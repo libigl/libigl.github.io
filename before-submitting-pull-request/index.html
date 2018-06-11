@@ -1,0 +1,880 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Simple C++ geometry processing library">
+      
+      
+        <link rel="canonical" href="http://gabuzome.github.io/libigl/before-submitting-pull-request/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../favicon.ico">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.3">
+    
+    
+      
+        <title>Creating a Pull Request - libigl</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.8d40d89b.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.6079476c.css">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../css/style.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="light-blue" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <a href="#before-submitting-a-pull-request" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="http://gabuzome.github.io/libigl/" title="libigl" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"> </i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                libigl
+              </span>
+              <span class="md-header-nav__topic">
+                Creating a Pull Request
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/gabuzome/gabuzome.github.io/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      libigl/libigl
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"> </i>
+      
+    </span>
+    libigl
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/gabuzome/gabuzome.github.io/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      libigl/libigl
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/" title="Tutorial" class="md-nav__link">
+      Tutorial
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Compilation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Compilation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../example-project/" title="Example Project" class="md-nav__link">
+      Example Project
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../static-library/" title="Static Library" class="md-nav__link">
+      Static Library
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../third-party/" title="External Dependencies" class="md-nav__link">
+      External Dependencies
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python-bindings/" title="Python Bindings" class="md-nav__link">
+      Python Bindings
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Contributing
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Contributing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../style-guidelines/" title="Style Guidelines" class="md-nav__link">
+      Style Guidelines
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../CONTRIBUTING/" title="Bug Report" class="md-nav__link">
+      Bug Report
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Creating a Pull Request
+      </label>
+    
+    <a href="./" title="Creating a Pull Request" class="md-nav__link md-nav__link--active">
+      Creating a Pull Request
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exhaustive-build-test" title="Exhaustive build test" class="md-nav__link">
+    Exhaustive build test
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#direct-test-of-tutorial-using-static-library" title="Direct test of tutorial using static library" class="md-nav__link">
+    Direct test of tutorial using static library
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../unit-tests/" title="Unit Tests" class="md-nav__link">
+      Unit Tests
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Misc
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Misc
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../matlab-to-eigen/" title="Matlab-libigl Cheatsheet" class="md-nav__link">
+      Matlab-libigl Cheatsheet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../coding-guidelines/" title="Coding Tips" class="md-nav__link">
+      Coding Tips
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3" type="checkbox" id="nav-5-3">
+    
+    <label class="md-nav__link" for="nav-5-3">
+      File Formats
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-3">
+        File Formats
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../file-formats/" title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../file-formats/bf/" title="bf" class="md-nav__link">
+      bf
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../file-formats/dmat/" title="dmat" class="md-nav__link">
+      dmat
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../file-formats/rbr/" title="rbr" class="md-nav__link">
+      rbr
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../file-formats/tgf/" title="tgf" class="md-nav__link">
+      tgf
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../file-formats/xml/" title="xml" class="md-nav__link">
+      xml
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../readme/" title="Building the Website" class="md-nav__link">
+      Building the Website
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../faq/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      About
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        About
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../RELEASE_HISTORY/" title="Release History" class="md-nav__link">
+      Release History
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../LICENSE/" title="License" class="md-nav__link">
+      License
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exhaustive-build-test" title="Exhaustive build test" class="md-nav__link">
+    Exhaustive build test
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#direct-test-of-tutorial-using-static-library" title="Direct test of tutorial using static library" class="md-nav__link">
+    Direct test of tutorial using static library
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/gabuzome/gabuzome.github.io/edit/master/docs/before-submitting-pull-request.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="before-submitting-a-pull-request">Before submitting a pull request<a class="headerlink" href="#before-submitting-a-pull-request" title="Permanent link">&para;</a></h1>
+<p>There are a variety of things you can do before submitting a pull request that
+will reduce the effort on the libigl team to merge your code and increase the
+likelihood that the merge ever happens.</p>
+<ol>
+<li>Test your code and submit a unit test as part of the pull request</li>
+<li>Verify that your code matches the <a href="../style-guidelines/">libigl style
+  guidelines</a></li>
+<li>Run the <a href="#exhaustivebuildtest">exhaustive build test</a> below</li>
+</ol>
+<h2 id="exhaustive-build-test">Exhaustive build test<a class="headerlink" href="#exhaustive-build-test" title="Permanent link">&para;</a></h2>
+<p>This script will <code class="codehilite">git clone</code> libigl to a temporary directory and build </p>
+<ol>
+<li>the static libigl library, </li>
+<li>the tutorial using the default header only libigl, and </li>
+<li>the tutorial using the static library libigl.</li>
+</ol>
+<p>Eventually this script should also run the unit tests.</p>
+<div class="codehilite"><pre><span></span><span class="c1"># In scripts/clone_and_build.sh add your email address to the line:</span>
+<span class="c1"># `recipients=&quot;alecjacobson@gmail.com,youremail@domain.com&quot;`</span>
+<span class="c1"># In your email client (e.g. gmail) create a filter to prevent emails </span>
+<span class="c1"># from your local machine from going to spam</span>
+scripts/clone_and_build.sh
+</pre></div>
+
+<h3 id="direct-test-of-tutorial-using-static-library">Direct test of tutorial using static library<a class="headerlink" href="#direct-test-of-tutorial-using-static-library" title="Permanent link">&para;</a></h3>
+<p>This part of the <code class="codehilite">clone_and_build.sh</code> script catches 99% of the compilation
+issues that <em>don&rsquo;t</em> show up when testing:</p>
+<div class="codehilite"><pre><span></span><span class="nb">cd</span> tutorial/
+mkdir build-use-static
+<span class="nb">cd</span> build-use-static
+cmake -DCMAKE_BUILD_TYPE<span class="o">=</span>Release -DLIBIGL_USE_STATIC_LIBRARY<span class="o">=</span>ON ..
+make
+</pre></div>
+
+<p>A typical issue is a missing template instantiation (symbol not found):</p>
+<div class="codehilite"><pre><span></span>&quot;void igl::cgal::points_inside_component&lt;Eigen::Matrix&lt;double, -1, 3, 0, -1, 3&gt;, Eigen::Matrix&lt;int, -1, 3, 0, -1, 3&gt;, Eigen::Matrix&lt;double, -1, 3, 0, -1, 3&gt;, Eigen::Matrix&lt;int, -1, 1, 0, -1, 1&gt; &gt;(Eigen::PlainObjectBase&lt;Eigen::Matrix&lt;double, -1, 3, 0, -1, 3&gt; &gt; const&amp;, Eigen::PlainObjectBase&lt;Eigen::Matrix&lt;int, -1, 3, 0, -1, 3&gt; &gt; const&amp;, Eigen::PlainObjectBase&lt;Eigen::Matrix&lt;double, -1, 3, 0, -1, 3&gt; &gt; const&amp;, Eigen::PlainObjectBase&lt;Eigen::Matrix&lt;int, -1, 1, 0, -1, 1&gt; &gt;&amp;)&quot;, referenced from:
+    void igl::cgal::outer_hull&lt;Eigen::Matrix&lt;double, -1, 3, 0, -1, 3&gt;, Eigen::Matrix&lt;int, -1, 3, 0, -1, 3&gt;, Eigen::Matrix&lt;int, -1, 3, 0, -1, 3&gt;, Eigen::Matrix&lt;long, -1, 1, 0, -1, 1&gt;, Eigen::Matrix&lt;int, -1, 1, 0, -1, 1&gt; &gt;(Eigen::PlainObjectBase&lt;Eigen::Matrix&lt;double, -1, 3, 0, -1, 3&gt; &gt; const&amp;, Eigen::PlainObjectBase&lt;Eigen::Matrix&lt;int, -1, 3, 0, -1, 3&gt; &gt; const&amp;, Eigen::PlainObjectBase&lt;Eigen::Matrix&lt;int, -1, 3, 0, -1, 3&gt; &gt;&amp;, Eigen::PlainObjectBase&lt;Eigen::Matrix&lt;long, -1, 1, 0, -1, 1&gt; &gt;&amp;, Eigen::PlainObjectBase&lt;Eigen::Matrix&lt;int, -1, 1, 0, -1, 1&gt; &gt;&amp;) in libiglboolean.a(mesh_boolean.cpp.o)
+    void igl::cgal::outer_hull&lt;Eigen::Matrix&lt;double, -1, 3, 0, -1, 3&gt;, Eigen::Matrix&lt;int, -1, 3, 0, -1, 3&gt;, Eigen::Matrix&lt;int, -1, 3, 0, -1, 3&gt;, Eigen::Matrix&lt;long, -1, 1, 0, -1, 1&gt;, Eigen::Matrix&lt;bool, -1, 1, 0, -1, 1&gt; &gt;(Eigen::PlainObjectBase&lt;Eigen::Matrix&lt;double, -1, 3, 0, -1, 3&gt; &gt; const&amp;, Eigen::PlainObjectBase&lt;Eigen::Matrix&lt;int, -1, 3, 0, -1, 3&gt; &gt; const&amp;, Eigen::PlainObjectBase&lt;Eigen::Matrix&lt;int, -1, 3, 0, -1, 3&gt; &gt;&amp;, Eigen::PlainObjectBase&lt;Eigen::Matrix&lt;long, -1, 1, 0, -1, 1&gt; &gt;&amp;, Eigen::PlainObjectBase&lt;Eigen::Matrix&lt;bool, -1, 1, 0, -1, 1&gt; &gt;&amp;) in libiglboolean.a(mesh_boolean.cpp.o)
+</pre></div>
+
+
+<p>This looks like a mess, but the solution is very simple. Copy the chunk inside of the quotes, in this case:</p>
+<div class="codehilite"><pre><span></span>&quot;void igl::cgal::points_inside_component&lt;Eigen::Matrix&lt;double, -1, 3, 0, -1, 3&gt;, Eigen::Matrix&lt;int, -1, 3, 0, -1, 3&gt;, Eigen::Matrix&lt;double, -1, 3, 0, -1, 3&gt;, Eigen::Matrix&lt;int, -1, 1, 0, -1, 1&gt; &gt;(Eigen::PlainObjectBase&lt;Eigen::Matrix&lt;double, -1, 3, 0, -1, 3&gt; &gt; const&amp;, Eigen::PlainObjectBase&lt;Eigen::Matrix&lt;int, -1, 3, 0, -1, 3&gt; &gt; const&amp;, Eigen::PlainObjectBase&lt;Eigen::Matrix&lt;double, -1, 3, 0, -1, 3&gt; &gt; const&amp;, Eigen::PlainObjectBase&lt;Eigen::Matrix&lt;int, -1, 1, 0, -1, 1&gt; &gt;&amp;)&quot;
+</pre></div>
+
+
+<p>and paste it at the bottom of the relevant .cpp file with the word template in front of it and a semicolon at then. In this case, in include/igl/cgal/points_inside_component.cpp:</p>
+<div class="codehilite"><pre><span></span><span class="cp">#ifdef IGL_STATIC_LIBRARY</span>
+<span class="c1">// Explicit template instantiation</span>
+<span class="k">template</span> <span class="kt">void</span> <span class="n">igl</span><span class="o">::</span><span class="n">cgal</span><span class="o">::</span><span class="n">points_inside_component</span><span class="o">&lt;</span><span class="n">Eigen</span><span class="o">::</span><span class="n">Matrix</span><span class="o">&lt;</span><span class="n">CGAL</span><span class="o">::</span><span class="n">Lazy_exact_nt</span><span class="o">&lt;</span><span class="n">CGAL</span><span class="o">::</span><span class="n">Gmpq</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">Eigen</span><span class="o">::</span><span class="n">Matrix</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">Eigen</span><span class="o">::</span><span class="n">Matrix</span><span class="o">&lt;</span><span class="n">CGAL</span><span class="o">::</span><span class="n">Lazy_exact_nt</span><span class="o">&lt;</span><span class="n">CGAL</span><span class="o">::</span><span class="n">Gmpq</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">Eigen</span><span class="o">::</span><span class="n">Matrix</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="o">&gt;</span> <span class="o">&gt;</span><span class="p">(</span><span class="n">Eigen</span><span class="o">::</span><span class="n">PlainObjectBase</span><span class="o">&lt;</span><span class="n">Eigen</span><span class="o">::</span><span class="n">Matrix</span><span class="o">&lt;</span><span class="n">CGAL</span><span class="o">::</span><span class="n">Lazy_exact_nt</span><span class="o">&lt;</span><span class="n">CGAL</span><span class="o">::</span><span class="n">Gmpq</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="k">const</span><span class="o">&amp;</span><span class="p">,</span> <span class="n">Eigen</span><span class="o">::</span><span class="n">PlainObjectBase</span><span class="o">&lt;</span><span class="n">Eigen</span><span class="o">::</span><span class="n">Matrix</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="k">const</span><span class="o">&amp;</span><span class="p">,</span> <span class="n">Eigen</span><span class="o">::</span><span class="n">PlainObjectBase</span><span class="o">&lt;</span><span class="n">Eigen</span><span class="o">::</span><span class="n">Matrix</span><span class="o">&lt;</span><span class="n">CGAL</span><span class="o">::</span><span class="n">Lazy_exact_nt</span><span class="o">&lt;</span><span class="n">CGAL</span><span class="o">::</span><span class="n">Gmpq</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="k">const</span><span class="o">&amp;</span><span class="p">,</span> <span class="n">Eigen</span><span class="o">::</span><span class="n">PlainObjectBase</span><span class="o">&lt;</span><span class="n">Eigen</span><span class="o">::</span><span class="n">Matrix</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="o">&gt;</span> <span class="o">&gt;&amp;</span><span class="p">);</span>
+<span class="cp">#endif</span>
+</pre></div>
+
+<p>Then &ldquo;rinse and repeat&rdquo;.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../CONTRIBUTING/" title="Bug Report" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Bug Report
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../unit-tests/" title="Unit Tests" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Unit Tests
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/libigl" class="md-footer-social__link fa fa-github"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.b438e6c5.js"></script>
+      
+      <script>app.initialize({version:"0.17.3",url:{base:".."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>

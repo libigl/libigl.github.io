@@ -1,0 +1,1313 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Simple C++ geometry processing library">
+      
+      
+        <link rel="canonical" href="http://gabuzome.github.io/libigl/RELEASE_HISTORY/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../favicon.ico">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.3">
+    
+    
+      
+        <title>Release History - libigl</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.8d40d89b.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.6079476c.css">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../css/style.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="light-blue" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <a href="#libigl-version-tracking" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="http://gabuzome.github.io/libigl/" title="libigl" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"> </i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                libigl
+              </span>
+              <span class="md-header-nav__topic">
+                Release History
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/gabuzome/gabuzome.github.io/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      libigl/libigl
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"> </i>
+      
+    </span>
+    libigl
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/gabuzome/gabuzome.github.io/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      libigl/libigl
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/" title="Tutorial" class="md-nav__link">
+      Tutorial
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Compilation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Compilation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../example-project/" title="Example Project" class="md-nav__link">
+      Example Project
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../static-library/" title="Static Library" class="md-nav__link">
+      Static Library
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../third-party/" title="External Dependencies" class="md-nav__link">
+      External Dependencies
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python-bindings/" title="Python Bindings" class="md-nav__link">
+      Python Bindings
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Contributing
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Contributing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../style-guidelines/" title="Style Guidelines" class="md-nav__link">
+      Style Guidelines
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../CONTRIBUTING/" title="Bug Report" class="md-nav__link">
+      Bug Report
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../before-submitting-pull-request/" title="Creating a Pull Request" class="md-nav__link">
+      Creating a Pull Request
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../unit-tests/" title="Unit Tests" class="md-nav__link">
+      Unit Tests
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Misc
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Misc
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../matlab-to-eigen/" title="Matlab-libigl Cheatsheet" class="md-nav__link">
+      Matlab-libigl Cheatsheet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../coding-guidelines/" title="Coding Tips" class="md-nav__link">
+      Coding Tips
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3" type="checkbox" id="nav-5-3">
+    
+    <label class="md-nav__link" for="nav-5-3">
+      File Formats
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-3">
+        File Formats
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../file-formats/" title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../file-formats/bf/" title="bf" class="md-nav__link">
+      bf
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../file-formats/dmat/" title="dmat" class="md-nav__link">
+      dmat
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../file-formats/rbr/" title="rbr" class="md-nav__link">
+      rbr
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../file-formats/tgf/" title="tgf" class="md-nav__link">
+      tgf
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../file-formats/xml/" title="xml" class="md-nav__link">
+      xml
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../readme/" title="Building the Website" class="md-nav__link">
+      Building the Website
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../faq/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
+    
+    <label class="md-nav__link" for="nav-7">
+      About
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        About
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Release History
+      </label>
+    
+    <a href="./" title="Release History" class="md-nav__link md-nav__link--active">
+      Release History
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#version-13-changes" title="Version 1.3 Changes" class="md-nav__link">
+    Version 1.3 Changes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-12-changes" title="Version 1.2 Changes" class="md-nav__link">
+    Version 1.2 Changes
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#external-libraries-as-git-subrepos" title="External libraries as git subrepos" class="md-nav__link">
+    External libraries as git subrepos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deprecatedrepeated-functions" title="Deprecated/repeated functions" class="md-nav__link">
+    Deprecated/repeated functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-10-changes" title="Version 1.0 Changes" class="md-nav__link">
+    Version 1.0 Changes
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#renamed-functions" title="Renamed functions" class="md-nav__link">
+    Renamed functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#miscellaneous" title="Miscellaneous" class="md-nav__link">
+    Miscellaneous
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../LICENSE/" title="License" class="md-nav__link">
+      License
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#version-13-changes" title="Version 1.3 Changes" class="md-nav__link">
+    Version 1.3 Changes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-12-changes" title="Version 1.2 Changes" class="md-nav__link">
+    Version 1.2 Changes
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#external-libraries-as-git-subrepos" title="External libraries as git subrepos" class="md-nav__link">
+    External libraries as git subrepos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deprecatedrepeated-functions" title="Deprecated/repeated functions" class="md-nav__link">
+    Deprecated/repeated functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-10-changes" title="Version 1.0 Changes" class="md-nav__link">
+    Version 1.0 Changes
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#renamed-functions" title="Renamed functions" class="md-nav__link">
+    Renamed functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#miscellaneous" title="Miscellaneous" class="md-nav__link">
+    Miscellaneous
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/gabuzome/gabuzome.github.io/edit/master/docs/RELEASE_HISTORY.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="libigl-version-tracking">Libigl version tracking<a class="headerlink" href="#libigl-version-tracking" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Short description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.3.0</td>
+<td>Modernized cmake build, multi-mesh viewer, replace nanogui with imgui</td>
+</tr>
+<tr>
+<td>1.2.1</td>
+<td>Reorganization opengl-dependent functions: opengl and opengl2 extras</td>
+</tr>
+<tr>
+<td>1.2.0</td>
+<td>Reorganization of &ldquo;extras&rdquo;, rm deprecated funcs, absorb boost &amp; svd3x3</td>
+</tr>
+<tr>
+<td>1.1.7</td>
+<td>Switch build for static library to cmake.</td>
+</tr>
+<tr>
+<td>1.1.6</td>
+<td>Major boolean robustness fix, drop CGAL dependency for AABB/distances</td>
+</tr>
+<tr>
+<td>1.1.5</td>
+<td>Bug fix in booleans</td>
+</tr>
+<tr>
+<td>1.1.4</td>
+<td>Edge collapsing and linear program solving</td>
+</tr>
+<tr>
+<td>1.1.3</td>
+<td>Bug fixes in active set and boundary_conditions</td>
+</tr>
+<tr>
+<td>1.1.1</td>
+<td>PLY file format support</td>
+</tr>
+<tr>
+<td>1.1.0</td>
+<td>Mesh boolean operations using CGAL and cork, implementing [Attene 14]</td>
+</tr>
+<tr>
+<td>1.0.3</td>
+<td>Bone heat method</td>
+</tr>
+<tr>
+<td>1.0.2</td>
+<td>Bug fix in winding number code</td>
+</tr>
+<tr>
+<td>1.0.1</td>
+<td>Bug fixes and more CGAL support</td>
+</tr>
+<tr>
+<td>1.0.0</td>
+<td>Major beta release: many renames, tutorial, triangle, org. build</td>
+</tr>
+<tr>
+<td>0.4.6</td>
+<td>Generalized Winding Numbers</td>
+</tr>
+<tr>
+<td>0.4.5</td>
+<td>CGAL extra: mesh selfintersection</td>
+</tr>
+<tr>
+<td>0.4.4</td>
+<td>STL file format support</td>
+</tr>
+<tr>
+<td>0.4.3</td>
+<td>ARAP implementation</td>
+</tr>
+<tr>
+<td>0.4.1</td>
+<td>Migrated much of the FAST code including extra for Sifakis&rsquo; 3x3 svd</td>
+</tr>
+<tr>
+<td>0.4.0</td>
+<td>Release under MPL2 license</td>
+</tr>
+<tr>
+<td>0.3.7</td>
+<td>Embree2.0 support</td>
+</tr>
+<tr>
+<td>0.3.6</td>
+<td>boost extra, patches, mosek 7 support, libiglbbw (mosek optional)</td>
+</tr>
+<tr>
+<td>0.3.5</td>
+<td>More examples, naive primitive sorting</td>
+</tr>
+<tr>
+<td>0.3.3</td>
+<td>Many more examples, ambient occlusion with Embree.</td>
+</tr>
+<tr>
+<td>0.3.1</td>
+<td>Linearly dependent constraints in min_quad_with_fixed, SparseQR buggy</td>
+</tr>
+<tr>
+<td>0.3.0</td>
+<td>Better active set method support</td>
+</tr>
+<tr>
+<td>0.2.3</td>
+<td>More explicits, active set method, opengl/anttweakbar guards</td>
+</tr>
+<tr>
+<td>0.2.2</td>
+<td>More explicit instantiations, faster sorts and uniques</td>
+</tr>
+<tr>
+<td>0.2.1</td>
+<td>Bug fixes in barycenter and doublearea found by Martin Bisson</td>
+</tr>
+<tr>
+<td>0.2.0</td>
+<td>XML serializer more stable and fixed bug in remove_duplicate_vertices</td>
+</tr>
+<tr>
+<td>0.1.8</td>
+<td>Embree and xml (windows only) extras</td>
+</tr>
+<tr>
+<td>0.1.5</td>
+<td>Compilation on windows, bug fix for compilation with cygwin</td>
+</tr>
+<tr>
+<td>0.1.1</td>
+<td>Alpha release with core functions, extras, examples</td>
+</tr>
+</tbody>
+</table>
+<h2 id="version-13-changes">Version 1.3 Changes<a class="headerlink" href="#version-13-changes" title="Permanent link">&para;</a></h2>
+<p>List of changes related to this version:</p>
+<ul>
+<li>
+<p>The CMake build system has been rewritten to be more modular and modern.
+libigl modules are now available as CMake target, e.g. <code class="codehilite">igl::triangle</code> or
+<code class="codehilite">igl::opengl</code>. See the libigl-example-project for an example of typical usage.</p>
+</li>
+<li>
+<p><code class="codehilite">igl/antweakbar</code> and <code class="codehilite">igl/opengl2</code> support has been removed from the CMake.
+The files are still available, but their use is discouraged.</p>
+</li>
+<li>
+<p>The viewer has been refactored and now supports multiple meshes. See related
+tutorial entry for more information. The viewer files are now split according
+to their dependencies. E.g. <code class="codehilite">igl::viewer::Viewer</code> has been renamed
+<code class="codehilite">igl::opengl::glfw::Viewer</code>.</p>
+</li>
+<li>
+<p>NanoGui has been replaced by ImGui, and is now available as a viewer plugin
+instead of <code class="codehilite">#define</code></p>
+</li>
+</ul>
+<h2 id="version-12-changes">Version 1.2 Changes<a class="headerlink" href="#version-12-changes" title="Permanent link">&para;</a></h2>
+<p>This change introduces better organization of dependencies and removes some
+deprecated/repeated functions. The 3x3 svd code and dependent functions
+(including ARAP) were absorbed into the main library. Similarly, the boost
+dependency extra was absorbed.</p>
+<h3 id="external-libraries-as-git-subrepos">External libraries as git subrepos<a class="headerlink" href="#external-libraries-as-git-subrepos" title="Permanent link">&para;</a></h3>
+<p>The core functionality of libigl (still) just depends on stl, c++11 and Eigen.
+There are additional <em>optional</em> dependencies (e.g. CGAL, embree, glfw, tetgen,
+triangle). Libigl functions using these are located (still) in sub-folders of
+the include directory (e.g.  <code class="codehilite">include/igl/cgal/</code>, <code class="codehilite">include/igl/embree/</code>). Prior
+to version 1.2 we included copies of the code for some of these dependencies in the
+<code class="codehilite">external/</code> directory. As of
+version 1.2, these have been replaced with git sub-repos. If you have cloned
+libigl <em>before version 1.2</em> then you should issue </p>
+<div class="codehilite"><pre><span></span>git submodule update --init --recursive
+</pre></div>
+
+
+<h3 id="deprecatedrepeated-functions">Deprecated/repeated functions<a class="headerlink" href="#deprecatedrepeated-functions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Old</th>
+<th>New</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="codehilite">igl::angles</code></td>
+<td><code class="codehilite">igl::internal_angles</code></td>
+</tr>
+<tr>
+<td><code class="codehilite">igl::get_modifiers</code></td>
+<td>[deleted]</td>
+</tr>
+<tr>
+<td><code class="codehilite">igl::nchoosek(offset,K,N,std::vector)</code></td>
+<td><code class="codehilite">igl::nchoosek(Eigen,K,Eigen)</code></td>
+</tr>
+<tr>
+<td><code class="codehilite"><span class="cp">#include</span> <span class="cpf">&lt;igl/boost/components.h&gt;</span><span class="cp"></span></code></td>
+<td><code class="codehilite"><span class="cp">#include</span> <span class="cpf">&lt;igl/components.h&gt;</span><span class="cp"></span></code></td>
+</tr>
+<tr>
+<td><code class="codehilite"><span class="cp">#include</span> <span class="cpf">&lt;igl/boost/bfs_orient.h&gt;</span><span class="cp"></span></code></td>
+<td><code class="codehilite"><span class="cp">#include</span> <span class="cpf">&lt;igl/bfs_orient.h&gt;</span><span class="cp"></span></code></td>
+</tr>
+<tr>
+<td><code class="codehilite"><span class="cp">#include</span> <span class="cpf">&lt;igl/boost/orientable_patches.h&gt;</span><span class="cp"></span></code></td>
+<td><code class="codehilite"><span class="cp">#include</span> <span class="cpf">&lt;igl/orientable_patches.h&gt;</span><span class="cp"></span></code></td>
+</tr>
+<tr>
+<td><code class="codehilite"><span class="cp">#include</span> <span class="cpf">&lt;igl/svd3x3/arap.h&gt;</span><span class="cp"></span></code></td>
+<td><code class="codehilite"><span class="cp">#include</span> <span class="cpf">&lt;igl/arap.h&gt;</span><span class="cp"></span></code></td>
+</tr>
+<tr>
+<td><code class="codehilite"><span class="cp">#include</span> <span class="cpf">&lt;igl/svd3x3/arap_dof.h&gt;</span><span class="cp"></span></code></td>
+<td><code class="codehilite"><span class="cp">#include</span> <span class="cpf">&lt;igl/arap_dof.h&gt;</span><span class="cp"></span></code></td>
+</tr>
+<tr>
+<td><code class="codehilite"><span class="cp">#include</span> <span class="cpf">&lt;igl/svd3x3/fit_rotations.h&gt;</span><span class="cp"></span></code></td>
+<td><code class="codehilite"><span class="cp">#include</span> <span class="cpf">&lt;igl/fit_rotations.h&gt;</span><span class="cp"></span></code></td>
+</tr>
+<tr>
+<td><code class="codehilite"><span class="cp">#include</span> <span class="cpf">&lt;igl/svd3x3/polar_svd3x3.h&gt;</span><span class="cp"></span></code></td>
+<td><code class="codehilite"><span class="cp">#include</span> <span class="cpf">&lt;igl/polar_svd3x3.h&gt;</span><span class="cp"></span></code></td>
+</tr>
+<tr>
+<td><code class="codehilite"><span class="cp">#include</span> <span class="cpf">&lt;igl/svd3x3/svd3x3.h&gt;</span><span class="cp"></span></code></td>
+<td><code class="codehilite"><span class="cp">#include</span> <span class="cpf">&lt;igl/svd3x3.h&gt;</span><span class="cp"></span></code></td>
+</tr>
+<tr>
+<td><code class="codehilite"><span class="cp">#include</span> <span class="cpf">&lt;igl/svd3x3/svd3x3_avx.h&gt;</span><span class="cp"></span></code></td>
+<td><code class="codehilite"><span class="cp">#include</span> <span class="cpf">&lt;igl/svd3x3_avx.h&gt;</span><span class="cp"></span></code></td>
+</tr>
+<tr>
+<td><code class="codehilite"><span class="cp">#include</span> <span class="cpf">&lt;igl/svd3x3/svd3x3_sse.h&gt;</span><span class="cp"></span></code></td>
+<td><code class="codehilite"><span class="cp">#include</span> <span class="cpf">&lt;igl/svd3x3_sse.h&gt;</span><span class="cp"></span></code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="version-10-changes">Version 1.0 Changes<a class="headerlink" href="#version-10-changes" title="Permanent link">&para;</a></h2>
+<p>Our beta release marks our confidence that this library can be used outside of
+casual experimenting. To maintain order, we have made a few changes which
+current users should read and adapt their code accordingly.</p>
+<h3 id="renamed-functions">Renamed functions<a class="headerlink" href="#renamed-functions" title="Permanent link">&para;</a></h3>
+<p>The following table lists functions which have changed name as of version
+1.0.0:</p>
+<table>
+<thead>
+<tr>
+<th>Old</th>
+<th>New</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="codehilite">igl::add_barycenter</code></td>
+<td><code class="codehilite">igl::false_barycentric_subdivision</code></td>
+</tr>
+<tr>
+<td><code class="codehilite">igl::areamatrix</code></td>
+<td><code class="codehilite">igl::vector_area_matrix</code></td>
+</tr>
+<tr>
+<td><code class="codehilite">igl::barycentric2global</code></td>
+<td><code class="codehilite">igl::barycentric_to_global</code></td>
+</tr>
+<tr>
+<td><code class="codehilite">igl::boundary_faces</code></td>
+<td><code class="codehilite">igl::boundary_facets</code></td>
+</tr>
+<tr>
+<td><code class="codehilite">igl::boundary_vertices_sorted</code></td>
+<td><code class="codehilite">igl::boundary_loop</code></td>
+</tr>
+<tr>
+<td><code class="codehilite">igl::cotangent</code></td>
+<td><code class="codehilite">igl::cotmatrix_entries</code></td>
+</tr>
+<tr>
+<td><code class="codehilite">igl::edgetopology</code></td>
+<td><code class="codehilite">igl::edge_topology</code></td>
+</tr>
+<tr>
+<td><code class="codehilite">igl::gradMat</code></td>
+<td><code class="codehilite">igl::grad</code></td>
+</tr>
+<tr>
+<td><code class="codehilite">igl::is_manifold</code></td>
+<td><code class="codehilite">igl::is_edge_manifold</code></td>
+</tr>
+<tr>
+<td><code class="codehilite">igl::mexStream</code></td>
+<td><code class="codehilite">igl::MexStream</code></td>
+</tr>
+<tr>
+<td><code class="codehilite">igl::moveFV</code></td>
+<td><code class="codehilite">igl::average_onto_vertices</code></td>
+</tr>
+<tr>
+<td><code class="codehilite">igl::moveVF</code></td>
+<td><code class="codehilite">igl::average_onto_faces</code></td>
+</tr>
+<tr>
+<td><code class="codehilite">igl::plot_vector</code></td>
+<td><code class="codehilite">igl::print_vector</code></td>
+</tr>
+<tr>
+<td><code class="codehilite">igl::pos</code></td>
+<td><code class="codehilite">igl::HalfEdgeIterator</code></td>
+</tr>
+<tr>
+<td><code class="codehilite">igl::plane_project</code></td>
+<td><code class="codehilite">igl::project_isometrically_to_plane</code></td>
+</tr>
+<tr>
+<td><code class="codehilite">igl::project_points_mesh</code></td>
+<td><code class="codehilite">igl::line_mesh_intersection</code></td>
+</tr>
+<tr>
+<td><code class="codehilite">igl::read</code></td>
+<td><code class="codehilite">igl::read_triangle_mesh</code></td>
+</tr>
+<tr>
+<td><code class="codehilite">igl::removeDuplicates.cpp</code></td>
+<td><code class="codehilite">igl::remove_duplicates</code></td>
+</tr>
+<tr>
+<td><code class="codehilite">igl::removeUnreferenced</code></td>
+<td><code class="codehilite">igl::remove_unreferenced</code></td>
+</tr>
+<tr>
+<td><code class="codehilite">igl::tt</code></td>
+<td><code class="codehilite">igl::triangle_triangle_adjacency</code></td>
+</tr>
+<tr>
+<td><code class="codehilite">igl::vf</code></td>
+<td><code class="codehilite">igl::vertex_triangle_adjacency</code></td>
+</tr>
+<tr>
+<td><code class="codehilite">igl::write</code></td>
+<td><code class="codehilite">igl::write_triangle_mesh</code></td>
+</tr>
+<tr>
+<td><code class="codehilite">igl::manifold_patches</code></td>
+<td><code class="codehilite">igl::orientable_patches</code></td>
+</tr>
+<tr>
+<td><code class="codehilite">igl::selfintersect</code></td>
+<td><code class="codehilite">igl::remesh_self_intersections</code></td>
+</tr>
+<tr>
+<td><code class="codehilite">igl::project_mesh</code></td>
+<td><code class="codehilite">igl::line_mesh_intersection</code></td>
+</tr>
+<tr>
+<td><code class="codehilite">igl::triangulate</code></td>
+<td><code class="codehilite">igl::polygon_mesh_to_triangle_mesh</code></td>
+</tr>
+<tr>
+<td><code class="codehilite">igl::is_manifold</code></td>
+<td><code class="codehilite">igl::is_edge_manifold</code></td>
+</tr>
+<tr>
+<td><code class="codehilite">igl::triangle_wrapper</code></td>
+<td><code class="codehilite">igl::triangulate</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="miscellaneous">Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permanent link">&para;</a></h3>
+<ul>
+<li>To match interfaces provided by (all) other quadratic optimization
+   libraries, <code class="codehilite">igl::min_quad_with_fixed</code> and <code class="codehilite">igl::active_set</code> now expect as
+   input twice the quadratic coefficients matrix, i.e. the Hessian. For
+   example, <code class="codehilite">igl::min_quad_with_fixed(H,B,...)</code> minimizes <span><span class="MathJax_Preview">\frac{1}{2}x^T H
+   x+x^T B</span><script type="math/tex">\frac{1}{2}x^T H
+   x+x^T B</script></span>.</li>
+<li>We have inverted the <code class="codehilite">IGL_HEADER_ONLY</code> macro to <code class="codehilite">IGL_STATIC_LIBRARY</code>. To
+   compile using libigl as a header-only library, simply include headers and
+   libigl in the header search path. To link to libigl, you must define the
+   <code class="codehilite">IGL_STATIC_LIBRARY</code> macro at compile time and link to the <code class="codehilite">libigl*.a</code>
+   libraries.</li>
+<li>Building libigl as a static library is now more organized. There is a
+   <code class="codehilite">build/</code> directory with Makefiles for the main library (<code class="codehilite">Makefile</code>) and each
+   dependency (e.g. <code class="codehilite">Makefile_mosek</code> for <code class="codehilite">libiglmosek.a</code>)</li>
+<li><code class="codehilite">igl::polar_svd</code> now always returns a rotation in <code class="codehilite">R</code>, never a reflection.
+   This mirrors the behavior of <code class="codehilite">igl::polar_svd3x3</code>.  Consequently the <code class="codehilite">T</code>
+   part may have negative skews.</li>
+<li>We have organized the static library build</li>
+<li>The previous <code class="codehilite">igl::grad</code> function, which computed the per-triangle gradient
+   of a per-vertex scalar function has been replaced. Now <code class="codehilite">igl::grad</code> computes
+   the linear operator (previous computed using <code class="codehilite">igl::gradMat</code>). The gradient
+   values can still be recovered by multiplying the operator against the scalar
+   field as a vector and reshaping to have gradients per row.</li>
+<li><code class="codehilite">MASSMATRIX_*</code> has become <code class="codehilite">MASSMATRIX_TYPE_*</code></li>
+<li>The function <code class="codehilite">igl::project_normals</code>, which cast a line for each vertex of
+   mesh <em>A</em> in the normal direction and found the closest intersection along
+   these lines with mesh <em>B</em>, has been removed.</li>
+</ul>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../faq/" title="FAQ" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                FAQ
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../LICENSE/" title="License" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                License
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/libigl" class="md-footer-social__link fa fa-github"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.b438e6c5.js"></script>
+      
+      <script>app.initialize({version:"0.17.3",url:{base:".."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>
