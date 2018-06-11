@@ -1,0 +1,1252 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Simple C++ geometry processing library">
+      
+      
+        <link rel="canonical" href="http://gabuzome.github.io/libigl/libigl/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../favicon.ico">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.3">
+    
+    
+      
+        <title>Home - libigl</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.8d40d89b.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.6079476c.css">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../css/style.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="light-blue" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <a href="#libigl-a-simple-c-geometry-processing-library" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="http://gabuzome.github.io/libigl/" title="libigl" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"> </i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                libigl
+              </span>
+              <span class="md-header-nav__topic">
+                Home
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/gabuzome/gabuzome.github.io/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      libigl/libigl
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"> </i>
+      
+    </span>
+    libigl
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/gabuzome/gabuzome.github.io/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      libigl/libigl
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Home
+      </label>
+    
+    <a href="./" title="Home" class="md-nav__link md-nav__link--active">
+      Home
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tutorial" title="Tutorial" class="md-nav__link">
+    Tutorial
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#libigl-example-project" title="libigl Example Project" class="md-nav__link">
+    libigl Example Project
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coding-guidelines-and-tips" title="Coding Guidelines and Tips" class="md-nav__link">
+    Coding Guidelines and Tips
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" title="Installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" title="Dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#optional-dependencies" title="Optional Dependencies" class="md-nav__link">
+    Optional Dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gcc-and-the-optional-cgal-dependency" title="GCC and the Optional CGAL Dependency" class="md-nav__link">
+    GCC and the Optional CGAL Dependency
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openmp-and-windows" title="OpenMP and Windows" class="md-nav__link">
+    OpenMP and Windows
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download" title="Download" class="md-nav__link">
+    Download
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-issues" title="Known Issues" class="md-nav__link">
+    Known Issues
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-submodules" title="Git Submodules" class="md-nav__link">
+    Git Submodules
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unit-testing" title="Unit Testing" class="md-nav__link">
+    Unit Testing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-contribute" title="How to Contribute" class="md-nav__link">
+    How to Contribute
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" title="License" class="md-nav__link">
+    License
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attribution" title="Attribution" class="md-nav__link">
+    Attribution
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projectsuniversities-using-libigl" title="Projects/Universities using libigl" class="md-nav__link">
+    Projects/Universities using libigl
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contact" title="Contact" class="md-nav__link">
+    Contact
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#copyright" title="Copyright" class="md-nav__link">
+    Copyright
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="tutorial/" title="Tutorial" class="md-nav__link">
+      Tutorial
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Compilation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Compilation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="example-project/" title="Example Project" class="md-nav__link">
+      Example Project
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="static-library/" title="Static Library" class="md-nav__link">
+      Static Library
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="third-party/" title="External Dependencies" class="md-nav__link">
+      External Dependencies
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="python-bindings/" title="Python Bindings" class="md-nav__link">
+      Python Bindings
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Contributing
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Contributing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="style-guidelines/" title="Style Guidelines" class="md-nav__link">
+      Style Guidelines
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="CONTRIBUTING/" title="Bug Report" class="md-nav__link">
+      Bug Report
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="before-submitting-pull-request/" title="Creating a Pull Request" class="md-nav__link">
+      Creating a Pull Request
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="unit-tests/" title="Unit Tests" class="md-nav__link">
+      Unit Tests
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Misc
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Misc
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="matlab-to-eigen/" title="Matlab-libigl Cheatsheet" class="md-nav__link">
+      Matlab-libigl Cheatsheet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="coding-guidelines/" title="Coding Tips" class="md-nav__link">
+      Coding Tips
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3" type="checkbox" id="nav-5-3">
+    
+    <label class="md-nav__link" for="nav-5-3">
+      File Formats
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-3">
+        File Formats
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="file-formats/" title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="file-formats/bf/" title="bf" class="md-nav__link">
+      bf
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="file-formats/dmat/" title="dmat" class="md-nav__link">
+      dmat
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="file-formats/rbr/" title="rbr" class="md-nav__link">
+      rbr
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="file-formats/tgf/" title="tgf" class="md-nav__link">
+      tgf
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="file-formats/xml/" title="xml" class="md-nav__link">
+      xml
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="readme/" title="Building the Website" class="md-nav__link">
+      Building the Website
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="faq/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      About
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        About
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="RELEASE_HISTORY/" title="Release History" class="md-nav__link">
+      Release History
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="LICENSE/" title="License" class="md-nav__link">
+      License
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tutorial" title="Tutorial" class="md-nav__link">
+    Tutorial
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#libigl-example-project" title="libigl Example Project" class="md-nav__link">
+    libigl Example Project
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coding-guidelines-and-tips" title="Coding Guidelines and Tips" class="md-nav__link">
+    Coding Guidelines and Tips
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" title="Installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" title="Dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#optional-dependencies" title="Optional Dependencies" class="md-nav__link">
+    Optional Dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gcc-and-the-optional-cgal-dependency" title="GCC and the Optional CGAL Dependency" class="md-nav__link">
+    GCC and the Optional CGAL Dependency
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openmp-and-windows" title="OpenMP and Windows" class="md-nav__link">
+    OpenMP and Windows
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download" title="Download" class="md-nav__link">
+    Download
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-issues" title="Known Issues" class="md-nav__link">
+    Known Issues
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-submodules" title="Git Submodules" class="md-nav__link">
+    Git Submodules
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unit-testing" title="Unit Testing" class="md-nav__link">
+    Unit Testing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-contribute" title="How to Contribute" class="md-nav__link">
+    How to Contribute
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" title="License" class="md-nav__link">
+    License
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attribution" title="Attribution" class="md-nav__link">
+    Attribution
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projectsuniversities-using-libigl" title="Projects/Universities using libigl" class="md-nav__link">
+    Projects/Universities using libigl
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contact" title="Contact" class="md-nav__link">
+    Contact
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#copyright" title="Copyright" class="md-nav__link">
+    Copyright
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/gabuzome/gabuzome.github.io/edit/master/docs/libigl/index.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="libigl-a-simple-c-geometry-processing-library">libigl - A simple C++ geometry processing library<a class="headerlink" href="#libigl-a-simple-c-geometry-processing-library" title="Permanent link">&para;</a></h1>
+<p><a href="https://travis-ci.org/libigl/libigl"><img alt="Build Status" src="https://travis-ci.org/libigl/libigl.svg?branch=master" /></a>
+<a href="https://ci.appveyor.com/project/danielepanozzo/libigl-6hjk1/branch/master"><img alt="Build status" src="https://ci.appveyor.com/api/projects/status/mf3t9rnhco0vhly8/branch/master?svg=true" /></a>
+<img alt="" src="./libigl-teaser.png" /></p>
+<p><a href="https://github.com/libigl/libigl/">https://github.com/libigl/libigl/</a></p>
+<blockquote>
+<p>Get started with:</p>
+<div class="codehilite"><pre><span></span>git clone --recursive https://github.com/libigl/libigl.git
+</pre></div>
+
+</blockquote>
+<p>libigl is a simple C++ geometry processing library. We have a wide
+functionality including construction of sparse discrete differential geometry
+operators and finite-elements matrices such as the cotangent Laplacian and
+diagonalized mass matrix, simple facet and edge-based topology data structures,
+mesh-viewing utilities for OpenGL and GLSL, and many core functions for matrix
+manipulation which make <a href="http://eigen.tuxfamily.org">Eigen</a> feel a lot more
+like MATLAB.</p>
+<p>It is <strong>a header-only library</strong>. You do not need to compile anything to use,
+just include igl headers (e.g. <code class="codehilite"><span class="cp">#include</span> <span class="cpf">&lt;igl/cotmatrix.h&gt;</span><span class="cp"></span></code>) and run.  Each
+header file contains a single function (e.g. <code class="codehilite">igl/cotmatrix.h</code> contains
+<code class="codehilite">igl::cotmatrix()</code>). Most are tailored to operate on a generic triangle mesh
+stored in an n-by-3 matrix of vertex positions <code class="codehilite">V</code> and an m-by-3 matrix of
+triangle indices <code class="codehilite">F</code>.</p>
+<p><em>Optionally</em> the library may also be <a href="http://libigl.github.io/libigl/static-library/">pre-compiled</a> into a statically
+linked library, for faster compile times with your projects. This only effects
+compile time (run-time performance and behavior is identical). If in doubt, use
+the header-only default mode: (i.e. just include the headers you want to use).</p>
+<p>We use the <a href="http://eigen.tuxfamily.org">Eigen</a> library heavily in our code. Our
+group prototypes a lot in MATLAB, and we have a useful <a href="./matlab-to-eigen.html">MATLAB to libigl+Eigen
+conversion table</a>.</p>
+<p>We regularly test compiling our library on Mac OS X with clang, Linux with gcc
+and Windows with Visual Studio 2015 Community Edition.</p>
+<h2 id="tutorial">Tutorial<a class="headerlink" href="#tutorial" title="Permanent link">&para;</a></h2>
+<p>As of version 1.0, libigl includes an introductory
+<a href="http://libigl.github.io/libigl/tutorial">tutorial</a> that covers many functionalities.</p>
+<h2 id="libigl-example-project">libigl Example Project<a class="headerlink" href="#libigl-example-project" title="Permanent link">&para;</a></h2>
+<p>We provide a <a href="https://github.com/libigl/libigl-example-project">blank project example</a> showing how to use libigl and cmake. Feel free and encouraged to copy or fork this project as a way of starting a new personal project using libigl.</p>
+<h2 id="coding-guidelines-and-tips">Coding Guidelines and Tips<a class="headerlink" href="#coding-guidelines-and-tips" title="Permanent link">&para;</a></h2>
+<p>libigl follows strict coding guidelines, please take a look <a href="http://libigl.github.io/libigl/style-guidelines">here</a> before submitting your pull requests. We also have a set of <a href="http://libigl.github.io/libigl/coding-guidelines">general coding tips</a> on how to code a geometry processing research project.</p>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<p>Libigl is a <strong>header-only</strong> library. You do <strong>not</strong> need to build anything to
+install.  Simply add <code class="codehilite">libigl/include</code> to your include path and include relevant
+headers.  Here is a small &ldquo;Hello, World&rdquo; program:</p>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;igl/cotmatrix.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;Eigen/Dense&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;Eigen/Sparse&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="n">Eigen</span><span class="o">::</span><span class="n">MatrixXd</span> <span class="n">V</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+  <span class="n">V</span><span class="o">&lt;&lt;</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span>
+     <span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span>
+     <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span>
+     <span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">;</span>
+  <span class="n">Eigen</span><span class="o">::</span><span class="n">MatrixXi</span> <span class="n">F</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+  <span class="n">F</span><span class="o">&lt;&lt;</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span>
+     <span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">;</span>
+  <span class="n">Eigen</span><span class="o">::</span><span class="n">SparseMatrix</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">L</span><span class="p">;</span>
+  <span class="n">igl</span><span class="o">::</span><span class="n">cotmatrix</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">F</span><span class="p">,</span><span class="n">L</span><span class="p">);</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;Hello, mesh: &quot;</span><span class="o">&lt;&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="o">&lt;&lt;</span><span class="n">L</span><span class="o">*</span><span class="n">V</span><span class="o">&lt;&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>If you save this in <code class="codehilite">hello.cpp</code>, then you could compile this with (assuming
+Eigen is installed in <code class="codehilite">/usr/local/include/eigen3</code>):</p>
+<div class="codehilite"><pre><span></span>g++ -std<span class="o">=</span>c++11 -I/usr/local/include/eigen3 -I./libigl/include/ hello.cpp -o hello
+</pre></div>
+
+<p>Running <code class="codehilite">./hello</code> would then produce</p>
+<div class="codehilite"><pre><span></span>Hello, mesh:
+ 0.5  0.5
+-0.5  0.5
+-0.5 -0.5
+ 0.5 -0.5
+</pre></div>
+
+<h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
+<p>Dependencies are on a per-include basis and the majority of the functions in
+libigl depends only on the <a href="http://eigen.tuxfamily.org">Eigen</a> library.</p>
+<p>For more information see our <a href="http://libigl.github.io/libigl/tutorial">tutorial</a>.</p>
+<h3 id="optional-dependencies">Optional Dependencies<a class="headerlink" href="#optional-dependencies" title="Permanent link">&para;</a></h3>
+<p>Libigl compartmentalizes its <strong>optional</strong> dependences via its directory
+organization in the <code class="codehilite">include/</code> folder. All header files located <em>directly</em> in
+the <code class="codehilite">include/igl/</code> folder have only stl and Eigen as dependencies. For example,
+all of the headers that depend on CGAL are located in <code class="codehilite">include/igl/copyleft/cgal</code>.
+For a full list of <em>optional</em> dependencies check <code class="codehilite">optional/CMakeLists.txt</code>.</p>
+<h3 id="gcc-and-the-optional-cgal-dependency">GCC and the Optional CGAL Dependency<a class="headerlink" href="#gcc-and-the-optional-cgal-dependency" title="Permanent link">&para;</a></h3>
+<p>The <code class="codehilite">include/igl/copyleft/cgal/*.h</code> headers depend on CGAL. It has come to
+our attention that CGAL does not work properly with GCC 4.8. To the best of
+our knowledge, GCC 4.7 and clang will work correctly.</p>
+<h3 id="openmp-and-windows">OpenMP and Windows<a class="headerlink" href="#openmp-and-windows" title="Permanent link">&para;</a></h3>
+<p>Some of our functions will take advantage of OpenMP if available. However, it
+has come to our attention that Visual Studio + Eigen + OpenMP does not work
+properly. Since we use OpenMP only to improve performance, we recommend
+avoiding OpenMP on Windows or proceeding with caution.</p>
+<h2 id="download">Download<a class="headerlink" href="#download" title="Permanent link">&para;</a></h2>
+<p>You can keep up to date by cloning a read-only copy of our GitHub
+<a href="https://github.com/libigl">repository</a>.</p>
+<h2 id="known-issues">Known Issues<a class="headerlink" href="#known-issues" title="Permanent link">&para;</a></h2>
+<p>We rely heavily on Eigen. Nearly all inputs and outputs are Eigen matrices of
+some kind. However, we currently <em>only</em> officially support Eigen&rsquo;s default
+column-major ordering. That means, we <strong>do not</strong> expect our code to work for
+matrices using the <code class="codehilite">Eigen::RowMajor</code> flag. If you can, change definitions like:</p>
+<div class="codehilite"><pre><span></span><span class="n">Eigen</span><span class="o">::</span><span class="n">Matrix</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span> <span class="n">Eigen</span><span class="o">::</span><span class="n">Dynamic</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">Eigen</span><span class="o">::</span><span class="n">RowMajor</span><span class="o">&gt;</span> <span class="n">A</span><span class="p">;</span>
+</pre></div>
+
+<p>to</p>
+<div class="codehilite"><pre><span></span><span class="n">Eigen</span><span class="o">::</span><span class="n">Matrix</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span> <span class="n">Eigen</span><span class="o">::</span><span class="n">Dynamic</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">Eigen</span><span class="o">::</span><span class="n">ColMajor</span><span class="o">&gt;</span> <span class="n">A</span><span class="p">;</span>
+<span class="c1">// or simply</span>
+<span class="n">Eigen</span><span class="o">::</span><span class="n">Matrix</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span> <span class="n">Eigen</span><span class="o">::</span><span class="n">Dynamic</span><span class="p">,</span> <span class="mi">3</span><span class="o">&gt;</span> <span class="n">A</span><span class="p">;</span>
+</pre></div>
+
+<p>We hope to fix this, or at least identify which functions are safe (many of
+them probably work just fine). This requires setting up unit testing, which is
+a major <em>todo</em> for our development.</p>
+<h2 id="git-submodules">Git Submodules<a class="headerlink" href="#git-submodules" title="Permanent link">&para;</a></h2>
+<p>Libigl uses git submodules for its <em>optional</em> dependencies,
+in particular, those needed by the OpenGL viewer to run the examples in the
+<a href="http://libigl.github.io/libigl/tutorial">tutorial</a>. Git submodules allow use to treat clones of
+other libraries as sub-directories within ours while separating our commits.
+Read the <a href="http://git-scm.com/docs/git-submodule">documentation</a> for a detailed
+explanation, but essentially our libigl repo stores a hash for each of its
+subrepos containing which version to update to. When a change is introduced in
+a dependencies repo we can incorporate that change by pulling in our sub-repo
+and updating (i.e.  committing) that change to the hash.</p>
+<p>When pulling new changes to libigl it&rsquo;s also a good idea to update changes to
+subrepos:</p>
+<div class="codehilite"><pre><span></span>git pull
+git submodule update --recursive
+</pre></div>
+
+<h2 id="unit-testing">Unit Testing<a class="headerlink" href="#unit-testing" title="Permanent link">&para;</a></h2>
+<p>Libigl maintains <a href="https://github.com/libigl/libigl-unit-tests">separate
+repository</a> for unit testing.</p>
+<h2 id="how-to-contribute">How to Contribute<a class="headerlink" href="#how-to-contribute" title="Permanent link">&para;</a></h2>
+<p>If you are interested in joining development, please fork the repository and
+submit a <a href="https://help.github.com/articles/using-pull-requests/">pull request</a>
+with your changes. libigl follows strict coding guidelines, please take a look at our  <a href="http://libigl.github.io/libigl/style-guidelines">style guidelines</a> before submitting your pull requests.</p>
+<h2 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
+<p>libigl is primarily <a href="http://www.mozilla.org/MPL/2.0/">MPL2</a> licensed
+(<a href="http://www.mozilla.org/MPL/2.0/FAQ.html">FAQ</a>). Some files contain
+third-party code under other licenses. We&rsquo;re currently in the processes of
+identifying these and marking appropriately.</p>
+<h2 id="attribution">Attribution<a class="headerlink" href="#attribution" title="Permanent link">&para;</a></h2>
+<p>If you use libigl in your academic projects, please cite the papers we
+implement as appropriate. To cite the library in general, you could use this
+BibTeX entry:</p>
+<div class="codehilite"><pre><span></span><span class="nc">@misc</span><span class="p">{</span><span class="nl">libigl</span><span class="p">,</span>
+  <span class="na">title</span> <span class="p">=</span> <span class="s">{{libigl}: A simple {C++} geometry processing library}</span><span class="p">,</span>
+  <span class="na">author</span> <span class="p">=</span> <span class="s">{Alec Jacobson and Daniele Panozzo and others}</span><span class="p">,</span>
+  <span class="na">note</span> <span class="p">=</span> <span class="s">{http://libigl.github.io/libigl/}</span><span class="p">,</span>
+  <span class="na">year</span> <span class="p">=</span> <span class="s">{2017}</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="projectsuniversities-using-libigl">Projects/Universities using libigl<a class="headerlink" href="#projectsuniversities-using-libigl" title="Permanent link">&para;</a></h2>
+<p>Libigl is used by many research groups around the world. In 2015, it won the
+Eurographics/ACM Symposium on Geometry Processing software award. Here are a
+few labs/companies/institutions using libigl:</p>
+<ul>
+<li><a href="http://www.activision.com">Activision</a></li>
+<li><a href="http://www.adobe.com/technology/">Adobe Research</a>  </li>
+<li><a href="http://www.ea.com">Electronic Arts, Inc</a></li>
+<li><a href="https://epicgames.com">Epic Games</a></li>
+<li><a href="https://research.google.com">Google Research</a></li>
+<li><a href="http://ilm.com">Industrial Light and Magic</a></li>
+<li><a href="http://meshconsultants.ca/">Mesh consultants</a>, Canada</li>
+<li><a href="https://www.microsoft.com/en-us/research/">Microsoft Research</a></li>
+<li><a href="http://graphics.pixar.com/research/">Pixar</a></li>
+<li><a href="http://esotericsoftware.com/">Spine by Esoteric Software</a> is an animation tool dedicated to 2D characters.</li>
+<li><a href="http://vvvv.org">vvvv toolkit</a> a multipurpose tookit</li>
+<li>Columbia University, <a href="http://www.cs.columbia.edu/cg/">Columbia Computer Graphics Group</a>, USA</li>
+<li><a href="http://www.graphics.cornell.edu/">Cornell University</a>, USA</li>
+<li><a href="http://dcgi.felk.cvut.cz/">Czech Technical University in Prague</a>, Czech</li>
+<li>EPF Lausanne, <a href="http://lgg.epfl.ch/people.php">Computer Graphics and Geometry Laboratory</a>, Switzerland</li>
+<li>ETH Zurich, <a href="http://igl.ethz.ch/">Interactive Geometry Lab</a> and <a href="http://ait.inf.ethz.ch/">Advanced Technologies Lab</a>, Swizterland</li>
+<li>George Mason University, <a href="http://cs.gmu.edu/~ygingold/">CraGL</a>, USA</li>
+<li><a href="http://www.ust.hk/">Hong Kong University of Science and Technology</a>, Hong Kong</li>
+<li><a href="https://www.inria.fr/centre/grenoble/">Inria, Université Grenoble Alpes</a>, France</li>
+<li><a href="http://english.jiangnan.edu.cn">Jiangnan university</a>, China</li>
+<li><a href="http://www.nii.ac.jp/en/">National Institute of Informatics</a>, Japan</li>
+<li>New York University, <a href="http://mrl.nyu.edu/">Media Research Lab</a>, USA</li>
+<li>NYUPoly, <a href="http://game.engineering.nyu.edu/">Game Innovation Lab</a>, USA</li>
+<li><a href="https://www.cg.tu-berlin.de">TU Berlin</a>, Germany</li>
+<li><a href="http://www.tudelft.nl/en/">TU Delft</a>, Netherlands</li>
+<li><a href="https://www.tuwien.ac.at/en/tuwien_home/">TU Wien</a>, Austria</li>
+<li><a href="http://www.telecom-paristech.fr/en/formation-et-innovation-dans-le-numerique.html">Telecom ParisTech</a>, Paris, France</li>
+<li><a href="http://www.staff.science.uu.nl/~vaxma001/">Utrecht University</a>, The Netherlands</li>
+<li><a href="http://mtm.ufsc.br/~leo/">Universidade Federal de Santa Catarina</a>, Brazil</li>
+<li><a href="http://vecg.cs.ucl.ac.uk/">University College London</a>, England</li>
+<li><a href="http://vis.berkeley.edu/">University of California Berkeley</a>, USA</li>
+<li><a href="http://www.cam.ac.uk/">University of Cambridge</a>, England</li>
+<li><a href="http://cg.cis.upenn.edu/">University of Pennsylvania</a>, USA</li>
+<li><a href="http://www.cs.utexas.edu/users/evouga/">University of Texas at Austin</a>, USA</li>
+<li><a href="http://dgp.toronto.edu">University of Toronto</a>, Canada</li>
+<li><a href="https://www.csc.uvic.ca/Research/graphics/">University of Victoria</a>, Canada</li>
+<li><a href="http://www.uwec.edu/computer-science/">University of Wisconsin-Eau Claire</a>, USA</li>
+<li><a href="http://www.usi.ch/en">Università della Svizzera Italiana</a>, Switzerland</li>
+<li><a href="http://www.univ-tlse3.fr/">Université Toulouse III Paul Sabatier</a>, France</li>
+<li><a href="http://www.math.zju.edu.cn/cagd/">Zhejiang University</a>, China</li>
+</ul>
+<h2 id="contact">Contact<a class="headerlink" href="#contact" title="Permanent link">&para;</a></h2>
+<p>Libigl is a group endeavor led by <a href="http://www.cs.toronto.edu/~jacobson/">Alec
+Jacobson</a> and <a href="http://cs.nyu.edu/~panozzo/">Daniele
+Panozzo</a>. Please <a href="mailto:alecjacobson@gmail.com,daniele.panozzo@gmail.com">contact
+us</a> if you have
+questions or comments. For troubleshooting, please post an
+<a href="https://github.com/libigl/libigl/issues">issue</a> on github.</p>
+<p>If you&rsquo;re using libigl in your projects, quickly <a href="mailto:alecjacobson@gmail.com,daniele.panozzo@gmail.com">drop us a
+note</a>. Tell us who you
+are and what you&rsquo;re using it for. This helps us apply for funding and justify
+spending time maintaining this.</p>
+<p>If you find bugs or have problems please use our <a href="https://github.com/libigl/libigl/issues">github issue tracking
+page</a>.</p>
+<h2 id="copyright">Copyright<a class="headerlink" href="#copyright" title="Permanent link">&para;</a></h2>
+<p>2017 Alec Jacobson, Daniele Panozzo, Christian Schüller, Olga Diamanti, Qingnan Zhou, Sebastian Koch, Jeremie Dumas, Amir Vaxman, Nico Pietroni, Stefan Brugger, Kenshi Takayama, Wenzel Jakob, Nikolas De Giorgis, Luigi Rocca, Leonardo Sacht, Kevin Walliman, Olga Sorkine-Hornung, and others.</p>
+<p>Please see individual files for appropriate copyright notices.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+        
+          <a href="tutorial/" title="Tutorial" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Tutorial
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/libigl" class="md-footer-social__link fa fa-github"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.b438e6c5.js"></script>
+      
+      <script>app.initialize({version:"0.17.3",url:{base:".."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>
