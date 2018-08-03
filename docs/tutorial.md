@@ -414,7 +414,7 @@ Libigl's `igl::opengl::glfw::Viewer` provides basic support for rendering
 multiple meshes.
 
 Which mesh is _selected_ is controlled via the `viewer.selected_data_index`
-field. By default it his is set to `0`, so in the typical case of a single mesh
+field. By default the index is set to `0`, so in the typical case of a single mesh
 `viewer.data()` returns the `igl::ViewerData` corresponding to the one
 and only mesh.
 
@@ -1384,7 +1384,7 @@ set solver or by calling out to [Mosek](http://www.mosek.com).
 
 ### Dual quaternion skinning
 Even with high quality weights, linear blend skinning is limited. In
-particular, it suffers from known artifacts stemming from blending rotations as
+particular, it suffers from known artifacts stemming from blending rotations
 as matrices: a weight combination of rotation matrices is not necessarily a
 rotation. Consider an equal blend between rotating by $-\pi/2$ and by $\pi/2$
 about the $z$-axis. Intuitively one might expect to get the identity matrix,
