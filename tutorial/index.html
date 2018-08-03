@@ -13,7 +13,7 @@
         <meta name="description" content="Simple C++ geometry processing library">
       
       
-        <link rel="canonical" href="http://gabuzome.github.io/tutorial/">
+        <link rel="canonical" href="http://gabuzome.github.io/libigl/tutorial/">
       
       
       
@@ -108,7 +108,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="http://gabuzome.github.io/" title="libigl" class="md-header-nav__button md-logo">
+        <a href="http://gabuzome.github.io/libigl/" title="libigl" class="md-header-nav__button md-logo">
           
             <i class="md-icon"> </i>
           
@@ -1292,6 +1292,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rewritten-history/" title="Rewritten History" class="md-nav__link">
+      Rewritten History
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -2457,7 +2469,7 @@ viewer and to expose more user defined variables you have to implement a custom 
 <p>Libigl&rsquo;s <code class="codehilite">igl::opengl::glfw::Viewer</code> provides basic support for rendering
 multiple meshes.</p>
 <p>Which mesh is <em>selected</em> is controlled via the <code class="codehilite">viewer.selected_data_index</code>
-field. By default it his is set to <code class="codehilite">0</code>, so in the typical case of a single mesh
+field. By default the index is set to <code class="codehilite">0</code>, so in the typical case of a single mesh
 <code class="codehilite">viewer.data()</code> returns the <code class="codehilite">igl::ViewerData</code> corresponding to the one
 and only mesh.</p>
 <figure><img alt="(Example 107) The igl::opengl::glfw::Viewer can render multiple meshes, each with its own attributes like colors." src="../images/multiple-meshes.png" /><figcaption>(<a href="https://github.com/libigl/libigl/tree/master/tutorial/107_MultipleMeshes/main.cpp">Example 107</a>) The <code class="codehilite">igl::opengl::glfw::Viewer</code> can render multiple meshes, each with its own attributes like colors.</figcaption>
@@ -3465,7 +3477,7 @@ set solver or by calling out to <a href="http://www.mosek.com">Mosek</a>.</p>
 </figure>
 <h3 id="dual-quaternion-skinning">Dual quaternion skinning<a class="headerlink" href="#dual-quaternion-skinning" title="Permanent link">&para;</a></h3>
 <p>Even with high quality weights, linear blend skinning is limited. In
-particular, it suffers from known artifacts stemming from blending rotations as
+particular, it suffers from known artifacts stemming from blending rotations
 as matrices: a weight combination of rotation matrices is not necessarily a
 rotation. Consider an equal blend between rotating by <span><span class="MathJax_Preview">-\pi/2</span><script type="math/tex">-\pi/2</script></span> and by <span><span class="MathJax_Preview">\pi/2</span><script type="math/tex">\pi/2</script></span>
 about the <span><span class="MathJax_Preview">z</span><script type="math/tex">z</script></span>-axis. Intuitively one might expect to get the identity matrix,
