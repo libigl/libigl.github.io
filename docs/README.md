@@ -35,6 +35,10 @@ If you want to preview changes to the libigl website before a commit, you can fo
 !!! note
     The reason we are using `python -m mkdocs serve` instead of `mkdocs serve` directly is because we are using local extensions for mkdocs. Those extensions are located in the `scripts/` folder of libigl. Running `mkdocs` as a module adds the current directory to the `PYTHONPATH`, allowing us to load those extensions without installing them on the system or in a virtualenv.
 
+## TODO
+
+- [ ] Use virtualenv to run a specific version of mkdocs/mkdocs-material, to avoid incompatible changes from breaking the build...
+
 ## References
 
 - [MkDocs](http://www.mkdocs.org/)

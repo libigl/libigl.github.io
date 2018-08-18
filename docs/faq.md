@@ -47,3 +47,12 @@
 
 ??? faq "I get an `error: Server does not allow request for unadvertised object` when cloning a repository using libigl as a submodule."
     You are probably getting this error because the *libigl history rewriting* that happened on XXX. Read more about this breaking change [here].
+
+??? faq "I have some old GUI code that uses NanoGUI. How can I update it to the latest version of libigl?"
+    In 2017, libigl switched from NanoGUI to ImGui for its viewer's user interface. The main reason was to remove nested dependencies in common with libigl, thus providing an overall lighter experience. ImGui also has other advantages, such as more dynamic menus (where you can add/remove elements on the fly), inject UI debugging code in user-code (with [`ImGuiOnceUponAFrame`](https://github.com/ocornut/imgui/blob/a1f3949d7174e4500308a6211c9781f85900bb16/imgui.h#L1187)), etc.
+
+    Porting UI code to ImGui should be relatively straightforward. Have a look at [tutorial 106]({{ repo_url }}tutorial/106_ViewerMenu/main.cpp), or read issue #719 for more discussion.
+    If you would like to keep NanoGUI as your interface library for whatever reason, you are welcome to write a [`ViewerPlugin`]({{ repo_url }}/include/igl/opengl/glfw/ViewerPlugin.h) reusing the old binding code, and we would be happy to advertise it somewhere.
+
+??? faq "How to write custom shader code in the viewer?"
+    See [#657](https://github.com/libigl/libigl/issues/657).

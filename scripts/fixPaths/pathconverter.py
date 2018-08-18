@@ -62,6 +62,7 @@ RE_TAG_LINK_ATTR = re.compile(
     '''
 )
 
+
 log = logging.getLogger(__name__)
 
 
@@ -76,7 +77,8 @@ def repl_absolute(m, key, val):
     link = m.group(0)
     try:
         scheme, netloc, path, params, query, fragment, is_url, is_absolute = util.parse_url(m.group('path')[1:-1])
-        new_path = m.group('path')[1:-1].replace('../{{ %s }}' % key, val)
+        new_path = m.group('path')[1:-1].replace('{{ %s }}' % key, val)
+        # pprint(scheme, netloc, path, params, query, fragment, is_url, is_absolute, new_path)
 
         if (not is_absolute and not is_url):
             link = '%s"%s"' % (m.group('name'), new_path)
@@ -95,6 +97,7 @@ def repl(m, key, val):
         tag = m.group('comments')
     else:
         tag = m.group('open')
+        # pprint(m.group('attr'), RE_TAG_LINK_ATTR.sub(lambda m2: repl_absolute(m2, key, val), m.group('attr')))
         tag += RE_TAG_LINK_ATTR.sub(lambda m2: repl_absolute(m2, key, val), m.group('attr'))
         tag += m.group('close')
     return tag
