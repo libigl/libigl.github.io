@@ -55,4 +55,4 @@
     If you would like to keep NanoGUI as your interface library for whatever reason, you are welcome to write a [`ViewerPlugin`]({{ repo_url }}/include/igl/opengl/glfw/ViewerPlugin.h) reusing the old binding code, and we would be happy to advertise it somewhere.
 
 ??? faq "How to write custom shader code in the viewer?"
-    See [#657](https://github.com/libigl/libigl/issues/657).
+    See #657.
