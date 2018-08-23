@@ -56,3 +56,6 @@
 
 ??? faq "How to write custom shader code in the viewer?"
     See #657.
+
+??? faq "How to draw text in the viewer?"
+    See #876.
