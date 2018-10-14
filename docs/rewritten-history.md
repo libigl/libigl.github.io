@@ -33,7 +33,7 @@ If you are **new** to libigl, there is nothing to do: use the new repository nor
 
 ### What About My Old Code?
 
-We maintain a copy of libigl with the old history in the repository [libigl-old](https://github.com/libigl/libigl-old).
+We maintain a copy of libigl with the old history in the repository [libigl-legacy](https://github.com/libigl/libigl-legacy).
 If you have an old code the depends on a specific version of libigl, simply update the url (e.g. by editing the `.gitmodules` file), and it will pick up the matching commit with the SHA1 number from the old history.
 
 ### Troubleshooting
@@ -72,7 +72,7 @@ Fetched in submodule path 'external/libigl', but it did not contain 03536c4aa44a
    ```
 3. Update the path in the `.gitmodules` file
     ```
-    sed -i 's|libigl/libigl.git|libigl/libigl-old.git|' .gitmodules
+    sed -i 's|libigl/libigl.git|libigl/libigl-legacy.git|' .gitmodules
     ```
 4. Update local configuration of your submodule repos with the new URL
     ```
