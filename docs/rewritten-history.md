@@ -70,10 +70,16 @@ Fetched in submodule path 'external/libigl', but it did not contain 03536c4aa44a
    ```
    rm -rf .git/modules/external/libigl/
    ```
-3. Update the path in the `.gitmodules` file
-    ```
-    sed -i 's|libigl/libigl.git|libigl/libigl-legacy.git|' .gitmodules
-    ```
+3. Change the `libigl/libigl.git` to `libigl/libigl-legacy.git` in the `.gitmodules` file. 
+> Or issue, on Linux
+>    ```
+>    sed -i 's|libigl/libigl.git|libigl/libigl-legacy.git|' .gitmodules
+>    ```
+> Or issue, on Mac OS X
+>    ```
+>    sed -i '' 's|libigl/libigl.git|libigl/libigl-legacy.git|' .gitmodules
+>    ```
+> 
 4. Update local configuration of your submodule repos with the new URL
     ```
     git submodule sync
