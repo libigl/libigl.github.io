@@ -7,6 +7,12 @@ If you want to preview changes to the libigl website before a commit, you can fo
    ```bash
    pip3 install -U --user mkdocs mkdocs-material
    ```
+   Alternatively, use `pipenv` to install the dependencies:
+   ```bash
+   pip3 install -U --user pipenv
+   pipenv install requests
+   pipenv shell
+   ```
 2. Preview the website locally (in the root folder of the libigl project):
    ```bash
    python3 -m mkdocs serve
