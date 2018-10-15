@@ -19,7 +19,7 @@ git rm -rf external/libigl
 
 And to add it again:
 ```
-git submodule add https://github.com/libigl/libigl.git
+git submodule add https://github.com/libigl/libigl.git external/libigl
 ```
 
 If you have an existing **fork** of libigl, we strongly suggest that you delete it and fork the project anew. You will not be able to create a PR with a fork that has the old history.
@@ -34,7 +34,9 @@ If you have an old code the depends on a specific version of libigl, simply upda
 
 ### Troubleshooting
 
-If you are getting the following error when trying to clone a repository:
+#### Problem 1
+
+I have an old project with a submodule using libigl, but it is pointing to an invalid commit number:
 
 ```
 Submodule 'libigl' (git@github.com:libigl/libigl.git) registered for path 'external/libigl'
@@ -43,44 +45,94 @@ error: Server does not allow request for unadvertised object 03536c4aa44a399ed71
 Fetched in submodule path 'external/libigl', but it did not contain 03536c4aa44a399ed7134b68f04cf3773edebc73. Direct fetching of that commit failed.
 ```
 
-#### Steps to reproduce the problem:
+??? faq "How to fix"
 
-1. Suppose we have a parent project with libigl submodule in `external/libigl/`.
-2. Clone the parent repository
-    ```
-    git clone git@github.com:gabuzome/libigl-example-project.git
-    ```
-3. Try to initialize the submodules with the command
-    ```
-    git submodule update --init --recursive
-    ```
-   this should produces the error you see above.
+    #### Steps to reproduce the problem:
 
-#### Steps to fix the problem (execute *in that order*):
+    1. Suppose we have a parent project with libigl submodule in `external/libigl/`.
+    2. Clone the parent repository
+        ```
+        git clone git@github.com:gabuzome/libigl-example-project.git
+        ```
+    3. Try to initialize the submodules with the command
+        ```
+        git submodule update --init --recursive
+        ```
+       this should produces the error you see above.
 
-1. Delete the local folder that contained the submodule
-   ```
-   rm -rf external/libigl/
-   ```
-2. Delete the corrupted copy in the `.git/` folder
-   ```
-   rm -rf .git/modules/external/libigl/
-   ```
-3. Change the `libigl/libigl.git` to `libigl/libigl-legacy.git` in the `.gitmodules` file. 
-> Or issue, on Linux
->    ```
->    sed -i 's|libigl/libigl.git|libigl/libigl-legacy.git|' .gitmodules
->    ```
-> Or issue, on Mac OS X
->    ```
->    sed -i '' 's|libigl/libigl.git|libigl/libigl-legacy.git|' .gitmodules
->    ```
-> 
-4. Update local configuration of your submodule repos with the new URL
-    ```
-    git submodule sync
-    ```
-5. Clone the submodule with the new address
-    ```
-    git submodule update --init --recursive
-    ```
+    #### Steps to fix the problem (execute *in that order*):
+
+    1. Delete the local folder that contained the submodule
+       ```
+       rm -rf external/libigl/
+       ```
+    2. Delete the corrupted copy in the `.git/` folder
+       ```
+       rm -rf .git/modules/external/libigl/
+       ```
+    3. Change the `libigl/libigl.git` to `libigl/libigl-legacy.git` in the `.gitmodules` file. 
+    > Or issue, on Linux
+    >    ```
+    >    sed -i 's|libigl/libigl.git|libigl/libigl-legacy.git|' .gitmodules
+    >    ```
+    > Or issue, on Mac OS X
+    >    ```
+    >    sed -i '' 's|libigl/libigl.git|libigl/libigl-legacy.git|' .gitmodules
+    >    ```
+    > 
+    4. Update local configuration of your submodule repos with the new URL
+        ```
+        git submodule sync
+        ```
+    5. Clone the submodule with the new address
+        ```
+        git submodule update --init --recursive
+        ```
+
+#### Problem 2
+
+I have a problem with my current project that I want to update to the latest version, but I messed up my submodule and somehow get this error message:
+
+```
+A git directory for 'external/libigl' is found locally with remote(s):
+  origin  https://github.com/libigl/libigl.git
+If you want to reuse this local git directory instead of cloning again from
+  https://github.com/libigl/libigl.git
+use the '--force' option. If the local git directory is not the correct repo
+or you are unsure what this means choose another name with the '--name' option.
+```
+
+??? faq "How to fix"
+
+    #### Steps to fix the problem (execute *in that order*):
+
+    1. Delete the local folder that contained the submodule
+       ```
+       rm -rf external/libigl/
+       ```
+    2. Delete the corrupted copy in the `.git/` folder
+       ```
+       rm -rf .git/modules/external/libigl/
+       ```
+    3. Update local configuration of your submodule repos with the new URL
+        ```
+        git submodule sync
+        ```
+    4. Clone the submodule to the current tip of the repository
+        ```
+        git submodule update --init --recursive
+        ```
+
+#### Problem 3
+
+I have updated my submodule to the latest version of libigl, but the CMake script is complaining about missing targets.
+
+??? faq "How to fix"
+
+    The files in the libigl repository have been restructured a little bit.
+    The CMake build script are now located under `cmake/` instead of `shared/cmake/`.
+    Please check out the latest version of the [FindLIBIGL.cmake](https://github.com/libigl/libigl-example-project/blob/master/cmake/FindLIBIGL.cmake) from the `libigl-example-project`.
+
+#### Other Problems
+
+Please check out the [changelog](RELEASE_HISTORY.md) page for the list of changes that have been merged into the main branch.

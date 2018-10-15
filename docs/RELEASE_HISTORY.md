@@ -1,40 +1,42 @@
 # Libigl version tracking
 
-Version | Short description
---------|----------------------------------------------------------------------
-1.3.0   | Modernized cmake build, multi-mesh viewer, replace nanogui with imgui
-1.2.1   | Reorganization opengl-dependent functions: opengl and opengl2 extras
-1.2.0   | Reorganization of "extras", rm deprecated funcs, absorb boost & svd3x3
-1.1.7   | Switch build for static library to cmake.
-1.1.6   | Major boolean robustness fix, drop CGAL dependency for AABB/distances
-1.1.5   | Bug fix in booleans
-1.1.4   | Edge collapsing and linear program solving
-1.1.3   | Bug fixes in active set and boundary_conditions
-1.1.1   | PLY file format support
-1.1.0   | Mesh boolean operations using CGAL and cork, implementing [Attene 14]
-1.0.3   | Bone heat method
-1.0.2   | Bug fix in winding number code
-1.0.1   | Bug fixes and more CGAL support
-1.0.0   | Major beta release: many renames, tutorial, triangle, org. build
-0.4.6   | Generalized Winding Numbers
-0.4.5   | CGAL extra: mesh selfintersection
-0.4.4   | STL file format support
-0.4.3   | ARAP implementation
-0.4.1   | Migrated much of the FAST code including extra for Sifakis' 3x3 svd
-0.4.0   | Release under MPL2 license
-0.3.7   | Embree2.0 support
-0.3.6   | boost extra, patches, mosek 7 support, libiglbbw (mosek optional)
-0.3.5   | More examples, naive primitive sorting
-0.3.3   | Many more examples, ambient occlusion with Embree.
-0.3.1   | Linearly dependent constraints in min_quad_with_fixed, SparseQR buggy
-0.3.0   | Better active set method support
-0.2.3   | More explicits, active set method, opengl/anttweakbar guards
-0.2.2   | More explicit instantiations, faster sorts and uniques
-0.2.1   | Bug fixes in barycenter and doublearea found by Martin Bisson
-0.2.0   | XML serializer more stable and fixed bug in remove_duplicate_vertices
-0.1.8   | Embree and xml (windows only) extras
-0.1.5   | Compilation on windows, bug fix for compilation with cygwin
-0.1.1   | Alpha release with core functions, extras, examples
+??? info "Recap Array"
+
+      Version | Short description
+      --------|----------------------------------------------------------------------
+      1.3.0   | Modernized cmake build, multi-mesh viewer, replace nanogui with imgui
+      1.2.1   | Reorganization opengl-dependent functions: opengl and opengl2 extras
+      1.2.0   | Reorganization of "extras", rm deprecated funcs, absorb boost & svd3x3
+      1.1.7   | Switch build for static library to cmake.
+      1.1.6   | Major boolean robustness fix, drop CGAL dependency for AABB/distances
+      1.1.5   | Bug fix in booleans
+      1.1.4   | Edge collapsing and linear program solving
+      1.1.3   | Bug fixes in active set and boundary_conditions
+      1.1.1   | PLY file format support
+      1.1.0   | Mesh boolean operations using CGAL and cork, implementing [Attene 14]
+      1.0.3   | Bone heat method
+      1.0.2   | Bug fix in winding number code
+      1.0.1   | Bug fixes and more CGAL support
+      1.0.0   | Major beta release: many renames, tutorial, triangle, org. build
+      0.4.6   | Generalized Winding Numbers
+      0.4.5   | CGAL extra: mesh selfintersection
+      0.4.4   | STL file format support
+      0.4.3   | ARAP implementation
+      0.4.1   | Migrated much of the FAST code including extra for Sifakis' 3x3 svd
+      0.4.0   | Release under MPL2 license
+      0.3.7   | Embree2.0 support
+      0.3.6   | boost extra, patches, mosek 7 support, libiglbbw (mosek optional)
+      0.3.5   | More examples, naive primitive sorting
+      0.3.3   | Many more examples, ambient occlusion with Embree.
+      0.3.1   | Linearly dependent constraints in min_quad_with_fixed, SparseQR buggy
+      0.3.0   | Better active set method support
+      0.2.3   | More explicits, active set method, opengl/anttweakbar guards
+      0.2.2   | More explicit instantiations, faster sorts and uniques
+      0.2.1   | Bug fixes in barycenter and doublearea found by Martin Bisson
+      0.2.0   | XML serializer more stable and fixed bug in remove_duplicate_vertices
+      0.1.8   | Embree and xml (windows only) extras
+      0.1.5   | Compilation on windows, bug fix for compilation with cygwin
+      0.1.1   | Alpha release with core functions, extras, examples
 
 ## Version 1.3.2 Changes
 
