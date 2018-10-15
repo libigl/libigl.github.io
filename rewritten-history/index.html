@@ -598,13 +598,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#during-the-transition-period" title="During The Transition Period" class="md-nav__link">
-    During The Transition Period
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#how-to-upgrade" title="How To Upgrade?" class="md-nav__link">
     How To Upgrade?
   </a>
@@ -747,13 +740,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#during-the-transition-period" title="During The Transition Period" class="md-nav__link">
-    During The Transition Period
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#how-to-upgrade" title="How To Upgrade?" class="md-nav__link">
     How To Upgrade?
   </a>
@@ -821,13 +807,11 @@
 
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
-<p>On <strong>XXX</strong>, a lighter version of the libigl repository will be pushed to the master branch.
+<p>On October 15, 2018, a lighter version of the libigl repository will be pushed to the master branch.
 This new version will have its history rewritten, and that will invalidate all commit SHA1 numbers pointing to previous versions of libigl.</p>
 </div>
 <h3 id="why-are-we-doing-this">Why Are We Doing This?<a class="headerlink" href="#why-are-we-doing-this" title="Permanent link">&para;</a></h3>
 <p>libigl was always intended as lightweight library. Over the year, the size of the git repository grew significantly for various reasons: large binary assets being committed to the main repository, optional submodules growing in size, etc. To remedy this, we have changed the way external dependencies are handled. But to truly reduce the size of the repository to something manageable, it was necessary to prune large binary files from the git history. <strong>This means introducing breaking changes and invalidating existing commit SHA1 numbers.</strong></p>
-<h3 id="during-the-transition-period">During The Transition Period<a class="headerlink" href="#during-the-transition-period" title="Permanent link">&para;</a></h3>
-<p>Forcing a push with a new history on a github project will close all existing pull requests. For this reason, <em>we need to close (merge or postpone) all existing PR</em>.</p>
 <h3 id="how-to-upgrade">How To Upgrade?<a class="headerlink" href="#how-to-upgrade" title="Permanent link">&para;</a></h3>
 <p>If you are using libigl as a <strong>submodule</strong>, I suggest you simply remove the submodule and add it again. To remove a submodule you can write
 <div class="codehilite"><pre><span></span>git submodule deinit external/libigl
