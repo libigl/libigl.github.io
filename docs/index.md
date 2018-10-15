@@ -108,7 +108,15 @@ Libigl compartmentalizes its **optional** dependences via its directory
 organization in the `include/` folder. All header files located _directly_ in
 the `include/igl/` folder have only stl and Eigen as dependencies. For example,
 all of the headers that depend on CGAL are located in `include/igl/copyleft/cgal`.
-For a full list of _optional_ dependencies check `optional/CMakeLists.txt`.
+For a full list of _optional_ dependencies check `cmake/libigl.cmake`.
+
+!!! warning "CGAL and Boost"
+    By default, the CMake script for libigl will not build the CGAL dependency,
+    since Boost is required to compile CGAL. If you enable the CMake option
+    `LIBIGL_WITH_CGAL`, you will need to have Boost installed on your machine.
+    On **Windows**, it is advised to install Boost using `conda`. On **Linux**
+    and **macOS**, you will need to install Boost, GMP and MPFR using your
+    favorite package manager (CGAL itself will be downloaded by libigl).
 
 ### GCC and the Optional CGAL Dependency
 The `include/igl/copyleft/cgal/*.h` headers depend on CGAL. It has come to
