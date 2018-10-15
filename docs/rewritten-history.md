@@ -2,16 +2,12 @@
 <style>.md-nav--secondary .md-nav__list .md-nav__list { display: none }</style>
 
 !!! danger
-    On **XXX**, a lighter version of the libigl repository will be pushed to the master branch.
+    On October 15, 2018, a lighter version of the libigl repository will be pushed to the master branch.
     This new version will have its history rewritten, and that will invalidate all commit SHA1 numbers pointing to previous versions of libigl.
 
 ### Why Are We Doing This?
 
 libigl was always intended as lightweight library. Over the year, the size of the git repository grew significantly for various reasons: large binary assets being committed to the main repository, optional submodules growing in size, etc. To remedy this, we have changed the way external dependencies are handled. But to truly reduce the size of the repository to something manageable, it was necessary to prune large binary files from the git history. **This means introducing breaking changes and invalidating existing commit SHA1 numbers.**
-
-### During The Transition Period
-
-Forcing a push with a new history on a github project will close all existing pull requests. For this reason, *we need to close (merge or postpone) all existing PR*.
 
 ### How To Upgrade?
 

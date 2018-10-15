@@ -11,6 +11,11 @@
 git clone --recursive https://github.com/libigl/libigl.git
 ```
 
+!!! danger
+    On October 15, 2018, a new, cleaned-up history has been pushed onto the main
+    libigl repository. To learn more about the consequences of this, and troubleshooting,
+    please read [this page](rewritten-history.md).
+
 libigl is a simple C++ geometry processing library. We have a wide
 functionality including construction of sparse discrete differential geometry
 operators and finite-elements matrices such as the cotangent Laplacian and
