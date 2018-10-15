@@ -13,7 +13,7 @@
         <meta name="description" content="Simple C++ geometry processing library">
       
       
-        <link rel="canonical" href="http://gabuzome.github.io/libigl/rewritten-history/">
+        <link rel="canonical" href="http://libigl.github.io/libigl/rewritten-history/">
       
       
       
@@ -113,7 +113,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="http://gabuzome.github.io/libigl/" title="libigl" class="md-header-nav__button md-logo">
+        <a href="http://libigl.github.io/libigl/" title="libigl" class="md-header-nav__button md-logo">
           
             <i class="md-icon"> </i>
           
@@ -209,7 +209,7 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="http://gabuzome.github.io/libigl/" title="libigl" class="md-nav__button md-logo">
+    <a href="http://libigl.github.io/libigl/" title="libigl" class="md-nav__button md-logo">
       
         <i class="md-icon"> </i>
       
@@ -840,7 +840,7 @@ git rm -rf external/libigl
 If you have existing changes (e.g. from a pending PR), then simply apply the same changes on the newly forked project, and submit your PR again.</p>
 <p>If you are <strong>new</strong> to libigl, there is nothing to do: use the new repository normally, and enjoy the new lightness!</p>
 <h3 id="what-about-my-old-code">What About My Old Code?<a class="headerlink" href="#what-about-my-old-code" title="Permanent link">&para;</a></h3>
-<p>We maintain a copy of libigl with the old history in the repository <a href="https://github.com/libigl/libigl-old">libigl-old</a>.
+<p>We maintain a copy of libigl with the old history in the repository <a href="https://github.com/libigl/libigl-legacy">libigl-legacy</a>.
 If you have an old code the depends on a specific version of libigl, simply update the url (e.g. by editing the <code class="codehilite"><span class="na">.gitmodules</span></code> file), and it will pick up the matching commit with the SHA1 number from the old history.</p>
 <h3 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h3>
 <p>If you are getting the following error when trying to clone a repository:</p>
@@ -869,9 +869,16 @@ Fetched in submodule path &#39;external/libigl&#39;, but it did not contain 0353
 <li>Delete the corrupted copy in the <code class="codehilite"><span class="na">.git</span><span class="err">/</span></code> folder
    <div class="codehilite"><pre><span></span>rm -rf .git/modules/external/libigl/
 </pre></div></li>
-<li>Update the path in the <code class="codehilite"><span class="na">.gitmodules</span></code> file
-    <div class="codehilite"><pre><span></span>sed -i &#39;s|libigl/libigl.git|libigl/libigl-old.git|&#39; .gitmodules
-</pre></div></li>
+<li>Change the <code class="codehilite">libigl/libigl.git</code> to <code class="codehilite">libigl/libigl-legacy.git</code> in the <code class="codehilite"><span class="na">.gitmodules</span></code> file. <blockquote>
+<p>Or issue, on Linux
+   <div class="codehilite"><pre><span></span>sed -i &#39;s|libigl/libigl.git|libigl/libigl-legacy.git|&#39; .gitmodules
+</pre></div>
+Or issue, on Mac OS X
+   <div class="codehilite"><pre><span></span>sed -i &#39;&#39; &#39;s|libigl/libigl.git|libigl/libigl-legacy.git|&#39; .gitmodules
+</pre></div>
+</p>
+</blockquote>
+</li>
 <li>Update local configuration of your submodule repos with the new URL
     <div class="codehilite"><pre><span></span>git submodule sync
 </pre></div></li>

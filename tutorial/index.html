@@ -13,7 +13,7 @@
         <meta name="description" content="Simple C++ geometry processing library">
       
       
-        <link rel="canonical" href="http://gabuzome.github.io/libigl/tutorial/">
+        <link rel="canonical" href="http://libigl.github.io/libigl/tutorial/">
       
       
       
@@ -113,7 +113,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="http://gabuzome.github.io/libigl/" title="libigl" class="md-header-nav__button md-logo">
+        <a href="http://libigl.github.io/libigl/" title="libigl" class="md-header-nav__button md-logo">
           
             <i class="md-icon"> </i>
           
@@ -209,7 +209,7 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="http://gabuzome.github.io/libigl/" title="libigl" class="md-nav__button md-logo">
+    <a href="http://libigl.github.io/libigl/" title="libigl" class="md-nav__button md-logo">
       
         <i class="md-icon"> </i>
       
@@ -912,6 +912,13 @@
           <li class="md-nav__item">
   <a href="#marching-cubes" title="Marching Cubes" class="md-nav__link">
     Marching Cubes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marching-tetrahedra" title="Marching Tetrahedra" class="md-nav__link">
+    Marching Tetrahedra
   </a>
   
 </li>
@@ -2023,6 +2030,13 @@
           <li class="md-nav__item">
   <a href="#marching-cubes" title="Marching Cubes" class="md-nav__link">
     Marching Cubes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marching-tetrahedra" title="Marching Tetrahedra" class="md-nav__link">
+    Marching Tetrahedra
   </a>
   
 </li>
@@ -4332,7 +4346,7 @@ memory buffer using the function, <code class="codehilite">igl::opengl::ViewerCo
 <span class="n">Eigen</span><span class="o">::</span><span class="n">Matrix</span><span class="o">&lt;</span><span class="kt">unsigned</span> <span class="kt">char</span><span class="p">,</span><span class="n">Eigen</span><span class="o">::</span><span class="n">Dynamic</span><span class="p">,</span><span class="n">Eigen</span><span class="o">::</span><span class="n">Dynamic</span><span class="o">&gt;</span> <span class="n">A</span><span class="p">(</span><span class="mi">1280</span><span class="p">,</span><span class="mi">800</span><span class="p">);</span>
 
 <span class="c1">// Draw the scene in the buffers</span>
-<span class="n">viewer</span><span class="p">.</span><span class="n">core</span><span class="p">.</span><span class="n">draw_buffer</span><span class="p">(</span><span class="n">viewer</span><span class="p">.</span><span class="n">data</span><span class="p">,</span><span class="n">viewer</span><span class="p">.</span><span class="n">opengl</span><span class="p">,</span><span class="nb">false</span><span class="p">,</span><span class="n">R</span><span class="p">,</span><span class="n">G</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">A</span><span class="p">);</span>
+<span class="n">viewer</span><span class="p">.</span><span class="n">core</span><span class="p">.</span><span class="n">draw_buffer</span><span class="p">(</span><span class="n">viewer</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="nb">false</span><span class="p">,</span><span class="n">R</span><span class="p">,</span><span class="n">G</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">A</span><span class="p">);</span>
 
 <span class="c1">// Save it to a PNG</span>
 <span class="n">igl</span><span class="o">::</span><span class="n">png</span><span class="o">::</span><span class="n">writePNG</span><span class="p">(</span><span class="n">R</span><span class="p">,</span><span class="n">G</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="s">&quot;out.png&quot;</span><span class="p">);</span>
@@ -4737,6 +4751,28 @@ input scalar field <code class="codehilite">S</code> sampled at vertex locations
 
 <figure><img alt="(Example 705) samples signed distance to the input mesh (left) and then reconstructs the surface using marching cubes to contour the 0-level set (center). For comparison, clamping this signed distance field to an indicator function and contouring reveals serious aliasing artifacts." src="../images/armadillo-marching-cubes.jpg" /><figcaption>(<a href="https://github.com/libigl/libigl/tree/master/tutorial/705_MarchingCubes/main.cpp">Example 705</a>) samples signed distance to the input mesh (left) and then reconstructs the surface using marching cubes to contour the 0-level set (center). For comparison, clamping this signed distance field to an indicator function and contouring reveals serious aliasing artifacts.</figcaption>
 </figure>
+<h3 id="marching-tetrahedra">Marching Tetrahedra<a class="headerlink" href="#marching-tetrahedra" title="Permanent link">&para;</a></h3>
+<p>Often 3D data is captured as scalar field defined over space <span><span class="MathJax_Preview">f(\mathbf{x}) :
+\mathcal{R}^3 \rightarrow \mathcal{R}</span><script type="math/tex">f(\mathbf{x}) :
+\mathcal{R}^3 \rightarrow \mathcal{R}</script></span>. Lurking within this field,
+<em>iso-surfaces</em> of the scalar field are often salient geometric objects. The
+iso-surface at value <span><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span> is composed of all points <span><span class="MathJax_Preview">\mathbf{x}</span><script type="math/tex">\mathbf{x}</script></span> in
+<span><span class="MathJax_Preview">\mathcal{R}^3</span><script type="math/tex">\mathcal{R}^3</script></span> such that <span><span class="MathJax_Preview">f(\mathbf{x}) = v</span><script type="math/tex">f(\mathbf{x}) = v</script></span>. A core problem in geometry
+processing is to extract an iso-surface as a triangle mesh for further
+mesh-based processing or visualization. This is referred to as iso-contouring.</p>
+<p>&ldquo;Marching Tetrahedra&rdquo; <sup id="fnref:treece_1999"><a class="footnote-ref" href="#fn:treece_1999" rel="footnote">42</a></sup> is a <a href="https://en.wikipedia.org/wiki/Marching_tetrahedra">famous
+method</a> for iso-contouring
+tri-linear functions <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> on a 3D simplicial complex (aka a tet mesh). The core idea of this
+method is to contour the iso-surface passing through each cell  (if it does at
+all) with a predefined topology (aka connectivity) chosen from a look up table
+depending on the function values at each vertex of the cell. The method
+iterates (&ldquo;marches&rdquo;) over all cells (&ldquo;tetrahedra&rdquo;) in the complex and stitches together
+the final mesh.</p>
+<p>In libigl, <code class="codehilite">igl::marching_tets</code> constructs a triangle mesh <code class="codehilite">(V,F)</code> approximating the iso-level set
+for the value <code class="codehilite">isovalue</code> from an input scalar field <code class="codehilite">S</code> sampled at the vertices of a tet mesh locations <code class="codehilite">(TV, TT)</code>:</p>
+<div class="codehilite"><pre><span></span><span class="n">igl</span><span class="o">::</span><span class="n">marching_tets</span><span class="p">(</span><span class="n">TV</span><span class="p">,</span><span class="n">TT</span><span class="p">,</span><span class="n">S</span><span class="p">,</span> <span class="n">isovalue</span> <span class="p">,</span><span class="n">V</span><span class="p">,</span><span class="n">F</span><span class="p">);</span>
+</pre></div>
+
 <h3 id="facet-orientation">Facet Orientation<a class="headerlink" href="#facet-orientation" title="Permanent link">&para;</a></h3>
 <p>Models from the web occasionally arrive <em>unorientated</em> in the sense that
 the orderings of each triangles vertices do not consistently agree. Determining
@@ -5113,6 +5149,9 @@ repository</a>.</p>
 </li>
 <li id="fn:takayama14">
 <p>Kenshi Takayama, Alec Jacobson, Ladislav Kavan, Olga Sorkine-Hornung. <a href="https://www.google.com/search?q=A+Simple+Method+for+Correcting+Facet+Orientations+in+Polygon+Meshes+Based+on+Ray+Casting">A Simple Method for Correcting Facet Orientations in Polygon Meshes Based on Ray Casting</a>, 2014.&#160;<a class="footnote-backref" href="#fnref:takayama14" rev="footnote" title="Jump back to footnote 41 in the text">&#8617;</a></p>
+</li>
+<li id="fn:treece_1999">
+<p>G.M. Treece, R.W. Prager, and A.H.Gee <a href="https://www.sciencedirect.com/science/article/pii/S009784939900076X">Regularised marching tetrahedra: improved iso-surface extraction</a>, 1999.&#160;<a class="footnote-backref" href="#fnref:treece_1999" rev="footnote" title="Jump back to footnote 42 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
