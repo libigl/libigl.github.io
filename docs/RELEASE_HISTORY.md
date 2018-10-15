@@ -36,7 +36,17 @@ Version | Short description
 0.1.5   | Compilation on windows, bug fix for compilation with cygwin
 0.1.1   | Alpha release with core functions, extras, examples
 
-## Version 1.3 Changes
+## Version 1.3.2 Changes
+
+- First version after all pull requests were merged during the libigl hackaton,
+and before switching from submodules to CMake external projects.
+
+## Version 1.3.1 Changes
+
+- `igl::components` has been renamed to `igl::vertex_components`.
+- Last version before pull requests were merged during the libigl hackaton.
+
+## Version 1.3.0 Changes
 List of changes related to this version:
 
 - The CMake build system has been rewritten to be more modular and modern.
