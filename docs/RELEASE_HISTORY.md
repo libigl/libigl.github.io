@@ -47,7 +47,7 @@
 This release is a result of the 2018 libigl hackathon at NYU. The major changes are:
 
 - a simplified cmake set up that can build a static library, tutorials, tests, and python bindings;
- - cmake now uses `external_project_add` to download necessary/requested dependency source code and tutorial/test data
+ - cmake now uses `ExternalProject_Add` to download necessary/requested dependency source code and tutorial/test data
  - as a result, `git clone --recursive ...` is no longer required 
 - unit tests are now part of main repo and included in continuous integration (https://github.com/libigl/libigl-unit-tests is obsolete);
 - tutorial data has been moved to <https://github.com/libigl/libigl-tutorial-data>;
