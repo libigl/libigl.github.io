@@ -52,7 +52,7 @@ This release is a result of the 2018 libigl hackathon at NYU. The major changes 
 - unit tests are now part of main repo and included in continuous integration (https://github.com/libigl/libigl-unit-tests is obsolete);
 - tutorial data has been moved to <https://github.com/libigl/libigl-tutorial-data>;
 - unit test data has been moved to <https://github.com/libigl/libigl-tests-data>;
-- all dependencies previously in `libigl/external` have been removed or moved to repos (and added via `external_project_add`);
+- all dependencies previously in `libigl/external` have been removed or moved to repos (and added via `ExternalProject_Add`);
 - documentation and the tutorial webpage has been moved to <https://github.com/libigl/libigl.github.io>;
 - .git history of these files has been _**purged**_ using [bfg](https://rtyley.github.io/bfg-repo-cleaner/)
 - unfortunately this means that SHA hashes have changed and any external projects using libigl as a _submodule_ will need to be refreshed to the new hashes.
