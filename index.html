@@ -627,7 +627,7 @@
     <label class="md-nav__link" for="nav-5-3">
       File Formats
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="4">
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
       <label class="md-nav__title" for="nav-5-3">
         File Formats
       </label>
@@ -1058,7 +1058,16 @@ libigl depends only on the <a href="http://eigen.tuxfamily.org">Eigen</a> librar
 organization in the <code class="codehilite">include/</code> folder. All header files located <em>directly</em> in
 the <code class="codehilite">include/igl/</code> folder have only stl and Eigen as dependencies. For example,
 all of the headers that depend on CGAL are located in <code class="codehilite">include/igl/copyleft/cgal</code>.
-For a full list of <em>optional</em> dependencies check <code class="codehilite">optional/CMakeLists.txt</code>.</p>
+For a full list of <em>optional</em> dependencies check <code class="codehilite">cmake/libigl.cmake</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">CGAL and Boost</p>
+<p>By default, the CMake script for libigl will not build the CGAL dependency,
+since Boost is required to compile CGAL. If you enable the CMake option
+<code class="codehilite">LIBIGL_WITH_CGAL</code>, you will need to have Boost installed on your machine.
+On <strong>Windows</strong>, it is advised to install Boost using <code class="codehilite">conda</code>. On <strong>Linux</strong>
+and <strong>macOS</strong>, you will need to install Boost, GMP and MPFR using your
+favorite package manager (CGAL itself will be downloaded by libigl).</p>
+</div>
 <h3 id="gcc-and-the-optional-cgal-dependency">GCC and the Optional CGAL Dependency<a class="headerlink" href="#gcc-and-the-optional-cgal-dependency" title="Permanent link">&para;</a></h3>
 <p>The <code class="codehilite">include/igl/copyleft/cgal/*.h</code> headers depend on CGAL. It has come to
 our attention that CGAL does not work properly with GCC 4.8. To the best of
