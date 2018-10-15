@@ -5,12 +5,6 @@
 
 <https://github.com/libigl/libigl/>
 
-> Get started with:
->
-```bash
-git clone --recursive https://github.com/libigl/libigl.git
-```
-
 !!! danger
     On October 15, 2018, a new, cleaned-up history has been pushed onto the main
     libigl repository. To learn more about the consequences of this, and troubleshooting,
@@ -160,25 +154,6 @@ We hope to fix this, or at least identify which functions are safe (many of
 them probably work just fine). This requires setting up unit testing, which is
 a major _todo_ for our development.
 
-## Git Submodules
-Libigl uses git submodules for its _optional_ dependencies,
-in particular, those needed by the OpenGL viewer to run the examples in the
-[tutorial](http://libigl.github.io/libigl/tutorial). Git submodules allow use to treat clones of
-other libraries as sub-directories within ours while separating our commits.
-Read the [documentation](http://git-scm.com/docs/git-submodule) for a detailed
-explanation, but essentially our libigl repo stores a hash for each of its
-subrepos containing which version to update to. When a change is introduced in
-a dependencies repo we can incorporate that change by pulling in our sub-repo
-and updating (i.e.  committing) that change to the hash.
-
-When pulling new changes to libigl it's also a good idea to update changes to
-subrepos:
-
-```bash
-git pull
-git submodule update --recursive
-```
-
 ## Unit Testing
 
 Libigl maintains [separate
@@ -206,7 +181,7 @@ BibTeX entry:
   title = {{libigl}: A simple {C++} geometry processing library},
   author = {Alec Jacobson and Daniele Panozzo and others},
   note = {http://libigl.github.io/libigl/},
-  year = {2017},
+  year = {2018},
 }
 ```
 
@@ -276,6 +251,6 @@ If you find bugs or have problems please use our [github issue tracking
 page](https://github.com/libigl/libigl/issues).
 
 ## Copyright
-2017 Alec Jacobson, Daniele Panozzo, Christian Schüller, Olga Diamanti, Qingnan Zhou, Sebastian Koch, Jeremie Dumas, Amir Vaxman, Nico Pietroni, Stefan Brugger, Kenshi Takayama, Wenzel Jakob, Nikolas De Giorgis, Luigi Rocca, Leonardo Sacht, Kevin Walliman, Olga Sorkine-Hornung, and others.
+2018 Alec Jacobson, Daniele Panozzo, Christian Schüller, Olga Diamanti, Qingnan Zhou, Sebastian Koch, Jeremie Dumas, Amir Vaxman, Nico Pietroni, Stefan Brugger, Kenshi Takayama, Wenzel Jakob, Nikolas De Giorgis, Luigi Rocca, Leonardo Sacht, Kevin Walliman, Olga Sorkine-Hornung, and others.
 
 Please see individual files for appropriate copyright notices.
