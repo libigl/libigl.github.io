@@ -350,13 +350,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#git-submodules" title="Git Submodules" class="md-nav__link">
-    Git Submodules
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#unit-testing" title="Unit Testing" class="md-nav__link">
     Unit Testing
   </a>
@@ -897,13 +890,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#git-submodules" title="Git Submodules" class="md-nav__link">
-    Git Submodules
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#unit-testing" title="Unit Testing" class="md-nav__link">
     Unit Testing
   </a>
@@ -976,12 +962,6 @@
 <a href="https://ci.appveyor.com/project/danielepanozzo/libigl-6hjk1/branch/master"><img alt="Build status" src="https://ci.appveyor.com/api/projects/status/mf3t9rnhco0vhly8/branch/master?svg=true" /></a>
 <img alt="" src="libigl-teaser.png" /></p>
 <p><a href="https://github.com/libigl/libigl/">https://github.com/libigl/libigl/</a></p>
-<blockquote>
-<p>Get started with:</p>
-<div class="codehilite"><pre><span></span>git clone --recursive https://github.com/libigl/libigl.git
-</pre></div>
-
-</blockquote>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
 <p>On October 15, 2018, a new, cleaned-up history has been pushed onto the main
@@ -1103,22 +1083,6 @@ matrices using the <code class="codehilite">Eigen::RowMajor</code> flag. If you 
 <p>We hope to fix this, or at least identify which functions are safe (many of
 them probably work just fine). This requires setting up unit testing, which is
 a major <em>todo</em> for our development.</p>
-<h2 id="git-submodules">Git Submodules<a class="headerlink" href="#git-submodules" title="Permanent link">&para;</a></h2>
-<p>Libigl uses git submodules for its <em>optional</em> dependencies,
-in particular, those needed by the OpenGL viewer to run the examples in the
-<a href="http://libigl.github.io/libigl/tutorial">tutorial</a>. Git submodules allow use to treat clones of
-other libraries as sub-directories within ours while separating our commits.
-Read the <a href="http://git-scm.com/docs/git-submodule">documentation</a> for a detailed
-explanation, but essentially our libigl repo stores a hash for each of its
-subrepos containing which version to update to. When a change is introduced in
-a dependencies repo we can incorporate that change by pulling in our sub-repo
-and updating (i.e.  committing) that change to the hash.</p>
-<p>When pulling new changes to libigl it&rsquo;s also a good idea to update changes to
-subrepos:</p>
-<div class="codehilite"><pre><span></span>git pull
-git submodule update --recursive
-</pre></div>
-
 <h2 id="unit-testing">Unit Testing<a class="headerlink" href="#unit-testing" title="Permanent link">&para;</a></h2>
 <p>Libigl maintains <a href="https://github.com/libigl/libigl-unit-tests">separate
 repository</a> for unit testing.</p>
@@ -1139,7 +1103,7 @@ BibTeX entry:</p>
   <span class="na">title</span> <span class="p">=</span> <span class="s">{{libigl}: A simple {C++} geometry processing library}</span><span class="p">,</span>
   <span class="na">author</span> <span class="p">=</span> <span class="s">{Alec Jacobson and Daniele Panozzo and others}</span><span class="p">,</span>
   <span class="na">note</span> <span class="p">=</span> <span class="s">{http://libigl.github.io/libigl/}</span><span class="p">,</span>
-  <span class="na">year</span> <span class="p">=</span> <span class="s">{2017}</span><span class="p">,</span>
+  <span class="na">year</span> <span class="p">=</span> <span class="s">{2018}</span><span class="p">,</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -1204,7 +1168,7 @@ spending time maintaining this.</p>
 <p>If you find bugs or have problems please use our <a href="https://github.com/libigl/libigl/issues">github issue tracking
 page</a>.</p>
 <h2 id="copyright">Copyright<a class="headerlink" href="#copyright" title="Permanent link">&para;</a></h2>
-<p>2017 Alec Jacobson, Daniele Panozzo, Christian Schüller, Olga Diamanti, Qingnan Zhou, Sebastian Koch, Jeremie Dumas, Amir Vaxman, Nico Pietroni, Stefan Brugger, Kenshi Takayama, Wenzel Jakob, Nikolas De Giorgis, Luigi Rocca, Leonardo Sacht, Kevin Walliman, Olga Sorkine-Hornung, and others.</p>
+<p>2018 Alec Jacobson, Daniele Panozzo, Christian Schüller, Olga Diamanti, Qingnan Zhou, Sebastian Koch, Jeremie Dumas, Amir Vaxman, Nico Pietroni, Stefan Brugger, Kenshi Takayama, Wenzel Jakob, Nikolas De Giorgis, Luigi Rocca, Leonardo Sacht, Kevin Walliman, Olga Sorkine-Hornung, and others.</p>
 <p>Please see individual files for appropriate copyright notices.</p>
                 
                   
