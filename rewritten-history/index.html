@@ -620,6 +620,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#problem-1" title="Problem 1" class="md-nav__link">
+    Problem 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#steps-to-reproduce-the-problem" title="Steps to reproduce the problem:" class="md-nav__link">
     Steps to reproduce the problem:
   </a>
@@ -629,6 +636,34 @@
           <li class="md-nav__item">
   <a href="#steps-to-fix-the-problem-execute-in-that-order" title="Steps to fix the problem (execute in that order):" class="md-nav__link">
     Steps to fix the problem (execute in that order):
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-2" title="Problem 2" class="md-nav__link">
+    Problem 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps-to-fix-the-problem-execute-in-that-order_1" title="Steps to fix the problem (execute in that order):" class="md-nav__link">
+    Steps to fix the problem (execute in that order):
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-3" title="Problem 3" class="md-nav__link">
+    Problem 3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-problems" title="Other Problems" class="md-nav__link">
+    Other Problems
   </a>
   
 </li>
@@ -762,6 +797,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#problem-1" title="Problem 1" class="md-nav__link">
+    Problem 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#steps-to-reproduce-the-problem" title="Steps to reproduce the problem:" class="md-nav__link">
     Steps to reproduce the problem:
   </a>
@@ -771,6 +813,34 @@
           <li class="md-nav__item">
   <a href="#steps-to-fix-the-problem-execute-in-that-order" title="Steps to fix the problem (execute in that order):" class="md-nav__link">
     Steps to fix the problem (execute in that order):
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-2" title="Problem 2" class="md-nav__link">
+    Problem 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps-to-fix-the-problem-execute-in-that-order_1" title="Steps to fix the problem (execute in that order):" class="md-nav__link">
+    Steps to fix the problem (execute in that order):
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-3" title="Problem 3" class="md-nav__link">
+    Problem 3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-problems" title="Other Problems" class="md-nav__link">
+    Other Problems
   </a>
   
 </li>
@@ -818,7 +888,7 @@ This new version will have its history rewritten, and that will invalidate all c
 git rm -rf external/libigl
 </pre></div></p>
 <p>And to add it again:
-<div class="codehilite"><pre><span></span>git submodule add https://github.com/libigl/libigl.git
+<div class="codehilite"><pre><span></span>git submodule add https://github.com/libigl/libigl.git external/libigl
 </pre></div></p>
 <p>If you have an existing <strong>fork</strong> of libigl, we strongly suggest that you delete it and fork the project anew. You will not be able to create a PR with a fork that has the old history.
 If you have existing changes (e.g. from a pending PR), then simply apply the same changes on the newly forked project, and submit your PR again.</p>
@@ -827,49 +897,57 @@ If you have existing changes (e.g. from a pending PR), then simply apply the sam
 <p>We maintain a copy of libigl with the old history in the repository <a href="https://github.com/libigl/libigl-legacy">libigl-legacy</a>.
 If you have an old code the depends on a specific version of libigl, simply update the url (e.g. by editing the <code class="codehilite"><span class="na">.gitmodules</span></code> file), and it will pick up the matching commit with the SHA1 number from the old history.</p>
 <h3 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h3>
-<p>If you are getting the following error when trying to clone a repository:</p>
+<h4 id="problem-1">Problem 1<a class="headerlink" href="#problem-1" title="Permanent link">&para;</a></h4>
+<p>I have an old project with a submodule using libigl, but it is pointing to an invalid commit number:</p>
 <div class="codehilite"><pre><span></span>Submodule &#39;libigl&#39; (git@github.com:libigl/libigl.git) registered for path &#39;external/libigl&#39;
 Cloning into &#39;/home/user/foo/libigl-example-project/external/libigl&#39;...
 error: Server does not allow request for unadvertised object 03536c4aa44a399ed7134b68f04cf3773edebc73
 Fetched in submodule path &#39;external/libigl&#39;, but it did not contain 03536c4aa44a399ed7134b68f04cf3773edebc73. Direct fetching of that commit failed.
 </pre></div>
 
-<h4 id="steps-to-reproduce-the-problem">Steps to reproduce the problem:<a class="headerlink" href="#steps-to-reproduce-the-problem" title="Permanent link">&para;</a></h4>
-<ol>
-<li>Suppose we have a parent project with libigl submodule in <code class="codehilite">external/libigl/</code>.</li>
-<li>Clone the parent repository
+<details class="faq"><summary>How to fix</summary><h4 id="steps-to-reproduce-the-problem">Steps to reproduce the problem:<a class="headerlink" href="#steps-to-reproduce-the-problem" title="Permanent link">&para;</a></h4><ol><li>Suppose we have a parent project with libigl submodule in <code class="codehilite">external/libigl/</code>.</li><li>Clone the parent repository
     <div class="codehilite"><pre><span></span>git clone git@github.com:gabuzome/libigl-example-project.git
-</pre></div></li>
-<li>Try to initialize the submodules with the command
+</pre></div></li><li>Try to initialize the submodules with the command
     <div class="codehilite"><pre><span></span>git submodule update --init --recursive
 </pre></div>
-   this should produces the error you see above.</li>
-</ol>
-<h4 id="steps-to-fix-the-problem-execute-in-that-order">Steps to fix the problem (execute <em>in that order</em>):<a class="headerlink" href="#steps-to-fix-the-problem-execute-in-that-order" title="Permanent link">&para;</a></h4>
-<ol>
-<li>Delete the local folder that contained the submodule
+   this should produces the error you see above.</li></ol><h4 id="steps-to-fix-the-problem-execute-in-that-order">Steps to fix the problem (execute <em>in that order</em>):<a class="headerlink" href="#steps-to-fix-the-problem-execute-in-that-order" title="Permanent link">&para;</a></h4><ol><li>Delete the local folder that contained the submodule
    <div class="codehilite"><pre><span></span>rm -rf external/libigl/
-</pre></div></li>
-<li>Delete the corrupted copy in the <code class="codehilite"><span class="na">.git</span><span class="err">/</span></code> folder
+</pre></div></li><li>Delete the corrupted copy in the <code class="codehilite"><span class="na">.git</span><span class="err">/</span></code> folder
    <div class="codehilite"><pre><span></span>rm -rf .git/modules/external/libigl/
-</pre></div></li>
-<li>Change the <code class="codehilite">libigl/libigl.git</code> to <code class="codehilite">libigl/libigl-legacy.git</code> in the <code class="codehilite"><span class="na">.gitmodules</span></code> file. <blockquote>
-<p>Or issue, on Linux
+</pre></div></li><li>Change the <code class="codehilite">libigl/libigl.git</code> to <code class="codehilite">libigl/libigl-legacy.git</code> in the <code class="codehilite"><span class="na">.gitmodules</span></code> file. <blockquote><p>Or issue, on Linux
    <div class="codehilite"><pre><span></span>sed -i &#39;s|libigl/libigl.git|libigl/libigl-legacy.git|&#39; .gitmodules
 </pre></div>
 Or issue, on Mac OS X
    <div class="codehilite"><pre><span></span>sed -i &#39;&#39; &#39;s|libigl/libigl.git|libigl/libigl-legacy.git|&#39; .gitmodules
 </pre></div>
-</p>
-</blockquote>
-</li>
-<li>Update local configuration of your submodule repos with the new URL
+</p></blockquote></li><li>Update local configuration of your submodule repos with the new URL
     <div class="codehilite"><pre><span></span>git submodule sync
-</pre></div></li>
-<li>Clone the submodule with the new address
+</pre></div></li><li>Clone the submodule with the new address
     <div class="codehilite"><pre><span></span>git submodule update --init --recursive
-</pre></div></li>
-</ol>
+</pre></div></li></ol></details><h4 id="problem-2">Problem 2<a class="headerlink" href="#problem-2" title="Permanent link">&para;</a></h4>
+<p>I have a problem with my current project that I want to update to the latest version, but I messed up my submodule and somehow get this error message:</p>
+<div class="codehilite"><pre><span></span>A git directory for &#39;external/libigl&#39; is found locally with remote(s):
+  origin  https://github.com/libigl/libigl.git
+If you want to reuse this local git directory instead of cloning again from
+  https://github.com/libigl/libigl.git
+use the &#39;--force&#39; option. If the local git directory is not the correct repo
+or you are unsure what this means choose another name with the &#39;--name&#39; option.
+</pre></div>
+
+<details class="faq"><summary>How to fix</summary><h4 id="steps-to-fix-the-problem-execute-in-that-order_1">Steps to fix the problem (execute <em>in that order</em>):<a class="headerlink" href="#steps-to-fix-the-problem-execute-in-that-order_1" title="Permanent link">&para;</a></h4><ol><li>Delete the local folder that contained the submodule
+   <div class="codehilite"><pre><span></span>rm -rf external/libigl/
+</pre></div></li><li>Delete the corrupted copy in the <code class="codehilite"><span class="na">.git</span><span class="err">/</span></code> folder
+   <div class="codehilite"><pre><span></span>rm -rf .git/modules/external/libigl/
+</pre></div></li><li>Update local configuration of your submodule repos with the new URL
+    <div class="codehilite"><pre><span></span>git submodule sync
+</pre></div></li><li>Clone the submodule to the current tip of the repository
+    <div class="codehilite"><pre><span></span>git submodule update --init --recursive
+</pre></div></li></ol></details><h4 id="problem-3">Problem 3<a class="headerlink" href="#problem-3" title="Permanent link">&para;</a></h4>
+<p>I have updated my submodule to the latest version of libigl, but the CMake script is complaining about missing targets.</p>
+<details class="faq"><summary>How to fix</summary><p>The files in the libigl repository have been restructured a little bit.
+The CMake build script are now located under <code class="codehilite">cmake/</code> instead of <code class="codehilite">shared/cmake/</code>.
+Please check out the latest version of the <a href="https://github.com/libigl/libigl-example-project/blob/master/cmake/FindLIBIGL.cmake">FindLIBIGL.cmake</a> from the <code class="codehilite">libigl-example-project</code>.</p></details><h4 id="other-problems">Other Problems<a class="headerlink" href="#other-problems" title="Permanent link">&para;</a></h4>
+<p>Please check out the <a href="../RELEASE_HISTORY/">changelog</a> page for the list of changes that have been merged into the main branch.</p>
                 
                   
                 
