@@ -134,6 +134,17 @@ I have updated my submodule to the latest version of libigl, but the CMake scrip
     The CMake build script are now located under `cmake/` instead of `shared/cmake/`.
     Please check out the latest version of the [FindLIBIGL.cmake](https://github.com/libigl/libigl-example-project/blob/master/cmake/FindLIBIGL.cmake) from the `libigl-example-project`.
 
+### Problem 4
+
+I have an existing fork with some changes, how do I update it to the latest version of libigl?
+
+??? faq "How to fix"
+
+    For now we advise that you keep a copy of your legacy fork (you can rename/archive your existing fork, etc.),
+    and create a new fork from the current libigl repository. If you have existing changes that you would like
+    to merge, you can also try to `cherry-pick` the individual commits, but the simplest solution might to recreate
+    new commits with the desired changes.
+
 #### Other Problems
 
 Please check out the [changelog](RELEASE_HISTORY.md) page for the list of changes that have been merged into the main branch.
