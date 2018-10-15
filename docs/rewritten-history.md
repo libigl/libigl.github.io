@@ -2,8 +2,9 @@
 <style>.md-nav--secondary .md-nav__list .md-nav__list { display: none }</style>
 
 !!! danger
-    On October 15, 2018, a lighter version of the libigl repository will be pushed to the master branch.
-    This new version will have its history rewritten, and that will invalidate all commit SHA1 numbers pointing to previous versions of libigl.
+    On October 15, 2018, a lighter version of the libigl repository has been pushed to the master branch.
+    This new version has its history rewritten, which does invalidate all commit SHA1 numbers pointing to previous versions of libigl.
+    See the full list of changes in the [changelog](RELEASE_HISTORY.md).
 
 ### Why Are We Doing This?
 

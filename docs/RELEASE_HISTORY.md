@@ -4,6 +4,10 @@
 
       Version | Short description
       --------|----------------------------------------------------------------------
+      2.0.0   | Lighter, simpler CMake build, rewritten history
+      1.3.3   | Switched the build system from submodules to CMake external projects.
+      1.3.2   | After merging PRs in the 2018 hackaton
+      1.3.1   | Before merging PRs in the 2018 hackaton
       1.3.0   | Modernized cmake build, multi-mesh viewer, replace nanogui with imgui
       1.2.1   | Reorganization opengl-dependent functions: opengl and opengl2 extras
       1.2.0   | Reorganization of "extras", rm deprecated funcs, absorb boost & svd3x3
@@ -38,6 +42,25 @@
       0.1.5   | Compilation on windows, bug fix for compilation with cygwin
       0.1.1   | Alpha release with core functions, extras, examples
 
+## Version 2.0.0 Changes
+
+This release is a result of the 2018 libigl hackathon at NYU. The major changes are:
+
+- a simplified cmake set up that can build a static library, tutorials, tests, and python bindings;
+ - cmake now uses `external_project_add` to download necessary/requested dependency source code and tutorial/test data
+ - as a result, `git clone --recursive ...` is no longer required 
+- unit tests are now part of main repo and included in continuous integration (https://github.com/libigl/libigl-unit-tests is obsolete);
+- tutorial data has been moved to <https://github.com/libigl/libigl-tutorial-data>;
+- unit test data has been moved to <https://github.com/libigl/libigl-tests-data>;
+- all dependencies previously in `libigl/external` have been removed or moved to repos (and added via `external_project_add`);
+- documentation and the tutorial webpage has been moved to <https://github.com/libigl/libigl.github.io>;
+- .git history of these files has been _**purged**_ using [bfg](https://rtyley.github.io/bfg-repo-cleaner/)
+- unfortunately this means that SHA hashes have changed and any external projects using libigl as a _submodule_ will need to be refreshed to the new hashes.
+- More information and instructions for troubleshooting at <https://libigl.github.io/rewritten-history/>.
+- A legacy version with SHA hashes matching old repo is hosted at https://github.com/libigl/libigl-legacy.
+
+The **major upshot** is that the old `git clone --recursive` that resulted in a 1.8GB `libigl/` directory is now a `git clone ` that results in 16.5MB, more than a **100x** reduction in size. 
+
 ## Version 1.3.2 Changes
 
 - First version after all pull requests were merged during the libigl hackaton,
@@ -45,8 +68,9 @@ and before switching from submodules to CMake external projects.
 
 ## Version 1.3.1 Changes
 
-- `igl::components` has been renamed to `igl::vertex_components`.
 - Last version before pull requests were merged during the libigl hackaton.
+- `igl::components` has been renamed to `igl::vertex_components`.
+- `viewer.core.model` matrix is gone (#700).
 
 ## Version 1.3.0 Changes
 List of changes related to this version:
