@@ -23,6 +23,25 @@ And to add it again:
 git submodule add https://github.com/libigl/libigl.git external/libigl
 ```
 
+Before commmit your changes, here is what the output of `git status` should look like:
+```
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+  modified:   .gitmodules
+  modified:   external/libigl
+
+Submodule changes to be committed:
+
+* external/libigl 7371494...ed363da:
+  Warn: external/libigl doesn't contain commit 737149498ad3d25ea1a56dc4234a66d2876764ef
+```
+
+The warning is normal: this is because submodule was referencing an old commit (`7371494`) that no longer exists in the new history, but the new commit (`ed363da`) does.
+
 If you have an existing **fork** of libigl, we strongly suggest that you delete it and fork the project anew. You will not be able to create a PR with a fork that has the old history.
 If you have existing changes (e.g. from a pending PR), then simply apply the same changes on the newly forked project, and submit your PR again.
 
