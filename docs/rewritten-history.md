@@ -12,7 +12,7 @@ libigl was always intended as lightweight library. Over the year, the size of th
 
 ### How To Upgrade?
 
-If you are using libigl as a **submodule**, I suggest you simply remove the submodule and add it again. To remove a submodule you can write
+If you are using libigl as a **submodule**, I suggest you simply remove the submodule and add it again. To remove a submodule you can write (replacing `external/libigl` with the relative path to libigl in your repo):
 ```
 git submodule deinit external/libigl
 git rm -rf external/libigl
