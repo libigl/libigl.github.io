@@ -905,6 +905,22 @@ git rm -rf external/libigl
 <p>And to add it again:
 <div class="codehilite"><pre><span></span>git submodule add https://github.com/libigl/libigl.git external/libigl
 </pre></div></p>
+<p>Before commmit your changes, here is what the output of <code class="codehilite">git status</code> should look like:
+<div class="codehilite"><pre><span></span>On branch master
+Your branch is up to date with &#39;origin/master&#39;.
+
+Changes to be committed:
+  (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
+
+  modified:   .gitmodules
+  modified:   external/libigl
+
+Submodule changes to be committed:
+
+* external/libigl 7371494...ed363da:
+  Warn: external/libigl doesn&#39;t contain commit 737149498ad3d25ea1a56dc4234a66d2876764ef
+</pre></div></p>
+<p>The warning is normal: this is because submodule was referencing an old commit (<code class="codehilite">7371494</code>) that no longer exists in the new history, but the new commit (<code class="codehilite">ed363da</code>) does.</p>
 <p>If you have an existing <strong>fork</strong> of libigl, we strongly suggest that you delete it and fork the project anew. You will not be able to create a PR with a fork that has the old history.
 If you have existing changes (e.g. from a pending PR), then simply apply the same changes on the newly forked project, and submit your PR again.</p>
 <p>If you are <strong>new</strong> to libigl, there is nothing to do: use the new repository normally, and enjoy the new lightness!</p>
