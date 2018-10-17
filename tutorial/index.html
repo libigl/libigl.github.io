@@ -2176,20 +2176,27 @@ libigl:</p>
 <h4 id="downloading-libigl">Downloading libigl<a class="headerlink" href="#downloading-libigl" title="Permanent link">&para;</a></h4>
 <p>libigl can be downloaded from our <a href="https://github.com/libigl/libigl">github
 repository</a> or cloned with git:</p>
-<div class="codehilite"><pre><span></span>git clone --recursive https://github.com/libigl/libigl.git
+<div class="codehilite"><pre><span></span>git clone https://github.com/libigl/libigl.git
 </pre></div>
 
 <p>The core libigl functionality only depends on the C++ Standard Library and
-Eigen.</p>
-<p>To build all the examples in the tutorial, you can use the CMakeLists.txt in
-the tutorial folder:</p>
-<div class="codehilite"><pre><span></span><span class="nb">cd</span> tutorial
+Eigen. <em>Optional dependencies</em> will be downloaded upon issuing <code class="codehilite">cmake</code>, below.</p>
+<p>To build all the examples in the tutorial (and tests), you can use the CMakeLists.txt in
+the root folder:</p>
+<div class="codehilite"><pre><span></span><span class="nb">cd</span> libigl/
 mkdir build
 <span class="nb">cd</span> build
-cmake -DCMAKE_BUILD_TYPE<span class="o">=</span>Release ../
+cmake ../
 make
 </pre></div>
 
+<div class="admonition note">
+<p class="admonition-title">Note about CGAL</p>
+<p>The <em>optional</em> dependency <a href="https://www.cgal.org">CGAL</a> has been notoroiusly difficult for installation (in turn it also depends on boost). Unlike the other optional dependencies, by default CGAL is <em>not</em> downloaded upon issuing the <code class="codehilite">cmake</code> command above and the corresponding tutorial entries will be skipped. To download CGAL and include those entries, issue</p>
+<div class="codehilite"><pre><span></span>cmake -DLIBIGL_WITH_CGAL<span class="o">=</span>ON ../
+</pre></div>
+
+</div>
 <p>The examples can also be built independently using the CMakeLists.txt
 inside each example folder.</p>
 <div class="admonition note">
