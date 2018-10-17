@@ -43,7 +43,8 @@
     Our current recommendation is to keep the CGAL parts self-contained as much as possible, and avoid such constructs in the parts of the code that use CGAL. _[Jérémie]_
 
 ??? faq "Should I use `Eigen::MatrixBase` or `Eigen::PlainObjectBase` as an argument for my templated functions?"
-    ???
+    - Use `Eigen::MatrixBase` for **inputs** (so you can pass plain matrices, maps and matrix expressions);
+    - Use `Eigen::PlainObjectBase` for **outputs** (so the memory can be allocated by the libigl function).
 
 ??? faq "I get an `error: Server does not allow request for unadvertised object` when cloning a repository using libigl as a submodule."
     You are probably getting this error because the *libigl history rewriting* that happened on XXX. Read more about this breaking change [here].
