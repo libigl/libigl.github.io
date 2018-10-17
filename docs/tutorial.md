@@ -42,22 +42,29 @@ libigl can be downloaded from our [github
 repository](https://github.com/libigl/libigl) or cloned with git:
 
 ```bash
-git clone --recursive https://github.com/libigl/libigl.git
+git clone https://github.com/libigl/libigl.git
 ```
 
 The core libigl functionality only depends on the C++ Standard Library and
-Eigen.
+Eigen. _Optional dependencies_ will be downloaded upon issuing `cmake`, below.
 
-To build all the examples in the tutorial, you can use the CMakeLists.txt in
-the tutorial folder:
+To build all the examples in the tutorial (and tests), you can use the CMakeLists.txt in
+the root folder:
 
 ```bash
-cd tutorial
+cd libigl/
 mkdir build
 cd build
-cmake -DCMAKE_BUILD_TYPE=Release ../
+cmake ../
 make
 ```
+
+!!! note "Note about CGAL"
+    The _optional_ dependency [CGAL](https://www.cgal.org) has been notoroiusly difficult for installation (in turn it also depends on boost). Unlike the other optional dependencies, by default CGAL is _not_ downloaded upon issuing the `cmake` command above and the corresponding tutorial entries will be skipped. To download CGAL and include those entries, issue
+    
+    ```bash
+    cmake -DLIBIGL_WITH_CGAL=ON ../
+    ```
 
 The examples can also be built independently using the CMakeLists.txt
 inside each example folder.
