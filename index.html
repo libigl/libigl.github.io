@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.3">
+      <meta name="generator" content="mkdocs-1.0.1, mkdocs-material-3.0.3">
     
     
       
@@ -345,6 +345,13 @@
         <li class="md-nav__item">
   <a href="#known-issues" title="Known Issues" class="md-nav__link">
     Known Issues
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies_1" title="Dependencies" class="md-nav__link">
+    Dependencies
   </a>
   
 </li>
@@ -890,6 +897,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#dependencies_1" title="Dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#unit-testing" title="Unit Testing" class="md-nav__link">
     Unit Testing
   </a>
@@ -1083,9 +1097,13 @@ matrices using the <code class="codehilite">Eigen::RowMajor</code> flag. If you 
 <p>We hope to fix this, or at least identify which functions are safe (many of
 them probably work just fine). This requires setting up unit testing, which is
 a major <em>todo</em> for our development.</p>
+<blockquote>
+<h2 id="dependencies_1">Dependencies<a class="headerlink" href="#dependencies_1" title="Permanent link">&para;</a></h2>
+<p>Libigl uses CMake&rsquo;s <a href="https://cmake.org/cmake/help/latest/module/ExternalProject.html">ExternalProject_Add</a> to manage external dependencies. External libraries are build statically with libigl using CMake. In order to be included in the CMake script via <code class="codehilite">add_subdirectory</code>, the third-party content is fetched at CMake time using the <a href="https://github.com/Crascit/DownloadProject">DownloadProject.cmake</a> script (which has been introduced in CMake itself with the command <a href="https://cmake.org/cmake/help/v3.11/module/FetchContent.html">FetchContent</a> in CMake 3.11).</p>
+<p>There is not much to know about this, other than the content will be fetched the first time you run CMake, and placed into the <code class="codehilite">external/</code> folder. If something goes wrong with your dependencies, simply erase your <code class="codehilite">external/</code> folder and run CMake again. The exact version of each external dependencies used by libigl are recorded in the file <code class="codehilite">cmake/LibiglDownloadExternal.cmake</code>.</p>
+</blockquote>
 <h2 id="unit-testing">Unit Testing<a class="headerlink" href="#unit-testing" title="Permanent link">&para;</a></h2>
-<p>Libigl maintains <a href="https://github.com/libigl/libigl-unit-tests">separate
-repository</a> for unit testing.</p>
+<p>Unit tests are located in the <code class="codehilite">tests/</code> folder of the main libigl repository.</p>
 <h2 id="how-to-contribute">How to Contribute<a class="headerlink" href="#how-to-contribute" title="Permanent link">&para;</a></h2>
 <p>If you are interested in joining development, please fork the repository and
 submit a <a href="https://help.github.com/articles/using-pull-requests/">pull request</a>
@@ -1236,7 +1254,7 @@ page</a>.</p>
     
       <script src="assets/javascripts/application.583bbe55.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"."}})</script>
+      <script>app.initialize({version:"1.0.1",url:{base:"."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
