@@ -4,10 +4,11 @@ There are a variety of things you can do before submitting a pull request that
 will reduce the effort on the libigl team to merge your code and increase the
 likelihood that the merge ever happens.
 
-  1. Test your code and submit a unit test as part of the pull request
-  2. Verify that your code matches the [libigl style
+  1. Make sure you are using the **dev** branch to create your pull request.
+  2. Test your code and submit a unit test as part of the pull request
+  3. Verify that your code matches the [libigl style
   guidelines](style-guidelines.md)
-  3. Run the [exhaustive build test](#exhaustivebuildtest) below *[deprecated]*
+  4. ~~Run the [exhaustive build test](#exhaustivebuildtest) below~~ *[deprecated]*
 
 !!! tip
 
