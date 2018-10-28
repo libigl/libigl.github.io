@@ -317,6 +317,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#downloading-dependencies" title="Downloading Dependencies" class="md-nav__link">
+    Downloading Dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#gcc-and-the-optional-cgal-dependency" title="GCC and the Optional CGAL Dependency" class="md-nav__link">
     GCC and the Optional CGAL Dependency
   </a>
@@ -857,6 +864,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#downloading-dependencies" title="Downloading Dependencies" class="md-nav__link">
+    Downloading Dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#gcc-and-the-optional-cgal-dependency" title="GCC and the Optional CGAL Dependency" class="md-nav__link">
     GCC and the Optional CGAL Dependency
   </a>
@@ -961,7 +975,6 @@
 <p><a href="https://travis-ci.org/libigl/libigl"><img alt="Build Status" src="https://travis-ci.org/libigl/libigl.svg?branch=master" /></a>
 <a href="https://ci.appveyor.com/project/danielepanozzo/libigl-6hjk1/branch/master"><img alt="Build status" src="https://ci.appveyor.com/api/projects/status/mf3t9rnhco0vhly8/branch/master?svg=true" /></a>
 <img alt="" src="libigl-teaser.png" /></p>
-<p><a href="https://github.com/libigl/libigl/">https://github.com/libigl/libigl/</a></p>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
 <p>On October 15, 2018, a new, cleaned-up history has been pushed onto the main
@@ -971,36 +984,46 @@ please read <a href="rewritten-history/">this page</a>.</p>
 <p>libigl is a simple C++ geometry processing library. We have a wide
 functionality including construction of sparse discrete differential geometry
 operators and finite-elements matrices such as the cotangent Laplacian and
-diagonalized mass matrix, simple facet and edge-based topology data structures,
-mesh-viewing utilities for OpenGL and GLSL, and many core functions for matrix
-manipulation which make <a href="http://eigen.tuxfamily.org">Eigen</a> feel a lot more
-like MATLAB.</p>
+diagonalized mass matrix, simple facet and edge-based topology data
+structures, mesh-viewing utilities for OpenGL and GLSL, and many core
+functions for matrix manipulation which make
+<a href="http://eigen.tuxfamily.org">Eigen</a> feel a lot more like MATLAB.</p>
 <p>It is <strong>a header-only library</strong>. You do not need to compile anything to use,
 just include igl headers (e.g. <code class="codehilite"><span class="cp">#include</span> <span class="cpf">&lt;igl/cotmatrix.h&gt;</span><span class="cp"></span></code>) and run.  Each
 header file contains a single function (e.g. <code class="codehilite">igl/cotmatrix.h</code> contains
 <code class="codehilite">igl::cotmatrix()</code>). Most are tailored to operate on a generic triangle mesh
 stored in an n-by-3 matrix of vertex positions <code class="codehilite">V</code> and an m-by-3 matrix of
 triangle indices <code class="codehilite">F</code>.</p>
-<p><em>Optionally</em> the library may also be <a href="http://libigl.github.io/libigl/static-library/">pre-compiled</a> into a statically
-linked library, for faster compile times with your projects. This only effects
-compile time (run-time performance and behavior is identical). If in doubt, use
-the header-only default mode: (i.e. just include the headers you want to use).</p>
-<p>We use the <a href="http://eigen.tuxfamily.org">Eigen</a> library heavily in our code. Our
-group prototypes a lot in MATLAB, and we have a useful <a href="matlab-to-eigen.html">MATLAB to libigl+Eigen
-conversion table</a>.</p>
+<p><em>Optionally</em> the library may also be
+<a href="http://libigl.github.io/libigl/static-library/">pre-compiled</a> into a
+statically linked library, for faster compile times with your projects. This
+only effects compile time (run-time performance and behavior is identical). If
+in doubt, use the header-only default mode: (i.e. just include the headers you
+want to use).</p>
+<p>We use the <a href="http://eigen.tuxfamily.org">Eigen</a> library heavily in our code.
+Our group prototypes a lot in MATLAB, and we have a useful <a href="matlab-to-eigen.html">MATLAB to
+libigl+Eigen conversion table</a>.</p>
 <p>We regularly test compiling our library on Mac OS X with clang, Linux with gcc
 and Windows with Visual Studio 2015 Community Edition.</p>
 <h2 id="tutorial">Tutorial<a class="headerlink" href="#tutorial" title="Permanent link">&para;</a></h2>
 <p>As of version 1.0, libigl includes an introductory
-<a href="http://libigl.github.io/libigl/tutorial">tutorial</a> that covers many functionalities.</p>
+<a href="http://libigl.github.io/libigl/tutorial">tutorial</a> that covers many
+functionalities.</p>
 <h2 id="libigl-example-project">libigl Example Project<a class="headerlink" href="#libigl-example-project" title="Permanent link">&para;</a></h2>
-<p>We provide a <a href="https://github.com/libigl/libigl-example-project">blank project example</a> showing how to use libigl and cmake. Feel free and encouraged to copy or fork this project as a way of starting a new personal project using libigl.</p>
+<p>We provide a <a href="https://github.com/libigl/libigl-example-project">blank project
+example</a> showing how to use
+libigl and cmake. Feel free and encouraged to copy or fork this project as a
+way of starting a new personal project using libigl.</p>
 <h2 id="coding-guidelines-and-tips">Coding Guidelines and Tips<a class="headerlink" href="#coding-guidelines-and-tips" title="Permanent link">&para;</a></h2>
-<p>libigl follows strict coding guidelines, please take a look <a href="http://libigl.github.io/libigl/style-guidelines">here</a> before submitting your pull requests. We also have a set of <a href="http://libigl.github.io/libigl/coding-guidelines">general coding tips</a> on how to code a geometry processing research project.</p>
+<p>libigl follows strict coding guidelines, please take a look
+<a href="http://libigl.github.io/libigl/style-guidelines">here</a> before submitting your
+pull requests. We also have a set of <a href="http://libigl.github.io/libigl/coding-guidelines">general coding
+tips</a> on how to code a
+geometry processing research project.</p>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <p>Libigl is a <strong>header-only</strong> library. You do <strong>not</strong> need to build anything to
-install.  Simply add <code class="codehilite">libigl/include</code> to your include path and include relevant
-headers.  Here is a small &ldquo;Hello, World&rdquo; program:</p>
+install. Simply add <code class="codehilite">libigl/include</code> to your include path and include
+relevant headers. Here is a small &ldquo;Hello, World&rdquo; program:</p>
 <div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;igl/cotmatrix.h&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;Eigen/Dense&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;Eigen/Sparse&gt;</span><span class="cp"></span>
@@ -1054,10 +1077,26 @@ On <strong>Windows</strong>, it is advised to install Boost using <code class="c
 and <strong>macOS</strong>, you will need to install Boost, GMP and MPFR using your
 favorite package manager (CGAL itself will be downloaded by libigl).</p>
 </div>
+<h3 id="downloading-dependencies">Downloading Dependencies<a class="headerlink" href="#downloading-dependencies" title="Permanent link">&para;</a></h3>
+<p>Libigl uses CMake&rsquo;s
+<a href="https://cmake.org/cmake/help/latest/module/ExternalProject.html">ExternalProject_Add</a>
+to manage external dependencies. External libraries are build statically with
+libigl using CMake. In order to be included in the CMake script via
+<code class="codehilite">add_subdirectory</code>, the third-party content is fetched at CMake time using the
+<a href="https://github.com/Crascit/DownloadProject">DownloadProject.cmake</a> script
+(which has been introduced in CMake itself with the command
+<a href="https://cmake.org/cmake/help/v3.11/module/FetchContent.html">FetchContent</a> in
+CMake 3.11).</p>
+<p>There is not much to know about this, other than the content will be fetched
+the first time you run CMake, and placed into the <code class="codehilite">external/</code> folder. If
+something goes wrong with your dependencies, simply erase your <code class="codehilite">external/</code>
+folder and run CMake again. The exact version of each external dependencies
+used by libigl are recorded in the file <code class="codehilite">cmake/LibiglDownloadExternal.cmake</code>.</p>
 <h3 id="gcc-and-the-optional-cgal-dependency">GCC and the Optional CGAL Dependency<a class="headerlink" href="#gcc-and-the-optional-cgal-dependency" title="Permanent link">&para;</a></h3>
-<p>The <code class="codehilite">include/igl/copyleft/cgal/*.h</code> headers depend on CGAL. It has come to
-our attention that CGAL does not work properly with GCC 4.8. To the best of
-our knowledge, GCC 4.7 and clang will work correctly.</p>
+<p>The <code class="codehilite">include/igl/copyleft/cgal/*.h</code> headers depend on CGAL. It has come to our
+attention that CGAL does not work properly with GCC 4.8. To the best of our
+knowledge, GCC 4.7 and clang will work correctly. Please the <a href="faq">FAQ</a> for
+more details.</p>
 <h3 id="openmp-and-windows">OpenMP and Windows<a class="headerlink" href="#openmp-and-windows" title="Permanent link">&para;</a></h3>
 <p>Some of our functions will take advantage of OpenMP if available. However, it
 has come to our attention that Visual Studio + Eigen + OpenMP does not work
@@ -1084,12 +1123,16 @@ matrices using the <code class="codehilite">Eigen::RowMajor</code> flag. If you 
 them probably work just fine). This requires setting up unit testing, which is
 a major <em>todo</em> for our development.</p>
 <h2 id="unit-testing">Unit Testing<a class="headerlink" href="#unit-testing" title="Permanent link">&para;</a></h2>
-<p>Libigl maintains <a href="https://github.com/libigl/libigl-unit-tests">separate
-repository</a> for unit testing.</p>
+<p>As of v2.0.0, unit tests have been moved into the main libigl repository,
+under the <code class="codehilite">tests/</code> folder. Unit test data is downloaded at CMake time if the
+option <code class="codehilite">LIBIGL_BUILD_TESTS=ON</code> is given. Please read <a href="unit-tests">this page</a>
+for more information about unit testing in libigl.</p>
 <h2 id="how-to-contribute">How to Contribute<a class="headerlink" href="#how-to-contribute" title="Permanent link">&para;</a></h2>
 <p>If you are interested in joining development, please fork the repository and
 submit a <a href="https://help.github.com/articles/using-pull-requests/">pull request</a>
-with your changes. libigl follows strict coding guidelines, please take a look at our  <a href="http://libigl.github.io/libigl/style-guidelines">style guidelines</a> before submitting your pull requests.</p>
+with your changes. libigl follows strict coding guidelines, please take a look
+at our  <a href="http://libigl.github.io/libigl/style-guidelines">style guidelines</a>
+before submitting your pull requests.</p>
 <h2 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
 <p>libigl is primarily <a href="http://www.mozilla.org/MPL/2.0/">MPL2</a> licensed
 (<a href="http://www.mozilla.org/MPL/2.0/FAQ.html">FAQ</a>). Some files contain
@@ -1168,7 +1211,10 @@ spending time maintaining this.</p>
 <p>If you find bugs or have problems please use our <a href="https://github.com/libigl/libigl/issues">github issue tracking
 page</a>.</p>
 <h2 id="copyright">Copyright<a class="headerlink" href="#copyright" title="Permanent link">&para;</a></h2>
-<p>2018 Alec Jacobson, Daniele Panozzo, Christian Schüller, Olga Diamanti, Qingnan Zhou, Sebastian Koch, Jeremie Dumas, Amir Vaxman, Nico Pietroni, Stefan Brugger, Kenshi Takayama, Wenzel Jakob, Nikolas De Giorgis, Luigi Rocca, Leonardo Sacht, Kevin Walliman, Olga Sorkine-Hornung, and others.</p>
+<p>2018 Alec Jacobson, Daniele Panozzo, Christian Schüller, Olga Diamanti,
+Qingnan Zhou, Sebastian Koch, Jeremie Dumas, Amir Vaxman, Nico Pietroni,
+Stefan Brugger, Kenshi Takayama, Wenzel Jakob, Nikolas De Giorgis, Luigi
+Rocca, Leonardo Sacht, Kevin Walliman, Olga Sorkine-Hornung, and others.</p>
 <p>Please see individual files for appropriate copyright notices.</p>
                 
                   
