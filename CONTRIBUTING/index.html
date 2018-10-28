@@ -104,7 +104,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../#compilation-issues" tabindex="1" class="md-skip">
+      <a href="../#general-issues" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -397,6 +397,13 @@
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-issues" title="General Issues" class="md-nav__link">
+    General Issues
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#compilation-issues" title="Compilation Issues" class="md-nav__link">
@@ -692,6 +699,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#general-issues" title="General Issues" class="md-nav__link">
+    General Issues
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#compilation-issues" title="Compilation Issues" class="md-nav__link">
     Compilation Issues
   </a>
@@ -720,28 +734,68 @@
                   <h1>Bug Report</h1>
                 
                 <p>Before opening an issue on creating a pull request, please check the following:</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>
+<p>Make sure your read the
+  <a href="https://github.com/libigl/libigl/wiki/FAQ"><strong>FAQ</strong></a> before asking a new
+  question, search <a href="https://github.com/libigl/libigl/issues?q=is%3Aissue+is%3Aclosed"><strong>existing
+  issues</strong></a>
+  for a problem similar to yours.</p>
+</li>
+<li>
+<p>Make sure you read the information contained in the libigl
+  <a href="https://github.com/libigl/libigl"><strong>homepage</strong></a> as well as the
+  <a href="http://libigl.github.io/libigl/tutorial"><strong>tutorial</strong></a>.</p>
+</li>
+</ul>
+</div>
+<h2 id="general-issues">General Issues<a class="headerlink" href="#general-issues" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>If you are using the <strong>master</strong> branch, please checkout the latest version
+  of the <strong>dev</strong> branch and verify that your issue has not been fixed already
+  before opening an issue on github.</p>
+</li>
+<li>
+<p>To report a problem about the <strong>website</strong> (out-of-date content, erroneous
+  instructions or errors in the tutorial), please open your issue in the
+  designated <a href="https://github.com/libigl/libigl.github.io/issues">repository</a>
+  for the website.</p>
+</li>
+</ul>
 <h2 id="compilation-issues">Compilation Issues<a class="headerlink" href="#compilation-issues" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p>If you are on Windows, did you select the <strong>x64</strong> version of the Visual Studio compiler?</p>
+<p>If you are on Windows, did you select the <strong>x64</strong> version of the Visual
+  Studio compiler?</p>
 </li>
 <li>
-<p>If you have a <strong>CMake issue</strong>, make sure you follow the same approach as the  <a href="https://github.com/libigl/libigl-example-project">libigl-example-project</a> to build libigl with your project, and make sure that you can compile the example project.</p>
+<p>If you have a <strong>CMake issue</strong>, make sure you follow the same approach as the
+  <a href="https://github.com/libigl/libigl-example-project">libigl-example-project</a>
+  to build libigl with your project, and make sure that you can compile the
+  example project.</p>
 </li>
 <li>
-<p>If you have an issue with a <strong>submodule</strong>, check if your submodules are up to date. If you have a doubt about a submodule, delete its folder and run <code class="codehilite">git submodule update --init --recursive</code> in the libigl directory.</p>
+<p>If you have an issue with a <strong>submodule</strong>, then you are using an old version
+  of libigl. Please read <a href="/rewritten-history">this page</a> about the transition
+  to v2.0.0.</p>
 </li>
 <li>
-<p>If you have an issue with a missing <strong>template issue</strong>, check if your code compile with the <em>header-only</em> option of libigl activated. Turn <strong><code class="codehilite">OFF</code></strong> the CMake option <code class="codehilite">LIBIGL_USE_STATIC_LIBRARY</code>: either modify your <code class="codehilite">CMakeCache.txt</code> via CMake GUI or ccmake, or delete your <code class="codehilite">CMakeCache.txt</code> and re-run <code class="codehilite">cmake -DLIBIGL_USE_STATIC_LIBRARY=OFF ..</code> in your build folder.</p>
+<p>If you have an issue with downloading an <strong>external dependency</strong> using the
+  CMake build, nuke the <code class="codehilite">external/</code> folder and try again.</p>
 </li>
 <li>
-<p>Make sure your read the <a href="https://github.com/libigl/libigl/wiki/FAQ"><strong>FAQ</strong></a> before asking a new question, and search <a href="https://github.com/libigl/libigl/issues?q=is%3Aissue+is%3Aclosed"><strong>existing issues</strong></a> for a problem similar to yours.</p>
+<p>If you have an issue with a missing <strong>template</strong>, check that your code
+  compiles with the <em>header-only</em> option of libigl activated. Turn <strong><code class="codehilite">OFF</code></strong>
+  the CMake option <code class="codehilite">LIBIGL_USE_STATIC_LIBRARY</code>: either modify your
+  <code class="codehilite">CMakeCache.txt</code> via CMake GUI or ccmake, or delete your <code class="codehilite">CMakeCache.txt</code>
+  and re-run <code class="codehilite">cmake -DLIBIGL_USE_STATIC_LIBRARY=OFF ..</code> in your build folder.</p>
 </li>
 <li>
-<p>Make sure you read the information contained in the libigl <a href="https://github.com/libigl/libigl">homepage</a> as well as the <a href="http://libigl.github.io/libigl/tutorial">tutorials</a>.</p>
-</li>
-<li>
-<p>If none of these solve your problem, then please report your issue in the bug tracker!</p>
+<p>If none of these solve your problem, then please report your issue in the
+  bug tracker!</p>
 </li>
 </ul>
                 

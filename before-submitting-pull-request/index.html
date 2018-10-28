@@ -434,6 +434,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#troubleshooting" title="Troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+</li>
+      
       
       
       
@@ -730,6 +737,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#troubleshooting" title="Troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+</li>
+      
       
       
       
@@ -757,8 +771,14 @@ likelihood that the merge ever happens.</p>
 <li>Test your code and submit a unit test as part of the pull request</li>
 <li>Verify that your code matches the <a href="../style-guidelines/">libigl style
   guidelines</a></li>
-<li>Run the <a href="#exhaustivebuildtest">exhaustive build test</a> below</li>
+<li>Run the <a href="#exhaustivebuildtest">exhaustive build test</a> below <em>[deprecated]</em></li>
 </ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>When opening a pull-request to fix a known bug, you can link to and existing
+github issue or pull-request by mentioning their number in your message. See
+for example <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/954" title="GitHub Issue: libigl/libigl#954">#954</a>.</p>
+</div>
 <h2 id="exhaustive-build-test">Exhaustive build test<a class="headerlink" href="#exhaustive-build-test" title="Permanent link">&para;</a></h2>
 <p>This script will <code class="codehilite">git clone</code> libigl to a temporary directory and build </p>
 <ol>
@@ -784,6 +804,7 @@ cmake -DCMAKE_BUILD_TYPE<span class="o">=</span>Release -DLIBIGL_USE_STATIC_LIBR
 make
 </pre></div>
 
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <p>A typical issue is a missing template instantiation (symbol not found):</p>
 <div class="codehilite"><pre><span></span>&quot;void igl::cgal::points_inside_component&lt;Eigen::Matrix&lt;double, -1, 3, 0, -1, 3&gt;, Eigen::Matrix&lt;int, -1, 3, 0, -1, 3&gt;, Eigen::Matrix&lt;double, -1, 3, 0, -1, 3&gt;, Eigen::Matrix&lt;int, -1, 1, 0, -1, 1&gt; &gt;(Eigen::PlainObjectBase&lt;Eigen::Matrix&lt;double, -1, 3, 0, -1, 3&gt; &gt; const&amp;, Eigen::PlainObjectBase&lt;Eigen::Matrix&lt;int, -1, 3, 0, -1, 3&gt; &gt; const&amp;, Eigen::PlainObjectBase&lt;Eigen::Matrix&lt;double, -1, 3, 0, -1, 3&gt; &gt; const&amp;, Eigen::PlainObjectBase&lt;Eigen::Matrix&lt;int, -1, 1, 0, -1, 1&gt; &gt;&amp;)&quot;, referenced from:
     void igl::cgal::outer_hull&lt;Eigen::Matrix&lt;double, -1, 3, 0, -1, 3&gt;, Eigen::Matrix&lt;int, -1, 3, 0, -1, 3&gt;, Eigen::Matrix&lt;int, -1, 3, 0, -1, 3&gt;, Eigen::Matrix&lt;long, -1, 1, 0, -1, 1&gt;, Eigen::Matrix&lt;int, -1, 1, 0, -1, 1&gt; &gt;(Eigen::PlainObjectBase&lt;Eigen::Matrix&lt;double, -1, 3, 0, -1, 3&gt; &gt; const&amp;, Eigen::PlainObjectBase&lt;Eigen::Matrix&lt;int, -1, 3, 0, -1, 3&gt; &gt; const&amp;, Eigen::PlainObjectBase&lt;Eigen::Matrix&lt;int, -1, 3, 0, -1, 3&gt; &gt;&amp;, Eigen::PlainObjectBase&lt;Eigen::Matrix&lt;long, -1, 1, 0, -1, 1&gt; &gt;&amp;, Eigen::PlainObjectBase&lt;Eigen::Matrix&lt;int, -1, 1, 0, -1, 1&gt; &gt;&amp;) in libiglboolean.a(mesh_boolean.cpp.o)
