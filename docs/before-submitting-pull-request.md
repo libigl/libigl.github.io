@@ -7,7 +7,13 @@ likelihood that the merge ever happens.
   1. Test your code and submit a unit test as part of the pull request
   2. Verify that your code matches the [libigl style
   guidelines](style-guidelines.md)
-  3. Run the [exhaustive build test](#exhaustivebuildtest) below
+  3. Run the [exhaustive build test](#exhaustivebuildtest) below *[deprecated]*
+
+!!! tip
+
+    When opening a pull-request to fix a known bug, you can link to and existing
+    github issue or pull-request by mentioning their number in your message. See
+    for example #954.
 
 ## Exhaustive build test
 
@@ -39,6 +45,8 @@ cd build-use-static
 cmake -DCMAKE_BUILD_TYPE=Release -DLIBIGL_USE_STATIC_LIBRARY=ON ..
 make
 ```
+
+## Troubleshooting
 
 A typical issue is a missing template instantiation (symbol not found):
 
