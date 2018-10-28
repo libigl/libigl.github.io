@@ -2258,7 +2258,7 @@ make
 
 <div class="admonition note">
 <p class="admonition-title">Note about CGAL</p>
-<p>The <em>optional</em> dependency <a href="https://www.cgal.org">CGAL</a> has been notoroiusly difficult for installation (in turn it also depends on boost). Unlike the other optional dependencies, by default CGAL is <em>not</em> downloaded upon issuing the <code class="codehilite">cmake</code> command above and the corresponding tutorial entries will be skipped. To download CGAL and include those entries, issue</p>
+<p>The <em>optional</em> dependency <a href="https://www.cgal.org">CGAL</a> has been notoriously difficult for installation (in turn it also depends on boost). Unlike the other optional dependencies, by default CGAL is <em>not</em> downloaded upon issuing the <code class="codehilite">cmake</code> command above and the corresponding tutorial entries will be skipped. To download CGAL and include those entries, issue</p>
 <div class="codehilite"><pre><span></span>cmake -DLIBIGL_WITH_CGAL<span class="o">=</span>ON ../
 </pre></div>
 
@@ -2285,17 +2285,15 @@ sudo apt-get install libxcursor-dev
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note for Windows users</p>
-<p>libigl only supports the Microsoft Visual Studio 2015 compiler and later, in 64bit mode.
+<p>libigl only supports the Microsoft Visual Studio 2015 compiler and later, in <strong>64bit</strong> mode.
 It will not work with a 32bit build and it will not work with older versions of visual studio.</p>
 </div>
-<p>A few examples in Chapter 5 requires the <a href="http://www.graphics.rwth-aachen.de/software/comiso">CoMiSo solver</a>.
-We provide a mirror of CoMISo that works out of the box with libigl. To install it:</p>
-<div class="codehilite"><pre><span></span><span class="nb">cd</span> libigl/external
-git clone --recursive https://github.com/libigl/CoMISo.git
-</pre></div>
-
-<p>You can then build the tutorials again and it libigl will automatically find and
-compile CoMISo.</p>
+<p>A few examples in Chapter 5 requires the <a href="http://www.graphics.rwth-aachen.de/software/comiso">CoMiSo
+solver</a>. We provide a
+mirror of CoMISo that works out of the box with libigl. A copy will be
+downloaded automatically by CMake the first time you build the libigl root
+project. You can build the tutorials as usual and libigl will automatically
+find and compile CoMISo.</p>
 <p><em>Note 1</em>: CoMISo is distributed under the GPL3 license, it does impose restrictions on commercial usage.</p>
 <p><em>Note 2</em>: CoMISo requires a blas implementation. We use the built-in blas in macosx and linux, and we bundle a precompiled binary for VS2015 64 bit. Do NOT compile the tutorials
 in 32 bit on windows.</p>
