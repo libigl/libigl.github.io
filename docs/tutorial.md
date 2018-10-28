@@ -60,7 +60,7 @@ make
 ```
 
 !!! note "Note about CGAL"
-    The _optional_ dependency [CGAL](https://www.cgal.org) has been notoroiusly difficult for installation (in turn it also depends on boost). Unlike the other optional dependencies, by default CGAL is _not_ downloaded upon issuing the `cmake` command above and the corresponding tutorial entries will be skipped. To download CGAL and include those entries, issue
+    The _optional_ dependency [CGAL](https://www.cgal.org) has been notoriously difficult for installation (in turn it also depends on boost). Unlike the other optional dependencies, by default CGAL is _not_ downloaded upon issuing the `cmake` command above and the corresponding tutorial entries will be skipped. To download CGAL and include those entries, issue
     
     ```bash
     cmake -DLIBIGL_WITH_CGAL=ON ../
@@ -88,19 +88,15 @@ inside each example folder.
     ```
 
 !!! note "Note for Windows users"
-    libigl only supports the Microsoft Visual Studio 2015 compiler and later, in 64bit mode.
+    libigl only supports the Microsoft Visual Studio 2015 compiler and later, in **64bit** mode.
     It will not work with a 32bit build and it will not work with older versions of visual studio.
 
-A few examples in Chapter 5 requires the [CoMiSo solver](http://www.graphics.rwth-aachen.de/software/comiso).
-We provide a mirror of CoMISo that works out of the box with libigl. To install it:
-
-```bash
-cd libigl/external
-git clone --recursive https://github.com/libigl/CoMISo.git
-```
-
-You can then build the tutorials again and it libigl will automatically find and
-compile CoMISo.
+A few examples in Chapter 5 requires the [CoMiSo
+solver](http://www.graphics.rwth-aachen.de/software/comiso). We provide a
+mirror of CoMISo that works out of the box with libigl. A copy will be
+downloaded automatically by CMake the first time you build the libigl root
+project. You can build the tutorials as usual and libigl will automatically
+find and compile CoMISo.
 
 *Note 1*: CoMISo is distributed under the GPL3 license, it does impose restrictions on commercial usage.
 
