@@ -944,22 +944,27 @@ and before switching from submodules to CMake external projects.</li>
 <ul>
 <li>
 <p>The CMake build system has been rewritten to be more modular and modern.
-libigl modules are now available as CMake target, e.g. <code class="codehilite">igl::triangle</code> or
-<code class="codehilite">igl::opengl</code>. See the libigl-example-project for an example of typical usage.</p>
+  libigl modules are now available as CMake target, e.g. <code class="codehilite">igl::triangle</code> or
+  <code class="codehilite">igl::opengl</code>. See the libigl-example-project for an example of typical
+  usage.</p>
 </li>
 <li>
 <p><code class="codehilite">igl/antweakbar</code> and <code class="codehilite">igl/opengl2</code> support has been removed from the CMake.
-The files are still available, but their use is discouraged.</p>
+  The files are still available, but their use is discouraged.</p>
 </li>
 <li>
 <p>The viewer has been refactored and now supports multiple meshes. See related
-tutorial entry for more information. The viewer files are now split according
-to their dependencies. E.g. <code class="codehilite">igl::viewer::Viewer</code> has been renamed
-<code class="codehilite">igl::opengl::glfw::Viewer</code>.</p>
+  tutorial entry for more information. The viewer files are now split
+  according to their dependencies. E.g. <code class="codehilite">igl::viewer::Viewer</code> has been renamed
+  <code class="codehilite">igl::opengl::glfw::Viewer</code>.</p>
 </li>
 <li>
 <p>NanoGui has been replaced by ImGui, and is now available as a viewer plugin
-instead of <code class="codehilite">#define</code></p>
+  instead of <code class="codehilite">#define</code></p>
+</li>
+<li>
+<p>Polyvector code has been moved to
+  <a href="https://github.com/avaxman/libdirectional">libdirectional</a> (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/630" title="GitHub Issue: libigl/libigl#630">#630</a>).</p>
 </li>
 </ul>
 <h2 id="version-12-changes">Version 1.2 Changes<a class="headerlink" href="#version-12-changes" title="Permanent link">&para;</a></h2>
