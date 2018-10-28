@@ -2542,7 +2542,7 @@ then the final composite.
 
 ![Example [610]({{ repo_url }}/tutorial/610_CSGTree/main.cpp) computes  complex CSG Tree operation on 5 input meshes.](images/cube-sphere-cylinders-csg.gif)
 
-## Miscellaneous
+## Chapter 7: Miscellaneous
 
 Libigl contains a _wide_ variety of geometry processing tools and functions for
 dealing with meshes and the linear algebra related to them: far too many to
@@ -2895,31 +2895,6 @@ igl::marching_cubes(S,GV,nx,ny,nz,V,F);
 
 ![([Example 705]({{ repo_url }}/tutorial/705_MarchingCubes/main.cpp)) samples signed distance to the input mesh (left) and then reconstructs the surface using marching cubes to contour the 0-level set (center). For comparison, clamping this signed distance field to an indicator function and contouring reveals serious aliasing artifacts.](images/armadillo-marching-cubes.jpg)
 
-### Marching Tetrahedra
-
-Often 3D data is captured as scalar field defined over space $f(\mathbf{x}) :
-\mathcal{R}^3 \rightarrow \mathcal{R}$. Lurking within this field,
-_iso-surfaces_ of the scalar field are often salient geometric objects. The
-iso-surface at value $v$ is composed of all points $\mathbf{x}$ in
-$\mathcal{R}^3$ such that $f(\mathbf{x}) = v$. A core problem in geometry
-processing is to extract an iso-surface as a triangle mesh for further
-mesh-based processing or visualization. This is referred to as iso-contouring.
-
-"Marching Tetrahedra" [^treece_1999] is a [famous
-method](https://en.wikipedia.org/wiki/Marching_tetrahedra) for iso-contouring
-tri-linear functions $f$ on a 3D simplicial complex (aka a tet mesh). The core idea of this
-method is to contour the iso-surface passing through each cell  (if it does at
-all) with a predefined topology (aka connectivity) chosen from a look up table
-depending on the function values at each vertex of the cell. The method
-iterates ("marches") over all cells ("tetrahedra") in the complex and stitches together
-the final mesh.
-
-In libigl, `igl::marching_tets` constructs a triangle mesh `(V,F)` approximating the iso-level set
-for the value `isovalue` from an input scalar field `S` sampled at the vertices of a tet mesh locations `(TV, TT)`:
-
-```cpp
-igl::marching_tets(TV,TT,S, isovalue ,V,F);
-```
 
 ### Facet Orientation
 
@@ -3045,17 +3020,6 @@ by Embree, and `fid` and `vid` are the picked face and vertex, respectively.
 
 ![([Example 708]({{ repo_url }}/tutorial/708_Picking/main.cpp)) Picking via ray casting. The selected vertices are colored in red.](images/607_Picking.png)
 
-### Vector Field Visualization
-
-Vector fields on surfaces are commonly visualized by tracing [streamlines](https://en.wikipedia.org/wiki/Streamlines,_streaklines,_and_pathlines). Libigl
-supports the seeding and tracing of streamlines, for both simple vector fields
-and for N-rosy fields. The seeds for the streamlines are initialized using `streamlines_init`,
-and the lines are traced using `streamlines_next`. Each call to `streamlines_next` extends
-each line by one triangle, allowing interactive rendering of the traced lines, as demonstrated
-in [Example 709]({{ repo_url }}/tutorial/709_VectorFieldVisualizer/main.cpp).
-
-![([Example 709]({{ repo_url }}/tutorial/709_VectorFieldVisualizer/main.cpp)) Interactive streamlines tracing.](images/streamlines.jpg)
-
 ### Scalable Locally Injective Maps
 
 The Scalable Locally Injective Maps [^rabinovich_2016] algorithm allows to
@@ -3063,7 +3027,7 @@ compute locally injective maps on massive datasets. The algorithm shares many
 similarities with ARAP, but uses a reweighting scheme to minimize arbitrary
 distortion energies, including those that prevent the introduction of flips.
 
-[Example 710]({{ repo_url }}/tutorial/710_SLIM/main.cpp) contains three demos: (1) an example of large
+[Example 709]({{ repo_url }}/tutorial/709_SLIM/main.cpp) contains three demos: (1) an example of large
 scale 2D parametrization, (2) an example of 2D deformation with soft
 constraints, and (3) an example of 3D deformation with soft constraints. The
 implementation in libigl is self-contained and relies on Eigen for the solution
@@ -3072,6 +3036,10 @@ on Pardiso is available
 [here](https://github.com/MichaelRabinovich/Scalable-Locally-Injective-Mappings).
 
 ![A locally injective parametrization of a mesh with 50k faces is computed using the SLIM algorithm in 10 iterations.](images/slim.png)
+
+### Simplicial Complex Augmentation Framework for Bijective Maps
+
+_Entry Missing_
 
 ### Subdivision surfaces
 
@@ -3198,6 +3166,40 @@ The best way to contribute new feature or bug fixes is to fork the libigl
 repository and to open a [pull
 request](https://help.github.com/articles/using-pull-requests) on [our github
 repository](https://github.com/libigl/libigl).
+
+### Marching Tetrahedra
+
+Often 3D data is captured as scalar field defined over space $f(\mathbf{x}) :
+\mathcal{R}^3 \rightarrow \mathcal{R}$. Lurking within this field,
+_iso-surfaces_ of the scalar field are often salient geometric objects. The
+iso-surface at value $v$ is composed of all points $\mathbf{x}$ in
+$\mathcal{R}^3$ such that $f(\mathbf{x}) = v$. A core problem in geometry
+processing is to extract an iso-surface as a triangle mesh for further
+mesh-based processing or visualization. This is referred to as iso-contouring.
+
+"Marching Tetrahedra" [^treece_1999] is a [famous
+method](https://en.wikipedia.org/wiki/Marching_tetrahedra) for iso-contouring
+tri-linear functions $f$ on a 3D simplicial complex (aka a tet mesh). The core idea of this
+method is to contour the iso-surface passing through each cell  (if it does at
+all) with a predefined topology (aka connectivity) chosen from a look up table
+depending on the function values at each vertex of the cell. The method
+iterates ("marches") over all cells ("tetrahedra") in the complex and stitches together
+the final mesh.
+
+In libigl, `igl::marching_tets` constructs a triangle mesh `(V,F)` approximating the iso-level set
+for the value `isovalue` from an input scalar field `S` sampled at the vertices of a tet mesh locations `(TV, TT)`:
+
+```cpp
+igl::marching_tets(TV,TT,S, isovalue ,V,F);
+```
+
+### Implicit Function Meshing
+
+_Entry Missing_
+
+### Heat Method for Fast Geodesic Distance Approximation
+
+_Entry Missing_
 
 ## References
 
