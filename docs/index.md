@@ -3,8 +3,6 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/mf3t9rnhco0vhly8/branch/master?svg=true)](https://ci.appveyor.com/project/danielepanozzo/libigl-6hjk1/branch/master)
 ![](libigl-teaser.png)
 
-<https://github.com/libigl/libigl/>
-
 !!! danger
     On October 15, 2018, a new, cleaned-up history has been pushed onto the main
     libigl repository. To learn more about the consequences of this, and troubleshooting,
@@ -13,10 +11,10 @@
 libigl is a simple C++ geometry processing library. We have a wide
 functionality including construction of sparse discrete differential geometry
 operators and finite-elements matrices such as the cotangent Laplacian and
-diagonalized mass matrix, simple facet and edge-based topology data structures,
-mesh-viewing utilities for OpenGL and GLSL, and many core functions for matrix
-manipulation which make [Eigen](http://eigen.tuxfamily.org) feel a lot more
-like MATLAB.
+diagonalized mass matrix, simple facet and edge-based topology data
+structures, mesh-viewing utilities for OpenGL and GLSL, and many core
+functions for matrix manipulation which make
+[Eigen](http://eigen.tuxfamily.org) feel a lot more like MATLAB.
 
 It is **a header-only library**. You do not need to compile anything to use,
 just include igl headers (e.g. `#include <igl/cotmatrix.h>`) and run.  Each
@@ -25,14 +23,16 @@ header file contains a single function (e.g. `igl/cotmatrix.h` contains
 stored in an n-by-3 matrix of vertex positions `V` and an m-by-3 matrix of
 triangle indices `F`.
 
-_Optionally_ the library may also be [pre-compiled](http://libigl.github.io/libigl/static-library/) into a statically
-linked library, for faster compile times with your projects. This only effects
-compile time (run-time performance and behavior is identical). If in doubt, use
-the header-only default mode: (i.e. just include the headers you want to use).
+_Optionally_ the library may also be
+[pre-compiled](http://libigl.github.io/libigl/static-library/) into a
+statically linked library, for faster compile times with your projects. This
+only effects compile time (run-time performance and behavior is identical). If
+in doubt, use the header-only default mode: (i.e. just include the headers you
+want to use).
 
-We use the [Eigen](http://eigen.tuxfamily.org) library heavily in our code. Our
-group prototypes a lot in MATLAB, and we have a useful [MATLAB to libigl+Eigen
-conversion table](matlab-to-eigen.html).
+We use the [Eigen](http://eigen.tuxfamily.org) library heavily in our code.
+Our group prototypes a lot in MATLAB, and we have a useful [MATLAB to
+libigl+Eigen conversion table](matlab-to-eigen.html).
 
 We regularly test compiling our library on Mac OS X with clang, Linux with gcc
 and Windows with Visual Studio 2015 Community Edition.
@@ -40,21 +40,29 @@ and Windows with Visual Studio 2015 Community Edition.
 ## Tutorial
 
 As of version 1.0, libigl includes an introductory
-[tutorial](http://libigl.github.io/libigl/tutorial) that covers many functionalities.
+[tutorial](http://libigl.github.io/libigl/tutorial) that covers many
+functionalities.
 
 ## libigl Example Project
 
-We provide a [blank project example](https://github.com/libigl/libigl-example-project) showing how to use libigl and cmake. Feel free and encouraged to copy or fork this project as a way of starting a new personal project using libigl.
+We provide a [blank project
+example](https://github.com/libigl/libigl-example-project) showing how to use
+libigl and cmake. Feel free and encouraged to copy or fork this project as a
+way of starting a new personal project using libigl.
 
 ## Coding Guidelines and Tips
 
-libigl follows strict coding guidelines, please take a look [here](http://libigl.github.io/libigl/style-guidelines) before submitting your pull requests. We also have a set of [general coding tips](http://libigl.github.io/libigl/coding-guidelines) on how to code a geometry processing research project.
+libigl follows strict coding guidelines, please take a look
+[here](http://libigl.github.io/libigl/style-guidelines) before submitting your
+pull requests. We also have a set of [general coding
+tips](http://libigl.github.io/libigl/coding-guidelines) on how to code a
+geometry processing research project.
 
 ## Installation
 
 Libigl is a **header-only** library. You do **not** need to build anything to
-install.  Simply add `libigl/include` to your include path and include relevant
-headers.  Here is a small "Hello, World" program:
+install. Simply add `libigl/include` to your include path and include
+relevant headers. Here is a small "Hello, World" program:
 
 ```cpp
 #include <igl/cotmatrix.h>
@@ -96,6 +104,7 @@ Hello, mesh:
 ```
 
 ## Dependencies
+
 Dependencies are on a per-include basis and the majority of the functions in
 libigl depends only on the [Eigen](http://eigen.tuxfamily.org) library.
 
@@ -117,22 +126,45 @@ For a full list of _optional_ dependencies check `cmake/libigl.cmake`.
     and **macOS**, you will need to install Boost, GMP and MPFR using your
     favorite package manager (CGAL itself will be downloaded by libigl).
 
+### Downloading Dependencies
+
+Libigl uses CMake's
+[ExternalProject_Add](https://cmake.org/cmake/help/latest/module/ExternalProject.html)
+to manage external dependencies. External libraries are build statically with
+libigl using CMake. In order to be included in the CMake script via
+`add_subdirectory`, the third-party content is fetched at CMake time using the
+[DownloadProject.cmake](https://github.com/Crascit/DownloadProject) script
+(which has been introduced in CMake itself with the command
+[FetchContent](https://cmake.org/cmake/help/v3.11/module/FetchContent.html) in
+CMake 3.11).
+
+There is not much to know about this, other than the content will be fetched
+the first time you run CMake, and placed into the `external/` folder. If
+something goes wrong with your dependencies, simply erase your `external/`
+folder and run CMake again. The exact version of each external dependencies
+used by libigl are recorded in the file `cmake/LibiglDownloadExternal.cmake`.
+
 ### GCC and the Optional CGAL Dependency
-The `include/igl/copyleft/cgal/*.h` headers depend on CGAL. It has come to
-our attention that CGAL does not work properly with GCC 4.8. To the best of
-our knowledge, GCC 4.7 and clang will work correctly.
+
+The `include/igl/copyleft/cgal/*.h` headers depend on CGAL. It has come to our
+attention that CGAL does not work properly with GCC 4.8. To the best of our
+knowledge, GCC 4.7 and clang will work correctly. Please the [FAQ](faq) for
+more details.
 
 ### OpenMP and Windows
+
 Some of our functions will take advantage of OpenMP if available. However, it
 has come to our attention that Visual Studio + Eigen + OpenMP does not work
 properly. Since we use OpenMP only to improve performance, we recommend
 avoiding OpenMP on Windows or proceeding with caution.
 
 ## Download
+
 You can keep up to date by cloning a read-only copy of our GitHub
 [repository](https://github.com/libigl).
 
 ## Known Issues
+
 We rely heavily on Eigen. Nearly all inputs and outputs are Eigen matrices of
 some kind. However, we currently _only_ officially support Eigen's default
 column-major ordering. That means, we **do not** expect our code to work for
@@ -156,22 +188,28 @@ a major _todo_ for our development.
 
 ## Unit Testing
 
-Libigl maintains [separate
-repository](https://github.com/libigl/libigl-unit-tests) for unit testing.
+As of v2.0.0, unit tests have been moved into the main libigl repository,
+under the `tests/` folder. Unit test data is downloaded at CMake time if the
+option `LIBIGL_BUILD_TESTS=ON` is given. Please read [this page](unit-tests)
+for more information about unit testing in libigl.
 
 ## How to Contribute
 
 If you are interested in joining development, please fork the repository and
 submit a [pull request](https://help.github.com/articles/using-pull-requests/)
-with your changes. libigl follows strict coding guidelines, please take a look at our  [style guidelines](http://libigl.github.io/libigl/style-guidelines) before submitting your pull requests.
+with your changes. libigl follows strict coding guidelines, please take a look
+at our  [style guidelines](http://libigl.github.io/libigl/style-guidelines)
+before submitting your pull requests.
 
 ## License
+
 libigl is primarily [MPL2](http://www.mozilla.org/MPL/2.0/) licensed
 ([FAQ](http://www.mozilla.org/MPL/2.0/FAQ.html)). Some files contain
 third-party code under other licenses. We're currently in the processes of
 identifying these and marking appropriately.
 
 ## Attribution
+
 If you use libigl in your academic projects, please cite the papers we
 implement as appropriate. To cite the library in general, you could use this
 BibTeX entry:
@@ -186,6 +224,7 @@ BibTeX entry:
 ```
 
 ## Projects/Universities using libigl
+
 Libigl is used by many research groups around the world. In 2015, it won the
 Eurographics/ACM Symposium on Geometry Processing software award. Here are a
 few labs/companies/institutions using libigl:
@@ -251,6 +290,10 @@ If you find bugs or have problems please use our [github issue tracking
 page](https://github.com/libigl/libigl/issues).
 
 ## Copyright
-2018 Alec Jacobson, Daniele Panozzo, Christian Schüller, Olga Diamanti, Qingnan Zhou, Sebastian Koch, Jeremie Dumas, Amir Vaxman, Nico Pietroni, Stefan Brugger, Kenshi Takayama, Wenzel Jakob, Nikolas De Giorgis, Luigi Rocca, Leonardo Sacht, Kevin Walliman, Olga Sorkine-Hornung, and others.
+
+2018 Alec Jacobson, Daniele Panozzo, Christian Schüller, Olga Diamanti,
+Qingnan Zhou, Sebastian Koch, Jeremie Dumas, Amir Vaxman, Nico Pietroni,
+Stefan Brugger, Kenshi Takayama, Wenzel Jakob, Nikolas De Giorgis, Luigi
+Rocca, Leonardo Sacht, Kevin Walliman, Olga Sorkine-Hornung, and others.
 
 Please see individual files for appropriate copyright notices.
