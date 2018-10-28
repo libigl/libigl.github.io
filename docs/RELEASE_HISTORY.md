@@ -87,19 +87,23 @@ and before switching from submodules to CMake external projects.
 List of changes related to this version:
 
 - The CMake build system has been rewritten to be more modular and modern.
-libigl modules are now available as CMake target, e.g. `igl::triangle` or
-`igl::opengl`. See the libigl-example-project for an example of typical usage.
+  libigl modules are now available as CMake target, e.g. `igl::triangle` or
+  `igl::opengl`. See the libigl-example-project for an example of typical
+  usage.
 
 - `igl/antweakbar` and `igl/opengl2` support has been removed from the CMake.
-The files are still available, but their use is discouraged.
+  The files are still available, but their use is discouraged.
 
 - The viewer has been refactored and now supports multiple meshes. See related
-tutorial entry for more information. The viewer files are now split according
-to their dependencies. E.g. `igl::viewer::Viewer` has been renamed
-`igl::opengl::glfw::Viewer`.
+  tutorial entry for more information. The viewer files are now split
+  according to their dependencies. E.g. `igl::viewer::Viewer` has been renamed
+  `igl::opengl::glfw::Viewer`.
 
 - NanoGui has been replaced by ImGui, and is now available as a viewer plugin
-instead of `#define`
+  instead of `#define`
+
+- Polyvector code has been moved to
+  [libdirectional](https://github.com/avaxman/libdirectional) (#630).
 
 
 ## Version 1.2 Changes
