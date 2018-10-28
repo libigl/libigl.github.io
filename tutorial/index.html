@@ -461,8 +461,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#geodesic" title="Geodesic" class="md-nav__link">
-    Geodesic
+  <a href="#exact-discrete-geodesic-distances" title="Exact Discrete Geodesic Distances" class="md-nav__link">
+    Exact Discrete Geodesic Distances
   </a>
   
 </li>
@@ -1003,6 +1003,19 @@
   <a href="#heat-method-for-fast-geodesic-distance-approximation" title="Heat Method for Fast Geodesic Distance Approximation" class="md-nav__link">
     Heat Method for Fast Geodesic Distance Approximation
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intrinsic-delaunay-triangulation" title="Intrinsic Delaunay Triangulation" class="md-nav__link">
+    Intrinsic Delaunay Triangulation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1599,8 +1612,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#geodesic" title="Geodesic" class="md-nav__link">
-    Geodesic
+  <a href="#exact-discrete-geodesic-distances" title="Exact Discrete Geodesic Distances" class="md-nav__link">
+    Exact Discrete Geodesic Distances
   </a>
   
 </li>
@@ -2141,6 +2154,19 @@
   <a href="#heat-method-for-fast-geodesic-distance-approximation" title="Heat Method for Fast Geodesic Distance Approximation" class="md-nav__link">
     Heat Method for Fast Geodesic Distance Approximation
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intrinsic-delaunay-triangulation" title="Intrinsic Delaunay Triangulation" class="md-nav__link">
+    Intrinsic Delaunay Triangulation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2776,12 +2802,21 @@ hints that we may consider <span><span class="MathJax_Preview">\mathbf{G}^T</spa
 since the Laplacian is the divergence of the gradient. Naturally, <span><span class="MathJax_Preview">\mathbf{G}^T</span><script type="math/tex">\mathbf{G}^T</script></span> is
 a <span><span class="MathJax_Preview">n \times md</span><script type="math/tex">n \times md</script></span> sparse matrix which takes vector values stored at triangle faces
 to scalar divergence values at vertices.</p>
-<h3 id="geodesic">Geodesic<a class="headerlink" href="#geodesic" title="Permanent link">&para;</a></h3>
-<p>The discrete geodesic distance between two points is the length of the shortest path between then restricted to the surface. For triangle meshes, such a path is made of a set of segments which can be either edges of the mesh or crossing a triangle.</p>
-<p>Libigl includes a wrapper for the exact geodesic algorithm <sup id="fnref:mitchell_1987"><a class="footnote-ref" href="#fn:mitchell_1987" rel="footnote">4</a></sup> developed by Danil Kirsanov (<a href="https://code.google.com/archive/p/geodesic/">https://code.google.com/archive/p/geodesic/</a>), exposing it through an Eigen-based API. The function 
+<h3 id="exact-discrete-geodesic-distances">Exact Discrete Geodesic Distances<a class="headerlink" href="#exact-discrete-geodesic-distances" title="Permanent link">&para;</a></h3>
+<p>The discrete geodesic distance between two points is the length of the shortest
+path between then restricted to the surface. For triangle meshes, such a path is
+made of a set of segments which can be either edges of the mesh or crossing a
+triangle.</p>
+<p>Libigl includes a wrapper for the exact geodesic algorithm <sup id="fnref:mitchell_1987"><a class="footnote-ref" href="#fn:mitchell_1987" rel="footnote">4</a></sup>
+developed by Danil Kirsanov (<a href="https://code.google.com/archive/p/geodesic/">https://code.google.com/archive/p/geodesic/</a>),
+exposing it through an Eigen-based API. The function 
 <div class="codehilite"><pre><span></span><span class="n">igl</span><span class="o">::</span><span class="n">exact_geodesic</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">F</span><span class="p">,</span><span class="n">VS</span><span class="p">,</span><span class="n">FS</span><span class="p">,</span><span class="n">VT</span><span class="p">,</span><span class="n">FT</span><span class="p">,</span><span class="n">d</span><span class="p">);</span>
 </pre></div>
-computes the closest geodesic distances of each vertex in VT or face in FT, from the source vertices VS or faces FS of the input mesh V,F. The output is writted in the vector d, which lists first the distances for the vertices in VT, and then for the faces in FT. For example, if you want to compute the distance from the vertex with id <code class="codehilite">vid</code>, to all vertices of F you can use:
+computes the closest geodesic distances of each vertex in VT or face in FT, from
+the source vertices VS or faces FS of the input mesh V,F. The output is written
+in the vector d, which lists first the distances for the vertices in VT, and
+then for the faces in FT. For example, if you want to compute the distance from
+the vertex with id <code class="codehilite">vid</code>, to all vertices of F you can use:
 <div class="codehilite"><pre><span></span><span class="n">Eigen</span><span class="o">::</span><span class="n">VectorXi</span> <span class="n">VS</span><span class="p">,</span><span class="n">FS</span><span class="p">,</span><span class="n">VT</span><span class="p">,</span><span class="n">FT</span><span class="p">;</span>
 <span class="c1">// The selected vertex is the source</span>
 <span class="n">VS</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
@@ -2791,8 +2826,9 @@ computes the closest geodesic distances of each vertex in VT or face in FT, from
 <span class="n">Eigen</span><span class="o">::</span><span class="n">VectorXd</span> <span class="n">d</span><span class="p">;</span>
 <span class="n">igl</span><span class="o">::</span><span class="n">exact_geodesic</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">F</span><span class="p">,</span><span class="n">VS</span><span class="p">,</span><span class="n">FS</span><span class="p">,</span><span class="n">VT</span><span class="p">,</span><span class="n">FT</span><span class="p">,</span><span class="n">d</span><span class="p">);</span>
 </pre></div></p>
-<figure><img alt="Example 206 allows to interactively pick the source vertex and displays the distance using a periodic color pattern." src="../images/geodesicdistance.jpg" /><figcaption><a href="https://github.com/libigl/libigl/tree/master/tutorial/206_GeodesicDistance/main.cpp">Example 206</a> allows to interactively pick the source vertex and displays the distance using a periodic color pattern.</figcaption>
-</figure>
+<p><img alt="Example 206 allows to
+interactively pick the source vertex and displays the distance using a periodic
+color pattern." src="../images/geodesicdistance.jpg" /></p>
 <h2 id="chapter-3-matrices-and-linear-algebra">Chapter 3: Matrices and linear algebra<a class="headerlink" href="#chapter-3-matrices-and-linear-algebra" title="Permanent link">&para;</a></h2>
 <p>Libigl relies heavily on the Eigen library for dense and sparse linear algebra
 routines. Besides geometry processing routines, libigl has linear algebra
@@ -5054,7 +5090,100 @@ for the value <code class="codehilite">isovalue</code> from an input scalar fiel
 <h3 id="implicit-function-meshing">Implicit Function Meshing<a class="headerlink" href="#implicit-function-meshing" title="Permanent link">&para;</a></h3>
 <p><em>Entry Missing</em></p>
 <h3 id="heat-method-for-fast-geodesic-distance-approximation">Heat Method for Fast Geodesic Distance Approximation<a class="headerlink" href="#heat-method-for-fast-geodesic-distance-approximation" title="Permanent link">&para;</a></h3>
-<p><em>Entry Missing</em></p>
+<p>In the [Exact Discrete Geodesic Distances][exactdiscretegeodesicdistances]
+example above, geodesic distances are computed <em>exactly</em>. This is an expensive
+operation: <span><span class="MathJax_Preview">O(n²)</span><script type="math/tex">O(n²)</script></span> for a mesh with <span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> edges. In 2013, Crane et al.
+<sup id="fnref:crane_2013"><a class="footnote-ref" href="#fn:crane_2013" rel="footnote">43</a></sup> proposed a method to compute <em>approximate</em> geodesic distances much
+faster by solving heat equation on the surface, filtering the result and then
+reconstructing a smooth solution by solving a Poisson equation. The method
+begins with the observation of Varadhan that the geodesic distance
+<span><span class="MathJax_Preview">d(\mathbf{x},\mathbf{y})</span><script type="math/tex">d(\mathbf{x},\mathbf{y})</script></span> between two points <span><span class="MathJax_Preview">\mathbf{x}</span><script type="math/tex">\mathbf{x}</script></span> and <span><span class="MathJax_Preview">\mathbf{y}</span><script type="math/tex">\mathbf{y}</script></span> is
+equal to the square root of the logarithm of the heat diffused from <span><span class="MathJax_Preview">\mathbf{x}</span><script type="math/tex">\mathbf{x}</script></span>
+to <span><span class="MathJax_Preview">\mathbf{y}</span><script type="math/tex">\mathbf{y}</script></span> after a time <span><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span>:</p>
+<p>\[
+d(\mathbf{x},\mathbf{y}) = \lim_{t→∞} \sqrt{ -4 t \log k_{t,\mathbf{x}} (\mathbf{y}) },
+\]
+where <span><span class="MathJax_Preview">k_{t,\mathbf{x}}</span><script type="math/tex">k_{t,\mathbf{x}}</script></span> is the <em>heat kernel</em>. We can think of this heat
+diffusion problem as placing a hot needle on <span><span class="MathJax_Preview">\mathbf{x}</span><script type="math/tex">\mathbf{x}</script></span> and then after <span><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span>
+seconds, measuring the temperature at point <span><span class="MathJax_Preview">\mathbf{y}</span><script type="math/tex">\mathbf{y}</script></span>.</p>
+<p>On triangle meshes we know how to solve the heat equation for any finite time <span><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span>:</p>
+<p>\[
+(-\mathbf{L}+\frac{1}{t}\mathbf{M}) \mathbf{u} = δ_{x},
+\]</p>
+<p>where <span><span class="MathJax_Preview">\mathbf{L} ∈ \mathbb{R}^{n×n}</span><script type="math/tex">\mathbf{L} ∈ \mathbb{R}^{n×n}</script></span> is the discrete Laplacian matrix,
+<span><span class="MathJax_Preview">\mathbf{M} ∈ \mathbb{R}^{n×n}</span><script type="math/tex">\mathbf{M} ∈ \mathbb{R}^{n×n}</script></span> is the discrete mass matrix, <span><span class="MathJax_Preview">\mathbf{u} ∈
+\mathbb{R}^n</span><script type="math/tex">\mathbf{u} ∈
+\mathbb{R}^n</script></span> are the resulting temperatures at each vertex, and <span><span class="MathJax_Preview">δ_x ∈
+\mathbb{R}^n</span><script type="math/tex">δ_x ∈
+\mathbb{R}^n</script></span> is a vector of all zeros except a one at the vertex at the source
+<span><span class="MathJax_Preview">\mathbf{x}</span><script type="math/tex">\mathbf{x}</script></span>.</p>
+<p>If we had sufficient numerical accuracy and precision, we could simply evaluate
+<span><span class="MathJax_Preview">\sqrt{-4 t \log u}</span><script type="math/tex">\sqrt{-4 t \log u}</script></span> for a small time parameter <span><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span>. The problem observed by
+Crane et al. is that our numerical accuracy of the <em>value</em> of <span><span class="MathJax_Preview">\mathbf{u}</span><script type="math/tex">\mathbf{u}</script></span> is
+far from sufficient. However, the <em>direction</em> of the gradient <span><span class="MathJax_Preview">∇ \mathbf{u}</span><script type="math/tex">∇ \mathbf{u}</script></span> is
+surprisingly accurate. Hence, their idea is to acquire the gradient of
+<span><span class="MathJax_Preview">\mathbf{u}</span><script type="math/tex">\mathbf{u}</script></span>, normalize these vectors to get a gradient <em>direction</em> (unit
+vector). And then solve a Poisson equation to integrate these directions into
+actual distance values.</p>
+<p>This method involves inverting <span><span class="MathJax_Preview">n×n</span><script type="math/tex">n×n</script></span> sparse matrices (a <span><span class="MathJax_Preview">O(n^{1.\cdots})</span><script type="math/tex">O(n^{1.\cdots})</script></span>
+operation), but if Cholesky factorizations are used then the factorization is
+precomputation that can be <em>reused</em> even if the source of the geodesic distances
+is changed. For a new source, only back-substitution needs to be performed.</p>
+<p>In libigl, you can compute approximate geodesic distances for a mesh (<code class="codehilite">V</code>,<code class="codehilite">F</code>)
+from a list of source vertex indices <code class="codehilite">gamma</code> into a vector <code class="codehilite">D</code> using this method
+via two steps:</p>
+<div class="codehilite"><pre><span></span><span class="nt">igl</span><span class="p">::</span><span class="nd">HeatGeodesicsData</span><span class="o">&lt;</span><span class="nt">double</span><span class="o">&gt;</span> <span class="nt">data</span><span class="o">;</span>
+<span class="nt">igl</span><span class="p">::</span><span class="nd">heat_geodesics_precompute</span><span class="o">(</span><span class="nt">V</span><span class="o">,</span><span class="nt">F</span><span class="o">,</span><span class="nt">data</span><span class="o">);</span>
+<span class="o">...</span>
+<span class="nt">igl</span><span class="p">::</span><span class="nd">heat_geodesics_solve</span><span class="o">(</span><span class="nt">data</span><span class="o">,</span><span class="nt">gamma</span><span class="o">,</span><span class="nt">D</span><span class="o">);</span>
+</pre></div>
+
+<p><img alt="(Example 716) loads a
+mesh and computes approximate geodesics distances from wherever the user
+clicks." src="../images/heat-geodesic-beetle.gif" /></p>
+<h4 id="intrinsic-delaunay-triangulation">Intrinsic Delaunay Triangulation<a class="headerlink" href="#intrinsic-delaunay-triangulation" title="Permanent link">&para;</a></h4>
+<p>The original heat method for geodesic distances works well on regular, unbiased
+meshes: i.e., where the finite-element cotangent and mass matrices are
+well-behaved. For poor quality meshes, however, this method may show arbitrarily
+poor results. Increasing the time parameter <span><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span> can reduce this instability but
+but simultaneously smoothes the resulting approximate distances.</p>
+<p>Instead, one avenue of improvement is to employ the so-called <em>intrinsic
+Delaunay triangulation</em> discrete Laplace operator <sup id="fnref:bobenko_2005"><a class="footnote-ref" href="#fn:bobenko_2005" rel="footnote">44</a></sup>.</p>
+<p>Since the cotangent Laplacian only depends on the edge-lengths of a triangle
+mesh, this new operator will be constructed by <em>intrinsically</em> flipping edges
+and recording changes to edge-lengths. Edges are flipped until every edge is
+locally Delaunay (i.e., its corresponding cotangent weights are positive).</p>
+<p>You can compute the intrinsic Delaunay triangulation of mesh (<code class="codehilite">V</code>,<code class="codehilite">F</code>) in libigl
+using:</p>
+<div class="codehilite"><pre><span></span><span class="nt">Eigen</span><span class="p">::</span><span class="nd">MatrixXd</span> <span class="nt">l</span><span class="o">;</span>
+<span class="nt">igl</span><span class="p">::</span><span class="nd">edge_lengths</span><span class="o">(</span><span class="nt">V</span><span class="o">,</span><span class="nt">F</span><span class="o">,</span><span class="nt">l</span><span class="o">);</span>
+<span class="nt">Eigen</span><span class="p">::</span><span class="nd">MatrixXd</span> <span class="nt">l_intrinsic</span><span class="o">;</span>
+<span class="nt">Eigen</span><span class="p">::</span><span class="nd">MatrixXi</span> <span class="nt">F_intrinsic</span><span class="o">;</span>
+<span class="nt">igl</span><span class="p">::</span><span class="nd">intrinsic_delaunay_triangulation</span><span class="o">(</span><span class="nt">l</span><span class="o">,</span><span class="nt">F</span><span class="o">,</span><span class="nt">l_intrinsic</span><span class="o">,</span><span class="nt">F_intrinsic</span><span class="o">);</span>
+</pre></div>
+
+<p>Notice that the mesh vertex positions <code class="codehilite">V</code> are not used, since this is a purely
+intrinsic operation. The method inputs and outputs edge-lengths and triangle
+indices.</p>
+<p>You may construct the intrinsic Delaunay cotangent Laplacian matrix directly
+using:</p>
+<div class="codehilite"><pre><span></span><span class="nt">Eigen</span><span class="p">::</span><span class="nd">SparseMatrix</span><span class="o">&lt;</span><span class="nt">double</span><span class="o">&gt;</span> <span class="nt">L</span><span class="o">;</span>
+<span class="nt">igl</span><span class="p">::</span><span class="nd">intrinsic_delaunay_cotmatrix</span><span class="o">(</span><span class="nt">V</span><span class="o">,</span><span class="nt">F</span><span class="o">,</span><span class="nt">L</span><span class="o">);</span>
+</pre></div>
+
+<p>And finally you can compute heat geodesics using this matrix via:</p>
+<div class="codehilite"><pre><span></span><span class="nt">igl</span><span class="p">::</span><span class="nd">HeatGeodesicsData</span><span class="o">&lt;</span><span class="nt">double</span><span class="o">&gt;</span> <span class="nt">data</span><span class="o">;</span>
+<span class="nt">data</span><span class="p">.</span><span class="nc">use_intrinsic_delaunay</span> <span class="o">=</span> <span class="nt">true</span><span class="o">;</span>
+<span class="nt">igl</span><span class="p">::</span><span class="nd">heat_geodesics_precompute</span><span class="o">(</span><span class="nt">V</span><span class="o">,</span><span class="nt">F</span><span class="o">,</span><span class="nt">data</span><span class="o">);</span>
+<span class="o">...</span>
+<span class="nt">igl</span><span class="p">::</span><span class="nd">heat_geodesics_solve</span><span class="o">(</span><span class="nt">data</span><span class="o">,</span><span class="nt">gamma</span><span class="o">,</span><span class="nt">D</span><span class="o">);</span>
+</pre></div>
+
+<p><img alt="The _standard_ FEM Laplacian igl::cotmatrix results in an unstable geodesic
+distance approximation that is non-monotonic (left), in the presence of a poor
+quality and/or biased mesh (zoom-in center). Switching to the intrinsic Delaunay
+triangulation's cotagent Laplacian igl::intrinsic_delaunay_cotmatrix improves
+things and ensures monotonicity (right)" src="../images/heat-geodesic-peaks.png" /></p>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <!-- Chapter 2 -->
 
@@ -5196,6 +5325,12 @@ for the value <code class="codehilite">isovalue</code> from an input scalar fiel
 </li>
 <li id="fn:treece_1999">
 <p>G.M. Treece, R.W. Prager, and A.H.Gee <a href="https://www.sciencedirect.com/science/article/pii/S009784939900076X">Regularised marching tetrahedra: improved iso-surface extraction</a>, 1999.&#160;<a class="footnote-backref" href="#fnref:treece_1999" rev="footnote" title="Jump back to footnote 42 in the text">&#8617;</a></p>
+</li>
+<li id="fn:crane_2013">
+<p>Keenan Crane, Clarisse Weischedel, and Max Wardetzky. <a href="https://www.google.com/search?q=geodesics+in+heat+a+new+approach+to+computing+distance+based+on+heat+flow">Geodesics in Heat: A New Approach to Computing Distance Based on Heat Flow</a>, 2013.&#160;<a class="footnote-backref" href="#fnref:crane_2013" rev="footnote" title="Jump back to footnote 43 in the text">&#8617;</a></p>
+</li>
+<li id="fn:bobenko_2005">
+<p>Alexander I. Bobenko and Boris A. Springborn. <a href="https://www.google.com/search?q=a+discrete+laplace-beltrami+operator+for+simplicial+surfaces">A discrete Laplace-Beltrami operator for simplicial surfaces</a>, 2005.&#160;<a class="footnote-backref" href="#fnref:bobenko_2005" rev="footnote" title="Jump back to footnote 44 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
