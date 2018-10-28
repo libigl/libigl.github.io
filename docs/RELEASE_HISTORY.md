@@ -1,6 +1,6 @@
 # Libigl version tracking
 
-??? info "Recap Array"
+??? info "Summary Table"
 
       Version | Short description
       --------|----------------------------------------------------------------------
@@ -42,6 +42,10 @@
       0.1.5   | Compilation on windows, bug fix for compilation with cygwin
       0.1.1   | Alpha release with core functions, extras, examples
 
+## Upcoming Changes
+
+- Fixed an issue with transparent window on macOS (#953) which was introduced in v2.0.0
+
 ## Version 2.0.0 Changes
 
 This release is a result of the 2018 libigl hackathon at NYU. The major changes are:
@@ -60,6 +64,13 @@ This release is a result of the 2018 libigl hackathon at NYU. The major changes 
 - A legacy version with SHA hashes matching old repo is hosted at https://github.com/libigl/libigl-legacy.
 
 The **major upshot** is that the old `git clone --recursive` that resulted in a 1.8GB `libigl/` directory is now a `git clone ` that results in 16.5MB, more than a **100x** reduction in size. 
+
+Name changes:
+
+Old                                     | New
+--------------------------------------- | -----------------------------------
+`igl::components`                       | `igl::vertex_components`
+`igl::slice_tets`                       | `igl::marching_tets`
 
 ## Version 1.3.2 Changes
 

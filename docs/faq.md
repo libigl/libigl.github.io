@@ -35,7 +35,7 @@
 
 ??? faq "What's the deal with CGAL and GCC 4.8?"
     It has come to our attention that CGAL does not work properly with GCC 4.8.
-    Please read see [#650](https://github.com/libigl/libigl/issues/650), and in particular [this thread](http://cgal-discuss.949826.n4.nabble.com/Bugs-in-AABBTree-td4660077.html), for more detailed information. _[Jérémie]_
+    Please read see #650, and in particular [this thread](http://cgal-discuss.949826.n4.nabble.com/Bugs-in-AABBTree-td4660077.html), for more detailed information. _[Jérémie]_
 
 ??? faq "Why do a get a compilation error when writing `contexpr a = 1.0 / 2.0;`?"
     You are likely facing this issue because you are using CGAL 4.12+ with gcc. Starting from 4.12, CGAL now properly supports CMake. In particular, it will propagates flags such as `-frounding-math`, which will cause gcc to produce a compilation error on the code above.
