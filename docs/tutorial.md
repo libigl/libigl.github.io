@@ -3177,7 +3177,7 @@ _Entry Missing_
 
 ### Heat Method for Fast Geodesic Distance Approximation
 
-In the [Exact Discrete Geodesic Distances][exactdiscretegeodesicdistances]
+In the [Exact Discrete Geodesic Distances](#exact-discrete-geodesic-distances)
 example above, geodesic distances are computed _exactly_. This is an expensive
 operation: $O(n²)$ for a mesh with $n$ edges. In 2013, Crane et al.
 [^crane_2013] proposed a method to compute _approximate_ geodesic distances much
