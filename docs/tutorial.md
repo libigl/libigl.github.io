@@ -3177,6 +3177,9 @@ _Entry Missing_
 
 ### Heat Method for Fast Geodesic Distance Approximation
 
+!!! info
+    The content of this tutorial is available on the **dev** branch of the repository, and will be merged in the **master** branch the next version of libigl.
+
 In the [Exact Discrete Geodesic Distances](#exact-discrete-geodesic-distances)
 example above, geodesic distances are computed _exactly_. This is an expensive
 operation: $O(n²)$ for a mesh with $n$ edges. In 2013, Crane et al.
