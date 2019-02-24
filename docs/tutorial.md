@@ -170,8 +170,8 @@ It is a standalone application that loads a mesh and uses the viewer to
 render it.
 
 ```cpp
-##include <igl/readOFF.h>
-##include <igl/opengl/glfw/Viewer.h>
+#include <igl/readOFF.h>
+#include <igl/opengl/glfw/Viewer.h>
 
 Eigen::MatrixXd V;
 Eigen::MatrixXi F;
@@ -535,9 +535,9 @@ It is easy to compute this on a discrete triangle mesh in libigl using the
 cotangent Laplace-Beltrami operator [^meyer_2003].
 
 ```cpp
-##include <igl/cotmatrix.h>
-##include <igl/massmatrix.h>
-##include <igl/invert_diag.h>
+#include <igl/cotmatrix.h>
+#include <igl/massmatrix.h>
+#include <igl/invert_diag.h>
 ...
 MatrixXd HN;
 SparseMatrix<double> L,M,Minv;
@@ -2072,7 +2072,7 @@ add serialization to your applications.
 To de-/serialize a set of variables use the following method:
 
 ```cpp
-##include "igl/serialize.h"
+#include "igl/serialize.h"
 
 bool b = true;
 unsigned int num = 10;
@@ -2105,7 +2105,7 @@ method.
 Assume that the state of your application is a mesh and a set of integer ids:
 
 ```cpp
-##include "igl/serialize.h"
+#include "igl/serialize.h"
 
 struct State : public igl::Serializable
 {
@@ -2176,7 +2176,7 @@ option to create a partial binary serialization of your data by using the binary
 parameter, exposed in the function `serialize_xml()`:
 
 ```cpp
-##include "igl/xml/serialize_xml.h"
+#include "igl/xml/serialize_xml.h"
 
 int number;
 
