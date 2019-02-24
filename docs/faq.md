@@ -60,3 +60,10 @@
 
 ??? faq "How to draw text in the viewer?"
     See #876.
+
+??? faq "Issues with multi-threading and cgal::CSGTree"
+    There is a known race condition that can occur in rare occasions when doing CSG operations with duplicated nodes in the CSG tree, e.g.,
+    ```cpp
+    igl::copyleft::cgal::CSGTree inter(tree, tree, "i");
+    ```
+    See an detailed explanation of the problem [here](https://github.com/libigl/libigl/pull/996#issuecomment-450543678), and please use [this thread](https://github.com/libigl/libigl/issues/1086) to discuss the bug if it affects you. So far the problem has only been observed on macOS.
