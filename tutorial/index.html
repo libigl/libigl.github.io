@@ -821,13 +821,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#locally-injective-maps" title="Locally Injective Maps" class="md-nav__link">
-    Locally Injective Maps
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#boolean-operations-on-meshes" title="Boolean operations on meshes" class="md-nav__link">
     Boolean operations on meshes
   </a>
@@ -1235,7 +1228,7 @@
     <label class="md-nav__link" for="nav-5-3">
       File Formats
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="4">
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
       <label class="md-nav__title" for="nav-5-3">
         File Formats
       </label>
@@ -1966,13 +1959,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#locally-injective-maps" title="Locally Injective Maps" class="md-nav__link">
-    Locally Injective Maps
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#boolean-operations-on-meshes" title="Boolean operations on meshes" class="md-nav__link">
     Boolean operations on meshes
   </a>
@@ -2335,8 +2321,8 @@ properties and additional debugging information.</p>
 for all the examples that will be used in the tutorial.
 It is a standalone application that loads a mesh and uses the viewer to
 render it.</p>
-<div class="codehilite"><pre><span></span><span class="cp">##include &lt;igl/readOFF.h&gt;</span>
-<span class="cp">##include &lt;igl/opengl/glfw/Viewer.h&gt;</span>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;igl/readOFF.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;igl/opengl/glfw/Viewer.h&gt;</span><span class="cp"></span>
 
 <span class="n">Eigen</span><span class="o">::</span><span class="n">MatrixXd</span> <span class="n">V</span><span class="p">;</span>
 <span class="n">Eigen</span><span class="o">::</span><span class="n">MatrixXi</span> <span class="n">F</span><span class="p">;</span>
@@ -2638,9 +2624,9 @@ normal:</p>
 <p><span><span class="MathJax_Preview">-\Delta \mathbf{x} = H \mathbf{n}.</span><script type="math/tex">-\Delta \mathbf{x} = H \mathbf{n}.</script></span></p>
 <p>It is easy to compute this on a discrete triangle mesh in libigl using the
 cotangent Laplace-Beltrami operator <sup id="fnref2:meyer_2003"><a class="footnote-ref" href="#fn:meyer_2003" rel="footnote">3</a></sup>.</p>
-<div class="codehilite"><pre><span></span><span class="cp">##include &lt;igl/cotmatrix.h&gt;</span>
-<span class="cp">##include &lt;igl/massmatrix.h&gt;</span>
-<span class="cp">##include &lt;igl/invert_diag.h&gt;</span>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;igl/cotmatrix.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;igl/massmatrix.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;igl/invert_diag.h&gt;</span><span class="cp"></span>
 <span class="p">...</span>
 <span class="n">MatrixXd</span> <span class="n">HN</span><span class="p">;</span>
 <span class="n">SparseMatrix</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">L</span><span class="p">,</span><span class="n">M</span><span class="p">,</span><span class="n">Minv</span><span class="p">;</span>
@@ -4131,7 +4117,7 @@ with external libraries). Libigl bundles a simple and self-contained binary and
 XML serialization framework, that drastically reduces the overhead required to
 add serialization to your applications.</p>
 <p>To de-/serialize a set of variables use the following method:</p>
-<div class="codehilite"><pre><span></span><span class="cp">##include &quot;igl/serialize.h&quot;</span>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;igl/serialize.h&quot;</span><span class="cp"></span>
 
 <span class="kt">bool</span> <span class="n">b</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
 <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
@@ -4161,7 +4147,7 @@ currently not supported.  To make user defined types serializable, just derive
 from <code class="codehilite">igl::Serializable</code> and trivially implementing the <code class="codehilite">InitSerialization</code>
 method.</p>
 <p>Assume that the state of your application is a mesh and a set of integer ids:</p>
-<div class="codehilite"><pre><span></span><span class="cp">##include &quot;igl/serialize.h&quot;</span>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;igl/serialize.h&quot;</span><span class="cp"></span>
 
 <span class="k">struct</span> <span class="nl">State</span> <span class="p">:</span> <span class="k">public</span> <span class="n">igl</span><span class="o">::</span><span class="n">Serializable</span>
 <span class="p">{</span>
@@ -4224,7 +4210,7 @@ hand we provide a serialization to XML files which is based on the library
 <a href="https://github.com/leethomason/tinyxml2">tinyxml2</a>.  There you also have the
 option to create a partial binary serialization of your data by using the binary
 parameter, exposed in the function <code class="codehilite">serialize_xml()</code>:</p>
-<div class="codehilite"><pre><span></span><span class="cp">##include &quot;igl/xml/serialize_xml.h&quot;</span>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;igl/xml/serialize_xml.h&quot;</span><span class="cp"></span>
 
 <span class="kt">int</span> <span class="n">number</span><span class="p">;</span>
 
@@ -4423,16 +4409,6 @@ memory buffer using the function, <code class="codehilite">igl::opengl::ViewerCo
 
 <p>In <a href="https://github.com/libigl/libigl/tree/master/tutorial/607_ScreenCapture/main.cpp">Example 607</a> a scene is rendered in a temporary
 png and used to texture a quadrilateral.</p>
-<h3 id="locally-injective-maps">Locally Injective Maps<a class="headerlink" href="#locally-injective-maps" title="Permanent link">&para;</a></h3>
-<p>Extreme deformations or parametrizations with high-distortion might flip
-elements.  This is undesirable in many applications, and it is possible to
-avoid it by introducing a non-linear constraints that guarantees that the area
-of every element remain positive.</p>
-<p>Libigl can be used to compute Locally Injective Maps <sup id="fnref:schuller_2013"><a class="footnote-ref" href="#fn:schuller_2013" rel="footnote">31</a></sup> using a variety of
-deformation energies. A simple deformation of a 2D grid is computed in <a href="https://github.com/libigl/libigl/tree/master/tutorial/608_LIM/main.cpp">Example
-608</a>.</p>
-<figure><img alt="A mesh (left) deformed using Laplacian editing (middle) and with Laplacian editing plus the anti-flipping constraints (right)." src="../images/608_LIM.png" /><figcaption>A mesh (left) deformed using Laplacian editing (middle) and with Laplacian editing plus the anti-flipping constraints (right).</figcaption>
-</figure>
 <h3 id="boolean-operations-on-meshes">Boolean operations on meshes<a class="headerlink" href="#boolean-operations-on-meshes" title="Permanent link">&para;</a></h3>
 <p>Constructive solid geometry (CSG) is a technique to define a complex surface as
 the result of a number of set operations on solid regions of space: union,
