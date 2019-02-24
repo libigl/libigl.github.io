@@ -44,11 +44,13 @@
 
 ## Upcoming Changes
 
-- Fixed an issue with transparent window on macOS which was introduced in v2.0.0 (#953)
+- Fixed an issue with transparent window on macOS that was introduced in v2.0.0 (#953)
 - New Heat Geodesics feature (#988)
 - Fixed current python bindings (#1008)
-- Switch from Google Test to Catch2 (#961), and added various unit tests
+- Switched from Google Test to Catch2 (#961), and added various unit tests
 - Updated dependencies: Embree 3 (#947), GLFW (#977), ImGui (#1039)
+- Removed LIM tutorial (#1014, #1012)
+- Extended `boundary_facets` with outputs revealing which element facet comes from (#1067)
 - Various code cleanup and compilation fixes
 
 ## Version 2.0.0 Changes

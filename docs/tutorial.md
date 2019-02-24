@@ -2425,20 +2425,6 @@ igl::png::writePNG(R,G,B,A,"out.png");
 In [Example 607]({{ repo_url }}/tutorial/607_ScreenCapture/main.cpp) a scene is rendered in a temporary
 png and used to texture a quadrilateral.
 
-
-### Locally Injective Maps
-
-Extreme deformations or parametrizations with high-distortion might flip
-elements.  This is undesirable in many applications, and it is possible to
-avoid it by introducing a non-linear constraints that guarantees that the area
-of every element remain positive.
-
-Libigl can be used to compute Locally Injective Maps [^schuller_2013] using a variety of
-deformation energies. A simple deformation of a 2D grid is computed in [Example
-608]({{ repo_url }}/tutorial/608_LIM/main.cpp).
-
-![A mesh (left) deformed using Laplacian editing (middle) and with Laplacian editing plus the anti-flipping constraints (right).](images/608_LIM.png)
-
 ### Boolean operations on meshes
 
 Constructive solid geometry (CSG) is a technique to define a complex surface as
