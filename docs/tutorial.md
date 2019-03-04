@@ -3032,7 +3032,15 @@ on Pardiso is available
 
 ### Simplicial Complex Augmentation Framework for Bijective Maps
 
-_Entry Missing_
+
+The Simplicial Complex Augmentation Framework  [^jiang_2017] algorithm allows to
+compute bijective maps efficiently and robustly.
+The algorithm constructed a scaffold structure to take advantage of efficient locally injective mapping algorithms like SLIM, guarantees a overlapping free map with low distortion while being efficient and scalable.
+
+[Example 710]({{ repo_url }}/tutorial/710_SCAF/main.cpp) contains a demo of bijective parameterizing a camel mesh.
+
+![A bijective parametrization of a mesh
+using the SCAF algorithm in 10 iterations.](images/simplicial_complex_augmentation_framework.png)
 
 ### Subdivision surfaces
 
@@ -3373,4 +3381,5 @@ repository](https://github.com/libigl/libigl).
 [^treece_1999]: G.M. Treece, R.W. Prager, and A.H.Gee [Regularised marching tetrahedra: improved iso-surface extraction](https://www.sciencedirect.com/science/article/pii/S009784939900076X), 1999.
 [^crane_2013]: Keenan Crane, Clarisse Weischedel, and Max Wardetzky. [Geodesics in Heat: A New Approach to Computing Distance Based on Heat Flow](https://www.google.com/search?q=geodesics+in+heat+a+new+approach+to+computing+distance+based+on+heat+flow), 2013.
 [^bobenko_2005]: Alexander I. Bobenko and Boris A. Springborn. [A discrete Laplace-Beltrami operator for simplicial surfaces](https://www.google.com/search?q=a+discrete+laplace-beltrami+operator+for+simplicial+surfaces), 2005.
+[^jiang_2017]: Zhongshi Jiang, Scott Schaefer, Daniele Panozzo. [SCAF: Simplicial Complex Augmentation Framework for Bijective Maps](https://doi.org/10.1145/3130800.3130895), 2017
 
