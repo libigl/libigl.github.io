@@ -1864,7 +1864,7 @@ parametrization since the starting point must be a 2D mesh. In [Example
 parametrization. Similarly to LSCM, the boundary is free to deform to minimize
 the distortion.
 
-![([Example 503]({{ repo_url }}/tutorial/502_ARAPParam/main.cpp)) As-Rigid-As-Possible parametrization. (left) mesh with texture, (right) UV parametrization with texture](images/503_ARAPParam.png)
+![([Example 503]({{ repo_url }}/tutorial/503_ARAPParam/main.cpp)) As-Rigid-As-Possible parametrization. (left) mesh with texture, (right) UV parametrization with texture](images/503_ARAPParam.png)
 
 ### N-rotationally symmetric tangent fields
 
