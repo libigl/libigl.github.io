@@ -269,7 +269,7 @@ few labs/companies/institutions using libigl:
  - [University of Wisconsin-Eau Claire](http://www.uwec.edu/computer-science/), USA
  - [Università della Svizzera Italiana](http://www.usi.ch/en), Switzerland
  - [Université Toulouse III Paul Sabatier](http://www.univ-tlse3.fr/), France
- - [Zhejiang University](http://www.math.zju.edu.cn/cagd/), China
+ - [Zhejiang University](http://www.cad.zju.edu.cn/english.html), China
 
 
 ## Contact
