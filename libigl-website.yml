@@ -1,0 +1,11 @@
+name: libigl-website
+channels:
+  - conda-forge
+dependencies:
+  - mkdocs=1.0.4
+  - pip=19.1.1
+  - pip:
+    - mkdocs-material==4.3.0
+    - pymdown-extensions==6.0.0
+    - "--editable=git+https://github.com/jdumas/figureAltCaption@52ace7cbfb165820df890cd6065b27988cfc0ca4#egg=figureAltCaption-master"
+    - "--editable=git+https://github.com/libigl/libigl-website-plugins.git@7e0d9879c42a8e2741f07cd89f0cc055a205b38c#egg=libigl-website-plugins-master"

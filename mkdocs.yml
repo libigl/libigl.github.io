@@ -25,10 +25,12 @@ markdown_extensions:
   - admonition
   - toc:
       permalink: true
-  - scripts.figureAltCaption
+  - figureAltCaption
   - markdown.extensions.smarty
   - markdown.extensions.toc:
       permalink: true
+  - markdown.extensions.wikilinks:
+      base_url: https://github.com/libigl/libigl/tree/master
   - pymdownx.arithmatex
   - pymdownx.betterem:
       smart_enable: all
@@ -47,7 +49,7 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
-  - scripts.fixPaths:
+  - urlprocessor:
       variables:
         repo_url: 'https://github.com/libigl/libigl/tree/master'
 extra_javascript:
