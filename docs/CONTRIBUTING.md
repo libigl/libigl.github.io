@@ -10,7 +10,7 @@ Before opening an issue on creating a pull request, please check the following:
 
     - Make sure you read the information contained in the libigl
       [**homepage**](https://github.com/libigl/libigl) as well as the
-      [**tutorial**](http://libigl.github.io/libigl/tutorial).
+      [**tutorial**](https://libigl.github.io/tutorial).
 
 ## General Issues
 
