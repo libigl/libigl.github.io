@@ -24,7 +24,7 @@ stored in an n-by-3 matrix of vertex positions `V` and an m-by-3 matrix of
 triangle indices `F`.
 
 _Optionally_ the library may also be
-[pre-compiled](https://libigl.github.io/libigl/static-library/) into a
+[pre-compiled](https://libigl.github.io/static-library/) into a
 statically linked library, for faster compile times with your projects. This
 only effects compile time (run-time performance and behavior is identical). If
 in doubt, use the header-only default mode: (i.e. just include the headers you
@@ -40,7 +40,7 @@ and Windows with Visual Studio 2015 Community Edition.
 ## Tutorial
 
 As of version 1.0, libigl includes an introductory
-[tutorial](https://libigl.github.io/libigl/tutorial) that covers many
+[tutorial](https://libigl.github.io/tutorial) that covers many
 functionalities.
 
 ## libigl Example Project
@@ -53,9 +53,9 @@ way of starting a new personal project using libigl.
 ## Coding Guidelines and Tips
 
 libigl follows strict coding guidelines, please take a look
-[here](https://libigl.github.io/libigl/style-guidelines) before submitting your
+[here](https://libigl.github.io/style-guidelines) before submitting your
 pull requests. We also have a set of [general coding
-tips](https://libigl.github.io/libigl/coding-guidelines) on how to code a
+tips](https://libigl.github.io/coding-guidelines) on how to code a
 geometry processing research project.
 
 ## Installation
@@ -108,7 +108,7 @@ Hello, mesh:
 Dependencies are on a per-include basis and the majority of the functions in
 libigl depends only on the [Eigen](http://eigen.tuxfamily.org) library.
 
-For more information see our [tutorial](https://libigl.github.io/libigl/tutorial).
+For more information see our [tutorial](https://libigl.github.io/tutorial).
 
 ### Optional Dependencies
 
@@ -198,7 +198,7 @@ for more information about unit testing in libigl.
 If you are interested in joining development, please fork the repository and
 submit a [pull request](https://help.github.com/articles/using-pull-requests/)
 with your changes. libigl follows strict coding guidelines, please take a look
-at our  [style guidelines](https://libigl.github.io/libigl/style-guidelines)
+at our  [style guidelines](https://libigl.github.io/style-guidelines)
 before submitting your pull requests.
 
 ## License
@@ -218,7 +218,7 @@ BibTeX entry:
 @misc{libigl,
   title = {{libigl}: A simple {C++} geometry processing library},
   author = {Alec Jacobson and Daniele Panozzo and others},
-  note = {https://libigl.github.io/libigl/},
+  note = {https://libigl.github.io/},
   year = {2018},
 }
 ```
