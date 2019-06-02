@@ -422,6 +422,7 @@ field. By default the index is set to `0`, so in the typical case of a single me
 and only mesh.
 
 ![([Example 107]({{ repo_url }}/tutorial/107_MultipleMeshes/main.cpp)) The `igl::opengl::glfw::Viewer` can render multiple meshes, each with its own attributes like colors.](images/multiple-meshes.png)
+
 ## Chapter 2: Discrete Geometric Quantities and Operators
 
 This chapter illustrates a few discrete quantities that libigl can compute on a
