@@ -51,9 +51,11 @@
 ## Version 2.1.0 Changes (Upcoming Version)
 
 - Fixed an issue with transparent window on macOS that was introduced in v2.0.0 (#953)
-- New Heat Geodesics feature (#988, #1140)
+- New Heat Geodesics feature (#988, #1140). See also tutorial 716.
 - Fixed current python bindings (#1008)
 - Added wrapper around Shewchuk's predicates (#1163)
+- Added tutorial 714 for marching tets (#716)
+- Added sparse voxel grids (#937, #942) and tutorial 715 for meshing implicit functions.
 - Switched from Google Test to Catch2 (#961), and added various unit tests
 - Updated dependencies: Embree 3 (#947), GLFW (#977, #1153), ImGui (#1039), std-image (#1072)
 - libigl now also compiles with Eigen 3.3 (#1110).
