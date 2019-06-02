@@ -1,9 +1,15 @@
-# Libigl version tracking
+<!-- Hide h3+ from toc  -->
+<style>.md-nav--secondary .md-nav__list .md-nav__list { display: none }</style>
 
-??? info "Summary Table"
+# Changelog
+
+## Summary Table
+
+??? abstract "Click to unroll."
 
       Version | Short description
       --------|----------------------------------------------------------------------
+      2.1.0   | Various improvements and bug fixes, updated dependencies
       2.0.0   | Lighter, simpler CMake build, rewritten history
       1.3.3   | Switched the build system from submodules to CMake external projects.
       1.3.2   | After merging PRs in the 2018 hackaton
@@ -42,15 +48,20 @@
       0.1.5   | Compilation on windows, bug fix for compilation with cygwin
       0.1.1   | Alpha release with core functions, extras, examples
 
-## Upcoming Changes
+## Version 2.1.0 Changes (Upcoming Version)
 
 - Fixed an issue with transparent window on macOS that was introduced in v2.0.0 (#953)
-- New Heat Geodesics feature (#988)
+- New Heat Geodesics feature (#988, #1140)
 - Fixed current python bindings (#1008)
+- Added wrapper around Shewchuk's predicates (#1163)
 - Switched from Google Test to Catch2 (#961), and added various unit tests
-- Updated dependencies: Embree 3 (#947), GLFW (#977), ImGui (#1039)
+- Updated dependencies: Embree 3 (#947), GLFW (#977, #1153), ImGui (#1039), std-image (#1072)
+- libigl now also compiles with Eigen 3.3 (#1110).
 - Removed LIM tutorial (#1014, #1012)
 - Extended `boundary_facets` with outputs revealing which element facet comes from (#1067)
+- Extended `igl::cat` functionalities (#1108) 
+- Use `std::shuffle` instead of `std::random_shuffle` in `igl/randperm` (#1062)
+- Fixed an Eigen alignment issue in the viewer (#1029)
 - Various code cleanup and compilation fixes
 
 ## Version 2.0.0 Changes

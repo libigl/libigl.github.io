@@ -423,6 +423,47 @@ and only mesh.
 
 ![([Example 107]({{ repo_url }}/tutorial/107_MultipleMeshes/main.cpp)) The `igl::opengl::glfw::Viewer` can render multiple meshes, each with its own attributes like colors.](images/multiple-meshes.png)
 
+### Multiple Views
+
+!!! info
+    The content of this tutorial is available on the **dev** branch of the repository, and will be merged in the **master** branch the next version of libigl.
+
+Libigl's `igl::opengl::glfw::Viewer` provides basic support for rendering meshes with multiple views.
+
+A new view core can be added to the viewer using the `Viewer::append_core()` method.
+There can be a maximum of 31 cores created through the life of any viewer.
+Each core is assigned an `unsigned int` **id** that is guaranteed to be unique.
+A core can be accessed by its id calling the `Viewer::core(id)` method.
+
+When there are more than one view core, the user is responsible for specifying each
+viewport's size and position by setting their `viewport` attribute. The user must also
+indicates how to resize each viewport when the size of the window changes. For example:
+
+```cpp
+viewer.callback_post_resize = [&](igl::opengl::glfw::Viewer &v, int w, int h) {
+  v.core( left_view).viewport = Eigen::Vector4f(0, 0, w / 2, h);
+  v.core(right_view).viewport = Eigen::Vector4f(w / 2, 0, w - (w / 2), h);
+  return true;
+};
+```
+
+Note that the viewport currently hovered by the mouse can be selected using the
+`Viewer::selected_core_index()` method, and the selected view core can then be
+accessed by calling `viewer.core_list[viewer.selected_core_index]`.
+
+Finally, the visibility of a mesh on a given view core is controlled by a bitmask flag per mesh.
+This property can be easily controlled by calling the method
+
+```cpp
+viewer.data(mesh_id).set_visible(false, view_id);
+```
+
+When appending a new mesh or a new view core, an optional argument controls the visibility
+of the existing objects with respect to the new mesh/view. Please refer to the documentation
+of `Viewer::append_mesh()` and `Viewer::append_core()` for more details.
+
+![([Example 108]({{ dev_url }}/tutorial/108_MultipleViews/main.cpp)) The `igl::opengl::glfw::Viewer` can render the same scene using multiple views, each with its own attributes like colors, and individual mesh visibility.](images/108_MultipleViews.png)
+
 ## Chapter 2: Discrete Geometric Quantities and Operators
 
 This chapter illustrates a few discrete quantities that libigl can compute on a
@@ -3230,7 +3271,7 @@ igl::heat_geodesics_precompute(V,F,data);
 igl::heat_geodesics_solve(data,gamma,D);
 ```
 
-![([Example 716]({{ repo_url }}/tutorial/716_HeatGeodesics/main.cpp)) loads a
+![([Example 716]({{ dev_url }}/tutorial/716_HeatGeodesics/main.cpp)) loads a
 mesh and computes approximate geodesics distances from wherever the user
 clicks.](images/heat-geodesic-beetle.gif)
 
