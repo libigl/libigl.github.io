@@ -3330,6 +3330,82 @@ quality and/or biased mesh (zoom-in center). Switching to the intrinsic Delaunay
 triangulation's cotagent Laplacian `igl::intrinsic_delaunay_cotmatrix` improves
 things and ensures monotonicity (right)](images/heat-geodesic-peaks.png)
 
+### Fast Winding Number for Soups and Clouds
+
+!!! info
+    The content of this tutorial is available on the **dev** branch of the repository, and will be merged in the **master** branch the next version of libigl.
+
+In 2018, Barill et al. [^barill_2018] demonstrated how to significantly
+expediate the computation of the [generalized winding
+numbers][generalizedwindingnumber] mentioned above. The original definition of
+generalized winding numbers for triangle meshes is also extended to (oriented) point
+clouds.
+
+#### Soups
+
+For triangle soups, the exact divide-and-conquer approach of [^jacobson_2013]
+_ideally_ scales logarithmically $O(\log{n})$ in the number of triangles.
+However, this method has failure modes where the computation becomes linear
+$O(n)$. This can be dramatically improved with a [tree
+method](https://en.wikipedia.org/wiki/Barnes–Hut_simulation) similar to those
+used in n-body graviational system simulations or electrostatics problems. The
+result is approximate, but much more closely follows a $O(\log{n})$  trend and
+with much smaller constant factors.
+
+![([Example 717]({{ dev_url }}/tutorial/717_FastWindingNumbers/main.cpp)) 
+loads a mesh, samples 1,000,000 random queries and then discards all those
+_outside_ the given model.](images/bunny-fwn-soup.jpg)
+
+Computing _fast_ winding numbers for soups has two steps: building the tree data
+structure and then evaluating at query points. In libigl, this is programmed as
+follows:
+
+```
+igl::FastWindingNumberBVH fwn_bvh;
+igl::fast_winding_number(V.cast<float>(),F,2,fwn_bvh);
+Eigen::VectorXf W;
+igl::fast_winding_number(fwn_bvh,2,Q.cast<float>(),W);
+```
+
+#### Clouds
+
+For point clouds, the process is similar, but more precomputation may be
+necessary. The winding number for point clouds is defined so long as each point
+comes with an outward-facing normal and an area value. Areas can be estimated by
+using a libigl function that computes a tangents space Voronoi diagram for each
+point `igl::copyleft::cgal::point_areas`. This function in turn relies on first
+computing k nearest neighbors `igl::knn`. And that function and the eventual
+winding number computation uses libigl's `igl::octree` as a bounding volume
+hierarchy. To estimate areas use for a point cloud `P` with normals `N` use:
+
+```
+// Build octree
+std::vector<std::vector<int > > O_PI;
+Eigen::MatrixXi O_CH;
+Eigen::MatrixXd O_CN;
+Eigen::VectorXd O_W;
+igl::octree(P,O_PI,O_CH,O_CN,O_W);
+Eigen::VectorXd A;
+{
+  Eigen::MatrixXi I;
+  igl::knn(P,20,O_PI,O_CH,O_CN,O_W,I);
+  // CGAL is only used to help get point areas
+  igl::copyleft::cgal::point_areas(P,I,N,A);
+}
+```
+
+Then it is possible to compute fast winding numbers for a list of queries `Q`:
+
+```
+Eigen::MatrixXd O_CM;
+Eigen::VectorXd O_R;
+Eigen::MatrixXd O_EC;
+igl::fast_winding_number(P,N,A,O_PI,O_CH,2,O_CM,O_R,O_EC);
+Eigen::VectorXd W;
+igl::fast_winding_number(P,N,A,O_PI,O_CH,O_CM,O_R,O_EC,Q,2,W);
+```
+
+
 ## Outlook for continuing development
 
 Libigl is in active development, and we plan to focus on the following features
@@ -3348,6 +3424,8 @@ in the next months:
   masonry and _3D-printability_ analysis.
 
 * Increase support for point clouds and general polygonal meshes.
+
+* Wrangle/unify the many bounding volume hierarchies that now exist within libigl.
 
 * What would you like to see in libigl? [Contact
   us!](mailto:alecjacobson@gmail.com) or post a [feature
@@ -3424,4 +3502,5 @@ repository](https://github.com/libigl/libigl).
 [^crane_2013]: Keenan Crane, Clarisse Weischedel, and Max Wardetzky. [Geodesics in Heat: A New Approach to Computing Distance Based on Heat Flow](https://www.google.com/search?q=geodesics+in+heat+a+new+approach+to+computing+distance+based+on+heat+flow), 2013.
 [^bobenko_2005]: Alexander I. Bobenko and Boris A. Springborn. [A discrete Laplace-Beltrami operator for simplicial surfaces](https://www.google.com/search?q=a+discrete+laplace-beltrami+operator+for+simplicial+surfaces), 2005.
 [^jiang_2017]: Zhongshi Jiang, Scott Schaefer, Daniele Panozzo. [SCAF: Simplicial Complex Augmentation Framework for Bijective Maps](https://doi.org/10.1145/3130800.3130895), 2017
+[^barill_2018]: Gavin Barill, Neil G. Dickson, Ryan Schmidt, David I.W. Levin, Alec Jacobson. [ Fast Winding Numbers for Soups and Clouds](http://www.dgp.toronto.edu/projects/fast-winding-numbers/), 2018.
 
