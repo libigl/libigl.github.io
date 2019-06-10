@@ -425,9 +425,6 @@ and only mesh.
 
 ### Multiple Views
 
-!!! info
-    The content of this tutorial is available on the **dev** branch of the repository, and will be merged in the **master** branch the next version of libigl.
-
 Libigl's `igl::opengl::glfw::Viewer` provides basic support for rendering meshes with multiple views.
 
 A new view core can be added to the viewer using the `Viewer::append_core()` method.
@@ -462,7 +459,7 @@ When appending a new mesh or a new view core, an optional argument controls the 
 of the existing objects with respect to the new mesh/view. Please refer to the documentation
 of `Viewer::append_mesh()` and `Viewer::append_core()` for more details.
 
-![([Example 108]({{ dev_url }}/tutorial/108_MultipleViews/main.cpp)) The `igl::opengl::glfw::Viewer` can render the same scene using multiple views, each with its own attributes like colors, and individual mesh visibility.](images/108_MultipleViews.png)
+![([Example 108]({{ repo_url }}/tutorial/108_MultipleViews/main.cpp)) The `igl::opengl::glfw::Viewer` can render the same scene using multiple views, each with its own attributes like colors, and individual mesh visibility.](images/108_MultipleViews.png)
 
 ## Chapter 2: Discrete Geometric Quantities and Operators
 
@@ -3213,9 +3210,6 @@ _Entry Missing_
 
 ### Heat Method for Fast Geodesic Distance Approximation
 
-!!! info
-    The content of this tutorial is available on the **dev** branch of the repository, and will be merged in the **master** branch the next version of libigl.
-
 In the [Exact Discrete Geodesic Distances](#exact-discrete-geodesic-distances)
 example above, geodesic distances are computed _exactly_. This is an expensive
 operation: $O(n²)$ for a mesh with $n$ edges. In 2013, Crane et al.
@@ -3271,7 +3265,7 @@ igl::heat_geodesics_precompute(V,F,data);
 igl::heat_geodesics_solve(data,gamma,D);
 ```
 
-![([Example 716]({{ dev_url }}/tutorial/716_HeatGeodesics/main.cpp)) loads a
+![([Example 716]({{ repo_url }}/tutorial/716_HeatGeodesics/main.cpp)) loads a
 mesh and computes approximate geodesics distances from wherever the user
 clicks.](images/heat-geodesic-beetle.gif)
 
