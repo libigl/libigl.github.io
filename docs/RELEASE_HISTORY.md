@@ -50,21 +50,22 @@
 
 ## Version 2.1.0 Changes (Upcoming Version)
 
-- Fixed an issue with transparent window on macOS that was introduced in v2.0.0 (#953)
-- New Heat Geodesics feature (#988, #1140). See also tutorial 716.
-- Fixed current python bindings (#1008)
+- Various code cleanup, compilation fixes, and explicit template instantiations
 - Added wrapper around Shewchuk's predicates (#1163)
-- Added tutorial 714 for marching tets (#716)
-- Added sparse voxel grids (#937, #942) and tutorial 715 for meshing implicit functions.
-- Switched from Google Test to Catch2 (#961), and added various unit tests
-- Updated dependencies: Embree 3 (#947), GLFW (#977, #1153), ImGui (#1039), std-image (#1072)
 - libigl now also compiles with Eigen 3.3 (#1110).
-- Removed LIM tutorial (#1014, #1012)
+- Extended `igl::cat` functionalities (#1108)
 - Extended `boundary_facets` with outputs revealing which element facet comes from (#1067)
-- Extended `igl::cat` functionalities (#1108) 
 - Use `std::shuffle` instead of `std::random_shuffle` in `igl/randperm` (#1062)
 - Fixed an Eigen alignment issue in the viewer (#1029)
-- Various code cleanup and compilation fixes
+- Removed LIM tutorial (#1012, #1014)
+- Fixed current python bindings (#1008)
+- Intrinsic Delaunay triangulation (#988)
+- New Heat Geodesics feature (#988, #1140). See also tutorial 716.
+- Switched from Google Test to Catch2 (#961), and added various unit tests
+- Fixed an issue with transparent window on macOS that was introduced in v2.0.0 (#953)
+- Updated dependencies: Embree 3 (#947), GLFW (#977, #1153), ImGui (#1039), std-image (#1072)
+- Added sparse voxel grids (#937, #942) and tutorial 715 for meshing implicit functions.
+- Added tutorial 714 for marching tets (#716)
 
 ## Version 2.0.0 Changes
 
