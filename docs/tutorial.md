@@ -3212,7 +3212,7 @@ _Entry Missing_
 
 In the [Exact Discrete Geodesic Distances](#exact-discrete-geodesic-distances)
 example above, geodesic distances are computed _exactly_. This is an expensive
-operation: $O(n²)$ for a mesh with $n$ edges. In 2013, Crane et al.
+operation: $O(n² log(n))$ for a mesh with $n$ edges. In 2013, Crane et al.
 [^crane_2013] proposed a method to compute _approximate_ geodesic distances much
 faster by solving heat equation on the surface, filtering the result and then
 reconstructing a smooth solution by solving a Poisson equation. The method
