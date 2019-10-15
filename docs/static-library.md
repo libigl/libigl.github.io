@@ -185,18 +185,6 @@ reveal each missing symbol on its own line:
 
     make 2>&1 | grep "referenced from" | sed -e "s/, referenced from.*//"
 
-Alternatively you can use the `autoexplicit.sh` function
-which (for well organized .h/.cpp pairs in libigl) automatically
-create explicit instantiations from your compiler's error messages.
-Repeat this process until convergence:
-
-    cd /to/your/project
-    make 2>$LIBIGL/make.err
-    cd $LIBIGL
-    cat make.err | ./autoexplicit.sh
-    make clean
-    make
-
 ### Benefits of static library
 
 - **Faster compile time**: Because the libigl library
