@@ -94,10 +94,6 @@ meshing library.
 This library extra provides a simplified wrapper to the triangle 2d triangle
 meshing library.
 
-### viewer
-This library extra utilizes glfw and glew to open an opengl context and launch
-a simple mesh viewer.
-
 ### xml
 This library extra utilizes tinyxml2 to read and write serialized classes
 containing Eigen matrices and other standard simple data-structures.
