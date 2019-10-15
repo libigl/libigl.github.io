@@ -4,7 +4,7 @@
 # Compiling libigl as a static library
 
 > Warning: compiling libigl as a static library is considerably more difficult
-> than using it as a header-only library (see [../README.md](../) instead). Do
+> than using it as a header-only library (see [installation instruction](https://libigl.github.io/#installation) instead). Do
 > it only if you are experienced with C++, cmake and make, and you want to
 > improve your compilation times.
 
@@ -23,7 +23,7 @@ from _this current directory_: issue:
 ```bash
     mkdir -p ../lib
     cd ../lib
-    cmake -DCMAKE_BUILD_TYPE=Release ../optional
+    cmake -DCMAKE_BUILD_TYPE=Release -DLIBIGL_USE_STATIC_LIBRARY=ON ..
     make
 ```
 
