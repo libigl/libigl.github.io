@@ -44,6 +44,9 @@ find_package(LIBIGL REQUIRED QUIET)
 in the `CMakeLists.txt` to always build libigl as static library for your project.
 See [example-project](./example-project.md) aswell.
 
+!!! tip
+    If you've changed the value for `LIBIGL_USE_STATIC_LIBRARY` in your CMakeLists.txt make sure to remove or update the **CMakeCache.txt** in your build directory.
+
 #### Warnings
 
 You should expect to see a few linker warnings of the form:
