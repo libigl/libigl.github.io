@@ -58,20 +58,6 @@ You should expect to see a few linker warnings of the form:
 These are (admittedly unpopular) functions that have never been used by us
 statically so we haven't explicit instantiations (yet).
 
-##### Installing Embree 2.0
-To build the embree library and executables on Mac OS X issue:
-
-```bash
-cd external/embree
-mkdir build
-cd build
-cmake ..
-# Or using a different compiler
-#cmake .. -DCMAKE_C_COMPILER=/opt/local/bin/gcc -DCMAKE_CXX_COMPILER=/opt/local/bin/g++
-make
-# Could also install embree to your root, but libigl examples don't expect this
-#sudo make install
-```
 
 ## Development
 Further documentation for developers is listed in
