@@ -27,6 +27,19 @@ from _this current directory_: issue:
     make
 ```
 
+Or if you base your project on the [libigl-example-project](https://github.com/libigl/libigl-example-project)
+you can add
+
+```cmake
+option(LIBIGL_USE_STATIC_LIBRARY     "Use libIGL as static librarie" ON)
+```
+before the following line
+```cmake
+find_package(LIBIGL REQUIRED QUIET)
+```
+in the `CMakeLists.txt` to always build libigl as static library for your project.
+See [example-project](./example-project.md) aswell.
+
 #### Warnings
 
 You should expect to see a few linker warnings of the form:
@@ -99,8 +112,8 @@ This library extra utilizes tinyxml2 to read and write serialized classes
 containing Eigen matrices and other standard simple data-structures.
 
 ## Development
-Further documentation for developers is listed in 
-[style_guidelines.html](./style-guidelines.md).
+Further documentation for developers is listed in
+[style-guidelines](./style-guidelines.md).
 
 ## License
 See `LICENSE.txt`
