@@ -55,14 +55,6 @@ You should expect to see a few linker warnings of the form:
 These are (admittedly unpopular) functions that have never been used by us
 statically so we haven't explicit instantiations (yet).
 
-#### External
-
-Finally there are a number of external libraries that we include in
-`./external/` because they are either difficult to obtain or they have been
-patched for easier use with libigl. Please see the respective readmes in those
-directories or build the tutorial using cmake, which will recursively build all
-dependencies.
-
 ##### Installing Embree 2.0
 To build the embree library and executables on Mac OS X issue:
 
@@ -77,45 +69,6 @@ make
 # Could also install embree to your root, but libigl examples don't expect this
 #sudo make install
 ```
-
-## Extras
-
-### bbw
-This library extra contains functions for computing Bounded Biharmonic Weights, can be used with and without the [mosek](#mosek) extra via the `IGL_NO_MOSEK` macro.
-
-### boolean
-This library extra contains functions for computing mesh-mesh booleans,
-depending on CGAL and optionally Cork.
-
-### cgal
-This library extra utilizes CGAL's efficient and exact intersection and
-proximity queries.
-
-### embree
-This library extra utilizes embree's efficient ray tracing queries.
-
-### matlab
-This library extra provides support for reading and writing `.mat` workspace
-files, interfacing with Matlab at run time and compiling mex functions.
-
-### mosek
-This library extra utilizes mosek's efficient interior-point solver for
-quadratic programs.
-
-### png
-This library extra uses `libpng` and `YImage` to read and write `.png` files.
-
-### tetgen
-This library extra provides a simplified wrapper to the tetgen 3d tetrahedral
-meshing library.
-
-### Triangle
-This library extra provides a simplified wrapper to the triangle 2d triangle
-meshing library.
-
-### xml
-This library extra utilizes tinyxml2 to read and write serialized classes
-containing Eigen matrices and other standard simple data-structures.
 
 ## Development
 Further documentation for developers is listed in
@@ -313,30 +266,3 @@ The following bash one-liner will find all source files that contain the string 
 ```bash
 grep OpenGL `grep -L IGL_NO_OPENGL include/igl/*`
 ```
-
-## Optional
-
-- OpenGL (disable with `IGL_NO_OPENGL`)
-    * OpenGL >= 4 (enable with `IGL_OPENGL_4`)
-- AntTweakBar  (disable with `IGL_NO_ANTTWEAKBAR`) Last tested 1.16 (see
-  `libigl/external/AntTweakBar`)
-- GLEW  Windows and Linux
-- OpenMP
-- libpng  libiglpng extra only
-- Mosek  libiglmosek extra only
-- Matlab  libiglmatlab extra only
-- boost  libiglboost, libiglcgal extra only
-- SSE/AVX  libiglsvd3x3 extra only
-- CGAL  libiglcgal extra only
-    * boost
-    * gmp
-    * mpfr
-- CoMiSo libcomiso extra only
-
-### Optional (included in external/)
-
-- TetGen  libigltetgen extra only
-- Embree  libiglembree extra only
-- tinyxml2  libiglxml extra only
-- glfw libviewer extra only
-- LIM  liblim extra only
