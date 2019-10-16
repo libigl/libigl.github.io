@@ -21,10 +21,10 @@ possible other (automatically detected) extras, e.g. `libigl/lib/libiglcgal.a`
 from _this current directory_: issue:
 
 ```bash
-    mkdir -p ../lib
-    cd ../lib
-    cmake -DCMAKE_BUILD_TYPE=Release -DLIBIGL_USE_STATIC_LIBRARY=ON ..
-    make
+mkdir -p ../lib
+cd ../lib
+cmake -DCMAKE_BUILD_TYPE=Release -DLIBIGL_USE_STATIC_LIBRARY=ON ..
+make
 ```
 
 Or if you base your project on the [libigl-example-project](https://github.com/libigl/libigl-example-project)
@@ -33,10 +33,13 @@ you can add
 ```cmake
 option(LIBIGL_USE_STATIC_LIBRARY     "Use libIGL as static librarie" ON)
 ```
+
 before the following line
+
 ```cmake
 find_package(LIBIGL REQUIRED QUIET)
 ```
+
 in the `CMakeLists.txt` to always build libigl as static library for your project.
 See [example-project](./example-project.md) aswell.
 
@@ -44,7 +47,9 @@ See [example-project](./example-project.md) aswell.
 
 You should expect to see a few linker warnings of the form:
 
-    /opt/local/bin/ranlib: file: libigl.a(*.cpp.o) has no symbols
+```bash
+/opt/local/bin/ranlib: file: libigl.a(*.cpp.o) has no symbols
+```
 
 These are (admittedly unpopular) functions that have never been used by us
 statically so we haven't explicit instantiations (yet).
@@ -121,18 +126,22 @@ See `LICENSE.txt`
 ## Zipping
 Zip this directory without .git litter and binaries using:
 
-    git archive -prefix=libigl/ -o libigl.zip master
+```bash
+git archive -prefix=libigl/ -o libigl.zip master
+```
 
 ## Explicit instantiations of templated functions
 
 Special care must be taken by the developers of each function and
 class in the libigl library that uses C++ templates. If this function
 is intended to be compiled into the statically linked libigl library
-then function is only compiled for each <i>explicitly</i> instantiated 
+then function is only compiled for each *explicitly* instantiated
 declaration. These should be added at the bottom of the corresponding
 .cpp file surrounded by a
 
-    #ifdef IGL_STATIC_LIBRARY
+```cpp
+#ifdef IGL_STATIC_LIBRARY
+```
 
 Of course, a developer may not know ahead of time which
 instantiations should be explicitly included in the igl static lib.
@@ -147,23 +156,29 @@ Supposed for example we have compiled the igl static lib, including the
 cat.h and cat.cpp functions, without any explicit instantiation. Say
 using the makefile in the `libigl` directory:
 
-    cd $LIBIGL
-    make
+```bash
+cd $LIBIGL
+make
+```
 
 Now if we try to compile a project and link against it we may get
 an error like:
 
-    Undefined symbols for architecture x86_64:
-    "Eigen::Matrix<int, -1, -1, 0, -1, -1> igl::cat<Eigen::Matrix<int, -1, -1, 0, -1, -1> >(int, Eigen::Matrix<int, -1, -1, 0, -1, -1> const&, Eigen::Matrix<int, -1, -1, 0, -1, -1> const&)", referenced from:
-    uniform_sample(Eigen::Matrix<double, -1, -1, 0, -1, -1> const&, Eigen::Matrix<int, -1, -1, 0, -1, -1> const&, int, double, Eigen::Matrix<double, -1, -1, 0, -1, -1>&)in Skinning.o
-    "Eigen::SparseMatrix<double, 0, int> igl::cat<Eigen::SparseMatrix<double, 0, int> >(int, Eigen::SparseMatrix<double, 0, int> const&, Eigen::SparseMatrix<double, 0, int> const&)", referenced from:
-    covariance_scatter_matrix(Eigen::Matrix<double, -1, -1, 0, -1, -1> const&, Eigen::Matrix<int, -1, -1, 0, -1, -1> const&, ArapEnergy, Eigen::SparseMatrix<double, 0, int>&)in arap_dof.o
-    arap_rhs(Eigen::Matrix<double, -1, -1, 0, -1, -1> const&, Eigen::Matrix<int, -1, -1, 0, -1, -1> const&, ArapEnergy, Eigen::SparseMatrix<double, 0, int>&)in arap_dof.o
+```bash
+Undefined symbols for architecture x86_64:
+"Eigen::Matrix<int, -1, -1, 0, -1, -1> igl::cat<Eigen::Matrix<int, -1, -1, 0, -1, -1> >(int, Eigen::Matrix<int, -1, -1, 0, -1, -1> const&, Eigen::Matrix<int, -1, -1, 0, -1, -1> const&)", referenced from:
+uniform_sample(Eigen::Matrix<double, -1, -1, 0, -1, -1> const&, Eigen::Matrix<int, -1, -1, 0, -1, -1> const&, int, double, Eigen::Matrix<double, -1, -1, 0, -1, -1>&)in Skinning.o
+"Eigen::SparseMatrix<double, 0, int> igl::cat<Eigen::SparseMatrix<double, 0, int> >(int, Eigen::SparseMatrix<double, 0, int> const&, Eigen::SparseMatrix<double, 0, int> const&)", referenced from:
+covariance_scatter_matrix(Eigen::Matrix<double, -1, -1, 0, -1, -1> const&, Eigen::Matrix<int, -1, -1, 0, -1, -1> const&, ArapEnergy, Eigen::SparseMatrix<double, 0, int>&)in arap_dof.o
+arap_rhs(Eigen::Matrix<double, -1, -1, 0, -1, -1> const&, Eigen::Matrix<int, -1, -1, 0, -1, -1> const&, ArapEnergy, Eigen::SparseMatrix<double, 0, int>&)in arap_dof.o
+```
 
 This looks like a mess, but luckily we don't really need to read it
 all. Just copy the first part in quotes
 
-    Eigen::Matrix<int, -1, -1, 0, -1, -1> igl::cat<Eigen::Matrix<int, -1, -1, 0, -1, -1> >(int, Eigen::Matrix<int, -1, -1, 0, -1, -1> const&, Eigen::Matrix<int, -1, -1, 0, -1, -1> const&)
+```cpp
+Eigen::Matrix<int, -1, -1, 0, -1, -1> igl::cat<Eigen::Matrix<int, -1, -1, 0, -1, -1> >(int, Eigen::Matrix<int, -1, -1, 0, -1, -1> const&, Eigen::Matrix<int, -1, -1, 0, -1, -1> const&)
+```
 
 , then append it
 to the list of explicit template instantiations at the end of
@@ -171,15 +186,19 @@ to the list of explicit template instantiations at the end of
 **template** and followed by a semi-colon.
 Like this:
 
-    #ifdef IGL_STATIC_LIBRARY
-    // Explicit template instantiation
-    template Eigen::Matrix<int, -1, -1, 0, -1, -1> igl::cat<Eigen::Matrix<int, -1, -1, 0, -1, -1> >(int, Eigen::Matrix<int, -1, -1, 0, -1, -1> const&, Eigen::Matrix<int, -1, -1, 0, -1, -1> const&);
-    #endif
+```cpp
+#ifdef IGL_STATIC_LIBRARY
+// Explicit template instantiation
+template Eigen::Matrix<int, -1, -1, 0, -1, -1> igl::cat<Eigen::Matrix<int, -1, -1, 0, -1, -1> >(int, Eigen::Matrix<int, -1, -1, 0, -1, -1> const&, Eigen::Matrix<int, -1, -1, 0, -1, -1> const&);
+#endif
+```
 
 Then you must recompile the IGL static library.
 
-    cd $LIBIGL
-    make
+```bash
+cd $LIBIGL
+make
+```
 
 And try to compile your project again, potentially repeating this
 process until no more symbols are undefined.
@@ -192,7 +211,9 @@ process until no more symbols are undefined.
 If you're using make then the following command will
 reveal each missing symbol on its own line:
 
-    make 2>&1 | grep "referenced from" | sed -e "s/, referenced from.*//"
+```bash
+make 2>&1 | grep "referenced from" | sed -e "s/, referenced from.*//"
+```
 
 ### Benefits of static library
 
@@ -213,13 +234,17 @@ reveal each missing symbol on its own line:
 ## Compressed .h/.cpp pair
 Calling the script:
 
-    scripts/compress.sh igl.h igl.cpp
+``bash
+scripts/compress.sh igl.h igl.cpp
+```
 
 will create a single header `igl.h` and a single cpp file `igl.cpp`.
 
 Alternatively, you can also compress everything into a single header file:
 
-    scripts/compress.sh igl.h
+```bash
+scripts/compress.sh igl.h
+```
 
 ### Benefits of compressed .h/.cpp pair
 
@@ -263,22 +288,30 @@ return (argc>=2 && igl::read_triangle_mesh(argv[1],V,F)?0:1);
 
 Then compile `igl.cpp` with:
 
-    g++ -o igl.o -c igl.cpp -I/opt/local/include/eigen3 -DIGL_NO_OPENGL -DIGL_NO_ANTTWEAKBAR
+```bash
+g++ -o igl.o -c igl.cpp -I/opt/local/include/eigen3 -DIGL_NO_OPENGL -DIGL_NO_ANTTWEAKBAR
+```
 
 Notice that we're using `-DIGL_NO_OPENGL -DIGL_NO_ANTTWEAKBAR` to disable any libigl dependencies on OpenGL and AntTweakBar.
 
 Now compile `test.cpp` with:
 
-    g++ -g -I/opt/local/include/eigen3/ -I/usr/local/igl/libigl/ -L/usr/local/igl/libigl/ -ligl -DIGL_NO_OPENGL -DIGL_NO_ANTTWEAKBAR -o test
+```bash
+g++ -g -I/opt/local/include/eigen3/ -I/usr/local/igl/libigl/ -L/usr/local/igl/libigl/ -ligl -DIGL_NO_OPENGL -DIGL_NO_ANTTWEAKBAR -o test
+```
 
 Try running it with:
 
-    ./test path/to/mesh.obj
+```bash
+./test path/to/mesh.obj
+```
 
 
 The following bash one-liner will find all source files that contain the string `OpenGL` but don't contain and `IGL_NO_OPENGL` guard:
 
-    grep OpenGL `grep -L IGL_NO_OPENGL include/igl/*`
+```bash
+grep OpenGL `grep -L IGL_NO_OPENGL include/igl/*`
+```
 
 ## Optional
 
