@@ -3,10 +3,11 @@
 
 # Compiling libigl as a static library
 
-> Warning: compiling libigl as a static library is considerably more difficult
-> than using it as a header-only library (see [installation instruction](https://libigl.github.io/#installation) instead). Do
-> it only if you are experienced with C++, cmake and make, and you want to
-> improve your compilation times.
+!!! warning
+    Compiling libigl as a static library is considerably more difficult
+    than using it as a header-only library (see [installation instruction](https://libigl.github.io/#installation) instead). Do
+    it only if you are experienced with C++, cmake and make, and you want to
+    improve your compilation times.
 
 Libigl is developed most often on Mac OS X, though has current users in Linux and Windows.
 
