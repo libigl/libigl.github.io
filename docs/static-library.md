@@ -17,16 +17,20 @@ Libigl may also be compiled to a static library. This is advantageous when
 building a project with libigl, since when used as an header-only library can
 slow down compile times.
 
-To build the entire libigl library producing at least `libigl/lib/libigl.a` and
-possible other (automatically detected) extras, e.g. `libigl/lib/libiglcgal.a`
-from _this current directory_: issue:
+To build the entire libigl library producing at least `lib/libigl.a` and
+possible other (automatically detected) extras, e.g. `lib/libiglcgal.a` issue:
 
 ```bash
-mkdir -p ../lib
-cd ../lib
-cmake -DCMAKE_BUILD_TYPE=Release -DLIBIGL_USE_STATIC_LIBRARY=ON ..
-make
+cmake ../ -DCMAKE_BUILD_TYPE=Release\
+          -DLIBIGL_USE_STATIC_LIBRARY=ON\
+          -DCMAKE_INSTALL_PREFIX=/path/to/custom/installation
 ```
+```bash
+make
+make install
+```
+This will install libigl into the directory specified by `CMAKE_INSTALL_PREFIX`, which is set to `/usr/local` by deafault on macOS and Linux.
+The installation process does not only create `${CMAKE_INSTALL_PREFIX}/lib/libigl.a`, it copies the libigl headers into `${CMAKE_INSTALL_PREFIX}/include/igl/` too.
 
 Or if you base your project on the [libigl-example-project](https://github.com/libigl/libigl-example-project)
 you can add
