@@ -9,14 +9,43 @@ project using libigl.
 
 Then build, run and understand the [libigl tutorial](./tutorial.md).
 
+
+## Dependencies
+
+The only dependencies are stl, [libigl](https://libigl.github.io/), Eigen3 (included in libigl) and
+the dependencies of the `igl::opengl::glfw::Viewer`.
+
+We recommend to install libigl using git via:
+
+```bash
+git clone https://github.com/libigl/libigl.git
+```
+Or use an existing version of libigl, more on that see [Compile](./example-project.md#compile).
+
+If you have installed libigl at `/path/to/libigl/` then a good place for the example project is right next to libigl:
+
+```bash
+git clone https://github.com/libigl/libigl-example-project.git /path/to/libigl-example-project
+```
+
+
 ## Compile
+
 
 Compile this project using the standard cmake routine:
 
-    mkdir build
-    cd build
-    cmake ..
-    make
+```
+mkdir build
+cd build
+cmake ../
+make
+```
+Just make sure that cmake is able to find libigl.
+To do so cmake checks a few directories and environment variables, see [FindLIBIGL.cmake](https://github.com/libigl/libigl-example-project/blob/master/cmake/FindLIBIGL.cmake).
+If your libigl version is locate elsewhere, either set one of the ENVs or add `LIBIGL_INCLUDE_DIR` when you issue cmake:
+```bash
+cmake ../ -DLIBIGL_INCLUDE_DIR=/path/to/libigl/include
+```
 
 This should find and build the dependencies and create a `example_bin` binary.
 
@@ -24,22 +53,10 @@ This should find and build the dependencies and create a `example_bin` binary.
 
 From within the `build` directory just issue:
 
-    ./example_bin
+```bash
+./example_bin
+```
 
 A glfw app should launch displaying a 3D cube.
+![Libigl example project: https://github.com/libigl/libigl-example-project](images/libigl-example-project.png)
 
-## Dependencies
-
-The only dependencies are stl, eigen, [libigl](https://libigl.github.io/) and
-the dependencies of the `igl::opengl::glfw::Viewer`.
-
-We recommend to install libigl using git via:
-
-    git clone https://github.com/libigl/libigl.git
-    cd libigl/
-    git checkout 6ebc585611d27d8e2038bbbf9cb4910c51713848
-    git submodule update --init --recursive
-    cd ..
-
-If you have installed libigl at `/path/to/libigl/` then a good place to clone
-this library is `/path/to/libigl-example-project/`.
