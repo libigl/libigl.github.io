@@ -49,18 +49,17 @@ in the `CMakeLists.txt` to always build libigl as static library for your projec
 See [example-project](./example-project.md) aswell.
 
 !!! tip
-    If you've changed the value for `LIBIGL_USE_STATIC_LIBRARY` in your CMakeLists.txt make sure to remove or update the **CMakeCache.txt** in your build directory.
+    If you have changed the value for `LIBIGL_USE_STATIC_LIBRARY` in your CMakeLists.txt make sure to remove or update the **CMakeCache.txt** in your build directory.
 
-#### Warnings
+!!! warning
+    You should expect to see a few linker warnings of the form:
 
-You should expect to see a few linker warnings of the form:
+    ```bash
+    /opt/local/bin/ranlib: file: libigl.a(*.cpp.o) has no symbols
+    ```
 
-```bash
-/opt/local/bin/ranlib: file: libigl.a(*.cpp.o) has no symbols
-```
-
-These are (admittedly unpopular) functions that have never been used by us
-statically so we haven't explicit instantiations (yet).
+    These are (admittedly unpopular) functions that have never been used by us
+    statically so we haven't explicit instantiations (yet).
 
 
 ## Development
