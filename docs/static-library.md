@@ -3,10 +3,11 @@
 
 # Compiling libigl as a static library
 
-> Warning: compiling libigl as a static library is considerably more difficult
-> than using it as a header-only library (see [../README.md](../) instead). Do
-> it only if you are experienced with C++, cmake and make, and you want to
-> improve your compilation times.
+!!! warning
+    Compiling libigl as a static library is considerably more difficult
+    than using it as a header-only library (see [installation instruction](https://libigl.github.io/#installation) instead). Do
+    it only if you are experienced with C++, cmake and make, and you want to
+    improve your compilation times.
 
 Libigl is developed most often on Mac OS X, though has current users in Linux and Windows.
 
@@ -16,95 +17,54 @@ Libigl may also be compiled to a static library. This is advantageous when
 building a project with libigl, since when used as an header-only library can
 slow down compile times.
 
-To build the entire libigl library producing at least `libigl/lib/libigl.a` and
-possible other (automatically detected) extras, e.g. `libigl/lib/libiglcgal.a`
-from _this current directory_: issue:
+To build the entire libigl library producing at least `lib/libigl.a` and
+possible other (automatically detected) extras, e.g. `lib/libiglcgal.a` issue:
 
 ```bash
-    mkdir -p ../lib
-    cd ../lib
-    cmake -DCMAKE_BUILD_TYPE=Release ../optional
-    make
+cmake ../ -DCMAKE_BUILD_TYPE=Release\
+          -DLIBIGL_USE_STATIC_LIBRARY=ON\
+          -DCMAKE_INSTALL_PREFIX=/path/to/custom/installation
 ```
-
-#### Warnings
-
-You should expect to see a few linker warnings of the form:
-
-    /opt/local/bin/ranlib: file: libigl.a(*.cpp.o) has no symbols
-
-These are (admittedly unpopular) functions that have never been used by us
-statically so we haven't explicit instantiations (yet).
-
-#### External
-
-Finally there are a number of external libraries that we include in
-`./external/` because they are either difficult to obtain or they have been
-patched for easier use with libigl. Please see the respective readmes in those
-directories or build the tutorial using cmake, which will recursively build all
-dependencies.
-
-##### Installing Embree 2.0
-To build the embree library and executables on Mac OS X issue:
-
 ```bash
-cd external/embree
-mkdir build
-cd build
-cmake ..
-# Or using a different compiler
-#cmake .. -DCMAKE_C_COMPILER=/opt/local/bin/gcc -DCMAKE_CXX_COMPILER=/opt/local/bin/g++
 make
-# Could also install embree to your root, but libigl examples don't expect this
-#sudo make install
+make install
+```
+This will install libigl into the directory specified by `CMAKE_INSTALL_PREFIX`, which is set to `/usr/local` by deafault on macOS and Linux.
+The installation process does not only create `${CMAKE_INSTALL_PREFIX}/lib/libigl.a`, it copies the libigl headers into `${CMAKE_INSTALL_PREFIX}/include/igl/` too.
+
+Or if you base your project on the [libigl-example-project](https://github.com/libigl/libigl-example-project)
+you can add
+
+```cmake
+option(LIBIGL_USE_STATIC_LIBRARY     "Use libIGL as static librarie" ON)
 ```
 
-## Extras
+before the following line
 
-### bbw
-This library extra contains functions for computing Bounded Biharmonic Weights, can be used with and without the [mosek](#mosek) extra via the `IGL_NO_MOSEK` macro.
+```cmake
+find_package(LIBIGL REQUIRED QUIET)
+```
 
-### boolean
-This library extra contains functions for computing mesh-mesh booleans,
-depending on CGAL and optionally Cork.
+in the `CMakeLists.txt` to always build libigl as static library for your project.
+See [example-project](./example-project.md) aswell.
 
-### cgal
-This library extra utilizes CGAL's efficient and exact intersection and
-proximity queries.
+!!! tip
+    If you have changed the value for `LIBIGL_USE_STATIC_LIBRARY` in your CMakeLists.txt make sure to remove or update the **CMakeCache.txt** in your build directory.
 
-### embree
-This library extra utilizes embree's efficient ray tracing queries.
+!!! warning
+    You should expect to see a few linker warnings of the form:
 
-### matlab
-This library extra provides support for reading and writing `.mat` workspace
-files, interfacing with Matlab at run time and compiling mex functions.
+    ```bash
+    /opt/local/bin/ranlib: file: libigl.a(*.cpp.o) has no symbols
+    ```
 
-### mosek
-This library extra utilizes mosek's efficient interior-point solver for
-quadratic programs.
+    These are (admittedly unpopular) functions that have never been used by us
+    statically so we haven't explicit instantiations (yet).
 
-### png
-This library extra uses `libpng` and `YImage` to read and write `.png` files.
-
-### tetgen
-This library extra provides a simplified wrapper to the tetgen 3d tetrahedral
-meshing library.
-
-### Triangle
-This library extra provides a simplified wrapper to the triangle 2d triangle
-meshing library.
-
-### viewer
-This library extra utilizes glfw and glew to open an opengl context and launch
-a simple mesh viewer.
-
-### xml
-This library extra utilizes tinyxml2 to read and write serialized classes
-containing Eigen matrices and other standard simple data-structures.
 
 ## Development
-Further documentation for developers is listed in 
-[style_guidelines.html](./style-guidelines.md).
+Further documentation for developers is listed in
+[style-guidelines](./style-guidelines.md).
 
 ## License
 See `LICENSE.txt`
@@ -112,18 +72,22 @@ See `LICENSE.txt`
 ## Zipping
 Zip this directory without .git litter and binaries using:
 
-    git archive -prefix=libigl/ -o libigl.zip master
+```bash
+git archive -prefix=libigl/ -o libigl.zip master
+```
 
 ## Explicit instantiations of templated functions
 
 Special care must be taken by the developers of each function and
 class in the libigl library that uses C++ templates. If this function
 is intended to be compiled into the statically linked libigl library
-then function is only compiled for each <i>explicitly</i> instantiated 
+then function is only compiled for each *explicitly* instantiated
 declaration. These should be added at the bottom of the corresponding
 .cpp file surrounded by a
 
-    #ifdef IGL_STATIC_LIBRARY
+```cpp
+#ifdef IGL_STATIC_LIBRARY
+```
 
 Of course, a developer may not know ahead of time which
 instantiations should be explicitly included in the igl static lib.
@@ -138,23 +102,29 @@ Supposed for example we have compiled the igl static lib, including the
 cat.h and cat.cpp functions, without any explicit instantiation. Say
 using the makefile in the `libigl` directory:
 
-    cd $LIBIGL
-    make
+```bash
+cd $LIBIGL
+make
+```
 
 Now if we try to compile a project and link against it we may get
 an error like:
 
-    Undefined symbols for architecture x86_64:
-    "Eigen::Matrix<int, -1, -1, 0, -1, -1> igl::cat<Eigen::Matrix<int, -1, -1, 0, -1, -1> >(int, Eigen::Matrix<int, -1, -1, 0, -1, -1> const&, Eigen::Matrix<int, -1, -1, 0, -1, -1> const&)", referenced from:
-    uniform_sample(Eigen::Matrix<double, -1, -1, 0, -1, -1> const&, Eigen::Matrix<int, -1, -1, 0, -1, -1> const&, int, double, Eigen::Matrix<double, -1, -1, 0, -1, -1>&)in Skinning.o
-    "Eigen::SparseMatrix<double, 0, int> igl::cat<Eigen::SparseMatrix<double, 0, int> >(int, Eigen::SparseMatrix<double, 0, int> const&, Eigen::SparseMatrix<double, 0, int> const&)", referenced from:
-    covariance_scatter_matrix(Eigen::Matrix<double, -1, -1, 0, -1, -1> const&, Eigen::Matrix<int, -1, -1, 0, -1, -1> const&, ArapEnergy, Eigen::SparseMatrix<double, 0, int>&)in arap_dof.o
-    arap_rhs(Eigen::Matrix<double, -1, -1, 0, -1, -1> const&, Eigen::Matrix<int, -1, -1, 0, -1, -1> const&, ArapEnergy, Eigen::SparseMatrix<double, 0, int>&)in arap_dof.o
+```bash
+Undefined symbols for architecture x86_64:
+"Eigen::Matrix<int, -1, -1, 0, -1, -1> igl::cat<Eigen::Matrix<int, -1, -1, 0, -1, -1> >(int, Eigen::Matrix<int, -1, -1, 0, -1, -1> const&, Eigen::Matrix<int, -1, -1, 0, -1, -1> const&)", referenced from:
+uniform_sample(Eigen::Matrix<double, -1, -1, 0, -1, -1> const&, Eigen::Matrix<int, -1, -1, 0, -1, -1> const&, int, double, Eigen::Matrix<double, -1, -1, 0, -1, -1>&)in Skinning.o
+"Eigen::SparseMatrix<double, 0, int> igl::cat<Eigen::SparseMatrix<double, 0, int> >(int, Eigen::SparseMatrix<double, 0, int> const&, Eigen::SparseMatrix<double, 0, int> const&)", referenced from:
+covariance_scatter_matrix(Eigen::Matrix<double, -1, -1, 0, -1, -1> const&, Eigen::Matrix<int, -1, -1, 0, -1, -1> const&, ArapEnergy, Eigen::SparseMatrix<double, 0, int>&)in arap_dof.o
+arap_rhs(Eigen::Matrix<double, -1, -1, 0, -1, -1> const&, Eigen::Matrix<int, -1, -1, 0, -1, -1> const&, ArapEnergy, Eigen::SparseMatrix<double, 0, int>&)in arap_dof.o
+```
 
 This looks like a mess, but luckily we don't really need to read it
 all. Just copy the first part in quotes
 
-    Eigen::Matrix<int, -1, -1, 0, -1, -1> igl::cat<Eigen::Matrix<int, -1, -1, 0, -1, -1> >(int, Eigen::Matrix<int, -1, -1, 0, -1, -1> const&, Eigen::Matrix<int, -1, -1, 0, -1, -1> const&)
+```cpp
+Eigen::Matrix<int, -1, -1, 0, -1, -1> igl::cat<Eigen::Matrix<int, -1, -1, 0, -1, -1> >(int, Eigen::Matrix<int, -1, -1, 0, -1, -1> const&, Eigen::Matrix<int, -1, -1, 0, -1, -1> const&)
+```
 
 , then append it
 to the list of explicit template instantiations at the end of
@@ -162,15 +132,19 @@ to the list of explicit template instantiations at the end of
 **template** and followed by a semi-colon.
 Like this:
 
-    #ifdef IGL_STATIC_LIBRARY
-    // Explicit template instantiation
-    template Eigen::Matrix<int, -1, -1, 0, -1, -1> igl::cat<Eigen::Matrix<int, -1, -1, 0, -1, -1> >(int, Eigen::Matrix<int, -1, -1, 0, -1, -1> const&, Eigen::Matrix<int, -1, -1, 0, -1, -1> const&);
-    #endif
+```cpp
+#ifdef IGL_STATIC_LIBRARY
+// Explicit template instantiation
+template Eigen::Matrix<int, -1, -1, 0, -1, -1> igl::cat<Eigen::Matrix<int, -1, -1, 0, -1, -1> >(int, Eigen::Matrix<int, -1, -1, 0, -1, -1> const&, Eigen::Matrix<int, -1, -1, 0, -1, -1> const&);
+#endif
+```
 
 Then you must recompile the IGL static library.
 
-    cd $LIBIGL
-    make
+```bash
+cd $LIBIGL
+make
+```
 
 And try to compile your project again, potentially repeating this
 process until no more symbols are undefined.
@@ -183,19 +157,9 @@ process until no more symbols are undefined.
 If you're using make then the following command will
 reveal each missing symbol on its own line:
 
-    make 2>&1 | grep "referenced from" | sed -e "s/, referenced from.*//"
-
-Alternatively you can use the `autoexplicit.sh` function
-which (for well organized .h/.cpp pairs in libigl) automatically
-create explicit instantiations from your compiler's error messages.
-Repeat this process until convergence:
-
-    cd /to/your/project
-    make 2>$LIBIGL/make.err
-    cd $LIBIGL
-    cat make.err | ./autoexplicit.sh
-    make clean
-    make
+```bash
+make 2>&1 | grep "referenced from" | sed -e "s/, referenced from.*//"
+```
 
 ### Benefits of static library
 
@@ -212,100 +176,3 @@ Repeat this process until convergence:
 ### Drawbacks of static library
 
 - **Hard to use templates**: Special care (by the developers of the library) needs to be taken when exposing templated functions.
-
-## Compressed .h/.cpp pair
-Calling the script:
-
-    scripts/compress.sh igl.h igl.cpp
-
-will create a single header `igl.h` and a single cpp file `igl.cpp`.
-
-Alternatively, you can also compress everything into a single header file:
-
-    scripts/compress.sh igl.h
-
-### Benefits of compressed .h/.cpp pair
-
-- **Easy incorporation**: This can be easily incorporated
-  into external projects.
-
-### Drawbacks of compressed .h/.cpp pair
-
-- **Hard to debug/edit**: The compressed files are
-  automatically generated. They're huge and should not be edited. Thus
-  debugging and editing are near impossible.
-
-- **Compounded dependencies**:
-  An immediate disadvantage of this
-  seems to be that even to use a single function (e.g.
-  `cotmatrix`), compiling and linking against
-  `igl.cpp` will require linking to all of `libigl`'s
-  dependencies (`OpenGL`, `GLUT`,
-  `AntTweakBar`, `BLAS`). However, because all
-  dependencies other than Eigen should be encapsulated between
-  `#ifndef` guards (e.g. `#ifndef IGL_NO_OPENGL`, it
-  is possible to ignore certain functions that have such dependencies.
-
-- **Long compile**: 
-  Compiling `igl.cpp` takes a long time and isn't easily parallelized (no `make
-  -j12` equivalent).
-
-Here's a tiny test example using `igl.h` and `igl.cpp`. Save the following in `test.cpp`:
-
-```cpp
-#include <igl.h>
-#include <Eigen/Core>
-
-int main(int argc, char * argv[])
-{
-Eigen::MatrixXd V;
-Eigen::MatrixXi F;
-return (argc>=2 && igl::read_triangle_mesh(argv[1],V,F)?0:1);
-}
-```
-
-Then compile `igl.cpp` with:
-
-    g++ -o igl.o -c igl.cpp -I/opt/local/include/eigen3 -DIGL_NO_OPENGL -DIGL_NO_ANTTWEAKBAR
-
-Notice that we're using `-DIGL_NO_OPENGL -DIGL_NO_ANTTWEAKBAR` to disable any libigl dependencies on OpenGL and AntTweakBar.
-
-Now compile `test.cpp` with:
-
-    g++ -g -I/opt/local/include/eigen3/ -I/usr/local/igl/libigl/ -L/usr/local/igl/libigl/ -ligl -DIGL_NO_OPENGL -DIGL_NO_ANTTWEAKBAR -o test
-
-Try running it with:
-
-    ./test path/to/mesh.obj
-
-
-The following bash one-liner will find all source files that contain the string `OpenGL` but don't contain and `IGL_NO_OPENGL` guard:
-
-    grep OpenGL `grep -L IGL_NO_OPENGL include/igl/*`
-
-## Optional
-
-- OpenGL (disable with `IGL_NO_OPENGL`)
-    * OpenGL >= 4 (enable with `IGL_OPENGL_4`)
-- AntTweakBar  (disable with `IGL_NO_ANTTWEAKBAR`) Last tested 1.16 (see
-  `libigl/external/AntTweakBar`)
-- GLEW  Windows and Linux
-- OpenMP
-- libpng  libiglpng extra only
-- Mosek  libiglmosek extra only
-- Matlab  libiglmatlab extra only
-- boost  libiglboost, libiglcgal extra only
-- SSE/AVX  libiglsvd3x3 extra only
-- CGAL  libiglcgal extra only
-    * boost
-    * gmp
-    * mpfr
-- CoMiSo libcomiso extra only
-
-### Optional (included in external/)
-
-- TetGen  libigltetgen extra only
-- Embree  libiglembree extra only
-- tinyxml2  libiglxml extra only
-- glfw libviewer extra only
-- LIM  liblim extra only
