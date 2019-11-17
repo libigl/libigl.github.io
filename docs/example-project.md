@@ -5,6 +5,7 @@ A blank project example showing how to use libigl and cmake can be found
 encouraged to copy or fork this project as a way of starting a new personal
 project using libigl.
 
+
 ## See the tutorial first
 
 Then build, run and understand the [libigl tutorial](./tutorial.md).
@@ -12,27 +13,25 @@ Then build, run and understand the [libigl tutorial](./tutorial.md).
 
 ## Dependencies
 
-The only dependencies are stl, [libigl](https://libigl.github.io/), Eigen3 (included in libigl) and
+The only dependencies are the STL, [libigl](https://libigl.github.io/), Eigen3 (included in libigl) and
 the dependencies of the `igl::opengl::glfw::Viewer`.
 
-We recommend to install libigl using git via:
-
+libigl can be installed by cloning the git repository on your computer:
 ```bash
 git clone https://github.com/libigl/libigl.git
 ```
-Or use an existing version of libigl, more on that see [Compile](./example-project.md#compile).
+In the [next section](./example-project.md#compilation) we discuss how to find an existing copy of libigl when compiling the example project.
 
-If you have installed libigl at `/path/to/libigl/` then a good place for the example project is right next to libigl:
-
+For ease of use, it can be a good idea to place your example project right next to the libigl folder.
+For example, if libigl is installed in `~/foo/libigl`, then you can create a copy of the example project right next to it:
 ```bash
-git clone https://github.com/libigl/libigl-example-project.git /path/to/libigl-example-project
+git clone https://github.com/libigl/libigl-example-project.git ~/foo/libigl-example-project
 ```
 
 
-## Compile
+## Compilation
 
-
-Compile this project using the standard cmake routine:
+Compile this project using the standard CMake routine:
 
 ```
 mkdir build
@@ -40,14 +39,16 @@ cd build
 cmake ../
 make
 ```
-Just make sure that cmake is able to find libigl.
-To do so cmake checks a few directories and environment variables, see [FindLIBIGL.cmake](https://github.com/libigl/libigl-example-project/blob/master/cmake/FindLIBIGL.cmake).
-If your libigl version is locate elsewhere, either set one of the ENVs or add `LIBIGL_INCLUDE_DIR` when you issue cmake:
+
+Just make sure that CMake is able to find libigl.
+To do so CMake checks a few directories and environment variables, see [FindLIBIGL.cmake](https://github.com/libigl/libigl-example-project/blob/master/cmake/FindLIBIGL.cmake).
+If your libigl version is located elsewhere, you can set the environment variable `LIBIGL_DIR` to the root directory of libigl, or pass this variable when invoking CMake from the command line:
 ```bash
-cmake ../ -DLIBIGL_INCLUDE_DIR=/path/to/libigl/include
+cmake -DLIBIGL_DIR=<path-to-libigl> ..
 ```
 
 This should find and build the dependencies and create a `example_bin` binary.
+
 
 ## Run
 
