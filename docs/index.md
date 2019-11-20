@@ -231,7 +231,7 @@ Eurographics/ACM Symposium on Geometry Processing software award. Here are a
 few labs/companies/institutions using libigl:
 
  - [Activision](http://www.activision.com)
- - [Adobe Research](http://www.adobe.com/technology/)  
+ - [Adobe Research](http://www.adobe.com/technology/)
  - [Electronic Arts, Inc](http://www.ea.com)
  - [Epic Games](https://epicgames.com)
  - [Google Research](https://research.google.com)
@@ -295,6 +295,7 @@ page](https://github.com/libigl/libigl/issues).
 2018 Alec Jacobson, Daniele Panozzo, Christian Schüller, Olga Diamanti,
 Qingnan Zhou, Sebastian Koch, Jeremie Dumas, Amir Vaxman, Nico Pietroni,
 Stefan Brugger, Kenshi Takayama, Wenzel Jakob, Nikolas De Giorgis, Luigi
-Rocca, Leonardo Sacht, Kevin Walliman, Olga Sorkine-Hornung, and others.
+Rocca, Leonardo Sacht, Kevin Walliman, Olga Sorkine-Hornung, Teseo Schneider,
+and others.
 
 Please see individual files for appropriate copyright notices.

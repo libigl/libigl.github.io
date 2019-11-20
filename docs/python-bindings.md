@@ -3,9 +3,11 @@
 ## Work in progress
 
 !!! warning
-    Everything in this folder is currently being developed and it is likely to be
-    changed radically in the next couple of months, breaking compatibility between
-    different version. We plan to stabilize the python API by the end of 2016.
+    Everything in this folder is currently being removed and replaced by a
+    [new and better version](https://geometryprocessing.github.io/libigl-python-bindings/tutorials/).
+    It is a radical change which breaks compatibility between previous versions.
+    A current beta version can be installed trough [conda-forge](https://anaconda.org/conda-forge/igl)
+    We plan to stabilize the python bindings by the end of 2020.
 
 ## Introduction
 
@@ -137,7 +139,7 @@ We provide a few examples in the folder python/matlab.
 The python functions have exactly the same prototypes as their C++ counterpart.
 Docstrings for all available python functions are extracted from the C++ header files and compiled into the python module. To get help for a certain function, you can run `help(pyigl.<function_name>)` in the python console.
 
-In the scripts folder there is the script `generate_docstrings.py` that automatically generates python docstrings for a new function. You can run it with `generate_docstrings.py <path_to_cpp_header_files> <path_to_python_files>`. 
+In the scripts folder there is the script `generate_docstrings.py` that automatically generates python docstrings for a new function. You can run it with `generate_docstrings.py <path_to_cpp_header_files> <path_to_python_files>`.
 The script depends on additional libraries (joblib, mako, clang), make sure to install them (e.g. through pip. python-clang is included in external/pybind11/tools/clang).
 
 
@@ -164,6 +166,6 @@ page](https://github.com/libigl/libigl/issues).
 
 2015 Alec Jacobson, Daniele Panozzo, Christian Schüller, Olga Diamanti, Qingnan
 Zhou, Sebastian Koch, Nico Pietroni, Stefan Brugger, Kenshi Takayama, Wenzel Jakob, Nikolas De
-Giorgis, Luigi Rocca, Leonardo Sacht, Olga Sorkine-Hornung, and others.
+Giorgis, Luigi Rocca, Leonardo Sacht, Olga Sorkine-Hornung, Teseo Schneider, and others.
 
 Please see individual files for appropriate copyright notices.
