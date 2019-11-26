@@ -103,9 +103,10 @@ find and compile CoMISo.
 *Note 2*: CoMISo requires a blas implementation. We use the built-in blas in macosx and linux, and we bundle a precompiled binary for VS2015 64 bit. Do NOT compile the tutorials
 in 32 bit on windows.
 
-#### Libigl Example Project
-
-We provide a [blank project example](https://github.com/libigl/libigl-example-project) showing how to use libigl and cmake. Feel free and encouraged to copy or fork this project as a way of starting a new personal project using libigl.
+!!! tip "Libigl Example Project"
+    We provide a [blank project example](../example-project) showing how to use libigl and CMake.
+    **This is the recommended way of using libigl in your project**.
+    Feel free and encouraged to use this repository as a template to start a new personal project using libigl.
 
 ### Mesh Representation
 
