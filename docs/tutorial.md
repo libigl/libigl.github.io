@@ -673,7 +673,7 @@ for(int i : vertices)
   {
     for(int k : triangle_on_edge(i,j))
     {
-      L(i,j) = cot(angle(i,j,k));
+      L(i,j) += cot(angle(i,j,k));
       L(i,i) -= cot(angle(i,j,k));
     }
   }
