@@ -3,6 +3,7 @@
 ## Work in progress
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 !!! warning
     Everything in this folder is currently being removed and replaced by a
     [new and better version](https://geometryprocessing.github.io/libigl-python-bindings/tutorials/).
@@ -18,6 +19,15 @@
     trough [conda-forge](https://anaconda.org/conda-forge/igl). We plan to stabilize
     the python bindings by the end of 2020.
 >>>>>>> upstream/docs
+=======
+!!! danger
+    All the information on this web page describe the **old** Python bindings, present
+    on the `master` branch of the `libigl` repository. Those bindings will be removed
+    and replaced by a [new and better version](https://geometryprocessing.github.io/libigl-python-bindings/tutorials/) in a future version of libigl. It is a radical change which breaks
+    compatibility between previous versions. A current beta version can be installed
+    trough [conda-forge](https://anaconda.org/conda-forge/igl). We plan to stabilize
+    the python bindings by the end of 2020.
+>>>>>>> 11d51f83b4e0755598c65e0ef0532a186074c465
 
 ## Introduction
 
