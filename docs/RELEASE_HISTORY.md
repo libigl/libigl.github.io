@@ -9,9 +9,10 @@
 
       Version | Short description
       --------|----------------------------------------------------------------------
+      dev     | New python bindings, fast winding number for soups, ICP algorithm
       2.1.0   | Various improvements and bug fixes, updated dependencies
       2.0.0   | Lighter, simpler CMake build, rewritten history
-      1.3.3   | Switched the build system from submodules to CMake external projects.
+      1.3.3   | Switched the build system from submodules to CMake external projects
       1.3.2   | After merging PRs in the 2018 hackaton
       1.3.1   | Before merging PRs in the 2018 hackaton
       1.3.0   | Modernized cmake build, multi-mesh viewer, replace nanogui with imgui
@@ -48,7 +49,31 @@
       0.1.5   | Compilation on windows, bug fix for compilation with cygwin
       0.1.1   | Alpha release with core functions, extras, examples
 
-## Version 2.1.0 Changes (Upcoming Version)
+## Upcoming version (`dev` branch)
+
+#### Build system
+- Overhauled function signatures in preparation of new python bindings (#1162, #1228, #1271, #1274)
+- Added a conda environment `cmake/libigl-cgal.yml` to provide boost for Windows users (#1239)
+- Added experimental support for Hunter (#1242)
+- Now `libigl.cmake` will define a CMake target `Eigen3::Eigen` if not provided by the user (#1299)
+
+#### New features
+- Fast winding number for triangle soups (#1218)
+- Iterative closest point algorithm + tutorial (#1347)
+- Ear clipping triangulation (#1169)
+- Added `igl::path_to_edges` function (#1259)
+- `igl::dijkstra` can now use mesh edge length (#1170)
+- Keep reference to multiple material when reading obj (#1280)
+
+#### Misc
+- Fix underflow issue when computing normalization in `igl::heat_geodesics` (#1344) 
+- Update nrosy to match the MIQ paper (#1303)
+- Delete `Embree_convenience.h` (#1314)
+- Refactored `igl::cut_mesh` (#1332)
+- Various improvements to the viewer (#1196, #1251)
+- Various bugfixes (#1197, #1210, #1216, #1231, #1247, #1258, #1288, #1309, #1320, #1337, #1345)
+
+## Version 2.1.0 Changes
 
 - Various code cleanup, compilation fixes, and explicit template instantiations
 - Added wrapper around Shewchuk's predicates (#1163)
