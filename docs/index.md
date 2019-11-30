@@ -2,12 +2,24 @@
 
 [![](https://travis-ci.org/libigl/libigl.svg?branch=master)](https://travis-ci.org/libigl/libigl)
 [![](https://ci.appveyor.com/api/projects/status/mf3t9rnhco0vhly8/branch/master?svg=true)](https://ci.appveyor.com/project/danielepanozzo/libigl-6hjk1/branch/master)
+[![](https://anaconda.org/conda-forge/polyfempy/badges/installer/conda.svg)](https://conda.anaconda.org/conda-forge)
+
 ![](libigl-teaser.png)
 
 !!! danger
     On October 15, 2018, a new, cleaned-up history has been pushed onto the main
     libigl repository. To learn more about the consequences of this, and troubleshooting,
     please read [this page](rewritten-history.md).
+
+
+```bibtex
+@misc{libigl,
+  title = {{libigl}: A simple {C++} geometry processing library},
+  author = {Alec Jacobson and Daniele Panozzo and others},
+  note = {https://libigl.github.io/},
+  year = {2018},
+}
+```
 
 libigl is a simple C++ geometry processing library. We have a wide
 functionality including construction of sparse discrete differential geometry

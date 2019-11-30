@@ -1,16 +1,26 @@
 # Python wrappers for libigl
 
+A new a [new and improved version](https://libigl.github.io/libigl-python-bindings/) of the python bindings is under development.
+The new bindings are installed trough conda
+```
+conda install -c conda-forge igl
+```
+
+For more details visit [https://libigl.github.io/libigl-python-bindings/](https://libigl.github.io/libigl-python-bindings/).
+
+## Note
+
+!!! danger
+    The **old** Python bindings, present on the `master` branch of the `libigl` repository, will be removed
+    and replaced by the [new and improved version](https://geometryprocessing.github.io/libigl-python-bindings/tutorials/) in a future version of libigl. It is a radical change which breaks
+    compatibility between previous versions. We plan to stabilize
+    the python bindings by the end of 2020.
+
+<!-- # Python wrappers for libigl
+
 ## Work in progress
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-!!! warning
-    Everything in this folder is currently being removed and replaced by a
-    [new and better version](https://geometryprocessing.github.io/libigl-python-bindings/tutorials/).
-    It is a radical change which breaks compatibility between previous versions.
-    A current beta version can be installed trough [conda-forge](https://anaconda.org/conda-forge/igl)
-    We plan to stabilize the python bindings by the end of 2020.
-=======
+
 !!! danger
     All the information on this web page describe the **old** Python bindings, present
     on the `master` branch of the `libigl` repository. Those bindings will be removed
@@ -18,16 +28,6 @@
     compatibility between previous versions. A current beta version can be installed
     trough [conda-forge](https://anaconda.org/conda-forge/igl). We plan to stabilize
     the python bindings by the end of 2020.
->>>>>>> upstream/docs
-=======
-!!! danger
-    All the information on this web page describe the **old** Python bindings, present
-    on the `master` branch of the `libigl` repository. Those bindings will be removed
-    and replaced by a [new and better version](https://geometryprocessing.github.io/libigl-python-bindings/tutorials/) in a future version of libigl. It is a radical change which breaks
-    compatibility between previous versions. A current beta version can be installed
-    trough [conda-forge](https://anaconda.org/conda-forge/igl). We plan to stabilize
-    the python bindings by the end of 2020.
->>>>>>> 11d51f83b4e0755598c65e0ef0532a186074c465
 
 ## Introduction
 
@@ -188,4 +188,4 @@ page](https://github.com/libigl/libigl/issues).
 Zhou, Sebastian Koch, Nico Pietroni, Stefan Brugger, Kenshi Takayama, Wenzel Jakob, Nikolas De
 Giorgis, Luigi Rocca, Leonardo Sacht, Olga Sorkine-Hornung, Teseo Schneider, and others.
 
-Please see individual files for appropriate copyright notices.
+Please see individual files for appropriate copyright notices. -->
