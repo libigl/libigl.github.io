@@ -28,6 +28,7 @@ jobs:
           mkdocs build
 
       - name: Deploy to GitHub Pages
+        if: github.repository == 'libigl/libigl.github.io'
         env:
           ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           PUBLISH_BRANCH: master
