@@ -256,43 +256,39 @@ the viewer's callbacks. See the
 
 ### Scalar Field Visualization
 
-Colors and normals can be associated to faces or vertices using the
-set_colors function:
+Colors can be associated to faces or vertices using the
+`set_colors` function:
 
 ```cpp
 viewer.data().set_colors(C);
 ```
 
-`C` is a #C by 3 matrix with one RGB color per row. `C` must have as many
-rows as the number of faces **or** the number of vertices of the mesh.
-Depending on the size of `C`, the viewer applies the color to the faces or to
-the vertices.
+`C` is a #C by 3 matrix with one RGB color per row. `C` must have as many rows
+as the number of faces **or** the number of vertices of the mesh.  Depending on
+the size of `C`, the viewer applies the color to the faces or to the vertices.
+In Example 104, the colors of mesh vertices are set according to their Cartesian
+coordinates.
 
-Colors can be used to visualize a scalar function defined on a surface.  The
-scalar function is converted to colors using a color transfer function, which
-maps a scalar value between 0 and 1 to a color. A simple example of a scalar
-field defined on a surface is the z coordinate of each point, which can be
-extract from our mesh representation by taking the last column of `V`
-([Example 104]({{ repo_url }}/tutorial/104_Colors/main.cpp)). The function `igl::jet` can be used to
-convert it to colors:
+![([Example 104]({{ repo_url }}/tutorial/104_Colors/main.cpp)) Set the colors of a mesh. ](images/104_Colors.png)
+
+Per-Vertex scalar fields can be directly visualized using `set_data` function:
 
 ```cpp
-Eigen::VectorXd Z = V.col(2);
-igl::jet(Z,true,C);
+viewer.data().set_data(D);
 ```
 
-The first row extracts the third column from `V` (the z coordinate of each
-vertex) and the second calls a libigl functions that converts a scalar field to colors. The second parameter of jet normalizes the scalar field to lie between 0 and 1 before applying the transfer function.
-
-![([Example 104]({{ repo_url }}/tutorial/104_Colors/main.cpp)) igl::jet converts a scalar field to a color field.](images/104_Colors.png)
-
-`igl::jet` is an example of a standard function in libigl: it takes simple
-types and can be easily reused for many different tasks.  Not committing to
-heavy data structures types favors simplicity, ease of use and reusability.
+`D` is a #V by 1 vector with one value corresponding to each vertex. `set_data`
+will color according to linearly interpolating the _data_ within a triangle (in
+the [fragment shader](https://en.wikipedia.org/wiki/Shader#Types)) and use this
+interpolated data to look up a color in a colormap (stored as a texture). The
+colormap defaults to `igl::parula` with 21 discrete intervals. The colormap may
+be set with `set_colormap`.
 
 ### Overlays
 
-In addition to plotting the surface, the viewer supports the visualization of points, lines and text labels: these overlays can be very helpful while developing geometric processing algorithms to plot debug information.
+In addition to plotting the surface, the viewer supports the visualization of
+points, lines and text labels: these overlays can be very helpful while
+developing geometric processing algorithms to plot debug information.
 
 ```cpp
 viewer.data().add_points(P,Eigen::RowVector3d(r,g,b));
@@ -2286,7 +2282,7 @@ igl::mlgetmatrix(&engine,"EV",EV);
 
 and plotted using the libigl viewer.
 
-![4 Eigenfunctions of the Laplacian plotted in the libigl viewer.](images/602_Matlab_2.png)
+![Eigenfunctions of the Laplacian computed in Matlab, plotted in the libigl viewer.](images/602_Matlab_2.gif)
 
 
 #### Saving A Matlab Workspace
