@@ -2,12 +2,11 @@
 
 [![](https://travis-ci.org/libigl/libigl.svg?branch=master)](https://travis-ci.org/libigl/libigl)
 [![](https://ci.appveyor.com/api/projects/status/mf3t9rnhco0vhly8/branch/master?svg=true)](https://ci.appveyor.com/project/danielepanozzo/libigl-6hjk1/branch/master)
+[![](https://anaconda.org/conda-forge/igl/badges/installer/conda.svg)](https://conda.anaconda.org/conda-forge/igl)
+<!-- [![](https://anaconda.org/conda-forge/igl/badges/downloads.svg)](https://anaconda.org/conda-forge/igl) -->
+
 ![](libigl-teaser.png)
 
-!!! danger
-    On October 15, 2018, a new, cleaned-up history has been pushed onto the main
-    libigl repository. To learn more about the consequences of this, and troubleshooting,
-    please read [this page](rewritten-history.md).
 
 libigl is a simple C++ geometry processing library. We have a wide
 functionality including construction of sparse discrete differential geometry
@@ -209,7 +208,7 @@ libigl is primarily [MPL2](http://www.mozilla.org/MPL/2.0/) licensed
 third-party code under other licenses. We're currently in the processes of
 identifying these and marking appropriately.
 
-## Attribution
+## Citation
 
 If you use libigl in your academic projects, please cite the papers we
 implement as appropriate. To cite the library in general, you could use this
