@@ -8,16 +8,6 @@
 ![](libigl-teaser.png)
 
 
-
-```bibtex
-@misc{libigl,
-  title = {{libigl}: A simple {C++} geometry processing library},
-  author = {Alec Jacobson and Daniele Panozzo and others},
-  note = {https://libigl.github.io/},
-  year = {2018},
-}
-```
-
 libigl is a simple C++ geometry processing library. We have a wide
 functionality including construction of sparse discrete differential geometry
 operators and finite-elements matrices such as the cotangent Laplacian and
@@ -218,7 +208,7 @@ libigl is primarily [MPL2](http://www.mozilla.org/MPL/2.0/) licensed
 third-party code under other licenses. We're currently in the processes of
 identifying these and marking appropriately.
 
-## Attribution
+## Citation
 
 If you use libigl in your academic projects, please cite the papers we
 implement as appropriate. To cite the library in general, you could use this
