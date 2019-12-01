@@ -1,14 +1,18 @@
-# Unit Tests for [libigl](https://github.com/libigl/libigl)
+# Unit Tests for libigl
 
 The libigl unit test are included in the main repository inside the `tests` folder.
-There is a cmake flag to enable/disable the testings `LIBIGL_BUILD_TESTS` which is
-disable by default when libigl is not a *toplevel project*, that is you are using
+There is a CMake flag to enable/disable the testings `LIBIGL_BUILD_TESTS` which is
+disabled by default when libigl is not a *toplevel project*, that is when you are using
 libigl as a library in your own project.
+
+
+!!! tip
+    Before writing any new unit test, be sure you are using the `dev` branch to use the latest version of libigl available.
 
 
 ## Dependencies
 
-[Catch2](https://github.com/catchorg/Catch2) is a auto-download dependency.
+- [Catch2](https://github.com/catchorg/Catch2) is an auto-downloaded dependency.
 
 
 ## Build and test
@@ -25,6 +29,7 @@ cmake ..
 Then build and test with
 
 ```
+make
 make test
 ```
 
@@ -42,7 +47,7 @@ Test project /usr/local/libigl-unit-tests/build
     Start 4: run_igl_tests
 ```
 
-We refer to [Catch2 manual](https://github.com/catchorg/Catch2/tree/master/docs) for additional options.
+We refer to the [Catch2 manual](https://github.com/catchorg/Catch2/tree/master/docs) for additional options.
 
 
 ## Generating new tests
@@ -58,14 +63,14 @@ TEST_CASE("<function_name> <possible description>", "[igl]")
 }
 ```
 
-You can use functions like `test_common::assert_eq` to assert equality.
+You can use functions like `test_common::assert_eq` to assert equality between two Eigen matrices.
 The [cumsum test](https://github.com/libigl/libigl/blob/master/tests/include/igl/cumsum.cpp) is a good
 simple example of a test case.
 
-Many libigl functions act on triangle meshes, you can use the utility `test_common::load_mesh("cube.obj", V, F)`
-to load some data.
+Many libigl functions act on triangle meshes, you can use `igl::read_triangle_mesh(test_common::data_path("cube.obj"), V, F)` to load a triangle mesh located in the test data folder.
 
-**Note** the data used for testing is not in this repository. Instead it is contained in the [libigl-tests-data](https://github.com/libigl/libigl-tests-data) repo. It is automatically downloaded when `LIBIGL_BUILD_TESTS` is enabled.
+!!! note
+    The data used for testing is not in the main libigl repository. Instead it is contained in the [libigl-tests-data](https://github.com/libigl/libigl-tests-data) repository. It is automatically downloaded when `LIBIGL_BUILD_TESTS` is enabled.
 
 
 ## Conventions
@@ -73,14 +78,13 @@ to load some data.
 When naming a test for a function `igl::extra::function_name` use:
 
 ```cpp
-TEST_CASE(extra_function_name, "[igl/extra]")
+TEST_CASE("function_name: my_description", "[igl/extra]")
 {
   ...
 }
 ```
 
-where `meaning_test_name` could identify the type of test or the type of data
-being used.
+where `my_description` can be used to identify the type of unit test being run on the function `function_name`.
 
 ### Example
 
@@ -88,7 +92,7 @@ The test for `igl::copyleft::cgal::order_facets_around_edges` in
 `include/igl/copyleft/cgal/order_facets_around_edges.cpp` is:
 
 ```cpp
-TEST_CASE("copyleft_cgal_order_facets_around_edges", "[igl/copyleft/cgal]")
+TEST_CASE("copyleft_cgal_order_facets_around_edges: Simple", "[igl/copyleft/cgal]")
 {
   ...
 }
