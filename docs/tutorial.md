@@ -256,43 +256,43 @@ the viewer's callbacks. See the
 
 ### Scalar Field Visualization
 
-Colors and normals can be associated to faces or vertices using the
-set_colors function:
+Colors can be associated to faces or vertices using the
+`set_colors` function:
 
 ```cpp
 viewer.data().set_colors(C);
 ```
 
-`C` is a #C by 3 matrix with one RGB color per row. `C` must have as many
-rows as the number of faces **or** the number of vertices of the mesh.
-Depending on the size of `C`, the viewer applies the color to the faces or to
-the vertices.
+`C` is a #C by 3 matrix with one RGB color per row. `C` must have as many rows
+as the number of faces **or** the number of vertices of the mesh.  Depending on
+the size of `C`, the viewer applies the color to the faces or to the vertices.
+In Example 104, the colors of mesh vertices are set according to their Cartesian
+coordinates.
 
-Colors can be used to visualize a scalar function defined on a surface.  The
-scalar function is converted to colors using a color transfer function, which
-maps a scalar value between 0 and 1 to a color. A simple example of a scalar
-field defined on a surface is the z coordinate of each point, which can be
-extract from our mesh representation by taking the last column of `V`
-([Example 104]({{ repo_url }}/tutorial/104_Colors/main.cpp)). The function `igl::jet` can be used to
-convert it to colors:
+![([Example 104]({{ repo_url }}/tutorial/104_Colors/main.cpp)) Set the colors of a mesh. ](images/104_Colors.png)
+
+Per-Vertex scalar fields can be directly visualized using `set_data` function:
 
 ```cpp
-Eigen::VectorXd Z = V.col(2);
-igl::jet(Z,true,C);
+viewer.data().set_data(D);
 ```
 
-The first row extracts the third column from `V` (the z coordinate of each
-vertex) and the second calls a libigl functions that converts a scalar field to colors. The second parameter of jet normalizes the scalar field to lie between 0 and 1 before applying the transfer function.
+`D` is a #V by 1 vector with one value corresponding to each vertex. `set_data`
+will color according to linearly interpolating the _data_ within a triangle (in
+the [fragment shader](https://en.wikipedia.org/wiki/Shader#Types)) and use this
+interpolated data to look up a color in a colormap (stored as a texture). The
+colormap defaults to `igl::COLOR_MAP_TYPE_VIRIDIS` with 21 discrete intervals.
+A custom colormap may be set with `set_colormap`.
 
-![([Example 104]({{ repo_url }}/tutorial/104_Colors/main.cpp)) igl::jet converts a scalar field to a color field.](images/104_Colors.png)
-
-`igl::jet` is an example of a standard function in libigl: it takes simple
-types and can be easily reused for many different tasks.  Not committing to
-heavy data structures types favors simplicity, ease of use and reusability.
+!!! info
+    The method `set_data` is currently only available in the **dev** branch of libigl.
+    The currently stable release (in the **master** branch) can only use `set_colors`.
 
 ### Overlays
 
-In addition to plotting the surface, the viewer supports the visualization of points, lines and text labels: these overlays can be very helpful while developing geometric processing algorithms to plot debug information.
+In addition to plotting the surface, the viewer supports the visualization of
+points, lines and text labels: these overlays can be very helpful while
+developing geometric processing algorithms to plot debug information.
 
 ```cpp
 viewer.data().add_points(P,Eigen::RowVector3d(r,g,b));
@@ -2286,7 +2286,7 @@ igl::mlgetmatrix(&engine,"EV",EV);
 
 and plotted using the libigl viewer.
 
-![4 Eigenfunctions of the Laplacian plotted in the libigl viewer.](images/602_Matlab_2.png)
+![Eigenfunctions of the Laplacian computed in Matlab, plotted in the libigl viewer.](images/602_Matlab_2.gif)
 
 
 #### Saving A Matlab Workspace
@@ -3142,8 +3142,8 @@ the mass matrix `M`: `QL = L'*(M\L)`. Because of the implicit zero Neumann
 boundary conditions however, the function behavior is significantly warped at
 the boundary if $f$ does not have zero normal gradient at the boundary.
 
-In #[stein_2017] it is suggested to use the Biharmonic energy with natural
-Hessian boundary conditions instead, which corresponds to the hessian energy
+In [^stein_2018] it is suggested to use the Biharmonic energy with natural
+Hessian boundary conditions instead, which corresponds to the Hessian energy
 with the matrix `QH = H'*(M2\H)`, where `H` is a finite element Hessian and
 `M2` is a stacked mass matrix. The matrices `H` and `QH` are implemented in
 libigl as `igl::hessian` and `igl::hessian_energy` respectively. An example
@@ -3207,7 +3207,9 @@ igl::marching_tets(TV,TT,S, isovalue ,V,F);
 
 ### Implicit Function Meshing
 
-_Entry Missing_
+!!! todo
+    _Entry Missing_
+
 
 ### Heat Method For Fast Geodesic Distance Approximation
 
@@ -3328,7 +3330,7 @@ things and ensures monotonicity (right)](images/heat-geodesic-peaks.png)
 ### Fast Winding Number For Soups And Clouds
 
 !!! info
-    The content of this tutorial is currently available in #1218, and will be merged on the **dev** branch of the repository. It will be available in the **master** branch in the next version of libigl.
+    The content of this tutorial is currently available in **dev** branch of the repository. It will be available in the **master** branch in the next version of libigl.
 
 In 2018, Barill et al. [^barill_2018] demonstrated how to significantly
 expediate the computation of the [generalized winding
@@ -3497,5 +3499,5 @@ repository](https://github.com/libigl/libigl).
 [^crane_2013]: Keenan Crane, Clarisse Weischedel, and Max Wardetzky. [Geodesics in Heat: A New Approach to Computing Distance Based on Heat Flow](https://www.google.com/search?q=geodesics+in+heat+a+new+approach+to+computing+distance+based+on+heat+flow), 2013.
 [^bobenko_2005]: Alexander I. Bobenko and Boris A. Springborn. [A discrete Laplace-Beltrami operator for simplicial surfaces](https://www.google.com/search?q=a+discrete+laplace-beltrami+operator+for+simplicial+surfaces), 2005.
 [^jiang_2017]: Zhongshi Jiang, Scott Schaefer, Daniele Panozzo. [SCAF: Simplicial Complex Augmentation Framework for Bijective Maps](https://doi.org/10.1145/3130800.3130895), 2017
-[^barill_2018]: Gavin Barill, Neil G. Dickson, Ryan Schmidt, David I.W. Levin, Alec Jacobson. [ Fast Winding Numbers for Soups and Clouds](http://www.dgp.toronto.edu/projects/fast-winding-numbers/), 2018.
-
+[^barill_2018]: Gavin Barill, Neil G. Dickson, Ryan Schmidt, David I.W. Levin, Alec Jacobson. [Fast Winding Numbers for Soups and Clouds](http://www.dgp.toronto.edu/projects/fast-winding-numbers/), 2018.
+[^stein_2018]: Oded Stein, Eitan Grinspun, Max Wardetzky, Alec Jacobson. [Natural Boundary Conditions for Smoothing in Geometry Processing](http://www.cs.columbia.edu/cg/hessians/), 2018.
