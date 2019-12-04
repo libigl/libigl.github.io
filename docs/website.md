@@ -5,8 +5,7 @@ The website is now hosted in [its own repository](https://github.com/libigl/libi
 separate from the main libigl repository. You can edit directly pages of the website and create an
 associated pull requests on github. For more substantial changes, you may want
 to preview your changes to the website before committing them. The
-instructions bellow explain how to *preview* or *deploy* the website on
-github.
+instructions bellow explain how to *preview* the website on your local machine.
 
 ### Prerequisites
 
@@ -31,32 +30,18 @@ github.
    ```bash
    mkdocs serve
    ```
-3. Build the website to generate the html locally (optional):
-   ```bash
-   mkdocs build
-   ```
-4. Deploy the website directly to github (will overwrite the gh-pages branch
-   of the remote repository):
-   ```bash
-   mkdocs gh-deploy
-   ```
-
-!!! warning
-    
-    The `gh-deploy` script will overwrite the content of the `gh-pages` in the
-    remote repository. Be sure of what you are doing before pushing new
-    content with this command.
 
 !!! tip
 
-    * Be careful to not have any `<>` characters in your email in your
-      `.gitconfig`, otherwise the `gh-deploy` script will fail.
-    * Dead links can be checked using the
-      [LinkChecker](https://linkchecker.github.io/linkchecker/) tool. Run the
-      website locally, then run LinkChecker on it:
-      ```bash
-      linkchecker http://127.0.0.1:8000
-      ```
+    Dead links can be checked using the [LinkChecker](https://linkchecker.github.io/linkchecker/)
+    tool. Run the website locally, then run LinkChecker on it:
+    ```bash
+    linkchecker http://127.0.0.1:8000
+    ```
+
+### Deployment
+
+Deployment has been automated through the use of GitHub Actions. The configuration file is located [here](https://github.com/libigl/libigl.github.io/blob/docs/.github/workflows/gh-pages.yml).
 
 ## References
 
