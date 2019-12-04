@@ -59,7 +59,7 @@ inside the `include\igl` in the `tests` folder. Then just add
 
 TEST_CASE("<function_name> <possible description>", "[igl]")
 {
-  \\test code goes here
+  //test code goes here
 }
 ```
 
