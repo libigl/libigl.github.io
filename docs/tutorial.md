@@ -525,7 +525,7 @@ designer, but creases and corners can also be computed automatically. Libigl
 implements a simple scheme which computes corner normals as averages of
 normals of faces incident on the corresponding vertex which do not deviate by more than a specified dihedral angle (e.g. 20°).
 
-![The `Normals` example computes per-face (left), per-vertex (middle) and per-corner (right) normals](images/fandisk-normals.jpg)
+![The `Normals` example computes per-face (left), per-vertex (middle) and per-corner (right) normals](images/fandisk-normals.png)
 
 ### Gaussian Curvature
 
@@ -826,7 +826,7 @@ functionality is provided in libigl using `slice_into`:
 igl::slice_into(B,R,C,A);
 ```
 
-![The example `Slice` shows how to use `igl::slice` to change the colors for triangles on a mesh.](images/decimated-knight-slice-color.jpg)
+![The example `Slice` shows how to use `igl::slice` to change the colors for triangles on a mesh.](images/decimated-knight-slice-color.png)
 
 ### Sort
 
@@ -866,7 +866,7 @@ where again `I` reveals the index of sort so that it can be reproduced with
 
 Analogous functions are available in libigl for: `max`, `min`, and `unique`.
 
-![The example `Sort` shows how to use `igl::sortrows` to pseudocolor triangles according to their barycenters' sorted order ([Example 302]({{ repo_url }}/tutorial/302_Sort/main.cpp)).](images/decimated-knight-sort-color.jpg)
+![The example `Sort` shows how to use `igl::sortrows` to pseudocolor triangles according to their barycenters' sorted order ([Example 302]({{ repo_url }}/tutorial/302_Sort/main.cpp)).](images/decimated-knight-sort-color.png)
 
 
 #### Other Matlab-style Functions
@@ -3039,7 +3039,7 @@ bool hit = igl::unproject_onto_mesh(
   viewer.core.viewport,
   *ei,
   fid,
-  vid);
+  bc);
 ```
 
 This function casts a ray from the view plane in the view direction. Variables
@@ -3049,9 +3049,9 @@ projection matrix respectively; `viewport` is the viewport in OpenGL format;
 `ei`
 contains a [Bounding Volume
 Hierarchy](http://en.wikipedia.org/wiki/Bounding_volume_hierarchy) constructed
-by Embree, and `fid` and `vid` are the picked face and vertex, respectively.
+by Embree, and `fid` and `bc` are the picked face and barycentric coordinate of the picked position, respectively.
 
-![([Example 708]({{ repo_url }}/tutorial/708_Picking/main.cpp)) Picking via ray casting. The selected vertices are colored in red.](images/607_Picking.png)
+![([Example 708]({{ repo_url }}/tutorial/708_Picking/main.cpp)) Picking via ray casting. The selected faces are colored in red.](images/708_Picking.png)
 
 ### Scalable Locally Injective Maps
 
