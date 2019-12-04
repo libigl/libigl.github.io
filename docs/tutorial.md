@@ -3261,7 +3261,7 @@ In libigl, you can compute approximate geodesic distances for a mesh (`V`,`F`)
 from a list of source vertex indices `gamma` into a vector `D` using this method
 via two steps:
 
-```
+```cpp
 igl::HeatGeodesicsData<double> data;
 igl::heat_geodesics_precompute(V,F,data);
 ...
@@ -3291,7 +3291,7 @@ locally Delaunay (i.e., its corresponding cotangent weights are positive).
 You can compute the intrinsic Delaunay triangulation of mesh (`V`,`F`) in libigl
 using:
 
-```
+```cpp
 Eigen::MatrixXd l;
 igl::edge_lengths(V,F,l);
 Eigen::MatrixXd l_intrinsic;
@@ -3306,14 +3306,14 @@ indices.
 You may construct the intrinsic Delaunay cotangent Laplacian matrix directly
 using:
 
-```
+```cpp
 Eigen::SparseMatrix<double> L;
 igl::intrinsic_delaunay_cotmatrix(V,F,L);
 ```
 
 And finally you can compute heat geodesics using this matrix via:
 
-```
+```cpp
 igl::HeatGeodesicsData<double> data;
 data.use_intrinsic_delaunay = true;
 igl::heat_geodesics_precompute(V,F,data);
@@ -3357,7 +3357,7 @@ Computing _fast_ winding numbers for soups has two steps: building the tree data
 structure and then evaluating at query points. In libigl, this is programmed as
 follows:
 
-```
+```cpp
 igl::FastWindingNumberBVH fwn_bvh;
 igl::fast_winding_number(V.cast<float>(),F,2,fwn_bvh);
 Eigen::VectorXf W;
@@ -3375,7 +3375,7 @@ computing k nearest neighbors `igl::knn`. And that function and the eventual
 winding number computation uses libigl's `igl::octree` as a bounding volume
 hierarchy. To estimate areas use for a point cloud `P` with normals `N` use:
 
-```
+```cpp
 // Build octree
 std::vector<std::vector<int > > O_PI;
 Eigen::MatrixXi O_CH;
@@ -3393,7 +3393,7 @@ Eigen::VectorXd A;
 
 Then it is possible to compute fast winding numbers for a list of queries `Q`:
 
-```
+```cpp
 Eigen::MatrixXd O_CM;
 Eigen::VectorXd O_R;
 Eigen::MatrixXd O_EC;
