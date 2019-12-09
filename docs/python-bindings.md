@@ -1,7 +1,7 @@
 # Python wrappers for libigl
 
-A new a [new and improved version](https://libigl.github.io/libigl-python-bindings/) of the python bindings is under development.
-The new bindings are installed trough conda
+A [new and improved version](https://libigl.github.io/libigl-python-bindings/) of the Python bindings is under development.
+The new bindings are installed through conda
 ```
 conda install -c conda-forge igl
 ```
