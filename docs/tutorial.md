@@ -1679,7 +1679,7 @@ Being a subspace method, an immediate disadvantage is the reduced degrees of
 freedom. This brings performance, but in some situations limits behavior too
 much. In such cases one can use the skinning subspace to build an effective
 clustering of rotation edge-sets for a traditional ARAP optimization: forgoing
-the subspace substitution. This has an two-fold effect. The cost of the
+the subspace substitution. This has a two-fold effect. The cost of the
 rotation fitting, local step drastically reduces, and the deformations are
 "regularized" according the clusters. From a high level point of view, if the
 clusters are derived from skinning weights, then they will discourage bending,
@@ -1793,7 +1793,7 @@ algorithms are efficient and simple, but they usually produce high-distortion ma
 
 2. **Single patch, free boundary:** these algorithms let the boundary
 deform freely, greatly reducing the map distortion. Care should be taken to
-prevent the border to self-intersect.
+prevent the border from self-intersecting.
 
 3. **Global parametrization**: these algorithms work on meshes with arbitrary
 genus. They initially cut the mesh in multiple patches that can be separately parametrized. The generated maps are discontinuous on the cuts (often referred as *seams*).
@@ -1985,7 +1985,7 @@ random face.
 
 ![Combed bisector field.](images/505_MIQ_3.png)
 
-You can imagine this process as combing an hairy surface: you will be able to
+You can imagine this process as combing a hairy surface: you will be able to
 comb part of it, but at some point you will not be able to consistently comb
 the entire surface ([Hairy ball
 theorem](http://en.wikipedia.org/wiki/Hairy_ball_theorem)). The discontinuities
@@ -2098,7 +2098,7 @@ reproducible, allowing to quickly test algorithms variants on the same input
 data.
 
 Serialization is often not considered in geometry processing due to the extreme
-difficulty in serializing pointer-based data structured, such as an half-edge
+difficulty in serializing pointer-based data structures, such as an half-edge
 data structure ([OpenMesh](http://openmesh.org), [CGAL](http://www.cgal.org)),
 or a pointer based indexed structure
 ([VCG](http://vcg.isti.cnr.it/~cignoni/newvcglib/html/)).
@@ -2501,7 +2501,7 @@ Stringing together many of these operations, one can design quite complex
 shapes. A typical CSG library might only keep explicit _base-case_
 representations of canonical shapes: half-spaces, quadrics, etc.
 
-In libigl, we do currently _not_ have an implicit surface representation.
+In libigl, we currently do _not_ have an implicit surface representation.
 Instead we expect our users to be working with _explicit_ triangle mesh
 _boundary representations_ of solid shapes. CSG operations are much hard to
 compute robustly with boundary representations, but are nonetheless useful.
