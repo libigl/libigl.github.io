@@ -69,6 +69,7 @@
 - Added a conda environment `cmake/libigl-cgal.yml` to provide boost for Windows users (#1239)
 - Added experimental support for Hunter (#1242)
 - Now `libigl.cmake` will define a CMake target `Eigen3::Eigen` if not provided by the user (#1299)
+- Added `igl_set_folders()` to sort CMake targets into folders in IDEs such as Visual Studio or Xcode (#1383)
 - Minor fixes to our CMake build system (#1363)
 
 #### Misc
@@ -80,6 +81,7 @@
 - Unit tests: cleand up `test_common.h` (#1365)
 - Made call to `igl::predicates::exactinit()` thread-safe + marked internal functions in `predicates.c` as `static` to prevent name collisions (#1377)
 - Doc cleanup (#1376)
+- Allows `igl::hsv_to_rgb` to work on negative hues (#1399)
 - Explicitly marked the following functions as deprecated (#1380):
     - `igl::all_edges`
     - `igl::internal_angles_using_edge_lengths` (only a specific overload is affected)
