@@ -303,7 +303,7 @@ developing geometric processing algorithms to plot debug information.
 viewer.data().add_points(P,Eigen::RowVector3d(r,g,b));
 ```
 
-Draws a point of color r,g,b for each row of P. The point is placed at the coordinates specified in each row of P, which is a #P by 3 matrix.
+Draws a point of color r,g,b for each row of P. The point is placed at the coordinates specified in each row of P, which is a #P by 3 matrix. Size of the points (in pixels) can be changed globally by setting `viewer.data().point_size`.
 
 ```cpp
 viewer.data().add_edges(P1,P2,Eigen::RowVector3d(r,g,b));
