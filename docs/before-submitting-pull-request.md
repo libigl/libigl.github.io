@@ -1,4 +1,4 @@
-# Before submitting a pull request
+# Before Submitting A Pull Request
 
 There are a variety of things you can do before submitting a pull request that
 will reduce the effort on the libigl team to merge your code and increase the
@@ -16,7 +16,7 @@ likelihood that the merge ever happens.
     github issue or pull-request by mentioning their number in your message. See
     for example #954.
 
-## Exhaustive build test
+## Exhaustive Build Test
 
 This script will `git clone` libigl to a temporary directory and build 
 
@@ -34,7 +34,7 @@ Eventually this script should also run the unit tests.
 scripts/clone_and_build.sh
 ```
 
-### Direct test of tutorial using static library
+### Direct Test Of Tutorial Using Static Library
 
 This part of the `clone_and_build.sh` script catches 99% of the compilation
 issues that _don't_ show up when testing:

@@ -15,7 +15,7 @@ libigl as a library in your own project.
 - [Catch2](https://github.com/catchorg/Catch2) is an auto-downloaded dependency.
 
 
-## Build and test
+## Build And Test
 
 Use `cmake` to generate a `Makefile` that will build _and test_ upon issuing
 `make`:
@@ -50,7 +50,7 @@ Test project /usr/local/libigl-unit-tests/build
 We refer to the [Catch2 manual](https://github.com/catchorg/Catch2/tree/master/docs) for additional options.
 
 
-## Generating new tests
+## Generating New Tests
 
 To create a new test, just create a file with the same name of the file you want to test
 inside the `include\igl` in the `tests` folder. Then just add
@@ -109,7 +109,7 @@ None.
 the libigl function `igl::cotmatrix` is bug free or "fully tested" or "heavily
 tested" or even "adequately tested".
 
-## Need work?
+## Need Work?
 
 Some of the most used libigl functions
 
