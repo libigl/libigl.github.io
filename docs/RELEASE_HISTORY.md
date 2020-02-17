@@ -63,6 +63,7 @@
 - Added `igl::quad_grid` and `igl::triangulated_grid` to create meshes from regular grids (#1369)
 - Added `igl::isolines_map`, `ViewerData::set_data` and `ViewerData::set_colormap` to improve scalar field visualization in the Viewer, and updated tutorials accordingly (#1371)
 - Added new `COLOR_MAP_TYPE_TURBO` colormap, based on [Turbo](https://ai.googleblog.com/2019/08/turbo-improved-rainbow-colormap-for.html). Jet is now an alias for Turbo, and switched to Viridis as default colormap in the viewer (#1372)
+- Added `igl::slice_sorted` and removed deprecated `Eigen::DynamicSparsematrix` from `igl::slice` (#1370)
 
 #### Build system
 - Overhauled function signatures in preparation of new python bindings (#1162, #1228, #1271, #1274)
@@ -87,7 +88,7 @@
     - `igl::internal_angles_using_edge_lengths` (only a specific overload is affected)
     - `igl::is_border_vertex` (only a specific overload is affected)
     - `igl::remove_duplicates`
-- Various bugfixes (#1197, #1210, #1216, #1231, #1247, #1258, #1288, #1309, #1320, #1337, #1345)
+- Various bugfixes, code cleanup and explicit template instantiations (#1197, #1210, #1216, #1231, #1247, #1258, #1288, #1309, #1320, #1337, #1345, #1379, #1396)
 
 ## Version 2.1.0 Changes
 
