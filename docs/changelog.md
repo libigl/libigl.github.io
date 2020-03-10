@@ -88,7 +88,7 @@
     - `igl::internal_angles_using_edge_lengths` (only a specific overload is affected)
     - `igl::is_border_vertex` (only a specific overload is affected)
     - `igl::remove_duplicates`
-- Various bugfixes, code cleanup and explicit template instantiations (#1197, #1210, #1216, #1231, #1247, #1258, #1288, #1309, #1320, #1337, #1345, #1379, #1396)
+- Various bugfixes, code cleanup and explicit template instantiations (#1197, #1210, #1216, #1231, #1247, #1258, #1288, #1309, #1320, #1337, #1345, #1379, #1396, #1327)
 
 ## Version 2.1.0 Changes
 
