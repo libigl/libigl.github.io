@@ -1,6 +1,6 @@
 # libigl - A simple C++ geometry processing library
 
-![Build](https://github.com/libigl/libigl/workflows/Build/badge.svg)
+![](https://github.com/libigl/libigl/workflows/Build/badge.svg)
 [![](https://anaconda.org/conda-forge/igl/badges/installer/conda.svg)](https://conda.anaconda.org/conda-forge/igl)
 <!-- [![](https://anaconda.org/conda-forge/igl/badges/downloads.svg)](https://anaconda.org/conda-forge/igl) -->
 
