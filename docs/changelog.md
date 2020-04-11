@@ -51,12 +51,23 @@
 
 ## Upcoming version (`master` branch)
 
+#### New Features
+- Replace .ply reader/writer with tinyply library (#1422)
+
+#### Build System
+
+#### Misc
+- Fix align_camera_center in Viewer::init() for multiple cores (#1349)
+- Add floating point exceptions in unit tests (#1001)
+- Extended serialization functionality to Eigen::Array (#1113)
+- Various bugfixes, compile fixes, template fixes (#1400, #1361, #1402, #1430, #1438, #1471, #1441, #1475)
+
 ## Version 2.2.0 Changes
 
 #### Python Bindings
 The python bindings have been moved to a [separate repository](https://github.com/libigl/libigl-python-bindings). These are now available as an [conda package](https://anaconda.org/conda-forge/igl).
 
-#### New features
+#### New Features
 - Fast winding number for triangle soups (#1218)
 - Iterative closest point algorithm + tutorial (#1347)
 - Ear clipping triangulation (#1169)
@@ -70,7 +81,7 @@ The python bindings have been moved to a [separate repository](https://github.co
 - Added new `COLOR_MAP_TYPE_TURBO` colormap, based on [Turbo](https://ai.googleblog.com/2019/08/turbo-improved-rainbow-colormap-for.html). Jet is now an alias for Turbo, and switched to Viridis as default colormap in the viewer (#1372)
 - Added `igl::slice_sorted` and removed deprecated `Eigen::DynamicSparsematrix` from `igl::slice` (#1370)
 
-#### Build system
+#### Build System
 - Overhauled function signatures in preparation of new python bindings (#1162, #1228, #1271, #1274)
 - Added a conda environment `cmake/libigl-cgal.yml` to provide boost for Windows users (#1239)
 - Added experimental support for Hunter (#1242)
