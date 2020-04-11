@@ -4,11 +4,9 @@ There are a variety of things you can do before submitting a pull request that
 will reduce the effort on the libigl team to merge your code and increase the
 likelihood that the merge ever happens.
 
-  1. Make sure you are using the **dev** branch to create your pull request.
-  2. Test your code and submit a unit test as part of the pull request
-  3. Verify that your code matches the [libigl style
-  guidelines](style-guidelines.md)
-  4. ~~Run the [exhaustive build test](#exhaustivebuildtest) below~~ *[deprecated]*
+  1. Make sure you are up-to-date with the **master** branch to create your pull request.
+  2. Test your code and submit a unit test as part of the pull request;
+  3. Verify that your code matches the [libigl style guidelines](style-guidelines.md);
 
 !!! tip
 
@@ -16,35 +14,16 @@ likelihood that the merge ever happens.
     github issue or pull-request by mentioning their number in your message. See
     for example #954.
 
-## Exhaustive Build Test
+### Compilation Using Static Library
 
-This script will `git clone` libigl to a temporary directory and build 
-
-  1. the static libigl library, 
-  2. the tutorial using the default header only libigl, and 
-  3. the tutorial using the static library libigl.
-  
-Eventually this script should also run the unit tests.
+If you are using libigl in header-only mode, please ensure that your code also compiles when enabling the CMake flag `LIBIGL_USE_STATIC_LIBRARY`:
 
 ```bash
-# In scripts/clone_and_build.sh add your email address to the line:
-# `recipients="alecjacobson@gmail.com,youremail@domain.com"`
-# In your email client (e.g. gmail) create a filter to prevent emails 
-# from your local machine from going to spam
-scripts/clone_and_build.sh
-```
-
-### Direct Test Of Tutorial Using Static Library
-
-This part of the `clone_and_build.sh` script catches 99% of the compilation
-issues that _don't_ show up when testing:
-
-```bash
-cd tutorial/
 mkdir build-use-static
 cd build-use-static
 cmake -DCMAKE_BUILD_TYPE=Release -DLIBIGL_USE_STATIC_LIBRARY=ON ..
 make
+make test
 ```
 
 ## Troubleshooting

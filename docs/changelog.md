@@ -49,7 +49,12 @@
       0.1.5   | Compilation on windows, bug fix for compilation with cygwin
       0.1.1   | Alpha release with core functions, extras, examples
 
-## Upcoming version (`dev` branch)
+## Upcoming version (`master` branch)
+
+## Version 2.2.0 Changes
+
+#### Python Bindings
+The python bindings have been moved to a [separate repository](https://github.com/libigl/libigl-python-bindings). These are now available as an [conda package](https://anaconda.org/conda-forge/igl).
 
 #### New features
 - Fast winding number for triangle soups (#1218)
@@ -72,6 +77,7 @@
 - Now `libigl.cmake` will define a CMake target `Eigen3::Eigen` if not provided by the user (#1299)
 - Added `igl_set_folders()` to sort CMake targets into folders in IDEs such as Visual Studio or Xcode (#1383)
 - Minor fixes to our CMake build system (#1363)
+- Github actions for CI replacing appveyor and travis (#1389)
 
 #### Misc
 - Fix underflow issue when computing normalization in `igl::heat_geodesics` (#1344) 

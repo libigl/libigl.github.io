@@ -7,7 +7,7 @@ libigl as a library in your own project.
 
 
 !!! tip
-    Before writing any new unit test, be sure you are using the `dev` branch to use the latest version of libigl available.
+    Before writing any new unit test, be sure you are up-to-date with the **master** branch to use the latest version of libigl available.
 
 
 ## Dependencies

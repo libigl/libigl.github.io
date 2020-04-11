@@ -289,10 +289,6 @@ interpolated data to look up a color in a colormap (stored as a texture). The
 colormap defaults to `igl::COLOR_MAP_TYPE_VIRIDIS` with 21 discrete intervals.
 A custom colormap may be set with `set_colormap`.
 
-!!! info
-    The method `set_data` is currently only available in the **dev** branch of libigl.
-    The currently stable release (in the **master** branch) can only use `set_colors`.
-
 ### Overlays
 
 In addition to plotting the surface, the viewer supports the visualization of
@@ -3333,9 +3329,6 @@ triangulation's cotagent Laplacian `igl::intrinsic_delaunay_cotmatrix` improves
 things and ensures monotonicity (right)](images/heat-geodesic-peaks.png)
 
 ### Fast Winding Number For Soups And Clouds
-
-!!! info
-    The content of this tutorial is currently available in **dev** branch of the repository. It will be available in the **master** branch in the next version of libigl.
 
 In 2018, Barill et al. [^barill_2018] demonstrated how to significantly
 expediate the computation of the [generalized winding

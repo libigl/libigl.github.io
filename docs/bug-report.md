@@ -14,9 +14,8 @@ Before opening an issue on creating a pull request, please check the following:
 
 ## General Issues
 
-- If you are using the **master** branch, please checkout the latest version
-  of the **dev** branch and verify that your issue has not been fixed already
-  before opening an issue on github.
+- Make sure you are up-to-date with the **master** branch, and verify that
+  your issue has not been fixed already before opening an issue on github.
 
 - To report a problem about the **website** (out-of-date content, erroneous
   instructions or errors in the tutorial), please open your issue in the
