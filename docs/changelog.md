@@ -60,7 +60,7 @@
 - Fix align_camera_center in Viewer::init() for multiple cores (#1349)
 - Add floating point exceptions in unit tests (#1001)
 - Extended serialization functionality to Eigen::Array (#1113)
-- Various bugfixes, compile fixes, template fixes (#1400, #1361, #1402, #1430, #1438, #1471, #1441, #1475)
+- Various bugfixes, compile fixes, template fixes (#1400, #1361, #1402, #1430, #1438, #1471, #1441, #1475, #1335)
 
 ## Version 2.2.0 Changes
 
