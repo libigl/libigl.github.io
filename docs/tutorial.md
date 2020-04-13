@@ -1695,7 +1695,7 @@ redundant) clustering of the per-triangle edge-sets.
 
 ### Biharmonic Coordinates
 
-Linear blend skinning (as [above](#boundedbiharmonicweights)) deforms a mesh by
+Linear blend skinning (as [above](#bounded-biharmonic-weights)) deforms a mesh by
 propagating _full affine transformations_ at handles (bones, points, regions,
 etc.) to the rest of the shape via weights. Another deformation framework,
 called "generalized barycentric coordinates", is a special case of linear blend
@@ -2622,7 +2622,7 @@ in artifacts if used for solving PDEs.
 ### Generalized Winding Number
 
 The problem of tetrahedralizing the interior of closed watertight surface mesh
-is a difficult, but well-posed problem (see our [Tetgen wrappers][tetrahedralizationofclosedsurfaces]).  But
+is a difficult, but well-posed problem (see our [Tetgen wrappers](#tetrahedralization-of-closed-surfaces)).  But
 black-box tet-meshers like TetGen will _refuse_ input triangle meshes with
 self-intersections, open boundaries, non-manifold edges from multiple connected
 components.
@@ -3085,7 +3085,7 @@ using the SCAF algorithm in 10 iterations.](images/simplicial_complex_augmentati
 
 ### Subdivision Surfaces
 
-Given a coarse mesh (aka cage) with vertices `V` and faces `F`, one can createa
+Given a coarse mesh (aka cage) with vertices `V` and faces `F`, one can create a
 higher-resolution mesh with more vertices and faces by _subdividing_ every
 face. That is, each coarse triangle in the input is replaced by many smaller
 triangles. Libigl has three different methods for subdividing a triangle mesh.
