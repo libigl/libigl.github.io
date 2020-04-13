@@ -3085,7 +3085,7 @@ using the SCAF algorithm in 10 iterations.](images/simplicial_complex_augmentati
 
 ### Subdivision Surfaces
 
-Given a coarse mesh (aka cage) with vertices `V` and faces `F`, one can createa
+Given a coarse mesh (aka cage) with vertices `V` and faces `F`, one can create a
 higher-resolution mesh with more vertices and faces by _subdividing_ every
 face. That is, each coarse triangle in the input is replaced by many smaller
 triangles. Libigl has three different methods for subdividing a triangle mesh.
