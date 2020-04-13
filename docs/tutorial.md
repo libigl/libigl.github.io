@@ -2622,7 +2622,7 @@ in artifacts if used for solving PDEs.
 ### Generalized Winding Number
 
 The problem of tetrahedralizing the interior of closed watertight surface mesh
-is a difficult, but well-posed problem (see our [Tetgen wrappers][tetrahedralizationofclosedsurfaces]).  But
+is a difficult, but well-posed problem (see our [Tetgen wrappers](#tetrahedralization-of-closed-surfaces)).  But
 black-box tet-meshers like TetGen will _refuse_ input triangle meshes with
 self-intersections, open boundaries, non-manifold edges from multiple connected
 components.
