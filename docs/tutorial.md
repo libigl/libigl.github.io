@@ -1695,7 +1695,7 @@ redundant) clustering of the per-triangle edge-sets.
 
 ### Biharmonic Coordinates
 
-Linear blend skinning (as [above](#boundedbiharmonicweights)) deforms a mesh by
+Linear blend skinning (as [above](#bounded-biharmonic-weights)) deforms a mesh by
 propagating _full affine transformations_ at handles (bones, points, regions,
 etc.) to the rest of the shape via weights. Another deformation framework,
 called "generalized barycentric coordinates", is a special case of linear blend
