@@ -49,29 +49,63 @@
       0.1.5   | Compilation on windows, bug fix for compilation with cygwin
       0.1.1   | Alpha release with core functions, extras, examples
 
-## Upcoming version (`dev` branch)
+## Upcoming version (`master` branch)
 
-#### Build system
-- Overhauled function signatures in preparation of new python bindings (#1162, #1228, #1271, #1274)
-- Added a conda environment `cmake/libigl-cgal.yml` to provide boost for Windows users (#1239)
-- Added experimental support for Hunter (#1242)
-- Now `libigl.cmake` will define a CMake target `Eigen3::Eigen` if not provided by the user (#1299)
+#### New Features
+- Replace .ply reader/writer with tinyply library (#1422)
 
-#### New features
+#### Build System
+
+#### Misc
+- Fix align_camera_center in Viewer::init() for multiple cores (#1349)
+- Add floating point exceptions in unit tests (#1001)
+- Extended serialization functionality to Eigen::Array (#1113)
+- Various bugfixes, compile fixes, template fixes (#1400, #1361, #1402, #1430, #1438, #1471, #1441, #1475, #1335)
+
+## Version 2.2.0 Changes
+
+#### Python Bindings
+The python bindings have been moved to a [separate repository](https://github.com/libigl/libigl-python-bindings). These are now available as an [conda package](https://anaconda.org/conda-forge/igl).
+
+#### New Features
 - Fast winding number for triangle soups (#1218)
 - Iterative closest point algorithm + tutorial (#1347)
 - Ear clipping triangulation (#1169)
 - Added `igl::path_to_edges` function (#1259)
 - `igl::dijkstra` can now use mesh edge length (#1170)
 - Keep reference to multiple material when reading obj (#1280)
+- Added `igl::sharp_edges` for sharp edges extraction (#1364)
+- Added `igl::unproject_on_line`, `igl::unproject_on_plane` and `igl::projection_constraint` to compute cursor (un)-projections (#1368)
+- Added `igl::quad_grid` and `igl::triangulated_grid` to create meshes from regular grids (#1369)
+- Added `igl::isolines_map`, `ViewerData::set_data` and `ViewerData::set_colormap` to improve scalar field visualization in the Viewer, and updated tutorials accordingly (#1371)
+- Added new `COLOR_MAP_TYPE_TURBO` colormap, based on [Turbo](https://ai.googleblog.com/2019/08/turbo-improved-rainbow-colormap-for.html). Jet is now an alias for Turbo, and switched to Viridis as default colormap in the viewer (#1372)
+- Added `igl::slice_sorted` and removed deprecated `Eigen::DynamicSparsematrix` from `igl::slice` (#1370)
+
+#### Build System
+- Overhauled function signatures in preparation of new python bindings (#1162, #1228, #1271, #1274)
+- Added a conda environment `cmake/libigl-cgal.yml` to provide boost for Windows users (#1239)
+- Added experimental support for Hunter (#1242)
+- Now `libigl.cmake` will define a CMake target `Eigen3::Eigen` if not provided by the user (#1299)
+- Added `igl_set_folders()` to sort CMake targets into folders in IDEs such as Visual Studio or Xcode (#1383)
+- Minor fixes to our CMake build system (#1363)
+- Github actions for CI replacing appveyor and travis (#1389)
 
 #### Misc
 - Fix underflow issue when computing normalization in `igl::heat_geodesics` (#1344) 
 - Update nrosy to match the MIQ paper (#1303)
 - Delete `Embree_convenience.h` (#1314)
 - Refactored `igl::cut_mesh` (#1332)
-- Various improvements to the viewer (#1196, #1251)
-- Various bugfixes (#1197, #1210, #1216, #1231, #1247, #1258, #1288, #1309, #1320, #1337, #1345)
+- Various improvements to the viewer (#1196, #1251, #1366)
+- Unit tests: cleand up `test_common.h` (#1365)
+- Made call to `igl::predicates::exactinit()` thread-safe + marked internal functions in `predicates.c` as `static` to prevent name collisions (#1377)
+- Doc cleanup (#1376)
+- Allows `igl::hsv_to_rgb` to work on negative hues (#1399)
+- Explicitly marked the following functions as deprecated (#1380):
+    - `igl::all_edges`
+    - `igl::internal_angles_using_edge_lengths` (only a specific overload is affected)
+    - `igl::is_border_vertex` (only a specific overload is affected)
+    - `igl::remove_duplicates`
+- Various bugfixes, code cleanup and explicit template instantiations (#1197, #1210, #1216, #1231, #1247, #1258, #1288, #1309, #1320, #1337, #1345, #1379, #1396, #1327)
 
 ## Version 2.1.0 Changes
 

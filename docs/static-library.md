@@ -1,7 +1,7 @@
 <!-- Hide h3+ from toc  -->
 <style>.md-nav--secondary .md-nav__list .md-nav__list { display: none }</style>
 
-# Compiling libigl as a static library
+# Compiling libigl As A Static Library
 
 !!! warning
     Compiling libigl as a static library is considerably more difficult
@@ -76,7 +76,7 @@ Zip this directory without .git litter and binaries using:
 git archive -prefix=libigl/ -o libigl.zip master
 ```
 
-## Explicit instantiations of templated functions
+## Explicit Instantiations Of Templated Functions
 
 Special care must be taken by the developers of each function and
 class in the libigl library that uses C++ templates. If this function
@@ -161,7 +161,7 @@ reveal each missing symbol on its own line:
 make 2>&1 | grep "referenced from" | sed -e "s/, referenced from.*//"
 ```
 
-### Benefits of static library
+### Benefits Of Static Library
 
 - **Faster compile time**: Because the libigl library
     is already compiled, only the new code in ones project must be
@@ -173,6 +173,6 @@ make 2>&1 | grep "referenced from" | sed -e "s/, referenced from.*//"
     regardless of whether one's project is being optimized or
     debugged.
 
-### Drawbacks of static library
+### Drawbacks Of Static Library
 
 - **Hard to use templates**: Special care (by the developers of the library) needs to be taken when exposing templated functions.

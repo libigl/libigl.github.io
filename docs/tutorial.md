@@ -191,6 +191,11 @@ int main(int argc, char *argv[])
 
 The function `set_mesh` copies the mesh into the viewer.
 `Viewer.launch()`  creates a window, an OpenGL context and it starts the draw loop.
+The default camera motion mode is 2-axis (`ROTATION_TYPE_TWO_AXIS_VALUATOR_FIXED_UP`), 
+which can be changed to 3-axis trackball style by adding this line:
+```
+  viewer.core().set_rotation_type(igl::opengl::ViewerCore::ROTATION_TYPE_TRACKBALL);
+```
 Additional properties can be plotted on the mesh (as we will see later),
 and it is possible to extend the viewer with standard OpenGL code.
 Please see the documentation in
@@ -256,49 +261,45 @@ the viewer's callbacks. See the
 
 ### Scalar Field Visualization
 
-Colors and normals can be associated to faces or vertices using the
-set_colors function:
+Colors can be associated to faces or vertices using the
+`set_colors` function:
 
 ```cpp
 viewer.data().set_colors(C);
 ```
 
-`C` is a #C by 3 matrix with one RGB color per row. `C` must have as many
-rows as the number of faces **or** the number of vertices of the mesh.
-Depending on the size of `C`, the viewer applies the color to the faces or to
-the vertices.
+`C` is a #C by 3 matrix with one RGB color per row. `C` must have as many rows
+as the number of faces **or** the number of vertices of the mesh.  Depending on
+the size of `C`, the viewer applies the color to the faces or to the vertices.
+In Example 104, the colors of mesh vertices are set according to their Cartesian
+coordinates.
 
-Colors can be used to visualize a scalar function defined on a surface.  The
-scalar function is converted to colors using a color transfer function, which
-maps a scalar value between 0 and 1 to a color. A simple example of a scalar
-field defined on a surface is the z coordinate of each point, which can be
-extract from our mesh representation by taking the last column of `V`
-([Example 104]({{ repo_url }}/tutorial/104_Colors/main.cpp)). The function `igl::jet` can be used to
-convert it to colors:
+![([Example 104]({{ repo_url }}/tutorial/104_Colors/main.cpp)) Set the colors of a mesh. ](images/104_Colors.png)
+
+Per-Vertex scalar fields can be directly visualized using `set_data` function:
 
 ```cpp
-Eigen::VectorXd Z = V.col(2);
-igl::jet(Z,true,C);
+viewer.data().set_data(D);
 ```
 
-The first row extracts the third column from `V` (the z coordinate of each
-vertex) and the second calls a libigl functions that converts a scalar field to colors. The second parameter of jet normalizes the scalar field to lie between 0 and 1 before applying the transfer function.
-
-![([Example 104]({{ repo_url }}/tutorial/104_Colors/main.cpp)) igl::jet converts a scalar field to a color field.](images/104_Colors.png)
-
-`igl::jet` is an example of a standard function in libigl: it takes simple
-types and can be easily reused for many different tasks.  Not committing to
-heavy data structures types favors simplicity, ease of use and reusability.
+`D` is a #V by 1 vector with one value corresponding to each vertex. `set_data`
+will color according to linearly interpolating the _data_ within a triangle (in
+the [fragment shader](https://en.wikipedia.org/wiki/Shader#Types)) and use this
+interpolated data to look up a color in a colormap (stored as a texture). The
+colormap defaults to `igl::COLOR_MAP_TYPE_VIRIDIS` with 21 discrete intervals.
+A custom colormap may be set with `set_colormap`.
 
 ### Overlays
 
-In addition to plotting the surface, the viewer supports the visualization of points, lines and text labels: these overlays can be very helpful while developing geometric processing algorithms to plot debug information.
+In addition to plotting the surface, the viewer supports the visualization of
+points, lines and text labels: these overlays can be very helpful while
+developing geometric processing algorithms to plot debug information.
 
 ```cpp
 viewer.data().add_points(P,Eigen::RowVector3d(r,g,b));
 ```
 
-Draws a point of color r,g,b for each row of P. The point is placed at the coordinates specified in each row of P, which is a #P by 3 matrix.
+Draws a point of color r,g,b for each row of P. The point is placed at the coordinates specified in each row of P, which is a #P by 3 matrix. Size of the points (in pixels) can be changed globally by setting `viewer.data().point_size`.
 
 ```cpp
 viewer.data().add_edges(P1,P2,Eigen::RowVector3d(r,g,b));
@@ -525,7 +526,7 @@ designer, but creases and corners can also be computed automatically. Libigl
 implements a simple scheme which computes corner normals as averages of
 normals of faces incident on the corresponding vertex which do not deviate by more than a specified dihedral angle (e.g. 20°).
 
-![The `Normals` example computes per-face (left), per-vertex (middle) and per-corner (right) normals](images/fandisk-normals.jpg)
+![The `Normals` example computes per-face (left), per-vertex (middle) and per-corner (right) normals](images/fandisk-normals.png)
 
 ### Gaussian Curvature
 
@@ -674,7 +675,7 @@ for(int i : vertices)
   {
     for(int k : triangle_on_edge(i,j))
     {
-      L(i,j) = cot(angle(i,j,k));
+      L(i,j) += cot(angle(i,j,k));
       L(i,i) -= cot(angle(i,j,k));
     }
   }
@@ -826,7 +827,7 @@ functionality is provided in libigl using `slice_into`:
 igl::slice_into(B,R,C,A);
 ```
 
-![The example `Slice` shows how to use `igl::slice` to change the colors for triangles on a mesh.](images/decimated-knight-slice-color.jpg)
+![The example `Slice` shows how to use `igl::slice` to change the colors for triangles on a mesh.](images/decimated-knight-slice-color.png)
 
 ### Sort
 
@@ -866,7 +867,7 @@ where again `I` reveals the index of sort so that it can be reproduced with
 
 Analogous functions are available in libigl for: `max`, `min`, and `unique`.
 
-![The example `Sort` shows how to use `igl::sortrows` to pseudocolor triangles according to their barycenters' sorted order ([Example 302]({{ repo_url }}/tutorial/302_Sort/main.cpp)).](images/decimated-knight-sort-color.jpg)
+![The example `Sort` shows how to use `igl::sortrows` to pseudocolor triangles according to their barycenters' sorted order ([Example 302]({{ repo_url }}/tutorial/302_Sort/main.cpp)).](images/decimated-knight-sort-color.png)
 
 
 #### Other Matlab-style Functions
@@ -1679,7 +1680,7 @@ Being a subspace method, an immediate disadvantage is the reduced degrees of
 freedom. This brings performance, but in some situations limits behavior too
 much. In such cases one can use the skinning subspace to build an effective
 clustering of rotation edge-sets for a traditional ARAP optimization: forgoing
-the subspace substitution. This has an two-fold effect. The cost of the
+the subspace substitution. This has a two-fold effect. The cost of the
 rotation fitting, local step drastically reduces, and the deformations are
 "regularized" according the clusters. From a high level point of view, if the
 clusters are derived from skinning weights, then they will discourage bending,
@@ -1694,7 +1695,7 @@ redundant) clustering of the per-triangle edge-sets.
 
 ### Biharmonic Coordinates
 
-Linear blend skinning (as [above](#boundedbiharmonicweights)) deforms a mesh by
+Linear blend skinning (as [above](#bounded-biharmonic-weights)) deforms a mesh by
 propagating _full affine transformations_ at handles (bones, points, regions,
 etc.) to the rest of the shape via weights. Another deformation framework,
 called "generalized barycentric coordinates", is a special case of linear blend
@@ -1857,7 +1858,7 @@ algorithms are efficient and simple, but they usually produce high-distortion ma
 
 2. **Single patch, free boundary:** these algorithms let the boundary
 deform freely, greatly reducing the map distortion. Care should be taken to
-prevent the border to self-intersect.
+prevent the border from self-intersecting.
 
 3. **Global parametrization**: these algorithms work on meshes with arbitrary
 genus. They initially cut the mesh in multiple patches that can be separately parametrized. The generated maps are discontinuous on the cuts (often referred as *seams*).
@@ -2049,7 +2050,7 @@ random face.
 
 ![Combed bisector field.](images/505_MIQ_3.png)
 
-You can imagine this process as combing an hairy surface: you will be able to
+You can imagine this process as combing a hairy surface: you will be able to
 comb part of it, but at some point you will not be able to consistently comb
 the entire surface ([Hairy ball
 theorem](http://en.wikipedia.org/wiki/Hairy_ball_theorem)). The discontinuities
@@ -2162,7 +2163,7 @@ reproducible, allowing to quickly test algorithms variants on the same input
 data.
 
 Serialization is often not considered in geometry processing due to the extreme
-difficulty in serializing pointer-based data structured, such as an half-edge
+difficulty in serializing pointer-based data structures, such as an half-edge
 data structure ([OpenMesh](http://openmesh.org), [CGAL](http://www.cgal.org)),
 or a pointer based indexed structure
 ([VCG](http://vcg.isti.cnr.it/~cignoni/newvcglib/html/)).
@@ -2350,7 +2351,7 @@ igl::mlgetmatrix(&engine,"EV",EV);
 
 and plotted using the libigl viewer.
 
-![4 Eigenfunctions of the Laplacian plotted in the libigl viewer.](images/602_Matlab_2.png)
+![Eigenfunctions of the Laplacian computed in Matlab, plotted in the libigl viewer.](images/602_Matlab_2.gif)
 
 
 #### Saving A Matlab Workspace
@@ -2565,7 +2566,7 @@ Stringing together many of these operations, one can design quite complex
 shapes. A typical CSG library might only keep explicit _base-case_
 representations of canonical shapes: half-spaces, quadrics, etc.
 
-In libigl, we do currently _not_ have an implicit surface representation.
+In libigl, we currently do _not_ have an implicit surface representation.
 Instead we expect our users to be working with _explicit_ triangle mesh
 _boundary representations_ of solid shapes. CSG operations are much hard to
 compute robustly with boundary representations, but are nonetheless useful.
@@ -2685,7 +2686,7 @@ in artifacts if used for solving PDEs.
 ### Generalized Winding Number
 
 The problem of tetrahedralizing the interior of closed watertight surface mesh
-is a difficult, but well-posed problem (see our [Tetgen wrappers][tetrahedralizationofclosedsurfaces]).  But
+is a difficult, but well-posed problem (see our [Tetgen wrappers](#tetrahedralization-of-closed-surfaces)).  But
 black-box tet-meshers like TetGen will _refuse_ input triangle meshes with
 self-intersections, open boundaries, non-manifold edges from multiple connected
 components.
@@ -3103,7 +3104,7 @@ bool hit = igl::unproject_onto_mesh(
   viewer.core.viewport,
   *ei,
   fid,
-  vid);
+  bc);
 ```
 
 This function casts a ray from the view plane in the view direction. Variables
@@ -3113,9 +3114,9 @@ projection matrix respectively; `viewport` is the viewport in OpenGL format;
 `ei`
 contains a [Bounding Volume
 Hierarchy](http://en.wikipedia.org/wiki/Bounding_volume_hierarchy) constructed
-by Embree, and `fid` and `vid` are the picked face and vertex, respectively.
+by Embree, and `fid` and `bc` are the picked face and barycentric coordinate of the picked position, respectively.
 
-![([Example 708]({{ repo_url }}/tutorial/708_Picking/main.cpp)) Picking via ray casting. The selected vertices are colored in red.](images/607_Picking.png)
+![([Example 708]({{ repo_url }}/tutorial/708_Picking/main.cpp)) Picking via ray casting. The selected faces are colored in red.](images/708_Picking.png)
 
 ### Scalable Locally Injective Maps
 
@@ -3148,7 +3149,7 @@ using the SCAF algorithm in 10 iterations.](images/simplicial_complex_augmentati
 
 ### Subdivision Surfaces
 
-Given a coarse mesh (aka cage) with vertices `V` and faces `F`, one can createa
+Given a coarse mesh (aka cage) with vertices `V` and faces `F`, one can create a
 higher-resolution mesh with more vertices and faces by _subdividing_ every
 face. That is, each coarse triangle in the input is replaced by many smaller
 triangles. Libigl has three different methods for subdividing a triangle mesh.
@@ -3206,8 +3207,8 @@ the mass matrix `M`: `QL = L'*(M\L)`. Because of the implicit zero Neumann
 boundary conditions however, the function behavior is significantly warped at
 the boundary if $f$ does not have zero normal gradient at the boundary.
 
-In #[stein_2017] it is suggested to use the Biharmonic energy with natural
-Hessian boundary conditions instead, which corresponds to the hessian energy
+In [^stein_2018] it is suggested to use the Biharmonic energy with natural
+Hessian boundary conditions instead, which corresponds to the Hessian energy
 with the matrix `QH = H'*(M2\H)`, where `H` is a finite element Hessian and
 `M2` is a stacked mass matrix. The matrices `H` and `QH` are implemented in
 libigl as `igl::hessian` and `igl::hessian_energy` respectively. An example
@@ -3271,7 +3272,9 @@ igl::marching_tets(TV,TT,S, isovalue ,V,F);
 
 ### Implicit Function Meshing
 
-_Entry Missing_
+!!! todo
+    _Entry Missing_
+
 
 ### Heat Method For Fast Geodesic Distance Approximation
 
@@ -3323,7 +3326,7 @@ In libigl, you can compute approximate geodesic distances for a mesh (`V`,`F`)
 from a list of source vertex indices `gamma` into a vector `D` using this method
 via two steps:
 
-```
+```cpp
 igl::HeatGeodesicsData<double> data;
 igl::heat_geodesics_precompute(V,F,data);
 ...
@@ -3353,7 +3356,7 @@ locally Delaunay (i.e., its corresponding cotangent weights are positive).
 You can compute the intrinsic Delaunay triangulation of mesh (`V`,`F`) in libigl
 using:
 
-```
+```cpp
 Eigen::MatrixXd l;
 igl::edge_lengths(V,F,l);
 Eigen::MatrixXd l_intrinsic;
@@ -3368,14 +3371,14 @@ indices.
 You may construct the intrinsic Delaunay cotangent Laplacian matrix directly
 using:
 
-```
+```cpp
 Eigen::SparseMatrix<double> L;
 igl::intrinsic_delaunay_cotmatrix(V,F,L);
 ```
 
 And finally you can compute heat geodesics using this matrix via:
 
-```
+```cpp
 igl::HeatGeodesicsData<double> data;
 data.use_intrinsic_delaunay = true;
 igl::heat_geodesics_precompute(V,F,data);
@@ -3390,9 +3393,6 @@ triangulation's cotagent Laplacian `igl::intrinsic_delaunay_cotmatrix` improves
 things and ensures monotonicity (right)](images/heat-geodesic-peaks.png)
 
 ### Fast Winding Number For Soups And Clouds
-
-!!! info
-    The content of this tutorial is currently available in #1218, and will be merged on the **dev** branch of the repository. It will be available in the **master** branch in the next version of libigl.
 
 In 2018, Barill et al. [^barill_2018] demonstrated how to significantly
 expediate the computation of the [generalized winding
@@ -3419,7 +3419,7 @@ Computing _fast_ winding numbers for soups has two steps: building the tree data
 structure and then evaluating at query points. In libigl, this is programmed as
 follows:
 
-```
+```cpp
 igl::FastWindingNumberBVH fwn_bvh;
 igl::fast_winding_number(V.cast<float>(),F,2,fwn_bvh);
 Eigen::VectorXf W;
@@ -3437,7 +3437,7 @@ computing k nearest neighbors `igl::knn`. And that function and the eventual
 winding number computation uses libigl's `igl::octree` as a bounding volume
 hierarchy. To estimate areas use for a point cloud `P` with normals `N` use:
 
-```
+```cpp
 // Build octree
 std::vector<std::vector<int > > O_PI;
 Eigen::MatrixXi O_CH;
@@ -3455,7 +3455,7 @@ Eigen::VectorXd A;
 
 Then it is possible to compute fast winding numbers for a list of queries `Q`:
 
-```
+```cpp
 Eigen::MatrixXd O_CM;
 Eigen::VectorXd O_R;
 Eigen::MatrixXd O_EC;
@@ -3564,5 +3564,5 @@ repository](https://github.com/libigl/libigl).
 [^crane_2013]: Keenan Crane, Clarisse Weischedel, and Max Wardetzky. [Geodesics in Heat: A New Approach to Computing Distance Based on Heat Flow](https://www.google.com/search?q=geodesics+in+heat+a+new+approach+to+computing+distance+based+on+heat+flow), 2013.
 [^bobenko_2005]: Alexander I. Bobenko and Boris A. Springborn. [A discrete Laplace-Beltrami operator for simplicial surfaces](https://www.google.com/search?q=a+discrete+laplace-beltrami+operator+for+simplicial+surfaces), 2005.
 [^jiang_2017]: Zhongshi Jiang, Scott Schaefer, Daniele Panozzo. [SCAF: Simplicial Complex Augmentation Framework for Bijective Maps](https://doi.org/10.1145/3130800.3130895), 2017
-[^barill_2018]: Gavin Barill, Neil G. Dickson, Ryan Schmidt, David I.W. Levin, Alec Jacobson. [ Fast Winding Numbers for Soups and Clouds](http://www.dgp.toronto.edu/projects/fast-winding-numbers/), 2018.
-
+[^barill_2018]: Gavin Barill, Neil G. Dickson, Ryan Schmidt, David I.W. Levin, Alec Jacobson. [Fast Winding Numbers for Soups and Clouds](http://www.dgp.toronto.edu/projects/fast-winding-numbers/), 2018.
+[^stein_2018]: Oded Stein, Eitan Grinspun, Max Wardetzky, Alec Jacobson. [Natural Boundary Conditions for Smoothing in Geometry Processing](http://www.cs.columbia.edu/cg/hessians/), 2018.

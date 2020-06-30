@@ -4,7 +4,7 @@
 !!! danger
     On October 15, 2018, a lighter version of the libigl repository has been pushed to the master branch.
     This new version has its history rewritten, which does invalidate all commit SHA1 numbers pointing to previous versions of libigl.
-    See the full list of changes in the [changelog](RELEASE_HISTORY.md).
+    See the full list of changes in the [changelog](changelog.md).
 
 ### Why Are We Doing This?
 
@@ -166,4 +166,4 @@ I have an existing fork with some changes, how do I update it to the latest vers
 
 #### Other Problems
 
-Please check out the [changelog](RELEASE_HISTORY.md) page for the list of changes that have been merged into the main branch.
+Please check out the [changelog](changelog.md) page for the list of changes that have been merged into the main branch.
