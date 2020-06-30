@@ -1773,6 +1773,70 @@ igl::biharmonic_coordinates(V,F,S,W);
 
 ![([Example 407]({{ repo_url }}/tutorial/407_BiharmonicCoordinates/main.cpp)) shows a physics simulation on a coarse orange mesh. The vertices of this mesh become control points for a biharmonic coordinates deformation of the blue high-resolution mesh.](images/octopus-biharmonic-coordinates-physics.gif)
 
+### Direct Delta Mush
+
+To produce a smooth deformation, linear blend skinning requires smooth skinning
+weights. These could be painted manually or computed automatically (e.g., using
+[Bounded Biharmonic Weights](bounded-biharmonic-weights) [^jacobson_2011]).
+Even still, linear blend skinning suffers from shrinkage and collapse artifacts
+due to its inherent linearity (see [earlier](dual-quaternion-skinning)). "Direct
+Delta Mush" [^le_2019] skinning attempts to solve both of these issues by providing a
+direct skinning method that takes as input a rig with piecewise-constant weight
+functions (weights are either $=0$ or $=1$ everywhere). _Direct_ delta mush is
+an adaptation of a less performant method called simply "Delta Mush"
+[^mancewicz_2014]. The computation of Delta Mush separates into "bind pose"
+precomputation and runtime evaluation. 
+
+At bind time, Laplacian smoothing is conducted on the bind pose, moving each
+vertex from its rest position $\mathbf{v}_i$ to a new position
+$\tilde{\mathbf{v}}_i$. The "delta" describing undoing this smoothing procedure,
+is computed and stored in a local coordinate frame associated with the vertex:
+
+ $\delta_i = \mathbf{T}_i^{-1} (\mathbf{v}_i - \tilde{\mathbf{v}}_i).$
+
+At run time, the mesh is deformed using linear blend skinning and
+piecewise-constant weights. Near bones, the deformation is perfectly rigid,
+while near joints where bones meet, the mesh _tears apart_ with a sudden change
+to the next rigid transformation. The same amount of Laplacian smoothing is
+applied at run time to this posed mesh. Moving each vertex to a location
+$\tilde{\mathbf{u}}_i$. A local frame $\mathbf{S}_i$ is computed at this
+location and the cached _deltas_ are adding in this resolved frame to restore
+the shape's original details:
+
+ $\mathbf{u}_i = \tilde{\mathbf{u}}_i + \mathbf{S}_i \delta_i.$
+
+The key insight of "Delta Mush" is that Laplacian smoothing acts similarly on
+the rest and posed models.
+
+The key insight of "Direct Delta Mush" is that this process of Laplacian
+smoothing at runtime is _nearly linear_ and local frames can be computed in a
+embarrassingly parallel fashion using SVD (cf. [ARAP](as-rigid-as-possible)).
+
+Direct delta mush moves the smoothing step into precomputation, resulting in
+"vector-valued" skinning weights per-vertex per-bone, stored in a matrix
+$\Omega$. In libigl, for a mesh `(V,F)` and (e.g., piecewise-constant) weights
+`W` this precomputation is computed using:
+
+```cpp
+igl::direct_delta_mush_precomputation(V, F,Wsparse, p, lambda, kappa, alpha, Omega);
+```
+
+the parameters `p, lambda, kappa, alpha` control the smoothness and compactness
+of the resulting deformation. The precomputation's output is the matrix `Omega`.
+
+At runtime, $\Omega$ is used to deform the mesh to its final locations. In
+libigl, this is computed using:
+
+```cpp
+igl::direct_delta_mush(V, T_list, Omega, U);
+```
+
+where `T_list` is the input pose (affine) transformations associated with each
+bone and the final locations are stored in `U`.
+
+![([Example 408]({{ repo_url }}/tutorial/408_DirectDeltaMush/main.cpp)) Direct Delta Mush. (left) input piecewise-rigid skinning, (middle) skeleton animation, (right) smooth Direct Delta Mush skinning](images/elephant-ddm.gif)
+
+
 ## Chapter 5: Parametrization
 
 In computer graphics, we denote as surface parametrization a map from the
@@ -3459,6 +3523,9 @@ repository](https://github.com/libigl/libigl).
 [^jacobson_mixed_2010]: Alec Jacobson, Elif Tosun, Olga Sorkine, and Denis Zorin. [Mixed Finite Elements for Variational Surface Modeling](https://www.google.com/search?q=Mixed+Finite+Elements+for+Variational+Surface+Modeling), 2010.
 [^jacobson_skinning_course_2014]: Alec Jacobson, Zhigang Deng, Ladislav Kavan, J.P. Lewis. [_Skinning: Real-Time Shape Deformation_](https://www.google.com/search?q=Skinning+Real-Time+Shape+Deformation), 2014.
 [^kavan_2008]: Ladislav Kavan, Steven Collins, Jiri Zara, and Carol O'Sullivan. [Geometric Skinning with Approximate Dual Quaternion Blending](https://www.google.com/search?q=Geometric+Skinning+with+Approximate+Dual+Quaternion+Blending), 2008.
+[^le_2019]: Binh Huy Le, J.P. Lewis. [Direct delta mush skinning and variants](https://www.google.com/search?q=Direct+delta+mush+skinning+and+variants), 2019.
+[^mancewicz_2014]: Joe Mancewicz, Matt L. Derksen, Hans Rijpkema, and Cyrus A. Wilson. [Delta Mush: smoothing deformations while preserving detail](https://www.google.com/search?q=Delta+Mush%3A+smoothing+deformations+while+preserving+detail), 2014.
+
 [^mcadams_2011]: Alexa McAdams, Andrew Selle, Rasmus Tamstorf, Joseph Teran, Eftychios Sifakis. [Computing the Singular Value Decomposition of 3x3 matrices with minimal branching and elementary floating point operations](https://www.google.com/search?q=Computing+the+Singular+Value+Decomposition+of+3x3+matrices+with+minimal+branching+and+elementary+floating+point+operations), 2011.
 [^sorkine_2004]: Olga Sorkine, Yaron Lipman, Daniel Cohen-Or, Marc Alexa, Christian Rössl and Hans-Peter Seidel. [Laplacian Surface Editing](https://www.google.com/search?q=Laplacian+Surface+Editing), 2004.
 [^sorkine_2007]: Olga Sorkine and Marc Alexa. [As-rigid-as-possible Surface Modeling](https://www.google.com/search?q=As-rigid-as-possible+Surface+Modeling), 2007.
