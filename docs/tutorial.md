@@ -3494,7 +3494,7 @@ repository and to open a [pull
 request](https://help.github.com/articles/using-pull-requests) on [our github
 repository](https://github.com/libigl/libigl).
 
-## past libigl courses at conferences
+## Past Libigl Courses At Conferences
 
 This tutorial was originally presented by Daniele Panozzo and Alec Jacobson at SGP Graduate School 2014. It has also been presented at SGP 2017 ([video](https://www.google.com/search?q=libigl+sgp&oq=libigl+sgp&aqs=chrome..69i57j69i59l2j69i60l5.2123j0j7&sourceid=chrome&ie=UTF-8)), ACM SIGGRAPH Asia 2017, Eurographics 2019, and SGP 2020.
 
