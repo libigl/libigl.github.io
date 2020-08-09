@@ -9,7 +9,8 @@
 
       Version | Short description
       --------|----------------------------------------------------------------------
-      dev     | New python bindings, fast winding number for soups, ICP algorithm
+      master  | DDM skinning, Bézier, PLY reader, 3D text rendering, matcap
+      2.2.0   | New python bindings, fast winding number for soups, ICP algorithm
       2.1.0   | Various improvements and bug fixes, updated dependencies
       2.0.0   | Lighter, simpler CMake build, rewritten history
       1.3.3   | Switched the build system from submodules to CMake external projects
