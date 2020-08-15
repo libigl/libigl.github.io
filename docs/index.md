@@ -36,6 +36,10 @@ libigl+Eigen conversion table](matlab-to-eigen.html).
 We regularly test compiling our library on Mac OS X with clang, Linux with gcc
 and Windows with Visual Studio 2015 Community Edition.
 
+## Short Video Introduction
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OSQWCABxLsM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Tutorial
 
 As of version 1.0, libigl includes an introductory
