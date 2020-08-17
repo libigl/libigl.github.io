@@ -35,7 +35,7 @@ libigl:
   the function.
 
 
-#### Downloading Libigl
+### Downloading Libigl
 libigl can be downloaded from our [github
 repository](https://github.com/libigl/libigl) or cloned with git:
 
