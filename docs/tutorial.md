@@ -461,6 +461,16 @@ of `Viewer::append_mesh()` and `Viewer::append_core()` for more details.
 
 ![([Example 108]({{ repo_url }}/tutorial/108_MultipleViews/main.cpp)) The `igl::opengl::glfw::Viewer` can render the same scene using multiple views, each with its own attributes like colors, and individual mesh visibility.](images/108_MultipleViews.png)
 
+### Viewer Guizmos
+
+!!! todo "109_ImGuizmo"
+    _Entry Missing_
+
+### Msh Viewer
+
+!!! todo "110_MshView"
+    _Entry Missing_
+
 ## Chapter 2: Discrete Geometric Quantities And Operators
 
 This chapter illustrates a few discrete quantities that libigl can compute on a
@@ -3270,9 +3280,8 @@ igl::marching_tets(TV,TT,S, isovalue ,V,F);
 
 ### Implicit Function Meshing
 
-!!! todo
+!!! todo "715_MeshImplicitFunction"
     _Entry Missing_
-
 
 ### Heat Method For Fast Geodesic Distance Approximation
 
@@ -3462,6 +3471,30 @@ Eigen::VectorXd W;
 igl::fast_winding_number(P,N,A,O_PI,O_CH,O_CM,O_R,O_EC,Q,2,W);
 ```
 
+### Iterative Closest Point
+
+!!! todo "718_IterativeClosestPoint"
+    _Entry Missing_
+
+### Iterative Closest Point
+
+!!! todo "719_ExplodedView"
+    _Entry Missing_
+
+### Blue Noise Surface Sampling
+
+!!! todo "720_BlueNoise"
+    _Entry Missing_
+
+### Vector Field Smoothing
+
+!!! todo "721_VectorFieldSmoothing"
+    _Entry Missing_
+
+### Vector Parallel Transport
+
+!!! todo "722_VectorParallelTransport"
+    _Entry Missing_
 
 ## Outlook For Continuing Development
 
