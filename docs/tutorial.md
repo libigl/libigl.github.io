@@ -1845,6 +1845,10 @@ bone and the final locations are stored in `U`.
 
 ![([Example 408]({{ repo_url }}/tutorial/408_DirectDeltaMush/main.cpp)) Direct Delta Mush. (left) input piecewise-rigid skinning, (middle) skeleton animation, (right) smooth Direct Delta Mush skinning](images/elephant-ddm.gif)
 
+### Mesh Deformation with Kelvinlet
+
+!!! todo "409_Kelvinlets"
+    _Entry Missing_
 
 ## Chapter 5: Parametrization
 
