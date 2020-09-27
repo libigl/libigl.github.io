@@ -3476,7 +3476,7 @@ igl::fast_winding_number(P,N,A,O_PI,O_CH,O_CM,O_R,O_EC,Q,2,W);
 !!! todo "718_IterativeClosestPoint"
     _Entry Missing_
 
-### Iterative Closest Point
+### Exploded View
 
 !!! todo "719_ExplodedView"
     _Entry Missing_
