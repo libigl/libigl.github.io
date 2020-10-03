@@ -1847,8 +1847,109 @@ bone and the final locations are stored in `U`.
 
 ### Mesh Deformation with Kelvinlet
 
-!!! todo "409_Kelvinlets"
-    _Entry Missing_
+Kelvinlets[^pixar_2017] is a technique for real-time physically based volume sculpting of
+virtual elastic materials. The technique treats meshes as fluids made of
+compressible materials and deforms them by advecting points along a displacement
+field. It relies on analytical solutions to the equations of elasticity.
+
+#### A quick primer on linear elastostatics [^slaughter_2002]
+
+The equilibrium state of linear elasticity is determined by a displacement field
+$\mathbf{u} : R^3 \rightarrow  R^3$ that minimizes the elastic potential energy 
+
+$E(\mathbf{u}) = \frac{\mu}{2}\left\|\nabla\mathbf{u}\right\|^2  +
+ \frac{\mu}{2(1-2\nu)}\left\|\nabla .\mathbf{u}\right\|^2 - \langle\mathbf{b},
+ \mathbf{u}\rangle$
+
+where $\mu$ is the elastic shear modulus,  $\nu$ is the Poisson ratio, and
+$\mathbf{b}$ represents the external body forces.
+
+The first term controls the smoothness of the displacement field, the second
+term penalizes infinitesimal volume change, and the last term indicates the
+external body forces to be counteracted.
+
+One can associate the optimal displacement field with the solution to the
+critical point of the above equation, also known as the Navier-Cauchy equation:
+
+$\mu\Delta\mathbf{u} + \frac{\mu}{(1 - 2\nu)}\nabla(\nabla . \mathbf{u}) +
+\mathbf{b} = 0$
+
+The Kelvinlet is the solution to the Navier-Cauchy equation in the case of a
+concentrated body load due to a force vector $\mathbf{f}$ at a point
+$\mathbf{x}_{0}$, i.e., where $\mathbf{b}(\mathbf{x}) = \mathbf{f}
+\delta(\mathbf{x} − \mathbf{x}_{0})$ and can be written as:
+
+$\mathbf{u}(\mathbf{r}) = \left[ \frac{(a - b)}{r}I +
+\frac{\mathbf{b}}{\mathit{r}^3}\mathbf{r}\mathbf{r}^{t}\right] \equiv
+\mathbf{K}(\mathbf{r})\mathbf{f}$
+
+where $\mathbf{K}$ is the Kelvinlet function, $\mathbf{r} = \mathbf{x} − \mathbf{x}_{0}$ is the relative position vector
+from the load location $\mathbf{x}_{0}$ to an observation point $\mathbf{x}$,
+$\mathit{r}$ is the norm of $\mathbf{r}$, $a = \frac{1}{4\pi\mu}$ and $b = \frac{a}{(1-\nu)}$
+
+The displacement field $\mathbf{u}(\mathbf{x} − \mathbf{x}_{0})$ deforms a point
+$\mathbf{x}$ in a linear elastic material to $\mathbf{x} + \mathbf{u}(\mathbf{x}
+− \mathbf{x}_{0})$. The associated deformation gradient is then defined by a
+$3×3$ matrix of the form $\mathbf{G}(\mathbf{x} − \mathbf{x}_{0}) = \mathbf{I} +
+\nabla\mathbf{u}(\mathbf{x} − \mathbf{x}_{0})$.
+
+This gradient $\mathbf{G}(\mathbf{r})$ determines the different properties of
+the displacement field $\mathbf{u(\mathbf{r})}$. For instance, the skew-symmetric
+part of $\nabla\mathbf{u}(\mathbf{r})$ indicates the rotation induced by
+$\mathbf{u(\mathbf{r})}$, while its symmetric part corresponds to the elastic
+strain and determines the stretching. The strain tensor can also be decomposed
+into a trace term that represents the scaling of the volume of the
+elastic medium, and a traceless term that represents the pinching
+deformation.
+
+This forms the fundamentals of the Kelvinlet brushes. 
+
+#### Regularized kelvinlets
+
+The concentrated body load at a single point $\mathbf{x}_{0}$ introduces a
+singularity to the Kelvinlet solution at $\mathbf{x}_{0}$. For this reason, the
+kelvinlet equation is modified to:
+
+$\mathbf{u_{\epsilon}}(\mathbf{r}) = \left[ \frac{(a - b)}{r_{\epsilon}}I +
+\frac{\mathbf{b}}{\mathit{r_{\epsilon}}^3}\mathbf{r_{\epsilon}}\mathbf{r_{\epsilon}}^{t}
++ \frac{a}{2}\frac{\epsilon^2}{r_{\epsilon}^3}I\right] \equiv
+\mathbf{K_{\epsilon}}(\mathbf{r})\mathbf{f}$
+
+where $\mathbf{r}_{\epsilon} = \sqrt{r^2 + \epsilon^2}$ is the regularized
+distance, $\epsilon > 0$ is the radius of the sculpting brush.
+
+Thus, given a force vector $\mathbf{f}$, the displacement for any point in $R^3$
+can be calculated, thus defining the physically based space deformation. In
+practice, the force vector is parameterized in terms of the brush tip
+displacement $\mathbf{\bar{u}}$. To this end, we can expand the regularized kelvinlet
+equation with the constraint $\mathbf{u}_{\epsilon}(0) = \mathbf{\bar{u}}$ 
+to end up with $\mathbf{u_{\epsilon}} = c\epsilon\mathbf{K_{\epsilon}}(\mathbf{r})\mathbf{\bar{u}}$ 
+where $c = 2/(3a - 2b)$
+
+Kelvinlets of different radial scales can be linearly combined to construct
+brushes with arbitrarily fast decays:
+
+$\mathbf{u}_{\epsilon_{1},..\epsilon_{n}}(\mathbf{r}) = c \left( \sum_{i}
+ \frac{w_{i}}{\epsilon_{i}}\right)^{-1} \left[\sum_{i}
+ w_{i}\mathbf{K_{\epsilon_{i}}}(\mathbf{r})  \right] \mathbf{\bar{u}}$
+
+where $w_{i}$ are weights and $\epsilon_{i} < \epsilon_{i+1}$. 
+Due to the superposition principle, these compound brushes still satisfy the
+Navier-Cauchy equation.
+
+Regularized kelvinlets can further be extended by replacing the vector-based
+load distribution with a matrix-based distribution to achieve non-affine
+transformations like twist, pinch, and scale as described earlier.
+
+In libigl, this is computed using:
+
+```cpp
+igl::KelvinletParams<double> brushParams{brushRadius, scale, brushType};
+igl::kelvinlets(V, origin, forceVec, forceMatrix, brushParams, result);
+```
+where `brushRadius, scale, brushType` correspond to $\epsilon$, the falloff, and operation(grab, pinch, scale, twist).
+
+![([Example 409]({{ repo_url }}/tutorial/409_Kelvinlets/main.cpp)) pinch, twist, grab and scale in action](images/kelvinlets.gif)
 
 ## Chapter 5: Parametrization
 
@@ -3570,7 +3671,8 @@ This tutorial was originally presented by Daniele Panozzo and Alec Jacobson at S
 [^sorkine_2004]: Olga Sorkine, Yaron Lipman, Daniel Cohen-Or, Marc Alexa, Christian Rössl and Hans-Peter Seidel. [Laplacian Surface Editing](https://www.google.com/search?q=Laplacian+Surface+Editing), 2004.
 [^sorkine_2007]: Olga Sorkine and Marc Alexa. [As-rigid-as-possible Surface Modeling](https://www.google.com/search?q=As-rigid-as-possible+Surface+Modeling), 2007.
 [^wang_bc_2015]: Yu Wang, Alec Jacobson, Jernej Barbic, Ladislav Kavan. [Linear Subspace Design for Real-Time Shape Deformation](https://www.google.com/search?q=Linear+Subspace+Design+for+Real-Time+Shape+Deformation), 2015
-
+[^pixar_2017]: Fernando de Goes, Doug L. James. [Regularized Kelvinlets: Sculpting Brushes based on Fundamental Solutions of Elasticity](https://graphics.pixar.com/library/Kelvinlets/), 2017
+[^slaughter_2002]: W. S. Slaughter. [The Linearized Theory of Elasticity](https://www.google.com/search?q=the+linearized+theory+of+elasticity+slaughter), 2002
 <!-- Chapter 5 -->
 
 [^bommes_2009]: David Bommes, Henrik Zimmer, Leif Kobbelt. [Mixed-integer quadrangulation](http://www-sop.inria.fr/members/David.Bommes/publications/miq.pdf), 2009.
