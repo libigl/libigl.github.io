@@ -1858,7 +1858,7 @@ The equilibrium state of linear elasticity is determined by a displacement field
 $\mathbf{u} : R^3 \rightarrow  R^3$ that minimizes the elastic potential energy 
 
 $E(\mathbf{u}) = \frac{\mu}{2}\left\|\nabla\mathbf{u}\right\|^2  +
- \frac{\mu}{2(1-2\nu)}\left\|\nabla .\mathbf{u}\right\|^2 - \langle\mathbf{b},
+ \frac{\mu}{2(1-2\nu)}\left\|\nabla \cdot \mathbf{u}\right\|^2 - \langle\mathbf{b},
  \mathbf{u}\rangle$
 
 where $\mu$ is the elastic shear modulus,  $\nu$ is the Poisson ratio, and
@@ -1871,7 +1871,7 @@ external body forces to be counteracted.
 One can associate the optimal displacement field with the solution to the
 critical point of the above equation, also known as the Navier-Cauchy equation:
 
-$\mu\Delta\mathbf{u} + \frac{\mu}{(1 - 2\nu)}\nabla(\nabla . \mathbf{u}) +
+$\mu\Delta\mathbf{u} + \frac{\mu}{(1 - 2\nu)}\nabla(\nabla \cdot \mathbf{u}) +
 \mathbf{b} = 0$
 
 The Kelvinlet is the solution to the Navier-Cauchy equation in the case of a
@@ -1880,7 +1880,7 @@ $\mathbf{x}_{0}$, i.e., where $\mathbf{b}(\mathbf{x}) = \mathbf{f}
 \delta(\mathbf{x} − \mathbf{x}_{0})$ and can be written as:
 
 $\mathbf{u}(\mathbf{r}) = \left[ \frac{(a - b)}{r}I +
-\frac{\mathbf{b}}{\mathit{r}^3}\mathbf{r}\mathbf{r}^{t}\right] \equiv
+\frac{\mathbf{b}}{\mathit{r}^3}\mathbf{r}\mathbf{r}^{t}\right] \mathbf{f} \equiv
 \mathbf{K}(\mathbf{r})\mathbf{f}$
 
 where $\mathbf{K}$ is the Kelvinlet function, $\mathbf{r} = \mathbf{x} − \mathbf{x}_{0}$ is the relative position vector
