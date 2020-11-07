@@ -471,6 +471,50 @@ of `Viewer::append_mesh()` and `Viewer::append_core()` for more details.
 !!! todo "110_MshView"
     _Entry Missing_
 
+### MatCaps
+
+MatCaps (material captures), also known as environment maps, are a simple
+image-based rendering technique to achieve complex lighting without a complex
+shader program.
+
+Using offline rendering or even a painting program, an image of a rendered
+unit sphere is created, such as this image of a sphere with a
+[jade](https://en.wikipedia.org/wiki/Jade) material viewed under [studio
+lighting](https://en.wikipedia.org/wiki/Three-point_lighting):
+
+![](images/jade.png)
+
+The position $\mathbf{p}$ of each point on the sphere is also its unit normal
+vector $\hat{\mathbf{n}} = \mathbf{p}$. The idea of matcaps is to use this image
+of the sphere as a lookup table keyed on an input normal value and outputting
+the rgb color: $I(\hat{\mathbf{n}}) \rightarrow (r,g,b)$.
+
+When rendering a non-spherical shape, in the fragment shader we compute the
+normal vector $\hat{\mathbf{n}}$ and then use its $x-$ and $y-$ components as
+texture coordinates to look up the corresponding point in the matcap image. In
+this way, there is no lighting model or lighting computation done in the
+fragment shader, it is simply a texture lookup, but rather than requiring a
+UV-mapping (parameterization) of the model, we use the per-fragment normals. By
+using the normal relative to the camera's coordinate system we get view
+dependent complex lighting "for free":
+
+![[Example 111]({{ repo_url }}/tutorial/111_MatCaps/main.cpp) demonstrates using a jade matcap to add complex lighting to the libigl viewer.](images/armadillo-jade-matcap.gif)
+
+In libigl, if the rgba data for a matcap image is stored in `R`,`G`,`B`, and `A`
+(as output, e.g., by `igl::png::readPNG`) then this can be attached to the 
+`igl::opengl::ViewerData` by setting it as the texture data and then turning on
+matcap rendering:
+
+
+```cpp
+viewer.data().set_texture(R,G,B,A);
+viewer.data().use_matcap = true;
+```
+
+
+
+
+
 ## Chapter 2: Discrete Geometric Quantities And Operators
 
 This chapter illustrates a few discrete quantities that libigl can compute on a
