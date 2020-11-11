@@ -498,7 +498,7 @@ UV-mapping (parameterization) of the model, we use the per-fragment normals. By
 using the normal relative to the camera's coordinate system we get view
 dependent complex lighting "for free":
 
-![[Example 111]({{ repo_url }}/tutorial/111_MatCaps/main.cpp) demonstrates using a jade matcap to add complex lighting to the libigl viewer.](images/armadillo-jade-matcap.gif)
+![[Example 111]({{ repo_url }}/tutorial/111_MatCap/main.cpp) demonstrates using a jade matcap to add complex lighting to the libigl viewer.](images/armadillo-jade-matcap.gif)
 
 In libigl, if the rgba data for a matcap image is stored in `R`,`G`,`B`, and `A`
 (as output, e.g., by `igl::png::readPNG`) then this can be attached to the 
