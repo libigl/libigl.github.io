@@ -9,7 +9,8 @@
 
       Version | Short description
       --------|----------------------------------------------------------------------
-      master  | DDM skinning, Bézier, PLY reader, 3D text rendering, matcap
+      main    | ...
+      2.3.0   | Dual Contouring, DDM skinning, Bézier, PLY reader, 3D text rendering, matcap
       2.2.0   | New python bindings, fast winding number for soups, ICP algorithm
       2.1.0   | Various improvements and bug fixes, updated dependencies
       2.0.0   | Lighter, simpler CMake build, rewritten history
@@ -50,30 +51,62 @@
       0.1.5   | Compilation on windows, bug fix for compilation with cygwin
       0.1.1   | Alpha release with core functions, extras, examples
 
-## Upcoming version (`master` branch)
+## Upcoming version (`main` branch)
+
+## Version 2.3.0 Changes
+
+!!! warning
+    This is our last stable release before some planned major reorganization (see #1696 for details). The upcoming reorganization is aimed at facilitating maintenance and packaging of various libigl components. The next release will be a new major version of libigl (3.0.0).
 
 #### New Features
+- Dual contouring (#1716)
+- Viewer: Selection Plugin (#1654)
+- Implements "[Polygon Laplacian Made Simple](https://doi.org/10.1111/cgf.13931)" (#1653)
+- Offscreen meshes rendering using Embree (#1652)
+- Signing distances with Fast Winding Number (#1630) 
+- Turn ImGuizmo tutorial into a viewer plugin (#1618)
+- Adds MATLAB-like function `igl::blkdiag` to build a block-diagonal matrix (#1617)
+- Kelvinlet mesh deformation (#1614)
+- Blue noise sampling on triangle meshes + adds `igl::barycentric_interpolation` (#1597)
 - Direct Delta Mush skinning (#1541)
 - New exploded view tutorial (#1510)
 - Bézier curve evaluation (`igl::bezier`) and fitting (`igl::fit_cubic_bezier`) (#1476)
 - Replace .ply reader/writer with tinyply library (#1422)
 - `igl::copyleft::cgal::wire_mesh` now support per-edge thickness. Adds `igl::copyleft::cgal::coplanar` test (#1488)
 - New generic function for connected components (`igl::connected_components`) (#1487)
-- Viewer: matcap support (#1482)
+- Viewer: matcap support (#1482) + tutorial entry (#1646)
 - Viewer: option for double-sided lighting (#1480)
 - Viewer: new 3D text rendering feature, supporting proper label depth (#1549)
 
 #### Build System
-- Update ImGui to 1.76 (#1545)
+- Update ImGui to 1.81 (#1723), fixing rendering issue with newer Visual Studio
+- Fix mosek to work with 9.2; fix mosek dynamic link via CMake (#1675)
+- Reimplement `igl::marching_cubes` outside of the `copyleft/` folder (#1666, #1687)
+- Update GLFW to fix an issue on macOS with CMake 3.19.0 (#1657)
+- Update Embree to v3.12.1 (#1648)
+- Use new gitlab remote to clone Eigen (#1631)
+- Update compiler versions in github actions (#1629)
+- Update CoMiSo version (#1608). Note that CoMiSo support for libigl is deprecated and will be removed in version 3.0.
+- Removed `_bin` suffix from executable files (#1594)
+- Moved SCAF to triangle folder (#1590)
+- Various fixes to github actions (#1649, #1651, #1721)
 
 #### Misc
+- Control number of threads in parallel_for with env variable `IGL_NUM_THREADS` (#1684)
+- Support msh in `igl::read_triangle_mesh` (#1645)
+- Change boundary weight from length to length squared in `igl::per_vertex_point_to_plane_quadrics` (#1644)
+- Update STL read to work on problematic thingi10K meshes (#1628)
+- Use an enum to specify file encoding when writing files (#1619)
+- Removed some functions marked as deprecated (#1610) 
+- Fix bug with epsilon parameter in `igl::remove_duplicate_vertices` (#1603)
+- Removed unused function `igl::barycentric_to_global` (#1596)
 - Fix align_camera_center in Viewer::init() for multiple cores (#1349)
 - Add floating point exceptions in unit tests (#1001)
 - Extended serialization functionality to Eigen::Array (#1113)
 - SCAF: Expose linear system to be solved by user code (#1553)
 - Fix issue with `igl::heat_geodesic` (#1497)
 - Refactored `igl::is_edge_manifold` (#1509)
-- Various bugfixes, compile fixes, template fixes (#1335, #1361, #1400, #1402, #1430, #1438, #1441, #1471, #1475, #1484, #1494, #1495, #1497, #1525, #1538, #1544, #1546, #1581, #1582)
+- Various bugfixes, compile fixes, template fixes (#1335, #1361, #1400, #1402, #1430, #1438, #1441, #1471, #1475, #1484, #1494, #1495, #1497, #1525, #1538, #1544, #1546, #1581, #1582, #1625, #1627, #1638, #1640, #1642, #1658, #1673, #1674, #1679, #1694, #1704, #1709)
 
 ## Version 2.2.0 Changes
 
