@@ -468,8 +468,30 @@ of `Viewer::append_mesh()` and `Viewer::append_core()` for more details.
 
 ### Msh Viewer
 
-!!! todo "110_MshView"
-    _Entry Missing_
+Libigl can read mixed meshes stored in [Gmsh `.msh` version 2](https://gmsh.info/doc/texinfo/gmsh.html#MSH-file-format-version-2-_0028Legacy_0029) file format.
+These files can contain mixture of different meshes, as well as additional scalar and vector fields defined on element level and vertex level.
+
+```cpp
+Eigen::MatrixXd X; // Vertex coorinates (Xx3)
+Eigen::MatrixXi Tri; // Triangular elements (Yx3)
+Eigen::MatrixXi Tet; // Tetrahedral elements (Zx4)
+Eigen::VectorXi TriTag; // Integer tags defining triangular submeshes
+Eigen::VectorXi TetTag; // Integer tags defining tetrahedral submeshes
+
+std::vector<std::string> XFields; // headers (names) of fields defined on vertex level
+std::vector<std::string> EFields; // headers (names) of fields defined on element level
+
+std::vector<Eigen::MatrixXd> XF;   // fields defined on vertex 
+std::vector<Eigen::MatrixXd> TriF; // fields defined on triangular elements
+std::vector<Eigen::MatrixXd> TetF; // fields defined on tetrahedral elements
+
+// loading mixed mesh from Gmsh file
+igl::readMSH("hand.msh", X, Tri, Tet, TriTag, TetTag, XFields, XF, EFields, TriF, TetF);
+```
+Interactive viewer is unable to directly draw tetrahedra though. For visualization purposes, each tetrahedra
+can be converted to four triangles.
+![([Example 110]({{ repo_url }}/tutorial/110_MshView/main.cpp)) Shows a slice of tetrahedral mesh with scalar field defined on element level](images/110_MshView.png)
+
 
 ### MatCaps
 
