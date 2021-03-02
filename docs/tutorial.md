@@ -2687,6 +2687,57 @@ igl::png::writePNG(R,G,B,A,"out.png");
 In [Example 607]({{ repo_url }}/tutorial/607_ScreenCapture/main.cpp) a scene is rendered in a temporary
 png and used to texture a quadrilateral.
 
+### Off-screen rendering using ray tracing with Embree
+
+If libigl is compiled with OpenGL support, or when interactive viewer is not
+practical, it is still possible to render view in memory using [Embree](https://www.embree.org/)
+library. Currently only triangular meshes are supported. The usage is very similar to  [Screen Capture](#screen-capture).
+
+```cpp
+// Create embree renderer object
+igl::embree::EmbreeRenderer er;
+// Specify mesh, tell embree to optimize for static scene
+er.set_mesh(V,F,true);
+
+// Specify scalar data, use JET color map to convert to colors
+er.set_data(K,igl::COLOR_MAP_TYPE_JET);
+
+// Since the render is not interactive, need to specify scene parameters
+// the default view is identical to the interactive viewer
+Eigen::Matrix3d rot_matrix;
+
+// Specify rotation matrix:
+//     10 degrees around X axis
+//      5 degrees around Y axis
+//      4 degrees around Z axis
+rot_matrix =  Eigen::AngleAxisd( 10*igl::PI/180.0, Eigen::Vector3d::UnitX())
+            * Eigen::AngleAxisd(  5*igl::PI/180.0, Eigen::Vector3d::UnitY())
+            * Eigen::AngleAxisd(  4*igl::PI/180.0, Eigen::Vector3d::UnitZ());
+er.set_rot(rot_matrix);
+
+// Specify relative zoom factor
+er.set_zoom(1.5);
+// Request orthographic projection
+er.set_orthographic(false);
+
+// Allocate temporary buffers for 1280x800 image
+Eigen::Matrix<unsigned char,Eigen::Dynamic,Eigen::Dynamic> R(1280,800);
+Eigen::Matrix<unsigned char,Eigen::Dynamic,Eigen::Dynamic> G(1280,800);
+Eigen::Matrix<unsigned char,Eigen::Dynamic,Eigen::Dynamic> B(1280,800);
+Eigen::Matrix<unsigned char,Eigen::Dynamic,Eigen::Dynamic> A(1280,800);
+
+// Render view
+er.render_buffer(R,G,B,A);
+
+// Save it to a PNG
+igl::png::writePNG(R,G,B,A,png_file);
+```
+
+![Fertility statue showing curvature as scalar field, rendered with embree](images/608_RayTrace.png)
+
+In [Example 608]({{ repo_url }}/tutorial/608_RayTrace/main.cpp) a scene is rendered in a memory
+buffer and saved as png file.
+
 ### Boolean Operations On Meshes
 
 Constructive solid geometry (CSG) is a technique to define a complex surface as
