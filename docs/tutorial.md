@@ -463,8 +463,46 @@ of `Viewer::append_mesh()` and `Viewer::append_core()` for more details.
 
 ### Viewer Guizmos
 
-!!! todo "109_ImGuizmo"
-    _Entry Missing_
+!!! bug
+    It is currently not possible to have more than one ImGui-related viewer plugin active at the same time (that includes `ImGuiMenu`, `ImGuizmoPlugin` and `SelectionPlugin`). Please follow #1656 for more information.
+
+The viewer integrates with [ImGuizmo](https://github.com/CedricGuillemet/ImGuizmo) to provide 
+widgets for manipulating a mesh. Mesh manipulations consist of translations, rotations, 
+and scaling, where `W,w`, `E,e`, and `R,r` can be used to toggle between them, respectively. 
+
+First, register the `ImGuizmoPlugin` plugin with the Viewer:
+```cpp
+#include <igl/opengl/glfw/imgui/ImGuizmoPlugin.h>
+
+// ImGuizmoPlugin replaces the ImGuiMenu plugin entirely
+igl::opengl::glfw::imgui::ImGuizmoPlugin plugin;
+vr.plugins.push_back(&plugin);
+```
+
+On initialization, ImGuizmo must be provided with the mesh centroid, as shown in [Example 109]({{ repo_url }}/tutorial/109_ImGuizmo/main.cpp):
+
+```cpp
+// Initialize ImGuizmo at mesh centroid
+plugin.T.block(0,3,3,1) = 
+  0.5*(V.colwise().maxCoeff() + V.colwise().minCoeff()).transpose().cast<float>();
+```
+To apply the mesh manipulations invoked by the guizmos, the resulting transformation matrix 
+is computed and applied to the input geometric data explicitly through the viewer's API: 
+
+```cpp
+// Update can be applied relative to this remembered initial transform
+const Eigen::Matrix4f T0 = plugin.T;
+// Attach callback to apply imguizmo's transform to mesh
+plugin.callback = [&](const Eigen::Matrix4f & T)
+{
+  const Eigen::Matrix4d TT = (T*T0.inverse()).cast<double>().transpose();
+  vr.data().set_vertices(
+    (V.rowwise().homogeneous()*TT).rowwise().hnormalized());
+  vr.data().compute_normals();
+};
+```
+
+<center>![([Example 109]({{ repo_url }}/tutorial/109_ImGuizmo/main.cpp)) The Libigl Viewer integrates with ImGuizmo to provide transformation widgets.](images/109_ImGuizmo.png)</center>
 
 ### Msh Viewer
 
