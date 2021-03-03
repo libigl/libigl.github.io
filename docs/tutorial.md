@@ -488,7 +488,8 @@ std::vector<Eigen::MatrixXd> TetF; // fields defined on tetrahedral elements
 // loading mixed mesh from Gmsh file
 igl::readMSH("hand.msh", X, Tri, Tet, TriTag, TetTag, XFields, XF, EFields, TriF, TetF);
 ```
-Interactive viewer is unable to directly draw tetrahedra though. For visualization purposes, each tetrahedra
+
+The interactive viewer is unable to directly draw tetrahedra though. So for visualization purposes each tetrahedron
 can be converted to four triangles.
 ![([Example 110]({{ repo_url }}/tutorial/110_MshView/main.cpp)) Shows a slice of tetrahedral mesh with scalar field defined on element level](images/110_MshView.png)
 
@@ -2711,9 +2712,9 @@ png and used to texture a quadrilateral.
 
 ### Off-screen rendering using ray tracing with Embree
 
-If libigl is compiled with OpenGL support, or when interactive viewer is not
+If libigl is compiled without OpenGL support, or when the interactive viewer is not
 practical, it is still possible to render view in memory using [Embree](https://www.embree.org/)
-library. Currently only triangular meshes are supported. The usage is very similar to  [Screen Capture](#screen-capture).
+library. Currently only triangular meshes are supported. The usage is very similar to the [Screen Capture](#screen-capture) tutorial.
 
 ```cpp
 // Create embree renderer object
