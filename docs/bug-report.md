@@ -14,7 +14,7 @@ Before opening an issue on creating a pull request, please check the following:
 
 ## General Issues
 
-- Make sure you are up-to-date with the **master** branch, and verify that
+- Make sure you are up-to-date with the **main** branch, and verify that
   your issue has not been fixed already before opening an issue on github.
 
 - To report a problem about the **website** (out-of-date content, erroneous
@@ -30,14 +30,15 @@ Before opening an issue on creating a pull request, please check the following:
 - If you have a **CMake issue**, make sure you follow the same approach as the
   [libigl-example-project](https://github.com/libigl/libigl-example-project)
   to build libigl with your project, and make sure that you can compile the
-  example project.
+  example project. Please also make sure to delete your **CMakeCache.txt**,
+  or delete your **build/** folder and try again.
 
 - If you have an issue with a **submodule**, then you are using an old version
   of libigl. Please read [this page](/rewritten-history) about the transition
   to v2.0.0.
 
 - If you have an issue with downloading an **external dependency** using the
-  CMake build, nuke the `external/` folder and try again.
+  CMake build, delete the `external/` folder and try again.
 
 - If you have an issue with a missing **template**, check that your code
   compiles with the *header-only* option of libigl activated. Turn **`OFF`**
