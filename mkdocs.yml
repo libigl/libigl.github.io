@@ -11,15 +11,15 @@ remote_branch: 'master'
 theme:
   name: material
   favicon: 'favicon.ico'
-  logo:
-    icon: ' '
+  logo: 'logo.png'
   palette:
     primary: 'light blue'
     accent: 'blue'
 extra:
   social:
-    - type: 'github'
+    - icon: fontawesome/brands/github-alt
       link: 'https://github.com/libigl'
+  repo_url: 'https://github.com/libigl/libigl/tree/main'
 extra_javascript:
   - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
 extra_css:
@@ -37,7 +37,7 @@ markdown_extensions:
   - markdown.extensions.toc:
       permalink: true
   - markdown.extensions.wikilinks:
-      base_url: https://github.com/libigl/libigl/tree/master
+      base_url: https://github.com/libigl/libigl/tree/main
   - pymdownx.arithmatex
   - pymdownx.betterem:
       smart_enable: all
@@ -56,12 +56,10 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
-  - urlprocessor:
-      variables:
-        repo_url: 'https://github.com/libigl/libigl/tree/master'
-        dev_url: 'https://github.com/libigl/libigl/tree/dev'
 plugins:
   - search
+  - macros:
+      verbose: true
   - redirects:
       redirect_maps:
         'RELEASE_HISTORY.md': 'changelog.md'

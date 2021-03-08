@@ -1,0 +1,18 @@
+name: libigl-website
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9
+  - mkdocs=1.1.2
+  - mkdocs-material=7.0.5
+  - markdown=3.3.4
+  - wcwidth=0.2.5
+  - pygments==2.8.0
+  - pymdown-extensions=8.1.1
+  - pip=21.0.1
+  - pip:
+      - mkdocs-redirects==1.0.1
+      - mkdocs-minify-plugin==0.4.0
+      - mkdocs-macros-plugin==0.5.5
+      - LinkChecker==10.0.1
+      - "--editable=git+https://github.com/jdumas/figureAltCaption@c1eb51cffa0c500d5f7c9b78bd3b5e752e14aee9#egg=figureAltCaption"

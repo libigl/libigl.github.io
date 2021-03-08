@@ -219,7 +219,7 @@ BibTeX entry:
 
 ```bibtex
 @misc{libigl,
-  title = {{libigl}: A simple {C++} geometry processing library},
+  title = { {libigl}: A simple {C++} geometry processing library},
   author = {Alec Jacobson and Daniele Panozzo and others},
   note = {https://libigl.github.io/},
   year = {2018},

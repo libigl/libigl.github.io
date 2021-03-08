@@ -1891,9 +1891,9 @@ igl::biharmonic_coordinates(V,F,S,W);
 
 To produce a smooth deformation, linear blend skinning requires smooth skinning
 weights. These could be painted manually or computed automatically (e.g., using
-[Bounded Biharmonic Weights](bounded-biharmonic-weights) [^jacobson_2011]).
+[Bounded Biharmonic Weights](#bounded-biharmonic-weights) [^jacobson_2011]).
 Even still, linear blend skinning suffers from shrinkage and collapse artifacts
-due to its inherent linearity (see [earlier](dual-quaternion-skinning)). "Direct
+due to its inherent linearity (see [earlier](#dual-quaternion-skinning)). "Direct
 Delta Mush" [^le_2019] skinning attempts to solve both of these issues by providing a
 direct skinning method that takes as input a rig with piecewise-constant weight
 functions (weights are either $=0$ or $=1$ everywhere). _Direct_ delta mush is
@@ -1924,7 +1924,7 @@ the rest and posed models.
 
 The key insight of "Direct Delta Mush" is that this process of Laplacian
 smoothing at runtime is _nearly linear_ and local frames can be computed in a
-embarrassingly parallel fashion using SVD (cf. [ARAP](as-rigid-as-possible)).
+embarrassingly parallel fashion using SVD (cf. [ARAP](#as-rigid-as-possible)).
 
 Direct delta mush moves the smoothing step into precomputation, resulting in
 "vector-valued" skinning weights per-vertex per-bone, stored in a matrix
@@ -2899,7 +2899,7 @@ of three cylinders:
 ```cpp
 // Compute result of (A ∩ B) \ ((C ∪ D) ∪ E)
 igl::copyleft::cgal::CSGTree<MatrixXi> CSGTree =
-  {{{VA,FA},{VB,FB},"i"},{{{VC,FC},{VD,FD},"u"},{VE,FE},"u"},"m"};
+  { { {VA,FA},{VB,FB},"i"},{ { {VC,FC},{VD,FD},"u"}, {VE,FE},"u"},"m"};
 ```
 
 ![A CSG Tree represents a shape as a combination of binary boolean operations](images/cube-sphere-cylinders-csg-tree.jpg)
@@ -3679,7 +3679,7 @@ used in n-body graviational system simulations or electrostatics problems. The
 result is approximate, but much more closely follows a $O(\log{n})$  trend and
 with much smaller constant factors.
 
-![([Example 717]({{ dev_url }}/tutorial/717_FastWindingNumbers/main.cpp)) 
+![([Example 717]({{ repo_url }}/tutorial/717_FastWindingNumbers/main.cpp)) 
 loads a mesh, samples 1,000,000 random queries and then discards all those
 _outside_ the given model.](images/bunny-fwn-soup.jpg)
 
