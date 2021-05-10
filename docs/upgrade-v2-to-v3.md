@@ -8,9 +8,7 @@
 !!! warning
     This entry describes changes introduced in an **unmerged** pull-request. This warning will be removed once the changes have been merged into `main`.
 
-### CMake
-
-#### Entry point
+### CMake entry point
 
 The main entry point for CMake is now the `CMakeLists.txt` at the root of the libigl repository. If you were using a `FindLibigl.cmake`, or were including `libigl.cmake` directly, please update your project.
 
@@ -29,7 +27,7 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(libigl)
 ```
 
-#### CMake targets
+### CMake targets
 
 The CMake target for each libigl module has been renamed in v3.0.0. This provides greater visibility into each module category (between regular, copyleft and nonfree modules). Here is the table mapping the old names to the new names:
 
@@ -51,7 +49,7 @@ The CMake target for each libigl module has been renamed in v3.0.0. This provide
 | `igl::mosek`             | `igl_nonfree::mosek`         |
 | `igl::triangle`          | `igl_nonfree::triangle`      |
 
-#### CMake options
+### CMake options
 
 Some libigl CMake options have changed in v3.0.0. Here is a mapping from the old name to the new names:
 
