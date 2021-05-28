@@ -3558,7 +3558,7 @@ equal to the square root of the logarithm of the heat diffused from $\mathbf{x}$
 to $\mathbf{y}$ after a time $t$:
 
 \\[
-d(\mathbf{x},\mathbf{y}) = \lim_{t→∞} \sqrt{ -4 t \log k_{t,\mathbf{x}} (\mathbf{y}) },
+d(\mathbf{x},\mathbf{y}) = \lim_{t→0} \sqrt{ -4 t \log k_{t,\mathbf{x}} (\mathbf{y}) },
 \\]
 where $k_{t,\mathbf{x}}$ is the _heat kernel_. We can think of this heat
 diffusion problem as placing a hot needle on $\mathbf{x}$ and then after $t$
