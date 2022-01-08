@@ -67,3 +67,12 @@
     igl::copyleft::cgal::CSGTree inter(tree, tree, "i");
     ```
     See an detailed explanation of the problem [here](https://github.com/libigl/libigl/pull/996#issuecomment-450543678), and please use [this thread](https://github.com/libigl/libigl/issues/1086) to discuss the bug if it affects you. So far the problem has only been observed on macOS.
+
+??? faq "Commenting out viewer.launch() causes linker errors with imgui/glad (no imgui/glad functions called)"
+    This issue only happens on macOS with the Xcode project generator, when libigl is compiled in header-only mode. Possible solutions:
+
+    - Add an unused function in your project calling `viewer.launch()`.
+    - Compile libigl as a static library.
+    - Compile your project using another project generator (Makefile or Ninja).
+
+    For a more detailed explanation of the problem, see [this answer](https://github.com/libigl/libigl-example-project/issues/33#issuecomment-1008171774).
