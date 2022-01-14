@@ -3126,7 +3126,7 @@ strategy discussed above.
 
 ### Signed Distances
 
-In the [Generalized Winding Number section][generalizedwindingnumber], we
+In the [Generalized Winding Number section](#generalized-winding-number), we
 examined a robust method for determining whether points lie inside or outside
 of a given triangle soup mesh. Libigl complements this algorithm with
 accelerated signed and unsigned distance queries and "in element" queries for
@@ -3214,7 +3214,7 @@ $\mathbf{q}$ is inside $(V,F)$: -1, or outside: +1. This is a fast $O(1)$ test
 once $\mathbf{c}$ is located, but may fail if `V,F` is not watertight.
 
 An alternative is to use the [generalized winding
-number][generalizedwindingnumber] to determine the sign. This is very robust to
+number](#generalized-winding-number) to determine the sign. This is very robust to
 unclean meshes `V,F` but slower: something like $O(\sqrt{n})$ once $\mathbf{c}$
 is located.
 
@@ -3664,7 +3664,7 @@ things and ensures monotonicity (right)](images/heat-geodesic-peaks.png)
 
 In 2018, Barill et al. [^barill_2018] demonstrated how to significantly
 expediate the computation of the [generalized winding
-numbers][generalizedwindingnumber] mentioned above. The original definition of
+numbers](#generalized-winding-number) mentioned above. The original definition of
 generalized winding numbers for triangle meshes is also extended to (oriented) point
 clouds.
 
