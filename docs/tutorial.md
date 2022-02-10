@@ -58,11 +58,7 @@ make
 ```
 
 !!! note "Note about CGAL"
-    The _optional_ dependency [CGAL](https://www.cgal.org) has been notoriously difficult for installation (in turn it also depends on boost). Unlike the other optional dependencies, by default CGAL is _not_ downloaded upon issuing the `cmake` command above and the corresponding tutorial entries will be skipped. To download CGAL and include those entries, issue
-    
-    ```bash
-    cmake -DLIBIGL_WITH_CGAL=ON ../
-    ```
+    The _optional_ dependency [CGAL](https://www.cgal.org) has been notoriously difficult to setup (as it also depends on boost/gmp/mpfr). By default, it will only be enabled on Linux/macOS if GMP and MPFR are installed system-wide. On Windows, all its dependencies will be downloaded by CMake, thus requiring no setup on your part.
 
 The examples can also be built independently using the CMakeLists.txt
 inside each example folder.
