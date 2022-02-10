@@ -99,11 +99,14 @@ The CMake target for each libigl module has been renamed in v2.4.0. This provide
 |                          | `igl_copyleft::core` (_New_) |
 | `igl::cgal`              | `igl_copyleft::cgal`         |
 | `igl::comiso`            | `igl_copyleft::comiso`       |
-| `igl::cork`              | `igl_copyleft::cork`         |
+| `igl::cork`              | **removed**                  |
 | `igl::tetgen`            | `igl_copyleft::tetgen`       |
 | `igl::matlab`            | `igl_restricted::matlab`        |
 | `igl::mosek`             | `igl_restricted::mosek`         |
 | `igl::triangle`          | `igl_restricted::triangle`      |
+
+!!! important
+    The libigl cork wrapper was removed from this release, due to lack of Windows support. A standalone repository with a libigl-style wrapper around cork is available [here](https://github.com/libigl/libigl-cork).
 
 #### CMake options
 
@@ -137,7 +140,52 @@ Some libigl CMake options have changed in v2.4.0. Here is a mapping from the old
 
 ### Other Changes
 
-- ...
+#### Bugfixes
+
+- Fix #1924 "PLY with no faces throw SIGFPE in ReadPLY" (#1927)
+- LSCM: fix sign for the area term (#1853)
+- Fix bug in igl::read_file_binary (#1821)
+- Fix #1795 "Can't convert CGAL::Polyhedron_3 to mesh" (#1796)
+- Fix the order of principal curvature (#1767)
+- Fix dirty flag for ViewerData::set_labels (#1761)
+
+#### Enhancements
+
+- Modified arap interface to accept Eigen::Map (#1922)
+- Wrapper around CGAL's 2D constrained delaunay triangulation (#1811) 
+- Delete obsolete function `igl::point_in_poly` (#1810)
+- Instead of calling exit(1), triangle now throws an exception (#1800)
+- Use igl::default_num_threads in cgal module (#1768)
+- Added double_sided flag to embree renderer (#1765)
+- Replace Eigen::PlainObjectBase with Eigen::MatrixBase for input of ambient_occlusion (#1752)
+- 10-100x speedup on per corner normals + caching adjacency (#1745)
+
+#### Compilation
+
+- CMake refactor (#1805)
+  - CGAL and Boost are now built entirely from source via CMake. This means the CGAL module will work out of the box under Windows -- no need for a conda virtual environment. On Linux/macOS, the only dependency to install system-wide are GMP+MPFR.
+  - CMake targets and options have been renamed based on the module category: regular/copyleft/restricted. This eliminates long module names (`igl::open_glfw_imgui`) that didn't bring much to the table, in favor of three root classes based on available licenses for each module.
+  - There is now a `LibiglOptions.cmake` sample file at the root of the project repository, which should make it easier to document/update available CMake options.
+  - There is now a unique entry point for the project, which is the root `CMakeLists.txt`. This facilitates maintenance, as before either `tutorial/CMakeLists.txt` and `cmake/libigl.cmake` could serve as potential entry points.
+  - The default behavior for module compilation is:
+      - When compiling libigl on its own, all modules are enabled by default.
+      - When compiling libigl as a subproject, all modules are disabled by default.
+      - On Linux/macOS, if GMP/MPFR is not installed on the system, shows a warning and disable CGAL by default.
+      - If Mosek/Matlab are not installed on the system, shows a warning and disable the Mosek/Matlab libigl wrappers respectively.
+      - If the user explicitly enables those modules, but they do not have GMP/MPFR/Mosek/Matlab installed on the system, CMake configuration will fail.
+  - Big cleanup of the tutorial CMake definitions. With the new setup adding a new tutorial is even easier!
+  - Cleaned up dependency setup for imgui/stb (among others)
+  - Unit tests have been split into different CMake target, based on which module is tested.
+  - Add support for Hunter + install() for the `igl::core` module (should be the same as before).
+  - Use a more generic `igl_copy_dll()` function to copy GMP/MPFR dlls on Windows (should work to copy the CoMiSo dll as well).
+  - Cleaned up our .gitignore file.
+- Fix blue noise random shuffle for C++17 (#1949)
+- Bump triangle version (#1813) and tetgen version (#1815)
+- Templates EmbreeRenderer (#1788)
+- Fix Cuda compilation issue on Windows (#1747)
+- Split min_quad_with_fixed implementation into separate cpp (#1746)
+- Silence MSVC warning with std::getenv (#1744)
+- Fix usage of find_package(OpenGL) on Linux (#1733)
 
 ## Version 2.3.0 Changes
 
