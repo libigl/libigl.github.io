@@ -99,7 +99,7 @@ The CMake target for each libigl module has been renamed in v2.4.0. This provide
 |                          | `igl_copyleft::core` (_New_) |
 | `igl::cgal`              | `igl_copyleft::cgal`         |
 | `igl::comiso`            | `igl_copyleft::comiso`       |
-| `igl::cork`              | **removed**                  |
+| `igl::cork`              | _**Removed**_                |
 | `igl::tetgen`            | `igl_copyleft::tetgen`       |
 | `igl::matlab`            | `igl_restricted::matlab`        |
 | `igl::mosek`             | `igl_restricted::mosek`         |
