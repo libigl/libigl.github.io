@@ -3,7 +3,7 @@
 
 # Changelog
 
-## Summary Table
+## Version Summary Table
 
 ??? abstract "Click to unroll."
 
@@ -51,7 +51,93 @@
       0.1.5   | Compilation on windows, bug fix for compilation with cygwin
       0.1.1   | Alpha release with core functions, extras, examples
 
-## Upcoming version (`main` branch)
+## Version 2.4.0 Changes (upcoming)
+
+!!! caution
+    **Libigl v2.4.0 is not released yet.** This section describes breaking changes and upgrade guides from v2.3.0 to the latest `main` branch, which will be tagged as v2.4.0 shortly.
+
+### Breaking Changes
+
+Libigl v2.4.0 introduced a number of breaking changes regarding its **CMake build system**. If you follow the upgrade guide below, these breaking changes should be easy to resolve.
+
+!!! tip
+    When starting a new project using libigl, use the [libigl-example-project](https://github.com/libigl/libigl-example-project) as a starting point.
+
+#### CMake entry point
+
+The main entry point for CMake is now the `CMakeLists.txt` at the root of the libigl repository. If you were using a `FindLibigl.cmake`, or were including `libigl.cmake` directly, please update your project.
+
+If you are using the [libigl-example-project](https://github.com/libigl/libigl-example-project), you may update the content of `cmake/libigl.cmake` to the following:
+
+```cmake
+if(TARGET igl::core)
+    return()
+endif()
+
+include(FetchContent)
+FetchContent_Declare(
+    libigl
+    GIT_REPOSITORY https://github.com/libigl/libigl.git
+    GIT_TAG <TARGET_SHA1>
+)
+FetchContent_MakeAvailable(libigl)
+```
+
+#### CMake targets
+
+The CMake target for each libigl module has been renamed in v2.4.0. This provides greater visibility into each module category (between regular, copyleft and nonfree modules). Here is the table mapping the old names to the new names:
+
+| Old target name (v2.3.0) | New target name (v2.4.0) |
+|--------------------------|--------------------------|
+| `igl::embree`            | _Unchanged_                  |
+| `igl::opengl_glfw`       | `igl::glfw`                  |
+| `igl::opengl_glfw_imgui` | `igl::imgui`                 |
+| `igl::opengl`            | _Unchanged_                  |
+| `igl::png`               | _Unchanged_                  |
+| `igl::predicates`        | _Unchanged_                  |
+| `igl::xml`               | _Unchanged_                  |
+|                          | `igl_copyleft::core` (_New_) |
+| `igl::cgal`              | `igl_copyleft::cgal`         |
+| `igl::comiso`            | `igl_copyleft::comiso`       |
+| `igl::cork`              | `igl_copyleft::cork`         |
+| `igl::tetgen`            | `igl_copyleft::tetgen`       |
+| `igl::matlab`            | `igl_restricted::matlab`        |
+| `igl::mosek`             | `igl_restricted::mosek`         |
+| `igl::triangle`          | `igl_restricted::triangle`      |
+
+#### CMake options
+
+Some libigl CMake options have changed in v2.4.0. Here is a mapping from the old name to the new names:
+
+| Old option (v2.3.0) | New option (v2.4.0) |
+|---------------------|---------------------|
+| LIBIGL_WITH_EMBREE            | _Unchanged_                       |
+| LIBIGL_WITH_OPENGL            | _Unchanged_                       |
+| LIBIGL_WITH_OPENGL_GLFW       | LIBIGL_WITH_GLFW                  |
+| LIBIGL_WITH_OPENGL_GLFW_IMGUI | LIBIGL_WITH_IMGUI                 |
+| LIBIGL_WITH_PNG               | _Unchanged_                       |
+| LIBIGL_WITH_PREDICATES        | _Unchanged_                       |
+| LIBIGL_WITH_XML               | _Unchanged_                       |
+|                               | LIBIGL_COPYLEFT_WITH_CORE (_New_) |
+| LIBIGL_WITH_CGAL              | LIBIGL_COPYLEFT_WITH_CGAL         |
+| LIBIGL_WITH_COMISO            | LIBIGL_COPYLEFT_WITH_COMISO       |
+| LIBIGL_WITH_CORK              | LIBIGL_COPYLEFT_WITH_CORK         |
+| LIBIGL_WITH_TETGEN            | LIBIGL_COPYLEFT_WITH_TETGEN       |
+| LIBIGL_WITH_TRIANGLE          | LIBIGL_RESTRICTED_WITH_TRIANGLE   |
+| LIBIGL_WITH_MATLAB            | LIBIGL_RESTRICTED_WITH_MATLAB     |
+| LIBIGL_WITH_MOSEK             | LIBIGL_RESTRICTED_WITH_MOSEK      |
+| LIBIGL_WITH_PYTHON            | _Removed_                         |
+| LIBIGL_BUILD_TESTS            | _Unchanged_                       |
+| LIBIGL_BUILD_TUTORIALS        | _Unchanged_                       |
+| LIBIGL_EXPORT_TARGETS         | LIBIGL_INSTALL                    |
+| LIBIGL_USE_STATIC_LIBRARY     | _Unchanged_                       |
+
+!!! tip
+    There is a now a sample file `LibiglOption.cmake.sample` at the root of the libigl repository. Simply remove the `.sample` extension and edit this file to modify libigl compilation options. If you are using libigl as a subdirectory (e.g. in a parent project), then please set your options in the parent project instead.
+
+### Other Changes
+
+- ...
 
 ## Version 2.3.0 Changes
 
