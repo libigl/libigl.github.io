@@ -138,6 +138,15 @@ Some libigl CMake options have changed in v2.4.0. Here is a mapping from the old
 !!! tip
     There is a now a sample file `LibiglOption.cmake.sample` at the root of the libigl repository. Simply remove the `.sample` extension and edit this file to modify libigl compilation options. If you are using libigl as a subdirectory (e.g. in a parent project), then please set your options in the parent project instead.
 
+#### ImGui headers
+
+We are also updating our ImGui dependency to use the base repository as include folder, rather than forcing headers to be copied into a `imgui/` subfolder. This helps be consistent with other projects that might be using ImGui. This requires users changing their include headers as follows:
+
+- `#include <imgui/imgui.h>` --> `#include <imgui.h>`
+- `#include <imgui/imgui_internal.h>` --> `#include <imgui_internal.h>`
+- `#include <imgui_impl_glfw.h>` --> `#include <backends/imgui_impl_glfw.h>`
+- `#include <imgui_impl_opengl3.h>` --> `#include <backends/imgui_impl_opengl3.h>`
+
 ### Other Changes
 
 #### Bugfixes
@@ -162,6 +171,7 @@ Some libigl CMake options have changed in v2.4.0. Here is a mapping from the old
 
 #### Compilation
 
+- Update ImGui to v1.85 + use default include folders for ImGui (#1970) 
 - CMake refactor (#1805)
   - CGAL and Boost are now built entirely from source via CMake. This means the CGAL module will work out of the box under Windows -- no need for a conda virtual environment. On Linux/macOS, the only dependency to install system-wide are GMP+MPFR.
   - CMake targets and options have been renamed based on the module category: regular/copyleft/restricted. This eliminates long module names (`igl::open_glfw_imgui`) that didn't bring much to the table, in favor of three root classes based on available licenses for each module.
