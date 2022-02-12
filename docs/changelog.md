@@ -85,7 +85,7 @@ FetchContent_MakeAvailable(libigl)
 
 #### CMake targets
 
-The CMake target for each libigl module has been renamed in v2.4.0. This provides greater visibility into each module category (between regular, copyleft and nonfree modules). Here is the table mapping the old names to the new names:
+The CMake targets for many libigl modules have been renamed in v2.4.0. This provides greater visibility into each module category (between regular, copyleft and restricted modules). Here is the table mapping the old names to the new names:
 
 | Old target name (v2.3.0) | New target name (v2.4.0) |
 |--------------------------|--------------------------|
@@ -106,34 +106,34 @@ The CMake target for each libigl module has been renamed in v2.4.0. This provide
 | `igl::triangle`          | `igl_restricted::triangle`      |
 
 !!! important
-    The libigl cork wrapper was removed from this release, due to lack of Windows support. A standalone repository with a libigl-style wrapper around cork is available [here](https://github.com/libigl/libigl-cork).
+    The libigl cork wrapper was removed from this release. A standalone repository with a libigl-style wrapper around cork is available [here](https://github.com/libigl/libigl-cork).
 
 #### CMake options
 
-Some libigl CMake options have changed in v2.4.0. Here is a mapping from the old name to the new names:
+Many libigl CMake options have changed in v2.4.0. Here is a mapping from the old name to the new names:
 
 | Old option (v2.3.0) | New option (v2.4.0) |
 |---------------------|---------------------|
-| LIBIGL_WITH_EMBREE            | _Unchanged_                       |
-| LIBIGL_WITH_OPENGL            | _Unchanged_                       |
-| LIBIGL_WITH_OPENGL_GLFW       | LIBIGL_WITH_GLFW                  |
-| LIBIGL_WITH_OPENGL_GLFW_IMGUI | LIBIGL_WITH_IMGUI                 |
-| LIBIGL_WITH_PNG               | _Unchanged_                       |
-| LIBIGL_WITH_PREDICATES        | _Unchanged_                       |
-| LIBIGL_WITH_XML               | _Unchanged_                       |
-|                               | LIBIGL_COPYLEFT_WITH_CORE (_New_) |
-| LIBIGL_WITH_CGAL              | LIBIGL_COPYLEFT_WITH_CGAL         |
-| LIBIGL_WITH_COMISO            | LIBIGL_COPYLEFT_WITH_COMISO       |
-| LIBIGL_WITH_CORK              | LIBIGL_COPYLEFT_WITH_CORK         |
-| LIBIGL_WITH_TETGEN            | LIBIGL_COPYLEFT_WITH_TETGEN       |
-| LIBIGL_WITH_TRIANGLE          | LIBIGL_RESTRICTED_WITH_TRIANGLE   |
-| LIBIGL_WITH_MATLAB            | LIBIGL_RESTRICTED_WITH_MATLAB     |
-| LIBIGL_WITH_MOSEK             | LIBIGL_RESTRICTED_WITH_MOSEK      |
-| LIBIGL_WITH_PYTHON            | _Removed_                         |
+|                               | LIBIGL_COPYLEFT_CORE (_New_)      |
 | LIBIGL_BUILD_TESTS            | _Unchanged_                       |
 | LIBIGL_BUILD_TUTORIALS        | _Unchanged_                       |
 | LIBIGL_EXPORT_TARGETS         | LIBIGL_INSTALL                    |
 | LIBIGL_USE_STATIC_LIBRARY     | _Unchanged_                       |
+| LIBIGL_WITH_CGAL              | LIBIGL_COPYLEFT_CGAL              |
+| LIBIGL_WITH_COMISO            | LIBIGL_COPYLEFT_COMISO            |
+| LIBIGL_WITH_CORK              | _Removed_
+| LIBIGL_WITH_EMBREE            | LIBIGL_EMBREE                     |
+| LIBIGL_WITH_MATLAB            | LIBIGL_RESTRICTED_MATLAB          |
+| LIBIGL_WITH_MOSEK             | LIBIGL_RESTRICTED_MOSEK           |
+| LIBIGL_WITH_OPENGL            | LIBIGL_OPENGL                     |
+| LIBIGL_WITH_OPENGL_GLFW       | LIBIGL_GLFW                       |
+| LIBIGL_WITH_OPENGL_GLFW_IMGUI | LIBIGL_IMGUI                      |
+| LIBIGL_WITH_PNG               | LIBIGL_PNG                        |
+| LIBIGL_WITH_PREDICATES        | LIBIGL_PREDICATES                 |
+| LIBIGL_WITH_PYTHON            | _Removed_                         |
+| LIBIGL_WITH_TETGEN            | LIBIGL_COPYLEFT_TETGEN            |
+| LIBIGL_WITH_TRIANGLE          | LIBIGL_RESTRICTED_TRIANGLE        |
+| LIBIGL_WITH_XML               | _Unchanged_                       |
 
 !!! tip
     There is a now a sample file `LibiglOption.cmake.sample` at the root of the libigl repository. Simply remove the `.sample` extension and edit this file to modify libigl compilation options. If you are using libigl as a subdirectory (e.g. in a parent project), then please set your options in the parent project instead.
@@ -481,3 +481,4 @@ Old                              | New
  - The function `igl::project_normals`, which cast a line for each vertex of
    mesh _A_ in the normal direction and found the closest intersection along
    these lines with mesh _B_, has been removed.
+
