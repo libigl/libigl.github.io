@@ -147,10 +147,29 @@ We are also updating our ImGui dependency to use the base repository as include 
 - `#include <imgui_impl_glfw.h>` --> `#include <backends/imgui_impl_glfw.h>`
 - `#include <imgui_impl_opengl3.h>` --> `#include <backends/imgui_impl_opengl3.h>`
 
+#### ImGuiMenu,ImGuizmoPlugin,SelectionPlugin → ImGuiWidgets
+
+We've introduced a new "parent" `ImGuiPlugin` which handles ImGui IO functions and converted the old `ImGuiMenu`, `ImGuizmoPlugin`, `SelectionPlugin` plugins to inherit from a new `ImGuiWidget` class. In this way, a single `ImGuiPlugin` can be registered to the viewer's plugins list and one or many widgets are registered to this plugin's widgets list.
+
+For folks just using the menu, this incurs a few extra lines. To add the menu:
+
+```cpp
+#include <igl/opengl/glfw/imgui/ImGuiPlugin.h>
+#include <igl/opengl/glfw/imgui/ImGuiMenu.h>
+…
+igl::opengl::glfw::imgui::ImGuiPlugin plugin;
+viewer.plugins.push_back(&plugin);
+igl::opengl::glfw::imgui::ImGuiMenu menu;
+plugin.widgets.push_back(&menu);
+```
+
+The reward is that now we can use all of these plugins (and any new user created plugins using ImGui subroutines) without conflict.
+
 ### Other Changes
 
 #### Bugfixes
 
+- Fix #1656 "Can only have one ImGuiMenu plugin at a time" (#1973)
 - Fix #1924 "PLY with no faces throw SIGFPE in ReadPLY" (#1927)
 - LSCM: fix sign for the area term (#1853)
 - Fix bug in igl::read_file_binary (#1821)
