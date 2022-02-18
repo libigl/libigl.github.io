@@ -190,6 +190,7 @@ The reward is that now we can use all of these plugins (and any new user created
 
 #### Compilation
 
+- Update Embree to v13.3.3 (#1976)
 - Update ImGui to v1.85 + use default include folders for ImGui (#1970) 
 - CMake refactor (#1805)
   - CGAL and Boost are now built entirely from source via CMake. This means the CGAL module will work out of the box under Windows -- no need for a conda virtual environment. On Linux/macOS, the only dependency to install system-wide are GMP+MPFR.
