@@ -190,6 +190,7 @@ The reward is that now we can use all of these plugins (and any new user created
 
 #### Compilation
 
+- Update Catch2 to v2.13.8 (#1972)
 - Update Embree to v13.3.3 (#1976)
 - Broad support for M1 macs (#1976, #1975)
 - Update ImGui to v1.85 + use default include folders for ImGui (#1970) 
