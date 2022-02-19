@@ -10,6 +10,7 @@
       Version | Short description
       --------|----------------------------------------------------------------------
       main    | ...
+      2.4.0   | Bug fixes, CMake tidying, imgui widgets, broad M1 mac support, dependency bumps
       2.3.0   | Dual Contouring, DDM skinning, Bézier, PLY reader, 3D text rendering, matcap
       2.2.0   | New python bindings, fast winding number for soups, ICP algorithm
       2.1.0   | Various improvements and bug fixes, updated dependencies
@@ -51,7 +52,7 @@
       0.1.5   | Compilation on windows, bug fix for compilation with cygwin
       0.1.1   | Alpha release with core functions, extras, examples
 
-## Version 2.4.0 Changes (upcoming)
+## Version 2.4.0 Changes
 
 !!! caution
     **Libigl v2.4.0 is not released yet.** This section describes breaking changes and upgrade guides from v2.3.0 to the latest `main` branch, which will be tagged as v2.4.0 shortly.
