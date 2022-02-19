@@ -54,9 +54,6 @@
 
 ## Version 2.4.0 Changes
 
-!!! caution
-    **Libigl v2.4.0 is not released yet.** This section describes breaking changes and upgrade guides from v2.3.0 to the latest `main` branch, which will be tagged as v2.4.0 shortly.
-
 ### Breaking Changes
 
 Libigl v2.4.0 introduced a number of breaking changes regarding its **CMake build system**. If you follow the upgrade guide below, these breaking changes should be easy to resolve.
