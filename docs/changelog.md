@@ -52,6 +52,20 @@
       0.1.5   | Compilation on windows, bug fix for compilation with cygwin
       0.1.1   | Alpha release with core functions, extras, examples
 
+## Upcoming Version 2.5.0 Changes
+
+The following changes are represent in the main branch of libigl, but not yet included in a tagged release.
+
+### Bugfixes
+- `ViewerData::set_data()` now accepts #F-long data vectors (1f44d1e025040df06f82dde648741909b17afae1)
+
+### Enhancements
+- `ismember_rows` split into its own file (may need to change `#include <igl/ismember.h>` to `#include <igl/ismember_rows.h>` (#1989)
+- `igl::predicates::delaunay_triangulation` and `igl::predicates::lexicographic_triangulation` routines (#1988)
+- properly expose edge-markers in `igl::triangle::triangulate` (#1983)
+
+### Compilation
+
 ## Version 2.4.0 Changes
 
 ### Breaking Changes
