@@ -3809,7 +3809,7 @@ This tutorial was originally presented by Daniele Panozzo and Alec Jacobson at S
 
 <!-- Chapter 4 -->
 
-[^botsch_2004]: Matrio Botsch and Leif Kobbelt. [An Intuitive Framework for Real-Time Freeform Modeling](https://www.google.com/search?q=An+Intuitive+Framework+for+Real-Time+Freeform+Modeling), 2004.
+[^botsch_2004]: Mario Botsch and Leif Kobbelt. [An Intuitive Framework for Real-Time Freeform Modeling](https://www.google.com/search?q=An+Intuitive+Framework+for+Real-Time+Freeform+Modeling), 2004.
 [^chao_2010]: Isaac Chao, Ulrich Pinkall, Patrick Sanan, Peter Schröder. [A Simple Geometric Model for Elastic Deformations](https://www.google.com/search?q=A+Simple+Geometric+Model+for+Elastic+Deformations), 2010.
 [^jacobson_2011]: Alec Jacobson, Ilya Baran, Jovan Popović, and Olga Sorkine. [Bounded Biharmonic Weights for Real-Time Deformation](https://www.google.com/search?q=Bounded+biharmonic+weights+for+real-time+deformation), 2011.
 [^jacobson_2012]: Alec Jacobson, Ilya Baran, Ladislav Kavan, Jovan Popović, and Olga Sorkine. [Fast Automatic Skinning Transformations](https://www.google.com/search?q=Fast+Automatic+Skinning+Transformations), 2012.
