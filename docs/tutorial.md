@@ -3675,7 +3675,7 @@ used in n-body graviational system simulations or electrostatics problems. The
 result is approximate, but much more closely follows a $O(\log{n})$  trend and
 with much smaller constant factors.
 
-![([Example 717]({{ repo_url }}/tutorial/717_FastWindingNumbers/main.cpp)) 
+![([Example 717]({{ repo_url }}/tutorial/717_FastWindingNumber/main.cpp)) 
 loads a mesh, samples 1,000,000 random queries and then discards all those
 _outside_ the given model.](images/bunny-fwn-soup.jpg)
 
