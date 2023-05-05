@@ -61,3 +61,20 @@ From within the `build` directory just issue:
 A glfw app should launch displaying a 3D cube.
 ![Libigl example project: https://github.com/libigl/libigl-example-project](images/libigl-example-project.png)
 
+## Enabling optional modules via cmake
+
+The example project already requires the `glfw` module. This shows up in the `CMakeLists.txt` in two places:
+
+```
+igl_include(glfw)
+…
+target_link_libraries(${PROJECT_NAME} PUBLIC igl::glfw)
+```
+
+Suppose you'd like to add another module, for example, so that you can include `#include <igl/copyleft/tetgen/tetrahedralize.h>` then you'd change these to:
+
+```
+igl_include(copyleft tetgen)
+…
+target_link_libraries(${PROJECT_NAME} PUBLIC igl::glfw igl_copyleft::tetgen)
+```
