@@ -1,0 +1,2376 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Simple C++ geometry processing library">
+      
+      
+      
+        <link rel="canonical" href="https://libigl.github.io/changelog/">
+      
+      <link rel="icon" href="../favicon.ico">
+      <meta name="generator" content="mkdocs-1.2.4, mkdocs-material-8.2.7">
+    
+    
+      
+        <title>Changelog - libigl</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.9d5733d3.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#02a6f2">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/style.css">
+    
+      <link rel="stylesheet" href="../css/pygments.css">
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="light-blue" data-md-color-accent="blue">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#changelog" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="libigl" class="md-header__button md-logo" aria-label="libigl" data-md-component="logo">
+      
+  <img src="../logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            libigl
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Changelog
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/libigl/libigl/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    libigl/libigl
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="libigl" class="md-nav__button md-logo" aria-label="libigl" data-md-component="logo">
+      
+  <img src="../logo.png" alt="logo">
+
+    </a>
+    libigl
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/libigl/libigl/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    libigl/libigl
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial/" class="md-nav__link">
+        Tutorial
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-bindings/" class="md-nav__link">
+        Python Bindings
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Compilation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Compilation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Compilation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../example-project/" class="md-nav__link">
+        Example Project
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../static-library/" class="md-nav__link">
+        Static Library
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../third-party/" class="md-nav__link">
+        External Dependencies
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Contributing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Contributing" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Contributing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../style-guidelines/" class="md-nav__link">
+        Style Guidelines
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bug-report/" class="md-nav__link">
+        Bug Report
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../before-submitting-pull-request/" class="md-nav__link">
+        Creating a Pull Request
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unit-tests/" class="md-nav__link">
+        Unit Tests
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Misc
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Misc" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Misc
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../matlab-to-eigen/" class="md-nav__link">
+        Matlab-libigl Cheatsheet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coding-guidelines/" class="md-nav__link">
+        Coding Tips
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" type="checkbox" id="__nav_6_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_3">
+          File Formats
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="File Formats" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_3">
+          <span class="md-nav__icon md-icon"></span>
+          File Formats
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-formats/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-formats/bf/" class="md-nav__link">
+        bf
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-formats/dmat/" class="md-nav__link">
+        dmat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-formats/rbr/" class="md-nav__link">
+        rbr
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-formats/tgf/" class="md-nav__link">
+        tgf
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-formats/xml/" class="md-nav__link">
+        xml
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../website/" class="md-nav__link">
+        Building the Website
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rewritten-history/" class="md-nav__link">
+        Rewritten History
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          About
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="About" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          About
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Changelog
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Changelog
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#version-summary-table" class="md-nav__link">
+    Version Summary Table
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upcoming-version-250-changes" class="md-nav__link">
+    Upcoming Version 2.5.0 Changes
+  </a>
+  
+    <nav class="md-nav" aria-label="Upcoming Version 2.5.0 Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bugfixes" class="md-nav__link">
+    Bugfixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enhancements" class="md-nav__link">
+    Enhancements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compilation" class="md-nav__link">
+    Compilation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-240-changes" class="md-nav__link">
+    Version 2.4.0 Changes
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 2.4.0 Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#breaking-changes" class="md-nav__link">
+    Breaking Changes
+  </a>
+  
+    <nav class="md-nav" aria-label="Breaking Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cmake-entry-point" class="md-nav__link">
+    CMake entry point
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cmake-targets" class="md-nav__link">
+    CMake targets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cmake-options" class="md-nav__link">
+    CMake options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imgui-headers" class="md-nav__link">
+    ImGui headers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imguimenuimguizmopluginselectionplugin-imguiwidgets" class="md-nav__link">
+    ImGuiMenu,ImGuizmoPlugin,SelectionPlugin → ImGuiWidgets
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-changes" class="md-nav__link">
+    Other Changes
+  </a>
+  
+    <nav class="md-nav" aria-label="Other Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bugfixes_1" class="md-nav__link">
+    Bugfixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enhancements_1" class="md-nav__link">
+    Enhancements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compilation_1" class="md-nav__link">
+    Compilation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-230-changes" class="md-nav__link">
+    Version 2.3.0 Changes
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 2.3.0 Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features" class="md-nav__link">
+    New Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-system" class="md-nav__link">
+    Build System
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    Misc
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-220-changes" class="md-nav__link">
+    Version 2.2.0 Changes
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 2.2.0 Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-bindings" class="md-nav__link">
+    Python Bindings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-features_1" class="md-nav__link">
+    New Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-system_1" class="md-nav__link">
+    Build System
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#misc_1" class="md-nav__link">
+    Misc
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-210-changes" class="md-nav__link">
+    Version 2.1.0 Changes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-200-changes" class="md-nav__link">
+    Version 2.0.0 Changes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-132-changes" class="md-nav__link">
+    Version 1.3.2 Changes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-131-changes" class="md-nav__link">
+    Version 1.3.1 Changes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-130-changes" class="md-nav__link">
+    Version 1.3.0 Changes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-12-changes" class="md-nav__link">
+    Version 1.2 Changes
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 1.2 Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#external-libraries-as-git-subrepos" class="md-nav__link">
+    External libraries as git subrepos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deprecatedrepeated-functions" class="md-nav__link">
+    Deprecated/repeated functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-10-changes" class="md-nav__link">
+    Version 1.0 Changes
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 1.0 Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#renamed-functions" class="md-nav__link">
+    Renamed functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#miscellaneous" class="md-nav__link">
+    Miscellaneous
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license/" class="md-nav__link">
+        License
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#version-summary-table" class="md-nav__link">
+    Version Summary Table
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upcoming-version-250-changes" class="md-nav__link">
+    Upcoming Version 2.5.0 Changes
+  </a>
+  
+    <nav class="md-nav" aria-label="Upcoming Version 2.5.0 Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bugfixes" class="md-nav__link">
+    Bugfixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enhancements" class="md-nav__link">
+    Enhancements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compilation" class="md-nav__link">
+    Compilation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-240-changes" class="md-nav__link">
+    Version 2.4.0 Changes
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 2.4.0 Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#breaking-changes" class="md-nav__link">
+    Breaking Changes
+  </a>
+  
+    <nav class="md-nav" aria-label="Breaking Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cmake-entry-point" class="md-nav__link">
+    CMake entry point
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cmake-targets" class="md-nav__link">
+    CMake targets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cmake-options" class="md-nav__link">
+    CMake options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imgui-headers" class="md-nav__link">
+    ImGui headers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imguimenuimguizmopluginselectionplugin-imguiwidgets" class="md-nav__link">
+    ImGuiMenu,ImGuizmoPlugin,SelectionPlugin → ImGuiWidgets
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-changes" class="md-nav__link">
+    Other Changes
+  </a>
+  
+    <nav class="md-nav" aria-label="Other Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bugfixes_1" class="md-nav__link">
+    Bugfixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enhancements_1" class="md-nav__link">
+    Enhancements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compilation_1" class="md-nav__link">
+    Compilation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-230-changes" class="md-nav__link">
+    Version 2.3.0 Changes
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 2.3.0 Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features" class="md-nav__link">
+    New Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-system" class="md-nav__link">
+    Build System
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    Misc
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-220-changes" class="md-nav__link">
+    Version 2.2.0 Changes
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 2.2.0 Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-bindings" class="md-nav__link">
+    Python Bindings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-features_1" class="md-nav__link">
+    New Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-system_1" class="md-nav__link">
+    Build System
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#misc_1" class="md-nav__link">
+    Misc
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-210-changes" class="md-nav__link">
+    Version 2.1.0 Changes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-200-changes" class="md-nav__link">
+    Version 2.0.0 Changes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-132-changes" class="md-nav__link">
+    Version 1.3.2 Changes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-131-changes" class="md-nav__link">
+    Version 1.3.1 Changes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-130-changes" class="md-nav__link">
+    Version 1.3.0 Changes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-12-changes" class="md-nav__link">
+    Version 1.2 Changes
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 1.2 Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#external-libraries-as-git-subrepos" class="md-nav__link">
+    External libraries as git subrepos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deprecatedrepeated-functions" class="md-nav__link">
+    Deprecated/repeated functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-10-changes" class="md-nav__link">
+    Version 1.0 Changes
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 1.0 Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#renamed-functions" class="md-nav__link">
+    Renamed functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#miscellaneous" class="md-nav__link">
+    Miscellaneous
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+<a href="https://github.com/libigl/libigl.github.io/edit/docs/docs/changelog.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+
+<!-- Hide h3+ from toc  -->
+<style>.md-nav--secondary .md-nav__list .md-nav__list { display: none }</style>
+
+<h1 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permanent link">&para;</a></h1>
+<h2 id="version-summary-table">Version Summary Table<a class="headerlink" href="#version-summary-table" title="Permanent link">&para;</a></h2>
+<details class="abstract">
+<summary>Click to unroll.</summary>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Short description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>main</td>
+<td>&hellip;</td>
+</tr>
+<tr>
+<td>2.4.0</td>
+<td>Bug fixes, CMake tidying, imgui widgets, broad M1 mac support, dependency bumps</td>
+</tr>
+<tr>
+<td>2.3.0</td>
+<td>Dual Contouring, DDM skinning, Bézier, PLY reader, 3D text rendering, matcap</td>
+</tr>
+<tr>
+<td>2.2.0</td>
+<td>New python bindings, fast winding number for soups, ICP algorithm</td>
+</tr>
+<tr>
+<td>2.1.0</td>
+<td>Various improvements and bug fixes, updated dependencies</td>
+</tr>
+<tr>
+<td>2.0.0</td>
+<td>Lighter, simpler CMake build, rewritten history</td>
+</tr>
+<tr>
+<td>1.3.3</td>
+<td>Switched the build system from submodules to CMake external projects</td>
+</tr>
+<tr>
+<td>1.3.2</td>
+<td>After merging PRs in the 2018 hackaton</td>
+</tr>
+<tr>
+<td>1.3.1</td>
+<td>Before merging PRs in the 2018 hackaton</td>
+</tr>
+<tr>
+<td>1.3.0</td>
+<td>Modernized cmake build, multi-mesh viewer, replace nanogui with imgui</td>
+</tr>
+<tr>
+<td>1.2.1</td>
+<td>Reorganization opengl-dependent functions: opengl and opengl2 extras</td>
+</tr>
+<tr>
+<td>1.2.0</td>
+<td>Reorganization of &ldquo;extras&rdquo;, rm deprecated funcs, absorb boost &amp; svd3x3</td>
+</tr>
+<tr>
+<td>1.1.7</td>
+<td>Switch build for static library to cmake.</td>
+</tr>
+<tr>
+<td>1.1.6</td>
+<td>Major boolean robustness fix, drop CGAL dependency for AABB/distances</td>
+</tr>
+<tr>
+<td>1.1.5</td>
+<td>Bug fix in booleans</td>
+</tr>
+<tr>
+<td>1.1.4</td>
+<td>Edge collapsing and linear program solving</td>
+</tr>
+<tr>
+<td>1.1.3</td>
+<td>Bug fixes in active set and boundary_conditions</td>
+</tr>
+<tr>
+<td>1.1.1</td>
+<td>PLY file format support</td>
+</tr>
+<tr>
+<td>1.1.0</td>
+<td>Mesh boolean operations using CGAL and cork, implementing [Attene 14]</td>
+</tr>
+<tr>
+<td>1.0.3</td>
+<td>Bone heat method</td>
+</tr>
+<tr>
+<td>1.0.2</td>
+<td>Bug fix in winding number code</td>
+</tr>
+<tr>
+<td>1.0.1</td>
+<td>Bug fixes and more CGAL support</td>
+</tr>
+<tr>
+<td>1.0.0</td>
+<td>Major beta release: many renames, tutorial, triangle, org. build</td>
+</tr>
+<tr>
+<td>0.4.6</td>
+<td>Generalized Winding Numbers</td>
+</tr>
+<tr>
+<td>0.4.5</td>
+<td>CGAL extra: mesh selfintersection</td>
+</tr>
+<tr>
+<td>0.4.4</td>
+<td>STL file format support</td>
+</tr>
+<tr>
+<td>0.4.3</td>
+<td>ARAP implementation</td>
+</tr>
+<tr>
+<td>0.4.1</td>
+<td>Migrated much of the FAST code including extra for Sifakis&rsquo; 3x3 svd</td>
+</tr>
+<tr>
+<td>0.4.0</td>
+<td>Release under MPL2 license</td>
+</tr>
+<tr>
+<td>0.3.7</td>
+<td>Embree2.0 support</td>
+</tr>
+<tr>
+<td>0.3.6</td>
+<td>boost extra, patches, mosek 7 support, libiglbbw (mosek optional)</td>
+</tr>
+<tr>
+<td>0.3.5</td>
+<td>More examples, naive primitive sorting</td>
+</tr>
+<tr>
+<td>0.3.3</td>
+<td>Many more examples, ambient occlusion with Embree.</td>
+</tr>
+<tr>
+<td>0.3.1</td>
+<td>Linearly dependent constraints in min_quad_with_fixed, SparseQR buggy</td>
+</tr>
+<tr>
+<td>0.3.0</td>
+<td>Better active set method support</td>
+</tr>
+<tr>
+<td>0.2.3</td>
+<td>More explicits, active set method, opengl/anttweakbar guards</td>
+</tr>
+<tr>
+<td>0.2.2</td>
+<td>More explicit instantiations, faster sorts and uniques</td>
+</tr>
+<tr>
+<td>0.2.1</td>
+<td>Bug fixes in barycenter and doublearea found by Martin Bisson</td>
+</tr>
+<tr>
+<td>0.2.0</td>
+<td>XML serializer more stable and fixed bug in remove_duplicate_vertices</td>
+</tr>
+<tr>
+<td>0.1.8</td>
+<td>Embree and xml (windows only) extras</td>
+</tr>
+<tr>
+<td>0.1.5</td>
+<td>Compilation on windows, bug fix for compilation with cygwin</td>
+</tr>
+<tr>
+<td>0.1.1</td>
+<td>Alpha release with core functions, extras, examples</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h2 id="upcoming-version-250-changes">Upcoming Version 2.5.0 Changes<a class="headerlink" href="#upcoming-version-250-changes" title="Permanent link">&para;</a></h2>
+<p>The following changes are represent in the main branch of libigl, but not yet included in a tagged release.</p>
+<h3 id="bugfixes">Bugfixes<a class="headerlink" href="#bugfixes" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>ViewerData::set_data()</code> now accepts #F-long data vectors (<a class="magiclink magiclink-github magiclink-commit" href="https://github.com/libigl/libigl/commit/1f44d1e025040df06f82dde648741909b17afae1" title="GitHub Commit: libigl/libigl@1f44d1e">1f44d1e</a>)</li>
+</ul>
+<h3 id="enhancements">Enhancements<a class="headerlink" href="#enhancements" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>ismember_rows</code> split into its own file (may need to change <code>#include &lt;igl/ismember.h&gt;</code> to <code>#include &lt;igl/ismember_rows.h&gt;</code> (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1989" title="GitHub Issue: libigl/libigl #1989">#1989</a>)</li>
+<li><code>igl::predicates::delaunay_triangulation</code> and <code>igl::predicates::lexicographic_triangulation</code> routines (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1988" title="GitHub Issue: libigl/libigl #1988">#1988</a>)</li>
+<li>properly expose edge-markers in <code>igl::triangle::triangulate</code> (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1983" title="GitHub Issue: libigl/libigl #1983">#1983</a>)</li>
+</ul>
+<h3 id="compilation">Compilation<a class="headerlink" href="#compilation" title="Permanent link">&para;</a></h3>
+<h2 id="version-240-changes">Version 2.4.0 Changes<a class="headerlink" href="#version-240-changes" title="Permanent link">&para;</a></h2>
+<h3 id="breaking-changes">Breaking Changes<a class="headerlink" href="#breaking-changes" title="Permanent link">&para;</a></h3>
+<p>Libigl v2.4.0 introduced a number of breaking changes regarding its <strong>CMake build system</strong>. If you follow the upgrade guide below, these breaking changes should be easy to resolve.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>When starting a new project using libigl, use the <a href="https://github.com/libigl/libigl-example-project">libigl-example-project</a> as a starting point.</p>
+</div>
+<h4 id="cmake-entry-point">CMake entry point<a class="headerlink" href="#cmake-entry-point" title="Permanent link">&para;</a></h4>
+<p>The main entry point for CMake is now the <code>CMakeLists.txt</code> at the root of the libigl repository. If you were using a <code>FindLibigl.cmake</code>, or were including <code>libigl.cmake</code> directly, please update your project.</p>
+<p>If you are using the <a href="https://github.com/libigl/libigl-example-project">libigl-example-project</a>, you may update the content of <code>cmake/libigl.cmake</code> to the following:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">if</span><span class="p">(</span><span class="s">TARGET</span><span class="w"> </span><span class="s">igl::core</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">return</span><span class="p">()</span>
+<span class="nb">endif</span><span class="p">()</span>
+
+<span class="nb">include</span><span class="p">(</span><span class="s">FetchContent</span><span class="p">)</span>
+<span class="nb">FetchContent_Declare</span><span class="p">(</span>
+<span class="w">    </span><span class="s">libigl</span>
+<span class="w">    </span><span class="s">GIT_REPOSITORY</span><span class="w"> </span><span class="s">https://github.com/libigl/libigl.git</span>
+<span class="w">    </span><span class="s">GIT_TAG</span><span class="w"> </span><span class="s">&lt;TARGET_SHA1&gt;</span>
+<span class="p">)</span>
+<span class="nb">FetchContent_MakeAvailable</span><span class="p">(</span><span class="s">libigl</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="cmake-targets">CMake targets<a class="headerlink" href="#cmake-targets" title="Permanent link">&para;</a></h4>
+<p>The CMake targets for many libigl modules have been renamed in v2.4.0. This provides greater visibility into each module category (between regular, copyleft and restricted modules). Here is the table mapping the old names to the new names:</p>
+<table>
+<thead>
+<tr>
+<th>Old target name (v2.3.0)</th>
+<th>New target name (v2.4.0)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>igl::embree</code></td>
+<td><em>Unchanged</em></td>
+</tr>
+<tr>
+<td><code>igl::opengl_glfw</code></td>
+<td><code>igl::glfw</code></td>
+</tr>
+<tr>
+<td><code>igl::opengl_glfw_imgui</code></td>
+<td><code>igl::imgui</code></td>
+</tr>
+<tr>
+<td><code>igl::opengl</code></td>
+<td><em>Unchanged</em></td>
+</tr>
+<tr>
+<td><code>igl::png</code></td>
+<td><em>Unchanged</em></td>
+</tr>
+<tr>
+<td><code>igl::predicates</code></td>
+<td><em>Unchanged</em></td>
+</tr>
+<tr>
+<td><code>igl::xml</code></td>
+<td><em>Unchanged</em></td>
+</tr>
+<tr>
+<td></td>
+<td><code>igl_copyleft::core</code> (<em>New</em>)</td>
+</tr>
+<tr>
+<td><code>igl::cgal</code></td>
+<td><code>igl_copyleft::cgal</code></td>
+</tr>
+<tr>
+<td><code>igl::comiso</code></td>
+<td><code>igl_copyleft::comiso</code></td>
+</tr>
+<tr>
+<td><code>igl::cork</code></td>
+<td><em><strong>Removed</strong></em></td>
+</tr>
+<tr>
+<td><code>igl::tetgen</code></td>
+<td><code>igl_copyleft::tetgen</code></td>
+</tr>
+<tr>
+<td><code>igl::matlab</code></td>
+<td><code>igl_restricted::matlab</code></td>
+</tr>
+<tr>
+<td><code>igl::mosek</code></td>
+<td><code>igl_restricted::mosek</code></td>
+</tr>
+<tr>
+<td><code>igl::triangle</code></td>
+<td><code>igl_restricted::triangle</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The libigl cork wrapper was removed from this release. A standalone repository with a libigl-style wrapper around cork is available <a href="https://github.com/libigl/libigl-cork">here</a>.</p>
+</div>
+<h4 id="cmake-options">CMake options<a class="headerlink" href="#cmake-options" title="Permanent link">&para;</a></h4>
+<p>Many libigl CMake options have changed in v2.4.0. Here is a mapping from the old name to the new names:</p>
+<table>
+<thead>
+<tr>
+<th>Old option (v2.3.0)</th>
+<th>New option (v2.4.0)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>LIBIGL_COPYLEFT_CORE (<em>New</em>)</td>
+</tr>
+<tr>
+<td>LIBIGL_BUILD_TESTS</td>
+<td><em>Unchanged</em></td>
+</tr>
+<tr>
+<td>LIBIGL_BUILD_TUTORIALS</td>
+<td><em>Unchanged</em></td>
+</tr>
+<tr>
+<td>LIBIGL_EXPORT_TARGETS</td>
+<td>LIBIGL_INSTALL</td>
+</tr>
+<tr>
+<td>LIBIGL_USE_STATIC_LIBRARY</td>
+<td><em>Unchanged</em></td>
+</tr>
+<tr>
+<td>LIBIGL_WITH_CGAL</td>
+<td>LIBIGL_COPYLEFT_CGAL</td>
+</tr>
+<tr>
+<td>LIBIGL_WITH_COMISO</td>
+<td>LIBIGL_COPYLEFT_COMISO</td>
+</tr>
+<tr>
+<td>LIBIGL_WITH_CORK</td>
+<td><em>Removed</em></td>
+</tr>
+<tr>
+<td>LIBIGL_WITH_EMBREE</td>
+<td>LIBIGL_EMBREE</td>
+</tr>
+<tr>
+<td>LIBIGL_WITH_MATLAB</td>
+<td>LIBIGL_RESTRICTED_MATLAB</td>
+</tr>
+<tr>
+<td>LIBIGL_WITH_MOSEK</td>
+<td>LIBIGL_RESTRICTED_MOSEK</td>
+</tr>
+<tr>
+<td>LIBIGL_WITH_OPENGL</td>
+<td>LIBIGL_OPENGL</td>
+</tr>
+<tr>
+<td>LIBIGL_WITH_OPENGL_GLFW</td>
+<td>LIBIGL_GLFW</td>
+</tr>
+<tr>
+<td>LIBIGL_WITH_OPENGL_GLFW_IMGUI</td>
+<td>LIBIGL_IMGUI</td>
+</tr>
+<tr>
+<td>LIBIGL_WITH_PNG</td>
+<td>LIBIGL_PNG</td>
+</tr>
+<tr>
+<td>LIBIGL_WITH_PREDICATES</td>
+<td>LIBIGL_PREDICATES</td>
+</tr>
+<tr>
+<td>LIBIGL_WITH_PYTHON</td>
+<td><em>Removed</em></td>
+</tr>
+<tr>
+<td>LIBIGL_WITH_TETGEN</td>
+<td>LIBIGL_COPYLEFT_TETGEN</td>
+</tr>
+<tr>
+<td>LIBIGL_WITH_TRIANGLE</td>
+<td>LIBIGL_RESTRICTED_TRIANGLE</td>
+</tr>
+<tr>
+<td>LIBIGL_WITH_XML</td>
+<td><em>Unchanged</em></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>There is a now a sample file <code>LibiglOption.cmake.sample</code> at the root of the libigl repository. Simply remove the <code>.sample</code> extension and edit this file to modify libigl compilation options. If you are using libigl as a subdirectory (e.g. in a parent project), then please set your options in the parent project instead.</p>
+</div>
+<h4 id="imgui-headers">ImGui headers<a class="headerlink" href="#imgui-headers" title="Permanent link">&para;</a></h4>
+<p>We are also updating our ImGui dependency to use the base repository as include folder, rather than forcing headers to be copied into a <code>imgui/</code> subfolder. This helps be consistent with other projects that might be using ImGui. This requires users changing their include headers as follows:</p>
+<ul>
+<li><code>#include &lt;imgui/imgui.h&gt;</code> &rarr; <code>#include &lt;imgui.h&gt;</code></li>
+<li><code>#include &lt;imgui/imgui_internal.h&gt;</code> &rarr; <code>#include &lt;imgui_internal.h&gt;</code></li>
+<li><code>#include &lt;imgui_impl_glfw.h&gt;</code> &rarr; <code>#include &lt;backends/imgui_impl_glfw.h&gt;</code></li>
+<li><code>#include &lt;imgui_impl_opengl3.h&gt;</code> &rarr; <code>#include &lt;backends/imgui_impl_opengl3.h&gt;</code></li>
+</ul>
+<h4 id="imguimenuimguizmopluginselectionplugin-imguiwidgets">ImGuiMenu,ImGuizmoPlugin,SelectionPlugin → ImGuiWidgets<a class="headerlink" href="#imguimenuimguizmopluginselectionplugin-imguiwidgets" title="Permanent link">&para;</a></h4>
+<p>We&rsquo;ve introduced a new &ldquo;parent&rdquo; <code>ImGuiPlugin</code> which handles ImGui IO functions and converted the old <code>ImGuiMenu</code>, <code>ImGuizmoPlugin</code>, <code>SelectionPlugin</code> plugins to inherit from a new <code>ImGuiWidget</code> class. In this way, a single <code>ImGuiPlugin</code> can be registered to the viewer&rsquo;s plugins list and one or many widgets are registered to this plugin&rsquo;s widgets list.</p>
+<p>For folks just using the menu, this incurs a few extra lines. To add the menu:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;igl/opengl/glfw/imgui/ImGuiPlugin.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;igl/opengl/glfw/imgui/ImGuiMenu.h&gt;</span><span class="cp"></span>
+<span class="err">…</span><span class="w"></span>
+<span class="n">igl</span><span class="o">::</span><span class="n">opengl</span><span class="o">::</span><span class="n">glfw</span><span class="o">::</span><span class="n">imgui</span><span class="o">::</span><span class="n">ImGuiPlugin</span><span class="w"> </span><span class="n">plugin</span><span class="p">;</span><span class="w"></span>
+<span class="n">viewer</span><span class="p">.</span><span class="n">plugins</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="o">&amp;</span><span class="n">plugin</span><span class="p">);</span><span class="w"></span>
+<span class="n">igl</span><span class="o">::</span><span class="n">opengl</span><span class="o">::</span><span class="n">glfw</span><span class="o">::</span><span class="n">imgui</span><span class="o">::</span><span class="n">ImGuiMenu</span><span class="w"> </span><span class="n">menu</span><span class="p">;</span><span class="w"></span>
+<span class="n">plugin</span><span class="p">.</span><span class="n">widgets</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="o">&amp;</span><span class="n">menu</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p>The reward is that now we can use all of these plugins (and any new user created plugins using ImGui subroutines) without conflict.</p>
+<h3 id="other-changes">Other Changes<a class="headerlink" href="#other-changes" title="Permanent link">&para;</a></h3>
+<h4 id="bugfixes_1">Bugfixes<a class="headerlink" href="#bugfixes_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Fix <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1656" title="GitHub Issue: libigl/libigl #1656">#1656</a> &ldquo;Can only have one ImGuiMenu plugin at a time&rdquo; (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1973" title="GitHub Issue: libigl/libigl #1973">#1973</a>)</li>
+<li>Fix <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1924" title="GitHub Issue: libigl/libigl #1924">#1924</a> &ldquo;PLY with no faces throw SIGFPE in ReadPLY&rdquo; (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1927" title="GitHub Issue: libigl/libigl #1927">#1927</a>)</li>
+<li>LSCM: fix sign for the area term (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1853" title="GitHub Issue: libigl/libigl #1853">#1853</a>)</li>
+<li>Fix bug in igl::read_file_binary (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1821" title="GitHub Issue: libigl/libigl #1821">#1821</a>)</li>
+<li>Fix <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1795" title="GitHub Issue: libigl/libigl #1795">#1795</a> &ldquo;Can&rsquo;t convert CGAL::Polyhedron_3 to mesh&rdquo; (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1796" title="GitHub Issue: libigl/libigl #1796">#1796</a>)</li>
+<li>Fix the order of principal curvature (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1767" title="GitHub Issue: libigl/libigl #1767">#1767</a>)</li>
+<li>Fix dirty flag for ViewerData::set_labels (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1761" title="GitHub Issue: libigl/libigl #1761">#1761</a>)</li>
+</ul>
+<h4 id="enhancements_1">Enhancements<a class="headerlink" href="#enhancements_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Modified arap interface to accept Eigen::Map (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1922" title="GitHub Issue: libigl/libigl #1922">#1922</a>)</li>
+<li>Wrapper around CGAL&rsquo;s 2D constrained delaunay triangulation (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1811" title="GitHub Issue: libigl/libigl #1811">#1811</a>) </li>
+<li>Delete obsolete function <code>igl::point_in_poly</code> (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1810" title="GitHub Issue: libigl/libigl #1810">#1810</a>)</li>
+<li>Instead of calling exit(1), triangle now throws an exception (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1800" title="GitHub Issue: libigl/libigl #1800">#1800</a>)</li>
+<li>Use igl::default_num_threads in cgal module (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1768" title="GitHub Issue: libigl/libigl #1768">#1768</a>)</li>
+<li>Added double_sided flag to embree renderer (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1765" title="GitHub Issue: libigl/libigl #1765">#1765</a>)</li>
+<li>Replace Eigen::PlainObjectBase with Eigen::MatrixBase for input of ambient_occlusion (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1752" title="GitHub Issue: libigl/libigl #1752">#1752</a>)</li>
+<li>10-100x speedup on per corner normals + caching adjacency (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1745" title="GitHub Issue: libigl/libigl #1745">#1745</a>)</li>
+</ul>
+<h4 id="compilation_1">Compilation<a class="headerlink" href="#compilation_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Update Catch2 to v2.13.8 (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1972" title="GitHub Issue: libigl/libigl #1972">#1972</a>)</li>
+<li>Update Embree to v13.3.3 (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1976" title="GitHub Issue: libigl/libigl #1976">#1976</a>)</li>
+<li>Broad support for M1 macs (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1976" title="GitHub Issue: libigl/libigl #1976">#1976</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1975" title="GitHub Issue: libigl/libigl #1975">#1975</a>)</li>
+<li>Update ImGui to v1.85 + use default include folders for ImGui (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1970" title="GitHub Issue: libigl/libigl #1970">#1970</a>) </li>
+<li>CMake refactor (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1805" title="GitHub Issue: libigl/libigl #1805">#1805</a>)</li>
+<li>CGAL and Boost are now built entirely from source via CMake. This means the CGAL module will work out of the box under Windows &ndash; no need for a conda virtual environment. On Linux/macOS, the only dependency to install system-wide are GMP+MPFR.</li>
+<li>CMake targets and options have been renamed based on the module category: regular/copyleft/restricted. This eliminates long module names (<code>igl::open_glfw_imgui</code>) that didn&rsquo;t bring much to the table, in favor of three root classes based on available licenses for each module.</li>
+<li>There is now a <code>LibiglOptions.cmake</code> sample file at the root of the project repository, which should make it easier to document/update available CMake options.</li>
+<li>There is now a unique entry point for the project, which is the root <code>CMakeLists.txt</code>. This facilitates maintenance, as before either <code>tutorial/CMakeLists.txt</code> and <code>cmake/libigl.cmake</code> could serve as potential entry points.</li>
+<li>The default behavior for module compilation is:<ul>
+<li>When compiling libigl on its own, all modules are enabled by default.</li>
+<li>When compiling libigl as a subproject, all modules are disabled by default.</li>
+<li>On Linux/macOS, if GMP/MPFR is not installed on the system, shows a warning and disable CGAL by default.</li>
+<li>If Mosek/Matlab are not installed on the system, shows a warning and disable the Mosek/Matlab libigl wrappers respectively.</li>
+<li>If the user explicitly enables those modules, but they do not have GMP/MPFR/Mosek/Matlab installed on the system, CMake configuration will fail.</li>
+</ul>
+</li>
+<li>Big cleanup of the tutorial CMake definitions. With the new setup adding a new tutorial is even easier!</li>
+<li>Cleaned up dependency setup for imgui/stb (among others)</li>
+<li>Unit tests have been split into different CMake target, based on which module is tested.</li>
+<li>Add support for Hunter + install() for the <code>igl::core</code> module (should be the same as before).</li>
+<li>Use a more generic <code>igl_copy_dll()</code> function to copy GMP/MPFR dlls on Windows (should work to copy the CoMiSo dll as well).</li>
+<li>Cleaned up our .gitignore file.</li>
+<li>Fix blue noise random shuffle for C++17 (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1949" title="GitHub Issue: libigl/libigl #1949">#1949</a>)</li>
+<li>Bump triangle version (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1813" title="GitHub Issue: libigl/libigl #1813">#1813</a>) and tetgen version (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1815" title="GitHub Issue: libigl/libigl #1815">#1815</a>)</li>
+<li>Templates EmbreeRenderer (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1788" title="GitHub Issue: libigl/libigl #1788">#1788</a>)</li>
+<li>Fix Cuda compilation issue on Windows (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1747" title="GitHub Issue: libigl/libigl #1747">#1747</a>)</li>
+<li>Split min_quad_with_fixed implementation into separate cpp (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1746" title="GitHub Issue: libigl/libigl #1746">#1746</a>)</li>
+<li>Silence MSVC warning with std::getenv (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1744" title="GitHub Issue: libigl/libigl #1744">#1744</a>)</li>
+<li>Fix usage of find_package(OpenGL) on Linux (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1733" title="GitHub Issue: libigl/libigl #1733">#1733</a>)</li>
+</ul>
+<h2 id="version-230-changes">Version 2.3.0 Changes<a class="headerlink" href="#version-230-changes" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is our last stable release before some planned major reorganization (see <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1696" title="GitHub Issue: libigl/libigl #1696">#1696</a> for details). The upcoming reorganization is aimed at facilitating maintenance and packaging of various libigl components. The next release will be a new major version of libigl (3.0.0).</p>
+</div>
+<h4 id="new-features">New Features<a class="headerlink" href="#new-features" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Dual contouring (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1716" title="GitHub Issue: libigl/libigl #1716">#1716</a>)</li>
+<li>Viewer: Selection Plugin (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1654" title="GitHub Issue: libigl/libigl #1654">#1654</a>)</li>
+<li>Implements &ldquo;<a href="https://doi.org/10.1111/cgf.13931">Polygon Laplacian Made Simple</a>&rdquo; (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1653" title="GitHub Issue: libigl/libigl #1653">#1653</a>)</li>
+<li>Offscreen meshes rendering using Embree (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1652" title="GitHub Issue: libigl/libigl #1652">#1652</a>)</li>
+<li>Signing distances with Fast Winding Number (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1630" title="GitHub Issue: libigl/libigl #1630">#1630</a>) </li>
+<li>Turn ImGuizmo tutorial into a viewer plugin (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1618" title="GitHub Issue: libigl/libigl #1618">#1618</a>)</li>
+<li>Adds MATLAB-like function <code>igl::blkdiag</code> to build a block-diagonal matrix (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1617" title="GitHub Issue: libigl/libigl #1617">#1617</a>)</li>
+<li>Kelvinlet mesh deformation (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1614" title="GitHub Issue: libigl/libigl #1614">#1614</a>)</li>
+<li>Blue noise sampling on triangle meshes + adds <code>igl::barycentric_interpolation</code> (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1597" title="GitHub Issue: libigl/libigl #1597">#1597</a>)</li>
+<li>Direct Delta Mush skinning (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1541" title="GitHub Issue: libigl/libigl #1541">#1541</a>)</li>
+<li>New exploded view tutorial (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1510" title="GitHub Issue: libigl/libigl #1510">#1510</a>)</li>
+<li>Bézier curve evaluation (<code>igl::bezier</code>) and fitting (<code>igl::fit_cubic_bezier</code>) (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1476" title="GitHub Issue: libigl/libigl #1476">#1476</a>)</li>
+<li>Replace .ply reader/writer with tinyply library (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1422" title="GitHub Issue: libigl/libigl #1422">#1422</a>)</li>
+<li><code>igl::copyleft::cgal::wire_mesh</code> now support per-edge thickness. Adds <code>igl::copyleft::cgal::coplanar</code> test (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1488" title="GitHub Issue: libigl/libigl #1488">#1488</a>)</li>
+<li>New generic function for connected components (<code>igl::connected_components</code>) (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1487" title="GitHub Issue: libigl/libigl #1487">#1487</a>)</li>
+<li>Viewer: matcap support (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1482" title="GitHub Issue: libigl/libigl #1482">#1482</a>) + tutorial entry (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1646" title="GitHub Issue: libigl/libigl #1646">#1646</a>)</li>
+<li>Viewer: option for double-sided lighting (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1480" title="GitHub Issue: libigl/libigl #1480">#1480</a>)</li>
+<li>Viewer: new 3D text rendering feature, supporting proper label depth (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1549" title="GitHub Issue: libigl/libigl #1549">#1549</a>)</li>
+</ul>
+<h4 id="build-system">Build System<a class="headerlink" href="#build-system" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Update ImGui to 1.81 (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1723" title="GitHub Issue: libigl/libigl #1723">#1723</a>), fixing rendering issue with newer Visual Studio</li>
+<li>Fix mosek to work with 9.2; fix mosek dynamic link via CMake (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1675" title="GitHub Issue: libigl/libigl #1675">#1675</a>)</li>
+<li>Reimplement <code>igl::marching_cubes</code> outside of the <code>copyleft/</code> folder (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1666" title="GitHub Issue: libigl/libigl #1666">#1666</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1687" title="GitHub Issue: libigl/libigl #1687">#1687</a>)</li>
+<li>Update GLFW to fix an issue on macOS with CMake 3.19.0 (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1657" title="GitHub Issue: libigl/libigl #1657">#1657</a>)</li>
+<li>Update Embree to v3.12.1 (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1648" title="GitHub Issue: libigl/libigl #1648">#1648</a>)</li>
+<li>Use new gitlab remote to clone Eigen (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1631" title="GitHub Issue: libigl/libigl #1631">#1631</a>)</li>
+<li>Update compiler versions in github actions (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1629" title="GitHub Issue: libigl/libigl #1629">#1629</a>)</li>
+<li>Update CoMiSo version (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1608" title="GitHub Issue: libigl/libigl #1608">#1608</a>). Note that CoMiSo support for libigl is deprecated and will be removed in version 3.0.</li>
+<li>Removed <code>_bin</code> suffix from executable files (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1594" title="GitHub Issue: libigl/libigl #1594">#1594</a>)</li>
+<li>Moved SCAF to triangle folder (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1590" title="GitHub Issue: libigl/libigl #1590">#1590</a>)</li>
+<li>Various fixes to github actions (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1649" title="GitHub Issue: libigl/libigl #1649">#1649</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1651" title="GitHub Issue: libigl/libigl #1651">#1651</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1721" title="GitHub Issue: libigl/libigl #1721">#1721</a>)</li>
+</ul>
+<h4 id="misc">Misc<a class="headerlink" href="#misc" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Control number of threads in parallel_for with env variable <code>IGL_NUM_THREADS</code> (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1684" title="GitHub Issue: libigl/libigl #1684">#1684</a>)</li>
+<li>Support msh in <code>igl::read_triangle_mesh</code> (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1645" title="GitHub Issue: libigl/libigl #1645">#1645</a>)</li>
+<li>Change boundary weight from length to length squared in <code>igl::per_vertex_point_to_plane_quadrics</code> (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1644" title="GitHub Issue: libigl/libigl #1644">#1644</a>)</li>
+<li>Update STL read to work on problematic thingi10K meshes (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1628" title="GitHub Issue: libigl/libigl #1628">#1628</a>)</li>
+<li>Use an enum to specify file encoding when writing files (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1619" title="GitHub Issue: libigl/libigl #1619">#1619</a>)</li>
+<li>Removed some functions marked as deprecated (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1610" title="GitHub Issue: libigl/libigl #1610">#1610</a>) </li>
+<li>Fix bug with epsilon parameter in <code>igl::remove_duplicate_vertices</code> (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1603" title="GitHub Issue: libigl/libigl #1603">#1603</a>)</li>
+<li>Removed unused function <code>igl::barycentric_to_global</code> (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1596" title="GitHub Issue: libigl/libigl #1596">#1596</a>)</li>
+<li>Fix align_camera_center in Viewer::init() for multiple cores (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1349" title="GitHub Issue: libigl/libigl #1349">#1349</a>)</li>
+<li>Add floating point exceptions in unit tests (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1001" title="GitHub Issue: libigl/libigl #1001">#1001</a>)</li>
+<li>Extended serialization functionality to Eigen::Array (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1113" title="GitHub Issue: libigl/libigl #1113">#1113</a>)</li>
+<li>SCAF: Expose linear system to be solved by user code (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1553" title="GitHub Issue: libigl/libigl #1553">#1553</a>)</li>
+<li>Fix issue with <code>igl::heat_geodesic</code> (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1497" title="GitHub Issue: libigl/libigl #1497">#1497</a>)</li>
+<li>Refactored <code>igl::is_edge_manifold</code> (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1509" title="GitHub Issue: libigl/libigl #1509">#1509</a>)</li>
+<li>Various bugfixes, compile fixes, template fixes (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1335" title="GitHub Issue: libigl/libigl #1335">#1335</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1361" title="GitHub Issue: libigl/libigl #1361">#1361</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1400" title="GitHub Issue: libigl/libigl #1400">#1400</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1402" title="GitHub Issue: libigl/libigl #1402">#1402</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1430" title="GitHub Issue: libigl/libigl #1430">#1430</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1438" title="GitHub Issue: libigl/libigl #1438">#1438</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1441" title="GitHub Issue: libigl/libigl #1441">#1441</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1471" title="GitHub Issue: libigl/libigl #1471">#1471</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1475" title="GitHub Issue: libigl/libigl #1475">#1475</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1484" title="GitHub Issue: libigl/libigl #1484">#1484</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1494" title="GitHub Issue: libigl/libigl #1494">#1494</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1495" title="GitHub Issue: libigl/libigl #1495">#1495</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1497" title="GitHub Issue: libigl/libigl #1497">#1497</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1525" title="GitHub Issue: libigl/libigl #1525">#1525</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1538" title="GitHub Issue: libigl/libigl #1538">#1538</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1544" title="GitHub Issue: libigl/libigl #1544">#1544</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1546" title="GitHub Issue: libigl/libigl #1546">#1546</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1581" title="GitHub Issue: libigl/libigl #1581">#1581</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1582" title="GitHub Issue: libigl/libigl #1582">#1582</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1625" title="GitHub Issue: libigl/libigl #1625">#1625</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1627" title="GitHub Issue: libigl/libigl #1627">#1627</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1638" title="GitHub Issue: libigl/libigl #1638">#1638</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1640" title="GitHub Issue: libigl/libigl #1640">#1640</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1642" title="GitHub Issue: libigl/libigl #1642">#1642</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1658" title="GitHub Issue: libigl/libigl #1658">#1658</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1673" title="GitHub Issue: libigl/libigl #1673">#1673</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1674" title="GitHub Issue: libigl/libigl #1674">#1674</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1679" title="GitHub Issue: libigl/libigl #1679">#1679</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1694" title="GitHub Issue: libigl/libigl #1694">#1694</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1704" title="GitHub Issue: libigl/libigl #1704">#1704</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1709" title="GitHub Issue: libigl/libigl #1709">#1709</a>)</li>
+</ul>
+<h2 id="version-220-changes">Version 2.2.0 Changes<a class="headerlink" href="#version-220-changes" title="Permanent link">&para;</a></h2>
+<h4 id="python-bindings">Python Bindings<a class="headerlink" href="#python-bindings" title="Permanent link">&para;</a></h4>
+<p>The python bindings have been moved to a <a href="https://github.com/libigl/libigl-python-bindings">separate repository</a>. These are now available as an <a href="https://anaconda.org/conda-forge/igl">conda package</a>.</p>
+<h4 id="new-features_1">New Features<a class="headerlink" href="#new-features_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Fast winding number for triangle soups (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1218" title="GitHub Issue: libigl/libigl #1218">#1218</a>)</li>
+<li>Iterative closest point algorithm + tutorial (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1347" title="GitHub Issue: libigl/libigl #1347">#1347</a>)</li>
+<li>Ear clipping triangulation (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1169" title="GitHub Issue: libigl/libigl #1169">#1169</a>)</li>
+<li>Added <code>igl::path_to_edges</code> function (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1259" title="GitHub Issue: libigl/libigl #1259">#1259</a>)</li>
+<li><code>igl::dijkstra</code> can now use mesh edge length (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1170" title="GitHub Issue: libigl/libigl #1170">#1170</a>)</li>
+<li>Keep reference to multiple material when reading obj (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1280" title="GitHub Issue: libigl/libigl #1280">#1280</a>)</li>
+<li>Added <code>igl::sharp_edges</code> for sharp edges extraction (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1364" title="GitHub Issue: libigl/libigl #1364">#1364</a>)</li>
+<li>Added <code>igl::unproject_on_line</code>, <code>igl::unproject_on_plane</code> and <code>igl::projection_constraint</code> to compute cursor (un)-projections (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1368" title="GitHub Issue: libigl/libigl #1368">#1368</a>)</li>
+<li>Added <code>igl::quad_grid</code> and <code>igl::triangulated_grid</code> to create meshes from regular grids (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1369" title="GitHub Issue: libigl/libigl #1369">#1369</a>)</li>
+<li>Added <code>igl::isolines_map</code>, <code>ViewerData::set_data</code> and <code>ViewerData::set_colormap</code> to improve scalar field visualization in the Viewer, and updated tutorials accordingly (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1371" title="GitHub Issue: libigl/libigl #1371">#1371</a>)</li>
+<li>Added new <code>COLOR_MAP_TYPE_TURBO</code> colormap, based on <a href="https://ai.googleblog.com/2019/08/turbo-improved-rainbow-colormap-for.html">Turbo</a>. Jet is now an alias for Turbo, and switched to Viridis as default colormap in the viewer (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1372" title="GitHub Issue: libigl/libigl #1372">#1372</a>)</li>
+<li>Added <code>igl::slice_sorted</code> and removed deprecated <code>Eigen::DynamicSparsematrix</code> from <code>igl::slice</code> (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1370" title="GitHub Issue: libigl/libigl #1370">#1370</a>)</li>
+</ul>
+<h4 id="build-system_1">Build System<a class="headerlink" href="#build-system_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Overhauled function signatures in preparation of new python bindings (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1162" title="GitHub Issue: libigl/libigl #1162">#1162</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1228" title="GitHub Issue: libigl/libigl #1228">#1228</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1271" title="GitHub Issue: libigl/libigl #1271">#1271</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1274" title="GitHub Issue: libigl/libigl #1274">#1274</a>)</li>
+<li>Added a conda environment <code>cmake/libigl-cgal.yml</code> to provide boost for Windows users (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1239" title="GitHub Issue: libigl/libigl #1239">#1239</a>)</li>
+<li>Added experimental support for Hunter (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1242" title="GitHub Issue: libigl/libigl #1242">#1242</a>)</li>
+<li>Now <code>libigl.cmake</code> will define a CMake target <code>Eigen3::Eigen</code> if not provided by the user (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1299" title="GitHub Issue: libigl/libigl #1299">#1299</a>)</li>
+<li>Added <code>igl_set_folders()</code> to sort CMake targets into folders in IDEs such as Visual Studio or Xcode (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1383" title="GitHub Issue: libigl/libigl #1383">#1383</a>)</li>
+<li>Minor fixes to our CMake build system (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1363" title="GitHub Issue: libigl/libigl #1363">#1363</a>)</li>
+<li>Github actions for CI replacing appveyor and travis (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1389" title="GitHub Issue: libigl/libigl #1389">#1389</a>)</li>
+</ul>
+<h4 id="misc_1">Misc<a class="headerlink" href="#misc_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Fix underflow issue when computing normalization in <code>igl::heat_geodesics</code> (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1344" title="GitHub Issue: libigl/libigl #1344">#1344</a>) </li>
+<li>Update nrosy to match the MIQ paper (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1303" title="GitHub Issue: libigl/libigl #1303">#1303</a>)</li>
+<li>Delete <code>Embree_convenience.h</code> (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1314" title="GitHub Issue: libigl/libigl #1314">#1314</a>)</li>
+<li>Refactored <code>igl::cut_mesh</code> (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1332" title="GitHub Issue: libigl/libigl #1332">#1332</a>)</li>
+<li>Various improvements to the viewer (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1196" title="GitHub Issue: libigl/libigl #1196">#1196</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1251" title="GitHub Issue: libigl/libigl #1251">#1251</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1366" title="GitHub Issue: libigl/libigl #1366">#1366</a>)</li>
+<li>Unit tests: cleand up <code>test_common.h</code> (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1365" title="GitHub Issue: libigl/libigl #1365">#1365</a>)</li>
+<li>Made call to <code>igl::predicates::exactinit()</code> thread-safe + marked internal functions in <code>predicates.c</code> as <code>static</code> to prevent name collisions (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1377" title="GitHub Issue: libigl/libigl #1377">#1377</a>)</li>
+<li>Doc cleanup (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1376" title="GitHub Issue: libigl/libigl #1376">#1376</a>)</li>
+<li>Allows <code>igl::hsv_to_rgb</code> to work on negative hues (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1399" title="GitHub Issue: libigl/libigl #1399">#1399</a>)</li>
+<li>Explicitly marked the following functions as deprecated (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1380" title="GitHub Issue: libigl/libigl #1380">#1380</a>):<ul>
+<li><code>igl::all_edges</code></li>
+<li><code>igl::internal_angles_using_edge_lengths</code> (only a specific overload is affected)</li>
+<li><code>igl::is_border_vertex</code> (only a specific overload is affected)</li>
+<li><code>igl::remove_duplicates</code></li>
+</ul>
+</li>
+<li>Various bugfixes, code cleanup and explicit template instantiations (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1197" title="GitHub Issue: libigl/libigl #1197">#1197</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1210" title="GitHub Issue: libigl/libigl #1210">#1210</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1216" title="GitHub Issue: libigl/libigl #1216">#1216</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1231" title="GitHub Issue: libigl/libigl #1231">#1231</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1247" title="GitHub Issue: libigl/libigl #1247">#1247</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1258" title="GitHub Issue: libigl/libigl #1258">#1258</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1288" title="GitHub Issue: libigl/libigl #1288">#1288</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1309" title="GitHub Issue: libigl/libigl #1309">#1309</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1320" title="GitHub Issue: libigl/libigl #1320">#1320</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1337" title="GitHub Issue: libigl/libigl #1337">#1337</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1345" title="GitHub Issue: libigl/libigl #1345">#1345</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1379" title="GitHub Issue: libigl/libigl #1379">#1379</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1396" title="GitHub Issue: libigl/libigl #1396">#1396</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1327" title="GitHub Issue: libigl/libigl #1327">#1327</a>)</li>
+</ul>
+<h2 id="version-210-changes">Version 2.1.0 Changes<a class="headerlink" href="#version-210-changes" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Various code cleanup, compilation fixes, and explicit template instantiations</li>
+<li>Added wrapper around Shewchuk&rsquo;s predicates (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1163" title="GitHub Issue: libigl/libigl #1163">#1163</a>)</li>
+<li>libigl now also compiles with Eigen 3.3 (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1110" title="GitHub Issue: libigl/libigl #1110">#1110</a>).</li>
+<li>Extended <code>igl::cat</code> functionalities (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1108" title="GitHub Issue: libigl/libigl #1108">#1108</a>)</li>
+<li>Extended <code>boundary_facets</code> with outputs revealing which element facet comes from (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1067" title="GitHub Issue: libigl/libigl #1067">#1067</a>)</li>
+<li>Use <code>std::shuffle</code> instead of <code>std::random_shuffle</code> in <code>igl/randperm</code> (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1062" title="GitHub Issue: libigl/libigl #1062">#1062</a>)</li>
+<li>Fixed an Eigen alignment issue in the viewer (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1029" title="GitHub Issue: libigl/libigl #1029">#1029</a>)</li>
+<li>Removed LIM tutorial (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1012" title="GitHub Issue: libigl/libigl #1012">#1012</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1014" title="GitHub Issue: libigl/libigl #1014">#1014</a>)</li>
+<li>Fixed current python bindings (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1008" title="GitHub Issue: libigl/libigl #1008">#1008</a>)</li>
+<li>Intrinsic Delaunay triangulation (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/988" title="GitHub Issue: libigl/libigl #988">#988</a>)</li>
+<li>New Heat Geodesics feature (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/988" title="GitHub Issue: libigl/libigl #988">#988</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1140" title="GitHub Issue: libigl/libigl #1140">#1140</a>). See also tutorial 716.</li>
+<li>Switched from Google Test to Catch2 (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/961" title="GitHub Issue: libigl/libigl #961">#961</a>), and added various unit tests</li>
+<li>Fixed an issue with transparent window on macOS that was introduced in v2.0.0 (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/953" title="GitHub Issue: libigl/libigl #953">#953</a>)</li>
+<li>Updated dependencies: Embree 3 (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/947" title="GitHub Issue: libigl/libigl #947">#947</a>), GLFW (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/977" title="GitHub Issue: libigl/libigl #977">#977</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1153" title="GitHub Issue: libigl/libigl #1153">#1153</a>), ImGui (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1039" title="GitHub Issue: libigl/libigl #1039">#1039</a>), std-image (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/1072" title="GitHub Issue: libigl/libigl #1072">#1072</a>)</li>
+<li>Added sparse voxel grids (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/937" title="GitHub Issue: libigl/libigl #937">#937</a>, <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/942" title="GitHub Issue: libigl/libigl #942">#942</a>) and tutorial 715 for meshing implicit functions.</li>
+<li>Added tutorial 714 for marching tets (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/716" title="GitHub Issue: libigl/libigl #716">#716</a>)</li>
+</ul>
+<h2 id="version-200-changes">Version 2.0.0 Changes<a class="headerlink" href="#version-200-changes" title="Permanent link">&para;</a></h2>
+<p>This release is a result of the 2018 libigl hackathon at NYU. The major changes are:</p>
+<ul>
+<li>a simplified cmake set up that can build a static library, tutorials, tests, and python bindings;</li>
+<li>cmake now uses <code>ExternalProject_Add</code> to download necessary/requested dependency source code and tutorial/test data</li>
+<li>as a result, <code>git clone --recursive ...</code> is no longer required </li>
+<li>unit tests are now part of main repo and included in continuous integration (<a class="magiclink magiclink-github magiclink-repository" href="https://github.com/libigl/libigl-unit-tests" title="GitHub Repository: libigl/libigl-unit-tests">libigl/libigl-unit-tests</a> is obsolete);</li>
+<li>tutorial data has been moved to <a class="magiclink magiclink-github magiclink-repository" href="https://github.com/libigl/libigl-tutorial-data" title="GitHub Repository: libigl/libigl-tutorial-data">libigl/libigl-tutorial-data</a>;</li>
+<li>unit test data has been moved to <a class="magiclink magiclink-github magiclink-repository" href="https://github.com/libigl/libigl-tests-data" title="GitHub Repository: libigl/libigl-tests-data">libigl/libigl-tests-data</a>;</li>
+<li>all dependencies previously in <code>libigl/external</code> have been removed or moved to repos (and added via <code>ExternalProject_Add</code>);</li>
+<li>documentation and the tutorial webpage has been moved to <a class="magiclink magiclink-github magiclink-repository" href="https://github.com/libigl/libigl.github.io" title="GitHub Repository: libigl/libigl.github.io">libigl/libigl.github.io</a>;</li>
+<li>.git history of these files has been <em><strong>purged</strong></em> using <a href="https://rtyley.github.io/bfg-repo-cleaner/">bfg</a></li>
+<li>unfortunately this means that SHA hashes have changed and any external projects using libigl as a <em>submodule</em> will need to be refreshed to the new hashes.</li>
+<li>More information and instructions for troubleshooting at <a href="https://libigl.github.io/rewritten-history/">https://libigl.github.io/rewritten-history/</a>.</li>
+<li>A legacy version with SHA hashes matching old repo is hosted at <a class="magiclink magiclink-github magiclink-repository" href="https://github.com/libigl/libigl-legacy" title="GitHub Repository: libigl/libigl-legacy">libigl/libigl-legacy</a>.</li>
+</ul>
+<p>The <strong>major upshot</strong> is that the old <code>git clone --recursive</code> that resulted in a 1.8GB <code>libigl/</code> directory is now a <code>git clone</code> that results in 16.5MB, more than a <strong>100x</strong> reduction in size. </p>
+<p>Name changes:</p>
+<table>
+<thead>
+<tr>
+<th>Old</th>
+<th>New</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>igl::components</code></td>
+<td><code>igl::vertex_components</code></td>
+</tr>
+<tr>
+<td><code>igl::slice_tets</code></td>
+<td><code>igl::marching_tets</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="version-132-changes">Version 1.3.2 Changes<a class="headerlink" href="#version-132-changes" title="Permanent link">&para;</a></h2>
+<ul>
+<li>First version after all pull requests were merged during the libigl hackaton,
+and before switching from submodules to CMake external projects.</li>
+</ul>
+<h2 id="version-131-changes">Version 1.3.1 Changes<a class="headerlink" href="#version-131-changes" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Last version before pull requests were merged during the libigl hackaton.</li>
+<li><code>igl::components</code> has been renamed to <code>igl::vertex_components</code>.</li>
+<li><code>viewer.core.model</code> matrix is gone (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/700" title="GitHub Issue: libigl/libigl #700">#700</a>).</li>
+</ul>
+<h2 id="version-130-changes">Version 1.3.0 Changes<a class="headerlink" href="#version-130-changes" title="Permanent link">&para;</a></h2>
+<p>List of changes related to this version:</p>
+<ul>
+<li>
+<p>The CMake build system has been rewritten to be more modular and modern.
+  libigl modules are now available as CMake target, e.g. <code>igl::triangle</code> or
+  <code>igl::opengl</code>. See the libigl-example-project for an example of typical
+  usage.</p>
+</li>
+<li>
+<p><code>igl/antweakbar</code> and <code>igl/opengl2</code> support has been removed from the CMake.
+  The files are still available, but their use is discouraged.</p>
+</li>
+<li>
+<p>The viewer has been refactored and now supports multiple meshes. See related
+  tutorial entry for more information. The viewer files are now split
+  according to their dependencies. E.g. <code>igl::viewer::Viewer</code> has been renamed
+  <code>igl::opengl::glfw::Viewer</code>.</p>
+</li>
+<li>
+<p>NanoGui has been replaced by ImGui, and is now available as a viewer plugin
+  instead of <code>#define</code></p>
+</li>
+<li>
+<p>Polyvector code has been moved to
+  <a href="https://github.com/avaxman/libdirectional">libdirectional</a> (<a class="magiclink magiclink-github magiclink-issue" href="https://github.com/libigl/libigl/issues/630" title="GitHub Issue: libigl/libigl #630">#630</a>).</p>
+</li>
+</ul>
+<h2 id="version-12-changes">Version 1.2 Changes<a class="headerlink" href="#version-12-changes" title="Permanent link">&para;</a></h2>
+<p>This change introduces better organization of dependencies and removes some
+deprecated/repeated functions. The 3x3 svd code and dependent functions
+(including ARAP) were absorbed into the main library. Similarly, the boost
+dependency extra was absorbed.</p>
+<h3 id="external-libraries-as-git-subrepos">External libraries as git subrepos<a class="headerlink" href="#external-libraries-as-git-subrepos" title="Permanent link">&para;</a></h3>
+<p>The core functionality of libigl (still) just depends on stl, c++11 and Eigen.
+There are additional <em>optional</em> dependencies (e.g. CGAL, embree, glfw, tetgen,
+triangle). Libigl functions using these are located (still) in sub-folders of
+the include directory (e.g.  <code>include/igl/cgal/</code>, <code>include/igl/embree/</code>). Prior
+to version 1.2 we included copies of the code for some of these dependencies in the
+<code>external/</code> directory. As of
+version 1.2, these have been replaced with git sub-repos. If you have cloned
+libigl <em>before version 1.2</em> then you should issue </p>
+<div class="codehilite"><pre><span></span><code>git submodule update --init --recursive
+</code></pre></div>
+
+<h3 id="deprecatedrepeated-functions">Deprecated/repeated functions<a class="headerlink" href="#deprecatedrepeated-functions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Old</th>
+<th>New</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>igl::angles</code></td>
+<td><code>igl::internal_angles</code></td>
+</tr>
+<tr>
+<td><code>igl::get_modifiers</code></td>
+<td>[deleted]</td>
+</tr>
+<tr>
+<td><code>igl::nchoosek(offset,K,N,std::vector)</code></td>
+<td><code>igl::nchoosek(Eigen,K,Eigen)</code></td>
+</tr>
+<tr>
+<td><code>#include &lt;igl/boost/components.h&gt;</code></td>
+<td><code>#include &lt;igl/components.h&gt;</code></td>
+</tr>
+<tr>
+<td><code>#include &lt;igl/boost/bfs_orient.h&gt;</code></td>
+<td><code>#include &lt;igl/bfs_orient.h&gt;</code></td>
+</tr>
+<tr>
+<td><code>#include &lt;igl/boost/orientable_patches.h&gt;</code></td>
+<td><code>#include &lt;igl/orientable_patches.h&gt;</code></td>
+</tr>
+<tr>
+<td><code>#include &lt;igl/svd3x3/arap.h&gt;</code></td>
+<td><code>#include &lt;igl/arap.h&gt;</code></td>
+</tr>
+<tr>
+<td><code>#include &lt;igl/svd3x3/arap_dof.h&gt;</code></td>
+<td><code>#include &lt;igl/arap_dof.h&gt;</code></td>
+</tr>
+<tr>
+<td><code>#include &lt;igl/svd3x3/fit_rotations.h&gt;</code></td>
+<td><code>#include &lt;igl/fit_rotations.h&gt;</code></td>
+</tr>
+<tr>
+<td><code>#include &lt;igl/svd3x3/polar_svd3x3.h&gt;</code></td>
+<td><code>#include &lt;igl/polar_svd3x3.h&gt;</code></td>
+</tr>
+<tr>
+<td><code>#include &lt;igl/svd3x3/svd3x3.h&gt;</code></td>
+<td><code>#include &lt;igl/svd3x3.h&gt;</code></td>
+</tr>
+<tr>
+<td><code>#include &lt;igl/svd3x3/svd3x3_avx.h&gt;</code></td>
+<td><code>#include &lt;igl/svd3x3_avx.h&gt;</code></td>
+</tr>
+<tr>
+<td><code>#include &lt;igl/svd3x3/svd3x3_sse.h&gt;</code></td>
+<td><code>#include &lt;igl/svd3x3_sse.h&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="version-10-changes">Version 1.0 Changes<a class="headerlink" href="#version-10-changes" title="Permanent link">&para;</a></h2>
+<p>Our beta release marks our confidence that this library can be used outside of
+casual experimenting. To maintain order, we have made a few changes which
+current users should read and adapt their code accordingly.</p>
+<h3 id="renamed-functions">Renamed functions<a class="headerlink" href="#renamed-functions" title="Permanent link">&para;</a></h3>
+<p>The following table lists functions which have changed name as of version
+1.0.0:</p>
+<table>
+<thead>
+<tr>
+<th>Old</th>
+<th>New</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>igl::add_barycenter</code></td>
+<td><code>igl::false_barycentric_subdivision</code></td>
+</tr>
+<tr>
+<td><code>igl::areamatrix</code></td>
+<td><code>igl::vector_area_matrix</code></td>
+</tr>
+<tr>
+<td><code>igl::barycentric2global</code></td>
+<td><code>igl::barycentric_to_global</code></td>
+</tr>
+<tr>
+<td><code>igl::boundary_faces</code></td>
+<td><code>igl::boundary_facets</code></td>
+</tr>
+<tr>
+<td><code>igl::boundary_vertices_sorted</code></td>
+<td><code>igl::boundary_loop</code></td>
+</tr>
+<tr>
+<td><code>igl::cotangent</code></td>
+<td><code>igl::cotmatrix_entries</code></td>
+</tr>
+<tr>
+<td><code>igl::edgetopology</code></td>
+<td><code>igl::edge_topology</code></td>
+</tr>
+<tr>
+<td><code>igl::gradMat</code></td>
+<td><code>igl::grad</code></td>
+</tr>
+<tr>
+<td><code>igl::is_manifold</code></td>
+<td><code>igl::is_edge_manifold</code></td>
+</tr>
+<tr>
+<td><code>igl::mexStream</code></td>
+<td><code>igl::MexStream</code></td>
+</tr>
+<tr>
+<td><code>igl::moveFV</code></td>
+<td><code>igl::average_onto_vertices</code></td>
+</tr>
+<tr>
+<td><code>igl::moveVF</code></td>
+<td><code>igl::average_onto_faces</code></td>
+</tr>
+<tr>
+<td><code>igl::plot_vector</code></td>
+<td><code>igl::print_vector</code></td>
+</tr>
+<tr>
+<td><code>igl::pos</code></td>
+<td><code>igl::HalfEdgeIterator</code></td>
+</tr>
+<tr>
+<td><code>igl::plane_project</code></td>
+<td><code>igl::project_isometrically_to_plane</code></td>
+</tr>
+<tr>
+<td><code>igl::project_points_mesh</code></td>
+<td><code>igl::line_mesh_intersection</code></td>
+</tr>
+<tr>
+<td><code>igl::read</code></td>
+<td><code>igl::read_triangle_mesh</code></td>
+</tr>
+<tr>
+<td><code>igl::removeDuplicates.cpp</code></td>
+<td><code>igl::remove_duplicates</code></td>
+</tr>
+<tr>
+<td><code>igl::removeUnreferenced</code></td>
+<td><code>igl::remove_unreferenced</code></td>
+</tr>
+<tr>
+<td><code>igl::tt</code></td>
+<td><code>igl::triangle_triangle_adjacency</code></td>
+</tr>
+<tr>
+<td><code>igl::vf</code></td>
+<td><code>igl::vertex_triangle_adjacency</code></td>
+</tr>
+<tr>
+<td><code>igl::write</code></td>
+<td><code>igl::write_triangle_mesh</code></td>
+</tr>
+<tr>
+<td><code>igl::manifold_patches</code></td>
+<td><code>igl::orientable_patches</code></td>
+</tr>
+<tr>
+<td><code>igl::selfintersect</code></td>
+<td><code>igl::remesh_self_intersections</code></td>
+</tr>
+<tr>
+<td><code>igl::project_mesh</code></td>
+<td><code>igl::line_mesh_intersection</code></td>
+</tr>
+<tr>
+<td><code>igl::triangulate</code></td>
+<td><code>igl::polygon_mesh_to_triangle_mesh</code></td>
+</tr>
+<tr>
+<td><code>igl::is_manifold</code></td>
+<td><code>igl::is_edge_manifold</code></td>
+</tr>
+<tr>
+<td><code>igl::triangle_wrapper</code></td>
+<td><code>igl::triangulate</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="miscellaneous">Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permanent link">&para;</a></h3>
+<ul>
+<li>To match interfaces provided by (all) other quadratic optimization
+   libraries, <code>igl::min_quad_with_fixed</code> and <code>igl::active_set</code> now expect as
+   input twice the quadratic coefficients matrix, i.e. the Hessian. For
+   example, <code>igl::min_quad_with_fixed(H,B,...)</code> minimizes <span class="arithmatex"><span class="MathJax_Preview">\frac{1}{2}x^T H
+   x+x^T B</span><script type="math/tex">\frac{1}{2}x^T H
+   x+x^T B</script></span>.</li>
+<li>We have inverted the <code>IGL_HEADER_ONLY</code> macro to <code>IGL_STATIC_LIBRARY</code>. To
+   compile using libigl as a header-only library, simply include headers and
+   libigl in the header search path. To link to libigl, you must define the
+   <code>IGL_STATIC_LIBRARY</code> macro at compile time and link to the <code>libigl*.a</code>
+   libraries.</li>
+<li>Building libigl as a static library is now more organized. There is a
+   <code>build/</code> directory with Makefiles for the main library (<code>Makefile</code>) and each
+   dependency (e.g. <code>Makefile_mosek</code> for <code>libiglmosek.a</code>)</li>
+<li><code>igl::polar_svd</code> now always returns a rotation in <code>R</code>, never a reflection.
+   This mirrors the behavior of <code>igl::polar_svd3x3</code>.  Consequently the <code>T</code>
+   part may have negative skews.</li>
+<li>We have organized the static library build</li>
+<li>The previous <code>igl::grad</code> function, which computed the per-triangle gradient
+   of a per-vertex scalar function has been replaced. Now <code>igl::grad</code> computes
+   the linear operator (previous computed using <code>igl::gradMat</code>). The gradient
+   values can still be recovered by multiplying the operator against the scalar
+   field as a vector and reshaping to have gradients per row.</li>
+<li><code>MASSMATRIX_*</code> has become <code>MASSMATRIX_TYPE_*</code></li>
+<li>The function <code>igl::project_normals</code>, which cast a line for each vertex of
+   mesh <em>A</em> in the normal direction and found the closest intersection along
+   these lines with mesh <em>B</em>, has been removed.</li>
+</ul>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../faq/" class="md-footer__link md-footer__link--prev" aria-label="Previous: FAQ" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              FAQ
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../license/" class="md-footer__link md-footer__link--next" aria-label="Next: License" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              License
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/libigl" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.5e67fbfe.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e87a5f81.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

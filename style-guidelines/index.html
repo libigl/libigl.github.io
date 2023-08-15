@@ -1,0 +1,1658 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Simple C++ geometry processing library">
+      
+      
+      
+        <link rel="canonical" href="https://libigl.github.io/style-guidelines/">
+      
+      <link rel="icon" href="../favicon.ico">
+      <meta name="generator" content="mkdocs-1.2.4, mkdocs-material-8.2.7">
+    
+    
+      
+        <title>Style Guidelines - libigl</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.9d5733d3.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#02a6f2">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/style.css">
+    
+      <link rel="stylesheet" href="../css/pygments.css">
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="light-blue" data-md-color-accent="blue">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#libigl-style-guidelines" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="libigl" class="md-header__button md-logo" aria-label="libigl" data-md-component="logo">
+      
+  <img src="../logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            libigl
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Style Guidelines
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/libigl/libigl/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    libigl/libigl
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="libigl" class="md-nav__button md-logo" aria-label="libigl" data-md-component="logo">
+      
+  <img src="../logo.png" alt="logo">
+
+    </a>
+    libigl
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/libigl/libigl/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    libigl/libigl
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial/" class="md-nav__link">
+        Tutorial
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-bindings/" class="md-nav__link">
+        Python Bindings
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Compilation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Compilation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Compilation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../example-project/" class="md-nav__link">
+        Example Project
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../static-library/" class="md-nav__link">
+        Static Library
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../third-party/" class="md-nav__link">
+        External Dependencies
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Contributing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Contributing" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Contributing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Style Guidelines
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Style Guidelines
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#one-function-one-hcpp-pair" class="md-nav__link">
+    One function, one .h/.cpp pair
+  </a>
+  
+    <nav class="md-nav" aria-label="One function, one .h/.cpp pair">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+    <nav class="md-nav" aria-label="Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_funh" class="md-nav__link">
+    example_fun.h
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_funcpp" class="md-nav__link">
+    example_fun.cpp
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avoid-static-helper-functions" class="md-nav__link">
+    Avoid static "helper" functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Avoid static "helper" functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lambda-functions" class="md-nav__link">
+    Lambda functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avoid-helper-classes" class="md-nav__link">
+    Avoid "helper" classes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#header-documentation" class="md-nav__link">
+    Header Documentation
+  </a>
+  
+    <nav class="md-nav" aria-label="Header Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#const-inputs" class="md-nav__link">
+    Const inputs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-parameters" class="md-nav__link">
+    Reference parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#returns-vs-output-parameters" class="md-nav__link">
+    Returns vs output parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#templating-with-eigen" class="md-nav__link">
+    Templating with Eigen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-naming-conventions" class="md-nav__link">
+    Function naming conventions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variable-naming-conventions" class="md-nav__link">
+    Variable naming conventions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-naming-conventions" class="md-nav__link">
+    Class naming conventions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enum-naming-conversion" class="md-nav__link">
+    Enum naming conversion
+  </a>
+  
+    <nav class="md-nav" aria-label="Enum naming conversion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exception-for-file-io" class="md-nav__link">
+    Exception for file IO
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-namespace-in-global-scope" class="md-nav__link">
+    using namespace ... in global scope
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#namespaces-and-external-dependencies" class="md-nav__link">
+    Namespaces and external dependencies
+  </a>
+  
+    <nav class="md-nav" aria-label="Namespaces and external dependencies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#copyleft-subdirectorynamespace" class="md-nav__link">
+    copyleft subdirectory/namespace
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assertions" class="md-nav__link">
+    Assertions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ifndef-include-guard" class="md-nav__link">
+    ifndef include guard
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spaces-vs-tabs-indentation" class="md-nav__link">
+    Spaces vs. tabs indentation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#max-line-length" class="md-nav__link">
+    Max line length
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include-order" class="md-nav__link">
+    Include order
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#placement-of-includes" class="md-nav__link">
+    Placement of includes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#warnings" class="md-nav__link">
+    Warnings
+  </a>
+  
+    <nav class="md-nav" aria-label="Warnings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#an-exception" class="md-nav__link">
+    An Exception
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bug-report/" class="md-nav__link">
+        Bug Report
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../before-submitting-pull-request/" class="md-nav__link">
+        Creating a Pull Request
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unit-tests/" class="md-nav__link">
+        Unit Tests
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Misc
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Misc" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Misc
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../matlab-to-eigen/" class="md-nav__link">
+        Matlab-libigl Cheatsheet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coding-guidelines/" class="md-nav__link">
+        Coding Tips
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" type="checkbox" id="__nav_6_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_3">
+          File Formats
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="File Formats" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_3">
+          <span class="md-nav__icon md-icon"></span>
+          File Formats
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-formats/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-formats/bf/" class="md-nav__link">
+        bf
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-formats/dmat/" class="md-nav__link">
+        dmat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-formats/rbr/" class="md-nav__link">
+        rbr
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-formats/tgf/" class="md-nav__link">
+        tgf
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-formats/xml/" class="md-nav__link">
+        xml
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../website/" class="md-nav__link">
+        Building the Website
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rewritten-history/" class="md-nav__link">
+        Rewritten History
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          About
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="About" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          About
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license/" class="md-nav__link">
+        License
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#one-function-one-hcpp-pair" class="md-nav__link">
+    One function, one .h/.cpp pair
+  </a>
+  
+    <nav class="md-nav" aria-label="One function, one .h/.cpp pair">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+    <nav class="md-nav" aria-label="Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_funh" class="md-nav__link">
+    example_fun.h
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_funcpp" class="md-nav__link">
+    example_fun.cpp
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avoid-static-helper-functions" class="md-nav__link">
+    Avoid static "helper" functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Avoid static "helper" functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lambda-functions" class="md-nav__link">
+    Lambda functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avoid-helper-classes" class="md-nav__link">
+    Avoid "helper" classes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#header-documentation" class="md-nav__link">
+    Header Documentation
+  </a>
+  
+    <nav class="md-nav" aria-label="Header Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#const-inputs" class="md-nav__link">
+    Const inputs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-parameters" class="md-nav__link">
+    Reference parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#returns-vs-output-parameters" class="md-nav__link">
+    Returns vs output parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#templating-with-eigen" class="md-nav__link">
+    Templating with Eigen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-naming-conventions" class="md-nav__link">
+    Function naming conventions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variable-naming-conventions" class="md-nav__link">
+    Variable naming conventions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-naming-conventions" class="md-nav__link">
+    Class naming conventions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enum-naming-conversion" class="md-nav__link">
+    Enum naming conversion
+  </a>
+  
+    <nav class="md-nav" aria-label="Enum naming conversion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exception-for-file-io" class="md-nav__link">
+    Exception for file IO
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-namespace-in-global-scope" class="md-nav__link">
+    using namespace ... in global scope
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#namespaces-and-external-dependencies" class="md-nav__link">
+    Namespaces and external dependencies
+  </a>
+  
+    <nav class="md-nav" aria-label="Namespaces and external dependencies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#copyleft-subdirectorynamespace" class="md-nav__link">
+    copyleft subdirectory/namespace
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assertions" class="md-nav__link">
+    Assertions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ifndef-include-guard" class="md-nav__link">
+    ifndef include guard
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spaces-vs-tabs-indentation" class="md-nav__link">
+    Spaces vs. tabs indentation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#max-line-length" class="md-nav__link">
+    Max line length
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include-order" class="md-nav__link">
+    Include order
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#placement-of-includes" class="md-nav__link">
+    Placement of includes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#warnings" class="md-nav__link">
+    Warnings
+  </a>
+  
+    <nav class="md-nav" aria-label="Warnings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#an-exception" class="md-nav__link">
+    An Exception
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+<a href="https://github.com/libigl/libigl.github.io/edit/docs/docs/style-guidelines.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+
+<!-- Hide h3+ from toc  -->
+<style>.md-nav--secondary .md-nav__list .md-nav__list { display: none }</style>
+
+<h1 id="libigl-style-guidelines">Libigl Style Guidelines<a class="headerlink" href="#libigl-style-guidelines" title="Permanent link">&para;</a></h1>
+<p>Libigl is used and developed by many people. This document highlights some
+style guidelines for <em>developers</em> of the library, but also acts as
+best-practices for users.</p>
+<h2 id="one-function-one-hcpp-pair">One function, one .h/.cpp pair<a class="headerlink" href="#one-function-one-hcpp-pair" title="Permanent link">&para;</a></h2>
+<p>The structure of libigl is very flat and function-based. For every
+function/sub-routine, create a single .h and .cpp file. For example, if you have
+a function that determines connected components from a face list <code>F</code> you would
+create the header <code>connected_components.h</code> and <code>connected_components.cpp</code> and the only
+function defined should be <code>void connected_components(const ... F, ... C)</code>. If the
+implementation of <code>connected_components</code> requires a subroutine to compute an
+adjacency matrix then <em>create another pair</em> <code>adjacency_matrix.h</code> and
+<code>adjacency_matrix.cpp</code> with a single function <code>void adjacency_matrix(const ... F, ... A)</code>.</p>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
+<p>Here is an example function that would be defined in
+<code>include/igl/example_fun.h</code> and implemented in <code>include/igl/example_fun.cpp</code>.</p>
+<h4 id="example_funh"><code>example_fun.h</code><a class="headerlink" href="#example_funh" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1">// This file is part of libigl, a simple c++ geometry processing library.</span>
+<span class="c1">// </span>
+<span class="c1">// Copyright (C) 2015 [Your Name] [your email address]</span>
+<span class="c1">// </span>
+<span class="c1">// This Source Code Form is subject to the terms of the Mozilla Public License </span>
+<span class="c1">// v. 2.0. If a copy of the MPL was not distributed with this file, You can </span>
+<span class="c1">// obtain one at http://mozilla.org/MPL/2.0/</span>
+<span class="cp">#ifndef IGL_EXAMPLE_FUN_H</span>
+<span class="cp">#define IGL_EXAMPLE_FUN_H</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;igl_inline.h&quot;</span><span class="cp"></span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">igl</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// This is an example of a function, it takes a templated parameter and</span>
+<span class="w">  </span><span class="c1">// shovels it into cout</span>
+<span class="w">  </span><span class="c1">//</span>
+<span class="w">  </span><span class="c1">// Input:</span>
+<span class="w">  </span><span class="c1">//   input  some input of a Printable type</span>
+<span class="w">  </span><span class="c1">// Returns true for the sake of returning something</span>
+<span class="w">  </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">Printable</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="n">IGL_INLINE</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">example_fun</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Printable</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">input</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="cp">#ifndef IGL_STATIC_LIBRARY</span>
+<span class="cp">#</span><span class="w">  </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&quot;example_fun.cpp&quot;</span><span class="cp"></span>
+<span class="cp">#endif</span>
+
+<span class="cp">#endif</span>
+</code></pre></div>
+<h4 id="example_funcpp"><code>example_fun.cpp</code><a class="headerlink" href="#example_funcpp" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1">// This file is part of libigl, a simple c++ geometry processing library.</span>
+<span class="c1">// </span>
+<span class="c1">// Copyright (C) 2015 [Your Name] [your email address]</span>
+<span class="c1">// </span>
+<span class="c1">// This Source Code Form is subject to the terms of the Mozilla Public License </span>
+<span class="c1">// v. 2.0. If a copy of the MPL was not distributed with this file, You can </span>
+<span class="c1">// obtain one at http://mozilla.org/MPL/2.0/</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;igl/example_fun.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">Printable</span><span class="o">&gt;</span><span class="w"></span>
+<span class="n">IGL_INLINE</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">igl</span><span class="o">::</span><span class="n">example_fun</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Printable</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">input</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;example_fun: &quot;</span><span class="o">&lt;&lt;</span><span class="n">input</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="cp">#ifdef IGL_STATIC_LIBRARY</span>
+<span class="k">template</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">igl</span><span class="o">::</span><span class="n">example_fun</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="o">&amp;</span><span class="w"> </span><span class="n">input</span><span class="p">);</span><span class="w"></span>
+<span class="k">template</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">igl</span><span class="o">::</span><span class="n">example_fun</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">input</span><span class="p">);</span><span class="w"></span>
+<span class="cp">#endif</span>
+</code></pre></div>
+<h3 id="avoid-static-helper-functions">Avoid static &ldquo;helper&rdquo; functions<a class="headerlink" href="#avoid-static-helper-functions" title="Permanent link">&para;</a></h3>
+<p>Strive to encapsulate sub-functions that could possibly be useful outside of
+the implementation of your current function. This might mean abstracting the
+interface a bit. If it doesn&rsquo;t dramatically effect performance then create a
+new pair of .h/.cpp files with this sub-function.</p>
+<h4 id="lambda-functions">Lambda functions<a class="headerlink" href="#lambda-functions" title="Permanent link">&para;</a></h4>
+<p>If encapsulation in a separate file is not possible or does not make sense,
+then avoid crowding the namespace by creating lambda functions within the
+function implementation.</p>
+<p>These lambda functions must still be documented with clear <a href="#headerdocumentation">input and output
+arguments</a>. Avoid using full capturing of all automatic
+variables: do not use <code>[&amp;]</code> or <code>[=]</code>. Rather specify each captured variable
+individually.</p>
+<h3 id="avoid-helper-classes">Avoid &ldquo;helper&rdquo; classes<a class="headerlink" href="#avoid-helper-classes" title="Permanent link">&para;</a></h3>
+<p>Libigl is built around the high-performance paradigm of &ldquo;struct of arrays&rdquo;
+rather than &ldquo;array of structs&rdquo;. The way we achieve this is to avoid classes and
+pass &ldquo;basic types&rdquo; directly. The price we pay is long function interfaces, but
+this increases code reuse dramatically. A &ldquo;basic type&rdquo; in our context is a
+Eigen type, stl type, or basic C type.</p>
+<h2 id="header-documentation">Header Documentation<a class="headerlink" href="#header-documentation" title="Permanent link">&para;</a></h2>
+<p>Each function prototype should be well documented in its corresponding .h
+header file. A typical documentation consists of four parts:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// [A human readable description of what the function does.]</span>
+<span class="c1">//</span>
+<span class="c1">// Inputs:</span>
+<span class="c1">//   [variable name of first (const) input]   [dimensions and description of</span>
+<span class="c1">//     this input variable]</span>
+<span class="c1">//   [variable name of second (const) input]   [dimensions and description of</span>
+<span class="c1">//     this input variable]</span>
+<span class="c1">//   ...</span>
+<span class="c1">// Outputs:</span>
+<span class="c1">//   [variable name of first output ]   [dimensions and description of this</span>
+<span class="c1">//     output variable]</span>
+<span class="c1">//   [variable name of second output ]   [dimensions and description of this</span>
+<span class="c1">//     output variable]</span>
+<span class="c1">//   ...</span>
+<span class="c1">// Returns [description of return value]</span>
+</code></pre></div>
+<h3 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h3>
+<p>For example the header <code>barycenter.h</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Computes the barycenter of every simplex</span>
+<span class="c1">//</span>
+<span class="c1">// Inputs:</span>
+<span class="c1">//   V  #V by dim matrix of vertex coordinates</span>
+<span class="c1">//   F  #F by simplex_size  matrix of indices of simplex corners into V</span>
+<span class="c1">// Output:</span>
+<span class="c1">//   BC  #F by dim matrix of 3d vertices</span>
+<span class="c1">//</span>
+</code></pre></div>
+<h2 id="const-inputs">Const inputs<a class="headerlink" href="#const-inputs" title="Permanent link">&para;</a></h2>
+<p>All input parameters should be demarcated <code>const</code>. If an input is also an
+output than consider exposing two parameters (one <code>const</code>) or be sure to list
+the variable under both <code>// Inputs:</code> and <code>// Outputs:</code> in the header comments.</p>
+<h2 id="reference-parameters">Reference parameters<a class="headerlink" href="#reference-parameters" title="Permanent link">&para;</a></h2>
+<p>All but simple types should be passed by reference (e.g. <code>Matrix &amp; mat</code>) rather
+than pointers (e.g. <code>Matrix * mat</code>) or value (e.g. <code>Matrix mat</code>).</p>
+<h2 id="returns-vs-output-parameters">Returns vs output parameters<a class="headerlink" href="#returns-vs-output-parameters" title="Permanent link">&para;</a></h2>
+<p>All functions should be implemented with at least one overload that has a
+<code>void</code> or simple return type (e.g. <code>bool</code> on success/failure). With this
+implementation its then possible to write an overload that returns a single
+output. Please see <a href="#templatingwitheigen">Templating with Eigen</a>.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">Atype</span><span class="o">&gt;</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="n">adjacency_matrix</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">F</span><span class="p">,</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">SparseMatrix</span><span class="o">&lt;</span><span class="n">AType</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">A</span><span class="p">);</span><span class="w"></span>
+
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">Atype</span><span class="o">&gt;</span><span class="w"></span>
+<span class="n">Eigen</span><span class="o">::</span><span class="n">SparseMatrix</span><span class="o">&lt;</span><span class="n">Atype</span><span class="o">&gt;</span><span class="w"> </span><span class="n">adjacency_matrix</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">F</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<h2 id="templating-with-eigen">Templating with Eigen<a class="headerlink" href="#templating-with-eigen" title="Permanent link">&para;</a></h2>
+<p>Functions taking Eigen dense matrices/arrays as inputs and outputs (but <strong>not</strong>
+return arguments), should template on top of <code>Eigen::MatrixBase</code>. <strong>Each
+parameter</strong> should be derived using its own template.</p>
+<p>For example,</p>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DerivedV</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">DerivedF</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">DerivedBC</span><span class="o">&gt;</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="n">barycenter</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">MatrixBase</span><span class="o">&lt;</span><span class="n">DerivedV</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">V</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">MatrixBase</span><span class="o">&lt;</span><span class="n">DerivedF</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">F</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">MatrixBase</span><span class="o">&lt;</span><span class="n">DerivedBC</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">BC</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p>The <code>Derived*</code> template encodes the scalar type (e.g. <code>double</code>, <code>int</code>), the
+number of rows and cols at compile time, and the data storage (Row-major vs.
+column-major). </p>
+<p>Returning Eigen types is discouraged. In cases where the size and scalar type
+are a fixed <strong>and matching</strong> function of an input <code>Derived*</code> template, then
+return that <code>Derived*</code> type. <strong>Do not</strong> return
+<code>Eigen::PlainObjectBase&lt;...&gt;</code> types. For example, this function scales fits a
+given set of points to the unit cube. The return is a new set of vertex
+positions so its type should <em>match</em> that of the input points:</p>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DerivedV</span><span class="o">&gt;</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="n">DerivedV</span><span class="w"> </span><span class="n">fit_to_unit_cube</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">PlainObjectBase</span><span class="o">&lt;</span><span class="n">DerivedV</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">V</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p>To implement this function, it is <strong>required</strong> to implement a more generic
+output-argument version and call that. So a full implementation looks like:</p>
+<p>In <code>igl/fit_in_unit_cube.h</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DerivedV</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">DerivedW</span><span class="o">&gt;</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="n">fit_to_unit_cube</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">MatrixBase</span><span class="o">&lt;</span><span class="n">DerivedV</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">V</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">Eigen</span><span class="o">::</span><span class="n">PlainObjectBase</span><span class="o">&lt;</span><span class="n">DerivedW</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">W</span><span class="p">);</span><span class="w"></span>
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DerivedV</span><span class="o">&gt;</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="n">DerivedV</span><span class="w"> </span><span class="n">fit_to_unit_cube</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">PlainObjectBase</span><span class="o">&lt;</span><span class="n">DerivedV</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">V</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p>In <code>igl/fit_in_unit_cube.cpp</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DerivedV</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">DerivedW</span><span class="o">&gt;</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="n">fit_to_unit_cube</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">MatrixBase</span><span class="o">&lt;</span><span class="n">DerivedV</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">V</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">Eigen</span><span class="o">::</span><span class="n">PlainObjectBase</span><span class="o">&lt;</span><span class="n">DerivedW</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">W</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">W</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">V</span><span class="p">.</span><span class="n">rowwise</span><span class="p">()</span><span class="o">-</span><span class="n">V</span><span class="p">.</span><span class="n">colwise</span><span class="p">().</span><span class="n">minCoeff</span><span class="p">()).</span><span class="n">array</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="n">V</span><span class="p">.</span><span class="n">maxCoeff</span><span class="p">()</span><span class="o">-</span><span class="n">V</span><span class="p">.</span><span class="n">minCoeff</span><span class="p">());</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">DerivedV</span><span class="o">&gt;</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="n">DerivedV</span><span class="w"> </span><span class="n">fit_to_unit_cube</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">MatrixBase</span><span class="o">&lt;</span><span class="n">DerivedV</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">V</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">DerivedV</span><span class="w"> </span><span class="n">W</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">fit_to_unit_cube</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">W</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">W</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Notice that <code>W</code> is declared as a <code>DerivedV</code> type and <strong>not</strong>
+<code>Eigen::PlainObjectBase&lt;DerivedV&gt;</code> type.</p>
+<p><strong>Note:</strong> Not all functions are suitable for returning Eigen types. For example
+<code>igl::barycenter</code> above outputs a #F by dim list of barycenters. Returning a
+<code>DerivedV</code> type would be inappropriate since the number of rows in <code>DerivedV</code>
+will be #V and may not match the number of rows in <code>DerivedF</code> (#F).</p>
+<h2 id="function-naming-conventions">Function naming conventions<a class="headerlink" href="#function-naming-conventions" title="Permanent link">&para;</a></h2>
+<p>Functions (and <a href="#one-function-one-hcpp-pair-filefunction">thus also files</a>) should have simple,
+descriptive names using lowercase letters and underscores between words. Avoid
+unnecessary prefaces. For example, instead of <code>compute_adjacency_matrix</code>,
+<code>construct_adjacency_matrix</code>, <code>extract_adjacency_matrix</code>,
+<code>get_adjacency_matrix</code>, or <code>set_adjacency_matrix</code> just call the function
+<code>adjacency_matrix</code>.</p>
+<h2 id="variable-naming-conventions">Variable naming conventions<a class="headerlink" href="#variable-naming-conventions" title="Permanent link">&para;</a></h2>
+<p>Libigl prefers short (even single character) variable names <em>with heavy
+documentation</em> in the comments in the header file or above the declaration of
+the function. When possible use <code>V</code> to mean a list of vertex positions and <code>F</code>
+to mean a list of faces/triangles.</p>
+<h2 id="class-naming-conventions">Class naming conventions<a class="headerlink" href="#class-naming-conventions" title="Permanent link">&para;</a></h2>
+<p>Classes should be avoided. When naming a class use CamelCase (e.g.
+SortableRow.h).</p>
+<h2 id="enum-naming-conversion">Enum naming conversion<a class="headerlink" href="#enum-naming-conversion" title="Permanent link">&para;</a></h2>
+<p>Enums types should be placed in the appropriate <code>igl::</code> namespace and should be
+named in CamelCase (e.g. <code>igl::SolverStatus</code>) and instances should be named in
+ALL_CAPS with underscores between words and prefaced with the name of the enum.
+For example:</p>
+<div class="highlight"><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">igl</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">enum</span><span class="w"> </span><span class="nc">SolverStatus</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Good</span>
+<span class="w">    </span><span class="n">SOLVER_STATUS_CONVERGED</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// OK</span>
+<span class="w">    </span><span class="n">SOLVER_STATUS_MAX_ITER</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Bad</span>
+<span class="w">    </span><span class="n">SOLVER_STATUS_ERROR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">NUM_SOLVER_STATUSES</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="p">};</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</code></pre></div>
+<h3 id="exception-for-file-io">Exception for file IO<a class="headerlink" href="#exception-for-file-io" title="Permanent link">&para;</a></h3>
+<p>For legacy reasons, file reading and writing functions use a different naming
+convention. A functions reading a <code>.xyz</code> file should be named <code>readXYZ</code> and a
+function writing <code>.xyz</code> files should be names <code>writeXYZ</code>.</p>
+<h2 id="using-namespace-in-global-scope"><code>using namespace ...</code> in global scope<a class="headerlink" href="#using-namespace-in-global-scope" title="Permanent link">&para;</a></h2>
+<p>Writing <code>using namespace std;</code>, <code>using namespace Eigen;</code> etc. outside of a
+global scope is strictly forbidden. Place these lines at the top of each
+function instead.</p>
+<h2 id="namespaces-and-external-dependencies">Namespaces and external dependencies<a class="headerlink" href="#namespaces-and-external-dependencies" title="Permanent link">&para;</a></h2>
+<p>Functions in the main library (directly in <code>include/igl</code>) should only depend on
+Eigen and stl. These functions should have the <code>igl::</code> namespace.</p>
+<p>Functions with other dependencies should be placed into
+appropriate sub-directories (e.g. if <code>myfunction</code> depends on tetgen then create
+<code>igl/copyleft/tetgen/myfunction.h</code> and <code>igl/copyleft/tetgen/myfunction.cpp</code> and give the function
+the namespace <code>igl::copyleft::tetgen::myfunction</code>.</p>
+<h3 id="copyleft-subdirectorynamespace">copyleft subdirectory/namespace<a class="headerlink" href="#copyleft-subdirectorynamespace" title="Permanent link">&para;</a></h3>
+<p>Dependencies that require users of libigl to release their projects open source
+(e.g. GPL) are considered aggressively &ldquo;copyleft&rdquo; and should be placed in the
+<code>include/igl/copyleft/</code> sub-directory and <code>igl::copyleft::</code> namespace.</p>
+<h2 id="assertions">Assertions<a class="headerlink" href="#assertions" title="Permanent link">&para;</a></h2>
+<p>Be generous with assertions and always identify the assertion with strings:</p>
+<div class="highlight"><pre><span></span><code><span class="n">assert</span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="s">&quot;m must be less than n&quot;</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<h2 id="ifndef-include-guard">ifndef include guard<a class="headerlink" href="#ifndef-include-guard" title="Permanent link">&para;</a></h2>
+<p>Every header file should be wrapped in an <code>#ifndef</code> compiler directive. The
+name of the guard should be in direct correspondence with the path of the .h
+file. For example, <code>include/igl/copyleft/tetgen/tetrahedralize.h</code> should be</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#ifndef IGL_COPYLEFT_TETGEN_TETRAHEDRALIZE_H</span>
+<span class="cp">#define IGL_COPYLEFT_TETGEN_TETRAHEDRALIZE_H</span>
+<span class="p">...</span><span class="w"></span>
+<span class="cp">#endif</span>
+</code></pre></div>
+<h2 id="spaces-vs-tabs-indentation">Spaces vs. tabs indentation<a class="headerlink" href="#spaces-vs-tabs-indentation" title="Permanent link">&para;</a></h2>
+<p>Do not use tabs. Use 2 spaces for each indentation level.</p>
+<h2 id="max-line-length">Max line length<a class="headerlink" href="#max-line-length" title="Permanent link">&para;</a></h2>
+<p>Limit lines to 80 characters. Break up long lines into many operations (this
+also helps performance).</p>
+<h2 id="include-order">Include order<a class="headerlink" href="#include-order" title="Permanent link">&para;</a></h2>
+<p><code>#include</code> directives at the top of a .h or .cpp file should be sorted
+according to a simple principle: place headers of files most likely to be
+edited by you first. This means for
+<code>include/igl/copyleft/tetgen/tetrahedralize.cpp</code> you might see</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// [Includes of headers in this directory]</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;tetrahedralize.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;mesh_to_tetgenio.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;tetgenio_to_tetmesh.h&quot;</span><span class="cp"></span>
+<span class="c1">// [Includes of headers in this project]</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;../../matrix_to_list.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;../../list_to_matrix.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;../../boundary_facets.h&quot;</span><span class="cp"></span>
+<span class="c1">// [Includes of headers of related projects]</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Eigen/Core&gt;</span><span class="cp"></span>
+<span class="c1">// [Includes of headers of standard libraries]</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cassert&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+</code></pre></div>
+<h2 id="placement-of-includes">Placement of includes<a class="headerlink" href="#placement-of-includes" title="Permanent link">&para;</a></h2>
+<p>Whenever possible <code>#include</code> directives should be placed in the <code>.cpp</code>
+implementation file rather than the <code>.h</code> header file.</p>
+<h2 id="warnings">Warnings<a class="headerlink" href="#warnings" title="Permanent link">&para;</a></h2>
+<p>Code should compile without firing any warnings.</p>
+<h3 id="an-exception">An Exception<a class="headerlink" href="#an-exception" title="Permanent link">&para;</a></h3>
+<p>The only exception is for the use of the deprecated
+<code>Eigen::DynamicSparseMatrix</code> in core sub-routines (e.g. <code>igl::cat</code>). This class
+is still supported and faster than the standard, non-deprecated Eigen
+implementation so we&rsquo;re keeping it as long as possible and profitable.</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../third-party/" class="md-footer__link md-footer__link--prev" aria-label="Previous: External Dependencies" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              External Dependencies
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../bug-report/" class="md-footer__link md-footer__link--next" aria-label="Next: Bug Report" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Bug Report
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/libigl" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.5e67fbfe.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e87a5f81.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
