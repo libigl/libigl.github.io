@@ -1,0 +1,74 @@
+\doxysection{for\+\_\+each.\+h}
+\hypertarget{for__each_8h_source}{}\label{for__each_8h_source}\index{include/igl/for\_each.h@{include/igl/for\_each.h}}
+\mbox{\hyperlink{for__each_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ IGL\_FOR\_EACH\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ IGL\_FOR\_EACH\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <Eigen/Sparse>}}
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00017\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ AType,\ \textcolor{keyword}{typename}\ Func>}
+\DoxyCodeLine{00018\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a09311547ed4f12bee75c2631d2d19bfd}{for\_each}}(}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<AType>\ \&\ A,}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{const}\ Func\ \&\ func);}
+\DoxyCodeLine{00022\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedA,\ \textcolor{keyword}{typename}\ Func>}
+\DoxyCodeLine{00023\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a09311547ed4f12bee75c2631d2d19bfd}{for\_each}}(}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::DenseBase<DerivedA>\ \&\ A,}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{const}\ Func\ \&\ func);}
+\DoxyCodeLine{00026\ \}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{comment}{//\ Implementation}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ AType,\ \textcolor{keyword}{typename}\ Func>}
+\DoxyCodeLine{00031\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a09311547ed4f12bee75c2631d2d19bfd}{igl::for\_each}}(}
+\DoxyCodeLine{00032\ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<AType>\ \&\ A,}
+\DoxyCodeLine{00033\ \ \ \textcolor{keyword}{const}\ Func\ \&\ func)}
+\DoxyCodeLine{00034\ \{}
+\DoxyCodeLine{00035\ \ \ \textcolor{comment}{//\ Can\ **not**\ use\ parallel\ for\ because\ this\ must\ be\ \_in\ order\_}}
+\DoxyCodeLine{00036\ \ \ \textcolor{comment}{//\ Iterate\ over\ outside}}
+\DoxyCodeLine{00037\ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ k=0;\ k<A.outerSize();\ ++k)}
+\DoxyCodeLine{00038\ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//\ Iterate\ over\ inside}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{typename}\ Eigen::SparseMatrix<AType>::InnerIterator\ it\ (A,k);\ it;\ ++it)}
+\DoxyCodeLine{00041\ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ func(it.row(),it.col(),it.value());}
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \}}
+\DoxyCodeLine{00045\ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedA,\ \textcolor{keyword}{typename}\ Func>}
+\DoxyCodeLine{00048\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a09311547ed4f12bee75c2631d2d19bfd}{igl::for\_each}}(}
+\DoxyCodeLine{00049\ \ \ \textcolor{keyword}{const}\ Eigen::DenseBase<DerivedA>\ \&\ A,}
+\DoxyCodeLine{00050\ \ \ \textcolor{keyword}{const}\ Func\ \&\ func)}
+\DoxyCodeLine{00051\ \{}
+\DoxyCodeLine{00052\ \ \ \textcolor{comment}{//\ Can\ **not**\ use\ parallel\ for\ because\ this\ must\ be\ \_in\ order\_}}
+\DoxyCodeLine{00053\ \ \ \textcolor{keywordflow}{if}(A.IsRowMajor)}
+\DoxyCodeLine{00054\ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{typename}\ DerivedA::Index\ i\ =\ 0;i<A.rows();i++)}
+\DoxyCodeLine{00056\ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{typename}\ DerivedA::Index\ j\ =\ 0;j<A.cols();j++)}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ func(i,j,A(i,j));}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+\DoxyCodeLine{00062\ \ \ \}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{00063\ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{typename}\ DerivedA::Index\ j\ =\ 0;j<A.cols();j++)}
+\DoxyCodeLine{00065\ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{typename}\ DerivedA::Index\ i\ =\ 0;i<A.rows();i++)}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ func(i,j,A(i,j));}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \}}
+\DoxyCodeLine{00072\ \ \ }
+\DoxyCodeLine{00073\ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{comment}{//\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00076\ \textcolor{comment}{//\#\ \ include\ "{}for\_each.cpp"{}}}
+\DoxyCodeLine{00077\ \textcolor{comment}{//\#endif}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

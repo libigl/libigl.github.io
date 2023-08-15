@@ -1,0 +1,42 @@
+\doxysection{boundary\+\_\+loop.\+h}
+\hypertarget{boundary__loop_8h_source}{}\label{boundary__loop_8h_source}\index{include/igl/boundary\_loop.h@{include/igl/boundary\_loop.h}}
+\mbox{\hyperlink{boundary__loop_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2014\ Stefan\ Brugger\ <stefanbrugger@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_BOUNDARY\_LOOP\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_BOUNDARY\_LOOP\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00023\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedF,\ \textcolor{keyword}{typename}\ Index>}
+\DoxyCodeLine{00024\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_adb06d6406b52700028680b4b2c727700}{boundary\_loop}}(}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\&\ F,\ }
+\DoxyCodeLine{00026\ \ \ \ \ std::vector<std::vector<Index>\ >\&\ L);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00036\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedF,\ \textcolor{keyword}{typename}\ Index>}
+\DoxyCodeLine{00037\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_adb06d6406b52700028680b4b2c727700}{boundary\_loop}}(}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\&\ F,\ }
+\DoxyCodeLine{00039\ \ \ \ \ std::vector<Index>\&\ L);}
+\DoxyCodeLine{00047\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedF,\ \textcolor{keyword}{typename}\ DerivedL>}
+\DoxyCodeLine{00048\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_adb06d6406b52700028680b4b2c727700}{boundary\_loop}}(}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\&\ F,\ }
+\DoxyCodeLine{00050\ \ \ \ \ Eigen::PlainObjectBase<DerivedL>\&\ L);}
+\DoxyCodeLine{00051\ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#\ \ include\ "{}boundary\_loop.cpp"{}}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

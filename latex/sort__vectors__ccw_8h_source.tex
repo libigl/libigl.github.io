@@ -1,0 +1,55 @@
+\doxysection{sort\+\_\+vectors\+\_\+ccw.\+h}
+\hypertarget{sort__vectors__ccw_8h_source}{}\label{sort__vectors__ccw_8h_source}\index{include/igl/sort\_vectors\_ccw.h@{include/igl/sort\_vectors\_ccw.h}}
+\mbox{\hyperlink{sort__vectors__ccw_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2015\ Olga\ Diamanti\ <olga.diam@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ IGL\_SORT\_VECTORS\_CCW}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ IGL\_SORT\_VECTORS\_CCW}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}\ \{}
+\DoxyCodeLine{00029\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedS,\ \textcolor{keyword}{typename}\ DerivedI>}
+\DoxyCodeLine{00030\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_ab6d31a3df6fc3ab3d769b240cc8ca2f5}{sort\_vectors\_ccw}}(}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedS>\&\ P,}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedS>\&\ N,}
+\DoxyCodeLine{00033\ \ \ \ \ Eigen::PlainObjectBase<DerivedI>\ \&order,}
+\DoxyCodeLine{00034\ \ \ \ \ Eigen::PlainObjectBase<DerivedS>\ \&sorted,}
+\DoxyCodeLine{00035\ \ \ \ \ Eigen::PlainObjectBase<DerivedI>\ \&inv\_order);}
+\DoxyCodeLine{00037\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedS,\ \textcolor{keyword}{typename}\ DerivedI>}
+\DoxyCodeLine{00038\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_ab6d31a3df6fc3ab3d769b240cc8ca2f5}{sort\_vectors\_ccw}}(}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedS>\&\ P,}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedS>\&\ N,}
+\DoxyCodeLine{00041\ \ \ \ \ Eigen::PlainObjectBase<DerivedI>\ \&order,}
+\DoxyCodeLine{00042\ \ \ \ \ Eigen::PlainObjectBase<DerivedS>\ \&sorted);}
+\DoxyCodeLine{00044\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedS,\ \textcolor{keyword}{typename}\ DerivedI>}
+\DoxyCodeLine{00045\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_ab6d31a3df6fc3ab3d769b240cc8ca2f5}{sort\_vectors\_ccw}}(}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedS>\&\ P,}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedS>\&\ N,}
+\DoxyCodeLine{00048\ \ \ \ \ Eigen::PlainObjectBase<DerivedI>\ \&order,}
+\DoxyCodeLine{00049\ \ \ \ \ Eigen::PlainObjectBase<DerivedI>\ \&inv\_order);}
+\DoxyCodeLine{00051\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedS,\ \textcolor{keyword}{typename}\ DerivedI>}
+\DoxyCodeLine{00052\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_ab6d31a3df6fc3ab3d769b240cc8ca2f5}{sort\_vectors\_ccw}}(}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedS>\&\ P,}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedS>\&\ N,}
+\DoxyCodeLine{00055\ \ \ \ \ Eigen::PlainObjectBase<DerivedI>\ \&order);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ "{}sort\_vectors\_ccw.cpp"{}}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ defined(IGL\_FIELD\_LOCAL\_GLOBAL\_CONVERSIONS)\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

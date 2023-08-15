@@ -1,0 +1,21 @@
+\doxysection{include/igl/unproject\+\_\+in\+\_\+mesh.h File Reference}
+\hypertarget{unproject__in__mesh_8h}{}\label{unproject__in__mesh_8h}\index{include/igl/unproject\_in\_mesh.h@{include/igl/unproject\_in\_mesh.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \"{}Hit.\+h\"{}}\newline
+{\ttfamily \#include \"{}unproject\+\_\+in\+\_\+mesh.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename Derivedobj $>$ }\\int \mbox{\hyperlink{namespaceigl_adec5b69e885a84437436bde2e86bb09a}{igl\+::unproject\+\_\+in\+\_\+mesh}} (const Eigen\+::\+Vector2f \&pos, const Eigen\+::\+Matrix4f \&model, const Eigen\+::\+Matrix4f \&proj, const Eigen\+::\+Vector4f \&viewport, const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ Derivedobj $>$ \&obj, std\+::vector$<$ \mbox{\hyperlink{structigl_1_1Hit}{igl\+::\+Hit}} $>$ \&hits)
+\begin{DoxyCompactList}\small\item\em Unproject a screen location (using current opengl viewport, projection, and model view) to a 3D position {\itshape inside} a given mesh. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename Derivedobj $>$ }\\int \mbox{\hyperlink{namespaceigl_a25fc2d8b2c9e58a5006fe7f8ea6308ec}{igl\+::unproject\+\_\+in\+\_\+mesh}} (const Eigen\+::\+Vector2f \&pos, const Eigen\+::\+Matrix4f \&model, const Eigen\+::\+Matrix4f \&proj, const Eigen\+::\+Vector4f \&viewport, const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ Derivedobj $>$ \&obj)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derivedobj $>$ }\\int \mbox{\hyperlink{namespaceigl_a86f5bf3b46d4f04f8189b0a5b489e4bb}{igl\+::unproject\+\_\+in\+\_\+mesh}} (const Eigen\+::\+Vector2f \&pos, const Eigen\+::\+Matrix4f \&model, const Eigen\+::\+Matrix4f \&proj, const Eigen\+::\+Vector4f \&viewport, const std\+::function$<$ void(const Eigen\+::\+Vector3f \&, const Eigen\+::\+Vector3f \&, std\+::vector$<$ \mbox{\hyperlink{structigl_1_1Hit}{igl\+::\+Hit}} $>$ \&) $>$ \&shoot\+\_\+ray, Eigen\+::\+Plain\+Object\+Base$<$ Derivedobj $>$ \&obj, std\+::vector$<$ \mbox{\hyperlink{structigl_1_1Hit}{igl\+::\+Hit}} $>$ \&hits)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}

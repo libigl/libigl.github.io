@@ -1,0 +1,42 @@
+\doxysection{repdiag.\+h}
+\hypertarget{repdiag_8h_source}{}\label{repdiag_8h_source}\index{include/igl/repdiag.h@{include/igl/repdiag.h}}
+\mbox{\hyperlink{repdiag_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2013\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_REPDIAG\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_REPDIAG\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <Eigen/Sparse>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00029\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00030\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_ad35357b4f4e8dbf29c3fad77850fb957}{repdiag}}(}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<T>\&\ A,}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ d,}
+\DoxyCodeLine{00033\ \ \ \ \ Eigen::SparseMatrix<T>\&\ B);}
+\DoxyCodeLine{00035\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00036\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_ad35357b4f4e8dbf29c3fad77850fb957}{repdiag}}(}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<T,Eigen::Dynamic,Eigen::Dynamic>\ \&\ A,}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ d,}
+\DoxyCodeLine{00039\ \ \ \ \ Eigen::Matrix<T,Eigen::Dynamic,Eigen::Dynamic>\ \&\ B);}
+\DoxyCodeLine{00041\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Mat>}
+\DoxyCodeLine{00042\ \ \ IGL\_INLINE\ Mat\ \mbox{\hyperlink{namespaceigl_ad35357b4f4e8dbf29c3fad77850fb957}{repdiag}}(\textcolor{keyword}{const}\ Mat\ \&\ A,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ d);}
+\DoxyCodeLine{00043\ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#\ \ include\ "{}repdiag.cpp"{}}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

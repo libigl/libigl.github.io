@@ -1,0 +1,20 @@
+\doxysection{include/igl/edges.h File Reference}
+\hypertarget{edges_8h}{}\label{edges_8h}\index{include/igl/edges.h@{include/igl/edges.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include \"{}edges.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedF , typename DerivedE $>$ }\\void \mbox{\hyperlink{namespaceigl_a0efd6c6b371a55178d53cf0afacf34ee}{igl\+::edges}} (const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ DerivedE $>$ \&E)
+\begin{DoxyCompactList}\small\item\em Constructs a list of unique edges represented in a given mesh (V,F) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedI , typename DerivedC , typename DerivedE $>$ }\\void \mbox{\hyperlink{namespaceigl_aa0ad8afcbeffbd52acd213150ef184cc}{igl\+::edges}} (const Eigen\+::\+Matrix\+Base$<$ DerivedI $>$ \&I, const Eigen\+::\+Matrix\+Base$<$ DerivedC $>$ \&C, Eigen\+::\+Plain\+Object\+Base$<$ DerivedE $>$ \&E)
+\begin{DoxyCompactList}\small\item\em Constructs a list of unique edges represented in a given polygon mesh. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename DerivedE $>$ }\\void \mbox{\hyperlink{namespaceigl_a93abf38f4293f5e3010211137c9a6ea4}{igl\+::edges}} (const Eigen\+::\+Sparse\+Matrix$<$ T $>$ \&A, Eigen\+::\+Plain\+Object\+Base$<$ DerivedE $>$ \&E)
+\begin{DoxyCompactList}\small\item\em Constructs a list of unique edges represented in a given adjacency matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}

@@ -1,0 +1,19 @@
+\doxysection{include/igl/write\+MESH.h File Reference}
+\hypertarget{writeMESH_8h}{}\label{writeMESH_8h}\index{include/igl/writeMESH.h@{include/igl/writeMESH.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include \"{}write\+MESH.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Scalar , typename Index $>$ }\\bool \mbox{\hyperlink{namespaceigl_a6a6b14a1061d9ce7d0ef20880e604186}{igl\+::write\+MESH}} (const std\+::string mesh\+\_\+file\+\_\+name, const std\+::vector$<$ std\+::vector$<$ Scalar $>$ $>$ \&V, const std\+::vector$<$ std\+::vector$<$ Index $>$ $>$ \&T, const std\+::vector$<$ std\+::vector$<$ Index $>$ $>$ \&F)
+\begin{DoxyCompactList}\small\item\em save a tetrahedral volume mesh to a .mesh file \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedT , typename DerivedF $>$ }\\bool \mbox{\hyperlink{namespaceigl_ac173c671f0c9f633abe3daa005455507}{igl\+::write\+MESH}} (const std\+::string str, const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedT $>$ \&T, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F)
+\begin{DoxyCompactList}\small\item\em save a tetrahedral volume mesh to a .mesh file \end{DoxyCompactList}\end{DoxyCompactItemize}

@@ -1,0 +1,44 @@
+\doxysection{is\+\_\+boundary\+\_\+edge.\+h}
+\hypertarget{is__boundary__edge_8h_source}{}\label{is__boundary__edge_8h_source}\index{include/igl/is\_boundary\_edge.h@{include/igl/is\_boundary\_edge.h}}
+\mbox{\hyperlink{is__boundary__edge_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2015\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IS\_BOUNDARY\_EDGE\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IS\_BOUNDARY\_EDGE\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00021\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedE,}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedB>}
+\DoxyCodeLine{00025\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a39d02bea0e57dce707ada6bc3228d22a}{is\_boundary\_edge}}(}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedE>\ \&\ E,}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00028\ \ \ \ \ Eigen::PlainObjectBase<DerivedB>\ \&\ B);}
+\DoxyCodeLine{00033\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedE,}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedB,}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedEMAP>}
+\DoxyCodeLine{00038\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a39d02bea0e57dce707ada6bc3228d22a}{is\_boundary\_edge}}(}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00040\ \ \ \ \ Eigen::PlainObjectBase<DerivedB>\ \&\ B,}
+\DoxyCodeLine{00041\ \ \ \ \ Eigen::PlainObjectBase<DerivedE>\ \&\ E,}
+\DoxyCodeLine{00042\ \ \ \ \ Eigen::PlainObjectBase<DerivedEMAP>\ \&\ EMAP);}
+\DoxyCodeLine{00043\ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#\ \ include\ "{}is\_boundary\_edge.cpp"{}}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

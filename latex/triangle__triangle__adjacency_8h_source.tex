@@ -1,0 +1,102 @@
+\doxysection{triangle\+\_\+triangle\+\_\+adjacency.\+h}
+\hypertarget{triangle__triangle__adjacency_8h_source}{}\label{triangle__triangle__adjacency_8h_source}\index{include/igl/triangle\_triangle\_adjacency.h@{include/igl/triangle\_triangle\_adjacency.h}}
+\mbox{\hyperlink{triangle__triangle__adjacency_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2014\ Daniele\ Panozzo\ <daniele.panozzo@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_TRIANGLE\_TRIANGLE\_ADJACENCY\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_TRIANGLE\_TRIANGLE\_ADJACENCY\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00040\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedF,\ \textcolor{keyword}{typename}\ DerivedTT,\ \textcolor{keyword}{typename}\ DerivedTTi>}
+\DoxyCodeLine{00041\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_ae07b1e4d35569138ffa0d8a874f0e24f}{triangle\_triangle\_adjacency}}(}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\&\ F,}
+\DoxyCodeLine{00043\ \ \ \ \ Eigen::PlainObjectBase<DerivedTT>\&\ TT,}
+\DoxyCodeLine{00044\ \ \ \ \ Eigen::PlainObjectBase<DerivedTTi>\&\ TTi);}
+\DoxyCodeLine{00046\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedF,\ \textcolor{keyword}{typename}\ DerivedTT>}
+\DoxyCodeLine{00047\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_ae07b1e4d35569138ffa0d8a874f0e24f}{triangle\_triangle\_adjacency}}(}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\&\ F,}
+\DoxyCodeLine{00049\ \ \ \ \ Eigen::PlainObjectBase<DerivedTT>\&\ TT);}
+\DoxyCodeLine{00056\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedF,\ \textcolor{keyword}{typename}\ TTT\_type>}
+\DoxyCodeLine{00057\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_add74393b2dabd37b8efd0a7c2145372a}{triangle\_triangle\_adjacency\_preprocess}}(}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\&\ F,}
+\DoxyCodeLine{00059\ \ \ \ \ std::vector<std::vector<TTT\_type>\ >\&\ TTT);}
+\DoxyCodeLine{00068\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedF,\ \textcolor{keyword}{typename}\ TTT\_type,\ \textcolor{keyword}{typename}\ DerivedTT>}
+\DoxyCodeLine{00069\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a45cd01351200f4312c4fa5abef9c63a1}{triangle\_triangle\_adjacency\_extractTT}}(}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\&\ F,}
+\DoxyCodeLine{00071\ \ \ \ \ std::vector<std::vector<TTT\_type>\ >\&\ TTT,}
+\DoxyCodeLine{00072\ \ \ \ \ Eigen::PlainObjectBase<DerivedTT>\&\ TT);}
+\DoxyCodeLine{00081\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedF,\ \textcolor{keyword}{typename}\ TTT\_type,\ \textcolor{keyword}{typename}\ DerivedTTi>}
+\DoxyCodeLine{00082\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a81887c23c0079fb92f46a517cd42f752}{triangle\_triangle\_adjacency\_extractTTi}}(}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\&\ F,}
+\DoxyCodeLine{00084\ \ \ \ \ std::vector<std::vector<TTT\_type>\ >\&\ TTT,}
+\DoxyCodeLine{00085\ \ \ \ \ Eigen::PlainObjectBase<DerivedTTi>\&\ TTi);}
+\DoxyCodeLine{00095\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{typename}\ TTIndex,\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{typename}\ TTiIndex>}
+\DoxyCodeLine{00099\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_ae07b1e4d35569138ffa0d8a874f0e24f}{triangle\_triangle\_adjacency}}(}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ std::vector<std::vector<std::vector<TTIndex>\ >\ >\ \&\ TT,}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ std::vector<std::vector<std::vector<TTiIndex>\ >\ >\ \&\ TTi);}
+\DoxyCodeLine{00104\ \ \ \textcolor{keyword}{template}\ <\ \textcolor{keyword}{typename}\ DerivedF,\ \textcolor{keyword}{typename}\ TTIndex>}
+\DoxyCodeLine{00105\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_ae07b1e4d35569138ffa0d8a874f0e24f}{triangle\_triangle\_adjacency}}(}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ std::vector<std::vector<std::vector<TTIndex>\ >\ >\ \&\ TT);}
+\DoxyCodeLine{00108\ \ \ \textcolor{comment}{//\ @private}}
+\DoxyCodeLine{00109\ \ \ \textcolor{comment}{//\ Wrapper\ with\ bool\ to\ choose\ whether\ to\ compute\ TTi\ (this\ prototype\ should}}
+\DoxyCodeLine{00110\ \ \ \textcolor{comment}{//\ be\ "{}hidden"{}).}}
+\DoxyCodeLine{00111\ \ \ \textcolor{comment}{//\ @param[in]\ construct\_TTi\ \ whether\ to\ compute\ TTi}}
+\DoxyCodeLine{00112\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keyword}{typename}\ TTIndex,\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keyword}{typename}\ TTiIndex>}
+\DoxyCodeLine{00116\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_ae07b1e4d35569138ffa0d8a874f0e24f}{triangle\_triangle\_adjacency}}(}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ construct\_TTi,}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ std::vector<std::vector<std::vector<TTIndex>\ >\ >\ \&\ TT,}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ std::vector<std::vector<std::vector<TTiIndex>\ >\ >\ \&\ TTi);}
+\DoxyCodeLine{00131\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedE,\ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedEMAP,}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keyword}{typename}\ uE2EType,}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keyword}{typename}\ TTIndex,\ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keyword}{typename}\ TTiIndex>}
+\DoxyCodeLine{00137\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_ae07b1e4d35569138ffa0d8a874f0e24f}{triangle\_triangle\_adjacency}}(}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedE>\ \&\ E,}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEMAP>\ \&\ EMAP,}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<uE2EType\ >\ >\ \&\ uE2E,}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ construct\_TTi,}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ std::vector<std::vector<std::vector<TTIndex>\ >\ >\ \&\ TT,}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ std::vector<std::vector<std::vector<TTiIndex>\ >\ >\ \&\ TTi);}
+\DoxyCodeLine{00151\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedEMAP,}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keyword}{typename}\ DeriveduEC,}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keyword}{typename}\ DeriveduEE,}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keyword}{typename}\ TTIndex,\ }
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keyword}{typename}\ TTiIndex>}
+\DoxyCodeLine{00157\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_ae07b1e4d35569138ffa0d8a874f0e24f}{triangle\_triangle\_adjacency}}(}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEMAP>\ \&\ EMAP,}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DeriveduEC>\ \&\ uEC,}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DeriveduEE>\ \&\ uEE,}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ construct\_TTi,}
+\DoxyCodeLine{00162\ \ \ \ \ std::vector<std::vector<std::vector<TTIndex>\ >\ >\ \&\ TT,}
+\DoxyCodeLine{00163\ \ \ \ \ std::vector<std::vector<std::vector<TTiIndex>\ >\ >\ \&\ TTi);}
+\DoxyCodeLine{00164\ \}}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#\ \ include\ "{}triangle\_triangle\_adjacency.cpp"{}}}
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,16 @@
+\doxysection{include/igl/swept\+\_\+volume.h File Reference}
+\hypertarget{swept__volume_8h}{}\label{swept__volume_8h}\index{include/igl/swept\_volume.h@{include/igl/swept\_volume.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Geometry$>$}\newline
+{\ttfamily \#include \"{}swept\+\_\+volume.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespaceigl_a525f425d4315f9547a6e82782d7d672b}{igl\+::swept\+\_\+volume}} (const Eigen\+::\+Matrix\+Xd \&V, const Eigen\+::\+Matrix\+Xi \&F, const std\+::function$<$ Eigen\+::\+Affine3d(const double t)$>$ \&transform, const size\+\_\+t steps, const size\+\_\+t grid\+\_\+res, const size\+\_\+t isolevel, Eigen\+::\+Matrix\+Xd \&SV, Eigen\+::\+Matrix\+Xi \&SF)
+\begin{DoxyCompactList}\small\item\em Compute the surface of the swept volume of a solid object with surface (V,F) mesh under going rigid motion. \end{DoxyCompactList}\end{DoxyCompactItemize}

@@ -1,0 +1,43 @@
+\doxysection{include/igl/slim.h File Reference}
+\hypertarget{slim_8h}{}\label{slim_8h}\index{include/igl/slim.h@{include/igl/slim.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include \"{}Mapping\+Energy\+Type.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include $<$igl/\+At\+A\+\_\+cached.\+h$>$}\newline
+{\ttfamily \#include \"{}slim.\+cpp\"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structigl_1_1SLIMData}{igl\+::\+SLIMData}}
+\begin{DoxyCompactList}\small\item\em Parameters and precomputed data for computing a SLIM map as derived in \"{}\+Scalable Locally Injective Maps\"{} \mbox{[}Rabinovich et al. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{slim_8h_afce0c38c96a2abca6a3c6abbdde0a967}{SLIM\+\_\+\+CACHED}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespaceigl_a4b29382a965c510055a154aac6ecde4e}{igl\+::slim\+\_\+precompute}} (const Eigen\+::\+Matrix\+Xd \&V, const Eigen\+::\+Matrix\+Xi \&F, const Eigen\+::\+Matrix\+Xd \&V\+\_\+init, \mbox{\hyperlink{structigl_1_1SLIMData}{SLIMData}} \&data, \mbox{\hyperlink{namespaceigl_a79904ddf7fe8d79169b339cf43f9e739}{Mapping\+Energy\+Type}} slim\+\_\+energy, const Eigen\+::\+Vector\+Xi \&b, const Eigen\+::\+Matrix\+Xd \&bc, double soft\+\_\+p)
+\begin{DoxyCompactList}\small\item\em Compute necessary information to start using SLIM. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{namespaceigl_a5651f5d9a88f7dc131b6dd3b99f31fdf}{igl\+::slim\+\_\+solve}} (\mbox{\hyperlink{structigl_1_1SLIMData}{SLIMData}} \&data, int iter\+\_\+num)
+\begin{DoxyCompactList}\small\item\em Run iter\+\_\+num iterations of SLIM. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceigl_a02c86d444aaf4ab498a1466a59775059}{igl\+::slim\+\_\+update\+\_\+weights\+\_\+and\+\_\+closest\+\_\+rotations\+\_\+with\+\_\+jacobians}} (const Eigen\+::\+Matrix\+Xd \&Ji, \mbox{\hyperlink{namespaceigl_a79904ddf7fe8d79169b339cf43f9e739}{igl\+::\+Mapping\+Energy\+Type}} slim\+\_\+energy, double exp\+\_\+factor, Eigen\+::\+Matrix\+Xd \&W, Eigen\+::\+Matrix\+Xd \&Ri)
+\begin{DoxyCompactList}\small\item\em Internal Routine. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceigl_ac1a2368c134ab7daeb5cfb40b5a0e639}{igl\+::slim\+\_\+buildA}} (const Eigen\+::\+Sparse\+Matrix$<$ double $>$ \&Dx, const Eigen\+::\+Sparse\+Matrix$<$ double $>$ \&Dy, const Eigen\+::\+Sparse\+Matrix$<$ double $>$ \&Dz, const Eigen\+::\+Matrix\+Xd \&W, std\+::vector$<$ Eigen\+::\+Triplet$<$ double $>$ $>$ \&IJV)
+\begin{DoxyCompactList}\small\item\em Undocumented function related to SLIM optimization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{slim_8h_afce0c38c96a2abca6a3c6abbdde0a967}\label{slim_8h_afce0c38c96a2abca6a3c6abbdde0a967} 
+\index{slim.h@{slim.h}!SLIM\_CACHED@{SLIM\_CACHED}}
+\index{SLIM\_CACHED@{SLIM\_CACHED}!slim.h@{slim.h}}
+\doxysubsubsection{\texorpdfstring{SLIM\_CACHED}{SLIM\_CACHED}}
+{\footnotesize\ttfamily \#define SLIM\+\_\+\+CACHED}
+

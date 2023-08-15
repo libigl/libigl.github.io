@@ -1,0 +1,43 @@
+\doxysection{fit\+\_\+rotations.\+h}
+\hypertarget{fit__rotations_8h_source}{}\label{fit__rotations_8h_source}\index{include/igl/fit\_rotations.h@{include/igl/fit\_rotations.h}}
+\mbox{\hyperlink{fit__rotations_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2013\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_FIT\_ROTATIONS\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_FIT\_ROTATIONS\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00023\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedS,\ \textcolor{keyword}{typename}\ DerivedD>}
+\DoxyCodeLine{00024\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_aab9cbb962b540c16acdca0c7d168345d}{fit\_rotations}}(}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedS>\ \&\ S,}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ single\_precision,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedD>\ \&\ R);}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#ifdef\ \_\_SSE\_\_}}
+\DoxyCodeLine{00032\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ fit\_rotations\_SSE(\ \textcolor{keyword}{const}\ Eigen::MatrixXf\ \&\ S,\ Eigen::MatrixXf\ \&\ R);}
+\DoxyCodeLine{00036\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ fit\_rotations\_SSE(\ \textcolor{keyword}{const}\ Eigen::MatrixXd\ \&\ S,\ Eigen::MatrixXd\ \&\ R);}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#ifdef\ \_\_AVX\_\_}}
+\DoxyCodeLine{00042\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ fit\_rotations\_AVX(\ \textcolor{keyword}{const}\ Eigen::MatrixXf\ \&\ S,\ Eigen::MatrixXf\ \&\ R);}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00054\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedS,\ \textcolor{keyword}{typename}\ DerivedD>}
+\DoxyCodeLine{00055\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_ac84591b34ac42f8f958c015edabec2d6}{fit\_rotations\_planar}}(}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedS>\ \&\ S,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedD>\ \&\ R);}
+\DoxyCodeLine{00058\ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#\ \ include\ "{}fit\_rotations.cpp"{}}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

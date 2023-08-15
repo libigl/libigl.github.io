@@ -1,0 +1,30 @@
+\doxysection{include/igl/decimate\+\_\+callback\+\_\+types.h File Reference}
+\hypertarget{decimate__callback__types_8h}{}\label{decimate__callback__types_8h}\index{include/igl/decimate\_callback\_types.h@{include/igl/decimate\_callback\_types.h}}
+
+
+See \doxylink{decimate_8h}{decimate.\+h} for more details.  
+
+
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include \"{}min\+\_\+heap.\+h\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespaceigl_af967096efcc39e806f0c2b374e2ccc5f}{igl\+::decimate\+\_\+cost\+\_\+and\+\_\+placement\+\_\+callback}} = std\+::function$<$ void(const int, const Eigen\+::\+Matrix\+Xd \&, const Eigen\+::\+Matrix\+Xi \&, const Eigen\+::\+Matrix\+Xi \&, const Eigen\+::\+Vector\+Xi \&, const Eigen\+::\+Matrix\+Xi \&, const Eigen\+::\+Matrix\+Xi \&, double \&, Eigen\+::\+Row\+Vector\+Xd \&)$>$
+\begin{DoxyCompactList}\small\item\em Function handle used to control the cost of each edge collapse in \doxylink{namespaceigl_a48e2a2c1ae537d160f7767a230be66b3}{igl\+::decimate}. \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{namespaceigl_a64c8b006ed52af02a20d1664722a94b3}{igl\+::decimate\+\_\+stopping\+\_\+condition\+\_\+callback}} = std\+::function$<$ bool(const Eigen\+::\+Matrix\+Xd \&, const Eigen\+::\+Matrix\+Xi \&, const Eigen\+::\+Matrix\+Xi \&, const Eigen\+::\+Vector\+Xi \&, const Eigen\+::\+Matrix\+Xi \&, const Eigen\+::\+Matrix\+Xi \&, const \mbox{\hyperlink{namespaceigl_acd3e0aca98df4cd1576aecb262342dbf}{igl\+::min\+\_\+heap}}$<$ std\+::tuple$<$ double, int, int $>$ $>$ \&, const Eigen\+::\+Vector\+Xi \&, const Eigen\+::\+Matrix\+Xd \&, const int, const int, const int, const int, const int)$>$
+\begin{DoxyCompactList}\small\item\em Function handle used to control whether the queue processing in \doxylink{namespaceigl_a48e2a2c1ae537d160f7767a230be66b3}{igl\+::decimate} should stop. \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{namespaceigl_af695d0b4a424387592b06f466a86088e}{igl\+::decimate\+\_\+pre\+\_\+collapse\+\_\+callback}} = std\+::function$<$ bool(const Eigen\+::\+Matrix\+Xd \&, const Eigen\+::\+Matrix\+Xi \&, const Eigen\+::\+Matrix\+Xi \&, const Eigen\+::\+Vector\+Xi \&, const Eigen\+::\+Matrix\+Xi \&, const Eigen\+::\+Matrix\+Xi \&, const \mbox{\hyperlink{namespaceigl_acd3e0aca98df4cd1576aecb262342dbf}{igl\+::min\+\_\+heap}}$<$ std\+::tuple$<$ double, int, int $>$ $>$ \&, const Eigen\+::\+Vector\+Xi \&, const Eigen\+::\+Matrix\+Xd \&, const int)$>$
+\begin{DoxyCompactList}\small\item\em Function handle called just before {\ttfamily collapse\+\_\+edge} is attempted. \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{namespaceigl_a16fd55ae4f3085d4ed4d3c6bff008426}{igl\+::decimate\+\_\+post\+\_\+collapse\+\_\+callback}} = std\+::function$<$ void(const Eigen\+::\+Matrix\+Xd \&, const Eigen\+::\+Matrix\+Xi \&, const Eigen\+::\+Matrix\+Xi \&, const Eigen\+::\+Vector\+Xi \&, const Eigen\+::\+Matrix\+Xi \&, const Eigen\+::\+Matrix\+Xi \&, const \mbox{\hyperlink{namespaceigl_acd3e0aca98df4cd1576aecb262342dbf}{igl\+::min\+\_\+heap}}$<$ std\+::tuple$<$ double, int, int $>$ $>$ \&, const Eigen\+::\+Vector\+Xi \&, const Eigen\+::\+Matrix\+Xd \&, const int, const int, const int, const int, const int, const bool)$>$
+\begin{DoxyCompactList}\small\item\em Function handle called just after {\ttfamily collapse\+\_\+edge} is attempted. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+See \doxylink{decimate_8h}{decimate.\+h} for more details. 
+

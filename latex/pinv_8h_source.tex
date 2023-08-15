@@ -1,0 +1,27 @@
+\doxysection{pinv.\+h}
+\hypertarget{pinv_8h_source}{}\label{pinv_8h_source}\index{include/igl/pinv.h@{include/igl/pinv.h}}
+\mbox{\hyperlink{pinv_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ IGL\_PINV\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ IGL\_PINV\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}deprecated.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00017\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedA,\ \textcolor{keyword}{typename}\ DerivedX>}
+\DoxyCodeLine{00018\ \ \ IGL\_DEPRECATED\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_ad498ebcab984468e7f07b426d677af29}{pinv}}(}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedA>\ \&\ A,}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedA::Scalar\ tol,}
+\DoxyCodeLine{00021\ \ \ \ \ Eigen::PlainObjectBase<DerivedX>\ \&\ X);}
+\DoxyCodeLine{00023\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedA,\ \textcolor{keyword}{typename}\ DerivedX>}
+\DoxyCodeLine{00024\ \ \ IGL\_DEPRECATED\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_ad498ebcab984468e7f07b426d677af29}{pinv}}(}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedA>\ \&\ A,}
+\DoxyCodeLine{00026\ \ \ \ \ Eigen::PlainObjectBase<DerivedX>\ \&\ X);}
+\DoxyCodeLine{00027\ \}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#\ \ include\ "{}pinv.cpp"{}}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,82 @@
+\doxysection{arap.\+h}
+\hypertarget{arap_8h_source}{}\label{arap_8h_source}\index{include/igl/arap.h@{include/igl/arap.h}}
+\mbox{\hyperlink{arap_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2013\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_ARAP\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_ARAP\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{min__quad__with__fixed_8h}{min\_quad\_with\_fixed.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ARAPEnergyType_8h}{ARAPEnergyType.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <Eigen/Sparse>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00021\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1ARAPData}{ARAPData}}}
+\DoxyCodeLine{00022\ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structigl_1_1ARAPData_ab99b3e4ab328a9312eff182894a32143}{n}};}
+\DoxyCodeLine{00027\ \ \ \ \ Eigen::VectorXi\ \mbox{\hyperlink{structigl_1_1ARAPData_a925142dca89b71eeb119f5268b1a4332}{G}};}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{namespaceigl_afcbc9001656cf2d4cc135602618c97e5}{ARAPEnergyType}}\ \mbox{\hyperlink{structigl_1_1ARAPData_a295a9607737205344e67005507e25689}{energy}};}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structigl_1_1ARAPData_a2ef0c86be0a56a52c99ed1a4dd376d46}{with\_dynamics}};}
+\DoxyCodeLine{00033\ \ \ \ \ Eigen::MatrixXd\ \mbox{\hyperlink{structigl_1_1ARAPData_a48d618d6be0a7ffc6e8a73c3750a3f8a}{f\_ext}};}
+\DoxyCodeLine{00035\ \ \ \ \ Eigen::MatrixXd\ \mbox{\hyperlink{structigl_1_1ARAPData_a6fb5fa16caad9e042899ee23ae667c1a}{vel}};}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structigl_1_1ARAPData_a6328b0f335d4ce9cfb36327178ebea53}{h}};}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structigl_1_1ARAPData_a70ce1768d7ebd4a6682fcaea066f9170}{ym}};}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structigl_1_1ARAPData_ae4f9eeb68882aa1a5a5c9fda98dd54d7}{max\_iter}};}
+\DoxyCodeLine{00043\ \ \ \ \ Eigen::SparseMatrix<double>\ K;}
+\DoxyCodeLine{00045\ \ \ \ \ Eigen::SparseMatrix<double>\ M;}
+\DoxyCodeLine{00047\ \ \ \ \ Eigen::SparseMatrix<double>\ CSM;}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data}{min\_quad\_with\_fixed\_data<double>}}\ solver\_data;}
+\DoxyCodeLine{00051\ \ \ \ \ Eigen::VectorXi\ b;}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{int}\ dim;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1ARAPData_a7b6316a2c0dfcbddab8ba0bdc3ee7ec2}{ARAPData}}():}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1ARAPData_ab99b3e4ab328a9312eff182894a32143}{n}}(0),}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1ARAPData_a925142dca89b71eeb119f5268b1a4332}{G}}(),}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1ARAPData_a295a9607737205344e67005507e25689}{energy}}(\mbox{\hyperlink{namespaceigl_afcbc9001656cf2d4cc135602618c97e5a0ab35acc294ac22e4f4d125fce81bb2e}{ARAP\_ENERGY\_TYPE\_DEFAULT}}),}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1ARAPData_a2ef0c86be0a56a52c99ed1a4dd376d46}{with\_dynamics}}(false),}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1ARAPData_a48d618d6be0a7ffc6e8a73c3750a3f8a}{f\_ext}}(),}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1ARAPData_a6328b0f335d4ce9cfb36327178ebea53}{h}}(1),}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1ARAPData_a70ce1768d7ebd4a6682fcaea066f9170}{ym}}(1),}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1ARAPData_ae4f9eeb68882aa1a5a5c9fda98dd54d7}{max\_iter}}(10),}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ K(),}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ CSM(),}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ solver\_data(),}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ b(),}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ dim(-\/1)\ \textcolor{comment}{//\ force\ this\ to\ be\ set\ by\ \_precomputation}}
+\DoxyCodeLine{00068\ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \};}
+\DoxyCodeLine{00070\ \ \ \};}
+\DoxyCodeLine{00071\ \ \ }
+\DoxyCodeLine{00085\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedb>}
+\DoxyCodeLine{00089\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a48e5f486e14127dc6eb9013a7dc312bd}{arap\_precomputation}}(}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ dim,}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedb>\ \&\ b,}
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{structigl_1_1ARAPData}{ARAPData}}\ \&\ data);}
+\DoxyCodeLine{00110\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedbc,}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedU>}
+\DoxyCodeLine{00113\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a62a45ef9782fe4b54d7487a8b3bb45e9}{arap\_solve}}(}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedbc>\ \&\ bc,}
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{structigl_1_1ARAPData}{ARAPData}}\ \&\ data,}
+\DoxyCodeLine{00116\ \ \ \ \ Eigen::MatrixBase<DerivedU>\ \&\ U);}
+\DoxyCodeLine{00117\ \};}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#include\ "{}arap.cpp"{}}}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

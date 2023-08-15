@@ -1,0 +1,69 @@
+\doxysection{File\+Memory\+Stream.\+h}
+\hypertarget{FileMemoryStream_8h_source}{}\label{FileMemoryStream_8h_source}\index{include/igl/FileMemoryStream.h@{include/igl/FileMemoryStream.h}}
+\mbox{\hyperlink{FileMemoryStream_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2020\ Jérémie\ Dumas\ <jeremie.dumas@ens-\/lyon.org>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ Copyright\ (C)\ 2021\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ IGL\_FILEMEMORYSTREAM\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ IGL\_FILEMEMORYSTREAM\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <streambuf>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <istream>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}\ \{}
+\DoxyCodeLine{00019\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1FileMemoryBuffer}{FileMemoryBuffer}}\ :\ \textcolor{keyword}{public}\ std::streambuf\ }
+\DoxyCodeLine{00020\ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{structigl_1_1FileMemoryBuffer_a621d731ae08e29bd65685180961aeec3}{p\_start}}\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{structigl_1_1FileMemoryBuffer_aa29ca11f91735970f16e397ed0d84404}{p\_end}}\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structigl_1_1FileMemoryBuffer_a1e7aabc3f803e896eb5d9dc334ea329d}{size}};}
+\DoxyCodeLine{00024\ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{structigl_1_1FileMemoryBuffer_aa3475ed1e2643fbfd9de5eeabcc397fd}{FileMemoryBuffer}}(\textcolor{keywordtype}{char}\ \textcolor{keyword}{const}\ *first\_elem,\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structigl_1_1FileMemoryBuffer_a1e7aabc3f803e896eb5d9dc334ea329d}{size}})}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ :\ \mbox{\hyperlink{structigl_1_1FileMemoryBuffer_a621d731ae08e29bd65685180961aeec3}{p\_start}}(const\_cast<char\ *>(first\_elem)),\ \mbox{\hyperlink{structigl_1_1FileMemoryBuffer_aa29ca11f91735970f16e397ed0d84404}{p\_end}}(\mbox{\hyperlink{structigl_1_1FileMemoryBuffer_a621d731ae08e29bd65685180961aeec3}{p\_start}}\ +\ \mbox{\hyperlink{structigl_1_1FileMemoryBuffer_a1e7aabc3f803e896eb5d9dc334ea329d}{size}}),}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1FileMemoryBuffer_a1e7aabc3f803e896eb5d9dc334ea329d}{size}}(\mbox{\hyperlink{structigl_1_1FileMemoryBuffer_a1e7aabc3f803e896eb5d9dc334ea329d}{size}})\ }
+\DoxyCodeLine{00028\ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ setg(\mbox{\hyperlink{structigl_1_1FileMemoryBuffer_a621d731ae08e29bd65685180961aeec3}{p\_start}},\ \mbox{\hyperlink{structigl_1_1FileMemoryBuffer_a621d731ae08e29bd65685180961aeec3}{p\_start}},\ \mbox{\hyperlink{structigl_1_1FileMemoryBuffer_aa29ca11f91735970f16e397ed0d84404}{p\_end}});}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \ \ }
+\DoxyCodeLine{00032\ \ \ \ \ pos\_type\ \mbox{\hyperlink{structigl_1_1FileMemoryBuffer_a4dbaa6d918bc1142dd0f45a5cc5fedbf}{seekoff}}(}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ off\_type\ off,\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ std::ios\_base::seekdir\ dir,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ std::ios\_base::openmode\ which)\textcolor{keyword}{\ override\ }}
+\DoxyCodeLine{00036\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dir\ ==\ std::ios\_base::cur)\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ gbump(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(off));}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ setg(\mbox{\hyperlink{structigl_1_1FileMemoryBuffer_a621d731ae08e29bd65685180961aeec3}{p\_start}},(dir==std::ios\_base::beg\ ?\ \mbox{\hyperlink{structigl_1_1FileMemoryBuffer_a621d731ae08e29bd65685180961aeec3}{p\_start}}\ :\ \mbox{\hyperlink{structigl_1_1FileMemoryBuffer_aa29ca11f91735970f16e397ed0d84404}{p\_end}})\ +\ off,\mbox{\hyperlink{structigl_1_1FileMemoryBuffer_aa29ca11f91735970f16e397ed0d84404}{p\_end}});}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ gptr()\ -\/\ \mbox{\hyperlink{structigl_1_1FileMemoryBuffer_a621d731ae08e29bd65685180961aeec3}{p\_start}};}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ pos\_type\ \mbox{\hyperlink{structigl_1_1FileMemoryBuffer_a2cd80f35aa620ca0151e8f76babae523}{seekpos}}(pos\_type\ pos,\ std::ios\_base::openmode\ which)\textcolor{keyword}{\ override\ }}
+\DoxyCodeLine{00048\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structigl_1_1FileMemoryBuffer_a4dbaa6d918bc1142dd0f45a5cc5fedbf}{seekoff}}(pos,\ std::ios\_base::beg,\ which);}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \ \ \};}
+\DoxyCodeLine{00052\ \ \ }
+\DoxyCodeLine{00054\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1FileMemoryStream}{FileMemoryStream}}\ :\ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{structigl_1_1FileMemoryBuffer}{FileMemoryBuffer}},\ \textcolor{keyword}{public}\ std::istream\ }
+\DoxyCodeLine{00055\ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{structigl_1_1FileMemoryStream_a182fc3637595c9e787a529dd35ba4ffc}{FileMemoryStream}}(\ \textcolor{keywordtype}{char}\ \textcolor{keyword}{const}\ *first\_elem,\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structigl_1_1FileMemoryBuffer_a1e7aabc3f803e896eb5d9dc334ea329d}{size}})}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ :\ \mbox{\hyperlink{structigl_1_1FileMemoryBuffer}{FileMemoryBuffer}}(first\_elem,\ \mbox{\hyperlink{structigl_1_1FileMemoryBuffer_a1e7aabc3f803e896eb5d9dc334ea329d}{size}}),\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ std::istream(\ static\_cast<std::streambuf\ *>(this))}
+\DoxyCodeLine{00059\ \ \ \ \ \{\}}
+\DoxyCodeLine{00060\ \ \ \};}
+\DoxyCodeLine{00061\ \}\ }
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00064\ }
+
+\end{DoxyCode}

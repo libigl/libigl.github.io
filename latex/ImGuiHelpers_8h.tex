@@ -1,0 +1,29 @@
+\doxysection{include/igl/opengl/glfw/imgui/\+Im\+Gui\+Helpers.h File Reference}
+\hypertarget{ImGuiHelpers_8h}{}\label{ImGuiHelpers_8h}\index{include/igl/opengl/glfw/imgui/ImGuiHelpers.h@{include/igl/opengl/glfw/imgui/ImGuiHelpers.h}}
+{\ttfamily \#include \"{}Im\+Gui\+Traits.\+h\"{}}\newline
+{\ttfamily \#include $<$imgui.\+h$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$cstddef$>$}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceImGui}{Im\+Gui}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespaceImGui_a010b32e950ef1eb7a43808f0c0bd04d2}{Im\+Gui\+::\+Combo}} (const char \texorpdfstring{$\ast$}{*}label, int \texorpdfstring{$\ast$}{*}idx, std\+::vector$<$ std\+::string $>$ \&values)
+\item 
+bool \mbox{\hyperlink{namespaceImGui_a023d8107acf5b52a1594c2b935b824f0}{Im\+Gui\+::\+Combo}} (const char \texorpdfstring{$\ast$}{*}label, int \texorpdfstring{$\ast$}{*}idx, std\+::function$<$ const char \texorpdfstring{$\ast$}{*}(int)$>$ getter, int items\+\_\+count)
+\item 
+bool \mbox{\hyperlink{namespaceImGui_a3f11b20393024f0f4261ae92b927836d}{Im\+Gui\+::\+List\+Box}} (const char \texorpdfstring{$\ast$}{*}label, int \texorpdfstring{$\ast$}{*}idx, std\+::vector$<$ std\+::string $>$ \&values)
+\item 
+bool \mbox{\hyperlink{namespaceImGui_a392168d28bc4973532ead37f8061121e}{Im\+Gui\+::\+Input\+Text}} (const char \texorpdfstring{$\ast$}{*}label, std\+::string \&str, Im\+Gui\+Input\+Text\+Flags flags=0, Im\+Gui\+Input\+Text\+Callback callback=NULL, void \texorpdfstring{$\ast$}{*}user\+\_\+data=NULL)
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{namespaceImGui_a0fb91683a93c61f90f7c448466266f3c}{Im\+Gui\+::\+Slider\+Scalar}} (const char \texorpdfstring{$\ast$}{*}label, T \texorpdfstring{$\ast$}{*}value, T min=0, T max=0, const char \texorpdfstring{$\ast$}{*}format=\"{}\"{})
+\item 
+{\footnotesize template$<$typename Getter , typename Setter $>$ }\\bool \mbox{\hyperlink{namespaceImGui_a01e8908c9ff42e3510168251a97f1d48}{Im\+Gui\+::\+Checkbox}} (const char \texorpdfstring{$\ast$}{*}label, Getter get, Setter set)
+\end{DoxyCompactItemize}

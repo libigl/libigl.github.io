@@ -1,0 +1,18 @@
+\doxysection{include/igl/loop.h File Reference}
+\hypertarget{loop_8h}{}\label{loop_8h}\index{include/igl/loop.h@{include/igl/loop.h}}
+{\ttfamily \#include $<$igl/igl\+\_\+inline.\+h$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include \"{}loop.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedF , typename SType , typename Derived\+NF $>$ }\\void \mbox{\hyperlink{namespaceigl_aea9965bc615b0a851fabf90d37a73320}{igl\+::loop}} (const int n\+\_\+verts, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Sparse\+Matrix$<$ SType $>$ \&S, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+NF $>$ \&NF)
+\begin{DoxyCompactList}\small\item\em Given the triangle mesh \mbox{[}V, F\mbox{]}, where n\+\_\+verts = V.\+rows(), computes newV and a sparse matrix S s.\+t. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename Derived\+NV , typename Derived\+NF $>$ }\\void \mbox{\hyperlink{namespaceigl_aee95891ee4e9418b27c3fbfa92542784}{igl\+::loop}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+NV $>$ \&NV, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+NF $>$ \&NF, const int number\+\_\+of\+\_\+subdivs=1)
+\begin{DoxyCompactList}\small\item\em Given the triangle mesh \mbox{[}V, F\mbox{]}, computes number\+\_\+of\+\_\+subdivs steps of loop subdivision and outputs the new mesh \mbox{[}newV, newF\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}

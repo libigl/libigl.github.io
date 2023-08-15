@@ -1,0 +1,25 @@
+\doxysection{include/igl/heat\+\_\+geodesics.h File Reference}
+\hypertarget{heat__geodesics_8h}{}\label{heat__geodesics_8h}\index{include/igl/heat\_geodesics.h@{include/igl/heat\_geodesics.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include \"{}min\+\_\+quad\+\_\+with\+\_\+fixed.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include \"{}heat\+\_\+geodesics.\+cpp\"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structigl_1_1HeatGeodesicsData}{igl\+::\+Heat\+Geodesics\+Data$<$ Scalar $>$}}
+\begin{DoxyCompactList}\small\item\em Precomputation data for heat\+\_\+geodesics\+\_\+solve. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename Scalar $>$ }\\bool \mbox{\hyperlink{namespaceigl_affbddd3e363a529044cd4bd848b278f4}{igl\+::heat\+\_\+geodesics\+\_\+precompute}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, \mbox{\hyperlink{structigl_1_1HeatGeodesicsData}{Heat\+Geodesics\+Data}}$<$ Scalar $>$ \&data)
+\begin{DoxyCompactList}\small\item\em Precompute factorized solvers for computing a fast approximation of geodesic distances on a mesh (V,F). \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename Scalar $>$ }\\bool \mbox{\hyperlink{namespaceigl_a12efa6b8fc863b52dd131d478a456802}{igl\+::heat\+\_\+geodesics\+\_\+precompute}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const Scalar t, \mbox{\hyperlink{structigl_1_1HeatGeodesicsData}{Heat\+Geodesics\+Data}}$<$ Scalar $>$ \&data)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Scalar , typename Derivedgamma , typename DerivedD $>$ }\\void \mbox{\hyperlink{namespaceigl_ae558cd690e05ad2e41caa655251e23c4}{igl\+::heat\+\_\+geodesics\+\_\+solve}} (const \mbox{\hyperlink{structigl_1_1HeatGeodesicsData}{Heat\+Geodesics\+Data}}$<$ Scalar $>$ \&data, const Eigen\+::\+Matrix\+Base$<$ Derivedgamma $>$ \&gamma, Eigen\+::\+Plain\+Object\+Base$<$ DerivedD $>$ \&D)
+\begin{DoxyCompactList}\small\item\em Compute fast approximate geodesic distances using precomputed data from a set of selected source vertices (gamma). \end{DoxyCompactList}\end{DoxyCompactItemize}

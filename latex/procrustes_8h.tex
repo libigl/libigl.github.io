@@ -1,0 +1,24 @@
+\doxysection{include/igl/procrustes.h File Reference}
+\hypertarget{procrustes_8h}{}\label{procrustes_8h}\index{include/igl/procrustes.h@{include/igl/procrustes.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Geometry$>$}\newline
+{\ttfamily \#include \"{}procrustes.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedX , typename DerivedY , typename Scalar , typename DerivedR , typename DerivedT $>$ }\\void \mbox{\hyperlink{namespaceigl_abb69dbb018159a761459ceee76dd1fd0}{igl\+::procrustes}} (const Eigen\+::\+Matrix\+Base$<$ DerivedX $>$ \&X, const Eigen\+::\+Matrix\+Base$<$ DerivedY $>$ \&Y, bool include\+Scaling, bool include\+Reflections, Scalar \&scale, Eigen\+::\+Plain\+Object\+Base$<$ DerivedR $>$ \&R, Eigen\+::\+Plain\+Object\+Base$<$ DerivedT $>$ \&t)
+\begin{DoxyCompactList}\small\item\em Solve Procrustes problem in d dimensions. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedX , typename DerivedY , typename Scalar , int DIM, int TType$>$ }\\void \mbox{\hyperlink{namespaceigl_a3256b2f17cb8bf71950143ab00f2fe23}{igl\+::procrustes}} (const Eigen\+::\+Matrix\+Base$<$ DerivedX $>$ \&X, const Eigen\+::\+Matrix\+Base$<$ DerivedY $>$ \&Y, bool include\+Scaling, bool include\+Reflections, Eigen\+::\+Transform$<$ Scalar, DIM, TType $>$ \&T)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedX , typename DerivedY , typename DerivedR , typename DerivedT $>$ }\\void \mbox{\hyperlink{namespaceigl_a866d5f4c834ba548e05a00aed704683b}{igl\+::procrustes}} (const Eigen\+::\+Matrix\+Base$<$ DerivedX $>$ \&X, const Eigen\+::\+Matrix\+Base$<$ DerivedY $>$ \&Y, bool include\+Scaling, bool include\+Reflections, Eigen\+::\+Plain\+Object\+Base$<$ DerivedR $>$ \&S, Eigen\+::\+Plain\+Object\+Base$<$ DerivedT $>$ \&t)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedX , typename DerivedY , typename DerivedR , typename DerivedT $>$ }\\void \mbox{\hyperlink{namespaceigl_aa5807bccc7e6795e024af55047f473e6}{igl\+::procrustes}} (const Eigen\+::\+Matrix\+Base$<$ DerivedX $>$ \&X, const Eigen\+::\+Matrix\+Base$<$ DerivedY $>$ \&Y, Eigen\+::\+Plain\+Object\+Base$<$ DerivedR $>$ \&R, Eigen\+::\+Plain\+Object\+Base$<$ DerivedT $>$ \&t)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedX , typename DerivedY , typename Scalar , typename DerivedT $>$ }\\void \mbox{\hyperlink{namespaceigl_ab2b1805a74d6529030a2eb932a6f2fa0}{igl\+::procrustes}} (const Eigen\+::\+Matrix\+Base$<$ DerivedX $>$ \&X, const Eigen\+::\+Matrix\+Base$<$ DerivedY $>$ \&Y, Eigen\+::\+Rotation2D$<$ Scalar $>$ \&R, Eigen\+::\+Plain\+Object\+Base$<$ DerivedT $>$ \&t)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}

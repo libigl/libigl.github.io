@@ -1,0 +1,129 @@
+\doxysection{Embree\+Intersector.\+h}
+\hypertarget{EmbreeIntersector_8h_source}{}\label{EmbreeIntersector_8h_source}\index{include/igl/embree/EmbreeIntersector.h@{include/igl/embree/EmbreeIntersector.h}}
+\mbox{\hyperlink{EmbreeIntersector_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2013\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2014\ Christian\ Schüller\ <schuellchr@gmail.com>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ igl\ function\ interface\ for\ Embree2.2}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ Necessary\ changes\ to\ switch\ from\ previous\ Embree\ versions:}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ *\ Use\ igl:Hit\ instead\ of\ embree:Hit\ (where\ id0\ -\/>\ id)}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ *\ For\ Embree2.2}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ *\ Uncomment\ \#define\ \_\_USE\_RAY\_MASK\_\_\ in\ platform.h\ to\ enable\ masking}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifndef\ IGL\_EMBREE\_EMBREE\_INTERSECTOR\_H}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ IGL\_EMBREE\_EMBREE\_INTERSECTOR\_H}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}../Hit.h"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <Eigen/Geometry>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <embree3/rtcore.h>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <embree3/rtcore\_ray.h>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{EmbreeDevice_8h}{EmbreeDevice.h}}"{}}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00031\ \{}
+\DoxyCodeLine{00032\ \ \ \textcolor{keyword}{namespace\ }embree}
+\DoxyCodeLine{00033\ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector}{EmbreeIntersector}}}
+\DoxyCodeLine{00036\ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ Eigen::Matrix<float,Eigen::Dynamic,3>\ \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector_a8738232667aec7922199fb5f0c19a41c}{PointMatrixType}};}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ Eigen::Matrix<int,Eigen::Dynamic,3>\ \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector_af148a234bbb045e7d9d49417271c0442}{FaceMatrixType}};}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector_a425ee5dc0116cba94263a7ceab0878fd}{EmbreeIntersector}}();}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \textcolor{comment}{//\ Copying\ and\ assignment\ are\ not\ allowed.}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector_a425ee5dc0116cba94263a7ceab0878fd}{EmbreeIntersector}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector}{EmbreeIntersector}}\ \&\ that);}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector}{EmbreeIntersector}}\ \&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector}{EmbreeIntersector}}\ \&);}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector_ad262bb39ac26b004ad1d9f1b07e58915}{\string~EmbreeIntersector}}();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector_ad8f02c7c596e601303bf1a72742de159}{init}}(}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector_a8738232667aec7922199fb5f0c19a41c}{PointMatrixType}}\&\ V,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector_af148a234bbb045e7d9d49417271c0442}{FaceMatrixType}}\&\ F,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isStatic\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector_acb7d3b621158907f00ba9a972699481f}{init}}(}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<const\ PointMatrixType*>\&\ V,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<const\ FaceMatrixType*>\&\ F,}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<int>\&\ masks,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isStatic\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector_a61c0079def921d5288cd1cef5d173761}{deinit}}();}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector_a674a92001c5fb384eaf2bbba80ec0fa6}{intersectRay}}(}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::RowVector3f\&\ origin,}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::RowVector3f\&\ direction,}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1Hit}{Hit}}\&\ hit,}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ tnear\ =\ 0,}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ tfar\ =\ std::numeric\_limits<float>::infinity(),}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ mask\ =\ 0xFFFFFFFF)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector_a531899c6b568c8c4f194e5bf1db7517c}{intersectBeam}}(}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::RowVector3f\&\ origin,}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::RowVector3f\&\ direction,}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1Hit}{Hit}}\&\ hit,}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ tnear\ =\ 0,}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ tfar\ =\ std::numeric\_limits<float>::infinity(),}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ mask\ =\ 0xFFFFFFFF,}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ geoId\ =\ -\/1,}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ closestHit\ =\ \textcolor{keyword}{true},}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ samples\ =\ 4)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector_a8bbb5872dcbf9b27dcca0d715bc195c5}{intersectRay}}(}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::RowVector3f\&\ origin,}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::RowVector3f\&\ direction,}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ std::vector<Hit\ >\ \&hits,}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\&\ num\_rays,}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ tnear\ =\ 0,}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ tfar\ =\ std::numeric\_limits<float>::infinity(),}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ mask\ =\ 0xFFFFFFFF)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector_a121e6dfd3f8188558ad8031fae02b55a}{intersectSegment}}(}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::RowVector3f\&\ a,}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::RowVector3f\&\ ab,}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1Hit}{Hit}}\ \&hit,}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ mask\ =\ 0xFFFFFFFF)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \textcolor{keyword}{struct\ }Vertex\ \ \ \{\textcolor{keywordtype}{float}\ x,y,z,a;\};}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \textcolor{keyword}{struct\ }Triangle\ \{\textcolor{keywordtype}{int}\ v0,\ v1,\ v2;\};}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ RTCScene\ scene;}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ geomID;}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ Vertex*\ vertices;}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ Triangle*\ triangles;}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ initialized;}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ \ \ RTCDevice\ device;}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ createRay(}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ RTCRayHit\&\ ray,}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::RowVector3f\&\ origin,}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::RowVector3f\&\ direction,}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ tnear,}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ tfar,}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ mask)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00173\ \ \ \ \ \};}
+\DoxyCodeLine{00174\ \ \ \}}
+\DoxyCodeLine{00175\ \}}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#\ \ include\ "{}EmbreeIntersector.cpp"{}}}
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//EMBREE\_INTERSECTOR\_H}}
+
+\end{DoxyCode}

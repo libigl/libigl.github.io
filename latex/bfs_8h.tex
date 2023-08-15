@@ -1,0 +1,21 @@
+\doxysection{include/igl/bfs.h File Reference}
+\hypertarget{bfs_8h}{}\label{bfs_8h}\index{include/igl/bfs.h@{include/igl/bfs.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include \"{}bfs.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename AType , typename DerivedD , typename DerivedP $>$ }\\void \mbox{\hyperlink{namespaceigl_a75b1dcc1386b54083fe6a2b70c7b7225}{igl\+::bfs}} (const AType \&A, const size\+\_\+t s, Eigen\+::\+Plain\+Object\+Base$<$ DerivedD $>$ \&D, Eigen\+::\+Plain\+Object\+Base$<$ DerivedP $>$ \&P)
+\begin{DoxyCompactList}\small\item\em Traverse a {\bfseries{directed}} graph represented by an adjacency list using. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename AType , typename DType , typename PType $>$ }\\void \mbox{\hyperlink{namespaceigl_a9ed9474cc5d1478971346be27092d3a2}{igl\+::bfs}} (const std\+::vector$<$ std\+::vector$<$ AType $>$ $>$ \&A, const size\+\_\+t s, std\+::vector$<$ DType $>$ \&D, std\+::vector$<$ PType $>$ \&P)
+\begin{DoxyCompactList}\small\item\em Traverse a {\bfseries{directed}} graph represented by an adjacency list using. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename AType , typename DType , typename PType $>$ }\\void \mbox{\hyperlink{namespaceigl_a3199a27a3e8403ef457e2a7b56f338f3}{igl\+::bfs}} (const Eigen\+::\+Sparse\+Compressed\+Base$<$ AType $>$ \&A, const size\+\_\+t s, std\+::vector$<$ DType $>$ \&D, std\+::vector$<$ PType $>$ \&P)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}

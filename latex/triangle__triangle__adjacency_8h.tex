@@ -1,0 +1,34 @@
+\doxysection{include/igl/triangle\+\_\+triangle\+\_\+adjacency.h File Reference}
+\hypertarget{triangle__triangle__adjacency_8h}{}\label{triangle__triangle__adjacency_8h}\index{include/igl/triangle\_triangle\_adjacency.h@{include/igl/triangle\_triangle\_adjacency.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \"{}triangle\+\_\+triangle\+\_\+adjacency.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedF , typename Derived\+TT , typename Derived\+TTi $>$ }\\void \mbox{\hyperlink{namespaceigl_ae07b1e4d35569138ffa0d8a874f0e24f}{igl\+::triangle\+\_\+triangle\+\_\+adjacency}} (const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TT $>$ \&TT, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TTi $>$ \&TTi)
+\begin{DoxyCompactList}\small\item\em Constructs the triangle-\/triangle adjacency matrix for a given mesh (V,F). \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedF , typename Derived\+TT $>$ }\\void \mbox{\hyperlink{namespaceigl_a7210f2492117b1c482907e6a47dbed75}{igl\+::triangle\+\_\+triangle\+\_\+adjacency}} (const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TT $>$ \&TT)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedF , typename TTT\+\_\+type $>$ }\\void \mbox{\hyperlink{namespaceigl_add74393b2dabd37b8efd0a7c2145372a}{igl\+::triangle\+\_\+triangle\+\_\+adjacency\+\_\+preprocess}} (const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, std\+::vector$<$ std\+::vector$<$ TTT\+\_\+type $>$ $>$ \&TTT)
+\begin{DoxyCompactList}\small\item\em Preprocessing for triangle\+\_\+triangle\+\_\+adjacency. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedF , typename TTT\+\_\+type , typename Derived\+TT $>$ }\\void \mbox{\hyperlink{namespaceigl_a45cd01351200f4312c4fa5abef9c63a1}{igl\+::triangle\+\_\+triangle\+\_\+adjacency\+\_\+extract\+TT}} (const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, std\+::vector$<$ std\+::vector$<$ TTT\+\_\+type $>$ $>$ \&TTT, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TT $>$ \&TT)
+\begin{DoxyCompactList}\small\item\em Extract the face adjacencies for triangle\+\_\+triangle\+\_\+adjacency. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedF , typename TTT\+\_\+type , typename Derived\+TTi $>$ }\\void \mbox{\hyperlink{namespaceigl_a81887c23c0079fb92f46a517cd42f752}{igl\+::triangle\+\_\+triangle\+\_\+adjacency\+\_\+extract\+TTi}} (const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, std\+::vector$<$ std\+::vector$<$ TTT\+\_\+type $>$ $>$ \&TTT, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TTi $>$ \&TTi)
+\begin{DoxyCompactList}\small\item\em Extract the face adjacencies indices for triangle\+\_\+triangle\+\_\+adjacency. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedF , typename TTIndex , typename TTi\+Index $>$ }\\void \mbox{\hyperlink{namespaceigl_a99e6fd086c1507cb6b02df0b458566cd}{igl\+::triangle\+\_\+triangle\+\_\+adjacency}} (const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ TTIndex $>$ $>$ $>$ \&TT, std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ TTi\+Index $>$ $>$ $>$ \&TTi)
+\begin{DoxyCompactList}\small\item\em Adjacency list version, which works with non-\/manifold meshes. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedF , typename TTIndex $>$ }\\void \mbox{\hyperlink{namespaceigl_a5ea1a1ba3c8bee980c00db518fb9f443}{igl\+::triangle\+\_\+triangle\+\_\+adjacency}} (const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ TTIndex $>$ $>$ $>$ \&TT)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedF , typename TTIndex , typename TTi\+Index $>$ }\\void \mbox{\hyperlink{namespaceigl_ad091a40b270aa5030a3dd0909e6402e6}{igl\+::triangle\+\_\+triangle\+\_\+adjacency}} (const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const bool construct\+\_\+\+TTi, std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ TTIndex $>$ $>$ $>$ \&TT, std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ TTi\+Index $>$ $>$ $>$ \&TTi)
+\item 
+{\footnotesize template$<$typename DerivedE , typename Derived\+EMAP , typename u\+E2\+EType , typename TTIndex , typename TTi\+Index $>$ }\\void \mbox{\hyperlink{namespaceigl_ab979438c0daba73490363a56fc67f54a}{igl\+::triangle\+\_\+triangle\+\_\+adjacency}} (const Eigen\+::\+Matrix\+Base$<$ DerivedE $>$ \&E, const Eigen\+::\+Matrix\+Base$<$ Derived\+EMAP $>$ \&EMAP, const std\+::vector$<$ std\+::vector$<$ u\+E2\+EType $>$ $>$ \&u\+E2E, const bool construct\+\_\+\+TTi, std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ TTIndex $>$ $>$ $>$ \&TT, std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ TTi\+Index $>$ $>$ $>$ \&TTi)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derived\+EMAP , typename Derivedu\+EC , typename Derivedu\+EE , typename TTIndex , typename TTi\+Index $>$ }\\void \mbox{\hyperlink{namespaceigl_afc80c379b811624a97c1ed29ba4df0fb}{igl\+::triangle\+\_\+triangle\+\_\+adjacency}} (const Eigen\+::\+Matrix\+Base$<$ Derived\+EMAP $>$ \&EMAP, const Eigen\+::\+Matrix\+Base$<$ Derivedu\+EC $>$ \&u\+EC, const Eigen\+::\+Matrix\+Base$<$ Derivedu\+EE $>$ \&u\+EE, const bool construct\+\_\+\+TTi, std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ TTIndex $>$ $>$ $>$ \&TT, std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ TTi\+Index $>$ $>$ $>$ \&TTi)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}

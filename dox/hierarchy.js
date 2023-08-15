@@ -1,0 +1,55 @@
+var hierarchy =
+[
+    [ "igl::AABB< DerivedV, DIM >", "classigl_1_1AABB.html", null ],
+    [ "igl::active_set_params", "structigl_1_1active__set__params.html", null ],
+    [ "igl::ARAPData", "structigl_1_1ARAPData.html", null ],
+    [ "igl::ArapDOFData< LbsMatrixType, SSCALAR >", "structigl_1_1ArapDOFData.html", null ],
+    [ "igl::AtA_cached_data", "structigl_1_1AtA__cached__data.html", null ],
+    [ "igl::BBWData", "classigl_1_1BBWData.html", null ],
+    [ "igl::tinyply::Buffer", "classigl_1_1tinyply_1_1Buffer.html", null ],
+    [ "igl::embree::EmbreeDevice", "structigl_1_1embree_1_1EmbreeDevice.html", null ],
+    [ "igl::embree::EmbreeIntersector", "classigl_1_1embree_1_1EmbreeIntersector.html", null ],
+    [ "igl::FastWindingNumberBVH", "structigl_1_1FastWindingNumberBVH.html", null ],
+    [ "igl::HalfEdgeIterator< DerivedF, DerivedFF, DerivedFFi >", "classigl_1_1HalfEdgeIterator.html", null ],
+    [ "igl::HeatGeodesicsData< Scalar >", "structigl_1_1HeatGeodesicsData.html", null ],
+    [ "igl::embree::EmbreeRenderer::Hit", "structigl_1_1embree_1_1EmbreeRenderer_1_1Hit.html", null ],
+    [ "igl::Hit", "structigl_1_1Hit.html", null ],
+    [ "igl::IndexDimLessThan< T >", "structigl_1_1IndexDimLessThan.html", null ],
+    [ "igl::IndexEquals< T >", "structigl_1_1IndexEquals.html", null ],
+    [ "igl::IndexLessThan< T >", "structigl_1_1IndexLessThan.html", null ],
+    [ "igl::IndexRowEquals< T >", "structigl_1_1IndexRowEquals.html", null ],
+    [ "igl::IndexRowLessThan< T >", "structigl_1_1IndexRowLessThan.html", null ],
+    [ "igl::IndexVectorLessThan< T >", "structigl_1_1IndexVectorLessThan.html", null ],
+    [ "std::istream", null, [
+      [ "igl::FileMemoryStream", "structigl_1_1FileMemoryStream.html", null ]
+    ] ],
+    [ "igl::KelvinletParams< Scalar >", "structigl_1_1KelvinletParams.html", null ],
+    [ "igl::matlab::MatlabWorkspace", "classigl_1_1matlab_1_1MatlabWorkspace.html", null ],
+    [ "igl::opengl::MeshGL", "classigl_1_1opengl_1_1MeshGL.html", null ],
+    [ "igl::min_quad_with_fixed_data< T >", "structigl_1_1min__quad__with__fixed__data.html", null ],
+    [ "igl::min_quad_with_fixed_data< double >", "structigl_1_1min__quad__with__fixed__data.html", null ],
+    [ "igl::min_quad_with_fixed_data< Scalar >", "structigl_1_1min__quad__with__fixed__data.html", null ],
+    [ "igl::MshLoader::msh_struct", "structigl_1_1MshLoader_1_1msh__struct.html", null ],
+    [ "igl::MshLoader", "classigl_1_1MshLoader.html", null ],
+    [ "igl::MshSaver", "classigl_1_1MshSaver.html", null ],
+    [ "igl::tinyply::PlyData", "structigl_1_1tinyply_1_1PlyData.html", null ],
+    [ "igl::tinyply::PlyElement", "structigl_1_1tinyply_1_1PlyElement.html", null ],
+    [ "igl::tinyply::PlyFile", "structigl_1_1tinyply_1_1PlyFile.html", null ],
+    [ "igl::tinyply::PlyProperty", "structigl_1_1tinyply_1_1PlyProperty.html", null ],
+    [ "igl::tinyply::PropertyInfo", "structigl_1_1tinyply_1_1PropertyInfo.html", null ],
+    [ "igl::ShapeupData", "structigl_1_1ShapeupData.html", null ],
+    [ "igl::SLIMData", "structigl_1_1SLIMData.html", null ],
+    [ "igl::SortableRow< T >", "classigl_1_1SortableRow.html", null ],
+    [ "std::streambuf", null, [
+      [ "igl::FileMemoryBuffer", "structigl_1_1FileMemoryBuffer.html", [
+        [ "igl::FileMemoryStream", "structigl_1_1FileMemoryStream.html", null ]
+      ] ]
+    ] ],
+    [ "igl::opengl::MeshGL::TextGL", "structigl_1_1opengl_1_1MeshGL_1_1TextGL.html", null ],
+    [ "igl::Timer", "classigl_1_1Timer.html", null ],
+    [ "igl::FastWindingNumber::HDK_Sample::UT_SolidAngle< T1, T2 >", "classigl_1_1FastWindingNumber_1_1HDK__Sample_1_1UT__SolidAngle.html", null ],
+    [ "igl::FastWindingNumber::HDK_Sample::UT_SolidAngle< float, float >", "classigl_1_1FastWindingNumber_1_1HDK__Sample_1_1UT__SolidAngle.html", null ],
+    [ "igl::opengl::glfw::Viewer", "classigl_1_1opengl_1_1glfw_1_1Viewer.html", null ],
+    [ "igl::opengl::ViewerData", "classigl_1_1opengl_1_1ViewerData.html", null ],
+    [ "igl::WindingNumberTree< Point, DerivedV, DerivedF >", "classigl_1_1WindingNumberTree.html", null ]
+];

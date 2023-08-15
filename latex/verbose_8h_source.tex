@@ -1,0 +1,49 @@
+\doxysection{verbose.\+h}
+\hypertarget{verbose_8h_source}{}\label{verbose_8h_source}\index{include/igl/verbose.h@{include/igl/verbose.h}}
+\mbox{\hyperlink{verbose_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2013\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_VERBOSE\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_VERBOSE\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ This\ function\ is\ only\ useful\ as\ a\ header-\/only\ inlined\ function}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00022\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceigl_a1052b6f357eb1bcc4258d45490d866ad}{verbose}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ msg,...);}
+\DoxyCodeLine{00023\ \}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <cstdio>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#ifdef\ VERBOSE}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#\ \ include\ <cstdarg>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00033\ \textcolor{comment}{//\ http://channel9.msdn.com/forums/techoff/254707-\/wrapping-\/printf-\/in-\/c/}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#ifdef\ VERBOSE}}
+\DoxyCodeLine{00035\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceigl_a1052b6f357eb1bcc4258d45490d866ad}{igl::verbose}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ msg,...)}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \ \ va\_list\ argList;}
+\DoxyCodeLine{00038\ \ \ va\_start(argList,\ msg);}
+\DoxyCodeLine{00039\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceigl_a83819bb842f4bc4c8af21a98e1db44b3}{count}}\ =\ vprintf(msg,\ argList);}
+\DoxyCodeLine{00040\ \ \ va\_end(argList);}
+\DoxyCodeLine{00041\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceigl_a83819bb842f4bc4c8af21a98e1db44b3}{count}};}
+\DoxyCodeLine{00042\ \}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00044\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceigl_a1052b6f357eb1bcc4258d45490d866ad}{igl::verbose}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \textcolor{comment}{/*msg*/},...)}
+\DoxyCodeLine{00045\ \{}
+\DoxyCodeLine{00046\ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00047\ \}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

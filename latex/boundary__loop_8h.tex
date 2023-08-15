@@ -1,0 +1,20 @@
+\doxysection{include/igl/boundary\+\_\+loop.h File Reference}
+\hypertarget{boundary__loop_8h}{}\label{boundary__loop_8h}\index{include/igl/boundary\_loop.h@{include/igl/boundary\_loop.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \"{}boundary\+\_\+loop.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedF , typename Index $>$ }\\void \mbox{\hyperlink{namespaceigl_adb06d6406b52700028680b4b2c727700}{igl\+::boundary\+\_\+loop}} (const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, std\+::vector$<$ std\+::vector$<$ Index $>$ $>$ \&L)
+\begin{DoxyCompactList}\small\item\em Compute list of ordered boundary loops for a manifold mesh. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedF , typename Index $>$ }\\void \mbox{\hyperlink{namespaceigl_a21468e50560667302d1637ed6895b29a}{igl\+::boundary\+\_\+loop}} (const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, std\+::vector$<$ Index $>$ \&L)
+\begin{DoxyCompactList}\small\item\em Compute ordered boundary loops for a manifold mesh and return the longest loop in terms of vertices. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedF , typename DerivedL $>$ }\\void \mbox{\hyperlink{namespaceigl_a82fec963303eda50e7dec22793b756d8}{igl\+::boundary\+\_\+loop}} (const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ DerivedL $>$ \&L)
+\begin{DoxyCompactList}\small\item\em Compute ordered boundary loops for a manifold mesh and return the longest loop in terms of vertices. \end{DoxyCompactList}\end{DoxyCompactItemize}

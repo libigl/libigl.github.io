@@ -1,0 +1,39 @@
+\doxysection{dqs.\+h}
+\hypertarget{dqs_8h_source}{}\label{dqs_8h_source}\index{include/igl/dqs.h@{include/igl/dqs.h}}
+\mbox{\hyperlink{dqs_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2014\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_DQS\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_DQS\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00022\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedW,}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{typename}\ Q,}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{typename}\ QAlloc,}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{typename}\ T,}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedU>}
+\DoxyCodeLine{00029\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_ae135ef705d377be39be52549ba816de4}{dqs}}(}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedW>\ \&\ W,}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<Q,QAlloc>\ \&\ vQ,}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<T>\ \&\ vT,}
+\DoxyCodeLine{00034\ \ \ \ \ Eigen::PlainObjectBase<DerivedU>\ \&\ U);}
+\DoxyCodeLine{00035\ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#\ \ include\ "{}dqs.cpp"{}}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

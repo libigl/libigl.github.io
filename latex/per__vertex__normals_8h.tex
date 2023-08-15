@@ -1,0 +1,33 @@
+\doxysection{include/igl/per\+\_\+vertex\+\_\+normals.h File Reference}
+\hypertarget{per__vertex__normals_8h}{}\label{per__vertex__normals_8h}\index{include/igl/per\_vertex\_normals.h@{include/igl/per\_vertex\_normals.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include \"{}per\+\_\+vertex\+\_\+normals.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespaceigl_a9bd1d9465ddaaed7691194b99b3b9f94}{igl\+::\+Per\+Vertex\+Normals\+Weighting\+Type}} \{ \newline
+\mbox{\hyperlink{namespaceigl_a9bd1d9465ddaaed7691194b99b3b9f94a221b3f6444f4194512508cce2c89d605}{igl\+::\+PER\+\_\+\+VERTEX\+\_\+\+NORMALS\+\_\+\+WEIGHTING\+\_\+\+TYPE\+\_\+\+UNIFORM}} = 0
+, \mbox{\hyperlink{namespaceigl_a9bd1d9465ddaaed7691194b99b3b9f94a6f6afda8e7e65ddb0214f4bf4fe9d714}{igl\+::\+PER\+\_\+\+VERTEX\+\_\+\+NORMALS\+\_\+\+WEIGHTING\+\_\+\+TYPE\+\_\+\+AREA}} = 1
+, \mbox{\hyperlink{namespaceigl_a9bd1d9465ddaaed7691194b99b3b9f94a3929a73f6d85de3ab2e7f61c4c569f8d}{igl\+::\+PER\+\_\+\+VERTEX\+\_\+\+NORMALS\+\_\+\+WEIGHTING\+\_\+\+TYPE\+\_\+\+ANGLE}} = 2
+, \mbox{\hyperlink{namespaceigl_a9bd1d9465ddaaed7691194b99b3b9f94a8384f77b5ce9bc68e6ed0c9dac5520f8}{igl\+::\+PER\+\_\+\+VERTEX\+\_\+\+NORMALS\+\_\+\+WEIGHTING\+\_\+\+TYPE\+\_\+\+DEFAULT}} = 3
+, \newline
+\mbox{\hyperlink{namespaceigl_a9bd1d9465ddaaed7691194b99b3b9f94ae39893168b9c7f1fb96cbe18aabcaf90}{igl\+::\+NUM\+\_\+\+PER\+\_\+\+VERTEX\+\_\+\+NORMALS\+\_\+\+WEIGHTING\+\_\+\+TYPE}} = 4
+ \}
+\begin{DoxyCompactList}\small\item\em Weighting schemes for computing per-\/vertex normals. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedN $>$ }\\void \mbox{\hyperlink{namespaceigl_a7d913043c5590b413bc2ea64adae0c17}{igl\+::per\+\_\+vertex\+\_\+normals}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const \mbox{\hyperlink{namespaceigl_a9bd1d9465ddaaed7691194b99b3b9f94}{igl\+::\+Per\+Vertex\+Normals\+Weighting\+Type}} weighting, Eigen\+::\+Plain\+Object\+Base$<$ DerivedN $>$ \&N)
+\begin{DoxyCompactList}\small\item\em Compute vertex normals via vertex position list, face list. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedN $>$ }\\void \mbox{\hyperlink{namespaceigl_a3b0ea8f0fee8d96f0acbda506d40fe2d}{igl\+::per\+\_\+vertex\+\_\+normals}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ DerivedN $>$ \&N)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename Derived\+FN , typename DerivedN $>$ }\\void \mbox{\hyperlink{namespaceigl_aa29a9edc300d4684a03a6d656d2d715c}{igl\+::per\+\_\+vertex\+\_\+normals}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const \mbox{\hyperlink{namespaceigl_a9bd1d9465ddaaed7691194b99b3b9f94}{Per\+Vertex\+Normals\+Weighting\+Type}} weighting, const Eigen\+::\+Matrix\+Base$<$ Derived\+FN $>$ \&FN, Eigen\+::\+Plain\+Object\+Base$<$ DerivedN $>$ \&N)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename Derived\+FN , typename DerivedN $>$ }\\void \mbox{\hyperlink{namespaceigl_addca97c5fd3aeb0c2ed9fb260b020092}{igl\+::per\+\_\+vertex\+\_\+normals}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const Eigen\+::\+Matrix\+Base$<$ Derived\+FN $>$ \&FN, Eigen\+::\+Plain\+Object\+Base$<$ DerivedN $>$ \&N)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}

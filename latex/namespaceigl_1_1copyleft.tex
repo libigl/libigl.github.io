@@ -1,0 +1,227 @@
+\doxysection{igl\+::copyleft Namespace Reference}
+\hypertarget{namespaceigl_1_1copyleft}{}\label{namespaceigl_1_1copyleft}\index{igl::copyleft@{igl::copyleft}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Derived\+Values , typename Derived\+Points , typename Derived\+Vertices , typename Derived\+Faces $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1copyleft_a5c5920cc7d10f7fc5a4de60dcee97163}{marching\+\_\+cubes}} (const Eigen\+::\+Matrix\+Base$<$ Derived\+Values $>$ \&values, const Eigen\+::\+Matrix\+Base$<$ Derived\+Points $>$ \&points, const unsigned x\+\_\+res, const unsigned y\+\_\+res, const unsigned z\+\_\+res, const double isovalue, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+Vertices $>$ \&vertices, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+Faces $>$ \&faces)
+\begin{DoxyCompactList}\small\item\em Performs marching cubes reconstruction on a grid defined by values, and points, and generates a mesh defined by vertices and faces. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derived\+Values , typename Derived\+Points , typename Derived\+Vertices , typename Derived\+Faces $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1copyleft_a2df017abd3ecc522475b1c761dfcb884}{marching\+\_\+cubes}} (const Eigen\+::\+Matrix\+Base$<$ Derived\+Values $>$ \&values, const Eigen\+::\+Matrix\+Base$<$ Derived\+Points $>$ \&points, const unsigned x\+\_\+res, const unsigned y\+\_\+res, const unsigned z\+\_\+res, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+Vertices $>$ \&vertices, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+Faces $>$ \&faces)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Overload of the above function where the isovalue defaults to 0.\+0. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derived\+Value , typename Derived\+Point , typename Derived\+Points , typename Derived\+Vertices , typename Derived\+Faces $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1copyleft_a94e085211bca600f67f086f3a489c415}{marching\+\_\+cubes}} (const std\+::function$<$ Derived\+Value(const Derived\+Point \&) $>$ \&value\+\_\+fun, const Eigen\+::\+Matrix\+Base$<$ Derived\+Points $>$ \&points, const unsigned x\+\_\+res, const unsigned y\+\_\+res, const unsigned z\+\_\+res, const double isovalue, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+Vertices $>$ \&vertices, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+Faces $>$ \&faces)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derived\+Values , typename Derived\+Points , typename Derived\+Vertices , typename Derived\+Indices , typename Derived\+Faces $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1copyleft_a58cd861ba98a41b35dcb8c94f147e27f}{marching\+\_\+cubes}} (const Eigen\+::\+Matrix\+Base$<$ Derived\+Values $>$ \&values, const Eigen\+::\+Matrix\+Base$<$ Derived\+Points $>$ \&points, const Eigen\+::\+Matrix\+Base$<$ Derived\+Indices $>$ \&indices, const double isovalue, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+Vertices $>$ \&vertices, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+Faces $>$ \&faces)
+\begin{DoxyCompactList}\small\item\em Perform marching cubes reconstruction on the sparse grid cells defined by (indices, points). \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derived\+Values , typename Derived\+Points , typename Derived\+Vertices , typename Derived\+Indices , typename Derived\+Faces $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1copyleft_acd17c22c13a6d3000c4d3553c47122fe}{marching\+\_\+cubes}} (const Eigen\+::\+Matrix\+Base$<$ Derived\+Values $>$ \&values, const Eigen\+::\+Matrix\+Base$<$ Derived\+Points $>$ \&points, const Eigen\+::\+Matrix\+Base$<$ Derived\+Indices $>$ \&indices, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+Vertices $>$ \&vertices, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+Faces $>$ \&faces)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceigl_1_1copyleft_a127b3a99bb9ceb2143b6a5c1a524574a}{progressive\+\_\+hulls}} (const Eigen\+::\+Matrix\+Xd \&V, const Eigen\+::\+Matrix\+Xi \&F, const size\+\_\+t max\+\_\+m, Eigen\+::\+Matrix\+Xd \&U, Eigen\+::\+Matrix\+Xi \&G, Eigen\+::\+Vector\+Xi \&J)
+\begin{DoxyCompactList}\small\item\em Collapses edges until desired number of faces is achieved but ensures that new vertices are placed outside all previous meshes as per \"{}progressive hulls\"{} in \"{}\+Silhouette clipping\"{} \mbox{[}Sander et al. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceigl_1_1copyleft_a411d44b5d8f23907ab845053fbf98a2a}{progressive\+\_\+hulls\+\_\+cost\+\_\+and\+\_\+placement}} (const int e, const Eigen\+::\+Matrix\+Xd \&V, const Eigen\+::\+Matrix\+Xi \&F, const Eigen\+::\+Matrix\+Xi \&E, const Eigen\+::\+Vector\+Xi \&EMAP, const Eigen\+::\+Matrix\+Xi \&EF, const Eigen\+::\+Matrix\+Xi \&EI, double \&cost, Eigen\+::\+Row\+Vector\+Xd \&p)
+\begin{DoxyCompactList}\small\item\em A \"{}cost and placement\"{} compatible with {\ttfamily \doxylink{namespaceigl_a48e2a2c1ae537d160f7767a230be66b3}{igl\+::decimate}} implementing the \"{}progressive hulls\"{} algorithm in \"{}\+Silhouette clipping\"{} \mbox{[}Sander et al. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceigl_1_1copyleft_a61ed7a42a1c65a33d80828d77d2d940d}{quadprog}} (const Eigen\+::\+Matrix\+Xd \&G, const Eigen\+::\+Vector\+Xd \&g0, const Eigen\+::\+Matrix\+Xd \&CE, const Eigen\+::\+Vector\+Xd \&ce0, const Eigen\+::\+Matrix\+Xd \&CI, const Eigen\+::\+Vector\+Xd \&ci0, Eigen\+::\+Vector\+Xd \&x)
+\begin{DoxyCompactList}\small\item\em Solve a (dense) convex quadratric program. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceigl_1_1copyleft_a5c5920cc7d10f7fc5a4de60dcee97163}\label{namespaceigl_1_1copyleft_a5c5920cc7d10f7fc5a4de60dcee97163} 
+\index{igl::copyleft@{igl::copyleft}!marching\_cubes@{marching\_cubes}}
+\index{marching\_cubes@{marching\_cubes}!igl::copyleft@{igl::copyleft}}
+\doxysubsubsection{\texorpdfstring{marching\_cubes()}{marching\_cubes()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily template$<$typename Derived\+Values , typename Derived\+Points , typename Derived\+Vertices , typename Derived\+Faces $>$ \\
+void igl\+::copyleft\+::marching\+\_\+cubes (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+Values $>$ \&}]{values,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+Points $>$ \&}]{points,  }\item[{const unsigned}]{x\+\_\+res,  }\item[{const unsigned}]{y\+\_\+res,  }\item[{const unsigned}]{z\+\_\+res,  }\item[{const double}]{isovalue,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+Vertices $>$ \&}]{vertices,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+Faces $>$ \&}]{faces }\end{DoxyParamCaption})}
+
+
+
+Performs marching cubes reconstruction on a grid defined by values, and points, and generates a mesh defined by vertices and faces. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em values} & \#number\+\_\+of\+\_\+grid\+\_\+points x 1 array -- the scalar values of an implicit function defined on the grid points (\texorpdfstring{$<$}{<}0 in the inside of the surface, 0 on the border, \texorpdfstring{$>$}{>}0 outside) \\
+\hline
+\mbox{\texttt{ in}}  & {\em points} & \#number\+\_\+of\+\_\+grid\+\_\+points x 3 array -- 3-\/D positions of the grid points, ordered in x,y,z order\+: points\mbox{[}index\mbox{]} = the point at (x,y,z) where \+: x = (index \% (xres -\/1), y = (index / (xres-\/1)) \%(yres-\/1), z = index / (xres -\/1) / (yres -\/1) ). where x,y,z index x, y, z dimensions i.\+e. index = x + y\texorpdfstring{$\ast$}{*}xres + z\texorpdfstring{$\ast$}{*}xres\texorpdfstring{$\ast$}{*}yres \\
+\hline
+\mbox{\texttt{ in}}  & {\em xres} & resolutions of the grid in x dimension \\
+\hline
+\mbox{\texttt{ in}}  & {\em yres} & resolutions of the grid in y dimension \\
+\hline
+\mbox{\texttt{ in}}  & {\em zres} & resolutions of the grid in z dimension \\
+\hline
+\mbox{\texttt{ in}}  & {\em isovalue} & the isovalue of the surface to reconstruct \\
+\hline
+\mbox{\texttt{ out}}  & {\em vertices} & \#V by 3 list of mesh vertex positions \\
+\hline
+\mbox{\texttt{ out}}  & {\em faces} & \#F by 3 list of mesh triangle indices\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{namespaceigl_a3e677970b7188cac95bc9f93181f2ed7}{igl\+::marching\+\_\+cubes} 
+\end{DoxySeeAlso}
+\Hypertarget{namespaceigl_1_1copyleft_a2df017abd3ecc522475b1c761dfcb884}\label{namespaceigl_1_1copyleft_a2df017abd3ecc522475b1c761dfcb884} 
+\index{igl::copyleft@{igl::copyleft}!marching\_cubes@{marching\_cubes}}
+\index{marching\_cubes@{marching\_cubes}!igl::copyleft@{igl::copyleft}}
+\doxysubsubsection{\texorpdfstring{marching\_cubes()}{marching\_cubes()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily template$<$typename Derived\+Values , typename Derived\+Points , typename Derived\+Vertices , typename Derived\+Faces $>$ \\
+void igl\+::copyleft\+::marching\+\_\+cubes (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+Values $>$ \&}]{values,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+Points $>$ \&}]{points,  }\item[{const unsigned}]{x\+\_\+res,  }\item[{const unsigned}]{y\+\_\+res,  }\item[{const unsigned}]{z\+\_\+res,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+Vertices $>$ \&}]{vertices,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+Faces $>$ \&}]{faces }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Overload of the above function where the isovalue defaults to 0.\+0. 
+
+\Hypertarget{namespaceigl_1_1copyleft_a94e085211bca600f67f086f3a489c415}\label{namespaceigl_1_1copyleft_a94e085211bca600f67f086f3a489c415} 
+\index{igl::copyleft@{igl::copyleft}!marching\_cubes@{marching\_cubes}}
+\index{marching\_cubes@{marching\_cubes}!igl::copyleft@{igl::copyleft}}
+\doxysubsubsection{\texorpdfstring{marching\_cubes()}{marching\_cubes()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily template$<$typename Derived\+Value , typename Derived\+Point , typename Derived\+Points , typename Derived\+Vertices , typename Derived\+Faces $>$ \\
+void igl\+::copyleft\+::marching\+\_\+cubes (\begin{DoxyParamCaption}\item[{const std\+::function$<$ Derived\+Value(const Derived\+Point \&) $>$ \&}]{value\+\_\+fun,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+Points $>$ \&}]{points,  }\item[{const unsigned}]{x\+\_\+res,  }\item[{const unsigned}]{y\+\_\+res,  }\item[{const unsigned}]{z\+\_\+res,  }\item[{const double}]{isovalue,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+Vertices $>$ \&}]{vertices,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+Faces $>$ \&}]{faces }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value\+\_\+fun} & a function that takes a 3D point and returns a scalar value \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespaceigl_1_1copyleft_a58cd861ba98a41b35dcb8c94f147e27f}\label{namespaceigl_1_1copyleft_a58cd861ba98a41b35dcb8c94f147e27f} 
+\index{igl::copyleft@{igl::copyleft}!marching\_cubes@{marching\_cubes}}
+\index{marching\_cubes@{marching\_cubes}!igl::copyleft@{igl::copyleft}}
+\doxysubsubsection{\texorpdfstring{marching\_cubes()}{marching\_cubes()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily template$<$typename Derived\+Values , typename Derived\+Points , typename Derived\+Vertices , typename Derived\+Indices , typename Derived\+Faces $>$ \\
+void igl\+::copyleft\+::marching\+\_\+cubes (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+Values $>$ \&}]{values,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+Points $>$ \&}]{points,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+Indices $>$ \&}]{indices,  }\item[{const double}]{isovalue,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+Vertices $>$ \&}]{vertices,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+Faces $>$ \&}]{faces }\end{DoxyParamCaption})}
+
+
+
+Perform marching cubes reconstruction on the sparse grid cells defined by (indices, points). 
+
+The indices parameter is an nx8 dense array of index values into the points and values arrays. Each row of indices represents a cube for which to generate vertices and faces over.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em values} & \#number\+\_\+of\+\_\+grid\+\_\+points x 1 array -- the scalar values of an implicit function defined on the grid points (\texorpdfstring{$<$}{<}0 in the inside of the surface, 0 on the border, \texorpdfstring{$>$}{>}0 outside) \\
+\hline
+\mbox{\texttt{ in}}  & {\em points} & \#number\+\_\+of\+\_\+grid\+\_\+points x 3 array -- 3-\/D positions of the grid points, ordered in x,y,z order\+: \\
+\hline
+\mbox{\texttt{ in}}  & {\em indices} & \#cubes x 8 array -- one row for each cube where each value is the index of a vertex in points and a scalar in values. i.\+e. points\mbox{[}indices\mbox{[}i, j\mbox{]}\mbox{]} = the position of the j\textquotesingle{}th vertex of the i\textquotesingle{}th cube \\
+\hline
+\mbox{\texttt{ out}}  & {\em vertices} & \#V by 3 list of mesh vertex positions \\
+\hline
+\mbox{\texttt{ out}}  & {\em faces} & \#F by 3 list of mesh triangle indices\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The winding direction of the cube indices will affect the output winding of the faces 
+\end{DoxyNote}
+\Hypertarget{namespaceigl_1_1copyleft_acd17c22c13a6d3000c4d3553c47122fe}\label{namespaceigl_1_1copyleft_acd17c22c13a6d3000c4d3553c47122fe} 
+\index{igl::copyleft@{igl::copyleft}!marching\_cubes@{marching\_cubes}}
+\index{marching\_cubes@{marching\_cubes}!igl::copyleft@{igl::copyleft}}
+\doxysubsubsection{\texorpdfstring{marching\_cubes()}{marching\_cubes()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily template$<$typename Derived\+Values , typename Derived\+Points , typename Derived\+Vertices , typename Derived\+Indices , typename Derived\+Faces $>$ \\
+void igl\+::copyleft\+::marching\+\_\+cubes (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+Values $>$ \&}]{values,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+Points $>$ \&}]{points,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+Indices $>$ \&}]{indices,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+Vertices $>$ \&}]{vertices,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+Faces $>$ \&}]{faces }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+isovalue defaults to 0.\+0 \Hypertarget{namespaceigl_1_1copyleft_a127b3a99bb9ceb2143b6a5c1a524574a}\label{namespaceigl_1_1copyleft_a127b3a99bb9ceb2143b6a5c1a524574a} 
+\index{igl::copyleft@{igl::copyleft}!progressive\_hulls@{progressive\_hulls}}
+\index{progressive\_hulls@{progressive\_hulls}!igl::copyleft@{igl::copyleft}}
+\doxysubsubsection{\texorpdfstring{progressive\_hulls()}{progressive\_hulls()}}
+{\footnotesize\ttfamily bool igl\+::copyleft\+::progressive\+\_\+hulls (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Xi \&}]{F,  }\item[{const size\+\_\+t}]{max\+\_\+m,  }\item[{Eigen\+::\+Matrix\+Xd \&}]{U,  }\item[{Eigen\+::\+Matrix\+Xi \&}]{G,  }\item[{Eigen\+::\+Vector\+Xi \&}]{J }\end{DoxyParamCaption})}
+
+
+
+Collapses edges until desired number of faces is achieved but ensures that new vertices are placed outside all previous meshes as per \"{}progressive hulls\"{} in \"{}\+Silhouette clipping\"{} \mbox{[}Sander et al. 
+
+2000\mbox{]}.
+
+\begin{DoxyPrecond}{Precondition}
+Assumes (V,F) is a closed manifold mesh
+\end{DoxyPrecond}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em V} & \#V by dim list of vertex positions \\
+\hline
+\mbox{\texttt{ in}}  & {\em F} & \#F by 3 list of face indices into V. \\
+\hline
+\mbox{\texttt{ in}}  & {\em max\+\_\+m} & desired number of output faces \\
+\hline
+\mbox{\texttt{ out}}  & {\em U} & \#U by dim list of output vertex posistions (can be same ref as V) \\
+\hline
+\mbox{\texttt{ out}}  & {\em G} & \#G by 3 list of output face indices into U (can be same ref as G) \\
+\hline
+\mbox{\texttt{ out}}  & {\em J} & \#G list of indices into F of birth faces \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if m was reached (otherwise \#G \texorpdfstring{$>$}{>} m) 
+\end{DoxyReturn}
+\Hypertarget{namespaceigl_1_1copyleft_a411d44b5d8f23907ab845053fbf98a2a}\label{namespaceigl_1_1copyleft_a411d44b5d8f23907ab845053fbf98a2a} 
+\index{igl::copyleft@{igl::copyleft}!progressive\_hulls\_cost\_and\_placement@{progressive\_hulls\_cost\_and\_placement}}
+\index{progressive\_hulls\_cost\_and\_placement@{progressive\_hulls\_cost\_and\_placement}!igl::copyleft@{igl::copyleft}}
+\doxysubsubsection{\texorpdfstring{progressive\_hulls\_cost\_and\_placement()}{progressive\_hulls\_cost\_and\_placement()}}
+{\footnotesize\ttfamily void igl\+::copyleft\+::progressive\+\_\+hulls\+\_\+cost\+\_\+and\+\_\+placement (\begin{DoxyParamCaption}\item[{const int}]{e,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Xi \&}]{F,  }\item[{const Eigen\+::\+Matrix\+Xi \&}]{E,  }\item[{const Eigen\+::\+Vector\+Xi \&}]{EMAP,  }\item[{const Eigen\+::\+Matrix\+Xi \&}]{EF,  }\item[{const Eigen\+::\+Matrix\+Xi \&}]{EI,  }\item[{double \&}]{cost,  }\item[{Eigen\+::\+Row\+Vector\+Xd \&}]{p }\end{DoxyParamCaption})}
+
+
+
+A \"{}cost and placement\"{} compatible with {\ttfamily \doxylink{namespaceigl_a48e2a2c1ae537d160f7767a230be66b3}{igl\+::decimate}} implementing the \"{}progressive hulls\"{} algorithm in \"{}\+Silhouette clipping\"{} \mbox{[}Sander et al. 
+
+2000\mbox{]}. This implementation fixes an issue that the original linear program becomes unstable for flat patches by introducing a small quadratic energy term pulling the collapsed edge toward its midpoint. This function is not really meant to be called directly but rather passed to {\ttfamily \doxylink{namespaceigl_a48e2a2c1ae537d160f7767a230be66b3}{igl\+::decimate}} as a handle.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em e} & index of edge to be collapsed \\
+\hline
+\mbox{\texttt{ in}}  & {\em V} & \#V by 3 list of vertex positions \\
+\hline
+\mbox{\texttt{ in}}  & {\em F} & \#F by 3 list of faces indices into V \\
+\hline
+\mbox{\texttt{ in}}  & {\em E} & \#E by 3 list of edges indices into V \\
+\hline
+\mbox{\texttt{ in}}  & {\em EMAP} & \#F\texorpdfstring{$\ast$}{*}3 list of indices into E, mapping each directed edge to unique unique edge in E \\
+\hline
+\mbox{\texttt{ in}}  & {\em EF} & \#E by 2 list of edge flaps, EF(e,0)=f means e=(i-\/-\/\texorpdfstring{$>$}{>}j) is the edge of F(f,\+:) opposite the vth corner, where EI(e,0)=v. Similarly EF(e,1) "{} e=(j-\/\texorpdfstring{$>$}{>}i) \\
+\hline
+\mbox{\texttt{ in}}  & {\em EI} & \#E by 2 list of edge flap corners (see above). \\
+\hline
+\mbox{\texttt{ out}}  & {\em cost} & cost of collapsing edge e \\
+\hline
+\mbox{\texttt{ out}}  & {\em p} & position to place collapsed vertex\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{namespaceigl_a48e2a2c1ae537d160f7767a230be66b3}{igl\+::decimate}, \doxylink{namespaceigl_aa8e3cfdf30adcadd5172a4f0b862bf59}{igl\+::collapse\+\_\+edge} 
+\end{DoxySeeAlso}
+\Hypertarget{namespaceigl_1_1copyleft_a61ed7a42a1c65a33d80828d77d2d940d}\label{namespaceigl_1_1copyleft_a61ed7a42a1c65a33d80828d77d2d940d} 
+\index{igl::copyleft@{igl::copyleft}!quadprog@{quadprog}}
+\index{quadprog@{quadprog}!igl::copyleft@{igl::copyleft}}
+\doxysubsubsection{\texorpdfstring{quadprog()}{quadprog()}}
+{\footnotesize\ttfamily bool igl\+::copyleft\+::quadprog (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{G,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{g0,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{CE,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{ce0,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{CI,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{ci0,  }\item[{Eigen\+::\+Vector\+Xd \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Solve a (dense) convex quadratric program. 
+
+Given in the form \begin{DoxyVerb} min  0.5 x G x + g0 x
+ s.t. CE' x + ce0  = 0
+ and  CI' x + ci0 >= 0
+\end{DoxyVerb}
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em G} & \#x by \#x matrix of quadratic coefficients \\
+\hline
+\mbox{\texttt{ in}}  & {\em g0} & \#x vector of linear coefficients \\
+\hline
+\mbox{\texttt{ in}}  & {\em CE} & \#x by \#\+CE list of linear equality coefficients \\
+\hline
+\mbox{\texttt{ in}}  & {\em ce0} & \#\+CE list of linear equality right-\/hand sides \\
+\hline
+\mbox{\texttt{ in}}  & {\em CI} & \#x by \#\+CI list of linear equality coefficients \\
+\hline
+\mbox{\texttt{ in}}  & {\em ci0} & \#\+CI list of linear equality right-\/hand sides \\
+\hline
+\mbox{\texttt{ out}}  & {\em x} & \#x vector of solution values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true iff success 
+\end{DoxyReturn}

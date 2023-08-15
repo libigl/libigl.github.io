@@ -1,0 +1,68 @@
+\doxysection{per\+\_\+vertex\+\_\+normals.\+h}
+\hypertarget{per__vertex__normals_8h_source}{}\label{per__vertex__normals_8h_source}\index{include/igl/per\_vertex\_normals.h@{include/igl/per\_vertex\_normals.h}}
+\mbox{\hyperlink{per__vertex__normals_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2013\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_PER\_VERTEX\_NORMALS\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_PER\_VERTEX\_NORMALS\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00018\ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespaceigl_a9bd1d9465ddaaed7691194b99b3b9f94}{PerVertexNormalsWeightingType}}}
+\DoxyCodeLine{00019\ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{namespaceigl_a9bd1d9465ddaaed7691194b99b3b9f94a221b3f6444f4194512508cce2c89d605}{PER\_VERTEX\_NORMALS\_WEIGHTING\_TYPE\_UNIFORM}}\ =\ 0,}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{namespaceigl_a9bd1d9465ddaaed7691194b99b3b9f94a6f6afda8e7e65ddb0214f4bf4fe9d714}{PER\_VERTEX\_NORMALS\_WEIGHTING\_TYPE\_AREA}}\ =\ 1,}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{namespaceigl_a9bd1d9465ddaaed7691194b99b3b9f94a3929a73f6d85de3ab2e7f61c4c569f8d}{PER\_VERTEX\_NORMALS\_WEIGHTING\_TYPE\_ANGLE}}\ =\ 2,}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{namespaceigl_a9bd1d9465ddaaed7691194b99b3b9f94a8384f77b5ce9bc68e6ed0c9dac5520f8}{PER\_VERTEX\_NORMALS\_WEIGHTING\_TYPE\_DEFAULT}}\ =\ 3,}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{namespaceigl_a9bd1d9465ddaaed7691194b99b3b9f94ae39893168b9c7f1fb96cbe18aabcaf90}{NUM\_PER\_VERTEX\_NORMALS\_WEIGHTING\_TYPE}}\ =\ 4}
+\DoxyCodeLine{00030\ \ \ \};}
+\DoxyCodeLine{00037\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedN>}
+\DoxyCodeLine{00041\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a7d913043c5590b413bc2ea64adae0c17}{per\_vertex\_normals}}(}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\&\ V,}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\&\ F,}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceigl_a9bd1d9465ddaaed7691194b99b3b9f94}{igl::PerVertexNormalsWeightingType}}\ weighting,}
+\DoxyCodeLine{00045\ \ \ \ \ Eigen::PlainObjectBase<DerivedN>\ \&\ N);}
+\DoxyCodeLine{00047\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedN>}
+\DoxyCodeLine{00051\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a7d913043c5590b413bc2ea64adae0c17}{per\_vertex\_normals}}(}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\&\ V,}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\&\ F,}
+\DoxyCodeLine{00054\ \ \ \ \ Eigen::PlainObjectBase<DerivedN>\ \&\ N);}
+\DoxyCodeLine{00058\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF,\ \textcolor{keyword}{typename}\ DerivedFN,\ \textcolor{keyword}{typename}\ DerivedN>}
+\DoxyCodeLine{00059\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a7d913043c5590b413bc2ea64adae0c17}{per\_vertex\_normals}}(}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\&\ V,}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\&\ F,}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceigl_a9bd1d9465ddaaed7691194b99b3b9f94}{PerVertexNormalsWeightingType}}\ weighting,}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedFN>\&\ FN,}
+\DoxyCodeLine{00064\ \ \ \ \ Eigen::PlainObjectBase<DerivedN>\ \&\ N);}
+\DoxyCodeLine{00066\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFN,}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedN>}
+\DoxyCodeLine{00071\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a7d913043c5590b413bc2ea64adae0c17}{per\_vertex\_normals}}(}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\&\ V,}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\&\ F,}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedFN>\&\ FN,}
+\DoxyCodeLine{00075\ \ \ \ \ Eigen::PlainObjectBase<DerivedN>\ \&\ N);}
+\DoxyCodeLine{00076\ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#\ \ include\ "{}per\_vertex\_normals.cpp"{}}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,38 @@
+\doxysection{bounding\+\_\+box.\+h}
+\hypertarget{bounding__box_8h_source}{}\label{bounding__box_8h_source}\index{include/igl/bounding\_box.h@{include/igl/bounding\_box.h}}
+\mbox{\hyperlink{bounding__box_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2014\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_BOUNDING\_BOX\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_BOUNDING\_BOX\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00019\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedBV,\ \textcolor{keyword}{typename}\ DerivedBF>}
+\DoxyCodeLine{00020\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_ad3dc35283c38c7712366f3b0f9dd09a7}{bounding\_box}}(}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\&\ V,}
+\DoxyCodeLine{00022\ \ \ \ \ Eigen::PlainObjectBase<DerivedBV>\&\ BV,}
+\DoxyCodeLine{00023\ \ \ \ \ Eigen::PlainObjectBase<DerivedBF>\&\ BF);}
+\DoxyCodeLine{00027\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedBV,\ \textcolor{keyword}{typename}\ DerivedBF>}
+\DoxyCodeLine{00028\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_ad3dc35283c38c7712366f3b0f9dd09a7}{bounding\_box}}(}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\&\ V,}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{typename}\ DerivedV::Scalar\ pad,}
+\DoxyCodeLine{00031\ \ \ \ \ Eigen::PlainObjectBase<DerivedBV>\&\ BV,}
+\DoxyCodeLine{00032\ \ \ \ \ Eigen::PlainObjectBase<DerivedBF>\&\ BF);}
+\DoxyCodeLine{00033\ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#\ \ include\ "{}bounding\_box.cpp"{}}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00040\ }
+
+\end{DoxyCode}

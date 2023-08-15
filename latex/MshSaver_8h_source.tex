@@ -1,0 +1,87 @@
+\doxysection{Msh\+Saver.\+h}
+\hypertarget{MshSaver_8h_source}{}\label{MshSaver_8h_source}\index{include/igl/MshSaver.h@{include/igl/MshSaver.h}}
+\mbox{\hyperlink{MshSaver_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ based\ on\ MSH\ writer\ from\ PyMesh\ }}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (c)\ 2015\ Qingnan\ Zhou\ <qzhou@adobe.com>\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ Copyright\ (C)\ 2020\ Vladimir\ Fonov\ <vladimir.fonov@gmail.com>\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ Public\ License\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ }}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ with\ this\ file,\ You\ can\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.\ }}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ IGL\_MSH\_SAVER\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ IGL\_MSH\_SAVER\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}\ \{}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classigl_1_1MshSaver}{MshSaver}}\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classigl_1_1MshSaver_a3fef10a1a0dc3ace7283e7dbcf30078e}{Float}};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ std::vector<int>\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1MshSaver_a945ea2c6da475788ccf4bc10a702dece}{IndexVector}};}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ std::vector<int>\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1MshSaver_a1c543ddee654789540f2972bff826b26}{IntVector}};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ std::vector<Float>\ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1MshSaver_aaca191056efb814c54c1645d0037d304}{FloatVector}};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ std::vector<FloatVector>\ \mbox{\hyperlink{classigl_1_1MshSaver_a7193eb49ad56815c95ce202a52705630}{FloatField}};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ std::vector<IntVector>\ \ \ \mbox{\hyperlink{classigl_1_1MshSaver_aeca12ba03c22dc302c708b5d780b9926}{IntField}};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ std::vector<std::string>\ \mbox{\hyperlink{classigl_1_1MshSaver_a261940a64db6d7ba255d7755758e1cab}{FieldNames}};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1MshSaver_a3f9ca9c43d5cd09c05dff9d61f763bc9}{MshSaver}}(\textcolor{keyword}{const}\ std::string\&\ filename,\ \textcolor{keywordtype}{bool}\ binary=\textcolor{keyword}{true});}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1MshSaver_a9885efa95783f3db6021316cebf25d98}{\string~MshSaver}}();}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Only\ these\ element\ types\ are\ supported\ right\ now}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum}\ \{\mbox{\hyperlink{classigl_1_1MshSaver_a175c284f3dea9689851cfe3d213d5836aad2f602738c91006a873e192b8ec9ebb}{ELEMENT\_LINE}}=1,\ \mbox{\hyperlink{classigl_1_1MshSaver_a175c284f3dea9689851cfe3d213d5836a834f9346b0d805620585dc195581d1cf}{ELEMENT\_TRI}}=2,\ \mbox{\hyperlink{classigl_1_1MshSaver_a175c284f3dea9689851cfe3d213d5836ac194fa101729e3827db565d9e9398767}{ELEMENT\_QUAD}}=3,\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1MshSaver_a175c284f3dea9689851cfe3d213d5836a4ba27e7cdbc4ccbeea795fa37f5fd728}{ELEMENT\_TET}}=4,\ \ \mbox{\hyperlink{classigl_1_1MshSaver_a175c284f3dea9689851cfe3d213d5836a07d45d2165039b3a743d9bddacf24ba2}{ELEMENT\_HEX}}=5,\ \mbox{\hyperlink{classigl_1_1MshSaver_a175c284f3dea9689851cfe3d213d5836a0572e9f1e1b9158840fe026333b69b2e}{ELEMENT\_PRISM}}=6\ \};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ save\ mesh\ geometry}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1MshSaver_a7840e9d1feb34f945e52bfd8e12ba8c0}{save\_mesh}}(}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1MshSaver_aaca191056efb814c54c1645d0037d304}{FloatVector}}\&\ nodes,\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1MshSaver_a945ea2c6da475788ccf4bc10a702dece}{IndexVector}}\&\ elements,\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1MshSaver_a1c543ddee654789540f2972bff826b26}{IntVector}}\&\ element\_lengths,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1MshSaver_a1c543ddee654789540f2972bff826b26}{IntVector}}\&\ element\_type,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1MshSaver_a1c543ddee654789540f2972bff826b26}{IntVector}}\&\ element\_tags\ );}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ save\ additional\ fields\ associated\ with\ the\ mesh}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ add\ node\ scalar\ field}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1MshSaver_a9575468a7b6b2aeb4740eed0b6a2894b}{save\_scalar\_field}}(\textcolor{keyword}{const}\ std::string\&\ fieldname,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1MshSaver_aaca191056efb814c54c1645d0037d304}{FloatVector}}\&\ field);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ add\ node\ vectot\ field}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1MshSaver_a0f116b48718224fd75eb390cecbc3c4c}{save\_vector\_field}}(\textcolor{keyword}{const}\ std::string\&\ fieldname,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1MshSaver_aaca191056efb814c54c1645d0037d304}{FloatVector}}\&\ field);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ add\ element\ scalar\ field}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1MshSaver_a5916b17faf4b635859ae8b5e139c8ed2}{save\_elem\_scalar\_field}}(\textcolor{keyword}{const}\ std::string\&\ fieldname,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1MshSaver_aaca191056efb814c54c1645d0037d304}{FloatVector}}\&\ field);}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ add\ element\ vector\ field}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1MshSaver_af2290748083ec9b0639e201cbb709bae}{save\_elem\_vector\_field}}(\textcolor{keyword}{const}\ std::string\&\ fieldname,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1MshSaver_aaca191056efb814c54c1645d0037d304}{FloatVector}}\&\ field);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ add\ element\ tensor\ field}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1MshSaver_a7119143ffeac7ac8600a7cad04a9837f}{save\_elem\_tensor\_field}}(\textcolor{keyword}{const}\ std::string\&\ fieldname,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1MshSaver_aaca191056efb814c54c1645d0037d304}{FloatVector}}\&\ field);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1MshSaver_a5d608a2f5cbbada18e324a46d85eb486}{save\_header}}();}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1MshSaver_a47eba73e6be96cdfa9240e46590a2d7c}{save\_nodes}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1MshSaver_aaca191056efb814c54c1645d0037d304}{FloatVector}}\&\ nodes);}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1MshSaver_ad44dc9d64e4903009b925a3b4ed5fc76}{save\_elements}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1MshSaver_a945ea2c6da475788ccf4bc10a702dece}{IndexVector}}\&\ elements,\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1MshSaver_a1c543ddee654789540f2972bff826b26}{IntVector}}\&\ element\_lengths,}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1MshSaver_a1c543ddee654789540f2972bff826b26}{IntVector}}\&\ element\_type,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1MshSaver_a1c543ddee654789540f2972bff826b26}{IntVector}}\&\ element\_tags);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_binary;}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ m\_num\_nodes;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ m\_num\_elements;}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ std::ofstream\ fout;}
+\DoxyCodeLine{00080\ \};}
+\DoxyCodeLine{00081\ \}\ \textcolor{comment}{//igl}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#\ \ include\ "{}MshSaver.cpp"{}}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//MSH\_SAVER\_H}}
+
+\end{DoxyCode}

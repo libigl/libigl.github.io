@@ -1,0 +1,36 @@
+\doxysection{isolines\+\_\+map.\+h}
+\hypertarget{isolines__map_8h_source}{}\label{isolines__map_8h_source}\index{include/igl/isolines\_map.h@{include/igl/isolines\_map.h}}
+\mbox{\hyperlink{isolines__map_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ IGL\_ISOLINES\_MAP\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ IGL\_ISOLINES\_MAP\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00017\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedCM,}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{typename}\ Derivediso\_color,}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedICM\ >}
+\DoxyCodeLine{00021\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_ac262ba447b16b5edccade00d31f39722}{isolines\_map}}(}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedCM>\ \&\ CM,\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivediso\_color>\ \&\ iso\_color,}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ interval\_thickness,}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ iso\_thickness,}
+\DoxyCodeLine{00026\ \ \ \ \ Eigen::PlainObjectBase<DerivedICM>\ \&\ ICM);}
+\DoxyCodeLine{00028\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedCM,}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedICM>}
+\DoxyCodeLine{00031\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_ac262ba447b16b5edccade00d31f39722}{isolines\_map}}(}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedCM>\ \&\ CM,\ }
+\DoxyCodeLine{00033\ \ \ \ \ Eigen::PlainObjectBase<DerivedICM>\ \&\ ICM);}
+\DoxyCodeLine{00034\ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#\ \ include\ "{}isolines\_map.cpp"{}}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,22 @@
+\doxysection{include/igl/boundary\+\_\+facets.h File Reference}
+\hypertarget{boundary__facets_8h}{}\label{boundary__facets_8h}\index{include/igl/boundary\_facets.h@{include/igl/boundary\_facets.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \"{}boundary\+\_\+facets.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedT , typename DerivedF , typename DerivedJ , typename DerivedK $>$ }\\void \mbox{\hyperlink{namespaceigl_aa7d8c6202cbd9be61850e58d65fd3096}{igl\+::boundary\+\_\+facets}} (const Eigen\+::\+Matrix\+Base$<$ DerivedT $>$ \&T, Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ DerivedJ $>$ \&J, Eigen\+::\+Plain\+Object\+Base$<$ DerivedK $>$ \&K)
+\begin{DoxyCompactList}\small\item\em Determine boundary faces (edges) of tetrahedra (triangles) stored in T (analogous to qptoolbox\textquotesingle{}s {\ttfamily outline} and {\ttfamily boundary\+\_\+faces}). \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedT , typename DerivedF $>$ }\\void \mbox{\hyperlink{namespaceigl_a68133ab0b5aaff2f739a42c49f769512}{igl\+::boundary\+\_\+facets}} (const Eigen\+::\+Matrix\+Base$<$ DerivedT $>$ \&T, Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F)
+\begin{DoxyCompactList}\small\item\em Determine boundary faces (edges) of tetrahedra (triangles) stored in T. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedT , typename Ret $>$ }\\Ret \mbox{\hyperlink{namespaceigl_adfd8cee60db0ccd9448521c2c828430d}{igl\+::boundary\+\_\+facets}} (const Eigen\+::\+Matrix\+Base$<$ DerivedT $>$ \&T)
+\begin{DoxyCompactList}\small\item\em Determine boundary faces (edges) of tetrahedra (triangles) stored in T. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename IntegerT , typename IntegerF $>$ }\\void \mbox{\hyperlink{namespaceigl_a782f0e0282464889f69540a72db9e88b}{igl\+::boundary\+\_\+facets}} (const std\+::vector$<$ std\+::vector$<$ IntegerT $>$ $>$ \&T, std\+::vector$<$ std\+::vector$<$ IntegerF $>$ $>$ \&F)
+\begin{DoxyCompactList}\small\item\em Determine boundary faces (edges) of tetrahedra (triangles) stored in T; inputs and outputs lists. \end{DoxyCompactList}\end{DoxyCompactItemize}

@@ -1,0 +1,184 @@
+\doxysection{write\+PLY.\+h}
+\hypertarget{writePLY_8h_source}{}\label{writePLY_8h_source}\index{include/igl/writePLY.h@{include/igl/writePLY.h}}
+\mbox{\hyperlink{writePLY_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ IGL\_WRITEPLY\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ IGL\_WRITEPLY\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <igl/igl\_inline.h>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{FileEncoding_8h}{igl/FileEncoding.h}}>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00032\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedE,}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedN,}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedUV,}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVD,}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFD,}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedED}
+\DoxyCodeLine{00041\ \ \ >}
+\DoxyCodeLine{00042\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_ad75b8abd010b0cc4ce47469b3f855e42}{writePLY}}(}
+\DoxyCodeLine{00043\ \ \ \ \ std::ostream\ \&\ ply\_stream,}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedE>\ \&\ E,}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedN>\ \&\ N,}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedUV>\ \&\ UV,}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedVD>\ \&\ VD,}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\ \&\ VDheader,}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedFD>\ \&\ FD,}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\ \&\ FDheader,}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedED>\ \&\ ED,}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\ \&\ EDheader,}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\ \&\ comments,}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{namespaceigl_a85ec0330094fed10f10bb12010bbcdbf}{FileEncoding}}\ encoding}
+\DoxyCodeLine{00057\ \ \ \ \ \ );}
+\DoxyCodeLine{00060\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedE,}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedN,}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedUV,}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVD,}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFD,}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedED}
+\DoxyCodeLine{00069\ \ \ >}
+\DoxyCodeLine{00070\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_ad75b8abd010b0cc4ce47469b3f855e42}{writePLY}}(}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\ filename,}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedE>\ \&\ E,}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedN>\ \&\ N,}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedUV>\ \&\ UV,}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedVD>\ \&\ VD,}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\ \&\ VDheader,}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedFD>\ \&\ FD,}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\ \&\ FDheader,}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedED>\ \&\ ED,}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\ \&\ EDheader,}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\ \&\ comments,}
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{namespaceigl_a85ec0330094fed10f10bb12010bbcdbf}{FileEncoding}}\ encoding);}
+\DoxyCodeLine{00086\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF}
+\DoxyCodeLine{00089\ \ \ >}
+\DoxyCodeLine{00090\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_ad75b8abd010b0cc4ce47469b3f855e42}{writePLY}}(}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\ filename,}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F}
+\DoxyCodeLine{00094\ \ \ \ \ );}
+\DoxyCodeLine{00096\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedE}
+\DoxyCodeLine{00100\ \ \ >}
+\DoxyCodeLine{00101\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_ad75b8abd010b0cc4ce47469b3f855e42}{writePLY}}(}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\ filename,}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ E}
+\DoxyCodeLine{00106\ \ \ \ \ \ );}
+\DoxyCodeLine{00108\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedN,}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedUV}
+\DoxyCodeLine{00113\ \ \ >}
+\DoxyCodeLine{00114\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_ad75b8abd010b0cc4ce47469b3f855e42}{writePLY}}(}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\ filename,}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedN>\ \&\ N,}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedUV>\ \&\ UV}
+\DoxyCodeLine{00120\ \ \ \ \ \ );}
+\DoxyCodeLine{00122\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedE,}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedN,}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedUV}
+\DoxyCodeLine{00128\ \ \ >}
+\DoxyCodeLine{00129\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_ad75b8abd010b0cc4ce47469b3f855e42}{writePLY}}(}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\ filename,}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedE>\ \&\ E,}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedN>\ \&\ N,}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedUV>\ \&\ UV}
+\DoxyCodeLine{00136\ \ \ \ \ \ );}
+\DoxyCodeLine{00138\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF}
+\DoxyCodeLine{00141\ \ \ >}
+\DoxyCodeLine{00142\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_ad75b8abd010b0cc4ce47469b3f855e42}{writePLY}}(}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\ filename,}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00146\ \ \ \ \ \mbox{\hyperlink{namespaceigl_a85ec0330094fed10f10bb12010bbcdbf}{FileEncoding}}\ encoding}
+\DoxyCodeLine{00147\ \ \ \ \ \ );}
+\DoxyCodeLine{00149\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedE}
+\DoxyCodeLine{00153\ \ \ >}
+\DoxyCodeLine{00154\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_ad75b8abd010b0cc4ce47469b3f855e42}{writePLY}}(}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\ filename,}
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedE>\ \&\ E,}
+\DoxyCodeLine{00159\ \ \ \ \ \mbox{\hyperlink{namespaceigl_a85ec0330094fed10f10bb12010bbcdbf}{FileEncoding}}\ encoding}
+\DoxyCodeLine{00160\ \ \ \ \ \ );}
+\DoxyCodeLine{00162\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedN,}
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedUV,}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVD}
+\DoxyCodeLine{00168\ \ \ >}
+\DoxyCodeLine{00169\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_ad75b8abd010b0cc4ce47469b3f855e42}{writePLY}}(}
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\ filename,}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedN>\ \&\ N,}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedUV>\ \&\ UV,}
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedVD>\ \&\ VD=Eigen::MatrixXd(0,0),}
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\ \&\ VDheader=\{\},}
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\ \&\ comments=\{\}}
+\DoxyCodeLine{00178\ \ \ \ \ \ );}
+\DoxyCodeLine{00180\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedE,}
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedN,}
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedUV,}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVD}
+\DoxyCodeLine{00187\ \ \ >}
+\DoxyCodeLine{00188\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_ad75b8abd010b0cc4ce47469b3f855e42}{writePLY}}(}
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\ filename,}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedE>\ \&\ E,}
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedN>\ \&\ N,}
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedUV>\ \&\ UV,}
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedVD>\ \&\ VD=Eigen::MatrixXd(0,0),}
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\ \&\ VDheader=\{\},}
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\ \&\ comments=\{\}}
+\DoxyCodeLine{00198\ \ \ \ \ \ );}
+\DoxyCodeLine{00199\ \}}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00203\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00204\ \textcolor{preprocessor}{\#\ \ include\ "{}writePLY.cpp"{}}}
+\DoxyCodeLine{00205\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00206\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

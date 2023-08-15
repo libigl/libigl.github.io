@@ -1,0 +1,50 @@
+\doxysection{vertex\+\_\+triangle\+\_\+adjacency.\+h}
+\hypertarget{vertex__triangle__adjacency_8h_source}{}\label{vertex__triangle__adjacency_8h_source}\index{include/igl/vertex\_triangle\_adjacency.h@{include/igl/vertex\_triangle\_adjacency.h}}
+\mbox{\hyperlink{vertex__triangle__adjacency_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2014\ Daniele\ Panozzo\ <daniele.panozzo@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_VERTEX\_TRIANGLE\_ADJACENCY\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_VERTEX\_TRIANGLE\_ADJACENCY\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00031\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedF,\ \textcolor{keyword}{typename}\ VFType,\ \textcolor{keyword}{typename}\ VFiType>}
+\DoxyCodeLine{00032\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_acabdf409439e0498066a620d30db6899}{vertex\_triangle\_adjacency}}(}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{typename}\ DerivedF::Scalar\ n,}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\&\ F,}
+\DoxyCodeLine{00035\ \ \ \ \ std::vector<std::vector<VFType>\ >\&\ VF,}
+\DoxyCodeLine{00036\ \ \ \ \ std::vector<std::vector<VFiType>\ >\&\ VFi);}
+\DoxyCodeLine{00038\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF,\ \textcolor{keyword}{typename}\ IndexType>}
+\DoxyCodeLine{00039\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_acabdf409439e0498066a620d30db6899}{vertex\_triangle\_adjacency}}(}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\&\ V,}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\&\ F,}
+\DoxyCodeLine{00042\ \ \ \ \ std::vector<std::vector<IndexType>\ >\&\ VF,}
+\DoxyCodeLine{00043\ \ \ \ \ std::vector<std::vector<IndexType>\ >\&\ VFi);}
+\DoxyCodeLine{00054\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVF,}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedNI>}
+\DoxyCodeLine{00058\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_acabdf409439e0498066a620d30db6899}{vertex\_triangle\_adjacency}}(}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ n,}
+\DoxyCodeLine{00061\ \ \ \ \ Eigen::PlainObjectBase<DerivedVF>\ \&\ VF,}
+\DoxyCodeLine{00062\ \ \ \ \ Eigen::PlainObjectBase<DerivedNI>\ \&\ NI);}
+\DoxyCodeLine{00063\ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#\ \ include\ "{}vertex\_triangle\_adjacency.cpp"{}}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

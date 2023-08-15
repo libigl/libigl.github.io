@@ -1,0 +1,20 @@
+\doxysection{include/igl/upsample.h File Reference}
+\hypertarget{upsample_8h}{}\label{upsample_8h}\index{include/igl/upsample.h@{include/igl/upsample.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include \"{}upsample.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedF , typename SType , typename Derived\+NF $>$ }\\void \mbox{\hyperlink{namespaceigl_a7897e133babd19415648e5aaef9cc63a}{igl\+::upsample}} (const int n\+\_\+verts, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Sparse\+Matrix$<$ SType $>$ \&S, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+NF $>$ \&NF)
+\begin{DoxyCompactList}\small\item\em Subdivide without moving vertices\+: Given the triangle mesh \mbox{[}V, F\mbox{]}, where n\+\_\+verts = V.\+rows(), computes newV and a sparse matrix S s.\+t. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename Derived\+NV , typename Derived\+NF $>$ }\\void \mbox{\hyperlink{namespaceigl_a22564028c3ea860f1dcfb72d48872602}{igl\+::upsample}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+NV $>$ \&NV, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+NF $>$ \&NF, const int number\+\_\+of\+\_\+subdivs=1)
+\begin{DoxyCompactList}\small\item\em Subdivide a mesh without moving vertices\+: loop subdivision but odd vertices stay put and even vertices are just edge midpoints. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename MatV , typename MatF $>$ }\\void \mbox{\hyperlink{namespaceigl_a9347f30f3803c2aa656a3b73ed9c02f5}{igl\+::upsample}} (MatV \&V, MatF \&F, const int number\+\_\+of\+\_\+subdivs=1)
+\end{DoxyCompactItemize}

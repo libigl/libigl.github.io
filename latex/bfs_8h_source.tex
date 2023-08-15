@@ -1,0 +1,48 @@
+\doxysection{bfs.\+h}
+\hypertarget{bfs_8h_source}{}\label{bfs_8h_source}\index{include/igl/bfs.h@{include/igl/bfs.h}}
+\mbox{\hyperlink{bfs_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ IGL\_BFS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ IGL\_BFS\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <Eigen/Sparse>}}
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00019\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{typename}\ AType,}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedD,}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedP>}
+\DoxyCodeLine{00023\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a75b1dcc1386b54083fe6a2b70c7b7225}{bfs}}(}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{const}\ AType\ \&\ A,}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ s,}
+\DoxyCodeLine{00026\ \ \ \ \ Eigen::PlainObjectBase<DerivedD>\ \&\ D,}
+\DoxyCodeLine{00027\ \ \ \ \ Eigen::PlainObjectBase<DerivedP>\ \&\ P);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00039\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{typename}\ AType,}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{typename}\ DType,}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{typename}\ PType>}
+\DoxyCodeLine{00043\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a75b1dcc1386b54083fe6a2b70c7b7225}{bfs}}(}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<AType>\ >\ \&\ A,}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ s,}
+\DoxyCodeLine{00046\ \ \ \ \ std::vector<DType>\ \&\ D,}
+\DoxyCodeLine{00047\ \ \ \ \ std::vector<PType>\ \&\ P);}
+\DoxyCodeLine{00049\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{typename}\ AType,}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{typename}\ DType,}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{typename}\ PType>}
+\DoxyCodeLine{00053\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a75b1dcc1386b54083fe6a2b70c7b7225}{bfs}}(}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::SparseCompressedBase<AType>\ \&\ A,}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ s,}
+\DoxyCodeLine{00056\ \ \ \ \ std::vector<DType>\ \&\ D,}
+\DoxyCodeLine{00057\ \ \ \ \ std::vector<PType>\ \&\ P);}
+\DoxyCodeLine{00058\ \}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#\ \ include\ "{}bfs.cpp"{}}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00063\ }
+
+\end{DoxyCode}

@@ -1,0 +1,69 @@
+\doxysection{cr\+\_\+vector\+\_\+laplacian.\+h}
+\hypertarget{cr__vector__laplacian_8h_source}{}\label{cr__vector__laplacian_8h_source}\index{include/igl/cr\_vector\_laplacian.h@{include/igl/cr\_vector\_laplacian.h}}
+\mbox{\hyperlink{cr__vector__laplacian_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2020\ Oded\ Stein\ <oded.stein@columbia.edu>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_CR\_VECTOR\_LAPLACIAN\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_CR\_VECTOR\_LAPLACIAN\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <Eigen/Sparse>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00030\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF,\ \textcolor{keyword}{typename}\ DerivedE,}
+\DoxyCodeLine{00031\ \ \ \textcolor{keyword}{typename}\ DerivedOE,\ \textcolor{keyword}{typename}\ ScalarL>}
+\DoxyCodeLine{00032\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00033\ \ \ \mbox{\hyperlink{namespaceigl_ad3b4cd87c1b79a3e8220217907e2f92d}{cr\_vector\_laplacian}}(}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\&\ V,}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\&\ F,}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedE>\&\ E,}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedOE>\&\ oE,}
+\DoxyCodeLine{00038\ \ \ \ \ Eigen::SparseMatrix<ScalarL>\&\ L);}
+\DoxyCodeLine{00042\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF,\ \textcolor{keyword}{typename}\ DerivedE,}
+\DoxyCodeLine{00043\ \ \ \textcolor{keyword}{typename}\ DerivedOE,\ \textcolor{keyword}{typename}\ ScalarL>}
+\DoxyCodeLine{00044\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00045\ \ \ \mbox{\hyperlink{namespaceigl_ad3b4cd87c1b79a3e8220217907e2f92d}{cr\_vector\_laplacian}}(}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\&\ V,}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\&\ F,}
+\DoxyCodeLine{00048\ \ \ \ \ Eigen::PlainObjectBase<DerivedE>\&\ E,}
+\DoxyCodeLine{00049\ \ \ \ \ Eigen::PlainObjectBase<DerivedOE>\&\ oE,}
+\DoxyCodeLine{00050\ \ \ \ \ Eigen::SparseMatrix<ScalarL>\&\ L);}
+\DoxyCodeLine{00058\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedF,\ \textcolor{keyword}{typename}\ DerivedL\_sq,\ \textcolor{keyword}{typename}\ DeriveddA,}
+\DoxyCodeLine{00059\ \ \ \textcolor{keyword}{typename}\ DerivedE,\ \textcolor{keyword}{typename}\ DerivedOE,\ \textcolor{keyword}{typename}\ ScalarL>}
+\DoxyCodeLine{00060\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00061\ \ \ \mbox{\hyperlink{namespaceigl_a7a2c2b7f03004fbcca3d3fa8f4fef60f}{cr\_vector\_laplacian\_intrinsic}}(}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\&\ F,}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedL\_sq>\&\ l\_sq,}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DeriveddA>\&\ dA,}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedE>\&\ E,}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedOE>\&\ oE,}
+\DoxyCodeLine{00067\ \ \ \ \ Eigen::SparseMatrix<ScalarL>\&\ L);}
+\DoxyCodeLine{00070\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedF,\ \textcolor{keyword}{typename}\ DerivedL\_sq,\ \textcolor{keyword}{typename}\ DerivedE,}
+\DoxyCodeLine{00071\ \ \ \textcolor{keyword}{typename}\ DerivedOE,\ \textcolor{keyword}{typename}\ ScalarL>}
+\DoxyCodeLine{00072\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00073\ \ \ \mbox{\hyperlink{namespaceigl_a7a2c2b7f03004fbcca3d3fa8f4fef60f}{cr\_vector\_laplacian\_intrinsic}}(}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\&\ F,}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedL\_sq>\&\ l\_sq,}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedE>\&\ E,}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedOE>\&\ oE,}
+\DoxyCodeLine{00078\ \ \ \ \ Eigen::SparseMatrix<ScalarL>\&\ L);}
+\DoxyCodeLine{00079\ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#\ \ include\ "{}cr\_vector\_laplacian.cpp"{}}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

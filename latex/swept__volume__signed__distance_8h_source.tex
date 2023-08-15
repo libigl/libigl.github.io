@@ -1,0 +1,49 @@
+\doxysection{swept\+\_\+volume\+\_\+signed\+\_\+distance.\+h}
+\hypertarget{swept__volume__signed__distance_8h_source}{}\label{swept__volume__signed__distance_8h_source}\index{include/igl/swept\_volume\_signed\_distance.h@{include/igl/swept\_volume\_signed\_distance.h}}
+\mbox{\hyperlink{swept__volume__signed__distance_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2016\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_SWEPT\_VOLUME\_SIGNED\_DISTANCE\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_SWEPT\_VOLUME\_SIGNED\_DISTANCE\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Geometry>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00035\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a2df37d639d7915a6623d3dd0deecaf8a}{swept\_volume\_signed\_distance}}(}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\ \&\ V,}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ F,}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{const}\ std::function<Eigen::Affine3d(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ t)>\ \&\ transform,}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ \&\ steps,}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\ \&\ GV,}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::RowVector3i\ \&\ res,}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ h,}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ isolevel,}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::VectorXd\ \&\ S0,}
+\DoxyCodeLine{00045\ \ \ \ \ Eigen::VectorXd\ \&\ S);}
+\DoxyCodeLine{00047\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a2df37d639d7915a6623d3dd0deecaf8a}{swept\_volume\_signed\_distance}}(}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\ \&\ V,}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ F,}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{const}\ std::function<Eigen::Affine3d(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ t)>\ \&\ transform,}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ \&\ steps,}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\ \&\ GV,}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::RowVector3i\ \&\ res,}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ h,}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ isolevel,}
+\DoxyCodeLine{00056\ \ \ \ \ Eigen::VectorXd\ \&\ S);}
+\DoxyCodeLine{00057\ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#\ \ include\ "{}swept\_volume\_signed\_distance.cpp"{}}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#endif\ }}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

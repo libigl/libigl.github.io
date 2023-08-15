@@ -1,0 +1,18 @@
+\doxysection{include/igl/iterative\+\_\+closest\+\_\+point.h File Reference}
+\hypertarget{iterative__closest__point_8h}{}\label{iterative__closest__point_8h}\index{include/igl/iterative\_closest\_point.h@{include/igl/iterative\_closest\_point.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include \"{}AABB.\+h\"{}}\newline
+{\ttfamily \#include \"{}iterative\+\_\+closest\+\_\+point.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Derived\+VX , typename Derived\+FX , typename Derived\+VY , typename Derived\+FY , typename DerivedR , typename Derivedt $>$ }\\void \mbox{\hyperlink{namespaceigl_aa7b2dbd6e4ee3d5ca15dd5dce9928453}{igl\+::iterative\+\_\+closest\+\_\+point}} (const Eigen\+::\+Matrix\+Base$<$ Derived\+VX $>$ \&VX, const Eigen\+::\+Matrix\+Base$<$ Derived\+FX $>$ \&FX, const Eigen\+::\+Matrix\+Base$<$ Derived\+VY $>$ \&VY, const Eigen\+::\+Matrix\+Base$<$ Derived\+FY $>$ \&FY, const int num\+\_\+samples, const int max\+\_\+iters, Eigen\+::\+Plain\+Object\+Base$<$ DerivedR $>$ \&R, Eigen\+::\+Plain\+Object\+Base$<$ Derivedt $>$ \&t)
+\begin{DoxyCompactList}\small\item\em Solve for the rigid transformation that places mesh X onto mesh Y using the iterative closest point method. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derived\+VX , typename Derived\+FX , typename Derived\+VY , typename Derived\+FY , typename Derived\+NY , typename DerivedR , typename Derivedt $>$ }\\void \mbox{\hyperlink{namespaceigl_a1cd54b56f1bb183ab3898eb0e78949da}{igl\+::iterative\+\_\+closest\+\_\+point}} (const Eigen\+::\+Matrix\+Base$<$ Derived\+VX $>$ \&VX, const Eigen\+::\+Matrix\+Base$<$ Derived\+FX $>$ \&FX, const Eigen\+::\+Matrix\+Base$<$ Derived\+VY $>$ \&VY, const Eigen\+::\+Matrix\+Base$<$ Derived\+FY $>$ \&FY, const \mbox{\hyperlink{classigl_1_1AABB}{igl\+::\+AABB}}$<$ Derived\+VY, 3 $>$ \&Ytree, const Eigen\+::\+Matrix\+Base$<$ Derived\+NY $>$ \&NY, const int num\+\_\+samples, const int max\+\_\+iters, Eigen\+::\+Plain\+Object\+Base$<$ DerivedR $>$ \&R, Eigen\+::\+Plain\+Object\+Base$<$ Derivedt $>$ \&t)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}

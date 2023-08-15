@@ -1,0 +1,19 @@
+\doxysection{include/igl/principal\+\_\+curvature.h File Reference}
+\hypertarget{principal__curvature_8h}{}\label{principal__curvature_8h}\index{include/igl/principal\_curvature.h@{include/igl/principal\_curvature.h}}
+{\ttfamily \#include $<$Eigen/\+Geometry$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include \"{}principal\+\_\+curvature.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename Derived\+PD1 , typename Derived\+PD2 , typename Derived\+PV1 , typename Derived\+PV2 $>$ }\\void \mbox{\hyperlink{namespaceigl_a381027e74d14b6e7adb31c0565a26027}{igl\+::principal\+\_\+curvature}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+PD1 $>$ \&PD1, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+PD2 $>$ \&PD2, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+PV1 $>$ \&PV1, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+PV2 $>$ \&PV2, unsigned radius=5, bool use\+Kring=true)
+\begin{DoxyCompactList}\small\item\em Compute the principal curvature directions and magnitude of the given triangle mesh DerivedV derived from vertex positions matrix type\+: i.\+e. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename Derived\+PD1 , typename Derived\+PD2 , typename Derived\+PV1 , typename Derived\+PV2 , typename Index $>$ }\\void \mbox{\hyperlink{namespaceigl_a1521eb853db32a29fdb6eacbf3ad9fc2}{igl\+::principal\+\_\+curvature}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+PD1 $>$ \&PD1, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+PD2 $>$ \&PD2, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+PV1 $>$ \&PV1, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+PV2 $>$ \&PV2, std\+::vector$<$ Index $>$ \&bad\+\_\+vertices, unsigned radius=5, bool use\+Kring=true)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}

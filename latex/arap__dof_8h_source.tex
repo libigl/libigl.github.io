@@ -1,0 +1,116 @@
+\doxysection{arap\+\_\+dof.\+h}
+\hypertarget{arap__dof_8h_source}{}\label{arap__dof_8h_source}\index{include/igl/arap\_dof.h@{include/igl/arap\_dof.h}}
+\mbox{\hyperlink{arap__dof_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2013\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_ARAP\_ENERGY\_TYPE\_DOF\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_ARAP\_ENERGY\_TYPE\_DOF\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <Eigen/Sparse>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ARAPEnergyType_8h}{ARAPEnergyType.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00056\ \{}
+\DoxyCodeLine{00057\ \ \ }
+\DoxyCodeLine{00058\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ LbsMatrixType,\ \textcolor{keyword}{typename}\ SSCALAR>}
+\DoxyCodeLine{00059\ \ \ \textcolor{keyword}{struct\ }ArapDOFData;}
+\DoxyCodeLine{00087\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ LbsMatrixType,\ \textcolor{keyword}{typename}\ SSCALAR>}
+\DoxyCodeLine{00088\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a26233fdaaff7c535c5cf9e54d58f6f80}{arap\_dof\_precomputation}}(}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\ \&\ V,\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ F,}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{const}\ LbsMatrixType\ \&\ M,}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<int,Eigen::Dynamic,1>\ \&\ G,}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{structigl_1_1ArapDOFData}{ArapDOFData<LbsMatrixType,\ SSCALAR>}}\ \&\ data);}
+\DoxyCodeLine{00094\ \ \ }
+\DoxyCodeLine{00116\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ LbsMatrixType,\ \textcolor{keyword}{typename}\ SSCALAR>}
+\DoxyCodeLine{00117\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_acec31e2faca7eecae08c921a0430d0aa}{arap\_dof\_recomputation}}(}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<int,Eigen::Dynamic,1>\ \&\ fixed\_dim,}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<double>\ \&\ A\_eq,}
+\DoxyCodeLine{00120\ \ \ \ \ \mbox{\hyperlink{structigl_1_1ArapDOFData}{ArapDOFData<LbsMatrixType,\ SSCALAR>}}\ \&\ data);}
+\DoxyCodeLine{00121\ \ \ }
+\DoxyCodeLine{00138\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ LbsMatrixType,\ \textcolor{keyword}{typename}\ SSCALAR>}
+\DoxyCodeLine{00139\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a31279c751ae3a7d24bc56dd4c8029d1e}{arap\_dof\_update}}(}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structigl_1_1ArapDOFData}{ArapDOFData<LbsMatrixType,SSCALAR>}}\ \&\ data,}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<double,Eigen::Dynamic,1>\ \&\ B\_eq,}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\ \&\ L0,}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ max\_iters,}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ tol,}
+\DoxyCodeLine{00145\ \ \ \ \ Eigen::MatrixXd\ \&\ L}
+\DoxyCodeLine{00146\ \ \ \ \ );}
+\DoxyCodeLine{00147\ \ \ }
+\DoxyCodeLine{00152\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ LbsMatrixType,\ \textcolor{keyword}{typename}\ SSCALAR>}
+\DoxyCodeLine{00153\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1ArapDOFData}{ArapDOFData}}}
+\DoxyCodeLine{00154\ \ \ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keyword}{typedef}\ Eigen::Matrix<SSCALAR,\ Eigen::Dynamic,\ Eigen::Dynamic>\ \mbox{\hyperlink{structigl_1_1ArapDOFData_ac85269765634e0b98c0f57447849b4ca}{MatrixXS}};}
+\DoxyCodeLine{00158\ \ \ \ \ \mbox{\hyperlink{namespaceigl_afcbc9001656cf2d4cc135602618c97e5}{igl::ARAPEnergyType}}\ \mbox{\hyperlink{structigl_1_1ArapDOFData_a91bea11f44a6fe58c2b10ec7f890ad0e}{energy}};}
+\DoxyCodeLine{00160\ \ \ \ \ Eigen::Matrix<int,Eigen::Dynamic,1>\ \mbox{\hyperlink{structigl_1_1ArapDOFData_a34538d236b90557eee1dff922b47de02}{fixed\_dim}};}
+\DoxyCodeLine{00163\ \ \ \ \ std::vector<Eigen::MatrixXd>\ \mbox{\hyperlink{structigl_1_1ArapDOFData_a968d8afb1579266783ead1d7e051b8ce}{CSM\_M}};}
+\DoxyCodeLine{00165\ \ \ \ \ LbsMatrixType\ M\_KG;}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structigl_1_1ArapDOFData_a496220a6256bfd490491b0f86384b241}{n}};}
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structigl_1_1ArapDOFData_aa162503dfcb0aa7d40d662a9d4c9b906}{m}};}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structigl_1_1ArapDOFData_ac4591d80505f9c48bdb0dd9c7069b612}{dim}};}
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structigl_1_1ArapDOFData_ae3910776546a298f423b319b78481375}{effective\_dim}};}
+\DoxyCodeLine{00175\ \ \ \ \ Eigen::Matrix<int,Eigen::Dynamic,1>\ \mbox{\hyperlink{structigl_1_1ArapDOFData_afbe5f347dfd39d3a62c09173e21dea15}{interpolated}};}
+\DoxyCodeLine{00177\ \ \ \ \ std::vector<bool>\ \mbox{\hyperlink{structigl_1_1ArapDOFData_ab066e3faf1ff71953b051e11033b2417}{free\_mask}};}
+\DoxyCodeLine{00179\ \ \ \ \ LbsMatrixType\ \mbox{\hyperlink{structigl_1_1ArapDOFData_afc773159071cf32fd1cef5380b6b6c82}{Q}};}
+\DoxyCodeLine{00180\ \ \ }
+\DoxyCodeLine{00181\ \ \ }
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{comment}{//Eigen::MatrixXd\ M\_Solve;\ //\ TODO:\ remove\ from\ here}}
+\DoxyCodeLine{00184\ \ \ }
+\DoxyCodeLine{00187\ \ \ \ \ \mbox{\hyperlink{structigl_1_1ArapDOFData_ac85269765634e0b98c0f57447849b4ca}{MatrixXS}}\ \mbox{\hyperlink{structigl_1_1ArapDOFData_a3494ef8635b2f2ca4617b49f5f46484a}{M\_FullSolve}};}
+\DoxyCodeLine{00188\ \ \ }
+\DoxyCodeLine{00190\ \ \ \ \ \mbox{\hyperlink{structigl_1_1ArapDOFData_ac85269765634e0b98c0f57447849b4ca}{MatrixXS}}\ \mbox{\hyperlink{structigl_1_1ArapDOFData_a903bc4a544d836de46879706dcb0485c}{CSM}};}
+\DoxyCodeLine{00192\ \ \ \ \ \mbox{\hyperlink{structigl_1_1ArapDOFData_ac85269765634e0b98c0f57447849b4ca}{MatrixXS}}\ CSolveBlock1;}
+\DoxyCodeLine{00193\ \ \ }
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structigl_1_1ArapDOFData_a941cf3932d352a19588b7b97b45ba9a0}{print\_timings}};}
+\DoxyCodeLine{00196\ \ \ }
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structigl_1_1ArapDOFData_a4622abc143c3c0b1ce2d5facfc862a01}{with\_dynamics}};}
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{comment}{//\ I'm\ hiding\ the\ extra\ dynamics\ stuff\ in\ this\ struct,\ which\ sort\ of\ defeats}}
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{comment}{//\ the\ purpose\ of\ this\ function-\/based\ coding\ style...}}
+\DoxyCodeLine{00201\ \ \ }
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structigl_1_1ArapDOFData_ae4b97caeaf9cee1359adc7454240005c}{h}};}
+\DoxyCodeLine{00204\ \ \ }
+\DoxyCodeLine{00207\ \ \ \ \ \mbox{\hyperlink{structigl_1_1ArapDOFData_ac85269765634e0b98c0f57447849b4ca}{MatrixXS}}\ \mbox{\hyperlink{structigl_1_1ArapDOFData_a3611b0645969c785247ae9f10911f27f}{L0}};}
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{comment}{//MatrixXS\ Lm1;}}
+\DoxyCodeLine{00212\ \textcolor{comment}{}\ \ \ \ \mbox{\hyperlink{structigl_1_1ArapDOFData_ac85269765634e0b98c0f57447849b4ca}{MatrixXS}}\ \mbox{\hyperlink{structigl_1_1ArapDOFData_a3b5766a665522b07f56c8246317e3c28}{Lvel0}};}
+\DoxyCodeLine{00213\ \ \ }
+\DoxyCodeLine{00215\ \ \ \ \ \mbox{\hyperlink{structigl_1_1ArapDOFData_ac85269765634e0b98c0f57447849b4ca}{MatrixXS}}\ \mbox{\hyperlink{structigl_1_1ArapDOFData_a5b99b61473c728cdabc1fa795ff55d07}{fext}};}
+\DoxyCodeLine{00216\ \ \ }
+\DoxyCodeLine{00218\ \ \ \ \ LbsMatrixType\ \mbox{\hyperlink{structigl_1_1ArapDOFData_aaacd2e1cfb4af5c13bd582a60f3d5d27}{Mass\_tilde}};}
+\DoxyCodeLine{00219\ \ \ }
+\DoxyCodeLine{00221\ \ \ \ \ Eigen::MatrixXd\ \mbox{\hyperlink{structigl_1_1ArapDOFData_acf855b8b6c6b2ec2d8e8b4b0b3fdcc3c}{fgrav}};}
+\DoxyCodeLine{00223\ \ \ \ \ Eigen::Vector3d\ \mbox{\hyperlink{structigl_1_1ArapDOFData_ad40196005d15ac3afd0ca5c5a7c65a84}{grav\_dir}};}
+\DoxyCodeLine{00225\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structigl_1_1ArapDOFData_a649220e2378b21337c5afac9b0e1e562}{grav\_mag}};}
+\DoxyCodeLine{00226\ \ \ \ \ }
+\DoxyCodeLine{00228\ \ \ \ \ \mbox{\hyperlink{structigl_1_1ArapDOFData_ac85269765634e0b98c0f57447849b4ca}{MatrixXS}}\ \mbox{\hyperlink{structigl_1_1ArapDOFData_a4d9f942453b6fa99ba5ca1b20628690d}{Pi\_1}};}
+\DoxyCodeLine{00229\ \ \ }
+\DoxyCodeLine{00230\ \ \ \ \ \textcolor{comment}{//\ @private\ Default\ values}}
+\DoxyCodeLine{00231\ \ \ \ \ \mbox{\hyperlink{structigl_1_1ArapDOFData_a27f3ed746533c804a8b177f7d0794ffc}{ArapDOFData}}():\ }
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1ArapDOFData_a91bea11f44a6fe58c2b10ec7f890ad0e}{energy}}(\mbox{\hyperlink{namespaceigl}{igl}}::\mbox{\hyperlink{namespaceigl_afcbc9001656cf2d4cc135602618c97e5a97e873f2663a9aceb16484fb07de5ff5}{ARAP\_ENERGY\_TYPE\_SPOKES}}),\ }
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1ArapDOFData_a4622abc143c3c0b1ce2d5facfc862a01}{with\_dynamics}}(false),}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1ArapDOFData_ae4b97caeaf9cee1359adc7454240005c}{h}}(1),}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1ArapDOFData_ad40196005d15ac3afd0ca5c5a7c65a84}{grav\_dir}}(0,-\/1,0),}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1ArapDOFData_a649220e2378b21337c5afac9b0e1e562}{grav\_mag}}(0)}
+\DoxyCodeLine{00237\ \ \ \ \ \{}
+\DoxyCodeLine{00238\ \ \ \ \ \}}
+\DoxyCodeLine{00239\ \ \ \};}
+\DoxyCodeLine{00240\ \}}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00243\ \textcolor{preprocessor}{\#\ \ include\ "{}arap\_dof.cpp"{}}}
+\DoxyCodeLine{00244\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00246\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,113 @@
+\doxysection{Index\+Comparison.\+h}
+\hypertarget{IndexComparison_8h_source}{}\label{IndexComparison_8h_source}\index{include/igl/IndexComparison.h@{include/igl/IndexComparison.h}}
+\mbox{\hyperlink{IndexComparison_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2013\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_INDEXCOMPARISON\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_INDEXCOMPARISON\_H}}
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}\{}
+\DoxyCodeLine{00013\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1IndexLessThan}{IndexLessThan}}}
+\DoxyCodeLine{00014\ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{structigl_1_1IndexLessThan_abe80082d3aa25908b46db679bdeee677}{IndexLessThan}}(\textcolor{keyword}{const}\ T\ \mbox{\hyperlink{structigl_1_1IndexLessThan_aa9e98d7528bc91041fc0cc02d13b4d37}{arr}})\ :\ \mbox{\hyperlink{structigl_1_1IndexLessThan_aa9e98d7528bc91041fc0cc02d13b4d37}{arr}}(\mbox{\hyperlink{structigl_1_1IndexLessThan_aa9e98d7528bc91041fc0cc02d13b4d37}{arr}})\ \{\}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structigl_1_1IndexLessThan_a4c4bd21fc3859b1d454e8d18adb66bf5}{operator()}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ a,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ b)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00017\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structigl_1_1IndexLessThan_aa9e98d7528bc91041fc0cc02d13b4d37}{arr}}[a]\ <\ \mbox{\hyperlink{structigl_1_1IndexLessThan_aa9e98d7528bc91041fc0cc02d13b4d37}{arr}}[b];}
+\DoxyCodeLine{00019\ \ \ \ \ \}}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{const}\ T\ \mbox{\hyperlink{structigl_1_1IndexLessThan_aa9e98d7528bc91041fc0cc02d13b4d37}{arr}};}
+\DoxyCodeLine{00021\ \ \ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00024\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1IndexEquals}{IndexEquals}}}
+\DoxyCodeLine{00025\ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{structigl_1_1IndexEquals_a7eb0823318eecd1d55055096678a65fa}{IndexEquals}}(\textcolor{keyword}{const}\ T\ \mbox{\hyperlink{structigl_1_1IndexEquals_ad61aabf1e0e909ba84602120a1d92a24}{arr}})\ :\ \mbox{\hyperlink{structigl_1_1IndexEquals_ad61aabf1e0e909ba84602120a1d92a24}{arr}}(\mbox{\hyperlink{structigl_1_1IndexEquals_ad61aabf1e0e909ba84602120a1d92a24}{arr}})\ \{\}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structigl_1_1IndexEquals_ab8e688125bf833075ee4d3c28ee74f59}{operator()}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ a,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ b)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00028\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structigl_1_1IndexEquals_ad61aabf1e0e909ba84602120a1d92a24}{arr}}[a]\ ==\ \mbox{\hyperlink{structigl_1_1IndexEquals_ad61aabf1e0e909ba84602120a1d92a24}{arr}}[b];}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{const}\ T\ \mbox{\hyperlink{structigl_1_1IndexEquals_ad61aabf1e0e909ba84602120a1d92a24}{arr}};}
+\DoxyCodeLine{00032\ \ \ \};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00035\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1IndexVectorLessThan}{IndexVectorLessThan}}}
+\DoxyCodeLine{00036\ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{structigl_1_1IndexVectorLessThan_ae314b6e282b625dca0ac513df10654bc}{IndexVectorLessThan}}(\textcolor{keyword}{const}\ T\ \&\ \mbox{\hyperlink{structigl_1_1IndexVectorLessThan_a96c859e1ab5c7d6f9e09af6485a5a983}{vec}})\ :\ \mbox{\hyperlink{structigl_1_1IndexVectorLessThan_a96c859e1ab5c7d6f9e09af6485a5a983}{vec}}\ (\ \mbox{\hyperlink{structigl_1_1IndexVectorLessThan_a96c859e1ab5c7d6f9e09af6485a5a983}{vec}})\ \{\}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structigl_1_1IndexVectorLessThan_a2e62a2dd7e9d6b49c9e363e748a8c004}{operator()}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ a,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ b)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00039\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structigl_1_1IndexVectorLessThan_a96c859e1ab5c7d6f9e09af6485a5a983}{vec}}(a)\ <\ \mbox{\hyperlink{structigl_1_1IndexVectorLessThan_a96c859e1ab5c7d6f9e09af6485a5a983}{vec}}(b);}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{const}\ T\ \&\ \mbox{\hyperlink{structigl_1_1IndexVectorLessThan_a96c859e1ab5c7d6f9e09af6485a5a983}{vec}};}
+\DoxyCodeLine{00043\ \ \ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00046\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1IndexDimLessThan}{IndexDimLessThan}}}
+\DoxyCodeLine{00047\ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{structigl_1_1IndexDimLessThan_ac42df334816a86d92e498d520e5478de}{IndexDimLessThan}}(\textcolor{keyword}{const}\ T\ \&\ \mbox{\hyperlink{structigl_1_1IndexDimLessThan_ab3e80552070f009f08733b956a0aadea}{mat}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \&\ \mbox{\hyperlink{structigl_1_1IndexDimLessThan_ad360d49f66b41cc13e63b9bbbfd68e67}{dim}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \&\ \mbox{\hyperlink{structigl_1_1IndexDimLessThan_a17a618405f18c09af32c870a9eb02a8a}{j}})\ :\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1IndexDimLessThan_ab3e80552070f009f08733b956a0aadea}{mat}}(\mbox{\hyperlink{structigl_1_1IndexDimLessThan_ab3e80552070f009f08733b956a0aadea}{mat}}),}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1IndexDimLessThan_ad360d49f66b41cc13e63b9bbbfd68e67}{dim}}(\mbox{\hyperlink{structigl_1_1IndexDimLessThan_ad360d49f66b41cc13e63b9bbbfd68e67}{dim}}),}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1IndexDimLessThan_a17a618405f18c09af32c870a9eb02a8a}{j}}(\mbox{\hyperlink{structigl_1_1IndexDimLessThan_a17a618405f18c09af32c870a9eb02a8a}{j}})}
+\DoxyCodeLine{00052\ \ \ \ \ \{\}}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structigl_1_1IndexDimLessThan_ab2452398b5578ab4c5becf0f8ccef18d}{operator()}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ a,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ b)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00054\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{structigl_1_1IndexDimLessThan_ad360d49f66b41cc13e63b9bbbfd68e67}{dim}}\ ==\ 1)}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structigl_1_1IndexDimLessThan_ab3e80552070f009f08733b956a0aadea}{mat}}(a,\mbox{\hyperlink{structigl_1_1IndexDimLessThan_a17a618405f18c09af32c870a9eb02a8a}{j}})\ <\ \mbox{\hyperlink{structigl_1_1IndexDimLessThan_ab3e80552070f009f08733b956a0aadea}{mat}}(b,\mbox{\hyperlink{structigl_1_1IndexDimLessThan_a17a618405f18c09af32c870a9eb02a8a}{j}});}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structigl_1_1IndexDimLessThan_ab3e80552070f009f08733b956a0aadea}{mat}}(\mbox{\hyperlink{structigl_1_1IndexDimLessThan_a17a618405f18c09af32c870a9eb02a8a}{j}},a)\ <\ \mbox{\hyperlink{structigl_1_1IndexDimLessThan_ab3e80552070f009f08733b956a0aadea}{mat}}(\mbox{\hyperlink{structigl_1_1IndexDimLessThan_a17a618405f18c09af32c870a9eb02a8a}{j}},b);}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{const}\ T\ \&\ \mbox{\hyperlink{structigl_1_1IndexDimLessThan_ab3e80552070f009f08733b956a0aadea}{mat}};}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \&\ \mbox{\hyperlink{structigl_1_1IndexDimLessThan_ad360d49f66b41cc13e63b9bbbfd68e67}{dim}};}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \&\ \mbox{\hyperlink{structigl_1_1IndexDimLessThan_a17a618405f18c09af32c870a9eb02a8a}{j}};}
+\DoxyCodeLine{00066\ \ \ \};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00069\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1IndexRowLessThan}{IndexRowLessThan}}}
+\DoxyCodeLine{00070\ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{structigl_1_1IndexRowLessThan_ad810a56e5c4fd3a709ff9beae2284a90}{IndexRowLessThan}}(\textcolor{keyword}{const}\ T\ \&\ \mbox{\hyperlink{structigl_1_1IndexRowLessThan_ad32389f1aba67e8a348276bea2376df7}{mat}})\ :\ \mbox{\hyperlink{structigl_1_1IndexRowLessThan_ad32389f1aba67e8a348276bea2376df7}{mat}}\ (\ \mbox{\hyperlink{structigl_1_1IndexRowLessThan_ad32389f1aba67e8a348276bea2376df7}{mat}})\ \{\}}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structigl_1_1IndexRowLessThan_a101f6fd4cdf7b0c9ae4f50b3980b9ca9}{operator()}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ a,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ b)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00073\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ cols\ =\ \mbox{\hyperlink{structigl_1_1IndexRowLessThan_ad32389f1aba67e8a348276bea2376df7}{mat}}.cols();}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \textcolor{comment}{//\ Lexicographical\ order}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;j<cols;j++)}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{structigl_1_1IndexRowLessThan_ad32389f1aba67e8a348276bea2376df7}{mat}}(a,j)\ >\ \mbox{\hyperlink{structigl_1_1IndexRowLessThan_ad32389f1aba67e8a348276bea2376df7}{mat}}(b,j))}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(\mbox{\hyperlink{structigl_1_1IndexRowLessThan_ad32389f1aba67e8a348276bea2376df7}{mat}}(a,j)\ <\ \mbox{\hyperlink{structigl_1_1IndexRowLessThan_ad32389f1aba67e8a348276bea2376df7}{mat}}(b,j))}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \textcolor{comment}{//\ equality\ is\ false}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00088\ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{const}\ T\ \&\ \mbox{\hyperlink{structigl_1_1IndexRowLessThan_ad32389f1aba67e8a348276bea2376df7}{mat}};}
+\DoxyCodeLine{00090\ \ \ \};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00093\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1IndexRowEquals}{IndexRowEquals}}}
+\DoxyCodeLine{00094\ \ \ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{structigl_1_1IndexRowEquals_abd5fb6d9ee98f05d8e46453a5de50f6e}{IndexRowEquals}}(\textcolor{keyword}{const}\ T\ \&\ \mbox{\hyperlink{structigl_1_1IndexRowEquals_a125eee38848f0b69d36a3c8afc41faaa}{mat}})\ :\ \mbox{\hyperlink{structigl_1_1IndexRowEquals_a125eee38848f0b69d36a3c8afc41faaa}{mat}}\ (\ \mbox{\hyperlink{structigl_1_1IndexRowEquals_a125eee38848f0b69d36a3c8afc41faaa}{mat}})\ \{\}}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structigl_1_1IndexRowEquals_aaeb139b5e7e4bd9ac66327a2c30643b1}{operator()}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ a,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ b)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00097\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ cols\ =\ \mbox{\hyperlink{structigl_1_1IndexRowEquals_a125eee38848f0b69d36a3c8afc41faaa}{mat}}.cols();}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \textcolor{comment}{//\ Lexicographical\ order}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;j<cols;j++)}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{structigl_1_1IndexRowEquals_a125eee38848f0b69d36a3c8afc41faaa}{mat}}(a,j)\ !=\ \ \mbox{\hyperlink{structigl_1_1IndexRowEquals_a125eee38848f0b69d36a3c8afc41faaa}{mat}}(b,j))}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00108\ \ \ \ \ \}}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{const}\ T\ \&\ \mbox{\hyperlink{structigl_1_1IndexRowEquals_a125eee38848f0b69d36a3c8afc41faaa}{mat}};}
+\DoxyCodeLine{00110\ \ \ \};}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

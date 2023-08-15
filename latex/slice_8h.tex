@@ -1,0 +1,25 @@
+\doxysection{include/igl/slice.h File Reference}
+\hypertarget{slice_8h}{}\label{slice_8h}\index{include/igl/slice.h@{include/igl/slice.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include \"{}slice.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename TX , typename TY , typename DerivedR , typename DerivedC $>$ }\\void \mbox{\hyperlink{namespaceigl_a547a8704200d3af48fe92105c15a32ad}{igl\+::slice}} (const Eigen\+::\+Sparse\+Matrix$<$ TX $>$ \&X, const Eigen\+::\+Dense\+Base$<$ DerivedR $>$ \&R, const Eigen\+::\+Dense\+Base$<$ DerivedC $>$ \&C, Eigen\+::\+Sparse\+Matrix$<$ TY $>$ \&Y)
+\begin{DoxyCompactList}\small\item\em Act like the matlab X(row\+\_\+indices,col\+\_\+indices) operator, where row\+\_\+indices, col\+\_\+indices are non-\/negative integer indices. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedX , typename DerivedR , typename DerivedC , typename DerivedY $>$ }\\void \mbox{\hyperlink{namespaceigl_a90268d9fb8c64692427036793191a8b7}{igl\+::slice}} (const Eigen\+::\+Dense\+Base$<$ DerivedX $>$ \&X, const Eigen\+::\+Dense\+Base$<$ DerivedR $>$ \&R, const Eigen\+::\+Dense\+Base$<$ DerivedC $>$ \&C, Eigen\+::\+Plain\+Object\+Base$<$ DerivedY $>$ \&Y)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename MatX , typename DerivedR , typename MatY $>$ }\\void \mbox{\hyperlink{namespaceigl_ae747d042c40e074264e161b49906216d}{igl\+::slice}} (const MatX \&X, const Eigen\+::\+Dense\+Base$<$ DerivedR $>$ \&R, const int dim, MatY \&Y)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedX , typename DerivedY , typename DerivedR $>$ }\\void \mbox{\hyperlink{namespaceigl_aae8c4cf15b6f5f8cc16da9405b96be59}{igl\+::slice}} (const Eigen\+::\+Dense\+Base$<$ DerivedX $>$ \&X, const Eigen\+::\+Dense\+Base$<$ DerivedR $>$ \&R, Eigen\+::\+Plain\+Object\+Base$<$ DerivedY $>$ \&Y)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedX , typename DerivedR $>$ }\\DerivedX \mbox{\hyperlink{namespaceigl_a86abeffa3ef136e9e35057e526618dc8}{igl\+::slice}} (const Eigen\+::\+Dense\+Base$<$ DerivedX $>$ \&X, const Eigen\+::\+Dense\+Base$<$ DerivedR $>$ \&R)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedX , typename DerivedR $>$ }\\DerivedX \mbox{\hyperlink{namespaceigl_aa5271870d0385781c2236145ee9c3897}{igl\+::slice}} (const Eigen\+::\+Dense\+Base$<$ DerivedX $>$ \&X, const Eigen\+::\+Dense\+Base$<$ DerivedR $>$ \&R, const int dim)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}

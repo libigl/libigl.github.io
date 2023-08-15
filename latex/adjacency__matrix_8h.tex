@@ -1,0 +1,32 @@
+\doxysection{include/igl/adjacency\+\_\+matrix.h File Reference}
+\hypertarget{adjacency__matrix_8h}{}\label{adjacency__matrix_8h}\index{include/igl/adjacency\_matrix.h@{include/igl/adjacency\_matrix.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include \"{}adjacency\+\_\+matrix.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{adjacency__matrix_8h_aa93624b0b2836d2510e8c92ae951d817}{EIGEN\+\_\+\+YES\+\_\+\+I\+\_\+\+KNOW\+\_\+\+SPARSE\+\_\+\+MODULE\+\_\+\+IS\+\_\+\+NOT\+\_\+\+STABLE\+\_\+\+YET}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedF , typename T $>$ }\\void \mbox{\hyperlink{namespaceigl_a705a8f51137d1dd807bbe517c0567735}{igl\+::adjacency\+\_\+matrix}} (const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Sparse\+Matrix$<$ T $>$ \&A)
+\begin{DoxyCompactList}\small\item\em Constructs the graph adjacency matrix of a given mesh (V,F) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedI , typename DerivedC , typename T $>$ }\\void \mbox{\hyperlink{namespaceigl_a9b6ba9089b88d1e5ba18a153462c750c}{igl\+::adjacency\+\_\+matrix}} (const Eigen\+::\+Matrix\+Base$<$ DerivedI $>$ \&I, const Eigen\+::\+Matrix\+Base$<$ DerivedC $>$ \&C, Eigen\+::\+Sparse\+Matrix$<$ T $>$ \&A)
+\begin{DoxyCompactList}\small\item\em Constructs an vertex adjacency for a polygon mesh. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{adjacency__matrix_8h_aa93624b0b2836d2510e8c92ae951d817}\label{adjacency__matrix_8h_aa93624b0b2836d2510e8c92ae951d817} 
+\index{adjacency\_matrix.h@{adjacency\_matrix.h}!EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET@{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}}
+\index{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET@{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}!adjacency\_matrix.h@{adjacency\_matrix.h}}
+\doxysubsubsection{\texorpdfstring{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}}
+{\footnotesize\ttfamily \#define EIGEN\+\_\+\+YES\+\_\+\+I\+\_\+\+KNOW\+\_\+\+SPARSE\+\_\+\+MODULE\+\_\+\+IS\+\_\+\+NOT\+\_\+\+STABLE\+\_\+\+YET}
+

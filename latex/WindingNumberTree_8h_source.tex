@@ -1,0 +1,493 @@
+\doxysection{Winding\+Number\+Tree.\+h}
+\hypertarget{WindingNumberTree_8h_source}{}\label{WindingNumberTree_8h_source}\index{include/igl/WindingNumberTree.h@{include/igl/WindingNumberTree.h}}
+\mbox{\hyperlink{WindingNumberTree_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2014\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_WINDINGNUMBERTREE\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_WINDINGNUMBERTREE\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{WindingNumberMethod_8h}{WindingNumberMethod.h}}"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00020\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{typename}\ Point,}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF\ >}
+\DoxyCodeLine{00024\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classigl_1_1WindingNumberTree}{WindingNumberTree}}}
+\DoxyCodeLine{00025\ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \textcolor{comment}{//\ Method\ to\ use\ (see\ enum\ above)}}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \textcolor{comment}{//static\ double\ min\_max\_w;}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::map<\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ std::pair<const\ WindingNumberTree*,const\ WindingNumberTree*>,\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV::Scalar>}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1WindingNumberTree_ab79b3f45a07dee2ff3d36713d3378a50}{cached}};}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \textcolor{comment}{//\ This\ is\ only\ need\ to\ fill\ in\ references,\ it\ should\ never\ actually\ be\ touched}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \textcolor{comment}{//\ and\ shouldn't\ cause\ race\ conditions.\ (This\ is\ a\ hack,\ but\ I\ think\ it's\ "{}safe"{})}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \textcolor{keyword}{static}\ DerivedV\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_aff17a52f56dd5b58cd354d547d216cdb}{dummyV}};}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_a509f63ef3c5ff8b238920eb0fe3ceecf}{WindingNumberMethod}}\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a4d069040791d8e2d5f141634d0698d60}{method}};}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1WindingNumberTree}{WindingNumberTree}}\ *\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a111e8645c2849defb6617b5adbe67810}{parent}};}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ std::list<WindingNumberTree\ *\ >\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a25ebc7f7a74bd9b6c56bb766634d872b}{children}};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ Eigen::Matrix<typename\ DerivedV::Scalar,Eigen::Dynamic,Eigen::Dynamic>}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1WindingNumberTree_aafe76333946b7ad3829b43a032fae8a1}{MatrixXS}};}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ Eigen::Matrix<typename\ DerivedF::Scalar,Eigen::Dynamic,Eigen::Dynamic>}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a08fd4eb30fce0b226f1b2dc2853daf04}{MatrixXF}};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \textcolor{comment}{//const\ Eigen::MatrixXi\ boundary;}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \textcolor{comment}{//\ Base\ mesh\ vertices}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ DerivedV\ \&\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a2551264e8045c3dee664537ae21011bc}{V}};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \textcolor{comment}{//\ Base\ mesh\ vertices\ with\ duplicates\ removed}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1WindingNumberTree_aafe76333946b7ad3829b43a032fae8a1}{MatrixXS}}\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_afb916b7b6c91cd34c714902e7d796694}{SV}};}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \textcolor{comment}{//\ Facets\ in\ this\ bounding\ volume}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a08fd4eb30fce0b226f1b2dc2853daf04}{MatrixXF}}\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_ad18e9c1a1712406b55d3e0716a1b8082}{F}};}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \textcolor{comment}{//\ Tessellated\ boundary\ curve}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a08fd4eb30fce0b226f1b2dc2853daf04}{MatrixXF}}\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a76dc36adcef875cfe8e9ee54cc3c0567}{cap}};}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \textcolor{comment}{//\ Upper\ Bound\ on\ radius\ of\ enclosing\ ball}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV::Scalar\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_aaaf5b57a6499adebe98142232b5cdb84}{radius}};}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \textcolor{comment}{//\ (Approximate)\ center\ (of\ mass)}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ Point\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_ac407689ad7517a6bc25cdcaeebd06a75}{center}};}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a274ffae28f5b336b2db8c8a742f9452f}{WindingNumberTree}}();}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \textcolor{comment}{//\ For\ root}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a274ffae28f5b336b2db8c8a742f9452f}{WindingNumberTree}}(}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a2551264e8045c3dee664537ae21011bc}{V}},}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_ad18e9c1a1712406b55d3e0716a1b8082}{F}});}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \textcolor{comment}{//\ For\ chilluns\ }}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a274ffae28f5b336b2db8c8a742f9452f}{WindingNumberTree}}(}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1WindingNumberTree}{WindingNumberTree<Point,DerivedV,DerivedF>}}\ \&\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a111e8645c2849defb6617b5adbe67810}{parent}},}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_ad18e9c1a1712406b55d3e0716a1b8082}{F}});}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a415ddcf1557d35be4788f6173e6d105a}{\string~WindingNumberTree}}();}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_abff1f1dff02ab9ae24b81a7b534aa9dc}{delete\_children}}();}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a2e3647b6ad15ff4d418f0a0cbc45af0b}{set\_mesh}}(}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a2551264e8045c3dee664537ae21011bc}{V}},}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_ad18e9c1a1712406b55d3e0716a1b8082}{F}});}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ method}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a6aeaed6e361921d5e5fc817264ea4303}{set\_method}}(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceigl_a509f63ef3c5ff8b238920eb0fe3ceecf}{WindingNumberMethod}}\ \&\ m);}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ DerivedV\ \&\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a8f063f38b9b3ae75e0fe9f585d380de8}{getV}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a08fd4eb30fce0b226f1b2dc2853daf04}{MatrixXF}}\ \&\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a6974b1b8ed760bc29859230b52f47be7}{getF}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a08fd4eb30fce0b226f1b2dc2853daf04}{MatrixXF}}\ \&\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a476dbc98e75d9ee7cb22e13900812393}{getcap}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \textcolor{comment}{//\ Grow\ the\ Tree\ recursively}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_aa23f528100b8899953f4eec7b11c2bb6}{grow}}();}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \textcolor{comment}{//\ Determine\ whether\ a\ given\ point\ is\ inside\ the\ bounding\ }}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \textcolor{comment}{//\ Inputs:}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ p\ \ query\ point\ }}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \textcolor{comment}{//\ Returns\ true\ if\ the\ point\ p\ is\ inside\ this\ bounding\ volume}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a02580f4446de4f2e50ae461dd05856f7}{inside}}(\textcolor{keyword}{const}\ Point\ \&\ p)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ the\ (partial)\ winding\ number\ of\ a\ given\ point\ p}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \textcolor{comment}{//\ According\ to\ method}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \textcolor{comment}{//\ \ }}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \textcolor{comment}{//\ Inputs:}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ p\ \ query\ point\ }}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \textcolor{comment}{//\ Returns\ winding\ number\ }}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ DerivedV::Scalar\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_ad38f25af1a8db78d093a7f81dc2b1f95}{winding\_number}}(\textcolor{keyword}{const}\ Point\ \&\ p)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \textcolor{comment}{//\ Same\ as\ above,\ but\ always\ computes\ winding\ number\ using\ exact\ method}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \textcolor{comment}{//\ (sum\ over\ every\ facet)}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ DerivedV::Scalar\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a916c5b98a73f8c0ac810dc14470cdd93}{winding\_number\_all}}(\textcolor{keyword}{const}\ Point\ \&\ p)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \textcolor{comment}{//\ Same\ as\ above,\ but\ always\ computes\ using\ sum\ over\ tessllated\ boundary}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ DerivedV::Scalar\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_af6031baede4515bddaab39fa44c87596}{winding\_number\_boundary}}(\textcolor{keyword}{const}\ Point\ \&\ p)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \textcolor{comment}{//double\ winding\_number\_approx\_simple(}}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \textcolor{comment}{//\ \ const\ Point\ \&\ p,\ }}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \textcolor{comment}{//\ \ const\ double\ min\_max\_w);}}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \textcolor{comment}{//\ Print\ contents\ of\ Tree}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \textcolor{comment}{//\ Optional\ input:}}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ tab\ \ tab\ to\ show\ depth}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a5618b0faff1fc19922d780922f675e58}{print}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ tab=\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \textcolor{comment}{//\ Determine\ max\ absolute\ winding\ number}}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \textcolor{comment}{//\ Inputs:}}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ p\ \ query\ point\ }}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \textcolor{comment}{//\ Returns\ max\ winding\ number\ of\ }}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{virtual}\ \textcolor{keyword}{typename}\ DerivedV::Scalar\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a4db0183d5e5fa19ee65fd73f403825ec}{max\_abs\_winding\_number}}(\textcolor{keyword}{const}\ Point\ \&\ p)\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \textcolor{comment}{//\ Same\ as\ above,\ but\ stronger\ assumptions\ on\ (V,F).\ Assumes\ (V,F)\ is\ a}}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \textcolor{comment}{//\ simple\ polyhedron}}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{virtual}\ \textcolor{keyword}{typename}\ DerivedV::Scalar\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a09df6ec29cff08ffcca5ca01b29d5695}{max\_simple\_abs\_winding\_number}}(\textcolor{keyword}{const}\ Point\ \&\ p)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ or\ read\ cached\ winding\ number\ for\ point\ p\ with\ respect\ to\ mesh}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \textcolor{comment}{//\ in\ bounding\ box,\ recursing\ according\ to\ approximation\ criteria}}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \textcolor{comment}{//\ Inputs:}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ p\ \ query\ point\ }}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ that\ \ WindingNumberTree\ containing\ mesh\ w.r.t.\ which\ we're\ computing\ w.n.}}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \textcolor{comment}{//\ Returns\ cached\ winding\ number}}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{virtual}\ \textcolor{keyword}{typename}\ DerivedV::Scalar\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a6977fc49ea141561d07410e157f75bdb}{cached\_winding\_number}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1WindingNumberTree}{WindingNumberTree}}\ \&\ that,\ \textcolor{keyword}{const}\ Point\ \&\ p)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00135\ \ \ \};}
+\DoxyCodeLine{00136\ \}}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \textcolor{comment}{//\ Implementation}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{WindingNumberTree_8h}{WindingNumberTree.h}}"{}}}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{winding__number_8h}{winding\_number.h}}"{}}}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{triangle__fan_8h}{triangle\_fan.h}}"{}}}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{exterior__edges_8h}{exterior\_edges.h}}"{}}}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{PI_8h}{igl/PI.h}}>}}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{remove__duplicate__vertices_8h}{igl/remove\_duplicate\_vertices.h}}>}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \textcolor{comment}{//template\ <typename\ Point,\ typename\ DerivedV,\ typename\ DerivedF>}}
+\DoxyCodeLine{00152\ \textcolor{comment}{//WindingNumberMethod\ WindingNumberTree<Point,DerivedV,DerivedF>::method\ =\ EXACT\_WINDING\_NUMBER\_METHOD;}}
+\DoxyCodeLine{00153\ \textcolor{comment}{//template\ <typename\ Point,\ typename\ DerivedV,\ typename\ DerivedF>}}
+\DoxyCodeLine{00154\ \textcolor{comment}{//double\ WindingNumberTree<Point,DerivedV,DerivedF>::min\_max\_w\ =\ 0;}}
+\DoxyCodeLine{00155\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int},\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00156\ std::map<\ std::pair<const\ igl::WindingNumberTree<Point,DerivedV,DerivedF>*,\textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1WindingNumberTree}{igl::WindingNumberTree<Point,DerivedV,DerivedF>}}*>,\ \textcolor{keyword}{typename}\ DerivedV::Scalar>}
+\DoxyCodeLine{00157\ \ \ \mbox{\hyperlink{classigl_1_1WindingNumberTree}{igl::WindingNumberTree<Point,DerivedV,DerivedF>::cached}};}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int},\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00160\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a274ffae28f5b336b2db8c8a742f9452f}{igl::WindingNumberTree<Point,DerivedV,DerivedF>::WindingNumberTree}}():}
+\DoxyCodeLine{00161\ \ \ method(\mbox{\hyperlink{namespaceigl_a509f63ef3c5ff8b238920eb0fe3ceecfaa10945b526da7066079013ebe7efa315}{EXACT\_WINDING\_NUMBER\_METHOD}}),}
+\DoxyCodeLine{00162\ \ \ parent(NULL),}
+\DoxyCodeLine{00163\ \ \ V(dummyV),}
+\DoxyCodeLine{00164\ \ \ SV(),}
+\DoxyCodeLine{00165\ \ \ F(),}
+\DoxyCodeLine{00166\ \ \ cap(),}
+\DoxyCodeLine{00167\ \ \ radius(std::numeric\_limits<typename\ DerivedV::Scalar>::infinity()),}
+\DoxyCodeLine{00168\ \ \ center(0,0,0)}
+\DoxyCodeLine{00169\ \{}
+\DoxyCodeLine{00170\ \}}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int},\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00173\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a274ffae28f5b336b2db8c8a742f9452f}{igl::WindingNumberTree<Point,DerivedV,DerivedF>::WindingNumberTree}}(}
+\DoxyCodeLine{00174\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ \_V,}
+\DoxyCodeLine{00175\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ \_F):}
+\DoxyCodeLine{00176\ \ \ method(\mbox{\hyperlink{namespaceigl_a509f63ef3c5ff8b238920eb0fe3ceecfaa10945b526da7066079013ebe7efa315}{EXACT\_WINDING\_NUMBER\_METHOD}}),}
+\DoxyCodeLine{00177\ \ \ parent(NULL),}
+\DoxyCodeLine{00178\ \ \ V(dummyV),}
+\DoxyCodeLine{00179\ \ \ SV(),}
+\DoxyCodeLine{00180\ \ \ F(),}
+\DoxyCodeLine{00181\ \ \ cap(),}
+\DoxyCodeLine{00182\ \ \ radius(std::numeric\_limits<typename\ DerivedV::Scalar>::infinity()),}
+\DoxyCodeLine{00183\ \ \ center(0,0,0)}
+\DoxyCodeLine{00184\ \{}
+\DoxyCodeLine{00185\ \ \ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a2e3647b6ad15ff4d418f0a0cbc45af0b}{set\_mesh}}(\_V,\_F);}
+\DoxyCodeLine{00186\ \}}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int},\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00189\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a2e3647b6ad15ff4d418f0a0cbc45af0b}{igl::WindingNumberTree<Point,DerivedV,DerivedF>::set\_mesh}}(}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ \_V,}
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ \_F)}
+\DoxyCodeLine{00192\ \{}
+\DoxyCodeLine{00193\ \ \ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00194\ \ \ \textcolor{comment}{//\ Remove\ any\ exactly\ duplicate\ vertices}}
+\DoxyCodeLine{00195\ \ \ \textcolor{comment}{//\ Q:\ Can\ this\ ever\ increase\ the\ complexity\ of\ the\ boundary?}}
+\DoxyCodeLine{00196\ \ \ \textcolor{comment}{//\ Q:\ Would\ we\ gain\ even\ more\ by\ remove\ almost\ exactly\ duplicate\ vertices?}}
+\DoxyCodeLine{00197\ \ \ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a08fd4eb30fce0b226f1b2dc2853daf04}{MatrixXF}}\ SF,SVI,SVJ;}
+\DoxyCodeLine{00198\ \ \ \mbox{\hyperlink{namespaceigl_a4684c8d485a5cd367751c6bb92e8b415}{igl::remove\_duplicate\_vertices}}(\_V,\_F,0.0,SV,SVI,SVJ,F);}
+\DoxyCodeLine{00199\ \ \ \mbox{\hyperlink{namespaceigl_a9ce1a2b984f20466ffc7732ab29501ba}{triangle\_fan}}(\mbox{\hyperlink{namespaceigl_a269a81c6ea4fcbc58882d48720e1a4f5}{igl::exterior\_edges}}(F),cap);}
+\DoxyCodeLine{00200\ \ \ V\ =\ SV;}
+\DoxyCodeLine{00201\ \}}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00203\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int},\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00204\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a274ffae28f5b336b2db8c8a742f9452f}{igl::WindingNumberTree<Point,DerivedV,DerivedF>::WindingNumberTree}}(}
+\DoxyCodeLine{00205\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1WindingNumberTree}{igl::WindingNumberTree<Point,DerivedV,DerivedF>}}\ \&\ parent,}
+\DoxyCodeLine{00206\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ \_F):}
+\DoxyCodeLine{00207\ \ \ method(parent.method),}
+\DoxyCodeLine{00208\ \ \ parent(\&parent),}
+\DoxyCodeLine{00209\ \ \ V(parent.V),}
+\DoxyCodeLine{00210\ \ \ SV(),}
+\DoxyCodeLine{00211\ \ \ F(\_F),}
+\DoxyCodeLine{00212\ \ \ cap(\mbox{\hyperlink{namespaceigl_a9ce1a2b984f20466ffc7732ab29501ba}{triangle\_fan}}(\mbox{\hyperlink{namespaceigl}{igl}}::\mbox{\hyperlink{namespaceigl_a269a81c6ea4fcbc58882d48720e1a4f5}{exterior\_edges}}(\_F)))}
+\DoxyCodeLine{00213\ \{}
+\DoxyCodeLine{00214\ \}}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int},\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00217\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a415ddcf1557d35be4788f6173e6d105a}{igl::WindingNumberTree<Point,DerivedV,DerivedF>::\string~WindingNumberTree}}()}
+\DoxyCodeLine{00218\ \{}
+\DoxyCodeLine{00219\ \ \ delete\_children();}
+\DoxyCodeLine{00220\ \}}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int},\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00223\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_abff1f1dff02ab9ae24b81a7b534aa9dc}{igl::WindingNumberTree<Point,DerivedV,DerivedF>::delete\_children}}()}
+\DoxyCodeLine{00224\ \{}
+\DoxyCodeLine{00225\ \ \ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00226\ \ \ \textcolor{comment}{//\ Delete\ children}}
+\DoxyCodeLine{00227\ \ \ \textcolor{keyword}{typename}\ list<WindingNumberTree<Point,DerivedV,DerivedF>*\ >::iterator\ cit\ =\ children.begin();}
+\DoxyCodeLine{00228\ \ \ \textcolor{keywordflow}{while}(cit\ !=\ children.end())}
+\DoxyCodeLine{00229\ \ \ \{}
+\DoxyCodeLine{00230\ \ \ \ \ \textcolor{comment}{//\ clear\ the\ memory\ of\ this\ item}}
+\DoxyCodeLine{00231\ \ \ \ \ \textcolor{keyword}{delete}\ (*\ cit);}
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{comment}{//\ erase\ from\ list,\ returns\ next\ element\ in\ iterator}}
+\DoxyCodeLine{00233\ \ \ \ \ cit\ =\ children.erase(cit);}
+\DoxyCodeLine{00234\ \ \ \}}
+\DoxyCodeLine{00235\ \}}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ }
+\DoxyCodeLine{00237\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int},\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00238\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a6aeaed6e361921d5e5fc817264ea4303}{igl::WindingNumberTree<Point,DerivedV,DerivedF>::set\_method}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceigl_a509f63ef3c5ff8b238920eb0fe3ceecf}{WindingNumberMethod}}\ \&\ m)}
+\DoxyCodeLine{00239\ \{}
+\DoxyCodeLine{00240\ \ \ this-\/>method\ =\ m;}
+\DoxyCodeLine{00241\ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ child\ :\ children)}
+\DoxyCodeLine{00242\ \ \ \{}
+\DoxyCodeLine{00243\ \ \ \ \ child-\/>set\_method(m);}
+\DoxyCodeLine{00244\ \ \ \}}
+\DoxyCodeLine{00245\ \}}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00247\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int},\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00248\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ DerivedV\ \&\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a8f063f38b9b3ae75e0fe9f585d380de8}{igl::WindingNumberTree<Point,DerivedV,DerivedF>::getV}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00249\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00250\ \ \ \textcolor{keywordflow}{return}\ V;}
+\DoxyCodeLine{00251\ \}}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00253\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int},\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00254\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keyword}{typename}\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a08fd4eb30fce0b226f1b2dc2853daf04}{igl::WindingNumberTree<Point,DerivedV,DerivedF>::MatrixXF}}\&\ }
+\DoxyCodeLine{00255\ \ \ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a6974b1b8ed760bc29859230b52f47be7}{igl::WindingNumberTree<Point,DerivedV,DerivedF>::getF}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00256\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00257\ \ \ \textcolor{keywordflow}{return}\ F;}
+\DoxyCodeLine{00258\ \}}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00260\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int},\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00261\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keyword}{typename}\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a08fd4eb30fce0b226f1b2dc2853daf04}{igl::WindingNumberTree<Point,DerivedV,DerivedF>::MatrixXF}}\&\ }
+\DoxyCodeLine{00262\ \ \ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a476dbc98e75d9ee7cb22e13900812393}{igl::WindingNumberTree<Point,DerivedV,DerivedF>::getcap}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00263\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00264\ \ \ \textcolor{keywordflow}{return}\ cap;}
+\DoxyCodeLine{00265\ \}}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00267\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int},\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00268\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_aa23f528100b8899953f4eec7b11c2bb6}{igl::WindingNumberTree<Point,DerivedV,DerivedF>::grow}}()}
+\DoxyCodeLine{00269\ \{}
+\DoxyCodeLine{00270\ \ \ \textcolor{comment}{//\ Don't\ grow}}
+\DoxyCodeLine{00271\ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00272\ \}}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00274\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int},\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00275\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a02580f4446de4f2e50ae461dd05856f7}{igl::WindingNumberTree<Point,DerivedV,DerivedF>::inside}}(\textcolor{keyword}{const}\ Point\ \&\ \textcolor{comment}{/*p*/})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00276\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00277\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00278\ \}}
+\DoxyCodeLine{00279\ }
+\DoxyCodeLine{00280\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int},\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00281\ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ DerivedV::Scalar\ }
+\DoxyCodeLine{00282\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_ad38f25af1a8db78d093a7f81dc2b1f95}{igl::WindingNumberTree<Point,DerivedV,DerivedF>::winding\_number}}(\textcolor{keyword}{const}\ Point\ \&\ p)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00283\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00284\ \ \ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00285\ \ \ \textcolor{comment}{//cout<<"{}+"{}<<boundary.rows();}}
+\DoxyCodeLine{00286\ \ \ \textcolor{comment}{//\ If\ inside\ then\ we\ need\ to\ be\ careful}}
+\DoxyCodeLine{00287\ \ \ \textcolor{keywordflow}{if}(inside(p))}
+\DoxyCodeLine{00288\ \ \ \{}
+\DoxyCodeLine{00289\ \ \ \ \ \textcolor{comment}{//\ If\ not\ a\ leaf\ then\ recurse}}
+\DoxyCodeLine{00290\ \ \ \ \ \textcolor{keywordflow}{if}(children.size()>0)}
+\DoxyCodeLine{00291\ \ \ \ \ \{}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \textcolor{comment}{//\ Recurse\ on\ each\ child\ and\ accumulate}}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV::Scalar\ \mbox{\hyperlink{namespaceigl_adf21bb95cf3e8474259c54e4a55ed734}{sum}}\ =\ 0;}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ list<\mbox{\hyperlink{classigl_1_1WindingNumberTree}{WindingNumberTree<Point,DerivedV,DerivedF>}}*\ >::const\_iterator\ cit\ =\ children.begin();}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ cit\ !=\ children.end();}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ cit++)}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(method)}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceigl_a509f63ef3c5ff8b238920eb0fe3ceecfaa10945b526da7066079013ebe7efa315}{EXACT\_WINDING\_NUMBER\_METHOD}}:}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_adf21bb95cf3e8474259c54e4a55ed734}{sum}}\ +=\ (*cit)-\/>winding\_number(p);}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceigl_a509f63ef3c5ff8b238920eb0fe3ceecfa0d9a88899ed0568e9ea92020c2202c90}{APPROX\_SIMPLE\_WINDING\_NUMBER\_METHOD}}:}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceigl_a509f63ef3c5ff8b238920eb0fe3ceecfa8a0f3017839d2e66a55fabbd269bff19}{APPROX\_CACHE\_WINDING\_NUMBER\_METHOD}}:}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//if((*cit)-\/>max\_simple\_abs\_winding\_number(p)\ >\ min\_max\_w)}}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\{}}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_adf21bb95cf3e8474259c54e4a55ed734}{sum}}\ +=\ (*cit)-\/>winding\_number(p);}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\}}}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ assert(\textcolor{keyword}{false});}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceigl_adf21bb95cf3e8474259c54e4a55ed734}{sum}};}
+\DoxyCodeLine{00317\ \ \ \ \ \}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{00318\ \ \ \ \ \{}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ winding\_number\_all(p);}
+\DoxyCodeLine{00320\ \ \ \ \ \}}
+\DoxyCodeLine{00321\ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00322\ \ \ \ \ \textcolor{comment}{//\ Otherwise\ we\ can\ just\ consider\ boundary}}
+\DoxyCodeLine{00323\ \ \ \ \ \textcolor{comment}{//\ Q:\ If\ we\ using\ the\ "{}multipole"{}\ method\ should\ we\ also\ subdivide\ the}}
+\DoxyCodeLine{00324\ \ \ \ \ \textcolor{comment}{//\ boundary\ case?}}
+\DoxyCodeLine{00325\ \ \ \ \ \textcolor{keywordflow}{if}((cap.rows()\ -\/\ 2)\ <\ F.rows())}
+\DoxyCodeLine{00326\ \ \ \ \ \{}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(method)}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceigl_a509f63ef3c5ff8b238920eb0fe3ceecfaa10945b526da7066079013ebe7efa315}{EXACT\_WINDING\_NUMBER\_METHOD}}:}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ winding\_number\_boundary(p);}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceigl_a509f63ef3c5ff8b238920eb0fe3ceecfa0d9a88899ed0568e9ea92020c2202c90}{APPROX\_SIMPLE\_WINDING\_NUMBER\_METHOD}}:}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV::Scalar\ dist\ =\ (p-\/center).norm();}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Radius\ is\ already\ an\ overestimate\ of\ inside}}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(dist>1.0*radius)}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ winding\_number\_boundary(p);}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceigl_a509f63ef3c5ff8b238920eb0fe3ceecfa8a0f3017839d2e66a55fabbd269bff19}{APPROX\_CACHE\_WINDING\_NUMBER\_METHOD}}:}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ parent-\/>cached\_winding\_number(*\textcolor{keyword}{this},p);}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\ assert(\textcolor{keyword}{false});\textcolor{keywordflow}{break};}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00349\ \ \ \ \ \}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{00350\ \ \ \ \ \{}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \textcolor{comment}{//\ doesn't\ pay\ off\ to\ use\ boundary}}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ winding\_number\_all(p);}
+\DoxyCodeLine{00353\ \ \ \ \ \}}
+\DoxyCodeLine{00354\ \ \ \}}
+\DoxyCodeLine{00355\ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00356\ \}}
+\DoxyCodeLine{00357\ }
+\DoxyCodeLine{00358\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int},\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00359\ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ DerivedV::Scalar\ }
+\DoxyCodeLine{00360\ \ \ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a916c5b98a73f8c0ac810dc14470cdd93}{igl::WindingNumberTree<Point,DerivedV,DerivedF>::winding\_number\_all}}(\textcolor{keyword}{const}\ Point\ \&\ p)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00361\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00362\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceigl_a468f01ca961ac9ea78d02b3ecac25bee}{igl::winding\_number}}(V,F,p);}
+\DoxyCodeLine{00363\ \}}
+\DoxyCodeLine{00364\ }
+\DoxyCodeLine{00365\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int},\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00366\ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ DerivedV::Scalar\ }
+\DoxyCodeLine{00367\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_af6031baede4515bddaab39fa44c87596}{igl::WindingNumberTree<Point,DerivedV,DerivedF>::winding\_number\_boundary}}(\textcolor{keyword}{const}\ Point\ \&\ p)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00368\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00369\ \ \ \textcolor{keyword}{using\ namespace\ }Eigen;}
+\DoxyCodeLine{00370\ \ \ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00371\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceigl_a468f01ca961ac9ea78d02b3ecac25bee}{igl::winding\_number}}(V,cap,p);}
+\DoxyCodeLine{00372\ \}}
+\DoxyCodeLine{00373\ }
+\DoxyCodeLine{00374\ \textcolor{comment}{//template\ <typename\ Point,\ typename\ DerivedV,\ typename\ DerivedF>}}
+\DoxyCodeLine{00375\ \textcolor{comment}{//inline\ double\ igl::WindingNumberTree<Point,DerivedV,DerivedF>::winding\_number\_approx\_simple(}}
+\DoxyCodeLine{00376\ \textcolor{comment}{//\ \ const\ Point\ \&\ p,\ }}
+\DoxyCodeLine{00377\ \textcolor{comment}{//\ \ const\ double\ min\_max\_w)}}
+\DoxyCodeLine{00378\ \textcolor{comment}{//\{}}
+\DoxyCodeLine{00379\ \textcolor{comment}{//\ \ using\ namespace\ std;}}
+\DoxyCodeLine{00380\ \textcolor{comment}{//\ \ if(max\_simple\_abs\_winding\_number(p)\ >\ min\_max\_w)}}
+\DoxyCodeLine{00381\ \textcolor{comment}{//\ \ \{}}
+\DoxyCodeLine{00382\ \textcolor{comment}{//\ \ \ \ return\ winding\_number(p);}}
+\DoxyCodeLine{00383\ \textcolor{comment}{//\ \ \}else}}
+\DoxyCodeLine{00384\ \textcolor{comment}{//\ \ \{}}
+\DoxyCodeLine{00385\ \textcolor{comment}{//\ \ \ \ cout<<"{}Skipped!\ "{}<<max\_simple\_abs\_winding\_number(p)<<"{}<"{}<<min\_max\_w<<endl;}}
+\DoxyCodeLine{00386\ \textcolor{comment}{//\ \ \ \ return\ 0;}}
+\DoxyCodeLine{00387\ \textcolor{comment}{//\ \ \}}}
+\DoxyCodeLine{00388\ \textcolor{comment}{//\}}}
+\DoxyCodeLine{00389\ }
+\DoxyCodeLine{00390\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int},\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00391\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a5618b0faff1fc19922d780922f675e58}{igl::WindingNumberTree<Point,DerivedV,DerivedF>::print}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ tab)}
+\DoxyCodeLine{00392\ \{}
+\DoxyCodeLine{00393\ \ \ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00394\ \ \ \textcolor{comment}{//\ Print\ all\ facets}}
+\DoxyCodeLine{00395\ \ \ cout<<tab<<\textcolor{stringliteral}{"{}["{}}<<endl<<F<<endl<<\textcolor{stringliteral}{"{}]"{}};}
+\DoxyCodeLine{00396\ \ \ \textcolor{comment}{//\ Print\ children}}
+\DoxyCodeLine{00397\ \ \ \textcolor{keywordflow}{for}(}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ list<\mbox{\hyperlink{classigl_1_1WindingNumberTree}{WindingNumberTree<Point,DerivedV,DerivedF>}}*\ >::iterator\ cit\ =\ children.begin();}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ cit\ !=\ children.end();}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ cit++)}
+\DoxyCodeLine{00401\ \ \ \{}
+\DoxyCodeLine{00402\ \ \ \ \ cout<<\textcolor{stringliteral}{"{},"{}}<<endl;}
+\DoxyCodeLine{00403\ \ \ \ \ (*cit)-\/>print((\textcolor{keywordtype}{string}(tab)+\textcolor{stringliteral}{"{}"{}}).c\_str());}
+\DoxyCodeLine{00404\ \ \ \}}
+\DoxyCodeLine{00405\ \}}
+\DoxyCodeLine{00406\ }
+\DoxyCodeLine{00407\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int},\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00408\ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ DerivedV::Scalar\ }
+\DoxyCodeLine{00409\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a4db0183d5e5fa19ee65fd73f403825ec}{igl::WindingNumberTree<Point,DerivedV,DerivedF>::max\_abs\_winding\_number}}(\textcolor{keyword}{const}\ Point\ \&\ \textcolor{comment}{/*p*/})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00410\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00411\ \ \ \textcolor{keywordflow}{return}\ std::numeric\_limits<typename\ DerivedV::Scalar>::infinity();}
+\DoxyCodeLine{00412\ \}}
+\DoxyCodeLine{00413\ }
+\DoxyCodeLine{00414\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int},\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00415\ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ DerivedV::Scalar\ }
+\DoxyCodeLine{00416\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a09df6ec29cff08ffcca5ca01b29d5695}{igl::WindingNumberTree<Point,DerivedV,DerivedF>::max\_simple\_abs\_winding\_number}}(}
+\DoxyCodeLine{00417\ \ \ \textcolor{keyword}{const}\ Point\ \&\ \textcolor{comment}{/*p*/})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00418\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00419\ \ \ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00420\ \ \ \textcolor{keywordflow}{return}\ numeric\_limits<typename\ DerivedV::Scalar>::infinity();}
+\DoxyCodeLine{00421\ \}}
+\DoxyCodeLine{00422\ }
+\DoxyCodeLine{00423\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int},\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00424\ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ DerivedV::Scalar\ }
+\DoxyCodeLine{00425\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a6977fc49ea141561d07410e157f75bdb}{igl::WindingNumberTree<Point,DerivedV,DerivedF>::cached\_winding\_number}}(}
+\DoxyCodeLine{00426\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1WindingNumberTree}{igl::WindingNumberTree<Point,DerivedV,DerivedF>}}\ \&\ that,}
+\DoxyCodeLine{00427\ \ \ \textcolor{keyword}{const}\ Point\ \&\ p)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00428\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00429\ \ \ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00430\ \ \ \textcolor{comment}{//\ Simple\ metric\ for\ \`{}is\_far`}}
+\DoxyCodeLine{00431\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00432\ \ \ \textcolor{comment}{//\ \ \ this\ \ \ \ \ \ \ \ \ \ \ \ \ that}}
+\DoxyCodeLine{00433\ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00434\ \ \ \textcolor{comment}{//\ \ \ -\/-\/-\/-\/-\/\ \ \ \ \ \ \ \ \ \ /\ \ \ |\ \ \ \ \(\backslash\)\ .}}
+\DoxyCodeLine{00435\ \ \ \textcolor{comment}{//\ \ /\ \ r\ \ \(\backslash\)\ \ \ \ \ \ \ \ /\ \ \ \ R\ \ \ \ \ \(\backslash\)\ .}}
+\DoxyCodeLine{00436\ \ \ \textcolor{comment}{//\ |\ p\ !\ \ \ |\ \ \ \ \ \ |\ \ \ \ \ !\ \ \ \ \ \ |}}
+\DoxyCodeLine{00437\ \ \ \textcolor{comment}{//\ \ \(\backslash\)\_\_\_\_\_/\ \ \ \ \ \ \ \ \(\backslash\)\ \ \ \ \ \ \ \ \ \ /}}
+\DoxyCodeLine{00438\ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)\_\_\_\_\_\_\_\_/}}
+\DoxyCodeLine{00439\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00440\ \ \ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00441\ \ \ \textcolor{comment}{//\ a\ =\ angle\ formed\ by\ trapazoid\ formed\ by\ raising\ sides\ with\ lengths\ r\ and\ R}}
+\DoxyCodeLine{00442\ \ \ \textcolor{comment}{//\ at\ respective\ centers.}}
+\DoxyCodeLine{00443\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00444\ \ \ \textcolor{comment}{//\ a\ =\ atan2(R-\/r,d),\ where\ d\ is\ the\ distance\ between\ centers}}
+\DoxyCodeLine{00445\ }
+\DoxyCodeLine{00446\ \ \ \textcolor{comment}{//\ That\ should\ be\ bigger\ (what\ about\ parent?\ what\ about\ sister?)}}
+\DoxyCodeLine{00447\ \ \ \textcolor{keywordtype}{bool}\ is\_far\ =\ this-\/>radius<that.\mbox{\hyperlink{classigl_1_1WindingNumberTree_aaaf5b57a6499adebe98142232b5cdb84}{radius}};}
+\DoxyCodeLine{00448\ \ \ \textcolor{keywordflow}{if}(is\_far)}
+\DoxyCodeLine{00449\ \ \ \{}
+\DoxyCodeLine{00450\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV::Scalar\ a\ =\ atan2(}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ that.\mbox{\hyperlink{classigl_1_1WindingNumberTree_aaaf5b57a6499adebe98142232b5cdb84}{radius}}\ -\/\ this-\/>radius,}
+\DoxyCodeLine{00452\ \ \ \ \ \ \ (that.\mbox{\hyperlink{classigl_1_1WindingNumberTree_ac407689ad7517a6bc25cdcaeebd06a75}{center}}\ -\/\ this-\/>center).norm());}
+\DoxyCodeLine{00453\ \ \ \ \ assert(a>0);}
+\DoxyCodeLine{00454\ \ \ \ \ is\_far\ =\ (a<\mbox{\hyperlink{namespaceigl_af3c65fcb2a063b19e572a9d982b5dcdc}{PI}}/8.0);}
+\DoxyCodeLine{00455\ \ \ \}}
+\DoxyCodeLine{00456\ }
+\DoxyCodeLine{00457\ \ \ \textcolor{keywordflow}{if}(is\_far)}
+\DoxyCodeLine{00458\ \ \ \{}
+\DoxyCodeLine{00459\ \ \ \ \ \textcolor{comment}{//\ Not\ implemented\ yet}}
+\DoxyCodeLine{00460\ \ \ \ \ pair<const\ WindingNumberTree*,const\ WindingNumberTree*>\ this\_that(\textcolor{keyword}{this},\&that);}
+\DoxyCodeLine{00461\ \ \ \ \ \textcolor{comment}{//\ Need\ to\ compute\ it\ for\ first\ time?}}
+\DoxyCodeLine{00462\ \ \ \ \ \textcolor{keywordflow}{if}(cached.count(this\_that)==0)}
+\DoxyCodeLine{00463\ \ \ \ \ \{}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ cached[this\_that]\ =\ }
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ that.\mbox{\hyperlink{classigl_1_1WindingNumberTree_af6031baede4515bddaab39fa44c87596}{winding\_number\_boundary}}(this-\/>center);}
+\DoxyCodeLine{00466\ \ \ \ \ \}}
+\DoxyCodeLine{00467\ \ \ \ \ \textcolor{keywordflow}{return}\ cached[this\_that];}
+\DoxyCodeLine{00468\ \ \ \}\textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(children.size()\ ==\ 0)}
+\DoxyCodeLine{00469\ \ \ \{}
+\DoxyCodeLine{00470\ \ \ \ \ \textcolor{comment}{//\ not\ far\ and\ hierarchy\ ended\ too\ soon:\ can't\ use\ cache}}
+\DoxyCodeLine{00471\ \ \ \ \ \textcolor{keywordflow}{return}\ that.\mbox{\hyperlink{classigl_1_1WindingNumberTree_af6031baede4515bddaab39fa44c87596}{winding\_number\_boundary}}(p);}
+\DoxyCodeLine{00472\ \ \ \}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{00473\ \ \ \{}
+\DoxyCodeLine{00474\ \ \ \ \ \textcolor{keywordflow}{for}(}
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ list<\mbox{\hyperlink{classigl_1_1WindingNumberTree}{WindingNumberTree<Point,DerivedV,DerivedF>}}*\ >::const\_iterator\ cit\ =\ children.begin();}
+\DoxyCodeLine{00476\ \ \ \ \ \ \ cit\ !=\ children.end();}
+\DoxyCodeLine{00477\ \ \ \ \ \ \ cit++)}
+\DoxyCodeLine{00478\ \ \ \ \ \{}
+\DoxyCodeLine{00479\ \ \ \ \ \ \ \textcolor{keywordflow}{if}((*cit)-\/>inside(p))}
+\DoxyCodeLine{00480\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (*cit)-\/>cached\_winding\_number(that,p);}
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00483\ \ \ \ \ \}}
+\DoxyCodeLine{00484\ \ \ \ \ \textcolor{comment}{//\ Not\ inside\ any\ children?\ This\ can\ totally\ happen\ because\ bounding\ boxes}}
+\DoxyCodeLine{00485\ \ \ \ \ \textcolor{comment}{//\ are\ set\ to\ bound\ contained\ facets.\ So\ sibilings\ may\ overlap\ and\ their}}
+\DoxyCodeLine{00486\ \ \ \ \ \textcolor{comment}{//\ union\ may\ not\ contain\ their\ parent\ (though,\ their\ union\ is\ certainly\ a}}
+\DoxyCodeLine{00487\ \ \ \ \ \textcolor{comment}{//\ subset\ of\ their\ parent).}}
+\DoxyCodeLine{00488\ \ \ \ \ assert(\textcolor{keyword}{false});}
+\DoxyCodeLine{00489\ \ \ \}}
+\DoxyCodeLine{00490\ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00491\ \}}
+\DoxyCodeLine{00492\ }
+\DoxyCodeLine{00493\ \textcolor{comment}{//\ Explicit\ instantiation\ of\ static\ variable}}
+\DoxyCodeLine{00494\ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00495\ \ \ \textcolor{keyword}{typename}\ Point,}
+\DoxyCodeLine{00496\ \ \ \textcolor{keyword}{typename}\ DerivedV,\ }
+\DoxyCodeLine{00497\ \ \ \textcolor{keyword}{typename}\ DerivedF\ >}
+\DoxyCodeLine{00498\ DerivedV\ \mbox{\hyperlink{classigl_1_1WindingNumberTree}{igl::WindingNumberTree<Point,DerivedV,DerivedF>::dummyV}};}
+\DoxyCodeLine{00499\ }
+\DoxyCodeLine{00500\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

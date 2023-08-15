@@ -1,0 +1,62 @@
+\doxysection{material\+\_\+colors.\+h}
+\hypertarget{material__colors_8h_source}{}\label{material__colors_8h_source}\index{include/igl/material\_colors.h@{include/igl/material\_colors.h}}
+\mbox{\hyperlink{material__colors_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2013\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_MATERIAL\_COLORS\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_MATERIAL\_COLORS\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \ \ \textcolor{comment}{//\ Gold/Silver\ used\ in\ BBW/MONO/STBS/FAST}}
+\DoxyCodeLine{00019\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceigl_a2719a5fd20a68136038b7132136e74bf}{GOLD\_AMBIENT}}[4]\ =\ \ \ \{\ \ 51.0/255.0,\ 43.0/255.0,33.3/255.0,1.0f\ \};}
+\DoxyCodeLine{00020\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceigl_a8589d6f0c07c7387258e004cfade2567}{GOLD\_DIFFUSE}}[4]\ =\ \ \ \{\ 255.0/255.0,228.0/255.0,58.0/255.0,1.0f\ \};}
+\DoxyCodeLine{00021\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceigl_a63110eff6fbd6ded60fc3c4a004c1ac3}{GOLD\_SPECULAR}}[4]\ =\ \ \{\ 255.0/255.0,235.0/255.0,80.0/255.0,1.0f\ \};}
+\DoxyCodeLine{00022\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceigl_a2cea9492c40178a4255d810a81b27abb}{SILVER\_AMBIENT}}[4]\ =\ \{\ 0.2f,\ 0.2f,\ 0.2f,\ 1.0f\ \};}
+\DoxyCodeLine{00023\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceigl_a285eccdcab39b99b34da071d0e811328}{SILVER\_DIFFUSE}}[4]\ =\ \{\ 1.0f,\ 1.0f,\ 1.0f,\ 1.0f\ \};}
+\DoxyCodeLine{00024\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceigl_adde55f12f19663cc168932e3cbaa1033}{SILVER\_SPECULAR}}[4]\ =\ \{\ 1.0f,\ 1.0f,\ 1.0f,\ 1.0f\ \};}
+\DoxyCodeLine{00025\ \ \ \textcolor{comment}{//\ Blue/Cyan\ more\ similar\ to\ Jovan\ Popovic's\ blue\ than\ to\ Mario\ Botsch's\ blue}}
+\DoxyCodeLine{00026\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceigl_a41f327ea1271a24126e5b54b58137207}{CYAN\_AMBIENT}}[4]\ =\ \ \ \{\ \ 59.0/255.0,\ 68.0/255.0,255.0/255.0,1.0f\ \};}
+\DoxyCodeLine{00027\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceigl_aa91b40d8001ba8a6732b57ea544e3cff}{CYAN\_DIFFUSE}}[4]\ =\ \ \ \{\ \ 94.0/255.0,185.0/255.0,238.0/255.0,1.0f\ \};}
+\DoxyCodeLine{00028\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceigl_a2aa44781d95faf982b844c0aa39b3138}{CYAN\_SPECULAR}}[4]\ =\ \ \ \{\ 163.0/255.0,221.0/255.0,255.0/255.0,1.0f\ \};}
+\DoxyCodeLine{00029\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceigl_a35121926b4786e30ae17f9f96c2657c6}{DENIS\_PURPLE\_DIFFUSE}}[4]\ =\ \ \ \{\ 80.0/255.0,64.0/255.0,255.0/255.0,1.0f\ \};}
+\DoxyCodeLine{00030\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceigl_a31d9148951bd2c269433253e37bdb5fa}{LADISLAV\_ORANGE\_DIFFUSE}}[4]\ =\ \{1.0f,\ 125.0f\ /\ 255.0f,\ 19.0f\ /\ 255.0f,\ 0.0f\};}
+\DoxyCodeLine{00031\ \ \ \textcolor{comment}{//\ FAST\ armadillos\ colors}}
+\DoxyCodeLine{00032\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceigl_a3ef7cc70cc21ec016debd929ca40cb25}{FAST\_GREEN\_DIFFUSE}}[4]\ =\ \{\ 113.0f/255.0f,\ 239.0f/255.0f,\ \ 46.0f/255.0f,\ 1.0f\};}
+\DoxyCodeLine{00033\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceigl_af6d07e97190e3d6eb57c438d929fd9f7}{FAST\_RED\_DIFFUSE}}[4]\ \ \ =\ \{\ 255.0f/255.0f,\ \ 65.0f/255.0f,\ \ 46.0f/255.0f,\ 1.0f\};}
+\DoxyCodeLine{00034\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceigl_a81c3adfdf58bb4b9041258ed528419d8}{FAST\_BLUE\_DIFFUSE}}[4]\ \ =\ \{\ 106.0f/255.0f,\ 106.0f/255.0f,\ 255.0f/255.0f,\ 1.0f\};}
+\DoxyCodeLine{00035\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceigl_a1a8c0ec0db4f21074319658ec9cda122}{FAST\_GRAY\_DIFFUSE}}[4]\ \ =\ \{\ 150.0f/255.0f,\ 150.0f/255.0f,\ 150.0f/255.0f,\ 1.0f\};}
+\DoxyCodeLine{00036\ \ \ \textcolor{comment}{//\ Basic\ colors}}
+\DoxyCodeLine{00037\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceigl_a42bdfa6acbe2c64f29cbd31426c86bfb}{WHITE}}[4]\ =\ \ \ \{\ 255.0/255.0,255.0/255.0,255.0/255.0,1.0f\ \};}
+\DoxyCodeLine{00038\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceigl_aba9827caee2da38a16d2578ad87c18b8}{BLACK}}[4]\ =\ \ \ \{\ 0.0/255.0,0.0/255.0,0.0/255.0,1.0f\ \};}
+\DoxyCodeLine{00039\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceigl_a4ace1077f98e7c25d1b590afc21001d4}{WHITE\_AMBIENT}}[4]\ =\ \ \ \{\ 255.0/255.0,255.0/255.0,255.0/255.0,1.0f\ \};}
+\DoxyCodeLine{00040\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceigl_af258223de150eac4510266bce6c15adc}{WHITE\_DIFFUSE}}[4]\ =\ \ \ \{\ 255.0/255.0,255.0/255.0,255.0/255.0,1.0f\ \};}
+\DoxyCodeLine{00041\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceigl_aa83f669c0c7352ed86d6991e28616eed}{WHITE\_SPECULAR}}[4]\ =\ \ \{\ 255.0/255.0,255.0/255.0,255.0/255.0,1.0f\ \};}
+\DoxyCodeLine{00042\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceigl_a8d653f310491c5eeea8199df41a8506b}{BBW\_POINT\_COLOR}}[4]\ =\ \{239./255.,213./255.,46./255.,255.0/255.0\};}
+\DoxyCodeLine{00043\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceigl_a2a441cf01da7bb4f7455fa87831cc862}{BBW\_LINE\_COLOR}}[4]\ =\ \{106./255.,106./255.,255./255.,255./255.\};}
+\DoxyCodeLine{00044\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceigl_a3443568d1ef02dea80982a3df4bbfec1}{MIDNIGHT\_BLUE\_DIFFUSE}}[4]\ \ =\ \{\ 21.0f/255.0f,\ 27.0f/255.0f,\ 84.0f/255.0f,\ 1.0f\};}
+\DoxyCodeLine{00045\ \ \ \textcolor{comment}{//\ Winding\ number\ colors}}
+\DoxyCodeLine{00046\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceigl_aa9c277b6c43132159685619ae7e56d38}{EASTER\_RED\_DIFFUSE}}[4]\ =\ \{0.603922,0.494118f,0.603922f,1.0f\};}
+\DoxyCodeLine{00047\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceigl_af16c584a27f3dcfaa597e5864861931f}{WN\_OPEN\_BOUNDARY\_COLOR}}[4]\ =\ \{154./255.,0./255.,0./255.,1.0f\};}
+\DoxyCodeLine{00048\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceigl_a147760067e19822d9de2d3386c607b6e}{WN\_NON\_MANIFOLD\_EDGE\_COLOR}}[4]\ =\ \{201./255.,\ 51./255.,255./255.,1.0f\};}
+\DoxyCodeLine{00049\ \ \ \textcolor{keyword}{const}\ Eigen::Vector4f\ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{namespaceigl_afa21880837017adbf621456039ee7682}{MAYA\_GREEN}}(128./255.,242./255.,0./255.,1.),}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{namespaceigl_a4babb52f3f1868081e0cefa0e4f56e07}{MAYA\_YELLOW}}(255./255.,247./255.,50./255.,1.),}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{namespaceigl_a10e550e4712ab9495265314ad14c3372}{MAYA\_RED}}(234./255.,63./255.,52./255.,1.),}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{namespaceigl_a669df861bcae5e90ab84e929012a1007}{MAYA\_BLUE}}(0./255.,73./255.,252./255.,1.),}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{namespaceigl_af3d3a9a0275b56ed0378893b3e80f0b4}{MAYA\_PURPLE}}(180./255.,73./255.,200./255.,1.),}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{namespaceigl_a2348169281b988537537308cba384db3}{MAYA\_VIOLET}}(31./255.,15./255.,66./255.,1.),}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{namespaceigl_acf86c730ad8ddf83e5c89d8589047364}{MAYA\_GREY}}(0.5,0.5,0.5,1.0),}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{namespaceigl_a362ead03e0717a9a1e39f52996e6f6db}{MAYA\_CYAN}}(131./255.,219./255.,252./255.,1.),}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{namespaceigl_a576798d977c56f9ebd4699e1d9693dd3}{MAYA\_SEA\_GREEN}}(70./255.,252./255.,167./255.,1.);}
+\DoxyCodeLine{00059\ \}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

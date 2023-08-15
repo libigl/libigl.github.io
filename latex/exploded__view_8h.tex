@@ -1,0 +1,15 @@
+\doxysection{include/igl/exploded\+\_\+view.h File Reference}
+\hypertarget{exploded__view_8h}{}\label{exploded__view_8h}\index{include/igl/exploded\_view.h@{include/igl/exploded\_view.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include \"{}exploded\+\_\+view.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedT , typename Derived\+EV , typename Derived\+EF , typename DerivedI , typename DerivedJ $>$ }\\void \mbox{\hyperlink{namespaceigl_ad617638bca753edfeed7b8cdb65794ad}{igl\+::exploded\+\_\+view}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedT $>$ \&T, const typename Derived\+V\+::\+Scalar s, const typename Derived\+V\+::\+Scalar t, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+EV $>$ \&EV, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+EF $>$ \&EF, Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&I, Eigen\+::\+Plain\+Object\+Base$<$ DerivedJ $>$ \&J)
+\begin{DoxyCompactList}\small\item\em Given a tet-\/mesh, create a trivial surface mesh (4 triangles per tet) with each tet scaled individually and translated outward from the mesh\textquotesingle{}s centroid, creating an exploded-\/view visualization. \end{DoxyCompactList}\end{DoxyCompactItemize}

@@ -1,0 +1,19 @@
+\doxysection{include/igl/ray\+\_\+mesh\+\_\+intersect.h File Reference}
+\hypertarget{ray__mesh__intersect_8h}{}\label{ray__mesh__intersect_8h}\index{include/igl/ray\_mesh\_intersect.h@{include/igl/ray\_mesh\_intersect.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include \"{}Hit.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \"{}ray\+\_\+mesh\+\_\+intersect.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Derivedsource , typename Deriveddir , typename DerivedV , typename DerivedF $>$ }\\bool \mbox{\hyperlink{namespaceigl_adcb07bb96941cdba2a28b4239f88a246}{igl\+::ray\+\_\+mesh\+\_\+intersect}} (const Eigen\+::\+Matrix\+Base$<$ Derivedsource $>$ \&source, const Eigen\+::\+Matrix\+Base$<$ Deriveddir $>$ \&dir, const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, std\+::vector$<$ \mbox{\hyperlink{structigl_1_1Hit}{igl\+::\+Hit}} $>$ \&hits)
+\begin{DoxyCompactList}\small\item\em Shoot a ray against a mesh (V,F) and collect all hits. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derivedsource , typename Deriveddir , typename DerivedV , typename DerivedF $>$ }\\bool \mbox{\hyperlink{namespaceigl_a6a827e72cc935817ec986e83ce56cc73}{igl\+::ray\+\_\+mesh\+\_\+intersect}} (const Eigen\+::\+Matrix\+Base$<$ Derivedsource $>$ \&source, const Eigen\+::\+Matrix\+Base$<$ Deriveddir $>$ \&dir, const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, \mbox{\hyperlink{structigl_1_1Hit}{igl\+::\+Hit}} \&hit)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}

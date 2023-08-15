@@ -1,0 +1,54 @@
+\doxysection{is\+\_\+intrinsic\+\_\+delaunay.\+h}
+\hypertarget{is__intrinsic__delaunay_8h_source}{}\label{is__intrinsic__delaunay_8h_source}\index{include/igl/is\_intrinsic\_delaunay.h@{include/igl/is\_intrinsic\_delaunay.h}}
+\mbox{\hyperlink{is__intrinsic__delaunay_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2018\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_IS\_INTRINSIC\_DELAUNAY\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_IS\_INTRINSIC\_DELAUNAY\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00022\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedl,}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedD>}
+\DoxyCodeLine{00026\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a95a946e409259bd08727637f7fd15b74}{is\_intrinsic\_delaunay}}(}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedl>\ \&\ l,}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00029\ \ \ \ \ Eigen::PlainObjectBase<DerivedD>\ \&\ D);}
+\DoxyCodeLine{00032\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedl,}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{typename}\ uE2EType,}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedD>}
+\DoxyCodeLine{00037\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a95a946e409259bd08727637f7fd15b74}{is\_intrinsic\_delaunay}}(}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedl>\ \&\ l,}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<uE2EType>\ >\ \&\ uE2E,}
+\DoxyCodeLine{00041\ \ \ \ \ Eigen::PlainObjectBase<DerivedD>\ \&\ D);}
+\DoxyCodeLine{00051\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedl,}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{typename}\ uE2EType,}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{typename}\ Index>}
+\DoxyCodeLine{00055\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a95a946e409259bd08727637f7fd15b74}{is\_intrinsic\_delaunay}}(}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedl>\ \&\ l,}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<uE2EType>\ >\ \&\ uE2E,}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{const}\ Index\ num\_faces,}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{const}\ Index\ uei);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#include\ "{}is\_intrinsic\_delaunay.cpp"{}}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00066\ }
+
+\end{DoxyCode}

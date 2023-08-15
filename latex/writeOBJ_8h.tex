@@ -1,0 +1,21 @@
+\doxysection{include/igl/write\+OBJ.h File Reference}
+\hypertarget{writeOBJ_8h}{}\label{writeOBJ_8h}\index{include/igl/writeOBJ.h@{include/igl/writeOBJ.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \"{}write\+OBJ.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename Derived\+CN , typename Derived\+FN , typename Derived\+TC , typename Derived\+FTC $>$ }\\bool \mbox{\hyperlink{namespaceigl_a1a1761a85ec5cdef44ce8104d0ccdc3f}{igl\+::write\+OBJ}} (const std\+::string str, const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const Eigen\+::\+Matrix\+Base$<$ Derived\+CN $>$ \&CN, const Eigen\+::\+Matrix\+Base$<$ Derived\+FN $>$ \&FN, const Eigen\+::\+Matrix\+Base$<$ Derived\+TC $>$ \&TC, const Eigen\+::\+Matrix\+Base$<$ Derived\+FTC $>$ \&FTC)
+\begin{DoxyCompactList}\small\item\em Write a mesh in an ascii obj file. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF $>$ }\\bool \mbox{\hyperlink{namespaceigl_ad361555ef88be9751c1940298028a4a3}{igl\+::write\+OBJ}} (const std\+::string str, const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename T $>$ }\\bool \mbox{\hyperlink{namespaceigl_a5acdf796fe0c739fd37989deb859f564}{igl\+::write\+OBJ}} (const std\+::string \&str, const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const std\+::vector$<$ std\+::vector$<$ T $>$ $>$ \&F)
+\begin{DoxyCompactList}\small\item\em Write a mesh of mixed tris and quads to an ascii obj file. \end{DoxyCompactList}\end{DoxyCompactItemize}

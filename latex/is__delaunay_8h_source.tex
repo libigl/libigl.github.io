@@ -1,0 +1,46 @@
+\doxysection{is\+\_\+delaunay.\+h}
+\hypertarget{is__delaunay_8h_source}{}\label{is__delaunay_8h_source}\index{include/igl/is\_delaunay.h@{include/igl/is\_delaunay.h}}
+\mbox{\hyperlink{is__delaunay_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2018\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_IS\_DELAUNAY\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_IS\_DELAUNAY\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00022\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedD>}
+\DoxyCodeLine{00026\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a8670d8afa68524c4d0e4745faa89efc7}{is\_delaunay}}(}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00029\ \ \ \ \ Eigen::PlainObjectBase<DerivedD>\ \&\ D);}
+\DoxyCodeLine{00044\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{typename}\ uE2EType,}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{typename}\ InCircle,}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{typename}\ ueiType>}
+\DoxyCodeLine{00050\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a8670d8afa68524c4d0e4745faa89efc7}{is\_delaunay}}(}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<uE2EType>\ >\ \&\ uE2E,}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{const}\ InCircle\ incircle,}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{const}\ ueiType\ uei);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ "{}is\_delaunay.cpp"{}}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

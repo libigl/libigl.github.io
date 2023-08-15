@@ -1,0 +1,40 @@
+\doxysection{seam\+\_\+edges.\+h}
+\hypertarget{seam__edges_8h_source}{}\label{seam__edges_8h_source}\index{include/igl/seam\_edges.h@{include/igl/seam\_edges.h}}
+\mbox{\hyperlink{seam__edges_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2016\ Yotam\ Gingold\ <yotam@yotamgingold.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_SEAM\_EDGES\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_SEAM\_EDGES\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00042\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedTC,}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFTC,}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedseams,}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedboundaries,}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedfoldovers>}
+\DoxyCodeLine{00050\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_ac159f8e26c3ca48a403dd1f27d3fd645}{seam\_edges}}(}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedV>\&\ V,}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedTC>\&\ TC,}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedF>\&\ F,}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedFTC>\&\ FTC,}
+\DoxyCodeLine{00055\ \ \ \ \ Eigen::PlainObjectBase<Derivedseams>\&\ seams,}
+\DoxyCodeLine{00056\ \ \ \ \ Eigen::PlainObjectBase<Derivedboundaries>\&\ boundaries,}
+\DoxyCodeLine{00057\ \ \ \ \ Eigen::PlainObjectBase<Derivedfoldovers>\&\ foldovers);}
+\DoxyCodeLine{00058\ \}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#\ \ include\ "{}seam\_edges.cpp"{}}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,24 @@
+\doxysection{include/igl/lbs\+\_\+matrix.h File Reference}
+\hypertarget{lbs__matrix_8h}{}\label{lbs__matrix_8h}\index{include/igl/lbs\_matrix.h@{include/igl/lbs\_matrix.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include \"{}lbs\+\_\+matrix.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespaceigl_a7e6a7f8c0fb33cae88074977a12e12fc}{igl\+::lbs\+\_\+matrix}} (const Eigen\+::\+Matrix\+Xd \&V, const Eigen\+::\+Matrix\+Xd \&W, Eigen\+::\+Matrix\+Xd \&M)
+\begin{DoxyCompactList}\small\item\em Linear blend skinning can be expressed by V\textquotesingle{} = M \texorpdfstring{$\ast$}{*} T where V\textquotesingle{} is a \#V by dim matrix of deformed vertex positions (one vertex per row), M is a \#V by (dim+1)\texorpdfstring{$\ast$}{*}\#T (composed of weights and rest positions) and T is a \#T\texorpdfstring{$\ast$}{*}(dim+1) by dim matrix of \#T stacked transposed transformation matrices. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceigl_abf08b3e278ea284934baa0d3f6dc4975}{igl\+::lbs\+\_\+matrix\+\_\+column}} (const Eigen\+::\+Matrix\+Xd \&V, const Eigen\+::\+Matrix\+Xd \&W, Eigen\+::\+Sparse\+Matrix$<$ double $>$ \&M)
+\begin{DoxyCompactList}\small\item\em Construct a matrix that when multiplied against a column of affine transformation entries computes new coordinates of the vertices. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceigl_aaafa8162de573ea1c1c90b3f4ffad4a7}{igl\+::lbs\+\_\+matrix\+\_\+column}} (const Eigen\+::\+Matrix\+Xd \&V, const Eigen\+::\+Matrix\+Xd \&W, Eigen\+::\+Matrix\+Xd \&M)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceigl_a5f0754d811bd0e0c95fac0317917c255}{igl\+::lbs\+\_\+matrix\+\_\+column}} (const Eigen\+::\+Matrix\+Xd \&V, const Eigen\+::\+Matrix\+Xd \&W, const Eigen\+::\+Matrix\+Xi \&WI, Eigen\+::\+Sparse\+Matrix$<$ double $>$ \&M)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceigl_a24aaeb1753decc0b7602a6cb0432458e}{igl\+::lbs\+\_\+matrix\+\_\+column}} (const Eigen\+::\+Matrix\+Xd \&V, const Eigen\+::\+Matrix\+Xd \&W, const Eigen\+::\+Matrix\+Xi \&WI, Eigen\+::\+Matrix\+Xd \&M)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}

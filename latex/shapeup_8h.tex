@@ -1,0 +1,36 @@
+\doxysection{include/igl/shapeup.h File Reference}
+\hypertarget{shapeup_8h}{}\label{shapeup_8h}\index{include/igl/shapeup.h@{include/igl/shapeup.h}}
+{\ttfamily \#include $<$igl/min\+\_\+quad\+\_\+with\+\_\+fixed.\+h$>$}\newline
+{\ttfamily \#include $<$igl/igl\+\_\+inline.\+h$>$}\newline
+{\ttfamily \#include $<$igl/setdiff.\+h$>$}\newline
+{\ttfamily \#include $<$igl/cat.\+h$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$igl/\+PI.\+h$>$}\newline
+{\ttfamily \#include \"{}shapeup.\+cpp\"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structigl_1_1ShapeupData}{igl\+::\+Shapeup\+Data}}
+\begin{DoxyCompactList}\small\item\em Parameters and precomputed data for Shape\+Up. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespaceigl_af2b7710824b3b35bfcda5dd2d5c723f5}{igl\+::shapeup\+\_\+projection\+\_\+function}} = std\+::function$<$ bool(const Eigen\+::\+Plain\+Object\+Base$<$ Eigen\+::\+Matrix\+Xd $>$ \&, const Eigen\+::\+Plain\+Object\+Base$<$ Eigen\+::\+Vector\+Xi $>$ \&, const Eigen\+::\+Plain\+Object\+Base$<$ Eigen\+::\+Matrix\+Xi $>$ \&, Eigen\+::\+Plain\+Object\+Base$<$ Eigen\+::\+Matrix\+Xd $>$ \&)$>$
+\begin{DoxyCompactList}\small\item\em Every function here defines a local projection for Shape\+Up, and must have the following structure to qualify\+: \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespaceigl_a5df9db393a5b6b3865e7a10d9d02a31b}{igl\+::shapeup\+\_\+identity\+\_\+projection}} (const Eigen\+::\+Plain\+Object\+Base$<$ Eigen\+::\+Matrix\+Xd $>$ \&P, const Eigen\+::\+Plain\+Object\+Base$<$ Eigen\+::\+Vector\+Xi $>$ \&SC, const Eigen\+::\+Plain\+Object\+Base$<$ Eigen\+::\+Matrix\+Xi $>$ \&S, Eigen\+::\+Plain\+Object\+Base$<$ Eigen\+::\+Matrix\+Xd $>$ \&projP)
+\begin{DoxyCompactList}\small\item\em This projection does nothing but render points into projP. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceigl_aaced06a2a1f184dc5bfe8ff1b87d6d0d}{igl\+::shapeup\+\_\+regular\+\_\+face\+\_\+projection}} (const Eigen\+::\+Plain\+Object\+Base$<$ Eigen\+::\+Matrix\+Xd $>$ \&P, const Eigen\+::\+Plain\+Object\+Base$<$ Eigen\+::\+Vector\+Xi $>$ \&SC, const Eigen\+::\+Plain\+Object\+Base$<$ Eigen\+::\+Matrix\+Xi $>$ \&S, Eigen\+::\+Plain\+Object\+Base$<$ Eigen\+::\+Matrix\+Xd $>$ \&projP)
+\begin{DoxyCompactList}\small\item\em the projection assumes that the sets are vertices of polygons in cyclic order \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedP , typename Derived\+SC , typename DerivedS , typename Derivedw $>$ }\\bool \mbox{\hyperlink{namespaceigl_ad94a2c7d2cbbaf046ff244daa6620895}{igl\+::shapeup\+\_\+precomputation}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedP $>$ \&P, const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SC $>$ \&SC, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedS $>$ \&S, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedS $>$ \&E, const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SC $>$ \&b, const Eigen\+::\+Plain\+Object\+Base$<$ Derivedw $>$ \&w\+Shape, const Eigen\+::\+Plain\+Object\+Base$<$ Derivedw $>$ \&w\+Smooth, \mbox{\hyperlink{structigl_1_1ShapeupData}{Shapeup\+Data}} \&sudata)
+\begin{DoxyCompactList}\small\item\em This function precomputation the necessary matrices for the Shape\+Up process, and prefactorizes them. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedP , typename Derived\+SC , typename DerivedS $>$ }\\bool \mbox{\hyperlink{namespaceigl_a9b6baf02654fad9293e1560d71475185}{igl\+::shapeup\+\_\+solve}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedP $>$ \&bc, const std\+::function$<$ bool(const Eigen\+::\+Plain\+Object\+Base$<$ DerivedP $>$ \&, const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SC $>$ \&, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedS $>$ \&, Eigen\+::\+Plain\+Object\+Base$<$ DerivedP $>$ \&)$>$ \&local\+\_\+projection, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedP $>$ \&P0, const \mbox{\hyperlink{structigl_1_1ShapeupData}{Shapeup\+Data}} \&sudata, const bool quiet\+Iterations, Eigen\+::\+Plain\+Object\+Base$<$ DerivedP $>$ \&P)
+\begin{DoxyCompactList}\small\item\em This function solve the shapeup project optimization. \end{DoxyCompactList}\end{DoxyCompactItemize}

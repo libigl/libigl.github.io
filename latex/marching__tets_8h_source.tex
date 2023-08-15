@@ -1,0 +1,113 @@
+\doxysection{marching\+\_\+tets.\+h}
+\hypertarget{marching__tets_8h_source}{}\label{marching__tets_8h_source}\index{include/igl/marching\_tets.h@{include/igl/marching\_tets.h}}
+\mbox{\hyperlink{marching__tets_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2018\ Francis\ Williams\ <francis@fwilliams.info>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ IGL\_MARCHING\_TETS\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ IGL\_MARCHING\_TETS\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <Eigen/Sparse>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}\ \{}
+\DoxyCodeLine{00030\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedTV,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedTT,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedS,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedSV,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedSF,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedJ,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ BCType>}
+\DoxyCodeLine{00037\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a0093d125cb961522130e5a1ab9b8ca27}{marching\_tets}}(}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedTV>\&\ TV,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedTT>\&\ TT,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedS>\&\ S,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ isovalue,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedSV>\&\ SV,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedSF>\&\ SF,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedJ>\&\ J,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ Eigen::SparseMatrix<BCType>\&\ BC);}
+\DoxyCodeLine{00048\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedTV,}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedTT,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedS,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedSV,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedSF,}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedJ,}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ BCType>}
+\DoxyCodeLine{00055\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a0093d125cb961522130e5a1ab9b8ca27}{marching\_tets}}(}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedTV>\&\ TV,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedTT>\&\ TT,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedS>\&\ S,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedSV>\&\ SV,}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedSF>\&\ SF,}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedJ>\&\ J,}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ Eigen::SparseMatrix<BCType>\&\ BC)\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceigl_a0093d125cb961522130e5a1ab9b8ca27}{igl::marching\_tets}}(TV,\ TT,\ S,\ 0.0,\ SV,\ SF,\ J,\ BC);}
+\DoxyCodeLine{00064\ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedTV,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedTT,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedS,}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedSV,}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedSF,}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedJ>}
+\DoxyCodeLine{00072\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a0093d125cb961522130e5a1ab9b8ca27}{marching\_tets}}(}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedTV>\&\ TV,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedTT>\&\ TT,}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedS>\&\ S,}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ isovalue,}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedSV>\&\ SV,}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedSF>\&\ SF,}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedJ>\&\ J)\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ Eigen::SparseMatrix<double>\ \_BC;}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceigl_a0093d125cb961522130e5a1ab9b8ca27}{igl::marching\_tets}}(TV,\ TT,\ S,\ isovalue,\ SV,\ SF,\ J,\ \_BC);}
+\DoxyCodeLine{00082\ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedTV,}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedTT,}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedS,}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedSV,}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedSF,}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ BCType>}
+\DoxyCodeLine{00090\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a0093d125cb961522130e5a1ab9b8ca27}{marching\_tets}}(}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedTV>\&\ TV,}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedTT>\&\ TT,}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedS>\&\ S,}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ isovalue,}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedSV>\&\ SV,}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedSF>\&\ SF,}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ Eigen::SparseMatrix<BCType>\&\ BC)\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ Eigen::VectorXi\ \_J;}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceigl_a0093d125cb961522130e5a1ab9b8ca27}{igl::marching\_tets}}(TV,\ TT,\ S,\ isovalue,\ SV,\ SF,\ \_J,\ BC);}
+\DoxyCodeLine{00100\ \ \ \}}
+\DoxyCodeLine{00102\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedTV,}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedTT,}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedS,}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedSV,}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedSF>}
+\DoxyCodeLine{00107\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a0093d125cb961522130e5a1ab9b8ca27}{marching\_tets}}(}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedTV>\&\ TV,}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedTT>\&\ TT,}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedS>\&\ S,}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ isovalue,}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedSV>\&\ SV,}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedSF>\&\ SF)\ \{}
+\DoxyCodeLine{00114\ \ \ \ \ Eigen::VectorXi\ \_J;}
+\DoxyCodeLine{00115\ \ \ \ \ Eigen::SparseMatrix<double>\ \_BC;}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceigl_a0093d125cb961522130e5a1ab9b8ca27}{igl::marching\_tets}}(TV,\ TT,\ S,\ isovalue,\ SV,\ SF,\ \_J,\ \_BC);}
+\DoxyCodeLine{00117\ \ \ \}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#\ \ include\ "{}marching\_tets.cpp"{}}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ IGL\_MARCHING\_TETS\_H}}
+
+\end{DoxyCode}

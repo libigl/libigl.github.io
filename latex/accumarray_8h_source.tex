@@ -1,0 +1,43 @@
+\doxysection{accumarray.\+h}
+\hypertarget{accumarray_8h_source}{}\label{accumarray_8h_source}\index{include/igl/accumarray.h@{include/igl/accumarray.h}}
+\mbox{\hyperlink{accumarray_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2018\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ ACCUMARRY\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ ACCUMARRY\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00019\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedS,}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedA}
+\DoxyCodeLine{00023\ \ \ \ \ >}
+\DoxyCodeLine{00024\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a8012b0115ea55d7e1ef308d01a37d65c}{accumarray}}(}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedS>\ \&\ S,}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00027\ \ \ \ \ Eigen::PlainObjectBase<DerivedA>\ \&\ A);}
+\DoxyCodeLine{00033\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedS,}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedA}
+\DoxyCodeLine{00036\ \ \ \ \ >}
+\DoxyCodeLine{00037\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a8012b0115ea55d7e1ef308d01a37d65c}{accumarray}}(}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedS>\ \&\ S,}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{typename}\ DerivedA::Scalar\ V,}
+\DoxyCodeLine{00040\ \ \ \ \ Eigen::PlainObjectBase<DerivedA>\ \&\ A);}
+\DoxyCodeLine{00041\ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#\ \ include\ "{}accumarray.cpp"{}}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

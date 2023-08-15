@@ -1,0 +1,58 @@
+\doxysection{Im\+Gui Namespace Reference}
+\hypertarget{namespaceImGui}{}\label{namespaceImGui}\index{ImGui@{ImGui}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespaceImGui_a010b32e950ef1eb7a43808f0c0bd04d2}{Combo}} (const char \texorpdfstring{$\ast$}{*}label, int \texorpdfstring{$\ast$}{*}idx, std\+::vector$<$ std\+::string $>$ \&values)
+\item 
+bool \mbox{\hyperlink{namespaceImGui_a023d8107acf5b52a1594c2b935b824f0}{Combo}} (const char \texorpdfstring{$\ast$}{*}label, int \texorpdfstring{$\ast$}{*}idx, std\+::function$<$ const char \texorpdfstring{$\ast$}{*}(int)$>$ getter, int items\+\_\+count)
+\item 
+bool \mbox{\hyperlink{namespaceImGui_a3f11b20393024f0f4261ae92b927836d}{List\+Box}} (const char \texorpdfstring{$\ast$}{*}label, int \texorpdfstring{$\ast$}{*}idx, std\+::vector$<$ std\+::string $>$ \&values)
+\item 
+bool \mbox{\hyperlink{namespaceImGui_a392168d28bc4973532ead37f8061121e}{Input\+Text}} (const char \texorpdfstring{$\ast$}{*}label, std\+::string \&str, Im\+Gui\+Input\+Text\+Flags flags=0, Im\+Gui\+Input\+Text\+Callback callback=NULL, void \texorpdfstring{$\ast$}{*}user\+\_\+data=NULL)
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{namespaceImGui_a0fb91683a93c61f90f7c448466266f3c}{Slider\+Scalar}} (const char \texorpdfstring{$\ast$}{*}label, T \texorpdfstring{$\ast$}{*}value, T min=0, T max=0, const char \texorpdfstring{$\ast$}{*}format=\"{}\"{})
+\item 
+{\footnotesize template$<$typename Getter , typename Setter $>$ }\\bool \mbox{\hyperlink{namespaceImGui_a01e8908c9ff42e3510168251a97f1d48}{Checkbox}} (const char \texorpdfstring{$\ast$}{*}label, Getter get, Setter set)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceImGui_a010b32e950ef1eb7a43808f0c0bd04d2}\label{namespaceImGui_a010b32e950ef1eb7a43808f0c0bd04d2} 
+\index{ImGui@{ImGui}!Combo@{Combo}}
+\index{Combo@{Combo}!ImGui@{ImGui}}
+\doxysubsubsection{\texorpdfstring{Combo()}{Combo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Im\+Gui\+::\+Combo (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{label,  }\item[{int \texorpdfstring{$\ast$}{*}}]{idx,  }\item[{std\+::vector$<$ std\+::string $>$ \&}]{values }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceImGui_a023d8107acf5b52a1594c2b935b824f0}\label{namespaceImGui_a023d8107acf5b52a1594c2b935b824f0} 
+\index{ImGui@{ImGui}!Combo@{Combo}}
+\index{Combo@{Combo}!ImGui@{ImGui}}
+\doxysubsubsection{\texorpdfstring{Combo()}{Combo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Im\+Gui\+::\+Combo (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{label,  }\item[{int \texorpdfstring{$\ast$}{*}}]{idx,  }\item[{std\+::function$<$ const char \texorpdfstring{$\ast$}{*}(int)$>$}]{getter,  }\item[{int}]{items\+\_\+count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceImGui_a3f11b20393024f0f4261ae92b927836d}\label{namespaceImGui_a3f11b20393024f0f4261ae92b927836d} 
+\index{ImGui@{ImGui}!ListBox@{ListBox}}
+\index{ListBox@{ListBox}!ImGui@{ImGui}}
+\doxysubsubsection{\texorpdfstring{ListBox()}{ListBox()}}
+{\footnotesize\ttfamily bool Im\+Gui\+::\+List\+Box (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{label,  }\item[{int \texorpdfstring{$\ast$}{*}}]{idx,  }\item[{std\+::vector$<$ std\+::string $>$ \&}]{values }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceImGui_a392168d28bc4973532ead37f8061121e}\label{namespaceImGui_a392168d28bc4973532ead37f8061121e} 
+\index{ImGui@{ImGui}!InputText@{InputText}}
+\index{InputText@{InputText}!ImGui@{ImGui}}
+\doxysubsubsection{\texorpdfstring{InputText()}{InputText()}}
+{\footnotesize\ttfamily bool Im\+Gui\+::\+Input\+Text (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{label,  }\item[{std\+::string \&}]{str,  }\item[{Im\+Gui\+Input\+Text\+Flags}]{flags = {\ttfamily 0},  }\item[{Im\+Gui\+Input\+Text\+Callback}]{callback = {\ttfamily NULL},  }\item[{void \texorpdfstring{$\ast$}{*}}]{user\+\_\+data = {\ttfamily NULL} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceImGui_a0fb91683a93c61f90f7c448466266f3c}\label{namespaceImGui_a0fb91683a93c61f90f7c448466266f3c} 
+\index{ImGui@{ImGui}!SliderScalar@{SliderScalar}}
+\index{SliderScalar@{SliderScalar}!ImGui@{ImGui}}
+\doxysubsubsection{\texorpdfstring{SliderScalar()}{SliderScalar()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool Im\+Gui\+::\+Slider\+Scalar (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{label,  }\item[{T \texorpdfstring{$\ast$}{*}}]{value,  }\item[{T}]{min = {\ttfamily 0},  }\item[{T}]{max = {\ttfamily 0},  }\item[{const char \texorpdfstring{$\ast$}{*}}]{format = {\ttfamily \"{}\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceImGui_a01e8908c9ff42e3510168251a97f1d48}\label{namespaceImGui_a01e8908c9ff42e3510168251a97f1d48} 
+\index{ImGui@{ImGui}!Checkbox@{Checkbox}}
+\index{Checkbox@{Checkbox}!ImGui@{ImGui}}
+\doxysubsubsection{\texorpdfstring{Checkbox()}{Checkbox()}}
+{\footnotesize\ttfamily template$<$typename Getter , typename Setter $>$ \\
+bool Im\+Gui\+::\+Checkbox (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{label,  }\item[{Getter}]{get,  }\item[{Setter}]{set }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+

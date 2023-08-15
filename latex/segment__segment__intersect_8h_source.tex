@@ -1,0 +1,35 @@
+\doxysection{segment\+\_\+segment\+\_\+intersect.\+h}
+\hypertarget{segment__segment__intersect_8h_source}{}\label{segment__segment__intersect_8h_source}\index{include/igl/segment\_segment\_intersect.h@{include/igl/segment\_segment\_intersect.h}}
+\mbox{\hyperlink{segment__segment__intersect_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2016\ Francisca\ Gil\ Ureta\ <gilureta@cs.nyu.edu>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_SEGMENT\_SEGMENT\_INTERSECT\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_SEGMENT\_SEGMENT\_INTERSECT\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00028\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ DerivedSource,\ \textcolor{keyword}{typename}\ DerivedDir>}
+\DoxyCodeLine{00029\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_ab4c9b0f32a7605d9de8575ba478e0817}{segment\_segment\_intersect}}(}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase\ <DerivedSource>\ \&p,}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase\ <DerivedDir>\ \&r,}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase\ <DerivedSource>\ \&q,}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase\ <DerivedDir>\ \&s,}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{double}\ \&t,}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{double}\ \&u,}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{double}\ eps\ =\ 1e-\/6);}
+\DoxyCodeLine{00037\ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#\ \ \ include\ "{}segment\_segment\_intersect.cpp"{}}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

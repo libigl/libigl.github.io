@@ -1,0 +1,122 @@
+\doxysection{igl\+::tinyply\+::Ply\+File Struct Reference}
+\hypertarget{structigl_1_1tinyply_1_1PlyFile}{}\label{structigl_1_1tinyply_1_1PlyFile}\index{igl::tinyply::PlyFile@{igl::tinyply::PlyFile}}
+
+
+{\ttfamily \#include $<$tinyply.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structigl_1_1tinyply_1_1PlyFile_aaa6e7cd92a1c39569c612f6e49b8fb33}{Ply\+File}} ()
+\item 
+\mbox{\hyperlink{structigl_1_1tinyply_1_1PlyFile_af8acffd41569ea0b02b185334ceac8f3}{\texorpdfstring{$\sim$}{\string~}\+Ply\+File}} ()
+\item 
+bool \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyFile_a5f1e06b9c8122da785add78a753ec867}{parse\+\_\+header}} (std\+::istream \&is)
+\item 
+void \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyFile_a1461566984e513dc5d291662739f7693}{read}} (std\+::istream \&is)
+\item 
+void \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyFile_af40b4078ae710227655e91f06159c31d}{write}} (std\+::ostream \&os, bool is\+Binary)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyElement}{Ply\+Element}} $>$ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyFile_af37a0fb4443dadc094b66dbe0b363665}{get\+\_\+elements}} () const
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyFile_ae58ee435927acd4842ac716d6e7e1a82}{get\+\_\+info}} () const
+\item 
+std\+::vector$<$ std\+::string $>$ \& \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyFile_adfd9999b497b37c71ed2a747193b83b4}{get\+\_\+comments}} ()
+\item 
+bool \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyFile_af3159bec0c645805bc379fd8d5a512f9}{is\+\_\+binary\+\_\+file}} () const
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyData}{Ply\+Data}} $>$ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyFile_aa71d3111dd28cbca2fd2c39b67071139}{request\+\_\+properties\+\_\+from\+\_\+element}} (const std\+::string \&element\+Key, const std\+::vector$<$ std\+::string $>$ property\+Keys, const uint32\+\_\+t list\+\_\+size\+\_\+hint=0)
+\item 
+void \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyFile_a510e35efa75ee2c75abd5a900c48f961}{add\+\_\+properties\+\_\+to\+\_\+element}} (const std\+::string \&element\+Key, const std\+::vector$<$ std\+::string $>$ property\+Keys, const \mbox{\hyperlink{namespaceigl_1_1tinyply_a635cb7fe81c17c2be5899e7caea506cd}{Type}} type, const size\+\_\+t \mbox{\hyperlink{namespaceigl_a83819bb842f4bc4c8af21a98e1db44b3}{count}}, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, const \mbox{\hyperlink{namespaceigl_1_1tinyply_a635cb7fe81c17c2be5899e7caea506cd}{Type}} list\+Type, const size\+\_\+t list\+Count)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ Ply\+File\+Impl $>$ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyFile_a021df6c1d4dc5800635e5e00acb9dd48}{impl}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structigl_1_1tinyply_1_1PlyFile_aaa6e7cd92a1c39569c612f6e49b8fb33}\label{structigl_1_1tinyply_1_1PlyFile_aaa6e7cd92a1c39569c612f6e49b8fb33} 
+\index{igl::tinyply::PlyFile@{igl::tinyply::PlyFile}!PlyFile@{PlyFile}}
+\index{PlyFile@{PlyFile}!igl::tinyply::PlyFile@{igl::tinyply::PlyFile}}
+\doxysubsubsection{\texorpdfstring{PlyFile()}{PlyFile()}}
+{\footnotesize\ttfamily igl\+::tinyply\+::\+Ply\+File\+::\+Ply\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{structigl_1_1tinyply_1_1PlyFile_af8acffd41569ea0b02b185334ceac8f3}\label{structigl_1_1tinyply_1_1PlyFile_af8acffd41569ea0b02b185334ceac8f3} 
+\index{igl::tinyply::PlyFile@{igl::tinyply::PlyFile}!````~PlyFile@{\texorpdfstring{$\sim$}{\string~}PlyFile}}
+\index{````~PlyFile@{\texorpdfstring{$\sim$}{\string~}PlyFile}!igl::tinyply::PlyFile@{igl::tinyply::PlyFile}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}PlyFile()}{\string~PlyFile()}}
+{\footnotesize\ttfamily igl\+::tinyply\+::\+Ply\+File\+::\texorpdfstring{$\sim$}{\string~}\+Ply\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structigl_1_1tinyply_1_1PlyFile_a5f1e06b9c8122da785add78a753ec867}\label{structigl_1_1tinyply_1_1PlyFile_a5f1e06b9c8122da785add78a753ec867} 
+\index{igl::tinyply::PlyFile@{igl::tinyply::PlyFile}!parse\_header@{parse\_header}}
+\index{parse\_header@{parse\_header}!igl::tinyply::PlyFile@{igl::tinyply::PlyFile}}
+\doxysubsubsection{\texorpdfstring{parse\_header()}{parse\_header()}}
+{\footnotesize\ttfamily bool igl\+::tinyply\+::\+Ply\+File\+::parse\+\_\+header (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{is }\end{DoxyParamCaption})}
+
+\Hypertarget{structigl_1_1tinyply_1_1PlyFile_a1461566984e513dc5d291662739f7693}\label{structigl_1_1tinyply_1_1PlyFile_a1461566984e513dc5d291662739f7693} 
+\index{igl::tinyply::PlyFile@{igl::tinyply::PlyFile}!read@{read}}
+\index{read@{read}!igl::tinyply::PlyFile@{igl::tinyply::PlyFile}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily void igl\+::tinyply\+::\+Ply\+File\+::read (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{is }\end{DoxyParamCaption})}
+
+\Hypertarget{structigl_1_1tinyply_1_1PlyFile_af40b4078ae710227655e91f06159c31d}\label{structigl_1_1tinyply_1_1PlyFile_af40b4078ae710227655e91f06159c31d} 
+\index{igl::tinyply::PlyFile@{igl::tinyply::PlyFile}!write@{write}}
+\index{write@{write}!igl::tinyply::PlyFile@{igl::tinyply::PlyFile}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily void igl\+::tinyply\+::\+Ply\+File\+::write (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{bool}]{is\+Binary }\end{DoxyParamCaption})}
+
+\Hypertarget{structigl_1_1tinyply_1_1PlyFile_af37a0fb4443dadc094b66dbe0b363665}\label{structigl_1_1tinyply_1_1PlyFile_af37a0fb4443dadc094b66dbe0b363665} 
+\index{igl::tinyply::PlyFile@{igl::tinyply::PlyFile}!get\_elements@{get\_elements}}
+\index{get\_elements@{get\_elements}!igl::tinyply::PlyFile@{igl::tinyply::PlyFile}}
+\doxysubsubsection{\texorpdfstring{get\_elements()}{get\_elements()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyElement}{Ply\+Element}} $>$ igl\+::tinyply\+::\+Ply\+File\+::get\+\_\+elements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{structigl_1_1tinyply_1_1PlyFile_ae58ee435927acd4842ac716d6e7e1a82}\label{structigl_1_1tinyply_1_1PlyFile_ae58ee435927acd4842ac716d6e7e1a82} 
+\index{igl::tinyply::PlyFile@{igl::tinyply::PlyFile}!get\_info@{get\_info}}
+\index{get\_info@{get\_info}!igl::tinyply::PlyFile@{igl::tinyply::PlyFile}}
+\doxysubsubsection{\texorpdfstring{get\_info()}{get\_info()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ igl\+::tinyply\+::\+Ply\+File\+::get\+\_\+info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{structigl_1_1tinyply_1_1PlyFile_adfd9999b497b37c71ed2a747193b83b4}\label{structigl_1_1tinyply_1_1PlyFile_adfd9999b497b37c71ed2a747193b83b4} 
+\index{igl::tinyply::PlyFile@{igl::tinyply::PlyFile}!get\_comments@{get\_comments}}
+\index{get\_comments@{get\_comments}!igl::tinyply::PlyFile@{igl::tinyply::PlyFile}}
+\doxysubsubsection{\texorpdfstring{get\_comments()}{get\_comments()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ \& igl\+::tinyply\+::\+Ply\+File\+::get\+\_\+comments (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{structigl_1_1tinyply_1_1PlyFile_af3159bec0c645805bc379fd8d5a512f9}\label{structigl_1_1tinyply_1_1PlyFile_af3159bec0c645805bc379fd8d5a512f9} 
+\index{igl::tinyply::PlyFile@{igl::tinyply::PlyFile}!is\_binary\_file@{is\_binary\_file}}
+\index{is\_binary\_file@{is\_binary\_file}!igl::tinyply::PlyFile@{igl::tinyply::PlyFile}}
+\doxysubsubsection{\texorpdfstring{is\_binary\_file()}{is\_binary\_file()}}
+{\footnotesize\ttfamily bool igl\+::tinyply\+::\+Ply\+File\+::is\+\_\+binary\+\_\+file (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{structigl_1_1tinyply_1_1PlyFile_aa71d3111dd28cbca2fd2c39b67071139}\label{structigl_1_1tinyply_1_1PlyFile_aa71d3111dd28cbca2fd2c39b67071139} 
+\index{igl::tinyply::PlyFile@{igl::tinyply::PlyFile}!request\_properties\_from\_element@{request\_properties\_from\_element}}
+\index{request\_properties\_from\_element@{request\_properties\_from\_element}!igl::tinyply::PlyFile@{igl::tinyply::PlyFile}}
+\doxysubsubsection{\texorpdfstring{request\_properties\_from\_element()}{request\_properties\_from\_element()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyData}{Ply\+Data}} $>$ igl\+::tinyply\+::\+Ply\+File\+::request\+\_\+properties\+\_\+from\+\_\+element (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{element\+Key,  }\item[{const std\+::vector$<$ std\+::string $>$}]{property\+Keys,  }\item[{const uint32\+\_\+t}]{list\+\_\+size\+\_\+hint = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\Hypertarget{structigl_1_1tinyply_1_1PlyFile_a510e35efa75ee2c75abd5a900c48f961}\label{structigl_1_1tinyply_1_1PlyFile_a510e35efa75ee2c75abd5a900c48f961} 
+\index{igl::tinyply::PlyFile@{igl::tinyply::PlyFile}!add\_properties\_to\_element@{add\_properties\_to\_element}}
+\index{add\_properties\_to\_element@{add\_properties\_to\_element}!igl::tinyply::PlyFile@{igl::tinyply::PlyFile}}
+\doxysubsubsection{\texorpdfstring{add\_properties\_to\_element()}{add\_properties\_to\_element()}}
+{\footnotesize\ttfamily void igl\+::tinyply\+::\+Ply\+File\+::add\+\_\+properties\+\_\+to\+\_\+element (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{element\+Key,  }\item[{const std\+::vector$<$ std\+::string $>$}]{property\+Keys,  }\item[{const \mbox{\hyperlink{namespaceigl_1_1tinyply_a635cb7fe81c17c2be5899e7caea506cd}{Type}}}]{type,  }\item[{const size\+\_\+t}]{count,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data,  }\item[{const \mbox{\hyperlink{namespaceigl_1_1tinyply_a635cb7fe81c17c2be5899e7caea506cd}{Type}}}]{list\+Type,  }\item[{const size\+\_\+t}]{list\+Count }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structigl_1_1tinyply_1_1PlyFile_a021df6c1d4dc5800635e5e00acb9dd48}\label{structigl_1_1tinyply_1_1PlyFile_a021df6c1d4dc5800635e5e00acb9dd48} 
+\index{igl::tinyply::PlyFile@{igl::tinyply::PlyFile}!impl@{impl}}
+\index{impl@{impl}!igl::tinyply::PlyFile@{igl::tinyply::PlyFile}}
+\doxysubsubsection{\texorpdfstring{impl}{impl}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$Ply\+File\+Impl$>$ igl\+::tinyply\+::\+Ply\+File\+::impl}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/igl/\mbox{\hyperlink{tinyply_8h}{tinyply.\+h}}\end{DoxyCompactItemize}

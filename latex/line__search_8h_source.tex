@@ -1,0 +1,35 @@
+\doxysection{line\+\_\+search.\+h}
+\hypertarget{line__search_8h_source}{}\label{line__search_8h_source}\index{include/igl/line\_search.h@{include/igl/line\_search.h}}
+\mbox{\hyperlink{line__search_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2016\ Michael\ Rabinovich}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_LINE\_SEARCH\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_LINE\_SEARCH\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00027\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespaceigl_a9145bd261a2cf691294d8104c99a4ab9}{line\_search}}(}
+\DoxyCodeLine{00028\ \ \ \ \ Eigen::MatrixXd\&\ x,}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\&\ d,}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{double}\ i\_step\_size,}
+\DoxyCodeLine{00031\ \ \ \ \ std::function<\textcolor{keywordtype}{double}(Eigen::MatrixXd\&)>\ energy,}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{double}\ cur\_energy\ =\ -\/1);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#\ \ include\ "{}line\_search.cpp"{}}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,80 @@
+\doxysection{matlabinterface.\+h}
+\hypertarget{matlabinterface_8h_source}{}\label{matlabinterface_8h_source}\index{include/igl/matlab/matlabinterface.h@{include/igl/matlab/matlabinterface.h}}
+\mbox{\hyperlink{matlabinterface_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2013\ Daniele\ Panozzo\ <daniele.panozzo@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_MATLAB\_MATLAB\_INTERFACE\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_MATLAB\_MATLAB\_INTERFACE\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ WARNING:\ These\ functions\ require\ matlab\ installed}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ Additional\ header\ folder\ required:}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ \ \ /Applications/MATLAB\_R2011a.app/extern/include}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ Additional\ binary\ lib\ to\ be\ linked\ with:}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ /Applications/MATLAB\_R2011a.app/bin/maci64/libeng.dylib}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ /Applications/MATLAB\_R2011a.app/bin/maci64/libmx.dylib}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ MAC\ ONLY:}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ Add\ to\ the\ environment\ variables:}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ DYLD\_LIBRARY\_PATH\ =\ /Applications/MATLAB\_R2011a.app/bin/maci64/}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ PATH\ =\ /opt/local/bin:/opt/local/sbin:/Applications/MATLAB\_R2011a.app/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/texbin:/usr/X11/bin}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <Eigen/Sparse>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <complex>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <engine.h>}\ \ \textcolor{comment}{//\ Matlab\ engine\ header}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \ \ \textcolor{keyword}{namespace\ }matlab}
+\DoxyCodeLine{00038\ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1matlab_ad8de12d0e083072ea5fa8b288e1b2d29}{mlinit}}(Engine**\ engine);}
+\DoxyCodeLine{00044\ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1matlab_a3bc3526995e0e598bae21926487e09d3}{mlclose}}(Engine**\ engine);}
+\DoxyCodeLine{00049\ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1matlab_accce7e18a910a90599ffead0b2015fa5}{mlsetmatrix}}(Engine**\ engine,\ std::string\ name,\ \textcolor{keyword}{const}\ Eigen::MatrixXd\&\ M);}
+\DoxyCodeLine{00056\ \ \ }
+\DoxyCodeLine{00058\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1matlab_accce7e18a910a90599ffead0b2015fa5}{mlsetmatrix}}(Engine**\ engine,\ std::string\ name,\ \textcolor{keyword}{const}\ Eigen::MatrixXf\&\ M);}
+\DoxyCodeLine{00059\ \ \ }
+\DoxyCodeLine{00061\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1matlab_accce7e18a910a90599ffead0b2015fa5}{mlsetmatrix}}(Engine**\ engine,\ std::string\ name,\ \textcolor{keyword}{const}\ Eigen::MatrixXi\&\ M);}
+\DoxyCodeLine{00062\ \ \ }
+\DoxyCodeLine{00064\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1matlab_accce7e18a910a90599ffead0b2015fa5}{mlsetmatrix}}(Engine**\ mlengine,\ std::string\ name,\ \textcolor{keyword}{const}\ Eigen::Matrix<unsigned\ int,\ Eigen::Dynamic,\ Eigen::Dynamic\ >\&\ M);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00067\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1matlab_accce7e18a910a90599ffead0b2015fa5}{mlsetmatrix}}(Engine**\ mlengine,\ std::string\ name,\ \textcolor{keyword}{const}\ Eigen::SparseMatrix<double>\&\ M);}
+\DoxyCodeLine{00068\ \ \ }
+\DoxyCodeLine{00074\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1matlab_adcc4db99ace58b7fffb180eff1decf00}{mlgetmatrix}}(Engine**\ engine,\ std::string\ name,\ Eigen::MatrixXd\&\ M);}
+\DoxyCodeLine{00075\ \ \ }
+\DoxyCodeLine{00077\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1matlab_adcc4db99ace58b7fffb180eff1decf00}{mlgetmatrix}}(Engine**\ engine,\ std::string\ name,\ Eigen::MatrixXf\&\ M);}
+\DoxyCodeLine{00078\ \ \ }
+\DoxyCodeLine{00080\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1matlab_adcc4db99ace58b7fffb180eff1decf00}{mlgetmatrix}}(Engine**\ engine,\ std::string\ name,\ Eigen::MatrixXi\&\ M);}
+\DoxyCodeLine{00081\ \ \ }
+\DoxyCodeLine{00083\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1matlab_adcc4db99ace58b7fffb180eff1decf00}{mlgetmatrix}}(Engine**\ mlengine,\ std::string\ name,\ Eigen::Matrix<unsigned\ int,\ Eigen::Dynamic,\ Eigen::Dynamic\ >\&\ M);}
+\DoxyCodeLine{00084\ \ \ }
+\DoxyCodeLine{00090\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1matlab_a45bb421821eac8eb06d80e3928db4090}{mlsetscalar}}(Engine**\ engine,\ std::string\ name,\ \textcolor{keywordtype}{double}\ s);}
+\DoxyCodeLine{00091\ \ \ }
+\DoxyCodeLine{00093\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespaceigl_1_1matlab_ac7d09e8c36882397f95586e8edf90cd1}{mlgetscalar}}(Engine**\ engine,\ std::string\ name);}
+\DoxyCodeLine{00094\ \ \ }
+\DoxyCodeLine{00101\ \ \ \ \ IGL\_INLINE\ std::string\ \mbox{\hyperlink{namespaceigl_1_1matlab_a6bbdb47b2f9b9618ae09a05588d0e29a}{mleval}}(Engine**\ engine,\ std::string\ code);}
+\DoxyCodeLine{00102\ \ \ \}}
+\DoxyCodeLine{00103\ \}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{comment}{//\ Be\ sure\ that\ this\ is\ not\ compiled\ into\ libigl.a}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#\ \ include\ "{}matlabinterface.cpp"{}}}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,75 @@
+\doxysection{Viewport.\+h}
+\hypertarget{Viewport_8h_source}{}\label{Viewport_8h_source}\index{include/igl/Viewport.h@{include/igl/Viewport.h}}
+\mbox{\hyperlink{Viewport_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2013\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_VIEWPORT\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_VIEWPORT\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00014\ \ \ \textcolor{comment}{//\ Simple\ Viewport\ class\ for\ an\ opengl\ context.\ Handles\ reshaping\ and\ mouse.}}
+\DoxyCodeLine{00015\ \ \ \textcolor{keyword}{struct\ }Viewport}
+\DoxyCodeLine{00016\ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ x,y,width,height;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//\ Constructors}}
+\DoxyCodeLine{00019\ \ \ \ \ Viewport(}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ x=0,\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ y=0,\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ width=0,}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ height=0):}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ x(x),}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ y(y),}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ width(width),}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ height(height)}
+\DoxyCodeLine{00028\ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \};}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{virtual}\ \string~Viewport()\{\}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ reshape(}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ x,\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ y,\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ width,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ height)}
+\DoxyCodeLine{00036\ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ this-\/>x\ =\ x;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ this-\/>y\ =\ y;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ this-\/>width\ =\ width;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ this-\/>height\ =\ height;}
+\DoxyCodeLine{00041\ \ \ \ \ \};}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//\ Given\ mouse\_x,mouse\_y\ on\ the\ entire\ window\ return\ mouse\_x,\ mouse\_y\ in}}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{//\ this\ viewport.}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{//\ Inputs:}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{comment}{//\ \ \ my\ \ mouse\ y-\/coordinate}}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//\ \ \ wh\ \ window\ height}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{//\ Returns\ y-\/coordinate\ in\ viewport}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ mouse\_y(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ my,\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ wh)}
+\DoxyCodeLine{00050\ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ my\ -\/\ (wh\ -\/\ height\ -\/\ y);}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{//\ Inputs:}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{//\ \ \ mx\ \ mouse\ x-\/coordinate}}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{//\ Returns\ x-\/coordinate\ in\ viewport}}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{int}\ mouse\_x(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ mx)}
+\DoxyCodeLine{00057\ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ mx\ -\/\ x;}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{comment}{//\ Returns\ whether\ point\ (mx,my)\ is\ in\ extend\ of\ Viewport}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{bool}\ inside(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ mx,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ my)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00062\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ mx\ >=\ x\ \&\&\ my\ >=\ y\ \&\&\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ mx\ <\ x+width\ \&\&\ my\ <\ y+height;}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \};}
+\DoxyCodeLine{00068\ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

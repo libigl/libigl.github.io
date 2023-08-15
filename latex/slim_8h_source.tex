@@ -1,0 +1,112 @@
+\doxysection{slim.\+h}
+\hypertarget{slim_8h_source}{}\label{slim_8h_source}\index{include/igl/slim.h@{include/igl/slim.h}}
+\mbox{\hyperlink{slim_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2016\ Michael\ Rabinovich}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ SLIM\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ SLIM\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{MappingEnergyType_8h}{MappingEnergyType.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <Eigen/Sparse>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ This\ option\ makes\ the\ iterations\ faster\ (all\ except\ the\ first)\ by\ caching\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ sparsity\ pattern\ of\ the\ matrix\ involved\ in\ the\ assembly.\ It\ should\ be\ on\ if}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ you\ plan\ to\ do\ many\ iterations,\ off\ if\ you\ have\ to\ change\ the\ matrix}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ structure\ at\ every\ iteration.}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ SLIM\_CACHED\ }}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#ifdef\ SLIM\_CACHED}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{AtA__cached_8h}{igl/AtA\_cached.h}}>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1SLIMData}{SLIMData}}}
+\DoxyCodeLine{00034\ \{}
+\DoxyCodeLine{00036\ \ \ Eigen::MatrixXd\ \mbox{\hyperlink{structigl_1_1SLIMData_a5c305368043e9a18e0196be96cfc31c3}{V}};\ }
+\DoxyCodeLine{00038\ \ \ Eigen::MatrixXi\ \mbox{\hyperlink{structigl_1_1SLIMData_a7230c04e2b1e764a9e81a7600daa85df}{F}};\ }
+\DoxyCodeLine{00040\ \ \ \mbox{\hyperlink{namespaceigl_a79904ddf7fe8d79169b339cf43f9e739}{MappingEnergyType}}\ \mbox{\hyperlink{structigl_1_1SLIMData_a0442b46248d198eae5dc341738e9f821}{slim\_energy}};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \textcolor{comment}{//\ Optional\ Input}}
+\DoxyCodeLine{00044\ \textcolor{comment}{}\ \ Eigen::VectorXi\ \mbox{\hyperlink{structigl_1_1SLIMData_ae1f26a818f7a1b5c3bc032663d38813d}{b}};}
+\DoxyCodeLine{00046\ \ \ Eigen::MatrixXd\ \mbox{\hyperlink{structigl_1_1SLIMData_a7326dcc125c3389443fe9424a1f88855}{bc}};}
+\DoxyCodeLine{00048\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structigl_1_1SLIMData_aab6b59568a73e6494399da6398fec86e}{soft\_const\_p}};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00051\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structigl_1_1SLIMData_a4f4bf11823f39c8e000c96d0de0248d2}{exp\_factor}};\ }
+\DoxyCodeLine{00053\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structigl_1_1SLIMData_a1f006ca2b423df1455584a2d727e2fab}{mesh\_improvement\_3d}};\ }
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \textcolor{comment}{//\ Output}}
+\DoxyCodeLine{00057\ \textcolor{comment}{}\ \ Eigen::MatrixXd\ \mbox{\hyperlink{structigl_1_1SLIMData_a5b913c4edb1082339aee8b462306df82}{V\_o}};\ }
+\DoxyCodeLine{00059\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structigl_1_1SLIMData_a56eea77ddeae9c08f49f5a2e6f8e2870}{energy}};\ }
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \textcolor{comment}{//\ INTERNAL}}
+\DoxyCodeLine{00062\ \ \ Eigen::VectorXd\ \mbox{\hyperlink{structigl_1_1SLIMData_a2bc173c625140e700d6448680a9e4b1c}{M}};}
+\DoxyCodeLine{00063\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structigl_1_1SLIMData_acfbfb09ce52e14e82d653561b251578b}{mesh\_area}};}
+\DoxyCodeLine{00064\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structigl_1_1SLIMData_abf93fae7057a12cdd76e5f445e9aef02}{avg\_edge\_length}};}
+\DoxyCodeLine{00065\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structigl_1_1SLIMData_a25c68c70641547300251ad372baffe0c}{v\_num}};}
+\DoxyCodeLine{00066\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structigl_1_1SLIMData_a19ebf2e83160d820ee92688f23aab7cd}{f\_num}};}
+\DoxyCodeLine{00067\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structigl_1_1SLIMData_a60fc6450c2b703e5daf5dae88a494c31}{proximal\_p}};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ Eigen::VectorXd\ \mbox{\hyperlink{structigl_1_1SLIMData_a8013a9e8c749e71e465272fd05e2b1a4}{WGL\_M}};}
+\DoxyCodeLine{00070\ \ \ Eigen::VectorXd\ \mbox{\hyperlink{structigl_1_1SLIMData_a002dfbdfde53ea23312a8630ff21a7c7}{rhs}};}
+\DoxyCodeLine{00071\ \ \ Eigen::MatrixXd\ \mbox{\hyperlink{structigl_1_1SLIMData_a03aec7d4e2f3b357123d3c744b43e08c}{Ri}},\mbox{\hyperlink{structigl_1_1SLIMData_a37b9e1ae8de3ed2e8639505e4cfc3f2f}{Ji}};}
+\DoxyCodeLine{00072\ \ \ Eigen::MatrixXd\ \mbox{\hyperlink{structigl_1_1SLIMData_ae8ac0c1d9f36a55353d22b9f9febdcb7}{W}};}
+\DoxyCodeLine{00073\ \ \ Eigen::SparseMatrix<double>\ \mbox{\hyperlink{structigl_1_1SLIMData_a6b244e29028952a6bbb1012f06e5f6b0}{Dx}},\mbox{\hyperlink{structigl_1_1SLIMData_a8d0be8e241b33ab953d23e40b5ecb663}{Dy}},\mbox{\hyperlink{structigl_1_1SLIMData_a879c8a130f88110d97c39dbd4fbb679d}{Dz}};}
+\DoxyCodeLine{00074\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structigl_1_1SLIMData_ab46c3e37552205350f0b8bcecf537944}{f\_n}},\mbox{\hyperlink{structigl_1_1SLIMData_a7b7167eb3f9f47351f457f60df96f46c}{v\_n}};}
+\DoxyCodeLine{00075\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structigl_1_1SLIMData_af1ed4a065b1cf60abf3157a9bf821c19}{first\_solve}};}
+\DoxyCodeLine{00076\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structigl_1_1SLIMData_a76584bbe384932765ccdb64c2a8704ff}{has\_pre\_calc}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00077\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structigl_1_1SLIMData_ad058f54a17eb3978975d7aebecb896f1}{dim}};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\ \ \#ifdef\ SLIM\_CACHED}}
+\DoxyCodeLine{00080\ \ \ Eigen::SparseMatrix<double>\ \mbox{\hyperlink{structigl_1_1SLIMData_ac1bb46cc49ec9e8a9933bd3432cbcb63}{A}};}
+\DoxyCodeLine{00081\ \ \ Eigen::VectorXi\ \mbox{\hyperlink{structigl_1_1SLIMData_af4b99cefe61daa44d67b9f6f20d0223c}{A\_data}};}
+\DoxyCodeLine{00082\ \ \ Eigen::SparseMatrix<double>\ \mbox{\hyperlink{structigl_1_1SLIMData_acf58a66da2491fdc82040bb1c011fceb}{AtA}};}
+\DoxyCodeLine{00083\ \ \ \mbox{\hyperlink{structigl_1_1AtA__cached__data}{igl::AtA\_cached\_data}}\ \mbox{\hyperlink{structigl_1_1SLIMData_a31f8835eedd9a596385f6a2230e76613}{AtA\_data}};}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\ \ \#endif}}
+\DoxyCodeLine{00085\ \};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00099\ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a4b29382a965c510055a154aac6ecde4e}{slim\_precompute}}(}
+\DoxyCodeLine{00100\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\&\ V,}
+\DoxyCodeLine{00101\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\&\ F,}
+\DoxyCodeLine{00102\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\&\ V\_init,}
+\DoxyCodeLine{00103\ \ \ \mbox{\hyperlink{structigl_1_1SLIMData}{SLIMData}}\&\ data,}
+\DoxyCodeLine{00104\ \ \ \mbox{\hyperlink{namespaceigl_a79904ddf7fe8d79169b339cf43f9e739}{MappingEnergyType}}\ slim\_energy,}
+\DoxyCodeLine{00105\ \ \ \textcolor{keyword}{const}\ Eigen::VectorXi\&\ b,}
+\DoxyCodeLine{00106\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\&\ bc,}
+\DoxyCodeLine{00107\ \ \ \textcolor{keywordtype}{double}\ soft\_p);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00116\ IGL\_INLINE\ Eigen::MatrixXd\ \mbox{\hyperlink{namespaceigl_a5651f5d9a88f7dc131b6dd3b99f31fdf}{slim\_solve}}(}
+\DoxyCodeLine{00117\ \ \ \mbox{\hyperlink{structigl_1_1SLIMData}{SLIMData}}\&\ data,\ }
+\DoxyCodeLine{00118\ \ \ \textcolor{keywordtype}{int}\ iter\_num);}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00129\ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a02c86d444aaf4ab498a1466a59775059}{slim\_update\_weights\_and\_closest\_rotations\_with\_jacobians}}(}
+\DoxyCodeLine{00130\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\ \&Ji,}
+\DoxyCodeLine{00131\ \ \ \mbox{\hyperlink{namespaceigl_a79904ddf7fe8d79169b339cf43f9e739}{igl::MappingEnergyType}}\ slim\_energy,}
+\DoxyCodeLine{00132\ \ \ \textcolor{keywordtype}{double}\ exp\_factor,}
+\DoxyCodeLine{00133\ \ \ Eigen::MatrixXd\ \&W,}
+\DoxyCodeLine{00134\ \ \ Eigen::MatrixXd\ \&Ri);}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00143\ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_ac1a2368c134ab7daeb5cfb40b5a0e639}{slim\_buildA}}(}
+\DoxyCodeLine{00144\ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<double>\ \&Dx,}
+\DoxyCodeLine{00145\ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<double>\ \&Dy,}
+\DoxyCodeLine{00146\ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<double>\ \&Dz,}
+\DoxyCodeLine{00147\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\ \&W,}
+\DoxyCodeLine{00148\ \ \ std::vector<Eigen::Triplet<double>\ >\ \&\ IJV);}
+\DoxyCodeLine{00149\ \}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#\ \ include\ "{}slim.cpp"{}}}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

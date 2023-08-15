@@ -1,0 +1,35 @@
+\doxysection{igl\+::spectra Namespace Reference}
+\hypertarget{namespaceigl_1_1spectra}{}\label{namespaceigl_1_1spectra}\index{igl::spectra@{igl::spectra}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename Derived\+V\+\_\+uv $>$ }\\bool \mbox{\hyperlink{namespaceigl_1_1spectra_adb72a973b3fc7104bbc4c5f52321924d}{lscm}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+V\+\_\+uv $>$ \&V\+\_\+uv)
+\begin{DoxyCompactList}\small\item\em Compute a free-\/boundary least-\/squares conformal map parametrization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceigl_1_1spectra_adb72a973b3fc7104bbc4c5f52321924d}\label{namespaceigl_1_1spectra_adb72a973b3fc7104bbc4c5f52321924d} 
+\index{igl::spectra@{igl::spectra}!lscm@{lscm}}
+\index{lscm@{lscm}!igl::spectra@{igl::spectra}}
+\doxysubsubsection{\texorpdfstring{lscm()}{lscm()}}
+{\footnotesize\ttfamily template$<$typename DerivedV , typename DerivedF , typename Derived\+V\+\_\+uv $>$ \\
+bool igl\+::spectra\+::lscm (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&}]{F,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+V\+\_\+uv $>$ \&}]{V\+\_\+uv }\end{DoxyParamCaption})}
+
+
+
+Compute a free-\/boundary least-\/squares conformal map parametrization. 
+
+Equivalently derived in \"{}\+Intrinsic Parameterizations of Surface Meshes\"{} \mbox{[}Desbrun et al. 2002\mbox{]} and \"{}\+Least Squares Conformal Maps for Automatic Texture Atlas \+Generation\"{} \mbox{[}Lévy et al. 2002\mbox{]}, though this implementation follows the derivation in\+: \"{}\+Spectral Conformal Parameterization\"{} \mbox{[}Mullen et al. 2008\mbox{]} Free boundary version. \"{}\+Spectral Conformal Parameterization\"{} using Eigen decomposition. Assumes mesh is a single connected component topologically equivalent to a chunk of the plane.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em V} & \#V by 3 list of mesh vertex positions \\
+\hline
+\mbox{\texttt{ in}}  & {\em F} & \#F by 3 list of mesh faces (must be triangles) \\
+\hline
+\mbox{\texttt{ out}}  & {\em UV} & \#V by 2 list of 2D mesh vertex positions in UV space \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true only on solver success. 
+\end{DoxyReturn}

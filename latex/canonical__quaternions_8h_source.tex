@@ -1,0 +1,133 @@
+\doxysection{canonical\+\_\+quaternions.\+h}
+\hypertarget{canonical__quaternions_8h_source}{}\label{canonical__quaternions_8h_source}\index{include/igl/canonical\_quaternions.h@{include/igl/canonical\_quaternions.h}}
+\mbox{\hyperlink{canonical__quaternions_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2013\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_CANONICAL\_QUATERNIONS\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_CANONICAL\_QUATERNIONS\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00020\ \ \ \textcolor{comment}{//\ Float\ versions}}
+\DoxyCodeLine{00021\ \ \ \textcolor{comment}{//\ This\ will\ get\ undef'd\ below}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ SQRT\_2\_OVER\_2\ 0.707106781f}}
+\DoxyCodeLine{00023\ \ \ \textcolor{comment}{//\ Identity\ quaternion}}
+\DoxyCodeLine{00024\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceigl_a4132693fc82720d3e947c09aad236d96}{IDENTITY\_QUAT\_F}}[4]\ =\ \{0,0,0,1\};}
+\DoxyCodeLine{00025\ \ \ \textcolor{comment}{//\ The\ following\ match\ the\ Matlab\ canonical\ views}}
+\DoxyCodeLine{00026\ \ \ \textcolor{comment}{//\ X\ point\ right,\ Y\ pointing\ up\ and\ Z\ point\ out}}
+\DoxyCodeLine{00027\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceigl_afc1c639c804d4e91dc1ffb424c5caf37}{XY\_PLANE\_QUAT\_F}}[4]\ =\ \{0,0,0,1\};}
+\DoxyCodeLine{00028\ \ \ \textcolor{comment}{//\ X\ points\ right,\ Y\ points\ *in*\ and\ Z\ points\ up}}
+\DoxyCodeLine{00029\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceigl_adf4ae9044c47ccad908df3775523d731}{XZ\_PLANE\_QUAT\_F}}[4]\ =\ \{-\/\mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}},0,0,\mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}}\};}
+\DoxyCodeLine{00030\ \ \ \textcolor{comment}{//\ X\ points\ out,\ Y\ points\ right,\ and\ Z\ points\ up}}
+\DoxyCodeLine{00031\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceigl_abd154ccb32e580426fe71c29fccf45e8}{YZ\_PLANE\_QUAT\_F}}[4]\ =\ \{-\/0.5,-\/0.5,-\/0.5,0.5\};}
+\DoxyCodeLine{00032\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceigl_ab16914177d382aa61d647d2bdac2f61a}{CANONICAL\_VIEW\_QUAT\_F}}[][4]\ =\ }
+\DoxyCodeLine{00033\ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ 1\},\ \textcolor{comment}{//\ 0}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}},\ \mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}}\},\ \textcolor{comment}{//\ 1}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ 1,\ \ \ \ \ \ \ \ \ \ \ \ \ 0\},\ \textcolor{comment}{//\ 2}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}},-\/\mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}}\},\ \textcolor{comment}{//\ 3}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \ \ \ \ \ \ \ \ \ \ \ -\/1,\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ 0\},\ \textcolor{comment}{//\ 4}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \{-\/\mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}},\ \mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}},\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ 0\},\ \textcolor{comment}{//\ 5}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ -\/1,\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ 0\},\ \textcolor{comment}{//\ 6}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \{-\/\mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}},-\/\mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}},\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ 0\},\ \textcolor{comment}{//\ 7}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ -\/0.5,\ \ \ \ \ \ \ \ \ \ -\/0.5,\ \ \ \ \ \ \ \ \ \ -\/0.5,\ \ \ \ \ \ \ \ \ \ \ 0.5\},\ \textcolor{comment}{//\ 8}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ 0,-\/\mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}},\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}}\},\ \textcolor{comment}{//\ 9}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ 0.5,\ \ \ \ \ \ \ \ \ \ -\/0.5,\ \ \ \ \ \ \ \ \ \ \ 0.5,\ \ \ \ \ \ \ \ \ \ \ 0.5\},\ \textcolor{comment}{//\ 10}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \{\ \mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}},\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}},\ \ \ \ \ \ \ \ \ \ \ \ \ 0\},\ \textcolor{comment}{//\ 11}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \{\ \mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}},\ \ \ \ \ \ \ \ \ \ \ \ \ 0,-\/\mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}},\ \ \ \ \ \ \ \ \ \ \ \ \ 0\},\ \textcolor{comment}{//\ 12}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ 0.5,\ \ \ \ \ \ \ \ \ \ \ 0.5,\ \ \ \ \ \ \ \ \ \ -\/0.5,\ \ \ \ \ \ \ \ \ \ \ 0.5\},\ \textcolor{comment}{//\ 13}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}},\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}}\},\ \textcolor{comment}{//\ 14}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ -\/0.5,\ \ \ \ \ \ \ \ \ \ \ 0.5,\ \ \ \ \ \ \ \ \ \ \ 0.5,\ \ \ \ \ \ \ \ \ \ \ 0.5\},\ \textcolor{comment}{//\ 15}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}},\ \mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}},\ \ \ \ \ \ \ \ \ \ \ \ \ 0\},\ \textcolor{comment}{//\ 16}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ -\/0.5,\ \ \ \ \ \ \ \ \ \ \ 0.5,\ \ \ \ \ \ \ \ \ \ \ 0.5,\ \ \ \ \ \ \ \ \ \ -\/0.5\},\ \textcolor{comment}{//\ 17}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \{-\/\mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}},\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ 0,-\/\mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}}\},\ \textcolor{comment}{//\ 18}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ -\/0.5,\ \ \ \ \ \ \ \ \ \ -\/0.5,\ \ \ \ \ \ \ \ \ \ -\/0.5,\ \ \ \ \ \ \ \ \ \ -\/0.5\},\ \textcolor{comment}{//\ 19}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \{-\/\mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}},\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}}\},\ \textcolor{comment}{//\ 20}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ -\/0.5,\ \ \ \ \ \ \ \ \ \ -\/0.5,\ \ \ \ \ \ \ \ \ \ \ 0.5,\ \ \ \ \ \ \ \ \ \ \ 0.5\},\ \textcolor{comment}{//\ 21}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ 0,-\/\mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}},\ \mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}},\ \ \ \ \ \ \ \ \ \ \ \ \ 0\},\ \textcolor{comment}{//\ 22}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ 0.5,\ \ \ \ \ \ \ \ \ \ -\/0.5,\ \ \ \ \ \ \ \ \ \ \ 0.5,\ \ \ \ \ \ \ \ \ \ -\/0.5\}\ \ \textcolor{comment}{//\ 23}}
+\DoxyCodeLine{00063\ \ \ \ \ \};}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#undef\ SQRT\_2\_OVER\_2}}
+\DoxyCodeLine{00065\ \ \ \textcolor{comment}{//\ Double\ versions}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ SQRT\_2\_OVER\_2\ 0.70710678118654757}}
+\DoxyCodeLine{00067\ \ \ \textcolor{comment}{//\ Identity}}
+\DoxyCodeLine{00068\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespaceigl_a4d25a0a671a74bdb8bea35d6dc482d66}{IDENTITY\_QUAT\_D}}[4]\ =\ \{0,0,0,1\};}
+\DoxyCodeLine{00069\ \ \ \textcolor{comment}{//\ The\ following\ match\ the\ Matlab\ canonical\ views}}
+\DoxyCodeLine{00070\ \ \ \textcolor{comment}{//\ X\ point\ right,\ Y\ pointing\ up\ and\ Z\ point\ out}}
+\DoxyCodeLine{00071\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespaceigl_a1e0bd2386fb8512b5fccf9abaab47952}{XY\_PLANE\_QUAT\_D}}[4]\ =\ \{0,0,0,1\};}
+\DoxyCodeLine{00072\ \ \ \textcolor{comment}{//\ X\ points\ right,\ Y\ points\ *in*\ and\ Z\ points\ up}}
+\DoxyCodeLine{00073\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespaceigl_a83519a14c0cfc4eb50105894232e10a4}{XZ\_PLANE\_QUAT\_D}}[4]\ =\ \{-\/\mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}},0,0,\mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}}\};}
+\DoxyCodeLine{00074\ \ \ \textcolor{comment}{//\ X\ points\ out,\ Y\ points\ right,\ and\ Z\ points\ up}}
+\DoxyCodeLine{00075\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespaceigl_aec963f40812a8ab05b4b6b370fce4cfd}{YZ\_PLANE\_QUAT\_D}}[4]\ =\ \{-\/0.5,-\/0.5,-\/0.5,0.5\};}
+\DoxyCodeLine{00076\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespaceigl_abbe2a3410b25f28096dcde690d7df743}{CANONICAL\_VIEW\_QUAT\_D}}[][4]\ =\ }
+\DoxyCodeLine{00077\ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ 1\},}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}},\ \mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}}\},}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ 1,\ \ \ \ \ \ \ \ \ \ \ \ \ 0\},}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}},-\/\mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}}\},}
+\DoxyCodeLine{00082\ \ \ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \ \ \ \ \ \ \ \ \ \ \ -\/1,\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ 0\},}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \{-\/\mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}},\ \mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}},\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ 0\},}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ -\/1,\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ 0\},}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \{-\/\mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}},-\/\mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}},\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ 0\},}
+\DoxyCodeLine{00087\ \ \ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ -\/0.5,\ \ \ \ \ \ \ \ \ \ -\/0.5,\ \ \ \ \ \ \ \ \ \ -\/0.5,\ \ \ \ \ \ \ \ \ \ \ 0.5\},}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ 0,-\/\mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}},\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}}\},}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ 0.5,\ \ \ \ \ \ \ \ \ \ -\/0.5,\ \ \ \ \ \ \ \ \ \ \ 0.5,\ \ \ \ \ \ \ \ \ \ \ 0.5\},}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \{\ \mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}},\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}},\ \ \ \ \ \ \ \ \ \ \ \ \ 0\},}
+\DoxyCodeLine{00092\ \ \ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \{\ \mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}},\ \ \ \ \ \ \ \ \ \ \ \ \ 0,-\/\mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}},\ \ \ \ \ \ \ \ \ \ \ \ \ 0\},}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ 0.5,\ \ \ \ \ \ \ \ \ \ \ 0.5,\ \ \ \ \ \ \ \ \ \ -\/0.5,\ \ \ \ \ \ \ \ \ \ \ 0.5\},}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}},\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}}\},}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ -\/0.5,\ \ \ \ \ \ \ \ \ \ \ 0.5,\ \ \ \ \ \ \ \ \ \ \ 0.5,\ \ \ \ \ \ \ \ \ \ \ 0.5\},}
+\DoxyCodeLine{00097\ \ \ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}},\ \mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}},\ \ \ \ \ \ \ \ \ \ \ \ \ 0\},}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ -\/0.5,\ \ \ \ \ \ \ \ \ \ \ 0.5,\ \ \ \ \ \ \ \ \ \ \ 0.5,\ \ \ \ \ \ \ \ \ \ -\/0.5\},}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \{-\/\mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}},\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ 0,-\/\mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}}\},}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ -\/0.5,\ \ \ \ \ \ \ \ \ \ -\/0.5,\ \ \ \ \ \ \ \ \ \ -\/0.5,\ \ \ \ \ \ \ \ \ \ -\/0.5\},}
+\DoxyCodeLine{00102\ \ \ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \{-\/\mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}},\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ \mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}}\},}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ -\/0.5,\ \ \ \ \ \ \ \ \ \ -\/0.5,\ \ \ \ \ \ \ \ \ \ \ 0.5,\ \ \ \ \ \ \ \ \ \ \ 0.5\},}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ 0,-\/\mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}},\ \mbox{\hyperlink{canonical__quaternions_8h_aeffaebb2528081eee665b34e5654a535}{SQRT\_2\_OVER\_2}},\ \ \ \ \ \ \ \ \ \ \ \ \ 0\},}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ 0.5,\ \ \ \ \ \ \ \ \ \ -\/0.5,\ \ \ \ \ \ \ \ \ \ \ 0.5,\ \ \ \ \ \ \ \ \ \ -\/0.5\}}
+\DoxyCodeLine{00107\ \ \ \ \ \};}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#undef\ SQRT\_2\_OVER\_2}}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#define\ NUM\_CANONICAL\_VIEW\_QUAT\ 24}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \textcolor{comment}{//\ NOTE:\ I\ want\ to\ rather\ be\ able\ to\ return\ a\ Q\_type[][]\ but\ C++\ is\ not}}
+\DoxyCodeLine{00112\ \ \ \textcolor{comment}{//\ making\ it\ easy.\ So\ instead\ I've\ written\ a\ per-\/element\ accessor}}
+\DoxyCodeLine{00113\ \ \ }
+\DoxyCodeLine{00114\ \ \ \textcolor{comment}{//\ Return\ element\ [i][j]\ of\ the\ corresponding\ CANONICAL\_VIEW\_QUAT\_*\ of\ the}}
+\DoxyCodeLine{00115\ \ \ \textcolor{comment}{//\ given\ templated\ type}}
+\DoxyCodeLine{00116\ \ \ \textcolor{comment}{//\ Inputs:}}
+\DoxyCodeLine{00117\ \ \ \textcolor{comment}{//\ \ \ i\ \ index\ of\ quaternion}}
+\DoxyCodeLine{00118\ \ \ \textcolor{comment}{//\ \ \ j\ \ index\ of\ coordinate\ in\ quaternion\ i}}
+\DoxyCodeLine{00119\ \ \ \textcolor{comment}{//\ Returns\ values\ of\ CANONICAL\_VIEW\_QUAT\_*[i][j]}}
+\DoxyCodeLine{00120\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Q\_type>\ }
+\DoxyCodeLine{00121\ \ \ IGL\_INLINE\ Q\_type\ \mbox{\hyperlink{namespaceigl_ab03aa82f1ac2c783bc64cbc9b869531e}{CANONICAL\_VIEW\_QUAT}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j);}
+\DoxyCodeLine{00122\ \ \ \textcolor{comment}{//\ Template\ specializations\ for\ float\ and\ double}}
+\DoxyCodeLine{00123\ \ \ \textcolor{keyword}{template}\ <>\ }
+\DoxyCodeLine{00124\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceigl_a9ac4840ccfe1570de9ff6efc2fba06a5}{CANONICAL\_VIEW\_QUAT<float>}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j);}
+\DoxyCodeLine{00125\ \ \ \textcolor{keyword}{template}\ <>\ }
+\DoxyCodeLine{00126\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespaceigl_a834139f67af87775d3524a90be997edc}{CANONICAL\_VIEW\_QUAT<double>}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j);}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#\ \ include\ "{}canonical\_quaternions.cpp"{}}}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,24 @@
+\doxysection{include/igl/eigs.h File Reference}
+\hypertarget{eigs_8h}{}\label{eigs_8h}\index{include/igl/eigs.h@{include/igl/eigs.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include \"{}eigs.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespaceigl_a39bb96a0597986315dc20d78ba46a50d}{igl\+::\+Eigs\+Type}} \{ \mbox{\hyperlink{namespaceigl_a39bb96a0597986315dc20d78ba46a50da2b8b23d6ed6bab31827ce232b5c4b753}{igl\+::\+EIGS\+\_\+\+TYPE\+\_\+\+SM}} = 0
+, \mbox{\hyperlink{namespaceigl_a39bb96a0597986315dc20d78ba46a50daea338bf4c5326fb6e1534be0d2d8c3ff}{igl\+::\+EIGS\+\_\+\+TYPE\+\_\+\+LM}} = 1
+, \mbox{\hyperlink{namespaceigl_a39bb96a0597986315dc20d78ba46a50dad803c6fe03f39ed4ef76376e6ba1d2c2}{igl\+::\+NUM\+\_\+\+EIGS\+\_\+\+TYPES}} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em Type of eigen values to extract. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Atype , typename Btype , typename DerivedU , typename DerivedS $>$ }\\bool \mbox{\hyperlink{namespaceigl_a77bf75e3dc429d5ca9d830c137ac1b1f}{igl\+::eigs}} (const Eigen\+::\+Sparse\+Matrix$<$ Atype $>$ \&A, const Eigen\+::\+Sparse\+Matrix$<$ Btype $>$ \&B, const size\+\_\+t k, const \mbox{\hyperlink{namespaceigl_a39bb96a0597986315dc20d78ba46a50d}{Eigs\+Type}} type, Eigen\+::\+Plain\+Object\+Base$<$ DerivedU $>$ \&sU, Eigen\+::\+Plain\+Object\+Base$<$ DerivedS $>$ \&sS)
+\begin{DoxyCompactList}\small\item\em Compute the first/last k eigen pairs of the generalized eigen value problem\+: \end{DoxyCompactList}\end{DoxyCompactItemize}

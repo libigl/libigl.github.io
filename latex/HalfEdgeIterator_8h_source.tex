@@ -1,0 +1,76 @@
+\doxysection{Half\+Edge\+Iterator.\+h}
+\hypertarget{HalfEdgeIterator_8h_source}{}\label{HalfEdgeIterator_8h_source}\index{include/igl/HalfEdgeIterator.h@{include/igl/HalfEdgeIterator.h}}
+\mbox{\hyperlink{HalfEdgeIterator_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2014\ Daniele\ Panozzo\ <daniele.panozzo@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_HALFEDGEITERATOR\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_HALFEDGEITERATOR\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <igl/igl\_inline.h>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00031\ \{}
+\DoxyCodeLine{00032\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFF,}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFFi>}
+\DoxyCodeLine{00036\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classigl_1_1HalfEdgeIterator}{HalfEdgeIterator}}}
+\DoxyCodeLine{00037\ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00048\ \ \ \ \ IGL\_INLINE\ \mbox{\hyperlink{classigl_1_1HalfEdgeIterator_ade6f831eefbe8752706db4e8c5ffebb9}{HalfEdgeIterator}}(}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\&\ \_F,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedFF>\&\ \_FF,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedFFi>\&\ \_FFi,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \_fi,}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \_ei,}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_reverse\ =\ \textcolor{keyword}{false}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00058\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1HalfEdgeIterator_a8be83ead1050fd4901b863cb32d2492e}{flipF}}();}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00061\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1HalfEdgeIterator_a302263a4590db215292b9df12a72ea98}{flipE}}();}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00064\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1HalfEdgeIterator_a5a46cbff6201fe3d5ea6965949dcf233}{flipV}}();}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00068\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1HalfEdgeIterator_acd659df96f2d15901e435f00bb108430}{isBorder}}();}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00083\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1HalfEdgeIterator_ae8c6926d09207e64ddebc76da5349bd1}{NextFE}}();}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00087\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1HalfEdgeIterator_a832d0372901b3083631507927e3eb11c}{Vi}}();}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00091\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1HalfEdgeIterator_acdebf5be0b70ae105896bc7b4dc21519}{Fi}}();}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00095\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1HalfEdgeIterator_a7b95717e2fe5d396d933bd9b48d4e82c}{Ei}}();}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00099\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1HalfEdgeIterator_a8ce6e514ed49e9684b0c0fd0dd48e0d6}{operator==}}(\mbox{\hyperlink{classigl_1_1HalfEdgeIterator}{HalfEdgeIterator}}\&\ p2);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{int}\ fi;}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{int}\ ei;}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{bool}\ reverse;}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{comment}{//\ All\ the\ same\ type?\ This\ is\ likely\ to\ break.}}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F;}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedFF>\ \&\ FF;}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedFFi>\ \&\ FFi;}
+\DoxyCodeLine{00110\ \ \ \};}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#\ \ include\ "{}HalfEdgeIterator.cpp"{}}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

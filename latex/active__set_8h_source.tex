@@ -1,0 +1,75 @@
+\doxysection{active\+\_\+set.\+h}
+\hypertarget{active__set_8h_source}{}\label{active__set_8h_source}\index{include/igl/active\_set.h@{include/igl/active\_set.h}}
+\mbox{\hyperlink{active__set_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2013\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_ACTIVE\_SET\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_ACTIVE\_SET\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{SolverStatus_8h}{SolverStatus.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <Eigen/Sparse>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \ \ \textcolor{keyword}{struct\ }active\_set\_params;}
+\DoxyCodeLine{00054\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{typename}\ AT,\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedB,}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedknown,\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedY,}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{typename}\ AeqT,}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedBeq,}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{typename}\ AieqT,}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedBieq,}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedlx,}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedux,}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedZ}
+\DoxyCodeLine{00066\ \ \ \ \ >}
+\DoxyCodeLine{00067\ \ \ IGL\_INLINE\ \mbox{\hyperlink{namespaceigl_a9b754bfef0dda338efc49cbf1fb6cfc2}{igl::SolverStatus}}\ \mbox{\hyperlink{namespaceigl_aebbfd2ea11fa90111a31666f48cc5f00}{active\_set}}(}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<AT>\&\ A,}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedB>\ \&\ B,}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<Derivedknown>\ \&\ known,}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedY>\ \&\ Y,}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<AeqT>\&\ Aeq,}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedBeq>\ \&\ Beq,}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<AieqT>\&\ Aieq,}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedBieq>\ \&\ Bieq,}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<Derivedlx>\ \&\ lx,}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<Derivedux>\ \&\ ux,}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structigl_1_1active__set__params}{igl::active\_set\_params}}\ \&\ params,}
+\DoxyCodeLine{00079\ \ \ \ \ Eigen::PlainObjectBase<DerivedZ>\ \&\ Z}
+\DoxyCodeLine{00080\ \ \ \ \ );}
+\DoxyCodeLine{00081\ \};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{EPS_8h}{EPS.h}}"{}}}
+\DoxyCodeLine{00087\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1active__set__params}{igl::active\_set\_params}}}
+\DoxyCodeLine{00088\ \{}
+\DoxyCodeLine{00090\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structigl_1_1active__set__params_a5390dad235e370d57169aac625068d44}{Auu\_pd}};}
+\DoxyCodeLine{00092\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structigl_1_1active__set__params_a8d3ce913bfb1ef286b5bfca62ccb5c50}{max\_iter}};}
+\DoxyCodeLine{00095\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structigl_1_1active__set__params_aedbeba9b57ee5d34e00f84b3c8f5ce7b}{inactive\_threshold}};}
+\DoxyCodeLine{00098\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structigl_1_1active__set__params_aeadffe312b9c2d67e835a261c0d7bf88}{constraint\_threshold}};}
+\DoxyCodeLine{00101\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structigl_1_1active__set__params_a7ef711f81e9fea1a97b5928f4bf59628}{solution\_diff\_threshold}};}
+\DoxyCodeLine{00103\ \ \ \mbox{\hyperlink{structigl_1_1active__set__params}{active\_set\_params}}():}
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{structigl_1_1active__set__params_a5390dad235e370d57169aac625068d44}{Auu\_pd}}(false),}
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{structigl_1_1active__set__params_a8d3ce913bfb1ef286b5bfca62ccb5c50}{max\_iter}}(100),}
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{structigl_1_1active__set__params_aedbeba9b57ee5d34e00f84b3c8f5ce7b}{inactive\_threshold}}(\mbox{\hyperlink{namespaceigl}{igl}}::\mbox{\hyperlink{namespaceigl_a959bd85cf0ed1b59e3a9ad857c953604}{DOUBLE\_EPS}}),}
+\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{structigl_1_1active__set__params_aeadffe312b9c2d67e835a261c0d7bf88}{constraint\_threshold}}(\mbox{\hyperlink{namespaceigl}{igl}}::\mbox{\hyperlink{namespaceigl_a959bd85cf0ed1b59e3a9ad857c953604}{DOUBLE\_EPS}}),}
+\DoxyCodeLine{00108\ \ \ \ \ \mbox{\hyperlink{structigl_1_1active__set__params_a7ef711f81e9fea1a97b5928f4bf59628}{solution\_diff\_threshold}}(\mbox{\hyperlink{namespaceigl}{igl}}::\mbox{\hyperlink{namespaceigl_a959bd85cf0ed1b59e3a9ad857c953604}{DOUBLE\_EPS}})}
+\DoxyCodeLine{00109\ \ \ \ \ \{\};}
+\DoxyCodeLine{00110\ \};}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#\ \ include\ "{}active\_set.cpp"{}}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

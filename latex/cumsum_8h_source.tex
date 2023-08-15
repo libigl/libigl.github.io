@@ -1,0 +1,44 @@
+\doxysection{cumsum.\+h}
+\hypertarget{cumsum_8h_source}{}\label{cumsum_8h_source}\index{include/igl/cumsum.h@{include/igl/cumsum.h}}
+\mbox{\hyperlink{cumsum_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2013\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_CUMSUM\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_CUMSUM\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00024\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedX,\ \textcolor{keyword}{typename}\ DerivedY>}
+\DoxyCodeLine{00025\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a6ad6bf440539af2b6aa5b38ce6d8f4ec}{cumsum}}(}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedX\ >\ \&\ X,}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ dim,}
+\DoxyCodeLine{00028\ \ \ \ \ Eigen::PlainObjectBase<DerivedY\ >\ \&\ Y);}
+\DoxyCodeLine{00040\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedX,\ \textcolor{keyword}{typename}\ DerivedY>}
+\DoxyCodeLine{00041\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a6ad6bf440539af2b6aa5b38ce6d8f4ec}{cumsum}}(}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedX\ >\ \&\ X,}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ dim,}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ zero\_prefix,}
+\DoxyCodeLine{00045\ \ \ \ \ Eigen::PlainObjectBase<DerivedY\ >\ \&\ Y);}
+\DoxyCodeLine{00046\ \ \ \textcolor{comment}{//template\ <typename\ DerivedX,\ typename\ DerivedY>}}
+\DoxyCodeLine{00047\ \ \ \textcolor{comment}{//IGL\_INLINE\ void\ cumsum(}}
+\DoxyCodeLine{00048\ \ \ \textcolor{comment}{//\ \ const\ Eigen::MatrixBase<DerivedX\ >\ \&\ X,}}
+\DoxyCodeLine{00049\ \ \ \textcolor{comment}{//\ \ Eigen::PlainObjectBase<DerivedY\ >\ \&\ Y);}}
+\DoxyCodeLine{00050\ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#\ \ include\ "{}cumsum.cpp"{}}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00057\ }
+
+\end{DoxyCode}

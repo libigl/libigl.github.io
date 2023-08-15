@@ -1,0 +1,36 @@
+\doxysection{include/igl/sparse.h File Reference}
+\hypertarget{sparse_8h}{}\label{sparse_8h}\index{include/igl/sparse.h@{include/igl/sparse.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include \"{}sparse.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{sparse_8h_aa93624b0b2836d2510e8c92ae951d817}{EIGEN\+\_\+\+YES\+\_\+\+I\+\_\+\+KNOW\+\_\+\+SPARSE\+\_\+\+MODULE\+\_\+\+IS\+\_\+\+NOT\+\_\+\+STABLE\+\_\+\+YET}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Index\+VectorI , class Index\+VectorJ , class Value\+Vector , typename T $>$ }\\void \mbox{\hyperlink{namespaceigl_aa0031015feb34d6398264ceac841bc0c}{igl\+::sparse}} (const Index\+VectorI \&I, const Index\+VectorJ \&J, const Value\+Vector \&V, const size\+\_\+t m, const size\+\_\+t n, Eigen\+::\+Sparse\+Matrix$<$ T $>$ \&X)
+\begin{DoxyCompactList}\small\item\em Build a sparse matrix from list of indices and values (I,J,V), functions like the sparse function in matlab. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Index\+Vector , class Value\+Vector , typename T $>$ }\\void \mbox{\hyperlink{namespaceigl_a55e6cc04971d8a30de15d18272221aa9}{igl\+::sparse}} (const Index\+Vector \&I, const Index\+Vector \&J, const Value\+Vector \&V, Eigen\+::\+Sparse\+Matrix$<$ T $>$ \&X)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedD , typename T $>$ }\\void \mbox{\hyperlink{namespaceigl_a1af79e7e819b442592de8d5db2e5829c}{igl\+::sparse}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedD $>$ \&D, Eigen\+::\+Sparse\+Matrix$<$ T $>$ \&X)
+\begin{DoxyCompactList}\small\item\em Convert a full, dense matrix to a sparse one. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedD $>$ }\\Eigen\+::\+Sparse\+Matrix$<$ typename Derived\+D\+::\+Scalar $>$ \mbox{\hyperlink{namespaceigl_aee96f9beefd8dd12066e82a32b314855}{igl\+::sparse}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedD $>$ \&D)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{sparse_8h_aa93624b0b2836d2510e8c92ae951d817}\label{sparse_8h_aa93624b0b2836d2510e8c92ae951d817} 
+\index{sparse.h@{sparse.h}!EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET@{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}}
+\index{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET@{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}!sparse.h@{sparse.h}}
+\doxysubsubsection{\texorpdfstring{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}}
+{\footnotesize\ttfamily \#define EIGEN\+\_\+\+YES\+\_\+\+I\+\_\+\+KNOW\+\_\+\+SPARSE\+\_\+\+MODULE\+\_\+\+IS\+\_\+\+NOT\+\_\+\+STABLE\+\_\+\+YET}
+

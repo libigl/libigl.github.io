@@ -1,0 +1,47 @@
+\doxysection{include/igl/collapse\+\_\+edge.h File Reference}
+\hypertarget{collapse__edge_8h}{}\label{collapse__edge_8h}\index{include/igl/collapse\_edge.h@{include/igl/collapse\_edge.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include \"{}min\+\_\+heap.\+h\"{}}\newline
+{\ttfamily \#include \"{}decimate\+\_\+callback\+\_\+types.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include \"{}collapse\+\_\+edge.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{collapse__edge_8h_aead6484be211713cb2b3f0b4e2eb4859}{IGL\+\_\+\+COLLAPSE\+\_\+\+EDGE\+\_\+\+NULL}}~0
+\begin{DoxyCompactList}\small\item\em Special value for indicating a null vertex index as the result of a collapsed edge. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespaceigl_aa8e3cfdf30adcadd5172a4f0b862bf59}{igl\+::collapse\+\_\+edge}} (const int e, const Eigen\+::\+Row\+Vector\+Xd \&p, Eigen\+::\+Matrix\+Xd \&V, Eigen\+::\+Matrix\+Xi \&F, Eigen\+::\+Matrix\+Xi \&E, Eigen\+::\+Vector\+Xi \&EMAP, Eigen\+::\+Matrix\+Xi \&EF, Eigen\+::\+Matrix\+Xi \&EI, int \&e1, int \&e2, int \&f1, int \&f2)
+\begin{DoxyCompactList}\small\item\em Attempt to collapse a given edge of a mesh. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceigl_a2382e1bd40b951c6f6c14da9773f2fea}{igl\+::collapse\+\_\+edge}} (const int e, const Eigen\+::\+Row\+Vector\+Xd \&p, std\+::vector$<$ int $>$ \&Nsv, const std\+::vector$<$ int $>$ \&Nsf, std\+::vector$<$ int $>$ \&Ndv, const std\+::vector$<$ int $>$ \&Ndf, Eigen\+::\+Matrix\+Xd \&V, Eigen\+::\+Matrix\+Xi \&F, Eigen\+::\+Matrix\+Xi \&E, Eigen\+::\+Vector\+Xi \&EMAP, Eigen\+::\+Matrix\+Xi \&EF, Eigen\+::\+Matrix\+Xi \&EI, int \&e1, int \&e2, int \&f1, int \&f2)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceigl_a43afe015e0827032a90d6a916c223b2f}{igl\+::collapse\+\_\+edge}} (const int e, const Eigen\+::\+Row\+Vector\+Xd \&p, Eigen\+::\+Matrix\+Xd \&V, Eigen\+::\+Matrix\+Xi \&F, Eigen\+::\+Matrix\+Xi \&E, Eigen\+::\+Vector\+Xi \&EMAP, Eigen\+::\+Matrix\+Xi \&EF, Eigen\+::\+Matrix\+Xi \&EI)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceigl_a943c00b18c9d77e42372a02ac5429bd0}{igl\+::collapse\+\_\+edge}} (const \mbox{\hyperlink{namespaceigl_af967096efcc39e806f0c2b374e2ccc5f}{decimate\+\_\+cost\+\_\+and\+\_\+placement\+\_\+callback}} \&cost\+\_\+and\+\_\+placement, const \mbox{\hyperlink{namespaceigl_af695d0b4a424387592b06f466a86088e}{decimate\+\_\+pre\+\_\+collapse\+\_\+callback}} \&pre\+\_\+collapse, const \mbox{\hyperlink{namespaceigl_a16fd55ae4f3085d4ed4d3c6bff008426}{decimate\+\_\+post\+\_\+collapse\+\_\+callback}} \&post\+\_\+collapse, Eigen\+::\+Matrix\+Xd \&V, Eigen\+::\+Matrix\+Xi \&F, Eigen\+::\+Matrix\+Xi \&E, Eigen\+::\+Vector\+Xi \&EMAP, Eigen\+::\+Matrix\+Xi \&EF, Eigen\+::\+Matrix\+Xi \&EI, \mbox{\hyperlink{namespaceigl_acd3e0aca98df4cd1576aecb262342dbf}{igl\+::min\+\_\+heap}}$<$ std\+::tuple$<$ double, int, int $>$ $>$ \&Q, Eigen\+::\+Vector\+Xi \&EQ, Eigen\+::\+Matrix\+Xd \&C, int \&e, int \&e1, int \&e2, int \&f1, int \&f2)
+\begin{DoxyCompactList}\small\item\em Collapse least-\/cost edge from a priority queue and update queue. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceigl_a134e573db7b2488d9118ebcf88419f62}{igl\+::collapse\+\_\+edge}} (const \mbox{\hyperlink{namespaceigl_af967096efcc39e806f0c2b374e2ccc5f}{decimate\+\_\+cost\+\_\+and\+\_\+placement\+\_\+callback}} \&cost\+\_\+and\+\_\+placement, Eigen\+::\+Matrix\+Xd \&V, Eigen\+::\+Matrix\+Xi \&F, Eigen\+::\+Matrix\+Xi \&E, Eigen\+::\+Vector\+Xi \&EMAP, Eigen\+::\+Matrix\+Xi \&EF, Eigen\+::\+Matrix\+Xi \&EI, \mbox{\hyperlink{namespaceigl_acd3e0aca98df4cd1576aecb262342dbf}{igl\+::min\+\_\+heap}}$<$ std\+::tuple$<$ double, int, int $>$ $>$ \&Q, Eigen\+::\+Vector\+Xi \&EQ, Eigen\+::\+Matrix\+Xd \&C)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceigl_a16f5c61d84a3d91b0e701df01c97c26c}{igl\+::collapse\+\_\+edge}} (const \mbox{\hyperlink{namespaceigl_af967096efcc39e806f0c2b374e2ccc5f}{decimate\+\_\+cost\+\_\+and\+\_\+placement\+\_\+callback}} \&cost\+\_\+and\+\_\+placement, const \mbox{\hyperlink{namespaceigl_af695d0b4a424387592b06f466a86088e}{decimate\+\_\+pre\+\_\+collapse\+\_\+callback}} \&pre\+\_\+collapse, const \mbox{\hyperlink{namespaceigl_a16fd55ae4f3085d4ed4d3c6bff008426}{decimate\+\_\+post\+\_\+collapse\+\_\+callback}} \&post\+\_\+collapse, Eigen\+::\+Matrix\+Xd \&V, Eigen\+::\+Matrix\+Xi \&F, Eigen\+::\+Matrix\+Xi \&E, Eigen\+::\+Vector\+Xi \&EMAP, Eigen\+::\+Matrix\+Xi \&EF, Eigen\+::\+Matrix\+Xi \&EI, \mbox{\hyperlink{namespaceigl_acd3e0aca98df4cd1576aecb262342dbf}{igl\+::min\+\_\+heap}}$<$ std\+::tuple$<$ double, int, int $>$ $>$ \&Q, Eigen\+::\+Vector\+Xi \&EQ, Eigen\+::\+Matrix\+Xd \&C)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{collapse__edge_8h_aead6484be211713cb2b3f0b4e2eb4859}\label{collapse__edge_8h_aead6484be211713cb2b3f0b4e2eb4859} 
+\index{collapse\_edge.h@{collapse\_edge.h}!IGL\_COLLAPSE\_EDGE\_NULL@{IGL\_COLLAPSE\_EDGE\_NULL}}
+\index{IGL\_COLLAPSE\_EDGE\_NULL@{IGL\_COLLAPSE\_EDGE\_NULL}!collapse\_edge.h@{collapse\_edge.h}}
+\doxysubsubsection{\texorpdfstring{IGL\_COLLAPSE\_EDGE\_NULL}{IGL\_COLLAPSE\_EDGE\_NULL}}
+{\footnotesize\ttfamily \#define IGL\+\_\+\+COLLAPSE\+\_\+\+EDGE\+\_\+\+NULL~0}
+
+
+
+Special value for indicating a null vertex index as the result of a collapsed edge. 
+

@@ -1,0 +1,36 @@
+\doxysection{include/igl/slice\+\_\+into.h File Reference}
+\hypertarget{slice__into_8h}{}\label{slice__into_8h}\index{include/igl/slice\_into.h@{include/igl/slice\_into.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include \"{}slice\+\_\+into.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{slice__into_8h_aa93624b0b2836d2510e8c92ae951d817}{EIGEN\+\_\+\+YES\+\_\+\+I\+\_\+\+KNOW\+\_\+\+SPARSE\+\_\+\+MODULE\+\_\+\+IS\+\_\+\+NOT\+\_\+\+STABLE\+\_\+\+YET}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T , typename DerivedR , typename DerivedC $>$ }\\void \mbox{\hyperlink{namespaceigl_ab893d0a94d4eb6a1c5422e7cfe368daf}{igl\+::slice\+\_\+into}} (const Eigen\+::\+Sparse\+Matrix$<$ T $>$ \&X, const Eigen\+::\+Matrix\+Base$<$ DerivedR $>$ \&R, const Eigen\+::\+Matrix\+Base$<$ DerivedC $>$ \&C, Eigen\+::\+Sparse\+Matrix$<$ T $>$ \&Y)
+\begin{DoxyCompactList}\small\item\em Act like the matlab Y(row\+\_\+indices,col\+\_\+indices) = X. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedX , typename DerivedY , typename DerivedR , typename DerivedC $>$ }\\void \mbox{\hyperlink{namespaceigl_afce428bb768059c8d6f9563873f8e730}{igl\+::slice\+\_\+into}} (const Eigen\+::\+Matrix\+Base$<$ DerivedX $>$ \&X, const Eigen\+::\+Matrix\+Base$<$ DerivedR $>$ \&R, const Eigen\+::\+Matrix\+Base$<$ DerivedC $>$ \&C, Eigen\+::\+Plain\+Object\+Base$<$ DerivedY $>$ \&Y)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename MatX , typename MatY , typename DerivedR $>$ }\\void \mbox{\hyperlink{namespaceigl_a185ee703c7cf8760af368bcb0861d37f}{igl\+::slice\+\_\+into}} (const MatX \&X, const Eigen\+::\+Matrix\+Base$<$ DerivedR $>$ \&R, const int dim, MatY \&Y)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedX , typename DerivedR , typename DerivedY $>$ }\\void \mbox{\hyperlink{namespaceigl_aa29b762b3094e33fd5167ca196de49ce}{igl\+::slice\+\_\+into}} (const Eigen\+::\+Matrix\+Base$<$ DerivedX $>$ \&X, const Eigen\+::\+Matrix\+Base$<$ DerivedR $>$ \&R, Eigen\+::\+Plain\+Object\+Base$<$ DerivedY $>$ \&Y)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{slice__into_8h_aa93624b0b2836d2510e8c92ae951d817}\label{slice__into_8h_aa93624b0b2836d2510e8c92ae951d817} 
+\index{slice\_into.h@{slice\_into.h}!EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET@{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}}
+\index{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET@{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}!slice\_into.h@{slice\_into.h}}
+\doxysubsubsection{\texorpdfstring{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}}
+{\footnotesize\ttfamily \#define EIGEN\+\_\+\+YES\+\_\+\+I\+\_\+\+KNOW\+\_\+\+SPARSE\+\_\+\+MODULE\+\_\+\+IS\+\_\+\+NOT\+\_\+\+STABLE\+\_\+\+YET}
+

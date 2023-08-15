@@ -1,0 +1,87 @@
+\doxysection{procrustes.\+h}
+\hypertarget{procrustes_8h_source}{}\label{procrustes_8h_source}\index{include/igl/procrustes.h@{include/igl/procrustes.h}}
+\mbox{\hyperlink{procrustes_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2014\ Stefan\ Brugger\ <stefanbrugger@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_PROCRUSTES\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_PROCRUSTES\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <Eigen/Geometry>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00045\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedX,\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedY,\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{typename}\ Scalar,\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedR,\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedT>}
+\DoxyCodeLine{00051\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_abb69dbb018159a761459ceee76dd1fd0}{procrustes}}(}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedX>\&\ X,}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedY>\&\ Y,}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{bool}\ includeScaling,}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{bool}\ includeReflections,}
+\DoxyCodeLine{00056\ \ \ \ \ Scalar\&\ scale,}
+\DoxyCodeLine{00057\ \ \ \ \ Eigen::PlainObjectBase<DerivedR>\&\ R,}
+\DoxyCodeLine{00058\ \ \ \ \ Eigen::PlainObjectBase<DerivedT>\&\ t);}
+\DoxyCodeLine{00071\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedX,\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedY,\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{typename}\ Scalar,\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{int}\ DIM,\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{int}\ TType>}
+\DoxyCodeLine{00077\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_abb69dbb018159a761459ceee76dd1fd0}{procrustes}}(}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedX>\&\ X,}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedY>\&\ Y,}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{bool}\ includeScaling,}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{bool}\ includeReflections,}
+\DoxyCodeLine{00082\ \ \ \ \ Eigen::Transform<Scalar,DIM,TType>\&\ T);}
+\DoxyCodeLine{00085\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedX,\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedY,\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedR,\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedT>}
+\DoxyCodeLine{00090\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_abb69dbb018159a761459ceee76dd1fd0}{procrustes}}(}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedX>\&\ X,}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedY>\&\ Y,}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{bool}\ includeScaling,}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{bool}\ includeReflections,}
+\DoxyCodeLine{00095\ \ \ \ \ Eigen::PlainObjectBase<DerivedR>\&\ S,}
+\DoxyCodeLine{00096\ \ \ \ \ Eigen::PlainObjectBase<DerivedT>\&\ t);}
+\DoxyCodeLine{00099\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedX,\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedY,\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedR,\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedT>}
+\DoxyCodeLine{00104\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_abb69dbb018159a761459ceee76dd1fd0}{procrustes}}(}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedX>\&\ X,}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedY>\&\ Y,}
+\DoxyCodeLine{00107\ \ \ \ \ Eigen::PlainObjectBase<DerivedR>\&\ R,}
+\DoxyCodeLine{00108\ \ \ \ \ Eigen::PlainObjectBase<DerivedT>\&\ t);}
+\DoxyCodeLine{00111\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedX,\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedY,\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keyword}{typename}\ Scalar,\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedT>}
+\DoxyCodeLine{00116\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_abb69dbb018159a761459ceee76dd1fd0}{procrustes}}(}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedX>\&\ X,}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedY>\&\ Y,}
+\DoxyCodeLine{00119\ \ \ \ \ Eigen::Rotation2D<Scalar>\&\ R,}
+\DoxyCodeLine{00120\ \ \ \ \ Eigen::PlainObjectBase<DerivedT>\&\ t);}
+\DoxyCodeLine{00121\ \}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\ \ \#include\ "{}procrustes.cpp"{}}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

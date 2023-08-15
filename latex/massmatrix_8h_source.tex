@@ -1,0 +1,45 @@
+\doxysection{massmatrix.\+h}
+\hypertarget{massmatrix_8h_source}{}\label{massmatrix_8h_source}\index{include/igl/massmatrix.h@{include/igl/massmatrix.h}}
+\mbox{\hyperlink{massmatrix_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2013\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_MASSMATRIX\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_MASSMATRIX\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <Eigen/Sparse>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}\ }
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00018\ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespaceigl_a8ed02513847d2f3fdb8c74dcbe55bb90}{MassMatrixType}}}
+\DoxyCodeLine{00019\ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{namespaceigl_a8ed02513847d2f3fdb8c74dcbe55bb90ad236264764d4f478ccb31c36be553483}{MASSMATRIX\_TYPE\_BARYCENTRIC}}\ =\ 0,}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{namespaceigl_a8ed02513847d2f3fdb8c74dcbe55bb90a8e91d83387a6cdc5e1c58d3249ed8484}{MASSMATRIX\_TYPE\_VORONOI}}\ =\ 1,}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{namespaceigl_a8ed02513847d2f3fdb8c74dcbe55bb90aa3067b3f2630f50a9806bf46b60e6fb7}{MASSMATRIX\_TYPE\_FULL}}\ =\ 2,}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{namespaceigl_a8ed02513847d2f3fdb8c74dcbe55bb90a69f57abe461a4a62943a5c38cbbf22f0}{MASSMATRIX\_TYPE\_DEFAULT}}\ =\ 3,}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{namespaceigl_a8ed02513847d2f3fdb8c74dcbe55bb90a90c5b05e42d20ca21fd5849e64bae2ae}{NUM\_MASSMATRIX\_TYPES}}\ =\ 4}
+\DoxyCodeLine{00032\ \ \ \};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00051\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF,\ \textcolor{keyword}{typename}\ Scalar>}
+\DoxyCodeLine{00052\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a72cf047d8b4df743c47bbbf0ba9dc6e1}{massmatrix}}(}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceigl_a8ed02513847d2f3fdb8c74dcbe55bb90}{MassMatrixType}}\ type,}
+\DoxyCodeLine{00056\ \ \ \ \ Eigen::SparseMatrix<Scalar>\&\ M);}
+\DoxyCodeLine{00057\ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#\ \ include\ "{}massmatrix.cpp"{}}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00064\ }
+
+\end{DoxyCode}

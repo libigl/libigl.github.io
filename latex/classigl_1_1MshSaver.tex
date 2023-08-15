@@ -1,0 +1,235 @@
+\doxysection{igl\+::Msh\+Saver Class Reference}
+\hypertarget{classigl_1_1MshSaver}{}\label{classigl_1_1MshSaver}\index{igl::MshSaver@{igl::MshSaver}}
+
+
+Class for dumping information to .msh file depends only on c++stl library current implementation works only with 3D information.  
+
+
+
+
+{\ttfamily \#include $<$Msh\+Saver.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \newline
+\mbox{\hyperlink{classigl_1_1MshSaver_a175c284f3dea9689851cfe3d213d5836aad2f602738c91006a873e192b8ec9ebb}{ELEMENT\+\_\+\+LINE}} =1
+, \mbox{\hyperlink{classigl_1_1MshSaver_a175c284f3dea9689851cfe3d213d5836a834f9346b0d805620585dc195581d1cf}{ELEMENT\+\_\+\+TRI}} =2
+, \mbox{\hyperlink{classigl_1_1MshSaver_a175c284f3dea9689851cfe3d213d5836ac194fa101729e3827db565d9e9398767}{ELEMENT\+\_\+\+QUAD}} =3
+, \mbox{\hyperlink{classigl_1_1MshSaver_a175c284f3dea9689851cfe3d213d5836a4ba27e7cdbc4ccbeea795fa37f5fd728}{ELEMENT\+\_\+\+TET}} =4
+, \newline
+\mbox{\hyperlink{classigl_1_1MshSaver_a175c284f3dea9689851cfe3d213d5836a07d45d2165039b3a743d9bddacf24ba2}{ELEMENT\+\_\+\+HEX}} =5
+, \mbox{\hyperlink{classigl_1_1MshSaver_a175c284f3dea9689851cfe3d213d5836a0572e9f1e1b9158840fe026333b69b2e}{ELEMENT\+\_\+\+PRISM}} =6
+ \}
+\item 
+typedef double \mbox{\hyperlink{classigl_1_1MshSaver_a3fef10a1a0dc3ace7283e7dbcf30078e}{Float}}
+\item 
+typedef std\+::vector$<$ int $>$ \mbox{\hyperlink{classigl_1_1MshSaver_a945ea2c6da475788ccf4bc10a702dece}{Index\+Vector}}
+\item 
+typedef std\+::vector$<$ int $>$ \mbox{\hyperlink{classigl_1_1MshSaver_a1c543ddee654789540f2972bff826b26}{Int\+Vector}}
+\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{classigl_1_1MshSaver_a3fef10a1a0dc3ace7283e7dbcf30078e}{Float}} $>$ \mbox{\hyperlink{classigl_1_1MshSaver_aaca191056efb814c54c1645d0037d304}{Float\+Vector}}
+\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{classigl_1_1MshSaver_aaca191056efb814c54c1645d0037d304}{Float\+Vector}} $>$ \mbox{\hyperlink{classigl_1_1MshSaver_a7193eb49ad56815c95ce202a52705630}{Float\+Field}}
+\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{classigl_1_1MshSaver_a1c543ddee654789540f2972bff826b26}{Int\+Vector}} $>$ \mbox{\hyperlink{classigl_1_1MshSaver_aeca12ba03c22dc302c708b5d780b9926}{Int\+Field}}
+\item 
+typedef std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classigl_1_1MshSaver_a261940a64db6d7ba255d7755758e1cab}{Field\+Names}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classigl_1_1MshSaver_a3f9ca9c43d5cd09c05dff9d61f763bc9}{Msh\+Saver}} (const std\+::string \&filename, bool binary=true)
+\begin{DoxyCompactList}\small\item\em Write a .msh to a given path. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classigl_1_1MshSaver_a9885efa95783f3db6021316cebf25d98}{\texorpdfstring{$\sim$}{\string~}\+Msh\+Saver}} ()
+\item 
+void \mbox{\hyperlink{classigl_1_1MshSaver_a7840e9d1feb34f945e52bfd8e12ba8c0}{save\+\_\+mesh}} (const \mbox{\hyperlink{classigl_1_1MshSaver_aaca191056efb814c54c1645d0037d304}{Float\+Vector}} \&nodes, const \mbox{\hyperlink{classigl_1_1MshSaver_a945ea2c6da475788ccf4bc10a702dece}{Index\+Vector}} \&elements, const \mbox{\hyperlink{classigl_1_1MshSaver_a1c543ddee654789540f2972bff826b26}{Int\+Vector}} \&element\+\_\+lengths, const \mbox{\hyperlink{classigl_1_1MshSaver_a1c543ddee654789540f2972bff826b26}{Int\+Vector}} \&element\+\_\+type, const \mbox{\hyperlink{classigl_1_1MshSaver_a1c543ddee654789540f2972bff826b26}{Int\+Vector}} \&element\+\_\+tags)
+\item 
+void \mbox{\hyperlink{classigl_1_1MshSaver_a9575468a7b6b2aeb4740eed0b6a2894b}{save\+\_\+scalar\+\_\+field}} (const std\+::string \&fieldname, const \mbox{\hyperlink{classigl_1_1MshSaver_aaca191056efb814c54c1645d0037d304}{Float\+Vector}} \&field)
+\item 
+void \mbox{\hyperlink{classigl_1_1MshSaver_a0f116b48718224fd75eb390cecbc3c4c}{save\+\_\+vector\+\_\+field}} (const std\+::string \&fieldname, const \mbox{\hyperlink{classigl_1_1MshSaver_aaca191056efb814c54c1645d0037d304}{Float\+Vector}} \&field)
+\item 
+void \mbox{\hyperlink{classigl_1_1MshSaver_a5916b17faf4b635859ae8b5e139c8ed2}{save\+\_\+elem\+\_\+scalar\+\_\+field}} (const std\+::string \&fieldname, const \mbox{\hyperlink{classigl_1_1MshSaver_aaca191056efb814c54c1645d0037d304}{Float\+Vector}} \&field)
+\item 
+void \mbox{\hyperlink{classigl_1_1MshSaver_af2290748083ec9b0639e201cbb709bae}{save\+\_\+elem\+\_\+vector\+\_\+field}} (const std\+::string \&fieldname, const \mbox{\hyperlink{classigl_1_1MshSaver_aaca191056efb814c54c1645d0037d304}{Float\+Vector}} \&field)
+\item 
+void \mbox{\hyperlink{classigl_1_1MshSaver_a7119143ffeac7ac8600a7cad04a9837f}{save\+\_\+elem\+\_\+tensor\+\_\+field}} (const std\+::string \&fieldname, const \mbox{\hyperlink{classigl_1_1MshSaver_aaca191056efb814c54c1645d0037d304}{Float\+Vector}} \&field)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classigl_1_1MshSaver_a5d608a2f5cbbada18e324a46d85eb486}{save\+\_\+header}} ()
+\item 
+void \mbox{\hyperlink{classigl_1_1MshSaver_a47eba73e6be96cdfa9240e46590a2d7c}{save\+\_\+nodes}} (const \mbox{\hyperlink{classigl_1_1MshSaver_aaca191056efb814c54c1645d0037d304}{Float\+Vector}} \&nodes)
+\item 
+void \mbox{\hyperlink{classigl_1_1MshSaver_ad44dc9d64e4903009b925a3b4ed5fc76}{save\+\_\+elements}} (const \mbox{\hyperlink{classigl_1_1MshSaver_a945ea2c6da475788ccf4bc10a702dece}{Index\+Vector}} \&elements, const \mbox{\hyperlink{classigl_1_1MshSaver_a1c543ddee654789540f2972bff826b26}{Int\+Vector}} \&element\+\_\+lengths, const \mbox{\hyperlink{classigl_1_1MshSaver_a1c543ddee654789540f2972bff826b26}{Int\+Vector}} \&element\+\_\+type, const \mbox{\hyperlink{classigl_1_1MshSaver_a1c543ddee654789540f2972bff826b26}{Int\+Vector}} \&element\+\_\+tags)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for dumping information to .msh file depends only on c++stl library current implementation works only with 3D information. 
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{classigl_1_1MshSaver_a3fef10a1a0dc3ace7283e7dbcf30078e}\label{classigl_1_1MshSaver_a3fef10a1a0dc3ace7283e7dbcf30078e} 
+\index{igl::MshSaver@{igl::MshSaver}!Float@{Float}}
+\index{Float@{Float}!igl::MshSaver@{igl::MshSaver}}
+\doxysubsubsection{\texorpdfstring{Float}{Float}}
+{\footnotesize\ttfamily typedef double \mbox{\hyperlink{classigl_1_1MshSaver_a3fef10a1a0dc3ace7283e7dbcf30078e}{igl\+::\+Msh\+Saver\+::\+Float}}}
+
+\Hypertarget{classigl_1_1MshSaver_a945ea2c6da475788ccf4bc10a702dece}\label{classigl_1_1MshSaver_a945ea2c6da475788ccf4bc10a702dece} 
+\index{igl::MshSaver@{igl::MshSaver}!IndexVector@{IndexVector}}
+\index{IndexVector@{IndexVector}!igl::MshSaver@{igl::MshSaver}}
+\doxysubsubsection{\texorpdfstring{IndexVector}{IndexVector}}
+{\footnotesize\ttfamily typedef std\+::vector$<$int$>$ \mbox{\hyperlink{classigl_1_1MshSaver_a945ea2c6da475788ccf4bc10a702dece}{igl\+::\+Msh\+Saver\+::\+Index\+Vector}}}
+
+\Hypertarget{classigl_1_1MshSaver_a1c543ddee654789540f2972bff826b26}\label{classigl_1_1MshSaver_a1c543ddee654789540f2972bff826b26} 
+\index{igl::MshSaver@{igl::MshSaver}!IntVector@{IntVector}}
+\index{IntVector@{IntVector}!igl::MshSaver@{igl::MshSaver}}
+\doxysubsubsection{\texorpdfstring{IntVector}{IntVector}}
+{\footnotesize\ttfamily typedef std\+::vector$<$int$>$ \mbox{\hyperlink{classigl_1_1MshSaver_a1c543ddee654789540f2972bff826b26}{igl\+::\+Msh\+Saver\+::\+Int\+Vector}}}
+
+\Hypertarget{classigl_1_1MshSaver_aaca191056efb814c54c1645d0037d304}\label{classigl_1_1MshSaver_aaca191056efb814c54c1645d0037d304} 
+\index{igl::MshSaver@{igl::MshSaver}!FloatVector@{FloatVector}}
+\index{FloatVector@{FloatVector}!igl::MshSaver@{igl::MshSaver}}
+\doxysubsubsection{\texorpdfstring{FloatVector}{FloatVector}}
+{\footnotesize\ttfamily typedef std\+::vector$<$\mbox{\hyperlink{classigl_1_1MshSaver_a3fef10a1a0dc3ace7283e7dbcf30078e}{Float}}$>$ \mbox{\hyperlink{classigl_1_1MshSaver_aaca191056efb814c54c1645d0037d304}{igl\+::\+Msh\+Saver\+::\+Float\+Vector}}}
+
+\Hypertarget{classigl_1_1MshSaver_a7193eb49ad56815c95ce202a52705630}\label{classigl_1_1MshSaver_a7193eb49ad56815c95ce202a52705630} 
+\index{igl::MshSaver@{igl::MshSaver}!FloatField@{FloatField}}
+\index{FloatField@{FloatField}!igl::MshSaver@{igl::MshSaver}}
+\doxysubsubsection{\texorpdfstring{FloatField}{FloatField}}
+{\footnotesize\ttfamily typedef std\+::vector$<$\mbox{\hyperlink{classigl_1_1MshSaver_aaca191056efb814c54c1645d0037d304}{Float\+Vector}}$>$ \mbox{\hyperlink{classigl_1_1MshSaver_a7193eb49ad56815c95ce202a52705630}{igl\+::\+Msh\+Saver\+::\+Float\+Field}}}
+
+\Hypertarget{classigl_1_1MshSaver_aeca12ba03c22dc302c708b5d780b9926}\label{classigl_1_1MshSaver_aeca12ba03c22dc302c708b5d780b9926} 
+\index{igl::MshSaver@{igl::MshSaver}!IntField@{IntField}}
+\index{IntField@{IntField}!igl::MshSaver@{igl::MshSaver}}
+\doxysubsubsection{\texorpdfstring{IntField}{IntField}}
+{\footnotesize\ttfamily typedef std\+::vector$<$\mbox{\hyperlink{classigl_1_1MshSaver_a1c543ddee654789540f2972bff826b26}{Int\+Vector}}$>$ \mbox{\hyperlink{classigl_1_1MshSaver_aeca12ba03c22dc302c708b5d780b9926}{igl\+::\+Msh\+Saver\+::\+Int\+Field}}}
+
+\Hypertarget{classigl_1_1MshSaver_a261940a64db6d7ba255d7755758e1cab}\label{classigl_1_1MshSaver_a261940a64db6d7ba255d7755758e1cab} 
+\index{igl::MshSaver@{igl::MshSaver}!FieldNames@{FieldNames}}
+\index{FieldNames@{FieldNames}!igl::MshSaver@{igl::MshSaver}}
+\doxysubsubsection{\texorpdfstring{FieldNames}{FieldNames}}
+{\footnotesize\ttfamily typedef std\+::vector$<$std\+::string$>$ \mbox{\hyperlink{classigl_1_1MshSaver_a261940a64db6d7ba255d7755758e1cab}{igl\+::\+Msh\+Saver\+::\+Field\+Names}}}
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classigl_1_1MshSaver_a175c284f3dea9689851cfe3d213d5836}\label{classigl_1_1MshSaver_a175c284f3dea9689851cfe3d213d5836} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ELEMENT\_LINE@{ELEMENT\_LINE}!igl::MshSaver@{igl::MshSaver}}\index{igl::MshSaver@{igl::MshSaver}!ELEMENT\_LINE@{ELEMENT\_LINE}}}\Hypertarget{classigl_1_1MshSaver_a175c284f3dea9689851cfe3d213d5836aad2f602738c91006a873e192b8ec9ebb}\label{classigl_1_1MshSaver_a175c284f3dea9689851cfe3d213d5836aad2f602738c91006a873e192b8ec9ebb} 
+ELEMENT\+\_\+\+LINE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ELEMENT\_TRI@{ELEMENT\_TRI}!igl::MshSaver@{igl::MshSaver}}\index{igl::MshSaver@{igl::MshSaver}!ELEMENT\_TRI@{ELEMENT\_TRI}}}\Hypertarget{classigl_1_1MshSaver_a175c284f3dea9689851cfe3d213d5836a834f9346b0d805620585dc195581d1cf}\label{classigl_1_1MshSaver_a175c284f3dea9689851cfe3d213d5836a834f9346b0d805620585dc195581d1cf} 
+ELEMENT\+\_\+\+TRI&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ELEMENT\_QUAD@{ELEMENT\_QUAD}!igl::MshSaver@{igl::MshSaver}}\index{igl::MshSaver@{igl::MshSaver}!ELEMENT\_QUAD@{ELEMENT\_QUAD}}}\Hypertarget{classigl_1_1MshSaver_a175c284f3dea9689851cfe3d213d5836ac194fa101729e3827db565d9e9398767}\label{classigl_1_1MshSaver_a175c284f3dea9689851cfe3d213d5836ac194fa101729e3827db565d9e9398767} 
+ELEMENT\+\_\+\+QUAD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ELEMENT\_TET@{ELEMENT\_TET}!igl::MshSaver@{igl::MshSaver}}\index{igl::MshSaver@{igl::MshSaver}!ELEMENT\_TET@{ELEMENT\_TET}}}\Hypertarget{classigl_1_1MshSaver_a175c284f3dea9689851cfe3d213d5836a4ba27e7cdbc4ccbeea795fa37f5fd728}\label{classigl_1_1MshSaver_a175c284f3dea9689851cfe3d213d5836a4ba27e7cdbc4ccbeea795fa37f5fd728} 
+ELEMENT\+\_\+\+TET&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ELEMENT\_HEX@{ELEMENT\_HEX}!igl::MshSaver@{igl::MshSaver}}\index{igl::MshSaver@{igl::MshSaver}!ELEMENT\_HEX@{ELEMENT\_HEX}}}\Hypertarget{classigl_1_1MshSaver_a175c284f3dea9689851cfe3d213d5836a07d45d2165039b3a743d9bddacf24ba2}\label{classigl_1_1MshSaver_a175c284f3dea9689851cfe3d213d5836a07d45d2165039b3a743d9bddacf24ba2} 
+ELEMENT\+\_\+\+HEX&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ELEMENT\_PRISM@{ELEMENT\_PRISM}!igl::MshSaver@{igl::MshSaver}}\index{igl::MshSaver@{igl::MshSaver}!ELEMENT\_PRISM@{ELEMENT\_PRISM}}}\Hypertarget{classigl_1_1MshSaver_a175c284f3dea9689851cfe3d213d5836a0572e9f1e1b9158840fe026333b69b2e}\label{classigl_1_1MshSaver_a175c284f3dea9689851cfe3d213d5836a0572e9f1e1b9158840fe026333b69b2e} 
+ELEMENT\+\_\+\+PRISM&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classigl_1_1MshSaver_a3f9ca9c43d5cd09c05dff9d61f763bc9}\label{classigl_1_1MshSaver_a3f9ca9c43d5cd09c05dff9d61f763bc9} 
+\index{igl::MshSaver@{igl::MshSaver}!MshSaver@{MshSaver}}
+\index{MshSaver@{MshSaver}!igl::MshSaver@{igl::MshSaver}}
+\doxysubsubsection{\texorpdfstring{MshSaver()}{MshSaver()}}
+{\footnotesize\ttfamily igl\+::\+Msh\+Saver\+::\+Msh\+Saver (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{bool}]{binary = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Write a .msh to a given path. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em filename} & path to output file \\
+\hline
+\mbox{\texttt{ in}}  & {\em binary} & whether to write in binary format \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classigl_1_1MshSaver_a9885efa95783f3db6021316cebf25d98}\label{classigl_1_1MshSaver_a9885efa95783f3db6021316cebf25d98} 
+\index{igl::MshSaver@{igl::MshSaver}!````~MshSaver@{\texorpdfstring{$\sim$}{\string~}MshSaver}}
+\index{````~MshSaver@{\texorpdfstring{$\sim$}{\string~}MshSaver}!igl::MshSaver@{igl::MshSaver}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}MshSaver()}{\string~MshSaver()}}
+{\footnotesize\ttfamily igl\+::\+Msh\+Saver\+::\texorpdfstring{$\sim$}{\string~}\+Msh\+Saver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classigl_1_1MshSaver_a7840e9d1feb34f945e52bfd8e12ba8c0}\label{classigl_1_1MshSaver_a7840e9d1feb34f945e52bfd8e12ba8c0} 
+\index{igl::MshSaver@{igl::MshSaver}!save\_mesh@{save\_mesh}}
+\index{save\_mesh@{save\_mesh}!igl::MshSaver@{igl::MshSaver}}
+\doxysubsubsection{\texorpdfstring{save\_mesh()}{save\_mesh()}}
+{\footnotesize\ttfamily void igl\+::\+Msh\+Saver\+::save\+\_\+mesh (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classigl_1_1MshSaver_aaca191056efb814c54c1645d0037d304}{Float\+Vector}} \&}]{nodes,  }\item[{const \mbox{\hyperlink{classigl_1_1MshSaver_a945ea2c6da475788ccf4bc10a702dece}{Index\+Vector}} \&}]{elements,  }\item[{const \mbox{\hyperlink{classigl_1_1MshSaver_a1c543ddee654789540f2972bff826b26}{Int\+Vector}} \&}]{element\+\_\+lengths,  }\item[{const \mbox{\hyperlink{classigl_1_1MshSaver_a1c543ddee654789540f2972bff826b26}{Int\+Vector}} \&}]{element\+\_\+type,  }\item[{const \mbox{\hyperlink{classigl_1_1MshSaver_a1c543ddee654789540f2972bff826b26}{Int\+Vector}} \&}]{element\+\_\+tags }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1MshSaver_a9575468a7b6b2aeb4740eed0b6a2894b}\label{classigl_1_1MshSaver_a9575468a7b6b2aeb4740eed0b6a2894b} 
+\index{igl::MshSaver@{igl::MshSaver}!save\_scalar\_field@{save\_scalar\_field}}
+\index{save\_scalar\_field@{save\_scalar\_field}!igl::MshSaver@{igl::MshSaver}}
+\doxysubsubsection{\texorpdfstring{save\_scalar\_field()}{save\_scalar\_field()}}
+{\footnotesize\ttfamily void igl\+::\+Msh\+Saver\+::save\+\_\+scalar\+\_\+field (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fieldname,  }\item[{const \mbox{\hyperlink{classigl_1_1MshSaver_aaca191056efb814c54c1645d0037d304}{Float\+Vector}} \&}]{field }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1MshSaver_a0f116b48718224fd75eb390cecbc3c4c}\label{classigl_1_1MshSaver_a0f116b48718224fd75eb390cecbc3c4c} 
+\index{igl::MshSaver@{igl::MshSaver}!save\_vector\_field@{save\_vector\_field}}
+\index{save\_vector\_field@{save\_vector\_field}!igl::MshSaver@{igl::MshSaver}}
+\doxysubsubsection{\texorpdfstring{save\_vector\_field()}{save\_vector\_field()}}
+{\footnotesize\ttfamily void igl\+::\+Msh\+Saver\+::save\+\_\+vector\+\_\+field (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fieldname,  }\item[{const \mbox{\hyperlink{classigl_1_1MshSaver_aaca191056efb814c54c1645d0037d304}{Float\+Vector}} \&}]{field }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1MshSaver_a5916b17faf4b635859ae8b5e139c8ed2}\label{classigl_1_1MshSaver_a5916b17faf4b635859ae8b5e139c8ed2} 
+\index{igl::MshSaver@{igl::MshSaver}!save\_elem\_scalar\_field@{save\_elem\_scalar\_field}}
+\index{save\_elem\_scalar\_field@{save\_elem\_scalar\_field}!igl::MshSaver@{igl::MshSaver}}
+\doxysubsubsection{\texorpdfstring{save\_elem\_scalar\_field()}{save\_elem\_scalar\_field()}}
+{\footnotesize\ttfamily void igl\+::\+Msh\+Saver\+::save\+\_\+elem\+\_\+scalar\+\_\+field (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fieldname,  }\item[{const \mbox{\hyperlink{classigl_1_1MshSaver_aaca191056efb814c54c1645d0037d304}{Float\+Vector}} \&}]{field }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1MshSaver_af2290748083ec9b0639e201cbb709bae}\label{classigl_1_1MshSaver_af2290748083ec9b0639e201cbb709bae} 
+\index{igl::MshSaver@{igl::MshSaver}!save\_elem\_vector\_field@{save\_elem\_vector\_field}}
+\index{save\_elem\_vector\_field@{save\_elem\_vector\_field}!igl::MshSaver@{igl::MshSaver}}
+\doxysubsubsection{\texorpdfstring{save\_elem\_vector\_field()}{save\_elem\_vector\_field()}}
+{\footnotesize\ttfamily void igl\+::\+Msh\+Saver\+::save\+\_\+elem\+\_\+vector\+\_\+field (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fieldname,  }\item[{const \mbox{\hyperlink{classigl_1_1MshSaver_aaca191056efb814c54c1645d0037d304}{Float\+Vector}} \&}]{field }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1MshSaver_a7119143ffeac7ac8600a7cad04a9837f}\label{classigl_1_1MshSaver_a7119143ffeac7ac8600a7cad04a9837f} 
+\index{igl::MshSaver@{igl::MshSaver}!save\_elem\_tensor\_field@{save\_elem\_tensor\_field}}
+\index{save\_elem\_tensor\_field@{save\_elem\_tensor\_field}!igl::MshSaver@{igl::MshSaver}}
+\doxysubsubsection{\texorpdfstring{save\_elem\_tensor\_field()}{save\_elem\_tensor\_field()}}
+{\footnotesize\ttfamily void igl\+::\+Msh\+Saver\+::save\+\_\+elem\+\_\+tensor\+\_\+field (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fieldname,  }\item[{const \mbox{\hyperlink{classigl_1_1MshSaver_aaca191056efb814c54c1645d0037d304}{Float\+Vector}} \&}]{field }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1MshSaver_a5d608a2f5cbbada18e324a46d85eb486}\label{classigl_1_1MshSaver_a5d608a2f5cbbada18e324a46d85eb486} 
+\index{igl::MshSaver@{igl::MshSaver}!save\_header@{save\_header}}
+\index{save\_header@{save\_header}!igl::MshSaver@{igl::MshSaver}}
+\doxysubsubsection{\texorpdfstring{save\_header()}{save\_header()}}
+{\footnotesize\ttfamily void igl\+::\+Msh\+Saver\+::save\+\_\+header (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classigl_1_1MshSaver_a47eba73e6be96cdfa9240e46590a2d7c}\label{classigl_1_1MshSaver_a47eba73e6be96cdfa9240e46590a2d7c} 
+\index{igl::MshSaver@{igl::MshSaver}!save\_nodes@{save\_nodes}}
+\index{save\_nodes@{save\_nodes}!igl::MshSaver@{igl::MshSaver}}
+\doxysubsubsection{\texorpdfstring{save\_nodes()}{save\_nodes()}}
+{\footnotesize\ttfamily void igl\+::\+Msh\+Saver\+::save\+\_\+nodes (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classigl_1_1MshSaver_aaca191056efb814c54c1645d0037d304}{Float\+Vector}} \&}]{nodes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classigl_1_1MshSaver_ad44dc9d64e4903009b925a3b4ed5fc76}\label{classigl_1_1MshSaver_ad44dc9d64e4903009b925a3b4ed5fc76} 
+\index{igl::MshSaver@{igl::MshSaver}!save\_elements@{save\_elements}}
+\index{save\_elements@{save\_elements}!igl::MshSaver@{igl::MshSaver}}
+\doxysubsubsection{\texorpdfstring{save\_elements()}{save\_elements()}}
+{\footnotesize\ttfamily void igl\+::\+Msh\+Saver\+::save\+\_\+elements (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classigl_1_1MshSaver_a945ea2c6da475788ccf4bc10a702dece}{Index\+Vector}} \&}]{elements,  }\item[{const \mbox{\hyperlink{classigl_1_1MshSaver_a1c543ddee654789540f2972bff826b26}{Int\+Vector}} \&}]{element\+\_\+lengths,  }\item[{const \mbox{\hyperlink{classigl_1_1MshSaver_a1c543ddee654789540f2972bff826b26}{Int\+Vector}} \&}]{element\+\_\+type,  }\item[{const \mbox{\hyperlink{classigl_1_1MshSaver_a1c543ddee654789540f2972bff826b26}{Int\+Vector}} \&}]{element\+\_\+tags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/igl/\mbox{\hyperlink{MshSaver_8h}{Msh\+Saver.\+h}}\end{DoxyCompactItemize}

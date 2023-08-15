@@ -1,0 +1,54 @@
+\doxysection{quad\+\_\+grid.\+h}
+\hypertarget{quad__grid_8h_source}{}\label{quad__grid_8h_source}\index{include/igl/quad\_grid.h@{include/igl/quad\_grid.h}}
+\mbox{\hyperlink{quad__grid_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2019\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_QUAD\_GRID\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_QUAD\_GRID\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <igl/igl\_inline.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \ \ \textcolor{comment}{//\ Generate\ a\ quad\ mesh\ over\ a\ regular\ grid.}}
+\DoxyCodeLine{00017\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00018\ \ \ \textcolor{comment}{//\ @param[in]\ nx\ \ number\ of\ vertices\ in\ the\ x\ direction}}
+\DoxyCodeLine{00019\ \ \ \textcolor{comment}{//\ @param[in]\ ny\ \ number\ of\ vertices\ in\ the\ y\ direction}}
+\DoxyCodeLine{00020\ \ \ \textcolor{comment}{//\ @param[out]\ V\ \ nx*ny\ by\ 2\ list\ of\ vertex\ positions}}
+\DoxyCodeLine{00021\ \ \ \textcolor{comment}{//\ @param[out]\ Q\ \ (nx-\/1)*(ny-\/1)\ by\ 4\ list\ of\ quad\ indices\ into\ V}}
+\DoxyCodeLine{00022\ \ \ \textcolor{comment}{//\ @param[out]\ E\ \ (nx-\/1)*ny+(ny-\/1)*nx\ by\ 2\ list\ of\ undirected\ quad\ edge\ indices\ into\ V}}
+\DoxyCodeLine{00023\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00024\ \ \ \textcolor{comment}{//\ \(\backslash\)see\ grid,\ triangulated\_grid}}
+\DoxyCodeLine{00025\ \ \ \textcolor{keyword}{template}<}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedQ,}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedE>}
+\DoxyCodeLine{00029\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_acb165fc9bf550b7a4248ef3e4750c7b5}{quad\_grid}}(}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ nx,}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ ny,}
+\DoxyCodeLine{00032\ \ \ \ \ Eigen::PlainObjectBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00033\ \ \ \ \ Eigen::PlainObjectBase<DerivedQ>\ \&\ Q,}
+\DoxyCodeLine{00034\ \ \ \ \ Eigen::PlainObjectBase<DerivedE>\ \&\ E);}
+\DoxyCodeLine{00036\ \ \ \textcolor{keyword}{template}<}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedQ,}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedE>}
+\DoxyCodeLine{00039\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_acb165fc9bf550b7a4248ef3e4750c7b5}{quad\_grid}}(}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ nx,}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ ny,}
+\DoxyCodeLine{00042\ \ \ \ \ Eigen::PlainObjectBase<DerivedQ>\ \&\ Q,}
+\DoxyCodeLine{00043\ \ \ \ \ Eigen::PlainObjectBase<DerivedE>\ \&\ E);}
+\DoxyCodeLine{00044\ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#\ \ include\ "{}quad\_grid.cpp"{}}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

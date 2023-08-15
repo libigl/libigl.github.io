@@ -1,0 +1,34 @@
+\doxysection{include/igl/repdiag.h File Reference}
+\hypertarget{repdiag_8h}{}\label{repdiag_8h}\index{include/igl/repdiag.h@{include/igl/repdiag.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include \"{}repdiag.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{repdiag_8h_aa93624b0b2836d2510e8c92ae951d817}{EIGEN\+\_\+\+YES\+\_\+\+I\+\_\+\+KNOW\+\_\+\+SPARSE\+\_\+\+MODULE\+\_\+\+IS\+\_\+\+NOT\+\_\+\+STABLE\+\_\+\+YET}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespaceigl_ad35357b4f4e8dbf29c3fad77850fb957}{igl\+::repdiag}} (const Eigen\+::\+Sparse\+Matrix$<$ T $>$ \&A, const int d, Eigen\+::\+Sparse\+Matrix$<$ T $>$ \&B)
+\begin{DoxyCompactList}\small\item\em Repeat a matrix along the diagonal a certain number of times, so that if A is a m by n matrix and we want to repeat along the diagonal d times, we get a m\texorpdfstring{$\ast$}{*}d by n\texorpdfstring{$\ast$}{*}d matrix B such that\+: B( (k\texorpdfstring{$\ast$}{*}m+1)\+:(k\texorpdfstring{$\ast$}{*}m+1+m-\/1), (k\texorpdfstring{$\ast$}{*}n+1)\+:(k\texorpdfstring{$\ast$}{*}n+1+n-\/1)) = A for k from 0 to d-\/1. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespaceigl_a4425112c9b09eccba5935d7390228b8f}{igl\+::repdiag}} (const Eigen\+::\+Matrix$<$ T, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&A, const int d, Eigen\+::\+Matrix$<$ T, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&B)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Mat $>$ }\\Mat \mbox{\hyperlink{namespaceigl_a8da20ed25cb6630b40cb666c4f0153fb}{igl\+::repdiag}} (const Mat \&A, const int d)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{repdiag_8h_aa93624b0b2836d2510e8c92ae951d817}\label{repdiag_8h_aa93624b0b2836d2510e8c92ae951d817} 
+\index{repdiag.h@{repdiag.h}!EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET@{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}}
+\index{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET@{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}!repdiag.h@{repdiag.h}}
+\doxysubsubsection{\texorpdfstring{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}}
+{\footnotesize\ttfamily \#define EIGEN\+\_\+\+YES\+\_\+\+I\+\_\+\+KNOW\+\_\+\+SPARSE\+\_\+\+MODULE\+\_\+\+IS\+\_\+\+NOT\+\_\+\+STABLE\+\_\+\+YET}
+

@@ -1,0 +1,16 @@
+\doxysection{include/igl/facet\+\_\+adjacency\+\_\+matrix.h File Reference}
+\hypertarget{facet__adjacency__matrix_8h}{}\label{facet__adjacency__matrix_8h}\index{include/igl/facet\_adjacency\_matrix.h@{include/igl/facet\_adjacency\_matrix.h}}
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include \"{}facet\+\_\+adjacency\+\_\+matrix.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedF , typename Atype $>$ }\\void \mbox{\hyperlink{namespaceigl_ab3c84999e29d9e168fe33b0ca7f2b199}{igl\+::facet\+\_\+adjacency\+\_\+matrix}} (const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Sparse\+Matrix$<$ Atype $>$ \&A)
+\begin{DoxyCompactList}\small\item\em Construct a \#\+F×\#F adjacency matrix with A(i,j)\texorpdfstring{$>$}{>}0 indicating that faces i and j share an edge. \end{DoxyCompactList}\end{DoxyCompactItemize}

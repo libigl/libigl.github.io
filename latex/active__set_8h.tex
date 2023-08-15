@@ -1,0 +1,23 @@
+\doxysection{include/igl/active\+\_\+set.h File Reference}
+\hypertarget{active__set_8h}{}\label{active__set_8h}\index{include/igl/active\_set.h@{include/igl/active\_set.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include \"{}Solver\+Status.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include \"{}EPS.\+h\"{}}\newline
+{\ttfamily \#include \"{}active\+\_\+set.\+cpp\"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structigl_1_1active__set__params}{igl\+::active\+\_\+set\+\_\+params}}
+\begin{DoxyCompactList}\small\item\em Input parameters controling active\+\_\+set. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename AT , typename DerivedB , typename Derivedknown , typename DerivedY , typename AeqT , typename Derived\+Beq , typename AieqT , typename Derived\+Bieq , typename Derivedlx , typename Derivedux , typename DerivedZ $>$ }\\\mbox{\hyperlink{namespaceigl_a9b754bfef0dda338efc49cbf1fb6cfc2}{igl\+::\+Solver\+Status}} \mbox{\hyperlink{namespaceigl_aebbfd2ea11fa90111a31666f48cc5f00}{igl\+::active\+\_\+set}} (const Eigen\+::\+Sparse\+Matrix$<$ AT $>$ \&A, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedB $>$ \&B, const Eigen\+::\+Plain\+Object\+Base$<$ Derivedknown $>$ \&known, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedY $>$ \&Y, const Eigen\+::\+Sparse\+Matrix$<$ AeqT $>$ \&Aeq, const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+Beq $>$ \&Beq, const Eigen\+::\+Sparse\+Matrix$<$ AieqT $>$ \&Aieq, const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+Bieq $>$ \&Bieq, const Eigen\+::\+Plain\+Object\+Base$<$ Derivedlx $>$ \&lx, const Eigen\+::\+Plain\+Object\+Base$<$ Derivedux $>$ \&ux, const \mbox{\hyperlink{structigl_1_1active__set__params}{igl\+::active\+\_\+set\+\_\+params}} \&params, Eigen\+::\+Plain\+Object\+Base$<$ DerivedZ $>$ \&Z)
+\begin{DoxyCompactList}\small\item\em Minimize convex quadratic energy subject to linear inequality constraints. \end{DoxyCompactList}\end{DoxyCompactItemize}

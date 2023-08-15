@@ -1,0 +1,23 @@
+\doxysection{include/igl/dijkstra.h File Reference}
+\hypertarget{dijkstra_8h}{}\label{dijkstra_8h}\index{include/igl/dijkstra.h@{include/igl/dijkstra.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include \"{}dijkstra.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Index\+Type , typename DerivedD , typename DerivedP $>$ }\\int \mbox{\hyperlink{namespaceigl_a16b06e5e2a37a01b6648acb209437f78}{igl\+::dijkstra}} (const Index\+Type \&source, const std\+::set$<$ Index\+Type $>$ \&targets, const std\+::vector$<$ std\+::vector$<$ Index\+Type $>$ $>$ \&VV, const std\+::vector$<$ double $>$ \&weights, Eigen\+::\+Plain\+Object\+Base$<$ DerivedD $>$ \&min\+\_\+distance, Eigen\+::\+Plain\+Object\+Base$<$ DerivedP $>$ \&previous)
+\begin{DoxyCompactList}\small\item\em Dijkstra\textquotesingle{}s algorithm for vertex-\/weighted shortest paths, with multiple targets. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Index\+Type , typename DerivedV , typename DerivedD , typename DerivedP $>$ }\\int \mbox{\hyperlink{namespaceigl_a5a2bd7c3c9affbdcd476b68cfe36a41d}{igl\+::dijkstra}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const std\+::vector$<$ std\+::vector$<$ Index\+Type $>$ $>$ \&VV, const Index\+Type \&source, const std\+::set$<$ Index\+Type $>$ \&targets, Eigen\+::\+Plain\+Object\+Base$<$ DerivedD $>$ \&min\+\_\+distance, Eigen\+::\+Plain\+Object\+Base$<$ DerivedP $>$ \&previous)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Index\+Type , typename DerivedD , typename DerivedP $>$ }\\int \mbox{\hyperlink{namespaceigl_ad95f2745c0d523d9b1b8d7b7ef2707b9}{igl\+::dijkstra}} (const Index\+Type \&source, const std\+::set$<$ Index\+Type $>$ \&targets, const std\+::vector$<$ std\+::vector$<$ Index\+Type $>$ $>$ \&VV, Eigen\+::\+Plain\+Object\+Base$<$ DerivedD $>$ \&min\+\_\+distance, Eigen\+::\+Plain\+Object\+Base$<$ DerivedP $>$ \&previous)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Index\+Type , typename DerivedP $>$ }\\void \mbox{\hyperlink{namespaceigl_a574a508288788ba1c5a7c8c2adbd0c33}{igl\+::dijkstra}} (const Index\+Type \&vertex, const Eigen\+::\+Matrix\+Base$<$ DerivedP $>$ \&previous, std\+::vector$<$ Index\+Type $>$ \&path)
+\begin{DoxyCompactList}\small\item\em Backtracking after Dijkstra\textquotesingle{}s algorithm, to find shortest path. \end{DoxyCompactList}\end{DoxyCompactItemize}

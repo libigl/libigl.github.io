@@ -1,0 +1,42 @@
+\doxysection{Lin\+Spaced.\+h}
+\hypertarget{LinSpaced_8h_source}{}\label{LinSpaced_8h_source}\index{include/igl/LinSpaced.h@{include/igl/LinSpaced.h}}
+\mbox{\hyperlink{LinSpaced_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ IGL\_LINSPACED\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ IGL\_LINSPACED\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00031\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00032\ \{}
+\DoxyCodeLine{00040\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Derived>}
+\DoxyCodeLine{00041\ \ \ \textcolor{comment}{//inline\ typename\ Eigen::DenseBase<\ Derived\ >::RandomAccessLinSpacedReturnType\ }}
+\DoxyCodeLine{00042\ \ \ \textcolor{keyword}{inline}\ Derived\ \mbox{\hyperlink{namespaceigl_ae8a4579279c09a298a5988c18f215d33}{LinSpaced}}(}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{typename}\ Derived::Index\ size,}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{typename}\ Derived::Scalar\ \&\ low,}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{typename}\ Derived::Scalar\ \&\ high);}
+\DoxyCodeLine{00046\ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{comment}{//\ Implementation}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Derived>}
+\DoxyCodeLine{00051\ \textcolor{comment}{//inline\ typename\ Eigen::DenseBase<\ Derived\ >::RandomAccessLinSpacedReturnType\ }}
+\DoxyCodeLine{00052\ \textcolor{keyword}{inline}\ Derived}
+\DoxyCodeLine{00053\ \mbox{\hyperlink{namespaceigl_ae8a4579279c09a298a5988c18f215d33}{igl::LinSpaced}}(}
+\DoxyCodeLine{00054\ \ \ \textcolor{keyword}{typename}\ Derived::Index\ size,}
+\DoxyCodeLine{00055\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{typename}\ Derived::Scalar\ \&\ low,}
+\DoxyCodeLine{00056\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{typename}\ Derived::Scalar\ \&\ high)}
+\DoxyCodeLine{00057\ \{}
+\DoxyCodeLine{00058\ \ \ \textcolor{keywordflow}{if}(size\ ==\ 0)}
+\DoxyCodeLine{00059\ \ \ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{comment}{//\ Force\ empty\ vector\ with\ correct\ "{}RandomAccessLinSpacedReturnType"{}\ type.}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordflow}{return}\ Derived::LinSpaced(0,0,1);}
+\DoxyCodeLine{00062\ \ \ \}\textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(high\ <\ low)}
+\DoxyCodeLine{00063\ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordflow}{return}\ low-\/Derived::LinSpaced(size,low-\/low,low-\/high).array();}
+\DoxyCodeLine{00065\ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordflow}{return}\ Derived::LinSpaced(size,low,high);}
+\DoxyCodeLine{00067\ \ \ \}}
+\DoxyCodeLine{00068\ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

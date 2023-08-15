@@ -1,0 +1,53 @@
+\doxysection{cotmatrix.\+h}
+\hypertarget{cotmatrix_8h_source}{}\label{cotmatrix_8h_source}\index{include/igl/cotmatrix.h@{include/igl/cotmatrix.h}}
+\mbox{\hyperlink{cotmatrix_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2014\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_COTMATRIX\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_COTMATRIX\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <Eigen/Sparse>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ History:}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ \ Used\ const\ references\ rather\ than\ copying\ the\ entire\ mesh\ }}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ \ \ \ Alec\ 9\ October\ 2011}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ \ removed\ cotan\ (uniform\ weights)\ optional\ parameter\ it\ was\ building\ a\ buggy}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ \ \ \ half\ of\ the\ uniform\ laplacian,\ please\ see\ adjacency\_matrix\ instead\ }}
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ \ \ \ Alec\ 9\ October\ 2011}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}\ }
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00044\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF,\ \textcolor{keyword}{typename}\ Scalar>}
+\DoxyCodeLine{00045\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_acbfe6ae19ab6f94e36b3d92be1159fe9}{cotmatrix}}(}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,\ }
+\DoxyCodeLine{00048\ \ \ \ \ Eigen::SparseMatrix<Scalar>\&\ L);}
+\DoxyCodeLine{00060\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedI,\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedC,\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{typename}\ Scalar>}
+\DoxyCodeLine{00065\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_acbfe6ae19ab6f94e36b3d92be1159fe9}{cotmatrix}}(}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedI>\ \&\ I,\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedC>\ \&\ C,\ }
+\DoxyCodeLine{00069\ \ \ \ \ Eigen::SparseMatrix<Scalar>\&\ L,}
+\DoxyCodeLine{00070\ \ \ \ \ Eigen::SparseMatrix<Scalar>\&\ M,}
+\DoxyCodeLine{00071\ \ \ \ \ Eigen::SparseMatrix<Scalar>\&\ P);}
+\DoxyCodeLine{00072\ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#\ \ include\ "{}cotmatrix.cpp"{}}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

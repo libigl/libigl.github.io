@@ -1,0 +1,33 @@
+\doxysection{rgb\+\_\+to\+\_\+hsv.\+h}
+\hypertarget{rgb__to__hsv_8h_source}{}\label{rgb__to__hsv_8h_source}\index{include/igl/rgb\_to\_hsv.h@{include/igl/rgb\_to\_hsv.h}}
+\mbox{\hyperlink{rgb__to__hsv_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2015\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_RGB\_TO\_HSV\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_RGB\_TO\_HSV\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00018\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ R,\textcolor{keyword}{typename}\ H>}
+\DoxyCodeLine{00019\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_ad9c02b0853de3739e4fcfe1a39591826}{rgb\_to\_hsv}}(\textcolor{keyword}{const}\ R\ *\ rgb,\ H\ *\ hsv);}
+\DoxyCodeLine{00023\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedR,\textcolor{keyword}{typename}\ DerivedH>}
+\DoxyCodeLine{00024\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_ad9c02b0853de3739e4fcfe1a39591826}{rgb\_to\_hsv}}(}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedR>\ \&\ R,}
+\DoxyCodeLine{00026\ \ \ \ \ Eigen::PlainObjectBase<DerivedH>\ \&\ H);}
+\DoxyCodeLine{00027\ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#\ \ include\ "{}rgb\_to\_hsv.cpp"{}}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00034\ }
+
+\end{DoxyCode}

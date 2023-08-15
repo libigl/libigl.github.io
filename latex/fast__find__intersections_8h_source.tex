@@ -1,0 +1,58 @@
+\doxysection{fast\+\_\+find\+\_\+intersections.\+h}
+\hypertarget{fast__find__intersections_8h_source}{}\label{fast__find__intersections_8h_source}\index{include/igl/fast\_find\_intersections.h@{include/igl/fast\_find\_intersections.h}}
+\mbox{\hyperlink{fast__find__intersections_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2022\ Vladimir\ S.\ FONOV\ <vladimir.fonov@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ FAST\_FIND\_MESH\_INTERSECT\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ FAST\_FIND\_MESH\_INTERSECT\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{AABB_8h}{AABB.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}\ \{}
+\DoxyCodeLine{00029\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV1,}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF1,}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV2,}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF2,}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedI,}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedE>}
+\DoxyCodeLine{00036\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a30b7f81580d0eb77cfa387adaa4e9c67}{fast\_find\_intersections}}(}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV1>\&\ V1,}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF1>\&\ F1,}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV2>\&\ V2,}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF2>\&\ F2,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedI>\&\ intersect\_pairs,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedE>\&\ \mbox{\hyperlink{namespaceigl_a0efd6c6b371a55178d53cf0afacf34ee}{edges}}\ );}
+\DoxyCodeLine{00045\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV1,}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF1,}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV2,}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF2,}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedI,}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedE>}
+\DoxyCodeLine{00052\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a30b7f81580d0eb77cfa387adaa4e9c67}{fast\_find\_intersections}}(}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB}{AABB<DerivedV1,3>}}\ \ \ \ \ \ \ \ \ \ \ \&\ tree,}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV1>\&\ V1,}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF1>\&\ F1,}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV2>\&\ V2,}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF2>\&\ F2,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedI>\&\ intersect\_pairs,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedE>\&\ \mbox{\hyperlink{namespaceigl_a0efd6c6b371a55178d53cf0afacf34ee}{edges}}\ );}
+\DoxyCodeLine{00060\ \};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#\ \ include\ "{}fast\_find\_intersections.cpp"{}}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

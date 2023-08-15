@@ -1,0 +1,62 @@
+\doxysection{unproject\+\_\+in\+\_\+mesh.\+h}
+\hypertarget{unproject__in__mesh_8h_source}{}\label{unproject__in__mesh_8h_source}\index{include/igl/unproject\_in\_mesh.h@{include/igl/unproject\_in\_mesh.h}}
+\mbox{\hyperlink{unproject__in__mesh_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2015\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_UNPROJECT\_IN\_MESH}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_UNPROJECT\_IN\_MESH}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Hit_8h}{Hit.h}}"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00034\ \ \ \textcolor{keyword}{template}\ <\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF,\ \textcolor{keyword}{typename}\ Derivedobj>}
+\DoxyCodeLine{00035\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceigl_adec5b69e885a84437436bde2e86bb09a}{unproject\_in\_mesh}}(}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Vector2f\&\ pos,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix4f\&\ model,}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix4f\&\ proj,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Vector4f\&\ viewport,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<Derivedobj>\ \&\ obj,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ std::vector<igl::Hit\ >\ \&\ hits);}
+\DoxyCodeLine{00045\ \ \ \textcolor{keyword}{template}\ <\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF,\ \textcolor{keyword}{typename}\ Derivedobj>}
+\DoxyCodeLine{00046\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceigl_adec5b69e885a84437436bde2e86bb09a}{unproject\_in\_mesh}}(}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Vector2f\&\ pos,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix4f\&\ model,}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix4f\&\ proj,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Vector4f\&\ viewport,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<Derivedobj>\ \&\ obj);}
+\DoxyCodeLine{00059\ \ \ \textcolor{keyword}{template}\ <\ \textcolor{keyword}{typename}\ Derivedobj>}
+\DoxyCodeLine{00060\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceigl_adec5b69e885a84437436bde2e86bb09a}{unproject\_in\_mesh}}(}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Vector2f\&\ pos,}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix4f\&\ model,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix4f\&\ proj,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Vector4f\&\ viewport,}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::function<}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}(}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Vector3f\&,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Vector3f\&,}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<igl::Hit>\ \&)}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ >\ \&\ shoot\_ray,}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<Derivedobj>\ \&\ obj,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ std::vector<igl::Hit\ >\ \&\ hits);}
+\DoxyCodeLine{00073\ \}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#\ \ include\ "{}unproject\_in\_mesh.cpp"{}}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00078\ }
+
+\end{DoxyCode}

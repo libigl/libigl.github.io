@@ -1,0 +1,15 @@
+\doxysection{include/igl/cut\+\_\+mesh\+\_\+from\+\_\+singularities.h File Reference}
+\hypertarget{cut__mesh__from__singularities_8h}{}\label{cut__mesh__from__singularities_8h}\index{include/igl/cut\_mesh\_from\_singularities.h@{include/igl/cut\_mesh\_from\_singularities.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include \"{}cut\+\_\+mesh\+\_\+from\+\_\+singularities.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedM , typename DerivedO $>$ }\\void \mbox{\hyperlink{namespaceigl_a719fb78367f00bac1b9ef47dacead128}{igl\+::cut\+\_\+mesh\+\_\+from\+\_\+singularities}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const Eigen\+::\+Matrix\+Base$<$ DerivedM $>$ \&MMatch, Eigen\+::\+Plain\+Object\+Base$<$ DerivedO $>$ \&seams)
+\begin{DoxyCompactList}\small\item\em Given a mesh (V,F) and the integer mismatch of a cross field per edge (mismatch), finds the cut\+\_\+graph connecting the singularities (seams) and the degree of the singularities singularity\+\_\+index. \end{DoxyCompactList}\end{DoxyCompactItemize}

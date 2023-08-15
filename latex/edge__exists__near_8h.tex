@@ -1,0 +1,16 @@
+\doxysection{include/igl/edge\+\_\+exists\+\_\+near.h File Reference}
+\hypertarget{edge__exists__near_8h}{}\label{edge__exists__near_8h}\index{include/igl/edge\_exists\_near.h@{include/igl/edge\_exists\_near.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \"{}edge\+\_\+exists\+\_\+near.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DeriveduE , typename Derived\+EMAP , typename u\+E2\+EType , typename Index $>$ }\\bool \mbox{\hyperlink{namespaceigl_a6c1b6d5e7d874099d4260df5291e63e7}{igl\+::edge\+\_\+exists\+\_\+near}} (const Eigen\+::\+Matrix\+Base$<$ DeriveduE $>$ \&uE, const Eigen\+::\+Matrix\+Base$<$ Derived\+EMAP $>$ \&EMAP, const std\+::vector$<$ std\+::vector$<$ u\+E2\+EType $>$ $>$ \&u\+E2E, const Index \&a, const Index \&b, const Index \&uei)
+\begin{DoxyCompactList}\small\item\em Does edge (a,b) exist in the edges of all faces incident on existing unique edge uei. \end{DoxyCompactList}\end{DoxyCompactItemize}

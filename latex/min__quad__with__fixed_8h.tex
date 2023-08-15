@@ -1,0 +1,50 @@
+\doxysection{include/igl/min\+\_\+quad\+\_\+with\+\_\+fixed.h File Reference}
+\hypertarget{min__quad__with__fixed_8h}{}\label{min__quad__with__fixed_8h}\index{include/igl/min\_quad\_with\_fixed.h@{include/igl/min\_quad\_with\_fixed.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$unsupported/\+Eigen/\+Sparse\+Extra$>$}\newline
+{\ttfamily \#include \"{}min\+\_\+quad\+\_\+with\+\_\+fixed.\+impl.\+h\"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data}{igl\+::min\+\_\+quad\+\_\+with\+\_\+fixed\+\_\+data$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em Parameters and precomputed values for min\+\_\+quad\+\_\+with\+\_\+fixed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{min__quad__with__fixed_8h_aa93624b0b2836d2510e8c92ae951d817}{EIGEN\+\_\+\+YES\+\_\+\+I\+\_\+\+KNOW\+\_\+\+SPARSE\+\_\+\+MODULE\+\_\+\+IS\+\_\+\+NOT\+\_\+\+STABLE\+\_\+\+YET}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T , typename Derivedknown $>$ }\\bool \mbox{\hyperlink{namespaceigl_adc0382628e374a5b92a226ad75ce6b8b}{igl\+::min\+\_\+quad\+\_\+with\+\_\+fixed\+\_\+precompute}} (const Eigen\+::\+Sparse\+Matrix$<$ T $>$ \&A, const Eigen\+::\+Matrix\+Base$<$ Derivedknown $>$ \&known, const Eigen\+::\+Sparse\+Matrix$<$ T $>$ \&Aeq, const bool pd, \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data}{min\+\_\+quad\+\_\+with\+\_\+fixed\+\_\+data}}$<$ T $>$ \&data)
+\begin{DoxyCompactList}\small\item\em Minimize a convex quadratic energy subject to fixed value and linear equality constraints. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename DerivedB , typename DerivedY , typename Derived\+Beq , typename DerivedZ , typename Derivedsol $>$ }\\bool \mbox{\hyperlink{namespaceigl_ad6d436a09a132f780d5e503b39499fbb}{igl\+::min\+\_\+quad\+\_\+with\+\_\+fixed\+\_\+solve}} (const \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data}{min\+\_\+quad\+\_\+with\+\_\+fixed\+\_\+data}}$<$ T $>$ \&data, const Eigen\+::\+Matrix\+Base$<$ DerivedB $>$ \&B, const Eigen\+::\+Matrix\+Base$<$ DerivedY $>$ \&Y, const Eigen\+::\+Matrix\+Base$<$ Derived\+Beq $>$ \&Beq, Eigen\+::\+Plain\+Object\+Base$<$ DerivedZ $>$ \&Z, Eigen\+::\+Plain\+Object\+Base$<$ Derivedsol $>$ \&sol)
+\begin{DoxyCompactList}\small\item\em Solves a system previously factored using min\+\_\+quad\+\_\+with\+\_\+fixed\+\_\+precompute. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename DerivedB , typename DerivedY , typename Derived\+Beq , typename DerivedZ $>$ }\\bool \mbox{\hyperlink{namespaceigl_ad5720740af2df4180f61b1731bd5499f}{igl\+::min\+\_\+quad\+\_\+with\+\_\+fixed\+\_\+solve}} (const \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data}{min\+\_\+quad\+\_\+with\+\_\+fixed\+\_\+data}}$<$ T $>$ \&data, const Eigen\+::\+Matrix\+Base$<$ DerivedB $>$ \&B, const Eigen\+::\+Matrix\+Base$<$ DerivedY $>$ \&Y, const Eigen\+::\+Matrix\+Base$<$ Derived\+Beq $>$ \&Beq, Eigen\+::\+Plain\+Object\+Base$<$ DerivedZ $>$ \&Z)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename Derivedknown , typename DerivedB , typename DerivedY , typename Derived\+Beq , typename DerivedZ $>$ }\\bool \mbox{\hyperlink{namespaceigl_abcdcf5c62d46412f4b5de5889e51c0d4}{igl\+::min\+\_\+quad\+\_\+with\+\_\+fixed}} (const Eigen\+::\+Sparse\+Matrix$<$ T $>$ \&A, const Eigen\+::\+Matrix\+Base$<$ DerivedB $>$ \&B, const Eigen\+::\+Matrix\+Base$<$ Derivedknown $>$ \&known, const Eigen\+::\+Matrix\+Base$<$ DerivedY $>$ \&Y, const Eigen\+::\+Sparse\+Matrix$<$ T $>$ \&Aeq, const Eigen\+::\+Matrix\+Base$<$ Derived\+Beq $>$ \&Beq, const bool pd, Eigen\+::\+Plain\+Object\+Base$<$ DerivedZ $>$ \&Z)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Scalar , int n, int m, bool Hpd = true$>$ }\\Eigen\+::\+Matrix$<$ Scalar, n, 1 $>$ \mbox{\hyperlink{namespaceigl_a897bf8d157d9e2b51b81603c5fd6e099}{igl\+::min\+\_\+quad\+\_\+with\+\_\+fixed}} (const Eigen\+::\+Matrix$<$ Scalar, n, n $>$ \&H, const Eigen\+::\+Matrix$<$ Scalar, n, 1 $>$ \&f, const Eigen\+::\+Array$<$ bool, n, 1 $>$ \&k, const Eigen\+::\+Matrix$<$ Scalar, n, 1 $>$ \&bc, const Eigen\+::\+Matrix$<$ Scalar, m, n $>$ \&A, const Eigen\+::\+Matrix$<$ Scalar, m, 1 $>$ \&b)
+\begin{DoxyCompactList}\small\item\em Dense version optimized for very small, known at compile time sizes. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Scalar , int n, bool Hpd = true$>$ }\\Eigen\+::\+Matrix$<$ Scalar, n, 1 $>$ \mbox{\hyperlink{namespaceigl_a4f2961e370b73126b4896c0f53cc8af4}{igl\+::min\+\_\+quad\+\_\+with\+\_\+fixed}} (const Eigen\+::\+Matrix$<$ Scalar, n, n $>$ \&H, const Eigen\+::\+Matrix$<$ Scalar, n, 1 $>$ \&f, const Eigen\+::\+Array$<$ bool, n, 1 $>$ \&k, const Eigen\+::\+Matrix$<$ Scalar, n, 1 $>$ \&bc)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Scalar , int n, int kcount, bool Hpd$>$ }\\Eigen\+::\+Matrix$<$ Scalar, n, 1 $>$ \mbox{\hyperlink{namespaceigl_a810f069896eadc075940d13f7cc22a4f}{igl\+::min\+\_\+quad\+\_\+with\+\_\+fixed}} (const Eigen\+::\+Matrix$<$ Scalar, n, n $>$ \&H, const Eigen\+::\+Matrix$<$ Scalar, n, 1 $>$ \&f, const Eigen\+::\+Array$<$ bool, n, 1 $>$ \&k, const Eigen\+::\+Matrix$<$ Scalar, n, 1 $>$ \&bc)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{min__quad__with__fixed_8h_aa93624b0b2836d2510e8c92ae951d817}\label{min__quad__with__fixed_8h_aa93624b0b2836d2510e8c92ae951d817} 
+\index{min\_quad\_with\_fixed.h@{min\_quad\_with\_fixed.h}!EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET@{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}}
+\index{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET@{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}!min\_quad\_with\_fixed.h@{min\_quad\_with\_fixed.h}}
+\doxysubsubsection{\texorpdfstring{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}}
+{\footnotesize\ttfamily \#define EIGEN\+\_\+\+YES\+\_\+\+I\+\_\+\+KNOW\+\_\+\+SPARSE\+\_\+\+MODULE\+\_\+\+IS\+\_\+\+NOT\+\_\+\+STABLE\+\_\+\+YET}
+

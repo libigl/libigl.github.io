@@ -1,0 +1,37 @@
+\doxysection{include/igl/read\+TGF.h File Reference}
+\hypertarget{readTGF_8h}{}\label{readTGF_8h}\index{include/igl/readTGF.h@{include/igl/readTGF.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include \"{}read\+TGF.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespaceigl_a0e2ff313a45b1882bc42711ef59518ea}{igl\+::read\+TGF}} (const std\+::string tgf\+\_\+filename, std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \&C, std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&E, std\+::vector$<$ int $>$ \&P, std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&BE, std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&CE, std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&PE)
+\begin{DoxyCompactList}\small\item\em Read a graph from a .tgf file. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceigl_a86a753ab8f368313c20aa9d6aa98841c}{igl\+::read\+TGF}} (const std\+::string tgf\+\_\+filename, Eigen\+::\+Matrix\+Xd \&C, Eigen\+::\+Matrix\+Xi \&E, Eigen\+::\+Vector\+Xi \&P, Eigen\+::\+Matrix\+Xi \&BE, Eigen\+::\+Matrix\+Xi \&CE, Eigen\+::\+Matrix\+Xi \&PE)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceigl_a2cfc64e83ab4d2cd4fb8a6e31d4403d6}{igl\+::read\+TGF}} (const std\+::string tgf\+\_\+filename, Eigen\+::\+Matrix\+Xd \&C, Eigen\+::\+Matrix\+Xi \&E)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\hypertarget{readTGF_8h_autotoc_md26}{}\doxysubsection{\texorpdfstring{.\+tgf -\/ control handle graphs}{.tgf - control handle graphs}}\label{readTGF_8h_autotoc_md26}
+\DoxyHorRuler{0}
+
+
+A .tgf file contains a graph of describing a set of control handles/structures\+: point controls, bones of a skeleton and cages made of \"{}cage edges\"{}.
+
+The first part of the file consists of lines regarding each vertex of the graph. Each line reads\+: \begin{DoxyVerb}[index] [x] [y] [z] [undocument optional data]
+\end{DoxyVerb}
+ Indices begin with 1 and should proceed in order. Then there should be a line with a sole\+: \begin{DoxyVerb}#
+\end{DoxyVerb}
+ The next section concerns the edges of the graph. Each line corresponds to an edge\+: \begin{DoxyVerb}[source index] [dest index] [is bone] [is pseudo-edge] [is cage edge] [undocument other data]
+\end{DoxyVerb}
+ Bone edges trump pseudo and cage edges. 

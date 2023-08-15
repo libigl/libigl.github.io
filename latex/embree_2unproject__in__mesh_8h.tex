@@ -1,0 +1,21 @@
+\doxysection{include/igl/embree/unproject\+\_\+in\+\_\+mesh.h File Reference}
+\hypertarget{embree_2unproject__in__mesh_8h}{}\label{embree_2unproject__in__mesh_8h}\index{include/igl/embree/unproject\_in\_mesh.h@{include/igl/embree/unproject\_in\_mesh.h}}
+{\ttfamily \#include $<$igl/igl\+\_\+inline.\+h$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \"{}../\+Hit.\+h\"{}}\newline
+{\ttfamily \#include \"{}unproject\+\_\+in\+\_\+mesh.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{namespaceigl_1_1embree}{igl\+::embree}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Derivedobj $>$ }\\int \mbox{\hyperlink{namespaceigl_1_1embree_a80724fc46ca35d893a6253133fdf1f20}{igl\+::embree\+::unproject\+\_\+in\+\_\+mesh}} (const Eigen\+::\+Vector2f \&pos, const Eigen\+::\+Matrix4f \&model, const Eigen\+::\+Matrix4f \&proj, const Eigen\+::\+Vector4f \&viewport, const \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector}{Embree\+Intersector}} \&ei, Eigen\+::\+Plain\+Object\+Base$<$ Derivedobj $>$ \&obj, std\+::vector$<$ \mbox{\hyperlink{structigl_1_1Hit}{igl\+::\+Hit}} $>$ \&hits)
+\begin{DoxyCompactList}\small\item\em Unproject a screen location (using current opengl viewport, projection, and model view) to a 3D position {\itshape inside} a given mesh. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derivedobj $>$ }\\int \mbox{\hyperlink{namespaceigl_1_1embree_a63f92b1ed81cbd29ef63241517ba0968}{igl\+::embree\+::unproject\+\_\+in\+\_\+mesh}} (const Eigen\+::\+Vector2f \&pos, const Eigen\+::\+Matrix4f \&model, const Eigen\+::\+Matrix4f \&proj, const Eigen\+::\+Vector4f \&viewport, const \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector}{Embree\+Intersector}} \&ei, Eigen\+::\+Plain\+Object\+Base$<$ Derivedobj $>$ \&obj)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}

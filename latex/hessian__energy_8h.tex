@@ -1,0 +1,16 @@
+\doxysection{include/igl/hessian\+\_\+energy.h File Reference}
+\hypertarget{hessian__energy_8h}{}\label{hessian__energy_8h}\index{include/igl/hessian\_energy.h@{include/igl/hessian\_energy.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include \"{}hessian\+\_\+energy.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename Scalar $>$ }\\void \mbox{\hyperlink{namespaceigl_a5d3d292215a6020d9e70cd7cfdd29ec1}{igl\+::hessian\+\_\+energy}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Sparse\+Matrix$<$ Scalar $>$ \&Q)
+\begin{DoxyCompactList}\small\item\em Constructs the Hessian energy matrix using mixed FEM as described in \href{https://arxiv.org/abs/1707.04348}{\texttt{ https\+://arxiv.\+org/abs/1707.\+04348}} Natural Boundary Conditions for Smoothing in Geometry Processing (Oded Stein, Eitan Grinspun, Max Wardetzky, Alec Jacobson) \end{DoxyCompactList}\end{DoxyCompactItemize}

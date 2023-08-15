@@ -1,0 +1,30 @@
+\doxysection{swept\+\_\+volume.\+h}
+\hypertarget{swept__volume_8h_source}{}\label{swept__volume_8h_source}\index{include/igl/swept\_volume.h@{include/igl/swept\_volume.h}}
+\mbox{\hyperlink{swept__volume_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ IGL\_SWEPT\_VOLUME\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ IGL\_SWEPT\_VOLUME\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <Eigen/Geometry>}}
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00021\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a525f425d4315f9547a6e82782d7d672b}{swept\_volume}}(}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\ \&\ V,}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ F,}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{const}\ std::function<Eigen::Affine3d(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ t)>\ \&\ transform,}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ steps,}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ grid\_res,}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ isolevel,}
+\DoxyCodeLine{00028\ \ \ \ \ Eigen::MatrixXd\ \&\ SV,}
+\DoxyCodeLine{00029\ \ \ \ \ Eigen::MatrixXi\ \&\ SF);}
+\DoxyCodeLine{00030\ \ \ }
+\DoxyCodeLine{00031\ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#\ \ include\ "{}swept\_volume.cpp"{}}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,68 @@
+\doxysection{cut\+\_\+mesh.\+h}
+\hypertarget{cut__mesh_8h_source}{}\label{cut__mesh_8h_source}\index{include/igl/cut\_mesh.h@{include/igl/cut\_mesh.h}}
+\mbox{\hyperlink{cut__mesh_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2019\ Hanxiao\ Shen\ <hanxiao@cims.nyu.edu>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_CUT\_MESH\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_CUT\_MESH\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00027\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF,\ \textcolor{keyword}{typename}\ DerivedC,\ \textcolor{keyword}{typename}\ DerivedI>}
+\DoxyCodeLine{00028\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a3221b56ac51e76ede2f88111bd099e2c}{cut\_mesh}}(}
+\DoxyCodeLine{00029\ \ \ \ \ Eigen::PlainObjectBase<DerivedV>\&\ V,}
+\DoxyCodeLine{00030\ \ \ \ \ Eigen::PlainObjectBase<DerivedF>\&\ F,}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedC>\&\ cuts,}
+\DoxyCodeLine{00032\ \ \ \ \ Eigen::PlainObjectBase<DerivedI>\&\ I}
+\DoxyCodeLine{00033\ \ \ );}
+\DoxyCodeLine{00051\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF,\ \textcolor{keyword}{typename}\ DerivedFF,\ \textcolor{keyword}{typename}\ DerivedFFi,\ \textcolor{keyword}{typename}\ DerivedC,\ \textcolor{keyword}{typename}\ DerivedI>}
+\DoxyCodeLine{00052\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a3221b56ac51e76ede2f88111bd099e2c}{cut\_mesh}}(}
+\DoxyCodeLine{00053\ \ \ \ \ Eigen::PlainObjectBase<DerivedV>\&\ V,}
+\DoxyCodeLine{00054\ \ \ \ \ Eigen::PlainObjectBase<DerivedF>\&\ F,}
+\DoxyCodeLine{00055\ \ \ \ \ Eigen::MatrixBase<DerivedFF>\&\ FF,}
+\DoxyCodeLine{00056\ \ \ \ \ Eigen::MatrixBase<DerivedFFi>\&\ FFi,}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedC>\&\ C,}
+\DoxyCodeLine{00058\ \ \ \ \ Eigen::PlainObjectBase<DerivedI>\&\ I}
+\DoxyCodeLine{00059\ \ \ );}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00076\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF,\ \textcolor{keyword}{typename}\ DerivedC>}
+\DoxyCodeLine{00077\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a3221b56ac51e76ede2f88111bd099e2c}{cut\_mesh}}(}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\&\ V,}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\&\ F,}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedC>\&\ cuts,}
+\DoxyCodeLine{00081\ \ \ \ \ Eigen::PlainObjectBase<DerivedV>\&\ Vn,}
+\DoxyCodeLine{00082\ \ \ \ \ Eigen::PlainObjectBase<DerivedF>\&\ Fn}
+\DoxyCodeLine{00083\ \ \ );}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00101\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF,\ \textcolor{keyword}{typename}\ DerivedC,\ \textcolor{keyword}{typename}\ DerivedI>}
+\DoxyCodeLine{00102\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a3221b56ac51e76ede2f88111bd099e2c}{cut\_mesh}}(}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\&\ V,}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\&\ F,}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedC>\&\ cuts,}
+\DoxyCodeLine{00106\ \ \ \ \ Eigen::PlainObjectBase<DerivedV>\&\ Vn,}
+\DoxyCodeLine{00107\ \ \ \ \ Eigen::PlainObjectBase<DerivedF>\&\ Fn,}
+\DoxyCodeLine{00108\ \ \ \ \ Eigen::PlainObjectBase<DerivedI>\&\ I}
+\DoxyCodeLine{00109\ \ \ );}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ }
+\DoxyCodeLine{00113\ \}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#include\ "{}cut\_mesh.cpp"{}}}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

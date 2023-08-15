@@ -1,0 +1,52 @@
+\doxysection{remove\+\_\+duplicate\+\_\+vertices.\+h}
+\hypertarget{remove__duplicate__vertices_8h_source}{}\label{remove__duplicate__vertices_8h_source}\index{include/igl/remove\_duplicate\_vertices.h@{include/igl/remove\_duplicate\_vertices.h}}
+\mbox{\hyperlink{remove__duplicate__vertices_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2013\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_REMOVE\_DUPLICATE\_VERTICES\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_REMOVE\_DUPLICATE\_VERTICES\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00023\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedSV,\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedSVI,\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedSVJ>}
+\DoxyCodeLine{00028\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a4684c8d485a5cd367751c6bb92e8b415}{remove\_duplicate\_vertices}}(}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\&\ V,}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ epsilon,}
+\DoxyCodeLine{00031\ \ \ \ \ Eigen::PlainObjectBase<DerivedSV>\&\ SV,}
+\DoxyCodeLine{00032\ \ \ \ \ Eigen::PlainObjectBase<DerivedSVI>\&\ SVI,}
+\DoxyCodeLine{00033\ \ \ \ \ Eigen::PlainObjectBase<DerivedSVJ>\&\ SVJ);}
+\DoxyCodeLine{00037\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedSV,\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedSVI,\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedSVJ,}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedSF>}
+\DoxyCodeLine{00044\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a4684c8d485a5cd367751c6bb92e8b415}{remove\_duplicate\_vertices}}(}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\&\ V,}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\&\ F,}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ epsilon,}
+\DoxyCodeLine{00048\ \ \ \ \ Eigen::PlainObjectBase<DerivedSV>\&\ SV,}
+\DoxyCodeLine{00049\ \ \ \ \ Eigen::PlainObjectBase<DerivedSVI>\&\ SVI,}
+\DoxyCodeLine{00050\ \ \ \ \ Eigen::PlainObjectBase<DerivedSVJ>\&\ SVJ,}
+\DoxyCodeLine{00051\ \ \ \ \ Eigen::PlainObjectBase<DerivedSF>\&\ SF);}
+\DoxyCodeLine{00052\ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#\ \ include\ "{}remove\_duplicate\_vertices.cpp"{}}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

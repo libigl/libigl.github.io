@@ -1,0 +1,22 @@
+\doxysection{include/igl/parallel\+\_\+for.h File Reference}
+\hypertarget{parallel__for_8h}{}\label{parallel__for_8h}\index{include/igl/parallel\_for.h@{include/igl/parallel\_for.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include \"{}default\+\_\+num\+\_\+threads.\+h\"{}}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Index , typename Function\+Type $>$ }\\bool \mbox{\hyperlink{namespaceigl_a48ba3dac8f2da11935cd7e566f27e69d}{igl\+::parallel\+\_\+for}} (const Index loop\+\_\+size, const Function\+Type \&func, const size\+\_\+t min\+\_\+parallel=0)
+\begin{DoxyCompactList}\small\item\em Functional implementation of a basic, open-\/mp style, parallel for loop. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Index , typename Prep\+Function\+Type , typename Function\+Type , typename Accum\+Function\+Type $>$ }\\bool \mbox{\hyperlink{namespaceigl_a8e1804e24a4fefa3bbe3e6241bd00f75}{igl\+::parallel\+\_\+for}} (const Index loop\+\_\+size, const Prep\+Function\+Type \&prep\+\_\+func, const Function\+Type \&func, const Accum\+Function\+Type \&accum\+\_\+func, const size\+\_\+t min\+\_\+parallel=0)
+\begin{DoxyCompactList}\small\item\em Functional implementation of an open-\/mp style, parallel for loop with accumulation. \end{DoxyCompactList}\end{DoxyCompactItemize}

@@ -1,0 +1,18 @@
+\doxysection{include/igl/remesh\+\_\+along\+\_\+isoline.h File Reference}
+\hypertarget{remesh__along__isoline_8h}{}\label{remesh__along__isoline_8h}\index{include/igl/remesh\_along\_isoline.h@{include/igl/remesh\_along\_isoline.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include \"{}remesh\+\_\+along\+\_\+isoline.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedS , typename DerivedU , typename DerivedG , typename DerivedJ , typename BCtype , typename Derived\+SU , typename DerivedL $>$ }\\void \mbox{\hyperlink{namespaceigl_a492e4e2a6bc227fe67a79b0110d4c8de}{igl\+::remesh\+\_\+along\+\_\+isoline}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const Eigen\+::\+Matrix\+Base$<$ DerivedS $>$ \&S, const typename Derived\+S\+::\+Scalar val, Eigen\+::\+Plain\+Object\+Base$<$ DerivedU $>$ \&U, Eigen\+::\+Plain\+Object\+Base$<$ DerivedG $>$ \&G, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SU $>$ \&SU, Eigen\+::\+Plain\+Object\+Base$<$ DerivedJ $>$ \&J, Eigen\+::\+Sparse\+Matrix$<$ BCtype $>$ \&BC, Eigen\+::\+Plain\+Object\+Base$<$ DerivedL $>$ \&L)
+\begin{DoxyCompactList}\small\item\em Given a triangle mesh and a scalar field, remesh so that a given isovalue of the scalar field follows (new) edges of the output mesh. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedF , typename DerivedS , typename DerivedG , typename DerivedJ , typename BCtype , typename Derived\+SU , typename DerivedL $>$ }\\void \mbox{\hyperlink{namespaceigl_a7057971dd3f4cb240c6598b5ee52eaff}{igl\+::remesh\+\_\+along\+\_\+isoline}} (const int n, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const Eigen\+::\+Matrix\+Base$<$ DerivedS $>$ \&S, const typename Derived\+S\+::\+Scalar val, Eigen\+::\+Plain\+Object\+Base$<$ DerivedG $>$ \&G, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SU $>$ \&SU, Eigen\+::\+Plain\+Object\+Base$<$ DerivedJ $>$ \&J, Eigen\+::\+Sparse\+Matrix$<$ BCtype $>$ \&BC, Eigen\+::\+Plain\+Object\+Base$<$ DerivedL $>$ \&L)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}

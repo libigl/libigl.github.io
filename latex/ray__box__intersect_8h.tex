@@ -1,0 +1,16 @@
+\doxysection{include/igl/ray\+\_\+box\+\_\+intersect.h File Reference}
+\hypertarget{ray__box__intersect_8h}{}\label{ray__box__intersect_8h}\index{include/igl/ray\_box\_intersect.h@{include/igl/ray\_box\_intersect.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Geometry$>$}\newline
+{\ttfamily \#include \"{}ray\+\_\+box\+\_\+intersect.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Derivedsource , typename Deriveddir , typename Scalar $>$ }\\bool \mbox{\hyperlink{namespaceigl_af41f8552f81764bc8793cb5f76a87553}{igl\+::ray\+\_\+box\+\_\+intersect}} (const Eigen\+::\+Matrix\+Base$<$ Derivedsource $>$ \&source, const Eigen\+::\+Matrix\+Base$<$ Deriveddir $>$ \&dir, const Eigen\+::\+Aligned\+Box$<$ Scalar, 3 $>$ \&box, const Scalar \&t0, const Scalar \&t1, Scalar \&tmin, Scalar \&tmax)
+\begin{DoxyCompactList}\small\item\em Determine whether a ray origin+t\texorpdfstring{$\ast$}{*}dir and box intersect within the ray\textquotesingle{}s parameterized range (t0,t1) \end{DoxyCompactList}\end{DoxyCompactItemize}

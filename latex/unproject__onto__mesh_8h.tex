@@ -1,0 +1,19 @@
+\doxysection{include/igl/unproject\+\_\+onto\+\_\+mesh.h File Reference}
+\hypertarget{unproject__onto__mesh_8h}{}\label{unproject__onto__mesh_8h}\index{include/igl/unproject\_onto\_mesh.h@{include/igl/unproject\_onto\_mesh.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include \"{}Hit.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include \"{}unproject\+\_\+onto\+\_\+mesh.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename Derivedbc $>$ }\\bool \mbox{\hyperlink{namespaceigl_abbefb4e32e184a299b36f663b23b7b9c}{igl\+::unproject\+\_\+onto\+\_\+mesh}} (const Eigen\+::\+Vector2f \&pos, const Eigen\+::\+Matrix4f \&model, const Eigen\+::\+Matrix4f \&proj, const Eigen\+::\+Vector4f \&viewport, const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, int \&fid, Eigen\+::\+Plain\+Object\+Base$<$ Derivedbc $>$ \&bc)
+\begin{DoxyCompactList}\small\item\em Unproject a screen location (using current opengl viewport, projection, and model view) to a 3D position {\itshape onto} a given mesh, if the ray through the given screen location (x,y) {\itshape hits} the mesh. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derivedbc $>$ }\\bool \mbox{\hyperlink{namespaceigl_af4d029fbc6f770b7dec469f743858d8f}{igl\+::unproject\+\_\+onto\+\_\+mesh}} (const Eigen\+::\+Vector2f \&pos, const Eigen\+::\+Matrix4f \&model, const Eigen\+::\+Matrix4f \&proj, const Eigen\+::\+Vector4f \&viewport, const std\+::function$<$ bool(const Eigen\+::\+Vector3f \&, const Eigen\+::\+Vector3f \&, \mbox{\hyperlink{structigl_1_1Hit}{igl\+::\+Hit}} \&) $>$ \&shoot\+\_\+ray, int \&fid, Eigen\+::\+Plain\+Object\+Base$<$ Derivedbc $>$ \&bc)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}

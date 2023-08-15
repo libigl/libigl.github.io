@@ -1,0 +1,42 @@
+\doxysection{sparse\+\_\+voxel\+\_\+grid.\+h}
+\hypertarget{sparse__voxel__grid_8h_source}{}\label{sparse__voxel__grid_8h_source}\index{include/igl/sparse\_voxel\_grid.h@{include/igl/sparse\_voxel\_grid.h}}
+\mbox{\hyperlink{sparse__voxel__grid_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2018\ Francis\ Williams\ <francis@fwilliams.info>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_SPARSE\_VOXEL\_GRID\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_SPARSE\_VOXEL\_GRID\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}\ }
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00030\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedP0,\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{typename}\ Func,\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedS,\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedI>}
+\DoxyCodeLine{00036\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_ae4c369ebc42c4e76553730c636d7967d}{sparse\_voxel\_grid}}(}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedP0>\&\ p0,}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{const}\ Func\&\ scalarFunc,}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ eps,}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ expected\_number\_of\_cubes,}
+\DoxyCodeLine{00041\ \ \ \ \ Eigen::PlainObjectBase<DerivedS>\&\ CS,}
+\DoxyCodeLine{00042\ \ \ \ \ Eigen::PlainObjectBase<DerivedV>\&\ CV,}
+\DoxyCodeLine{00043\ \ \ \ \ Eigen::PlainObjectBase<DerivedI>\&\ CI);}
+\DoxyCodeLine{00044\ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#\ \ \ \ include\ "{}sparse\_voxel\_grid.cpp"{}}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

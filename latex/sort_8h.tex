@@ -1,0 +1,26 @@
+\doxysection{include/igl/sort.h File Reference}
+\hypertarget{sort_8h}{}\label{sort_8h}\index{include/igl/sort.h@{include/igl/sort.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include \"{}sort.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedX , typename DerivedY , typename Derived\+IX $>$ }\\void \mbox{\hyperlink{namespaceigl_aea54a5804527aa194785e403870ba7db}{igl\+::sort}} (const Eigen\+::\+Dense\+Base$<$ DerivedX $>$ \&X, const int dim, const bool ascending, Eigen\+::\+Plain\+Object\+Base$<$ DerivedY $>$ \&Y, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+IX $>$ \&IX)
+\begin{DoxyCompactList}\small\item\em Sort the elements of a matrix X along a given dimension like matlabs sort function. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedX , typename DerivedY $>$ }\\void \mbox{\hyperlink{namespaceigl_a1b8c55dff1cae23221b5570ad7f9c194}{igl\+::sort}} (const Eigen\+::\+Dense\+Base$<$ DerivedX $>$ \&X, const int dim, const bool ascending, Eigen\+::\+Plain\+Object\+Base$<$ DerivedY $>$ \&Y)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedX , typename DerivedY , typename Derived\+IX $>$ }\\void \mbox{\hyperlink{namespaceigl_a4dd6daca2b874edaf27301a111ed2401}{igl\+::sort\+\_\+new}} (const Eigen\+::\+Dense\+Base$<$ DerivedX $>$ \&X, const int dim, const bool ascending, Eigen\+::\+Plain\+Object\+Base$<$ DerivedY $>$ \&Y, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+IX $>$ \&IX)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedX , typename DerivedY , typename Derived\+IX $>$ }\\void \mbox{\hyperlink{namespaceigl_a61ad3bd047a94be9c5ad7bf8890dd798}{igl\+::sort2}} (const Eigen\+::\+Dense\+Base$<$ DerivedX $>$ \&X, const int dim, const bool ascending, Eigen\+::\+Plain\+Object\+Base$<$ DerivedY $>$ \&Y, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+IX $>$ \&IX)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedX , typename DerivedY , typename Derived\+IX $>$ }\\void \mbox{\hyperlink{namespaceigl_a6bfeee50844cf4deac8ad3b473407428}{igl\+::sort3}} (const Eigen\+::\+Dense\+Base$<$ DerivedX $>$ \&X, const int dim, const bool ascending, Eigen\+::\+Plain\+Object\+Base$<$ DerivedY $>$ \&Y, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+IX $>$ \&IX)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{namespaceigl_a5ee021e4c406d792e624a3ddbdc5145d}{igl\+::sort}} (const std\+::vector$<$ T $>$ \&unsorted, const bool ascending, std\+::vector$<$ T $>$ \&sorted, std\+::vector$<$ size\+\_\+t $>$ \&index\+\_\+map)
+\begin{DoxyCompactList}\small\item\em Act like matlab\textquotesingle{}s \mbox{[}Y,I\mbox{]} = SORT(\+X) for std library vectors. \end{DoxyCompactList}\end{DoxyCompactItemize}

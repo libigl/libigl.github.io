@@ -1,0 +1,393 @@
+\doxysection{Winding\+Number\+AABB.\+h}
+\hypertarget{WindingNumberAABB_8h_source}{}\label{WindingNumberAABB_8h_source}\index{include/igl/WindingNumberAABB.h@{include/igl/WindingNumberAABB.h}}
+\mbox{\hyperlink{WindingNumberAABB_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2014\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ \#\ MUTUAL\ DEPENDENCY\ ISSUE\ FOR\ HEADER\ ONLY\ VERSION}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ MUST\ INCLUDE\ winding\_number.h\ first\ before\ guard:}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{winding__number_8h}{winding\_number.h}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ IGL\_WINDINGNUMBERAABB\_H}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ IGL\_WINDINGNUMBERAABB\_H}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{WindingNumberTree_8h}{WindingNumberTree.h}}"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00021\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{typename}\ Point,}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF\ >}
+\DoxyCodeLine{00025\ \ \ \textcolor{keyword}{class\ }WindingNumberAABB\ :\ \textcolor{keyword}{public}\ WindingNumberTree<Point,DerivedV,DerivedF>}
+\DoxyCodeLine{00026\ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ Point\ min\_corner;}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ Point\ max\_corner;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV::Scalar\ total\_positive\_area;}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{public}:\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \textcolor{keyword}{enum}\ SplitMethod}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ CENTER\_ON\_LONGEST\_AXIS\ =\ 0,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ MEDIAN\_ON\_LONGEST\_AXIS\ =\ 1,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ NUM\_SPLIT\_METHODS\ =\ 2}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \}\ split\_method;}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ WindingNumberAABB():}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ total\_positive\_area(std::numeric\_limits<typename\ DerivedV::Scalar>::infinity()),}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ split\_method(MEDIAN\_ON\_LONGEST\_AXIS)}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \{\}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ WindingNumberAABB(}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F);}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ WindingNumberAABB(}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ WindingNumberTree<Point,DerivedV,DerivedF>\ \&\ parent,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ set\_mesh(}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ init();}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ inside(\textcolor{keyword}{const}\ Point\ \&\ p)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ grow();}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ min\ and\ max\ corners}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ compute\_min\_max\_corners();}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ DerivedV::Scalar\ max\_abs\_winding\_number(\textcolor{keyword}{const}\ Point\ \&\ p)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ DerivedV::Scalar\ max\_simple\_abs\_winding\_number(\textcolor{keyword}{const}\ Point\ \&\ p)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00067\ \ \ \};}
+\DoxyCodeLine{00068\ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{comment}{//\ Implementation}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{winding__number_8h}{winding\_number.h}}"{}}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{barycenter_8h}{barycenter.h}}"{}}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{median_8h}{median.h}}"{}}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{doublearea_8h}{doublearea.h}}"{}}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{per__face__normals_8h}{per\_face\_normals.h}}"{}}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{comment}{//\ Minimum\ number\ of\ faces\ in\ a\ hierarchy\ element\ (this\ is\ probably\ dependent}}
+\DoxyCodeLine{00084\ \textcolor{comment}{//\ on\ speed\ of\ machine\ and\ compiler\ optimization)}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#ifndef\ WindingNumberAABB\_MIN\_F}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#\ \ define\ WindingNumberAABB\_MIN\_F\ 100}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int},\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00090\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ igl::WindingNumberAABB<Point,DerivedV,DerivedF>::set\_mesh(}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F)}
+\DoxyCodeLine{00093\ \{}
+\DoxyCodeLine{00094\ \ \ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a2e3647b6ad15ff4d418f0a0cbc45af0b}{igl::WindingNumberTree<Point,DerivedV,DerivedF>::set\_mesh}}(V,F);}
+\DoxyCodeLine{00095\ \ \ init();}
+\DoxyCodeLine{00096\ \}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int},\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00099\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ igl::WindingNumberAABB<Point,DerivedV,DerivedF>::init()}
+\DoxyCodeLine{00100\ \{}
+\DoxyCodeLine{00101\ \ \ \textcolor{keyword}{using\ namespace\ }Eigen;}
+\DoxyCodeLine{00102\ \ \ assert(max\_corner.size()\ ==\ 3);}
+\DoxyCodeLine{00103\ \ \ assert(min\_corner.size()\ ==\ 3);}
+\DoxyCodeLine{00104\ \ \ compute\_min\_max\_corners();}
+\DoxyCodeLine{00105\ \ \ Eigen::Matrix<typename\ DerivedV::Scalar,Eigen::Dynamic,1>\ dblA;}
+\DoxyCodeLine{00106\ \ \ \mbox{\hyperlink{namespaceigl_a7bae61a0f8a1bbe72e7832381c9beca5}{doublearea}}(this-\/>getV(),this-\/>getF(),dblA);}
+\DoxyCodeLine{00107\ \ \ total\_positive\_area\ =\ dblA.sum()/2.0;}
+\DoxyCodeLine{00108\ \}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int},\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00111\ \textcolor{keyword}{inline}\ igl::WindingNumberAABB<Point,DerivedV,DerivedF>::WindingNumberAABB(}
+\DoxyCodeLine{00112\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00113\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F):}
+\DoxyCodeLine{00114\ \ \ WindingNumberTree<Point,DerivedV,DerivedF>(V,F),}
+\DoxyCodeLine{00115\ \ \ min\_corner(),}
+\DoxyCodeLine{00116\ \ \ max\_corner(),}
+\DoxyCodeLine{00117\ \ \ total\_positive\_area(}
+\DoxyCodeLine{00118\ \ \ \ \ std::numeric\_limits<typename\ DerivedV::Scalar>::infinity()),}
+\DoxyCodeLine{00119\ \ \ split\_method(MEDIAN\_ON\_LONGEST\_AXIS)}
+\DoxyCodeLine{00120\ \{}
+\DoxyCodeLine{00121\ \ \ init();}
+\DoxyCodeLine{00122\ \}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int},\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00125\ \textcolor{keyword}{inline}\ igl::WindingNumberAABB<Point,DerivedV,DerivedF>::WindingNumberAABB(}
+\DoxyCodeLine{00126\ \ \ \textcolor{keyword}{const}\ WindingNumberTree<Point,DerivedV,DerivedF>\ \&\ parent,}
+\DoxyCodeLine{00127\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F):}
+\DoxyCodeLine{00128\ \ \ WindingNumberTree<Point,DerivedV,DerivedF>(parent,F),}
+\DoxyCodeLine{00129\ \ \ min\_corner(),}
+\DoxyCodeLine{00130\ \ \ max\_corner(),}
+\DoxyCodeLine{00131\ \ \ total\_positive\_area(}
+\DoxyCodeLine{00132\ \ \ \ \ std::numeric\_limits<typename\ DerivedV::Scalar>::infinity()),}
+\DoxyCodeLine{00133\ \ \ split\_method(MEDIAN\_ON\_LONGEST\_AXIS)}
+\DoxyCodeLine{00134\ \{}
+\DoxyCodeLine{00135\ \ \ init();}
+\DoxyCodeLine{00136\ \}}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int},\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00139\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ igl::WindingNumberAABB<Point,DerivedV,DerivedF>::grow()}
+\DoxyCodeLine{00140\ \{}
+\DoxyCodeLine{00141\ \ \ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00142\ \ \ \textcolor{keyword}{using\ namespace\ }Eigen;}
+\DoxyCodeLine{00143\ \ \ \textcolor{comment}{//\ Clear\ anything\ that\ already\ exists}}
+\DoxyCodeLine{00144\ \ \ this-\/>delete\_children();}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \textcolor{comment}{//cout<<"{}cap.rows():\ "{}<<this-\/>getcap().rows()<<endl;}}
+\DoxyCodeLine{00147\ \ \ \textcolor{comment}{//cout<<"{}F.rows():\ "{}<<this-\/>getF().rows()<<endl;}}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \textcolor{comment}{//\ Base\ cases}}
+\DoxyCodeLine{00150\ \ \ \textcolor{keywordflow}{if}(}
+\DoxyCodeLine{00151\ \ \ \ \ this-\/>getF().rows()\ <=\ (WindingNumberAABB\_MIN\_F>0?WindingNumberAABB\_MIN\_F:0)\ ||}
+\DoxyCodeLine{00152\ \ \ \ \ (this-\/>getcap().rows()\ -\/\ 2)\ >=\ this-\/>getF().rows())}
+\DoxyCodeLine{00153\ \ \ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{comment}{//\ Don't\ grow}}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00156\ \ \ \}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \textcolor{comment}{//\ Compute\ longest\ direction}}
+\DoxyCodeLine{00159\ \ \ \textcolor{keywordtype}{int}\ max\_d\ =\ -\/1;}
+\DoxyCodeLine{00160\ \ \ \textcolor{keyword}{typename}\ DerivedV::Scalar\ max\_len\ =\ }
+\DoxyCodeLine{00161\ \ \ \ \ -\/numeric\_limits<typename\ DerivedV::Scalar>::infinity();}
+\DoxyCodeLine{00162\ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ d\ =\ 0;d<min\_corner.size();d++)}
+\DoxyCodeLine{00163\ \ \ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordflow}{if}(\ (max\_corner[d]\ -\/\ min\_corner[d])\ >\ max\_len\ )}
+\DoxyCodeLine{00165\ \ \ \ \ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ max\_len\ =\ (max\_corner[d]\ -\/\ min\_corner[d]);}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ max\_d\ =\ d;}
+\DoxyCodeLine{00168\ \ \ \ \ \}}
+\DoxyCodeLine{00169\ \ \ \}}
+\DoxyCodeLine{00170\ \ \ \textcolor{comment}{//\ Compute\ facet\ barycenters}}
+\DoxyCodeLine{00171\ \ \ Eigen::Matrix<typename\ DerivedV::Scalar,Eigen::Dynamic,Eigen::Dynamic>\ BC;}
+\DoxyCodeLine{00172\ \ \ \mbox{\hyperlink{namespaceigl_a952c606ce07c40eb966cd5e55874f92d}{barycenter}}(this-\/>getV(),this-\/>getF(),BC);}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \textcolor{comment}{//\ Blerg,\ why\ is\ selecting\ rows\ so\ difficult}}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \textcolor{keyword}{typename}\ DerivedV::Scalar\ split\_value;}
+\DoxyCodeLine{00178\ \ \ \textcolor{comment}{//\ Split\ in\ longest\ direction}}
+\DoxyCodeLine{00179\ \ \ \textcolor{keywordflow}{switch}(split\_method)}
+\DoxyCodeLine{00180\ \ \ \{}
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordflow}{case}\ MEDIAN\_ON\_LONGEST\_AXIS:}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \textcolor{comment}{//\ Determine\ median}}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_ad73289b6fbba95eacda8174e185dcf9f}{median}}(BC.col(max\_d),split\_value);}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ assert(\textcolor{keyword}{false});}
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordflow}{case}\ CENTER\_ON\_LONGEST\_AXIS:}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ split\_value\ =\ 0.5*(max\_corner[max\_d]\ +\ min\_corner[max\_d]);}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00190\ \ \ \}}
+\DoxyCodeLine{00191\ \ \ \textcolor{comment}{//cout<<"{}c:\ "{}<<0.5*(max\_corner[max\_d]\ +\ min\_corner[max\_d])<<"{}\ "{}<<}}
+\DoxyCodeLine{00192\ \ \ \textcolor{comment}{//\ \ "{}m:\ "{}<<split\_value<<endl;;}}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \ \ vector<int>\ id(\ this-\/>getF().rows());}
+\DoxyCodeLine{00195\ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;i<this-\/>getF().rows();i++)}
+\DoxyCodeLine{00196\ \ \ \{}
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keywordflow}{if}(BC(i,max\_d)\ <=\ split\_value)}
+\DoxyCodeLine{00198\ \ \ \ \ \{}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \textcolor{keywordtype}{id}[i]\ =\ 0;\ \textcolor{comment}{//left}}
+\DoxyCodeLine{00200\ \ \ \ \ \}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{00201\ \ \ \ \ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \textcolor{keywordtype}{id}[i]\ =\ 1;\ \textcolor{comment}{//right}}
+\DoxyCodeLine{00203\ \ \ \ \ \}}
+\DoxyCodeLine{00204\ \ \ \}}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ lefts\ =\ (int)\ \mbox{\hyperlink{namespaceigl_a83819bb842f4bc4c8af21a98e1db44b3}{count}}(\textcolor{keywordtype}{id}.begin(),\textcolor{keywordtype}{id}.end(),0);}
+\DoxyCodeLine{00207\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ rights\ =\ (int)\ \mbox{\hyperlink{namespaceigl_a83819bb842f4bc4c8af21a98e1db44b3}{count}}(\textcolor{keywordtype}{id}.begin(),\textcolor{keywordtype}{id}.end(),1);}
+\DoxyCodeLine{00208\ \ \ \textcolor{keywordflow}{if}(lefts\ ==\ 0\ ||\ rights\ ==\ 0)}
+\DoxyCodeLine{00209\ \ \ \{}
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{comment}{//\ badly\ balanced\ base\ case\ (could\ try\ to\ recut)}}
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00212\ \ \ \}}
+\DoxyCodeLine{00213\ \ \ assert(lefts+rights\ ==\ this-\/>getF().rows());}
+\DoxyCodeLine{00214\ \ \ DerivedF\ leftF(lefts,\ \ this-\/>getF().cols());}
+\DoxyCodeLine{00215\ \ \ DerivedF\ rightF(rights,this-\/>getF().cols());}
+\DoxyCodeLine{00216\ \ \ \textcolor{keywordtype}{int}\ left\_i\ =\ 0;}
+\DoxyCodeLine{00217\ \ \ \textcolor{keywordtype}{int}\ right\_i\ =\ 0;}
+\DoxyCodeLine{00218\ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;i<this-\/>getF().rows();i++)}
+\DoxyCodeLine{00219\ \ \ \{}
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keywordflow}{if}(\textcolor{keywordtype}{id}[i]\ ==\ 0)}
+\DoxyCodeLine{00221\ \ \ \ \ \{}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ leftF.row(left\_i++)\ =\ this-\/>getF().row(i);}
+\DoxyCodeLine{00223\ \ \ \ \ \}\textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(\textcolor{keywordtype}{id}[i]\ ==\ 1)}
+\DoxyCodeLine{00224\ \ \ \ \ \{}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ rightF.row(right\_i++)\ =\ this-\/>getF().row(i);}
+\DoxyCodeLine{00226\ \ \ \ \ \}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{00227\ \ \ \ \ \{}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ assert(\textcolor{keyword}{false});}
+\DoxyCodeLine{00229\ \ \ \ \ \}}
+\DoxyCodeLine{00230\ \ \ \}}
+\DoxyCodeLine{00231\ \ \ assert(right\_i\ ==\ rightF.rows());}
+\DoxyCodeLine{00232\ \ \ assert(left\_i\ ==\ leftF.rows());}
+\DoxyCodeLine{00233\ \ \ \textcolor{comment}{//\ Finally\ actually\ grow\ children\ and\ Recursively\ grow}}
+\DoxyCodeLine{00234\ \ \ WindingNumberAABB<Point,DerivedV,DerivedF>\ *\ leftWindingNumberAABB\ =\ }
+\DoxyCodeLine{00235\ \ \ \ \ \textcolor{keyword}{new}\ WindingNumberAABB<Point,DerivedV,DerivedF>(*\textcolor{keyword}{this},leftF);}
+\DoxyCodeLine{00236\ \ \ leftWindingNumberAABB-\/>grow();}
+\DoxyCodeLine{00237\ \ \ this-\/>children.push\_back(leftWindingNumberAABB);}
+\DoxyCodeLine{00238\ \ \ WindingNumberAABB<Point,DerivedV,DerivedF>\ *\ rightWindingNumberAABB\ =\ }
+\DoxyCodeLine{00239\ \ \ \ \ \textcolor{keyword}{new}\ WindingNumberAABB<Point,DerivedV,DerivedF>(*\textcolor{keyword}{this},rightF);}
+\DoxyCodeLine{00240\ \ \ rightWindingNumberAABB-\/>grow();}
+\DoxyCodeLine{00241\ \ \ this-\/>children.push\_back(rightWindingNumberAABB);}
+\DoxyCodeLine{00242\ \}}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int},\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00245\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ igl::WindingNumberAABB<Point,DerivedV,DerivedF>::inside(\textcolor{keyword}{const}\ Point\ \&\ p)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00246\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00247\ \ \ assert(p.size()\ ==\ max\_corner.size());}
+\DoxyCodeLine{00248\ \ \ assert(p.size()\ ==\ min\_corner.size());}
+\DoxyCodeLine{00249\ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;i<p.size();i++)}
+\DoxyCodeLine{00250\ \ \ \{}
+\DoxyCodeLine{00252\ \ \ \ \ \textcolor{comment}{//if(\ p(i)\ <\ min\_corner(i)\ ||\ p(i)\ >=\ max\_corner(i))}}
+\DoxyCodeLine{00253\ \ \ \ \ \textcolor{comment}{//\ **MUST**\ be\ conservative}}
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{keywordflow}{if}(\ p(i)\ <\ min\_corner(i)\ ||\ p(i)\ >\ max\_corner(i))}
+\DoxyCodeLine{00255\ \ \ \ \ \{}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00257\ \ \ \ \ \}}
+\DoxyCodeLine{00258\ \ \ \}}
+\DoxyCodeLine{00259\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00260\ \}}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00262\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int},\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00263\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ igl::WindingNumberAABB<Point,DerivedV,DerivedF>::compute\_min\_max\_corners()}
+\DoxyCodeLine{00264\ \{}
+\DoxyCodeLine{00265\ \ \ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00266\ \ \ \textcolor{comment}{//\ initialize\ corners}}
+\DoxyCodeLine{00267\ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ d\ =\ 0;d<min\_corner.size();d++)}
+\DoxyCodeLine{00268\ \ \ \{}
+\DoxyCodeLine{00269\ \ \ \ \ min\_corner[d]\ =\ \ numeric\_limits<typename\ Point::Scalar>::infinity();}
+\DoxyCodeLine{00270\ \ \ \ \ max\_corner[d]\ =\ -\/numeric\_limits<typename\ Point::Scalar>::infinity();}
+\DoxyCodeLine{00271\ \ \ \}}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00273\ \ \ this-\/>center\ =\ Point(0,0,0);}
+\DoxyCodeLine{00274\ \ \ \textcolor{comment}{//\ Loop\ over\ facets}}
+\DoxyCodeLine{00275\ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;i<this-\/>getF().rows();i++)}
+\DoxyCodeLine{00276\ \ \ \{}
+\DoxyCodeLine{00277\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;j<this-\/>getF().cols();j++)}
+\DoxyCodeLine{00278\ \ \ \ \ \{}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ d\ =\ 0;d<min\_corner.size();d++)}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ min\_corner[d]\ =\ }
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ this-\/>getV()(this-\/>getF()(i,j),d)\ <\ min\_corner[d]\ ?\ \ }
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>getV()(this-\/>getF()(i,j),d)\ :\ min\_corner[d];}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ max\_corner[d]\ =\ }
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ this-\/>getV()(this-\/>getF()(i,j),d)\ >\ max\_corner[d]\ ?\ \ }
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>getV()(this-\/>getF()(i,j),d)\ :\ max\_corner[d];}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \textcolor{comment}{//\ This\ is\ biased\ toward\ vertices\ incident\ on\ more\ than\ one\ face,\ but}}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \textcolor{comment}{//\ perhaps\ that's\ good}}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ this-\/>center\ +=\ this-\/>getV().row(this-\/>getF()(i,j));}
+\DoxyCodeLine{00291\ \ \ \ \ \}}
+\DoxyCodeLine{00292\ \ \ \}}
+\DoxyCodeLine{00293\ \ \ \textcolor{comment}{//\ Average}}
+\DoxyCodeLine{00294\ \ \ this-\/>center.array()\ /=\ this-\/>getF().size();}
+\DoxyCodeLine{00295\ }
+\DoxyCodeLine{00296\ \ \ \textcolor{comment}{//cout<<"{}min\_corner:\ "{}<<this-\/>min\_corner.transpose()<<endl;}}
+\DoxyCodeLine{00297\ \ \ \textcolor{comment}{//cout<<"{}Center:\ "{}<<this-\/>center.transpose()<<endl;}}
+\DoxyCodeLine{00298\ \ \ \textcolor{comment}{//cout<<"{}max\_corner:\ "{}<<this-\/>max\_corner.transpose()<<endl;}}
+\DoxyCodeLine{00299\ \ \ \textcolor{comment}{//cout<<"{}Diag\ center:\ "{}<<((this-\/>max\_corner\ +\ this-\/>min\_corner)*0.5).transpose()<<endl;}}
+\DoxyCodeLine{00300\ \ \ \textcolor{comment}{//cout<<endl;}}
+\DoxyCodeLine{00301\ }
+\DoxyCodeLine{00302\ \ \ this-\/>radius\ =\ (max\_corner-\/min\_corner).norm()/2.0;}
+\DoxyCodeLine{00303\ \}}
+\DoxyCodeLine{00304\ }
+\DoxyCodeLine{00305\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int},\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00306\ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ DerivedV::Scalar}
+\DoxyCodeLine{00307\ igl::WindingNumberAABB<Point,DerivedV,DerivedF>::max\_abs\_winding\_number(\textcolor{keyword}{const}\ Point\ \&\ p)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00308\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00309\ \ \ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00310\ \ \ \textcolor{comment}{//\ Only\ valid\ if\ not\ inside}}
+\DoxyCodeLine{00311\ \ \ \textcolor{keywordflow}{if}(inside(p))}
+\DoxyCodeLine{00312\ \ \ \{}
+\DoxyCodeLine{00313\ \ \ \ \ \textcolor{keywordflow}{return}\ numeric\_limits<typename\ DerivedV::Scalar>::infinity();}
+\DoxyCodeLine{00314\ \ \ \}}
+\DoxyCodeLine{00315\ \ \ \textcolor{comment}{//\ Q:\ we\ know\ the\ total\ positive\ area\ so\ what's\ the\ most\ this\ could\ project}}
+\DoxyCodeLine{00316\ \ \ \textcolor{comment}{//\ to?\ Remember\ it\ could\ be\ layered\ in\ the\ same\ direction.}}
+\DoxyCodeLine{00317\ \ \ \textcolor{keywordflow}{return}\ numeric\_limits<typename\ DerivedV::Scalar>::infinity();}
+\DoxyCodeLine{00318\ \}}
+\DoxyCodeLine{00319\ }
+\DoxyCodeLine{00320\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int},\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00321\ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ DerivedV::Scalar\ }
+\DoxyCodeLine{00322\ \ \ igl::WindingNumberAABB<Point,DerivedV,DerivedF>::max\_simple\_abs\_winding\_number(}
+\DoxyCodeLine{00323\ \ \ \textcolor{keyword}{const}\ Point\ \&\ p)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00324\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00325\ \ \ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00326\ \ \ \textcolor{keyword}{using\ namespace\ }Eigen;}
+\DoxyCodeLine{00327\ \ \ \textcolor{comment}{//\ Only\ valid\ if\ not\ inside}}
+\DoxyCodeLine{00328\ \ \ \textcolor{keywordflow}{if}(inside(p))}
+\DoxyCodeLine{00329\ \ \ \{}
+\DoxyCodeLine{00330\ \ \ \ \ \textcolor{keywordflow}{return}\ numeric\_limits<typename\ DerivedV::Scalar>::infinity();}
+\DoxyCodeLine{00331\ \ \ \}}
+\DoxyCodeLine{00332\ \ \ \textcolor{comment}{//\ Max\ simple\ is\ the\ same\ as\ sum\ of\ positive\ winding\ number\ contributions\ of}}
+\DoxyCodeLine{00333\ \ \ \textcolor{comment}{//\ bounding\ box}}
+\DoxyCodeLine{00334\ }
+\DoxyCodeLine{00335\ \ \ \textcolor{comment}{//\ begin\ precomputation}}
+\DoxyCodeLine{00336\ \ \ \textcolor{comment}{//MatrixXd\ BV((int)pow(2,3),3);}}
+\DoxyCodeLine{00337\ \ \ \textcolor{keyword}{typedef}}
+\DoxyCodeLine{00338\ \ \ \ \ Eigen::Matrix<typename\ DerivedV::Scalar,Eigen::Dynamic,Eigen::Dynamic>}
+\DoxyCodeLine{00339\ \ \ \ \ MatrixXS;}
+\DoxyCodeLine{00340\ \ \ \textcolor{keyword}{typedef}}
+\DoxyCodeLine{00341\ \ \ \ \ Eigen::Matrix<typename\ DerivedF::Scalar,Eigen::Dynamic,Eigen::Dynamic>}
+\DoxyCodeLine{00342\ \ \ \ \ MatrixXF;}
+\DoxyCodeLine{00343\ \ \ MatrixXS\ BV((\textcolor{keywordtype}{int})(1<<3),3);}
+\DoxyCodeLine{00344\ \ \ BV\ <<}
+\DoxyCodeLine{00345\ \ \ \ \ min\_corner[0],min\_corner[1],min\_corner[2],}
+\DoxyCodeLine{00346\ \ \ \ \ min\_corner[0],min\_corner[1],max\_corner[2],}
+\DoxyCodeLine{00347\ \ \ \ \ min\_corner[0],max\_corner[1],min\_corner[2],}
+\DoxyCodeLine{00348\ \ \ \ \ min\_corner[0],max\_corner[1],max\_corner[2],}
+\DoxyCodeLine{00349\ \ \ \ \ max\_corner[0],min\_corner[1],min\_corner[2],}
+\DoxyCodeLine{00350\ \ \ \ \ max\_corner[0],min\_corner[1],max\_corner[2],}
+\DoxyCodeLine{00351\ \ \ \ \ max\_corner[0],max\_corner[1],min\_corner[2],}
+\DoxyCodeLine{00352\ \ \ \ \ max\_corner[0],max\_corner[1],max\_corner[2];}
+\DoxyCodeLine{00353\ \ \ MatrixXF\ BF(2*2*3,3);}
+\DoxyCodeLine{00354\ \ \ BF\ <<}
+\DoxyCodeLine{00355\ \ \ \ \ 0,6,4,}
+\DoxyCodeLine{00356\ \ \ \ \ 0,2,6,}
+\DoxyCodeLine{00357\ \ \ \ \ 0,3,2,}
+\DoxyCodeLine{00358\ \ \ \ \ 0,1,3,}
+\DoxyCodeLine{00359\ \ \ \ \ 2,7,6,}
+\DoxyCodeLine{00360\ \ \ \ \ 2,3,7,}
+\DoxyCodeLine{00361\ \ \ \ \ 4,6,7,}
+\DoxyCodeLine{00362\ \ \ \ \ 4,7,5,}
+\DoxyCodeLine{00363\ \ \ \ \ 0,4,5,}
+\DoxyCodeLine{00364\ \ \ \ \ 0,5,1,}
+\DoxyCodeLine{00365\ \ \ \ \ 1,5,7,}
+\DoxyCodeLine{00366\ \ \ \ \ 1,7,3;}
+\DoxyCodeLine{00367\ \ \ MatrixXS\ BFN;}
+\DoxyCodeLine{00368\ \ \ \mbox{\hyperlink{namespaceigl_a3d793baadcefcf122deae556812b2406}{per\_face\_normals}}(BV,BF,BFN);}
+\DoxyCodeLine{00369\ \ \ \textcolor{comment}{//\ end\ of\ precomputation}}
+\DoxyCodeLine{00370\ }
+\DoxyCodeLine{00371\ \ \ \textcolor{comment}{//\ Only\ keep\ those\ with\ positive\ dot\ products}}
+\DoxyCodeLine{00372\ \ \ MatrixXF\ PBF(BF.rows(),BF.cols());}
+\DoxyCodeLine{00373\ \ \ \textcolor{keywordtype}{int}\ pbfi\ =\ 0;}
+\DoxyCodeLine{00374\ \ \ Point\ p2c\ =\ 0.5*(min\_corner+max\_corner)-\/p;}
+\DoxyCodeLine{00375\ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;i<BFN.rows();i++)}
+\DoxyCodeLine{00376\ \ \ \{}
+\DoxyCodeLine{00377\ \ \ \ \ \textcolor{keywordflow}{if}(p2c.dot(BFN.row(i))\ >\ 0)}
+\DoxyCodeLine{00378\ \ \ \ \ \{}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ PBF.row(pbfi++)\ =\ BF.row(i);}
+\DoxyCodeLine{00380\ \ \ \ \ \}}
+\DoxyCodeLine{00381\ \ \ \}}
+\DoxyCodeLine{00382\ \ \ PBF.conservativeResize(pbfi,PBF.cols());}
+\DoxyCodeLine{00383\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceigl_a468f01ca961ac9ea78d02b3ecac25bee}{igl::winding\_number}}(BV,PBF,p);}
+\DoxyCodeLine{00384\ \}}
+\DoxyCodeLine{00385\ }
+\DoxyCodeLine{00386\ \textcolor{comment}{//\ This\ is\ a\ bullshit\ template\ because\ AABB\ annoyingly\ needs\ templates\ for\ bad}}
+\DoxyCodeLine{00387\ \textcolor{comment}{//\ combinations\ of\ 3D\ V\ with\ DIM=2\ AABB}}
+\DoxyCodeLine{00388\ \textcolor{comment}{//}}
+\DoxyCodeLine{00389\ \textcolor{comment}{//\ \_Define\_\ as\ a\ no-\/op\ rather\ than\ monkeying\ around\ with\ the\ proper\ code\ above}}
+\DoxyCodeLine{00390\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00391\ \{}
+\DoxyCodeLine{00392\ \ \ \textcolor{keyword}{template}\ <>\ \textcolor{keyword}{inline}\ igl::WindingNumberAABB<Eigen::Matrix<double,\ 1,\ 3,\ 1,\ 1,\ 3>,Eigen::Matrix<double,\ -\/1,\ 2,\ 0,\ -\/1,\ 2>,Eigen::Matrix<int,\ -\/1,\ 2,\ 0,\ -\/1,\ 2>>::WindingNumberAABB(\textcolor{keyword}{const}\ Eigen::MatrixBase<Eigen::Matrix<double,\ -\/1,\ 2,\ 0,\ -\/1,\ 2>>\ \&\ V,\ \textcolor{keyword}{const}\ Eigen::MatrixBase<Eigen::Matrix<int,\ -\/1,\ 2,\ 0,\ -\/1,\ 2>>\ \&\ F)\{\};}
+\DoxyCodeLine{00393\ \ \ \textcolor{keyword}{template}\ <>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ igl::WindingNumberAABB<Eigen::Matrix<double,\ 1,\ 3,\ 1,\ 1,\ 3>,Eigen::Matrix<double,\ -\/1,\ 2,\ 0,\ -\/1,\ 2>,Eigen::Matrix<int,\ -\/1,\ 2,\ 0,\ -\/1,\ 2>>::grow()\{\};}
+\DoxyCodeLine{00394\ \ \ \textcolor{keyword}{template}\ <>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ igl::WindingNumberAABB<Eigen::Matrix<double,\ 1,\ 3,\ 1,\ 1,\ 3>,Eigen::Matrix<double,\ -\/1,\ 2,\ 0,\ -\/1,\ 2>,Eigen::Matrix<int,\ -\/1,\ 2,\ 0,\ -\/1,\ 2>>::init()\{\};}
+\DoxyCodeLine{00395\ }
+\DoxyCodeLine{00396\ \}}
+\DoxyCodeLine{00397\ }
+\DoxyCodeLine{00398\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

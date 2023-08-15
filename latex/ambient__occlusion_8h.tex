@@ -1,0 +1,21 @@
+\doxysection{include/igl/ambient\+\_\+occlusion.h File Reference}
+\hypertarget{ambient__occlusion_8h}{}\label{ambient__occlusion_8h}\index{include/igl/ambient\_occlusion.h@{include/igl/ambient\_occlusion.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include \"{}AABB.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include \"{}ambient\+\_\+occlusion.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedP , typename DerivedN , typename DerivedS $>$ }\\void \mbox{\hyperlink{namespaceigl_acc5e79a82d06f353e2cc7364bb63d6ec}{igl\+::ambient\+\_\+occlusion}} (const std\+::function$<$ bool(const Eigen\+::\+Vector3f \&, const Eigen\+::\+Vector3f \&) $>$ \&shoot\+\_\+ray, const Eigen\+::\+Matrix\+Base$<$ DerivedP $>$ \&P, const Eigen\+::\+Matrix\+Base$<$ DerivedN $>$ \&N, const int num\+\_\+samples, Eigen\+::\+Plain\+Object\+Base$<$ DerivedS $>$ \&S)
+\begin{DoxyCompactList}\small\item\em Compute ambient occlusion per given point using ray-\/mesh intersection function handle. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , int DIM, typename DerivedF , typename DerivedP , typename DerivedN , typename DerivedS $>$ }\\void \mbox{\hyperlink{namespaceigl_a8e5409ff272904057655baa541161f63}{igl\+::ambient\+\_\+occlusion}} (const \mbox{\hyperlink{classigl_1_1AABB}{igl\+::\+AABB}}$<$ DerivedV, DIM $>$ \&aabb, const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const Eigen\+::\+Matrix\+Base$<$ DerivedP $>$ \&P, const Eigen\+::\+Matrix\+Base$<$ DerivedN $>$ \&N, const int num\+\_\+samples, Eigen\+::\+Plain\+Object\+Base$<$ DerivedS $>$ \&S)
+\begin{DoxyCompactList}\small\item\em Compute ambient occlusion per given point for mesh (V,F) with precomputed \doxylink{classigl_1_1AABB}{AABB} tree. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedP , typename DerivedN , typename DerivedS $>$ }\\void \mbox{\hyperlink{namespaceigl_a9892f183be30982954280fde853dd8f3}{igl\+::ambient\+\_\+occlusion}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const Eigen\+::\+Matrix\+Base$<$ DerivedP $>$ \&P, const Eigen\+::\+Matrix\+Base$<$ DerivedN $>$ \&N, const int num\+\_\+samples, Eigen\+::\+Plain\+Object\+Base$<$ DerivedS $>$ \&S)
+\begin{DoxyCompactList}\small\item\em Compute ambient occlusion per given point for mesh (V,F) \end{DoxyCompactList}\end{DoxyCompactItemize}

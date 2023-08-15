@@ -1,0 +1,73 @@
+\doxysection{include/igl/opengl/glfw/\+Viewer.h File Reference}
+\hypertarget{Viewer_8h}{}\label{Viewer_8h}\index{include/igl/opengl/glfw/Viewer.h@{include/igl/opengl/glfw/Viewer.h}}
+{\ttfamily \#include \"{}../../igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include \"{}../\+Mesh\+GL.\+h\"{}}\newline
+{\ttfamily \#include \"{}../\+Viewer\+Core.\+h\"{}}\newline
+{\ttfamily \#include \"{}../\+Viewer\+Data.\+h\"{}}\newline
+{\ttfamily \#include \"{}Viewer\+Plugin.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Geometry$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include \"{}Viewer.\+cpp\"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{igl\+::opengl\+::glfw\+::\+Viewer}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{namespaceigl_1_1opengl}{igl\+::opengl}}
+\item 
+namespace \mbox{\hyperlink{namespaceigl_1_1opengl_1_1glfw}{igl\+::opengl\+::glfw}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{Viewer_8h_a06890c542fff34ac4697f5eabc759216}{IGL\+\_\+\+OPENGL\+\_\+4}}
+\item 
+\#define \mbox{\hyperlink{Viewer_8h_a54f4a56ef4be139878c5e543b25154fe}{IGL\+\_\+\+MOD\+\_\+\+SHIFT}}~0x0001
+\item 
+\#define \mbox{\hyperlink{Viewer_8h_afd2bbb892d4462e629642fd3cd844293}{IGL\+\_\+\+MOD\+\_\+\+CONTROL}}~0x0002
+\item 
+\#define \mbox{\hyperlink{Viewer_8h_a0bc3cb127aa7b13459b990ae66defd4b}{IGL\+\_\+\+MOD\+\_\+\+ALT}}~0x0004
+\item 
+\#define \mbox{\hyperlink{Viewer_8h_a90807d1bae1c3f9eeef39f0fe2c19a94}{IGL\+\_\+\+MOD\+\_\+\+SUPER}}~0x0008
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{Viewer_8h_a06890c542fff34ac4697f5eabc759216}\label{Viewer_8h_a06890c542fff34ac4697f5eabc759216} 
+\index{Viewer.h@{Viewer.h}!IGL\_OPENGL\_4@{IGL\_OPENGL\_4}}
+\index{IGL\_OPENGL\_4@{IGL\_OPENGL\_4}!Viewer.h@{Viewer.h}}
+\doxysubsubsection{\texorpdfstring{IGL\_OPENGL\_4}{IGL\_OPENGL\_4}}
+{\footnotesize\ttfamily \#define IGL\+\_\+\+OPENGL\+\_\+4}
+
+\Hypertarget{Viewer_8h_a54f4a56ef4be139878c5e543b25154fe}\label{Viewer_8h_a54f4a56ef4be139878c5e543b25154fe} 
+\index{Viewer.h@{Viewer.h}!IGL\_MOD\_SHIFT@{IGL\_MOD\_SHIFT}}
+\index{IGL\_MOD\_SHIFT@{IGL\_MOD\_SHIFT}!Viewer.h@{Viewer.h}}
+\doxysubsubsection{\texorpdfstring{IGL\_MOD\_SHIFT}{IGL\_MOD\_SHIFT}}
+{\footnotesize\ttfamily \#define IGL\+\_\+\+MOD\+\_\+\+SHIFT~0x0001}
+
+\Hypertarget{Viewer_8h_afd2bbb892d4462e629642fd3cd844293}\label{Viewer_8h_afd2bbb892d4462e629642fd3cd844293} 
+\index{Viewer.h@{Viewer.h}!IGL\_MOD\_CONTROL@{IGL\_MOD\_CONTROL}}
+\index{IGL\_MOD\_CONTROL@{IGL\_MOD\_CONTROL}!Viewer.h@{Viewer.h}}
+\doxysubsubsection{\texorpdfstring{IGL\_MOD\_CONTROL}{IGL\_MOD\_CONTROL}}
+{\footnotesize\ttfamily \#define IGL\+\_\+\+MOD\+\_\+\+CONTROL~0x0002}
+
+\Hypertarget{Viewer_8h_a0bc3cb127aa7b13459b990ae66defd4b}\label{Viewer_8h_a0bc3cb127aa7b13459b990ae66defd4b} 
+\index{Viewer.h@{Viewer.h}!IGL\_MOD\_ALT@{IGL\_MOD\_ALT}}
+\index{IGL\_MOD\_ALT@{IGL\_MOD\_ALT}!Viewer.h@{Viewer.h}}
+\doxysubsubsection{\texorpdfstring{IGL\_MOD\_ALT}{IGL\_MOD\_ALT}}
+{\footnotesize\ttfamily \#define IGL\+\_\+\+MOD\+\_\+\+ALT~0x0004}
+
+\Hypertarget{Viewer_8h_a90807d1bae1c3f9eeef39f0fe2c19a94}\label{Viewer_8h_a90807d1bae1c3f9eeef39f0fe2c19a94} 
+\index{Viewer.h@{Viewer.h}!IGL\_MOD\_SUPER@{IGL\_MOD\_SUPER}}
+\index{IGL\_MOD\_SUPER@{IGL\_MOD\_SUPER}!Viewer.h@{Viewer.h}}
+\doxysubsubsection{\texorpdfstring{IGL\_MOD\_SUPER}{IGL\_MOD\_SUPER}}
+{\footnotesize\ttfamily \#define IGL\+\_\+\+MOD\+\_\+\+SUPER~0x0008}
+

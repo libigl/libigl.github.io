@@ -1,0 +1,55 @@
+\doxysection{bbw.\+h}
+\hypertarget{bbw_8h_source}{}\label{bbw_8h_source}\index{include/igl/bbw.h@{include/igl/bbw.h}}
+\mbox{\hyperlink{bbw_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2013\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_BBW\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_BBW\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{active__set_8h}{igl/active\_set.h}}>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00018\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classigl_1_1BBWData}{BBWData}}}
+\DoxyCodeLine{00019\ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1BBWData_af3698e083b91f018f4582ae99c895550}{partition\_unity}};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ Eigen::MatrixXd\ \mbox{\hyperlink{classigl_1_1BBWData_a82f5739b1b1f75e59e166007b147a03e}{W0}};}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1active__set__params}{igl::active\_set\_params}}\ \mbox{\hyperlink{classigl_1_1BBWData_ae25c16a461f5ad3baa1c592b11dce595}{active\_set\_params}};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1BBWData_a8d6aea08cbd1d0da932aa9213afd2f89}{verbosity}};}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ IGL\_INLINE\ \mbox{\hyperlink{classigl_1_1BBWData}{BBWData}}();}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1BBWData_abed9039a9c485087ab0537db1ea6f365}{print}}();}
+\DoxyCodeLine{00038\ \ \ \};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00056\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedEle,}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedb,}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedbc,}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedW>}
+\DoxyCodeLine{00062\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a33e3dc749c63b65a87635a309d322e9c}{bbw}}(}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedEle>\ \&\ Ele,}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<Derivedb>\ \&\ b,}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<Derivedbc>\ \&\ bc,}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{classigl_1_1BBWData}{BBWData}}\ \&\ data,}
+\DoxyCodeLine{00068\ \ \ \ \ Eigen::PlainObjectBase<DerivedW>\ \&\ W);}
+\DoxyCodeLine{00069\ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#\ \ include\ "{}bbw.cpp"{}}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00076\ }
+
+\end{DoxyCode}

@@ -1,0 +1,49 @@
+\doxysection{split\+\_\+nonmanifold.\+h}
+\hypertarget{split__nonmanifold_8h_source}{}\label{split__nonmanifold_8h_source}\index{include/igl/split\_nonmanifold.h@{include/igl/split\_nonmanifold.h}}
+\mbox{\hyperlink{split__nonmanifold_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2022\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ IGL\_SPLIT\_NONMANIFOLD\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ IGL\_SPLIT\_NONMANIFOLD\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00023\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedSF,}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedSVI}
+\DoxyCodeLine{00027\ \ \ \ \ >}
+\DoxyCodeLine{00028\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_ad087e73516c7afa1370f7b24c1132a36}{split\_nonmanifold}}(}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ Eigen::PlainObjectBase\ <DerivedSF>\ \&\ SF,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ Eigen::PlainObjectBase\ <DerivedSVI>\ \&\ SVI);}
+\DoxyCodeLine{00035\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedSV,}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedSF,}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedSVI}
+\DoxyCodeLine{00041\ \ \ \ \ >}
+\DoxyCodeLine{00042\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_ad087e73516c7afa1370f7b24c1132a36}{split\_nonmanifold}}(}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00045\ \ \ \ \ Eigen::PlainObjectBase\ <DerivedSV>\ \&\ SV,}
+\DoxyCodeLine{00046\ \ \ \ \ Eigen::PlainObjectBase\ <DerivedSF>\ \&\ SF,}
+\DoxyCodeLine{00047\ \ \ \ \ Eigen::PlainObjectBase\ <DerivedSVI>\ \&\ SVI);}
+\DoxyCodeLine{00048\ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#\ \ include\ "{}split\_nonmanifold.cpp"{}}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

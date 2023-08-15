@@ -1,0 +1,20 @@
+\doxysection{include/igl/trackball.h File Reference}
+\hypertarget{trackball_8h}{}\label{trackball_8h}\index{include/igl/trackball.h@{include/igl/trackball.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Geometry$>$}\newline
+{\ttfamily \#include \"{}trackball.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Q\+\_\+type $>$ }\\void \mbox{\hyperlink{namespaceigl_a4c72a7f89ae16b8e5196c4cd37fb2689}{igl\+::trackball}} (const double w, const double h, const Q\+\_\+type speed\+\_\+factor, const double down\+\_\+mouse\+\_\+x, const double down\+\_\+mouse\+\_\+y, const double mouse\+\_\+x, const double mouse\+\_\+y, Q\+\_\+type \texorpdfstring{$\ast$}{*}quat)
+\begin{DoxyCompactList}\small\item\em Applies a trackball drag to identity. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Q\+\_\+type $>$ }\\void \mbox{\hyperlink{namespaceigl_a46c31d9f94cfdba0d5da1b69f4f4d968}{igl\+::trackball}} (const double w, const double h, const Q\+\_\+type speed\+\_\+factor, const Q\+\_\+type \texorpdfstring{$\ast$}{*}down\+\_\+quat, const double down\+\_\+mouse\+\_\+x, const double down\+\_\+mouse\+\_\+y, const double mouse\+\_\+x, const double mouse\+\_\+y, Q\+\_\+type \texorpdfstring{$\ast$}{*}quat)
+\begin{DoxyCompactList}\small\item\em Applies a trackball drag to a given rotation. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Scalardown\+\_\+quat , typename Scalarquat $>$ }\\void \mbox{\hyperlink{namespaceigl_aaf9d8f7f6bbca5f24365f3ce5f401f9a}{igl\+::trackball}} (const double w, const double h, const double speed\+\_\+factor, const Eigen\+::\+Quaternion$<$ Scalardown\+\_\+quat $>$ \&down\+\_\+quat, const double down\+\_\+mouse\+\_\+x, const double down\+\_\+mouse\+\_\+y, const double mouse\+\_\+x, const double mouse\+\_\+y, Eigen\+::\+Quaternion$<$ Scalarquat $>$ \&quat)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}

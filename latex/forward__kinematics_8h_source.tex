@@ -1,0 +1,63 @@
+\doxysection{forward\+\_\+kinematics.\+h}
+\hypertarget{forward__kinematics_8h_source}{}\label{forward__kinematics_8h_source}\index{include/igl/forward\_kinematics.h@{include/igl/forward\_kinematics.h}}
+\mbox{\hyperlink{forward__kinematics_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2013\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_FORWARD\_KINEMATICS\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_FORWARD\_KINEMATICS\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Geometry>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <Eigen/StdVector>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00028\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a583ee685a22b43577be16d088b6d3f29}{forward\_kinematics}}(}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\ \&\ C,}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ BE,}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::VectorXi\ \&\ P,}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ Eigen::Quaterniond,Eigen::aligned\_allocator<Eigen::Quaterniond>\ >\ \&\ dQ,}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<Eigen::Vector3d>\ \&\ dT,}
+\DoxyCodeLine{00035\ \ \ \ \ std::vector<}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ Eigen::Quaterniond,Eigen::aligned\_allocator<Eigen::Quaterniond>\ >\ \&\ vQ,}
+\DoxyCodeLine{00037\ \ \ \ \ std::vector<Eigen::Vector3d>\ \&\ vT);}
+\DoxyCodeLine{00040\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a583ee685a22b43577be16d088b6d3f29}{forward\_kinematics}}(}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\ \&\ C,}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ BE,}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::VectorXi\ \&\ P,}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ Eigen::Quaterniond,Eigen::aligned\_allocator<Eigen::Quaterniond>\ >\ \&\ dQ,}
+\DoxyCodeLine{00046\ \ \ \ \ std::vector<}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ Eigen::Quaterniond,Eigen::aligned\_allocator<Eigen::Quaterniond>\ >\ \&\ vQ,}
+\DoxyCodeLine{00048\ \ \ \ \ std::vector<Eigen::Vector3d>\ \&\ vT);}
+\DoxyCodeLine{00051\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a583ee685a22b43577be16d088b6d3f29}{forward\_kinematics}}(}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\ \&\ C,}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ BE,}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::VectorXi\ \&\ P,}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ Eigen::Quaterniond,Eigen::aligned\_allocator<Eigen::Quaterniond>\ >\ \&\ dQ,}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<Eigen::Vector3d>\ \&\ dT,}
+\DoxyCodeLine{00058\ \ \ \ \ Eigen::MatrixXd\ \&\ T);}
+\DoxyCodeLine{00060\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a583ee685a22b43577be16d088b6d3f29}{forward\_kinematics}}(}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\ \&\ C,}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ BE,}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::VectorXi\ \&\ P,}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ Eigen::Quaterniond,Eigen::aligned\_allocator<Eigen::Quaterniond>\ >\ \&\ dQ,}
+\DoxyCodeLine{00066\ \ \ \ \ Eigen::MatrixXd\ \&\ T);}
+\DoxyCodeLine{00067\ \};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#\ \ include\ "{}forward\_kinematics.cpp"{}}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

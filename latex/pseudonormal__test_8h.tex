@@ -1,0 +1,17 @@
+\doxysection{include/igl/pseudonormal\+\_\+test.h File Reference}
+\hypertarget{pseudonormal__test_8h}{}\label{pseudonormal__test_8h}\index{include/igl/pseudonormal\_test.h@{include/igl/pseudonormal\_test.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include \"{}pseudonormal\+\_\+test.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename Derived\+FN , typename Derived\+VN , typename Derived\+EN , typename Derived\+EMAP , typename Derivedq , typename Derivedc , typename Scalar , typename Derivedn $>$ }\\void \mbox{\hyperlink{namespaceigl_a55630c2a7977e397d8b8fbc562a05bc5}{igl\+::pseudonormal\+\_\+test}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const Eigen\+::\+Matrix\+Base$<$ Derived\+FN $>$ \&FN, const Eigen\+::\+Matrix\+Base$<$ Derived\+VN $>$ \&VN, const Eigen\+::\+Matrix\+Base$<$ Derived\+EN $>$ \&EN, const Eigen\+::\+Matrix\+Base$<$ Derived\+EMAP $>$ \&EMAP, const Eigen\+::\+Matrix\+Base$<$ Derivedq $>$ \&q, const int f, Eigen\+::\+Plain\+Object\+Base$<$ Derivedc $>$ \&c, Scalar \&s, Eigen\+::\+Plain\+Object\+Base$<$ Derivedn $>$ \&n)
+\begin{DoxyCompactList}\small\item\em Given a mesh (V,F), a query point q, and a point on (V,F) c, determine whether q is inside (V,F) -\/-\/\texorpdfstring{$>$}{>} s=-\/1 or outside (V,F) s=1, based on the sign of the dot product between (q-\/c) and n, where n is the normal {\itshape at c}, carefully chosen according to \mbox{[}Bærentzen \& Aanæs 2005\mbox{]}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename Derived\+EN , typename Derived\+VN , typename Derivedq , typename Derivedc , typename Scalar , typename Derivedn $>$ }\\void \mbox{\hyperlink{namespaceigl_a56d059b63286144db10a9dc08d5083d2}{igl\+::pseudonormal\+\_\+test}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&E, const Eigen\+::\+Matrix\+Base$<$ Derived\+EN $>$ \&EN, const Eigen\+::\+Matrix\+Base$<$ Derived\+VN $>$ \&VN, const Eigen\+::\+Matrix\+Base$<$ Derivedq $>$ \&q, const int e, Eigen\+::\+Plain\+Object\+Base$<$ Derivedc $>$ \&c, Scalar \&s, Eigen\+::\+Plain\+Object\+Base$<$ Derivedn $>$ \&n)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}

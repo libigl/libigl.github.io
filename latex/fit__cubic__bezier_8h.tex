@@ -1,0 +1,18 @@
+\doxysection{include/igl/fit\+\_\+cubic\+\_\+bezier.h File Reference}
+\hypertarget{fit__cubic__bezier_8h}{}\label{fit__cubic__bezier_8h}\index{include/igl/fit\_cubic\_bezier.h@{include/igl/fit\_cubic\_bezier.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \"{}fit\+\_\+cubic\+\_\+bezier.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespaceigl_a7e61e6506e142c21944010806e350df3}{igl\+::fit\+\_\+cubic\+\_\+bezier}} (const Eigen\+::\+Matrix\+Xd \&d, const double error, std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&cubics)
+\begin{DoxyCompactList}\small\item\em Fit a cubic bezier spline (G1 continuous) to an ordered list of input points in any dimension, according to \"{}\+An algorithm for automatically fitting digitized curves\"{} \mbox{[}Schneider 1990\mbox{]}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceigl_a30fbe8999a386dbd7193683db1ed7ea7}{igl\+::fit\+\_\+cubic\+\_\+bezier\+\_\+substring}} (const Eigen\+::\+Matrix\+Xd \&d, const int first, const int last, const Eigen\+::\+Row\+Vector\+Xd \&t\+Hat1, const Eigen\+::\+Row\+Vector\+Xd \&t\+Hat2, const double error, const bool force\+\_\+split, std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&cubics)
+\begin{DoxyCompactList}\small\item\em Recursive helper function for fit\+\_\+cubic\+\_\+bezier. \end{DoxyCompactList}\end{DoxyCompactItemize}

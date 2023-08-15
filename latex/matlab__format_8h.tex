@@ -1,0 +1,27 @@
+\doxysection{include/igl/matlab\+\_\+format.h File Reference}
+\hypertarget{matlab__format_8h}{}\label{matlab__format_8h}\index{include/igl/matlab\_format.h@{include/igl/matlab\_format.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \"{}matlab\+\_\+format.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedM $>$ }\\const Eigen\+::\+With\+Format$<$ DerivedM $>$ \mbox{\hyperlink{namespaceigl_a64d87355c9c3b734e7658eed10bdd764}{igl\+::matlab\+\_\+format}} (const Eigen\+::\+Dense\+Base$<$ DerivedM $>$ \&M, const std\+::string name=\"{}\"{})
+\begin{DoxyCompactList}\small\item\em This is a routine to print a matrix using format suitable for pasting into the matlab IDE. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedM $>$ }\\std\+::string \mbox{\hyperlink{namespaceigl_acc0f1184f42624896cf510cd82ccb6ca}{igl\+::matlab\+\_\+format\+\_\+index}} (const Eigen\+::\+Matrix\+Base$<$ DerivedM $>$ \&M, const std\+::string name=\"{}\"{})
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedS $>$ }\\const std\+::string \mbox{\hyperlink{namespaceigl_a92ca4e0bd6d85899d88544c29389b048}{igl\+::matlab\+\_\+format}} (const Eigen\+::\+Sparse\+Matrix$<$ DerivedS $>$ \&S, const std\+::string name=\"{}\"{})
+\begin{DoxyCompactList}\small\item\em Same but for sparse matrices. \end{DoxyCompactList}\item 
+const std\+::string \mbox{\hyperlink{namespaceigl_a9641504c7ccb6996da7abc34c5ebe6a1}{igl\+::matlab\+\_\+format}} (const double v, const std\+::string name=\"{}\"{})
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+const std\+::string \mbox{\hyperlink{namespaceigl_a367414630ebe7f7fe7a243502d57b1ad}{igl\+::matlab\+\_\+format}} (const float v, const std\+::string name=\"{}\"{})
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+Eigen\+::\+IOFormat \mbox{\hyperlink{namespaceigl_a6b539a21fb577617710f5fce2046e65b}{igl\+::matlab\+\_\+format}} ()
+\begin{DoxyCompactList}\small\item\em Just build and return the format. \end{DoxyCompactList}\end{DoxyCompactItemize}

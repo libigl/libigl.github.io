@@ -1,0 +1,35 @@
+\doxysection{ramer\+\_\+douglas\+\_\+peucker.\+h}
+\hypertarget{ramer__douglas__peucker_8h_source}{}\label{ramer__douglas__peucker_8h_source}\index{include/igl/ramer\_douglas\_peucker.h@{include/igl/ramer\_douglas\_peucker.h}}
+\mbox{\hyperlink{ramer__douglas__peucker_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ IGL\_RAMER\_DOUGLAS\_PEUCKER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ IGL\_RAMER\_DOUGLAS\_PEUCKER\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00014\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedP,\ \textcolor{keyword}{typename}\ DerivedS,\ \textcolor{keyword}{typename}\ DerivedJ>}
+\DoxyCodeLine{00015\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a0fe9e431751b9d9370672f22da915cea}{ramer\_douglas\_peucker}}(}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedP>\ \&\ P,}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{typename}\ DerivedP::Scalar\ tol,}
+\DoxyCodeLine{00018\ \ \ \ \ Eigen::PlainObjectBase<DerivedS>\ \&\ S,}
+\DoxyCodeLine{00019\ \ \ \ \ Eigen::PlainObjectBase<DerivedJ>\ \&\ J);}
+\DoxyCodeLine{00025\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedP,\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedS,\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedJ,}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedQ>}
+\DoxyCodeLine{00030\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a0fe9e431751b9d9370672f22da915cea}{ramer\_douglas\_peucker}}(}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedP>\ \&\ P,}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{typename}\ DerivedP::Scalar\ tol,}
+\DoxyCodeLine{00033\ \ \ \ \ Eigen::PlainObjectBase<DerivedS>\ \&\ S,}
+\DoxyCodeLine{00034\ \ \ \ \ Eigen::PlainObjectBase<DerivedJ>\ \&\ J,}
+\DoxyCodeLine{00035\ \ \ \ \ Eigen::PlainObjectBase<DerivedQ>\ \&\ Q);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#\ \ include\ "{}ramer\_douglas\_peucker.cpp"{}}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

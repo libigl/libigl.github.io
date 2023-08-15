@@ -1,0 +1,18 @@
+\doxysection{include/igl/path\+\_\+to\+\_\+edges.h File Reference}
+\hypertarget{path__to__edges_8h}{}\label{path__to__edges_8h}\index{include/igl/path\_to\_edges.h@{include/igl/path\_to\_edges.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \"{}path\+\_\+to\+\_\+edges.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedI , typename DerivedE $>$ }\\void \mbox{\hyperlink{namespaceigl_ad9dedb9d3d8f684abb92cef75cacdb69}{igl\+::path\+\_\+to\+\_\+edges}} (const Eigen\+::\+Matrix\+Base$<$ DerivedI $>$ \&I, Eigen\+::\+Plain\+Object\+Base$<$ DerivedE $>$ \&E, bool make\+\_\+loop=false)
+\begin{DoxyCompactList}\small\item\em Given a path as an ordered list of N\texorpdfstring{$>$}{>}=2 vertex indices I\mbox{[}0\mbox{]}, I\mbox{[}1\mbox{]}, ..., I\mbox{[}N-\/1\mbox{]} construct a list of edges \mbox{[}\mbox{[}I\mbox{[}0\mbox{]},I\mbox{[}1\mbox{]}\mbox{]}, \mbox{[}I\mbox{[}1\mbox{]},I\mbox{[}2\mbox{]}\mbox{]}, ..., \mbox{[}I\mbox{[}N-\/2\mbox{]}, I\mbox{[}N-\/1\mbox{]}\mbox{]}\mbox{]} connecting each sequential pair of vertices. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Index , typename DerivedE $>$ }\\void \mbox{\hyperlink{namespaceigl_abc2ac47ac2adbe917283d5dd317dab36}{igl\+::path\+\_\+to\+\_\+edges}} (const std\+::vector$<$ Index $>$ \&I, Eigen\+::\+Plain\+Object\+Base$<$ DerivedE $>$ \&E, bool make\+\_\+loop=false)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}

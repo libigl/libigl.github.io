@@ -1,0 +1,50 @@
+\doxysection{read\+BF.\+h}
+\hypertarget{readBF_8h_source}{}\label{readBF_8h_source}\index{include/igl/readBF.h@{include/igl/readBF.h}}
+\mbox{\hyperlink{readBF_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2016\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_READBF\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_READBF\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00027\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00036\ \ \ \textcolor{keyword}{template}\ <\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedWI,}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedP,}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedO>}
+\DoxyCodeLine{00040\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a4efbc110f683b253ef703142d1406f28}{readBF}}(}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\ filename,}
+\DoxyCodeLine{00042\ \ \ \ \ Eigen::PlainObjectBase<DerivedWI>\ \&\ WI,}
+\DoxyCodeLine{00043\ \ \ \ \ Eigen::PlainObjectBase<DerivedP>\ \&\ P,}
+\DoxyCodeLine{00044\ \ \ \ \ Eigen::PlainObjectBase<DerivedO>\ \&\ O);}
+\DoxyCodeLine{00058\ \ \ \textcolor{keyword}{template}\ <\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedWI,}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedbfP,}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedO,}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedC,}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedBE,}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedP>}
+\DoxyCodeLine{00065\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a4efbc110f683b253ef703142d1406f28}{readBF}}(}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\ filename,}
+\DoxyCodeLine{00067\ \ \ \ \ Eigen::PlainObjectBase<DerivedWI>\ \&\ WI,}
+\DoxyCodeLine{00068\ \ \ \ \ Eigen::PlainObjectBase<DerivedbfP>\ \&\ bfP,}
+\DoxyCodeLine{00069\ \ \ \ \ Eigen::PlainObjectBase<DerivedO>\ \&\ O,}
+\DoxyCodeLine{00070\ \ \ \ \ Eigen::PlainObjectBase<DerivedC>\ \&\ C,}
+\DoxyCodeLine{00071\ \ \ \ \ Eigen::PlainObjectBase<DerivedBE>\ \&\ BE,}
+\DoxyCodeLine{00072\ \ \ \ \ Eigen::PlainObjectBase<DerivedP>\ \&\ P);}
+\DoxyCodeLine{00073\ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#\ \ include\ "{}readBF.cpp"{}}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

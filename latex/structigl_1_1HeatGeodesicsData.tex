@@ -1,0 +1,125 @@
+\doxysection{igl\+::Heat\+Geodesics\+Data\texorpdfstring{$<$}{<} Scalar \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{structigl_1_1HeatGeodesicsData}{}\label{structigl_1_1HeatGeodesicsData}\index{igl::HeatGeodesicsData$<$ Scalar $>$@{igl::HeatGeodesicsData$<$ Scalar $>$}}
+
+
+Precomputation data for heat\+\_\+geodesics\+\_\+solve.  
+
+
+
+
+{\ttfamily \#include $<$heat\+\_\+geodesics.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Eigen\+::\+Sparse\+Matrix$<$ Scalar $>$ \mbox{\hyperlink{structigl_1_1HeatGeodesicsData_af290dcb29632b90926fac7d67d64f5c9}{Grad}}
+\begin{DoxyCompactList}\small\item\em Gradient operator. \end{DoxyCompactList}\item 
+Eigen\+::\+Sparse\+Matrix$<$ Scalar $>$ \mbox{\hyperlink{structigl_1_1HeatGeodesicsData_a241e25f910cae127fcdbf84397837852}{Div}}
+\begin{DoxyCompactList}\small\item\em Divergence operator. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structigl_1_1HeatGeodesicsData_af41d42326cbaaff829b6e983e652cc33}{ng}}
+\begin{DoxyCompactList}\small\item\em Number of gradient components. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xi \mbox{\hyperlink{structigl_1_1HeatGeodesicsData_a3fea0791d898f3a7c5cdd7c9c4725bf7}{b}}
+\begin{DoxyCompactList}\small\item\em List of boundary vertex indices. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data}{min\+\_\+quad\+\_\+with\+\_\+fixed\+\_\+data}}$<$ Scalar $>$ \mbox{\hyperlink{structigl_1_1HeatGeodesicsData_a5034635f3dc79483e11d21bbfb4b0bf4}{Dirichlet}}
+\begin{DoxyCompactList}\small\item\em Cached solvers for Dirichet, Neumann problems. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data}{min\+\_\+quad\+\_\+with\+\_\+fixed\+\_\+data}}$<$ Scalar $>$ \mbox{\hyperlink{structigl_1_1HeatGeodesicsData_aca1af79b32c5e2db8c5c7b4617165e4e}{Neumann}}
+\item 
+\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data}{min\+\_\+quad\+\_\+with\+\_\+fixed\+\_\+data}}$<$ Scalar $>$ \mbox{\hyperlink{structigl_1_1HeatGeodesicsData_a63b1b2277a19a7640291d4d70efb3bfa}{Poisson}}
+\item 
+bool \mbox{\hyperlink{structigl_1_1HeatGeodesicsData_af2a3bd5c7574b3122c510cb73d9e4bb1}{use\+\_\+intrinsic\+\_\+delaunay}} = false
+\begin{DoxyCompactList}\small\item\em Whether to use intrinsic Delaunay Laplacian. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Scalar$>$\newline
+struct igl\+::\+Heat\+Geodesics\+Data$<$ Scalar $>$}
+Precomputation data for heat\+\_\+geodesics\+\_\+solve. 
+
+\doxylink{heat__geodesics_8h}{include/igl/heat\+\_\+geodesics.\+h} 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structigl_1_1HeatGeodesicsData_af290dcb29632b90926fac7d67d64f5c9}\label{structigl_1_1HeatGeodesicsData_af290dcb29632b90926fac7d67d64f5c9} 
+\index{igl::HeatGeodesicsData$<$ Scalar $>$@{igl::HeatGeodesicsData$<$ Scalar $>$}!Grad@{Grad}}
+\index{Grad@{Grad}!igl::HeatGeodesicsData$<$ Scalar $>$@{igl::HeatGeodesicsData$<$ Scalar $>$}}
+\doxysubsubsection{\texorpdfstring{Grad}{Grad}}
+{\footnotesize\ttfamily template$<$typename Scalar $>$ \\
+Eigen\+::\+Sparse\+Matrix$<$Scalar$>$ \mbox{\hyperlink{structigl_1_1HeatGeodesicsData}{igl\+::\+Heat\+Geodesics\+Data}}$<$ Scalar $>$\+::\+Grad}
+
+
+
+Gradient operator. 
+
+\Hypertarget{structigl_1_1HeatGeodesicsData_a241e25f910cae127fcdbf84397837852}\label{structigl_1_1HeatGeodesicsData_a241e25f910cae127fcdbf84397837852} 
+\index{igl::HeatGeodesicsData$<$ Scalar $>$@{igl::HeatGeodesicsData$<$ Scalar $>$}!Div@{Div}}
+\index{Div@{Div}!igl::HeatGeodesicsData$<$ Scalar $>$@{igl::HeatGeodesicsData$<$ Scalar $>$}}
+\doxysubsubsection{\texorpdfstring{Div}{Div}}
+{\footnotesize\ttfamily template$<$typename Scalar $>$ \\
+Eigen\+::\+Sparse\+Matrix$<$Scalar$>$ \mbox{\hyperlink{structigl_1_1HeatGeodesicsData}{igl\+::\+Heat\+Geodesics\+Data}}$<$ Scalar $>$\+::\+Div}
+
+
+
+Divergence operator. 
+
+\Hypertarget{structigl_1_1HeatGeodesicsData_af41d42326cbaaff829b6e983e652cc33}\label{structigl_1_1HeatGeodesicsData_af41d42326cbaaff829b6e983e652cc33} 
+\index{igl::HeatGeodesicsData$<$ Scalar $>$@{igl::HeatGeodesicsData$<$ Scalar $>$}!ng@{ng}}
+\index{ng@{ng}!igl::HeatGeodesicsData$<$ Scalar $>$@{igl::HeatGeodesicsData$<$ Scalar $>$}}
+\doxysubsubsection{\texorpdfstring{ng}{ng}}
+{\footnotesize\ttfamily template$<$typename Scalar $>$ \\
+int \mbox{\hyperlink{structigl_1_1HeatGeodesicsData}{igl\+::\+Heat\+Geodesics\+Data}}$<$ Scalar $>$\+::ng}
+
+
+
+Number of gradient components. 
+
+\Hypertarget{structigl_1_1HeatGeodesicsData_a3fea0791d898f3a7c5cdd7c9c4725bf7}\label{structigl_1_1HeatGeodesicsData_a3fea0791d898f3a7c5cdd7c9c4725bf7} 
+\index{igl::HeatGeodesicsData$<$ Scalar $>$@{igl::HeatGeodesicsData$<$ Scalar $>$}!b@{b}}
+\index{b@{b}!igl::HeatGeodesicsData$<$ Scalar $>$@{igl::HeatGeodesicsData$<$ Scalar $>$}}
+\doxysubsubsection{\texorpdfstring{b}{b}}
+{\footnotesize\ttfamily template$<$typename Scalar $>$ \\
+Eigen\+::\+Vector\+Xi \mbox{\hyperlink{structigl_1_1HeatGeodesicsData}{igl\+::\+Heat\+Geodesics\+Data}}$<$ Scalar $>$\+::b}
+
+
+
+List of boundary vertex indices. 
+
+\Hypertarget{structigl_1_1HeatGeodesicsData_a5034635f3dc79483e11d21bbfb4b0bf4}\label{structigl_1_1HeatGeodesicsData_a5034635f3dc79483e11d21bbfb4b0bf4} 
+\index{igl::HeatGeodesicsData$<$ Scalar $>$@{igl::HeatGeodesicsData$<$ Scalar $>$}!Dirichlet@{Dirichlet}}
+\index{Dirichlet@{Dirichlet}!igl::HeatGeodesicsData$<$ Scalar $>$@{igl::HeatGeodesicsData$<$ Scalar $>$}}
+\doxysubsubsection{\texorpdfstring{Dirichlet}{Dirichlet}}
+{\footnotesize\ttfamily template$<$typename Scalar $>$ \\
+\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data}{min\+\_\+quad\+\_\+with\+\_\+fixed\+\_\+data}}$<$Scalar$>$ \mbox{\hyperlink{structigl_1_1HeatGeodesicsData}{igl\+::\+Heat\+Geodesics\+Data}}$<$ Scalar $>$\+::\+Dirichlet}
+
+
+
+Cached solvers for Dirichet, Neumann problems. 
+
+\Hypertarget{structigl_1_1HeatGeodesicsData_aca1af79b32c5e2db8c5c7b4617165e4e}\label{structigl_1_1HeatGeodesicsData_aca1af79b32c5e2db8c5c7b4617165e4e} 
+\index{igl::HeatGeodesicsData$<$ Scalar $>$@{igl::HeatGeodesicsData$<$ Scalar $>$}!Neumann@{Neumann}}
+\index{Neumann@{Neumann}!igl::HeatGeodesicsData$<$ Scalar $>$@{igl::HeatGeodesicsData$<$ Scalar $>$}}
+\doxysubsubsection{\texorpdfstring{Neumann}{Neumann}}
+{\footnotesize\ttfamily template$<$typename Scalar $>$ \\
+\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data}{min\+\_\+quad\+\_\+with\+\_\+fixed\+\_\+data}}$<$Scalar$>$ \mbox{\hyperlink{structigl_1_1HeatGeodesicsData}{igl\+::\+Heat\+Geodesics\+Data}}$<$ Scalar $>$\+::\+Neumann}
+
+\Hypertarget{structigl_1_1HeatGeodesicsData_a63b1b2277a19a7640291d4d70efb3bfa}\label{structigl_1_1HeatGeodesicsData_a63b1b2277a19a7640291d4d70efb3bfa} 
+\index{igl::HeatGeodesicsData$<$ Scalar $>$@{igl::HeatGeodesicsData$<$ Scalar $>$}!Poisson@{Poisson}}
+\index{Poisson@{Poisson}!igl::HeatGeodesicsData$<$ Scalar $>$@{igl::HeatGeodesicsData$<$ Scalar $>$}}
+\doxysubsubsection{\texorpdfstring{Poisson}{Poisson}}
+{\footnotesize\ttfamily template$<$typename Scalar $>$ \\
+\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data}{min\+\_\+quad\+\_\+with\+\_\+fixed\+\_\+data}}$<$Scalar$>$ \mbox{\hyperlink{structigl_1_1HeatGeodesicsData}{igl\+::\+Heat\+Geodesics\+Data}}$<$ Scalar $>$\+::\+Poisson}
+
+\Hypertarget{structigl_1_1HeatGeodesicsData_af2a3bd5c7574b3122c510cb73d9e4bb1}\label{structigl_1_1HeatGeodesicsData_af2a3bd5c7574b3122c510cb73d9e4bb1} 
+\index{igl::HeatGeodesicsData$<$ Scalar $>$@{igl::HeatGeodesicsData$<$ Scalar $>$}!use\_intrinsic\_delaunay@{use\_intrinsic\_delaunay}}
+\index{use\_intrinsic\_delaunay@{use\_intrinsic\_delaunay}!igl::HeatGeodesicsData$<$ Scalar $>$@{igl::HeatGeodesicsData$<$ Scalar $>$}}
+\doxysubsubsection{\texorpdfstring{use\_intrinsic\_delaunay}{use\_intrinsic\_delaunay}}
+{\footnotesize\ttfamily template$<$typename Scalar $>$ \\
+bool \mbox{\hyperlink{structigl_1_1HeatGeodesicsData}{igl\+::\+Heat\+Geodesics\+Data}}$<$ Scalar $>$\+::use\+\_\+intrinsic\+\_\+delaunay = false}
+
+
+
+Whether to use intrinsic Delaunay Laplacian. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/igl/\mbox{\hyperlink{heat__geodesics_8h}{heat\+\_\+geodesics.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,35 @@
+\doxysection{include/igl/diag.h File Reference}
+\hypertarget{diag_8h}{}\label{diag_8h}\index{include/igl/diag.h@{include/igl/diag.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include \"{}diag.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{diag_8h_aa93624b0b2836d2510e8c92ae951d817}{EIGEN\+\_\+\+YES\+\_\+\+I\+\_\+\+KNOW\+\_\+\+SPARSE\+\_\+\+MODULE\+\_\+\+IS\+\_\+\+NOT\+\_\+\+STABLE\+\_\+\+YET}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespaceigl_afc7d0ecd1acd535cee662dd648fdbd80}{igl\+::diag}} (const Eigen\+::\+Sparse\+Matrix$<$ T $>$ \&X, Eigen\+::\+Sparse\+Vector$<$ T $>$ \&V)
+\begin{DoxyCompactList}\small\item\em Extracts the main diagonal of a matrix as a vector. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename DerivedV $>$ }\\void \mbox{\hyperlink{namespaceigl_a11efe7e088ed18a293d9f3860cfe9571}{igl\+::diag}} (const Eigen\+::\+Sparse\+Matrix$<$ T $>$ \&X, Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespaceigl_aba99156e6ab79bde7a820ae5ab3a310f}{igl\+::diag}} (const Eigen\+::\+Sparse\+Vector$<$ T $>$ \&V, Eigen\+::\+Sparse\+Matrix$<$ T $>$ \&X)
+\begin{DoxyCompactList}\small\item\em Builds a sparse matrix with a given vector along the main diagonal. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename DerivedV $>$ }\\void \mbox{\hyperlink{namespaceigl_a5b23f7806b53924f6b8f0b0e43fecc58}{igl\+::diag}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, Eigen\+::\+Sparse\+Matrix$<$ T $>$ \&X)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{diag_8h_aa93624b0b2836d2510e8c92ae951d817}\label{diag_8h_aa93624b0b2836d2510e8c92ae951d817} 
+\index{diag.h@{diag.h}!EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET@{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}}
+\index{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET@{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}!diag.h@{diag.h}}
+\doxysubsubsection{\texorpdfstring{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}}
+{\footnotesize\ttfamily \#define EIGEN\+\_\+\+YES\+\_\+\+I\+\_\+\+KNOW\+\_\+\+SPARSE\+\_\+\+MODULE\+\_\+\+IS\+\_\+\+NOT\+\_\+\+STABLE\+\_\+\+YET}
+

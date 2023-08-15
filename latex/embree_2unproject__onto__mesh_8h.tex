@@ -1,0 +1,20 @@
+\doxysection{include/igl/embree/unproject\+\_\+onto\+\_\+mesh.h File Reference}
+\hypertarget{embree_2unproject__onto__mesh_8h}{}\label{embree_2unproject__onto__mesh_8h}\index{include/igl/embree/unproject\_onto\_mesh.h@{include/igl/embree/unproject\_onto\_mesh.h}}
+{\ttfamily \#include $<$igl/igl\+\_\+inline.\+h$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \"{}unproject\+\_\+onto\+\_\+mesh.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{namespaceigl_1_1embree}{igl\+::embree}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespaceigl_1_1embree_a6cf896ed44c9329729459a291ac33047}{igl\+::embree\+::unproject\+\_\+onto\+\_\+mesh}} (const Eigen\+::\+Vector2f \&pos, const Eigen\+::\+Matrix\+Xi \&F, const Eigen\+::\+Matrix4f \&model, const Eigen\+::\+Matrix4f \&proj, const Eigen\+::\+Vector4f \&viewport, const \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector}{Embree\+Intersector}} \&ei, int \&fid, Eigen\+::\+Vector3f \&bc)
+\begin{DoxyCompactList}\small\item\em Unproject a screen location (using the given model, proj and viewport) to find the first hit on a mesh. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceigl_1_1embree_a227bbf88b8e795bea4558ab6018ea732}{igl\+::embree\+::unproject\+\_\+onto\+\_\+mesh}} (const Eigen\+::\+Vector2f \&pos, const Eigen\+::\+Matrix\+Xi \&F, const Eigen\+::\+Matrix4f \&model, const Eigen\+::\+Matrix4f \&proj, const Eigen\+::\+Vector4f \&viewport, const \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector}{Embree\+Intersector}} \&ei, int \&fid, int \&vid)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}

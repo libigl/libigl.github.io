@@ -1,0 +1,59 @@
+\doxysection{read\+\_\+triangle\+\_\+mesh.\+h}
+\hypertarget{read__triangle__mesh_8h_source}{}\label{read__triangle__mesh_8h_source}\index{include/igl/read\_triangle\_mesh.h@{include/igl/read\_triangle\_mesh.h}}
+\mbox{\hyperlink{read__triangle__mesh_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2013\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_READ\_TRIANGLE\_MESH\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_READ\_TRIANGLE\_MESH\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <cstdio>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ History:}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ \ renamed\ read\ -\/>\ read\_triangle\_mesh\ \ \ \ \ Daniele\ 24\ June\ 2014}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ \ return\ type\ changed\ from\ void\ to\ bool\ \ Alec\ 18\ Sept\ 2011}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00032\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00033\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a6bd18b073b51beb1500c10c4f2825aba}{read\_triangle\_mesh}}(}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ str,}
+\DoxyCodeLine{00035\ \ \ \ \ Eigen::PlainObjectBase<DerivedV>\&\ V,}
+\DoxyCodeLine{00036\ \ \ \ \ Eigen::PlainObjectBase<DerivedF>\&\ F);}
+\DoxyCodeLine{00039\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Scalar,\ \textcolor{keyword}{typename}\ Index>}
+\DoxyCodeLine{00040\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a6bd18b073b51beb1500c10c4f2825aba}{read\_triangle\_mesh}}(}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ str,}
+\DoxyCodeLine{00042\ \ \ \ \ std::vector<std::vector<Scalar>\ >\ \&\ V,}
+\DoxyCodeLine{00043\ \ \ \ \ std::vector<std::vector<Index>\ >\ \&\ F);}
+\DoxyCodeLine{00049\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00050\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a6bd18b073b51beb1500c10c4f2825aba}{read\_triangle\_mesh}}(}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ str,}
+\DoxyCodeLine{00052\ \ \ \ \ Eigen::PlainObjectBase<DerivedV>\&\ V,}
+\DoxyCodeLine{00053\ \ \ \ \ Eigen::PlainObjectBase<DerivedF>\&\ F,}
+\DoxyCodeLine{00054\ \ \ \ \ std::string\ \&\ dir,}
+\DoxyCodeLine{00055\ \ \ \ \ std::string\ \&\ base,}
+\DoxyCodeLine{00056\ \ \ \ \ std::string\ \&\ ext,}
+\DoxyCodeLine{00057\ \ \ \ \ std::string\ \&\ name);}
+\DoxyCodeLine{00061\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00062\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a6bd18b073b51beb1500c10c4f2825aba}{read\_triangle\_mesh}}(}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\ ext,}
+\DoxyCodeLine{00064\ \ \ \ \ FILE\ *\ fp,}
+\DoxyCodeLine{00065\ \ \ \ \ Eigen::PlainObjectBase<DerivedV>\&\ V,}
+\DoxyCodeLine{00066\ \ \ \ \ Eigen::PlainObjectBase<DerivedF>\&\ F);}
+\DoxyCodeLine{00067\ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#\ \ include\ "{}read\_triangle\_mesh.cpp"{}}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

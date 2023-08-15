@@ -1,0 +1,79 @@
+\doxysection{marching\+\_\+cubes.\+h}
+\hypertarget{copyleft_2marching__cubes_8h_source}{}\label{copyleft_2marching__cubes_8h_source}\index{include/igl/copyleft/marching\_cubes.h@{include/igl/copyleft/marching\_cubes.h}}
+\mbox{\hyperlink{copyleft_2marching__cubes_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2014\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_COPYLEFT\_MARCHINGCUBES\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_COPYLEFT\_MARCHINGCUBES\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \ \ \textcolor{keyword}{namespace\ }copyleft}
+\DoxyCodeLine{00016\ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedValues,\ \textcolor{keyword}{typename}\ DerivedPo\textcolor{keywordtype}{int}s,\ \textcolor{keyword}{typename}\ DerivedVertices,\ \textcolor{keyword}{typename}\ DerivedFaces>}
+\DoxyCodeLine{00040\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_a5c5920cc7d10f7fc5a4de60dcee97163}{marching\_cubes}}(}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedValues>\ \&values,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedPoints>\ \&points,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ x\_res,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ y\_res,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ z\_res,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ isovalue,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedVertices>\ \&vertices,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedFaces>\ \&faces);}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedValues,\ \textcolor{keyword}{typename}\ DerivedPo\textcolor{keywordtype}{int}s,\ \textcolor{keyword}{typename}\ DerivedVertices,\ \textcolor{keyword}{typename}\ DerivedFaces>}
+\DoxyCodeLine{00052\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_a5c5920cc7d10f7fc5a4de60dcee97163}{marching\_cubes}}(}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedValues>\ \&values,}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedPoints>\ \&points,}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ x\_res,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ y\_res,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ z\_res,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedVertices>\ \&vertices,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedFaces>\ \&faces);}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedValue,\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedPoint,}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedPoints,\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVertices,\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFaces>}
+\DoxyCodeLine{00068\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_a5c5920cc7d10f7fc5a4de60dcee97163}{marching\_cubes}}(}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::function<\ DerivedValue(\textcolor{keyword}{const}\ DerivedPoint\ \&\ )\ >\ \&\ value\_fun,}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedPoints>\ \&points,}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ x\_res,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ y\_res,}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ z\_res,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ isovalue,\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedVertices>\ \&vertices,}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedFaces>\ \&faces);}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedValues,\ \textcolor{keyword}{typename}\ DerivedPo\textcolor{keywordtype}{int}s,\ \textcolor{keyword}{typename}\ DerivedVertices,\ \textcolor{keyword}{typename}\ DerivedIndices,\ \textcolor{keyword}{typename}\ DerivedFaces>}
+\DoxyCodeLine{00095\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_a5c5920cc7d10f7fc5a4de60dcee97163}{marching\_cubes}}(}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedValues>\ \&values,}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedPoints>\ \&points,}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedIndices>\ \&indices,}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ isovalue,}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedVertices>\ \&vertices,}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedFaces>\ \&faces);}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedValues,\ \textcolor{keyword}{typename}\ DerivedPo\textcolor{keywordtype}{int}s,\ \textcolor{keyword}{typename}\ DerivedVertices,\ \textcolor{keyword}{typename}\ DerivedIndices,\ \textcolor{keyword}{typename}\ DerivedFaces>}
+\DoxyCodeLine{00105\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_a5c5920cc7d10f7fc5a4de60dcee97163}{marching\_cubes}}(}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedValues>\ \&values,}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedPoints>\ \&points,}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedIndices>\ \&indices,}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedVertices>\ \&vertices,}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedFaces>\ \&faces);}
+\DoxyCodeLine{00111\ \ \ \}}
+\DoxyCodeLine{00112\ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#\ \ include\ "{}marching\_cubes.cpp"{}}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

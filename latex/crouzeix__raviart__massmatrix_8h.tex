@@ -1,0 +1,17 @@
+\doxysection{include/igl/crouzeix\+\_\+raviart\+\_\+massmatrix.h File Reference}
+\hypertarget{crouzeix__raviart__massmatrix_8h}{}\label{crouzeix__raviart__massmatrix_8h}\index{include/igl/crouzeix\_raviart\_massmatrix.h@{include/igl/crouzeix\_raviart\_massmatrix.h}}
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include \"{}crouzeix\+\_\+raviart\+\_\+massmatrix.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename MT , typename DerivedV , typename DerivedF , typename DerivedE , typename Derived\+EMAP $>$ }\\void \mbox{\hyperlink{namespaceigl_a1e1d2b58df45ae7555c3719963bb39d6}{igl\+::crouzeix\+\_\+raviart\+\_\+massmatrix}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Sparse\+Matrix$<$ MT $>$ \&M, Eigen\+::\+Plain\+Object\+Base$<$ DerivedE $>$ \&E, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+EMAP $>$ \&EMAP)
+\begin{DoxyCompactList}\small\item\em CROUZEIX\+\_\+\+RAVIART\+\_\+\+MASSMATRIX Compute the Crouzeix-\/\+Raviart mass matrix where M(e,e) is just the sum of the areas of the triangles on either side of an edge e. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename MT , typename DerivedV , typename DerivedF , typename DerivedE , typename Derived\+EMAP $>$ }\\void \mbox{\hyperlink{namespaceigl_a4fbcad6ddce4e7c8f209f87f5deb5f81}{igl\+::crouzeix\+\_\+raviart\+\_\+massmatrix}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const Eigen\+::\+Matrix\+Base$<$ DerivedE $>$ \&E, const Eigen\+::\+Matrix\+Base$<$ Derived\+EMAP $>$ \&EMAP, Eigen\+::\+Sparse\+Matrix$<$ MT $>$ \&M)
+\begin{DoxyCompactList}\small\item\em CROUZEIX\+\_\+\+RAVIART\+\_\+\+MASSMATRIX Compute the Crouzeix-\/\+Raviart mass matrix where M(e,e) is just the sum of the areas of the triangles on either side of an edge e. \end{DoxyCompactList}\end{DoxyCompactItemize}

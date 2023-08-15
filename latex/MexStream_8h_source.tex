@@ -1,0 +1,51 @@
+\doxysection{Mex\+Stream.\+h}
+\hypertarget{MexStream_8h_source}{}\label{MexStream_8h_source}\index{include/igl/matlab/MexStream.h@{include/igl/matlab/MexStream.h}}
+\mbox{\hyperlink{MexStream_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2013\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_MATLAB\_MEX\_STREAM\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_MATLAB\_MEX\_STREAM\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ \textcolor{keyword}{namespace\ }matlab}
+\DoxyCodeLine{00014\ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{class\ }MexStream\ :\ \textcolor{keyword}{public}\ std::streambuf}
+\DoxyCodeLine{00030\ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{virtual}\ std::streamsize\ xsputn(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *s,\ std::streamsize\ n);\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ overflow(\textcolor{keywordtype}{int}\ c\ =\ EOF);}
+\DoxyCodeLine{00035\ \ \ \ \ \};\ }
+\DoxyCodeLine{00036\ \ \ \}}
+\DoxyCodeLine{00037\ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{comment}{//\ Implementation\ }}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ <mex.h>}}
+\DoxyCodeLine{00041\ \textcolor{keyword}{inline}\ std::streamsize\ igl::matlab::MexStream::xsputn(}
+\DoxyCodeLine{00042\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *s,\ }
+\DoxyCodeLine{00043\ \ \ std::streamsize\ n)\ }
+\DoxyCodeLine{00044\ \{}
+\DoxyCodeLine{00045\ \ \ mexPrintf(\textcolor{stringliteral}{"{}\%.*s"{}},n,s);}
+\DoxyCodeLine{00046\ \ \ mexEvalString(\textcolor{stringliteral}{"{}drawnow;"{}});\ \textcolor{comment}{//\ to\ dump\ string.}}
+\DoxyCodeLine{00047\ \ \ \textcolor{keywordflow}{return}\ n;}
+\DoxyCodeLine{00048\ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ igl::matlab::MexStream::overflow(\textcolor{keywordtype}{int}\ c)\ }
+\DoxyCodeLine{00051\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordflow}{if}\ (c\ !=\ EOF)\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ mexPrintf(\textcolor{stringliteral}{"{}\%.1s"{}},\&c);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ mexEvalString(\textcolor{stringliteral}{"{}drawnow;"{}});\ \textcolor{comment}{//\ to\ dump\ string.}}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00057\ \}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

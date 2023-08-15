@@ -1,0 +1,265 @@
+\doxysection{Viewer.\+h}
+\hypertarget{Viewer_8h_source}{}\label{Viewer_8h_source}\index{include/igl/opengl/glfw/Viewer.h@{include/igl/opengl/glfw/Viewer.h}}
+\mbox{\hyperlink{Viewer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2014\ Daniele\ Panozzo\ <daniele.panozzo@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_OPENGL\_GLFW\_VIEWER\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_OPENGL\_GLFW\_VIEWER\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ IGL\_OPENGL\_4}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ IGL\_OPENGL\_4}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}../../igl\_inline.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}../MeshGL.h"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}../ViewerCore.h"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}../ViewerData.h"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}ViewerPlugin.h"{}}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <Eigen/Geometry>}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ IGL\_MOD\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 0x0001}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ IGL\_MOD\_CONTROL\ \ \ \ \ \ \ \ \ 0x0002}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ IGL\_MOD\_ALT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x0004}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ IGL\_MOD\_SUPER\ \ \ \ \ \ \ \ \ \ \ 0x0008}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{struct\ }GLFWwindow;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \textcolor{keyword}{namespace\ }opengl}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \textcolor{keyword}{namespace\ }glfw}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \ \ \textcolor{comment}{//\ GLFW-\/based\ mesh\ viewer}}
+\DoxyCodeLine{00042\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}}}
+\DoxyCodeLine{00043\ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{//\ UI\ Enumerations}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a9ec42624cd37d353e030a8c89dc30c78}{MouseButton}}\ \{\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a9ec42624cd37d353e030a8c89dc30c78a945d5e233cf7d6240f6b783b36a374ff}{Left}},\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a9ec42624cd37d353e030a8c89dc30c78ab1ca34f82e83c52b010f86955f264e05}{Middle}},\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a9ec42624cd37d353e030a8c89dc30c78a92b09c7c48c520c3c55e497875da437c}{Right}}\};}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a07ec1c059cfc0579950454f4bdf1aab2}{MouseMode}}\ \{\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a07ec1c059cfc0579950454f4bdf1aab2a6adf97f83acf6453d4a6a4b1070f3754}{None}},\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a07ec1c059cfc0579950454f4bdf1aab2af1a42bd417390fc63b030a519624607a}{Rotation}},\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a07ec1c059cfc0579950454f4bdf1aab2a4252b72e6ebcd4d4b4c2e46a786f03d2}{Zoom}},\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a07ec1c059cfc0579950454f4bdf1aab2af6d4a17b27da35c2d90ce13801f36782}{Pan}},\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a07ec1c059cfc0579950454f4bdf1aab2a6dd08874f83507e9c7b23f1a46b7fa7c}{Translation}}\}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_acb6e7b7ce40049a23f5ca99fd40ba279}{mouse\_mode}};}
+\DoxyCodeLine{00048\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_aee90a5d0831fd4c41e516ab89b511d6c}{launch}}(\textcolor{keywordtype}{bool}\ resizable\ =\ \textcolor{keyword}{true},\ \textcolor{keywordtype}{bool}\ fullscreen\ =\ \textcolor{keyword}{false},\ \textcolor{keyword}{const}\ std::string\ \&name\ =\ \textcolor{stringliteral}{"{}libigl\ viewer"{}},\ \textcolor{keywordtype}{int}\ width\ =\ 0,\ \textcolor{keywordtype}{int}\ height\ =\ 0);}
+\DoxyCodeLine{00049\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a73b85673332b74bef9c75473b3142ffc}{launch\_init}}(\textcolor{keywordtype}{bool}\ resizable\ =\ \textcolor{keyword}{true},\ \textcolor{keywordtype}{bool}\ fullscreen\ =\ \textcolor{keyword}{false},\ \textcolor{keyword}{const}\ std::string\ \&name\ =\ \textcolor{stringliteral}{"{}libigl\ viewer"{}},\ \textcolor{keywordtype}{int}\ width\ =\ 0,\ \textcolor{keywordtype}{int}\ height\ =\ 0);}
+\DoxyCodeLine{00050\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a7b261788c078365c8a3b293b426b93e8}{launch\_rendering}}(\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_aea9965bc615b0a851fabf90d37a73320}{loop}}\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00051\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a6db08ce198588d6fc8966e7d2f01f311}{launch\_shut}}();}
+\DoxyCodeLine{00052\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a9f01c20d55a8efc539442fae8b0367a1}{init}}();}
+\DoxyCodeLine{00053\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a2b38160751bd00813506494cb608ac50}{init\_plugins}}();}
+\DoxyCodeLine{00054\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a15045bd3866036cc90d31c6a69d6787b}{shutdown\_plugins}}();}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_ade9081e5dbaccee6ce018018cd29ef89}{Viewer}}();}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a1c6647830a195ff39a8ec8ddfe62bba3}{\string~Viewer}}();}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{comment}{//\ Mesh\ IO}}
+\DoxyCodeLine{00058\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a2b5e2c00e3d4ac59318baf0af908daca}{load\_mesh\_from\_file}}(\textcolor{keyword}{const}\ std::string\ \&\ mesh\_file\_name);}
+\DoxyCodeLine{00059\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_ac508130c76df2ff50dcf593bbc34b69f}{save\_mesh\_to\_file}}(\textcolor{keyword}{const}\ std::string\ \&\ mesh\_file\_name);}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{comment}{//\ Callbacks}}
+\DoxyCodeLine{00061\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_ab846d887a586ba28f22a7be708e5f0b2}{key\_pressed}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ unicode\_key,\textcolor{keywordtype}{int}\ modifier);}
+\DoxyCodeLine{00062\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_ae3357af06c69f108f8123a036ccf2c65}{key\_down}}(\textcolor{keywordtype}{int}\ key,\textcolor{keywordtype}{int}\ modifier);}
+\DoxyCodeLine{00063\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_ab09a9f6d477c7274b44102176b236a4e}{key\_up}}(\textcolor{keywordtype}{int}\ key,\textcolor{keywordtype}{int}\ modifier);}
+\DoxyCodeLine{00064\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_ac3677477f88b291feb18d5dbc4ad214d}{mouse\_down}}(\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a9ec42624cd37d353e030a8c89dc30c78}{MouseButton}}\ button,\textcolor{keywordtype}{int}\ modifier);}
+\DoxyCodeLine{00065\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_ab003132f9cafd182c3854189f2beb325}{mouse\_up}}(\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a9ec42624cd37d353e030a8c89dc30c78}{MouseButton}}\ button,\textcolor{keywordtype}{int}\ modifier);}
+\DoxyCodeLine{00066\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a0a0825c4839fddf08fcbbf9943f29e2f}{mouse\_move}}(\textcolor{keywordtype}{int}\ mouse\_x,\textcolor{keywordtype}{int}\ mouse\_y);}
+\DoxyCodeLine{00067\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a7786f055a0566fb7a13927ed0355e21c}{mouse\_scroll}}(\textcolor{keywordtype}{float}\ delta\_y);}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{comment}{//\ Scene\ IO}}
+\DoxyCodeLine{00069\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a2b804f44e898f3ab954fbd9eb89b1468}{load\_scene}}();}
+\DoxyCodeLine{00070\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_ae2f917646826c663eb69ecfc395014c4}{load\_scene}}(std::string\ fname);}
+\DoxyCodeLine{00071\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a746ae6c96981c092cab505dd579d724f}{save\_scene}}();}
+\DoxyCodeLine{00072\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a255c85c9f14fdd975cad9a791dcfdd8e}{save\_scene}}(std::string\ fname);}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{comment}{//\ Draw\ everything}}
+\DoxyCodeLine{00074\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a44a2a81590392c586815cf9b3f8f7e56}{draw}}();}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{comment}{//\ Render\ given\ ViewerCore\ to\ a\ buffer.\ The\ width\ and\ height\ are\ determined}}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{comment}{//\ by\ non-\/zeros\ dimensions\ of\ R\ or\ –\ if\ both\ are\ zero\ —\ are\ set\ to\ this}}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{comment}{//\ core's\ viewport\ sizes.\ Other\ buffers\ are\ resized\ to\ fit\ if\ needed.}}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{comment}{//\ Template:}}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{comment}{//\ \ \ T\ \ image\ storage\ type,\ e.g.,\ unsigned\ char\ (values\ ∈\ [0,255]),\ double}}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ (values\ ∈\ [0.0,1.0]).}}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{comment}{//\ Inputs:}}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{comment}{//\ \ \ data\ \ which\ ViewerData\ to\ draw}}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{comment}{//\ \ \ update\_matrices\ \ whether\ to\ update\ view,\ proj,\ and\ norm\ matrices\ in}}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ shaders}}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{comment}{//\ Outputs:}}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{comment}{//\ \ \ R\ \ width\ by\ height\ red\ pixel\ color\ values}}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{comment}{//\ \ \ G\ \ width\ by\ height\ green\ pixel\ color\ values}}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{comment}{//\ \ \ B\ \ width\ by\ height\ blue\ pixel\ color\ values}}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{comment}{//\ \ \ A\ \ width\ by\ height\ alpha\ pixel\ color\ values}}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{comment}{//\ \ \ D\ \ width\ by\ height\ depth\ pixel\ values.\ Depth\ values\ are\ \_not\_}}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ anti-\/aliased\ like\ RGBA.}}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00095\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_aca9dc39fe9096f4c85e4438f3fc033c2}{draw\_buffer}}(}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \textcolor{comment}{//\ can't\ be\ const\ because\ of\ writing\ in\ and\ out\ of\ \`{}core.viewport`}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \textcolor{comment}{/*const*/}\ igl::opengl::ViewerCore\ \&\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a4fc39cbf6a2d68d0eaf63bef3fd49464}{core}},\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ Eigen::Matrix<T,Eigen::Dynamic,Eigen::Dynamic>\ \&\ R,}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ Eigen::Matrix<T,Eigen::Dynamic,Eigen::Dynamic>\ \&\ G,}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ Eigen::Matrix<T,Eigen::Dynamic,Eigen::Dynamic>\ \&\ B,}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ Eigen::Matrix<T,Eigen::Dynamic,Eigen::Dynamic>\ \&\ A,}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ Eigen::Matrix<T,Eigen::Dynamic,Eigen::Dynamic>\ \&\ D);}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{comment}{//\ OpenGL\ context\ resize}}
+\DoxyCodeLine{00104\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a4e66c632d62c6d8d0eaf5a31c21848cc}{resize}}(\textcolor{keywordtype}{int}\ w,\textcolor{keywordtype}{int}\ h);\ \textcolor{comment}{//\ explicitly\ set\ window\ size}}
+\DoxyCodeLine{00105\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a0c65ffc73bf52c69eb97ab7652e57a98}{post\_resize}}(\textcolor{keywordtype}{int}\ w,\textcolor{keywordtype}{int}\ h);\ \textcolor{comment}{//\ external\ resize\ due\ to\ user\ interaction}}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{comment}{//\ Helper\ functions}}
+\DoxyCodeLine{00107\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a13b85f3f52751675b6243ee7b57b6a8e}{snap\_to\_canonical\_quaternion}}();}
+\DoxyCodeLine{00108\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a4eaa37f0502d7bfc80ea26fe4e09ea57}{open\_dialog\_load\_mesh}}();}
+\DoxyCodeLine{00109\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a3be7a881a617dd11c5c6deac338c7386}{open\_dialog\_save\_mesh}}();}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{comment}{//\ Multi-\/mesh\ methods\ //}}
+\DoxyCodeLine{00114\ \textcolor{comment}{}}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{comment}{//\ Return\ the\ current\ mesh,\ or\ the\ mesh\ corresponding\ to\ a\ given\ unique\ identifier}}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{comment}{//\ Inputs:}}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{comment}{//\ \ \ mesh\_id\ \ unique\ identifier\ associated\ to\ the\ desired\ mesh\ (current\ mesh\ if\ -\/1)}}
+\DoxyCodeLine{00119\ \ \ \ \ IGL\_INLINE\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData}{ViewerData}}\&\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_ae5d5d4e238d8863531128353589b10f2}{data}}(\textcolor{keywordtype}{int}\ mesh\_id\ =\ -\/1);}
+\DoxyCodeLine{00120\ \ \ \ \ IGL\_INLINE\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData}{ViewerData}}\&\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a6a31e729664bff12bcd156e2d37abb68}{data}}(\textcolor{keywordtype}{int}\ mesh\_id\ =\ -\/1)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{comment}{//\ Append\ a\ new\ "{}slot"{}\ for\ a\ mesh\ (i.e.,\ create\ empty\ entries\ at\ the\ end\ of}}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{comment}{//\ the\ data\_list\ and\ opengl\_state\_list.}}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{comment}{//\ Inputs:}}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{comment}{//\ \ \ visible\ \ If\ true,\ the\ new\ mesh\ is\ set\ to\ be\ visible\ on\ all\ existing\ viewports}}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{comment}{//\ Returns\ the\ id\ of\ the\ last\ appended\ mesh}}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{comment}{//\ Side\ Effects:}}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{comment}{//\ \ \ selected\_data\_index\ is\ set\ this\ newly\ created,\ last\ entry\ (i.e.,}}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{comment}{//\ \ \ \#meshes-\/1)}}
+\DoxyCodeLine{00132\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a10a41b0817eecf4a02835fe602da6528}{append\_mesh}}(\textcolor{keywordtype}{bool}\ visible\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{comment}{//\ Erase\ a\ mesh\ (i.e.,\ its\ corresponding\ data\ and\ state\ entires\ in\ data\_list}}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{comment}{//\ and\ opengl\_state\_list)}}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{comment}{//\ Inputs:}}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{comment}{//\ \ \ index\ \ index\ of\ mesh\ to\ erase}}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{comment}{//\ Returns\ whether\ erasure\ was\ successful\ <=>\ cannot\ erase\ last\ mesh}}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{comment}{//\ Side\ Effects:}}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{comment}{//\ \ \ If\ selected\_data\_index\ is\ greater\ than\ or\ equal\ to\ index\ then\ it\ is}}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{comment}{//\ \ \ decremented}}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{comment}{//\ Example:}}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{comment}{//\ \ \ //\ Erase\ all\ mesh\ slots\ except\ first\ and\ clear\ remaining\ mesh}}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{comment}{//\ \ \ viewer.selected\_data\_index\ =\ viewer.data\_list.size()-\/1;}}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{comment}{//\ \ \ while(viewer.erase\_mesh(viewer.selected\_data\_index))\{\};}}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{comment}{//\ \ \ viewer.data().clear();}}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00150\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a39e77515f09c4b58990c794441d920bb}{erase\_mesh}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ index);}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{comment}{//\ Retrieve\ mesh\ index\ from\ its\ unique\ identifier}}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{comment}{//\ Returns\ 0\ if\ not\ found}}
+\DoxyCodeLine{00154\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_abd34d1bc45213bcd14ee95300fdc499d}{mesh\_index}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{comment}{//\ Multi-\/viewport\ methods\ //}}
+\DoxyCodeLine{00159\ \textcolor{comment}{}}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{comment}{//\ Return\ the\ current\ viewport,\ or\ the\ viewport\ corresponding\ to\ a\ given\ unique\ identifier}}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{comment}{//\ Inputs:}}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{comment}{//\ \ \ core\_id\ \ unique\ identifier\ corresponding\ to\ the\ desired\ viewport\ (current\ viewport\ if\ 0)}}
+\DoxyCodeLine{00164\ \ \ \ \ IGL\_INLINE\ ViewerCore\&\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a4fc39cbf6a2d68d0eaf63bef3fd49464}{core}}(\textcolor{keywordtype}{unsigned}\ core\_id\ =\ 0);}
+\DoxyCodeLine{00165\ \ \ \ \ IGL\_INLINE\ \textcolor{keyword}{const}\ ViewerCore\&\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_aca329644bd355f2f3dc6aa117964274f}{core}}(\textcolor{keywordtype}{unsigned}\ core\_id\ =\ 0)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{comment}{//\ Append\ a\ new\ "{}slot"{}\ for\ a\ viewport\ (i.e.,\ copy\ properties\ of\ the\ current\ viewport,\ only}}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{comment}{//\ changing\ the\ viewport\ size/position)}}
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{comment}{//\ Inputs:}}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{comment}{//\ \ \ viewport\ \ \ \ \ \ Vector\ specifying\ the\ viewport\ origin\ and\ size\ in\ screen\ coordinates.}}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{comment}{//\ \ \ append\_empty\ \ If\ true,\ existing\ meshes\ are\ hidden\ on\ the\ new\ viewport.}}
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{comment}{//\ Returns\ the\ unique\ id\ of\ the\ newly\ inserted\ viewport.\ There\ can\ be\ a\ maximum\ of\ 31}}
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{comment}{//\ \ \ viewports\ created\ in\ the\ same\ viewport.\ Erasing\ a\ viewport\ does\ not\ change\ the\ id\ of}}
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{comment}{//\ \ \ other\ existing\ viewports}}
+\DoxyCodeLine{00177\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a783a5b2ee8eb31fd76fb16e356bcf550}{append\_core}}(Eigen::Vector4f\ viewport,\ \textcolor{keywordtype}{bool}\ append\_empty\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{comment}{//\ Erase\ a\ viewport}}
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{comment}{//\ Inputs:}}
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{comment}{//\ \ \ index\ \ index\ of\ the\ viewport\ to\ erase}}
+\DoxyCodeLine{00183\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_ac3d5e3e5040f6e963bcb75a00cab4e3d}{erase\_core}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ index);}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{comment}{//\ Retrieve\ viewport\ index\ from\ its\ unique\ identifier}}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{comment}{//\ Returns\ 0\ if\ not\ found}}
+\DoxyCodeLine{00187\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a012b19566b9dbf2321542e78aaba252c}{core\_index}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{comment}{//\ Change\ selected\_core\_index\ to\ the\ viewport\ containing\ the\ mouse}}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{comment}{//\ (current\_mouse\_x,\ current\_mouse\_y)}}
+\DoxyCodeLine{00191\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a3cd0edeec6629ae2607b7b36c0e316a1}{select\_hovered\_core}}();}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{comment}{//\ Member\ variables\ //}}
+\DoxyCodeLine{00197\ \textcolor{comment}{}}
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{comment}{//\ Alec:\ I\ call\ this\ data\_list\ instead\ of\ just\ data\ to\ avoid\ confusion\ with}}
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{comment}{//\ old\ "{}data"{}\ variable.}}
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{comment}{//\ Stores\ all\ the\ data\ that\ should\ be\ visualized}}
+\DoxyCodeLine{00201\ \ \ \ \ std::vector<ViewerData>\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_afe88232cf93c9a8f40dc7c8388e4bef9}{data\_list}};}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a2fd28960580797eae596372f32147777}{selected\_data\_index}};}
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a29f39289f861509167438da14921bcb8}{next\_data\_id}};}
+\DoxyCodeLine{00205\ \ \ \ \ GLFWwindow*\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a8bd01c79b59e43407e1bb5c5ab227404}{window}};}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \ \ \ \ \textcolor{comment}{//\ Stores\ all\ the\ viewing\ options}}
+\DoxyCodeLine{00208\ \ \ \ \ std::vector<ViewerCore>\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_aaaa8e5c0215617964f3e191a28827f2b}{core\_list}};}
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a23fe17253347c87eb8383d61d33f7cd1}{selected\_core\_index}};}
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_af9cea96c79080e073dadf1e3658c77eb}{next\_core\_id}};}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{comment}{//\ List\ of\ registered\ plugins}}
+\DoxyCodeLine{00213\ \ \ \ \ std::vector<ViewerPlugin*>\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a71b77ba75ee7e094d5bf4f3b92f58ed3}{plugins}};}
+\DoxyCodeLine{00214\ \ \ \ \ \textcolor{comment}{//\ Temporary\ data\ stored\ when\ the\ mouse\ button\ is\ pressed}}
+\DoxyCodeLine{00215\ \ \ \ \ Eigen::Quaternionf\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a9c1329d7db58b4193b0f6124dd423d43}{down\_rotation}};}
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a3b0a689bb89ef9295e708cfcd2dbd51f}{current\_mouse\_x}};}
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_ad1ed01fb809938fa9b79e7cee0504e71}{current\_mouse\_y}};}
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_ac91c9394d85d316396b106de08c58608}{down\_mouse\_x}};}
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_afa9b382392394eebb987433cf101863a}{down\_mouse\_y}};}
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a7f612d15279ba7c7b87051db936bf90a}{down\_mouse\_z}};}
+\DoxyCodeLine{00221\ \ \ \ \ Eigen::Vector3f\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a5191fcde2387530399dcbdb2545fc486}{down\_translation}};}
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a409f232f38459dc2324c4fdf183c2078}{down}};}
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a45ccfbadedaad723e8ca598091a13b2e}{hack\_never\_moved}};}
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{comment}{//\ Keep\ track\ of\ the\ global\ position\ of\ the\ scrollwheel}}
+\DoxyCodeLine{00225\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_adde2fa7837951138c215206f7e3aafdb}{scroll\_position}};}
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{comment}{//\ C++-\/style\ functions}}
+\DoxyCodeLine{00227\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{comment}{//\ Returns\ **true**\ if\ action\ should\ be\ cancelled.}}
+\DoxyCodeLine{00229\ \ \ \ \ std::function<bool(\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}}\&\ viewer)>\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a031a29b6e4f3cc5a845d8e55ecc76e21}{callback\_init}};}
+\DoxyCodeLine{00230\ \ \ \ \ std::function<bool(\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}}\&\ viewer)>\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a370cdb7e65e003ee4529bf6d9a3f5aaf}{callback\_pre\_draw}};}
+\DoxyCodeLine{00231\ \ \ \ \ std::function<bool(\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}}\&\ viewer)>\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a6af757b8f1052d37fa864966b0cb8684}{callback\_post\_draw}};}
+\DoxyCodeLine{00232\ \ \ \ \ std::function<bool(\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}}\&\ viewer,\ \textcolor{keywordtype}{int}\ button,\ \textcolor{keywordtype}{int}\ modifier)>\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_af3639a31bead21b749df4184df83a891}{callback\_mouse\_down}};}
+\DoxyCodeLine{00233\ \ \ \ \ std::function<bool(\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}}\&\ viewer,\ \textcolor{keywordtype}{int}\ button,\ \textcolor{keywordtype}{int}\ modifier)>\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a23c44941f23ff861b22a735770c56795}{callback\_mouse\_up}};}
+\DoxyCodeLine{00234\ \ \ \ \ std::function<bool(\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}}\&\ viewer,\ \textcolor{keywordtype}{int}\ mouse\_x,\ \textcolor{keywordtype}{int}\ mouse\_y)>\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a5949846e54886a2ec738f83c5118c5b8}{callback\_mouse\_move}};}
+\DoxyCodeLine{00235\ \ \ \ \ std::function<bool(\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}}\&\ viewer,\ \textcolor{keywordtype}{float}\ delta\_y)>\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a34a68580d51de1a33651e63517cdd9c0}{callback\_mouse\_scroll}};}
+\DoxyCodeLine{00236\ \ \ \ \ std::function<bool(\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}}\&\ viewer,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ key,\ \textcolor{keywordtype}{int}\ modifiers)>\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a1a4857bec3b5a330fe099db6b4ab930c}{callback\_key\_pressed}};}
+\DoxyCodeLine{00237\ \ \ \ \ std::function<bool(\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}}\&\ viewer,\ \textcolor{keywordtype}{int}\ w,\ \textcolor{keywordtype}{int}\ h)>\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a2e7d09cbc7a03bd9745ca5ede0f94b97}{callback\_post\_resize}};}
+\DoxyCodeLine{00238\ \ \ \ \ \textcolor{comment}{//\ THESE\ SHOULD\ BE\ DEPRECATED:}}
+\DoxyCodeLine{00239\ \ \ \ \ std::function<bool(\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}}\&\ viewer,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ key,\ \textcolor{keywordtype}{int}\ modifiers)>\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a4868aa4ff805a5f70557e12228eb6c91}{callback\_key\_down}};}
+\DoxyCodeLine{00240\ \ \ \ \ std::function<bool(\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}}\&\ viewer,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ key,\ \textcolor{keywordtype}{int}\ modifiers)>\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a8c895a8e2eaaf9d4712817e581058dae}{callback\_key\_up}};}
+\DoxyCodeLine{00241\ \ \ \ \ \textcolor{comment}{//\ Pointers\ to\ per-\/callback\ data}}
+\DoxyCodeLine{00242\ \ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a2667ad51b12b0d2227729475e65420a0}{callback\_init\_data}};}
+\DoxyCodeLine{00243\ \ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a74a0a27439140217903d645ffccff653}{callback\_pre\_draw\_data}};}
+\DoxyCodeLine{00244\ \ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a774c6380c810d3eb68fdbc5707e04de7}{callback\_post\_draw\_data}};}
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_acfbbe515b6b2e1737ccdb9f89138abbc}{callback\_mouse\_down\_data}};}
+\DoxyCodeLine{00246\ \ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_ad0434e797f28c16405692efa93a8ee08}{callback\_mouse\_up\_data}};}
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_ac100310efc02f80e2bb59a0556933a27}{callback\_mouse\_move\_data}};}
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a0899419337d2701cfd621e6630f7eb1e}{callback\_mouse\_scroll\_data}};}
+\DoxyCodeLine{00249\ \ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_abd15e1b9e4258db141779f4c387a1f03}{callback\_key\_pressed\_data}};}
+\DoxyCodeLine{00250\ \ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_aaeda545d3415ac3cda2b41775d49f143}{callback\_key\_down\_data}};}
+\DoxyCodeLine{00251\ \ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_afd473a580f5e90d59fe405a8e76f05a3}{callback\_key\_up\_data}};}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00253\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00254\ \ \ \ \ EIGEN\_MAKE\_ALIGNED\_OPERATOR\_NEW}
+\DoxyCodeLine{00255\ \ \ \};}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00257\ \}\ \textcolor{comment}{//\ end\ namespace}}
+\DoxyCodeLine{00258\ \}\ \textcolor{comment}{//\ end\ namespace}}
+\DoxyCodeLine{00259\ \}\ \textcolor{comment}{//\ end\ namespace}}
+\DoxyCodeLine{00260\ }
+\DoxyCodeLine{00261\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00262\ \textcolor{preprocessor}{\#\ \ include\ "{}Viewer.cpp"{}}}
+\DoxyCodeLine{00263\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00265\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

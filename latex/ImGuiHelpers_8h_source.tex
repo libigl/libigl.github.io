@@ -1,0 +1,119 @@
+\doxysection{Im\+Gui\+Helpers.\+h}
+\hypertarget{ImGuiHelpers_8h_source}{}\label{ImGuiHelpers_8h_source}\index{include/igl/opengl/glfw/imgui/ImGuiHelpers.h@{include/igl/opengl/glfw/imgui/ImGuiHelpers.h}}
+\mbox{\hyperlink{ImGuiHelpers_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2018\ Jérémie\ Dumas\ <jeremie.dumas@ens-\/lyon.org>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_OPENGL\_GLFW\_IMGUI\_IMGUIHELPERS\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_OPENGL\_GLFW\_IMGUI\_IMGUIHELPERS\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}ImGuiTraits.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <imgui.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <cstddef>}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ Extend\ ImGui\ by\ populating\ its\ namespace\ directly}}
+\DoxyCodeLine{00022\ \textcolor{comment}{//}}
+\DoxyCodeLine{00023\ \textcolor{comment}{//\ Code\ snippets\ taken\ from\ there:}}
+\DoxyCodeLine{00024\ \textcolor{comment}{//\ https://eliasdaler.github.io/using-\/imgui-\/with-\/sfml-\/pt2/}}
+\DoxyCodeLine{00025\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceImGui}{ImGui}}}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{static}\ \textcolor{keyword}{auto}\ vector\_getter\ =\ [](\textcolor{keywordtype}{void}*\ vec,\ \textcolor{keywordtype}{int}\ idx,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}**\ out\_text)}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ \ \ \textcolor{keyword}{auto}\&\ vector\ =\ *\textcolor{keyword}{static\_cast<}std::vector<std::string>*\textcolor{keyword}{>}(vec);}
+\DoxyCodeLine{00031\ \ \ \textcolor{keywordflow}{if}\ (idx\ <\ 0\ ||\ idx\ >=\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(vector.size()))\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{00032\ \ \ *out\_text\ =\ vector.at(idx).c\_str();}
+\DoxyCodeLine{00033\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceImGui_a010b32e950ef1eb7a43808f0c0bd04d2}{Combo}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ label,\ \textcolor{keywordtype}{int}*\ idx,\ std::vector<std::string>\&\ values)}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \ \ \textcolor{keywordflow}{if}\ (values.empty())\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{00039\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceImGui_a010b32e950ef1eb7a43808f0c0bd04d2}{Combo}}(label,\ idx,\ vector\_getter,}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{void}*\textcolor{keyword}{>}(\&values),\ values.size());}
+\DoxyCodeLine{00041\ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceImGui_a010b32e950ef1eb7a43808f0c0bd04d2}{Combo}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ label,\ \textcolor{keywordtype}{int}*\ idx,\ std::function<\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *(\textcolor{keywordtype}{int})>\ getter,\ \textcolor{keywordtype}{int}\ items\_count)}
+\DoxyCodeLine{00044\ \{}
+\DoxyCodeLine{00045\ \ \ \textcolor{keyword}{auto}\ func\ =\ [](\textcolor{keywordtype}{void}*\ data,\ \textcolor{keywordtype}{int}\ i,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}**\ out\_text)\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{auto}\ \&getter\ =\ *\textcolor{keyword}{reinterpret\_cast<}std::function<\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}\ *(\textcolor{keywordtype}{int})\textcolor{keyword}{>}\ *>(data);}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *s\ =\ getter(i);}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordflow}{if}\ (s)\ \{\ *out\_text\ =\ s;\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordflow}{else}\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{00050\ \ \ \};}
+\DoxyCodeLine{00051\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceImGui_a010b32e950ef1eb7a43808f0c0bd04d2}{Combo}}(label,\ idx,\ func,\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{void}\ *\textcolor{keyword}{>}(\&getter),\ items\_count);}
+\DoxyCodeLine{00052\ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceImGui_a3f11b20393024f0f4261ae92b927836d}{ListBox}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ label,\ \textcolor{keywordtype}{int}*\ idx,\ std::vector<std::string>\&\ values)}
+\DoxyCodeLine{00055\ \{}
+\DoxyCodeLine{00056\ \ \ \textcolor{keywordflow}{if}\ (values.empty())\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{00057\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceImGui_a3f11b20393024f0f4261ae92b927836d}{ListBox}}(label,\ idx,\ vector\_getter,}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{void}*\textcolor{keyword}{>}(\&values),\ values.size());}
+\DoxyCodeLine{00059\ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceImGui_a392168d28bc4973532ead37f8061121e}{InputText}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ label,\ std::string\ \&str,\ ImGuiInputTextFlags\ flags\ =\ 0,\ ImGuiInputTextCallback\ callback\ =\ NULL,\ \textcolor{keywordtype}{void}*\ user\_data\ =\ NULL)}
+\DoxyCodeLine{00062\ \{}
+\DoxyCodeLine{00063\ \ \ \textcolor{keywordtype}{char}\ buf[1024];}
+\DoxyCodeLine{00064\ \ \ std::fill\_n(buf,\ 1024,\ 0);}
+\DoxyCodeLine{00065\ \ \ std::copy\_n(str.begin(),\ std::min(1024,\ (\textcolor{keywordtype}{int})\ str.size()),\ buf);}
+\DoxyCodeLine{00066\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespaceImGui_a392168d28bc4973532ead37f8061121e}{ImGui::InputText}}(label,\ buf,\ 1024,\ flags,\ callback,\ user\_data))}
+\DoxyCodeLine{00067\ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ str\ =\ std::string(buf);}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00070\ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00072\ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{comment}{//\ template<typename\ T>}}
+\DoxyCodeLine{00075\ \textcolor{comment}{//\ inline\ bool\ DragScalar(const\ char\ *label,\ T*\ value,\ void*\ v,\ float\ v\_speed,\ const\ void*\ v\_min\ =\ NULL,\ const\ void*\ v\_max\ =\ NULL,\ const\ char*\ format\ =\ NULL,\ float\ power\ =\ 1.0f)}}
+\DoxyCodeLine{00076\ \textcolor{comment}{//\ \{}}
+\DoxyCodeLine{00077\ \textcolor{comment}{//\ \ \ const\ char\ *fmt\ =\ format;}}
+\DoxyCodeLine{00078\ \textcolor{comment}{//\ \ \ if\ (format\ ==\ nullptr)\ \{}}
+\DoxyCodeLine{00079\ \textcolor{comment}{//\ \ \ \ \ fmt\ =\ ImGuiDataTypeTraits<T>::format;}}
+\DoxyCodeLine{00080\ \textcolor{comment}{//\ \ \ \}}}
+\DoxyCodeLine{00081\ \textcolor{comment}{//\ \ \ return\ DragScalar(label,\ ImGuiDataTypeTraits<T>::value,\ value,\ \&min,\ \&max,\ fmt);}}
+\DoxyCodeLine{00082\ \textcolor{comment}{//\ \}}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{comment}{//\ template<typename\ T>}}
+\DoxyCodeLine{00085\ \textcolor{comment}{//\ inline\ bool\ InputScalar(const\ char\ *label,\ T*\ value,\ T\ min\ =\ 0,\ T\ max\ =\ 0,\ const\ char*\ format\ =\ nulltptr)}}
+\DoxyCodeLine{00086\ \textcolor{comment}{//\ \{}}
+\DoxyCodeLine{00087\ \textcolor{comment}{//\ \ \ const\ char\ *fmt\ =\ format;}}
+\DoxyCodeLine{00088\ \textcolor{comment}{//\ \ \ if\ (format\ ==\ nullptr)\ \{}}
+\DoxyCodeLine{00089\ \textcolor{comment}{//\ \ \ \ \ fmt\ =\ ImGuiDataTypeTraits<T>::format;}}
+\DoxyCodeLine{00090\ \textcolor{comment}{//\ \ \ \}}}
+\DoxyCodeLine{00091\ \textcolor{comment}{//\ \ \ return\ InputScalar(label,\ ImGuiDataTypeTraits<T>::value,\ value,\ \&min,\ \&max,\ fmt);}}
+\DoxyCodeLine{00092\ \textcolor{comment}{//\ \}}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00095\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceImGui_a0fb91683a93c61f90f7c448466266f3c}{SliderScalar}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *label,\ T*\ value,\ T\ min\ =\ 0,\ T\ max\ =\ 0,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ format\ =\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{00096\ \{}
+\DoxyCodeLine{00097\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *fmt\ =\ format;}
+\DoxyCodeLine{00098\ \ \ \textcolor{keywordflow}{if}\ (format\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00099\ \ \ \ \ fmt\ =\ ImGuiDataTypeTraits<T>::format;}
+\DoxyCodeLine{00100\ \ \ \}}
+\DoxyCodeLine{00101\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceImGui_a0fb91683a93c61f90f7c448466266f3c}{SliderScalar}}(label,\ ImGuiDataTypeTraits<T>::value,\ value,\ \&min,\ \&max,\ fmt);}
+\DoxyCodeLine{00102\ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Getter,\ \textcolor{keyword}{typename}\ Setter>}
+\DoxyCodeLine{00105\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceImGui_a01e8908c9ff42e3510168251a97f1d48}{Checkbox}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ label,\ Getter\ get,\ Setter\ set)}
+\DoxyCodeLine{00106\ \{}
+\DoxyCodeLine{00107\ \ \ \textcolor{keywordtype}{bool}\ value\ =\ get();}
+\DoxyCodeLine{00108\ \ \ \textcolor{keywordtype}{bool}\ ret\ =\ \mbox{\hyperlink{namespaceImGui_a01e8908c9ff42e3510168251a97f1d48}{ImGui::Checkbox}}(label,\ \&value);}
+\DoxyCodeLine{00109\ \ \ set(value);}
+\DoxyCodeLine{00110\ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{00111\ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \}\ \textcolor{comment}{//\ namespace\ ImGui}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ IGL\_OPENGL\_GLFW\_IMGUI\_IMGUIHELPERS\_H}}
+
+\end{DoxyCode}

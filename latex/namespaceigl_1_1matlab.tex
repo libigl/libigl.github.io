@@ -1,0 +1,478 @@
+\doxysection{igl\+::matlab Namespace Reference}
+\hypertarget{namespaceigl_1_1matlab}{}\label{namespaceigl_1_1matlab}\index{igl::matlab@{igl::matlab}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{Matlab\+Workspace}}
+\begin{DoxyCompactList}\small\item\em Class which contains data of a matlab workspace which can be written to a .mat file and loaded from matlab. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespaceigl_1_1matlab_ad8de12d0e083072ea5fa8b288e1b2d29}{mlinit}} (Engine \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}engine)
+\begin{DoxyCompactList}\small\item\em Init the MATLAB engine (no need to call it directly since it is automatically invoked by any other command) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceigl_1_1matlab_a3bc3526995e0e598bae21926487e09d3}{mlclose}} (Engine \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}engine)
+\begin{DoxyCompactList}\small\item\em Closes the MATLAB engine. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceigl_1_1matlab_accce7e18a910a90599ffead0b2015fa5}{mlsetmatrix}} (Engine \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}engine, std\+::string name, const Eigen\+::\+Matrix\+Xd \&M)
+\begin{DoxyCompactList}\small\item\em Send a matrix to MATLAB. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceigl_1_1matlab_aa2c6b6137f73bf46f3915a5a987cca2f}{mlsetmatrix}} (Engine \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}engine, std\+::string name, const Eigen\+::\+Matrix\+Xf \&M)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceigl_1_1matlab_a96dda8f66dd4e1169a15bba9e79bc102}{mlsetmatrix}} (Engine \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}engine, std\+::string name, const Eigen\+::\+Matrix\+Xi \&M)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceigl_1_1matlab_af59118c699bdfa4fe28e300b47dc0a65}{mlsetmatrix}} (Engine \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}mlengine, std\+::string name, const Eigen\+::\+Matrix$<$ unsigned int, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&M)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceigl_1_1matlab_aea7e91e9f0e0b3902a959f6825db0d5e}{mlsetmatrix}} (Engine \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}mlengine, std\+::string name, const Eigen\+::\+Sparse\+Matrix$<$ double $>$ \&M)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceigl_1_1matlab_adcc4db99ace58b7fffb180eff1decf00}{mlgetmatrix}} (Engine \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}engine, std\+::string name, Eigen\+::\+Matrix\+Xd \&M)
+\begin{DoxyCompactList}\small\item\em Receive a matrix from MATLAB. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceigl_1_1matlab_acc8c1efd21abe13cce9e39b54e713710}{mlgetmatrix}} (Engine \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}engine, std\+::string name, Eigen\+::\+Matrix\+Xf \&M)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceigl_1_1matlab_a5708375cc5739ee0964e9384834f884c}{mlgetmatrix}} (Engine \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}engine, std\+::string name, Eigen\+::\+Matrix\+Xi \&M)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceigl_1_1matlab_ab15c264936807a2bed9ea2cfb6757f9f}{mlgetmatrix}} (Engine \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}mlengine, std\+::string name, Eigen\+::\+Matrix$<$ unsigned int, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&M)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceigl_1_1matlab_a45bb421821eac8eb06d80e3928db4090}{mlsetscalar}} (Engine \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}engine, std\+::string name, double s)
+\begin{DoxyCompactList}\small\item\em Send a single scalar to MATLAB. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespaceigl_1_1matlab_ac7d09e8c36882397f95586e8edf90cd1}{mlgetscalar}} (Engine \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}engine, std\+::string name)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{namespaceigl_1_1matlab_a6bbdb47b2f9b9618ae09a05588d0e29a}{mleval}} (Engine \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}engine, std\+::string code)
+\begin{DoxyCompactList}\small\item\em Execute arbitrary MATLAB code and return the MATLAB output. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceigl_1_1matlab_a9eeb17adfeadfcb6667e7a1dcc4ef8c9}{mex\+Err\+Msg\+Txt}} (bool test, const char \texorpdfstring{$\ast$}{*}message)
+\begin{DoxyCompactList}\small\item\em Wrapper for mex\+Err\+Msg\+Txt that only calls error if test fails. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1matlab_a2994596adf348c36cfe622aa873077bf}{parse\+\_\+rhs\+\_\+double}} (const mx\+Array \texorpdfstring{$\ast$}{*}prhs\mbox{[}$\,$\mbox{]}, Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V)
+\begin{DoxyCompactList}\small\item\em Reads in a matrix as a double. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename VType $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1matlab_ad92d1439fbfc172908c34081788444be}{parse\+\_\+rhs}} (const mx\+Array \texorpdfstring{$\ast$}{*}prhs\mbox{[}$\,$\mbox{]}, Eigen\+::\+Sparse\+Matrix$<$ VType $>$ \&M)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1matlab_aec9d0ec6f857020be5b865172f337f00}{parse\+\_\+rhs\+\_\+index}} (const mx\+Array \texorpdfstring{$\ast$}{*}prhs\mbox{[}$\,$\mbox{]}, Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V)
+\begin{DoxyCompactList}\small\item\em Reads in a matrix and subtracts 1. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1matlab_a0bf3ba75facb8ae4bdcec4b4e47eb1be}{prepare\+\_\+lhs\+\_\+double}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, mx\+Array \texorpdfstring{$\ast$}{*}plhs\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Writes out a matrix as a double. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Vtype $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1matlab_add77f3265f3edbc1669864a60a8f8429}{prepare\+\_\+lhs\+\_\+double}} (const Eigen\+::\+Sparse\+Matrix$<$ Vtype $>$ \&V, mx\+Array \texorpdfstring{$\ast$}{*}plhs\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1matlab_a96c214a1e80cc0614d522e1e2b46a981}{prepare\+\_\+lhs\+\_\+logical}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, mx\+Array \texorpdfstring{$\ast$}{*}plhs\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1matlab_a0630a8f73fa5c504000681f7b1afd6d4}{prepare\+\_\+lhs\+\_\+index}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, mx\+Array \texorpdfstring{$\ast$}{*}plhs\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Writes out a matrix and adds 1. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Vtype $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1matlab_a43f58ed5ed0fc9fd23c93a2859bf1b8b}{prepare\+\_\+lhs\+\_\+double}} (const std\+::vector$<$ Vtype $>$ \&V, mx\+Array \texorpdfstring{$\ast$}{*}plhs\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceigl_1_1matlab_ac5587d49b8f6780bf280cd6fbe40c2f5}{requires\+\_\+arg}} (const int i, const int nrhs, const char \texorpdfstring{$\ast$}{*}name)
+\begin{DoxyCompactList}\small\item\em Simply throw an error if (i+1)\texorpdfstring{$<$}{<}rhs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceigl_1_1matlab_a2b6d3a0b3e16c932d2c3802a943eb38b}{validate\+\_\+arg\+\_\+scalar}} (const int i, const int nrhs, const mx\+Array \texorpdfstring{$\ast$}{*}prhs\mbox{[}$\,$\mbox{]}, const char \texorpdfstring{$\ast$}{*}name)
+\begin{DoxyCompactList}\small\item\em Throw an error if arg i+1 is not a scalar. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceigl_1_1matlab_a2e22fac3e80b0ebb796eafe389d4316b}{validate\+\_\+arg\+\_\+logical}} (const int i, const int nrhs, const mx\+Array \texorpdfstring{$\ast$}{*}prhs\mbox{[}$\,$\mbox{]}, const char \texorpdfstring{$\ast$}{*}name)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \textbackslash{}breif Throw an error if arg i+1 is not logical. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceigl_1_1matlab_a9ec7788adb7b844fa5a58af9c3b7a2fe}{validate\+\_\+arg\+\_\+char}} (const int i, const int nrhs, const mx\+Array \texorpdfstring{$\ast$}{*}prhs\mbox{[}$\,$\mbox{]}, const char \texorpdfstring{$\ast$}{*}name)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \textbackslash{}breif Throw an error if arg i+1 is not char. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceigl_1_1matlab_ab313ea670138a9a913cde6a93e2f0e03}{validate\+\_\+arg\+\_\+double}} (const int i, const int nrhs, const mx\+Array \texorpdfstring{$\ast$}{*}prhs\mbox{[}$\,$\mbox{]}, const char \texorpdfstring{$\ast$}{*}name)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \textbackslash{}breif Throw an error if arg i+1 is not double. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceigl_1_1matlab_a0acb1e775bb45210a8d13bb75470e7bb}{validate\+\_\+arg\+\_\+function\+\_\+handle}} (const int i, const int nrhs, const mx\+Array \texorpdfstring{$\ast$}{*}prhs\mbox{[}$\,$\mbox{]}, const char \texorpdfstring{$\ast$}{*}name)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \textbackslash{}breif Throw an error if arg i+1 is not a function handle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceigl_1_1matlab_ad8de12d0e083072ea5fa8b288e1b2d29}\label{namespaceigl_1_1matlab_ad8de12d0e083072ea5fa8b288e1b2d29} 
+\index{igl::matlab@{igl::matlab}!mlinit@{mlinit}}
+\index{mlinit@{mlinit}!igl::matlab@{igl::matlab}}
+\doxysubsubsection{\texorpdfstring{mlinit()}{mlinit()}}
+{\footnotesize\ttfamily void igl\+::matlab\+::mlinit (\begin{DoxyParamCaption}\item[{Engine \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{engine }\end{DoxyParamCaption})}
+
+
+
+Init the MATLAB engine (no need to call it directly since it is automatically invoked by any other command) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em engine} & pointer to the MATLAB engine \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespaceigl_1_1matlab_a3bc3526995e0e598bae21926487e09d3}\label{namespaceigl_1_1matlab_a3bc3526995e0e598bae21926487e09d3} 
+\index{igl::matlab@{igl::matlab}!mlclose@{mlclose}}
+\index{mlclose@{mlclose}!igl::matlab@{igl::matlab}}
+\doxysubsubsection{\texorpdfstring{mlclose()}{mlclose()}}
+{\footnotesize\ttfamily void igl\+::matlab\+::mlclose (\begin{DoxyParamCaption}\item[{Engine \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{engine }\end{DoxyParamCaption})}
+
+
+
+Closes the MATLAB engine. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em engine} & pointer to the MATLAB engine \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespaceigl_1_1matlab_accce7e18a910a90599ffead0b2015fa5}\label{namespaceigl_1_1matlab_accce7e18a910a90599ffead0b2015fa5} 
+\index{igl::matlab@{igl::matlab}!mlsetmatrix@{mlsetmatrix}}
+\index{mlsetmatrix@{mlsetmatrix}!igl::matlab@{igl::matlab}}
+\doxysubsubsection{\texorpdfstring{mlsetmatrix()}{mlsetmatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily void igl\+::matlab\+::mlsetmatrix (\begin{DoxyParamCaption}\item[{Engine \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{engine,  }\item[{std\+::string}]{name,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{M }\end{DoxyParamCaption})}
+
+
+
+Send a matrix to MATLAB. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em engine} & pointer to the MATLAB engine \\
+\hline
+\mbox{\texttt{ in}}  & {\em name} & name of the variable in MATLAB \\
+\hline
+\mbox{\texttt{ in}}  & {\em M} & matrix to be sent \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespaceigl_1_1matlab_aa2c6b6137f73bf46f3915a5a987cca2f}\label{namespaceigl_1_1matlab_aa2c6b6137f73bf46f3915a5a987cca2f} 
+\index{igl::matlab@{igl::matlab}!mlsetmatrix@{mlsetmatrix}}
+\index{mlsetmatrix@{mlsetmatrix}!igl::matlab@{igl::matlab}}
+\doxysubsubsection{\texorpdfstring{mlsetmatrix()}{mlsetmatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily void igl\+::matlab\+::mlsetmatrix (\begin{DoxyParamCaption}\item[{Engine \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{engine,  }\item[{std\+::string}]{name,  }\item[{const Eigen\+::\+Matrix\+Xf \&}]{M }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{namespaceigl_1_1matlab_a96dda8f66dd4e1169a15bba9e79bc102}\label{namespaceigl_1_1matlab_a96dda8f66dd4e1169a15bba9e79bc102} 
+\index{igl::matlab@{igl::matlab}!mlsetmatrix@{mlsetmatrix}}
+\index{mlsetmatrix@{mlsetmatrix}!igl::matlab@{igl::matlab}}
+\doxysubsubsection{\texorpdfstring{mlsetmatrix()}{mlsetmatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily void igl\+::matlab\+::mlsetmatrix (\begin{DoxyParamCaption}\item[{Engine \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{engine,  }\item[{std\+::string}]{name,  }\item[{const Eigen\+::\+Matrix\+Xi \&}]{M }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{namespaceigl_1_1matlab_af59118c699bdfa4fe28e300b47dc0a65}\label{namespaceigl_1_1matlab_af59118c699bdfa4fe28e300b47dc0a65} 
+\index{igl::matlab@{igl::matlab}!mlsetmatrix@{mlsetmatrix}}
+\index{mlsetmatrix@{mlsetmatrix}!igl::matlab@{igl::matlab}}
+\doxysubsubsection{\texorpdfstring{mlsetmatrix()}{mlsetmatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily void igl\+::matlab\+::mlsetmatrix (\begin{DoxyParamCaption}\item[{Engine \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{mlengine,  }\item[{std\+::string}]{name,  }\item[{const Eigen\+::\+Matrix$<$ unsigned int, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{M }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{namespaceigl_1_1matlab_aea7e91e9f0e0b3902a959f6825db0d5e}\label{namespaceigl_1_1matlab_aea7e91e9f0e0b3902a959f6825db0d5e} 
+\index{igl::matlab@{igl::matlab}!mlsetmatrix@{mlsetmatrix}}
+\index{mlsetmatrix@{mlsetmatrix}!igl::matlab@{igl::matlab}}
+\doxysubsubsection{\texorpdfstring{mlsetmatrix()}{mlsetmatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily void igl\+::matlab\+::mlsetmatrix (\begin{DoxyParamCaption}\item[{Engine \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{mlengine,  }\item[{std\+::string}]{name,  }\item[{const Eigen\+::\+Sparse\+Matrix$<$ double $>$ \&}]{M }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{namespaceigl_1_1matlab_adcc4db99ace58b7fffb180eff1decf00}\label{namespaceigl_1_1matlab_adcc4db99ace58b7fffb180eff1decf00} 
+\index{igl::matlab@{igl::matlab}!mlgetmatrix@{mlgetmatrix}}
+\index{mlgetmatrix@{mlgetmatrix}!igl::matlab@{igl::matlab}}
+\doxysubsubsection{\texorpdfstring{mlgetmatrix()}{mlgetmatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void igl\+::matlab\+::mlgetmatrix (\begin{DoxyParamCaption}\item[{Engine \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{engine,  }\item[{std\+::string}]{name,  }\item[{Eigen\+::\+Matrix\+Xd \&}]{M }\end{DoxyParamCaption})}
+
+
+
+Receive a matrix from MATLAB. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em engine} & pointer to the MATLAB engine \\
+\hline
+\mbox{\texttt{ in}}  & {\em name} & name of the variable in MATLAB \\
+\hline
+\mbox{\texttt{ out}}  & {\em M} & matrix received \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespaceigl_1_1matlab_acc8c1efd21abe13cce9e39b54e713710}\label{namespaceigl_1_1matlab_acc8c1efd21abe13cce9e39b54e713710} 
+\index{igl::matlab@{igl::matlab}!mlgetmatrix@{mlgetmatrix}}
+\index{mlgetmatrix@{mlgetmatrix}!igl::matlab@{igl::matlab}}
+\doxysubsubsection{\texorpdfstring{mlgetmatrix()}{mlgetmatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void igl\+::matlab\+::mlgetmatrix (\begin{DoxyParamCaption}\item[{Engine \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{engine,  }\item[{std\+::string}]{name,  }\item[{Eigen\+::\+Matrix\+Xf \&}]{M }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{namespaceigl_1_1matlab_a5708375cc5739ee0964e9384834f884c}\label{namespaceigl_1_1matlab_a5708375cc5739ee0964e9384834f884c} 
+\index{igl::matlab@{igl::matlab}!mlgetmatrix@{mlgetmatrix}}
+\index{mlgetmatrix@{mlgetmatrix}!igl::matlab@{igl::matlab}}
+\doxysubsubsection{\texorpdfstring{mlgetmatrix()}{mlgetmatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void igl\+::matlab\+::mlgetmatrix (\begin{DoxyParamCaption}\item[{Engine \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{engine,  }\item[{std\+::string}]{name,  }\item[{Eigen\+::\+Matrix\+Xi \&}]{M }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{namespaceigl_1_1matlab_ab15c264936807a2bed9ea2cfb6757f9f}\label{namespaceigl_1_1matlab_ab15c264936807a2bed9ea2cfb6757f9f} 
+\index{igl::matlab@{igl::matlab}!mlgetmatrix@{mlgetmatrix}}
+\index{mlgetmatrix@{mlgetmatrix}!igl::matlab@{igl::matlab}}
+\doxysubsubsection{\texorpdfstring{mlgetmatrix()}{mlgetmatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void igl\+::matlab\+::mlgetmatrix (\begin{DoxyParamCaption}\item[{Engine \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{mlengine,  }\item[{std\+::string}]{name,  }\item[{Eigen\+::\+Matrix$<$ unsigned int, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{M }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{namespaceigl_1_1matlab_a45bb421821eac8eb06d80e3928db4090}\label{namespaceigl_1_1matlab_a45bb421821eac8eb06d80e3928db4090} 
+\index{igl::matlab@{igl::matlab}!mlsetscalar@{mlsetscalar}}
+\index{mlsetscalar@{mlsetscalar}!igl::matlab@{igl::matlab}}
+\doxysubsubsection{\texorpdfstring{mlsetscalar()}{mlsetscalar()}}
+{\footnotesize\ttfamily void igl\+::matlab\+::mlsetscalar (\begin{DoxyParamCaption}\item[{Engine \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{engine,  }\item[{std\+::string}]{name,  }\item[{double}]{s }\end{DoxyParamCaption})}
+
+
+
+Send a single scalar to MATLAB. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em engine} & pointer to the MATLAB engine \\
+\hline
+\mbox{\texttt{ in}}  & {\em name} & name of the variable in MATLAB \\
+\hline
+\mbox{\texttt{ in}}  & {\em M} & value to be sent \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespaceigl_1_1matlab_ac7d09e8c36882397f95586e8edf90cd1}\label{namespaceigl_1_1matlab_ac7d09e8c36882397f95586e8edf90cd1} 
+\index{igl::matlab@{igl::matlab}!mlgetscalar@{mlgetscalar}}
+\index{mlgetscalar@{mlgetscalar}!igl::matlab@{igl::matlab}}
+\doxysubsubsection{\texorpdfstring{mlgetscalar()}{mlgetscalar()}}
+{\footnotesize\ttfamily double igl\+::matlab\+::mlgetscalar (\begin{DoxyParamCaption}\item[{Engine \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{engine,  }\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{namespaceigl_1_1matlab_a6bbdb47b2f9b9618ae09a05588d0e29a}\label{namespaceigl_1_1matlab_a6bbdb47b2f9b9618ae09a05588d0e29a} 
+\index{igl::matlab@{igl::matlab}!mleval@{mleval}}
+\index{mleval@{mleval}!igl::matlab@{igl::matlab}}
+\doxysubsubsection{\texorpdfstring{mleval()}{mleval()}}
+{\footnotesize\ttfamily std\+::string igl\+::matlab\+::mleval (\begin{DoxyParamCaption}\item[{Engine \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{engine,  }\item[{std\+::string}]{code }\end{DoxyParamCaption})}
+
+
+
+Execute arbitrary MATLAB code and return the MATLAB output. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em engine} & pointer to the MATLAB engine \\
+\hline
+\mbox{\texttt{ in}}  & {\em code} & MATLAB code to be executed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+output of the MATLAB code 
+\end{DoxyReturn}
+\Hypertarget{namespaceigl_1_1matlab_a9eeb17adfeadfcb6667e7a1dcc4ef8c9}\label{namespaceigl_1_1matlab_a9eeb17adfeadfcb6667e7a1dcc4ef8c9} 
+\index{igl::matlab@{igl::matlab}!mexErrMsgTxt@{mexErrMsgTxt}}
+\index{mexErrMsgTxt@{mexErrMsgTxt}!igl::matlab@{igl::matlab}}
+\doxysubsubsection{\texorpdfstring{mexErrMsgTxt()}{mexErrMsgTxt()}}
+{\footnotesize\ttfamily void igl\+::matlab\+::mex\+Err\+Msg\+Txt (\begin{DoxyParamCaption}\item[{bool}]{test,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{message }\end{DoxyParamCaption})}
+
+
+
+Wrapper for mex\+Err\+Msg\+Txt that only calls error if test fails. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em test} & boolean expression to test \\
+\hline
+\mbox{\texttt{ in}}  & {\em message} & message to print if test fails \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespaceigl_1_1matlab_a2994596adf348c36cfe622aa873077bf}\label{namespaceigl_1_1matlab_a2994596adf348c36cfe622aa873077bf} 
+\index{igl::matlab@{igl::matlab}!parse\_rhs\_double@{parse\_rhs\_double}}
+\index{parse\_rhs\_double@{parse\_rhs\_double}!igl::matlab@{igl::matlab}}
+\doxysubsubsection{\texorpdfstring{parse\_rhs\_double()}{parse\_rhs\_double()}}
+{\footnotesize\ttfamily template$<$typename DerivedV $>$ \\
+void igl\+::matlab\+::parse\+\_\+rhs\+\_\+double (\begin{DoxyParamCaption}\item[{const mx\+Array \texorpdfstring{$\ast$}{*}}]{prhs\mbox{[}$\,$\mbox{]},  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&}]{V }\end{DoxyParamCaption})}
+
+
+
+Reads in a matrix as a double. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em prhs} & points to rhs argument \\
+\hline
+\mbox{\texttt{ out}}  & {\em V} & M by N matrix ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespaceigl_1_1matlab_ad92d1439fbfc172908c34081788444be}\label{namespaceigl_1_1matlab_ad92d1439fbfc172908c34081788444be} 
+\index{igl::matlab@{igl::matlab}!parse\_rhs@{parse\_rhs}}
+\index{parse\_rhs@{parse\_rhs}!igl::matlab@{igl::matlab}}
+\doxysubsubsection{\texorpdfstring{parse\_rhs()}{parse\_rhs()}}
+{\footnotesize\ttfamily template$<$typename VType $>$ \\
+void igl\+::matlab\+::parse\+\_\+rhs (\begin{DoxyParamCaption}\item[{const mx\+Array \texorpdfstring{$\ast$}{*}}]{prhs\mbox{[}$\,$\mbox{]},  }\item[{Eigen\+::\+Sparse\+Matrix$<$ VType $>$ \&}]{M }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{namespaceigl_1_1matlab_aec9d0ec6f857020be5b865172f337f00}\label{namespaceigl_1_1matlab_aec9d0ec6f857020be5b865172f337f00} 
+\index{igl::matlab@{igl::matlab}!parse\_rhs\_index@{parse\_rhs\_index}}
+\index{parse\_rhs\_index@{parse\_rhs\_index}!igl::matlab@{igl::matlab}}
+\doxysubsubsection{\texorpdfstring{parse\_rhs\_index()}{parse\_rhs\_index()}}
+{\footnotesize\ttfamily template$<$typename DerivedV $>$ \\
+void igl\+::matlab\+::parse\+\_\+rhs\+\_\+index (\begin{DoxyParamCaption}\item[{const mx\+Array \texorpdfstring{$\ast$}{*}}]{prhs\mbox{[}$\,$\mbox{]},  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&}]{V }\end{DoxyParamCaption})}
+
+
+
+Reads in a matrix and subtracts 1. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em prhs} & points to rhs argument \\
+\hline
+\mbox{\texttt{ out}}  & {\em V} & M by N matrix ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespaceigl_1_1matlab_a0bf3ba75facb8ae4bdcec4b4e47eb1be}\label{namespaceigl_1_1matlab_a0bf3ba75facb8ae4bdcec4b4e47eb1be} 
+\index{igl::matlab@{igl::matlab}!prepare\_lhs\_double@{prepare\_lhs\_double}}
+\index{prepare\_lhs\_double@{prepare\_lhs\_double}!igl::matlab@{igl::matlab}}
+\doxysubsubsection{\texorpdfstring{prepare\_lhs\_double()}{prepare\_lhs\_double()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename DerivedV $>$ \\
+void igl\+::matlab\+::prepare\+\_\+lhs\+\_\+double (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{mx\+Array \texorpdfstring{$\ast$}{*}}]{plhs\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Writes out a matrix as a double. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em V} & M by N matrix \\
+\hline
+\mbox{\texttt{ out}}  & {\em plhs} & points to lhs argument \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespaceigl_1_1matlab_add77f3265f3edbc1669864a60a8f8429}\label{namespaceigl_1_1matlab_add77f3265f3edbc1669864a60a8f8429} 
+\index{igl::matlab@{igl::matlab}!prepare\_lhs\_double@{prepare\_lhs\_double}}
+\index{prepare\_lhs\_double@{prepare\_lhs\_double}!igl::matlab@{igl::matlab}}
+\doxysubsubsection{\texorpdfstring{prepare\_lhs\_double()}{prepare\_lhs\_double()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename Vtype $>$ \\
+void igl\+::matlab\+::prepare\+\_\+lhs\+\_\+double (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Sparse\+Matrix$<$ Vtype $>$ \&}]{V,  }\item[{mx\+Array \texorpdfstring{$\ast$}{*}}]{plhs\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{namespaceigl_1_1matlab_a96c214a1e80cc0614d522e1e2b46a981}\label{namespaceigl_1_1matlab_a96c214a1e80cc0614d522e1e2b46a981} 
+\index{igl::matlab@{igl::matlab}!prepare\_lhs\_logical@{prepare\_lhs\_logical}}
+\index{prepare\_lhs\_logical@{prepare\_lhs\_logical}!igl::matlab@{igl::matlab}}
+\doxysubsubsection{\texorpdfstring{prepare\_lhs\_logical()}{prepare\_lhs\_logical()}}
+{\footnotesize\ttfamily template$<$typename DerivedV $>$ \\
+void igl\+::matlab\+::prepare\+\_\+lhs\+\_\+logical (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{mx\+Array \texorpdfstring{$\ast$}{*}}]{plhs\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+Casts to logical \Hypertarget{namespaceigl_1_1matlab_a0630a8f73fa5c504000681f7b1afd6d4}\label{namespaceigl_1_1matlab_a0630a8f73fa5c504000681f7b1afd6d4} 
+\index{igl::matlab@{igl::matlab}!prepare\_lhs\_index@{prepare\_lhs\_index}}
+\index{prepare\_lhs\_index@{prepare\_lhs\_index}!igl::matlab@{igl::matlab}}
+\doxysubsubsection{\texorpdfstring{prepare\_lhs\_index()}{prepare\_lhs\_index()}}
+{\footnotesize\ttfamily template$<$typename DerivedV $>$ \\
+void igl\+::matlab\+::prepare\+\_\+lhs\+\_\+index (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{mx\+Array \texorpdfstring{$\ast$}{*}}]{plhs\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Writes out a matrix and adds 1. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em V} & M by N matrix \\
+\hline
+\mbox{\texttt{ out}}  & {\em plhs} & points to lhs argument \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespaceigl_1_1matlab_a43f58ed5ed0fc9fd23c93a2859bf1b8b}\label{namespaceigl_1_1matlab_a43f58ed5ed0fc9fd23c93a2859bf1b8b} 
+\index{igl::matlab@{igl::matlab}!prepare\_lhs\_double@{prepare\_lhs\_double}}
+\index{prepare\_lhs\_double@{prepare\_lhs\_double}!igl::matlab@{igl::matlab}}
+\doxysubsubsection{\texorpdfstring{prepare\_lhs\_double()}{prepare\_lhs\_double()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename Vtype $>$ \\
+void igl\+::matlab\+::prepare\+\_\+lhs\+\_\+double (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Vtype $>$ \&}]{V,  }\item[{mx\+Array \texorpdfstring{$\ast$}{*}}]{plhs\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+Vector of matrices -\/\texorpdfstring{$>$}{>} cell array of matrices 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em V} & vector of M by N matrices \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespaceigl_1_1matlab_ac5587d49b8f6780bf280cd6fbe40c2f5}\label{namespaceigl_1_1matlab_ac5587d49b8f6780bf280cd6fbe40c2f5} 
+\index{igl::matlab@{igl::matlab}!requires\_arg@{requires\_arg}}
+\index{requires\_arg@{requires\_arg}!igl::matlab@{igl::matlab}}
+\doxysubsubsection{\texorpdfstring{requires\_arg()}{requires\_arg()}}
+{\footnotesize\ttfamily void igl\+::matlab\+::requires\+\_\+arg (\begin{DoxyParamCaption}\item[{const int}]{i,  }\item[{const int}]{nrhs,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{name }\end{DoxyParamCaption})}
+
+
+
+Simply throw an error if (i+1)\texorpdfstring{$<$}{<}rhs. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i} & index of current arg \\
+\hline
+\mbox{\texttt{ in}}  & {\em nrhs} & total number of args \\
+\hline
+\mbox{\texttt{ in}}  & {\em name} & of current arg \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespaceigl_1_1matlab_a2b6d3a0b3e16c932d2c3802a943eb38b}\label{namespaceigl_1_1matlab_a2b6d3a0b3e16c932d2c3802a943eb38b} 
+\index{igl::matlab@{igl::matlab}!validate\_arg\_scalar@{validate\_arg\_scalar}}
+\index{validate\_arg\_scalar@{validate\_arg\_scalar}!igl::matlab@{igl::matlab}}
+\doxysubsubsection{\texorpdfstring{validate\_arg\_scalar()}{validate\_arg\_scalar()}}
+{\footnotesize\ttfamily void igl\+::matlab\+::validate\+\_\+arg\+\_\+scalar (\begin{DoxyParamCaption}\item[{const int}]{i,  }\item[{const int}]{nrhs,  }\item[{const mx\+Array \texorpdfstring{$\ast$}{*}}]{prhs\mbox{[}$\,$\mbox{]},  }\item[{const char \texorpdfstring{$\ast$}{*}}]{name }\end{DoxyParamCaption})}
+
+
+
+Throw an error if arg i+1 is not a scalar. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i} & index of current argument \\
+\hline
+\mbox{\texttt{ in}}  & {\em nrhs} & total number of arguments \\
+\hline
+\mbox{\texttt{ in}}  & {\em prhs} & pointer to arguments array \\
+\hline
+\mbox{\texttt{ in}}  & {\em name} & name of current argument \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespaceigl_1_1matlab_a2e22fac3e80b0ebb796eafe389d4316b}\label{namespaceigl_1_1matlab_a2e22fac3e80b0ebb796eafe389d4316b} 
+\index{igl::matlab@{igl::matlab}!validate\_arg\_logical@{validate\_arg\_logical}}
+\index{validate\_arg\_logical@{validate\_arg\_logical}!igl::matlab@{igl::matlab}}
+\doxysubsubsection{\texorpdfstring{validate\_arg\_logical()}{validate\_arg\_logical()}}
+{\footnotesize\ttfamily void igl\+::matlab\+::validate\+\_\+arg\+\_\+logical (\begin{DoxyParamCaption}\item[{const int}]{i,  }\item[{const int}]{nrhs,  }\item[{const mx\+Array \texorpdfstring{$\ast$}{*}}]{prhs\mbox{[}$\,$\mbox{]},  }\item[{const char \texorpdfstring{$\ast$}{*}}]{name }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \textbackslash{}breif Throw an error if arg i+1 is not logical. 
+
+\Hypertarget{namespaceigl_1_1matlab_a9ec7788adb7b844fa5a58af9c3b7a2fe}\label{namespaceigl_1_1matlab_a9ec7788adb7b844fa5a58af9c3b7a2fe} 
+\index{igl::matlab@{igl::matlab}!validate\_arg\_char@{validate\_arg\_char}}
+\index{validate\_arg\_char@{validate\_arg\_char}!igl::matlab@{igl::matlab}}
+\doxysubsubsection{\texorpdfstring{validate\_arg\_char()}{validate\_arg\_char()}}
+{\footnotesize\ttfamily void igl\+::matlab\+::validate\+\_\+arg\+\_\+char (\begin{DoxyParamCaption}\item[{const int}]{i,  }\item[{const int}]{nrhs,  }\item[{const mx\+Array \texorpdfstring{$\ast$}{*}}]{prhs\mbox{[}$\,$\mbox{]},  }\item[{const char \texorpdfstring{$\ast$}{*}}]{name }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \textbackslash{}breif Throw an error if arg i+1 is not char. 
+
+\Hypertarget{namespaceigl_1_1matlab_ab313ea670138a9a913cde6a93e2f0e03}\label{namespaceigl_1_1matlab_ab313ea670138a9a913cde6a93e2f0e03} 
+\index{igl::matlab@{igl::matlab}!validate\_arg\_double@{validate\_arg\_double}}
+\index{validate\_arg\_double@{validate\_arg\_double}!igl::matlab@{igl::matlab}}
+\doxysubsubsection{\texorpdfstring{validate\_arg\_double()}{validate\_arg\_double()}}
+{\footnotesize\ttfamily void igl\+::matlab\+::validate\+\_\+arg\+\_\+double (\begin{DoxyParamCaption}\item[{const int}]{i,  }\item[{const int}]{nrhs,  }\item[{const mx\+Array \texorpdfstring{$\ast$}{*}}]{prhs\mbox{[}$\,$\mbox{]},  }\item[{const char \texorpdfstring{$\ast$}{*}}]{name }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \textbackslash{}breif Throw an error if arg i+1 is not double. 
+
+\Hypertarget{namespaceigl_1_1matlab_a0acb1e775bb45210a8d13bb75470e7bb}\label{namespaceigl_1_1matlab_a0acb1e775bb45210a8d13bb75470e7bb} 
+\index{igl::matlab@{igl::matlab}!validate\_arg\_function\_handle@{validate\_arg\_function\_handle}}
+\index{validate\_arg\_function\_handle@{validate\_arg\_function\_handle}!igl::matlab@{igl::matlab}}
+\doxysubsubsection{\texorpdfstring{validate\_arg\_function\_handle()}{validate\_arg\_function\_handle()}}
+{\footnotesize\ttfamily void igl\+::matlab\+::validate\+\_\+arg\+\_\+function\+\_\+handle (\begin{DoxyParamCaption}\item[{const int}]{i,  }\item[{const int}]{nrhs,  }\item[{const mx\+Array \texorpdfstring{$\ast$}{*}}]{prhs\mbox{[}$\,$\mbox{]},  }\item[{const char \texorpdfstring{$\ast$}{*}}]{name }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \textbackslash{}breif Throw an error if arg i+1 is not a function handle. 
+

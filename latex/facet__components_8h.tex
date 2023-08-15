@@ -1,0 +1,18 @@
+\doxysection{include/igl/facet\+\_\+components.h File Reference}
+\hypertarget{facet__components_8h}{}\label{facet__components_8h}\index{include/igl/facet\_components.h@{include/igl/facet\_components.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \"{}facet\+\_\+components.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedF , typename DerivedC $>$ }\\int \mbox{\hyperlink{namespaceigl_a7823f08d518cb237ee3cb47bb03cdb6d}{igl\+::facet\+\_\+components}} (const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ DerivedC $>$ \&C)
+\begin{DoxyCompactList}\small\item\em Compute connected components of facets based on edge-\/edge adjacency. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TTIndex , typename DerivedC , typename Derivedcounts $>$ }\\void \mbox{\hyperlink{namespaceigl_a0320b3e4f5075ce62360f96080b57a92}{igl\+::facet\+\_\+components}} (const std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ TTIndex $>$ $>$ $>$ \&TT, Eigen\+::\+Plain\+Object\+Base$<$ DerivedC $>$ \&C, Eigen\+::\+Plain\+Object\+Base$<$ Derivedcounts $>$ \&counts)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}

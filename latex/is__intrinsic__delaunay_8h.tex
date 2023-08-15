@@ -1,0 +1,20 @@
+\doxysection{include/igl/is\+\_\+intrinsic\+\_\+delaunay.h File Reference}
+\hypertarget{is__intrinsic__delaunay_8h}{}\label{is__intrinsic__delaunay_8h}\index{include/igl/is\_intrinsic\_delaunay.h@{include/igl/is\_intrinsic\_delaunay.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \"{}is\+\_\+intrinsic\+\_\+delaunay.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Derivedl , typename DerivedF , typename DerivedD $>$ }\\void \mbox{\hyperlink{namespaceigl_a95a946e409259bd08727637f7fd15b74}{igl\+::is\+\_\+intrinsic\+\_\+delaunay}} (const Eigen\+::\+Matrix\+Base$<$ Derivedl $>$ \&l, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ DerivedD $>$ \&D)
+\begin{DoxyCompactList}\small\item\em Determine if each edge in the mesh (V,F) is Delaunay. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derivedl , typename DerivedF , typename u\+E2\+EType , typename DerivedD $>$ }\\void \mbox{\hyperlink{namespaceigl_ada6b3f9347053522b1fc5da210be1968}{igl\+::is\+\_\+intrinsic\+\_\+delaunay}} (const Eigen\+::\+Matrix\+Base$<$ Derivedl $>$ \&l, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const std\+::vector$<$ std\+::vector$<$ u\+E2\+EType $>$ $>$ \&u\+E2E, Eigen\+::\+Plain\+Object\+Base$<$ DerivedD $>$ \&D)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derivedl , typename u\+E2\+EType , typename Index $>$ }\\bool \mbox{\hyperlink{namespaceigl_ae63e0780a4c5344cbafb31919f77bd0a}{igl\+::is\+\_\+intrinsic\+\_\+delaunay}} (const Eigen\+::\+Matrix\+Base$<$ Derivedl $>$ \&l, const std\+::vector$<$ std\+::vector$<$ u\+E2\+EType $>$ $>$ \&u\+E2E, const Index num\+\_\+faces, const Index uei)
+\begin{DoxyCompactList}\small\item\em Determine whether a single edge is Delaunay using a provided (extrinsic) incirle test. \end{DoxyCompactList}\end{DoxyCompactItemize}

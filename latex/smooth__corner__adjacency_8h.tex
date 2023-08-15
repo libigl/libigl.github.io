@@ -1,0 +1,17 @@
+\doxysection{include/igl/smooth\+\_\+corner\+\_\+adjacency.h File Reference}
+\hypertarget{smooth__corner__adjacency_8h}{}\label{smooth__corner__adjacency_8h}\index{include/igl/smooth\_corner\_adjacency.h@{include/igl/smooth\_corner\_adjacency.h}}
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include \"{}smooth\+\_\+corner\+\_\+adjacency.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespaceigl_aef5e220e449787733ece4abbc94f419a}{igl\+::smooth\+\_\+corner\+\_\+adjacency}} (const Eigen\+::\+Matrix\+Xd \&V, const Eigen\+::\+Matrix\+Xi \&F, const double corner\+\_\+threshold\+\_\+radians, Eigen\+::\+Vector\+Xi \&CI, Eigen\+::\+Vector\+Xi \&CC)
+\begin{DoxyCompactList}\small\item\em Determine the corner-\/to-\/face adjacency relationship that can be used for computing crease-\/aware per-\/corner normals. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceigl_a6eedd51ba703a9667e0bc21d6de863d8}{igl\+::smooth\+\_\+corner\+\_\+adjacency}} (const Eigen\+::\+Matrix\+Xi \&FV, const Eigen\+::\+Matrix\+Xi \&FN, Eigen\+::\+Vector\+Xi \&CI, Eigen\+::\+Vector\+Xi \&CC)
+\begin{DoxyCompactList}\small\item\em Determine the effective corner-\/to-\/face adjacency relationship implied by a set of indexed vertex positions (FV) and normals (FV) (e.\+g., those read in from a .obj file). \end{DoxyCompactList}\end{DoxyCompactItemize}

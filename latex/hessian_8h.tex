@@ -1,0 +1,16 @@
+\doxysection{include/igl/hessian.h File Reference}
+\hypertarget{hessian_8h}{}\label{hessian_8h}\index{include/igl/hessian.h@{include/igl/hessian.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include \"{}hessian.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename Scalar $>$ }\\void \mbox{\hyperlink{namespaceigl_a8e6dbdaae94657379ac8491942082d20}{igl\+::hessian}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Sparse\+Matrix$<$ Scalar $>$ \&H)
+\begin{DoxyCompactList}\small\item\em Constructs the finite element Hessian matrix as described in \href{https://arxiv.org/abs/1707.04348}{\texttt{ https\+://arxiv.\+org/abs/1707.\+04348}}, Natural Boundary Conditions for Smoothing in Geometry Processing (Oded Stein, Eitan Grinspun, Max Wardetzky, Alec Jacobson) The interior vertices are NOT set to zero yet. \end{DoxyCompactList}\end{DoxyCompactItemize}

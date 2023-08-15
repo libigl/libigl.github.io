@@ -1,0 +1,20 @@
+\doxysection{include/igl/vertex\+\_\+components.h File Reference}
+\hypertarget{vertex__components_8h}{}\label{vertex__components_8h}\index{include/igl/vertex\_components.h@{include/igl/vertex\_components.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include \"{}vertex\+\_\+components.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedA , typename DerivedC , typename Derivedcounts $>$ }\\void \mbox{\hyperlink{namespaceigl_ab8159118b103ccc116d788259917acdb}{igl\+::vertex\+\_\+components}} (const Eigen\+::\+Sparse\+Compressed\+Base$<$ DerivedA $>$ \&A, Eigen\+::\+Plain\+Object\+Base$<$ DerivedC $>$ \&C, Eigen\+::\+Plain\+Object\+Base$<$ Derivedcounts $>$ \&counts)
+\begin{DoxyCompactList}\small\item\em Compute connected components of a graph represented by an adjacency matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedA , typename DerivedC $>$ }\\void \mbox{\hyperlink{namespaceigl_a669ae9814690f3c0f466cfae73890263}{igl\+::vertex\+\_\+components}} (const Eigen\+::\+Sparse\+Compressed\+Base$<$ DerivedA $>$ \&A, Eigen\+::\+Plain\+Object\+Base$<$ DerivedC $>$ \&C)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedF , typename DerivedC $>$ }\\void \mbox{\hyperlink{namespaceigl_a1cfebfe524e61fecdadf7d789ddb9ec9}{igl\+::vertex\+\_\+components}} (const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ DerivedC $>$ \&C)
+\begin{DoxyCompactList}\small\item\em Compute the connected components for a mesh given its faces. \end{DoxyCompactList}\end{DoxyCompactItemize}

@@ -1,0 +1,36 @@
+\doxysection{include/igl/find.h File Reference}
+\hypertarget{find_8h}{}\label{find_8h}\index{include/igl/find.h@{include/igl/find.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include \"{}find.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{find_8h_aa93624b0b2836d2510e8c92ae951d817}{EIGEN\+\_\+\+YES\+\_\+\+I\+\_\+\+KNOW\+\_\+\+SPARSE\+\_\+\+MODULE\+\_\+\+IS\+\_\+\+NOT\+\_\+\+STABLE\+\_\+\+YET}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T , typename DerivedI , typename DerivedJ , typename DerivedV $>$ }\\void \mbox{\hyperlink{namespaceigl_ad0ba264f987871035fb7d12de96fccab}{igl\+::find}} (const Eigen\+::\+Sparse\+Matrix$<$ T $>$ \&X, Eigen\+::\+Dense\+Base$<$ DerivedI $>$ \&I, Eigen\+::\+Dense\+Base$<$ DerivedJ $>$ \&J, Eigen\+::\+Dense\+Base$<$ DerivedV $>$ \&V)
+\begin{DoxyCompactList}\small\item\em Find the non-\/zero entries and there respective indices in a sparse matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedX , typename DerivedI , typename DerivedJ , typename DerivedV $>$ }\\void \mbox{\hyperlink{namespaceigl_a2f6c699f94449b23813f0d80df36db8e}{igl\+::find}} (const Eigen\+::\+Dense\+Base$<$ DerivedX $>$ \&X, Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&I, Eigen\+::\+Plain\+Object\+Base$<$ DerivedJ $>$ \&J, Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedX , typename DerivedI $>$ }\\void \mbox{\hyperlink{namespaceigl_a1c874cf1ad179744026898ded3da4ea7}{igl\+::find}} (const Eigen\+::\+Dense\+Base$<$ DerivedX $>$ \&X, Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&I)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespaceigl_ab6758ca13380f9bd099c860aba705d45}{igl\+::find}} (const Eigen\+::\+Sparse\+Vector$<$ T $>$ \&X, Eigen\+::\+Matrix$<$ int, Eigen\+::\+Dynamic, 1 $>$ \&I, Eigen\+::\+Matrix$<$ T, Eigen\+::\+Dynamic, 1 $>$ \&V)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{find_8h_aa93624b0b2836d2510e8c92ae951d817}\label{find_8h_aa93624b0b2836d2510e8c92ae951d817} 
+\index{find.h@{find.h}!EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET@{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}}
+\index{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET@{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}!find.h@{find.h}}
+\doxysubsubsection{\texorpdfstring{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}}
+{\footnotesize\ttfamily \#define EIGEN\+\_\+\+YES\+\_\+\+I\+\_\+\+KNOW\+\_\+\+SPARSE\+\_\+\+MODULE\+\_\+\+IS\+\_\+\+NOT\+\_\+\+STABLE\+\_\+\+YET}
+

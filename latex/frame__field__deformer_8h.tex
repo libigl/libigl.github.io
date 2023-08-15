@@ -1,0 +1,15 @@
+\doxysection{include/igl/frame\+\_\+field\+\_\+deformer.h File Reference}
+\hypertarget{frame__field__deformer_8h}{}\label{frame__field__deformer_8h}\index{include/igl/frame\_field\_deformer.h@{include/igl/frame\_field\_deformer.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include \"{}frame\+\_\+field\+\_\+deformer.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespaceigl_a2da75428de04db095ad2b8c01861d9e7}{igl\+::frame\+\_\+field\+\_\+deformer}} (const Eigen\+::\+Matrix\+Xd \&V, const Eigen\+::\+Matrix\+Xi \&F, const Eigen\+::\+Matrix\+Xd \&FF1, const Eigen\+::\+Matrix\+Xd \&FF2, Eigen\+::\+Matrix\+Xd \&V\+\_\+d, Eigen\+::\+Matrix\+Xd \&FF1\+\_\+d, Eigen\+::\+Matrix\+Xd \&FF2\+\_\+d, const int iterations=50, const double lambda=0.\+1, const bool perturb\+\_\+initial\+\_\+guess=true)
+\begin{DoxyCompactList}\small\item\em Deform a mesh to transform the given per-\/face frame field to be as close as possible to a cross field, in the least square sense. \end{DoxyCompactList}\end{DoxyCompactItemize}

@@ -1,0 +1,19 @@
+\doxysection{include/igl/swept\+\_\+volume\+\_\+signed\+\_\+distance.h File Reference}
+\hypertarget{swept__volume__signed__distance_8h}{}\label{swept__volume__signed__distance_8h}\index{include/igl/swept\_volume\_signed\_distance.h@{include/igl/swept\_volume\_signed\_distance.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Geometry$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include \"{}swept\+\_\+volume\+\_\+signed\+\_\+distance.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespaceigl_a2df37d639d7915a6623d3dd0deecaf8a}{igl\+::swept\+\_\+volume\+\_\+signed\+\_\+distance}} (const Eigen\+::\+Matrix\+Xd \&V, const Eigen\+::\+Matrix\+Xi \&F, const std\+::function$<$ Eigen\+::\+Affine3d(const double t)$>$ \&transform, const size\+\_\+t \&steps, const Eigen\+::\+Matrix\+Xd \&GV, const Eigen\+::\+Row\+Vector3i \&res, const double h, const double isolevel, const Eigen\+::\+Vector\+Xd \&S0, Eigen\+::\+Vector\+Xd \&S)
+\begin{DoxyCompactList}\small\item\em Compute the signed distance to a sweep surface of a mesh under-\/going an arbitrary motion V(t) discretely sampled at {\ttfamily steps}-\/many moments in time at a grid. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceigl_a030deb66b915a2f498701588640ee3a4}{igl\+::swept\+\_\+volume\+\_\+signed\+\_\+distance}} (const Eigen\+::\+Matrix\+Xd \&V, const Eigen\+::\+Matrix\+Xi \&F, const std\+::function$<$ Eigen\+::\+Affine3d(const double t)$>$ \&transform, const size\+\_\+t \&steps, const Eigen\+::\+Matrix\+Xd \&GV, const Eigen\+::\+Row\+Vector3i \&res, const double h, const double isolevel, Eigen\+::\+Vector\+Xd \&S)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}

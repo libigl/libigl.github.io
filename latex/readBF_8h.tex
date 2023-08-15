@@ -1,0 +1,33 @@
+\doxysection{include/igl/read\+BF.h File Reference}
+\hypertarget{readBF_8h}{}\label{readBF_8h}\index{include/igl/readBF.h@{include/igl/readBF.h}}
+
+
+A .bf file contains a “bone forest”.  
+
+
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \"{}read\+BF.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Derived\+WI , typename DerivedP , typename DerivedO $>$ }\\bool \mbox{\hyperlink{namespaceigl_a4efbc110f683b253ef703142d1406f28}{igl\+::read\+BF}} (const std\+::string \&filename, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+WI $>$ \&WI, Eigen\+::\+Plain\+Object\+Base$<$ DerivedP $>$ \&P, Eigen\+::\+Plain\+Object\+Base$<$ DerivedO $>$ \&O)
+\begin{DoxyCompactList}\small\item\em Read a bones forest from a file, returns a list of bone roots. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derived\+WI , typename DerivedbfP , typename DerivedO , typename DerivedC , typename Derived\+BE , typename DerivedP $>$ }\\bool \mbox{\hyperlink{namespaceigl_a0ad78f74b0306e9a2775575579314170}{igl\+::read\+BF}} (const std\+::string \&filename, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+WI $>$ \&WI, Eigen\+::\+Plain\+Object\+Base$<$ DerivedbfP $>$ \&bfP, Eigen\+::\+Plain\+Object\+Base$<$ DerivedO $>$ \&O, Eigen\+::\+Plain\+Object\+Base$<$ DerivedC $>$ \&C, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+BE $>$ \&BE, Eigen\+::\+Plain\+Object\+Base$<$ DerivedP $>$ \&P)
+\begin{DoxyCompactList}\small\item\em Read bone forest into pure bone-\/skeleton format, expects only bones (no point handles), and that a root in the .bf \texorpdfstring{$<$}{<}---\texorpdfstring{$>$}{>} no weight attachment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A .bf file contains a “bone forest”. 
+
+Normally a skeleton for linear blend skinning is a “bone tree” with a single root. But this format may store multiple trees, hence a forest.
+
+Each line contains data about a vertex (joint) of the bone forest\+: \begin{DoxyVerb}[weight index] [parent index] [x] [y] [z] [undocument optional data]
+\end{DoxyVerb}
+ Indices begin with 0. The weight index is -\/1 if the bone does not have an associated weight. The parent index is -\/1 for root nodes. The x,y,z coordinates are offset vectors from this joint’s parent’s location (for roots, an offset from the origin). 

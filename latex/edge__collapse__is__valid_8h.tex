@@ -1,0 +1,18 @@
+\doxysection{include/igl/edge\+\_\+collapse\+\_\+is\+\_\+valid.h File Reference}
+\hypertarget{edge__collapse__is__valid_8h}{}\label{edge__collapse__is__valid_8h}\index{include/igl/edge\_collapse\_is\_valid.h@{include/igl/edge\_collapse\_is\_valid.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \"{}edge\+\_\+collapse\+\_\+is\+\_\+valid.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespaceigl_aa77cd5878fb81e389480d12080f8679c}{igl\+::edge\+\_\+collapse\+\_\+is\+\_\+valid}} (const int e, const Eigen\+::\+Matrix\+Xi \&F, const Eigen\+::\+Matrix\+Xi \&E, const Eigen\+::\+Vector\+Xi \&EMAP, const Eigen\+::\+Matrix\+Xi \&EF, const Eigen\+::\+Matrix\+Xi \&EI)
+\begin{DoxyCompactList}\small\item\em Tests whether collapsing exactly two faces and exactly 3 edges from E (e and one side of each face gets collapsed to the other) will result in a mesh with the same topology. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceigl_a4449e689db8a9360f41451ad4980b354}{igl\+::edge\+\_\+collapse\+\_\+is\+\_\+valid}} (std\+::vector$<$ int $>$ \&Nsv, std\+::vector$<$ int $>$ \&Ndv)
+\begin{DoxyCompactList}\small\item\em Tests whether collapsing exactly two faces and exactly 3 edges from E (e and one side of each face gets collapsed to the other) will result in a mesh with the same topology. \end{DoxyCompactList}\end{DoxyCompactItemize}

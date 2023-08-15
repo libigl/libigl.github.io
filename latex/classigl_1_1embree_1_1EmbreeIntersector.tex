@@ -1,0 +1,247 @@
+\doxysection{igl\+::embree\+::Embree\+Intersector Class Reference}
+\hypertarget{classigl_1_1embree_1_1EmbreeIntersector}{}\label{classigl_1_1embree_1_1EmbreeIntersector}\index{igl::embree::EmbreeIntersector@{igl::embree::EmbreeIntersector}}
+
+
+Simple class to wrap Embree\textquotesingle{}s ray tracing functionality.  
+
+
+
+
+{\ttfamily \#include $<$Embree\+Intersector.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Eigen\+::\+Matrix$<$ float, Eigen\+::\+Dynamic, 3 $>$ \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector_a8738232667aec7922199fb5f0c19a41c}{Point\+Matrix\+Type}}
+\item 
+typedef Eigen\+::\+Matrix$<$ int, Eigen\+::\+Dynamic, 3 $>$ \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector_af148a234bbb045e7d9d49417271c0442}{Face\+Matrix\+Type}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector_a425ee5dc0116cba94263a7ceab0878fd}{Embree\+Intersector}} ()
+\item 
+virtual \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector_ad262bb39ac26b004ad1d9f1b07e58915}{\texorpdfstring{$\sim$}{\string~}\+Embree\+Intersector}} ()
+\item 
+void \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector_ad8f02c7c596e601303bf1a72742de159}{init}} (const \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector_a8738232667aec7922199fb5f0c19a41c}{Point\+Matrix\+Type}} \&V, const \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector_af148a234bbb045e7d9d49417271c0442}{Face\+Matrix\+Type}} \&F, bool is\+Static=false)
+\begin{DoxyCompactList}\small\item\em Initialize with a given mesh. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector_acb7d3b621158907f00ba9a972699481f}{init}} (const std\+::vector$<$ const \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector_a8738232667aec7922199fb5f0c19a41c}{Point\+Matrix\+Type}} \texorpdfstring{$\ast$}{*} $>$ \&V, const std\+::vector$<$ const \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector_af148a234bbb045e7d9d49417271c0442}{Face\+Matrix\+Type}} \texorpdfstring{$\ast$}{*} $>$ \&F, const std\+::vector$<$ int $>$ \&masks, bool is\+Static=false)
+\begin{DoxyCompactList}\small\item\em Initialize with a given mesh. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector_a61c0079def921d5288cd1cef5d173761}{deinit}} ()
+\begin{DoxyCompactList}\small\item\em Deinitialize embree datasctructures for current mesh. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector_a674a92001c5fb384eaf2bbba80ec0fa6}{intersect\+Ray}} (const Eigen\+::\+Row\+Vector3f \&origin, const Eigen\+::\+Row\+Vector3f \&direction, \mbox{\hyperlink{structigl_1_1Hit}{Hit}} \&hit, float tnear=0, float tfar=std\+::numeric\+\_\+limits$<$ float $>$\+::infinity(), int mask=0x\+FFFFFFFF) const
+\begin{DoxyCompactList}\small\item\em Given a ray find the first hit. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector_a531899c6b568c8c4f194e5bf1db7517c}{intersect\+Beam}} (const Eigen\+::\+Row\+Vector3f \&origin, const Eigen\+::\+Row\+Vector3f \&direction, \mbox{\hyperlink{structigl_1_1Hit}{Hit}} \&hit, float tnear=0, float tfar=std\+::numeric\+\_\+limits$<$ float $>$\+::infinity(), int mask=0x\+FFFFFFFF, int geo\+Id=-\/1, bool closest\+Hit=true, unsigned int samples=4) const
+\begin{DoxyCompactList}\small\item\em Given a ray find the first hit This is a conservative hit test where multiple rays within a small radius will be tested and only the closesest hit is returned. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector_a8bbb5872dcbf9b27dcca0d715bc195c5}{intersect\+Ray}} (const Eigen\+::\+Row\+Vector3f \&origin, const Eigen\+::\+Row\+Vector3f \&direction, std\+::vector$<$ \mbox{\hyperlink{structigl_1_1Hit}{Hit}} $>$ \&hits, int \&num\+\_\+rays, float tnear=0, float tfar=std\+::numeric\+\_\+limits$<$ float $>$\+::infinity(), int mask=0x\+FFFFFFFF) const
+\begin{DoxyCompactList}\small\item\em Given a ray find all hits in order. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector_a121e6dfd3f8188558ad8031fae02b55a}{intersect\+Segment}} (const Eigen\+::\+Row\+Vector3f \&a, const Eigen\+::\+Row\+Vector3f \&ab, \mbox{\hyperlink{structigl_1_1Hit}{Hit}} \&hit, int mask=0x\+FFFFFFFF) const
+\begin{DoxyCompactList}\small\item\em Given a ray find the first hit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Simple class to wrap Embree\textquotesingle{}s ray tracing functionality. 
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{classigl_1_1embree_1_1EmbreeIntersector_a8738232667aec7922199fb5f0c19a41c}\label{classigl_1_1embree_1_1EmbreeIntersector_a8738232667aec7922199fb5f0c19a41c} 
+\index{igl::embree::EmbreeIntersector@{igl::embree::EmbreeIntersector}!PointMatrixType@{PointMatrixType}}
+\index{PointMatrixType@{PointMatrixType}!igl::embree::EmbreeIntersector@{igl::embree::EmbreeIntersector}}
+\doxysubsubsection{\texorpdfstring{PointMatrixType}{PointMatrixType}}
+{\footnotesize\ttfamily typedef Eigen\+::\+Matrix$<$float,Eigen\+::\+Dynamic,3$>$ \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector_a8738232667aec7922199fb5f0c19a41c}{igl\+::embree\+::\+Embree\+Intersector\+::\+Point\+Matrix\+Type}}}
+
+\Hypertarget{classigl_1_1embree_1_1EmbreeIntersector_af148a234bbb045e7d9d49417271c0442}\label{classigl_1_1embree_1_1EmbreeIntersector_af148a234bbb045e7d9d49417271c0442} 
+\index{igl::embree::EmbreeIntersector@{igl::embree::EmbreeIntersector}!FaceMatrixType@{FaceMatrixType}}
+\index{FaceMatrixType@{FaceMatrixType}!igl::embree::EmbreeIntersector@{igl::embree::EmbreeIntersector}}
+\doxysubsubsection{\texorpdfstring{FaceMatrixType}{FaceMatrixType}}
+{\footnotesize\ttfamily typedef Eigen\+::\+Matrix$<$int,Eigen\+::\+Dynamic,3$>$ \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector_af148a234bbb045e7d9d49417271c0442}{igl\+::embree\+::\+Embree\+Intersector\+::\+Face\+Matrix\+Type}}}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classigl_1_1embree_1_1EmbreeIntersector_a425ee5dc0116cba94263a7ceab0878fd}\label{classigl_1_1embree_1_1EmbreeIntersector_a425ee5dc0116cba94263a7ceab0878fd} 
+\index{igl::embree::EmbreeIntersector@{igl::embree::EmbreeIntersector}!EmbreeIntersector@{EmbreeIntersector}}
+\index{EmbreeIntersector@{EmbreeIntersector}!igl::embree::EmbreeIntersector@{igl::embree::EmbreeIntersector}}
+\doxysubsubsection{\texorpdfstring{EmbreeIntersector()}{EmbreeIntersector()}}
+{\footnotesize\ttfamily igl\+::embree\+::\+Embree\+Intersector\+::\+Embree\+Intersector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1embree_1_1EmbreeIntersector_ad262bb39ac26b004ad1d9f1b07e58915}\label{classigl_1_1embree_1_1EmbreeIntersector_ad262bb39ac26b004ad1d9f1b07e58915} 
+\index{igl::embree::EmbreeIntersector@{igl::embree::EmbreeIntersector}!````~EmbreeIntersector@{\texorpdfstring{$\sim$}{\string~}EmbreeIntersector}}
+\index{````~EmbreeIntersector@{\texorpdfstring{$\sim$}{\string~}EmbreeIntersector}!igl::embree::EmbreeIntersector@{igl::embree::EmbreeIntersector}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}EmbreeIntersector()}{\string~EmbreeIntersector()}}
+{\footnotesize\ttfamily virtual igl\+::embree\+::\+Embree\+Intersector\+::\texorpdfstring{$\sim$}{\string~}\+Embree\+Intersector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classigl_1_1embree_1_1EmbreeIntersector_ad8f02c7c596e601303bf1a72742de159}\label{classigl_1_1embree_1_1EmbreeIntersector_ad8f02c7c596e601303bf1a72742de159} 
+\index{igl::embree::EmbreeIntersector@{igl::embree::EmbreeIntersector}!init@{init}}
+\index{init@{init}!igl::embree::EmbreeIntersector@{igl::embree::EmbreeIntersector}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void igl\+::embree\+::\+Embree\+Intersector\+::init (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector_a8738232667aec7922199fb5f0c19a41c}{Point\+Matrix\+Type}} \&}]{V,  }\item[{const \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector_af148a234bbb045e7d9d49417271c0442}{Face\+Matrix\+Type}} \&}]{F,  }\item[{bool}]{is\+Static = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Initialize with a given mesh. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em V} & \#V by 3 list of vertex positions \\
+\hline
+\mbox{\texttt{ in}}  & {\em F} & \#F by 3 list of Oriented triangles \\
+\hline
+\mbox{\texttt{ in}}  & {\em is\+Static} & scene is optimized for static geometry \\
+\hline
+\end{DoxyParams}
+\hypertarget{classigl_1_1embree_1_1EmbreeIntersector_autotoc_md6}{}\doxyparagraph{\texorpdfstring{Side effects\+:}{Side effects:}}\label{classigl_1_1embree_1_1EmbreeIntersector_autotoc_md6}
+The first time this is ever called the embree engine is initialized. \Hypertarget{classigl_1_1embree_1_1EmbreeIntersector_acb7d3b621158907f00ba9a972699481f}\label{classigl_1_1embree_1_1EmbreeIntersector_acb7d3b621158907f00ba9a972699481f} 
+\index{igl::embree::EmbreeIntersector@{igl::embree::EmbreeIntersector}!init@{init}}
+\index{init@{init}!igl::embree::EmbreeIntersector@{igl::embree::EmbreeIntersector}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void igl\+::embree\+::\+Embree\+Intersector\+::init (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ const \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector_a8738232667aec7922199fb5f0c19a41c}{Point\+Matrix\+Type}} \texorpdfstring{$\ast$}{*} $>$ \&}]{V,  }\item[{const std\+::vector$<$ const \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector_af148a234bbb045e7d9d49417271c0442}{Face\+Matrix\+Type}} \texorpdfstring{$\ast$}{*} $>$ \&}]{F,  }\item[{const std\+::vector$<$ int $>$ \&}]{masks,  }\item[{bool}]{is\+Static = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Initialize with a given mesh. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em V} & vector of \#V by 3 list of vertex positions for each geometry \\
+\hline
+\mbox{\texttt{ in}}  & {\em F} & vector of \#F by 3 list of Oriented triangles for each geometry \\
+\hline
+\mbox{\texttt{ in}}  & {\em masks} & a 32 bit mask to identify active geometries. \\
+\hline
+\mbox{\texttt{ in}}  & {\em is\+Static} & scene is optimized for static geometry\\
+\hline
+\end{DoxyParams}
+\label{classigl_1_1embree_1_1EmbreeIntersector_autotoc_md7}%
+\Hypertarget{classigl_1_1embree_1_1EmbreeIntersector_autotoc_md7}%
+ \doxysubparagraph*{Side effects\+:}
+
+The first time this is ever called the embree engine is initialized. \Hypertarget{classigl_1_1embree_1_1EmbreeIntersector_a61c0079def921d5288cd1cef5d173761}\label{classigl_1_1embree_1_1EmbreeIntersector_a61c0079def921d5288cd1cef5d173761} 
+\index{igl::embree::EmbreeIntersector@{igl::embree::EmbreeIntersector}!deinit@{deinit}}
+\index{deinit@{deinit}!igl::embree::EmbreeIntersector@{igl::embree::EmbreeIntersector}}
+\doxysubsubsection{\texorpdfstring{deinit()}{deinit()}}
+{\footnotesize\ttfamily void igl\+::embree\+::\+Embree\+Intersector\+::deinit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Deinitialize embree datasctructures for current mesh. 
+
+Also called on destruction\+: no need to call if you just want to \doxylink{classigl_1_1embree_1_1EmbreeIntersector_ad8f02c7c596e601303bf1a72742de159}{init()} once and destroy. \Hypertarget{classigl_1_1embree_1_1EmbreeIntersector_a674a92001c5fb384eaf2bbba80ec0fa6}\label{classigl_1_1embree_1_1EmbreeIntersector_a674a92001c5fb384eaf2bbba80ec0fa6} 
+\index{igl::embree::EmbreeIntersector@{igl::embree::EmbreeIntersector}!intersectRay@{intersectRay}}
+\index{intersectRay@{intersectRay}!igl::embree::EmbreeIntersector@{igl::embree::EmbreeIntersector}}
+\doxysubsubsection{\texorpdfstring{intersectRay()}{intersectRay()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool igl\+::embree\+::\+Embree\+Intersector\+::intersect\+Ray (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Row\+Vector3f \&}]{origin,  }\item[{const Eigen\+::\+Row\+Vector3f \&}]{direction,  }\item[{\mbox{\hyperlink{structigl_1_1Hit}{Hit}} \&}]{hit,  }\item[{float}]{tnear = {\ttfamily 0},  }\item[{float}]{tfar = {\ttfamily std\+:\+:numeric\+\_\+limits$<$~float~$>$\+:\+:infinity()},  }\item[{int}]{mask = {\ttfamily 0xFFFFFFFF} }\end{DoxyParamCaption}) const}
+
+
+
+Given a ray find the first hit. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em origin} & 3d origin point of ray \\
+\hline
+\mbox{\texttt{ in}}  & {\em direction} & 3d (not necessarily normalized) direction vector of ray \\
+\hline
+\mbox{\texttt{ in}}  & {\em tnear} & start of ray segment \\
+\hline
+\mbox{\texttt{ in}}  & {\em tfar} & end of ray segment \\
+\hline
+\mbox{\texttt{ in}}  & {\em masks} & a 32 bit mask to identify active geometries. \\
+\hline
+\mbox{\texttt{ out}}  & {\em hit} & information about hit \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if and only if there was a hit 
+\end{DoxyReturn}
+\Hypertarget{classigl_1_1embree_1_1EmbreeIntersector_a531899c6b568c8c4f194e5bf1db7517c}\label{classigl_1_1embree_1_1EmbreeIntersector_a531899c6b568c8c4f194e5bf1db7517c} 
+\index{igl::embree::EmbreeIntersector@{igl::embree::EmbreeIntersector}!intersectBeam@{intersectBeam}}
+\index{intersectBeam@{intersectBeam}!igl::embree::EmbreeIntersector@{igl::embree::EmbreeIntersector}}
+\doxysubsubsection{\texorpdfstring{intersectBeam()}{intersectBeam()}}
+{\footnotesize\ttfamily bool igl\+::embree\+::\+Embree\+Intersector\+::intersect\+Beam (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Row\+Vector3f \&}]{origin,  }\item[{const Eigen\+::\+Row\+Vector3f \&}]{direction,  }\item[{\mbox{\hyperlink{structigl_1_1Hit}{Hit}} \&}]{hit,  }\item[{float}]{tnear = {\ttfamily 0},  }\item[{float}]{tfar = {\ttfamily std\+:\+:numeric\+\_\+limits$<$~float~$>$\+:\+:infinity()},  }\item[{int}]{mask = {\ttfamily 0xFFFFFFFF},  }\item[{int}]{geo\+Id = {\ttfamily -\/1},  }\item[{bool}]{closest\+Hit = {\ttfamily true},  }\item[{unsigned int}]{samples = {\ttfamily 4} }\end{DoxyParamCaption}) const}
+
+
+
+Given a ray find the first hit This is a conservative hit test where multiple rays within a small radius will be tested and only the closesest hit is returned. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em origin} & 3d origin point of ray \\
+\hline
+\mbox{\texttt{ in}}  & {\em direction} & 3d (not necessarily normalized) direction vector of ray \\
+\hline
+\mbox{\texttt{ in}}  & {\em tnear} & start of ray segment \\
+\hline
+\mbox{\texttt{ in}}  & {\em tfar} & end of ray segment \\
+\hline
+\mbox{\texttt{ in}}  & {\em masks} & a 32 bit mask to identify active geometries. \\
+\hline
+\mbox{\texttt{ in}}  & {\em geo\+Id} & id of geometry mask (default std\+::numeric\+\_\+limits$<$float$>$\+::infinity() if no\+: no masking) \\
+\hline
+\mbox{\texttt{ in}}  & {\em closest\+Hit} & true for gets closest hit, false for furthest hit \\
+\hline
+\mbox{\texttt{ out}}  & {\em hit} & information about hit \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if and only if there was a hit 
+\end{DoxyReturn}
+\Hypertarget{classigl_1_1embree_1_1EmbreeIntersector_a8bbb5872dcbf9b27dcca0d715bc195c5}\label{classigl_1_1embree_1_1EmbreeIntersector_a8bbb5872dcbf9b27dcca0d715bc195c5} 
+\index{igl::embree::EmbreeIntersector@{igl::embree::EmbreeIntersector}!intersectRay@{intersectRay}}
+\index{intersectRay@{intersectRay}!igl::embree::EmbreeIntersector@{igl::embree::EmbreeIntersector}}
+\doxysubsubsection{\texorpdfstring{intersectRay()}{intersectRay()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool igl\+::embree\+::\+Embree\+Intersector\+::intersect\+Ray (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Row\+Vector3f \&}]{origin,  }\item[{const Eigen\+::\+Row\+Vector3f \&}]{direction,  }\item[{std\+::vector$<$ \mbox{\hyperlink{structigl_1_1Hit}{Hit}} $>$ \&}]{hits,  }\item[{int \&}]{num\+\_\+rays,  }\item[{float}]{tnear = {\ttfamily 0},  }\item[{float}]{tfar = {\ttfamily std\+:\+:numeric\+\_\+limits$<$~float~$>$\+:\+:infinity()},  }\item[{int}]{mask = {\ttfamily 0xFFFFFFFF} }\end{DoxyParamCaption}) const}
+
+
+
+Given a ray find all hits in order. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em origin} & 3d origin point of ray \\
+\hline
+\mbox{\texttt{ in}}  & {\em direction} & 3d (not necessarily normalized) direction vector of ray \\
+\hline
+\mbox{\texttt{ in}}  & {\em tnear} & start of ray segment \\
+\hline
+\mbox{\texttt{ in}}  & {\em tfar} & end of ray segment \\
+\hline
+\mbox{\texttt{ in}}  & {\em masks} & a 32 bit mask to identify active geometries. \\
+\hline
+\mbox{\texttt{ out}}  & {\em hit} & information about hit \\
+\hline
+\mbox{\texttt{ out}}  & {\em num\+\_\+rays} & number of rays shot (at least one) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if and only if there was a hit 
+\end{DoxyReturn}
+\Hypertarget{classigl_1_1embree_1_1EmbreeIntersector_a121e6dfd3f8188558ad8031fae02b55a}\label{classigl_1_1embree_1_1EmbreeIntersector_a121e6dfd3f8188558ad8031fae02b55a} 
+\index{igl::embree::EmbreeIntersector@{igl::embree::EmbreeIntersector}!intersectSegment@{intersectSegment}}
+\index{intersectSegment@{intersectSegment}!igl::embree::EmbreeIntersector@{igl::embree::EmbreeIntersector}}
+\doxysubsubsection{\texorpdfstring{intersectSegment()}{intersectSegment()}}
+{\footnotesize\ttfamily bool igl\+::embree\+::\+Embree\+Intersector\+::intersect\+Segment (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Row\+Vector3f \&}]{a,  }\item[{const Eigen\+::\+Row\+Vector3f \&}]{ab,  }\item[{\mbox{\hyperlink{structigl_1_1Hit}{Hit}} \&}]{hit,  }\item[{int}]{mask = {\ttfamily 0xFFFFFFFF} }\end{DoxyParamCaption}) const}
+
+
+
+Given a ray find the first hit. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a} & 3d first end point of segment \\
+\hline
+\mbox{\texttt{ in}}  & {\em ab} & 3d vector from a to other endpoint b \\
+\hline
+\mbox{\texttt{ out}}  & {\em hit} & information about hit \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if and only if there was a hit 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/igl/embree/\mbox{\hyperlink{EmbreeIntersector_8h}{Embree\+Intersector.\+h}}\end{DoxyCompactItemize}

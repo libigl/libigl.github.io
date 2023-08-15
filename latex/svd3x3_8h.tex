@@ -1,0 +1,15 @@
+\doxysection{include/igl/svd3x3.h File Reference}
+\hypertarget{svd3x3_8h}{}\label{svd3x3_8h}\index{include/igl/svd3x3.h@{include/igl/svd3x3.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include \"{}svd3x3.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespaceigl_a3b7376c37ca3ec7bb7dc4cf7fdecfe36}{igl\+::svd3x3}} (const Eigen\+::\+Matrix$<$ T, 3, 3 $>$ \&A, Eigen\+::\+Matrix$<$ T, 3, 3 $>$ \&U, Eigen\+::\+Matrix$<$ T, 3, 1 $>$ \&S, Eigen\+::\+Matrix$<$ T, 3, 3 $>$ \&V)
+\begin{DoxyCompactList}\small\item\em Super fast 3x3 SVD according to \href{http://pages.cs.wisc.edu/~sifakis/project_pages/svd.html}{\texttt{ http\+://pages.\+cs.\+wisc.\+edu/\texorpdfstring{$\sim$}{\string~}sifakis/project\+\_\+pages/svd.\+html}} The resulting decomposition is A = U \texorpdfstring{$\ast$}{*} diag(\+S\mbox{[}0\mbox{]}, S\mbox{[}1\mbox{]}, S\mbox{[}2\mbox{]}) \texorpdfstring{$\ast$}{*} V\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}

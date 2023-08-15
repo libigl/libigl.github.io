@@ -1,0 +1,362 @@
+\doxysection{igl\+::Arap\+DOFData\texorpdfstring{$<$}{<} Lbs\+Matrix\+Type, SSCALAR \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{structigl_1_1ArapDOFData}{}\label{structigl_1_1ArapDOFData}\index{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}}
+
+
+Structure that contains fields for all precomputed data or data that needs to be remembered at update.  
+
+
+
+
+{\ttfamily \#include $<$arap\+\_\+dof.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Eigen\+::\+Matrix$<$ SSCALAR, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \mbox{\hyperlink{structigl_1_1ArapDOFData_ac85269765634e0b98c0f57447849b4ca}{Matrix\+XS}}
+\begin{DoxyCompactList}\small\item\em Matrix with SSCALAR type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structigl_1_1ArapDOFData_a27f3ed746533c804a8b177f7d0794ffc}{Arap\+DOFData}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceigl_afcbc9001656cf2d4cc135602618c97e5}{igl\+::\+ARAPEnergy\+Type}} \mbox{\hyperlink{structigl_1_1ArapDOFData_a91bea11f44a6fe58c2b10ec7f890ad0e}{energy}}
+\begin{DoxyCompactList}\small\item\em Type of arap energy we\textquotesingle{}re solving. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix$<$ int, Eigen\+::\+Dynamic, 1 $>$ \mbox{\hyperlink{structigl_1_1ArapDOFData_a34538d236b90557eee1dff922b47de02}{fixed\+\_\+dim}}
+\begin{DoxyCompactList}\small\item\em List of indices of fixed transformation entries. \end{DoxyCompactList}\item 
+std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \mbox{\hyperlink{structigl_1_1ArapDOFData_a968d8afb1579266783ead1d7e051b8ce}{CSM\+\_\+M}}
+\begin{DoxyCompactList}\small\item\em List of precomputed covariance scatter matrices multiplied by lbs matrices. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structigl_1_1ArapDOFData_a496220a6256bfd490491b0f86384b241}{n}}
+\begin{DoxyCompactList}\small\item\em Number of mesh vertices. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structigl_1_1ArapDOFData_aa162503dfcb0aa7d40d662a9d4c9b906}{m}}
+\begin{DoxyCompactList}\small\item\em Number of weight functions. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structigl_1_1ArapDOFData_ac4591d80505f9c48bdb0dd9c7069b612}{dim}}
+\begin{DoxyCompactList}\small\item\em Number of dimensions. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structigl_1_1ArapDOFData_ae3910776546a298f423b319b78481375}{effective\+\_\+dim}}
+\begin{DoxyCompactList}\small\item\em Effective dimensions. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix$<$ int, Eigen\+::\+Dynamic, 1 $>$ \mbox{\hyperlink{structigl_1_1ArapDOFData_afbe5f347dfd39d3a62c09173e21dea15}{interpolated}}
+\begin{DoxyCompactList}\small\item\em List of indices into C of positional constraints. \end{DoxyCompactList}\item 
+std\+::vector$<$ bool $>$ \mbox{\hyperlink{structigl_1_1ArapDOFData_ab066e3faf1ff71953b051e11033b2417}{free\+\_\+mask}}
+\begin{DoxyCompactList}\small\item\em Mask of free variables. \end{DoxyCompactList}\item 
+Lbs\+Matrix\+Type \mbox{\hyperlink{structigl_1_1ArapDOFData_afc773159071cf32fd1cef5380b6b6c82}{Q}}
+\begin{DoxyCompactList}\small\item\em Full quadratic coefficients matrix before lagrangian (should be dense) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structigl_1_1ArapDOFData_ac85269765634e0b98c0f57447849b4ca}{Matrix\+XS}} \mbox{\hyperlink{structigl_1_1ArapDOFData_a3494ef8635b2f2ca4617b49f5f46484a}{M\+\_\+\+Full\+Solve}}
+\begin{DoxyCompactList}\small\item\em Full solve matrix that contains also conversion from rotations to the right hand side, i.\+e., solves Poisson transformations just from rotations and positional constraints. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structigl_1_1ArapDOFData_ac85269765634e0b98c0f57447849b4ca}{Matrix\+XS}} \mbox{\hyperlink{structigl_1_1ArapDOFData_a903bc4a544d836de46879706dcb0485c}{CSM}}
+\begin{DoxyCompactList}\small\item\em Precomputed condensed matrices (3x3 commutators folded to 1x1)\+: \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structigl_1_1ArapDOFData_a941cf3932d352a19588b7b97b45ba9a0}{print\+\_\+timings}}
+\begin{DoxyCompactList}\small\item\em Print timings at each update. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structigl_1_1ArapDOFData_a4622abc143c3c0b1ce2d5facfc862a01}{with\+\_\+dynamics}}
+\begin{DoxyCompactList}\small\item\em dynamics \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{structigl_1_1ArapDOFData_ae4b97caeaf9cee1359adc7454240005c}{h}}
+\begin{DoxyCompactList}\small\item\em Time step. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structigl_1_1ArapDOFData_ac85269765634e0b98c0f57447849b4ca}{Matrix\+XS}} \mbox{\hyperlink{structigl_1_1ArapDOFData_a3611b0645969c785247ae9f10911f27f}{L0}}
+\begin{DoxyCompactList}\small\item\em \#handles \texorpdfstring{$\ast$}{*} dim \texorpdfstring{$\ast$}{*} dim+1 list of transformation entries from previous solve \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structigl_1_1ArapDOFData_ac85269765634e0b98c0f57447849b4ca}{Matrix\+XS}} \mbox{\hyperlink{structigl_1_1ArapDOFData_a3b5766a665522b07f56c8246317e3c28}{Lvel0}}
+\begin{DoxyCompactList}\small\item\em \"{}\+Velocity\"{} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structigl_1_1ArapDOFData_ac85269765634e0b98c0f57447849b4ca}{Matrix\+XS}} \mbox{\hyperlink{structigl_1_1ArapDOFData_a5b99b61473c728cdabc1fa795ff55d07}{fext}}
+\begin{DoxyCompactList}\small\item\em \#V by dim matrix of external forces \end{DoxyCompactList}\item 
+Lbs\+Matrix\+Type \mbox{\hyperlink{structigl_1_1ArapDOFData_aaacd2e1cfb4af5c13bd582a60f3d5d27}{Mass\+\_\+tilde}}
+\begin{DoxyCompactList}\small\item\em Mass\+\_\+tilde\+: MT \texorpdfstring{$\ast$}{*} Mass \texorpdfstring{$\ast$}{*} M. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{structigl_1_1ArapDOFData_acf855b8b6c6b2ec2d8e8b4b0b3fdcc3c}{fgrav}}
+\begin{DoxyCompactList}\small\item\em Force due to gravity (premultiplier) \end{DoxyCompactList}\item 
+Eigen\+::\+Vector3d \mbox{\hyperlink{structigl_1_1ArapDOFData_ad40196005d15ac3afd0ca5c5a7c65a84}{grav\+\_\+dir}}
+\begin{DoxyCompactList}\small\item\em Direction of gravity. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{structigl_1_1ArapDOFData_a649220e2378b21337c5afac9b0e1e562}{grav\+\_\+mag}}
+\begin{DoxyCompactList}\small\item\em Magnitude of gravity. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structigl_1_1ArapDOFData_ac85269765634e0b98c0f57447849b4ca}{Matrix\+XS}} \mbox{\hyperlink{structigl_1_1ArapDOFData_a4d9f942453b6fa99ba5ca1b20628690d}{Pi\+\_\+1}}
+\begin{DoxyCompactList}\small\item\em Π1 from the paper. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Lbs\+Matrix\+Type, typename SSCALAR$>$\newline
+struct igl\+::\+Arap\+DOFData$<$ Lbs\+Matrix\+Type, SSCALAR $>$}
+Structure that contains fields for all precomputed data or data that needs to be remembered at update. 
+
+\doxylink{arap__dof_8h}{include/igl/arap\+\_\+dof.\+h} 
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{structigl_1_1ArapDOFData_ac85269765634e0b98c0f57447849b4ca}\label{structigl_1_1ArapDOFData_ac85269765634e0b98c0f57447849b4ca} 
+\index{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}!MatrixXS@{MatrixXS}}
+\index{MatrixXS@{MatrixXS}!igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}}
+\doxysubsubsection{\texorpdfstring{MatrixXS}{MatrixXS}}
+{\footnotesize\ttfamily template$<$typename Lbs\+Matrix\+Type , typename SSCALAR $>$ \\
+typedef Eigen\+::\+Matrix$<$SSCALAR, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic$>$ \mbox{\hyperlink{structigl_1_1ArapDOFData}{igl\+::\+Arap\+DOFData}}$<$ Lbs\+Matrix\+Type, SSCALAR $>$\+::\+Matrix\+XS}
+
+
+
+Matrix with SSCALAR type. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structigl_1_1ArapDOFData_a27f3ed746533c804a8b177f7d0794ffc}\label{structigl_1_1ArapDOFData_a27f3ed746533c804a8b177f7d0794ffc} 
+\index{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}!ArapDOFData@{ArapDOFData}}
+\index{ArapDOFData@{ArapDOFData}!igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}}
+\doxysubsubsection{\texorpdfstring{ArapDOFData()}{ArapDOFData()}}
+{\footnotesize\ttfamily template$<$typename Lbs\+Matrix\+Type , typename SSCALAR $>$ \\
+\mbox{\hyperlink{structigl_1_1ArapDOFData}{igl\+::\+Arap\+DOFData}}$<$ Lbs\+Matrix\+Type, SSCALAR $>$\+::\+Arap\+DOFData (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structigl_1_1ArapDOFData_a91bea11f44a6fe58c2b10ec7f890ad0e}\label{structigl_1_1ArapDOFData_a91bea11f44a6fe58c2b10ec7f890ad0e} 
+\index{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}!energy@{energy}}
+\index{energy@{energy}!igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}}
+\doxysubsubsection{\texorpdfstring{energy}{energy}}
+{\footnotesize\ttfamily template$<$typename Lbs\+Matrix\+Type , typename SSCALAR $>$ \\
+\mbox{\hyperlink{namespaceigl_afcbc9001656cf2d4cc135602618c97e5}{igl\+::\+ARAPEnergy\+Type}} \mbox{\hyperlink{structigl_1_1ArapDOFData}{igl\+::\+Arap\+DOFData}}$<$ Lbs\+Matrix\+Type, SSCALAR $>$\+::energy}
+
+
+
+Type of arap energy we\textquotesingle{}re solving. 
+
+\Hypertarget{structigl_1_1ArapDOFData_a34538d236b90557eee1dff922b47de02}\label{structigl_1_1ArapDOFData_a34538d236b90557eee1dff922b47de02} 
+\index{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}!fixed\_dim@{fixed\_dim}}
+\index{fixed\_dim@{fixed\_dim}!igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}}
+\doxysubsubsection{\texorpdfstring{fixed\_dim}{fixed\_dim}}
+{\footnotesize\ttfamily template$<$typename Lbs\+Matrix\+Type , typename SSCALAR $>$ \\
+Eigen\+::\+Matrix$<$int,Eigen\+::\+Dynamic,1$>$ \mbox{\hyperlink{structigl_1_1ArapDOFData}{igl\+::\+Arap\+DOFData}}$<$ Lbs\+Matrix\+Type, SSCALAR $>$\+::fixed\+\_\+dim}
+
+
+
+List of indices of fixed transformation entries. 
+
+\Hypertarget{structigl_1_1ArapDOFData_a968d8afb1579266783ead1d7e051b8ce}\label{structigl_1_1ArapDOFData_a968d8afb1579266783ead1d7e051b8ce} 
+\index{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}!CSM\_M@{CSM\_M}}
+\index{CSM\_M@{CSM\_M}!igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}}
+\doxysubsubsection{\texorpdfstring{CSM\_M}{CSM\_M}}
+{\footnotesize\ttfamily template$<$typename Lbs\+Matrix\+Type , typename SSCALAR $>$ \\
+std\+::vector$<$Eigen\+::\+Matrix\+Xd$>$ \mbox{\hyperlink{structigl_1_1ArapDOFData}{igl\+::\+Arap\+DOFData}}$<$ Lbs\+Matrix\+Type, SSCALAR $>$\+::\+CSM\+\_\+M}
+
+
+
+List of precomputed covariance scatter matrices multiplied by lbs matrices. 
+
+\Hypertarget{structigl_1_1ArapDOFData_a496220a6256bfd490491b0f86384b241}\label{structigl_1_1ArapDOFData_a496220a6256bfd490491b0f86384b241} 
+\index{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}!n@{n}}
+\index{n@{n}!igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}}
+\doxysubsubsection{\texorpdfstring{n}{n}}
+{\footnotesize\ttfamily template$<$typename Lbs\+Matrix\+Type , typename SSCALAR $>$ \\
+int \mbox{\hyperlink{structigl_1_1ArapDOFData}{igl\+::\+Arap\+DOFData}}$<$ Lbs\+Matrix\+Type, SSCALAR $>$\+::n}
+
+
+
+Number of mesh vertices. 
+
+\Hypertarget{structigl_1_1ArapDOFData_aa162503dfcb0aa7d40d662a9d4c9b906}\label{structigl_1_1ArapDOFData_aa162503dfcb0aa7d40d662a9d4c9b906} 
+\index{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}!m@{m}}
+\index{m@{m}!igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}}
+\doxysubsubsection{\texorpdfstring{m}{m}}
+{\footnotesize\ttfamily template$<$typename Lbs\+Matrix\+Type , typename SSCALAR $>$ \\
+int \mbox{\hyperlink{structigl_1_1ArapDOFData}{igl\+::\+Arap\+DOFData}}$<$ Lbs\+Matrix\+Type, SSCALAR $>$\+::m}
+
+
+
+Number of weight functions. 
+
+\Hypertarget{structigl_1_1ArapDOFData_ac4591d80505f9c48bdb0dd9c7069b612}\label{structigl_1_1ArapDOFData_ac4591d80505f9c48bdb0dd9c7069b612} 
+\index{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}!dim@{dim}}
+\index{dim@{dim}!igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}}
+\doxysubsubsection{\texorpdfstring{dim}{dim}}
+{\footnotesize\ttfamily template$<$typename Lbs\+Matrix\+Type , typename SSCALAR $>$ \\
+int \mbox{\hyperlink{structigl_1_1ArapDOFData}{igl\+::\+Arap\+DOFData}}$<$ Lbs\+Matrix\+Type, SSCALAR $>$\+::dim}
+
+
+
+Number of dimensions. 
+
+\Hypertarget{structigl_1_1ArapDOFData_ae3910776546a298f423b319b78481375}\label{structigl_1_1ArapDOFData_ae3910776546a298f423b319b78481375} 
+\index{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}!effective\_dim@{effective\_dim}}
+\index{effective\_dim@{effective\_dim}!igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}}
+\doxysubsubsection{\texorpdfstring{effective\_dim}{effective\_dim}}
+{\footnotesize\ttfamily template$<$typename Lbs\+Matrix\+Type , typename SSCALAR $>$ \\
+int \mbox{\hyperlink{structigl_1_1ArapDOFData}{igl\+::\+Arap\+DOFData}}$<$ Lbs\+Matrix\+Type, SSCALAR $>$\+::effective\+\_\+dim}
+
+
+
+Effective dimensions. 
+
+\Hypertarget{structigl_1_1ArapDOFData_afbe5f347dfd39d3a62c09173e21dea15}\label{structigl_1_1ArapDOFData_afbe5f347dfd39d3a62c09173e21dea15} 
+\index{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}!interpolated@{interpolated}}
+\index{interpolated@{interpolated}!igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}}
+\doxysubsubsection{\texorpdfstring{interpolated}{interpolated}}
+{\footnotesize\ttfamily template$<$typename Lbs\+Matrix\+Type , typename SSCALAR $>$ \\
+Eigen\+::\+Matrix$<$int,Eigen\+::\+Dynamic,1$>$ \mbox{\hyperlink{structigl_1_1ArapDOFData}{igl\+::\+Arap\+DOFData}}$<$ Lbs\+Matrix\+Type, SSCALAR $>$\+::interpolated}
+
+
+
+List of indices into C of positional constraints. 
+
+\Hypertarget{structigl_1_1ArapDOFData_ab066e3faf1ff71953b051e11033b2417}\label{structigl_1_1ArapDOFData_ab066e3faf1ff71953b051e11033b2417} 
+\index{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}!free\_mask@{free\_mask}}
+\index{free\_mask@{free\_mask}!igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}}
+\doxysubsubsection{\texorpdfstring{free\_mask}{free\_mask}}
+{\footnotesize\ttfamily template$<$typename Lbs\+Matrix\+Type , typename SSCALAR $>$ \\
+std\+::vector$<$bool$>$ \mbox{\hyperlink{structigl_1_1ArapDOFData}{igl\+::\+Arap\+DOFData}}$<$ Lbs\+Matrix\+Type, SSCALAR $>$\+::free\+\_\+mask}
+
+
+
+Mask of free variables. 
+
+\Hypertarget{structigl_1_1ArapDOFData_afc773159071cf32fd1cef5380b6b6c82}\label{structigl_1_1ArapDOFData_afc773159071cf32fd1cef5380b6b6c82} 
+\index{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}!Q@{Q}}
+\index{Q@{Q}!igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}}
+\doxysubsubsection{\texorpdfstring{Q}{Q}}
+{\footnotesize\ttfamily template$<$typename Lbs\+Matrix\+Type , typename SSCALAR $>$ \\
+Lbs\+Matrix\+Type \mbox{\hyperlink{structigl_1_1ArapDOFData}{igl\+::\+Arap\+DOFData}}$<$ Lbs\+Matrix\+Type, SSCALAR $>$\+::Q}
+
+
+
+Full quadratic coefficients matrix before lagrangian (should be dense) 
+
+\Hypertarget{structigl_1_1ArapDOFData_a3494ef8635b2f2ca4617b49f5f46484a}\label{structigl_1_1ArapDOFData_a3494ef8635b2f2ca4617b49f5f46484a} 
+\index{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}!M\_FullSolve@{M\_FullSolve}}
+\index{M\_FullSolve@{M\_FullSolve}!igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}}
+\doxysubsubsection{\texorpdfstring{M\_FullSolve}{M\_FullSolve}}
+{\footnotesize\ttfamily template$<$typename Lbs\+Matrix\+Type , typename SSCALAR $>$ \\
+\mbox{\hyperlink{structigl_1_1ArapDOFData_ac85269765634e0b98c0f57447849b4ca}{Matrix\+XS}} \mbox{\hyperlink{structigl_1_1ArapDOFData}{igl\+::\+Arap\+DOFData}}$<$ Lbs\+Matrix\+Type, SSCALAR $>$\+::\+M\+\_\+\+Full\+Solve}
+
+
+
+Full solve matrix that contains also conversion from rotations to the right hand side, i.\+e., solves Poisson transformations just from rotations and positional constraints. 
+
+\Hypertarget{structigl_1_1ArapDOFData_a903bc4a544d836de46879706dcb0485c}\label{structigl_1_1ArapDOFData_a903bc4a544d836de46879706dcb0485c} 
+\index{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}!CSM@{CSM}}
+\index{CSM@{CSM}!igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}}
+\doxysubsubsection{\texorpdfstring{CSM}{CSM}}
+{\footnotesize\ttfamily template$<$typename Lbs\+Matrix\+Type , typename SSCALAR $>$ \\
+\mbox{\hyperlink{structigl_1_1ArapDOFData_ac85269765634e0b98c0f57447849b4ca}{Matrix\+XS}} \mbox{\hyperlink{structigl_1_1ArapDOFData}{igl\+::\+Arap\+DOFData}}$<$ Lbs\+Matrix\+Type, SSCALAR $>$\+::\+CSM}
+
+
+
+Precomputed condensed matrices (3x3 commutators folded to 1x1)\+: 
+
+\Hypertarget{structigl_1_1ArapDOFData_a941cf3932d352a19588b7b97b45ba9a0}\label{structigl_1_1ArapDOFData_a941cf3932d352a19588b7b97b45ba9a0} 
+\index{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}!print\_timings@{print\_timings}}
+\index{print\_timings@{print\_timings}!igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}}
+\doxysubsubsection{\texorpdfstring{print\_timings}{print\_timings}}
+{\footnotesize\ttfamily template$<$typename Lbs\+Matrix\+Type , typename SSCALAR $>$ \\
+bool \mbox{\hyperlink{structigl_1_1ArapDOFData}{igl\+::\+Arap\+DOFData}}$<$ Lbs\+Matrix\+Type, SSCALAR $>$\+::print\+\_\+timings}
+
+
+
+Print timings at each update. 
+
+\Hypertarget{structigl_1_1ArapDOFData_a4622abc143c3c0b1ce2d5facfc862a01}\label{structigl_1_1ArapDOFData_a4622abc143c3c0b1ce2d5facfc862a01} 
+\index{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}!with\_dynamics@{with\_dynamics}}
+\index{with\_dynamics@{with\_dynamics}!igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}}
+\doxysubsubsection{\texorpdfstring{with\_dynamics}{with\_dynamics}}
+{\footnotesize\ttfamily template$<$typename Lbs\+Matrix\+Type , typename SSCALAR $>$ \\
+bool \mbox{\hyperlink{structigl_1_1ArapDOFData}{igl\+::\+Arap\+DOFData}}$<$ Lbs\+Matrix\+Type, SSCALAR $>$\+::with\+\_\+dynamics}
+
+
+
+dynamics 
+
+\Hypertarget{structigl_1_1ArapDOFData_ae4b97caeaf9cee1359adc7454240005c}\label{structigl_1_1ArapDOFData_ae4b97caeaf9cee1359adc7454240005c} 
+\index{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}!h@{h}}
+\index{h@{h}!igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}}
+\doxysubsubsection{\texorpdfstring{h}{h}}
+{\footnotesize\ttfamily template$<$typename Lbs\+Matrix\+Type , typename SSCALAR $>$ \\
+double \mbox{\hyperlink{structigl_1_1ArapDOFData}{igl\+::\+Arap\+DOFData}}$<$ Lbs\+Matrix\+Type, SSCALAR $>$\+::h}
+
+
+
+Time step. 
+
+\Hypertarget{structigl_1_1ArapDOFData_a3611b0645969c785247ae9f10911f27f}\label{structigl_1_1ArapDOFData_a3611b0645969c785247ae9f10911f27f} 
+\index{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}!L0@{L0}}
+\index{L0@{L0}!igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}}
+\doxysubsubsection{\texorpdfstring{L0}{L0}}
+{\footnotesize\ttfamily template$<$typename Lbs\+Matrix\+Type , typename SSCALAR $>$ \\
+\mbox{\hyperlink{structigl_1_1ArapDOFData_ac85269765634e0b98c0f57447849b4ca}{Matrix\+XS}} \mbox{\hyperlink{structigl_1_1ArapDOFData}{igl\+::\+Arap\+DOFData}}$<$ Lbs\+Matrix\+Type, SSCALAR $>$\+::\+L0}
+
+
+
+\#handles \texorpdfstring{$\ast$}{*} dim \texorpdfstring{$\ast$}{*} dim+1 list of transformation entries from previous solve 
+
+\Hypertarget{structigl_1_1ArapDOFData_a3b5766a665522b07f56c8246317e3c28}\label{structigl_1_1ArapDOFData_a3b5766a665522b07f56c8246317e3c28} 
+\index{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}!Lvel0@{Lvel0}}
+\index{Lvel0@{Lvel0}!igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}}
+\doxysubsubsection{\texorpdfstring{Lvel0}{Lvel0}}
+{\footnotesize\ttfamily template$<$typename Lbs\+Matrix\+Type , typename SSCALAR $>$ \\
+\mbox{\hyperlink{structigl_1_1ArapDOFData_ac85269765634e0b98c0f57447849b4ca}{Matrix\+XS}} \mbox{\hyperlink{structigl_1_1ArapDOFData}{igl\+::\+Arap\+DOFData}}$<$ Lbs\+Matrix\+Type, SSCALAR $>$\+::\+Lvel0}
+
+
+
+\"{}\+Velocity\"{} 
+
+\Hypertarget{structigl_1_1ArapDOFData_a5b99b61473c728cdabc1fa795ff55d07}\label{structigl_1_1ArapDOFData_a5b99b61473c728cdabc1fa795ff55d07} 
+\index{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}!fext@{fext}}
+\index{fext@{fext}!igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}}
+\doxysubsubsection{\texorpdfstring{fext}{fext}}
+{\footnotesize\ttfamily template$<$typename Lbs\+Matrix\+Type , typename SSCALAR $>$ \\
+\mbox{\hyperlink{structigl_1_1ArapDOFData_ac85269765634e0b98c0f57447849b4ca}{Matrix\+XS}} \mbox{\hyperlink{structigl_1_1ArapDOFData}{igl\+::\+Arap\+DOFData}}$<$ Lbs\+Matrix\+Type, SSCALAR $>$\+::fext}
+
+
+
+\#V by dim matrix of external forces 
+
+\Hypertarget{structigl_1_1ArapDOFData_aaacd2e1cfb4af5c13bd582a60f3d5d27}\label{structigl_1_1ArapDOFData_aaacd2e1cfb4af5c13bd582a60f3d5d27} 
+\index{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}!Mass\_tilde@{Mass\_tilde}}
+\index{Mass\_tilde@{Mass\_tilde}!igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}}
+\doxysubsubsection{\texorpdfstring{Mass\_tilde}{Mass\_tilde}}
+{\footnotesize\ttfamily template$<$typename Lbs\+Matrix\+Type , typename SSCALAR $>$ \\
+Lbs\+Matrix\+Type \mbox{\hyperlink{structigl_1_1ArapDOFData}{igl\+::\+Arap\+DOFData}}$<$ Lbs\+Matrix\+Type, SSCALAR $>$\+::\+Mass\+\_\+tilde}
+
+
+
+Mass\+\_\+tilde\+: MT \texorpdfstring{$\ast$}{*} Mass \texorpdfstring{$\ast$}{*} M. 
+
+\Hypertarget{structigl_1_1ArapDOFData_acf855b8b6c6b2ec2d8e8b4b0b3fdcc3c}\label{structigl_1_1ArapDOFData_acf855b8b6c6b2ec2d8e8b4b0b3fdcc3c} 
+\index{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}!fgrav@{fgrav}}
+\index{fgrav@{fgrav}!igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}}
+\doxysubsubsection{\texorpdfstring{fgrav}{fgrav}}
+{\footnotesize\ttfamily template$<$typename Lbs\+Matrix\+Type , typename SSCALAR $>$ \\
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{structigl_1_1ArapDOFData}{igl\+::\+Arap\+DOFData}}$<$ Lbs\+Matrix\+Type, SSCALAR $>$\+::fgrav}
+
+
+
+Force due to gravity (premultiplier) 
+
+\Hypertarget{structigl_1_1ArapDOFData_ad40196005d15ac3afd0ca5c5a7c65a84}\label{structigl_1_1ArapDOFData_ad40196005d15ac3afd0ca5c5a7c65a84} 
+\index{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}!grav\_dir@{grav\_dir}}
+\index{grav\_dir@{grav\_dir}!igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}}
+\doxysubsubsection{\texorpdfstring{grav\_dir}{grav\_dir}}
+{\footnotesize\ttfamily template$<$typename Lbs\+Matrix\+Type , typename SSCALAR $>$ \\
+Eigen\+::\+Vector3d \mbox{\hyperlink{structigl_1_1ArapDOFData}{igl\+::\+Arap\+DOFData}}$<$ Lbs\+Matrix\+Type, SSCALAR $>$\+::grav\+\_\+dir}
+
+
+
+Direction of gravity. 
+
+\Hypertarget{structigl_1_1ArapDOFData_a649220e2378b21337c5afac9b0e1e562}\label{structigl_1_1ArapDOFData_a649220e2378b21337c5afac9b0e1e562} 
+\index{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}!grav\_mag@{grav\_mag}}
+\index{grav\_mag@{grav\_mag}!igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}}
+\doxysubsubsection{\texorpdfstring{grav\_mag}{grav\_mag}}
+{\footnotesize\ttfamily template$<$typename Lbs\+Matrix\+Type , typename SSCALAR $>$ \\
+double \mbox{\hyperlink{structigl_1_1ArapDOFData}{igl\+::\+Arap\+DOFData}}$<$ Lbs\+Matrix\+Type, SSCALAR $>$\+::grav\+\_\+mag}
+
+
+
+Magnitude of gravity. 
+
+\Hypertarget{structigl_1_1ArapDOFData_a4d9f942453b6fa99ba5ca1b20628690d}\label{structigl_1_1ArapDOFData_a4d9f942453b6fa99ba5ca1b20628690d} 
+\index{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}!Pi\_1@{Pi\_1}}
+\index{Pi\_1@{Pi\_1}!igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$@{igl::ArapDOFData$<$ LbsMatrixType, SSCALAR $>$}}
+\doxysubsubsection{\texorpdfstring{Pi\_1}{Pi\_1}}
+{\footnotesize\ttfamily template$<$typename Lbs\+Matrix\+Type , typename SSCALAR $>$ \\
+\mbox{\hyperlink{structigl_1_1ArapDOFData_ac85269765634e0b98c0f57447849b4ca}{Matrix\+XS}} \mbox{\hyperlink{structigl_1_1ArapDOFData}{igl\+::\+Arap\+DOFData}}$<$ Lbs\+Matrix\+Type, SSCALAR $>$\+::\+Pi\+\_\+1}
+
+
+
+Π1 from the paper. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/igl/\mbox{\hyperlink{arap__dof_8h}{arap\+\_\+dof.\+h}}\end{DoxyCompactItemize}

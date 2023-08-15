@@ -1,0 +1,36 @@
+\doxysection{include/igl/sparse\+\_\+cached.h File Reference}
+\hypertarget{sparse__cached_8h}{}\label{sparse__cached_8h}\index{include/igl/sparse\_cached.h@{include/igl/sparse\_cached.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include \"{}sparse\+\_\+cached.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{sparse__cached_8h_aa93624b0b2836d2510e8c92ae951d817}{EIGEN\+\_\+\+YES\+\_\+\+I\+\_\+\+KNOW\+\_\+\+SPARSE\+\_\+\+MODULE\+\_\+\+IS\+\_\+\+NOT\+\_\+\+STABLE\+\_\+\+YET}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedI , typename Scalar $>$ }\\void \mbox{\hyperlink{namespaceigl_ac623ce43ac510a2b3374c791984d819c}{igl\+::sparse\+\_\+cached\+\_\+precompute}} (const Eigen\+::\+Matrix\+Base$<$ DerivedI $>$ \&I, const Eigen\+::\+Matrix\+Base$<$ DerivedI $>$ \&J, Eigen\+::\+Vector\+Xi \&data, Eigen\+::\+Sparse\+Matrix$<$ Scalar $>$ \&X)
+\begin{DoxyCompactList}\small\item\em Build a sparse matrix from list of indices and values (I,J,V), similarly to the sparse function in matlab. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Scalar $>$ }\\void \mbox{\hyperlink{namespaceigl_a652603bae4d621913f8679441ac6d771}{igl\+::sparse\+\_\+cached\+\_\+precompute}} (const std\+::vector$<$ Eigen\+::\+Triplet$<$ Scalar $>$ $>$ \&triplets, Eigen\+::\+Vector\+Xi \&data, Eigen\+::\+Sparse\+Matrix$<$ Scalar $>$ \&X)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Scalar $>$ }\\void \mbox{\hyperlink{namespaceigl_abff00fedf6ea99985f251a964eb2fe21}{igl\+::sparse\+\_\+cached}} (const std\+::vector$<$ Eigen\+::\+Triplet$<$ Scalar $>$ $>$ \&triplets, const Eigen\+::\+Vector\+Xi \&data, Eigen\+::\+Sparse\+Matrix$<$ Scalar $>$ \&X)
+\begin{DoxyCompactList}\small\item\em Build a sparse matrix from cached list of data and values. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename Scalar $>$ }\\void \mbox{\hyperlink{namespaceigl_adb2f3d6b20dcda22b4415935b0b4a250}{igl\+::sparse\+\_\+cached}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Vector\+Xi \&data, Eigen\+::\+Sparse\+Matrix$<$ Scalar $>$ \&X)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{sparse__cached_8h_aa93624b0b2836d2510e8c92ae951d817}\label{sparse__cached_8h_aa93624b0b2836d2510e8c92ae951d817} 
+\index{sparse\_cached.h@{sparse\_cached.h}!EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET@{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}}
+\index{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET@{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}!sparse\_cached.h@{sparse\_cached.h}}
+\doxysubsubsection{\texorpdfstring{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}}
+{\footnotesize\ttfamily \#define EIGEN\+\_\+\+YES\+\_\+\+I\+\_\+\+KNOW\+\_\+\+SPARSE\+\_\+\+MODULE\+\_\+\+IS\+\_\+\+NOT\+\_\+\+STABLE\+\_\+\+YET}
+

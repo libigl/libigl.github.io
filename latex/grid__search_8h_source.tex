@@ -1,0 +1,32 @@
+\doxysection{grid\+\_\+search.\+h}
+\hypertarget{grid__search_8h_source}{}\label{grid__search_8h_source}\index{include/igl/grid\_search.h@{include/igl/grid\_search.h}}
+\mbox{\hyperlink{grid__search_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ IGL\_GRID\_SEARCH\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ IGL\_GRID\_SEARCH\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00022\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{typename}\ Scalar,\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedX,\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedLB,\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedUB,\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedI>}
+\DoxyCodeLine{00028\ \ \ IGL\_INLINE\ Scalar\ \mbox{\hyperlink{namespaceigl_a9a189dbba012d12c812bb7b0970b4ab9}{grid\_search}}(}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{const}\ std::function<\ Scalar\ (DerivedX\ \&)\ >\ f,}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedLB>\ \&\ LB,}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedUB>\ \&\ UB,}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedI>\ \&\ I,}
+\DoxyCodeLine{00033\ \ \ \ \ DerivedX\ \&\ X);}
+\DoxyCodeLine{00034\ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#\ \ include\ "{}grid\_search.cpp"{}}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

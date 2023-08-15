@@ -1,0 +1,43 @@
+\doxysection{render\+\_\+to\+\_\+tga.\+h}
+\hypertarget{render__to__tga_8h_source}{}\label{render__to__tga_8h_source}\index{include/igl/copyleft/opengl2/render\_to\_tga.h@{include/igl/copyleft/opengl2/render\_to\_tga.h}}
+\mbox{\hyperlink{render__to__tga_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2014\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_OPENGL\_RENDER\_TO\_TGA\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_OPENGL\_RENDER\_TO\_TGA\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../../igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \ \ \textcolor{keyword}{namespace\ }opengl}
+\DoxyCodeLine{00016\ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//\ Render\ current\ open\ GL\ image\ to\ .tga\ file}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//\ Inputs:}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//\ \ \ tga\_file\ \ path\ to\ output\ .tga\ file}}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{comment}{//\ \ \ width\ \ width\ of\ scene\ and\ resulting\ image}}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//\ \ \ height\ height\ of\ scene\ and\ resulting\ image}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}\ \ \ \ \textcolor{comment}{//\ Returns\ true\ only\ if\ no\ errors\ occurred}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//\ See\ also:\ png/render\_to\_png\ which\ is\ slower\ but\ writes\ .png\ files}}
+\DoxyCodeLine{00026\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_1_1opengl_a967f6e5284d63e98cbd501388672bff9}{render\_to\_tga}}(}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ tga\_file,}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ width,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ height,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ alpha);}
+\DoxyCodeLine{00031\ \ \ \}}
+\DoxyCodeLine{00032\ \}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#\ \ include\ "{}render\_to\_tga.cpp"{}}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

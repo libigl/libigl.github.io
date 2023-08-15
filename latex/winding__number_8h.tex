@@ -1,0 +1,31 @@
+\doxysection{include/igl/winding\+\_\+number.h File Reference}
+\hypertarget{winding__number_8h}{}\label{winding__number_8h}\index{include/igl/winding\_number.h@{include/igl/winding\_number.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include \"{}winding\+\_\+number.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{winding__number_8h_af352bb63c46739aa95c4e15b0288ae55}{IGL\+\_\+\+WINDING\+\_\+\+NUMBER\+\_\+\+OMP\+\_\+\+MIN\+\_\+\+VALUE}}~1000
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedO , typename DerivedW $>$ }\\void \mbox{\hyperlink{namespaceigl_a468f01ca961ac9ea78d02b3ecac25bee}{igl\+::winding\+\_\+number}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const Eigen\+::\+Matrix\+Base$<$ DerivedO $>$ \&O, Eigen\+::\+Plain\+Object\+Base$<$ DerivedW $>$ \&W)
+\begin{DoxyCompactList}\small\item\em Computes the generalized winding number at each dim-\/dimensional query point in O with respect to the oriented one-\/codimensional mesh (V,F). \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename Derivedp $>$ }\\Derived\+V\+::\+Scalar \mbox{\hyperlink{namespaceigl_a6aab3f308b50dd0cafa361fed13ee213}{igl\+::winding\+\_\+number}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const Eigen\+::\+Matrix\+Base$<$ Derivedp $>$ \&p)
+\begin{DoxyCompactList}\small\item\em Compute winding number of a single point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{winding__number_8h_af352bb63c46739aa95c4e15b0288ae55}\label{winding__number_8h_af352bb63c46739aa95c4e15b0288ae55} 
+\index{winding\_number.h@{winding\_number.h}!IGL\_WINDING\_NUMBER\_OMP\_MIN\_VALUE@{IGL\_WINDING\_NUMBER\_OMP\_MIN\_VALUE}}
+\index{IGL\_WINDING\_NUMBER\_OMP\_MIN\_VALUE@{IGL\_WINDING\_NUMBER\_OMP\_MIN\_VALUE}!winding\_number.h@{winding\_number.h}}
+\doxysubsubsection{\texorpdfstring{IGL\_WINDING\_NUMBER\_OMP\_MIN\_VALUE}{IGL\_WINDING\_NUMBER\_OMP\_MIN\_VALUE}}
+{\footnotesize\ttfamily \#define IGL\+\_\+\+WINDING\+\_\+\+NUMBER\+\_\+\+OMP\+\_\+\+MIN\+\_\+\+VALUE~1000}
+

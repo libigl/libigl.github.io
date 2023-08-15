@@ -1,0 +1,150 @@
+\doxysection{igl\+::Sortable\+Row\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classigl_1_1SortableRow}{}\label{classigl_1_1SortableRow}\index{igl::SortableRow$<$ T $>$@{igl::SortableRow$<$ T $>$}}
+
+
+A row of things that can be sorted against other rows.  
+
+
+
+
+{\ttfamily \#include $<$Sortable\+Row.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classigl_1_1SortableRow_a89980d7ef6d93de1c79382093fdfa09d}{Sortable\+Row}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classigl_1_1SortableRow_a97102fa189f560c73c2f885c56151766}{Sortable\+Row}} (const T \&\mbox{\hyperlink{classigl_1_1SortableRow_a71fac215d9e1b5ad5489761f1382e0cb}{data}})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classigl_1_1SortableRow_a4ce548d4681774660d67faaf4811b057}{operator$<$}} (const \mbox{\hyperlink{classigl_1_1SortableRow}{Sortable\+Row}} \&that) const
+\begin{DoxyCompactList}\small\item\em Less than comparison. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classigl_1_1SortableRow_a49bd673c0f1a43b1f21023191612622e}{operator==}} (const \mbox{\hyperlink{classigl_1_1SortableRow}{Sortable\+Row}} \&that) const
+\begin{DoxyCompactList}\small\item\em Equality comparison. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classigl_1_1SortableRow_a26af5d21985ad7e34c25bd06d5e5630c}{operator!=}} (const \mbox{\hyperlink{classigl_1_1SortableRow}{Sortable\+Row}} \&that) const
+\begin{DoxyCompactList}\small\item\em Inequality comparison. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T \mbox{\hyperlink{classigl_1_1SortableRow_a71fac215d9e1b5ad5489761f1382e0cb}{data}}
+\begin{DoxyCompactList}\small\item\em The data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class igl\+::\+Sortable\+Row$<$ T $>$}
+A row of things that can be sorted against other rows. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & should be a vector/matrix/array that implements .size(), and operator(int i) \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classigl_1_1SortableRow_a89980d7ef6d93de1c79382093fdfa09d}\label{classigl_1_1SortableRow_a89980d7ef6d93de1c79382093fdfa09d} 
+\index{igl::SortableRow$<$ T $>$@{igl::SortableRow$<$ T $>$}!SortableRow@{SortableRow}}
+\index{SortableRow@{SortableRow}!igl::SortableRow$<$ T $>$@{igl::SortableRow$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SortableRow()}{SortableRow()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classigl_1_1SortableRow}{igl\+::\+Sortable\+Row}}$<$ T $>$\+::\+Sortable\+Row (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor. 
+
+\Hypertarget{classigl_1_1SortableRow_a97102fa189f560c73c2f885c56151766}\label{classigl_1_1SortableRow_a97102fa189f560c73c2f885c56151766} 
+\index{igl::SortableRow$<$ T $>$@{igl::SortableRow$<$ T $>$}!SortableRow@{SortableRow}}
+\index{SortableRow@{SortableRow}!igl::SortableRow$<$ T $>$@{igl::SortableRow$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SortableRow()}{SortableRow()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classigl_1_1SortableRow}{igl\+::\+Sortable\+Row}}$<$ T $>$\+::\+Sortable\+Row (\begin{DoxyParamCaption}\item[{const T \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data} & the data \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classigl_1_1SortableRow_a4ce548d4681774660d67faaf4811b057}\label{classigl_1_1SortableRow_a4ce548d4681774660d67faaf4811b057} 
+\index{igl::SortableRow$<$ T $>$@{igl::SortableRow$<$ T $>$}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!igl::SortableRow$<$ T $>$@{igl::SortableRow$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classigl_1_1SortableRow}{igl\+::\+Sortable\+Row}}$<$ T $>$\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classigl_1_1SortableRow}{Sortable\+Row}}$<$ T $>$ \&}]{that }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Less than comparison. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em that} & the other row \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if this row is less than that row 
+\end{DoxyReturn}
+\Hypertarget{classigl_1_1SortableRow_a49bd673c0f1a43b1f21023191612622e}\label{classigl_1_1SortableRow_a49bd673c0f1a43b1f21023191612622e} 
+\index{igl::SortableRow$<$ T $>$@{igl::SortableRow$<$ T $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!igl::SortableRow$<$ T $>$@{igl::SortableRow$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classigl_1_1SortableRow}{igl\+::\+Sortable\+Row}}$<$ T $>$\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classigl_1_1SortableRow}{Sortable\+Row}}$<$ T $>$ \&}]{that }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Equality comparison. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em that} & the other row \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if this row is equal to that row 
+\end{DoxyReturn}
+\Hypertarget{classigl_1_1SortableRow_a26af5d21985ad7e34c25bd06d5e5630c}\label{classigl_1_1SortableRow_a26af5d21985ad7e34c25bd06d5e5630c} 
+\index{igl::SortableRow$<$ T $>$@{igl::SortableRow$<$ T $>$}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!igl::SortableRow$<$ T $>$@{igl::SortableRow$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classigl_1_1SortableRow}{igl\+::\+Sortable\+Row}}$<$ T $>$\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classigl_1_1SortableRow}{Sortable\+Row}}$<$ T $>$ \&}]{that }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Inequality comparison. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em that} & the other row \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if this row is not equal to that row 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classigl_1_1SortableRow_a71fac215d9e1b5ad5489761f1382e0cb}\label{classigl_1_1SortableRow_a71fac215d9e1b5ad5489761f1382e0cb} 
+\index{igl::SortableRow$<$ T $>$@{igl::SortableRow$<$ T $>$}!data@{data}}
+\index{data@{data}!igl::SortableRow$<$ T $>$@{igl::SortableRow$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{classigl_1_1SortableRow}{igl\+::\+Sortable\+Row}}$<$ T $>$\+::data}
+
+
+
+The data. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/igl/\mbox{\hyperlink{SortableRow_8h}{Sortable\+Row.\+h}}\end{DoxyCompactItemize}

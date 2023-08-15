@@ -1,0 +1,87 @@
+\doxysection{per\+\_\+corner\+\_\+normals.\+h}
+\hypertarget{per__corner__normals_8h_source}{}\label{per__corner__normals_8h_source}\index{include/igl/per\_corner\_normals.h@{include/igl/per\_corner\_normals.h}}
+\mbox{\hyperlink{per__corner__normals_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2021\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ Copyright\ (C)\ 2013\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ IGL\_PER\_CORNER\_NORMALS\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ IGL\_PER\_CORNER\_NORMALS\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00026\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedCN>}
+\DoxyCodeLine{00030\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a3a09c2edf78994c6f25f23a9212a3666}{per\_corner\_normals}}(}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{typename}\ DerivedV::Scalar\ corner\_threshold\_degrees,}
+\DoxyCodeLine{00034\ \ \ \ \ Eigen::PlainObjectBase<DerivedCN>\ \&\ CN);}
+\DoxyCodeLine{00044\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVF,}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedNI,}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedCN>}
+\DoxyCodeLine{00050\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a3a09c2edf78994c6f25f23a9212a3666}{per\_corner\_normals}}(}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{typename}\ DerivedV::Scalar\ corner\_threshold\_degrees,}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedVF>\ \&\ VF,}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedNI>\ \&\ NI,}
+\DoxyCodeLine{00056\ \ \ \ \ Eigen::PlainObjectBase<DerivedCN>\ \&\ CN);}
+\DoxyCodeLine{00062\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedCI,}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedCC,}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedCN>}
+\DoxyCodeLine{00068\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a3a09c2edf78994c6f25f23a9212a3666}{per\_corner\_normals}}(}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedCI>\ \&\ CI,}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedCC>\ \&\ CC,}
+\DoxyCodeLine{00073\ \ \ \ \ Eigen::PlainObjectBase<DerivedCN>\ \&\ CN);}
+\DoxyCodeLine{00081\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedNV,\ \textcolor{keyword}{typename}\ DerivedNF,\ \textcolor{keyword}{typename}\ DerivedCN>}
+\DoxyCodeLine{00082\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a3a09c2edf78994c6f25f23a9212a3666}{per\_corner\_normals}}(}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedNV>\ \&\ NV,}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedNF>\ \&\ NF,}
+\DoxyCodeLine{00085\ \ \ \ \ Eigen::PlainObjectBase<DerivedCN>\ \&\ CN);}
+\DoxyCodeLine{00099\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedI,\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedC,\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedN,}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVV,}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFF,}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedJ,}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedNN>}
+\DoxyCodeLine{00108\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a3a09c2edf78994c6f25f23a9212a3666}{per\_corner\_normals}}(}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedI>\ \&\ I,}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedC>\ \&\ C,}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{typename}\ DerivedV::Scalar\ corner\_threshold\_degrees,}
+\DoxyCodeLine{00113\ \ \ \ \ Eigen::PlainObjectBase<DerivedN>\ \ \&\ N,}
+\DoxyCodeLine{00114\ \ \ \ \ Eigen::PlainObjectBase<DerivedVV>\ \&\ VV,}
+\DoxyCodeLine{00115\ \ \ \ \ Eigen::PlainObjectBase<DerivedFF>\ \&\ FF,}
+\DoxyCodeLine{00116\ \ \ \ \ Eigen::PlainObjectBase<DerivedJ>\ \ \&\ J,}
+\DoxyCodeLine{00117\ \ \ \ \ Eigen::PlainObjectBase<DerivedNN>\ \&\ NN);}
+\DoxyCodeLine{00118\ \}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#\ \ include\ "{}per\_corner\_normals.cpp"{}}}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

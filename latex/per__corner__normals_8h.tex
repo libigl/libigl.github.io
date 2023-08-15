@@ -1,0 +1,24 @@
+\doxysection{include/igl/per\+\_\+corner\+\_\+normals.h File Reference}
+\hypertarget{per__corner__normals_8h}{}\label{per__corner__normals_8h}\index{include/igl/per\_corner\_normals.h@{include/igl/per\_corner\_normals.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \"{}per\+\_\+corner\+\_\+normals.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename Derived\+CN $>$ }\\void \mbox{\hyperlink{namespaceigl_a3a09c2edf78994c6f25f23a9212a3666}{igl\+::per\+\_\+corner\+\_\+normals}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const typename Derived\+V\+::\+Scalar corner\+\_\+threshold\+\_\+degrees, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+CN $>$ \&CN)
+\begin{DoxyCompactList}\small\item\em Compute per corner normals for a triangle mesh by computing the area-\/weighted average of normals at incident faces whose normals deviate less than the provided threshold. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename Derived\+VF , typename Derived\+NI , typename Derived\+CN $>$ }\\void \mbox{\hyperlink{namespaceigl_a1038de65b964583d4ea533a631e6c1b8}{igl\+::per\+\_\+corner\+\_\+normals}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const typename Derived\+V\+::\+Scalar corner\+\_\+threshold\+\_\+degrees, const Eigen\+::\+Matrix\+Base$<$ Derived\+VF $>$ \&VF, const Eigen\+::\+Matrix\+Base$<$ Derived\+NI $>$ \&NI, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+CN $>$ \&CN)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename Derived\+CI , typename Derived\+CC , typename Derived\+CN $>$ }\\void \mbox{\hyperlink{namespaceigl_a01b4e893d7a38a99124fb826f0f337c1}{igl\+::per\+\_\+corner\+\_\+normals}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const Eigen\+::\+Matrix\+Base$<$ Derived\+CI $>$ \&CI, const Eigen\+::\+Matrix\+Base$<$ Derived\+CC $>$ \&CC, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+CN $>$ \&CN)
+\item 
+{\footnotesize template$<$typename Derived\+NV , typename Derived\+NF , typename Derived\+CN $>$ }\\void \mbox{\hyperlink{namespaceigl_aac0d1344faa3702f4c79dcdf54888c68}{igl\+::per\+\_\+corner\+\_\+normals}} (const Eigen\+::\+Matrix\+Base$<$ Derived\+NV $>$ \&NV, const Eigen\+::\+Matrix\+Base$<$ Derived\+NF $>$ \&NF, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+CN $>$ \&CN)
+\begin{DoxyCompactList}\small\item\em Given indexed normals (e.\+g., read from a .obj file), explode into per-\/corner normals (e.\+g., as expected by \doxylink{classigl_1_1opengl_1_1ViewerData}{igl\+::opengl\+::\+Viewer\+Data}) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedI , typename DerivedC , typename DerivedN , typename Derived\+VV , typename Derived\+FF , typename DerivedJ , typename Derived\+NN $>$ }\\void \mbox{\hyperlink{namespaceigl_a4353bfd8d4ca70d1ea3bdf98dbfb50f4}{igl\+::per\+\_\+corner\+\_\+normals}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedI $>$ \&I, const Eigen\+::\+Matrix\+Base$<$ DerivedC $>$ \&C, const typename Derived\+V\+::\+Scalar corner\+\_\+threshold\+\_\+degrees, Eigen\+::\+Plain\+Object\+Base$<$ DerivedN $>$ \&N, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+VV $>$ \&VV, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+FF $>$ \&FF, Eigen\+::\+Plain\+Object\+Base$<$ DerivedJ $>$ \&J, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+NN $>$ \&NN)
+\begin{DoxyCompactList}\small\item\em Per-\/corner normals for a polygon mesh. \end{DoxyCompactList}\end{DoxyCompactItemize}

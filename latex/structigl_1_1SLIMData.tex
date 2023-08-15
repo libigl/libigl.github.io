@@ -1,0 +1,333 @@
+\doxysection{igl\+::SLIMData Struct Reference}
+\hypertarget{structigl_1_1SLIMData}{}\label{structigl_1_1SLIMData}\index{igl::SLIMData@{igl::SLIMData}}
+
+
+Parameters and precomputed data for computing a SLIM map as derived in \"{}\+Scalable Locally Injective Maps\"{} \mbox{[}Rabinovich et al.  
+
+
+
+
+{\ttfamily \#include $<$slim.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{structigl_1_1SLIMData_a5c305368043e9a18e0196be96cfc31c3}{V}}
+\begin{DoxyCompactList}\small\item\em \doxylink{structigl_1_1SLIMData_a5c305368043e9a18e0196be96cfc31c3}{V} by 3 list of mesh vertex positions \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xi \mbox{\hyperlink{structigl_1_1SLIMData_a7230c04e2b1e764a9e81a7600daa85df}{F}}
+\begin{DoxyCompactList}\small\item\em \doxylink{structigl_1_1SLIMData_a7230c04e2b1e764a9e81a7600daa85df}{F} by 3/4 list of mesh faces (triangles/tets) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceigl_a79904ddf7fe8d79169b339cf43f9e739}{Mapping\+Energy\+Type}} \mbox{\hyperlink{structigl_1_1SLIMData_a0442b46248d198eae5dc341738e9f821}{slim\+\_\+energy}}
+\begin{DoxyCompactList}\small\item\em Mapping energy type. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xi \mbox{\hyperlink{structigl_1_1SLIMData_ae1f26a818f7a1b5c3bc032663d38813d}{b}}
+\begin{DoxyCompactList}\small\item\em Fixed indices. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{structigl_1_1SLIMData_a7326dcc125c3389443fe9424a1f88855}{bc}}
+\begin{DoxyCompactList}\small\item\em Fixed values. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{structigl_1_1SLIMData_aab6b59568a73e6494399da6398fec86e}{soft\+\_\+const\+\_\+p}}
+\begin{DoxyCompactList}\small\item\em Weight for enforcing fixed values as soft constraint. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{structigl_1_1SLIMData_a4f4bf11823f39c8e000c96d0de0248d2}{exp\+\_\+factor}}
+\begin{DoxyCompactList}\small\item\em used for exponential energies, ignored otherwise \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structigl_1_1SLIMData_a1f006ca2b423df1455584a2d727e2fab}{mesh\+\_\+improvement\+\_\+3d}}
+\begin{DoxyCompactList}\small\item\em only supported for 3d \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{structigl_1_1SLIMData_a5b913c4edb1082339aee8b462306df82}{V\+\_\+o}}
+\begin{DoxyCompactList}\small\item\em \doxylink{structigl_1_1SLIMData_a5c305368043e9a18e0196be96cfc31c3}{V} by dim list of mesh vertex positions (dim = 2 for parametrization, 3 otherwise) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{structigl_1_1SLIMData_a56eea77ddeae9c08f49f5a2e6f8e2870}{energy}}
+\begin{DoxyCompactList}\small\item\em objective value \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{structigl_1_1SLIMData_a2bc173c625140e700d6448680a9e4b1c}{M}}
+\item 
+double \mbox{\hyperlink{structigl_1_1SLIMData_acfbfb09ce52e14e82d653561b251578b}{mesh\+\_\+area}}
+\item 
+double \mbox{\hyperlink{structigl_1_1SLIMData_abf93fae7057a12cdd76e5f445e9aef02}{avg\+\_\+edge\+\_\+length}}
+\item 
+int \mbox{\hyperlink{structigl_1_1SLIMData_a25c68c70641547300251ad372baffe0c}{v\+\_\+num}}
+\item 
+int \mbox{\hyperlink{structigl_1_1SLIMData_a19ebf2e83160d820ee92688f23aab7cd}{f\+\_\+num}}
+\item 
+double \mbox{\hyperlink{structigl_1_1SLIMData_a60fc6450c2b703e5daf5dae88a494c31}{proximal\+\_\+p}}
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{structigl_1_1SLIMData_a8013a9e8c749e71e465272fd05e2b1a4}{WGL\+\_\+M}}
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{structigl_1_1SLIMData_a002dfbdfde53ea23312a8630ff21a7c7}{rhs}}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{structigl_1_1SLIMData_a03aec7d4e2f3b357123d3c744b43e08c}{Ri}}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{structigl_1_1SLIMData_a37b9e1ae8de3ed2e8639505e4cfc3f2f}{Ji}}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{structigl_1_1SLIMData_ae8ac0c1d9f36a55353d22b9f9febdcb7}{W}}
+\item 
+Eigen\+::\+Sparse\+Matrix$<$ double $>$ \mbox{\hyperlink{structigl_1_1SLIMData_a6b244e29028952a6bbb1012f06e5f6b0}{Dx}}
+\item 
+Eigen\+::\+Sparse\+Matrix$<$ double $>$ \mbox{\hyperlink{structigl_1_1SLIMData_a8d0be8e241b33ab953d23e40b5ecb663}{Dy}}
+\item 
+Eigen\+::\+Sparse\+Matrix$<$ double $>$ \mbox{\hyperlink{structigl_1_1SLIMData_a879c8a130f88110d97c39dbd4fbb679d}{Dz}}
+\item 
+int \mbox{\hyperlink{structigl_1_1SLIMData_ab46c3e37552205350f0b8bcecf537944}{f\+\_\+n}}
+\item 
+int \mbox{\hyperlink{structigl_1_1SLIMData_a7b7167eb3f9f47351f457f60df96f46c}{v\+\_\+n}}
+\item 
+bool \mbox{\hyperlink{structigl_1_1SLIMData_af1ed4a065b1cf60abf3157a9bf821c19}{first\+\_\+solve}}
+\item 
+bool \mbox{\hyperlink{structigl_1_1SLIMData_a76584bbe384932765ccdb64c2a8704ff}{has\+\_\+pre\+\_\+calc}} = false
+\item 
+int \mbox{\hyperlink{structigl_1_1SLIMData_ad058f54a17eb3978975d7aebecb896f1}{dim}}
+\item 
+Eigen\+::\+Sparse\+Matrix$<$ double $>$ \mbox{\hyperlink{structigl_1_1SLIMData_ac1bb46cc49ec9e8a9933bd3432cbcb63}{A}}
+\item 
+Eigen\+::\+Vector\+Xi \mbox{\hyperlink{structigl_1_1SLIMData_af4b99cefe61daa44d67b9f6f20d0223c}{A\+\_\+data}}
+\item 
+Eigen\+::\+Sparse\+Matrix$<$ double $>$ \mbox{\hyperlink{structigl_1_1SLIMData_acf58a66da2491fdc82040bb1c011fceb}{AtA}}
+\item 
+\mbox{\hyperlink{structigl_1_1AtA__cached__data}{igl\+::\+At\+A\+\_\+cached\+\_\+data}} \mbox{\hyperlink{structigl_1_1SLIMData_a31f8835eedd9a596385f6a2230e76613}{At\+A\+\_\+data}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Parameters and precomputed data for computing a SLIM map as derived in \"{}\+Scalable Locally Injective Maps\"{} \mbox{[}Rabinovich et al. 
+
+2016\mbox{]}.
+
+\doxylink{slim_8h}{include/igl/slim.\+h} 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structigl_1_1SLIMData_a5c305368043e9a18e0196be96cfc31c3}\label{structigl_1_1SLIMData_a5c305368043e9a18e0196be96cfc31c3} 
+\index{igl::SLIMData@{igl::SLIMData}!V@{V}}
+\index{V@{V}!igl::SLIMData@{igl::SLIMData}}
+\doxysubsubsection{\texorpdfstring{V}{V}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd igl\+::\+SLIMData\+::V}
+
+
+
+\doxylink{structigl_1_1SLIMData_a5c305368043e9a18e0196be96cfc31c3}{V} by 3 list of mesh vertex positions 
+
+\Hypertarget{structigl_1_1SLIMData_a7230c04e2b1e764a9e81a7600daa85df}\label{structigl_1_1SLIMData_a7230c04e2b1e764a9e81a7600daa85df} 
+\index{igl::SLIMData@{igl::SLIMData}!F@{F}}
+\index{F@{F}!igl::SLIMData@{igl::SLIMData}}
+\doxysubsubsection{\texorpdfstring{F}{F}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xi igl\+::\+SLIMData\+::F}
+
+
+
+\doxylink{structigl_1_1SLIMData_a7230c04e2b1e764a9e81a7600daa85df}{F} by 3/4 list of mesh faces (triangles/tets) 
+
+\Hypertarget{structigl_1_1SLIMData_a0442b46248d198eae5dc341738e9f821}\label{structigl_1_1SLIMData_a0442b46248d198eae5dc341738e9f821} 
+\index{igl::SLIMData@{igl::SLIMData}!slim\_energy@{slim\_energy}}
+\index{slim\_energy@{slim\_energy}!igl::SLIMData@{igl::SLIMData}}
+\doxysubsubsection{\texorpdfstring{slim\_energy}{slim\_energy}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceigl_a79904ddf7fe8d79169b339cf43f9e739}{Mapping\+Energy\+Type}} igl\+::\+SLIMData\+::slim\+\_\+energy}
+
+
+
+Mapping energy type. 
+
+\Hypertarget{structigl_1_1SLIMData_ae1f26a818f7a1b5c3bc032663d38813d}\label{structigl_1_1SLIMData_ae1f26a818f7a1b5c3bc032663d38813d} 
+\index{igl::SLIMData@{igl::SLIMData}!b@{b}}
+\index{b@{b}!igl::SLIMData@{igl::SLIMData}}
+\doxysubsubsection{\texorpdfstring{b}{b}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xi igl\+::\+SLIMData\+::b}
+
+
+
+Fixed indices. 
+
+\Hypertarget{structigl_1_1SLIMData_a7326dcc125c3389443fe9424a1f88855}\label{structigl_1_1SLIMData_a7326dcc125c3389443fe9424a1f88855} 
+\index{igl::SLIMData@{igl::SLIMData}!bc@{bc}}
+\index{bc@{bc}!igl::SLIMData@{igl::SLIMData}}
+\doxysubsubsection{\texorpdfstring{bc}{bc}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd igl\+::\+SLIMData\+::bc}
+
+
+
+Fixed values. 
+
+\Hypertarget{structigl_1_1SLIMData_aab6b59568a73e6494399da6398fec86e}\label{structigl_1_1SLIMData_aab6b59568a73e6494399da6398fec86e} 
+\index{igl::SLIMData@{igl::SLIMData}!soft\_const\_p@{soft\_const\_p}}
+\index{soft\_const\_p@{soft\_const\_p}!igl::SLIMData@{igl::SLIMData}}
+\doxysubsubsection{\texorpdfstring{soft\_const\_p}{soft\_const\_p}}
+{\footnotesize\ttfamily double igl\+::\+SLIMData\+::soft\+\_\+const\+\_\+p}
+
+
+
+Weight for enforcing fixed values as soft constraint. 
+
+\Hypertarget{structigl_1_1SLIMData_a4f4bf11823f39c8e000c96d0de0248d2}\label{structigl_1_1SLIMData_a4f4bf11823f39c8e000c96d0de0248d2} 
+\index{igl::SLIMData@{igl::SLIMData}!exp\_factor@{exp\_factor}}
+\index{exp\_factor@{exp\_factor}!igl::SLIMData@{igl::SLIMData}}
+\doxysubsubsection{\texorpdfstring{exp\_factor}{exp\_factor}}
+{\footnotesize\ttfamily double igl\+::\+SLIMData\+::exp\+\_\+factor}
+
+
+
+used for exponential energies, ignored otherwise 
+
+\Hypertarget{structigl_1_1SLIMData_a1f006ca2b423df1455584a2d727e2fab}\label{structigl_1_1SLIMData_a1f006ca2b423df1455584a2d727e2fab} 
+\index{igl::SLIMData@{igl::SLIMData}!mesh\_improvement\_3d@{mesh\_improvement\_3d}}
+\index{mesh\_improvement\_3d@{mesh\_improvement\_3d}!igl::SLIMData@{igl::SLIMData}}
+\doxysubsubsection{\texorpdfstring{mesh\_improvement\_3d}{mesh\_improvement\_3d}}
+{\footnotesize\ttfamily bool igl\+::\+SLIMData\+::mesh\+\_\+improvement\+\_\+3d}
+
+
+
+only supported for 3d 
+
+\Hypertarget{structigl_1_1SLIMData_a5b913c4edb1082339aee8b462306df82}\label{structigl_1_1SLIMData_a5b913c4edb1082339aee8b462306df82} 
+\index{igl::SLIMData@{igl::SLIMData}!V\_o@{V\_o}}
+\index{V\_o@{V\_o}!igl::SLIMData@{igl::SLIMData}}
+\doxysubsubsection{\texorpdfstring{V\_o}{V\_o}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd igl\+::\+SLIMData\+::\+V\+\_\+o}
+
+
+
+\doxylink{structigl_1_1SLIMData_a5c305368043e9a18e0196be96cfc31c3}{V} by dim list of mesh vertex positions (dim = 2 for parametrization, 3 otherwise) 
+
+\Hypertarget{structigl_1_1SLIMData_a56eea77ddeae9c08f49f5a2e6f8e2870}\label{structigl_1_1SLIMData_a56eea77ddeae9c08f49f5a2e6f8e2870} 
+\index{igl::SLIMData@{igl::SLIMData}!energy@{energy}}
+\index{energy@{energy}!igl::SLIMData@{igl::SLIMData}}
+\doxysubsubsection{\texorpdfstring{energy}{energy}}
+{\footnotesize\ttfamily double igl\+::\+SLIMData\+::energy}
+
+
+
+objective value 
+
+\Hypertarget{structigl_1_1SLIMData_a2bc173c625140e700d6448680a9e4b1c}\label{structigl_1_1SLIMData_a2bc173c625140e700d6448680a9e4b1c} 
+\index{igl::SLIMData@{igl::SLIMData}!M@{M}}
+\index{M@{M}!igl::SLIMData@{igl::SLIMData}}
+\doxysubsubsection{\texorpdfstring{M}{M}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd igl\+::\+SLIMData\+::M}
+
+\Hypertarget{structigl_1_1SLIMData_acfbfb09ce52e14e82d653561b251578b}\label{structigl_1_1SLIMData_acfbfb09ce52e14e82d653561b251578b} 
+\index{igl::SLIMData@{igl::SLIMData}!mesh\_area@{mesh\_area}}
+\index{mesh\_area@{mesh\_area}!igl::SLIMData@{igl::SLIMData}}
+\doxysubsubsection{\texorpdfstring{mesh\_area}{mesh\_area}}
+{\footnotesize\ttfamily double igl\+::\+SLIMData\+::mesh\+\_\+area}
+
+\Hypertarget{structigl_1_1SLIMData_abf93fae7057a12cdd76e5f445e9aef02}\label{structigl_1_1SLIMData_abf93fae7057a12cdd76e5f445e9aef02} 
+\index{igl::SLIMData@{igl::SLIMData}!avg\_edge\_length@{avg\_edge\_length}}
+\index{avg\_edge\_length@{avg\_edge\_length}!igl::SLIMData@{igl::SLIMData}}
+\doxysubsubsection{\texorpdfstring{avg\_edge\_length}{avg\_edge\_length}}
+{\footnotesize\ttfamily double igl\+::\+SLIMData\+::avg\+\_\+edge\+\_\+length}
+
+\Hypertarget{structigl_1_1SLIMData_a25c68c70641547300251ad372baffe0c}\label{structigl_1_1SLIMData_a25c68c70641547300251ad372baffe0c} 
+\index{igl::SLIMData@{igl::SLIMData}!v\_num@{v\_num}}
+\index{v\_num@{v\_num}!igl::SLIMData@{igl::SLIMData}}
+\doxysubsubsection{\texorpdfstring{v\_num}{v\_num}}
+{\footnotesize\ttfamily int igl\+::\+SLIMData\+::v\+\_\+num}
+
+\Hypertarget{structigl_1_1SLIMData_a19ebf2e83160d820ee92688f23aab7cd}\label{structigl_1_1SLIMData_a19ebf2e83160d820ee92688f23aab7cd} 
+\index{igl::SLIMData@{igl::SLIMData}!f\_num@{f\_num}}
+\index{f\_num@{f\_num}!igl::SLIMData@{igl::SLIMData}}
+\doxysubsubsection{\texorpdfstring{f\_num}{f\_num}}
+{\footnotesize\ttfamily int igl\+::\+SLIMData\+::f\+\_\+num}
+
+\Hypertarget{structigl_1_1SLIMData_a60fc6450c2b703e5daf5dae88a494c31}\label{structigl_1_1SLIMData_a60fc6450c2b703e5daf5dae88a494c31} 
+\index{igl::SLIMData@{igl::SLIMData}!proximal\_p@{proximal\_p}}
+\index{proximal\_p@{proximal\_p}!igl::SLIMData@{igl::SLIMData}}
+\doxysubsubsection{\texorpdfstring{proximal\_p}{proximal\_p}}
+{\footnotesize\ttfamily double igl\+::\+SLIMData\+::proximal\+\_\+p}
+
+\Hypertarget{structigl_1_1SLIMData_a8013a9e8c749e71e465272fd05e2b1a4}\label{structigl_1_1SLIMData_a8013a9e8c749e71e465272fd05e2b1a4} 
+\index{igl::SLIMData@{igl::SLIMData}!WGL\_M@{WGL\_M}}
+\index{WGL\_M@{WGL\_M}!igl::SLIMData@{igl::SLIMData}}
+\doxysubsubsection{\texorpdfstring{WGL\_M}{WGL\_M}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd igl\+::\+SLIMData\+::\+WGL\+\_\+M}
+
+\Hypertarget{structigl_1_1SLIMData_a002dfbdfde53ea23312a8630ff21a7c7}\label{structigl_1_1SLIMData_a002dfbdfde53ea23312a8630ff21a7c7} 
+\index{igl::SLIMData@{igl::SLIMData}!rhs@{rhs}}
+\index{rhs@{rhs}!igl::SLIMData@{igl::SLIMData}}
+\doxysubsubsection{\texorpdfstring{rhs}{rhs}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd igl\+::\+SLIMData\+::rhs}
+
+\Hypertarget{structigl_1_1SLIMData_a03aec7d4e2f3b357123d3c744b43e08c}\label{structigl_1_1SLIMData_a03aec7d4e2f3b357123d3c744b43e08c} 
+\index{igl::SLIMData@{igl::SLIMData}!Ri@{Ri}}
+\index{Ri@{Ri}!igl::SLIMData@{igl::SLIMData}}
+\doxysubsubsection{\texorpdfstring{Ri}{Ri}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd igl\+::\+SLIMData\+::\+Ri}
+
+\Hypertarget{structigl_1_1SLIMData_a37b9e1ae8de3ed2e8639505e4cfc3f2f}\label{structigl_1_1SLIMData_a37b9e1ae8de3ed2e8639505e4cfc3f2f} 
+\index{igl::SLIMData@{igl::SLIMData}!Ji@{Ji}}
+\index{Ji@{Ji}!igl::SLIMData@{igl::SLIMData}}
+\doxysubsubsection{\texorpdfstring{Ji}{Ji}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd igl\+::\+SLIMData\+::\+Ji}
+
+\Hypertarget{structigl_1_1SLIMData_ae8ac0c1d9f36a55353d22b9f9febdcb7}\label{structigl_1_1SLIMData_ae8ac0c1d9f36a55353d22b9f9febdcb7} 
+\index{igl::SLIMData@{igl::SLIMData}!W@{W}}
+\index{W@{W}!igl::SLIMData@{igl::SLIMData}}
+\doxysubsubsection{\texorpdfstring{W}{W}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd igl\+::\+SLIMData\+::W}
+
+\Hypertarget{structigl_1_1SLIMData_a6b244e29028952a6bbb1012f06e5f6b0}\label{structigl_1_1SLIMData_a6b244e29028952a6bbb1012f06e5f6b0} 
+\index{igl::SLIMData@{igl::SLIMData}!Dx@{Dx}}
+\index{Dx@{Dx}!igl::SLIMData@{igl::SLIMData}}
+\doxysubsubsection{\texorpdfstring{Dx}{Dx}}
+{\footnotesize\ttfamily Eigen\+::\+Sparse\+Matrix$<$double$>$ igl\+::\+SLIMData\+::\+Dx}
+
+\Hypertarget{structigl_1_1SLIMData_a8d0be8e241b33ab953d23e40b5ecb663}\label{structigl_1_1SLIMData_a8d0be8e241b33ab953d23e40b5ecb663} 
+\index{igl::SLIMData@{igl::SLIMData}!Dy@{Dy}}
+\index{Dy@{Dy}!igl::SLIMData@{igl::SLIMData}}
+\doxysubsubsection{\texorpdfstring{Dy}{Dy}}
+{\footnotesize\ttfamily Eigen\+::\+Sparse\+Matrix$<$double$>$ igl\+::\+SLIMData\+::\+Dy}
+
+\Hypertarget{structigl_1_1SLIMData_a879c8a130f88110d97c39dbd4fbb679d}\label{structigl_1_1SLIMData_a879c8a130f88110d97c39dbd4fbb679d} 
+\index{igl::SLIMData@{igl::SLIMData}!Dz@{Dz}}
+\index{Dz@{Dz}!igl::SLIMData@{igl::SLIMData}}
+\doxysubsubsection{\texorpdfstring{Dz}{Dz}}
+{\footnotesize\ttfamily Eigen\+::\+Sparse\+Matrix$<$double$>$ igl\+::\+SLIMData\+::\+Dz}
+
+\Hypertarget{structigl_1_1SLIMData_ab46c3e37552205350f0b8bcecf537944}\label{structigl_1_1SLIMData_ab46c3e37552205350f0b8bcecf537944} 
+\index{igl::SLIMData@{igl::SLIMData}!f\_n@{f\_n}}
+\index{f\_n@{f\_n}!igl::SLIMData@{igl::SLIMData}}
+\doxysubsubsection{\texorpdfstring{f\_n}{f\_n}}
+{\footnotesize\ttfamily int igl\+::\+SLIMData\+::f\+\_\+n}
+
+\Hypertarget{structigl_1_1SLIMData_a7b7167eb3f9f47351f457f60df96f46c}\label{structigl_1_1SLIMData_a7b7167eb3f9f47351f457f60df96f46c} 
+\index{igl::SLIMData@{igl::SLIMData}!v\_n@{v\_n}}
+\index{v\_n@{v\_n}!igl::SLIMData@{igl::SLIMData}}
+\doxysubsubsection{\texorpdfstring{v\_n}{v\_n}}
+{\footnotesize\ttfamily int igl\+::\+SLIMData\+::v\+\_\+n}
+
+\Hypertarget{structigl_1_1SLIMData_af1ed4a065b1cf60abf3157a9bf821c19}\label{structigl_1_1SLIMData_af1ed4a065b1cf60abf3157a9bf821c19} 
+\index{igl::SLIMData@{igl::SLIMData}!first\_solve@{first\_solve}}
+\index{first\_solve@{first\_solve}!igl::SLIMData@{igl::SLIMData}}
+\doxysubsubsection{\texorpdfstring{first\_solve}{first\_solve}}
+{\footnotesize\ttfamily bool igl\+::\+SLIMData\+::first\+\_\+solve}
+
+\Hypertarget{structigl_1_1SLIMData_a76584bbe384932765ccdb64c2a8704ff}\label{structigl_1_1SLIMData_a76584bbe384932765ccdb64c2a8704ff} 
+\index{igl::SLIMData@{igl::SLIMData}!has\_pre\_calc@{has\_pre\_calc}}
+\index{has\_pre\_calc@{has\_pre\_calc}!igl::SLIMData@{igl::SLIMData}}
+\doxysubsubsection{\texorpdfstring{has\_pre\_calc}{has\_pre\_calc}}
+{\footnotesize\ttfamily bool igl\+::\+SLIMData\+::has\+\_\+pre\+\_\+calc = false}
+
+\Hypertarget{structigl_1_1SLIMData_ad058f54a17eb3978975d7aebecb896f1}\label{structigl_1_1SLIMData_ad058f54a17eb3978975d7aebecb896f1} 
+\index{igl::SLIMData@{igl::SLIMData}!dim@{dim}}
+\index{dim@{dim}!igl::SLIMData@{igl::SLIMData}}
+\doxysubsubsection{\texorpdfstring{dim}{dim}}
+{\footnotesize\ttfamily int igl\+::\+SLIMData\+::dim}
+
+\Hypertarget{structigl_1_1SLIMData_ac1bb46cc49ec9e8a9933bd3432cbcb63}\label{structigl_1_1SLIMData_ac1bb46cc49ec9e8a9933bd3432cbcb63} 
+\index{igl::SLIMData@{igl::SLIMData}!A@{A}}
+\index{A@{A}!igl::SLIMData@{igl::SLIMData}}
+\doxysubsubsection{\texorpdfstring{A}{A}}
+{\footnotesize\ttfamily Eigen\+::\+Sparse\+Matrix$<$double$>$ igl\+::\+SLIMData\+::A}
+
+\Hypertarget{structigl_1_1SLIMData_af4b99cefe61daa44d67b9f6f20d0223c}\label{structigl_1_1SLIMData_af4b99cefe61daa44d67b9f6f20d0223c} 
+\index{igl::SLIMData@{igl::SLIMData}!A\_data@{A\_data}}
+\index{A\_data@{A\_data}!igl::SLIMData@{igl::SLIMData}}
+\doxysubsubsection{\texorpdfstring{A\_data}{A\_data}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xi igl\+::\+SLIMData\+::\+A\+\_\+data}
+
+\Hypertarget{structigl_1_1SLIMData_acf58a66da2491fdc82040bb1c011fceb}\label{structigl_1_1SLIMData_acf58a66da2491fdc82040bb1c011fceb} 
+\index{igl::SLIMData@{igl::SLIMData}!AtA@{AtA}}
+\index{AtA@{AtA}!igl::SLIMData@{igl::SLIMData}}
+\doxysubsubsection{\texorpdfstring{AtA}{AtA}}
+{\footnotesize\ttfamily Eigen\+::\+Sparse\+Matrix$<$double$>$ igl\+::\+SLIMData\+::\+AtA}
+
+\Hypertarget{structigl_1_1SLIMData_a31f8835eedd9a596385f6a2230e76613}\label{structigl_1_1SLIMData_a31f8835eedd9a596385f6a2230e76613} 
+\index{igl::SLIMData@{igl::SLIMData}!AtA\_data@{AtA\_data}}
+\index{AtA\_data@{AtA\_data}!igl::SLIMData@{igl::SLIMData}}
+\doxysubsubsection{\texorpdfstring{AtA\_data}{AtA\_data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structigl_1_1AtA__cached__data}{igl\+::\+At\+A\+\_\+cached\+\_\+data}} igl\+::\+SLIMData\+::\+At\+A\+\_\+data}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/igl/\mbox{\hyperlink{slim_8h}{slim.\+h}}\end{DoxyCompactItemize}

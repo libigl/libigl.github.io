@@ -1,0 +1,66 @@
+\doxysection{pseudonormal\+\_\+test.\+h}
+\hypertarget{pseudonormal__test_8h_source}{}\label{pseudonormal__test_8h_source}\index{include/igl/pseudonormal\_test.h@{include/igl/pseudonormal\_test.h}}
+\mbox{\hyperlink{pseudonormal__test_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2015\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_PSEUDONORMAL\_TEST\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_PSEUDONORMAL\_TEST\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00030\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFN,}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVN,}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedEN,}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedEMAP,}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedq,}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedc,}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{typename}\ Scalar,}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedn>}
+\DoxyCodeLine{00041\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a55630c2a7977e397d8b8fbc562a05bc5}{pseudonormal\_test}}(}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedFN>\ \&\ FN,}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedVN>\ \&\ VN,}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEN>\ \&\ EN,}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEMAP>\ \&\ EMAP,}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedq>\ \&\ q,}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ f,}
+\DoxyCodeLine{00050\ \ \ \ \ Eigen::PlainObjectBase<Derivedc>\ \&\ c,}
+\DoxyCodeLine{00051\ \ \ \ \ Scalar\ \&\ s,}
+\DoxyCodeLine{00052\ \ \ \ \ Eigen::PlainObjectBase<Derivedn>\ \&\ n);}
+\DoxyCodeLine{00055\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedEN,}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVN,}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedq,}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedc,}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{typename}\ Scalar,}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedn>}
+\DoxyCodeLine{00064\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a55630c2a7977e397d8b8fbc562a05bc5}{pseudonormal\_test}}(}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ E,}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEN>\ \&\ EN,}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedVN>\ \&\ VN,}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedq>\ \&\ q,}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ e,}
+\DoxyCodeLine{00071\ \ \ \ \ Eigen::PlainObjectBase<Derivedc>\ \&\ c,}
+\DoxyCodeLine{00072\ \ \ \ \ Scalar\ \&\ s,}
+\DoxyCodeLine{00073\ \ \ \ \ Eigen::PlainObjectBase<Derivedn>\ \&\ n);}
+\DoxyCodeLine{00074\ \}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#\ \ include\ "{}pseudonormal\_test.cpp"{}}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

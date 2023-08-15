@@ -1,0 +1,141 @@
+\doxysection{parallel\+\_\+for.\+h}
+\hypertarget{parallel__for_8h_source}{}\label{parallel__for_8h_source}\index{include/igl/parallel\_for.h@{include/igl/parallel\_for.h}}
+\mbox{\hyperlink{parallel__for_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2016\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_PARALLEL\_FOR\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_PARALLEL\_FOR\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{comment}{//\#warning\ "{}Defining\ IGL\_PARALLEL\_FOR\_FORCE\_SERIAL"{}}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\#define\ IGL\_PARALLEL\_FOR\_FORCE\_SERIAL}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00060\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Index,\ \textcolor{keyword}{typename}\ FunctionType\ >}
+\DoxyCodeLine{00061\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a48ba3dac8f2da11935cd7e566f27e69d}{parallel\_for}}(}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{const}\ Index\ loop\_size,}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{const}\ FunctionType\ \&\ func,}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ min\_parallel=0);}
+\DoxyCodeLine{00098\ \ \ \textcolor{keyword}{template}<}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keyword}{typename}\ Index,}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{typename}\ PrepFunctionType,}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{typename}\ FunctionType,}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{typename}\ AccumFunctionType}
+\DoxyCodeLine{00103\ \ \ \ \ >}
+\DoxyCodeLine{00104\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a48ba3dac8f2da11935cd7e566f27e69d}{parallel\_for}}(}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{const}\ Index\ loop\_size,}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{const}\ PrepFunctionType\ \&\ prep\_func,}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{const}\ FunctionType\ \&\ func,}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keyword}{const}\ AccumFunctionType\ \&\ accum\_func,}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ min\_parallel=0);}
+\DoxyCodeLine{00110\ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{comment}{//\ Implementation}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{default__num__threads_8h}{default\_num\_threads.h}}"{}}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Index,\ \textcolor{keyword}{typename}\ FunctionType\ >}
+\DoxyCodeLine{00123\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a48ba3dac8f2da11935cd7e566f27e69d}{igl::parallel\_for}}(}
+\DoxyCodeLine{00124\ \ \ \textcolor{keyword}{const}\ Index\ loop\_size,}
+\DoxyCodeLine{00125\ \ \ \textcolor{keyword}{const}\ FunctionType\ \&\ func,}
+\DoxyCodeLine{00126\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ min\_parallel)}
+\DoxyCodeLine{00127\ \{}
+\DoxyCodeLine{00128\ \ \ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00129\ \ \ \textcolor{comment}{//\ no\ op\ preparation/accumulation}}
+\DoxyCodeLine{00130\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&\ no\_op\ =\ [](\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ \textcolor{comment}{/*n/t*/})\{\};}
+\DoxyCodeLine{00131\ \ \ \textcolor{comment}{//\ two-\/parameter\ wrapper\ ignoring\ thread\ id}}
+\DoxyCodeLine{00132\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&\ wrapper\ =\ [\&func](Index\ i,\textcolor{keywordtype}{size\_t}\ \textcolor{comment}{/*t*/})\{\ func(i);\ \};}
+\DoxyCodeLine{00133\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceigl_a48ba3dac8f2da11935cd7e566f27e69d}{parallel\_for}}(loop\_size,no\_op,wrapper,no\_op,min\_parallel);}
+\DoxyCodeLine{00134\ \}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \textcolor{keyword}{template}<}
+\DoxyCodeLine{00137\ \ \ \textcolor{keyword}{typename}\ Index,}
+\DoxyCodeLine{00138\ \ \ \textcolor{keyword}{typename}\ PreFunctionType,}
+\DoxyCodeLine{00139\ \ \ \textcolor{keyword}{typename}\ FunctionType,}
+\DoxyCodeLine{00140\ \ \ \textcolor{keyword}{typename}\ AccumFunctionType>}
+\DoxyCodeLine{00141\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a48ba3dac8f2da11935cd7e566f27e69d}{igl::parallel\_for}}(}
+\DoxyCodeLine{00142\ \ \ \textcolor{keyword}{const}\ Index\ loop\_size,}
+\DoxyCodeLine{00143\ \ \ \textcolor{keyword}{const}\ PreFunctionType\ \&\ prep\_func,}
+\DoxyCodeLine{00144\ \ \ \textcolor{keyword}{const}\ FunctionType\ \&\ func,}
+\DoxyCodeLine{00145\ \ \ \textcolor{keyword}{const}\ AccumFunctionType\ \&\ accum\_func,}
+\DoxyCodeLine{00146\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ min\_parallel)}
+\DoxyCodeLine{00147\ \{}
+\DoxyCodeLine{00148\ \ \ assert(loop\_size>=0);}
+\DoxyCodeLine{00149\ \ \ \textcolor{keywordflow}{if}(loop\_size==0)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00150\ \ \ \textcolor{comment}{//\ Estimate\ number\ of\ threads\ in\ the\ pool}}
+\DoxyCodeLine{00151\ \ \ \textcolor{comment}{//\ http://ideone.com/Z7zldb}}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#ifdef\ IGL\_PARALLEL\_FOR\_FORCE\_SERIAL}}
+\DoxyCodeLine{00153\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ nthreads\ =\ 1;}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00155\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ nthreads\ =\ \mbox{\hyperlink{namespaceigl_aa03c54b4a3c8a07853528d49455f4fcc}{igl::default\_num\_threads}}();}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00157\ \ \ \textcolor{keywordflow}{if}(loop\_size<min\_parallel\ ||\ nthreads<=1)}
+\DoxyCodeLine{00158\ \ \ \{}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{comment}{//\ serial}}
+\DoxyCodeLine{00160\ \ \ \ \ prep\_func(1);}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordflow}{for}(Index\ i\ =\ 0;i<loop\_size;i++)\ func(i,0);}
+\DoxyCodeLine{00162\ \ \ \ \ accum\_func(0);}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00164\ \ \ \}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{00165\ \ \ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{comment}{//\ Size\ of\ a\ slice\ for\ the\ range\ functions}}
+\DoxyCodeLine{00167\ \ \ \ \ Index\ \mbox{\hyperlink{namespaceigl_a547a8704200d3af48fe92105c15a32ad}{slice}}\ =}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ std::max(}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ (Index)std::round((loop\_size+1)/\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(nthreads)),(Index)1);}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{comment}{//\ [Helper]\ Inner\ loop}}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&\ range\ =\ [\&func](\textcolor{keyword}{const}\ Index\ k1,\ \textcolor{keyword}{const}\ Index\ k2,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ t)}
+\DoxyCodeLine{00173\ \ \ \ \ \{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(Index\ k\ =\ k1;\ k\ <\ k2;\ k++)\ func(k,t);}
+\DoxyCodeLine{00175\ \ \ \ \ \};}
+\DoxyCodeLine{00176\ \ \ \ \ prep\_func(nthreads);}
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{comment}{//\ Create\ pool\ and\ launch\ jobs}}
+\DoxyCodeLine{00178\ \ \ \ \ std::vector<std::thread>\ pool;}
+\DoxyCodeLine{00179\ \ \ \ \ pool.reserve(nthreads);}
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{comment}{//\ Inner\ range\ extents}}
+\DoxyCodeLine{00181\ \ \ \ \ Index\ i1\ =\ 0;}
+\DoxyCodeLine{00182\ \ \ \ \ Index\ i2\ =\ std::min(0\ +\ slice,\ loop\_size);}
+\DoxyCodeLine{00183\ \ \ \ \ \{}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ t\ =\ 0;}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (;\ t+1\ <\ nthreads\ \&\&\ i1\ <\ loop\_size;\ ++t)}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ pool.emplace\_back(range,\ i1,\ i2,\ t);}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ i1\ =\ i2;}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ i2\ =\ std::min(i2\ +\ slice,\ loop\_size);}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i1\ <\ loop\_size)}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ pool.emplace\_back(range,\ i1,\ loop\_size,\ t);}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00195\ \ \ \ \ \}}
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{comment}{//\ Wait\ for\ jobs\ to\ finish}}
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::thread\ \&t\ :\ pool)\ if\ (t.joinable())\ t.join();}
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{comment}{//\ Accumulate\ across\ threads}}
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ t\ =\ 0;t<nthreads;t++)}
+\DoxyCodeLine{00200\ \ \ \ \ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ accum\_func(t);}
+\DoxyCodeLine{00202\ \ \ \ \ \}}
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00204\ \ \ \}}
+\DoxyCodeLine{00205\ \}}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \textcolor{comment}{//\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00208\ \textcolor{comment}{//\#include\ "{}parallel\_for.cpp"{}}}
+\DoxyCodeLine{00209\ \textcolor{comment}{//\#endif}}
+\DoxyCodeLine{00210\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

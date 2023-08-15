@@ -1,0 +1,52 @@
+\doxysection{read\+TGF.\+h}
+\hypertarget{readTGF_8h_source}{}\label{readTGF_8h_source}\index{include/igl/readTGF.h@{include/igl/readTGF.h}}
+\mbox{\hyperlink{readTGF_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2013\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_READTGF\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_READTGF\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#ifndef\ IGL\_NO\_EIGEN}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00055\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a0e2ff313a45b1882bc42711ef59518ea}{readTGF}}(}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ tgf\_filename,}
+\DoxyCodeLine{00057\ \ \ \ \ std::vector<std::vector<double>\ >\ \&\ C,}
+\DoxyCodeLine{00058\ \ \ \ \ std::vector<std::vector<int>\ >\ \&\ E,}
+\DoxyCodeLine{00059\ \ \ \ \ std::vector<int>\ \&\ P,}
+\DoxyCodeLine{00060\ \ \ \ \ std::vector<std::vector<int>\ >\ \&\ BE,}
+\DoxyCodeLine{00061\ \ \ \ \ std::vector<std::vector<int>\ >\ \&\ CE,}
+\DoxyCodeLine{00062\ \ \ \ \ std::vector<std::vector<int>\ >\ \&\ PE);}
+\DoxyCodeLine{00064\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a0e2ff313a45b1882bc42711ef59518ea}{readTGF}}(}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ tgf\_filename,}
+\DoxyCodeLine{00066\ \ \ \ \ Eigen::MatrixXd\ \&\ C,}
+\DoxyCodeLine{00067\ \ \ \ \ Eigen::MatrixXi\ \&\ E,}
+\DoxyCodeLine{00068\ \ \ \ \ Eigen::VectorXi\ \&\ P,}
+\DoxyCodeLine{00069\ \ \ \ \ Eigen::MatrixXi\ \&\ BE,}
+\DoxyCodeLine{00070\ \ \ \ \ Eigen::MatrixXi\ \&\ CE,}
+\DoxyCodeLine{00071\ \ \ \ \ Eigen::MatrixXi\ \&\ PE);}
+\DoxyCodeLine{00073\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a0e2ff313a45b1882bc42711ef59518ea}{readTGF}}(}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ tgf\_filename,}
+\DoxyCodeLine{00075\ \ \ \ \ Eigen::MatrixXd\ \&\ C,}
+\DoxyCodeLine{00076\ \ \ \ \ Eigen::MatrixXi\ \&\ E);}
+\DoxyCodeLine{00077\ \}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#\ \ include\ "{}readTGF.cpp"{}}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

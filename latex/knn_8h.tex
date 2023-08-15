@@ -1,0 +1,18 @@
+\doxysection{include/igl/knn.h File Reference}
+\hypertarget{knn_8h}{}\label{knn_8h}\index{include/igl/knn.h@{include/igl/knn.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \"{}knn.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedP , typename Index\+Type , typename Derived\+CH , typename Derived\+CN , typename DerivedW , typename DerivedI $>$ }\\void \mbox{\hyperlink{namespaceigl_a6f2969bd735df2588ce37026375ddefe}{igl\+::knn}} (const Eigen\+::\+Matrix\+Base$<$ DerivedP $>$ \&P, size\+\_\+t k, const std\+::vector$<$ std\+::vector$<$ Index\+Type $>$ $>$ \&point\+\_\+indices, const Eigen\+::\+Matrix\+Base$<$ Derived\+CH $>$ \&CH, const Eigen\+::\+Matrix\+Base$<$ Derived\+CN $>$ \&CN, const Eigen\+::\+Matrix\+Base$<$ DerivedW $>$ \&W, Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&I)
+\begin{DoxyCompactList}\small\item\em Given a 3D set of points P, an whole number k, and an octree find the indicies of the k nearest neighbors for each point in P. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedP , typename DerivedV , typename Index\+Type , typename Derived\+CH , typename Derived\+CN , typename DerivedW , typename DerivedI $>$ }\\void \mbox{\hyperlink{namespaceigl_a8937a7fe108b5aa0669d3731c34e281d}{igl\+::knn}} (const Eigen\+::\+Matrix\+Base$<$ DerivedP $>$ \&P, const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, size\+\_\+t k, const std\+::vector$<$ std\+::vector$<$ Index\+Type $>$ $>$ \&point\+\_\+indices, const Eigen\+::\+Matrix\+Base$<$ Derived\+CH $>$ \&CH, const Eigen\+::\+Matrix\+Base$<$ Derived\+CN $>$ \&CN, const Eigen\+::\+Matrix\+Base$<$ DerivedW $>$ \&W, Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&I)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}

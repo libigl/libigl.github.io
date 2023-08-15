@@ -1,0 +1,45 @@
+\doxysection{eigs.\+h}
+\hypertarget{eigs_8h_source}{}\label{eigs_8h_source}\index{include/igl/eigs.h@{include/igl/eigs.h}}
+\mbox{\hyperlink{eigs_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2016\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_EIGS\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_EIGS\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Sparse>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00017\ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespaceigl_a39bb96a0597986315dc20d78ba46a50d}{EigsType}}}
+\DoxyCodeLine{00018\ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{namespaceigl_a39bb96a0597986315dc20d78ba46a50da2b8b23d6ed6bab31827ce232b5c4b753}{EIGS\_TYPE\_SM}}\ =\ 0,}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{namespaceigl_a39bb96a0597986315dc20d78ba46a50daea338bf4c5326fb6e1534be0d2d8c3ff}{EIGS\_TYPE\_LM}}\ =\ 1,}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{namespaceigl_a39bb96a0597986315dc20d78ba46a50dad803c6fe03f39ed4ef76376e6ba1d2c2}{NUM\_EIGS\_TYPES}}\ =\ 2}
+\DoxyCodeLine{00025\ \ \ \};}
+\DoxyCodeLine{00047\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{typename}\ Atype,}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{typename}\ Btype,}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedU,}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedS>}
+\DoxyCodeLine{00052\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a77bf75e3dc429d5ca9d830c137ac1b1f}{eigs}}(}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<Atype>\ \&\ A,}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<Btype>\ \&\ B,}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ k,}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceigl_a39bb96a0597986315dc20d78ba46a50d}{EigsType}}\ type,}
+\DoxyCodeLine{00057\ \ \ \ \ Eigen::PlainObjectBase<DerivedU>\ \&\ sU,}
+\DoxyCodeLine{00058\ \ \ \ \ Eigen::PlainObjectBase<DerivedS>\ \&\ sS);}
+\DoxyCodeLine{00059\ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#include\ "{}eigs.cpp"{}}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

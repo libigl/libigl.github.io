@@ -1,0 +1,23 @@
+\doxysection{include/igl/shape\+\_\+diameter\+\_\+function.h File Reference}
+\hypertarget{shape__diameter__function_8h}{}\label{shape__diameter__function_8h}\index{include/igl/shape\_diameter\_function.h@{include/igl/shape\_diameter\_function.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include \"{}AABB.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include \"{}shape\+\_\+diameter\+\_\+function.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedP , typename DerivedN , typename DerivedS $>$ }\\void \mbox{\hyperlink{namespaceigl_a3df5a621d40fe169f2138e39b8b81fec}{igl\+::shape\+\_\+diameter\+\_\+function}} (const std\+::function$<$ double(const Eigen\+::\+Vector3f \&, const Eigen\+::\+Vector3f \&) $>$ \&shoot\+\_\+ray, const Eigen\+::\+Matrix\+Base$<$ DerivedP $>$ \&P, const Eigen\+::\+Matrix\+Base$<$ DerivedN $>$ \&N, const int num\+\_\+samples, Eigen\+::\+Plain\+Object\+Base$<$ DerivedS $>$ \&S)
+\begin{DoxyCompactList}\small\item\em Compute shape diamater function per given point. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , int DIM, typename DerivedF , typename DerivedP , typename DerivedN , typename DerivedS $>$ }\\void \mbox{\hyperlink{namespaceigl_a982784dfbf6aae442c5e9b0bc3fdcb53}{igl\+::shape\+\_\+diameter\+\_\+function}} (const \mbox{\hyperlink{classigl_1_1AABB}{igl\+::\+AABB}}$<$ DerivedV, DIM $>$ \&aabb, const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const Eigen\+::\+Matrix\+Base$<$ DerivedP $>$ \&P, const Eigen\+::\+Matrix\+Base$<$ DerivedN $>$ \&N, const int num\+\_\+samples, Eigen\+::\+Plain\+Object\+Base$<$ DerivedS $>$ \&S)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedP , typename DerivedN , typename DerivedS $>$ }\\void \mbox{\hyperlink{namespaceigl_a46e0193f9523e75a450e14e3cf8179fd}{igl\+::shape\+\_\+diameter\+\_\+function}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const Eigen\+::\+Matrix\+Base$<$ DerivedP $>$ \&P, const Eigen\+::\+Matrix\+Base$<$ DerivedN $>$ \&N, const int num\+\_\+samples, Eigen\+::\+Plain\+Object\+Base$<$ DerivedS $>$ \&S)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedS $>$ }\\void \mbox{\hyperlink{namespaceigl_a725c756cdeba9b4dbc64ab4a50c50cfa}{igl\+::shape\+\_\+diameter\+\_\+function}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const bool per\+\_\+face, const int num\+\_\+samples, Eigen\+::\+Plain\+Object\+Base$<$ DerivedS $>$ \&S)
+\end{DoxyCompactItemize}

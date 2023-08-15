@@ -1,0 +1,43 @@
+\doxysection{write\+MSH.\+h}
+\hypertarget{writeMSH_8h_source}{}\label{writeMSH_8h_source}\index{include/igl/writeMSH.h@{include/igl/writeMSH.h}}
+\mbox{\hyperlink{writeMSH_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ high\ level\ interface\ for\ MshSaver\ }}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2020\ Vladimir\ Fonov\ <vladimir.fonov@gmail.com>\ }}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ Public\ License\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ with\ this\ file,\ You\ can\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.\ }}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_WRITE\_MSH\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_WRITE\_MSH\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00038\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a2df694c52f937d065a10d20c184ddfc4}{writeMSH}}(}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \ \ \&msh,}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\ \&X,}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&Tri,}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&Tet,}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&TriTag,}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&TetTag,}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\ \ \ \ \ \&XFields,}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<Eigen::MatrixXd>\ \&XF,}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\ \ \ \ \ \&EFields,}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<Eigen::MatrixXd>\ \&TriF,}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<Eigen::MatrixXd>\ \&TetF);}
+\DoxyCodeLine{00050\ \ \ }
+\DoxyCodeLine{00051\ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#\ \ include\ "{}writeMSH.cpp"{}}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//IGL\_WRITE\_MSH\_H}}
+
+\end{DoxyCode}

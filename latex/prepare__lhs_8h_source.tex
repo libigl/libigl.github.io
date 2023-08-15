@@ -1,0 +1,50 @@
+\doxysection{prepare\+\_\+lhs.\+h}
+\hypertarget{prepare__lhs_8h_source}{}\label{prepare__lhs_8h_source}\index{include/igl/matlab/prepare\_lhs.h@{include/igl/matlab/prepare\_lhs.h}}
+\mbox{\hyperlink{prepare__lhs_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2015\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_MATLAB\_PREPARE\_LHS\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_MATLAB\_PREPARE\_LHS\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <igl/igl\_inline.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <mex.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <Eigen/Sparse>}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \ \ \textcolor{keyword}{namespace\ }matlab}
+\DoxyCodeLine{00017\ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedV>}
+\DoxyCodeLine{00023\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1matlab_a0bf3ba75facb8ae4bdcec4b4e47eb1be}{prepare\_lhs\_double}}(}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ mxArray\ *plhs[]);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Vtype>}
+\DoxyCodeLine{00028\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1matlab_a0bf3ba75facb8ae4bdcec4b4e47eb1be}{prepare\_lhs\_double}}(}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<Vtype>\ \&\ V,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ mxArray\ *plhs[]);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedV>}
+\DoxyCodeLine{00034\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1matlab_a96c214a1e80cc0614d522e1e2b46a981}{prepare\_lhs\_logical}}(}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ mxArray\ *plhs[]);}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedV>}
+\DoxyCodeLine{00042\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1matlab_a0630a8f73fa5c504000681f7b1afd6d4}{prepare\_lhs\_index}}(}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ mxArray\ *plhs[]);}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Vtype>}
+\DoxyCodeLine{00049\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1matlab_a0bf3ba75facb8ae4bdcec4b4e47eb1be}{prepare\_lhs\_double}}(}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<Vtype>\ \&\ V,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ mxArray\ *plhs[]);}
+\DoxyCodeLine{00052\ \ \ \};}
+\DoxyCodeLine{00053\ \}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#\ \ include\ "{}prepare\_lhs.cpp"{}}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00058\ }
+
+\end{DoxyCode}

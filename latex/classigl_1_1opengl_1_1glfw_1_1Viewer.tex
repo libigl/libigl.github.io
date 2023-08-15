@@ -1,0 +1,735 @@
+\doxysection{igl\+::opengl\+::glfw\+::Viewer Class Reference}
+\hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer}{}\label{classigl_1_1opengl_1_1glfw_1_1Viewer}\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+
+
+{\ttfamily \#include $<$Viewer.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a9ec42624cd37d353e030a8c89dc30c78}{Mouse\+Button}} \{ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a9ec42624cd37d353e030a8c89dc30c78a945d5e233cf7d6240f6b783b36a374ff}{Left}}
+, \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a9ec42624cd37d353e030a8c89dc30c78ab1ca34f82e83c52b010f86955f264e05}{Middle}}
+, \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a9ec42624cd37d353e030a8c89dc30c78a92b09c7c48c520c3c55e497875da437c}{Right}}
+ \}
+\item 
+enum class \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a07ec1c059cfc0579950454f4bdf1aab2}{Mouse\+Mode}} \{ \newline
+\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a07ec1c059cfc0579950454f4bdf1aab2a6adf97f83acf6453d4a6a4b1070f3754}{None}}
+, \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a07ec1c059cfc0579950454f4bdf1aab2af1a42bd417390fc63b030a519624607a}{Rotation}}
+, \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a07ec1c059cfc0579950454f4bdf1aab2a4252b72e6ebcd4d4b4c2e46a786f03d2}{Zoom}}
+, \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a07ec1c059cfc0579950454f4bdf1aab2af6d4a17b27da35c2d90ce13801f36782}{Pan}}
+, \newline
+\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a07ec1c059cfc0579950454f4bdf1aab2a6dd08874f83507e9c7b23f1a46b7fa7c}{Translation}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_aee90a5d0831fd4c41e516ab89b511d6c}{launch}} (bool resizable=true, bool fullscreen=false, const std\+::string \&name=\"{}libigl viewer\"{}, int width=0, int height=0)
+\item 
+int \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a73b85673332b74bef9c75473b3142ffc}{launch\+\_\+init}} (bool resizable=true, bool fullscreen=false, const std\+::string \&name=\"{}libigl viewer\"{}, int width=0, int height=0)
+\item 
+bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a7b261788c078365c8a3b293b426b93e8}{launch\+\_\+rendering}} (bool \mbox{\hyperlink{namespaceigl_aea9965bc615b0a851fabf90d37a73320}{loop}}=true)
+\item 
+void \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a6db08ce198588d6fc8966e7d2f01f311}{launch\+\_\+shut}} ()
+\item 
+void \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a9f01c20d55a8efc539442fae8b0367a1}{init}} ()
+\item 
+void \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a2b38160751bd00813506494cb608ac50}{init\+\_\+plugins}} ()
+\item 
+void \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a15045bd3866036cc90d31c6a69d6787b}{shutdown\+\_\+plugins}} ()
+\item 
+\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_ade9081e5dbaccee6ce018018cd29ef89}{Viewer}} ()
+\item 
+\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a1c6647830a195ff39a8ec8ddfe62bba3}{\texorpdfstring{$\sim$}{\string~}\+Viewer}} ()
+\item 
+bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a2b5e2c00e3d4ac59318baf0af908daca}{load\+\_\+mesh\+\_\+from\+\_\+file}} (const std\+::string \&mesh\+\_\+file\+\_\+name)
+\item 
+bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_ac508130c76df2ff50dcf593bbc34b69f}{save\+\_\+mesh\+\_\+to\+\_\+file}} (const std\+::string \&mesh\+\_\+file\+\_\+name)
+\item 
+bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_ab846d887a586ba28f22a7be708e5f0b2}{key\+\_\+pressed}} (unsigned int unicode\+\_\+key, int modifier)
+\item 
+bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_ae3357af06c69f108f8123a036ccf2c65}{key\+\_\+down}} (int key, int modifier)
+\item 
+bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_ab09a9f6d477c7274b44102176b236a4e}{key\+\_\+up}} (int key, int modifier)
+\item 
+bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_ac3677477f88b291feb18d5dbc4ad214d}{mouse\+\_\+down}} (\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a9ec42624cd37d353e030a8c89dc30c78}{Mouse\+Button}} button, int modifier)
+\item 
+bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_ab003132f9cafd182c3854189f2beb325}{mouse\+\_\+up}} (\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a9ec42624cd37d353e030a8c89dc30c78}{Mouse\+Button}} button, int modifier)
+\item 
+bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a0a0825c4839fddf08fcbbf9943f29e2f}{mouse\+\_\+move}} (int mouse\+\_\+x, int mouse\+\_\+y)
+\item 
+bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a7786f055a0566fb7a13927ed0355e21c}{mouse\+\_\+scroll}} (float delta\+\_\+y)
+\item 
+bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a2b804f44e898f3ab954fbd9eb89b1468}{load\+\_\+scene}} ()
+\item 
+bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_ae2f917646826c663eb69ecfc395014c4}{load\+\_\+scene}} (std\+::string fname)
+\item 
+bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a746ae6c96981c092cab505dd579d724f}{save\+\_\+scene}} ()
+\item 
+bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a255c85c9f14fdd975cad9a791dcfdd8e}{save\+\_\+scene}} (std\+::string fname)
+\item 
+void \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a44a2a81590392c586815cf9b3f8f7e56}{draw}} ()
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_aca9dc39fe9096f4c85e4438f3fc033c2}{draw\+\_\+buffer}} (igl\+::opengl\+::\+Viewer\+Core \&\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a4fc39cbf6a2d68d0eaf63bef3fd49464}{core}}, Eigen\+::\+Matrix$<$ T, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&R, Eigen\+::\+Matrix$<$ T, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&G, Eigen\+::\+Matrix$<$ T, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&B, Eigen\+::\+Matrix$<$ T, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&A, Eigen\+::\+Matrix$<$ T, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&D)
+\item 
+void \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a4e66c632d62c6d8d0eaf5a31c21848cc}{resize}} (int w, int h)
+\item 
+void \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a0c65ffc73bf52c69eb97ab7652e57a98}{post\+\_\+resize}} (int w, int h)
+\item 
+void \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a13b85f3f52751675b6243ee7b57b6a8e}{snap\+\_\+to\+\_\+canonical\+\_\+quaternion}} ()
+\item 
+void \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a4eaa37f0502d7bfc80ea26fe4e09ea57}{open\+\_\+dialog\+\_\+load\+\_\+mesh}} ()
+\item 
+void \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a3be7a881a617dd11c5c6deac338c7386}{open\+\_\+dialog\+\_\+save\+\_\+mesh}} ()
+\item 
+\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData}{Viewer\+Data}} \& \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_ae5d5d4e238d8863531128353589b10f2}{data}} (int mesh\+\_\+id=-\/1)
+\item 
+const \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData}{Viewer\+Data}} \& \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a6a31e729664bff12bcd156e2d37abb68}{data}} (int mesh\+\_\+id=-\/1) const
+\item 
+int \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a10a41b0817eecf4a02835fe602da6528}{append\+\_\+mesh}} (bool visible=true)
+\item 
+bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a39e77515f09c4b58990c794441d920bb}{erase\+\_\+mesh}} (const size\+\_\+t index)
+\item 
+size\+\_\+t \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_abd34d1bc45213bcd14ee95300fdc499d}{mesh\+\_\+index}} (const int id) const
+\item 
+Viewer\+Core \& \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a4fc39cbf6a2d68d0eaf63bef3fd49464}{core}} (unsigned core\+\_\+id=0)
+\item 
+const Viewer\+Core \& \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_aca329644bd355f2f3dc6aa117964274f}{core}} (unsigned core\+\_\+id=0) const
+\item 
+int \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a783a5b2ee8eb31fd76fb16e356bcf550}{append\+\_\+core}} (Eigen\+::\+Vector4f viewport, bool append\+\_\+empty=false)
+\item 
+bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_ac3d5e3e5040f6e963bcb75a00cab4e3d}{erase\+\_\+core}} (const size\+\_\+t index)
+\item 
+size\+\_\+t \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a012b19566b9dbf2321542e78aaba252c}{core\+\_\+index}} (const int id) const
+\item 
+void \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a3cd0edeec6629ae2607b7b36c0e316a1}{select\+\_\+hovered\+\_\+core}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a07ec1c059cfc0579950454f4bdf1aab2}{igl\+::opengl\+::glfw\+::\+Viewer\+::\+Mouse\+Mode}} \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_acb6e7b7ce40049a23f5ca99fd40ba279}{mouse\+\_\+mode}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData}{Viewer\+Data}} $>$ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_afe88232cf93c9a8f40dc7c8388e4bef9}{data\+\_\+list}}
+\item 
+size\+\_\+t \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a2fd28960580797eae596372f32147777}{selected\+\_\+data\+\_\+index}}
+\item 
+int \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a29f39289f861509167438da14921bcb8}{next\+\_\+data\+\_\+id}}
+\item 
+GLFWwindow \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a8bd01c79b59e43407e1bb5c5ab227404}{window}}
+\item 
+std\+::vector$<$ Viewer\+Core $>$ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_aaaa8e5c0215617964f3e191a28827f2b}{core\+\_\+list}}
+\item 
+size\+\_\+t \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a23fe17253347c87eb8383d61d33f7cd1}{selected\+\_\+core\+\_\+index}}
+\item 
+int \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_af9cea96c79080e073dadf1e3658c77eb}{next\+\_\+core\+\_\+id}}
+\item 
+std\+::vector$<$ Viewer\+Plugin \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a71b77ba75ee7e094d5bf4f3b92f58ed3}{plugins}}
+\item 
+Eigen\+::\+Quaternionf \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a9c1329d7db58b4193b0f6124dd423d43}{down\+\_\+rotation}}
+\item 
+int \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a3b0a689bb89ef9295e708cfcd2dbd51f}{current\+\_\+mouse\+\_\+x}}
+\item 
+int \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_ad1ed01fb809938fa9b79e7cee0504e71}{current\+\_\+mouse\+\_\+y}}
+\item 
+int \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_ac91c9394d85d316396b106de08c58608}{down\+\_\+mouse\+\_\+x}}
+\item 
+int \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_afa9b382392394eebb987433cf101863a}{down\+\_\+mouse\+\_\+y}}
+\item 
+float \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a7f612d15279ba7c7b87051db936bf90a}{down\+\_\+mouse\+\_\+z}}
+\item 
+Eigen\+::\+Vector3f \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a5191fcde2387530399dcbdb2545fc486}{down\+\_\+translation}}
+\item 
+bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a409f232f38459dc2324c4fdf183c2078}{down}}
+\item 
+bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a45ccfbadedaad723e8ca598091a13b2e}{hack\+\_\+never\+\_\+moved}}
+\item 
+float \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_adde2fa7837951138c215206f7e3aafdb}{scroll\+\_\+position}}
+\item 
+std\+::function$<$ bool(\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}} \&viewer)$>$ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a031a29b6e4f3cc5a845d8e55ecc76e21}{callback\+\_\+init}}
+\item 
+std\+::function$<$ bool(\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}} \&viewer)$>$ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a370cdb7e65e003ee4529bf6d9a3f5aaf}{callback\+\_\+pre\+\_\+draw}}
+\item 
+std\+::function$<$ bool(\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}} \&viewer)$>$ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a6af757b8f1052d37fa864966b0cb8684}{callback\+\_\+post\+\_\+draw}}
+\item 
+std\+::function$<$ bool(\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}} \&viewer, int button, int modifier)$>$ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_af3639a31bead21b749df4184df83a891}{callback\+\_\+mouse\+\_\+down}}
+\item 
+std\+::function$<$ bool(\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}} \&viewer, int button, int modifier)$>$ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a23c44941f23ff861b22a735770c56795}{callback\+\_\+mouse\+\_\+up}}
+\item 
+std\+::function$<$ bool(\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}} \&viewer, int mouse\+\_\+x, int mouse\+\_\+y)$>$ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a5949846e54886a2ec738f83c5118c5b8}{callback\+\_\+mouse\+\_\+move}}
+\item 
+std\+::function$<$ bool(\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}} \&viewer, float delta\+\_\+y)$>$ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a34a68580d51de1a33651e63517cdd9c0}{callback\+\_\+mouse\+\_\+scroll}}
+\item 
+std\+::function$<$ bool(\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}} \&viewer, unsigned int key, int modifiers)$>$ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a1a4857bec3b5a330fe099db6b4ab930c}{callback\+\_\+key\+\_\+pressed}}
+\item 
+std\+::function$<$ bool(\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}} \&viewer, int w, int h)$>$ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a2e7d09cbc7a03bd9745ca5ede0f94b97}{callback\+\_\+post\+\_\+resize}}
+\item 
+std\+::function$<$ bool(\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}} \&viewer, unsigned int key, int modifiers)$>$ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a4868aa4ff805a5f70557e12228eb6c91}{callback\+\_\+key\+\_\+down}}
+\item 
+std\+::function$<$ bool(\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}} \&viewer, unsigned int key, int modifiers)$>$ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a8c895a8e2eaaf9d4712817e581058dae}{callback\+\_\+key\+\_\+up}}
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a2667ad51b12b0d2227729475e65420a0}{callback\+\_\+init\+\_\+data}}
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a74a0a27439140217903d645ffccff653}{callback\+\_\+pre\+\_\+draw\+\_\+data}}
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a774c6380c810d3eb68fdbc5707e04de7}{callback\+\_\+post\+\_\+draw\+\_\+data}}
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_acfbbe515b6b2e1737ccdb9f89138abbc}{callback\+\_\+mouse\+\_\+down\+\_\+data}}
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_ad0434e797f28c16405692efa93a8ee08}{callback\+\_\+mouse\+\_\+up\+\_\+data}}
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_ac100310efc02f80e2bb59a0556933a27}{callback\+\_\+mouse\+\_\+move\+\_\+data}}
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a0899419337d2701cfd621e6630f7eb1e}{callback\+\_\+mouse\+\_\+scroll\+\_\+data}}
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_abd15e1b9e4258db141779f4c387a1f03}{callback\+\_\+key\+\_\+pressed\+\_\+data}}
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_aaeda545d3415ac3cda2b41775d49f143}{callback\+\_\+key\+\_\+down\+\_\+data}}
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_afd473a580f5e90d59fe405a8e76f05a3}{callback\+\_\+key\+\_\+up\+\_\+data}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a9ec42624cd37d353e030a8c89dc30c78}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a9ec42624cd37d353e030a8c89dc30c78} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!MouseButton@{MouseButton}}
+\index{MouseButton@{MouseButton}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{MouseButton}{MouseButton}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a9ec42624cd37d353e030a8c89dc30c78}{igl\+::opengl\+::glfw\+::\+Viewer\+::\+Mouse\+Button}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Left@{Left}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!Left@{Left}}}\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a9ec42624cd37d353e030a8c89dc30c78a945d5e233cf7d6240f6b783b36a374ff}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a9ec42624cd37d353e030a8c89dc30c78a945d5e233cf7d6240f6b783b36a374ff} 
+Left&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Middle@{Middle}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!Middle@{Middle}}}\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a9ec42624cd37d353e030a8c89dc30c78ab1ca34f82e83c52b010f86955f264e05}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a9ec42624cd37d353e030a8c89dc30c78ab1ca34f82e83c52b010f86955f264e05} 
+Middle&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Right@{Right}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!Right@{Right}}}\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a9ec42624cd37d353e030a8c89dc30c78a92b09c7c48c520c3c55e497875da437c}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a9ec42624cd37d353e030a8c89dc30c78a92b09c7c48c520c3c55e497875da437c} 
+Right&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a07ec1c059cfc0579950454f4bdf1aab2}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a07ec1c059cfc0579950454f4bdf1aab2} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!MouseMode@{MouseMode}}
+\index{MouseMode@{MouseMode}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{MouseMode}{MouseMode}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a07ec1c059cfc0579950454f4bdf1aab2}{igl\+::opengl\+::glfw\+::\+Viewer\+::\+Mouse\+Mode}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{None@{None}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!None@{None}}}\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a07ec1c059cfc0579950454f4bdf1aab2a6adf97f83acf6453d4a6a4b1070f3754}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a07ec1c059cfc0579950454f4bdf1aab2a6adf97f83acf6453d4a6a4b1070f3754} 
+None&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Rotation@{Rotation}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!Rotation@{Rotation}}}\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a07ec1c059cfc0579950454f4bdf1aab2af1a42bd417390fc63b030a519624607a}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a07ec1c059cfc0579950454f4bdf1aab2af1a42bd417390fc63b030a519624607a} 
+Rotation&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Zoom@{Zoom}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!Zoom@{Zoom}}}\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a07ec1c059cfc0579950454f4bdf1aab2a4252b72e6ebcd4d4b4c2e46a786f03d2}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a07ec1c059cfc0579950454f4bdf1aab2a4252b72e6ebcd4d4b4c2e46a786f03d2} 
+Zoom&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Pan@{Pan}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!Pan@{Pan}}}\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a07ec1c059cfc0579950454f4bdf1aab2af6d4a17b27da35c2d90ce13801f36782}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a07ec1c059cfc0579950454f4bdf1aab2af6d4a17b27da35c2d90ce13801f36782} 
+Pan&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Translation@{Translation}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!Translation@{Translation}}}\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a07ec1c059cfc0579950454f4bdf1aab2a6dd08874f83507e9c7b23f1a46b7fa7c}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a07ec1c059cfc0579950454f4bdf1aab2a6dd08874f83507e9c7b23f1a46b7fa7c} 
+Translation&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_ade9081e5dbaccee6ce018018cd29ef89}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_ade9081e5dbaccee6ce018018cd29ef89} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!Viewer@{Viewer}}
+\index{Viewer@{Viewer}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{Viewer()}{Viewer()}}
+{\footnotesize\ttfamily igl\+::opengl\+::glfw\+::\+Viewer\+::\+Viewer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a1c6647830a195ff39a8ec8ddfe62bba3}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a1c6647830a195ff39a8ec8ddfe62bba3} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!````~Viewer@{\texorpdfstring{$\sim$}{\string~}Viewer}}
+\index{````~Viewer@{\texorpdfstring{$\sim$}{\string~}Viewer}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Viewer()}{\string~Viewer()}}
+{\footnotesize\ttfamily igl\+::opengl\+::glfw\+::\+Viewer\+::\texorpdfstring{$\sim$}{\string~}\+Viewer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_aee90a5d0831fd4c41e516ab89b511d6c}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_aee90a5d0831fd4c41e516ab89b511d6c} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!launch@{launch}}
+\index{launch@{launch}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{launch()}{launch()}}
+{\footnotesize\ttfamily int igl\+::opengl\+::glfw\+::\+Viewer\+::launch (\begin{DoxyParamCaption}\item[{bool}]{resizable = {\ttfamily true},  }\item[{bool}]{fullscreen = {\ttfamily false},  }\item[{const std\+::string \&}]{name = {\ttfamily \"{}libigl~viewer\"{}},  }\item[{int}]{width = {\ttfamily 0},  }\item[{int}]{height = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a73b85673332b74bef9c75473b3142ffc}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a73b85673332b74bef9c75473b3142ffc} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!launch\_init@{launch\_init}}
+\index{launch\_init@{launch\_init}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{launch\_init()}{launch\_init()}}
+{\footnotesize\ttfamily int igl\+::opengl\+::glfw\+::\+Viewer\+::launch\+\_\+init (\begin{DoxyParamCaption}\item[{bool}]{resizable = {\ttfamily true},  }\item[{bool}]{fullscreen = {\ttfamily false},  }\item[{const std\+::string \&}]{name = {\ttfamily \"{}libigl~viewer\"{}},  }\item[{int}]{width = {\ttfamily 0},  }\item[{int}]{height = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a7b261788c078365c8a3b293b426b93e8}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a7b261788c078365c8a3b293b426b93e8} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!launch\_rendering@{launch\_rendering}}
+\index{launch\_rendering@{launch\_rendering}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{launch\_rendering()}{launch\_rendering()}}
+{\footnotesize\ttfamily bool igl\+::opengl\+::glfw\+::\+Viewer\+::launch\+\_\+rendering (\begin{DoxyParamCaption}\item[{bool}]{loop = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a6db08ce198588d6fc8966e7d2f01f311}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a6db08ce198588d6fc8966e7d2f01f311} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!launch\_shut@{launch\_shut}}
+\index{launch\_shut@{launch\_shut}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{launch\_shut()}{launch\_shut()}}
+{\footnotesize\ttfamily void igl\+::opengl\+::glfw\+::\+Viewer\+::launch\+\_\+shut (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a9f01c20d55a8efc539442fae8b0367a1}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a9f01c20d55a8efc539442fae8b0367a1} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!init@{init}}
+\index{init@{init}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void igl\+::opengl\+::glfw\+::\+Viewer\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a2b38160751bd00813506494cb608ac50}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a2b38160751bd00813506494cb608ac50} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!init\_plugins@{init\_plugins}}
+\index{init\_plugins@{init\_plugins}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{init\_plugins()}{init\_plugins()}}
+{\footnotesize\ttfamily void igl\+::opengl\+::glfw\+::\+Viewer\+::init\+\_\+plugins (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a15045bd3866036cc90d31c6a69d6787b}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a15045bd3866036cc90d31c6a69d6787b} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!shutdown\_plugins@{shutdown\_plugins}}
+\index{shutdown\_plugins@{shutdown\_plugins}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{shutdown\_plugins()}{shutdown\_plugins()}}
+{\footnotesize\ttfamily void igl\+::opengl\+::glfw\+::\+Viewer\+::shutdown\+\_\+plugins (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a2b5e2c00e3d4ac59318baf0af908daca}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a2b5e2c00e3d4ac59318baf0af908daca} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!load\_mesh\_from\_file@{load\_mesh\_from\_file}}
+\index{load\_mesh\_from\_file@{load\_mesh\_from\_file}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{load\_mesh\_from\_file()}{load\_mesh\_from\_file()}}
+{\footnotesize\ttfamily bool igl\+::opengl\+::glfw\+::\+Viewer\+::load\+\_\+mesh\+\_\+from\+\_\+file (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{mesh\+\_\+file\+\_\+name }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_ac508130c76df2ff50dcf593bbc34b69f}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_ac508130c76df2ff50dcf593bbc34b69f} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!save\_mesh\_to\_file@{save\_mesh\_to\_file}}
+\index{save\_mesh\_to\_file@{save\_mesh\_to\_file}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{save\_mesh\_to\_file()}{save\_mesh\_to\_file()}}
+{\footnotesize\ttfamily bool igl\+::opengl\+::glfw\+::\+Viewer\+::save\+\_\+mesh\+\_\+to\+\_\+file (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{mesh\+\_\+file\+\_\+name }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_ab846d887a586ba28f22a7be708e5f0b2}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_ab846d887a586ba28f22a7be708e5f0b2} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!key\_pressed@{key\_pressed}}
+\index{key\_pressed@{key\_pressed}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{key\_pressed()}{key\_pressed()}}
+{\footnotesize\ttfamily bool igl\+::opengl\+::glfw\+::\+Viewer\+::key\+\_\+pressed (\begin{DoxyParamCaption}\item[{unsigned int}]{unicode\+\_\+key,  }\item[{int}]{modifier }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_ae3357af06c69f108f8123a036ccf2c65}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_ae3357af06c69f108f8123a036ccf2c65} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!key\_down@{key\_down}}
+\index{key\_down@{key\_down}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{key\_down()}{key\_down()}}
+{\footnotesize\ttfamily bool igl\+::opengl\+::glfw\+::\+Viewer\+::key\+\_\+down (\begin{DoxyParamCaption}\item[{int}]{key,  }\item[{int}]{modifier }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_ab09a9f6d477c7274b44102176b236a4e}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_ab09a9f6d477c7274b44102176b236a4e} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!key\_up@{key\_up}}
+\index{key\_up@{key\_up}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{key\_up()}{key\_up()}}
+{\footnotesize\ttfamily bool igl\+::opengl\+::glfw\+::\+Viewer\+::key\+\_\+up (\begin{DoxyParamCaption}\item[{int}]{key,  }\item[{int}]{modifier }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_ac3677477f88b291feb18d5dbc4ad214d}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_ac3677477f88b291feb18d5dbc4ad214d} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!mouse\_down@{mouse\_down}}
+\index{mouse\_down@{mouse\_down}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{mouse\_down()}{mouse\_down()}}
+{\footnotesize\ttfamily bool igl\+::opengl\+::glfw\+::\+Viewer\+::mouse\+\_\+down (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a9ec42624cd37d353e030a8c89dc30c78}{Mouse\+Button}}}]{button,  }\item[{int}]{modifier }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_ab003132f9cafd182c3854189f2beb325}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_ab003132f9cafd182c3854189f2beb325} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!mouse\_up@{mouse\_up}}
+\index{mouse\_up@{mouse\_up}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{mouse\_up()}{mouse\_up()}}
+{\footnotesize\ttfamily bool igl\+::opengl\+::glfw\+::\+Viewer\+::mouse\+\_\+up (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a9ec42624cd37d353e030a8c89dc30c78}{Mouse\+Button}}}]{button,  }\item[{int}]{modifier }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a0a0825c4839fddf08fcbbf9943f29e2f}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a0a0825c4839fddf08fcbbf9943f29e2f} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!mouse\_move@{mouse\_move}}
+\index{mouse\_move@{mouse\_move}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{mouse\_move()}{mouse\_move()}}
+{\footnotesize\ttfamily bool igl\+::opengl\+::glfw\+::\+Viewer\+::mouse\+\_\+move (\begin{DoxyParamCaption}\item[{int}]{mouse\+\_\+x,  }\item[{int}]{mouse\+\_\+y }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a7786f055a0566fb7a13927ed0355e21c}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a7786f055a0566fb7a13927ed0355e21c} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!mouse\_scroll@{mouse\_scroll}}
+\index{mouse\_scroll@{mouse\_scroll}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{mouse\_scroll()}{mouse\_scroll()}}
+{\footnotesize\ttfamily bool igl\+::opengl\+::glfw\+::\+Viewer\+::mouse\+\_\+scroll (\begin{DoxyParamCaption}\item[{float}]{delta\+\_\+y }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a2b804f44e898f3ab954fbd9eb89b1468}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a2b804f44e898f3ab954fbd9eb89b1468} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!load\_scene@{load\_scene}}
+\index{load\_scene@{load\_scene}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{load\_scene()}{load\_scene()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool igl\+::opengl\+::glfw\+::\+Viewer\+::load\+\_\+scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_ae2f917646826c663eb69ecfc395014c4}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_ae2f917646826c663eb69ecfc395014c4} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!load\_scene@{load\_scene}}
+\index{load\_scene@{load\_scene}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{load\_scene()}{load\_scene()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool igl\+::opengl\+::glfw\+::\+Viewer\+::load\+\_\+scene (\begin{DoxyParamCaption}\item[{std\+::string}]{fname }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a746ae6c96981c092cab505dd579d724f}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a746ae6c96981c092cab505dd579d724f} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!save\_scene@{save\_scene}}
+\index{save\_scene@{save\_scene}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{save\_scene()}{save\_scene()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool igl\+::opengl\+::glfw\+::\+Viewer\+::save\+\_\+scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a255c85c9f14fdd975cad9a791dcfdd8e}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a255c85c9f14fdd975cad9a791dcfdd8e} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!save\_scene@{save\_scene}}
+\index{save\_scene@{save\_scene}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{save\_scene()}{save\_scene()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool igl\+::opengl\+::glfw\+::\+Viewer\+::save\+\_\+scene (\begin{DoxyParamCaption}\item[{std\+::string}]{fname }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a44a2a81590392c586815cf9b3f8f7e56}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a44a2a81590392c586815cf9b3f8f7e56} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!draw@{draw}}
+\index{draw@{draw}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void igl\+::opengl\+::glfw\+::\+Viewer\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_aca9dc39fe9096f4c85e4438f3fc033c2}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_aca9dc39fe9096f4c85e4438f3fc033c2} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!draw\_buffer@{draw\_buffer}}
+\index{draw\_buffer@{draw\_buffer}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{draw\_buffer()}{draw\_buffer()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void igl\+::opengl\+::glfw\+::\+Viewer\+::draw\+\_\+buffer (\begin{DoxyParamCaption}\item[{igl\+::opengl\+::\+Viewer\+Core \&}]{core,  }\item[{Eigen\+::\+Matrix$<$ T, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{R,  }\item[{Eigen\+::\+Matrix$<$ T, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{G,  }\item[{Eigen\+::\+Matrix$<$ T, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{B,  }\item[{Eigen\+::\+Matrix$<$ T, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{A,  }\item[{Eigen\+::\+Matrix$<$ T, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{D }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a4e66c632d62c6d8d0eaf5a31c21848cc}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a4e66c632d62c6d8d0eaf5a31c21848cc} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!resize@{resize}}
+\index{resize@{resize}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{resize()}{resize()}}
+{\footnotesize\ttfamily void igl\+::opengl\+::glfw\+::\+Viewer\+::resize (\begin{DoxyParamCaption}\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a0c65ffc73bf52c69eb97ab7652e57a98}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a0c65ffc73bf52c69eb97ab7652e57a98} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!post\_resize@{post\_resize}}
+\index{post\_resize@{post\_resize}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{post\_resize()}{post\_resize()}}
+{\footnotesize\ttfamily void igl\+::opengl\+::glfw\+::\+Viewer\+::post\+\_\+resize (\begin{DoxyParamCaption}\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a13b85f3f52751675b6243ee7b57b6a8e}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a13b85f3f52751675b6243ee7b57b6a8e} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!snap\_to\_canonical\_quaternion@{snap\_to\_canonical\_quaternion}}
+\index{snap\_to\_canonical\_quaternion@{snap\_to\_canonical\_quaternion}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{snap\_to\_canonical\_quaternion()}{snap\_to\_canonical\_quaternion()}}
+{\footnotesize\ttfamily void igl\+::opengl\+::glfw\+::\+Viewer\+::snap\+\_\+to\+\_\+canonical\+\_\+quaternion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a4eaa37f0502d7bfc80ea26fe4e09ea57}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a4eaa37f0502d7bfc80ea26fe4e09ea57} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!open\_dialog\_load\_mesh@{open\_dialog\_load\_mesh}}
+\index{open\_dialog\_load\_mesh@{open\_dialog\_load\_mesh}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{open\_dialog\_load\_mesh()}{open\_dialog\_load\_mesh()}}
+{\footnotesize\ttfamily void igl\+::opengl\+::glfw\+::\+Viewer\+::open\+\_\+dialog\+\_\+load\+\_\+mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a3be7a881a617dd11c5c6deac338c7386}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a3be7a881a617dd11c5c6deac338c7386} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!open\_dialog\_save\_mesh@{open\_dialog\_save\_mesh}}
+\index{open\_dialog\_save\_mesh@{open\_dialog\_save\_mesh}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{open\_dialog\_save\_mesh()}{open\_dialog\_save\_mesh()}}
+{\footnotesize\ttfamily void igl\+::opengl\+::glfw\+::\+Viewer\+::open\+\_\+dialog\+\_\+save\+\_\+mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_ae5d5d4e238d8863531128353589b10f2}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_ae5d5d4e238d8863531128353589b10f2} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!data@{data}}
+\index{data@{data}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData}{Viewer\+Data}} \& igl\+::opengl\+::glfw\+::\+Viewer\+::data (\begin{DoxyParamCaption}\item[{int}]{mesh\+\_\+id = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a6a31e729664bff12bcd156e2d37abb68}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a6a31e729664bff12bcd156e2d37abb68} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!data@{data}}
+\index{data@{data}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData}{Viewer\+Data}} \& igl\+::opengl\+::glfw\+::\+Viewer\+::data (\begin{DoxyParamCaption}\item[{int}]{mesh\+\_\+id = {\ttfamily -\/1} }\end{DoxyParamCaption}) const}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a10a41b0817eecf4a02835fe602da6528}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a10a41b0817eecf4a02835fe602da6528} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!append\_mesh@{append\_mesh}}
+\index{append\_mesh@{append\_mesh}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{append\_mesh()}{append\_mesh()}}
+{\footnotesize\ttfamily int igl\+::opengl\+::glfw\+::\+Viewer\+::append\+\_\+mesh (\begin{DoxyParamCaption}\item[{bool}]{visible = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a39e77515f09c4b58990c794441d920bb}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a39e77515f09c4b58990c794441d920bb} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!erase\_mesh@{erase\_mesh}}
+\index{erase\_mesh@{erase\_mesh}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{erase\_mesh()}{erase\_mesh()}}
+{\footnotesize\ttfamily bool igl\+::opengl\+::glfw\+::\+Viewer\+::erase\+\_\+mesh (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_abd34d1bc45213bcd14ee95300fdc499d}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_abd34d1bc45213bcd14ee95300fdc499d} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!mesh\_index@{mesh\_index}}
+\index{mesh\_index@{mesh\_index}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{mesh\_index()}{mesh\_index()}}
+{\footnotesize\ttfamily size\+\_\+t igl\+::opengl\+::glfw\+::\+Viewer\+::mesh\+\_\+index (\begin{DoxyParamCaption}\item[{const int}]{id }\end{DoxyParamCaption}) const}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a4fc39cbf6a2d68d0eaf63bef3fd49464}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a4fc39cbf6a2d68d0eaf63bef3fd49464} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!core@{core}}
+\index{core@{core}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{core()}{core()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Viewer\+Core \& igl\+::opengl\+::glfw\+::\+Viewer\+::core (\begin{DoxyParamCaption}\item[{unsigned}]{core\+\_\+id = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_aca329644bd355f2f3dc6aa117964274f}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_aca329644bd355f2f3dc6aa117964274f} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!core@{core}}
+\index{core@{core}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{core()}{core()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Viewer\+Core \& igl\+::opengl\+::glfw\+::\+Viewer\+::core (\begin{DoxyParamCaption}\item[{unsigned}]{core\+\_\+id = {\ttfamily 0} }\end{DoxyParamCaption}) const}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a783a5b2ee8eb31fd76fb16e356bcf550}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a783a5b2ee8eb31fd76fb16e356bcf550} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!append\_core@{append\_core}}
+\index{append\_core@{append\_core}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{append\_core()}{append\_core()}}
+{\footnotesize\ttfamily int igl\+::opengl\+::glfw\+::\+Viewer\+::append\+\_\+core (\begin{DoxyParamCaption}\item[{Eigen\+::\+Vector4f}]{viewport,  }\item[{bool}]{append\+\_\+empty = {\ttfamily false} }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_ac3d5e3e5040f6e963bcb75a00cab4e3d}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_ac3d5e3e5040f6e963bcb75a00cab4e3d} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!erase\_core@{erase\_core}}
+\index{erase\_core@{erase\_core}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{erase\_core()}{erase\_core()}}
+{\footnotesize\ttfamily bool igl\+::opengl\+::glfw\+::\+Viewer\+::erase\+\_\+core (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a012b19566b9dbf2321542e78aaba252c}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a012b19566b9dbf2321542e78aaba252c} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!core\_index@{core\_index}}
+\index{core\_index@{core\_index}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{core\_index()}{core\_index()}}
+{\footnotesize\ttfamily size\+\_\+t igl\+::opengl\+::glfw\+::\+Viewer\+::core\+\_\+index (\begin{DoxyParamCaption}\item[{const int}]{id }\end{DoxyParamCaption}) const}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a3cd0edeec6629ae2607b7b36c0e316a1}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a3cd0edeec6629ae2607b7b36c0e316a1} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!select\_hovered\_core@{select\_hovered\_core}}
+\index{select\_hovered\_core@{select\_hovered\_core}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{select\_hovered\_core()}{select\_hovered\_core()}}
+{\footnotesize\ttfamily void igl\+::opengl\+::glfw\+::\+Viewer\+::select\+\_\+hovered\+\_\+core (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_acb6e7b7ce40049a23f5ca99fd40ba279}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_acb6e7b7ce40049a23f5ca99fd40ba279} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!mouse\_mode@{mouse\_mode}}
+\index{mouse\_mode@{mouse\_mode}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{mouse\_mode}{mouse\_mode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a07ec1c059cfc0579950454f4bdf1aab2}{igl\+::opengl\+::glfw\+::\+Viewer\+::\+Mouse\+Mode}} igl\+::opengl\+::glfw\+::\+Viewer\+::mouse\+\_\+mode}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_afe88232cf93c9a8f40dc7c8388e4bef9}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_afe88232cf93c9a8f40dc7c8388e4bef9} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!data\_list@{data\_list}}
+\index{data\_list@{data\_list}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{data\_list}{data\_list}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData}{Viewer\+Data}}$>$ igl\+::opengl\+::glfw\+::\+Viewer\+::data\+\_\+list}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a2fd28960580797eae596372f32147777}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a2fd28960580797eae596372f32147777} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!selected\_data\_index@{selected\_data\_index}}
+\index{selected\_data\_index@{selected\_data\_index}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{selected\_data\_index}{selected\_data\_index}}
+{\footnotesize\ttfamily size\+\_\+t igl\+::opengl\+::glfw\+::\+Viewer\+::selected\+\_\+data\+\_\+index}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a29f39289f861509167438da14921bcb8}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a29f39289f861509167438da14921bcb8} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!next\_data\_id@{next\_data\_id}}
+\index{next\_data\_id@{next\_data\_id}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{next\_data\_id}{next\_data\_id}}
+{\footnotesize\ttfamily int igl\+::opengl\+::glfw\+::\+Viewer\+::next\+\_\+data\+\_\+id}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a8bd01c79b59e43407e1bb5c5ab227404}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a8bd01c79b59e43407e1bb5c5ab227404} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!window@{window}}
+\index{window@{window}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{window}{window}}
+{\footnotesize\ttfamily GLFWwindow\texorpdfstring{$\ast$}{*} igl\+::opengl\+::glfw\+::\+Viewer\+::window}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_aaaa8e5c0215617964f3e191a28827f2b}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_aaaa8e5c0215617964f3e191a28827f2b} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!core\_list@{core\_list}}
+\index{core\_list@{core\_list}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{core\_list}{core\_list}}
+{\footnotesize\ttfamily std\+::vector$<$Viewer\+Core$>$ igl\+::opengl\+::glfw\+::\+Viewer\+::core\+\_\+list}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a23fe17253347c87eb8383d61d33f7cd1}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a23fe17253347c87eb8383d61d33f7cd1} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!selected\_core\_index@{selected\_core\_index}}
+\index{selected\_core\_index@{selected\_core\_index}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{selected\_core\_index}{selected\_core\_index}}
+{\footnotesize\ttfamily size\+\_\+t igl\+::opengl\+::glfw\+::\+Viewer\+::selected\+\_\+core\+\_\+index}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_af9cea96c79080e073dadf1e3658c77eb}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_af9cea96c79080e073dadf1e3658c77eb} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!next\_core\_id@{next\_core\_id}}
+\index{next\_core\_id@{next\_core\_id}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{next\_core\_id}{next\_core\_id}}
+{\footnotesize\ttfamily int igl\+::opengl\+::glfw\+::\+Viewer\+::next\+\_\+core\+\_\+id}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a71b77ba75ee7e094d5bf4f3b92f58ed3}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a71b77ba75ee7e094d5bf4f3b92f58ed3} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!plugins@{plugins}}
+\index{plugins@{plugins}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{plugins}{plugins}}
+{\footnotesize\ttfamily std\+::vector$<$Viewer\+Plugin\texorpdfstring{$\ast$}{*}$>$ igl\+::opengl\+::glfw\+::\+Viewer\+::plugins}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a9c1329d7db58b4193b0f6124dd423d43}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a9c1329d7db58b4193b0f6124dd423d43} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!down\_rotation@{down\_rotation}}
+\index{down\_rotation@{down\_rotation}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{down\_rotation}{down\_rotation}}
+{\footnotesize\ttfamily Eigen\+::\+Quaternionf igl\+::opengl\+::glfw\+::\+Viewer\+::down\+\_\+rotation}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a3b0a689bb89ef9295e708cfcd2dbd51f}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a3b0a689bb89ef9295e708cfcd2dbd51f} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!current\_mouse\_x@{current\_mouse\_x}}
+\index{current\_mouse\_x@{current\_mouse\_x}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{current\_mouse\_x}{current\_mouse\_x}}
+{\footnotesize\ttfamily int igl\+::opengl\+::glfw\+::\+Viewer\+::current\+\_\+mouse\+\_\+x}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_ad1ed01fb809938fa9b79e7cee0504e71}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_ad1ed01fb809938fa9b79e7cee0504e71} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!current\_mouse\_y@{current\_mouse\_y}}
+\index{current\_mouse\_y@{current\_mouse\_y}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{current\_mouse\_y}{current\_mouse\_y}}
+{\footnotesize\ttfamily int igl\+::opengl\+::glfw\+::\+Viewer\+::current\+\_\+mouse\+\_\+y}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_ac91c9394d85d316396b106de08c58608}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_ac91c9394d85d316396b106de08c58608} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!down\_mouse\_x@{down\_mouse\_x}}
+\index{down\_mouse\_x@{down\_mouse\_x}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{down\_mouse\_x}{down\_mouse\_x}}
+{\footnotesize\ttfamily int igl\+::opengl\+::glfw\+::\+Viewer\+::down\+\_\+mouse\+\_\+x}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_afa9b382392394eebb987433cf101863a}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_afa9b382392394eebb987433cf101863a} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!down\_mouse\_y@{down\_mouse\_y}}
+\index{down\_mouse\_y@{down\_mouse\_y}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{down\_mouse\_y}{down\_mouse\_y}}
+{\footnotesize\ttfamily int igl\+::opengl\+::glfw\+::\+Viewer\+::down\+\_\+mouse\+\_\+y}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a7f612d15279ba7c7b87051db936bf90a}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a7f612d15279ba7c7b87051db936bf90a} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!down\_mouse\_z@{down\_mouse\_z}}
+\index{down\_mouse\_z@{down\_mouse\_z}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{down\_mouse\_z}{down\_mouse\_z}}
+{\footnotesize\ttfamily float igl\+::opengl\+::glfw\+::\+Viewer\+::down\+\_\+mouse\+\_\+z}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a5191fcde2387530399dcbdb2545fc486}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a5191fcde2387530399dcbdb2545fc486} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!down\_translation@{down\_translation}}
+\index{down\_translation@{down\_translation}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{down\_translation}{down\_translation}}
+{\footnotesize\ttfamily Eigen\+::\+Vector3f igl\+::opengl\+::glfw\+::\+Viewer\+::down\+\_\+translation}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a409f232f38459dc2324c4fdf183c2078}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a409f232f38459dc2324c4fdf183c2078} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!down@{down}}
+\index{down@{down}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{down}{down}}
+{\footnotesize\ttfamily bool igl\+::opengl\+::glfw\+::\+Viewer\+::down}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a45ccfbadedaad723e8ca598091a13b2e}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a45ccfbadedaad723e8ca598091a13b2e} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!hack\_never\_moved@{hack\_never\_moved}}
+\index{hack\_never\_moved@{hack\_never\_moved}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{hack\_never\_moved}{hack\_never\_moved}}
+{\footnotesize\ttfamily bool igl\+::opengl\+::glfw\+::\+Viewer\+::hack\+\_\+never\+\_\+moved}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_adde2fa7837951138c215206f7e3aafdb}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_adde2fa7837951138c215206f7e3aafdb} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!scroll\_position@{scroll\_position}}
+\index{scroll\_position@{scroll\_position}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{scroll\_position}{scroll\_position}}
+{\footnotesize\ttfamily float igl\+::opengl\+::glfw\+::\+Viewer\+::scroll\+\_\+position}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a031a29b6e4f3cc5a845d8e55ecc76e21}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a031a29b6e4f3cc5a845d8e55ecc76e21} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!callback\_init@{callback\_init}}
+\index{callback\_init@{callback\_init}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{callback\_init}{callback\_init}}
+{\footnotesize\ttfamily std\+::function$<$bool(\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}}\& viewer)$>$ igl\+::opengl\+::glfw\+::\+Viewer\+::callback\+\_\+init}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a370cdb7e65e003ee4529bf6d9a3f5aaf}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a370cdb7e65e003ee4529bf6d9a3f5aaf} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!callback\_pre\_draw@{callback\_pre\_draw}}
+\index{callback\_pre\_draw@{callback\_pre\_draw}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{callback\_pre\_draw}{callback\_pre\_draw}}
+{\footnotesize\ttfamily std\+::function$<$bool(\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}}\& viewer)$>$ igl\+::opengl\+::glfw\+::\+Viewer\+::callback\+\_\+pre\+\_\+draw}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a6af757b8f1052d37fa864966b0cb8684}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a6af757b8f1052d37fa864966b0cb8684} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!callback\_post\_draw@{callback\_post\_draw}}
+\index{callback\_post\_draw@{callback\_post\_draw}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{callback\_post\_draw}{callback\_post\_draw}}
+{\footnotesize\ttfamily std\+::function$<$bool(\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}}\& viewer)$>$ igl\+::opengl\+::glfw\+::\+Viewer\+::callback\+\_\+post\+\_\+draw}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_af3639a31bead21b749df4184df83a891}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_af3639a31bead21b749df4184df83a891} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!callback\_mouse\_down@{callback\_mouse\_down}}
+\index{callback\_mouse\_down@{callback\_mouse\_down}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{callback\_mouse\_down}{callback\_mouse\_down}}
+{\footnotesize\ttfamily std\+::function$<$bool(\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}}\& viewer, int button, int modifier)$>$ igl\+::opengl\+::glfw\+::\+Viewer\+::callback\+\_\+mouse\+\_\+down}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a23c44941f23ff861b22a735770c56795}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a23c44941f23ff861b22a735770c56795} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!callback\_mouse\_up@{callback\_mouse\_up}}
+\index{callback\_mouse\_up@{callback\_mouse\_up}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{callback\_mouse\_up}{callback\_mouse\_up}}
+{\footnotesize\ttfamily std\+::function$<$bool(\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}}\& viewer, int button, int modifier)$>$ igl\+::opengl\+::glfw\+::\+Viewer\+::callback\+\_\+mouse\+\_\+up}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a5949846e54886a2ec738f83c5118c5b8}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a5949846e54886a2ec738f83c5118c5b8} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!callback\_mouse\_move@{callback\_mouse\_move}}
+\index{callback\_mouse\_move@{callback\_mouse\_move}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{callback\_mouse\_move}{callback\_mouse\_move}}
+{\footnotesize\ttfamily std\+::function$<$bool(\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}}\& viewer, int mouse\+\_\+x, int mouse\+\_\+y)$>$ igl\+::opengl\+::glfw\+::\+Viewer\+::callback\+\_\+mouse\+\_\+move}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a34a68580d51de1a33651e63517cdd9c0}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a34a68580d51de1a33651e63517cdd9c0} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!callback\_mouse\_scroll@{callback\_mouse\_scroll}}
+\index{callback\_mouse\_scroll@{callback\_mouse\_scroll}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{callback\_mouse\_scroll}{callback\_mouse\_scroll}}
+{\footnotesize\ttfamily std\+::function$<$bool(\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}}\& viewer, float delta\+\_\+y)$>$ igl\+::opengl\+::glfw\+::\+Viewer\+::callback\+\_\+mouse\+\_\+scroll}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a1a4857bec3b5a330fe099db6b4ab930c}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a1a4857bec3b5a330fe099db6b4ab930c} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!callback\_key\_pressed@{callback\_key\_pressed}}
+\index{callback\_key\_pressed@{callback\_key\_pressed}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{callback\_key\_pressed}{callback\_key\_pressed}}
+{\footnotesize\ttfamily std\+::function$<$bool(\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}}\& viewer, unsigned int key, int modifiers)$>$ igl\+::opengl\+::glfw\+::\+Viewer\+::callback\+\_\+key\+\_\+pressed}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a2e7d09cbc7a03bd9745ca5ede0f94b97}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a2e7d09cbc7a03bd9745ca5ede0f94b97} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!callback\_post\_resize@{callback\_post\_resize}}
+\index{callback\_post\_resize@{callback\_post\_resize}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{callback\_post\_resize}{callback\_post\_resize}}
+{\footnotesize\ttfamily std\+::function$<$bool(\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}}\& viewer, int w, int h)$>$ igl\+::opengl\+::glfw\+::\+Viewer\+::callback\+\_\+post\+\_\+resize}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a4868aa4ff805a5f70557e12228eb6c91}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a4868aa4ff805a5f70557e12228eb6c91} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!callback\_key\_down@{callback\_key\_down}}
+\index{callback\_key\_down@{callback\_key\_down}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{callback\_key\_down}{callback\_key\_down}}
+{\footnotesize\ttfamily std\+::function$<$bool(\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}}\& viewer, unsigned int key, int modifiers)$>$ igl\+::opengl\+::glfw\+::\+Viewer\+::callback\+\_\+key\+\_\+down}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a8c895a8e2eaaf9d4712817e581058dae}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a8c895a8e2eaaf9d4712817e581058dae} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!callback\_key\_up@{callback\_key\_up}}
+\index{callback\_key\_up@{callback\_key\_up}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{callback\_key\_up}{callback\_key\_up}}
+{\footnotesize\ttfamily std\+::function$<$bool(\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}}\& viewer, unsigned int key, int modifiers)$>$ igl\+::opengl\+::glfw\+::\+Viewer\+::callback\+\_\+key\+\_\+up}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a2667ad51b12b0d2227729475e65420a0}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a2667ad51b12b0d2227729475e65420a0} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!callback\_init\_data@{callback\_init\_data}}
+\index{callback\_init\_data@{callback\_init\_data}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{callback\_init\_data}{callback\_init\_data}}
+{\footnotesize\ttfamily void\texorpdfstring{$\ast$}{*} igl\+::opengl\+::glfw\+::\+Viewer\+::callback\+\_\+init\+\_\+data}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a74a0a27439140217903d645ffccff653}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a74a0a27439140217903d645ffccff653} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!callback\_pre\_draw\_data@{callback\_pre\_draw\_data}}
+\index{callback\_pre\_draw\_data@{callback\_pre\_draw\_data}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{callback\_pre\_draw\_data}{callback\_pre\_draw\_data}}
+{\footnotesize\ttfamily void\texorpdfstring{$\ast$}{*} igl\+::opengl\+::glfw\+::\+Viewer\+::callback\+\_\+pre\+\_\+draw\+\_\+data}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a774c6380c810d3eb68fdbc5707e04de7}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a774c6380c810d3eb68fdbc5707e04de7} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!callback\_post\_draw\_data@{callback\_post\_draw\_data}}
+\index{callback\_post\_draw\_data@{callback\_post\_draw\_data}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{callback\_post\_draw\_data}{callback\_post\_draw\_data}}
+{\footnotesize\ttfamily void\texorpdfstring{$\ast$}{*} igl\+::opengl\+::glfw\+::\+Viewer\+::callback\+\_\+post\+\_\+draw\+\_\+data}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_acfbbe515b6b2e1737ccdb9f89138abbc}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_acfbbe515b6b2e1737ccdb9f89138abbc} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!callback\_mouse\_down\_data@{callback\_mouse\_down\_data}}
+\index{callback\_mouse\_down\_data@{callback\_mouse\_down\_data}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{callback\_mouse\_down\_data}{callback\_mouse\_down\_data}}
+{\footnotesize\ttfamily void\texorpdfstring{$\ast$}{*} igl\+::opengl\+::glfw\+::\+Viewer\+::callback\+\_\+mouse\+\_\+down\+\_\+data}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_ad0434e797f28c16405692efa93a8ee08}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_ad0434e797f28c16405692efa93a8ee08} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!callback\_mouse\_up\_data@{callback\_mouse\_up\_data}}
+\index{callback\_mouse\_up\_data@{callback\_mouse\_up\_data}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{callback\_mouse\_up\_data}{callback\_mouse\_up\_data}}
+{\footnotesize\ttfamily void\texorpdfstring{$\ast$}{*} igl\+::opengl\+::glfw\+::\+Viewer\+::callback\+\_\+mouse\+\_\+up\+\_\+data}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_ac100310efc02f80e2bb59a0556933a27}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_ac100310efc02f80e2bb59a0556933a27} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!callback\_mouse\_move\_data@{callback\_mouse\_move\_data}}
+\index{callback\_mouse\_move\_data@{callback\_mouse\_move\_data}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{callback\_mouse\_move\_data}{callback\_mouse\_move\_data}}
+{\footnotesize\ttfamily void\texorpdfstring{$\ast$}{*} igl\+::opengl\+::glfw\+::\+Viewer\+::callback\+\_\+mouse\+\_\+move\+\_\+data}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a0899419337d2701cfd621e6630f7eb1e}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a0899419337d2701cfd621e6630f7eb1e} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!callback\_mouse\_scroll\_data@{callback\_mouse\_scroll\_data}}
+\index{callback\_mouse\_scroll\_data@{callback\_mouse\_scroll\_data}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{callback\_mouse\_scroll\_data}{callback\_mouse\_scroll\_data}}
+{\footnotesize\ttfamily void\texorpdfstring{$\ast$}{*} igl\+::opengl\+::glfw\+::\+Viewer\+::callback\+\_\+mouse\+\_\+scroll\+\_\+data}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_abd15e1b9e4258db141779f4c387a1f03}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_abd15e1b9e4258db141779f4c387a1f03} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!callback\_key\_pressed\_data@{callback\_key\_pressed\_data}}
+\index{callback\_key\_pressed\_data@{callback\_key\_pressed\_data}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{callback\_key\_pressed\_data}{callback\_key\_pressed\_data}}
+{\footnotesize\ttfamily void\texorpdfstring{$\ast$}{*} igl\+::opengl\+::glfw\+::\+Viewer\+::callback\+\_\+key\+\_\+pressed\+\_\+data}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_aaeda545d3415ac3cda2b41775d49f143}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_aaeda545d3415ac3cda2b41775d49f143} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!callback\_key\_down\_data@{callback\_key\_down\_data}}
+\index{callback\_key\_down\_data@{callback\_key\_down\_data}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{callback\_key\_down\_data}{callback\_key\_down\_data}}
+{\footnotesize\ttfamily void\texorpdfstring{$\ast$}{*} igl\+::opengl\+::glfw\+::\+Viewer\+::callback\+\_\+key\+\_\+down\+\_\+data}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_afd473a580f5e90d59fe405a8e76f05a3}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_afd473a580f5e90d59fe405a8e76f05a3} 
+\index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!callback\_key\_up\_data@{callback\_key\_up\_data}}
+\index{callback\_key\_up\_data@{callback\_key\_up\_data}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
+\doxysubsubsection{\texorpdfstring{callback\_key\_up\_data}{callback\_key\_up\_data}}
+{\footnotesize\ttfamily void\texorpdfstring{$\ast$}{*} igl\+::opengl\+::glfw\+::\+Viewer\+::callback\+\_\+key\+\_\+up\+\_\+data}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/igl/opengl/glfw/\mbox{\hyperlink{Viewer_8h}{Viewer.\+h}}\end{DoxyCompactItemize}

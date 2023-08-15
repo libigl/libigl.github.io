@@ -1,0 +1,437 @@
+\doxysection{igl\+::matlab\+::Matlab\+Workspace Class Reference}
+\hypertarget{classigl_1_1matlab_1_1MatlabWorkspace}{}\label{classigl_1_1matlab_1_1MatlabWorkspace}\index{igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}}
+
+
+Class which contains data of a matlab workspace which can be written to a .mat file and loaded from matlab.  
+
+
+
+
+{\ttfamily \#include $<$Matlab\+Workspace.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a883c693b38494b37dd359ff7de942c14}{Matlab\+Workspace}} ()
+\item 
+\mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a984837d7b6be41afd41c1526743bac0f}{\texorpdfstring{$\sim$}{\string~}\+Matlab\+Workspace}} ()
+\item 
+void \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_ae583f9f3840e306b65ef3c590fded313}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Clear names and data of variables in workspace. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a4cf22a9c3b4ff551a1032f237ef40938}{write}} (const std\+::string \&path) const
+\begin{DoxyCompactList}\small\item\em Save current list of variables. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a70ddccc669e0c63ac5c9bf4c82e40605}{read}} (const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Load list of variables from .mat file. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedM $>$ }\\\mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{Matlab\+Workspace}} \& \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a0e8f887139665c6bb6ce1d86736985ea}{save}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedM $>$ \&M, const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Assign data to a variable name in the workspace. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename MT $>$ }\\\mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{Matlab\+Workspace}} \& \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a952294f80ded66d91bcc32352a87d35e}{save}} (const Eigen\+::\+Sparse\+Matrix$<$ MT $>$ \&M, const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename ScalarM $>$ }\\\mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{Matlab\+Workspace}} \& \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a334ee31242c5700b6372ae2858188557}{save}} (const std\+::vector$<$ std\+::vector$<$ ScalarM $>$ $>$ \&vM, const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename ScalarV $>$ }\\\mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{Matlab\+Workspace}} \& \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a69e14902d98940ff21d807d0ffea4f87}{save}} (const std\+::vector$<$ ScalarV $>$ \&vV, const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Q $>$ }\\\mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{Matlab\+Workspace}} \& \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_ac3ab74c416d5d01cac69c7129750e625}{save}} (const Eigen\+::\+Quaternion$<$ Q $>$ \&q, const std\+::string \&name)
+\item 
+\mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{Matlab\+Workspace}} \& \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_aa287f217bfb87b2f5746e5f9191f5f9f}{save}} (const double d, const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedM $>$ }\\\mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{Matlab\+Workspace}} \& \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a07f84232f1f98f97e1202ba69cffe482}{save\+\_\+index}} (const Eigen\+::\+Dense\+Base$<$ DerivedM $>$ \&M, const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Same as \doxylink{classigl_1_1matlab_1_1MatlabWorkspace_a0e8f887139665c6bb6ce1d86736985ea}{save()} but adds 1 to each element, useful for saving \"{}index\"{} matrices like lists of faces or elements. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename ScalarM $>$ }\\\mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{Matlab\+Workspace}} \& \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_ac3011f108daca874e85e45bf194d16dd}{save\+\_\+index}} (const std\+::vector$<$ std\+::vector$<$ ScalarM $>$ $>$ \&vM, const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename ScalarV $>$ }\\\mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{Matlab\+Workspace}} \& \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a49a0410c922a5f5ecca44308322c119a}{save\+\_\+index}} (const std\+::vector$<$ ScalarV $>$ \&vV, const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedM $>$ }\\bool \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a4fe9cb0440cddb78e69dd3fb36632262}{find}} (const std\+::string \&name, Eigen\+::\+Plain\+Object\+Base$<$ DerivedM $>$ \&M)
+\begin{DoxyCompactList}\small\item\em Find a certain matrix by name. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename MT $>$ }\\bool \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_adfda9ed0fc7d141ccd7a882945517f92}{find}} (const std\+::string \&name, Eigen\+::\+Sparse\+Matrix$<$ MT $>$ \&M)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a7d9a0efb5a9b882069d0fff3ccd273cb}{find}} (const std\+::string \&name, double \&d)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a1455269d9d2df30a7e9d596d6a745b0f}{find}} (const std\+::string \&name, int \&v)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedM $>$ }\\bool \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_aa5795043aae313b4116c5ef9e14e8657}{find\+\_\+index}} (const std\+::string \&name, Eigen\+::\+Plain\+Object\+Base$<$ DerivedM $>$ \&M)
+\begin{DoxyCompactList}\small\item\em Subtracts 1 from all entries. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedM $>$ }\\\mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{igl\+::matlab\+::\+Matlab\+Workspace}} \& \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a1fd0d93869e68d06e9364941a00f27ac}{save}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedM $>$ \&M, const std\+::string \&name)
+\item 
+{\footnotesize template$<$typename MT $>$ }\\\mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{igl\+::matlab\+::\+Matlab\+Workspace}} \& \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_afc574cd5f9775c05a71e040b8f33f7ef}{save}} (const Eigen\+::\+Sparse\+Matrix$<$ MT $>$ \&M, const std\+::string \&name)
+\item 
+{\footnotesize template$<$typename ScalarM $>$ }\\\mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{igl\+::matlab\+::\+Matlab\+Workspace}} \& \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_ad0c5911f4089ccd3af91165f63fb9853}{save}} (const std\+::vector$<$ std\+::vector$<$ ScalarM $>$ $>$ \&vM, const std\+::string \&name)
+\item 
+{\footnotesize template$<$typename ScalarV $>$ }\\\mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{igl\+::matlab\+::\+Matlab\+Workspace}} \& \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a24df15dad7f99070ef127bba7208573c}{save}} (const std\+::vector$<$ ScalarV $>$ \&vV, const std\+::string \&name)
+\item 
+{\footnotesize template$<$typename Q $>$ }\\\mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{igl\+::matlab\+::\+Matlab\+Workspace}} \& \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_aa2a101b2341dc6433fcb2018aa1cddc5}{save}} (const Eigen\+::\+Quaternion$<$ Q $>$ \&q, const std\+::string \&name)
+\item 
+{\footnotesize template$<$typename DerivedM $>$ }\\\mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{igl\+::matlab\+::\+Matlab\+Workspace}} \& \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a3749dae04d721709a4ab7610e6528728}{save\+\_\+index}} (const Eigen\+::\+Dense\+Base$<$ DerivedM $>$ \&M, const std\+::string \&name)
+\item 
+{\footnotesize template$<$typename ScalarM $>$ }\\\mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{igl\+::matlab\+::\+Matlab\+Workspace}} \& \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a6245584990c238e403a7e199e403fe95}{save\+\_\+index}} (const std\+::vector$<$ std\+::vector$<$ ScalarM $>$ $>$ \&vM, const std\+::string \&name)
+\item 
+{\footnotesize template$<$typename ScalarV $>$ }\\\mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{igl\+::matlab\+::\+Matlab\+Workspace}} \& \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a9a21c19d5e382e3b8b5d910ae9b42e6f}{save\+\_\+index}} (const std\+::vector$<$ ScalarV $>$ \&vV, const std\+::string \&name)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class which contains data of a matlab workspace which can be written to a .mat file and loaded from matlab. 
+
+This depends on matlab at compile time (though it shouldn\textquotesingle{}t necessarily have to) but it does not depend on running the matlab engine at run-\/time.
+
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000005}{Bug}}]Treats all matrices as doubles (this may actually be desired for some \"{}index\"{} matrices since matlab\textquotesingle{}s sparse command takes doubles rather than int class matrices). It is of course not desired when dealing with logicals or uint\textquotesingle{}s for images. \end{DoxyRefDesc}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classigl_1_1matlab_1_1MatlabWorkspace_a883c693b38494b37dd359ff7de942c14}\label{classigl_1_1matlab_1_1MatlabWorkspace_a883c693b38494b37dd359ff7de942c14} 
+\index{igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}!MatlabWorkspace@{MatlabWorkspace}}
+\index{MatlabWorkspace@{MatlabWorkspace}!igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}}
+\doxysubsubsection{\texorpdfstring{MatlabWorkspace()}{MatlabWorkspace()}}
+{\footnotesize\ttfamily igl\+::matlab\+::\+Matlab\+Workspace\+::\+Matlab\+Workspace (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classigl_1_1matlab_1_1MatlabWorkspace_a984837d7b6be41afd41c1526743bac0f}\label{classigl_1_1matlab_1_1MatlabWorkspace_a984837d7b6be41afd41c1526743bac0f} 
+\index{igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}!````~MatlabWorkspace@{\texorpdfstring{$\sim$}{\string~}MatlabWorkspace}}
+\index{````~MatlabWorkspace@{\texorpdfstring{$\sim$}{\string~}MatlabWorkspace}!igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}MatlabWorkspace()}{\string~MatlabWorkspace()}}
+{\footnotesize\ttfamily igl\+::matlab\+::\+Matlab\+Workspace\+::\texorpdfstring{$\sim$}{\string~}\+Matlab\+Workspace (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classigl_1_1matlab_1_1MatlabWorkspace_ae583f9f3840e306b65ef3c590fded313}\label{classigl_1_1matlab_1_1MatlabWorkspace_ae583f9f3840e306b65ef3c590fded313} 
+\index{igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}!clear@{clear}}
+\index{clear@{clear}!igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void igl\+::matlab\+::\+Matlab\+Workspace\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Clear names and data of variables in workspace. 
+
+\Hypertarget{classigl_1_1matlab_1_1MatlabWorkspace_a4cf22a9c3b4ff551a1032f237ef40938}\label{classigl_1_1matlab_1_1MatlabWorkspace_a4cf22a9c3b4ff551a1032f237ef40938} 
+\index{igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}!write@{write}}
+\index{write@{write}!igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily bool igl\+::matlab\+::\+Matlab\+Workspace\+::write (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Save current list of variables. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em path} & path to .mat file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false on failure 
+\end{DoxyReturn}
+\Hypertarget{classigl_1_1matlab_1_1MatlabWorkspace_a70ddccc669e0c63ac5c9bf4c82e40605}\label{classigl_1_1matlab_1_1MatlabWorkspace_a70ddccc669e0c63ac5c9bf4c82e40605} 
+\index{igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}!read@{read}}
+\index{read@{read}!igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily bool igl\+::matlab\+::\+Matlab\+Workspace\+::read (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Load list of variables from .mat file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em path} & path to .mat file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false on failure 
+\end{DoxyReturn}
+\Hypertarget{classigl_1_1matlab_1_1MatlabWorkspace_a0e8f887139665c6bb6ce1d86736985ea}\label{classigl_1_1matlab_1_1MatlabWorkspace_a0e8f887139665c6bb6ce1d86736985ea} 
+\index{igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}!save@{save}}
+\index{save@{save}!igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}\hspace{0.1cm}{\footnotesize\ttfamily [1/11]}}
+{\footnotesize\ttfamily template$<$typename DerivedM $>$ \\
+\mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{Matlab\+Workspace}} \& igl\+::matlab\+::\+Matlab\+Workspace\+::save (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Plain\+Object\+Base$<$ DerivedM $>$ \&}]{M,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Assign data to a variable name in the workspace. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em DerivedM} & eigen matrix (e.\+g. Matrix\+Xd) \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em M} & data (usually a matrix) \\
+\hline
+\mbox{\texttt{ in}}  & {\em name} & variable name to save into work space \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false on failure
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000007}{Bug}}]Assumes DerivedM is using column major ordering \end{DoxyRefDesc}
+\Hypertarget{classigl_1_1matlab_1_1MatlabWorkspace_a952294f80ded66d91bcc32352a87d35e}\label{classigl_1_1matlab_1_1MatlabWorkspace_a952294f80ded66d91bcc32352a87d35e} 
+\index{igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}!save@{save}}
+\index{save@{save}!igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}\hspace{0.1cm}{\footnotesize\ttfamily [2/11]}}
+{\footnotesize\ttfamily template$<$typename MT $>$ \\
+\mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{Matlab\+Workspace}} \& igl\+::matlab\+::\+Matlab\+Workspace\+::save (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Sparse\+Matrix$<$ MT $>$ \&}]{M,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em MT} & sparse matrix type (e.\+g. double) \\
+\hline
+\end{DoxyTemplParams}
+\Hypertarget{classigl_1_1matlab_1_1MatlabWorkspace_a334ee31242c5700b6372ae2858188557}\label{classigl_1_1matlab_1_1MatlabWorkspace_a334ee31242c5700b6372ae2858188557} 
+\index{igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}!save@{save}}
+\index{save@{save}!igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}\hspace{0.1cm}{\footnotesize\ttfamily [3/11]}}
+{\footnotesize\ttfamily template$<$typename ScalarM $>$ \\
+\mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{Matlab\+Workspace}} \& igl\+::matlab\+::\+Matlab\+Workspace\+::save (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ ScalarM $>$ $>$ \&}]{vM,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em ScalarM} & scalar type, e.\+g. double \\
+\hline
+\end{DoxyTemplParams}
+\Hypertarget{classigl_1_1matlab_1_1MatlabWorkspace_a69e14902d98940ff21d807d0ffea4f87}\label{classigl_1_1matlab_1_1MatlabWorkspace_a69e14902d98940ff21d807d0ffea4f87} 
+\index{igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}!save@{save}}
+\index{save@{save}!igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}\hspace{0.1cm}{\footnotesize\ttfamily [4/11]}}
+{\footnotesize\ttfamily template$<$typename ScalarV $>$ \\
+\mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{Matlab\+Workspace}} \& igl\+::matlab\+::\+Matlab\+Workspace\+::save (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ ScalarV $>$ \&}]{vV,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em ScalarV} & scalar type, e.\+g. double \\
+\hline
+\end{DoxyTemplParams}
+\Hypertarget{classigl_1_1matlab_1_1MatlabWorkspace_ac3ab74c416d5d01cac69c7129750e625}\label{classigl_1_1matlab_1_1MatlabWorkspace_ac3ab74c416d5d01cac69c7129750e625} 
+\index{igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}!save@{save}}
+\index{save@{save}!igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}\hspace{0.1cm}{\footnotesize\ttfamily [5/11]}}
+{\footnotesize\ttfamily template$<$typename Q $>$ \\
+\mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{Matlab\+Workspace}} \& igl\+::matlab\+::\+Matlab\+Workspace\+::save (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Quaternion$<$ Q $>$ \&}]{q,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Q} & quaternion type\\
+\hline
+\end{DoxyTemplParams}
+NOTE\+: Eigen stores quaternions coefficients as (i,j,k,1), but most of our matlab code stores them as (1,i,j,k) This takes a quaternion and saves it as a (1,i,j,k) row vector \Hypertarget{classigl_1_1matlab_1_1MatlabWorkspace_aa287f217bfb87b2f5746e5f9191f5f9f}\label{classigl_1_1matlab_1_1MatlabWorkspace_aa287f217bfb87b2f5746e5f9191f5f9f} 
+\index{igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}!save@{save}}
+\index{save@{save}!igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}\hspace{0.1cm}{\footnotesize\ttfamily [6/11]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{igl\+::matlab\+::\+Matlab\+Workspace}} \& igl\+::matlab\+::\+Matlab\+Workspace\+::save (\begin{DoxyParamCaption}\item[{const double}]{d,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{classigl_1_1matlab_1_1MatlabWorkspace_a07f84232f1f98f97e1202ba69cffe482}\label{classigl_1_1matlab_1_1MatlabWorkspace_a07f84232f1f98f97e1202ba69cffe482} 
+\index{igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}!save\_index@{save\_index}}
+\index{save\_index@{save\_index}!igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}}
+\doxysubsubsection{\texorpdfstring{save\_index()}{save\_index()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$typename DerivedM $>$ \\
+\mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{Matlab\+Workspace}} \& igl\+::matlab\+::\+Matlab\+Workspace\+::save\+\_\+index (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Dense\+Base$<$ DerivedM $>$ \&}]{M,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Same as \doxylink{classigl_1_1matlab_1_1MatlabWorkspace_a0e8f887139665c6bb6ce1d86736985ea}{save()} but adds 1 to each element, useful for saving \"{}index\"{} matrices like lists of faces or elements. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em DerivedM} & eigen matrix (e.\+g. Matrix\+Xd) \\
+\hline
+\end{DoxyTemplParams}
+\Hypertarget{classigl_1_1matlab_1_1MatlabWorkspace_ac3011f108daca874e85e45bf194d16dd}\label{classigl_1_1matlab_1_1MatlabWorkspace_ac3011f108daca874e85e45bf194d16dd} 
+\index{igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}!save\_index@{save\_index}}
+\index{save\_index@{save\_index}!igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}}
+\doxysubsubsection{\texorpdfstring{save\_index()}{save\_index()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$typename ScalarM $>$ \\
+\mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{Matlab\+Workspace}} \& igl\+::matlab\+::\+Matlab\+Workspace\+::save\+\_\+index (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ ScalarM $>$ $>$ \&}]{vM,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em MT} & sparse matrix type (e.\+g. double) \\
+\hline
+\end{DoxyTemplParams}
+\Hypertarget{classigl_1_1matlab_1_1MatlabWorkspace_a49a0410c922a5f5ecca44308322c119a}\label{classigl_1_1matlab_1_1MatlabWorkspace_a49a0410c922a5f5ecca44308322c119a} 
+\index{igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}!save\_index@{save\_index}}
+\index{save\_index@{save\_index}!igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}}
+\doxysubsubsection{\texorpdfstring{save\_index()}{save\_index()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$typename ScalarV $>$ \\
+\mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{Matlab\+Workspace}} \& igl\+::matlab\+::\+Matlab\+Workspace\+::save\+\_\+index (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ ScalarV $>$ \&}]{vV,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em ScalarV} & scalar type, e.\+g. double \\
+\hline
+\end{DoxyTemplParams}
+\Hypertarget{classigl_1_1matlab_1_1MatlabWorkspace_a4fe9cb0440cddb78e69dd3fb36632262}\label{classigl_1_1matlab_1_1MatlabWorkspace_a4fe9cb0440cddb78e69dd3fb36632262} 
+\index{igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}!find@{find}}
+\index{find@{find}!igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename DerivedM $>$ \\
+bool igl\+::matlab\+::\+Matlab\+Workspace\+::find (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedM $>$ \&}]{M }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Find a certain matrix by name. 
+
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000008}{Bug}}]Outputs the first found (not necessarily unique lists).\end{DoxyRefDesc}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em DerivedM} & eigen matrix (e.\+g. Matrix\+Xd) \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em name} & exact name of matrix as string \\
+\hline
+\mbox{\texttt{ out}}  & {\em M} & matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true only if found. 
+\end{DoxyReturn}
+\Hypertarget{classigl_1_1matlab_1_1MatlabWorkspace_adfda9ed0fc7d141ccd7a882945517f92}\label{classigl_1_1matlab_1_1MatlabWorkspace_adfda9ed0fc7d141ccd7a882945517f92} 
+\index{igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}!find@{find}}
+\index{find@{find}!igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename MT $>$ \\
+bool igl\+::matlab\+::\+Matlab\+Workspace\+::find (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{Eigen\+::\+Sparse\+Matrix$<$ MT $>$ \&}]{M }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em MT} & sparse matrix type (e.\+g. double) \\
+\hline
+\end{DoxyTemplParams}
+\Hypertarget{classigl_1_1matlab_1_1MatlabWorkspace_a7d9a0efb5a9b882069d0fff3ccd273cb}\label{classigl_1_1matlab_1_1MatlabWorkspace_a7d9a0efb5a9b882069d0fff3ccd273cb} 
+\index{igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}!find@{find}}
+\index{find@{find}!igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily bool igl\+::matlab\+::\+Matlab\+Workspace\+::find (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{double \&}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{classigl_1_1matlab_1_1MatlabWorkspace_a1455269d9d2df30a7e9d596d6a745b0f}\label{classigl_1_1matlab_1_1MatlabWorkspace_a1455269d9d2df30a7e9d596d6a745b0f} 
+\index{igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}!find@{find}}
+\index{find@{find}!igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily bool igl\+::matlab\+::\+Matlab\+Workspace\+::find (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{int \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{classigl_1_1matlab_1_1MatlabWorkspace_aa5795043aae313b4116c5ef9e14e8657}\label{classigl_1_1matlab_1_1MatlabWorkspace_aa5795043aae313b4116c5ef9e14e8657} 
+\index{igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}!find\_index@{find\_index}}
+\index{find\_index@{find\_index}!igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}}
+\doxysubsubsection{\texorpdfstring{find\_index()}{find\_index()}}
+{\footnotesize\ttfamily template$<$typename DerivedM $>$ \\
+bool igl\+::matlab\+::\+Matlab\+Workspace\+::find\+\_\+index (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedM $>$ \&}]{M }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Subtracts 1 from all entries. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em DerivedM} & eigen matrix (e.\+g. Matrix\+Xd) \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em name} & exact name of matrix as string \\
+\hline
+\mbox{\texttt{ out}}  & {\em M} & matrix \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classigl_1_1matlab_1_1MatlabWorkspace_a1fd0d93869e68d06e9364941a00f27ac}\label{classigl_1_1matlab_1_1MatlabWorkspace_a1fd0d93869e68d06e9364941a00f27ac} 
+\index{igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}!save@{save}}
+\index{save@{save}!igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}\hspace{0.1cm}{\footnotesize\ttfamily [7/11]}}
+{\footnotesize\ttfamily template$<$typename DerivedM $>$ \\
+\mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{igl\+::matlab\+::\+Matlab\+Workspace}} \& igl\+::matlab\+::\+Matlab\+Workspace\+::save (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Plain\+Object\+Base$<$ DerivedM $>$ \&}]{M,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classigl_1_1matlab_1_1MatlabWorkspace_afc574cd5f9775c05a71e040b8f33f7ef}\label{classigl_1_1matlab_1_1MatlabWorkspace_afc574cd5f9775c05a71e040b8f33f7ef} 
+\index{igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}!save@{save}}
+\index{save@{save}!igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}\hspace{0.1cm}{\footnotesize\ttfamily [8/11]}}
+{\footnotesize\ttfamily template$<$typename MT $>$ \\
+\mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{igl\+::matlab\+::\+Matlab\+Workspace}} \& igl\+::matlab\+::\+Matlab\+Workspace\+::save (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Sparse\+Matrix$<$ MT $>$ \&}]{M,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classigl_1_1matlab_1_1MatlabWorkspace_ad0c5911f4089ccd3af91165f63fb9853}\label{classigl_1_1matlab_1_1MatlabWorkspace_ad0c5911f4089ccd3af91165f63fb9853} 
+\index{igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}!save@{save}}
+\index{save@{save}!igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}\hspace{0.1cm}{\footnotesize\ttfamily [9/11]}}
+{\footnotesize\ttfamily template$<$typename ScalarM $>$ \\
+\mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{igl\+::matlab\+::\+Matlab\+Workspace}} \& igl\+::matlab\+::\+Matlab\+Workspace\+::save (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ ScalarM $>$ $>$ \&}]{vM,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classigl_1_1matlab_1_1MatlabWorkspace_a24df15dad7f99070ef127bba7208573c}\label{classigl_1_1matlab_1_1MatlabWorkspace_a24df15dad7f99070ef127bba7208573c} 
+\index{igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}!save@{save}}
+\index{save@{save}!igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}\hspace{0.1cm}{\footnotesize\ttfamily [10/11]}}
+{\footnotesize\ttfamily template$<$typename ScalarV $>$ \\
+\mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{igl\+::matlab\+::\+Matlab\+Workspace}} \& igl\+::matlab\+::\+Matlab\+Workspace\+::save (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ ScalarV $>$ \&}]{vV,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classigl_1_1matlab_1_1MatlabWorkspace_aa2a101b2341dc6433fcb2018aa1cddc5}\label{classigl_1_1matlab_1_1MatlabWorkspace_aa2a101b2341dc6433fcb2018aa1cddc5} 
+\index{igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}!save@{save}}
+\index{save@{save}!igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}\hspace{0.1cm}{\footnotesize\ttfamily [11/11]}}
+{\footnotesize\ttfamily template$<$typename Q $>$ \\
+\mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{igl\+::matlab\+::\+Matlab\+Workspace}} \& igl\+::matlab\+::\+Matlab\+Workspace\+::save (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Quaternion$<$ Q $>$ \&}]{q,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classigl_1_1matlab_1_1MatlabWorkspace_a3749dae04d721709a4ab7610e6528728}\label{classigl_1_1matlab_1_1MatlabWorkspace_a3749dae04d721709a4ab7610e6528728} 
+\index{igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}!save\_index@{save\_index}}
+\index{save\_index@{save\_index}!igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}}
+\doxysubsubsection{\texorpdfstring{save\_index()}{save\_index()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$typename DerivedM $>$ \\
+\mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{igl\+::matlab\+::\+Matlab\+Workspace}} \& igl\+::matlab\+::\+Matlab\+Workspace\+::save\+\_\+index (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Dense\+Base$<$ DerivedM $>$ \&}]{M,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classigl_1_1matlab_1_1MatlabWorkspace_a6245584990c238e403a7e199e403fe95}\label{classigl_1_1matlab_1_1MatlabWorkspace_a6245584990c238e403a7e199e403fe95} 
+\index{igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}!save\_index@{save\_index}}
+\index{save\_index@{save\_index}!igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}}
+\doxysubsubsection{\texorpdfstring{save\_index()}{save\_index()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$typename ScalarM $>$ \\
+\mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{igl\+::matlab\+::\+Matlab\+Workspace}} \& igl\+::matlab\+::\+Matlab\+Workspace\+::save\+\_\+index (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ ScalarM $>$ $>$ \&}]{vM,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classigl_1_1matlab_1_1MatlabWorkspace_a9a21c19d5e382e3b8b5d910ae9b42e6f}\label{classigl_1_1matlab_1_1MatlabWorkspace_a9a21c19d5e382e3b8b5d910ae9b42e6f} 
+\index{igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}!save\_index@{save\_index}}
+\index{save\_index@{save\_index}!igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}}
+\doxysubsubsection{\texorpdfstring{save\_index()}{save\_index()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$typename ScalarV $>$ \\
+\mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{igl\+::matlab\+::\+Matlab\+Workspace}} \& igl\+::matlab\+::\+Matlab\+Workspace\+::save\+\_\+index (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ ScalarV $>$ \&}]{vV,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/igl/matlab/\mbox{\hyperlink{MatlabWorkspace_8h}{Matlab\+Workspace.\+h}}\end{DoxyCompactItemize}

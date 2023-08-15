@@ -1,0 +1,36 @@
+\doxysection{EPS.\+h}
+\hypertarget{EPS_8h_source}{}\label{EPS_8h_source}\index{include/igl/EPS.h@{include/igl/EPS.h}}
+\mbox{\hyperlink{EPS_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2013\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_EPS\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_EPS\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00014\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespaceigl_a959bd85cf0ed1b59e3a9ad857c953604}{DOUBLE\_EPS}}\ \ \ \ =\ 1.0e-\/14;}
+\DoxyCodeLine{00016\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespaceigl_ab4c4eb25dcc0beddf9732c13704a07b7}{DOUBLE\_EPS\_SQ}}\ =\ 1.0e-\/28;}
+\DoxyCodeLine{00018\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceigl_a7184cb6e2f319e3c31a0e1f5bc90354d}{FLOAT\_EPS}}\ \ \ \ =\ 1.0e-\/7f;}
+\DoxyCodeLine{00020\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceigl_a529be4dc6f96c94adc21d8480d9d9bbf}{FLOAT\_EPS\_SQ}}\ =\ 1.0e-\/14f;}
+\DoxyCodeLine{00022\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ S\_type>\ IGL\_INLINE\ S\_type\ \mbox{\hyperlink{namespaceigl_ad059c2eefaa87bb31a2b03a1787f133d}{EPS}}();}
+\DoxyCodeLine{00024\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ S\_type>\ IGL\_INLINE\ S\_type\ \mbox{\hyperlink{namespaceigl_aba458ce3c4cbdd9d0cbb3c83b3a255c7}{EPS\_SQ}}();}
+\DoxyCodeLine{00025\ \ \ \textcolor{comment}{//\ Template\ specializations\ for\ float\ and\ double}}
+\DoxyCodeLine{00026\ \ \ \textcolor{keyword}{template}\ <>\ IGL\_INLINE\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceigl_abfc53046d44a2c9f6c3c6e32cb3ae024}{EPS<float>}}();}
+\DoxyCodeLine{00027\ \ \ \textcolor{keyword}{template}\ <>\ IGL\_INLINE\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespaceigl_a8d0aed7321fc747f72cd8f680826ed8e}{EPS<double>}}();}
+\DoxyCodeLine{00028\ \ \ \textcolor{keyword}{template}\ <>\ IGL\_INLINE\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceigl_aa724bd6d64eb6b639407db5b87f1ac64}{EPS\_SQ<float>}}();}
+\DoxyCodeLine{00029\ \ \ \textcolor{keyword}{template}\ <>\ IGL\_INLINE\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespaceigl_a5e39a8d172ad95e01e3171a06a3a0bac}{EPS\_SQ<double>}}();}
+\DoxyCodeLine{00030\ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#\ \ include\ "{}EPS.cpp"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

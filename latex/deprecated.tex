@@ -1,0 +1,47 @@
+\chapter{Deprecated List}
+\hypertarget{deprecated}{}\label{deprecated}\index{Deprecated List@{Deprecated List}}
+
+\begin{DoxyRefList}
+\item[Member \doxylink{namespaceigl_abb6eac390a632bb79342e36438b03807}{igl\+::any\+\_\+of} (const Mat \&S)]\label{deprecated__deprecated000001}%
+\Hypertarget{deprecated__deprecated000001}%
+Seems that Eigen (now) implements this for {\ttfamily Eigen\+::\+Array}  
+\item[Member \doxylink{namespaceigl_af6bab06e3533fb4130d508453175889f}{igl\+::axis\+\_\+angle\+\_\+to\+\_\+quat} (const Q\+\_\+type \texorpdfstring{$\ast$}{*}axis, const Q\+\_\+type angle, Q\+\_\+type \texorpdfstring{$\ast$}{*}out)]\label{deprecated__deprecated000002}%
+\Hypertarget{deprecated__deprecated000002}%
+Use {\ttfamily Eigen\+::\+Angle\+Axisd} instead  
+\item[Member \doxylink{namespaceigl_afc7d0ecd1acd535cee662dd648fdbd80}{igl\+::diag} (const Eigen\+::\+Sparse\+Matrix$<$ T $>$ \&X, Eigen\+::\+Sparse\+Vector$<$ T $>$ \&V)]\label{deprecated__deprecated000004}%
+\Hypertarget{deprecated__deprecated000004}%
+Use {\ttfamily Vector\+Xd V = X.\+diagonal()} and {\ttfamily Sparse\+Vector\texorpdfstring{$<$}{<}double\texorpdfstring{$>$}{>} V = X.\+diagonal().sparse\+View()} {\ttfamily Sparse\+Matrix\texorpdfstring{$<$}{<}double\texorpdfstring{$>$}{>} X = V.\+as\+Diagonal().sparse\+View()} 
+\item[Member \doxylink{namespaceigl_a23322b4cdcba5a31a7e95dc0a29b83f1}{igl\+::dot\+\_\+row} (const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+V $>$ \&A, const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+V $>$ \&B)]\label{deprecated__deprecated000005}%
+\Hypertarget{deprecated__deprecated000005}%
+Use Eigen\textquotesingle{}s {\ttfamily .rowwise().\doxylink{namespaceigl_a3bdaab27eb4626ff5685a3a4f9347b6a}{dot()}} instead  
+\item[Member \doxylink{namespaceigl_aef9789170b7173db5255844fba17fbd1}{igl\+::euler\+\_\+characteristic} (const Eigen\+::\+Matrix\+Base$<$ Scalar $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ Index $>$ \&F)]\label{deprecated__deprecated000006}%
+\Hypertarget{deprecated__deprecated000006}%
+This version is inferior to the one above because it unecessarily requires V and expensively calls edge\+\_\+topology  
+\item[Member \doxylink{namespaceigl_a121c2475eac322f9100caf8433c66ad1}{igl\+::get\+\_\+seconds\+\_\+hires} ()]\label{deprecated__deprecated000007}%
+\Hypertarget{deprecated__deprecated000007}%
+just use get\+\_\+seconds instead  
+\item[Member \doxylink{namespaceigl_ad7968d06fbb2bcb8b64f707ec4b29f87}{igl\+::is\+\_\+sparse} (const Eigen\+::\+Sparse\+Matrix$<$ T $>$ \&A)]\label{deprecated__deprecated000008}%
+\Hypertarget{deprecated__deprecated000008}%
+should probably use {\ttfamily std\+::type\+\_\+info}  
+\item[Member \doxylink{namespaceigl_a406b1c228d9a40c7c25062de5c6e20c9}{igl\+::max} (const Eigen\+::\+Sparse\+Matrix$<$ AType $>$ \&A, const int dim, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+B $>$ \&B, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+I $>$ \&I)]\label{deprecated__deprecated000009}%
+\Hypertarget{deprecated__deprecated000009}%
+seems like a duplicate of mat\+\_\+max  
+\item[Member \doxylink{namespaceigl_aea356ce5149b60ed9d36e9f7a94db372}{igl\+::min} (const Eigen\+::\+Sparse\+Matrix$<$ AType $>$ \&A, const int dim, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+B $>$ \&B, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+I $>$ \&I)]\label{deprecated__deprecated000010}%
+\Hypertarget{deprecated__deprecated000010}%
+seems like a duplicate of mat\+\_\+min  
+\item[Member \doxylink{namespaceigl_a52a0f25c8aa1edce0991719a341cf1f5}{igl\+::normalize\+\_\+row\+\_\+lengths} (const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+V $>$ \&A, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+V $>$ \&B)]\label{deprecated__deprecated000011}%
+\Hypertarget{deprecated__deprecated000011}%
+just use A.\+rowwise().normalize() or B=A.\+rowwise().normalized(); 
+\item[Member \doxylink{namespaceigl_a68bd23d4b002a939debcfc372e464122}{igl\+::normalize\+\_\+row\+\_\+sums} (const Eigen\+::\+Matrix\+Base$<$ Derived\+A $>$ \&A, Eigen\+::\+Matrix\+Base$<$ Derived\+B $>$ \&B)]\label{deprecated__deprecated000012}%
+\Hypertarget{deprecated__deprecated000012}%
+This is just calling an Eigen one-\/liner\+:  
+\item[Member \doxylink{namespaceigl_ad498ebcab984468e7f07b426d677af29}{igl\+::pinv} (const Eigen\+::\+Matrix\+Base$<$ Derived\+A $>$ \&A, typename Derived\+A\+::\+Scalar tol, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+X $>$ \&X)]\label{deprecated__deprecated000013}%
+\Hypertarget{deprecated__deprecated000013}%
+Use {\ttfamily Eigen\+::\+Complete\+Orthogonal\+Decomposition\texorpdfstring{$<$}{<}Eigen\+::\+Matrix\+Xd\texorpdfstring{$>$}{>}} {\ttfamily .solve()} or {\ttfamily .pseudoinverse()} instead.  
+\item[Member \doxylink{namespaceigl_afd90a858ad910cc76923a2485ad31415}{igl\+::reorder} (const std\+::vector$<$ T $>$ \&X, std\+::vector$<$ size\+\_\+t $>$ const \&I, std\+::vector$<$ T $>$ \&Y)]\label{deprecated__deprecated000014}%
+\Hypertarget{deprecated__deprecated000014}%
+This is the same as slice but for std\+::vectors. Used only by \doxylink{namespaceigl_aea54a5804527aa194785e403870ba7db}{igl\+::sort} internally.  
+\item[Member \doxylink{namespaceigl_aa0031015feb34d6398264ceac841bc0c}{igl\+::sparse} (const Index\+VectorI \&I, const Index\+VectorJ \&J, const Value\+Vector \&V, const size\+\_\+t m, const size\+\_\+t n, Eigen\+::\+Sparse\+Matrix$<$ T $>$ \&X)]\label{deprecated__deprecated000015}%
+\Hypertarget{deprecated__deprecated000015}%
+just use Eigen\+::\+Sparse\+Matrix$<$$>$.\+set\+From\+Triplets() 
+\end{DoxyRefList}

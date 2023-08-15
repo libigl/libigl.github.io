@@ -1,0 +1,40 @@
+\doxysection{offset\+\_\+surface.\+h}
+\hypertarget{offset__surface_8h_source}{}\label{offset__surface_8h_source}\index{include/igl/offset\_surface.h@{include/igl/offset\_surface.h}}
+\mbox{\hyperlink{offset__surface_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ IGL\_OFFSET\_SURFACE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ IGL\_OFFSET\_SURFACE\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{signed__distance_8h}{signed\_distance.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00025\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{typename}\ isolevelType,}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedSV,}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedSF,}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedGV,}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedside,}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedS>}
+\DoxyCodeLine{00034\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_afff5efd1454c4544da0680e4c410b7cf}{offset\_surface}}(}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{const}\ isolevelType\ isolevel,}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{typename}\ Derivedside::Scalar\ s,}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceigl_a92ae0e8cefa226a1e493b33684b0b02e}{SignedDistanceType}}\ \&\ signed\_distance\_type,}
+\DoxyCodeLine{00040\ \ \ \ \ Eigen::PlainObjectBase<DerivedSV>\ \&\ SV,}
+\DoxyCodeLine{00041\ \ \ \ \ Eigen::PlainObjectBase<DerivedSF>\ \&\ SF,}
+\DoxyCodeLine{00042\ \ \ \ \ Eigen::PlainObjectBase<DerivedGV>\ \&\ GV,}
+\DoxyCodeLine{00043\ \ \ \ \ Eigen::PlainObjectBase<Derivedside>\ \&\ side,}
+\DoxyCodeLine{00044\ \ \ \ \ Eigen::PlainObjectBase<DerivedS>\ \&\ S);}
+\DoxyCodeLine{00045\ \ \ }
+\DoxyCodeLine{00046\ \}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#\ \ include\ "{}offset\_surface.cpp"{}}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#endif\ }}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}

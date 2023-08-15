@@ -1,0 +1,54 @@
+\doxysection{read\+STL.\+h}
+\hypertarget{readSTL_8h_source}{}\label{readSTL_8h_source}\index{include/igl/readSTL.h@{include/igl/readSTL.h}}
+\mbox{\hyperlink{readSTL_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2013\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ Copyright\ (C)\ 2020\ Jérémie\ Dumas\ <jeremie.dumas@ens-\/lyon.org>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ IGL\_READSTL\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ IGL\_READSTL\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ IGL\_NO\_EIGEN}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#\ \ include\ <Eigen/Core>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <istream>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00039\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF,\ \textcolor{keyword}{typename}\ DerivedN>}
+\DoxyCodeLine{00040\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_aa1e874916eb50201727b290cc48fbaac}{readSTL}}(}
+\DoxyCodeLine{00041\ \ \ \ \ std::istream\ \&input,}
+\DoxyCodeLine{00042\ \ \ \ \ Eigen::PlainObjectBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00043\ \ \ \ \ Eigen::PlainObjectBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00044\ \ \ \ \ Eigen::PlainObjectBase<DerivedN>\ \&\ N);}
+\DoxyCodeLine{00046\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TypeV,\ \textcolor{keyword}{typename}\ TypeF,\ \textcolor{keyword}{typename}\ TypeN>}
+\DoxyCodeLine{00047\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_aa1e874916eb50201727b290cc48fbaac}{readSTL}}(}
+\DoxyCodeLine{00048\ \ \ \ \ std::istream\ \&input,}
+\DoxyCodeLine{00049\ \ \ \ \ std::vector<std::array<TypeV,\ 3>\ >\ \&\ V,}
+\DoxyCodeLine{00050\ \ \ \ \ std::vector<std::array<TypeF,\ 3>\ >\ \&\ F,}
+\DoxyCodeLine{00051\ \ \ \ \ std::vector<std::array<TypeN,\ 3>\ >\ \&\ N);}
+\DoxyCodeLine{00054\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF,\ \textcolor{keyword}{typename}\ DerivedN>}
+\DoxyCodeLine{00055\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_aa1e874916eb50201727b290cc48fbaac}{readSTL}}(}
+\DoxyCodeLine{00056\ \ \ \ \ FILE\ *\ fp,}
+\DoxyCodeLine{00057\ \ \ \ \ Eigen::PlainObjectBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00058\ \ \ \ \ Eigen::PlainObjectBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00059\ \ \ \ \ Eigen::PlainObjectBase<DerivedN>\ \&\ N);}
+\DoxyCodeLine{00060\ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#\ \ include\ "{}readSTL.cpp"{}}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00067\ }
+
+\end{DoxyCode}

@@ -1,0 +1,15 @@
+\doxysection{include/igl/svd3x3\+\_\+avx.h File Reference}
+\hypertarget{svd3x3__avx_8h}{}\label{svd3x3__avx_8h}\index{include/igl/svd3x3\_avx.h@{include/igl/svd3x3\_avx.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include \"{}svd3x3\+\_\+avx.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespaceigl_a4153817f124410a202847cbf878d271b}{igl\+::svd3x3\+\_\+avx}} (const Eigen\+::\+Matrix$<$ T, 3 \texorpdfstring{$\ast$}{*}8, 3 $>$ \&A, Eigen\+::\+Matrix$<$ T, 3 \texorpdfstring{$\ast$}{*}8, 3 $>$ \&U, Eigen\+::\+Matrix$<$ T, 3 \texorpdfstring{$\ast$}{*}8, 1 $>$ \&S, Eigen\+::\+Matrix$<$ T, 3 \texorpdfstring{$\ast$}{*}8, 3 $>$ \&V)
+\begin{DoxyCompactList}\small\item\em Super fast 3x3 SVD according to \href{http://pages.cs.wisc.edu/~sifakis/project_pages/svd.html}{\texttt{ http\+://pages.\+cs.\+wisc.\+edu/\texorpdfstring{$\sim$}{\string~}sifakis/project\+\_\+pages/svd.\+html}} This is AVX version of svd3x3 (see \doxylink{svd3x3_8h}{svd3x3.\+h}) which works on 8 matrices at a time These eight matrices are simply stacked in columns, the rest is the same as for svd3x3. \end{DoxyCompactList}\end{DoxyCompactItemize}

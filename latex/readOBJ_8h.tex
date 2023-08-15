@@ -1,0 +1,30 @@
+\doxysection{include/igl/read\+OBJ.h File Reference}
+\hypertarget{readOBJ_8h}{}\label{readOBJ_8h}\index{include/igl/readOBJ.h@{include/igl/readOBJ.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$cstdio$>$}\newline
+{\ttfamily \#include \"{}read\+OBJ.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Scalar , typename Index $>$ }\\bool \mbox{\hyperlink{namespaceigl_ad3d68499324615abfb462bf80130431b}{igl\+::read\+OBJ}} (const std\+::string obj\+\_\+file\+\_\+name, std\+::vector$<$ std\+::vector$<$ Scalar $>$ $>$ \&V, std\+::vector$<$ std\+::vector$<$ Scalar $>$ $>$ \&TC, std\+::vector$<$ std\+::vector$<$ Scalar $>$ $>$ \&N, std\+::vector$<$ std\+::vector$<$ Index $>$ $>$ \&F, std\+::vector$<$ std\+::vector$<$ Index $>$ $>$ \&FTC, std\+::vector$<$ std\+::vector$<$ Index $>$ $>$ \&FN, std\+::vector$<$ std\+::tuple$<$ std\+::string, Index, Index $>$ $>$ \&FM)
+\begin{DoxyCompactList}\small\item\em Read a mesh from an ascii obj file, filling in vertex positions, normals and texture coordinates. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Scalar , typename Index $>$ }\\bool \mbox{\hyperlink{namespaceigl_aed3e2d2ac8f8dd1a2a8d5cdf8a6a80b8}{igl\+::read\+OBJ}} (const std\+::string obj\+\_\+file\+\_\+name, std\+::vector$<$ std\+::vector$<$ Scalar $>$ $>$ \&V, std\+::vector$<$ std\+::vector$<$ Scalar $>$ $>$ \&TC, std\+::vector$<$ std\+::vector$<$ Scalar $>$ $>$ \&N, std\+::vector$<$ std\+::vector$<$ Index $>$ $>$ \&F, std\+::vector$<$ std\+::vector$<$ Index $>$ $>$ \&FTC, std\+::vector$<$ std\+::vector$<$ Index $>$ $>$ \&FN)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Scalar , typename Index $>$ }\\bool \mbox{\hyperlink{namespaceigl_a86d39ea33fc7a17fb16a3e02a5065757}{igl\+::read\+OBJ}} (FILE \texorpdfstring{$\ast$}{*}obj\+\_\+file, std\+::vector$<$ std\+::vector$<$ Scalar $>$ $>$ \&V, std\+::vector$<$ std\+::vector$<$ Scalar $>$ $>$ \&TC, std\+::vector$<$ std\+::vector$<$ Scalar $>$ $>$ \&N, std\+::vector$<$ std\+::vector$<$ Index $>$ $>$ \&F, std\+::vector$<$ std\+::vector$<$ Index $>$ $>$ \&FTC, std\+::vector$<$ std\+::vector$<$ Index $>$ $>$ \&FN, std\+::vector$<$ std\+::tuple$<$ std\+::string, Index, Index $>$ $>$ \&FM)
+\item 
+{\footnotesize template$<$typename Scalar , typename Index $>$ }\\bool \mbox{\hyperlink{namespaceigl_a6485914541d342f476f70e9ba97a00ff}{igl\+::read\+OBJ}} (const std\+::string obj\+\_\+file\+\_\+name, std\+::vector$<$ std\+::vector$<$ Scalar $>$ $>$ \&V, std\+::vector$<$ std\+::vector$<$ Index $>$ $>$ \&F)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename Derived\+TC , typename Derived\+CN , typename DerivedF , typename Derived\+FTC , typename Derived\+FN $>$ }\\bool \mbox{\hyperlink{namespaceigl_a2d8c28b2557217c00bb8e146d828cd35}{igl\+::read\+OBJ}} (const std\+::string str, Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TC $>$ \&TC, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+CN $>$ \&CN, Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+FTC $>$ \&FTC, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+FN $>$ \&FN)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF $>$ }\\bool \mbox{\hyperlink{namespaceigl_a3034889b938bdf0fa96f79ad62f47641}{igl\+::read\+OBJ}} (const std\+::string str, Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedI , typename DerivedC $>$ }\\bool \mbox{\hyperlink{namespaceigl_a4c4849d6cdcfeffd1ed7b48c15d493ad}{igl\+::read\+OBJ}} (const std\+::string str, Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&I, Eigen\+::\+Plain\+Object\+Base$<$ DerivedC $>$ \&C)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}

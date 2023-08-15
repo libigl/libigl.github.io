@@ -1,0 +1,146 @@
+\doxysection{min\+\_\+quad\+\_\+with\+\_\+fixed.\+h}
+\hypertarget{min__quad__with__fixed_8h_source}{}\label{min__quad__with__fixed_8h_source}\index{include/igl/min\_quad\_with\_fixed.h@{include/igl/min\_quad\_with\_fixed.h}}
+\mbox{\hyperlink{min__quad__with__fixed_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2014\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_MIN\_QUAD\_WITH\_FIXED\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_MIN\_QUAD\_WITH\_FIXED\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <Eigen/Sparse>}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ Bug\ in\ unsupported/Eigen/SparseExtra\ needs\ iostream\ first}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <unsupported/Eigen/SparseExtra>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00023\ \ \ \textcolor{keyword}{struct\ }min\_quad\_with\_fixed\_data;}
+\DoxyCodeLine{00049\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ Derivedknown>}
+\DoxyCodeLine{00050\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_adc0382628e374a5b92a226ad75ce6b8b}{min\_quad\_with\_fixed\_precompute}}(}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<T>\&\ A,}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedknown>\ \&\ known,}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<T>\&\ Aeq,}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ pd,}
+\DoxyCodeLine{00055\ \ \ \ \ min\_quad\_with\_fixed\_data<T>\ \&\ data}
+\DoxyCodeLine{00056\ \ \ \ \ );}
+\DoxyCodeLine{00069\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{typename}\ T,}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedB,}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedY,}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedBeq,}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedZ,}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedsol>}
+\DoxyCodeLine{00076\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_ad6d436a09a132f780d5e503b39499fbb}{min\_quad\_with\_fixed\_solve}}(}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{const}\ min\_quad\_with\_fixed\_data<T>\ \&\ data,}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedB>\ \&\ B,}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedY>\ \&\ Y,}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedBeq>\ \&\ Beq,}
+\DoxyCodeLine{00081\ \ \ \ \ Eigen::PlainObjectBase<DerivedZ>\ \&\ Z,}
+\DoxyCodeLine{00082\ \ \ \ \ Eigen::PlainObjectBase<Derivedsol>\ \&\ sol);}
+\DoxyCodeLine{00084\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{typename}\ T,}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedB,}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedY,}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedBeq,}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedZ>}
+\DoxyCodeLine{00090\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_ad6d436a09a132f780d5e503b39499fbb}{min\_quad\_with\_fixed\_solve}}(}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{const}\ min\_quad\_with\_fixed\_data<T>\ \&\ data,}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedB>\ \&\ B,}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedY>\ \&\ Y,}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedBeq>\ \&\ Beq,}
+\DoxyCodeLine{00095\ \ \ \ \ Eigen::PlainObjectBase<DerivedZ>\ \&\ Z);}
+\DoxyCodeLine{00099\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{typename}\ T,}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedknown,}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedB,}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedY,}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedBeq,}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedZ>}
+\DoxyCodeLine{00106\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_abcdcf5c62d46412f4b5de5889e51c0d4}{min\_quad\_with\_fixed}}(}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<T>\&\ A,}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedB>\ \&\ B,}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedknown>\ \&\ known,}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedY>\ \&\ Y,}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<T>\&\ Aeq,}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedBeq>\ \&\ Beq,}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ pd,}
+\DoxyCodeLine{00114\ \ \ \ \ Eigen::PlainObjectBase<DerivedZ>\ \&\ Z);}
+\DoxyCodeLine{00135\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Scalar,\ \textcolor{keywordtype}{int}\ n,\ \textcolor{keywordtype}{int}\ m,\ \textcolor{keywordtype}{bool}\ Hpd=true>}
+\DoxyCodeLine{00136\ \ \ IGL\_INLINE\ Eigen::Matrix<Scalar,n,1>\ \mbox{\hyperlink{namespaceigl_abcdcf5c62d46412f4b5de5889e51c0d4}{min\_quad\_with\_fixed}}(}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,n,n>\ \&\ H,}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,n,1>\ \&\ f,}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Array<bool,n,1>\ \&\ k,}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,n,1>\ \&\ bc,}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,m,n>\ \&\ A,}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,m,1>\ \&\ b);}
+\DoxyCodeLine{00144\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Scalar,\ \textcolor{keywordtype}{int}\ n,\ \textcolor{keywordtype}{bool}\ Hpd=true>}
+\DoxyCodeLine{00145\ \ \ IGL\_INLINE\ Eigen::Matrix<Scalar,n,1>\ \mbox{\hyperlink{namespaceigl_abcdcf5c62d46412f4b5de5889e51c0d4}{min\_quad\_with\_fixed}}(}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,n,n>\ \&\ H,}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,n,1>\ \&\ f,}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Array<bool,n,1>\ \&\ k,}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,n,1>\ \&\ bc);}
+\DoxyCodeLine{00155\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Scalar,\ \textcolor{keywordtype}{int}\ n,\ \textcolor{keywordtype}{int}\ kcount,\ \textcolor{keywordtype}{bool}\ Hpd\textcolor{comment}{/*no\ default*/}>}
+\DoxyCodeLine{00156\ \ \ IGL\_INLINE\ Eigen::Matrix<Scalar,n,1>\ \mbox{\hyperlink{namespaceigl_abcdcf5c62d46412f4b5de5889e51c0d4}{min\_quad\_with\_fixed}}(}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,n,n>\ \&\ H,}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,n,1>\ \&\ f,}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Array<bool,n,1>\ \&\ k,}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,n,1>\ \&\ bc);}
+\DoxyCodeLine{00161\ \}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00164\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00165\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data}{igl::min\_quad\_with\_fixed\_data}}}
+\DoxyCodeLine{00166\ \{}
+\DoxyCodeLine{00168\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_aa2f79821dd5f69c2c704d4f8d2e0c34d}{n}};}
+\DoxyCodeLine{00170\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ad3ec9b5eb512ccd82dc39fc7c670eae5}{Auu\_pd}};}
+\DoxyCodeLine{00172\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ab1604a8b1d543c6dfc4ac01dc42df0a6}{Auu\_sym}};}
+\DoxyCodeLine{00174\ \ \ Eigen::VectorXi\ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0b135eb50ef96353f9959dbfdc4e9844}{known}};}
+\DoxyCodeLine{00176\ \ \ Eigen::VectorXi\ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a45a26b0e5d41d28bfea348ee51f52e4b}{unknown}};}
+\DoxyCodeLine{00178\ \ \ Eigen::VectorXi\ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ab07863971db161e5eb7cdf2ec28afb06}{lagrange}};}
+\DoxyCodeLine{00180\ \ \ Eigen::VectorXi\ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ac680271bddf24abc8337ca15965a200d}{unknown\_lagrange}};}
+\DoxyCodeLine{00182\ \ \ Eigen::SparseMatrix<T>\ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a3db371095ff5ecf7dc8c42c3e34a3695}{preY}};}
+\DoxyCodeLine{00184\ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0ecb4d6605c0d09f0d9cd9e3beaf9022}{SolverType}}}
+\DoxyCodeLine{00185\ \ \ \{}
+\DoxyCodeLine{00186\ \ \ \ \ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0ecb4d6605c0d09f0d9cd9e3beaf9022aec26e1242a5954a0a6c3aac46ceb9925}{LLT}}\ =\ 0,}
+\DoxyCodeLine{00187\ \ \ \ \ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0ecb4d6605c0d09f0d9cd9e3beaf9022a74a4143bfda022543372860ad5fe0160}{LDLT}}\ =\ 1,}
+\DoxyCodeLine{00188\ \ \ \ \ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0ecb4d6605c0d09f0d9cd9e3beaf9022a6a372e5f964cccd56a199d6172ececdc}{LU}}\ =\ 2,}
+\DoxyCodeLine{00189\ \ \ \ \ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0ecb4d6605c0d09f0d9cd9e3beaf9022a810e6fec9cfe02bad4897cb21380f6c9}{QR\_LLT}}\ =\ 3,}
+\DoxyCodeLine{00190\ \ \ \ \ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0ecb4d6605c0d09f0d9cd9e3beaf9022aa5422332d60edf9593d4c5ec0f26210d}{NUM\_SOLVER\_TYPES}}\ =\ 4}
+\DoxyCodeLine{00191\ \ \ \}\ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_adf555171e037b12e5177ebd81fd33de5}{solver\_type}};}
+\DoxyCodeLine{00193\ \ \ Eigen::SimplicialLLT\ <Eigen::SparseMatrix<T\ >\ >\ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a4ef765c434c7997a24378788a7fd9c84}{llt}};}
+\DoxyCodeLine{00194\ \ \ Eigen::SimplicialLDLT<Eigen::SparseMatrix<T\ >\ >\ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a1bd2d40db9381b99df7cafafa3e9b8ac}{ldlt}};}
+\DoxyCodeLine{00195\ \ \ Eigen::SparseLU<Eigen::SparseMatrix<T,\ Eigen::ColMajor>,\ Eigen::COLAMDOrdering<int>\ >\ \ \ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a7c60ca349277d0e6e85e5cdd489e5dc2}{lu}};}
+\DoxyCodeLine{00198\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_aae738302bbd952761f3e48fcaa1b11f9}{Aeq\_li}};}
+\DoxyCodeLine{00200\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_abdd3d36254dbf348fb6296f80bb3eaa0}{neq}};}
+\DoxyCodeLine{00201\ \ \ Eigen::SparseQR<Eigen::SparseMatrix<T>,\ Eigen::COLAMDOrdering<int>\ >\ \ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0dd37f713f6578dc75ab710458d4654c}{AeqTQR}};}
+\DoxyCodeLine{00202\ \ \ Eigen::SparseMatrix<T>\ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_add2a92c1b4fb911ff47f193b37650afa}{Aeqk}};}
+\DoxyCodeLine{00203\ \ \ Eigen::SparseMatrix<T>\ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ae7eec6673505fc46af7fb9e65aa6c426}{Aequ}};}
+\DoxyCodeLine{00204\ \ \ Eigen::SparseMatrix<T>\ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_adde8448b08fd094fb92f2638ae476814}{Auu}};}
+\DoxyCodeLine{00205\ \ \ Eigen::SparseMatrix<T>\ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a6dd70a80c9696cbd95cc4a11413caa8e}{AeqTQ1}};}
+\DoxyCodeLine{00206\ \ \ Eigen::SparseMatrix<T>\ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_af29f3f637f6a03ece40aa8c4811ad6f0}{AeqTQ1T}};}
+\DoxyCodeLine{00207\ \ \ Eigen::SparseMatrix<T>\ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a65ebbedaafb67501de8a7cb0798b70ab}{AeqTQ2}};}
+\DoxyCodeLine{00208\ \ \ Eigen::SparseMatrix<T>\ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ada118a14cca10b66554139cc28883b49}{AeqTQ2T}};}
+\DoxyCodeLine{00209\ \ \ Eigen::SparseMatrix<T>\ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_abe2e974252d7deadea02f19093374781}{AeqTR1}};}
+\DoxyCodeLine{00210\ \ \ Eigen::SparseMatrix<T>\ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ad67e1f780d301ce6928c4bcf60563288}{AeqTR1T}};}
+\DoxyCodeLine{00211\ \ \ Eigen::SparseMatrix<T>\ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_aeedc9f4d675bbd636b1782a75d0bbef3}{AeqTE}};}
+\DoxyCodeLine{00212\ \ \ Eigen::SparseMatrix<T>\ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_acabf6c24ee8ff41b8e536923a48c7395}{AeqTET}};}
+\DoxyCodeLine{00214\ \ \ Eigen::SparseMatrix<T>\ NA;}
+\DoxyCodeLine{00215\ \ \ Eigen::Matrix<T,Eigen::Dynamic,Eigen::Dynamic>\ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a5ebf64e81dccd7a909e252ff13d2dfee}{NB}};}
+\DoxyCodeLine{00216\ \};}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00219\ \textcolor{preprocessor}{\#\ \ include\ "{}\mbox{\hyperlink{min__quad__with__fixed_8impl_8h}{min\_quad\_with\_fixed.impl.h}}"{}}}
+\DoxyCodeLine{00220\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

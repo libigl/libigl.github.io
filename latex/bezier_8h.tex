@@ -1,0 +1,20 @@
+\doxysection{include/igl/bezier.h File Reference}
+\hypertarget{bezier_8h}{}\label{bezier_8h}\index{include/igl/bezier.h@{include/igl/bezier.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \"{}bezier.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedP $>$ }\\void \mbox{\hyperlink{namespaceigl_ae5227bd6077c6a709c20789e5c0d70cd}{igl\+::bezier}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const typename Derived\+V\+::\+Scalar t, Eigen\+::\+Plain\+Object\+Base$<$ DerivedP $>$ \&P)
+\begin{DoxyCompactList}\small\item\em Evaluate a polynomial Bezier Curve at single parameter value. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedT , typename DerivedP $>$ }\\void \mbox{\hyperlink{namespaceigl_a0860a64b8a1678d63bea76c8b1999c78}{igl\+::bezier}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedT $>$ \&T, Eigen\+::\+Plain\+Object\+Base$<$ DerivedP $>$ \&P)
+\begin{DoxyCompactList}\small\item\em Evaluate a polynomial Bezier Curve at many parameter values. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename VMat , typename DerivedT , typename DerivedP $>$ }\\void \mbox{\hyperlink{namespaceigl_a4be736f827b4ba341d4b2cb40f21f844}{igl\+::bezier}} (const std\+::vector$<$ VMat $>$ \&spline, const Eigen\+::\+Matrix\+Base$<$ DerivedT $>$ \&T, Eigen\+::\+Plain\+Object\+Base$<$ DerivedP $>$ \&P)
+\begin{DoxyCompactList}\small\item\em Evaluate a polynomial Bezier spline with a fixed parameter set for each sub-\/curve. \end{DoxyCompactList}\end{DoxyCompactItemize}

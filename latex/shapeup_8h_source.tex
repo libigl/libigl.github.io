@@ -1,0 +1,116 @@
+\doxysection{shapeup.\+h}
+\hypertarget{shapeup_8h_source}{}\label{shapeup_8h_source}\index{include/igl/shapeup.h@{include/igl/shapeup.h}}
+\mbox{\hyperlink{shapeup_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2017\ Amir\ Vaxman\ <avaxman@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_SHAPEUP\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_SHAPEUP\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{min__quad__with__fixed_8h}{igl/min\_quad\_with\_fixed.h}}>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <igl/igl\_inline.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{setdiff_8h}{igl/setdiff.h}}>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{cat_8h}{igl/cat.h}}>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{PI_8h}{igl/PI.h}}>}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{//This\ file\ implements\ the\ following\ algorithm:}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{comment}{//Bouaziz\ et\ al.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{//Shape-\/Up:\ Shaping\ Discrete\ Geometry\ with\ Projections}}
+\DoxyCodeLine{00024\ \textcolor{comment}{//Computer\ Graphics\ Forum\ (Proc.\ SGP)\ 31(5),\ 2012}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00031\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1ShapeupData}{ShapeupData}}\{}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{//input\ data}}
+\DoxyCodeLine{00033\ \ \ \ \ Eigen::MatrixXd\ \mbox{\hyperlink{structigl_1_1ShapeupData_a448b5688be346d89eac4ad9b61ff6929}{P}};}
+\DoxyCodeLine{00034\ \ \ \ \ Eigen::VectorXi\ \mbox{\hyperlink{structigl_1_1ShapeupData_ad3ff6cb6a413333ea017da0e8b8b1ed3}{SC}};}
+\DoxyCodeLine{00035\ \ \ \ \ Eigen::MatrixXi\ \mbox{\hyperlink{structigl_1_1ShapeupData_afcee02c48b1f80e29dcee86eb0544445}{S}};}
+\DoxyCodeLine{00036\ \ \ \ \ Eigen::VectorXi\ \mbox{\hyperlink{structigl_1_1ShapeupData_a848a894e9faeecbc0eb2986bca4f1f79}{b}};}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structigl_1_1ShapeupData_ab9a168c19134095d97f0a412ac91831c}{maxIterations}};\ \textcolor{comment}{//referring\ to\ number\ of\ local-\/global\ pairs.}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structigl_1_1ShapeupData_ab3e0f7ecfbc717b0341d220d04753657}{pTolerance}};\ \ \ \textcolor{comment}{//algorithm\ stops\ when\ max(|P\_k-\/P\_\{k-\/1\}|)<pTolerance.}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structigl_1_1ShapeupData_a78fb3acbff38f80e8e025f2ac228d558}{shapeCoeff}},\ \mbox{\hyperlink{structigl_1_1ShapeupData_a3727e2e2d16e87c277dd535f5ee19638}{closeCoeff}},\ \mbox{\hyperlink{structigl_1_1ShapeupData_af67e0b57af8a3d63b1c3f92e8f73109e}{smoothCoeff}};}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{//Internally-\/used\ matrices}}
+\DoxyCodeLine{00041\ \ \ \ \ Eigen::SparseMatrix<double>\ \mbox{\hyperlink{structigl_1_1ShapeupData_a5b7cfcb103d08fa1670778ce4b97fd19}{DShape}},\ \mbox{\hyperlink{structigl_1_1ShapeupData_a66e93b7a80094c16e905dab75839fdfa}{DClose}},\ \mbox{\hyperlink{structigl_1_1ShapeupData_a3bae129bea0caa841708f28a05a6b2b1}{DSmooth}},\ \mbox{\hyperlink{structigl_1_1ShapeupData_a3585a859a0981a599f554586cf7ba719}{Q}},\ \mbox{\hyperlink{structigl_1_1ShapeupData_ad363dcb7689a755a082de6e698f3a2f1}{A}},\ \mbox{\hyperlink{structigl_1_1ShapeupData_a089cb63a73bd8abcea2fb5558a45414a}{At}},\ \mbox{\hyperlink{structigl_1_1ShapeupData_af535bbd96ee9c813d671f5894616468d}{W}};}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data}{min\_quad\_with\_fixed\_data<double>}}\ \mbox{\hyperlink{structigl_1_1ShapeupData_a52d5a56d3f3d3bc6519f7c9a5db81adf}{solver\_data}};}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{structigl_1_1ShapeupData_a91e2c9b9b4b3d2489d610a3060f222cc}{ShapeupData}}():}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{structigl_1_1ShapeupData_ab9a168c19134095d97f0a412ac91831c}{maxIterations}}(50),}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{structigl_1_1ShapeupData_ab3e0f7ecfbc717b0341d220d04753657}{pTolerance}}(10e-\/6),}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{structigl_1_1ShapeupData_a78fb3acbff38f80e8e025f2ac228d558}{shapeCoeff}}(1.0),}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{structigl_1_1ShapeupData_a3727e2e2d16e87c277dd535f5ee19638}{closeCoeff}}(100.0),}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{structigl_1_1ShapeupData_af67e0b57af8a3d63b1c3f92e8f73109e}{smoothCoeff}}(0.0)\{\}}
+\DoxyCodeLine{00049\ \ \ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \textcolor{comment}{//\ Alec:\ I'm\ not\ sure\ why\ these\ are\ using\ PlainObjectBase\ but\ then\ not}}
+\DoxyCodeLine{00052\ \ \ \textcolor{comment}{//\ templating.}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ }
+\DoxyCodeLine{00067\ \ \ \textcolor{comment}{//typedef\ std::function<}}
+\DoxyCodeLine{00068\ \ \ \textcolor{comment}{//\ \ bool(}}
+\DoxyCodeLine{00069\ \ \ \textcolor{comment}{//\ \ \ \ \ \ const\ Eigen::PlainObjectBase<Eigen::MatrixXd>\&,\ }}
+\DoxyCodeLine{00070\ \ \ \textcolor{comment}{//\ \ \ \ \ \ const\ Eigen::PlainObjectBase<Eigen::VectorXi>\&,\ }}
+\DoxyCodeLine{00071\ \ \ \textcolor{comment}{//\ \ \ \ \ \ const\ Eigen::PlainObjectBase<Eigen::MatrixXi>\&,\ }}
+\DoxyCodeLine{00072\ \ \ \textcolor{comment}{//\ \ \ \ \ \ Eigen::PlainObjectBase<Eigen::MatrixXd>\&)>\ }}
+\DoxyCodeLine{00073\ \ \ \textcolor{comment}{//\ \ shapeup\_projection\_function;}}
+\DoxyCodeLine{00074\ \ \ \textcolor{keyword}{using\ }}
+\DoxyCodeLine{00075\ \textcolor{keyword}{\ \ \ \ }\mbox{\hyperlink{namespaceigl_af2b7710824b3b35bfcda5dd2d5c723f5}{shapeup\_projection\_function}}}
+\DoxyCodeLine{00076\ \ \ \ \ =}
+\DoxyCodeLine{00077\ \ \ \ \ std::function<}
+\DoxyCodeLine{00078\ \ \ \ \ bool(}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<Eigen::MatrixXd>\&,\ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<Eigen::VectorXi>\&,\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<Eigen::MatrixXi>\&,\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<Eigen::MatrixXd>\&)>\ ;}
+\DoxyCodeLine{00096\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a5df9db393a5b6b3865e7a10d9d02a31b}{shapeup\_identity\_projection}}(}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<Eigen::MatrixXd>\&\ P,\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<Eigen::VectorXi>\&\ SC,\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<Eigen::MatrixXi>\&\ S,\ \ }
+\DoxyCodeLine{00100\ \ \ \ \ Eigen::PlainObjectBase<Eigen::MatrixXd>\&\ projP);}
+\DoxyCodeLine{00101\ \ \ }
+\DoxyCodeLine{00115\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_aaced06a2a1f184dc5bfe8ff1b87d6d0d}{shapeup\_regular\_face\_projection}}(}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<Eigen::MatrixXd>\&\ P,\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<Eigen::VectorXi>\&\ SC,\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<Eigen::MatrixXi>\&\ S,\ \ }
+\DoxyCodeLine{00119\ \ \ \ \ Eigen::PlainObjectBase<Eigen::MatrixXd>\&\ projP);}
+\DoxyCodeLine{00138\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedP,}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedSC,}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedS,}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedw>}
+\DoxyCodeLine{00143\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_ad94a2c7d2cbbaf046ff244daa6620895}{shapeup\_precomputation}}(}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedP>\&\ P,}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedSC>\&\ SC,}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedS>\&\ S,}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedS>\&\ E,}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedSC>\&\ b,}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<Derivedw>\&\ wShape,}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<Derivedw>\&\ wSmooth,}
+\DoxyCodeLine{00151\ \ \ \ \ \mbox{\hyperlink{structigl_1_1ShapeupData}{ShapeupData}}\ \&\ sudata);}
+\DoxyCodeLine{00166\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedP,}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedSC,}
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedS>}
+\DoxyCodeLine{00170\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a9b6baf02654fad9293e1560d71475185}{shapeup\_solve}}(}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedP>\&\ bc,}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keyword}{const}\ std::function<\textcolor{keywordtype}{bool}(\textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedP>\&,\ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedSC>\&,\ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedS>\&,\ \ Eigen::PlainObjectBase<DerivedP>\&)>\&\ local\_projection,}
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedP>\&\ P0,}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structigl_1_1ShapeupData}{ShapeupData}}\ \&\ sudata,}
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ quietIterations,}
+\DoxyCodeLine{00176\ \ \ \ \ Eigen::PlainObjectBase<DerivedP>\&\ P);}
+\DoxyCodeLine{00177\ \ \ }
+\DoxyCodeLine{00178\ \}}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\#include\ "{}shapeup.cpp"{}}}
+\DoxyCodeLine{00182\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

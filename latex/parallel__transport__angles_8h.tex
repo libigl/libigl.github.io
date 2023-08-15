@@ -1,0 +1,16 @@
+\doxysection{include/igl/parallel\+\_\+transport\+\_\+angles.h File Reference}
+\hypertarget{parallel__transport__angles_8h}{}\label{parallel__transport__angles_8h}\index{include/igl/parallel\_transport\_angles.h@{include/igl/parallel\_transport\_angles.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \"{}parallel\+\_\+transport\+\_\+angles.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedK $>$ }\\void \mbox{\hyperlink{namespaceigl_a842fd7e11ac0c43a81d15fa137337adb}{igl\+::parallel\+\_\+transport\+\_\+angles}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&FN, const Eigen\+::\+Matrix\+Xi \&E2F, const Eigen\+::\+Matrix\+Xi \&F2E, Eigen\+::\+Plain\+Object\+Base$<$ DerivedK $>$ \&K)
+\begin{DoxyCompactList}\small\item\em Given the per-\/face local bases computed via \doxylink{namespaceigl_a108a662cae580e5c3459d81435f32e24}{igl\+::local\+\_\+basis}, this function computes the angle between the two reference frames across each edge. \end{DoxyCompactList}\end{DoxyCompactItemize}

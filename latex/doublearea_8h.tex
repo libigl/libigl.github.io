@@ -1,0 +1,25 @@
+\doxysection{include/igl/doublearea.h File Reference}
+\hypertarget{doublearea_8h}{}\label{doublearea_8h}\index{include/igl/doublearea.h@{include/igl/doublearea.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include \"{}doublearea.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename DeriveddblA $>$ }\\void \mbox{\hyperlink{namespaceigl_a7bae61a0f8a1bbe72e7832381c9beca5}{igl\+::doublearea}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ DeriveddblA $>$ \&dblA)
+\begin{DoxyCompactList}\small\item\em Computes twice the area for each input triangle or quad. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedA , typename DerivedB , typename DerivedC , typename DerivedD $>$ }\\void \mbox{\hyperlink{namespaceigl_adb2512ac1588eb6929dee61b2fb70955}{igl\+::doublearea}} (const Eigen\+::\+Matrix\+Base$<$ DerivedA $>$ \&A, const Eigen\+::\+Matrix\+Base$<$ DerivedB $>$ \&B, const Eigen\+::\+Matrix\+Base$<$ DerivedC $>$ \&C, Eigen\+::\+Plain\+Object\+Base$<$ DerivedD $>$ \&D)
+\begin{DoxyCompactList}\small\item\em Compute the twice the signed area of a each triangle. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedA , typename DerivedB , typename DerivedC $>$ }\\Derived\+A\+::\+Scalar \mbox{\hyperlink{namespaceigl_aace08ffa72a43a1758a45fe097625aef}{igl\+::doublearea\+\_\+single}} (const Eigen\+::\+Matrix\+Base$<$ DerivedA $>$ \&A, const Eigen\+::\+Matrix\+Base$<$ DerivedB $>$ \&B, const Eigen\+::\+Matrix\+Base$<$ DerivedC $>$ \&C)
+\begin{DoxyCompactList}\small\item\em Compute the twice the signed area of a single triangle. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derivedl , typename DeriveddblA $>$ }\\void \mbox{\hyperlink{namespaceigl_aa4f3fcc3d502d79e4617250e0ea85ef6}{igl\+::doublearea}} (const Eigen\+::\+Matrix\+Base$<$ Derivedl $>$ \&l, const typename Derivedl\+::\+Scalar nan\+\_\+replacement, Eigen\+::\+Plain\+Object\+Base$<$ DeriveddblA $>$ \&dblA)
+\begin{DoxyCompactList}\small\item\em Compute twice the area of each intrinsic triangle in a mesh. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derivedl , typename DeriveddblA $>$ }\\void \mbox{\hyperlink{namespaceigl_a0fcad7016d7021778f7ec4ff91cec557}{igl\+::doublearea}} (const Eigen\+::\+Matrix\+Base$<$ Derivedl $>$ \&l, Eigen\+::\+Plain\+Object\+Base$<$ DeriveddblA $>$ \&dblA)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename DeriveddblA $>$ }\\void \mbox{\hyperlink{namespaceigl_a516b190062ec90a40ecce7a721951303}{igl\+::doublearea\+\_\+quad}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ DeriveddblA $>$ \&dblA)
+\begin{DoxyCompactList}\small\item\em Computes twice the area for each input quadrilateral. \end{DoxyCompactList}\end{DoxyCompactItemize}

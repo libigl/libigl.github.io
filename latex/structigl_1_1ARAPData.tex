@@ -1,0 +1,149 @@
+\doxysection{igl\+::ARAPData Struct Reference}
+\hypertarget{structigl_1_1ARAPData}{}\label{structigl_1_1ARAPData}\index{igl::ARAPData@{igl::ARAPData}}
+
+
+Parameters and precomputed values for arap solver.  
+
+
+
+
+{\ttfamily \#include $<$arap.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structigl_1_1ARAPData_a7b6316a2c0dfcbddab8ba0bdc3ee7ec2}{ARAPData}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structigl_1_1ARAPData_ab99b3e4ab328a9312eff182894a32143}{n}}
+\begin{DoxyCompactList}\small\item\em \#V size of mesh \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xi \mbox{\hyperlink{structigl_1_1ARAPData_a925142dca89b71eeb119f5268b1a4332}{G}}
+\begin{DoxyCompactList}\small\item\em \#V list of group indices (1 to k) for each vertex, such that vertex i is assigned to group \doxylink{structigl_1_1ARAPData_a925142dca89b71eeb119f5268b1a4332}{G(i)} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceigl_afcbc9001656cf2d4cc135602618c97e5}{ARAPEnergy\+Type}} \mbox{\hyperlink{structigl_1_1ARAPData_a295a9607737205344e67005507e25689}{energy}}
+\begin{DoxyCompactList}\small\item\em type of energy to use \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structigl_1_1ARAPData_a2ef0c86be0a56a52c99ed1a4dd376d46}{with\+\_\+dynamics}}
+\begin{DoxyCompactList}\small\item\em whether using dynamics (need to call arap\+\_\+precomputation after changing) \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{structigl_1_1ARAPData_a48d618d6be0a7ffc6e8a73c3750a3f8a}{f\+\_\+ext}}
+\begin{DoxyCompactList}\small\item\em \#V by dim list of external forces \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{structigl_1_1ARAPData_a6fb5fa16caad9e042899ee23ae667c1a}{vel}}
+\begin{DoxyCompactList}\small\item\em \#V by dim list of velocities \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{structigl_1_1ARAPData_a6328b0f335d4ce9cfb36327178ebea53}{h}}
+\begin{DoxyCompactList}\small\item\em dynamics time step \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{structigl_1_1ARAPData_a70ce1768d7ebd4a6682fcaea066f9170}{ym}}
+\begin{DoxyCompactList}\small\item\em \"{}\+Young\textquotesingle{}s modulus\"{} smaller is softer, larger is more rigid/stiff \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structigl_1_1ARAPData_ae4f9eeb68882aa1a5a5c9fda98dd54d7}{max\+\_\+iter}}
+\begin{DoxyCompactList}\small\item\em maximum inner iterations \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Parameters and precomputed values for arap solver. 
+
+\doxylink{arap_8h}{include/igl/arap.\+h} 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structigl_1_1ARAPData_a7b6316a2c0dfcbddab8ba0bdc3ee7ec2}\label{structigl_1_1ARAPData_a7b6316a2c0dfcbddab8ba0bdc3ee7ec2} 
+\index{igl::ARAPData@{igl::ARAPData}!ARAPData@{ARAPData}}
+\index{ARAPData@{ARAPData}!igl::ARAPData@{igl::ARAPData}}
+\doxysubsubsection{\texorpdfstring{ARAPData()}{ARAPData()}}
+{\footnotesize\ttfamily igl\+::\+ARAPData\+::\+ARAPData (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structigl_1_1ARAPData_ab99b3e4ab328a9312eff182894a32143}\label{structigl_1_1ARAPData_ab99b3e4ab328a9312eff182894a32143} 
+\index{igl::ARAPData@{igl::ARAPData}!n@{n}}
+\index{n@{n}!igl::ARAPData@{igl::ARAPData}}
+\doxysubsubsection{\texorpdfstring{n}{n}}
+{\footnotesize\ttfamily int igl\+::\+ARAPData\+::n}
+
+
+
+\#V size of mesh 
+
+\Hypertarget{structigl_1_1ARAPData_a925142dca89b71eeb119f5268b1a4332}\label{structigl_1_1ARAPData_a925142dca89b71eeb119f5268b1a4332} 
+\index{igl::ARAPData@{igl::ARAPData}!G@{G}}
+\index{G@{G}!igl::ARAPData@{igl::ARAPData}}
+\doxysubsubsection{\texorpdfstring{G}{G}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xi igl\+::\+ARAPData\+::G}
+
+
+
+\#V list of group indices (1 to k) for each vertex, such that vertex i is assigned to group \doxylink{structigl_1_1ARAPData_a925142dca89b71eeb119f5268b1a4332}{G(i)} 
+
+\Hypertarget{structigl_1_1ARAPData_a295a9607737205344e67005507e25689}\label{structigl_1_1ARAPData_a295a9607737205344e67005507e25689} 
+\index{igl::ARAPData@{igl::ARAPData}!energy@{energy}}
+\index{energy@{energy}!igl::ARAPData@{igl::ARAPData}}
+\doxysubsubsection{\texorpdfstring{energy}{energy}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceigl_afcbc9001656cf2d4cc135602618c97e5}{ARAPEnergy\+Type}} igl\+::\+ARAPData\+::energy}
+
+
+
+type of energy to use 
+
+\Hypertarget{structigl_1_1ARAPData_a2ef0c86be0a56a52c99ed1a4dd376d46}\label{structigl_1_1ARAPData_a2ef0c86be0a56a52c99ed1a4dd376d46} 
+\index{igl::ARAPData@{igl::ARAPData}!with\_dynamics@{with\_dynamics}}
+\index{with\_dynamics@{with\_dynamics}!igl::ARAPData@{igl::ARAPData}}
+\doxysubsubsection{\texorpdfstring{with\_dynamics}{with\_dynamics}}
+{\footnotesize\ttfamily bool igl\+::\+ARAPData\+::with\+\_\+dynamics}
+
+
+
+whether using dynamics (need to call arap\+\_\+precomputation after changing) 
+
+\Hypertarget{structigl_1_1ARAPData_a48d618d6be0a7ffc6e8a73c3750a3f8a}\label{structigl_1_1ARAPData_a48d618d6be0a7ffc6e8a73c3750a3f8a} 
+\index{igl::ARAPData@{igl::ARAPData}!f\_ext@{f\_ext}}
+\index{f\_ext@{f\_ext}!igl::ARAPData@{igl::ARAPData}}
+\doxysubsubsection{\texorpdfstring{f\_ext}{f\_ext}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd igl\+::\+ARAPData\+::f\+\_\+ext}
+
+
+
+\#V by dim list of external forces 
+
+\Hypertarget{structigl_1_1ARAPData_a6fb5fa16caad9e042899ee23ae667c1a}\label{structigl_1_1ARAPData_a6fb5fa16caad9e042899ee23ae667c1a} 
+\index{igl::ARAPData@{igl::ARAPData}!vel@{vel}}
+\index{vel@{vel}!igl::ARAPData@{igl::ARAPData}}
+\doxysubsubsection{\texorpdfstring{vel}{vel}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd igl\+::\+ARAPData\+::vel}
+
+
+
+\#V by dim list of velocities 
+
+\Hypertarget{structigl_1_1ARAPData_a6328b0f335d4ce9cfb36327178ebea53}\label{structigl_1_1ARAPData_a6328b0f335d4ce9cfb36327178ebea53} 
+\index{igl::ARAPData@{igl::ARAPData}!h@{h}}
+\index{h@{h}!igl::ARAPData@{igl::ARAPData}}
+\doxysubsubsection{\texorpdfstring{h}{h}}
+{\footnotesize\ttfamily double igl\+::\+ARAPData\+::h}
+
+
+
+dynamics time step 
+
+\Hypertarget{structigl_1_1ARAPData_a70ce1768d7ebd4a6682fcaea066f9170}\label{structigl_1_1ARAPData_a70ce1768d7ebd4a6682fcaea066f9170} 
+\index{igl::ARAPData@{igl::ARAPData}!ym@{ym}}
+\index{ym@{ym}!igl::ARAPData@{igl::ARAPData}}
+\doxysubsubsection{\texorpdfstring{ym}{ym}}
+{\footnotesize\ttfamily double igl\+::\+ARAPData\+::ym}
+
+
+
+\"{}\+Young\textquotesingle{}s modulus\"{} smaller is softer, larger is more rigid/stiff 
+
+\Hypertarget{structigl_1_1ARAPData_ae4f9eeb68882aa1a5a5c9fda98dd54d7}\label{structigl_1_1ARAPData_ae4f9eeb68882aa1a5a5c9fda98dd54d7} 
+\index{igl::ARAPData@{igl::ARAPData}!max\_iter@{max\_iter}}
+\index{max\_iter@{max\_iter}!igl::ARAPData@{igl::ARAPData}}
+\doxysubsubsection{\texorpdfstring{max\_iter}{max\_iter}}
+{\footnotesize\ttfamily int igl\+::\+ARAPData\+::max\+\_\+iter}
+
+
+
+maximum inner iterations 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/igl/\mbox{\hyperlink{arap_8h}{arap.\+h}}\end{DoxyCompactItemize}

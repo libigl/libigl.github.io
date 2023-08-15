@@ -1,0 +1,54 @@
+\doxysection{igl\+::mosek Namespace Reference}
+\hypertarget{namespaceigl_1_1mosek}{}\label{namespaceigl_1_1mosek}\index{igl::mosek@{igl::mosek}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV , typename Derived\+Ele , typename Derivedb , typename Derivedbc , typename DerivedW $>$ }\\bool \mbox{\hyperlink{namespaceigl_1_1mosek_a4de18238d9facc388d5238acc014a99a}{bbw}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+Ele $>$ \&Ele, const Eigen\+::\+Plain\+Object\+Base$<$ Derivedb $>$ \&b, const Eigen\+::\+Plain\+Object\+Base$<$ Derivedbc $>$ \&bc, \mbox{\hyperlink{classigl_1_1BBWData}{igl\+::\+BBWData}} \&data, igl\+::mosek\+::\+Mosek\+Data \&mosek\+\_\+data, Eigen\+::\+Plain\+Object\+Base$<$ DerivedW $>$ \&W)
+\begin{DoxyCompactList}\small\item\em Compute Bounded Biharmonic Weights on a given domain (V,Ele) with a given set of boundary conditions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceigl_1_1mosek_a4de18238d9facc388d5238acc014a99a}\label{namespaceigl_1_1mosek_a4de18238d9facc388d5238acc014a99a} 
+\index{igl::mosek@{igl::mosek}!bbw@{bbw}}
+\index{bbw@{bbw}!igl::mosek@{igl::mosek}}
+\doxysubsubsection{\texorpdfstring{bbw()}{bbw()}}
+{\footnotesize\ttfamily template$<$typename DerivedV , typename Derived\+Ele , typename Derivedb , typename Derivedbc , typename DerivedW $>$ \\
+bool igl\+::mosek\+::bbw (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+Ele $>$ \&}]{Ele,  }\item[{const Eigen\+::\+Plain\+Object\+Base$<$ Derivedb $>$ \&}]{b,  }\item[{const Eigen\+::\+Plain\+Object\+Base$<$ Derivedbc $>$ \&}]{bc,  }\item[{\mbox{\hyperlink{classigl_1_1BBWData}{igl\+::\+BBWData}} \&}]{data,  }\item[{igl\+::mosek\+::\+Mosek\+Data \&}]{mosek\+\_\+data,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedW $>$ \&}]{W }\end{DoxyParamCaption})}
+
+
+
+Compute Bounded Biharmonic Weights on a given domain (V,Ele) with a given set of boundary conditions. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em DerivedV} & derived type of eigen matrix for V (e.\+g. Matrix\+Xd) \\
+\hline
+{\em DerivedF} & derived type of eigen matrix for F (e.\+g. Matrix\+Xi) \\
+\hline
+{\em Derivedb} & derived type of eigen matrix for b (e.\+g. Vector\+Xi) \\
+\hline
+{\em Derivedbc} & derived type of eigen matrix for bc (e.\+g. Matrix\+Xd) \\
+\hline
+{\em DerivedW} & derived type of eigen matrix for W (e.\+g. Matrix\+Xd) \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em V} & \#V by dim vertex positions \\
+\hline
+\mbox{\texttt{ in}}  & {\em Ele} & \#\+Elements by simplex-\/size list of element indices \\
+\hline
+\mbox{\texttt{ in}}  & {\em b} & \#b boundary indices into V \\
+\hline
+\mbox{\texttt{ in}}  & {\em bc} & \#b by \#W list of boundary values \\
+\hline
+\mbox{\texttt{ in}}  & {\em data} & object containing options, initial guess -\/-\/\texorpdfstring{$>$}{>} solution and results \\
+\hline
+\mbox{\texttt{ in}}  & {\em mosek\+\_\+data} & object containing mosek options \\
+\hline
+\mbox{\texttt{ out}}  & {\em W} & \#V by \#W list of {\itshape unnormalized} weights to normalize use igl\+::normalize\+\_\+row\+\_\+sums(\+W,\+W); \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false on failure 
+\end{DoxyReturn}

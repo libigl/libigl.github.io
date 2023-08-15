@@ -1,0 +1,32 @@
+\doxysection{include/igl/slice\+\_\+cached.h File Reference}
+\hypertarget{slice__cached_8h}{}\label{slice__cached_8h}\index{include/igl/slice\_cached.h@{include/igl/slice\_cached.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include \"{}slice\+\_\+cached.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{slice__cached_8h_aa93624b0b2836d2510e8c92ae951d817}{EIGEN\+\_\+\+YES\+\_\+\+I\+\_\+\+KNOW\+\_\+\+SPARSE\+\_\+\+MODULE\+\_\+\+IS\+\_\+\+NOT\+\_\+\+STABLE\+\_\+\+YET}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename TX , typename TY , typename DerivedI $>$ }\\void \mbox{\hyperlink{namespaceigl_a473da3d5636834fa6b0510d7a2f97628}{igl\+::slice\+\_\+cached\+\_\+precompute}} (const Eigen\+::\+Sparse\+Matrix$<$ TX $>$ \&X, const Eigen\+::\+Matrix$<$ int, Eigen\+::\+Dynamic, 1 $>$ \&R, const Eigen\+::\+Matrix$<$ int, Eigen\+::\+Dynamic, 1 $>$ \&C, Eigen\+::\+Matrix\+Base$<$ DerivedI $>$ \&data, Eigen\+::\+Sparse\+Matrix$<$ TY $>$ \&Y)
+\begin{DoxyCompactList}\small\item\em Act like the matlab X(row\+\_\+indices,col\+\_\+indices) operator, where row\+\_\+indices, col\+\_\+indices are non-\/negative integer indices. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TX , typename TY , typename DerivedI $>$ }\\void \mbox{\hyperlink{namespaceigl_a192c36479a5f74cfc02aaddd3afa4fea}{igl\+::slice\+\_\+cached}} (const Eigen\+::\+Sparse\+Matrix$<$ TX $>$ \&X, const Eigen\+::\+Matrix\+Base$<$ DerivedI $>$ \&data, Eigen\+::\+Sparse\+Matrix$<$ TY $>$ \&Y)
+\begin{DoxyCompactList}\small\item\em Slice X by cached C,R indices into Y. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{slice__cached_8h_aa93624b0b2836d2510e8c92ae951d817}\label{slice__cached_8h_aa93624b0b2836d2510e8c92ae951d817} 
+\index{slice\_cached.h@{slice\_cached.h}!EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET@{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}}
+\index{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET@{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}!slice\_cached.h@{slice\_cached.h}}
+\doxysubsubsection{\texorpdfstring{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}}
+{\footnotesize\ttfamily \#define EIGEN\+\_\+\+YES\+\_\+\+I\+\_\+\+KNOW\+\_\+\+SPARSE\+\_\+\+MODULE\+\_\+\+IS\+\_\+\+NOT\+\_\+\+STABLE\+\_\+\+YET}
+

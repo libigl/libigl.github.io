@@ -1,0 +1,83 @@
+\doxysection{igl\+::Hit Struct Reference}
+\hypertarget{structigl_1_1Hit}{}\label{structigl_1_1Hit}\index{igl::Hit@{igl::Hit}}
+
+
+Reimplementation of the embree\+::\+Hit struct from embree1.\+0.  
+
+
+
+
+{\ttfamily \#include $<$Hit.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structigl_1_1Hit_aac867f1426de0a5d0f2a9022496460ea}{id}}
+\begin{DoxyCompactList}\small\item\em primitive id \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structigl_1_1Hit_ae9bf3e8babcb425173d9345be38d7a87}{gid}}
+\begin{DoxyCompactList}\small\item\em geometry id (not used) \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structigl_1_1Hit_aaa0a85031d466e01f56dac94251f2e2e}{u}}
+\begin{DoxyCompactList}\small\item\em barycentric coordinates so that pos = V.\+row(\+F(id,0))\texorpdfstring{$\ast$}{*}(1-\/u-\/v)+V.\+row(\+F(id,1))\texorpdfstring{$\ast$}{*}u+V.row(\+F(id,2))\texorpdfstring{$\ast$}{*}v; \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structigl_1_1Hit_aadcb6273a81628a44bac6c9bdcf9d7d4}{v}}
+\item 
+float \mbox{\hyperlink{structigl_1_1Hit_a74e794fbf1a39d404f1a666165fa2b63}{t}}
+\begin{DoxyCompactList}\small\item\em parametric distance so that pos = origin + t \texorpdfstring{$\ast$}{*} dir \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Reimplementation of the embree\+::\+Hit struct from embree1.\+0. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structigl_1_1Hit_aac867f1426de0a5d0f2a9022496460ea}\label{structigl_1_1Hit_aac867f1426de0a5d0f2a9022496460ea} 
+\index{igl::Hit@{igl::Hit}!id@{id}}
+\index{id@{id}!igl::Hit@{igl::Hit}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily int igl\+::\+Hit\+::id}
+
+
+
+primitive id 
+
+\Hypertarget{structigl_1_1Hit_ae9bf3e8babcb425173d9345be38d7a87}\label{structigl_1_1Hit_ae9bf3e8babcb425173d9345be38d7a87} 
+\index{igl::Hit@{igl::Hit}!gid@{gid}}
+\index{gid@{gid}!igl::Hit@{igl::Hit}}
+\doxysubsubsection{\texorpdfstring{gid}{gid}}
+{\footnotesize\ttfamily int igl\+::\+Hit\+::gid}
+
+
+
+geometry id (not used) 
+
+\Hypertarget{structigl_1_1Hit_aaa0a85031d466e01f56dac94251f2e2e}\label{structigl_1_1Hit_aaa0a85031d466e01f56dac94251f2e2e} 
+\index{igl::Hit@{igl::Hit}!u@{u}}
+\index{u@{u}!igl::Hit@{igl::Hit}}
+\doxysubsubsection{\texorpdfstring{u}{u}}
+{\footnotesize\ttfamily float igl\+::\+Hit\+::u}
+
+
+
+barycentric coordinates so that pos = V.\+row(\+F(id,0))\texorpdfstring{$\ast$}{*}(1-\/u-\/v)+V.\+row(\+F(id,1))\texorpdfstring{$\ast$}{*}u+V.row(\+F(id,2))\texorpdfstring{$\ast$}{*}v; 
+
+\Hypertarget{structigl_1_1Hit_aadcb6273a81628a44bac6c9bdcf9d7d4}\label{structigl_1_1Hit_aadcb6273a81628a44bac6c9bdcf9d7d4} 
+\index{igl::Hit@{igl::Hit}!v@{v}}
+\index{v@{v}!igl::Hit@{igl::Hit}}
+\doxysubsubsection{\texorpdfstring{v}{v}}
+{\footnotesize\ttfamily float igl\+::\+Hit\+::v}
+
+\Hypertarget{structigl_1_1Hit_a74e794fbf1a39d404f1a666165fa2b63}\label{structigl_1_1Hit_a74e794fbf1a39d404f1a666165fa2b63} 
+\index{igl::Hit@{igl::Hit}!t@{t}}
+\index{t@{t}!igl::Hit@{igl::Hit}}
+\doxysubsubsection{\texorpdfstring{t}{t}}
+{\footnotesize\ttfamily float igl\+::\+Hit\+::t}
+
+
+
+parametric distance so that pos = origin + t \texorpdfstring{$\ast$}{*} dir 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/igl/\mbox{\hyperlink{Hit_8h}{Hit.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,362 @@
+\doxysection{igl\+::embree Namespace Reference}
+\hypertarget{namespaceigl_1_1embree}{}\label{namespaceigl_1_1embree}\index{igl::embree@{igl::embree}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice}{Embree\+Device}}
+\begin{DoxyCompactList}\small\item\em keep track of embree device instance \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector}{Embree\+Intersector}}
+\begin{DoxyCompactList}\small\item\em Simple class to wrap Embree\textquotesingle{}s ray tracing functionality. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedP , typename DerivedN , typename DerivedS $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1embree_ab0db10673eed92bdb98b52a69046eb2a}{ambient\+\_\+occlusion}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const Eigen\+::\+Matrix\+Base$<$ DerivedP $>$ \&P, const Eigen\+::\+Matrix\+Base$<$ DerivedN $>$ \&N, const int num\+\_\+samples, Eigen\+::\+Plain\+Object\+Base$<$ DerivedS $>$ \&S)
+\begin{DoxyCompactList}\small\item\em Compute ambient occlusion per given point. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedP , typename DerivedN , typename DerivedS $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1embree_acffda2e4befd6b4388bc7fc6147131fe}{ambient\+\_\+occlusion}} (const \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector}{Embree\+Intersector}} \&ei, const Eigen\+::\+Matrix\+Base$<$ DerivedP $>$ \&P, const Eigen\+::\+Matrix\+Base$<$ DerivedN $>$ \&N, const int num\+\_\+samples, Eigen\+::\+Plain\+Object\+Base$<$ DerivedS $>$ \&S)
+\item 
+bool \mbox{\hyperlink{namespaceigl_1_1embree_abc213ed6fba98d34eda3f84e08195720}{bone\+\_\+heat}} (const Eigen\+::\+Matrix\+Xd \&V, const Eigen\+::\+Matrix\+Xi \&F, const Eigen\+::\+Matrix\+Xd \&C, const Eigen\+::\+Vector\+Xi \&P, const Eigen\+::\+Matrix\+Xi \&BE, const Eigen\+::\+Matrix\+Xi \&CE, Eigen\+::\+Matrix\+Xd \&W)
+\begin{DoxyCompactList}\small\item\em Compute skinning weights W given a surface mesh (V,F) and an internal skeleton (C,BE) according to \"{}\+Automatic Rigging\"{} \mbox{[}Baran and Popovic 2007\mbox{]}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename Derived\+SD , typename Derivedflag $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1embree_a445638aff9f180c63695a5b86172fdb1}{bone\+\_\+visible}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F, const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SD $>$ \&s, const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SD $>$ \&d, Eigen\+::\+Plain\+Object\+Base$<$ Derivedflag $>$ \&flag)
+\begin{DoxyCompactList}\small\item\em Test whether vertices of mesh are \"{}visible\"{} to a given bone, where \"{}visible\"{} is defined as in \mbox{[}Baran \& Popovic 07\mbox{]}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename Derived\+SD , typename Derivedflag $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1embree_a58d462713a1a56f7c91fa6b74cfc5906}{bone\+\_\+visible}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F, const \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector}{Embree\+Intersector}} \&ei, const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SD $>$ \&s, const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SD $>$ \&d, Eigen\+::\+Plain\+Object\+Base$<$ Derivedflag $>$ \&flag)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Scalar\+Matrix , typename Index\+Matrix $>$ }\\Scalar\+Matrix \mbox{\hyperlink{namespaceigl_1_1embree_acd345c8c661526ebb4bab1605393afe8}{line\+\_\+mesh\+\_\+intersection}} (const Scalar\+Matrix \&V\+\_\+source, const Scalar\+Matrix \&N\+\_\+source, const Scalar\+Matrix \&V\+\_\+target, const Index\+Matrix \&F\+\_\+target)
+\begin{DoxyCompactList}\small\item\em Project the point cloud V\+\_\+source onto the triangle mesh V\+\_\+target,F\+\_\+target. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedI , typename DerivedC $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1embree_a50d8808b728c372e38d88371dee2cf0f}{reorient\+\_\+facets\+\_\+raycast}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F, int rays\+\_\+total, int rays\+\_\+minimum, bool facet\+\_\+wise, bool use\+\_\+parity, bool is\+\_\+verbose, Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&I, Eigen\+::\+Plain\+Object\+Base$<$ DerivedC $>$ \&C)
+\begin{DoxyCompactList}\small\item\em Orient each component (identified by C) of a mesh (V,F) using ambient occlusion such that the front side is less occluded than back side, as described in \"{}\+A Simple Method for Correcting Facet Orientations in \+Polygon Meshes Based on Ray Casting\"{} \mbox{[}Takayama et al. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename Derived\+FF , typename DerivedI $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1embree_a7dd7d02a9d43ec8e0735b96166341d68}{reorient\+\_\+facets\+\_\+raycast}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+FF $>$ \&FF, Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&I)
+\item 
+{\footnotesize template$<$typename DerivedP , typename DerivedN , typename DerivedS $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1embree_a93025c9bea20cc5c7dcf9c3c0606a3df}{shape\+\_\+diameter\+\_\+function}} (const \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector}{Embree\+Intersector}} \&ei, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedP $>$ \&P, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedN $>$ \&N, const int num\+\_\+samples, Eigen\+::\+Plain\+Object\+Base$<$ DerivedS $>$ \&S)
+\begin{DoxyCompactList}\small\item\em Compute shape diamter function per given point. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedP , typename DerivedN , typename DerivedS $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1embree_a628ebea8ce36a70ecb61abd5502b5ba4}{shape\+\_\+diameter\+\_\+function}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedP $>$ \&P, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedN $>$ \&N, const int num\+\_\+samples, Eigen\+::\+Plain\+Object\+Base$<$ DerivedS $>$ \&S)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derivedobj $>$ }\\int \mbox{\hyperlink{namespaceigl_1_1embree_a80724fc46ca35d893a6253133fdf1f20}{unproject\+\_\+in\+\_\+mesh}} (const Eigen\+::\+Vector2f \&pos, const Eigen\+::\+Matrix4f \&model, const Eigen\+::\+Matrix4f \&proj, const Eigen\+::\+Vector4f \&viewport, const \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector}{Embree\+Intersector}} \&ei, Eigen\+::\+Plain\+Object\+Base$<$ Derivedobj $>$ \&obj, std\+::vector$<$ \mbox{\hyperlink{structigl_1_1Hit}{igl\+::\+Hit}} $>$ \&hits)
+\begin{DoxyCompactList}\small\item\em Unproject a screen location (using current opengl viewport, projection, and model view) to a 3D position {\itshape inside} a given mesh. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derivedobj $>$ }\\int \mbox{\hyperlink{namespaceigl_1_1embree_a63f92b1ed81cbd29ef63241517ba0968}{unproject\+\_\+in\+\_\+mesh}} (const Eigen\+::\+Vector2f \&pos, const Eigen\+::\+Matrix4f \&model, const Eigen\+::\+Matrix4f \&proj, const Eigen\+::\+Vector4f \&viewport, const \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector}{Embree\+Intersector}} \&ei, Eigen\+::\+Plain\+Object\+Base$<$ Derivedobj $>$ \&obj)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceigl_1_1embree_a6cf896ed44c9329729459a291ac33047}{unproject\+\_\+onto\+\_\+mesh}} (const Eigen\+::\+Vector2f \&pos, const Eigen\+::\+Matrix\+Xi \&F, const Eigen\+::\+Matrix4f \&model, const Eigen\+::\+Matrix4f \&proj, const Eigen\+::\+Vector4f \&viewport, const \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector}{Embree\+Intersector}} \&ei, int \&fid, Eigen\+::\+Vector3f \&bc)
+\begin{DoxyCompactList}\small\item\em Unproject a screen location (using the given model, proj and viewport) to find the first hit on a mesh. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceigl_1_1embree_a227bbf88b8e795bea4558ab6018ea732}{unproject\+\_\+onto\+\_\+mesh}} (const Eigen\+::\+Vector2f \&pos, const Eigen\+::\+Matrix\+Xi \&F, const Eigen\+::\+Matrix4f \&model, const Eigen\+::\+Matrix4f \&proj, const Eigen\+::\+Vector4f \&viewport, const \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector}{Embree\+Intersector}} \&ei, int \&fid, int \&vid)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceigl_1_1embree_ab0db10673eed92bdb98b52a69046eb2a}\label{namespaceigl_1_1embree_ab0db10673eed92bdb98b52a69046eb2a} 
+\index{igl::embree@{igl::embree}!ambient\_occlusion@{ambient\_occlusion}}
+\index{ambient\_occlusion@{ambient\_occlusion}!igl::embree@{igl::embree}}
+\doxysubsubsection{\texorpdfstring{ambient\_occlusion()}{ambient\_occlusion()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename DerivedV , typename DerivedF , typename DerivedP , typename DerivedN , typename DerivedS $>$ \\
+void igl\+::embree\+::ambient\+\_\+occlusion (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&}]{F,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedP $>$ \&}]{P,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedN $>$ \&}]{N,  }\item[{const int}]{num\+\_\+samples,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedS $>$ \&}]{S }\end{DoxyParamCaption})}
+
+
+
+Compute ambient occlusion per given point. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em V} & \#V by 3 list of mesh vertex positiosn \\
+\hline
+\mbox{\texttt{ in}}  & {\em F} & \#F by 3 list of mesh triangle indices into rows of V \\
+\hline
+\mbox{\texttt{ in}}  & {\em P} & \#P by 3 list of origin points \\
+\hline
+\mbox{\texttt{ in}}  & {\em N} & \#P by 3 list of origin normals \\
+\hline
+\mbox{\texttt{ out}}  & {\em S} & \#P list of ambient occlusion values between 1 (fully occluded) and 0 (not occluded) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespaceigl_1_1embree_acffda2e4befd6b4388bc7fc6147131fe}\label{namespaceigl_1_1embree_acffda2e4befd6b4388bc7fc6147131fe} 
+\index{igl::embree@{igl::embree}!ambient\_occlusion@{ambient\_occlusion}}
+\index{ambient\_occlusion@{ambient\_occlusion}!igl::embree@{igl::embree}}
+\doxysubsubsection{\texorpdfstring{ambient\_occlusion()}{ambient\_occlusion()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename DerivedP , typename DerivedN , typename DerivedS $>$ \\
+void igl\+::embree\+::ambient\+\_\+occlusion (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector}{Embree\+Intersector}} \&}]{ei,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedP $>$ \&}]{P,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedN $>$ \&}]{N,  }\item[{const int}]{num\+\_\+samples,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedS $>$ \&}]{S }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceigl_1_1embree_abc213ed6fba98d34eda3f84e08195720}\label{namespaceigl_1_1embree_abc213ed6fba98d34eda3f84e08195720} 
+\index{igl::embree@{igl::embree}!bone\_heat@{bone\_heat}}
+\index{bone\_heat@{bone\_heat}!igl::embree@{igl::embree}}
+\doxysubsubsection{\texorpdfstring{bone\_heat()}{bone\_heat()}}
+{\footnotesize\ttfamily bool igl\+::embree\+::bone\+\_\+heat (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Xi \&}]{F,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{C,  }\item[{const Eigen\+::\+Vector\+Xi \&}]{P,  }\item[{const Eigen\+::\+Matrix\+Xi \&}]{BE,  }\item[{const Eigen\+::\+Matrix\+Xi \&}]{CE,  }\item[{Eigen\+::\+Matrix\+Xd \&}]{W }\end{DoxyParamCaption})}
+
+
+
+Compute skinning weights W given a surface mesh (V,F) and an internal skeleton (C,BE) according to \"{}\+Automatic Rigging\"{} \mbox{[}Baran and Popovic 2007\mbox{]}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em V} & \#V by 3 list of mesh vertex positions \\
+\hline
+\mbox{\texttt{ in}}  & {\em F} & \#F by 3 list of mesh corner indices into V \\
+\hline
+\mbox{\texttt{ in}}  & {\em C} & \#C by 3 list of joint locations \\
+\hline
+\mbox{\texttt{ in}}  & {\em P} & \#P list of point handle indices into C \\
+\hline
+\mbox{\texttt{ in}}  & {\em BE} & \#\+BE by 2 list of bone edge indices into C \\
+\hline
+\mbox{\texttt{ in}}  & {\em CE} & \#\+CE by 2 list of cage edge indices into {\bfseries{P}} \\
+\hline
+\mbox{\texttt{ out}}  & {\em W} & \#V by \#P+\#\+BE matrix of weights. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true only on success. 
+\end{DoxyReturn}
+\Hypertarget{namespaceigl_1_1embree_a445638aff9f180c63695a5b86172fdb1}\label{namespaceigl_1_1embree_a445638aff9f180c63695a5b86172fdb1} 
+\index{igl::embree@{igl::embree}!bone\_visible@{bone\_visible}}
+\index{bone\_visible@{bone\_visible}!igl::embree@{igl::embree}}
+\doxysubsubsection{\texorpdfstring{bone\_visible()}{bone\_visible()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename DerivedV , typename DerivedF , typename Derived\+SD , typename Derivedflag $>$ \\
+void igl\+::embree\+::bone\+\_\+visible (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&}]{F,  }\item[{const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SD $>$ \&}]{s,  }\item[{const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SD $>$ \&}]{d,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derivedflag $>$ \&}]{flag }\end{DoxyParamCaption})}
+
+
+
+Test whether vertices of mesh are \"{}visible\"{} to a given bone, where \"{}visible\"{} is defined as in \mbox{[}Baran \& Popovic 07\mbox{]}. 
+
+Instead of checking whether each point can see {\itshape any} of the bone, we just check if each point can see its own projection onto the bone segment. In other words, we project each vertex v onto the bone, projv. Then we check if there are any intersections between the line segment (projv-\/-\/\texorpdfstring{$>$}{>}v) and the mesh.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em V} & \#V by 3 list of vertex positions \\
+\hline
+\mbox{\texttt{ in}}  & {\em F} & \#F by 3 list of triangle indices \\
+\hline
+\mbox{\texttt{ in}}  & {\em s} & row vector of position of start end point of bone \\
+\hline
+\mbox{\texttt{ in}}  & {\em d} & row vector of position of dest end point of bone \\
+\hline
+\mbox{\texttt{ out}}  & {\em flag} & \#V by 1 list of bools (true) visible, (false) obstructed\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This checks for hits along the segment which are facing in {\itshape any} direction from the ray. 
+\end{DoxyNote}
+\Hypertarget{namespaceigl_1_1embree_a58d462713a1a56f7c91fa6b74cfc5906}\label{namespaceigl_1_1embree_a58d462713a1a56f7c91fa6b74cfc5906} 
+\index{igl::embree@{igl::embree}!bone\_visible@{bone\_visible}}
+\index{bone\_visible@{bone\_visible}!igl::embree@{igl::embree}}
+\doxysubsubsection{\texorpdfstring{bone\_visible()}{bone\_visible()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename DerivedV , typename DerivedF , typename Derived\+SD , typename Derivedflag $>$ \\
+void igl\+::embree\+::bone\+\_\+visible (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&}]{F,  }\item[{const \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector}{Embree\+Intersector}} \&}]{ei,  }\item[{const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SD $>$ \&}]{s,  }\item[{const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SD $>$ \&}]{d,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derivedflag $>$ \&}]{flag }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ei} & \doxylink{classigl_1_1embree_1_1EmbreeIntersector}{Embree\+Intersector} for mesh (V,F) should be double sided \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespaceigl_1_1embree_acd345c8c661526ebb4bab1605393afe8}\label{namespaceigl_1_1embree_acd345c8c661526ebb4bab1605393afe8} 
+\index{igl::embree@{igl::embree}!line\_mesh\_intersection@{line\_mesh\_intersection}}
+\index{line\_mesh\_intersection@{line\_mesh\_intersection}!igl::embree@{igl::embree}}
+\doxysubsubsection{\texorpdfstring{line\_mesh\_intersection()}{line\_mesh\_intersection()}}
+{\footnotesize\ttfamily template$<$typename Scalar\+Matrix , typename Index\+Matrix $>$ \\
+Scalar\+Matrix igl\+::embree\+::line\+\_\+mesh\+\_\+intersection (\begin{DoxyParamCaption}\item[{const Scalar\+Matrix \&}]{V\+\_\+source,  }\item[{const Scalar\+Matrix \&}]{N\+\_\+source,  }\item[{const Scalar\+Matrix \&}]{V\+\_\+target,  }\item[{const Index\+Matrix \&}]{F\+\_\+target }\end{DoxyParamCaption})}
+
+
+
+Project the point cloud V\+\_\+source onto the triangle mesh V\+\_\+target,F\+\_\+target. 
+
+A ray is casted for every vertex in the direction specified by N\+\_\+source and its opposite.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em V\+\_\+source} & \#\+Vx3 Vertices of the source mesh \\
+\hline
+\mbox{\texttt{ in}}  & {\em N\+\_\+source} & \#\+Vx3 Normals of the point cloud \\
+\hline
+\mbox{\texttt{ in}}  & {\em V\+\_\+target} & \#\+V2x3 Vertices of the target mesh \\
+\hline
+\mbox{\texttt{ in}}  & {\em F\+\_\+target} & \#\+F2x3 Faces of the target mesh\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\#\+Vx3 matrix of baricentric coordinate. Each row corresponds to a vertex of the projected mesh and it has the following format\+: id b1 b2. id is the id of a face of the source mesh. b1 and b2 are the barycentric coordinates wrt the first two edges of the triangle To convert to standard global coordinates, see barycentric\+\_\+to\+\_\+global.\+h 
+\end{DoxyReturn}
+\Hypertarget{namespaceigl_1_1embree_a50d8808b728c372e38d88371dee2cf0f}\label{namespaceigl_1_1embree_a50d8808b728c372e38d88371dee2cf0f} 
+\index{igl::embree@{igl::embree}!reorient\_facets\_raycast@{reorient\_facets\_raycast}}
+\index{reorient\_facets\_raycast@{reorient\_facets\_raycast}!igl::embree@{igl::embree}}
+\doxysubsubsection{\texorpdfstring{reorient\_facets\_raycast()}{reorient\_facets\_raycast()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename DerivedV , typename DerivedF , typename DerivedI , typename DerivedC $>$ \\
+void igl\+::embree\+::reorient\+\_\+facets\+\_\+raycast (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&}]{F,  }\item[{int}]{rays\+\_\+total,  }\item[{int}]{rays\+\_\+minimum,  }\item[{bool}]{facet\+\_\+wise,  }\item[{bool}]{use\+\_\+parity,  }\item[{bool}]{is\+\_\+verbose,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&}]{I,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedC $>$ \&}]{C }\end{DoxyParamCaption})}
+
+
+
+Orient each component (identified by C) of a mesh (V,F) using ambient occlusion such that the front side is less occluded than back side, as described in \"{}\+A Simple Method for Correcting Facet Orientations in \+Polygon Meshes Based on Ray Casting\"{} \mbox{[}Takayama et al. 
+
+2014\mbox{]}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em V} & \#V by 3 list of vertex positions \\
+\hline
+\mbox{\texttt{ in}}  & {\em F} & \#F by 3 list of triangle indices \\
+\hline
+\mbox{\texttt{ in}}  & {\em rays\+\_\+total} & Total number of rays that will be shot \\
+\hline
+\mbox{\texttt{ in}}  & {\em rays\+\_\+minimum} & Minimum number of rays that each patch should receive \\
+\hline
+\mbox{\texttt{ in}}  & {\em facet\+\_\+wise} & Decision made for each face independently, no use of patches (i.\+e., each face is treated as a patch) \\
+\hline
+\mbox{\texttt{ in}}  & {\em use\+\_\+parity} & Use parity mode \\
+\hline
+\mbox{\texttt{ in}}  & {\em is\+\_\+verbose} & Verbose output to cout \\
+\hline
+\mbox{\texttt{ out}}  & {\em I} & \#F list of whether face has been flipped \\
+\hline
+\mbox{\texttt{ out}}  & {\em C} & \#F list of patch ID (output of bfs\+\_\+orient \texorpdfstring{$>$}{>} manifold patches) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespaceigl_1_1embree_a7dd7d02a9d43ec8e0735b96166341d68}\label{namespaceigl_1_1embree_a7dd7d02a9d43ec8e0735b96166341d68} 
+\index{igl::embree@{igl::embree}!reorient\_facets\_raycast@{reorient\_facets\_raycast}}
+\index{reorient\_facets\_raycast@{reorient\_facets\_raycast}!igl::embree@{igl::embree}}
+\doxysubsubsection{\texorpdfstring{reorient\_facets\_raycast()}{reorient\_facets\_raycast()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename DerivedV , typename DerivedF , typename Derived\+FF , typename DerivedI $>$ \\
+void igl\+::embree\+::reorient\+\_\+facets\+\_\+raycast (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&}]{F,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+FF $>$ \&}]{FF,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&}]{I }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em FF} & \#F by 3 list of reoriented faces\\
+\hline
+\end{DoxyParams}
+\hypertarget{namespaceigl_1_1embree_autotoc_md8}{}\doxyparagraph{\texorpdfstring{Defaults\+:}{Defaults:}}\label{namespaceigl_1_1embree_autotoc_md8}
+rays\+\_\+total = F.\+rows()\texorpdfstring{$\ast$}{*}100; rays\+\_\+minimum = 10; facet\+\_\+wise = false; use\+\_\+parity = false; is\+\_\+verbose = false; \Hypertarget{namespaceigl_1_1embree_a93025c9bea20cc5c7dcf9c3c0606a3df}\label{namespaceigl_1_1embree_a93025c9bea20cc5c7dcf9c3c0606a3df} 
+\index{igl::embree@{igl::embree}!shape\_diameter\_function@{shape\_diameter\_function}}
+\index{shape\_diameter\_function@{shape\_diameter\_function}!igl::embree@{igl::embree}}
+\doxysubsubsection{\texorpdfstring{shape\_diameter\_function()}{shape\_diameter\_function()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename DerivedP , typename DerivedN , typename DerivedS $>$ \\
+void igl\+::embree\+::shape\+\_\+diameter\+\_\+function (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector}{Embree\+Intersector}} \&}]{ei,  }\item[{const Eigen\+::\+Plain\+Object\+Base$<$ DerivedP $>$ \&}]{P,  }\item[{const Eigen\+::\+Plain\+Object\+Base$<$ DerivedN $>$ \&}]{N,  }\item[{const int}]{num\+\_\+samples,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedS $>$ \&}]{S }\end{DoxyParamCaption})}
+
+
+
+Compute shape diamter function per given point. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ei} & \doxylink{classigl_1_1embree_1_1EmbreeIntersector}{Embree\+Intersector} containing (V,F) \\
+\hline
+\mbox{\texttt{ in}}  & {\em P} & \#P by 3 list of origin points \\
+\hline
+\mbox{\texttt{ in}}  & {\em N} & \#P by 3 list of origin normals \\
+\hline
+\mbox{\texttt{ out}}  & {\em S} & \#P list of shape diamater function values between bounding box diagonal (perfect sphere) and 0 (perfect needle hook) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespaceigl_1_1embree_a628ebea8ce36a70ecb61abd5502b5ba4}\label{namespaceigl_1_1embree_a628ebea8ce36a70ecb61abd5502b5ba4} 
+\index{igl::embree@{igl::embree}!shape\_diameter\_function@{shape\_diameter\_function}}
+\index{shape\_diameter\_function@{shape\_diameter\_function}!igl::embree@{igl::embree}}
+\doxysubsubsection{\texorpdfstring{shape\_diameter\_function()}{shape\_diameter\_function()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename DerivedV , typename DerivedF , typename DerivedP , typename DerivedN , typename DerivedS $>$ \\
+void igl\+::embree\+::shape\+\_\+diameter\+\_\+function (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&}]{F,  }\item[{const Eigen\+::\+Plain\+Object\+Base$<$ DerivedP $>$ \&}]{P,  }\item[{const Eigen\+::\+Plain\+Object\+Base$<$ DerivedN $>$ \&}]{N,  }\item[{const int}]{num\+\_\+samples,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedS $>$ \&}]{S }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+Wrapper which builds new \doxylink{classigl_1_1embree_1_1EmbreeIntersector}{Embree\+Intersector} for (V,F). That\textquotesingle{}s expensive so avoid this if repeatedly calling. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em V} & \#V by 3 list of mesh vertex positiosn \\
+\hline
+\mbox{\texttt{ in}}  & {\em F} & \#F by 3 list of mesh triangle indices into rows of V \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespaceigl_1_1embree_a80724fc46ca35d893a6253133fdf1f20}\label{namespaceigl_1_1embree_a80724fc46ca35d893a6253133fdf1f20} 
+\index{igl::embree@{igl::embree}!unproject\_in\_mesh@{unproject\_in\_mesh}}
+\index{unproject\_in\_mesh@{unproject\_in\_mesh}!igl::embree@{igl::embree}}
+\doxysubsubsection{\texorpdfstring{unproject\_in\_mesh()}{unproject\_in\_mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Derivedobj $>$ \\
+int igl\+::embree\+::unproject\+\_\+in\+\_\+mesh (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector2f \&}]{pos,  }\item[{const Eigen\+::\+Matrix4f \&}]{model,  }\item[{const Eigen\+::\+Matrix4f \&}]{proj,  }\item[{const Eigen\+::\+Vector4f \&}]{viewport,  }\item[{const \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector}{Embree\+Intersector}} \&}]{ei,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derivedobj $>$ \&}]{obj,  }\item[{std\+::vector$<$ \mbox{\hyperlink{structigl_1_1Hit}{igl\+::\+Hit}} $>$ \&}]{hits }\end{DoxyParamCaption})}
+
+
+
+Unproject a screen location (using current opengl viewport, projection, and model view) to a 3D position {\itshape inside} a given mesh. 
+
+If the ray through the given screen location (x,y) {\itshape hits} the mesh more than twice then the 3D midpoint between the first two hits is return. If it hits once, then that point is return. If it does not hit the mesh then obj is not set.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em pos} & screen space coordinates \\
+\hline
+\mbox{\texttt{ in}}  & {\em model} & model matrix \\
+\hline
+\mbox{\texttt{ in}}  & {\em proj} & projection matrix \\
+\hline
+\mbox{\texttt{ in}}  & {\em viewport} & vieweport vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em ei} & \doxylink{classigl_1_1embree_1_1EmbreeIntersector}{Embree\+Intersector} containing (V,F) \\
+\hline
+\mbox{\texttt{ out}}  & {\em obj} & 3d unprojected mouse point in mesh \\
+\hline
+\mbox{\texttt{ out}}  & {\em hits} & vector of embree hits \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of hits
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Previous prototype did not require model, proj, and viewport. This has been removed. Instead replace with\+: \begin{DoxyVerb} Eigen::Matrix4f model,proj;
+ Eigen::Vector4f viewport;
+ igl::opengl2::model_proj_viewport(model,proj,viewport);
+ igl::embree::unproject_in_mesh(Vector2f(x,y),model,proj,viewport,ei,obj,hits);
+\end{DoxyVerb}
+ 
+\end{DoxyNote}
+\Hypertarget{namespaceigl_1_1embree_a63f92b1ed81cbd29ef63241517ba0968}\label{namespaceigl_1_1embree_a63f92b1ed81cbd29ef63241517ba0968} 
+\index{igl::embree@{igl::embree}!unproject\_in\_mesh@{unproject\_in\_mesh}}
+\index{unproject\_in\_mesh@{unproject\_in\_mesh}!igl::embree@{igl::embree}}
+\doxysubsubsection{\texorpdfstring{unproject\_in\_mesh()}{unproject\_in\_mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Derivedobj $>$ \\
+int igl\+::embree\+::unproject\+\_\+in\+\_\+mesh (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector2f \&}]{pos,  }\item[{const Eigen\+::\+Matrix4f \&}]{model,  }\item[{const Eigen\+::\+Matrix4f \&}]{proj,  }\item[{const Eigen\+::\+Vector4f \&}]{viewport,  }\item[{const \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector}{Embree\+Intersector}} \&}]{ei,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derivedobj $>$ \&}]{obj }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{namespaceigl_1_1embree_a6cf896ed44c9329729459a291ac33047}\label{namespaceigl_1_1embree_a6cf896ed44c9329729459a291ac33047} 
+\index{igl::embree@{igl::embree}!unproject\_onto\_mesh@{unproject\_onto\_mesh}}
+\index{unproject\_onto\_mesh@{unproject\_onto\_mesh}!igl::embree@{igl::embree}}
+\doxysubsubsection{\texorpdfstring{unproject\_onto\_mesh()}{unproject\_onto\_mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool igl\+::embree\+::unproject\+\_\+onto\+\_\+mesh (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector2f \&}]{pos,  }\item[{const Eigen\+::\+Matrix\+Xi \&}]{F,  }\item[{const Eigen\+::\+Matrix4f \&}]{model,  }\item[{const Eigen\+::\+Matrix4f \&}]{proj,  }\item[{const Eigen\+::\+Vector4f \&}]{viewport,  }\item[{const \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector}{Embree\+Intersector}} \&}]{ei,  }\item[{int \&}]{fid,  }\item[{Eigen\+::\+Vector3f \&}]{bc }\end{DoxyParamCaption})}
+
+
+
+Unproject a screen location (using the given model, proj and viewport) to find the first hit on a mesh. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em pos} & screen space coordinates \\
+\hline
+\mbox{\texttt{ in}}  & {\em F} & \#F by 3 face matrix \\
+\hline
+\mbox{\texttt{ in}}  & {\em model} & model matrix \\
+\hline
+\mbox{\texttt{ in}}  & {\em proj} & projection matrix \\
+\hline
+\mbox{\texttt{ in}}  & {\em viewport} & vieweport vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em ei} & \doxylink{classigl_1_1embree_1_1EmbreeIntersector}{Embree\+Intersector} containing (V,F) \\
+\hline
+\mbox{\texttt{ out}}  & {\em fid} & id of the first face hit \\
+\hline
+\mbox{\texttt{ out}}  & {\em bc} & barycentric coordinates of hit \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if there is a hit 
+\end{DoxyReturn}
+\Hypertarget{namespaceigl_1_1embree_a227bbf88b8e795bea4558ab6018ea732}\label{namespaceigl_1_1embree_a227bbf88b8e795bea4558ab6018ea732} 
+\index{igl::embree@{igl::embree}!unproject\_onto\_mesh@{unproject\_onto\_mesh}}
+\index{unproject\_onto\_mesh@{unproject\_onto\_mesh}!igl::embree@{igl::embree}}
+\doxysubsubsection{\texorpdfstring{unproject\_onto\_mesh()}{unproject\_onto\_mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool igl\+::embree\+::unproject\+\_\+onto\+\_\+mesh (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector2f \&}]{pos,  }\item[{const Eigen\+::\+Matrix\+Xi \&}]{F,  }\item[{const Eigen\+::\+Matrix4f \&}]{model,  }\item[{const Eigen\+::\+Matrix4f \&}]{proj,  }\item[{const Eigen\+::\+Vector4f \&}]{viewport,  }\item[{const \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector}{Embree\+Intersector}} \&}]{ei,  }\item[{int \&}]{fid,  }\item[{int \&}]{vid }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em vid} & vertex id of the closest vertex hit \\
+\hline
+\end{DoxyParams}

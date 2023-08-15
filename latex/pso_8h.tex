@@ -1,0 +1,18 @@
+\doxysection{include/igl/pso.h File Reference}
+\hypertarget{pso_8h}{}\label{pso_8h}\index{include/igl/pso.h@{include/igl/pso.h}}
+{\ttfamily \#include $<$igl/igl\+\_\+inline.\+h$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include \"{}pso.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Scalar , typename DerivedX , typename Derived\+LB , typename Derived\+UB $>$ }\\Scalar \mbox{\hyperlink{namespaceigl_a011d3a109b2f48a5285cb49b1cf1f288}{igl\+::pso}} (const std\+::function$<$ Scalar(DerivedX \&) $>$ f, const Eigen\+::\+Matrix\+Base$<$ Derived\+LB $>$ \&LB, const Eigen\+::\+Matrix\+Base$<$ Derived\+UB $>$ \&UB, const int max\+\_\+iters, const int population, DerivedX \&X)
+\begin{DoxyCompactList}\small\item\em Global optimization with the particle swarm algorithm. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Scalar , typename DerivedX , typename Derived\+LB , typename Derived\+UB , typename DerivedP $>$ }\\Scalar \mbox{\hyperlink{namespaceigl_a1b1cad08724f66e0be85d15317bb5f11}{igl\+::pso}} (const std\+::function$<$ Scalar(DerivedX \&) $>$ f, const Eigen\+::\+Matrix\+Base$<$ Derived\+LB $>$ \&LB, const Eigen\+::\+Matrix\+Base$<$ Derived\+UB $>$ \&UB, const Eigen\+::\+Dense\+Base$<$ DerivedP $>$ \&P, const int max\+\_\+iters, const int population, DerivedX \&X)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}

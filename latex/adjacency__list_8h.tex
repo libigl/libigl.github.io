@@ -1,0 +1,19 @@
+\doxysection{include/igl/adjacency\+\_\+list.h File Reference}
+\hypertarget{adjacency__list_8h}{}\label{adjacency__list_8h}\index{include/igl/adjacency\_list.h@{include/igl/adjacency\_list.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \"{}adjacency\+\_\+list.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Index , typename Index\+Vector $>$ }\\void \mbox{\hyperlink{namespaceigl_a4c905c0e9124bb38a79769497fa9b48b}{igl\+::adjacency\+\_\+list}} (const Eigen\+::\+Matrix\+Base$<$ Index $>$ \&F, std\+::vector$<$ std\+::vector$<$ Index\+Vector $>$ $>$ \&A, bool sorted=false)
+\begin{DoxyCompactList}\small\item\em Constructs the graph adjacency list of a given mesh (V,F) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Index $>$ }\\void \mbox{\hyperlink{namespaceigl_a3b938bdb46eece91f62ab35a1e152a61}{igl\+::adjacency\+\_\+list}} (const std\+::vector$<$ std\+::vector$<$ Index $>$ $>$ \&F, std\+::vector$<$ std\+::vector$<$ Index $>$ $>$ \&A)
+\begin{DoxyCompactList}\small\item\em Constructs the graph adjacency list of a given {\itshape polygon} mesh (V,F) \end{DoxyCompactList}\end{DoxyCompactItemize}

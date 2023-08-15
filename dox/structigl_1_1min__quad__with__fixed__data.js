@@ -1,0 +1,37 @@
+var structigl_1_1min__quad__with__fixed__data =
+[
+    [ "SolverType", "structigl_1_1min__quad__with__fixed__data.html#a0ecb4d6605c0d09f0d9cd9e3beaf9022", [
+      [ "LLT", "structigl_1_1min__quad__with__fixed__data.html#a0ecb4d6605c0d09f0d9cd9e3beaf9022aec26e1242a5954a0a6c3aac46ceb9925", null ],
+      [ "LDLT", "structigl_1_1min__quad__with__fixed__data.html#a0ecb4d6605c0d09f0d9cd9e3beaf9022a74a4143bfda022543372860ad5fe0160", null ],
+      [ "LU", "structigl_1_1min__quad__with__fixed__data.html#a0ecb4d6605c0d09f0d9cd9e3beaf9022a6a372e5f964cccd56a199d6172ececdc", null ],
+      [ "QR_LLT", "structigl_1_1min__quad__with__fixed__data.html#a0ecb4d6605c0d09f0d9cd9e3beaf9022a810e6fec9cfe02bad4897cb21380f6c9", null ],
+      [ "NUM_SOLVER_TYPES", "structigl_1_1min__quad__with__fixed__data.html#a0ecb4d6605c0d09f0d9cd9e3beaf9022aa5422332d60edf9593d4c5ec0f26210d", null ]
+    ] ],
+    [ "n", "structigl_1_1min__quad__with__fixed__data.html#aa2f79821dd5f69c2c704d4f8d2e0c34d", null ],
+    [ "Auu_pd", "structigl_1_1min__quad__with__fixed__data.html#ad3ec9b5eb512ccd82dc39fc7c670eae5", null ],
+    [ "Auu_sym", "structigl_1_1min__quad__with__fixed__data.html#ab1604a8b1d543c6dfc4ac01dc42df0a6", null ],
+    [ "known", "structigl_1_1min__quad__with__fixed__data.html#a0b135eb50ef96353f9959dbfdc4e9844", null ],
+    [ "unknown", "structigl_1_1min__quad__with__fixed__data.html#a45a26b0e5d41d28bfea348ee51f52e4b", null ],
+    [ "lagrange", "structigl_1_1min__quad__with__fixed__data.html#ab07863971db161e5eb7cdf2ec28afb06", null ],
+    [ "unknown_lagrange", "structigl_1_1min__quad__with__fixed__data.html#ac680271bddf24abc8337ca15965a200d", null ],
+    [ "preY", "structigl_1_1min__quad__with__fixed__data.html#a3db371095ff5ecf7dc8c42c3e34a3695", null ],
+    [ "solver_type", "structigl_1_1min__quad__with__fixed__data.html#adf555171e037b12e5177ebd81fd33de5", null ],
+    [ "llt", "structigl_1_1min__quad__with__fixed__data.html#a4ef765c434c7997a24378788a7fd9c84", null ],
+    [ "ldlt", "structigl_1_1min__quad__with__fixed__data.html#a1bd2d40db9381b99df7cafafa3e9b8ac", null ],
+    [ "lu", "structigl_1_1min__quad__with__fixed__data.html#a7c60ca349277d0e6e85e5cdd489e5dc2", null ],
+    [ "Aeq_li", "structigl_1_1min__quad__with__fixed__data.html#aae738302bbd952761f3e48fcaa1b11f9", null ],
+    [ "neq", "structigl_1_1min__quad__with__fixed__data.html#abdd3d36254dbf348fb6296f80bb3eaa0", null ],
+    [ "AeqTQR", "structigl_1_1min__quad__with__fixed__data.html#a0dd37f713f6578dc75ab710458d4654c", null ],
+    [ "Aeqk", "structigl_1_1min__quad__with__fixed__data.html#add2a92c1b4fb911ff47f193b37650afa", null ],
+    [ "Aequ", "structigl_1_1min__quad__with__fixed__data.html#ae7eec6673505fc46af7fb9e65aa6c426", null ],
+    [ "Auu", "structigl_1_1min__quad__with__fixed__data.html#adde8448b08fd094fb92f2638ae476814", null ],
+    [ "AeqTQ1", "structigl_1_1min__quad__with__fixed__data.html#a6dd70a80c9696cbd95cc4a11413caa8e", null ],
+    [ "AeqTQ1T", "structigl_1_1min__quad__with__fixed__data.html#af29f3f637f6a03ece40aa8c4811ad6f0", null ],
+    [ "AeqTQ2", "structigl_1_1min__quad__with__fixed__data.html#a65ebbedaafb67501de8a7cb0798b70ab", null ],
+    [ "AeqTQ2T", "structigl_1_1min__quad__with__fixed__data.html#ada118a14cca10b66554139cc28883b49", null ],
+    [ "AeqTR1", "structigl_1_1min__quad__with__fixed__data.html#abe2e974252d7deadea02f19093374781", null ],
+    [ "AeqTR1T", "structigl_1_1min__quad__with__fixed__data.html#ad67e1f780d301ce6928c4bcf60563288", null ],
+    [ "AeqTE", "structigl_1_1min__quad__with__fixed__data.html#aeedc9f4d675bbd636b1782a75d0bbef3", null ],
+    [ "AeqTET", "structigl_1_1min__quad__with__fixed__data.html#acabf6c24ee8ff41b8e536923a48c7395", null ],
+    [ "NB", "structigl_1_1min__quad__with__fixed__data.html#a5ebf64e81dccd7a909e252ff13d2dfee", null ]
+];

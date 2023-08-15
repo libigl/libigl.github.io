@@ -1,0 +1,19 @@
+\doxysection{include/igl/in\+\_\+element.h File Reference}
+\hypertarget{in__element_8h}{}\label{in__element_8h}\index{include/igl/in\_element.h@{include/igl/in\_element.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include \"{}AABB.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include \"{}in\+\_\+element.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedQ , int DIM$>$ }\\void \mbox{\hyperlink{namespaceigl_ae6a48ea815ed7c6fce66c5fb16643592}{igl\+::in\+\_\+element}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Xi \&Ele, const Eigen\+::\+Matrix\+Base$<$ DerivedQ $>$ \&Q, const \mbox{\hyperlink{classigl_1_1AABB}{AABB}}$<$ DerivedV, DIM $>$ \&aabb, Eigen\+::\+Vector\+Xi \&I)
+\begin{DoxyCompactList}\small\item\em Determine whether each point in a list of points is in the elements of a mesh. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedQ , int DIM, typename Scalar $>$ }\\void \mbox{\hyperlink{namespaceigl_a1cc28747ccc281b8790d1ec2a07daf42}{igl\+::in\+\_\+element}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Xi \&Ele, const Eigen\+::\+Matrix\+Base$<$ DerivedQ $>$ \&Q, const \mbox{\hyperlink{classigl_1_1AABB}{AABB}}$<$ DerivedV, DIM $>$ \&aabb, Eigen\+::\+Sparse\+Matrix$<$ Scalar $>$ \&I)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}

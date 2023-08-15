@@ -1,0 +1,63 @@
+\doxysection{redux.\+h}
+\hypertarget{redux_8h_source}{}\label{redux_8h_source}\index{include/igl/redux.h@{include/igl/redux.h}}
+\mbox{\hyperlink{redux_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2023\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_REDUX\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_REDUX\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Eigen/Sparse>}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00033\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ AType,\ \textcolor{keyword}{typename}\ Func,\ \textcolor{keyword}{typename}\ DerivedB>}
+\DoxyCodeLine{00034\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_af757c8be2caaeaf804de6240cc6ffa7f}{redux}}(}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<AType>\ \&\ A,}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ dim,}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{const}\ Func\ \&\ func,}
+\DoxyCodeLine{00038\ \ \ \ \ Eigen::PlainObjectBase<DerivedB>\ \&\ B);}
+\DoxyCodeLine{00039\ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{comment}{//\ Implementation}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{for__each_8h}{for\_each.h}}"{}}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ AType,\ \textcolor{keyword}{typename}\ Func,\ \textcolor{keyword}{typename}\ DerivedB>}
+\DoxyCodeLine{00046\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_af757c8be2caaeaf804de6240cc6ffa7f}{igl::redux}}(}
+\DoxyCodeLine{00047\ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<AType>\ \&\ A,}
+\DoxyCodeLine{00048\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ dim,}
+\DoxyCodeLine{00049\ \ \ \textcolor{keyword}{const}\ Func\ \&\ func,}
+\DoxyCodeLine{00050\ \ \ Eigen::PlainObjectBase<DerivedB>\ \&\ B)}
+\DoxyCodeLine{00051\ \{}
+\DoxyCodeLine{00052\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ Eigen::SparseMatrix<AType>::StorageIndex\ Index;}
+\DoxyCodeLine{00053\ \ \ assert((dim\ ==\ 1\ ||\ dim\ ==\ 2)\ \&\&\ \textcolor{stringliteral}{"{}dim\ must\ be\ 2\ or\ 1"{}});}
+\DoxyCodeLine{00054\ \ \ \textcolor{comment}{//\ Get\ size\ of\ input}}
+\DoxyCodeLine{00055\ \ \ \textcolor{keywordtype}{int}\ m\ =\ A.rows();}
+\DoxyCodeLine{00056\ \ \ \textcolor{keywordtype}{int}\ n\ =\ A.cols();}
+\DoxyCodeLine{00057\ \ \ \textcolor{comment}{//\ resize\ output}}
+\DoxyCodeLine{00058\ \ \ B\ =\ DerivedB::Zero(dim==1?n:m);}
+\DoxyCodeLine{00059\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ func\_wrap\ =\ [\&func,\&B,\&dim](\textcolor{keyword}{const}\ Index\ i,\ \textcolor{keyword}{const}\ Index\ j,\ \textcolor{keyword}{const}\ AType\ v)}
+\DoxyCodeLine{00060\ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordflow}{if}(dim\ ==\ 1)}
+\DoxyCodeLine{00062\ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ B(j)\ =\ i\ ==\ 0?\ v\ :\ func(B(j),v);}
+\DoxyCodeLine{00064\ \ \ \ \ \}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{00065\ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ B(i)\ =\ j\ ==\ 0?\ v\ :\ func(B(i),v);}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \};}
+\DoxyCodeLine{00069\ \ \ \mbox{\hyperlink{namespaceigl_a09311547ed4f12bee75c2631d2d19bfd}{for\_each}}(A,func\_wrap);}
+\DoxyCodeLine{00070\ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{comment}{//\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00074\ \textcolor{comment}{//\#\ \ include\ "{}redux.cpp"{}}}
+\DoxyCodeLine{00075\ \textcolor{comment}{//\#endif}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

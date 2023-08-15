@@ -1,0 +1,15 @@
+\doxysection{include/igl/straighten\+\_\+seams.h File Reference}
+\hypertarget{straighten__seams_8h}{}\label{straighten__seams_8h}\index{include/igl/straighten\_seams.h@{include/igl/straighten\_seams.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include \"{}straighten\+\_\+seams.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename Derived\+VT , typename Derived\+FT , typename Scalar , typename Derived\+UE , typename Derived\+UT , typename Derived\+OT $>$ }\\void \mbox{\hyperlink{namespaceigl_a43464482f2fd9b2c4b7e2beac12fc522}{igl\+::straighten\+\_\+seams}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const Eigen\+::\+Matrix\+Base$<$ Derived\+VT $>$ \&VT, const Eigen\+::\+Matrix\+Base$<$ Derived\+FT $>$ \&FT, const Scalar tol, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+UE $>$ \&UE, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+UT $>$ \&UT, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+OT $>$ \&OT)
+\begin{DoxyCompactList}\small\item\em Given a obj-\/style mesh with (V,F) defining the geometric surface of the mesh and (VT,FT) defining the parameterization/texture-\/mapping of the mesh in the uv-\/domain, find all seams and boundaries in the texture-\/mapping and \"{}straighten\"{} them, remapping vertices along the boundary and in the interior. \end{DoxyCompactList}\end{DoxyCompactItemize}

@@ -1,0 +1,72 @@
+\doxysection{principal\+\_\+curvature.\+h}
+\hypertarget{principal__curvature_8h_source}{}\label{principal__curvature_8h_source}\index{include/igl/principal\_curvature.h@{include/igl/principal\_curvature.h}}
+\mbox{\hyperlink{principal__curvature_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2013\ Daniele\ Panozzo\ <daniele.panozzo@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_PRINCIPAL\_CURVATURE\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_PRINCIPAL\_CURVATURE\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Geometry>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\#include\ <igl/cotmatrix.h>}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\#include\ <igl/writeOFF.h>}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00045\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedPD1,}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedPD2,}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedPV1,}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedPV2>}
+\DoxyCodeLine{00052\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a381027e74d14b6e7adb31c0565a26027}{principal\_curvature}}(}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\&\ V,}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\&\ F,}
+\DoxyCodeLine{00055\ \ \ \ \ Eigen::PlainObjectBase<DerivedPD1>\&\ PD1,}
+\DoxyCodeLine{00056\ \ \ \ \ Eigen::PlainObjectBase<DerivedPD2>\&\ PD2,}
+\DoxyCodeLine{00057\ \ \ \ \ Eigen::PlainObjectBase<DerivedPV1>\&\ PV1,}
+\DoxyCodeLine{00058\ \ \ \ \ Eigen::PlainObjectBase<DerivedPV2>\&\ PV2,}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ radius\ =\ 5,}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{bool}\ useKring\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00063\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedPD1,}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedPD2,}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedPV1,}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedPV2,}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{typename}\ Index>}
+\DoxyCodeLine{00071\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a381027e74d14b6e7adb31c0565a26027}{principal\_curvature}}(}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\&\ V,}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\&\ F,}
+\DoxyCodeLine{00074\ \ \ \ \ Eigen::PlainObjectBase<DerivedPD1>\&\ PD1,}
+\DoxyCodeLine{00075\ \ \ \ \ Eigen::PlainObjectBase<DerivedPD2>\&\ PD2,}
+\DoxyCodeLine{00076\ \ \ \ \ Eigen::PlainObjectBase<DerivedPV1>\&\ PV1,}
+\DoxyCodeLine{00077\ \ \ \ \ Eigen::PlainObjectBase<DerivedPV2>\&\ PV2,}
+\DoxyCodeLine{00078\ \ \ \ \ std::vector<Index>\&\ bad\_vertices,}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ radius\ =\ 5,}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{bool}\ useKring\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00081\ \}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#include\ "{}principal\_curvature.cpp"{}}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

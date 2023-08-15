@@ -1,0 +1,54 @@
+\doxysection{reorient\+\_\+facets\+\_\+raycast.\+h}
+\hypertarget{reorient__facets__raycast_8h_source}{}\label{reorient__facets__raycast_8h_source}\index{include/igl/embree/reorient\_facets\_raycast.h@{include/igl/embree/reorient\_facets\_raycast.h}}
+\mbox{\hyperlink{reorient__facets__raycast_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2013\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_EMBREE\_REORIENT\_FACETS\_RAYCAST\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_EMBREE\_REORIENT\_FACETS\_RAYCAST\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \ \ \textcolor{keyword}{namespace\ }embree}
+\DoxyCodeLine{00015\ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedI,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedC>}
+\DoxyCodeLine{00036\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1embree_a50d8808b728c372e38d88371dee2cf0f}{reorient\_facets\_raycast}}(}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ rays\_total,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ rays\_minimum,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ facet\_wise,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ use\_parity,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_verbose,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedI>\ \&\ I,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedC>\ \&\ C);}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFF,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedI>}
+\DoxyCodeLine{00059\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1embree_a50d8808b728c372e38d88371dee2cf0f}{reorient\_facets\_raycast}}(}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedFF>\ \&\ FF,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedI>\ \&\ I);}
+\DoxyCodeLine{00064\ \ \ \}}
+\DoxyCodeLine{00065\ \};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#\ \ include\ "{}reorient\_facets\_raycast.cpp"{}}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

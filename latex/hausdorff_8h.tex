@@ -1,0 +1,18 @@
+\doxysection{include/igl/hausdorff.h File Reference}
+\hypertarget{hausdorff_8h}{}\label{hausdorff_8h}\index{include/igl/hausdorff.h@{include/igl/hausdorff.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include \"{}hausdorff.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Derived\+VA , typename Derived\+FA , typename Derived\+VB , typename Derived\+FB , typename Scalar $>$ }\\void \mbox{\hyperlink{namespaceigl_a64901d7f496bd1cccbccceddbc091603}{igl\+::hausdorff}} (const Eigen\+::\+Matrix\+Base$<$ Derived\+VA $>$ \&VA, const Eigen\+::\+Matrix\+Base$<$ Derived\+FA $>$ \&FA, const Eigen\+::\+Matrix\+Base$<$ Derived\+VB $>$ \&VB, const Eigen\+::\+Matrix\+Base$<$ Derived\+FB $>$ \&FB, Scalar \&d)
+\begin{DoxyCompactList}\small\item\em Compute the Hausdorff distance between mesh (VA,FA) and mesh (VB,FB). \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename Scalar $>$ }\\void \mbox{\hyperlink{namespaceigl_a3de06347c75f90acb8cc0114c7249e58}{igl\+::hausdorff}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const std\+::function$<$ Scalar(const Scalar \&, const Scalar \&, const Scalar \&)$>$ \&dist\+\_\+to\+\_\+B, Scalar \&l, Scalar \&u)
+\begin{DoxyCompactList}\small\item\em Compute lower and upper bounds (l,u) on the Hausdorff distance between a triangle (V) and a pointset (e.\+g., mesh, triangle soup) given by a distance function handle (dist\+\_\+to\+\_\+B). \end{DoxyCompactList}\end{DoxyCompactItemize}

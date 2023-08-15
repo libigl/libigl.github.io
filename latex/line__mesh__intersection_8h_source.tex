@@ -1,0 +1,40 @@
+\doxysection{line\+\_\+mesh\+\_\+intersection.\+h}
+\hypertarget{line__mesh__intersection_8h_source}{}\label{line__mesh__intersection_8h_source}\index{include/igl/embree/line\_mesh\_intersection.h@{include/igl/embree/line\_mesh\_intersection.h}}
+\mbox{\hyperlink{line__mesh__intersection_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2013\ Daniele\ Panozzo\ <daniele.panozzo@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_EMBREE\_LINE\_MESH\_INTERSECTION\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_EMBREE\_LINE\_MESH\_INTERSECTION\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <igl/igl\_inline.h>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <Eigen/Sparse>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}\ }
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \ \ \textcolor{keyword}{namespace\ }embree}
+\DoxyCodeLine{00019\ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ ScalarMatrix,\ \textcolor{keyword}{typename}\ IndexMatrix>}
+\DoxyCodeLine{00036\ \ \ \ \ IGL\_INLINE\ ScalarMatrix\ \mbox{\hyperlink{namespaceigl_1_1embree_acd345c8c661526ebb4bab1605393afe8}{line\_mesh\_intersection}}}
+\DoxyCodeLine{00037\ \ \ \ \ (}
+\DoxyCodeLine{00038\ \ \ \ \ \ \textcolor{keyword}{const}\ ScalarMatrix\ \&\ V\_source,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \textcolor{keyword}{const}\ ScalarMatrix\ \ \&\ N\_source,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \textcolor{keyword}{const}\ ScalarMatrix\ \&\ V\_target,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \textcolor{keyword}{const}\ IndexMatrix\ \ \&\ F\_target}
+\DoxyCodeLine{00042\ \ \ \ \ \ );}
+\DoxyCodeLine{00043\ \ \ \}}
+\DoxyCodeLine{00044\ \}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#\ \ include\ "{}line\_mesh\_intersection.cpp"{}}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

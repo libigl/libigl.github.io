@@ -1,0 +1,229 @@
+\doxysection{signed\+\_\+distance.\+h}
+\hypertarget{signed__distance_8h_source}{}\label{signed__distance_8h_source}\index{include/igl/signed\_distance.h@{include/igl/signed\_distance.h}}
+\mbox{\hyperlink{signed__distance_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2014\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_SIGNED\_DISTANCE\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_SIGNED\_DISTANCE\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{AABB_8h}{AABB.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{WindingNumberAABB_8h}{WindingNumberAABB.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{fast__winding__number_8h}{fast\_winding\_number.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00020\ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespaceigl_a92ae0e8cefa226a1e493b33684b0b02e}{SignedDistanceType}}}
+\DoxyCodeLine{00021\ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{namespaceigl_a92ae0e8cefa226a1e493b33684b0b02eac0557ab91e577c1b1f918891b6b3a9ce}{SIGNED\_DISTANCE\_TYPE\_PSEUDONORMAL}}\ \ \ \ \ \ \ \ \ =\ 0,}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{namespaceigl_a92ae0e8cefa226a1e493b33684b0b02ea2d092ad20bad8b2e4d6b015e0f64d5c8}{SIGNED\_DISTANCE\_TYPE\_WINDING\_NUMBER}}\ \ \ \ \ \ \ =\ 1,}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{namespaceigl_a92ae0e8cefa226a1e493b33684b0b02ea53947827c1a799002057e5dc4ffe3a6e}{SIGNED\_DISTANCE\_TYPE\_DEFAULT}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 2,}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{namespaceigl_a92ae0e8cefa226a1e493b33684b0b02ea3455ee3fba0a6898acccb895b94003ae}{SIGNED\_DISTANCE\_TYPE\_UNSIGNED}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 3,}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{namespaceigl_a92ae0e8cefa226a1e493b33684b0b02ea840c3ff04b4ec159043f1c6168ad383d}{SIGNED\_DISTANCE\_TYPE\_FAST\_WINDING\_NUMBER}}\ \ =\ 4,}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{namespaceigl_a92ae0e8cefa226a1e493b33684b0b02ea5ba484850e00fd63057bf36e540ffe57}{NUM\_SIGNED\_DISTANCE\_TYPE}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 5}
+\DoxyCodeLine{00034\ \ \ \};}
+\DoxyCodeLine{00052\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedP,}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedS,}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedI,}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedC,}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedN>}
+\DoxyCodeLine{00060\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a094f93a7b569504f70587f81f75fd879}{signed\_distance}}(}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedP>\ \&\ P,}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceigl_a92ae0e8cefa226a1e493b33684b0b02e}{SignedDistanceType}}\ sign\_type,}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{typename}\ DerivedV::Scalar\ lower\_bound,}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{typename}\ DerivedV::Scalar\ upper\_bound,}
+\DoxyCodeLine{00067\ \ \ \ \ Eigen::PlainObjectBase<DerivedS>\ \&\ S,}
+\DoxyCodeLine{00068\ \ \ \ \ Eigen::PlainObjectBase<DerivedI>\ \&\ I,}
+\DoxyCodeLine{00069\ \ \ \ \ Eigen::PlainObjectBase<DerivedC>\ \&\ C,}
+\DoxyCodeLine{00070\ \ \ \ \ Eigen::PlainObjectBase<DerivedN>\ \&\ N);}
+\DoxyCodeLine{00072\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedP,}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedS,}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedI,}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedC,}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedN>}
+\DoxyCodeLine{00080\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a094f93a7b569504f70587f81f75fd879}{signed\_distance}}(}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedP>\ \&\ P,}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceigl_a92ae0e8cefa226a1e493b33684b0b02e}{SignedDistanceType}}\ sign\_type,}
+\DoxyCodeLine{00085\ \ \ \ \ Eigen::PlainObjectBase<DerivedS>\ \&\ S,}
+\DoxyCodeLine{00086\ \ \ \ \ Eigen::PlainObjectBase<DerivedI>\ \&\ I,}
+\DoxyCodeLine{00087\ \ \ \ \ Eigen::PlainObjectBase<DerivedC>\ \&\ C,}
+\DoxyCodeLine{00088\ \ \ \ \ Eigen::PlainObjectBase<DerivedN>\ \&\ N);}
+\DoxyCodeLine{00102\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFN,}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVN,}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedEN,}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedEMAP,}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedq>}
+\DoxyCodeLine{00110\ \ \ IGL\_INLINE\ \textcolor{keyword}{typename}\ DerivedV::Scalar\ \mbox{\hyperlink{namespaceigl_a102279423d1d1b649cdf6a74558883dc}{signed\_distance\_pseudonormal}}(}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB}{AABB<DerivedV,3>}}\ \&\ tree,}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedFN>\ \&\ FN,}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedVN>\ \&\ VN,}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEN>\ \&\ EN,}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEMAP>\ \&\ EMAP,}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedq>\ \&\ q);}
+\DoxyCodeLine{00122\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedP,}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFN,}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVN,}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedEN,}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedEMAP,}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedS,}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedI,}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedC,}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedN>}
+\DoxyCodeLine{00134\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a102279423d1d1b649cdf6a74558883dc}{signed\_distance\_pseudonormal}}(}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedP>\ \&\ P,}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB}{AABB<DerivedV,3>}}\ \&\ tree,}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedFN>\ \&\ FN,}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedVN>\ \&\ VN,}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEN>\ \&\ EN,}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEMAP>\ \&\ EMAP,}
+\DoxyCodeLine{00143\ \ \ \ \ Eigen::PlainObjectBase<DerivedS>\ \&\ S,}
+\DoxyCodeLine{00144\ \ \ \ \ Eigen::PlainObjectBase<DerivedI>\ \&\ I,}
+\DoxyCodeLine{00145\ \ \ \ \ Eigen::PlainObjectBase<DerivedC>\ \&\ C,}
+\DoxyCodeLine{00146\ \ \ \ \ Eigen::PlainObjectBase<DerivedN>\ \&\ N);}
+\DoxyCodeLine{00156\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFN,}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVN,}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedEN,}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedEMAP,}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedq,}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keyword}{typename}\ Scalar,}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedc,}
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedn>}
+\DoxyCodeLine{00167\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a102279423d1d1b649cdf6a74558883dc}{signed\_distance\_pseudonormal}}(}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB}{AABB<DerivedV,3>}}\ \&\ tree,}
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedFN>\ \&\ FN,}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedVN>\ \&\ VN,}
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEN>\ \&\ EN,}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEMAP>\ \&\ EMAP,}
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedq>\ \&\ q,}
+\DoxyCodeLine{00176\ \ \ \ \ Scalar\ \&\ s,}
+\DoxyCodeLine{00177\ \ \ \ \ Scalar\ \&\ sqrd,}
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordtype}{int}\ \&\ i,}
+\DoxyCodeLine{00179\ \ \ \ \ Eigen::PlainObjectBase<Derivedc>\ \&\ c,}
+\DoxyCodeLine{00180\ \ \ \ \ Eigen::PlainObjectBase<Derivedn>\ \&\ n);}
+\DoxyCodeLine{00182\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedE,}
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedEN,}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVN,}
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedq,}
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keyword}{typename}\ Scalar,}
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedc,}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedn>}
+\DoxyCodeLine{00191\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a102279423d1d1b649cdf6a74558883dc}{signed\_distance\_pseudonormal}}(}
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB}{AABB<DerivedV,2>}}\ \&\ tree,}
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedE>\ \&\ E,}
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEN>\ \&\ EN,}
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedVN>\ \&\ VN,}
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedq>\ \&\ q,}
+\DoxyCodeLine{00198\ \ \ \ \ Scalar\ \&\ s,}
+\DoxyCodeLine{00199\ \ \ \ \ Scalar\ \&\ sqrd,}
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordtype}{int}\ \&\ i,}
+\DoxyCodeLine{00201\ \ \ \ \ Eigen::PlainObjectBase<Derivedc>\ \&\ c,}
+\DoxyCodeLine{00202\ \ \ \ \ Eigen::PlainObjectBase<Derivedn>\ \&\ n);}
+\DoxyCodeLine{00211\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00213\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00214\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedq>}
+\DoxyCodeLine{00215\ \ \ IGL\_INLINE\ \textcolor{keyword}{typename}\ DerivedV::Scalar\ \mbox{\hyperlink{namespaceigl_a75576a9807c547b55f797639412650d6}{signed\_distance\_winding\_number}}(}
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB}{AABB<DerivedV,3>}}\ \&\ tree,}
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{keyword}{const}\ igl::WindingNumberAABB<Derivedq,DerivedV,DerivedF>\ \&\ hier,}
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedq>\ \&\ q);}
+\DoxyCodeLine{00226\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00227\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00229\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedq,}
+\DoxyCodeLine{00230\ \ \ \ \ \textcolor{keyword}{typename}\ Scalar,}
+\DoxyCodeLine{00231\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedc>}
+\DoxyCodeLine{00232\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a75576a9807c547b55f797639412650d6}{signed\_distance\_winding\_number}}(}
+\DoxyCodeLine{00233\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB}{AABB<DerivedV,3>}}\ \&\ tree,}
+\DoxyCodeLine{00234\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00235\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00236\ \ \ \ \ \textcolor{keyword}{const}\ igl::WindingNumberAABB<Derivedq,DerivedV,DerivedF>\ \&\ hier,}
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedq>\ \&\ q,}
+\DoxyCodeLine{00238\ \ \ \ \ Scalar\ \&\ s,}
+\DoxyCodeLine{00239\ \ \ \ \ Scalar\ \&\ sqrd,}
+\DoxyCodeLine{00240\ \ \ \ \ \textcolor{keywordtype}{int}\ \&\ i,}
+\DoxyCodeLine{00241\ \ \ \ \ Eigen::PlainObjectBase<Derivedc>\ \&\ c);}
+\DoxyCodeLine{00243\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00244\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00246\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedq,}
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keyword}{typename}\ Scalar,}
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedc>}
+\DoxyCodeLine{00249\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a75576a9807c547b55f797639412650d6}{signed\_distance\_winding\_number}}(}
+\DoxyCodeLine{00250\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB}{AABB<DerivedV,2>}}\ \&\ tree,}
+\DoxyCodeLine{00251\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00252\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00253\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedq>\ \&\ q,}
+\DoxyCodeLine{00254\ \ \ \ \ Scalar\ \&\ s,}
+\DoxyCodeLine{00255\ \ \ \ \ Scalar\ \&\ sqrd,}
+\DoxyCodeLine{00256\ \ \ \ \ \textcolor{keywordtype}{int}\ \&\ i,}
+\DoxyCodeLine{00257\ \ \ \ \ Eigen::PlainObjectBase<Derivedc>\ \&\ c);}
+\DoxyCodeLine{00277\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00278\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedP,}
+\DoxyCodeLine{00279\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00280\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00281\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedS>}
+\DoxyCodeLine{00282\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a88918723d512e80456d10a043fa25177}{signed\_distance\_fast\_winding\_number}}(}
+\DoxyCodeLine{00283\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedP>\ \&\ P,}
+\DoxyCodeLine{00284\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00285\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00286\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB}{AABB<DerivedV,3>}}\ \&\ tree,}
+\DoxyCodeLine{00287\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structigl_1_1FastWindingNumberBVH}{igl::FastWindingNumberBVH}}\ \&\ fwn\_bvh,}
+\DoxyCodeLine{00288\ \ \ \ \ Eigen::PlainObjectBase<DerivedS>\ \&\ S}
+\DoxyCodeLine{00289\ \ \ );}
+\DoxyCodeLine{00301\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00302\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedq,}
+\DoxyCodeLine{00303\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00304\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00305\ \ \ IGL\_INLINE\ \textcolor{keyword}{typename}\ DerivedV::Scalar\ \mbox{\hyperlink{namespaceigl_a88918723d512e80456d10a043fa25177}{signed\_distance\_fast\_winding\_number}}(}
+\DoxyCodeLine{00306\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedq>\ \&\ q,}
+\DoxyCodeLine{00307\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00308\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00309\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB}{AABB<DerivedV,3>}}\ \&\ tree,}
+\DoxyCodeLine{00310\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structigl_1_1FastWindingNumberBVH}{igl::FastWindingNumberBVH}}\ \&\ fwn\_bvh}
+\DoxyCodeLine{00311\ \ \ );}
+\DoxyCodeLine{00312\ \}}
+\DoxyCodeLine{00313\ }
+\DoxyCodeLine{00314\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00315\ \textcolor{preprocessor}{\#\ \ include\ "{}signed\_distance.cpp"{}}}
+\DoxyCodeLine{00316\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00317\ }
+\DoxyCodeLine{00318\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

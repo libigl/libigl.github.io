@@ -1,0 +1,18 @@
+\doxysection{include/igl/is\+\_\+delaunay.h File Reference}
+\hypertarget{is__delaunay_8h}{}\label{is__delaunay_8h}\index{include/igl/is\_delaunay.h@{include/igl/is\_delaunay.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \"{}is\+\_\+delaunay.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedD $>$ }\\void \mbox{\hyperlink{namespaceigl_a8670d8afa68524c4d0e4745faa89efc7}{igl\+::is\+\_\+delaunay}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ DerivedD $>$ \&D)
+\begin{DoxyCompactList}\small\item\em IDetermine if each edge in the mesh (V,F) is Delaunay. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename u\+E2\+EType , typename In\+Circle , typename uei\+Type $>$ }\\bool \mbox{\hyperlink{namespaceigl_ae3e60388b9f45015b2d555acf24b9b4e}{igl\+::is\+\_\+delaunay}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const std\+::vector$<$ std\+::vector$<$ u\+E2\+EType $>$ $>$ \&u\+E2E, const In\+Circle incircle, const uei\+Type uei)
+\begin{DoxyCompactList}\small\item\em Determine whether a single edge is Delaunay using a provided (extrinsic) incirle test. \end{DoxyCompactList}\end{DoxyCompactItemize}

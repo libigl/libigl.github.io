@@ -1,0 +1,69 @@
+\doxysection{sort.\+h}
+\hypertarget{sort_8h_source}{}\label{sort_8h_source}\index{include/igl/sort.h@{include/igl/sort.h}}
+\mbox{\hyperlink{sort_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2013\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_SORT\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_SORT\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00030\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedX,\ \textcolor{keyword}{typename}\ DerivedY,\ \textcolor{keyword}{typename}\ DerivedIX>}
+\DoxyCodeLine{00031\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_aea54a5804527aa194785e403870ba7db}{sort}}(}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::DenseBase<DerivedX>\&\ X,}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ dim,}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ ascending,}
+\DoxyCodeLine{00035\ \ \ \ \ Eigen::PlainObjectBase<DerivedY>\&\ Y,}
+\DoxyCodeLine{00036\ \ \ \ \ Eigen::PlainObjectBase<DerivedIX>\&\ IX);}
+\DoxyCodeLine{00038\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedX,\ \textcolor{keyword}{typename}\ DerivedY>}
+\DoxyCodeLine{00039\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_aea54a5804527aa194785e403870ba7db}{sort}}(}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::DenseBase<DerivedX>\&\ X,}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ dim,}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ ascending,}
+\DoxyCodeLine{00043\ \ \ \ \ Eigen::PlainObjectBase<DerivedY>\&\ Y);}
+\DoxyCodeLine{00048\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedX,\ \textcolor{keyword}{typename}\ DerivedY,\ \textcolor{keyword}{typename}\ DerivedIX>}
+\DoxyCodeLine{00049\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a4dd6daca2b874edaf27301a111ed2401}{sort\_new}}(}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::DenseBase<DerivedX>\&\ X,}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ dim,}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ ascending,}
+\DoxyCodeLine{00053\ \ \ \ \ Eigen::PlainObjectBase<DerivedY>\&\ Y,}
+\DoxyCodeLine{00054\ \ \ \ \ Eigen::PlainObjectBase<DerivedIX>\&\ IX);}
+\DoxyCodeLine{00057\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedX,\ \textcolor{keyword}{typename}\ DerivedY,\ \textcolor{keyword}{typename}\ DerivedIX>}
+\DoxyCodeLine{00058\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a61ad3bd047a94be9c5ad7bf8890dd798}{sort2}}(}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::DenseBase<DerivedX>\&\ X,}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ dim,}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ ascending,}
+\DoxyCodeLine{00062\ \ \ \ \ Eigen::PlainObjectBase<DerivedY>\&\ Y,}
+\DoxyCodeLine{00063\ \ \ \ \ Eigen::PlainObjectBase<DerivedIX>\&\ IX);}
+\DoxyCodeLine{00066\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedX,\ \textcolor{keyword}{typename}\ DerivedY,\ \textcolor{keyword}{typename}\ DerivedIX>}
+\DoxyCodeLine{00067\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a6bfeee50844cf4deac8ad3b473407428}{sort3}}(}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::DenseBase<DerivedX>\&\ X,}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ dim,}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ ascending,}
+\DoxyCodeLine{00071\ \ \ \ \ Eigen::PlainObjectBase<DerivedY>\&\ Y,}
+\DoxyCodeLine{00072\ \ \ \ \ Eigen::PlainObjectBase<DerivedIX>\&\ IX);}
+\DoxyCodeLine{00079\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00080\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_aea54a5804527aa194785e403870ba7db}{sort}}(}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<T>\ \&unsorted,}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ ascending,}
+\DoxyCodeLine{00083\ \ \ \ \ std::vector<T>\ \&sorted,}
+\DoxyCodeLine{00084\ \ \ \ \ std::vector<size\_t>\ \&index\_map);}
+\DoxyCodeLine{00085\ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#\ \ include\ "{}sort.cpp"{}}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

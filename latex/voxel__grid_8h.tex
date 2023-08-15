@@ -1,0 +1,18 @@
+\doxysection{include/igl/voxel\+\_\+grid.h File Reference}
+\hypertarget{voxel__grid_8h}{}\label{voxel__grid_8h}\index{include/igl/voxel\_grid.h@{include/igl/voxel\_grid.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Geometry$>$}\newline
+{\ttfamily \#include \"{}voxel\+\_\+grid.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Scalar , typename Derived\+GV , typename Derivedside $>$ }\\void \mbox{\hyperlink{namespaceigl_adbd087fd838f29b3d9e50ef45403f2ce}{igl\+::voxel\+\_\+grid}} (const Eigen\+::\+Aligned\+Box$<$ Scalar, 3 $>$ \&box, const int s, const int pad\+\_\+count, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+GV $>$ \&GV, Eigen\+::\+Plain\+Object\+Base$<$ Derivedside $>$ \&side)
+\begin{DoxyCompactList}\small\item\em Construct the cell center positions of a regular voxel grid (lattice) made of perfectly square voxels. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename Derived\+GV , typename Derivedside $>$ }\\void \mbox{\hyperlink{namespaceigl_a467c3ec21d8d152e2e6aaf04ef8ab1da}{igl\+::voxel\+\_\+grid}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const typename Derived\+V\+::\+Scalar offset, const int s, const int pad\+\_\+count, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+GV $>$ \&GV, Eigen\+::\+Plain\+Object\+Base$<$ Derivedside $>$ \&side)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}

@@ -1,0 +1,21 @@
+\doxysection{include/igl/volume.h File Reference}
+\hypertarget{volume_8h}{}\label{volume_8h}\index{include/igl/volume.h@{include/igl/volume.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include \"{}volume.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedT , typename Derivedvol $>$ }\\void \mbox{\hyperlink{namespaceigl_a289cc75429d0c045af9eca70642b8f8a}{igl\+::volume}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedT $>$ \&T, Eigen\+::\+Plain\+Object\+Base$<$ Derivedvol $>$ \&vol)
+\begin{DoxyCompactList}\small\item\em Compute volume for all tets of a given tet mesh (V,T) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedA , typename DerivedB , typename DerivedC , typename DerivedD , typename Derivedvol $>$ }\\void \mbox{\hyperlink{namespaceigl_ab25567c5af213643fd332e32003e63b4}{igl\+::volume}} (const Eigen\+::\+Matrix\+Base$<$ DerivedA $>$ \&A, const Eigen\+::\+Matrix\+Base$<$ DerivedB $>$ \&B, const Eigen\+::\+Matrix\+Base$<$ DerivedC $>$ \&C, const Eigen\+::\+Matrix\+Base$<$ DerivedD $>$ \&D, Eigen\+::\+Plain\+Object\+Base$<$ Derivedvol $>$ \&vol)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename VecA , typename VecB , typename VecC , typename VecD $>$ }\\Vec\+A\+::\+Scalar \mbox{\hyperlink{namespaceigl_a89ebffa70b6797c8fd0404da673aaf3c}{igl\+::volume\+\_\+single}} (const VecA \&a, const VecB \&b, const VecC \&c, const VecD \&d)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedL , typename Derivedvol $>$ }\\void \mbox{\hyperlink{namespaceigl_a0da5bd53ebc802822b96aebabbfddfa1}{igl\+::volume}} (const Eigen\+::\+Matrix\+Base$<$ DerivedL $>$ \&L, Eigen\+::\+Plain\+Object\+Base$<$ Derivedvol $>$ \&vol)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}

@@ -1,0 +1,50 @@
+\doxysection{cat.\+h}
+\hypertarget{cat_8h_source}{}\label{cat_8h_source}\index{include/igl/cat.h@{include/igl/cat.h}}
+\mbox{\hyperlink{cat_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2013\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_CAT\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_CAT\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <Eigen/Sparse>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00032\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Scalar>}
+\DoxyCodeLine{00033\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_ad5f624eb7c4015b813215c87880eb54d}{cat}}(}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ dim,\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<Scalar>\ \&\ A,\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<Scalar>\ \&\ B,\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ Eigen::SparseMatrix<Scalar>\ \&\ C);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00048\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Derived,\ \textcolor{keyword}{class}\ MatC>}
+\DoxyCodeLine{00049\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_ad5f624eb7c4015b813215c87880eb54d}{cat}}(}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ dim,}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derived>\ \&\ A,\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derived>\ \&\ B,}
+\DoxyCodeLine{00053\ \ \ \ \ MatC\ \&\ C);}
+\DoxyCodeLine{00063\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Mat>}
+\DoxyCodeLine{00064\ \ \ IGL\_INLINE\ Mat\ \mbox{\hyperlink{namespaceigl_ad5f624eb7c4015b813215c87880eb54d}{cat}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ dim,\ \textcolor{keyword}{const}\ Mat\ \&\ A,\ \textcolor{keyword}{const}\ Mat\ \&\ B);}
+\DoxyCodeLine{00070\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Mat>}
+\DoxyCodeLine{00071\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_ad5f624eb7c4015b813215c87880eb54d}{cat}}(\textcolor{keyword}{const}\ std::vector<std::vector<\ Mat\ >\ >\ \&\ A,\ Mat\ \&\ C);}
+\DoxyCodeLine{00077\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ DerivedC>}
+\DoxyCodeLine{00078\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_ad5f624eb7c4015b813215c87880eb54d}{cat}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ dim,\ \textcolor{keyword}{const}\ std::vector<T>\ \&\ A,\ Eigen::PlainObjectBase<DerivedC>\ \&\ C);}
+\DoxyCodeLine{00079\ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#\ \ include\ "{}cat.cpp"{}}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

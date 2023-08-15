@@ -1,0 +1,521 @@
+\doxysection{Matlab\+Workspace.\+h}
+\hypertarget{MatlabWorkspace_8h_source}{}\label{MatlabWorkspace_8h_source}\index{include/igl/matlab/MatlabWorkspace.h@{include/igl/matlab/MatlabWorkspace.h}}
+\mbox{\hyperlink{MatlabWorkspace_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2013\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_MATLAB\_MATLAB\_WORKSPACE\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_MATLAB\_MATLAB\_WORKSPACE\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Sparse>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <mat.h>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \ \ \textcolor{keyword}{namespace\ }matlab}
+\DoxyCodeLine{00022\ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{MatlabWorkspace}}}
+\DoxyCodeLine{00035\ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ std::vector<std::string>\ names;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ std::vector<mxArray*>\ data;}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a883c693b38494b37dd359ff7de942c14}{MatlabWorkspace}}();}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a984837d7b6be41afd41c1526743bac0f}{\string~MatlabWorkspace}}();}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_ae583f9f3840e306b65ef3c590fded313}{clear}}();}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a4cf22a9c3b4ff551a1032f237ef40938}{write}}(\textcolor{keyword}{const}\ std::string\ \&\ path)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a70ddccc669e0c63ac5c9bf4c82e40605}{read}}(\textcolor{keyword}{const}\ std::string\ \&\ path);}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedM>}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{MatlabWorkspace}}\&\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a0e8f887139665c6bb6ce1d86736985ea}{save}}(}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedM>\&\ M,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\ name);}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ MT>}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{MatlabWorkspace}}\&\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a952294f80ded66d91bcc32352a87d35e}{save}}(}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<MT>\&\ M,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\ name);}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ ScalarM>}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{MatlabWorkspace}}\&\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a334ee31242c5700b6372ae2858188557}{save}}(}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<ScalarM>\ >\ \&\ vM,}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\ name);}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ ScalarV>}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{MatlabWorkspace}}\&\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a69e14902d98940ff21d807d0ffea4f87}{save}}(}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<ScalarV>\ \&\ vV,}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\ name);}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Q>}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{MatlabWorkspace}}\&\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_ac3ab74c416d5d01cac69c7129750e625}{save}}(}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Quaternion<Q>\ \&\ q,}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\ name);}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{MatlabWorkspace}}\&\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a0e8f887139665c6bb6ce1d86736985ea}{save}}(}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ d,}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\ name);}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedM>}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{MatlabWorkspace}}\&\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a07f84232f1f98f97e1202ba69cffe482}{save\_index}}(}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::DenseBase<DerivedM>\&\ M,}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\ name);}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ ScalarM>}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{MatlabWorkspace}}\&\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_ac3011f108daca874e85e45bf194d16dd}{save\_index}}(}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<ScalarM>\ >\ \&\ vM,}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\ name);}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ ScalarV>}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{MatlabWorkspace}}\&\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a49a0410c922a5f5ecca44308322c119a}{save\_index}}(}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<ScalarV>\ \&\ vV,}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\ name);}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedM>}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a4fe9cb0440cddb78e69dd3fb36632262}{find}}(\ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\ name,}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedM>\&\ M);}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ MT>}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a4fe9cb0440cddb78e69dd3fb36632262}{find}}(\ }
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\ name,}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ Eigen::SparseMatrix<MT>\&\ M);}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a4fe9cb0440cddb78e69dd3fb36632262}{find}}(\ }
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\ name,}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \&\ d);}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a4fe9cb0440cddb78e69dd3fb36632262}{find}}(\ }
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\ name,}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \&\ v);}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedM>}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_aa5795043aae313b4116c5ef9e14e8657}{find\_index}}(\ }
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\ name,}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedM>\&\ M);}
+\DoxyCodeLine{00153\ \ \ \ \ \};}
+\DoxyCodeLine{00154\ \ \ \}}
+\DoxyCodeLine{00155\ \}}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \textcolor{comment}{//\ Implementation}}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \textcolor{comment}{//\ Be\ sure\ that\ this\ is\ not\ compiled\ into\ libigl.a}}
+\DoxyCodeLine{00160\ \textcolor{comment}{//\ http://stackoverflow.com/a/3318993/148668}}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \textcolor{comment}{//\ IGL}}
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{list__to__matrix_8h}{igl/list\_to\_matrix.h}}"{}}}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \textcolor{comment}{//\ MATLAB}}
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\#include\ "{}mat.h"{}}}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \textcolor{comment}{//\ STL}}
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a883c693b38494b37dd359ff7de942c14}{igl::matlab::MatlabWorkspace::MatlabWorkspace}}():}
+\DoxyCodeLine{00174\ \ \ names(),}
+\DoxyCodeLine{00175\ \ \ data()}
+\DoxyCodeLine{00176\ \{}
+\DoxyCodeLine{00177\ \}}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a984837d7b6be41afd41c1526743bac0f}{igl::matlab::MatlabWorkspace::\string~MatlabWorkspace}}()}
+\DoxyCodeLine{00180\ \{}
+\DoxyCodeLine{00181\ \ \ \textcolor{comment}{//\ clean\ up\ data}}
+\DoxyCodeLine{00182\ \ \ clear();}
+\DoxyCodeLine{00183\ \}}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_ae583f9f3840e306b65ef3c590fded313}{igl::matlab::MatlabWorkspace::clear}}()}
+\DoxyCodeLine{00186\ \{}
+\DoxyCodeLine{00187\ \ \ \mbox{\hyperlink{namespaceigl_a09311547ed4f12bee75c2631d2d19bfd}{for\_each}}(data.begin(),data.end(),\&mxDestroyArray);}
+\DoxyCodeLine{00188\ \ \ data.clear();}
+\DoxyCodeLine{00189\ \ \ names.clear();}
+\DoxyCodeLine{00190\ \}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a4cf22a9c3b4ff551a1032f237ef40938}{igl::matlab::MatlabWorkspace::write}}(\textcolor{keyword}{const}\ std::string\ \&\ path)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00193\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00194\ \ \ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00195\ \ \ MATFile\ *\ mat\_file\ =\ matOpen(path.c\_str(),\ \textcolor{stringliteral}{"{}w"{}});}
+\DoxyCodeLine{00196\ \ \ \textcolor{keywordflow}{if}(mat\_file\ ==\ NULL)}
+\DoxyCodeLine{00197\ \ \ \{}
+\DoxyCodeLine{00198\ \ \ \ \ fprintf(stderr,\textcolor{stringliteral}{"{}Error\ opening\ file\ \%s\(\backslash\)n"{}},path.c\_str());}
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00200\ \ \ \}}
+\DoxyCodeLine{00201\ \ \ assert(names.size()\ ==\ data.size());}
+\DoxyCodeLine{00202\ \ \ \textcolor{comment}{//\ loop\ over\ names\ and\ data}}
+\DoxyCodeLine{00203\ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;i\ <\ (int)names.size();\ i++)}
+\DoxyCodeLine{00204\ \ \ \{}
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{comment}{//\ Put\ variable\ as\ LOCAL\ variable}}
+\DoxyCodeLine{00206\ \ \ \ \ \textcolor{keywordtype}{int}\ status\ =\ matPutVariable(mat\_file,names[i].c\_str(),\ data[i]);}
+\DoxyCodeLine{00207\ \ \ \ \ \textcolor{keywordflow}{if}(status\ !=\ 0)\ }
+\DoxyCodeLine{00208\ \ \ \ \ \{}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ cerr<<\textcolor{stringliteral}{"{}\string^MatlabWorkspace::save\ Error:\ matPutVariable\ ("{}}<<names[i]<<}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{})\ failed"{}}<<endl;}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00212\ \ \ \ \ \}\ }
+\DoxyCodeLine{00213\ \ \ \}}
+\DoxyCodeLine{00214\ \ \ \textcolor{keywordflow}{if}(matClose(mat\_file)\ !=\ 0)}
+\DoxyCodeLine{00215\ \ \ \{}
+\DoxyCodeLine{00216\ \ \ \ \ fprintf(stderr,\textcolor{stringliteral}{"{}Error\ closing\ file\ \%s\(\backslash\)n"{}},path.c\_str());}
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00218\ \ \ \}}
+\DoxyCodeLine{00219\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00220\ \}}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a70ddccc669e0c63ac5c9bf4c82e40605}{igl::matlab::MatlabWorkspace::read}}(\textcolor{keyword}{const}\ std::string\ \&\ path)}
+\DoxyCodeLine{00223\ \{}
+\DoxyCodeLine{00224\ \ \ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \ \ MATFile\ *\ mat\_file;}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \ \ mat\_file\ =\ matOpen(path.c\_str(),\ \textcolor{stringliteral}{"{}r"{}});}
+\DoxyCodeLine{00229\ \ \ \textcolor{keywordflow}{if}\ (mat\_file\ ==\ NULL)\ }
+\DoxyCodeLine{00230\ \ \ \{}
+\DoxyCodeLine{00231\ \ \ \ \ cerr<<\textcolor{stringliteral}{"{}Error:\ failed\ to\ open\ "{}}<<path<<endl;}
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00233\ \ \ \}}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00235\ \ \ \textcolor{keywordtype}{int}\ ndir;}
+\DoxyCodeLine{00236\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ **\ dir\ =\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ **)matGetDir(mat\_file,\ \&ndir);}
+\DoxyCodeLine{00237\ \ \ \textcolor{keywordflow}{if}\ (dir\ ==\ NULL)\ \{}
+\DoxyCodeLine{00238\ \ \ \ \ cerr<<\textcolor{stringliteral}{"{}Error\ reading\ directory\ of\ file\ "{}}<<\ path<<endl;}
+\DoxyCodeLine{00239\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00240\ \ \ \}}
+\DoxyCodeLine{00241\ \ \ mxFree(dir);}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00243\ \ \ \textcolor{comment}{//\ Must\ close\ and\ reopen}}
+\DoxyCodeLine{00244\ \ \ \textcolor{keywordflow}{if}(matClose(mat\_file)\ !=\ 0)}
+\DoxyCodeLine{00245\ \ \ \{}
+\DoxyCodeLine{00246\ \ \ \ \ cerr<<\textcolor{stringliteral}{"{}Error:\ failed\ to\ close\ file\ "{}}<<path<<endl;}
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00248\ \ \ \}}
+\DoxyCodeLine{00249\ \ \ mat\_file\ =\ matOpen(path.c\_str(),\ \textcolor{stringliteral}{"{}r"{}});}
+\DoxyCodeLine{00250\ \ \ \textcolor{keywordflow}{if}\ (mat\_file\ ==\ NULL)\ }
+\DoxyCodeLine{00251\ \ \ \{}
+\DoxyCodeLine{00252\ \ \ \ \ cerr<<\textcolor{stringliteral}{"{}Error:\ failed\ to\ open\ "{}}<<path<<endl;}
+\DoxyCodeLine{00253\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00254\ \ \ \}}
+\DoxyCodeLine{00255\ \ \ }
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00257\ \ \ \textcolor{comment}{/*\ Read\ in\ each\ array.\ */}}
+\DoxyCodeLine{00258\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i=0;\ i<ndir;\ i++)\ }
+\DoxyCodeLine{00259\ \ \ \{}
+\DoxyCodeLine{00260\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ name;}
+\DoxyCodeLine{00261\ \ \ \ \ mxArray\ *\ mx\_data\ =\ matGetNextVariable(mat\_file,\ \&name);}
+\DoxyCodeLine{00262\ \ \ \ \ \textcolor{keywordflow}{if}\ (mx\_data\ ==\ NULL)\ }
+\DoxyCodeLine{00263\ \ \ \ \ \{}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ cerr<<\textcolor{stringliteral}{"{}Error:\ matGetNextVariable\ failed\ in\ "{}}<<path<<endl;}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00266\ \ \ \ \ \}\ }
+\DoxyCodeLine{00267\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ dims\ =\ mxGetNumberOfDimensions(mx\_data);}
+\DoxyCodeLine{00268\ \ \ \ \ assert(dims\ ==\ 2);}
+\DoxyCodeLine{00269\ \ \ \ \ \textcolor{keywordflow}{if}(dims\ !=\ 2)}
+\DoxyCodeLine{00270\ \ \ \ \ \{}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ fprintf(stderr,\textcolor{stringliteral}{"{}Variable\ '\%s'\ has\ \%d\ ≠\ 2\ dimensions.\ Skipping\(\backslash\)n"{}},}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ name,dims);}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ mxDestroyArray(mx\_data);}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00275\ \ \ \ \ \}}
+\DoxyCodeLine{00276\ \ \ \ \ \textcolor{comment}{//\ don't\ destroy}}
+\DoxyCodeLine{00277\ \ \ \ \ names.push\_back(name);}
+\DoxyCodeLine{00278\ \ \ \ \ data.push\_back(mx\_data);}
+\DoxyCodeLine{00279\ \ \ \}}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00281\ \ \ \textcolor{keywordflow}{if}(matClose(mat\_file)\ !=\ 0)}
+\DoxyCodeLine{00282\ \ \ \{}
+\DoxyCodeLine{00283\ \ \ \ \ cerr<<\textcolor{stringliteral}{"{}Error:\ failed\ to\ close\ file\ "{}}<<path<<endl;}
+\DoxyCodeLine{00284\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00285\ \ \ \}}
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00287\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00288\ \}}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00290\ \textcolor{comment}{//\ Treat\ everything\ as\ a\ double}}
+\DoxyCodeLine{00291\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedM>}
+\DoxyCodeLine{00292\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{igl::matlab::MatlabWorkspace}}\&\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a0e8f887139665c6bb6ce1d86736985ea}{igl::matlab::MatlabWorkspace::save}}(}
+\DoxyCodeLine{00293\ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedM>\&\ M,}
+\DoxyCodeLine{00294\ \ \ \textcolor{keyword}{const}\ std::string\ \&\ name)}
+\DoxyCodeLine{00295\ \{}
+\DoxyCodeLine{00296\ \ \ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00297\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ m\ =\ M.rows();}
+\DoxyCodeLine{00298\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ n\ =\ M.cols();}
+\DoxyCodeLine{00299\ \ \ mxArray\ *\ mx\_data\ =\ mxCreateDoubleMatrix(m,n,mxREAL);}
+\DoxyCodeLine{00300\ \ \ data.push\_back(mx\_data);}
+\DoxyCodeLine{00301\ \ \ names.push\_back(name);}
+\DoxyCodeLine{00302\ \ \ \textcolor{comment}{//\ Copy\ data\ immediately}}
+\DoxyCodeLine{00303\ \ \ \textcolor{comment}{//\ Use\ Eigen's\ map\ and\ cast\ to\ copy}}
+\DoxyCodeLine{00304\ \ \ Eigen::Map<\ Eigen::Matrix<double,Eigen::Dynamic,Eigen::Dynamic>\ >\ }
+\DoxyCodeLine{00305\ \ \ \ \ map(mxGetPr(mx\_data),m,n);}
+\DoxyCodeLine{00306\ \ \ map\ =\ M.template\ cast<double>();}
+\DoxyCodeLine{00307\ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00308\ \}}
+\DoxyCodeLine{00309\ }
+\DoxyCodeLine{00310\ \textcolor{comment}{//\ Treat\ everything\ as\ a\ double}}
+\DoxyCodeLine{00311\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ MT>}
+\DoxyCodeLine{00312\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{igl::matlab::MatlabWorkspace}}\&\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a0e8f887139665c6bb6ce1d86736985ea}{igl::matlab::MatlabWorkspace::save}}(}
+\DoxyCodeLine{00313\ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<MT>\&\ M,}
+\DoxyCodeLine{00314\ \ \ \textcolor{keyword}{const}\ std::string\ \&\ name)}
+\DoxyCodeLine{00315\ \{}
+\DoxyCodeLine{00316\ \ \ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00317\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ m\ =\ M.rows();}
+\DoxyCodeLine{00318\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ n\ =\ M.cols();}
+\DoxyCodeLine{00319\ \ \ \textcolor{comment}{//\ THIS\ WILL\ NOT\ WORK\ FOR\ ROW-\/MAJOR}}
+\DoxyCodeLine{00320\ \ \ assert(n==M.outerSize());}
+\DoxyCodeLine{00321\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ nzmax\ =\ M.nonZeros();}
+\DoxyCodeLine{00322\ \ \ mxArray\ *\ mx\_data\ =\ mxCreateSparse(m,\ n,\ nzmax,\ mxREAL);}
+\DoxyCodeLine{00323\ \ \ data.push\_back(mx\_data);}
+\DoxyCodeLine{00324\ \ \ names.push\_back(name);}
+\DoxyCodeLine{00325\ \ \ \textcolor{comment}{//\ Copy\ data\ immediately}}
+\DoxyCodeLine{00326\ \ \ \textcolor{keywordtype}{double}\ *\ pr\ =\ mxGetPr(mx\_data);}
+\DoxyCodeLine{00327\ \ \ mwIndex\ *\ ir\ =\ mxGetIr(mx\_data);}
+\DoxyCodeLine{00328\ \ \ mwIndex\ *\ jc\ =\ mxGetJc(mx\_data);}
+\DoxyCodeLine{00329\ }
+\DoxyCodeLine{00330\ \ \ \textcolor{comment}{//\ Iterate\ over\ outside}}
+\DoxyCodeLine{00331\ \ \ \textcolor{keywordtype}{int}\ k\ =\ 0;}
+\DoxyCodeLine{00332\ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j=0;\ j<M.outerSize();j++)}
+\DoxyCodeLine{00333\ \ \ \{}
+\DoxyCodeLine{00334\ \ \ \ \ jc[j]\ =\ k;}
+\DoxyCodeLine{00335\ \ \ \ \ \textcolor{comment}{//\ Iterate\ over\ inside}}
+\DoxyCodeLine{00336\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{typename}\ Eigen::SparseMatrix<MT>::InnerIterator\ it\ (M,j);\ it;\ ++it)}
+\DoxyCodeLine{00337\ \ \ \ \ \{}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ pr[k]\ =\ it.value();}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ ir[k]\ =\ it.row();}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ k++;}
+\DoxyCodeLine{00341\ \ \ \ \ \}}
+\DoxyCodeLine{00342\ \ \ \}}
+\DoxyCodeLine{00343\ \ \ jc[M.outerSize()]\ =\ k;}
+\DoxyCodeLine{00344\ }
+\DoxyCodeLine{00345\ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00346\ \}}
+\DoxyCodeLine{00347\ }
+\DoxyCodeLine{00348\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ ScalarM>}
+\DoxyCodeLine{00349\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{igl::matlab::MatlabWorkspace}}\&\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a0e8f887139665c6bb6ce1d86736985ea}{igl::matlab::MatlabWorkspace::save}}(}
+\DoxyCodeLine{00350\ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<ScalarM>\ >\ \&\ vM,}
+\DoxyCodeLine{00351\ \ \ \textcolor{keyword}{const}\ std::string\ \&\ name)}
+\DoxyCodeLine{00352\ \{}
+\DoxyCodeLine{00353\ \ \ Eigen::MatrixXd\ M;}
+\DoxyCodeLine{00354\ \ \ \mbox{\hyperlink{namespaceigl_a6df6ee5a6c7852f628cefbb8dbb025af}{list\_to\_matrix}}(vM,M);}
+\DoxyCodeLine{00355\ \ \ \textcolor{keywordflow}{return}\ this-\/>save(M,name);}
+\DoxyCodeLine{00356\ \}}
+\DoxyCodeLine{00357\ }
+\DoxyCodeLine{00358\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ ScalarV>}
+\DoxyCodeLine{00359\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{igl::matlab::MatlabWorkspace}}\&\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a0e8f887139665c6bb6ce1d86736985ea}{igl::matlab::MatlabWorkspace::save}}(}
+\DoxyCodeLine{00360\ \ \ \textcolor{keyword}{const}\ std::vector<ScalarV>\ \&\ vV,}
+\DoxyCodeLine{00361\ \ \ \textcolor{keyword}{const}\ std::string\ \&\ name)}
+\DoxyCodeLine{00362\ \{}
+\DoxyCodeLine{00363\ \ \ Eigen::MatrixXd\ V;}
+\DoxyCodeLine{00364\ \ \ \mbox{\hyperlink{namespaceigl_a6df6ee5a6c7852f628cefbb8dbb025af}{list\_to\_matrix}}(vV,V);}
+\DoxyCodeLine{00365\ \ \ \textcolor{keywordflow}{return}\ this-\/>save(V,name);}
+\DoxyCodeLine{00366\ \}}
+\DoxyCodeLine{00367\ }
+\DoxyCodeLine{00368\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Q>}
+\DoxyCodeLine{00369\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{igl::matlab::MatlabWorkspace}}\&\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a0e8f887139665c6bb6ce1d86736985ea}{igl::matlab::MatlabWorkspace::save}}(}
+\DoxyCodeLine{00370\ \ \ \textcolor{keyword}{const}\ Eigen::Quaternion<Q>\ \&\ q,}
+\DoxyCodeLine{00371\ \ \ \textcolor{keyword}{const}\ std::string\ \&\ name)}
+\DoxyCodeLine{00372\ \{}
+\DoxyCodeLine{00373\ \ \ Eigen::Matrix<Q,1,4>\ qm;}
+\DoxyCodeLine{00374\ \ \ qm(0,0)\ =\ q.w();}
+\DoxyCodeLine{00375\ \ \ qm(0,1)\ =\ q.x();}
+\DoxyCodeLine{00376\ \ \ qm(0,2)\ =\ q.y();}
+\DoxyCodeLine{00377\ \ \ qm(0,3)\ =\ q.z();}
+\DoxyCodeLine{00378\ \ \ \textcolor{keywordflow}{return}\ save(qm,name);}
+\DoxyCodeLine{00379\ \}}
+\DoxyCodeLine{00380\ }
+\DoxyCodeLine{00381\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{igl::matlab::MatlabWorkspace}}\&\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a0e8f887139665c6bb6ce1d86736985ea}{igl::matlab::MatlabWorkspace::save}}(}
+\DoxyCodeLine{00382\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ d,}
+\DoxyCodeLine{00383\ \ \ \textcolor{keyword}{const}\ std::string\ \&\ name)}
+\DoxyCodeLine{00384\ \{}
+\DoxyCodeLine{00385\ \ \ Eigen::VectorXd\ v(1);}
+\DoxyCodeLine{00386\ \ \ v(0)\ =\ d;}
+\DoxyCodeLine{00387\ \ \ \textcolor{keywordflow}{return}\ save(v,name);}
+\DoxyCodeLine{00388\ \}}
+\DoxyCodeLine{00389\ }
+\DoxyCodeLine{00390\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedM>}
+\DoxyCodeLine{00391\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{igl::matlab::MatlabWorkspace}}\&\ }
+\DoxyCodeLine{00392\ \ \ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a07f84232f1f98f97e1202ba69cffe482}{igl::matlab::MatlabWorkspace::save\_index}}(}
+\DoxyCodeLine{00393\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::DenseBase<DerivedM>\&\ M,}
+\DoxyCodeLine{00394\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\ name)}
+\DoxyCodeLine{00395\ \{}
+\DoxyCodeLine{00396\ \ \ DerivedM\ Mp1\ =\ M;}
+\DoxyCodeLine{00397\ \ \ Mp1.array()\ +=\ 1;}
+\DoxyCodeLine{00398\ \ \ \textcolor{keywordflow}{return}\ this-\/>save(Mp1,name);}
+\DoxyCodeLine{00399\ \}}
+\DoxyCodeLine{00400\ }
+\DoxyCodeLine{00401\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ ScalarM>}
+\DoxyCodeLine{00402\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{igl::matlab::MatlabWorkspace}}\&\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a07f84232f1f98f97e1202ba69cffe482}{igl::matlab::MatlabWorkspace::save\_index}}(}
+\DoxyCodeLine{00403\ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<ScalarM>\ >\ \&\ vM,}
+\DoxyCodeLine{00404\ \ \ \textcolor{keyword}{const}\ std::string\ \&\ name)}
+\DoxyCodeLine{00405\ \{}
+\DoxyCodeLine{00406\ \ \ Eigen::MatrixXd\ M;}
+\DoxyCodeLine{00407\ \ \ \mbox{\hyperlink{namespaceigl_a6df6ee5a6c7852f628cefbb8dbb025af}{list\_to\_matrix}}(vM,M);}
+\DoxyCodeLine{00408\ \ \ \textcolor{keywordflow}{return}\ this-\/>save\_index(M,name);}
+\DoxyCodeLine{00409\ \}}
+\DoxyCodeLine{00410\ }
+\DoxyCodeLine{00411\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ ScalarV>}
+\DoxyCodeLine{00412\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace}{igl::matlab::MatlabWorkspace}}\&\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a07f84232f1f98f97e1202ba69cffe482}{igl::matlab::MatlabWorkspace::save\_index}}(}
+\DoxyCodeLine{00413\ \ \ \textcolor{keyword}{const}\ std::vector<ScalarV>\ \&\ vV,}
+\DoxyCodeLine{00414\ \ \ \textcolor{keyword}{const}\ std::string\ \&\ name)}
+\DoxyCodeLine{00415\ \{}
+\DoxyCodeLine{00416\ \ \ Eigen::MatrixXd\ V;}
+\DoxyCodeLine{00417\ \ \ \mbox{\hyperlink{namespaceigl_a6df6ee5a6c7852f628cefbb8dbb025af}{list\_to\_matrix}}(vV,V);}
+\DoxyCodeLine{00418\ \ \ \textcolor{keywordflow}{return}\ this-\/>save\_index(V,name);}
+\DoxyCodeLine{00419\ \}}
+\DoxyCodeLine{00420\ }
+\DoxyCodeLine{00421\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedM>}
+\DoxyCodeLine{00422\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a4fe9cb0440cddb78e69dd3fb36632262}{igl::matlab::MatlabWorkspace::find}}(\ }
+\DoxyCodeLine{00423\ \ \ \textcolor{keyword}{const}\ std::string\ \&\ name,}
+\DoxyCodeLine{00424\ \ \ Eigen::PlainObjectBase<DerivedM>\&\ M)}
+\DoxyCodeLine{00425\ \{}
+\DoxyCodeLine{00426\ \ \ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00427\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ i\ =\ std::find(names.begin(),\ names.end(),\ name)-\/names.begin();}
+\DoxyCodeLine{00428\ \ \ \textcolor{keywordflow}{if}(i>=(\textcolor{keywordtype}{int})names.size())}
+\DoxyCodeLine{00429\ \ \ \{}
+\DoxyCodeLine{00430\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00431\ \ \ \}}
+\DoxyCodeLine{00432\ \ \ assert(i<=(\textcolor{keywordtype}{int})data.size());}
+\DoxyCodeLine{00433\ \ \ mxArray\ *\ mx\_data\ =\ data[i];}
+\DoxyCodeLine{00434\ \ \ assert(!mxIsSparse(mx\_data));}
+\DoxyCodeLine{00435\ \ \ assert(mxGetNumberOfDimensions(mx\_data)\ ==\ 2);}
+\DoxyCodeLine{00436\ \ \ \textcolor{comment}{//cout<<name<<"{}:\ "{}<<mxGetM(mx\_data)<<"{}\ "{}<<mxGetN(mx\_data)<<endl;}}
+\DoxyCodeLine{00437\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ m\ =\ mxGetM(mx\_data);}
+\DoxyCodeLine{00438\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ n\ =\ mxGetN(mx\_data);}
+\DoxyCodeLine{00439\ \ \ \textcolor{comment}{//\ Handle\ vectors:\ in\ the\ sense\ that\ anything\ found\ becomes\ a\ column\ vector,}}
+\DoxyCodeLine{00440\ \ \ \textcolor{comment}{//\ whether\ it\ was\ column\ vector,\ row\ vector\ or\ matrix}}
+\DoxyCodeLine{00441\ \ \ \textcolor{keywordflow}{if}(DerivedM::IsVectorAtCompileTime)}
+\DoxyCodeLine{00442\ \ \ \{}
+\DoxyCodeLine{00443\ \ \ \ \ assert(m==1\ ||\ n==1\ ||\ (m==0\ \&\&\ n==0));}
+\DoxyCodeLine{00444\ \ \ \ \ M.resize(m*n,1);}
+\DoxyCodeLine{00445\ \ \ \}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{00446\ \ \ \{}
+\DoxyCodeLine{00447\ \ \ \ \ M.resize(m,n);}
+\DoxyCodeLine{00448\ \ \ \}}
+\DoxyCodeLine{00449\ \ \ assert(mxGetNumberOfElements(mx\_data)\ ==\ M.size());}
+\DoxyCodeLine{00450\ \ \ \textcolor{comment}{//\ Use\ Eigen's\ map\ and\ cast\ to\ copy}}
+\DoxyCodeLine{00451\ \ \ M\ =\ Eigen::Map<\ Eigen::Matrix<double,Eigen::Dynamic,Eigen::Dynamic>\ >\ }
+\DoxyCodeLine{00452\ \ \ \ \ (mxGetPr(mx\_data),M.rows(),M.cols()).cast<typename\ DerivedM::Scalar>();}
+\DoxyCodeLine{00453\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00454\ \}}
+\DoxyCodeLine{00455\ }
+\DoxyCodeLine{00456\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ MT>}
+\DoxyCodeLine{00457\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a4fe9cb0440cddb78e69dd3fb36632262}{igl::matlab::MatlabWorkspace::find}}(\ }
+\DoxyCodeLine{00458\ \ \ \textcolor{keyword}{const}\ std::string\ \&\ name,}
+\DoxyCodeLine{00459\ \ \ Eigen::SparseMatrix<MT>\&\ M)}
+\DoxyCodeLine{00460\ \{}
+\DoxyCodeLine{00461\ \ \ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00462\ \ \ \textcolor{keyword}{using\ namespace\ }Eigen;}
+\DoxyCodeLine{00463\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ i\ =\ std::find(names.begin(),\ names.end(),\ name)-\/names.begin();}
+\DoxyCodeLine{00464\ \ \ \textcolor{keywordflow}{if}(i>=(\textcolor{keywordtype}{int})names.size())}
+\DoxyCodeLine{00465\ \ \ \{}
+\DoxyCodeLine{00466\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00467\ \ \ \}}
+\DoxyCodeLine{00468\ \ \ assert(i<=(\textcolor{keywordtype}{int})data.size());}
+\DoxyCodeLine{00469\ \ \ mxArray\ *\ mx\_data\ =\ data[i];}
+\DoxyCodeLine{00470\ \ \ \textcolor{comment}{//\ Handle\ boring\ case\ where\ matrix\ is\ actually\ an\ empty\ dense\ matrix}}
+\DoxyCodeLine{00471\ \ \ \textcolor{keywordflow}{if}(mxGetNumberOfElements(mx\_data)\ ==\ 0)}
+\DoxyCodeLine{00472\ \ \ \{}
+\DoxyCodeLine{00473\ \ \ \ \ M.resize(0,0);}
+\DoxyCodeLine{00474\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00475\ \ \ \}}
+\DoxyCodeLine{00476\ \ \ assert(mxIsSparse(mx\_data));}
+\DoxyCodeLine{00477\ \ \ assert(mxGetNumberOfDimensions(mx\_data)\ ==\ 2);}
+\DoxyCodeLine{00478\ \ \ \textcolor{comment}{//cout<<name<<"{}:\ "{}<<mxGetM(mx\_data)<<"{}\ "{}<<mxGetN(mx\_data)<<endl;}}
+\DoxyCodeLine{00479\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ m\ =\ mxGetM(mx\_data);}
+\DoxyCodeLine{00480\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ n\ =\ mxGetN(mx\_data);}
+\DoxyCodeLine{00481\ \ \ \textcolor{comment}{//\ TODO:\ It\ should\ be\ possible\ to\ directly\ load\ the\ data\ into\ the\ sparse}}
+\DoxyCodeLine{00482\ \ \ \textcolor{comment}{//\ matrix\ without\ going\ through\ the\ triplets}}
+\DoxyCodeLine{00483\ \ \ \textcolor{comment}{//\ Copy\ data\ immediately}}
+\DoxyCodeLine{00484\ \ \ \textcolor{keywordtype}{double}\ *\ pr\ =\ mxGetPr(mx\_data);}
+\DoxyCodeLine{00485\ \ \ mwIndex\ *\ ir\ =\ mxGetIr(mx\_data);}
+\DoxyCodeLine{00486\ \ \ mwIndex\ *\ jc\ =\ mxGetJc(mx\_data);}
+\DoxyCodeLine{00487\ \ \ vector<Triplet<MT>\ >\ MIJV;}
+\DoxyCodeLine{00488\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ nnz\ =\ mxGetNzmax(mx\_data);}
+\DoxyCodeLine{00489\ \ \ MIJV.reserve(nnz);}
+\DoxyCodeLine{00490\ \ \ \textcolor{comment}{//\ Iterate\ over\ outside}}
+\DoxyCodeLine{00491\ \ \ \textcolor{keywordtype}{int}\ k\ =\ 0;}
+\DoxyCodeLine{00492\ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j=0;\ j<n;j++)}
+\DoxyCodeLine{00493\ \ \ \{}
+\DoxyCodeLine{00494\ \ \ \ \ \textcolor{comment}{//\ Iterate\ over\ inside}}
+\DoxyCodeLine{00495\ \ \ \ \ \textcolor{keywordflow}{while}(k<(\textcolor{keywordtype}{int})jc[j+1])}
+\DoxyCodeLine{00496\ \ \ \ \ \{}
+\DoxyCodeLine{00497\ \ \ \ \ \ \ \textcolor{comment}{//cout<<ir[k]<<"{}\ "{}<<j<<"{}\ "{}<<pr[k]<<endl;}}
+\DoxyCodeLine{00498\ \ \ \ \ \ \ assert((\textcolor{keywordtype}{int})ir[k]<m);}
+\DoxyCodeLine{00499\ \ \ \ \ \ \ assert((\textcolor{keywordtype}{int})j<n);}
+\DoxyCodeLine{00500\ \ \ \ \ \ \ MIJV.push\_back(Triplet<MT\ >(ir[k],j,pr[k]));}
+\DoxyCodeLine{00501\ \ \ \ \ \ \ k++;}
+\DoxyCodeLine{00502\ \ \ \ \ \}}
+\DoxyCodeLine{00503\ \ \ \}}
+\DoxyCodeLine{00504\ \ \ M.resize(m,n);}
+\DoxyCodeLine{00505\ \ \ M.setFromTriplets(MIJV.begin(),MIJV.end());}
+\DoxyCodeLine{00506\ }
+\DoxyCodeLine{00507\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00508\ \}}
+\DoxyCodeLine{00509\ }
+\DoxyCodeLine{00510\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a4fe9cb0440cddb78e69dd3fb36632262}{igl::matlab::MatlabWorkspace::find}}(\ }
+\DoxyCodeLine{00511\ \ \ \textcolor{keyword}{const}\ std::string\ \&\ name,}
+\DoxyCodeLine{00512\ \ \ \textcolor{keywordtype}{int}\ \&\ v)}
+\DoxyCodeLine{00513\ \{}
+\DoxyCodeLine{00514\ \ \ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00515\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ i\ =\ std::find(names.begin(),\ names.end(),\ name)-\/names.begin();}
+\DoxyCodeLine{00516\ \ \ \textcolor{keywordflow}{if}(i>=(\textcolor{keywordtype}{int})names.size())}
+\DoxyCodeLine{00517\ \ \ \{}
+\DoxyCodeLine{00518\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00519\ \ \ \}}
+\DoxyCodeLine{00520\ \ \ assert(i<=(\textcolor{keywordtype}{int})data.size());}
+\DoxyCodeLine{00521\ \ \ mxArray\ *\ mx\_data\ =\ data[i];}
+\DoxyCodeLine{00522\ \ \ assert(!mxIsSparse(mx\_data));}
+\DoxyCodeLine{00523\ \ \ assert(mxGetNumberOfDimensions(mx\_data)\ ==\ 2);}
+\DoxyCodeLine{00524\ \ \ \textcolor{comment}{//cout<<name<<"{}:\ "{}<<mxGetM(mx\_data)<<"{}\ "{}<<mxGetN(mx\_data)<<endl;}}
+\DoxyCodeLine{00525\ \ \ assert(mxGetNumberOfElements(mx\_data)\ ==\ 1);}
+\DoxyCodeLine{00526\ \ \ copy(}
+\DoxyCodeLine{00527\ \ \ \ \ mxGetPr(mx\_data),}
+\DoxyCodeLine{00528\ \ \ \ \ mxGetPr(mx\_data)+mxGetNumberOfElements(mx\_data),}
+\DoxyCodeLine{00529\ \ \ \ \ \&v);}
+\DoxyCodeLine{00530\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00531\ \}}
+\DoxyCodeLine{00532\ }
+\DoxyCodeLine{00533\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_a4fe9cb0440cddb78e69dd3fb36632262}{igl::matlab::MatlabWorkspace::find}}(\ }
+\DoxyCodeLine{00534\ \ \ \textcolor{keyword}{const}\ std::string\ \&\ name,}
+\DoxyCodeLine{00535\ \ \ \textcolor{keywordtype}{double}\ \&\ d)}
+\DoxyCodeLine{00536\ \{}
+\DoxyCodeLine{00537\ \ \ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00538\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ i\ =\ std::find(names.begin(),\ names.end(),\ name)-\/names.begin();}
+\DoxyCodeLine{00539\ \ \ \textcolor{keywordflow}{if}(i>=(\textcolor{keywordtype}{int})names.size())}
+\DoxyCodeLine{00540\ \ \ \{}
+\DoxyCodeLine{00541\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00542\ \ \ \}}
+\DoxyCodeLine{00543\ \ \ assert(i<=(\textcolor{keywordtype}{int})data.size());}
+\DoxyCodeLine{00544\ \ \ mxArray\ *\ mx\_data\ =\ data[i];}
+\DoxyCodeLine{00545\ \ \ assert(!mxIsSparse(mx\_data));}
+\DoxyCodeLine{00546\ \ \ assert(mxGetNumberOfDimensions(mx\_data)\ ==\ 2);}
+\DoxyCodeLine{00547\ \ \ \textcolor{comment}{//cout<<name<<"{}:\ "{}<<mxGetM(mx\_data)<<"{}\ "{}<<mxGetN(mx\_data)<<endl;}}
+\DoxyCodeLine{00548\ \ \ assert(mxGetNumberOfElements(mx\_data)\ ==\ 1);}
+\DoxyCodeLine{00549\ \ \ copy(}
+\DoxyCodeLine{00550\ \ \ \ \ mxGetPr(mx\_data),}
+\DoxyCodeLine{00551\ \ \ \ \ mxGetPr(mx\_data)+mxGetNumberOfElements(mx\_data),}
+\DoxyCodeLine{00552\ \ \ \ \ \&d);}
+\DoxyCodeLine{00553\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00554\ \}}
+\DoxyCodeLine{00555\ }
+\DoxyCodeLine{00556\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedM>}
+\DoxyCodeLine{00557\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1matlab_1_1MatlabWorkspace_aa5795043aae313b4116c5ef9e14e8657}{igl::matlab::MatlabWorkspace::find\_index}}(\ }
+\DoxyCodeLine{00558\ \ \ \textcolor{keyword}{const}\ std::string\ \&\ name,}
+\DoxyCodeLine{00559\ \ \ Eigen::PlainObjectBase<DerivedM>\&\ M)}
+\DoxyCodeLine{00560\ \{}
+\DoxyCodeLine{00561\ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{namespaceigl_ad0ba264f987871035fb7d12de96fccab}{find}}(name,M))}
+\DoxyCodeLine{00562\ \ \ \{}
+\DoxyCodeLine{00563\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00564\ \ \ \}}
+\DoxyCodeLine{00565\ \ \ M.array()\ -\/=\ 1;}
+\DoxyCodeLine{00566\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00567\ \}}
+\DoxyCodeLine{00568\ }
+\DoxyCodeLine{00569\ }
+\DoxyCodeLine{00570\ \textcolor{comment}{//template\ <typename\ Data>}}
+\DoxyCodeLine{00571\ \textcolor{comment}{//bool\ igl::matlab::MatlabWorkspace::save(const\ Data\ \&\ M,\ const\ std::string\ \&\ name)}}
+\DoxyCodeLine{00572\ \textcolor{comment}{//\{}}
+\DoxyCodeLine{00573\ \textcolor{comment}{//\ \ using\ namespace\ std;}}
+\DoxyCodeLine{00574\ \textcolor{comment}{//\ \ //\ If\ I\ don't\ know\ the\ type\ then\ I\ can't\ save\ it}}
+\DoxyCodeLine{00575\ \textcolor{comment}{//\ \ cerr<<"{}\string^MatlabWorkspace::save\ Error:\ Unknown\ data\ type.\ "{}<<}}
+\DoxyCodeLine{00576\ \textcolor{comment}{//\ \ \ \ name<<"{}\ not\ saved."{}<<endl;}}
+\DoxyCodeLine{00577\ \textcolor{comment}{//\ \ return\ false;}}
+\DoxyCodeLine{00578\ \textcolor{comment}{//\}}}
+\DoxyCodeLine{00579\ }
+\DoxyCodeLine{00580\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00581\ }
+
+\end{DoxyCode}

@@ -1,0 +1,22 @@
+\doxysection{include/igl/arap\+\_\+linear\+\_\+block.h File Reference}
+\hypertarget{arap__linear__block_8h}{}\label{arap__linear__block_8h}\index{include/igl/arap\_linear\_block.h@{include/igl/arap\_linear\_block.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include $<$igl/\+ARAPEnergy\+Type.\+h$>$}\newline
+{\ttfamily \#include \"{}arap\+\_\+linear\+\_\+block.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename MatV , typename MatF , typename MatK $>$ }\\void \mbox{\hyperlink{namespaceigl_ae1324ec871ee5fe0f3d6fa9b461ced93}{igl\+::arap\+\_\+linear\+\_\+block}} (const MatV \&V, const MatF \&F, const int d, const \mbox{\hyperlink{namespaceigl_afcbc9001656cf2d4cc135602618c97e5}{igl\+::\+ARAPEnergy\+Type}} energy, MatK \&Kd)
+\begin{DoxyCompactList}\small\item\em Constructs a block of the matrix which constructs the linear terms of a given arap energy. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename MatV , typename MatF , typename MatK $>$ }\\void \mbox{\hyperlink{namespaceigl_ad13e109be700043c1228c300bac31daf}{igl\+::arap\+\_\+linear\+\_\+block\+\_\+spokes}} (const MatV \&V, const MatF \&F, const int d, MatK \&Kd)
+\begin{DoxyCompactList}\small\item\em Constructs a block of the matrix which constructs the linear terms for spokes energy. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename MatV , typename MatF , typename MatK $>$ }\\void \mbox{\hyperlink{namespaceigl_a7280d256cac58af8c0dceb1e0ab487ca}{igl\+::arap\+\_\+linear\+\_\+block\+\_\+spokes\+\_\+and\+\_\+rims}} (const MatV \&V, const MatF \&F, const int d, MatK \&Kd)
+\begin{DoxyCompactList}\small\item\em Constructs a block of the matrix which constructs the linear terms for spokes and rims energy. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename MatV , typename MatF , typename MatK $>$ }\\void \mbox{\hyperlink{namespaceigl_af81355594a143ab2601ce468536c0112}{igl\+::arap\+\_\+linear\+\_\+block\+\_\+elements}} (const MatV \&V, const MatF \&F, const int d, MatK \&Kd)
+\begin{DoxyCompactList}\small\item\em Constructs a block of the matrix which constructs the linear terms for per element energy. \end{DoxyCompactList}\end{DoxyCompactItemize}

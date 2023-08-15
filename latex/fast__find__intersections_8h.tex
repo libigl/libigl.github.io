@@ -1,0 +1,32 @@
+\doxysection{include/igl/fast\+\_\+find\+\_\+intersections.h File Reference}
+\hypertarget{fast__find__intersections_8h}{}\label{fast__find__intersections_8h}\index{include/igl/fast\_find\_intersections.h@{include/igl/fast\_find\_intersections.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include \"{}AABB.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include \"{}fast\+\_\+find\+\_\+intersections.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{fast__find__intersections_8h_a0f04df7144fa522ce5883acf57070b8d}{FAST\+\_\+\+FIND\+\_\+\+MESH\+\_\+\+INTERSECT\+\_\+H}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Derived\+V1 , typename Derived\+F1 , typename Derived\+V2 , typename Derived\+F2 , typename DerivedI , typename DerivedE $>$ }\\void \mbox{\hyperlink{namespaceigl_a30b7f81580d0eb77cfa387adaa4e9c67}{igl\+::fast\+\_\+find\+\_\+intersections}} (const Eigen\+::\+Matrix\+Base$<$ Derived\+V1 $>$ \&V1, const Eigen\+::\+Matrix\+Base$<$ Derived\+F1 $>$ \&F1, const Eigen\+::\+Matrix\+Base$<$ Derived\+V2 $>$ \&V2, const Eigen\+::\+Matrix\+Base$<$ Derived\+F2 $>$ \&F2, Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&intersect\+\_\+pairs, Eigen\+::\+Plain\+Object\+Base$<$ DerivedE $>$ \&\mbox{\hyperlink{namespaceigl_a0efd6c6b371a55178d53cf0afacf34ee}{edges}})
+\begin{DoxyCompactList}\small\item\em Identify triangles where two meshes interesect using AABBTree and tri\+\_\+tri\+\_\+intersection\+\_\+test\+\_\+3d. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derived\+V1 , typename Derived\+F1 , typename Derived\+V2 , typename Derived\+F2 , typename DerivedI , typename DerivedE $>$ }\\void \mbox{\hyperlink{namespaceigl_a768af49174bc1daafe45f9eedda6eb8f}{igl\+::fast\+\_\+find\+\_\+intersections}} (const \mbox{\hyperlink{classigl_1_1AABB}{AABB}}$<$ Derived\+V1, 3 $>$ \&tree, const Eigen\+::\+Matrix\+Base$<$ Derived\+V1 $>$ \&V1, const Eigen\+::\+Matrix\+Base$<$ Derived\+F1 $>$ \&F1, const Eigen\+::\+Matrix\+Base$<$ Derived\+V2 $>$ \&V2, const Eigen\+::\+Matrix\+Base$<$ Derived\+F2 $>$ \&F2, Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&intersect\+\_\+pairs, Eigen\+::\+Plain\+Object\+Base$<$ DerivedE $>$ \&\mbox{\hyperlink{namespaceigl_a0efd6c6b371a55178d53cf0afacf34ee}{edges}})
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{fast__find__intersections_8h_a0f04df7144fa522ce5883acf57070b8d}\label{fast__find__intersections_8h_a0f04df7144fa522ce5883acf57070b8d} 
+\index{fast\_find\_intersections.h@{fast\_find\_intersections.h}!FAST\_FIND\_MESH\_INTERSECT\_H@{FAST\_FIND\_MESH\_INTERSECT\_H}}
+\index{FAST\_FIND\_MESH\_INTERSECT\_H@{FAST\_FIND\_MESH\_INTERSECT\_H}!fast\_find\_intersections.h@{fast\_find\_intersections.h}}
+\doxysubsubsection{\texorpdfstring{FAST\_FIND\_MESH\_INTERSECT\_H}{FAST\_FIND\_MESH\_INTERSECT\_H}}
+{\footnotesize\ttfamily \#define FAST\+\_\+\+FIND\+\_\+\+MESH\+\_\+\+INTERSECT\+\_\+H}
+

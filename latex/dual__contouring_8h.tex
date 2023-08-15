@@ -1,0 +1,21 @@
+\doxysection{include/igl/dual\+\_\+contouring.h File Reference}
+\hypertarget{dual__contouring_8h}{}\label{dual__contouring_8h}\index{include/igl/dual\_contouring.h@{include/igl/dual\_contouring.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include \"{}dual\+\_\+contouring.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedQ $>$ }\\void \mbox{\hyperlink{namespaceigl_ac43379fb55c1019ff88c726aacb64b91}{igl\+::dual\+\_\+contouring}} (const std\+::function$<$ typename Derived\+V\+::\+Scalar(const Eigen\+::\+Matrix$<$ typename Derived\+V\+::\+Scalar, 1, 3 $>$ \&)$>$ \&f, const std\+::function$<$ Eigen\+::\+Matrix$<$ typename Derived\+V\+::\+Scalar, 1, 3 $>$(const Eigen\+::\+Matrix$<$ typename Derived\+V\+::\+Scalar, 1, 3 $>$ \&)$>$ \&f\+\_\+grad, const Eigen\+::\+Matrix$<$ typename Derived\+V\+::\+Scalar, 1, 3 $>$ \&min\+\_\+corner, const Eigen\+::\+Matrix$<$ typename Derived\+V\+::\+Scalar, 1, 3 $>$ \&max\+\_\+corner, const int nx, const int ny, const int nz, const bool constrained, const bool triangles, const bool root\+\_\+finding, Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, Eigen\+::\+Plain\+Object\+Base$<$ DerivedQ $>$ \&Q)
+\begin{DoxyCompactList}\small\item\em Dual contouring to extract a pure quad mesh from differentiable implicit function using a dense grid. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derived\+Gf , typename Derived\+GV , typename DerivedV , typename DerivedQ $>$ }\\void \mbox{\hyperlink{namespaceigl_ab912fd8e785a570ce48146acf3c84597}{igl\+::dual\+\_\+contouring}} (const std\+::function$<$ typename Derived\+V\+::\+Scalar(const Eigen\+::\+Matrix$<$ typename Derived\+V\+::\+Scalar, 1, 3 $>$ \&)$>$ \&f, const std\+::function$<$ Eigen\+::\+Matrix$<$ typename Derived\+V\+::\+Scalar, 1, 3 $>$(const Eigen\+::\+Matrix$<$ typename Derived\+V\+::\+Scalar, 1, 3 $>$ \&)$>$ \&f\+\_\+grad, const Eigen\+::\+Matrix\+Base$<$ Derived\+Gf $>$ \&Gf, const Eigen\+::\+Matrix\+Base$<$ Derived\+GV $>$ \&GV, const int nx, const int ny, const int nz, const bool constrained, const bool triangles, const bool root\+\_\+finding, Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, Eigen\+::\+Plain\+Object\+Base$<$ DerivedQ $>$ \&Q)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derived\+Gf , typename Derived\+GV , typename Derived\+GI , typename DerivedV , typename DerivedQ $>$ }\\void \mbox{\hyperlink{namespaceigl_aab25bc6339ed9e928df2fcb7bd20ef7e}{igl\+::dual\+\_\+contouring}} (const std\+::function$<$ typename Derived\+V\+::\+Scalar(const Eigen\+::\+Matrix$<$ typename Derived\+V\+::\+Scalar, 1, 3 $>$ \&)$>$ \&f, const std\+::function$<$ Eigen\+::\+Matrix$<$ typename Derived\+V\+::\+Scalar, 1, 3 $>$(const Eigen\+::\+Matrix$<$ typename Derived\+V\+::\+Scalar, 1, 3 $>$ \&)$>$ \&f\+\_\+grad, const Eigen\+::\+Matrix$<$ typename Derived\+V\+::\+Scalar, 1, 3 $>$ \&step, const Eigen\+::\+Matrix\+Base$<$ Derived\+Gf $>$ \&Gf, const Eigen\+::\+Matrix\+Base$<$ Derived\+GV $>$ \&GV, const Eigen\+::\+Matrix\+Base$<$ Derived\+GI $>$ \&GI, const bool constrained, const bool triangles, const bool root\+\_\+finding, Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, Eigen\+::\+Plain\+Object\+Base$<$ DerivedQ $>$ \&Q)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}

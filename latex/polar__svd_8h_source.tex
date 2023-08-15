@@ -1,0 +1,47 @@
+\doxysection{polar\+\_\+svd.\+h}
+\hypertarget{polar__svd_8h_source}{}\label{polar__svd_8h_source}\index{include/igl/polar\_svd.h@{include/igl/polar\_svd.h}}
+\mbox{\hyperlink{polar__svd_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2013\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_POLAR\_SVD}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_POLAR\_SVD}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00026\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedA,}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedR,}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedT,}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedU,}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedS,}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV>}
+\DoxyCodeLine{00033\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a5bf5509fee9fb84f1bce5173d27cb3e4}{polar\_svd}}(}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedA>\ \&\ A,}
+\DoxyCodeLine{00035\ \ \ \ \ Eigen::PlainObjectBase<DerivedR>\ \&\ R,}
+\DoxyCodeLine{00036\ \ \ \ \ Eigen::PlainObjectBase<DerivedT>\ \&\ T,}
+\DoxyCodeLine{00037\ \ \ \ \ Eigen::PlainObjectBase<DerivedU>\ \&\ U,}
+\DoxyCodeLine{00038\ \ \ \ \ Eigen::PlainObjectBase<DerivedS>\ \&\ S,}
+\DoxyCodeLine{00039\ \ \ \ \ Eigen::PlainObjectBase<DerivedV>\ \&\ V);}
+\DoxyCodeLine{00041\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedA,}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedR,}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedT>}
+\DoxyCodeLine{00045\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a5bf5509fee9fb84f1bce5173d27cb3e4}{polar\_svd}}(}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedA>\ \&\ A,}
+\DoxyCodeLine{00047\ \ \ \ \ Eigen::PlainObjectBase<DerivedR>\ \&\ R,}
+\DoxyCodeLine{00048\ \ \ \ \ Eigen::PlainObjectBase<DerivedT>\ \&\ T);}
+\DoxyCodeLine{00049\ \}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#\ \ include\ "{}polar\_svd.cpp"{}}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

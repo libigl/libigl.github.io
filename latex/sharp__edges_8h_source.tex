@@ -1,0 +1,51 @@
+\doxysection{sharp\+\_\+edges.\+h}
+\hypertarget{sharp__edges_8h_source}{}\label{sharp__edges_8h_source}\index{include/igl/sharp\_edges.h@{include/igl/sharp\_edges.h}}
+\mbox{\hyperlink{sharp__edges_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ IGL\_SHARP\_EDGES\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ IGL\_SHARP\_EDGES\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <igl/igl\_inline.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00024\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedSE,}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedE,}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{typename}\ DeriveduE,}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedEMAP,}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{typename}\ uE2Etype,}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{typename}\ sharptype>}
+\DoxyCodeLine{00033\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a0b1cfc3d745b201faa8129b75d5a3b79}{sharp\_edges}}(}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{typename}\ DerivedV::Scalar\ angle,}
+\DoxyCodeLine{00037\ \ \ \ \ Eigen::PlainObjectBase<DerivedSE>\ \&\ SE,}
+\DoxyCodeLine{00038\ \ \ \ \ Eigen::PlainObjectBase<DerivedE>\ \&\ E,}
+\DoxyCodeLine{00039\ \ \ \ \ Eigen::PlainObjectBase<DeriveduE>\ \&\ uE,}
+\DoxyCodeLine{00040\ \ \ \ \ Eigen::PlainObjectBase<DerivedEMAP>\ \&\ EMAP,}
+\DoxyCodeLine{00041\ \ \ \ \ std::vector<std::vector<uE2Etype>\ >\ \&\ uE2E,}
+\DoxyCodeLine{00042\ \ \ \ \ std::vector<\ sharptype\ >\ \&\ sharp);}
+\DoxyCodeLine{00044\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedSE>}
+\DoxyCodeLine{00048\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a0b1cfc3d745b201faa8129b75d5a3b79}{sharp\_edges}}(}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{typename}\ DerivedV::Scalar\ angle,}
+\DoxyCodeLine{00052\ \ \ \ \ Eigen::PlainObjectBase<DerivedSE>\ \&\ SE}
+\DoxyCodeLine{00053\ \ \ \ \ );}
+\DoxyCodeLine{00054\ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#\ \ include\ "{}sharp\_edges.cpp"{}}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}

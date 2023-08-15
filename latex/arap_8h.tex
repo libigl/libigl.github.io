@@ -1,0 +1,25 @@
+\doxysection{include/igl/arap.h File Reference}
+\hypertarget{arap_8h}{}\label{arap_8h}\index{include/igl/arap.h@{include/igl/arap.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include \"{}min\+\_\+quad\+\_\+with\+\_\+fixed.\+h\"{}}\newline
+{\ttfamily \#include \"{}ARAPEnergy\+Type.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include \"{}arap.\+cpp\"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structigl_1_1ARAPData}{igl\+::\+ARAPData}}
+\begin{DoxyCompactList}\small\item\em Parameters and precomputed values for arap solver. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename Derivedb $>$ }\\bool \mbox{\hyperlink{namespaceigl_a48e5f486e14127dc6eb9013a7dc312bd}{igl\+::arap\+\_\+precomputation}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const int dim, const Eigen\+::\+Matrix\+Base$<$ Derivedb $>$ \&b, \mbox{\hyperlink{structigl_1_1ARAPData}{ARAPData}} \&data)
+\begin{DoxyCompactList}\small\item\em Compute necessary information to start using an ARAP deformation using local-\/global solver as described in \"{}\+As-\/rigid-\/as-\/possible surface modeling\"{} \mbox{[}Sorkine and Alexa 2007\mbox{]}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derivedbc , typename DerivedU $>$ }\\bool \mbox{\hyperlink{namespaceigl_a62a45ef9782fe4b54d7487a8b3bb45e9}{igl\+::arap\+\_\+solve}} (const Eigen\+::\+Matrix\+Base$<$ Derivedbc $>$ \&bc, \mbox{\hyperlink{structigl_1_1ARAPData}{ARAPData}} \&data, Eigen\+::\+Matrix\+Base$<$ DerivedU $>$ \&U)
+\begin{DoxyCompactList}\small\item\em Conduct arap solve. \end{DoxyCompactList}\end{DoxyCompactItemize}

@@ -1,0 +1,191 @@
+\doxysection{tinyply.\+h}
+\hypertarget{tinyply_8h_source}{}\label{tinyply_8h_source}\index{include/igl/tinyply.h@{include/igl/tinyply.h}}
+\mbox{\hyperlink{tinyply_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ tinyply\ 2.3.2\ (https://github.com/ddiakopoulos/tinyply)}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ A\ single-\/header,\ zero-\/dependency\ (except\ the\ C++\ STL)\ public\ domain\ implementation}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ of\ the\ PLY\ mesh\ file\ format.\ Requires\ C++11;\ errors\ are\ handled\ through\ exceptions.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ This\ software\ is\ in\ the\ public\ domain.\ Where\ that\ dedication\ is\ not}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ recognized,\ you\ are\ granted\ a\ perpetual,\ irrevocable\ license\ to\ copy,}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ distribute,\ and\ modify\ this\ file\ as\ you\ see\ fit.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Authored\ by\ Dimitri\ Diakopoulos\ (http://www.dimitridiakopoulos.com)}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ tinyply.h\ may\ be\ included\ in\ many\ files,\ however\ in\ a\ single\ compiled\ file,}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ the\ implementation\ must\ be\ created\ with\ the\ following\ defined\ prior\ to\ header\ inclusion}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ \#define\ TINYPLY\_IMPLEMENTATION}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ \ \ tinyply\ header\ \ \ //}}
+\DoxyCodeLine{00022\ \textcolor{comment}{}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#ifndef\ tinyply\_h}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ tinyply\_h}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <igl/igl\_inline.h>}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <cstddef>}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \textcolor{keyword}{namespace\ }tinyply}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceigl_1_1tinyply_a635cb7fe81c17c2be5899e7caea506cd}{Type}}\ :\ uint8\_t}
+\DoxyCodeLine{00044\ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1tinyply_a635cb7fe81c17c2be5899e7caea506cdaccc0377a8afbf50e7094f5c23a8af223}{INVALID}},}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1tinyply_a635cb7fe81c17c2be5899e7caea506cdaee9d73311ff0658494edfff14c3ec1e3}{INT8}},}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1tinyply_a635cb7fe81c17c2be5899e7caea506cdaecfc091ed2a607335524c8389cfa41b5}{UINT8}},}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1tinyply_a635cb7fe81c17c2be5899e7caea506cda5f90af42814c0a419d715d43ae54fd7a}{INT16}},}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1tinyply_a635cb7fe81c17c2be5899e7caea506cda48d8f1a723d44ff4a87db1bb6c551c62}{UINT16}},}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1tinyply_a635cb7fe81c17c2be5899e7caea506cda6495adba09844fac8eeb0aba86e6f1bf}{INT32}},}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1tinyply_a635cb7fe81c17c2be5899e7caea506cda17266551181f69a1b4a3ad5c9e270afc}{UINT32}},}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1tinyply_a635cb7fe81c17c2be5899e7caea506cda967d280b5c16d95f2947647dd2ca6cc2}{FLOAT32}},}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1tinyply_a635cb7fe81c17c2be5899e7caea506cda139882c654db8a57f7c3092de1dd0b02}{FLOAT64}}}
+\DoxyCodeLine{00054\ \ \ \ \ \};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1tinyply_1_1PropertyInfo}{PropertyInfo}}}
+\DoxyCodeLine{00057\ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1tinyply_1_1PropertyInfo_aa87ae72ddc5a19a47d4f1c051880aec6}{PropertyInfo}}()\ \{\};}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1tinyply_1_1PropertyInfo_abb249a8f371cfce22ec5153cb2de5cf3}{PropertyInfo}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{structigl_1_1tinyply_1_1PropertyInfo_ad13126d45ea57469ff33881dc56ec311}{stride}},\ std::string\ \mbox{\hyperlink{structigl_1_1tinyply_1_1PropertyInfo_abe2524efba37e0132a893d25743e7590}{str}})}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{structigl_1_1tinyply_1_1PropertyInfo_ad13126d45ea57469ff33881dc56ec311}{stride}}(\mbox{\hyperlink{structigl_1_1tinyply_1_1PropertyInfo_ad13126d45ea57469ff33881dc56ec311}{stride}}),\ \mbox{\hyperlink{structigl_1_1tinyply_1_1PropertyInfo_abe2524efba37e0132a893d25743e7590}{str}}(\mbox{\hyperlink{structigl_1_1tinyply_1_1PropertyInfo_abe2524efba37e0132a893d25743e7590}{str}})\ \{\}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structigl_1_1tinyply_1_1PropertyInfo_ad13126d45ea57469ff33881dc56ec311}{stride}}\ \{0\};}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{structigl_1_1tinyply_1_1PropertyInfo_abe2524efba37e0132a893d25743e7590}{str}};}
+\DoxyCodeLine{00063\ \ \ \ \ \};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{static}\ std::map<Type,\ PropertyInfo>\ PropertyTable}
+\DoxyCodeLine{00066\ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \{\ \mbox{\hyperlink{namespaceigl_1_1tinyply_a635cb7fe81c17c2be5899e7caea506cdaee9d73311ff0658494edfff14c3ec1e3}{Type::INT8}},\ \ \ \ \mbox{\hyperlink{structigl_1_1tinyply_1_1PropertyInfo}{PropertyInfo}}(1,\ std::string(\textcolor{stringliteral}{"{}char"{}}))\ \},}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \{\ \mbox{\hyperlink{namespaceigl_1_1tinyply_a635cb7fe81c17c2be5899e7caea506cdaecfc091ed2a607335524c8389cfa41b5}{Type::UINT8}},\ \ \ PropertyInfo(1,\ std::string(\textcolor{stringliteral}{"{}uchar"{}}))\ \},}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \{\ \mbox{\hyperlink{namespaceigl_1_1tinyply_a635cb7fe81c17c2be5899e7caea506cda5f90af42814c0a419d715d43ae54fd7a}{Type::INT16}},\ \ \ PropertyInfo(2,\ std::string(\textcolor{stringliteral}{"{}short"{}}))\ \},}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \{\ \mbox{\hyperlink{namespaceigl_1_1tinyply_a635cb7fe81c17c2be5899e7caea506cda48d8f1a723d44ff4a87db1bb6c551c62}{Type::UINT16}},\ \ PropertyInfo(2,\ std::string(\textcolor{stringliteral}{"{}ushort"{}}))\ \},}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \{\ \mbox{\hyperlink{namespaceigl_1_1tinyply_a635cb7fe81c17c2be5899e7caea506cda6495adba09844fac8eeb0aba86e6f1bf}{Type::INT32}},\ \ \ PropertyInfo(4,\ std::string(\textcolor{stringliteral}{"{}int"{}}))\ \},}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \{\ \mbox{\hyperlink{namespaceigl_1_1tinyply_a635cb7fe81c17c2be5899e7caea506cda17266551181f69a1b4a3ad5c9e270afc}{Type::UINT32}},\ \ PropertyInfo(4,\ std::string(\textcolor{stringliteral}{"{}uint"{}}))\ \},}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \{\ \mbox{\hyperlink{namespaceigl_1_1tinyply_a635cb7fe81c17c2be5899e7caea506cda967d280b5c16d95f2947647dd2ca6cc2}{Type::FLOAT32}},\ PropertyInfo(4,\ std::string(\textcolor{stringliteral}{"{}float"{}}))\ \},}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \{\ \mbox{\hyperlink{namespaceigl_1_1tinyply_a635cb7fe81c17c2be5899e7caea506cda139882c654db8a57f7c3092de1dd0b02}{Type::FLOAT64}},\ PropertyInfo(8,\ std::string(\textcolor{stringliteral}{"{}double"{}}))\ \},}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \{\ \mbox{\hyperlink{namespaceigl_1_1tinyply_a635cb7fe81c17c2be5899e7caea506cdaccc0377a8afbf50e7094f5c23a8af223}{Type::INVALID}},\ PropertyInfo(0,\ std::string(\textcolor{stringliteral}{"{}INVALID"{}}))\}}
+\DoxyCodeLine{00076\ \ \ \ \ \};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classigl_1_1tinyply_1_1Buffer}{Buffer}}}
+\DoxyCodeLine{00079\ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ uint8\_t\ *\ alias\{\ \textcolor{keyword}{nullptr}\ \};}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }delete\_array\ \{\ \textcolor{keywordtype}{void}\ operator()(uint8\_t\ *\ p)\ \{\ \textcolor{keyword}{delete}[]\ p;\ \}\ \};}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ std::unique\_ptr<uint8\_t,\ \textcolor{keyword}{decltype}(Buffer::delete\_array())>\ data;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size\ \{0\};}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1tinyply_1_1Buffer_ac9f5ca8fbe52ba3962f3d6d2339222c9}{Buffer}}()\ \{\};}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1tinyply_1_1Buffer_a6d0419715abbe5b95fa6cb24289d5d54}{Buffer}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ size)\ :\ data(new\ uint8\_t[size],\ delete\_array()),\ size(size)\ \{\ alias\ =\ data.get();\ \}\ \textcolor{comment}{//\ allocating}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1tinyply_1_1Buffer_a9b9faff730b1e5a1d88a034326fc88b4}{Buffer}}(uint8\_t\ *\ ptr):\ alias(ptr)\ \{\ \}\ \textcolor{comment}{//\ non-\/allocating,\ todo:\ set\ size?}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ uint8\_t\ *\ \mbox{\hyperlink{classigl_1_1tinyply_1_1Buffer_a1d07793eaa822f994db155fd72fe9ea4}{get}}()\ \{\ \textcolor{keywordflow}{return}\ alias;\ \}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classigl_1_1tinyply_1_1Buffer_a891d419fc256f66a809b97f13c68bef2}{size\_bytes}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ size;\ \}}
+\DoxyCodeLine{00090\ \ \ \ \ \};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1tinyply_1_1PlyData}{PlyData}}}
+\DoxyCodeLine{00093\ \ \ \ \ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1tinyply_a635cb7fe81c17c2be5899e7caea506cd}{Type}}\ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyData_acd853dee546e67627e473ba1fe139b8e}{t}};}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1tinyply_1_1Buffer}{Buffer}}\ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyData_a19554dbc06e1a4ddc72db201a1ceb613}{buffer}};}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyData_aa0182fb3033e2b89d49d4f2efa50a4bb}{count}}\ \{0\};}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyData_ac2c00013c59096951ef1715c3bb3c38e}{isList}}\ \{\textcolor{keyword}{false}\};}
+\DoxyCodeLine{00098\ \ \ \ \ \};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1tinyply_1_1PlyProperty}{PlyProperty}}}
+\DoxyCodeLine{00101\ \ \ \ \ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyProperty_a28c0d368c4deb528fc72df28beacb6f3}{PlyProperty}}(std::istream\ \&\ is);}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyProperty_a0b83f6e505f3db4292e288e58a82ca0c}{PlyProperty}}(\mbox{\hyperlink{namespaceigl_1_1tinyply_a635cb7fe81c17c2be5899e7caea506cd}{Type}}\ type,\ std::string\ \&\ \_name)\ :\ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyProperty_aa53b2b63462c4cb77ec7229d7cd287eb}{name}}(\_name),\ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyProperty_a1713211f746b7ad6c4a18ebff550dcdf}{propertyType}}(type)\ \{\}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyProperty_a864f3db1ba3ed564ff7367a5d2e76017}{PlyProperty}}(\mbox{\hyperlink{namespaceigl_1_1tinyply_a635cb7fe81c17c2be5899e7caea506cd}{Type}}\ list\_type,\ \mbox{\hyperlink{namespaceigl_1_1tinyply_a635cb7fe81c17c2be5899e7caea506cd}{Type}}\ prop\_type,\ std::string\ \&\ \_name,\ \textcolor{keywordtype}{size\_t}\ list\_count)}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyProperty_aa53b2b63462c4cb77ec7229d7cd287eb}{name}}(\_name),\ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyProperty_a1713211f746b7ad6c4a18ebff550dcdf}{propertyType}}(prop\_type),\ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyProperty_ab590f2baafdcf3a751447def16a59b1b}{isList}}(true),\ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyProperty_abbda3c9c523591c90f189856f3b69a23}{listType}}(list\_type),\ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyProperty_a86df70c01435123a1d5072191ba0ed48}{listCount}}(list\_count)\ \{\}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyProperty_aa53b2b63462c4cb77ec7229d7cd287eb}{name}};}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1tinyply_a635cb7fe81c17c2be5899e7caea506cd}{Type}}\ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyProperty_a1713211f746b7ad6c4a18ebff550dcdf}{propertyType}}\{\ \mbox{\hyperlink{namespaceigl_1_1tinyply_a635cb7fe81c17c2be5899e7caea506cdaccc0377a8afbf50e7094f5c23a8af223}{Type::INVALID}}\ \};}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyProperty_ab590f2baafdcf3a751447def16a59b1b}{isList}}\{\ \textcolor{keyword}{false}\ \};}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1tinyply_a635cb7fe81c17c2be5899e7caea506cd}{Type}}\ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyProperty_abbda3c9c523591c90f189856f3b69a23}{listType}}\{\ \mbox{\hyperlink{namespaceigl_1_1tinyply_a635cb7fe81c17c2be5899e7caea506cdaccc0377a8afbf50e7094f5c23a8af223}{Type::INVALID}}\ \};}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyProperty_a86df70c01435123a1d5072191ba0ed48}{listCount}}\ \{0\};}
+\DoxyCodeLine{00111\ \ \ \ \ \};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1tinyply_1_1PlyElement}{PlyElement}}}
+\DoxyCodeLine{00114\ \ \ \ \ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyElement_a36a4492b4d5569e83cf3a503dfc1d1c7}{PlyElement}}(std::istream\ \&\ istream);}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyElement_adf4f6ae1b570dba888368915f02e6a99}{PlyElement}}(\textcolor{keyword}{const}\ std::string\ \&\ \_name,\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{namespaceigl_a83819bb842f4bc4c8af21a98e1db44b3}{count}})\ :\ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyElement_a22dbc9a2aa517199660cc5c9d39c7972}{name}}(\_name),\ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyElement_a7bdf77722b8d552ee24ffa5098c39bad}{size}}(\mbox{\hyperlink{namespaceigl_a83819bb842f4bc4c8af21a98e1db44b3}{count}})\ \{\}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyElement_a22dbc9a2aa517199660cc5c9d39c7972}{name}};}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyElement_a7bdf77722b8d552ee24ffa5098c39bad}{size}}\ \{0\};}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ std::vector<PlyProperty>\ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyElement_a48289edd1b90a4a60a5f1bf2af42e494}{properties}};}
+\DoxyCodeLine{00120\ \ \ \ \ \};}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1tinyply_1_1PlyFile}{PlyFile}}}
+\DoxyCodeLine{00123\ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }PlyFileImpl;}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ std::unique\_ptr<PlyFileImpl>\ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyFile_a021df6c1d4dc5800635e5e00acb9dd48}{impl}};}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyFile_aaa6e7cd92a1c39569c612f6e49b8fb33}{PlyFile}}();}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyFile_af8acffd41569ea0b02b185334ceac8f3}{\string~PlyFile}}();}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00131\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ The\ ply\ format\ requires\ an\ ascii\ header.\ This\ can\ be\ used\ to\ determine\ at}}
+\DoxyCodeLine{00132\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ runtime\ which\ properties\ or\ elements\ exist\ in\ the\ file.\ Limited\ validation\ of\ the}}
+\DoxyCodeLine{00133\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ header\ is\ performed;\ it\ is\ assumed\ the\ header\ correctly\ reflects\ the\ contents\ of\ the}}
+\DoxyCodeLine{00134\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ payload.\ This\ function\ may\ throw.\ Returns\ true\ on\ success,\ false\ on\ failure.}}
+\DoxyCodeLine{00135\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyFile_a5f1e06b9c8122da785add78a753ec867}{parse\_header}}(std::istream\ \&\ is);}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00139\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ Execute\ a\ read\ operation.\ Data\ must\ be\ requested\ via\ \`{}request\_properties\_from\_element(...)`}}
+\DoxyCodeLine{00140\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ prior\ to\ calling\ this\ function.}}
+\DoxyCodeLine{00141\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyFile_a1461566984e513dc5d291662739f7693}{read}}(std::istream\ \&\ is);}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00145\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ \`{}write`\ performs\ no\ validation\ and\ assumes\ that\ the\ data\ passed\ into}}
+\DoxyCodeLine{00146\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ \`{}add\_properties\_to\_element`\ is\ well-\/formed.}}
+\DoxyCodeLine{00147\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyFile_af40b4078ae710227655e91f06159c31d}{write}}(std::ostream\ \&\ os,\ \textcolor{keywordtype}{bool}\ isBinary);}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00151\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ These\ functions\ are\ valid\ after\ a\ call\ to\ \`{}parse\_header(...)`.\ In\ the\ case\ of}}
+\DoxyCodeLine{00152\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ writing,\ get\_comments()\ reference\ may\ also\ be\ used\ to\ add\ new\ comments\ to\ the\ ply\ header.}}
+\DoxyCodeLine{00153\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ std::vector<PlyElement>\ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyFile_af37a0fb4443dadc094b66dbe0b363665}{get\_elements}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyFile_ae58ee435927acd4842ac716d6e7e1a82}{get\_info}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ std::vector<std::string>\ \&\ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyFile_adfd9999b497b37c71ed2a747193b83b4}{get\_comments}}();}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyFile_af3159bec0c645805bc379fd8d5a512f9}{is\_binary\_file}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00160\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ In\ the\ general\ case\ where\ |list\_size\_hint|\ is\ zero,\ \`{}read`\ performs\ a\ two-\/pass}}
+\DoxyCodeLine{00161\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ parse\ to\ support\ variable\ length\ lists.\ The\ most\ general\ use\ of\ the}}
+\DoxyCodeLine{00162\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ ply\ format\ is\ storing\ triangle\ meshes.\ When\ this\ fact\ is\ known\ a-\/priori,\ we\ can\ pass}}
+\DoxyCodeLine{00163\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ an\ expected\ list\ length\ that\ will\ apply\ to\ this\ element.\ Doing\ so\ results\ in\ an\ up-\/front}}
+\DoxyCodeLine{00164\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ memory\ allocation\ and\ a\ single-\/pass\ import,\ a\ 2x\ performance\ optimization.}}
+\DoxyCodeLine{00165\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ std::shared\_ptr<PlyData>\ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyFile_aa71d3111dd28cbca2fd2c39b67071139}{request\_properties\_from\_element}}(\textcolor{keyword}{const}\ std::string\ \&\ elementKey,}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\ propertyKeys,\ \textcolor{keyword}{const}\ uint32\_t\ list\_size\_hint\ =\ 0);}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structigl_1_1tinyply_1_1PlyFile_a510e35efa75ee2c75abd5a900c48f961}{add\_properties\_to\_element}}(\textcolor{keyword}{const}\ std::string\ \&\ elementKey,}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\ propertyKeys,}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceigl_1_1tinyply_a635cb7fe81c17c2be5899e7caea506cd}{Type}}\ type,}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{namespaceigl_a83819bb842f4bc4c8af21a98e1db44b3}{count}},}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ *\ data,}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceigl_1_1tinyply_a635cb7fe81c17c2be5899e7caea506cd}{Type}}\ listType,}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ listCount);}
+\DoxyCodeLine{00176\ \ \ \ \ \};}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \}\ \textcolor{comment}{//\ end\ namespace\ tinyply}}
+\DoxyCodeLine{00179\ \}\ \textcolor{comment}{//\ end\ namespace\ igl}}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00182\ \textcolor{comment}{//\ implementation\ moved\ to\ tinyply.cpp}}
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\#\ \ include\ "{}tinyply.cpp"{}}}
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ end\ tinyply\_h}}
+
+\end{DoxyCode}

@@ -1,0 +1,30 @@
+\doxysection{include/igl/kelvinlets.h File Reference}
+\hypertarget{kelvinlets_8h}{}\label{kelvinlets_8h}\index{include/igl/kelvinlets.h@{include/igl/kelvinlets.h}}
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$array$>$}\newline
+{\ttfamily \#include $<$igl/igl\+\_\+inline.\+h$>$}\newline
+{\ttfamily \#include \"{}kelvinlets.\+cpp\"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structigl_1_1KelvinletParams}{igl\+::\+Kelvinlet\+Params$<$ Scalar $>$}}
+\begin{DoxyCompactList}\small\item\em Parameters for controling kelvinlets. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespaceigl_a69c0d149c7cb41a263f858b695eeb988}{igl\+::\+Brush\+Type}} \+: int \{ \mbox{\hyperlink{namespaceigl_a69c0d149c7cb41a263f858b695eeb988a8695c57e30e957161af26fe52d8a5826}{igl\+::\+GRAB}}
+, \mbox{\hyperlink{namespaceigl_a69c0d149c7cb41a263f858b695eeb988a127ea1d20becc4dba06d9d152db0c2e5}{igl\+::\+SCALE}}
+, \mbox{\hyperlink{namespaceigl_a69c0d149c7cb41a263f858b695eeb988a7d503f3470adcef7d9b24cdfa82ea1c1}{igl\+::\+TWIST}}
+, \mbox{\hyperlink{namespaceigl_a69c0d149c7cb41a263f858b695eeb988a1519953796ab374eeab96e42a849ed19}{igl\+::\+PINCH}}
+ \}
+\begin{DoxyCompactList}\small\item\em Kelvinlets brush type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV , typename Derivedx0 , typename Derivedf , typename DerivedF , typename DerivedU $>$ }\\void \mbox{\hyperlink{namespaceigl_a0a85e70cd58bcb5ebb5b36ef4a010fde}{igl\+::kelvinlets}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ Derivedx0 $>$ \&x0, const Eigen\+::\+Matrix\+Base$<$ Derivedf $>$ \&f, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const \mbox{\hyperlink{structigl_1_1KelvinletParams}{Kelvinlet\+Params}}$<$ typename Derived\+V\+::\+Scalar $>$ \&params, Eigen\+::\+Plain\+Object\+Base$<$ DerivedU $>$ \&U)
+\begin{DoxyCompactList}\small\item\em Implements Pixar\textquotesingle{}s Regularized Kelvinlets (Pixar Technical Memo \#17-\/03)\+: Sculpting Brushes based on Fundamental Solutions of Elasticity, a technique for real-\/time physically based volume sculpting of virtual elastic materials. \end{DoxyCompactList}\end{DoxyCompactItemize}

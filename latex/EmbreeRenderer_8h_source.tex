@@ -1,0 +1,266 @@
+\doxysection{Embree\+Renderer.\+h}
+\hypertarget{EmbreeRenderer_8h_source}{}\label{EmbreeRenderer_8h_source}\index{include/igl/embree/EmbreeRenderer.h@{include/igl/embree/EmbreeRenderer.h}}
+\mbox{\hyperlink{EmbreeRenderer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ Copyright\ (C)\ 2020\ Vladimir\ Fonov\ <vladimir.fonov@gmail.com>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2013\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2014\ Christian\ Schüller\ <schuellchr@gmail.com>}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ IGL\_EMBREE\_EMBREE\_RENDERER\_H}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ IGL\_EMBREE\_EMBREE\_RENDERER\_H}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{colormap_8h}{igl/colormap.h}}>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <Eigen/Geometry>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <Eigen/Geometry>}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <embree3/rtcore.h>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <embree3/rtcore\_ray.h>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{EmbreeDevice_8h}{EmbreeDevice.h}}"{}}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00031\ \{}
+\DoxyCodeLine{00032\ \ \ \textcolor{keyword}{namespace\ }embree}
+\DoxyCodeLine{00033\ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{class\ }EmbreeRenderer}
+\DoxyCodeLine{00037\ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ Eigen::RowVector3f\ Vec3f;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1embree_1_1EmbreeRenderer_1_1Hit}{Hit}}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structigl_1_1embree_1_1EmbreeRenderer_1_1Hit_a420b1f982ab205030d185ebb2efae7cf}{id}};\ \ \ \ \textcolor{comment}{//\ primitive\ id}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structigl_1_1embree_1_1EmbreeRenderer_1_1Hit_a2443594f784a813f968229aa7b2391ac}{gid}};\ \ \ \textcolor{comment}{//\ geometry\ id}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structigl_1_1embree_1_1EmbreeRenderer_1_1Hit_a7a3deb3910a32739d84bb55a8dd928c2}{u}},\mbox{\hyperlink{structigl_1_1embree_1_1EmbreeRenderer_1_1Hit_ac18d3f6b788ea1249a32b0a8c537ea7d}{v}};\ \textcolor{comment}{//\ barycentric\ coordinates}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structigl_1_1embree_1_1EmbreeRenderer_1_1Hit_ae1f4d73ed6986b9dd08784102ceb4034}{t}};\ \ \ \textcolor{comment}{//\ distance\ =\ direction*t\ to\ intersection}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ Vec3f\ \mbox{\hyperlink{structigl_1_1embree_1_1EmbreeRenderer_1_1Hit_a1ba4beafff0f04f218f2192ca66a5edf}{N}};\ \ \ \ \textcolor{comment}{//\ element\ normal}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ Eigen::Matrix<float,Eigen::Dynamic,3>\ PointMatrixType;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ Eigen::Matrix<float,Eigen::Dynamic,3>\ ColorMatrixType;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ Eigen::Matrix<int,\ \ Eigen::Dynamic,3>\ FaceMatrixType;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ Eigen::Matrix<unsigned\ char,Eigen::Dynamic,Eigen::Dynamic>\ PixelMatrixType;}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ EmbreeRenderer();}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \textcolor{comment}{//\ Copying\ and\ assignment\ are\ not\ allowed.}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ EmbreeRenderer(\textcolor{keyword}{const}\ EmbreeRenderer\ \&\ that);}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ EmbreeRenderer\ \&\ operator=(\textcolor{keyword}{const}\ EmbreeRenderer\ \&);}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \string~EmbreeRenderer();}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \textcolor{comment}{//\ Specify\ mesh,\ this\ call\ reinitializes\ embree\ structures}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \textcolor{comment}{//\ Inputs:}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ V\ \ \#V\ x\ dim\ matrix\ of\ vertex\ coordinates}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ F\ \ \#F\ x\ simplex\_size\ \ matrix\ of\ indices\ of\ simplex\ corners\ into\ V}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ is\_static\ -\/\ optimize\ for\ static\ thene\ (HQ\ rendering)}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_mesh(\textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_static=\textcolor{keyword}{true});}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \textcolor{comment}{//\ Specify\ per-\/vertex\ or\ per-\/face\ color}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \textcolor{comment}{//\ Inputs:}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ C\ \ \#V\ x\ 3\ matrix\ of\ vertex\ colors}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ or\ \#F\ x\ 3\ matrix\ of\ face\ colors}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ or\ 1\ x\ 3\ matrix\ of\ uniform\ color}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedC>}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_colors(\textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedC>\ \&\ C);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \textcolor{comment}{//\ Use\ min(D)\ and\ max(D)\ to\ set\ caxis.}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedD>}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_data(\textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedD>\ \&\ D,}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_a1b823cd12b22dd7d7c16b36223e68dea}{igl::ColorMapType}}\ cmap\ =\ \mbox{\hyperlink{namespaceigl_a1b823cd12b22dd7d7c16b36223e68deaac0949b6bec17c57dae985f9945f0ba87}{igl::COLOR\_MAP\_TYPE\_VIRIDIS}});}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \textcolor{comment}{//\ Specify\ per-\/vertex\ or\ per-\/face\ scalar\ field}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ that\ will\ be\ converted\ to\ color\ using\ jet\ color\ map}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \textcolor{comment}{//\ Inputs:}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ caxis\_min\ \ caxis\ minimum\ bound}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ caxis\_max\ \ caxis\ maximum\ bound}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ D\ \ \#V\ by\ 1\ list\ of\ scalar\ values}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ cmap\ colormap\ type}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ num\_steps\ number\ of\ intervals\ to\ discretize\ the\ colormap}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedD,\ \textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_data(}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedD>\ \&\ D,}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ T\ caxis\_min,}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ T\ caxis\_max,}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_a1b823cd12b22dd7d7c16b36223e68dea}{igl::ColorMapType}}\ cmap\ =\ \mbox{\hyperlink{namespaceigl_a1b823cd12b22dd7d7c16b36223e68deaac0949b6bec17c57dae985f9945f0ba87}{igl::COLOR\_MAP\_TYPE\_VIRIDIS}});}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \textcolor{comment}{//\ Specify\ mesh\ rotation}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \textcolor{comment}{//\ Inputs:}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ r\ \ 3\ x\ 3\ rotaton\ matrix}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Derivedr>}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_rot(\textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedr>\ \&r);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \textcolor{comment}{//\ Specify\ mesh\ magnification}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \textcolor{comment}{//\ Inputs:}}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ z\ \ magnification\ ratio}}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_zoom(T\ z);}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \textcolor{comment}{//\ Specify\ mesh\ translation}}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \textcolor{comment}{//\ Inputs:}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ tr\ \ translation\ vector}}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Derivedtr>}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_translation(\textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedtr>\ \&tr);}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \textcolor{comment}{//\ Specify\ that\ color\ is\ face\ based}}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \textcolor{comment}{//\ Inputs:}}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ f\ -\/\ face\ or\ vertex\ colours}}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_face\_based(\textcolor{keywordtype}{bool}\ f);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \textcolor{comment}{//\ Use\ orthographic\ projection}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \textcolor{comment}{//\ Inputs:}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ f\ -\/\ orthographic\ or\ perspective\ projection}}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_orthographic(\textcolor{keywordtype}{bool}\ f\ );}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \textcolor{comment}{//\ Render\ both\ sides\ of\ triangles}}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \textcolor{comment}{//\ Inputs:}}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ f\ -\/\ double\ sided}}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_double\_sided(\textcolor{keywordtype}{bool}\ f);}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \textcolor{comment}{//\ render\ full\ buffer}}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \textcolor{comment}{//\ Outputs:}}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ all\ outputs\ should\ have\ the\ same\ size\ (size\ of\ the\ output\ picture)}}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ area\ outside\ of\ the\ visible\ object\ will\ have\ zero\ alpha\ component\ (transparant)}}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ R\ -\/\ red\ channel}}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ G\ -\/\ green\ channel}}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ B\ -\/\ blue\ channel}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ A\ -\/\ alpha\ channel}}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ render\_buffer(PixelMatrixType\ \&R,}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PixelMatrixType\ \&G,}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PixelMatrixType\ \&B,}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PixelMatrixType\ \&A);}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \textcolor{comment}{//\ Given\ a\ ray\ find\ the\ first\ hit}}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \textcolor{comment}{//\ Inputs:}}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ origin\ \ \ \ \ 3d\ origin\ point\ of\ ray}}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ direction\ \ 3d\ (not\ necessarily\ normalized)\ direction\ vector\ of\ ray}}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ tnear\ \ \ \ \ \ start\ of\ ray\ segment}}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ tfar\ \ \ \ \ \ \ end\ of\ ray\ segment}}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ mask\ \ \ \ \ \ a\ 32\ bit\ mask\ to\ identify\ active\ geometries.}}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \textcolor{comment}{//\ Output:}}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ hit\ \ \ \ \ \ \ \ information\ about\ hit}}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \textcolor{comment}{//\ Returns\ true\ if\ and\ only\ if\ there\ was\ a\ hit}}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ intersect\_ray(}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::RowVector3f\&\ origin,}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::RowVector3f\&\ direction,}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1embree_1_1EmbreeRenderer_1_1Hit}{Hit}}\&\ hit,}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ tnear\ =\ 0,}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ tfar\ =\ std::numeric\_limits<float>::infinity(),}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ mask\ =\ 0xFFFFFFFF)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \textcolor{comment}{//\ Initialize\ with\ a\ given\ mesh.}}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \textcolor{comment}{//\ Inputs:}}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ V\ \ \#V\ by\ 3\ list\ of\ vertex\ positions}}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ F\ \ \#F\ by\ 3\ list\ of\ Oriented\ triangles}}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ isStatic\ \ scene\ is\ optimized\ for\ static\ geometry}}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \textcolor{comment}{//\ Side\ effects:}}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ The\ first\ time\ this\ is\ ever\ called\ the\ embree\ engine\ is\ initialized.}}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ init(}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ PointMatrixType\&\ V,}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ FaceMatrixType\&\ F,}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isStatic\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \textcolor{comment}{//\ Initialize\ embree\ with\ a\ given\ mesh.}}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \textcolor{comment}{//\ Inputs:}}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ V\ \ vector\ of\ \#V\ by\ 3\ list\ of\ vertex\ positions\ for\ each\ geometry}}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ F\ \ vector\ of\ \#F\ by\ 3\ list\ of\ Oriented\ triangles\ for\ each\ geometry}}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ masks\ \ a\ 32\ bit\ mask\ to\ identify\ active\ geometries.}}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ isStatic\ \ scene\ is\ optimized\ for\ static\ geometry}}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \textcolor{comment}{//\ Side\ effects:}}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ The\ first\ time\ this\ is\ ever\ called\ the\ embree\ engine\ is\ initialized.}}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ init(}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<const\ PointMatrixType*>\&\ V,}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<const\ FaceMatrixType*>\&\ F,}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<int>\&\ masks,}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isStatic\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \textcolor{comment}{//\ Deinitialize\ embree\ datasctructures\ for\ current\ mesh.\ \ Also\ called\ on}}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \textcolor{comment}{//\ destruction:\ no\ need\ to\ call\ if\ you\ just\ want\ to\ init()\ once\ and}}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \textcolor{comment}{//\ destroy.}}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ deinit();}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \textcolor{comment}{//\ initialize\ view\ parameters}}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ init\_view();}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \textcolor{comment}{//\ scene\ data}}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ PointMatrixType\ V;\ \textcolor{comment}{//\ vertices}}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ FaceMatrixType\ \ F;\ \textcolor{comment}{//\ faces}}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ ColorMatrixType\ C;\ \textcolor{comment}{//\ colours}}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \ \ \ \ \ \ Eigen::RowVector3f\ uC;\ \textcolor{comment}{//\ uniform\ color}}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ face\_based;}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ uniform\_color;}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ double\_sided\ ;}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \textcolor{comment}{//\ Camera\ parameters}}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ camera\_base\_zoom;}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ camera\_zoom;}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \ \ \ \ \ \ Eigen::Vector3f\ camera\_base\_translation;}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ Eigen::Vector3f\ camera\_translation;}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ Eigen::Vector3f\ camera\_eye;}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ Eigen::Vector3f\ camera\_up;}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ Eigen::Vector3f\ camera\_center;}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ camera\_view\_angle;}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ camera\_dnear;}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ camera\_dfar;}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \textcolor{comment}{//\ projection\ matrixes}}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ Eigen::Matrix4f\ view;}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ Eigen::Matrix4f\ proj;}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ Eigen::Matrix4f\ norm;}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ \ \ \ \ \ \ Eigen::Matrix3f\ rot\_matrix;}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ orthographic;}
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \textcolor{comment}{//\ embree\ data}}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ RTCScene\ scene;}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ geomID;}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ initialized;}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00245\ \ \ \ \ \ \ RTCDevice\ device;}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ create\_ray(}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ RTCRayHit\&\ ray,}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::RowVector3f\&\ origin,}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::RowVector3f\&\ direction,}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ tnear,}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ tfar,}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ mask)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00255\ \ \ \ \ \};}
+\DoxyCodeLine{00256\ \ \ \}}
+\DoxyCodeLine{00257\ \}}
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00259\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00260\ \textcolor{preprocessor}{\#\ \ include\ "{}EmbreeRenderer.cpp"{}}}
+\DoxyCodeLine{00261\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00262\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//IGL\_EMBREE\_EMBREE\_RENDERER\_H}}
+
+\end{DoxyCode}

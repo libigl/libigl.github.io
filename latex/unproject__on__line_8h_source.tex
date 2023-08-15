@@ -1,0 +1,47 @@
+\doxysection{unproject\+\_\+on\+\_\+line.\+h}
+\hypertarget{unproject__on__line_8h_source}{}\label{unproject__on__line_8h_source}\index{include/igl/unproject\_on\_line.h@{include/igl/unproject\_on\_line.h}}
+\mbox{\hyperlink{unproject__on__line_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ IGL\_UNPROJECT\_ON\_LINE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ IGL\_UNPROJECT\_ON\_LINE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00020\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedUV,}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedM,}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVP,}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedorigin,}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{typename}\ Deriveddir>}
+\DoxyCodeLine{00026\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a28d4df676266aad88e2fad4b43a0777c}{unproject\_on\_line}}(}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedUV>\ \&\ UV,}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedM>\ \&\ M,}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedVP>\ \&\ VP,}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedorigin>\ \&\ origin,}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Deriveddir>\ \&\ dir,}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedUV::Scalar\ \&\ t);}
+\DoxyCodeLine{00035\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedUV,}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedM,}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVP,}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedorigin,}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{typename}\ Deriveddir,}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedZ>}
+\DoxyCodeLine{00042\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a28d4df676266aad88e2fad4b43a0777c}{unproject\_on\_line}}(}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedUV>\ \&\ UV,}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedM>\ \&\ M,}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedVP>\ \&\ VP,}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedorigin>\ \&\ origin,}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Deriveddir>\ \&\ dir,}
+\DoxyCodeLine{00048\ \ \ \ \ Eigen::PlainObjectBase<DerivedZ>\ \&\ Z);}
+\DoxyCodeLine{00049\ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#\ \ include\ "{}unproject\_on\_line.cpp"{}}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

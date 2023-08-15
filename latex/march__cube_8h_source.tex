@@ -1,0 +1,43 @@
+\doxysection{march\+\_\+cube.\+h}
+\hypertarget{march__cube_8h_source}{}\label{march__cube_8h_source}\index{include/igl/march\_cube.h@{include/igl/march\_cube.h}}
+\mbox{\hyperlink{march__cube_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2021\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_MARCH\_CUBE\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_MARCH\_CUBE\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00030\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedGV,}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{typename}\ Scalar,}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{typename}\ Index,}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00036\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a75c4985a12f6c71116d36492d2f6154d}{march\_cube}}(}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{const}\ DerivedGV\ \&\ GV,}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,8,1>\ \&\ cS,}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Index,8,1>\ \&\ cI,}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{const}\ Scalar\ \&\ isovalue,}
+\DoxyCodeLine{00041\ \ \ \ \ Eigen::PlainObjectBase<DerivedV>\ \&V,}
+\DoxyCodeLine{00042\ \ \ \ \ Index\ \&\ n,}
+\DoxyCodeLine{00043\ \ \ \ \ Eigen::PlainObjectBase<DerivedF>\ \&F,}
+\DoxyCodeLine{00044\ \ \ \ \ Index\ \&\ m,}
+\DoxyCodeLine{00045\ \ \ \ \ std::unordered\_map<int64\_t,int>\ \&\ E2V);}
+\DoxyCodeLine{00046\ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#\ \ include\ "{}march\_cube.cpp"{}}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

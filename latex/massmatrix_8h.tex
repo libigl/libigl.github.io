@@ -1,0 +1,28 @@
+\doxysection{include/igl/massmatrix.h File Reference}
+\hypertarget{massmatrix_8h}{}\label{massmatrix_8h}\index{include/igl/massmatrix.h@{include/igl/massmatrix.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include \"{}massmatrix.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespaceigl_a8ed02513847d2f3fdb8c74dcbe55bb90}{igl\+::\+Mass\+Matrix\+Type}} \{ \newline
+\mbox{\hyperlink{namespaceigl_a8ed02513847d2f3fdb8c74dcbe55bb90ad236264764d4f478ccb31c36be553483}{igl\+::\+MASSMATRIX\+\_\+\+TYPE\+\_\+\+BARYCENTRIC}} = 0
+, \mbox{\hyperlink{namespaceigl_a8ed02513847d2f3fdb8c74dcbe55bb90a8e91d83387a6cdc5e1c58d3249ed8484}{igl\+::\+MASSMATRIX\+\_\+\+TYPE\+\_\+\+VORONOI}} = 1
+, \mbox{\hyperlink{namespaceigl_a8ed02513847d2f3fdb8c74dcbe55bb90aa3067b3f2630f50a9806bf46b60e6fb7}{igl\+::\+MASSMATRIX\+\_\+\+TYPE\+\_\+\+FULL}} = 2
+, \mbox{\hyperlink{namespaceigl_a8ed02513847d2f3fdb8c74dcbe55bb90a69f57abe461a4a62943a5c38cbbf22f0}{igl\+::\+MASSMATRIX\+\_\+\+TYPE\+\_\+\+DEFAULT}} = 3
+, \newline
+\mbox{\hyperlink{namespaceigl_a8ed02513847d2f3fdb8c74dcbe55bb90a90c5b05e42d20ca21fd5849e64bae2ae}{igl\+::\+NUM\+\_\+\+MASSMATRIX\+\_\+\+TYPES}} = 4
+ \}
+\begin{DoxyCompactList}\small\item\em Type of mass matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename Scalar $>$ }\\void \mbox{\hyperlink{namespaceigl_a72cf047d8b4df743c47bbbf0ba9dc6e1}{igl\+::massmatrix}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const \mbox{\hyperlink{namespaceigl_a8ed02513847d2f3fdb8c74dcbe55bb90}{Mass\+Matrix\+Type}} type, Eigen\+::\+Sparse\+Matrix$<$ Scalar $>$ \&M)
+\begin{DoxyCompactList}\small\item\em Constructs the mass (area) matrix for a given mesh (V,F). \end{DoxyCompactList}\end{DoxyCompactItemize}

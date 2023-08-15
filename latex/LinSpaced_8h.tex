@@ -1,0 +1,36 @@
+\doxysection{include/igl/\+Lin\+Spaced.h File Reference}
+\hypertarget{LinSpaced_8h}{}\label{LinSpaced_8h}\index{include/igl/LinSpaced.h@{include/igl/LinSpaced.h}}
+
+
+This function is not intended to be a permanent function of libigl.  
+
+
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Derived $>$ }\\Derived \mbox{\hyperlink{namespaceigl_ae8a4579279c09a298a5988c18f215d33}{igl\+::\+Lin\+Spaced}} (typename Derived\+::\+Index size, const typename Derived\+::\+Scalar \&low, const typename Derived\+::\+Scalar \&high)
+\begin{DoxyCompactList}\small\item\em Replacement for Eigen\+::\+Dense\+Base\+::\+Lin\+Spaced. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This function is not intended to be a permanent function of libigl. 
+
+Rather it is a \"{}drop-\/in\"{} workaround for documented bug in Eigen\+: \href{http://eigen.tuxfamily.org/bz/show_bug.cgi?id=1383}{\texttt{ http\+://eigen.\+tuxfamily.\+org/bz/show\+\_\+bug.\+cgi?id=1383}}
+
+Replace\+: \begin{DoxyVerb}Eigen::VectorXi::LinSpaced(size,low,high);
+\end{DoxyVerb}
+ With\+: \begin{DoxyVerb}igl::LinSpaced<Eigen::VectorXi>(size,low,high);
+\end{DoxyVerb}
+ Specifcally, this version will {\itshape always} return an empty vector if size==0, regardless of the values for low and high. If size != 0, then this simply returns the result of Eigen\+::\+Derived\+::\+Lin\+Spaced.
+
+Until this bug is fixed, we should also avoid calls to the member function {\ttfamily .set\+Lin\+Spaced}. This means replacing\+: \begin{DoxyVerb}a.setLinSpaced(size,low,high);
+\end{DoxyVerb}
+ with \begin{DoxyVerb}a = igl::LinSpaced<decltype(a) >(size,low,high);
+\end{DoxyVerb}
+ 

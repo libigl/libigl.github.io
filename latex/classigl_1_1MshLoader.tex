@@ -1,0 +1,409 @@
+\doxysection{igl\+::Msh\+Loader Class Reference}
+\hypertarget{classigl_1_1MshLoader}{}\label{classigl_1_1MshLoader}\index{igl::MshLoader@{igl::MshLoader}}
+
+
+Class for loading information from .msh file depends only on c++stl library.  
+
+
+
+
+{\ttfamily \#include $<$Msh\+Loader.\+h$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structigl_1_1MshLoader_1_1msh__struct}{msh\+\_\+struct}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \newline
+\mbox{\hyperlink{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217ca956ef88c9c6f8086f51f865a327e8d87}{ELEMENT\+\_\+\+LINE}} =1
+, \mbox{\hyperlink{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217cadefecdfc3f20fa28b153095cb069b74f}{ELEMENT\+\_\+\+TRI}} =2
+, \mbox{\hyperlink{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217caf631fb97003a8502c394fc0b385b7a11}{ELEMENT\+\_\+\+QUAD}} =3
+, \mbox{\hyperlink{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217ca7869818ca16ff4b8cb596b51ada63e2b}{ELEMENT\+\_\+\+TET}} =4
+, \newline
+\mbox{\hyperlink{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217ca66f7316c7c5993fe4141aa49e1b4423b}{ELEMENT\+\_\+\+HEX}} =5
+, \mbox{\hyperlink{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217ca5b4f83065d8b479783891ed43a4cbc41}{ELEMENT\+\_\+\+PRISM}} =6
+, \mbox{\hyperlink{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217ca18531295e4716e426d9924b1aab48269}{ELEMENT\+\_\+\+PYRAMID}} =7
+, \mbox{\hyperlink{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217ca3aec3cac11507297fe342d46d85d6e4a}{ELEMENT\+\_\+\+LINE\+\_\+2\+ND\+\_\+\+ORDER}} =8
+, \newline
+\mbox{\hyperlink{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217ca704e2dd2c9ba5f1a2886b63df33dad59}{ELEMENT\+\_\+\+TRI\+\_\+2\+ND\+\_\+\+ORDER}} =9
+, \mbox{\hyperlink{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217caebda696c1ee6b08b1c7cb961273270e3}{ELEMENT\+\_\+\+QUAD\+\_\+2\+ND\+\_\+\+ORDER}} =10
+, \mbox{\hyperlink{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217ca3779ad8078db42a8e5b933a7e1a13db2}{ELEMENT\+\_\+\+TET\+\_\+2\+ND\+\_\+\+ORDER}} =11
+, \mbox{\hyperlink{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217cab493296e3354187ed76a69deb957c0a5}{ELEMENT\+\_\+\+HEX\+\_\+2\+ND\+\_\+\+ORDER}} =12
+, \newline
+\mbox{\hyperlink{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217ca3b1630530aecab283aa5ffe6f3339aa8}{ELEMENT\+\_\+\+PRISM\+\_\+2\+ND\+\_\+\+ORDER}} =13
+, \mbox{\hyperlink{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217ca9df293554a3177d34d22111b671ca652}{ELEMENT\+\_\+\+PYRAMID\+\_\+2\+ND\+\_\+\+ORDER}} =14
+, \mbox{\hyperlink{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217cabdc13d1d287535d10ae027e894691dc1}{ELEMENT\+\_\+\+POINT}} =15
+ \}
+\item 
+typedef double \mbox{\hyperlink{classigl_1_1MshLoader_a79ff327370d2391101d877b5c4bd6cb9}{Float}}
+\item 
+typedef std\+::vector$<$ int $>$ \mbox{\hyperlink{classigl_1_1MshLoader_a5db8b9522e76f31685f58134e09c932f}{Index\+Vector}}
+\item 
+typedef std\+::vector$<$ int $>$ \mbox{\hyperlink{classigl_1_1MshLoader_a318626d045076f67e77c64e37511d12b}{Int\+Vector}}
+\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{classigl_1_1MshLoader_a79ff327370d2391101d877b5c4bd6cb9}{Float}} $>$ \mbox{\hyperlink{classigl_1_1MshLoader_a803bba10a589e120fe7042a773ea28f9}{Float\+Vector}}
+\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{classigl_1_1MshLoader_a803bba10a589e120fe7042a773ea28f9}{Float\+Vector}} $>$ \mbox{\hyperlink{classigl_1_1MshLoader_a61602b2dcd11fefa9ff3d89cf2f5fdaf}{Float\+Field}}
+\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{classigl_1_1MshLoader_a318626d045076f67e77c64e37511d12b}{Int\+Vector}} $>$ \mbox{\hyperlink{classigl_1_1MshLoader_af3233603ec4a2f4d45c41102df24367b}{Int\+Field}}
+\item 
+typedef std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classigl_1_1MshLoader_a6ed977f8a22da332fd01ba0e31087a0f}{Field\+Names}}
+\item 
+typedef std\+::multimap$<$ \mbox{\hyperlink{structigl_1_1MshLoader_1_1msh__struct}{msh\+\_\+struct}}, int $>$ \mbox{\hyperlink{classigl_1_1MshLoader_aabbaacccd2590b3fb7090a6ffedd81b1}{Struct\+Index}}
+\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{structigl_1_1MshLoader_1_1msh__struct}{msh\+\_\+struct}} $>$ \mbox{\hyperlink{classigl_1_1MshLoader_a68d74708a3c79e49975b4253fd17a0e7}{Struct\+Vector}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classigl_1_1MshLoader_a03623e67c322c6ffe12cc757365667b9}{Msh\+Loader}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Load a .msh file from a given path. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classigl_1_1MshLoader_a803bba10a589e120fe7042a773ea28f9}{Float\+Vector}} \& \mbox{\hyperlink{classigl_1_1MshLoader_a3aa6191b7aba84707d7bf1f0381e8166}{get\+\_\+nodes}} () const
+\item 
+const \mbox{\hyperlink{classigl_1_1MshLoader_a5db8b9522e76f31685f58134e09c932f}{Index\+Vector}} \& \mbox{\hyperlink{classigl_1_1MshLoader_a5e3b20fb972d12909e7c1fbf695a01bb}{get\+\_\+elements}} () const
+\item 
+const \mbox{\hyperlink{classigl_1_1MshLoader_a318626d045076f67e77c64e37511d12b}{Int\+Vector}} \& \mbox{\hyperlink{classigl_1_1MshLoader_a1df3d4d4bfc731fe247a4985fe2c226d}{get\+\_\+elements\+\_\+types}} () const
+\item 
+const \mbox{\hyperlink{classigl_1_1MshLoader_a318626d045076f67e77c64e37511d12b}{Int\+Vector}} \& \mbox{\hyperlink{classigl_1_1MshLoader_aef8b7f77c90c3e62a944b2ba7ed600f5}{get\+\_\+elements\+\_\+lengths}} () const
+\item 
+const \mbox{\hyperlink{classigl_1_1MshLoader_af3233603ec4a2f4d45c41102df24367b}{Int\+Field}} \& \mbox{\hyperlink{classigl_1_1MshLoader_ac19adcafde032cd6d13a40fb07e38311}{get\+\_\+elements\+\_\+tags}} () const
+\item 
+const \mbox{\hyperlink{classigl_1_1MshLoader_a318626d045076f67e77c64e37511d12b}{Int\+Vector}} \& \mbox{\hyperlink{classigl_1_1MshLoader_a608573efc3a26ded3ffcdd51955991ca}{get\+\_\+elements\+\_\+ids}} () const
+\item 
+const \mbox{\hyperlink{classigl_1_1MshLoader_a5db8b9522e76f31685f58134e09c932f}{Index\+Vector}} \& \mbox{\hyperlink{classigl_1_1MshLoader_a11aac617272a2f1607d6cf84cb60ae29}{get\+\_\+elements\+\_\+nodes\+\_\+idx}} () const
+\item 
+const \mbox{\hyperlink{classigl_1_1MshLoader_a61602b2dcd11fefa9ff3d89cf2f5fdaf}{Float\+Field}} \& \mbox{\hyperlink{classigl_1_1MshLoader_a70ff48be7be9eae0a4cb5606a93f5f42}{get\+\_\+node\+\_\+fields}} () const
+\item 
+const \mbox{\hyperlink{classigl_1_1MshLoader_a6ed977f8a22da332fd01ba0e31087a0f}{Field\+Names}} \& \mbox{\hyperlink{classigl_1_1MshLoader_a8440951ccec4ed10812d34c90f79a849}{get\+\_\+node\+\_\+fields\+\_\+names}} () const
+\item 
+const \mbox{\hyperlink{classigl_1_1MshLoader_a318626d045076f67e77c64e37511d12b}{Int\+Vector}} \& \mbox{\hyperlink{classigl_1_1MshLoader_a0acc796cdca4dbd8a077b9fab13eb546}{get\+\_\+node\+\_\+fields\+\_\+components}} () const
+\item 
+int \mbox{\hyperlink{classigl_1_1MshLoader_a848759be4eb4c5298855dfdaf1b271ac}{get\+\_\+node\+\_\+field\+\_\+components}} (size\+\_\+t c) const
+\item 
+const \mbox{\hyperlink{classigl_1_1MshLoader_a61602b2dcd11fefa9ff3d89cf2f5fdaf}{Float\+Field}} \& \mbox{\hyperlink{classigl_1_1MshLoader_a4584080aa283c685016d40ee150649bf}{get\+\_\+element\+\_\+fields}} () const
+\item 
+const \mbox{\hyperlink{classigl_1_1MshLoader_a6ed977f8a22da332fd01ba0e31087a0f}{Field\+Names}} \& \mbox{\hyperlink{classigl_1_1MshLoader_aebc8937478779a3396bde0cec8a33f16}{get\+\_\+element\+\_\+fields\+\_\+names}} () const
+\item 
+const \mbox{\hyperlink{classigl_1_1MshLoader_a318626d045076f67e77c64e37511d12b}{Int\+Vector}} \& \mbox{\hyperlink{classigl_1_1MshLoader_abcff2435c0ea168cb2d5fd7fea4e784f}{get\+\_\+element\+\_\+fields\+\_\+components}} () const
+\item 
+int \mbox{\hyperlink{classigl_1_1MshLoader_aa1c712170575cee5b750818fabd90d4c}{get\+\_\+element\+\_\+field\+\_\+components}} (size\+\_\+t c) const
+\item 
+bool \mbox{\hyperlink{classigl_1_1MshLoader_a1a75e3dc68b723334632046cb2e766f3}{is\+\_\+node\+\_\+field}} (const std\+::string \&fieldname) const
+\item 
+bool \mbox{\hyperlink{classigl_1_1MshLoader_a55567e76f7e04a88c18cd961849bc82c}{is\+\_\+element\+\_\+field}} (const std\+::string \&fieldname) const
+\item 
+bool \mbox{\hyperlink{classigl_1_1MshLoader_a46e4c81a5f1b5c076585412938746615}{is\+\_\+element\+\_\+map\+\_\+identity}} () const
+\item 
+void \mbox{\hyperlink{classigl_1_1MshLoader_aa7ca7f83819c2736f34f564c2edfdf5e}{index\+\_\+structures}} (int tag\+\_\+column)
+\item 
+const \mbox{\hyperlink{classigl_1_1MshLoader_aabbaacccd2590b3fb7090a6ffedd81b1}{Struct\+Index}} \& \mbox{\hyperlink{classigl_1_1MshLoader_a2065fd180788a0ba185548ab63c9a805}{get\+\_\+structure\+\_\+index}} () const
+\item 
+const \mbox{\hyperlink{classigl_1_1MshLoader_aabbaacccd2590b3fb7090a6ffedd81b1}{Struct\+Index}} \& \mbox{\hyperlink{classigl_1_1MshLoader_aa8f37bd333194846c9d91f524fd73332}{get\+\_\+structure\+\_\+length}} () const
+\item 
+const \mbox{\hyperlink{classigl_1_1MshLoader_a68d74708a3c79e49975b4253fd17a0e7}{Struct\+Vector}} \& \mbox{\hyperlink{classigl_1_1MshLoader_a69f610310571325d4ee5e4e581452fff}{get\+\_\+structures}} () const
+\begin{DoxyCompactList}\small\item\em get list of structures \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{classigl_1_1MshLoader_a6b166a437b79a34a1a7fc5af059293d8}{num\+\_\+nodes\+\_\+per\+\_\+elem\+\_\+type}} (int elem\+\_\+type)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for loading information from .msh file depends only on c++stl library. 
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{classigl_1_1MshLoader_a79ff327370d2391101d877b5c4bd6cb9}\label{classigl_1_1MshLoader_a79ff327370d2391101d877b5c4bd6cb9} 
+\index{igl::MshLoader@{igl::MshLoader}!Float@{Float}}
+\index{Float@{Float}!igl::MshLoader@{igl::MshLoader}}
+\doxysubsubsection{\texorpdfstring{Float}{Float}}
+{\footnotesize\ttfamily typedef double \mbox{\hyperlink{classigl_1_1MshLoader_a79ff327370d2391101d877b5c4bd6cb9}{igl\+::\+Msh\+Loader\+::\+Float}}}
+
+\Hypertarget{classigl_1_1MshLoader_a5db8b9522e76f31685f58134e09c932f}\label{classigl_1_1MshLoader_a5db8b9522e76f31685f58134e09c932f} 
+\index{igl::MshLoader@{igl::MshLoader}!IndexVector@{IndexVector}}
+\index{IndexVector@{IndexVector}!igl::MshLoader@{igl::MshLoader}}
+\doxysubsubsection{\texorpdfstring{IndexVector}{IndexVector}}
+{\footnotesize\ttfamily typedef std\+::vector$<$int$>$ \mbox{\hyperlink{classigl_1_1MshLoader_a5db8b9522e76f31685f58134e09c932f}{igl\+::\+Msh\+Loader\+::\+Index\+Vector}}}
+
+\Hypertarget{classigl_1_1MshLoader_a318626d045076f67e77c64e37511d12b}\label{classigl_1_1MshLoader_a318626d045076f67e77c64e37511d12b} 
+\index{igl::MshLoader@{igl::MshLoader}!IntVector@{IntVector}}
+\index{IntVector@{IntVector}!igl::MshLoader@{igl::MshLoader}}
+\doxysubsubsection{\texorpdfstring{IntVector}{IntVector}}
+{\footnotesize\ttfamily typedef std\+::vector$<$int$>$ \mbox{\hyperlink{classigl_1_1MshLoader_a318626d045076f67e77c64e37511d12b}{igl\+::\+Msh\+Loader\+::\+Int\+Vector}}}
+
+\Hypertarget{classigl_1_1MshLoader_a803bba10a589e120fe7042a773ea28f9}\label{classigl_1_1MshLoader_a803bba10a589e120fe7042a773ea28f9} 
+\index{igl::MshLoader@{igl::MshLoader}!FloatVector@{FloatVector}}
+\index{FloatVector@{FloatVector}!igl::MshLoader@{igl::MshLoader}}
+\doxysubsubsection{\texorpdfstring{FloatVector}{FloatVector}}
+{\footnotesize\ttfamily typedef std\+::vector$<$\mbox{\hyperlink{classigl_1_1MshLoader_a79ff327370d2391101d877b5c4bd6cb9}{Float}}$>$ \mbox{\hyperlink{classigl_1_1MshLoader_a803bba10a589e120fe7042a773ea28f9}{igl\+::\+Msh\+Loader\+::\+Float\+Vector}}}
+
+\Hypertarget{classigl_1_1MshLoader_a61602b2dcd11fefa9ff3d89cf2f5fdaf}\label{classigl_1_1MshLoader_a61602b2dcd11fefa9ff3d89cf2f5fdaf} 
+\index{igl::MshLoader@{igl::MshLoader}!FloatField@{FloatField}}
+\index{FloatField@{FloatField}!igl::MshLoader@{igl::MshLoader}}
+\doxysubsubsection{\texorpdfstring{FloatField}{FloatField}}
+{\footnotesize\ttfamily typedef std\+::vector$<$\mbox{\hyperlink{classigl_1_1MshLoader_a803bba10a589e120fe7042a773ea28f9}{Float\+Vector}}$>$ \mbox{\hyperlink{classigl_1_1MshLoader_a61602b2dcd11fefa9ff3d89cf2f5fdaf}{igl\+::\+Msh\+Loader\+::\+Float\+Field}}}
+
+\Hypertarget{classigl_1_1MshLoader_af3233603ec4a2f4d45c41102df24367b}\label{classigl_1_1MshLoader_af3233603ec4a2f4d45c41102df24367b} 
+\index{igl::MshLoader@{igl::MshLoader}!IntField@{IntField}}
+\index{IntField@{IntField}!igl::MshLoader@{igl::MshLoader}}
+\doxysubsubsection{\texorpdfstring{IntField}{IntField}}
+{\footnotesize\ttfamily typedef std\+::vector$<$\mbox{\hyperlink{classigl_1_1MshLoader_a318626d045076f67e77c64e37511d12b}{Int\+Vector}}$>$ \mbox{\hyperlink{classigl_1_1MshLoader_af3233603ec4a2f4d45c41102df24367b}{igl\+::\+Msh\+Loader\+::\+Int\+Field}}}
+
+\Hypertarget{classigl_1_1MshLoader_a6ed977f8a22da332fd01ba0e31087a0f}\label{classigl_1_1MshLoader_a6ed977f8a22da332fd01ba0e31087a0f} 
+\index{igl::MshLoader@{igl::MshLoader}!FieldNames@{FieldNames}}
+\index{FieldNames@{FieldNames}!igl::MshLoader@{igl::MshLoader}}
+\doxysubsubsection{\texorpdfstring{FieldNames}{FieldNames}}
+{\footnotesize\ttfamily typedef std\+::vector$<$std\+::string$>$ \mbox{\hyperlink{classigl_1_1MshLoader_a6ed977f8a22da332fd01ba0e31087a0f}{igl\+::\+Msh\+Loader\+::\+Field\+Names}}}
+
+\Hypertarget{classigl_1_1MshLoader_aabbaacccd2590b3fb7090a6ffedd81b1}\label{classigl_1_1MshLoader_aabbaacccd2590b3fb7090a6ffedd81b1} 
+\index{igl::MshLoader@{igl::MshLoader}!StructIndex@{StructIndex}}
+\index{StructIndex@{StructIndex}!igl::MshLoader@{igl::MshLoader}}
+\doxysubsubsection{\texorpdfstring{StructIndex}{StructIndex}}
+{\footnotesize\ttfamily typedef std\+::multimap$<$\mbox{\hyperlink{structigl_1_1MshLoader_1_1msh__struct}{msh\+\_\+struct}},int$>$ \mbox{\hyperlink{classigl_1_1MshLoader_aabbaacccd2590b3fb7090a6ffedd81b1}{igl\+::\+Msh\+Loader\+::\+Struct\+Index}}}
+
+\Hypertarget{classigl_1_1MshLoader_a68d74708a3c79e49975b4253fd17a0e7}\label{classigl_1_1MshLoader_a68d74708a3c79e49975b4253fd17a0e7} 
+\index{igl::MshLoader@{igl::MshLoader}!StructVector@{StructVector}}
+\index{StructVector@{StructVector}!igl::MshLoader@{igl::MshLoader}}
+\doxysubsubsection{\texorpdfstring{StructVector}{StructVector}}
+{\footnotesize\ttfamily typedef std\+::vector$<$\mbox{\hyperlink{structigl_1_1MshLoader_1_1msh__struct}{msh\+\_\+struct}}$>$ \mbox{\hyperlink{classigl_1_1MshLoader_a68d74708a3c79e49975b4253fd17a0e7}{igl\+::\+Msh\+Loader\+::\+Struct\+Vector}}}
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217c}\label{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217c} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ELEMENT\_LINE@{ELEMENT\_LINE}!igl::MshLoader@{igl::MshLoader}}\index{igl::MshLoader@{igl::MshLoader}!ELEMENT\_LINE@{ELEMENT\_LINE}}}\Hypertarget{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217ca956ef88c9c6f8086f51f865a327e8d87}\label{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217ca956ef88c9c6f8086f51f865a327e8d87} 
+ELEMENT\+\_\+\+LINE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ELEMENT\_TRI@{ELEMENT\_TRI}!igl::MshLoader@{igl::MshLoader}}\index{igl::MshLoader@{igl::MshLoader}!ELEMENT\_TRI@{ELEMENT\_TRI}}}\Hypertarget{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217cadefecdfc3f20fa28b153095cb069b74f}\label{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217cadefecdfc3f20fa28b153095cb069b74f} 
+ELEMENT\+\_\+\+TRI&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ELEMENT\_QUAD@{ELEMENT\_QUAD}!igl::MshLoader@{igl::MshLoader}}\index{igl::MshLoader@{igl::MshLoader}!ELEMENT\_QUAD@{ELEMENT\_QUAD}}}\Hypertarget{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217caf631fb97003a8502c394fc0b385b7a11}\label{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217caf631fb97003a8502c394fc0b385b7a11} 
+ELEMENT\+\_\+\+QUAD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ELEMENT\_TET@{ELEMENT\_TET}!igl::MshLoader@{igl::MshLoader}}\index{igl::MshLoader@{igl::MshLoader}!ELEMENT\_TET@{ELEMENT\_TET}}}\Hypertarget{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217ca7869818ca16ff4b8cb596b51ada63e2b}\label{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217ca7869818ca16ff4b8cb596b51ada63e2b} 
+ELEMENT\+\_\+\+TET&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ELEMENT\_HEX@{ELEMENT\_HEX}!igl::MshLoader@{igl::MshLoader}}\index{igl::MshLoader@{igl::MshLoader}!ELEMENT\_HEX@{ELEMENT\_HEX}}}\Hypertarget{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217ca66f7316c7c5993fe4141aa49e1b4423b}\label{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217ca66f7316c7c5993fe4141aa49e1b4423b} 
+ELEMENT\+\_\+\+HEX&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ELEMENT\_PRISM@{ELEMENT\_PRISM}!igl::MshLoader@{igl::MshLoader}}\index{igl::MshLoader@{igl::MshLoader}!ELEMENT\_PRISM@{ELEMENT\_PRISM}}}\Hypertarget{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217ca5b4f83065d8b479783891ed43a4cbc41}\label{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217ca5b4f83065d8b479783891ed43a4cbc41} 
+ELEMENT\+\_\+\+PRISM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ELEMENT\_PYRAMID@{ELEMENT\_PYRAMID}!igl::MshLoader@{igl::MshLoader}}\index{igl::MshLoader@{igl::MshLoader}!ELEMENT\_PYRAMID@{ELEMENT\_PYRAMID}}}\Hypertarget{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217ca18531295e4716e426d9924b1aab48269}\label{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217ca18531295e4716e426d9924b1aab48269} 
+ELEMENT\+\_\+\+PYRAMID&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ELEMENT\_LINE\_2ND\_ORDER@{ELEMENT\_LINE\_2ND\_ORDER}!igl::MshLoader@{igl::MshLoader}}\index{igl::MshLoader@{igl::MshLoader}!ELEMENT\_LINE\_2ND\_ORDER@{ELEMENT\_LINE\_2ND\_ORDER}}}\Hypertarget{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217ca3aec3cac11507297fe342d46d85d6e4a}\label{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217ca3aec3cac11507297fe342d46d85d6e4a} 
+ELEMENT\+\_\+\+LINE\+\_\+2\+ND\+\_\+\+ORDER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ELEMENT\_TRI\_2ND\_ORDER@{ELEMENT\_TRI\_2ND\_ORDER}!igl::MshLoader@{igl::MshLoader}}\index{igl::MshLoader@{igl::MshLoader}!ELEMENT\_TRI\_2ND\_ORDER@{ELEMENT\_TRI\_2ND\_ORDER}}}\Hypertarget{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217ca704e2dd2c9ba5f1a2886b63df33dad59}\label{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217ca704e2dd2c9ba5f1a2886b63df33dad59} 
+ELEMENT\+\_\+\+TRI\+\_\+2\+ND\+\_\+\+ORDER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ELEMENT\_QUAD\_2ND\_ORDER@{ELEMENT\_QUAD\_2ND\_ORDER}!igl::MshLoader@{igl::MshLoader}}\index{igl::MshLoader@{igl::MshLoader}!ELEMENT\_QUAD\_2ND\_ORDER@{ELEMENT\_QUAD\_2ND\_ORDER}}}\Hypertarget{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217caebda696c1ee6b08b1c7cb961273270e3}\label{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217caebda696c1ee6b08b1c7cb961273270e3} 
+ELEMENT\+\_\+\+QUAD\+\_\+2\+ND\+\_\+\+ORDER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ELEMENT\_TET\_2ND\_ORDER@{ELEMENT\_TET\_2ND\_ORDER}!igl::MshLoader@{igl::MshLoader}}\index{igl::MshLoader@{igl::MshLoader}!ELEMENT\_TET\_2ND\_ORDER@{ELEMENT\_TET\_2ND\_ORDER}}}\Hypertarget{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217ca3779ad8078db42a8e5b933a7e1a13db2}\label{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217ca3779ad8078db42a8e5b933a7e1a13db2} 
+ELEMENT\+\_\+\+TET\+\_\+2\+ND\+\_\+\+ORDER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ELEMENT\_HEX\_2ND\_ORDER@{ELEMENT\_HEX\_2ND\_ORDER}!igl::MshLoader@{igl::MshLoader}}\index{igl::MshLoader@{igl::MshLoader}!ELEMENT\_HEX\_2ND\_ORDER@{ELEMENT\_HEX\_2ND\_ORDER}}}\Hypertarget{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217cab493296e3354187ed76a69deb957c0a5}\label{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217cab493296e3354187ed76a69deb957c0a5} 
+ELEMENT\+\_\+\+HEX\+\_\+2\+ND\+\_\+\+ORDER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ELEMENT\_PRISM\_2ND\_ORDER@{ELEMENT\_PRISM\_2ND\_ORDER}!igl::MshLoader@{igl::MshLoader}}\index{igl::MshLoader@{igl::MshLoader}!ELEMENT\_PRISM\_2ND\_ORDER@{ELEMENT\_PRISM\_2ND\_ORDER}}}\Hypertarget{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217ca3b1630530aecab283aa5ffe6f3339aa8}\label{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217ca3b1630530aecab283aa5ffe6f3339aa8} 
+ELEMENT\+\_\+\+PRISM\+\_\+2\+ND\+\_\+\+ORDER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ELEMENT\_PYRAMID\_2ND\_ORDER@{ELEMENT\_PYRAMID\_2ND\_ORDER}!igl::MshLoader@{igl::MshLoader}}\index{igl::MshLoader@{igl::MshLoader}!ELEMENT\_PYRAMID\_2ND\_ORDER@{ELEMENT\_PYRAMID\_2ND\_ORDER}}}\Hypertarget{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217ca9df293554a3177d34d22111b671ca652}\label{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217ca9df293554a3177d34d22111b671ca652} 
+ELEMENT\+\_\+\+PYRAMID\+\_\+2\+ND\+\_\+\+ORDER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ELEMENT\_POINT@{ELEMENT\_POINT}!igl::MshLoader@{igl::MshLoader}}\index{igl::MshLoader@{igl::MshLoader}!ELEMENT\_POINT@{ELEMENT\_POINT}}}\Hypertarget{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217cabdc13d1d287535d10ae027e894691dc1}\label{classigl_1_1MshLoader_a9a0387e68909423c36f154efcd71217cabdc13d1d287535d10ae027e894691dc1} 
+ELEMENT\+\_\+\+POINT&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classigl_1_1MshLoader_a03623e67c322c6ffe12cc757365667b9}\label{classigl_1_1MshLoader_a03623e67c322c6ffe12cc757365667b9} 
+\index{igl::MshLoader@{igl::MshLoader}!MshLoader@{MshLoader}}
+\index{MshLoader@{MshLoader}!igl::MshLoader@{igl::MshLoader}}
+\doxysubsubsection{\texorpdfstring{MshLoader()}{MshLoader()}}
+{\footnotesize\ttfamily igl\+::\+Msh\+Loader\+::\+Msh\+Loader (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Load a .msh file from a given path. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em filename} & path to .msh \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classigl_1_1MshLoader_a3aa6191b7aba84707d7bf1f0381e8166}\label{classigl_1_1MshLoader_a3aa6191b7aba84707d7bf1f0381e8166} 
+\index{igl::MshLoader@{igl::MshLoader}!get\_nodes@{get\_nodes}}
+\index{get\_nodes@{get\_nodes}!igl::MshLoader@{igl::MshLoader}}
+\doxysubsubsection{\texorpdfstring{get\_nodes()}{get\_nodes()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classigl_1_1MshLoader_a803bba10a589e120fe7042a773ea28f9}{Float\+Vector}} \& igl\+::\+Msh\+Loader\+::get\+\_\+nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classigl_1_1MshLoader_a5e3b20fb972d12909e7c1fbf695a01bb}\label{classigl_1_1MshLoader_a5e3b20fb972d12909e7c1fbf695a01bb} 
+\index{igl::MshLoader@{igl::MshLoader}!get\_elements@{get\_elements}}
+\index{get\_elements@{get\_elements}!igl::MshLoader@{igl::MshLoader}}
+\doxysubsubsection{\texorpdfstring{get\_elements()}{get\_elements()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classigl_1_1MshLoader_a5db8b9522e76f31685f58134e09c932f}{Index\+Vector}} \& igl\+::\+Msh\+Loader\+::get\+\_\+elements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classigl_1_1MshLoader_a1df3d4d4bfc731fe247a4985fe2c226d}\label{classigl_1_1MshLoader_a1df3d4d4bfc731fe247a4985fe2c226d} 
+\index{igl::MshLoader@{igl::MshLoader}!get\_elements\_types@{get\_elements\_types}}
+\index{get\_elements\_types@{get\_elements\_types}!igl::MshLoader@{igl::MshLoader}}
+\doxysubsubsection{\texorpdfstring{get\_elements\_types()}{get\_elements\_types()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classigl_1_1MshLoader_a318626d045076f67e77c64e37511d12b}{Int\+Vector}} \& igl\+::\+Msh\+Loader\+::get\+\_\+elements\+\_\+types (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classigl_1_1MshLoader_aef8b7f77c90c3e62a944b2ba7ed600f5}\label{classigl_1_1MshLoader_aef8b7f77c90c3e62a944b2ba7ed600f5} 
+\index{igl::MshLoader@{igl::MshLoader}!get\_elements\_lengths@{get\_elements\_lengths}}
+\index{get\_elements\_lengths@{get\_elements\_lengths}!igl::MshLoader@{igl::MshLoader}}
+\doxysubsubsection{\texorpdfstring{get\_elements\_lengths()}{get\_elements\_lengths()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classigl_1_1MshLoader_a318626d045076f67e77c64e37511d12b}{Int\+Vector}} \& igl\+::\+Msh\+Loader\+::get\+\_\+elements\+\_\+lengths (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classigl_1_1MshLoader_ac19adcafde032cd6d13a40fb07e38311}\label{classigl_1_1MshLoader_ac19adcafde032cd6d13a40fb07e38311} 
+\index{igl::MshLoader@{igl::MshLoader}!get\_elements\_tags@{get\_elements\_tags}}
+\index{get\_elements\_tags@{get\_elements\_tags}!igl::MshLoader@{igl::MshLoader}}
+\doxysubsubsection{\texorpdfstring{get\_elements\_tags()}{get\_elements\_tags()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classigl_1_1MshLoader_af3233603ec4a2f4d45c41102df24367b}{Int\+Field}} \& igl\+::\+Msh\+Loader\+::get\+\_\+elements\+\_\+tags (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classigl_1_1MshLoader_a608573efc3a26ded3ffcdd51955991ca}\label{classigl_1_1MshLoader_a608573efc3a26ded3ffcdd51955991ca} 
+\index{igl::MshLoader@{igl::MshLoader}!get\_elements\_ids@{get\_elements\_ids}}
+\index{get\_elements\_ids@{get\_elements\_ids}!igl::MshLoader@{igl::MshLoader}}
+\doxysubsubsection{\texorpdfstring{get\_elements\_ids()}{get\_elements\_ids()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classigl_1_1MshLoader_a318626d045076f67e77c64e37511d12b}{Int\+Vector}} \& igl\+::\+Msh\+Loader\+::get\+\_\+elements\+\_\+ids (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classigl_1_1MshLoader_a11aac617272a2f1607d6cf84cb60ae29}\label{classigl_1_1MshLoader_a11aac617272a2f1607d6cf84cb60ae29} 
+\index{igl::MshLoader@{igl::MshLoader}!get\_elements\_nodes\_idx@{get\_elements\_nodes\_idx}}
+\index{get\_elements\_nodes\_idx@{get\_elements\_nodes\_idx}!igl::MshLoader@{igl::MshLoader}}
+\doxysubsubsection{\texorpdfstring{get\_elements\_nodes\_idx()}{get\_elements\_nodes\_idx()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classigl_1_1MshLoader_a5db8b9522e76f31685f58134e09c932f}{Index\+Vector}} \& igl\+::\+Msh\+Loader\+::get\+\_\+elements\+\_\+nodes\+\_\+idx (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classigl_1_1MshLoader_a70ff48be7be9eae0a4cb5606a93f5f42}\label{classigl_1_1MshLoader_a70ff48be7be9eae0a4cb5606a93f5f42} 
+\index{igl::MshLoader@{igl::MshLoader}!get\_node\_fields@{get\_node\_fields}}
+\index{get\_node\_fields@{get\_node\_fields}!igl::MshLoader@{igl::MshLoader}}
+\doxysubsubsection{\texorpdfstring{get\_node\_fields()}{get\_node\_fields()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classigl_1_1MshLoader_a61602b2dcd11fefa9ff3d89cf2f5fdaf}{Float\+Field}} \& igl\+::\+Msh\+Loader\+::get\+\_\+node\+\_\+fields (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classigl_1_1MshLoader_a8440951ccec4ed10812d34c90f79a849}\label{classigl_1_1MshLoader_a8440951ccec4ed10812d34c90f79a849} 
+\index{igl::MshLoader@{igl::MshLoader}!get\_node\_fields\_names@{get\_node\_fields\_names}}
+\index{get\_node\_fields\_names@{get\_node\_fields\_names}!igl::MshLoader@{igl::MshLoader}}
+\doxysubsubsection{\texorpdfstring{get\_node\_fields\_names()}{get\_node\_fields\_names()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classigl_1_1MshLoader_a6ed977f8a22da332fd01ba0e31087a0f}{Field\+Names}} \& igl\+::\+Msh\+Loader\+::get\+\_\+node\+\_\+fields\+\_\+names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classigl_1_1MshLoader_a0acc796cdca4dbd8a077b9fab13eb546}\label{classigl_1_1MshLoader_a0acc796cdca4dbd8a077b9fab13eb546} 
+\index{igl::MshLoader@{igl::MshLoader}!get\_node\_fields\_components@{get\_node\_fields\_components}}
+\index{get\_node\_fields\_components@{get\_node\_fields\_components}!igl::MshLoader@{igl::MshLoader}}
+\doxysubsubsection{\texorpdfstring{get\_node\_fields\_components()}{get\_node\_fields\_components()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classigl_1_1MshLoader_a318626d045076f67e77c64e37511d12b}{Int\+Vector}} \& igl\+::\+Msh\+Loader\+::get\+\_\+node\+\_\+fields\+\_\+components (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classigl_1_1MshLoader_a848759be4eb4c5298855dfdaf1b271ac}\label{classigl_1_1MshLoader_a848759be4eb4c5298855dfdaf1b271ac} 
+\index{igl::MshLoader@{igl::MshLoader}!get\_node\_field\_components@{get\_node\_field\_components}}
+\index{get\_node\_field\_components@{get\_node\_field\_components}!igl::MshLoader@{igl::MshLoader}}
+\doxysubsubsection{\texorpdfstring{get\_node\_field\_components()}{get\_node\_field\_components()}}
+{\footnotesize\ttfamily int igl\+::\+Msh\+Loader\+::get\+\_\+node\+\_\+field\+\_\+components (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{c }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classigl_1_1MshLoader_a4584080aa283c685016d40ee150649bf}\label{classigl_1_1MshLoader_a4584080aa283c685016d40ee150649bf} 
+\index{igl::MshLoader@{igl::MshLoader}!get\_element\_fields@{get\_element\_fields}}
+\index{get\_element\_fields@{get\_element\_fields}!igl::MshLoader@{igl::MshLoader}}
+\doxysubsubsection{\texorpdfstring{get\_element\_fields()}{get\_element\_fields()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classigl_1_1MshLoader_a61602b2dcd11fefa9ff3d89cf2f5fdaf}{Float\+Field}} \& igl\+::\+Msh\+Loader\+::get\+\_\+element\+\_\+fields (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classigl_1_1MshLoader_aebc8937478779a3396bde0cec8a33f16}\label{classigl_1_1MshLoader_aebc8937478779a3396bde0cec8a33f16} 
+\index{igl::MshLoader@{igl::MshLoader}!get\_element\_fields\_names@{get\_element\_fields\_names}}
+\index{get\_element\_fields\_names@{get\_element\_fields\_names}!igl::MshLoader@{igl::MshLoader}}
+\doxysubsubsection{\texorpdfstring{get\_element\_fields\_names()}{get\_element\_fields\_names()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classigl_1_1MshLoader_a6ed977f8a22da332fd01ba0e31087a0f}{Field\+Names}} \& igl\+::\+Msh\+Loader\+::get\+\_\+element\+\_\+fields\+\_\+names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classigl_1_1MshLoader_abcff2435c0ea168cb2d5fd7fea4e784f}\label{classigl_1_1MshLoader_abcff2435c0ea168cb2d5fd7fea4e784f} 
+\index{igl::MshLoader@{igl::MshLoader}!get\_element\_fields\_components@{get\_element\_fields\_components}}
+\index{get\_element\_fields\_components@{get\_element\_fields\_components}!igl::MshLoader@{igl::MshLoader}}
+\doxysubsubsection{\texorpdfstring{get\_element\_fields\_components()}{get\_element\_fields\_components()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classigl_1_1MshLoader_a318626d045076f67e77c64e37511d12b}{Int\+Vector}} \& igl\+::\+Msh\+Loader\+::get\+\_\+element\+\_\+fields\+\_\+components (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classigl_1_1MshLoader_aa1c712170575cee5b750818fabd90d4c}\label{classigl_1_1MshLoader_aa1c712170575cee5b750818fabd90d4c} 
+\index{igl::MshLoader@{igl::MshLoader}!get\_element\_field\_components@{get\_element\_field\_components}}
+\index{get\_element\_field\_components@{get\_element\_field\_components}!igl::MshLoader@{igl::MshLoader}}
+\doxysubsubsection{\texorpdfstring{get\_element\_field\_components()}{get\_element\_field\_components()}}
+{\footnotesize\ttfamily int igl\+::\+Msh\+Loader\+::get\+\_\+element\+\_\+field\+\_\+components (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{c }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classigl_1_1MshLoader_a1a75e3dc68b723334632046cb2e766f3}\label{classigl_1_1MshLoader_a1a75e3dc68b723334632046cb2e766f3} 
+\index{igl::MshLoader@{igl::MshLoader}!is\_node\_field@{is\_node\_field}}
+\index{is\_node\_field@{is\_node\_field}!igl::MshLoader@{igl::MshLoader}}
+\doxysubsubsection{\texorpdfstring{is\_node\_field()}{is\_node\_field()}}
+{\footnotesize\ttfamily bool igl\+::\+Msh\+Loader\+::is\+\_\+node\+\_\+field (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fieldname }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classigl_1_1MshLoader_a55567e76f7e04a88c18cd961849bc82c}\label{classigl_1_1MshLoader_a55567e76f7e04a88c18cd961849bc82c} 
+\index{igl::MshLoader@{igl::MshLoader}!is\_element\_field@{is\_element\_field}}
+\index{is\_element\_field@{is\_element\_field}!igl::MshLoader@{igl::MshLoader}}
+\doxysubsubsection{\texorpdfstring{is\_element\_field()}{is\_element\_field()}}
+{\footnotesize\ttfamily bool igl\+::\+Msh\+Loader\+::is\+\_\+element\+\_\+field (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fieldname }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classigl_1_1MshLoader_a46e4c81a5f1b5c076585412938746615}\label{classigl_1_1MshLoader_a46e4c81a5f1b5c076585412938746615} 
+\index{igl::MshLoader@{igl::MshLoader}!is\_element\_map\_identity@{is\_element\_map\_identity}}
+\index{is\_element\_map\_identity@{is\_element\_map\_identity}!igl::MshLoader@{igl::MshLoader}}
+\doxysubsubsection{\texorpdfstring{is\_element\_map\_identity()}{is\_element\_map\_identity()}}
+{\footnotesize\ttfamily bool igl\+::\+Msh\+Loader\+::is\+\_\+element\+\_\+map\+\_\+identity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{classigl_1_1MshLoader_aa7ca7f83819c2736f34f564c2edfdf5e}\label{classigl_1_1MshLoader_aa7ca7f83819c2736f34f564c2edfdf5e} 
+\index{igl::MshLoader@{igl::MshLoader}!index\_structures@{index\_structures}}
+\index{index\_structures@{index\_structures}!igl::MshLoader@{igl::MshLoader}}
+\doxysubsubsection{\texorpdfstring{index\_structures()}{index\_structures()}}
+{\footnotesize\ttfamily void igl\+::\+Msh\+Loader\+::index\+\_\+structures (\begin{DoxyParamCaption}\item[{int}]{tag\+\_\+column }\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1MshLoader_a2065fd180788a0ba185548ab63c9a805}\label{classigl_1_1MshLoader_a2065fd180788a0ba185548ab63c9a805} 
+\index{igl::MshLoader@{igl::MshLoader}!get\_structure\_index@{get\_structure\_index}}
+\index{get\_structure\_index@{get\_structure\_index}!igl::MshLoader@{igl::MshLoader}}
+\doxysubsubsection{\texorpdfstring{get\_structure\_index()}{get\_structure\_index()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classigl_1_1MshLoader_aabbaacccd2590b3fb7090a6ffedd81b1}{Struct\+Index}} \& igl\+::\+Msh\+Loader\+::get\+\_\+structure\+\_\+index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classigl_1_1MshLoader_aa8f37bd333194846c9d91f524fd73332}\label{classigl_1_1MshLoader_aa8f37bd333194846c9d91f524fd73332} 
+\index{igl::MshLoader@{igl::MshLoader}!get\_structure\_length@{get\_structure\_length}}
+\index{get\_structure\_length@{get\_structure\_length}!igl::MshLoader@{igl::MshLoader}}
+\doxysubsubsection{\texorpdfstring{get\_structure\_length()}{get\_structure\_length()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classigl_1_1MshLoader_aabbaacccd2590b3fb7090a6ffedd81b1}{Struct\+Index}} \& igl\+::\+Msh\+Loader\+::get\+\_\+structure\+\_\+length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classigl_1_1MshLoader_a69f610310571325d4ee5e4e581452fff}\label{classigl_1_1MshLoader_a69f610310571325d4ee5e4e581452fff} 
+\index{igl::MshLoader@{igl::MshLoader}!get\_structures@{get\_structures}}
+\index{get\_structures@{get\_structures}!igl::MshLoader@{igl::MshLoader}}
+\doxysubsubsection{\texorpdfstring{get\_structures()}{get\_structures()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classigl_1_1MshLoader_a68d74708a3c79e49975b4253fd17a0e7}{Struct\+Vector}} \& igl\+::\+Msh\+Loader\+::get\+\_\+structures (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get list of structures 
+
+\Hypertarget{classigl_1_1MshLoader_a6b166a437b79a34a1a7fc5af059293d8}\label{classigl_1_1MshLoader_a6b166a437b79a34a1a7fc5af059293d8} 
+\index{igl::MshLoader@{igl::MshLoader}!num\_nodes\_per\_elem\_type@{num\_nodes\_per\_elem\_type}}
+\index{num\_nodes\_per\_elem\_type@{num\_nodes\_per\_elem\_type}!igl::MshLoader@{igl::MshLoader}}
+\doxysubsubsection{\texorpdfstring{num\_nodes\_per\_elem\_type()}{num\_nodes\_per\_elem\_type()}}
+{\footnotesize\ttfamily static int igl\+::\+Msh\+Loader\+::num\+\_\+nodes\+\_\+per\+\_\+elem\+\_\+type (\begin{DoxyParamCaption}\item[{int}]{elem\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/igl/\mbox{\hyperlink{MshLoader_8h}{Msh\+Loader.\+h}}\end{DoxyCompactItemize}

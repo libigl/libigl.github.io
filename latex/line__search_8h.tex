@@ -1,0 +1,15 @@
+\doxysection{include/igl/line\+\_\+search.h File Reference}
+\hypertarget{line__search_8h}{}\label{line__search_8h}\index{include/igl/line\_search.h@{include/igl/line\_search.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include \"{}line\+\_\+search.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{namespaceigl_a9145bd261a2cf691294d8104c99a4ab9}{igl\+::line\+\_\+search}} (Eigen\+::\+Matrix\+Xd \&x, const Eigen\+::\+Matrix\+Xd \&d, double i\+\_\+step\+\_\+size, std\+::function$<$ double(Eigen\+::\+Matrix\+Xd \&)$>$ energy, double cur\+\_\+energy=-\/1)
+\begin{DoxyCompactList}\small\item\em Implement a bisection linesearch to minimize a mesh-\/based energy on vertices given at \textquotesingle{}x\textquotesingle{} at a search direction \textquotesingle{}d\textquotesingle{}, with initial step size. \end{DoxyCompactList}\end{DoxyCompactItemize}

@@ -1,0 +1,16 @@
+\doxysection{include/igl/connected\+\_\+components.h File Reference}
+\hypertarget{connected__components_8h}{}\label{connected__components_8h}\index{include/igl/connected\_components.h@{include/igl/connected\_components.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include \"{}connected\+\_\+components.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Atype , typename DerivedC , typename DerivedK $>$ }\\int \mbox{\hyperlink{namespaceigl_ad493c0508f1454ae875031906899d4de}{igl\+::connected\+\_\+components}} (const Eigen\+::\+Sparse\+Matrix$<$ Atype $>$ \&A, Eigen\+::\+Plain\+Object\+Base$<$ DerivedC $>$ \&C, Eigen\+::\+Plain\+Object\+Base$<$ DerivedK $>$ \&K)
+\begin{DoxyCompactList}\small\item\em Determine the connected components of a graph described by the input adjacency matrix (similar to MATLAB\textquotesingle{}s graphconncomp or gptoolbox\textquotesingle{}s conncomp, but A is transposed for unsymmetric graphs). \end{DoxyCompactList}\end{DoxyCompactItemize}

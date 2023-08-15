@@ -1,0 +1,19 @@
+\doxysection{include/igl/outer\+\_\+element.h File Reference}
+\hypertarget{outer__element_8h}{}\label{outer__element_8h}\index{include/igl/outer\_element.h@{include/igl/outer\_element.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include \"{}outer\+\_\+element.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedI , typename Index\+Type , typename DerivedA $>$ }\\void \mbox{\hyperlink{namespaceigl_abf646b1d4c8ad6dd0d2660d0a5cae584}{igl\+::outer\+\_\+vertex}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const Eigen\+::\+Matrix\+Base$<$ DerivedI $>$ \&I, Index\+Type \&v\+\_\+index, Eigen\+::\+Plain\+Object\+Base$<$ DerivedA $>$ \&A)
+\begin{DoxyCompactList}\small\item\em Find a vertex that is reachable from infinite without crossing any faces. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedI , typename Index\+Type , typename DerivedA $>$ }\\void \mbox{\hyperlink{namespaceigl_a8a1dbaf3fab3346a4956ef93313e488b}{igl\+::outer\+\_\+edge}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const Eigen\+::\+Matrix\+Base$<$ DerivedI $>$ \&I, Index\+Type \&v1, Index\+Type \&v2, Eigen\+::\+Plain\+Object\+Base$<$ DerivedA $>$ \&A)
+\begin{DoxyCompactList}\small\item\em Find an edge that is reachable from infinity without crossing any faces. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedN , typename DerivedI , typename Index\+Type $>$ }\\void \mbox{\hyperlink{namespaceigl_ab8ea262d61548f3946263a5c00ed0192}{igl\+::outer\+\_\+facet}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const Eigen\+::\+Matrix\+Base$<$ DerivedN $>$ \&N, const Eigen\+::\+Matrix\+Base$<$ DerivedI $>$ \&I, Index\+Type \&f, bool \&flipped)
+\begin{DoxyCompactList}\small\item\em Find a facet that is reachable from infinity without crossing any faces. \end{DoxyCompactList}\end{DoxyCompactItemize}

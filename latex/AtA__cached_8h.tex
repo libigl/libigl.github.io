@@ -1,0 +1,37 @@
+\doxysection{include/igl/\+At\+A\+\_\+cached.h File Reference}
+\hypertarget{AtA__cached_8h}{}\label{AtA__cached_8h}\index{include/igl/AtA\_cached.h@{include/igl/AtA\_cached.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include \"{}At\+A\+\_\+cached.\+cpp\"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structigl_1_1AtA__cached__data}{igl\+::\+At\+A\+\_\+cached\+\_\+data}}
+\begin{DoxyCompactList}\small\item\em Hold precomputed data for At\+A\+\_\+cached. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{AtA__cached_8h_aa93624b0b2836d2510e8c92ae951d817}{EIGEN\+\_\+\+YES\+\_\+\+I\+\_\+\+KNOW\+\_\+\+SPARSE\+\_\+\+MODULE\+\_\+\+IS\+\_\+\+NOT\+\_\+\+STABLE\+\_\+\+YET}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Scalar $>$ }\\void \mbox{\hyperlink{namespaceigl_a2fde5a5b34007efccb521fd4f571f153}{igl\+::\+At\+A\+\_\+cached\+\_\+precompute}} (const Eigen\+::\+Sparse\+Matrix$<$ Scalar $>$ \&A, \mbox{\hyperlink{structigl_1_1AtA__cached__data}{At\+A\+\_\+cached\+\_\+data}} \&data, Eigen\+::\+Sparse\+Matrix$<$ Scalar $>$ \&AtA)
+\begin{DoxyCompactList}\small\item\em Computes At \texorpdfstring{$\ast$}{*} W \texorpdfstring{$\ast$}{*} A, where A is sparse and W is diagonal. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Scalar $>$ }\\void \mbox{\hyperlink{namespaceigl_ac62e1e593efb31faa3ecb727695f3e53}{igl\+::\+At\+A\+\_\+cached}} (const Eigen\+::\+Sparse\+Matrix$<$ Scalar $>$ \&A, const \mbox{\hyperlink{structigl_1_1AtA__cached__data}{At\+A\+\_\+cached\+\_\+data}} \&data, Eigen\+::\+Sparse\+Matrix$<$ Scalar $>$ \&AtA)
+\begin{DoxyCompactList}\small\item\em Computes At \texorpdfstring{$\ast$}{*} W \texorpdfstring{$\ast$}{*} A, where A is sparse and W is diagonal precomputed into data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{AtA__cached_8h_aa93624b0b2836d2510e8c92ae951d817}\label{AtA__cached_8h_aa93624b0b2836d2510e8c92ae951d817} 
+\index{AtA\_cached.h@{AtA\_cached.h}!EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET@{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}}
+\index{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET@{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}!AtA\_cached.h@{AtA\_cached.h}}
+\doxysubsubsection{\texorpdfstring{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}}
+{\footnotesize\ttfamily \#define EIGEN\+\_\+\+YES\+\_\+\+I\+\_\+\+KNOW\+\_\+\+SPARSE\+\_\+\+MODULE\+\_\+\+IS\+\_\+\+NOT\+\_\+\+STABLE\+\_\+\+YET}
+

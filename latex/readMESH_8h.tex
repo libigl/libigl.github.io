@@ -1,0 +1,24 @@
+\doxysection{include/igl/read\+MESH.h File Reference}
+\hypertarget{readMESH_8h}{}\label{readMESH_8h}\index{include/igl/readMESH.h@{include/igl/readMESH.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$cstdio$>$}\newline
+{\ttfamily \#include \"{}read\+MESH.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedT $>$ }\\bool \mbox{\hyperlink{namespaceigl_aa40ef4e0517c71c597272824497377b2}{igl\+::read\+MESH}} (const std\+::string mesh\+\_\+file\+\_\+name, Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, Eigen\+::\+Plain\+Object\+Base$<$ DerivedT $>$ \&T, Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F)
+\begin{DoxyCompactList}\small\item\em Load a tetrahedral volume mesh from a .mesh file. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Scalar , typename Index $>$ }\\bool \mbox{\hyperlink{namespaceigl_a078957e6e3c6a1f4cff7de4d0a28956d}{igl\+::read\+MESH}} (const std\+::string mesh\+\_\+file\+\_\+name, std\+::vector$<$ std\+::vector$<$ Scalar $>$ $>$ \&V, std\+::vector$<$ std\+::vector$<$ Index $>$ $>$ \&T, std\+::vector$<$ std\+::vector$<$ Index $>$ $>$ \&F)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedT $>$ }\\bool \mbox{\hyperlink{namespaceigl_a1471e99a81d4975918c69176594f4621}{igl\+::read\+MESH}} (FILE \texorpdfstring{$\ast$}{*}mesh\+\_\+file, Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, Eigen\+::\+Plain\+Object\+Base$<$ DerivedT $>$ \&T, Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Scalar , typename Index $>$ }\\bool \mbox{\hyperlink{namespaceigl_a2bcad51e218e111ff185566bea366cb3}{igl\+::read\+MESH}} (FILE \texorpdfstring{$\ast$}{*}mesh\+\_\+file, std\+::vector$<$ std\+::vector$<$ Scalar $>$ $>$ \&V, std\+::vector$<$ std\+::vector$<$ Index $>$ $>$ \&T, std\+::vector$<$ std\+::vector$<$ Index $>$ $>$ \&F)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}

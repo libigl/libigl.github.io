@@ -1,0 +1,31 @@
+\doxysection{include/igl/fast\+\_\+find\+\_\+self\+\_\+intersections.h File Reference}
+\hypertarget{fast__find__self__intersections_8h}{}\label{fast__find__self__intersections_8h}\index{include/igl/fast\_find\_self\_intersections.h@{include/igl/fast\_find\_self\_intersections.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include \"{}fast\+\_\+find\+\_\+self\+\_\+intersections.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{fast__find__self__intersections_8h_aff621fe68a817b3a8c8e6b2281ff61d5}{FAST\+\_\+\+FIND\+\_\+\+SELF\+\_\+\+INTERSECTIONS\+\_\+H}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedI , typename DerivedE $>$ }\\bool \mbox{\hyperlink{namespaceigl_a2f1a7f1d5201633025a2ac99846b1b78}{igl\+::fast\+\_\+find\+\_\+self\+\_\+intersections}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&\mbox{\hyperlink{namespaceigl_a4f72acbb659a5c1d291a4cff36910a87}{intersect}}, Eigen\+::\+Plain\+Object\+Base$<$ DerivedE $>$ \&\mbox{\hyperlink{namespaceigl_a0efd6c6b371a55178d53cf0afacf34ee}{edges}})
+\begin{DoxyCompactList}\small\item\em Identify triangles where mesh intersects itself using AABBTree and tri\+\_\+tri\+\_\+intersection\+\_\+test\+\_\+3d. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedI $>$ }\\bool \mbox{\hyperlink{namespaceigl_aa607a0b8a29847a27f3e92685a652d51}{igl\+::fast\+\_\+find\+\_\+self\+\_\+intersections}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&\mbox{\hyperlink{namespaceigl_a4f72acbb659a5c1d291a4cff36910a87}{intersect}})
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{fast__find__self__intersections_8h_aff621fe68a817b3a8c8e6b2281ff61d5}\label{fast__find__self__intersections_8h_aff621fe68a817b3a8c8e6b2281ff61d5} 
+\index{fast\_find\_self\_intersections.h@{fast\_find\_self\_intersections.h}!FAST\_FIND\_SELF\_INTERSECTIONS\_H@{FAST\_FIND\_SELF\_INTERSECTIONS\_H}}
+\index{FAST\_FIND\_SELF\_INTERSECTIONS\_H@{FAST\_FIND\_SELF\_INTERSECTIONS\_H}!fast\_find\_self\_intersections.h@{fast\_find\_self\_intersections.h}}
+\doxysubsubsection{\texorpdfstring{FAST\_FIND\_SELF\_INTERSECTIONS\_H}{FAST\_FIND\_SELF\_INTERSECTIONS\_H}}
+{\footnotesize\ttfamily \#define FAST\+\_\+\+FIND\+\_\+\+SELF\+\_\+\+INTERSECTIONS\+\_\+H}
+

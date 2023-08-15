@@ -1,0 +1,24 @@
+\doxysection{include/igl/marching\+\_\+tets.h File Reference}
+\hypertarget{marching__tets_8h}{}\label{marching__tets_8h}\index{include/igl/marching\_tets.h@{include/igl/marching\_tets.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include \"{}marching\+\_\+tets.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Derived\+TV , typename Derived\+TT , typename DerivedS , typename Derived\+SV , typename Derived\+SF , typename DerivedJ , typename BCType $>$ }\\void \mbox{\hyperlink{namespaceigl_a0093d125cb961522130e5a1ab9b8ca27}{igl\+::marching\+\_\+tets}} (const Eigen\+::\+Matrix\+Base$<$ Derived\+TV $>$ \&TV, const Eigen\+::\+Matrix\+Base$<$ Derived\+TT $>$ \&TT, const Eigen\+::\+Matrix\+Base$<$ DerivedS $>$ \&S, double isovalue, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SV $>$ \&SV, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SF $>$ \&SF, Eigen\+::\+Plain\+Object\+Base$<$ DerivedJ $>$ \&J, Eigen\+::\+Sparse\+Matrix$<$ BCType $>$ \&BC)
+\begin{DoxyCompactList}\small\item\em Performs the marching tetrahedra algorithm on a tet mesh defined by TV and TT with scalar values defined at each vertex in TV. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derived\+TV , typename Derived\+TT , typename DerivedS , typename Derived\+SV , typename Derived\+SF , typename DerivedJ , typename BCType $>$ }\\void \mbox{\hyperlink{namespaceigl_aa49f489ae12ec4a901418253fcd3f3ed}{igl\+::marching\+\_\+tets}} (const Eigen\+::\+Matrix\+Base$<$ Derived\+TV $>$ \&TV, const Eigen\+::\+Matrix\+Base$<$ Derived\+TT $>$ \&TT, const Eigen\+::\+Matrix\+Base$<$ DerivedS $>$ \&S, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SV $>$ \&SV, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SF $>$ \&SF, Eigen\+::\+Plain\+Object\+Base$<$ DerivedJ $>$ \&J, Eigen\+::\+Sparse\+Matrix$<$ BCType $>$ \&BC)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derived\+TV , typename Derived\+TT , typename DerivedS , typename Derived\+SV , typename Derived\+SF , typename DerivedJ $>$ }\\void \mbox{\hyperlink{namespaceigl_aad9e83c54a585aaa12cd190c0e616f78}{igl\+::marching\+\_\+tets}} (const Eigen\+::\+Matrix\+Base$<$ Derived\+TV $>$ \&TV, const Eigen\+::\+Matrix\+Base$<$ Derived\+TT $>$ \&TT, const Eigen\+::\+Matrix\+Base$<$ DerivedS $>$ \&S, double isovalue, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SV $>$ \&SV, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SF $>$ \&SF, Eigen\+::\+Plain\+Object\+Base$<$ DerivedJ $>$ \&J)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derived\+TV , typename Derived\+TT , typename DerivedS , typename Derived\+SV , typename Derived\+SF , typename BCType $>$ }\\void \mbox{\hyperlink{namespaceigl_a23bde721d023a222d5fe54c24c749d25}{igl\+::marching\+\_\+tets}} (const Eigen\+::\+Matrix\+Base$<$ Derived\+TV $>$ \&TV, const Eigen\+::\+Matrix\+Base$<$ Derived\+TT $>$ \&TT, const Eigen\+::\+Matrix\+Base$<$ DerivedS $>$ \&S, double isovalue, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SV $>$ \&SV, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SF $>$ \&SF, Eigen\+::\+Sparse\+Matrix$<$ BCType $>$ \&BC)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derived\+TV , typename Derived\+TT , typename DerivedS , typename Derived\+SV , typename Derived\+SF $>$ }\\void \mbox{\hyperlink{namespaceigl_a164e0e949f5e320e1fd2d9cc2bd1d40a}{igl\+::marching\+\_\+tets}} (const Eigen\+::\+Matrix\+Base$<$ Derived\+TV $>$ \&TV, const Eigen\+::\+Matrix\+Base$<$ Derived\+TT $>$ \&TT, const Eigen\+::\+Matrix\+Base$<$ DerivedS $>$ \&S, double isovalue, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SV $>$ \&SV, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SF $>$ \&SF)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}

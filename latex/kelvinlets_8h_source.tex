@@ -1,0 +1,69 @@
+\doxysection{kelvinlets.\+h}
+\hypertarget{kelvinlets_8h_source}{}\label{kelvinlets_8h_source}\index{include/igl/kelvinlets.h@{include/igl/kelvinlets.h}}
+\mbox{\hyperlink{kelvinlets_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ IGL\_KELVINLETS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ IGL\_KELVINLETS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <igl/igl\_inline.h>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}\ \{}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceigl_a69c0d149c7cb41a263f858b695eeb988}{BrushType}}\ :\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ \mbox{\hyperlink{namespaceigl_a69c0d149c7cb41a263f858b695eeb988a8695c57e30e957161af26fe52d8a5826}{GRAB}},}
+\DoxyCodeLine{00014\ \ \ \mbox{\hyperlink{namespaceigl_a69c0d149c7cb41a263f858b695eeb988a127ea1d20becc4dba06d9d152db0c2e5}{SCALE}},}
+\DoxyCodeLine{00015\ \ \ \mbox{\hyperlink{namespaceigl_a69c0d149c7cb41a263f858b695eeb988a7d503f3470adcef7d9b24cdfa82ea1c1}{TWIST}},}
+\DoxyCodeLine{00016\ \ \ \mbox{\hyperlink{namespaceigl_a69c0d149c7cb41a263f858b695eeb988a1519953796ab374eeab96e42a849ed19}{PINCH}},}
+\DoxyCodeLine{00017\ \};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Scalar>}
+\DoxyCodeLine{00021\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1KelvinletParams}{KelvinletParams}}}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \ \ \textcolor{keyword}{const}\ Scalar\ \mbox{\hyperlink{structigl_1_1KelvinletParams_a830d8ba44471b21a468c7ea537a2dee8}{epsilon}};}
+\DoxyCodeLine{00024\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structigl_1_1KelvinletParams_a0464935aa9c58690cf19f893fac7d87a}{scale}};}
+\DoxyCodeLine{00025\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceigl_a69c0d149c7cb41a263f858b695eeb988}{BrushType}}\ \mbox{\hyperlink{structigl_1_1KelvinletParams_ad815e84f428f832997865aca5682d339}{brushType}};}
+\DoxyCodeLine{00026\ \ \ std::array<Scalar,\ 3>\ \mbox{\hyperlink{structigl_1_1KelvinletParams_aa8a5f06a42ed5787c6388c43e04ef6f9}{ep}}\{\},\ \mbox{\hyperlink{structigl_1_1KelvinletParams_a380fb26a53c0df41b307e301b2975b88}{w}}\{\};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \mbox{\hyperlink{structigl_1_1KelvinletParams_a9847026baf07f501c382004a612bd177}{KelvinletParams}}(\textcolor{keyword}{const}\ Scalar\&\ \mbox{\hyperlink{structigl_1_1KelvinletParams_a830d8ba44471b21a468c7ea537a2dee8}{epsilon}},}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ falloff,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceigl_a69c0d149c7cb41a263f858b695eeb988}{BrushType}}\&\ type)}
+\DoxyCodeLine{00031\ \ \ \ \ :\ \mbox{\hyperlink{structigl_1_1KelvinletParams_a830d8ba44471b21a468c7ea537a2dee8}{epsilon}}(\mbox{\hyperlink{structigl_1_1KelvinletParams_a830d8ba44471b21a468c7ea537a2dee8}{epsilon}})}
+\DoxyCodeLine{00032\ \ \ \ \ ,\ \mbox{\hyperlink{structigl_1_1KelvinletParams_a0464935aa9c58690cf19f893fac7d87a}{scale}}(falloff)}
+\DoxyCodeLine{00033\ \ \ \ \ ,\ \mbox{\hyperlink{structigl_1_1KelvinletParams_ad815e84f428f832997865aca5682d339}{brushType}}(type)}
+\DoxyCodeLine{00034\ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ std::array<Scalar,\ 3>\ brush\_scaling\_params\{\ 1.0f,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1.1f,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1.21f\ \};}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1KelvinletParams_aa8a5f06a42ed5787c6388c43e04ef6f9}{ep}}[i]\ =\ \mbox{\hyperlink{structigl_1_1KelvinletParams_a830d8ba44471b21a468c7ea537a2dee8}{epsilon}}\ *\ brush\_scaling\_params[i];}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{structigl_1_1KelvinletParams_a380fb26a53c0df41b307e301b2975b88}{w}}[0]\ =\ 1;}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{structigl_1_1KelvinletParams_a380fb26a53c0df41b307e301b2975b88}{w}}[1]\ =\ -\/((\mbox{\hyperlink{structigl_1_1KelvinletParams_aa8a5f06a42ed5787c6388c43e04ef6f9}{ep}}[2]\ *\ \mbox{\hyperlink{structigl_1_1KelvinletParams_aa8a5f06a42ed5787c6388c43e04ef6f9}{ep}}[2]\ -\/\ \mbox{\hyperlink{structigl_1_1KelvinletParams_aa8a5f06a42ed5787c6388c43e04ef6f9}{ep}}[0]\ *\ \mbox{\hyperlink{structigl_1_1KelvinletParams_aa8a5f06a42ed5787c6388c43e04ef6f9}{ep}}[0])\ /\ (\mbox{\hyperlink{structigl_1_1KelvinletParams_aa8a5f06a42ed5787c6388c43e04ef6f9}{ep}}[2]\ *\ \mbox{\hyperlink{structigl_1_1KelvinletParams_aa8a5f06a42ed5787c6388c43e04ef6f9}{ep}}[2]\ -\/\ \mbox{\hyperlink{structigl_1_1KelvinletParams_aa8a5f06a42ed5787c6388c43e04ef6f9}{ep}}[1]\ *\ \mbox{\hyperlink{structigl_1_1KelvinletParams_aa8a5f06a42ed5787c6388c43e04ef6f9}{ep}}[1]));}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{structigl_1_1KelvinletParams_a380fb26a53c0df41b307e301b2975b88}{w}}[2]\ =\ (\mbox{\hyperlink{structigl_1_1KelvinletParams_aa8a5f06a42ed5787c6388c43e04ef6f9}{ep}}[1]\ *\ \mbox{\hyperlink{structigl_1_1KelvinletParams_aa8a5f06a42ed5787c6388c43e04ef6f9}{ep}}[1]\ -\/\ \mbox{\hyperlink{structigl_1_1KelvinletParams_aa8a5f06a42ed5787c6388c43e04ef6f9}{ep}}[0]\ *\ \mbox{\hyperlink{structigl_1_1KelvinletParams_aa8a5f06a42ed5787c6388c43e04ef6f9}{ep}}[0])\ /\ (\mbox{\hyperlink{structigl_1_1KelvinletParams_aa8a5f06a42ed5787c6388c43e04ef6f9}{ep}}[2]\ *\ \mbox{\hyperlink{structigl_1_1KelvinletParams_aa8a5f06a42ed5787c6388c43e04ef6f9}{ep}}[2]\ -\/\ \mbox{\hyperlink{structigl_1_1KelvinletParams_aa8a5f06a42ed5787c6388c43e04ef6f9}{ep}}[1]\ *\ \mbox{\hyperlink{structigl_1_1KelvinletParams_aa8a5f06a42ed5787c6388c43e04ef6f9}{ep}}[1]);}
+\DoxyCodeLine{00044\ \ \ \}}
+\DoxyCodeLine{00045\ \};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Derivedx0,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Derivedf,}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedU>}
+\DoxyCodeLine{00062\ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a0a85e70cd58bcb5ebb5b36ef4a010fde}{kelvinlets}}(}
+\DoxyCodeLine{00063\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\&\ V,}
+\DoxyCodeLine{00064\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedx0>\&\ x0,}
+\DoxyCodeLine{00065\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedf>\&\ f,}
+\DoxyCodeLine{00066\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\&\ F,}
+\DoxyCodeLine{00067\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structigl_1_1KelvinletParams}{KelvinletParams<typename\ DerivedV::Scalar>}}\&\ params,}
+\DoxyCodeLine{00068\ \ \ Eigen::PlainObjectBase<DerivedU>\&\ U);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#include\ "{}kelvinlets.cpp"{}}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

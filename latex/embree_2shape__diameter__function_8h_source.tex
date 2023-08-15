@@ -1,0 +1,54 @@
+\doxysection{shape\+\_\+diameter\+\_\+function.\+h}
+\hypertarget{embree_2shape__diameter__function_8h_source}{}\label{embree_2shape__diameter__function_8h_source}\index{include/igl/embree/shape\_diameter\_function.h@{include/igl/embree/shape\_diameter\_function.h}}
+\mbox{\hyperlink{embree_2shape__diameter__function_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2013\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_EMBREE\_SHAPE\_DIAMETER\_FUNCTION\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_EMBREE\_SHAPE\_DIAMETER\_FUNCTION\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \ \ \textcolor{keyword}{namespace\ }embree}
+\DoxyCodeLine{00015\ \ \ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{//\ Forward\ define}}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{class\ }EmbreeIntersector;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedP,}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedN,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedS\ >}
+\DoxyCodeLine{00030\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1embree_a93025c9bea20cc5c7dcf9c3c0606a3df}{shape\_diameter\_function}}(}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector}{EmbreeIntersector}}\ \&\ ei,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedP>\ \&\ P,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedN>\ \&\ N,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ num\_samples,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedS>\ \&\ S);}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedP,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedN,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedS\ >}
+\DoxyCodeLine{00047\ \ \ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1embree_a93025c9bea20cc5c7dcf9c3c0606a3df}{shape\_diameter\_function}}(}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedP>\ \&\ P,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedN>\ \&\ N,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ num\_samples,}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedS>\ \&\ S);}
+\DoxyCodeLine{00054\ \ \ \}}
+\DoxyCodeLine{00055\ \};}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#\ \ include\ "{}shape\_diameter\_function.cpp"{}}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00061\ }
+
+\end{DoxyCode}

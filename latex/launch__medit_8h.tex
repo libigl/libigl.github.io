@@ -1,0 +1,15 @@
+\doxysection{include/igl/launch\+\_\+medit.h File Reference}
+\hypertarget{launch__medit_8h}{}\label{launch__medit_8h}\index{include/igl/launch\_medit.h@{include/igl/launch\_medit.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include \"{}launch\+\_\+medit.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedT , typename DerivedF $>$ }\\int \mbox{\hyperlink{namespaceigl_af44b520d132c6b6d1941fe5819f45ae1}{igl\+::launch\+\_\+medit}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedT $>$ \&T, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F, const bool wait)
+\begin{DoxyCompactList}\small\item\em Writes the tetmesh in (V,T,F) to a temporary file, opens it with medit (forking with a system call) and returns. \end{DoxyCompactList}\end{DoxyCompactItemize}

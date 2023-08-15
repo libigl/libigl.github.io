@@ -1,0 +1,23 @@
+\doxysection{include/igl/read\+STL.h File Reference}
+\hypertarget{readSTL_8h}{}\label{readSTL_8h}\index{include/igl/readSTL.h@{include/igl/readSTL.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$istream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$array$>$}\newline
+{\ttfamily \#include \"{}read\+STL.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedN $>$ }\\bool \mbox{\hyperlink{namespaceigl_aa1e874916eb50201727b290cc48fbaac}{igl\+::read\+STL}} (std\+::istream \&input, Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ DerivedN $>$ \&N)
+\begin{DoxyCompactList}\small\item\em Read a mesh from an ascii/binary stl file. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TypeV , typename TypeF , typename TypeN $>$ }\\bool \mbox{\hyperlink{namespaceigl_a1b3c654bf8fde8ab6f7b55c515b11bea}{igl\+::read\+STL}} (std\+::istream \&input, std\+::vector$<$ std\+::array$<$ TypeV, 3 $>$ $>$ \&V, std\+::vector$<$ std\+::array$<$ TypeF, 3 $>$ $>$ \&F, std\+::vector$<$ std\+::array$<$ TypeN, 3 $>$ $>$ \&N)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedN $>$ }\\bool \mbox{\hyperlink{namespaceigl_aa7d360f2f2694afebd1e62cee1551de4}{igl\+::read\+STL}} (FILE \texorpdfstring{$\ast$}{*}fp, Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ DerivedN $>$ \&N)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}

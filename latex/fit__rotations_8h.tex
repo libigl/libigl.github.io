@@ -1,0 +1,17 @@
+\doxysection{include/igl/fit\+\_\+rotations.h File Reference}
+\hypertarget{fit__rotations_8h}{}\label{fit__rotations_8h}\index{include/igl/fit\_rotations.h@{include/igl/fit\_rotations.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include \"{}fit\+\_\+rotations.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedS , typename DerivedD $>$ }\\void \mbox{\hyperlink{namespaceigl_aab9cbb962b540c16acdca0c7d168345d}{igl\+::fit\+\_\+rotations}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedS $>$ \&S, const bool single\+\_\+precision, Eigen\+::\+Plain\+Object\+Base$<$ DerivedD $>$ \&R)
+\begin{DoxyCompactList}\small\item\em Given an input mesh and new positions find rotations for every covariance matrix in a stack of covariance matrices. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedS , typename DerivedD $>$ }\\void \mbox{\hyperlink{namespaceigl_ac84591b34ac42f8f958c015edabec2d6}{igl\+::fit\+\_\+rotations\+\_\+planar}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedS $>$ \&S, Eigen\+::\+Plain\+Object\+Base$<$ DerivedD $>$ \&R)
+\begin{DoxyCompactList}\small\item\em Given an input mesh and new positions find 2D rotations for every vertex that best maps its one ring to the new one ring. \end{DoxyCompactList}\end{DoxyCompactItemize}

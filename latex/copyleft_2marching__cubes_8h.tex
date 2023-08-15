@@ -1,0 +1,25 @@
+\doxysection{include/igl/copyleft/marching\+\_\+cubes.h File Reference}
+\hypertarget{copyleft_2marching__cubes_8h}{}\label{copyleft_2marching__cubes_8h}\index{include/igl/copyleft/marching\_cubes.h@{include/igl/copyleft/marching\_cubes.h}}
+{\ttfamily \#include \"{}../igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include \"{}marching\+\_\+cubes.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{namespaceigl_1_1copyleft}{igl\+::copyleft}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Derived\+Values , typename Derived\+Points , typename Derived\+Vertices , typename Derived\+Faces $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1copyleft_a5c5920cc7d10f7fc5a4de60dcee97163}{igl\+::copyleft\+::marching\+\_\+cubes}} (const Eigen\+::\+Matrix\+Base$<$ Derived\+Values $>$ \&values, const Eigen\+::\+Matrix\+Base$<$ Derived\+Points $>$ \&points, const unsigned x\+\_\+res, const unsigned y\+\_\+res, const unsigned z\+\_\+res, const double isovalue, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+Vertices $>$ \&vertices, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+Faces $>$ \&faces)
+\begin{DoxyCompactList}\small\item\em Performs marching cubes reconstruction on a grid defined by values, and points, and generates a mesh defined by vertices and faces. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derived\+Values , typename Derived\+Points , typename Derived\+Vertices , typename Derived\+Faces $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1copyleft_a2df017abd3ecc522475b1c761dfcb884}{igl\+::copyleft\+::marching\+\_\+cubes}} (const Eigen\+::\+Matrix\+Base$<$ Derived\+Values $>$ \&values, const Eigen\+::\+Matrix\+Base$<$ Derived\+Points $>$ \&points, const unsigned x\+\_\+res, const unsigned y\+\_\+res, const unsigned z\+\_\+res, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+Vertices $>$ \&vertices, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+Faces $>$ \&faces)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Overload of the above function where the isovalue defaults to 0.\+0. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derived\+Value , typename Derived\+Point , typename Derived\+Points , typename Derived\+Vertices , typename Derived\+Faces $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1copyleft_a94e085211bca600f67f086f3a489c415}{igl\+::copyleft\+::marching\+\_\+cubes}} (const std\+::function$<$ Derived\+Value(const Derived\+Point \&) $>$ \&value\+\_\+fun, const Eigen\+::\+Matrix\+Base$<$ Derived\+Points $>$ \&points, const unsigned x\+\_\+res, const unsigned y\+\_\+res, const unsigned z\+\_\+res, const double isovalue, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+Vertices $>$ \&vertices, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+Faces $>$ \&faces)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derived\+Values , typename Derived\+Points , typename Derived\+Vertices , typename Derived\+Indices , typename Derived\+Faces $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1copyleft_a58cd861ba98a41b35dcb8c94f147e27f}{igl\+::copyleft\+::marching\+\_\+cubes}} (const Eigen\+::\+Matrix\+Base$<$ Derived\+Values $>$ \&values, const Eigen\+::\+Matrix\+Base$<$ Derived\+Points $>$ \&points, const Eigen\+::\+Matrix\+Base$<$ Derived\+Indices $>$ \&indices, const double isovalue, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+Vertices $>$ \&vertices, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+Faces $>$ \&faces)
+\begin{DoxyCompactList}\small\item\em Perform marching cubes reconstruction on the sparse grid cells defined by (indices, points). \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derived\+Values , typename Derived\+Points , typename Derived\+Vertices , typename Derived\+Indices , typename Derived\+Faces $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1copyleft_acd17c22c13a6d3000c4d3553c47122fe}{igl\+::copyleft\+::marching\+\_\+cubes}} (const Eigen\+::\+Matrix\+Base$<$ Derived\+Values $>$ \&values, const Eigen\+::\+Matrix\+Base$<$ Derived\+Points $>$ \&points, const Eigen\+::\+Matrix\+Base$<$ Derived\+Indices $>$ \&indices, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+Vertices $>$ \&vertices, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+Faces $>$ \&faces)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}

@@ -1,0 +1,40 @@
+\doxysection{crouzeix\+\_\+raviart\+\_\+massmatrix.\+h}
+\hypertarget{crouzeix__raviart__massmatrix_8h_source}{}\label{crouzeix__raviart__massmatrix_8h_source}\index{include/igl/crouzeix\_raviart\_massmatrix.h@{include/igl/crouzeix\_raviart\_massmatrix.h}}
+\mbox{\hyperlink{crouzeix__raviart__massmatrix_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2015\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ CROUZEIX\_RAVIART\_MASSMATRIX\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ CROUZEIX\_RAVIART\_MASSMATRIX\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Eigen/Sparse>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00029\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ MT,\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF,\ \textcolor{keyword}{typename}\ DerivedE,\ \textcolor{keyword}{typename}\ DerivedEMAP>}
+\DoxyCodeLine{00030\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a1e1d2b58df45ae7555c3719963bb39d6}{crouzeix\_raviart\_massmatrix}}(}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ Eigen::SparseMatrix<MT>\ \&\ M,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedE>\ \&\ E,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedEMAP>\ \&\ EMAP);}
+\DoxyCodeLine{00050\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ MT,\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF,\ \textcolor{keyword}{typename}\ DerivedE,\ \textcolor{keyword}{typename}\ DerivedEMAP>}
+\DoxyCodeLine{00051\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a1e1d2b58df45ae7555c3719963bb39d6}{crouzeix\_raviart\_massmatrix}}(}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedE>\ \&\ E,}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEMAP>\ \&\ EMAP,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ Eigen::SparseMatrix<MT>\ \&\ M);}
+\DoxyCodeLine{00057\ \}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#\ \ include\ "{}crouzeix\_raviart\_massmatrix.cpp"{}}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00061\ \ \ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

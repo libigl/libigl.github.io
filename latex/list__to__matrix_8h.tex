@@ -1,0 +1,23 @@
+\doxysection{include/igl/list\+\_\+to\+\_\+matrix.h File Reference}
+\hypertarget{list__to__matrix_8h}{}\label{list__to__matrix_8h}\index{include/igl/list\_to\_matrix.h@{include/igl/list\_to\_matrix.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$array$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include \"{}list\+\_\+to\+\_\+matrix.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T , typename Derived $>$ }\\bool \mbox{\hyperlink{namespaceigl_a6df6ee5a6c7852f628cefbb8dbb025af}{igl\+::list\+\_\+to\+\_\+matrix}} (const std\+::vector$<$ std\+::vector$<$ T $>$ $>$ \&V, Eigen\+::\+Plain\+Object\+Base$<$ Derived $>$ \&M)
+\begin{DoxyCompactList}\small\item\em Convert a list (std\+::vector) of row vectors of the same length to a matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t N, typename Derived $>$ }\\bool \mbox{\hyperlink{namespaceigl_ae5fd001a788d43f744d257d305ddb1b3}{igl\+::list\+\_\+to\+\_\+matrix}} (const std\+::vector$<$ std\+::array$<$ T, N $>$ $>$ \&V, Eigen\+::\+Plain\+Object\+Base$<$ Derived $>$ \&M)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename Derived $>$ }\\bool \mbox{\hyperlink{namespaceigl_a47b768c6f9bfb5e3e0342cbe32f91110}{igl\+::list\+\_\+to\+\_\+matrix}} (const std\+::vector$<$ T $>$ \&V, Eigen\+::\+Plain\+Object\+Base$<$ Derived $>$ \&M)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename Derived $>$ }\\bool \mbox{\hyperlink{namespaceigl_a25bb0b08ed4407588cdc107ce3f99b3d}{igl\+::list\+\_\+to\+\_\+matrix}} (const std\+::vector$<$ std\+::vector$<$ T $>$ $>$ \&V, const int n, const T \&padding, Eigen\+::\+Plain\+Object\+Base$<$ Derived $>$ \&M)
+\begin{DoxyCompactList}\small\item\em Convert a list of row vectors of {\ttfamily n} or less to a matrix and pad on the right with {\ttfamily padding}. \end{DoxyCompactList}\end{DoxyCompactItemize}
