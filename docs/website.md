@@ -29,113 +29,15 @@ If you want to preview the website locally on your machine, you will need to run
 
 ### Prerequisites
 
-#### Install Conda
-
-If you do not already have it, install [miniconda](https://docs.conda.io/en/latest/miniconda.html) on your machine.
-
-??? info "Instructions for Windows"
-
-    - Option 1: Using [Chocolatey](https://chocolatey.org/):
-      ```
-      choco install -y miniconda3
-      ```
-
-    - Option 2: Using [Scoop](https://scoop.sh/):
-      ```bash
-      # Add the extras bucket
-      scoop bucket add extras
-      scoop install miniconda3
-      ```
-      
-    - Option 3: [Manual Installation](https://conda.io/projects/conda/en/latest/user-guide/install/windows.html)
-
-??? info "Instructions for macOS"
-
-    - Option 1: Using Homebrew Cask:
-      ```bash
-      brew cask install miniconda
-      ```
-
-    - Option 2: [Manual Installation](https://conda.io/projects/conda/en/latest/user-guide/install/macos.html)
-    ```bash
-    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
-    bash Miniconda3-latest-MacOSX-x86_64.sh
-    ```
-
-??? info "Instructions for Ubuntu/Debian"
-
-    1. Download the public GPG key and add the conda repository to the sources list
-        ```bash
-        # Install our public GPG key to trusted store
-        curl https://repo.anaconda.com/pkgs/misc/gpgkeys/anaconda.asc | gpg --dearmor > conda.gpg
-        install -o root -g root -m 644 conda.gpg /usr/share/keyrings/conda-archive-keyring.gpg
-
-        # Check whether fingerprint is correct (will output an error message otherwise)
-        gpg --keyring /usr/share/keyrings/conda-archive-keyring.gpg --no-default-keyring --fingerprint 34161F5BF5EB1D4BFBBB8F0A8AEB4F8B29D82806
-
-        # Add our Debian repo
-        echo "deb [arch=amd64 signed-by=/usr/share/keyrings/conda-archive-keyring.gpg] https://repo.anaconda.com/pkgs/misc/debrepo/conda stable main" > /etc/apt/sources.list.d/conda.list
-
-        **NB:** If you receive a Permission denied error when trying to run the above command (because `/etc/apt/sources.list.d/conda.list` is write protected), try using the following command instead:
-        echo "deb [arch=amd64 signed-by=/usr/share/keyrings/conda-archive-keyring.gpg] https://repo.anaconda.com/pkgs/misc/debrepo/conda stable main" | sudo tee -a /etc/apt/sources.list.d/conda.list
-        ```
-
-    2. Install the conda package manager:
-        ```bash
-        # Install it!
-        apt update
-        apt install conda
-        ```
-
-??? info "Instructions for RedHat/CentOS/Fedora"
-
-    1. Download the GPG key and add a repository configuration file for conda
-        ```bash
-        # Import our GPG public key
-        rpm --import https://repo.anaconda.com/pkgs/misc/gpgkeys/anaconda.asc
-
-        # Add the Anaconda repository
-        cat <<EOF > /etc/yum/repos.d/conda.repo
-        [conda]
-        name=Conda
-        baseurl=https://repo.anaconda.com/pkgs/misc/rpmrepo/conda
-        enabled=1
-        gpgcheck=1
-        gpgkey=https://repo.anaconda.com/pkgs/misc/gpgkeys/anaconda.asc
-        EOF
-        ```
-
-    2. Install the conda package manager:
-        ```
-        yum install conda
-        ```
-
-??? info "Instructions for generic Linux"
-
-    - [Manual installation](https://conda.io/projects/conda/en/latest/user-guide/install/linux.html):
-      ```bash
-      wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-      bash Miniconda3-latest-Linux-x86_64.sh
-      ```
-
-#### Create/Update Conda Environment
-
+```bash
+python -m pip install -r requirements.txt
 ```
-conda env update -f conda.yml
-```
-
 
 ### Render the Website
 
-1. Activate the conda environment installed on the previous step:
-   ```bash
-   conda activate libigl-website
-   ```
-
-2. Preview the website locally (run this command in the root folder of the libigl project):
-   ```bash
-   mkdocs serve
-   ```
+```bash
+mkdocs serve
+```
 
 !!! tip
 
@@ -151,6 +53,5 @@ Deployment has been automated through the use of GitHub Actions. The configurati
 
 ## References
 
-- [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
 - [MkDocs](http://www.mkdocs.org/)
 - [Material Theme](https://squidfunk.github.io/mkdocs-material/)

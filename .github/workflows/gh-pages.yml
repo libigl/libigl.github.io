@@ -14,19 +14,17 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: Setup Conda
-        uses: conda-incubator/setup-miniconda@v2
-        with:
-          activate-environment: libigl-website
-          environment-file: conda.yml
-          auto-activate-base: false
+      - name: Setup Python 🐍
+        - uses: actions/checkout@v3
+        - uses: actions/setup-python@v4
+          with:
+            python-version: '3.10'
+            cache: 'pip' # caching pip dependencies
+        - run: pip install -r requirements.txt
 
-      - name: Build website
+      - name: Build website 🛠
         shell: bash
-        run: |
-          eval "$(conda shell.bash hook)"
-          conda activate libigl-website
-          mkdocs build
+        run: mkdocs build
 
       - name: Deploy to GH Pages 🚀
         uses: peaceiris/actions-gh-pages@v3
