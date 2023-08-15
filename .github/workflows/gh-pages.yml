@@ -14,6 +14,7 @@ jobs:
         uses: actions/checkout@v1
         with:
           fetch-depth: 1
+          submodules: true
 
       - name: Setup Python 🐍
         uses: actions/setup-python@v4
@@ -23,6 +24,16 @@ jobs:
 
       - name: Install Pip Requirements 🐷
         run: pip install -r requirements.txt
+
+      - name: Install doxygen 🧪
+        uses: ssciwr/doxygen-install@v1
+
+      - name: Clone libigl & run doxygen 🤖
+        run: |
+          git clone -b alecjacobson/doxygen https://github.com/libigl/libigl/
+          cd docs/
+          doxygen ../libigl/docs/doxygen.conf
+
 
       - name: Build website 🛠
         shell: bash
