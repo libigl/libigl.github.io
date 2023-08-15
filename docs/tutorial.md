@@ -124,7 +124,13 @@ second and third column, respectively. The matrix `F` stores the triangle
 connectivity: each line of `F` denotes a triangle whose 3 vertices are
 represented as indices pointing to rows of `V`.
 
-![A simple mesh made of 2 triangles and 4 vertices.](images/VF.png)
+<figure markdown>
+  ![](images/VF.png)
+  <figcaption markdown="span">
+    A simple mesh made of 2 triangles and 4 vertices.
+  </figcaption>
+</figure>
+
 
 Note that the order of the vertex indices in `F` determines the orientation of
 the triangles and it should thus be consistent for the entire surface.
@@ -196,7 +202,13 @@ and it is possible to extend the viewer with standard OpenGL code.
 Please see the documentation in
 [Viewer.h]({{ repo_url }}/include/igl/opengl/glfw/Viewer.h) for more details.
 
-![([Example 102]({{ repo_url }}/tutorial/102_DrawMesh/main.cpp)) loads and draws a mesh.](images/102_DrawMesh.png)
+<figure markdown>
+  ![](images/102_DrawMesh.png)
+  <figcaption markdown="span">
+    ([Example 102]({{ repo_url }}/tutorial/102_DrawMesh/main.cpp)) loads and draws a mesh.
+  </figcaption>
+</figure>
+
 
 ### Interaction With Keyboard And Mouse
 
@@ -269,7 +281,13 @@ the size of `C`, the viewer applies the color to the faces or to the vertices.
 In Example 104, the colors of mesh vertices are set according to their Cartesian
 coordinates.
 
-![([Example 104]({{ repo_url }}/tutorial/104_Colors/main.cpp)) Set the colors of a mesh. ](images/104_Colors.png)
+<figure markdown>
+  ![](images/104_Colors.png)
+  <figcaption markdown="span">
+    ([Example 104]({{ repo_url }}/tutorial/104_Colors/main.cpp)) Set the colors of a mesh. 
+  </figcaption>
+</figure>
+
 
 Per-Vertex scalar fields can be directly visualized using `set_data` function:
 
@@ -319,7 +337,13 @@ Eigen::Vector3d m = V.colwise().minCoeff();
 Eigen::Vector3d M = V.colwise().maxCoeff();
 ```
 
-![([Example 105]({{ repo_url }}/tutorial/105_Overlays/main.cpp)) The bounding box of a mesh is shown using overlays.](images/105_Overlays.png)
+<figure markdown>
+  ![](images/105_Overlays.png)
+  <figcaption markdown="span">
+    ([Example 105]({{ repo_url }}/tutorial/105_Overlays/main.cpp)) The bounding box of a mesh is shown using overlays.
+  </figcaption>
+</figure>
+
 
 ### Viewer Menu
 
@@ -406,7 +430,13 @@ menu.callback_draw_custom_window = [&]()
 };
 ```
 
-![([Example 106]({{ repo_url }}/tutorial/106_ViewerMenu/main.cpp)) The UI of the viewer can be easily customized.](images/106_ViewerMenu.png)
+<figure markdown>
+  ![](images/106_ViewerMenu.png)
+  <figcaption markdown="span">
+    ([Example 106]({{ repo_url }}/tutorial/106_ViewerMenu/main.cpp)) The UI of the viewer can be easily customized.
+  </figcaption>
+</figure>
+
 
 ### Multiple Meshes
 
@@ -418,7 +448,13 @@ field. By default the index is set to `0`, so in the typical case of a single me
 `viewer.data()` returns the `igl::ViewerData` corresponding to the one
 and only mesh.
 
-![([Example 107]({{ repo_url }}/tutorial/107_MultipleMeshes/main.cpp)) The `igl::opengl::glfw::Viewer` can render multiple meshes, each with its own attributes like colors.](images/multiple-meshes.png)
+<figure markdown>
+  ![](images/multiple-meshes.png)
+  <figcaption markdown="span">
+    ([Example 107]({{ repo_url }}/tutorial/107_MultipleMeshes/main.cpp)) The `igl::opengl::glfw::Viewer` can render multiple meshes, each with its own attributes like colors.
+  </figcaption>
+</figure>
+
 
 ### Multiple Views
 
@@ -456,7 +492,13 @@ When appending a new mesh or a new view core, an optional argument controls the 
 of the existing objects with respect to the new mesh/view. Please refer to the documentation
 of `Viewer::append_mesh()` and `Viewer::append_core()` for more details.
 
-![([Example 108]({{ repo_url }}/tutorial/108_MultipleViews/main.cpp)) The `igl::opengl::glfw::Viewer` can render the same scene using multiple views, each with its own attributes like colors, and individual mesh visibility.](images/108_MultipleViews.png)
+<figure markdown>
+  ![](images/108_MultipleViews.png)
+  <figcaption markdown="span">
+    ([Example 108]({{ repo_url }}/tutorial/108_MultipleViews/main.cpp)) The `igl::opengl::glfw::Viewer` can render the same scene using multiple views, each with its own attributes like colors, and individual mesh visibility.
+  </figcaption>
+</figure>
+
 
 ### Viewer Guizmos
 
@@ -499,7 +541,13 @@ plugin.callback = [&](const Eigen::Matrix4f & T)
 };
 ```
 
-<center>![([Example 109]({{ repo_url }}/tutorial/109_ImGuizmo/main.cpp)) The Libigl Viewer integrates with ImGuizmo to provide transformation widgets.](images/109_ImGuizmo.png)</center>
+<center><figure markdown>
+  ![](images/109_ImGuizmo.png)
+  <figcaption markdown="span">
+    ([Example 109]({{ repo_url }}/tutorial/109_ImGuizmo/main.cpp)) The Libigl Viewer integrates with ImGuizmo to provide transformation widgets.
+  </figcaption>
+</figure>
+</center>
 
 ### Msh Viewer
 
@@ -526,7 +574,13 @@ igl::readMSH("hand.msh", X, Tri, Tet, TriTag, TetTag, XFields, XF, EFields, TriF
 
 The interactive viewer is unable to directly draw tetrahedra though. So for visualization purposes each tetrahedron
 can be converted to four triangles.
-![([Example 110]({{ repo_url }}/tutorial/110_MshView/main.cpp)) Shows a slice of tetrahedral mesh with scalar field defined on element level](images/110_MshView.png)
+<figure markdown>
+  ![](images/110_MshView.png)
+  <figcaption markdown="span">
+    ([Example 110]({{ repo_url }}/tutorial/110_MshView/main.cpp)) Shows a slice of tetrahedral mesh with scalar field defined on element level
+  </figcaption>
+</figure>
+
 
 
 ### MatCaps
@@ -556,7 +610,13 @@ UV-mapping (parameterization) of the model, we use the per-fragment normals. By
 using the normal relative to the camera's coordinate system we get view
 dependent complex lighting "for free":
 
-![[Example 111]({{ repo_url }}/tutorial/111_MatCap/main.cpp) demonstrates using a jade matcap to add complex lighting to the libigl viewer.](images/armadillo-jade-matcap.gif)
+<figure markdown>
+  ![](images/armadillo-jade-matcap.gif)
+  <figcaption markdown="span">
+    [Example 111]({{ repo_url }}/tutorial/111_MatCap/main.cpp) demonstrates using a jade matcap to add complex lighting to the libigl viewer.
+  </figcaption>
+</figure>
+
 
 In libigl, if the rgba data for a matcap image is stored in `R`,`G`,`B`, and `A`
 (as output, e.g., by `igl::png::readPNG`) then this can be attached to the 
@@ -636,7 +696,13 @@ designer, but creases and corners can also be computed automatically. Libigl
 implements a simple scheme which computes corner normals as averages of
 normals of faces incident on the corresponding vertex which do not deviate by more than a specified dihedral angle (e.g. 20°).
 
-![The `Normals` example computes per-face (left), per-vertex (middle) and per-corner (right) normals](images/fandisk-normals.png)
+<figure markdown>
+  ![](images/fandisk-normals.png)
+  <figcaption markdown="span">
+    The `Normals` example computes per-face (left), per-vertex (middle) and per-corner (right) normals
+  </figcaption>
+</figure>
+
 
 ### Gaussian Curvature
 
@@ -664,7 +730,13 @@ at vertex $i$ in triangle $j$ [^meyer_2003].
 Just like the continuous analog, our discrete Gaussian curvature reveals
 elliptic, hyperbolic and parabolic vertices on the domain, as demonstrated in [Example 202]({{ repo_url }}/tutorial/202_GaussianCurvature/main.cpp).
 
-![The `GaussianCurvature` example computes discrete Gaussian curvature and visualizes it in pseudocolor.](images/bumpy-gaussian-curvature.jpg)
+<figure markdown>
+  ![](images/bumpy-gaussian-curvature.jpg)
+  <figcaption markdown="span">
+    The `GaussianCurvature` example computes discrete Gaussian curvature and visualizes it in pseudocolor.
+  </figcaption>
+</figure>
+
 
 ### Curvature Directions
 The two principal curvatures $(k_1,k_2)$ at a point on a surface measure how
@@ -709,7 +781,13 @@ best-fit quadric is found and principal curvature values and directions are
 analytically computed on this quadric ([Example
 203]({{ repo_url }}/tutorial/203_CurvatureDirections/main.cpp)).
 
-![The `CurvatureDirections` example computes principal curvatures via quadric fitting and visualizes mean curvature in pseudocolor and principal directions with a cross field.](images/fertility-principal-curvature.jpg)
+<figure markdown>
+  ![](images/fertility-principal-curvature.jpg)
+  <figcaption markdown="span">
+    The `CurvatureDirections` example computes principal curvatures via quadric fitting and visualizes mean curvature in pseudocolor and principal directions with a cross field.
+  </figcaption>
+</figure>
+
 
 ### Gradient
 Scalar functions on a surface can be discretized as a piecewise linear function
@@ -721,7 +799,13 @@ where $\phi_i$ is a piecewise linear hat function defined by the mesh so that
 for each triangle $\phi_i$ is _the_ linear function which is one only at
 vertex $i$ and zero at the other corners.
 
-![Hat function $\phi_i$ is one at vertex $i$, zero at all other vertices, and linear on incident triangles.](images/hat-function.jpg)
+<figure markdown>
+  ![](images/hat-function.jpg)
+  <figcaption markdown="span">
+    Hat function $\phi_i$ is one at vertex $i$, zero at all other vertices, and linear on incident triangles.
+  </figcaption>
+</figure>
+
 
 Thus gradients of such piecewise linear functions are simply sums of gradients
 of the hat functions:
@@ -743,7 +827,13 @@ ch. 2[^jacobson_thesis_2013].
 Libigl's `grad` function computes $\mathbf{G}$ for
 triangle and tetrahedral meshes ([Example 204]({{ repo_url }}/tutorial/204_Gradient/main.cpp)):
 
-![The `Gradient` example computes gradients of an input function on a mesh and visualizes the vector field.](images/cheburashka-gradient.jpg)
+<figure markdown>
+  ![](images/cheburashka-gradient.jpg)
+  <figcaption markdown="span">
+    The `Gradient` example computes gradients of an input function on a mesh and visualizes the vector field.
+  </figcaption>
+</figure>
+
 
 ### Laplacian
 
@@ -816,7 +906,13 @@ book" FEM construction which involves many (small) matrix inversions, cf.
 The operator applied to mesh vertex positions amounts to smoothing by _flowing_
 the surface along the mean curvature normal direction ([Example 205]({{ repo_url }}/tutorial/205_Laplacian/main.cpp)). Note that this is equivalent to minimizing surface area.
 
-![The `Laplacian` example computes conformalized mean curvature flow using the cotangent Laplacian [^kazhdan_2012].](images/cow-curvature-flow.jpg)
+<figure markdown>
+  ![](images/cow-curvature-flow.jpg)
+  <figcaption markdown="span">
+    The `Laplacian` example computes conformalized mean curvature flow using the cotangent Laplacian [^kazhdan_2012].
+  </figcaption>
+</figure>
+
 
 #### Mass Matrix
 The mass matrix $\mathbf{M}$ is another $n \times n$ matrix which takes vertex
@@ -889,7 +985,13 @@ Eigen::VectorXd d;
 igl::exact_geodesic(V,F,VS,FS,VT,FT,d);
 ```
 
-![[Example 206]({{ repo_url }}/tutorial/206_GeodesicDistance/main.cpp) allows to
+<figure markdown>
+  ![]({{ repo_url }}/tutorial/206_GeodesicDistance/main.cpp)
+  <figcaption markdown="span">
+    [Example 206
+  </figcaption>
+</figure>
+ allows to
 interactively pick the source vertex and displays the distance using a periodic
 color pattern.](images/geodesicdistance.jpg)
 
@@ -937,7 +1039,13 @@ functionality is provided in libigl using `slice_into`:
 igl::slice_into(B,R,C,A);
 ```
 
-![The example `Slice` shows how to use `igl::slice` to change the colors for triangles on a mesh.](images/decimated-knight-slice-color.png)
+<figure markdown>
+  ![](images/decimated-knight-slice-color.png)
+  <figcaption markdown="span">
+    The example `Slice` shows how to use `igl::slice` to change the colors for triangles on a mesh.
+  </figcaption>
+</figure>
+
 
 ### Sort
 
@@ -977,7 +1085,13 @@ where again `I` reveals the index of sort so that it can be reproduced with
 
 Analogous functions are available in libigl for: `max`, `min`, and `unique`.
 
-![The example `Sort` shows how to use `igl::sortrows` to pseudocolor triangles according to their barycenters' sorted order ([Example 302]({{ repo_url }}/tutorial/302_Sort/main.cpp)).](images/decimated-knight-sort-color.png)
+<figure markdown>
+  ![](images/decimated-knight-sort-color.png)
+  <figcaption markdown="span">
+    The example `Sort` shows how to use `igl::sortrows` to pseudocolor triangles according to their barycenters' sorted order ([Example 302]({{ repo_url }}/tutorial/302_Sort/main.cpp)).
+  </figcaption>
+</figure>
+
 
 
 #### Other Matlab-style Functions
@@ -1099,7 +1213,13 @@ submatrix blocks ($\mathbf{L}_{in,in}$, $\mathbf{L}_{in,b}$, etc.) and follow
 the linear algebra above directly. Then we can slice the solution _into_ the
 rows of `Z` corresponding to the interior vertices ([Example 303]({{ repo_url }}/tutorial/303_LaplaceEquation/main.cpp)).
 
-![The `LaplaceEquation` example solves a Laplace equation with Dirichlet boundary conditions.](images/camelhead-laplace-equation.jpg)
+<figure markdown>
+  ![](images/camelhead-laplace-equation.jpg)
+  <figcaption markdown="span">
+    The `LaplaceEquation` example solves a Laplace equation with Dirichlet boundary conditions.
+  </figcaption>
+</figure>
+
 
 #### Quadratic Energy Minimization
 
@@ -1248,7 +1368,13 @@ different factorization technique (LDLT rather than LLT): libigl's
 `min_quad_with_fixed_precompute` automatically chooses the correct solver in
 the presence of linear equality constraints ([Example 304]({{ repo_url }}/tutorial/304_LinearEqualityConstraints/main.cpp)).
 
-![The example `LinearEqualityConstraints` first solves with just fixed value constraints (left: 1 and -1 on the left hand and foot respectively), then solves with an additional linear equality constraint (right: points on right hand and foot constrained to be equal).](images/cheburashka-biharmonic-leq.jpg)
+<figure markdown>
+  ![](images/cheburashka-biharmonic-leq.jpg)
+  <figcaption markdown="span">
+    The example `LinearEqualityConstraints` first solves with just fixed value constraints (left: 1 and -1 on the left hand and foot respectively), then solves with an additional linear equality constraint (right: points on right hand and foot constrained to be equal).
+  </figcaption>
+</figure>
+
 
 ### Quadratic Programming
 
@@ -1292,7 +1418,13 @@ igl::active_set_params as;
 igl::active_set(Q,B,b,bc,Aeq,Beq,Aieq,Bieq,lx,ux,as,Z);
 ```
 
-![ [Example 305]({{ repo_url }}/tutorial/305_QuadraticProgramming/main.cpp) uses an active set solver to optimize discrete biharmonic kernels [^rustamov_2011] at multiple scales .](images/cheburashka-multiscale-biharmonic-kernels.jpg)
+<figure markdown>
+  ![](images/cheburashka-multiscale-biharmonic-kernels.jpg)
+  <figcaption markdown="span">
+     [Example 305]({{ repo_url }}/tutorial/305_QuadraticProgramming/main.cpp) uses an active set solver to optimize discrete biharmonic kernels [^rustamov_2011] at multiple scales .
+  </figcaption>
+</figure>
+
 
 ### Eigen Decomposition
 
@@ -1350,7 +1482,13 @@ Eigen::VectorXd S;
 igl::eigs(L,M,5,igl::EIGS_TYPE_SM,U,S);
 ```
 
-![([Example 306]({{ repo_url }}/tutorial/306_EigenDecomposition/main.cpp)) Low frequency eigen vectors of the discrete Laplace-Beltrami operator vary smoothly and slowly over the _Beetle_.](images/beetle-eigen-decomposition.gif)
+<figure markdown>
+  ![](images/beetle-eigen-decomposition.gif)
+  <figcaption markdown="span">
+    ([Example 306]({{ repo_url }}/tutorial/306_EigenDecomposition/main.cpp)) Low frequency eigen vectors of the discrete Laplace-Beltrami operator vary smoothly and slowly over the _Beetle_.
+  </figcaption>
+</figure>
+
 
 <!-- Hide h4+ from toc  -->
 <style>.md-nav--secondary .md-nav__list .md-nav__list .md-nav__list { display: none }</style>
@@ -1445,7 +1583,13 @@ igl::harmonic(V,F,b,D_bc,2,D);
 U = V+D;
 ```
 
-![The [BiharmonicDeformation]({{ repo_url }}/tutorial/401_BiharmonicDeformation/main.cpp) example deforms a statue's head as a _biharmonic surface_ (top) and using a _biharmonic displacements_ (bottom).](images/max-biharmonic.jpg)
+<figure markdown>
+  ![](images/max-biharmonic.jpg)
+  <figcaption markdown="span">
+    The [BiharmonicDeformation]({{ repo_url }}/tutorial/401_BiharmonicDeformation/main.cpp) example deforms a statue's head as a _biharmonic surface_ (top) and using a _biharmonic displacements_ (bottom).
+  </figcaption>
+</figure>
+
 
 ##### Relationship To "differential Coordinates" And Laplacian Surface Editing
 Biharmonic functions (whether positions or displacements) are solutions to the
@@ -1484,7 +1628,13 @@ int k = 2;// or 1,3,4,...
 igl::harmonic(V,F,b,bc,k,Z);
 ```
 
-![The [PolyharmonicDeformation]({{ repo_url }}/tutorial/402_PolyharmonicDeformation/main.cpp) example deforms a flat domain (left) into a bump as a solution to various $k$-harmonic PDEs.](images/bump-k-harmonic.jpg)
+<figure markdown>
+  ![](images/bump-k-harmonic.jpg)
+  <figcaption markdown="span">
+    The [PolyharmonicDeformation]({{ repo_url }}/tutorial/402_PolyharmonicDeformation/main.cpp) example deforms a flat domain (left) into a bump as a solution to various $k$-harmonic PDEs.
+  </figcaption>
+</figure>
+
 
 ### Bounded Biharmonic Weights
 In computer animation, shape deformation is often referred to as "skinning".
@@ -1545,7 +1695,13 @@ parition of unity and encourage sparsity:
 This is a quadratic programming problem and libigl solves it using its active
 set solver or by calling out to [Mosek](http://www.mosek.com).
 
-![The example [BoundedBiharmonicWeights]({{ repo_url }}/tutorial/403_BoundedBiharmonicWeights/main.cpp) computes weights for a tetrahedral mesh given a skeleton (top) and then animates a linear blend skinning deformation (bottom).](images/hand-bbw.jpg)
+<figure markdown>
+  ![](images/hand-bbw.jpg)
+  <figcaption markdown="span">
+    The example [BoundedBiharmonicWeights]({{ repo_url }}/tutorial/403_BoundedBiharmonicWeights/main.cpp) computes weights for a tetrahedral mesh given a skeleton (top) and then animates a linear blend skinning deformation (bottom).
+  </figcaption>
+</figure>
+
 
 ### Dual Quaternion Skinning
 Even with high quality weights, linear blend skinning is limited. In
@@ -1591,7 +1747,13 @@ internally converts to the dual quaternion representation before blending:
 igl::dqs(V,W,vQ,vT,U);
 ```
 
-![The example [DualQuaternionSkinning]({{ repo_url }}/tutorial/404_DualQuaternionSkinning/main.cpp) compares linear blend skinning (top) to dual quaternion skinning (bottom), highlighting LBS's candy wrapper effect (middle) and joint collapse (right).](images/arm-dqs.jpg)
+<figure markdown>
+  ![](images/arm-dqs.jpg)
+  <figcaption markdown="span">
+    The example [DualQuaternionSkinning]({{ repo_url }}/tutorial/404_DualQuaternionSkinning/main.cpp) compares linear blend skinning (top) to dual quaternion skinning (bottom), highlighting LBS's candy wrapper effect (middle) and joint collapse (right).
+  </figcaption>
+</figure>
+
 
 ### As-rigid-as-possible
 
@@ -1694,7 +1856,13 @@ Libigl's implementation of as-rigid-as-possible deformation takes advantage of
 the highly optimized singular value decomposition code from McAdams et al.
 [^mcadams_2011] which leverages SSE intrinsics.
 
-![The example [AsRigidAsPossible]({{ repo_url }}/tutorial/405_AsRigidAsPossible/main.cpp) deforms a surface as if it were made of an elastic material](images/decimated-knight-arap.jpg)
+<figure markdown>
+  ![](images/decimated-knight-arap.jpg)
+  <figcaption markdown="span">
+    The example [AsRigidAsPossible]({{ repo_url }}/tutorial/405_AsRigidAsPossible/main.cpp) deforms a surface as if it were made of an elastic material
+  </figcaption>
+</figure>
+
 
 The concept of local rigidity will be revisited shortly in the context of
 surface parameterization.
@@ -1801,7 +1969,13 @@ biharmonic distance embedding.
 In this light, we can think of the "spokes+rims" style surface ARAP as a (slight and
 redundant) clustering of the per-triangle edge-sets.
 
-![The example [FastAutomaticSkinningTransformations]({{ repo_url }}/tutorial/406_FastAutomaticSkinningTransformations/main.cpp) compares a full (slow) ARAP deformation on a detailed shape (left of middle), to ARAP with grouped rotation edge sets (right of middle), to the very fast subpsace method (right).](images/armadillo-fast.jpg)
+<figure markdown>
+  ![](images/armadillo-fast.jpg)
+  <figcaption markdown="span">
+    The example [FastAutomaticSkinningTransformations]({{ repo_url }}/tutorial/406_FastAutomaticSkinningTransformations/main.cpp) compares a full (slow) ARAP deformation on a detailed shape (left of middle), to ARAP with grouped rotation edge sets (right of middle), to the very fast subpsace method (right).
+  </figcaption>
+</figure>
+
 
 ### Biharmonic Coordinates
 
@@ -1882,7 +2056,13 @@ handles):
 igl::biharmonic_coordinates(V,F,S,W);
 ```
 
-![([Example 407]({{ repo_url }}/tutorial/407_BiharmonicCoordinates/main.cpp)) shows a physics simulation on a coarse orange mesh. The vertices of this mesh become control points for a biharmonic coordinates deformation of the blue high-resolution mesh.](images/octopus-biharmonic-coordinates-physics.gif)
+<figure markdown>
+  ![](images/octopus-biharmonic-coordinates-physics.gif)
+  <figcaption markdown="span">
+    ([Example 407]({{ repo_url }}/tutorial/407_BiharmonicCoordinates/main.cpp)) shows a physics simulation on a coarse orange mesh. The vertices of this mesh become control points for a biharmonic coordinates deformation of the blue high-resolution mesh.
+  </figcaption>
+</figure>
+
 
 ### Direct Delta Mush
 
@@ -1945,7 +2125,13 @@ igl::direct_delta_mush(V, T_list, Omega, U);
 where `T_list` is the input pose (affine) transformations associated with each
 bone and the final locations are stored in `U`.
 
-![([Example 408]({{ repo_url }}/tutorial/408_DirectDeltaMush/main.cpp)) Direct Delta Mush. (left) input piecewise-rigid skinning, (middle) skeleton animation, (right) smooth Direct Delta Mush skinning](images/elephant-ddm.gif)
+<figure markdown>
+  ![](images/elephant-ddm.gif)
+  <figcaption markdown="span">
+    ([Example 408]({{ repo_url }}/tutorial/408_DirectDeltaMush/main.cpp)) Direct Delta Mush. (left) input piecewise-rigid skinning, (middle) skeleton animation, (right) smooth Direct Delta Mush skinning
+  </figcaption>
+</figure>
+
 
 ### Mesh Deformation with Kelvinlet
 
@@ -2051,7 +2237,13 @@ igl::kelvinlets(V, origin, forceVec, forceMatrix, brushParams, result);
 ```
 where `brushRadius, scale, brushType` correspond to $\epsilon$, the falloff, and operation(grab, pinch, scale, twist).
 
-![([Example 409]({{ repo_url }}/tutorial/409_Kelvinlets/main.cpp)) pinch, twist, grab and scale in action](images/kelvinlets.gif)
+<figure markdown>
+  ![](images/kelvinlets.gif)
+  <figcaption markdown="span">
+    ([Example 409]({{ repo_url }}/tutorial/409_Kelvinlets/main.cpp)) pinch, twist, grab and scale in action
+  </figcaption>
+</figure>
+
 
 ## Chapter 5: Parametrization
 
@@ -2116,7 +2308,13 @@ viewer.data().set_uv(V_uv);
 The UV coordinates are then used to apply a procedural checkerboard texture to the
 mesh ([Example 501]({{ repo_url }}/tutorial/501_HarmonicParam/main.cpp)).
 
-![([Example 501]({{ repo_url }}/tutorial/501_HarmonicParam/main.cpp)) Harmonic parametrization. (left) mesh with texture, (right) UV parametrization with texture](images/501_HarmonicParam.png)
+<figure markdown>
+  ![](images/501_HarmonicParam.png)
+  <figcaption markdown="span">
+    ([Example 501]({{ repo_url }}/tutorial/501_HarmonicParam/main.cpp)) Harmonic parametrization. (left) mesh with texture, (right) UV parametrization with texture
+  </figcaption>
+</figure>
+
 
 ### Least Squares Conformal Maps
 
@@ -2164,7 +2362,13 @@ The final energy matrix is $L_{flat} - 2A$. Note that in this
 case we do not need to fix the boundary. To remove the null space of the energy and make the minimum unique, it is sufficient to fix two arbitrary
 vertices to two arbitrary positions. The full source code is provided in [Example 502]({{ repo_url }}/tutorial/502_LSCMParam/main.cpp).
 
-![([Example 502]({{ repo_url }}/tutorial/502_LSCMParam/main.cpp)) LSCM parametrization. (left) mesh with texture, (right) UV parametrization](images/502_LSCMParam.png)
+<figure markdown>
+  ![](images/502_LSCMParam.png)
+  <figcaption markdown="span">
+    ([Example 502]({{ repo_url }}/tutorial/502_LSCMParam/main.cpp)) LSCM parametrization. (left) mesh with texture, (right) UV parametrization
+  </figcaption>
+</figure>
+
 
 ### As-rigid-as-possible Parametrization
 
@@ -2184,7 +2388,13 @@ parametrization since the starting point must be a 2D mesh. In [Example
 parametrization. Similarly to LSCM, the boundary is free to deform to minimize
 the distortion.
 
-![([Example 503]({{ repo_url }}/tutorial/503_ARAPParam/main.cpp)) As-Rigid-As-Possible parametrization. (left) mesh with texture, (right) UV parametrization with texture](images/503_ARAPParam.png)
+<figure markdown>
+  ![](images/503_ARAPParam.png)
+  <figcaption markdown="span">
+    ([Example 503]({{ repo_url }}/tutorial/503_ARAPParam/main.cpp)) As-Rigid-As-Possible parametrization. (left) mesh with texture, (right) UV parametrization with texture
+  </figcaption>
+</figure>
+
 
 ### N-rotationally Symmetric Tangent Fields
 
@@ -2208,7 +2418,13 @@ b_soft_weight, bc_soft), and returns the interpolated field for each face of
 the triangle mesh (output_field), plus the singularities of the field
 (output_singularities).
 
-![Design of a unit-length vector field](images/504_vector_field.png)
+<figure markdown>
+  ![](images/504_vector_field.png)
+  <figcaption markdown="span">
+    Design of a unit-length vector field
+  </figcaption>
+</figure>
+
 
 The singularities are vertices where the field vanishes (highlighted in red in
 the figure above). `igl::nrosy` can also generate N-RoSy fields [^levy_2008],
@@ -2217,7 +2433,13 @@ defined up to a constant rotation of $2\pi / N$. As can be observed in
 the following figure, the singularities of the fields generated with different
 N are of different types and they appear in different positions.
 
-![Design of a 2-,4- and 9-RoSy field](images/504_nrosy_field.png)
+<figure markdown>
+  ![](images/504_nrosy_field.png)
+  <figcaption markdown="span">
+    Design of a 2-,4- and 9-RoSy field
+  </figcaption>
+</figure>
+
 
 We demonstrate how to call and plot N-RoSy fields in [Example
 504]({{ repo_url }}/tutorial/504_NRosyDesign/main.cpp), where the degree of the field can be change
@@ -2244,7 +2466,13 @@ remeshing. The field constraints are usually manually specified or extracted
 from the principal curvature directions. In [Example
 506]({{ repo_url }}/tutorial/506_FrameField/main.cpp), we simply fix one face in a random direction.
 
-![Initial cross field prescribing the edge alignment.](images/505_MIQ_1.png)
+<figure markdown>
+  ![](images/505_MIQ_1.png)
+  <figcaption markdown="span">
+    Initial cross field prescribing the edge alignment.
+  </figcaption>
+</figure>
+
 
 #### Combing And Cutting
 
@@ -2257,13 +2485,25 @@ length cross fields.
 
 We thus rotate the field,
 
-![Bisector field.](images/505_MIQ_2.png)
+<figure markdown>
+  ![](images/505_MIQ_2.png)
+  <figcaption markdown="span">
+    Bisector field.
+  </figcaption>
+</figure>
+
 
 and we remove the rotation ambiguity by assigning to each face a u and a v
 direction. The assignment is done with a breadth-first search starting from a
 random face.
 
-![Combed bisector field.](images/505_MIQ_3.png)
+<figure markdown>
+  ![](images/505_MIQ_3.png)
+  <figcaption markdown="span">
+    Combed bisector field.
+  </figcaption>
+</figure>
+
 
 You can imagine this process as combing a hairy surface: you will be able to
 comb part of it, but at some point you will not be able to consistently comb
@@ -2271,12 +2511,24 @@ the entire surface ([Hairy ball
 theorem](http://en.wikipedia.org/wiki/Hairy_ball_theorem)). The discontinuities
 in the combing define the cut graph:
 
-![Cut graph.](images/505_MIQ_4.png)
+<figure markdown>
+  ![](images/505_MIQ_4.png)
+  <figcaption markdown="span">
+    Cut graph.
+  </figcaption>
+</figure>
+
 
 Finally, we rotate the combed field by 45 degrees to undo the initial degrees
 rotation:
 
-![Combed cross field.](images/505_MIQ_5.png)
+<figure markdown>
+  ![](images/505_MIQ_5.png)
+  <figcaption markdown="span">
+    Combed cross field.
+  </figcaption>
+</figure>
+
 
 The combed cross field can be seen as the ideal Jacobian of the parametrization
 that will be computed in the next section.
@@ -2294,17 +2546,35 @@ where $X_u$ and $X_u$ denotes the combed cross field. Solving this
 problem generates a parametrization whose u and v isolines are aligned with the
 input cross field.
 
-![Poisson parametrization.](images/505_MIQ_8.png)
+<figure markdown>
+  ![](images/505_MIQ_8.png)
+  <figcaption markdown="span">
+    Poisson parametrization.
+  </figcaption>
+</figure>
+
 
 We hide the seams by adding integer constraints to the Poisson problem
 that align the isolines on both sides of each seam [^bommes_2009].
 
-![Seamless Poisson parametrization.](images/505_MIQ_7.png)
+<figure markdown>
+  ![](images/505_MIQ_7.png)
+  <figcaption markdown="span">
+    Seamless Poisson parametrization.
+  </figcaption>
+</figure>
+
 
 Note that this parametrization can only be used for remeshing purposes, since
 it contains many overlaps.
 
-![Seamless Poisson parametrization (in 2D).](images/505_MIQ_6.png)
+<figure markdown>
+  ![](images/505_MIQ_6.png)
+  <figcaption markdown="span">
+    Seamless Poisson parametrization (in 2D).
+  </figcaption>
+</figure>
+
 
 A quad mesh can be extracted from this parametrization using
 [libQEx](https://github.com/hcebke/libQEx) (not included in libigl).
@@ -2325,26 +2595,50 @@ unique affine transformation. The two parts can then be interpolated
 separately, using `igl::nrosy` for the cross field, and an harmonic interpolant
 for the affine part.
 
-![Interpolation of a frame field. Colors on the vectors denote the desired scale. The red faces contains the frame field constraints.](images/506_FrameField_1.png)
+<figure markdown>
+  ![](images/506_FrameField_1.png)
+  <figcaption markdown="span">
+    Interpolation of a frame field. Colors on the vectors denote the desired scale. The red faces contains the frame field constraints.
+  </figcaption>
+</figure>
+
 
 After the interpolation, the surface is warped to transform each frame into an
 orthogonal and unit length cross (i.e. removing the scaling and skewness from
 the frame). This deformation defines a new embedding (and a new metric) for the
 surface.
 
-![The surface is deformed to transform the frame field in a cross field.](images/506_FrameField_2.png)
+<figure markdown>
+  ![](images/506_FrameField_2.png)
+  <figcaption markdown="span">
+    The surface is deformed to transform the frame field in a cross field.
+  </figcaption>
+</figure>
+
 
 The deformed surface can the be isotropically remeshed using the MIQ algorithm
 that has been presented in the previous section.
 
-![The deformed surface is isotropically remeshed.](images/506_FrameField_3.png)
+<figure markdown>
+  ![](images/506_FrameField_3.png)
+  <figcaption markdown="span">
+    The deformed surface is isotropically remeshed.
+  </figcaption>
+</figure>
+
 
 The UV coordinates of the deformed surface can then be used to transport the
 parametrization to the original surface, where the isolines will trace a quad
 mesh whose elements are similar to the shape prescribed in the input frame
 field.
 
-![The global parametrization is lifted to the original surface to create the anisotropic quad meshing.](images/506_FrameField_4.png)
+<figure markdown>
+  ![](images/506_FrameField_4.png)
+  <figcaption markdown="span">
+    The global parametrization is lifted to the original surface to create the anisotropic quad meshing.
+  </figcaption>
+</figure>
+
 
 Our implementation ([Example 506]({{ repo_url }}/tutorial/506_FrameField/main.cpp)) uses MIQ to
 generate the UV parametrization, but other algorithms could be applied: the
@@ -2360,7 +2654,13 @@ surface continuity and the local step to enforce planarity.
 [Example 507]({{ repo_url }}/tutorial/507_Planarization/main.cpp) planarizes a quad mesh until it
 satisfies a user-given planarity threshold.
 
-![A non-planar quad mesh (left) is planarized using the libigl function igl::planarize (right). The colors represent the planarity of the quads.](images/509_Planarization.png)
+<figure markdown>
+  ![](images/509_Planarization.png)
+  <figcaption markdown="span">
+    A non-planar quad mesh (left) is planarized using the libigl function igl::planarize (right). The colors represent the planarity of the quads.
+  </figcaption>
+</figure>
+
 
 ## Chapter 6: External Libraries
 
@@ -2555,7 +2855,13 @@ see the sparsity pattern of L using spy:
 igl::mleval(&engine,"spy(L)");
 ```
 
-![The Matlab spy function is called from a libigl-based application.](images/602_Matlab_1.png)
+<figure markdown>
+  ![](images/602_Matlab_1.png)
+  <figcaption markdown="span">
+    The Matlab spy function is called from a libigl-based application.
+  </figcaption>
+</figure>
+
 
 The results of Matlab computations can be returned back to the C++ application
 
@@ -2566,7 +2872,13 @@ igl::mlgetmatrix(&engine,"EV",EV);
 
 and plotted using the libigl viewer.
 
-![Eigenfunctions of the Laplacian computed in Matlab, plotted in the libigl viewer.](images/602_Matlab_2.gif)
+<figure markdown>
+  ![](images/602_Matlab_2.gif)
+  <figcaption markdown="span">
+    Eigenfunctions of the Laplacian computed in Matlab, plotted in the libigl viewer.
+  </figcaption>
+</figure>
+
 
 
 #### Saving A Matlab Workspace
@@ -2673,7 +2985,13 @@ triangles and a minimal angle of 20 degrees. In [Example
 604]({{ repo_url }}/tutorial/604_Triangle/main.cpp), the interior of a square (excluded a smaller square
 in its interior) is triangulated.
 
-![Triangulation of the interior of a polygon.](images/604_Triangle.png)
+<figure markdown>
+  ![](images/604_Triangle.png)
+  <figcaption markdown="span">
+    Triangulation of the interior of a polygon.
+  </figcaption>
+</figure>
+
 
 ### Tetrahedralization Of Closed Surfaces
 
@@ -2685,7 +3003,13 @@ using the function `igl::tetrahedralize` which wraps the Tetgen library ([Exampl
 igl::tetrahedralize(V,F,"pq1.414", TV,TT,TF);
 ```
 
-![Tetrahedralization of the interior of a surface mesh.](images/605_Tetgen.png)
+<figure markdown>
+  ![](images/605_Tetgen.png)
+  <figcaption markdown="span">
+    Tetrahedralization of the interior of a surface mesh.
+  </figcaption>
+</figure>
+
 
 ### Baking Ambient Occlusion
 
@@ -2718,7 +3042,13 @@ single scalar for each sample.
 Ambient occlusion can be used to darken the surface colors, as shown in
 [Example 606]({{ repo_url }}/tutorial/606_AmbientOcclusion/main.cpp)
 
-![A mesh rendered without (left) and with (right) ambient occlusion.](images/606_AmbientOcclusion.png)
+<figure markdown>
+  ![](images/606_AmbientOcclusion.png)
+  <figcaption markdown="span">
+    A mesh rendered without (left) and with (right) ambient occlusion.
+  </figcaption>
+</figure>
+
 
 ### Screen Capture
 
@@ -2791,7 +3121,13 @@ er.render_buffer(R,G,B,A);
 igl::png::writePNG(R,G,B,A,png_file);
 ```
 
-![Fertility statue showing curvature as scalar field, rendered with embree](images/608_RayTrace.png)
+<figure markdown>
+  ![](images/608_RayTrace.png)
+  <figcaption markdown="span">
+    Fertility statue showing curvature as scalar field, rendered with embree
+  </figcaption>
+</figure>
+
 
 In [Example 608]({{ repo_url }}/tutorial/608_RayTrace/main.cpp) a scene is rendered in a memory
 buffer and saved as png file.
@@ -2858,7 +3194,13 @@ igl::copyleft::cgal::mesh_boolean(VA,FA,VB,FB,MESH_BOOLEAN_TYPE_UNION,VC,FC);
 
 The following figure shows each boolean operation on two meshes.
 
-![The example [Boolean]({{ repo_url }}/tutorial/609_Boolean/main.cpp) conducts boolean operations on the _Cheburashka_ (red) and _Knight_ (green). From left to right: union, intersection, set minus, symmetric difference (XOR), "resolve". Bottom row reveals inner surfaces, darker color indicates back-facing triangles.](images/cheburashka-knight-boolean.jpg)
+<figure markdown>
+  ![](images/cheburashka-knight-boolean.jpg)
+  <figcaption markdown="span">
+    The example [Boolean]({{ repo_url }}/tutorial/609_Boolean/main.cpp) conducts boolean operations on the _Cheburashka_ (red) and _Knight_ (green). From left to right: union, intersection, set minus, symmetric difference (XOR), "resolve". Bottom row reveals inner surfaces, darker color indicates back-facing triangles.
+  </figcaption>
+</figure>
+
 
 The union, symmetric difference and "resolve" have the same outward
 appearance, but differ in their treatment of internal structures. The union has
@@ -2899,12 +3241,24 @@ igl::copyleft::cgal::CSGTree<MatrixXi> CSGTree =
   { { {VA,FA},{VB,FB},"i"},{ { {VC,FC},{VD,FD},"u"}, {VE,FE},"u"},"m"};
 ```
 
-![A CSG Tree represents a shape as a combination of binary boolean operations](images/cube-sphere-cylinders-csg-tree.jpg)
+<figure markdown>
+  ![](images/cube-sphere-cylinders-csg-tree.jpg)
+  <figcaption markdown="span">
+    A CSG Tree represents a shape as a combination of binary boolean operations
+  </figcaption>
+</figure>
+
 
 Example [610]({{ repo_url }}/tutorial/610_CSGTree/main.cpp) computes each intermediary CSG result and
 then the final composite.
 
-![Example [610]({{ repo_url }}/tutorial/610_CSGTree/main.cpp) computes  complex CSG Tree operation on 5 input meshes.](images/cube-sphere-cylinders-csg.gif)
+<figure markdown>
+  ![](images/cube-sphere-cylinders-csg.gif)
+  <figcaption markdown="span">
+    Example [610]({{ repo_url }}/tutorial/610_CSGTree/main.cpp) computes  complex CSG Tree operation on 5 input meshes.
+  </figcaption>
+</figure>
+
 
 ## Chapter 7: Miscellaneous
 
@@ -2991,7 +3345,13 @@ if `(V,F)` is not closed or not even manifold (but at least consistently
 oriented), then $w(\mathbf{p})$ tends smoothly toward 1 as $\mathbf{p}$ is
 _more_ inside `(V,F)`, and toward 0 as $\mathbf{p}$ is more outside.
 
-![Example [702]({{ repo_url }}/tutorial/702_WindingNumber/main.cpp) computes the generalized winding number function for a tetrahedral mesh inside a cat with holes and self intersections (gold). The silver mesh is surface of the extracted interior tets, and slices show the winding number function on all tets in the convex hull: blue (~0), green (~1), yellow (~2).](images/big-sigcat-winding-number.gif)
+<figure markdown>
+  ![](images/big-sigcat-winding-number.gif)
+  <figcaption markdown="span">
+    Example [702]({{ repo_url }}/tutorial/702_WindingNumber/main.cpp) computes the generalized winding number function for a tetrahedral mesh inside a cat with holes and self intersections (gold). The silver mesh is surface of the extracted interior tets, and slices show the winding number function on all tets in the convex hull: blue (~0), green (~1), yellow (~2).
+  </figcaption>
+</figure>
+
 
 ### Mesh Decimation
 
@@ -3028,7 +3388,13 @@ If there exists a third shared vertex, then another face will be removed, but 2
 edges will be removed. This can result in unwanted holes or non-manifold
 "flaps".
 
-![A valid edge collapse and an invalid edge collapse.](images/edge-collapse.jpg)
+<figure markdown>
+  ![](images/edge-collapse.jpg)
+  <figcaption markdown="span">
+    A valid edge collapse and an invalid edge collapse.
+  </figcaption>
+</figure>
+
 
 > There is also a one-off condition that no edges of a tetrahedron should be
 > collapsed.
@@ -3115,7 +3481,13 @@ updating their costs according to `cost_and_placement`, new placements are
 remembered in `C`. If not valid, then the edge is "popped" from `Q` and
 reinserted with infinite cost.
 
-![Example 703 conducts edge collapses on the fertility model.](images/fertility-edge-collapse.gif)
+<figure markdown>
+  ![](images/fertility-edge-collapse.gif)
+  <figcaption markdown="span">
+    Example 703 conducts edge collapses on the fertility model.
+  </figcaption>
+</figure>
+
 
 The [Example 703]({{ repo_url }}/tutorial/703_Decimation/main.cpp) demonstrates using this priority
 queue based approach with the simple shortest-edge-midpoint cost/placement
@@ -3228,7 +3600,13 @@ contains signed (unsquared) distances and the extra output `N` (only set when
 `type == SIGNED_DISTANCE_TYPE_PSEUDON`) contains the normals used for signing
 with the pseudo-normal test.
 
-![Example [704]({{ repo_url }}/tutorial/704_SignedDistance/main.cpp) computes signed distance on slices through the bunny.](images/bunny-signed-distance.gif)
+<figure markdown>
+  ![](images/bunny-signed-distance.gif)
+  <figcaption markdown="span">
+    Example [704]({{ repo_url }}/tutorial/704_SignedDistance/main.cpp) computes signed distance on slices through the bunny.
+  </figcaption>
+</figure>
+
 
 ### Marching Cubes
 
@@ -3257,7 +3635,13 @@ input scalar field `S` sampled at vertex locations `GV` of a `nx` by `ny` by
 igl::marching_cubes(S,GV,nx,ny,nz,V,F);
 ```
 
-![([Example 705]({{ repo_url }}/tutorial/705_MarchingCubes/main.cpp)) samples signed distance to the input mesh (left) and then reconstructs the surface using marching cubes to contour the 0-level set (center). For comparison, clamping this signed distance field to an indicator function and contouring reveals serious aliasing artifacts.](images/armadillo-marching-cubes.jpg)
+<figure markdown>
+  ![](images/armadillo-marching-cubes.jpg)
+  <figcaption markdown="span">
+    ([Example 705]({{ repo_url }}/tutorial/705_MarchingCubes/main.cpp)) samples signed distance to the input mesh (left) and then reconstructs the surface using marching cubes to contour the 0-level set (center). For comparison, clamping this signed distance field to an indicator function and contouring reveals serious aliasing artifacts.
+  </figcaption>
+</figure>
+
 
 
 ### Facet Orientation
@@ -3298,7 +3682,13 @@ igl::embree::reorient_facets_raycast(V,F,FF,I);
 
 The boolean vector `I` reveals which rows of `F` have been flipped in `FF`.
 
-![([Example 706]({{ repo_url }}/tutorial/706_FacetOrientation/main.cpp)) loads a truck model with inconsistent orientations (back facing triangles shown darker). Orientable patches are uniquely colored and then oriented to face outward (middle left). Alternatively, each individual triangle is considered a "patch" (middle right) and oriented outward independently.](images/truck-facet-orientation.jpg)
+<figure markdown>
+  ![](images/truck-facet-orientation.jpg)
+  <figcaption markdown="span">
+    ([Example 706]({{ repo_url }}/tutorial/706_FacetOrientation/main.cpp)) loads a truck model with inconsistent orientations (back facing triangles shown darker). Orientable patches are uniquely colored and then oriented to face outward (middle left). Alternatively, each individual triangle is considered a "patch" (middle right) and oriented outward independently.
+  </figcaption>
+</figure>
+
 
 ### Swept Volume
 
@@ -3351,7 +3741,13 @@ The `isolevel` parameter can be set to zero to approximate the exact swept
 volume, greater than zero to approximate a positive offset of the swept volume
 or less than zero to approximate a negative offset.
 
-![([Example 707]({{ repo_url }}/tutorial/707_SweptVolume/main.cpp)) computes the surface of the swept volume (silver) of the bunny model undergoing a rigid motion (gold).](images/bunny-swept-volume.gif)
+<figure markdown>
+  ![](images/bunny-swept-volume.gif)
+  <figcaption markdown="span">
+    ([Example 707]({{ repo_url }}/tutorial/707_SweptVolume/main.cpp)) computes the surface of the swept volume (silver) of the bunny model undergoing a rigid motion (gold).
+  </figcaption>
+</figure>
+
 
 ### Picking
 
@@ -3382,7 +3778,13 @@ contains a [Bounding Volume
 Hierarchy](http://en.wikipedia.org/wiki/Bounding_volume_hierarchy) constructed
 by Embree, and `fid` and `bc` are the picked face and barycentric coordinate of the picked position, respectively.
 
-![([Example 708]({{ repo_url }}/tutorial/708_Picking/main.cpp)) Picking via ray casting. The selected faces are colored in red.](images/708_Picking.png)
+<figure markdown>
+  ![](images/708_Picking.png)
+  <figcaption markdown="span">
+    ([Example 708]({{ repo_url }}/tutorial/708_Picking/main.cpp)) Picking via ray casting. The selected faces are colored in red.
+  </figcaption>
+</figure>
+
 
 ### Scalable Locally Injective Maps
 
@@ -3399,7 +3801,13 @@ of the linear system used in the global step. An optimized version that relies
 on Pardiso is available
 [here](https://github.com/MichaelRabinovich/Scalable-Locally-Injective-Mappings).
 
-![A locally injective parametrization of a mesh with 50k faces is computed using the SLIM algorithm in 10 iterations.](images/slim.png)
+<figure markdown>
+  ![](images/slim.png)
+  <figcaption markdown="span">
+    A locally injective parametrization of a mesh with 50k faces is computed using the SLIM algorithm in 10 iterations.
+  </figcaption>
+</figure>
+
 
 ### Simplicial Complex Augmentation Framework For Bijective Maps
 
@@ -3454,7 +3862,13 @@ $(i_c,i_a,i_{abc})$. In contrast to `igl::upsample`, this method will create
 triangles with smaller and smaller internal angles and new vertices will sample
 the carrier surfaces with extreme bias.
 
-![The original coarse mesh and three different subdivision methods: `igl::upsample`, `igl::loop` and `igl::false_barycentric_subdivision`.](images/decimated-knight-subdivision.gif)
+<figure markdown>
+  ![](images/decimated-knight-subdivision.gif)
+  <figcaption markdown="span">
+    The original coarse mesh and three different subdivision methods: `igl::upsample`, `igl::loop` and `igl::false_barycentric_subdivision`.
+  </figcaption>
+</figure>
+
 
 ### Data Smoothing
 
@@ -3486,7 +3900,13 @@ whereas the zero Neumann boundary condition in the third image bias the isolines
 of the function to be perpendicular to the boundary, the Hessian energy gives
 an unbiased result.
 
-![([Example 712]({{ repo_url }}/tutorial/712_DataSmoothing/main.cpp)) From left to right: a function on the beetle mesh, the function with added noise, the result of smoothing with the Laplacian energy and zero Neumann boundary conditions, and the result of smoothing with the Hessian energy.](images/712_beetles.jpg)
+<figure markdown>
+  ![](images/712_beetles.jpg)
+  <figcaption markdown="span">
+    ([Example 712]({{ repo_url }}/tutorial/712_DataSmoothing/main.cpp)) From left to right: a function on the beetle mesh, the function with added noise, the result of smoothing with the Laplacian energy and zero Neumann boundary conditions, and the result of smoothing with the Hessian energy.
+  </figcaption>
+</figure>
+
 
 ### Shapeup Projections
 
@@ -3508,7 +3928,13 @@ $$
 
 where the $\lambda$ coefficients are encoded in ``igl::ShapeUpData``, and can be updated **prior** to calling ``igl::shapeup_precomputation()``. The $E_{shape}$ component is the integration energy (fitting $P_k$ to the local projections). The $E_{close}$ component is adherence to positional constraints, given by ``b`` and ``bc`` parameters. The $E_{smooth}$ component is an optional objective function, to minimize differences (in the Dirichlet sense) between points, encodes by "edges" in parameter `E`. Both $E_{close}$ and $E_{shape}$ are also weighted by ``wClose`` and ``wShape`` function parameters, respectively.
 
-![([Example 713]({{ repo_url }}/tutorial/713_ShapeUp/main.cpp)) The half-tunnel mesh (left) has been optimized to be almost perfectly regular (right). The color scale is between $\lbrack 0,0.05 \rbrack$, measuring the average normalized deviation of the angles of each face from $90^{\circ}$.](images/713_ShapeUp.png)
+<figure markdown>
+  ![](images/713_ShapeUp.png)
+  <figcaption markdown="span">
+    ([Example 713]({{ repo_url }}/tutorial/713_ShapeUp/main.cpp)) The half-tunnel mesh (left) has been optimized to be almost perfectly regular (right). The color scale is between $\lbrack 0,0.05 \rbrack$, measuring the average normalized deviation of the angles of each face from $90^{\circ}$.
+  </figcaption>
+</figure>
+
 
 ### Marching Tetrahedra
 
@@ -3598,7 +4024,13 @@ igl::heat_geodesics_precompute(V,F,data);
 igl::heat_geodesics_solve(data,gamma,D);
 ```
 
-![([Example 716]({{ repo_url }}/tutorial/716_HeatGeodesics/main.cpp)) loads a
+<figure markdown>
+  ![]({{ repo_url }}/tutorial/716_HeatGeodesics/main.cpp))
+  <figcaption markdown="span">
+    ([Example 716
+  </figcaption>
+</figure>
+ loads a
 mesh and computes approximate geodesics distances from wherever the user
 clicks.](images/heat-geodesic-beetle.gif)
 
@@ -3676,7 +4108,13 @@ used in n-body graviational system simulations or electrostatics problems. The
 result is approximate, but much more closely follows a $O(\log{n})$  trend and
 with much smaller constant factors.
 
-![([Example 717]({{ repo_url }}/tutorial/717_FastWindingNumber/main.cpp)) 
+<figure markdown>
+  ![]({{ repo_url }}/tutorial/717_FastWindingNumber/main.cpp))
+  <figcaption markdown="span">
+    ([Example 717
+  </figcaption>
+</figure>
+ 
 loads a mesh, samples 1,000,000 random queries and then discards all those
 _outside_ the given model.](images/bunny-fwn-soup.jpg)
 

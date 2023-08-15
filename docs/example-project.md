@@ -59,7 +59,13 @@ From within the `build` directory just issue:
 ```
 
 A glfw app should launch displaying a 3D cube.
-![Libigl example project: https://github.com/libigl/libigl-example-project](images/libigl-example-project.png)
+<figure markdown>
+  ![](images/libigl-example-project.png)
+  <figcaption markdown="span">
+    Libigl example project: https://github.com/libigl/libigl-example-project
+  </figcaption>
+</figure>
+
 
 ## Enabling optional modules via cmake
 
