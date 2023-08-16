@@ -1,0 +1,46 @@
+\doxysection{include/igl/copyleft/tetgen/tetrahedralize.h File Reference}
+\hypertarget{tetrahedralize_8h}{}\label{tetrahedralize_8h}\index{include/igl/copyleft/tetgen/tetrahedralize.h@{include/igl/copyleft/tetgen/tetrahedralize.h}}
+{\ttfamily \#include \"{}../../igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$tetgen.\+h$>$}\newline
+{\ttfamily \#include \"{}tetrahedralize.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\item 
+namespace \mbox{\hyperlink{namespaceigl_1_1copyleft}{igl\+::copyleft}}
+\item 
+namespace \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen}{igl\+::copyleft\+::tetgen}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{tetrahedralize_8h_a27a4aa45fe153c617bcfdc9a135368e5}{TETLIBRARY}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen_a1fc3157f647538d164f586e08dfe9a85}{igl\+::copyleft\+::tetgen\+::tetrahedralize}} (const std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&V, const std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&F, const std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&H, const std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&R, const std\+::string switches, std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&TV, std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&TT, std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&TF, std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&TR, std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&TN, std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&PT, std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&FT, size\+\_\+t \&num\+Regions)
+\begin{DoxyCompactList}\small\item\em Mesh the interior of a surface mesh (V,F) using tetgen. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen_ab4136f1f19b670bb69a05b211b6f51bb}{igl\+::copyleft\+::tetgen\+::tetrahedralize}} (const std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&V, const std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&F, const std\+::string switches, std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&TV, std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&TT, std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&TF)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename Derived\+TV , typename Derived\+TT , typename Derived\+TF $>$ }\\int \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen_a8a5fdfe393bd442def86f9f936df2ed2}{igl\+::copyleft\+::tetgen\+::tetrahedralize}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const std\+::string switches, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TV $>$ \&TV, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TT $>$ \&TT, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TF $>$ \&TF)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen_a956297a4e1a76096f6dcec3c807087e3}{igl\+::copyleft\+::tetgen\+::tetrahedralize}} (const std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&V, const std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&F, const std\+::vector$<$ int $>$ \&VM, const std\+::vector$<$ int $>$ \&FM, const std\+::string switches, std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&TV, std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&TT, std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&TF, std\+::vector$<$ int $>$ \&TM)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename Derived\+VM , typename Derived\+FM , typename Derived\+TV , typename Derived\+TT , typename Derived\+TF , typename Derived\+TM $>$ }\\int \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen_a9935cb2c069f907c5e9922bd46e1de72}{igl\+::copyleft\+::tetgen\+::tetrahedralize}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const Eigen\+::\+Matrix\+Base$<$ Derived\+VM $>$ \&VM, const Eigen\+::\+Matrix\+Base$<$ Derived\+FM $>$ \&FM, const std\+::string switches, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TV $>$ \&TV, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TT $>$ \&TT, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TF $>$ \&TF, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TM $>$ \&TM)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedH , typename DerivedR , typename Derived\+TV , typename Derived\+TT , typename Derived\+TF , typename Derived\+TR $>$ }\\int \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen_a5fd2ea548c768b65074feb6b75b90649}{igl\+::copyleft\+::tetgen\+::tetrahedralize}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const Eigen\+::\+Matrix\+Base$<$ DerivedH $>$ \&H, const Eigen\+::\+Matrix\+Base$<$ DerivedR $>$ \&R, const std\+::string switches, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TV $>$ \&TV, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TT $>$ \&TT, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TF $>$ \&TF, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TR $>$ \&TR, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TT $>$ \&TN, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TT $>$ \&PT, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TT $>$ \&FT, size\+\_\+t \&num\+Regions)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{tetrahedralize_8h_a27a4aa45fe153c617bcfdc9a135368e5}\label{tetrahedralize_8h_a27a4aa45fe153c617bcfdc9a135368e5} 
+\index{tetrahedralize.h@{tetrahedralize.h}!TETLIBRARY@{TETLIBRARY}}
+\index{TETLIBRARY@{TETLIBRARY}!tetrahedralize.h@{tetrahedralize.h}}
+\doxysubsubsection{\texorpdfstring{TETLIBRARY}{TETLIBRARY}}
+{\footnotesize\ttfamily \#define TETLIBRARY}
+

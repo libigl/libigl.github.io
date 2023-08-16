@@ -1,0 +1,25 @@
+\doxysection{include/igl/copyleft/cgal/point\+\_\+mesh\+\_\+squared\+\_\+distance.h File Reference}
+\hypertarget{copyleft_2cgal_2point__mesh__squared__distance_8h}{}\label{copyleft_2cgal_2point__mesh__squared__distance_8h}\index{include/igl/copyleft/cgal/point\_mesh\_squared\_distance.h@{include/igl/copyleft/cgal/point\_mesh\_squared\_distance.h}}
+{\ttfamily \#include \"{}../../igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \"{}CGAL\+\_\+includes.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}point\+\_\+mesh\+\_\+squared\+\_\+distance.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\item 
+namespace \mbox{\hyperlink{namespaceigl_1_1copyleft}{igl\+::copyleft}}
+\item 
+namespace \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal}{igl\+::copyleft\+::cgal}}
+\begin{DoxyCompactList}\small\item\em Given a list of possible intersecting segments with endpoints, split segments to overlap only at endpoints. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Kernel , typename DerivedP , typename DerivedV , typename DerivedF , typename DerivedsqrD , typename DerivedI , typename DerivedC $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a538a22d0da720af8d4bc8943eeb78ccd}{igl\+::copyleft\+::cgal\+::point\+\_\+mesh\+\_\+squared\+\_\+distance}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedP $>$ \&P, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ DerivedsqrD $>$ \&sqrD, Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&I, Eigen\+::\+Plain\+Object\+Base$<$ DerivedC $>$ \&C)
+\begin{DoxyCompactList}\small\item\em Compute distances from a set of points P to a triangle mesh (V,F) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Kernel , typename DerivedV , typename DerivedF $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a7079694987005d32d246369f638930a2}{igl\+::copyleft\+::cgal\+::point\+\_\+mesh\+\_\+squared\+\_\+distance\+\_\+precompute}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F, CGAL\+::\+AABB\+\_\+tree$<$ CGAL\+::\+AABB\+\_\+traits$<$ Kernel, CGAL\+::\+AABB\+\_\+triangle\+\_\+primitive$<$ Kernel, typename std\+::vector$<$ CGAL\+::\+Triangle\+\_\+3$<$ Kernel $>$ $>$\+::iterator $>$ $>$ $>$ \&tree, std\+::vector$<$ CGAL\+::\+Triangle\+\_\+3$<$ Kernel $>$ $>$ \&T)
+\begin{DoxyCompactList}\small\item\em precomputation for point\+\_\+mesh\+\_\+squared\+\_\+distance \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Kernel , typename DerivedP , typename DerivedsqrD , typename DerivedI , typename DerivedC $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a4b06702d1399da65b7d57a7883a903cd}{igl\+::copyleft\+::cgal\+::point\+\_\+mesh\+\_\+squared\+\_\+distance}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedP $>$ \&P, const CGAL\+::\+AABB\+\_\+tree$<$ CGAL\+::\+AABB\+\_\+traits$<$ Kernel, CGAL\+::\+AABB\+\_\+triangle\+\_\+primitive$<$ Kernel, typename std\+::vector$<$ CGAL\+::\+Triangle\+\_\+3$<$ Kernel $>$ $>$\+::iterator $>$ $>$ $>$ \&tree, const std\+::vector$<$ CGAL\+::\+Triangle\+\_\+3$<$ Kernel $>$ $>$ \&T, Eigen\+::\+Plain\+Object\+Base$<$ DerivedsqrD $>$ \&sqrD, Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&I, Eigen\+::\+Plain\+Object\+Base$<$ DerivedC $>$ \&C)
+\begin{DoxyCompactList}\small\item\em Compute distances from a set of points P to a triangle mesh (V,F) using precomputed trees. \end{DoxyCompactList}\end{DoxyCompactItemize}

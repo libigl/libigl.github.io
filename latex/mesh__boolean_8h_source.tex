@@ -1,0 +1,149 @@
+\doxysection{mesh\+\_\+boolean.\+h}
+\hypertarget{mesh__boolean_8h_source}{}\label{mesh__boolean_8h_source}\index{include/igl/copyleft/cgal/mesh\_boolean.h@{include/igl/copyleft/cgal/mesh\_boolean.h}}
+\mbox{\hyperlink{mesh__boolean_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2015\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Qingnan\ Zhou\ <qnzhou@gmail.com>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ IGL\_COPYLEFT\_CGAL\_MESH\_BOOLEAN\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ IGL\_COPYLEFT\_CGAL\_MESH\_BOOLEAN\_H}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}../../igl\_inline.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}../../MeshBooleanType.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \ \ \textcolor{keyword}{namespace\ }copyleft}
+\DoxyCodeLine{00022\ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{namespace\ }cgal}
+\DoxyCodeLine{00024\ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVA,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFA,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVB,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFB,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVC,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFC,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedJ>}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a06c593a5aedf52ccb8234edccc484607}{mesh\_boolean}}(}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedVA\ >\ \&\ VA,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedFA\ >\ \&\ FA,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedVB\ >\ \&\ VB,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedFB\ >\ \&\ FB,}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceigl_a16cc7fd8778cd880be528227e0318b9f}{MeshBooleanType}}\ \&\ type,}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedVC\ >\ \&\ VC,}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedFC\ >\ \&\ FC,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedJ\ >\ \&\ J);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVA,}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFA,}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVB,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFB,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVC,}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFC,}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedJ>}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a06c593a5aedf52ccb8234edccc484607}{mesh\_boolean}}(}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedVA\ >\ \&\ VA,}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedFA\ >\ \&\ FA,}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedVB\ >\ \&\ VB,}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedFB\ >\ \&\ FB,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\ type\_str,}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedVC\ >\ \&\ VC,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedFC\ >\ \&\ FC,}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedJ\ >\ \&\ J);}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVA,}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFA,}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVB,}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFB,}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVC,}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFC,}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedJ>}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a06c593a5aedf52ccb8234edccc484607}{mesh\_boolean}}(}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedVA>\ \&\ VA,}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedFA>\ \&\ FA,}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedVB>\ \&\ VB,}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedFB>\ \&\ FB,}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::function<\textcolor{keywordtype}{int}(\textcolor{keyword}{const}\ Eigen::Matrix<int,1,Eigen::Dynamic>)\ >\&\ wind\_num\_op,}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::function<\textcolor{keywordtype}{int}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int})>\ \&\ keep,}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedVC\ >\ \&\ VC,}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedFC\ >\ \&\ FC,}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedJ\ >\ \&\ J);}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVC,}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFC,}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedJ>}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a06c593a5aedf52ccb8234edccc484607}{mesh\_boolean}}(}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<DerivedV\ >\ \&\ Vlist,}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<DerivedF\ >\ \&\ Flist,}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::function<\textcolor{keywordtype}{int}(\textcolor{keyword}{const}\ Eigen::Matrix<int,1,Eigen::Dynamic>)\ >\&\ wind\_num\_op,}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::function<\textcolor{keywordtype}{int}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int})>\ \&\ keep,}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedVC\ >\ \&\ VC,}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedFC\ >\ \&\ FC,}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedJ\ >\ \&\ J);}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVC,}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFC,}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedJ>}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a06c593a5aedf52ccb8234edccc484607}{mesh\_boolean}}(}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<DerivedV\ >\ \&\ Vlist,}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<DerivedF\ >\ \&\ Flist,}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceigl_a16cc7fd8778cd880be528227e0318b9f}{MeshBooleanType}}\ \&\ type,}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedVC\ >\ \&\ VC,}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedFC\ >\ \&\ FC,}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedJ\ >\ \&\ J);}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVV,}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFF,}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Derivedsizes,}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVC,}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFC,}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedJ>}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a06c593a5aedf52ccb8234edccc484607}{mesh\_boolean}}(}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedVV\ >\ \&\ VV,}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedFF\ >\ \&\ FF,}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedsizes>\ \&\ sizes,}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::function<\textcolor{keywordtype}{int}(\textcolor{keyword}{const}\ Eigen::Matrix<int,1,Eigen::Dynamic>)\ >\&\ wind\_num\_op,}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::function<\textcolor{keywordtype}{int}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int})>\ \&\ keep,}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedVC\ >\ \&\ VC,}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedFC\ >\ \&\ FC,}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedJ\ >\ \&\ J);}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVA,}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFA,}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVB,}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFB,}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVC,}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFC>}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a06c593a5aedf52ccb8234edccc484607}{mesh\_boolean}}(}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedVA\ >\ \&\ VA,}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedFA\ >\ \&\ FA,}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedVB\ >\ \&\ VB,}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedFB\ >\ \&\ FB,}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceigl_a16cc7fd8778cd880be528227e0318b9f}{MeshBooleanType}}\ \&\ type,}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedVC\ >\ \&\ VC,}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedFC\ >\ \&\ FC);}
+\DoxyCodeLine{00184\ \ \ \ \ \}}
+\DoxyCodeLine{00185\ \ \ \}}
+\DoxyCodeLine{00186\ \}}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00189\ \textcolor{preprocessor}{\#\ \ include\ "{}mesh\_boolean.cpp"{}}}
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

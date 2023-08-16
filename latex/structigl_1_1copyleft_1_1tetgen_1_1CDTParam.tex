@@ -1,0 +1,61 @@
+\doxysection{igl\+::copyleft\+::tetgen\+::CDTParam Struct Reference}
+\hypertarget{structigl_1_1copyleft_1_1tetgen_1_1CDTParam}{}\label{structigl_1_1copyleft_1_1tetgen_1_1CDTParam}\index{igl::copyleft::tetgen::CDTParam@{igl::copyleft::tetgen::CDTParam}}
+
+
+Parameters for controling the CDT.  
+
+
+
+
+{\ttfamily \#include $<$cdt.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structigl_1_1copyleft_1_1tetgen_1_1CDTParam_af202fb83c40a5bcdb473690c3c087572}{use\+\_\+bounding\+\_\+box}} = false
+\begin{DoxyCompactList}\small\item\em Tetgen can compute mesh of convex hull of input (i.\+e. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{structigl_1_1copyleft_1_1tetgen_1_1CDTParam_a52b4e13ee2dfc01704897fcc7e3a302b}{bounding\+\_\+box\+\_\+scale}} = 1.\+01
+\begin{DoxyCompactList}\small\item\em Scale the bounding box a bit so that vertices near it do not give tetgen problems. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{structigl_1_1copyleft_1_1tetgen_1_1CDTParam_a2e383b51e3e19ad85b724a36fc5461b0}{flags}} = \"{}Y\"{}
+\begin{DoxyCompactList}\small\item\em Flags to tetgen. Do not include the \"{}c\"{} flag here! \{\"{}\+Y\"{}\}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Parameters for controling the CDT. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structigl_1_1copyleft_1_1tetgen_1_1CDTParam_af202fb83c40a5bcdb473690c3c087572}\label{structigl_1_1copyleft_1_1tetgen_1_1CDTParam_af202fb83c40a5bcdb473690c3c087572} 
+\index{igl::copyleft::tetgen::CDTParam@{igl::copyleft::tetgen::CDTParam}!use\_bounding\_box@{use\_bounding\_box}}
+\index{use\_bounding\_box@{use\_bounding\_box}!igl::copyleft::tetgen::CDTParam@{igl::copyleft::tetgen::CDTParam}}
+\doxysubsubsection{\texorpdfstring{use\_bounding\_box}{use\_bounding\_box}}
+{\footnotesize\ttfamily bool igl\+::copyleft\+::tetgen\+::\+CDTParam\+::use\+\_\+bounding\+\_\+box = false}
+
+
+
+Tetgen can compute mesh of convex hull of input (i.\+e. 
+
+\"{}c\"{}) but often chokes. One workaround is to force it to mesh the entire bounding box. \{false\} \Hypertarget{structigl_1_1copyleft_1_1tetgen_1_1CDTParam_a52b4e13ee2dfc01704897fcc7e3a302b}\label{structigl_1_1copyleft_1_1tetgen_1_1CDTParam_a52b4e13ee2dfc01704897fcc7e3a302b} 
+\index{igl::copyleft::tetgen::CDTParam@{igl::copyleft::tetgen::CDTParam}!bounding\_box\_scale@{bounding\_box\_scale}}
+\index{bounding\_box\_scale@{bounding\_box\_scale}!igl::copyleft::tetgen::CDTParam@{igl::copyleft::tetgen::CDTParam}}
+\doxysubsubsection{\texorpdfstring{bounding\_box\_scale}{bounding\_box\_scale}}
+{\footnotesize\ttfamily double igl\+::copyleft\+::tetgen\+::\+CDTParam\+::bounding\+\_\+box\+\_\+scale = 1.\+01}
+
+
+
+Scale the bounding box a bit so that vertices near it do not give tetgen problems. 
+
+\{1.\+01\} \Hypertarget{structigl_1_1copyleft_1_1tetgen_1_1CDTParam_a2e383b51e3e19ad85b724a36fc5461b0}\label{structigl_1_1copyleft_1_1tetgen_1_1CDTParam_a2e383b51e3e19ad85b724a36fc5461b0} 
+\index{igl::copyleft::tetgen::CDTParam@{igl::copyleft::tetgen::CDTParam}!flags@{flags}}
+\index{flags@{flags}!igl::copyleft::tetgen::CDTParam@{igl::copyleft::tetgen::CDTParam}}
+\doxysubsubsection{\texorpdfstring{flags}{flags}}
+{\footnotesize\ttfamily std\+::string igl\+::copyleft\+::tetgen\+::\+CDTParam\+::flags = \"{}Y\"{}}
+
+
+
+Flags to tetgen. Do not include the \"{}c\"{} flag here! \{\"{}\+Y\"{}\}. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/igl/copyleft/tetgen/\mbox{\hyperlink{copyleft_2tetgen_2cdt_8h}{cdt.\+h}}\end{DoxyCompactItemize}

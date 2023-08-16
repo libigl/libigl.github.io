@@ -107,6 +107,9 @@ $(document).ready(function(){initNavTree('classigl_1_1opengl_1_1MeshGL.html','')
 </div><!--header-->
 <div class="contents">
 
+<p>Coverts mesh data inside a igl::ViewerData class in an OpenGL compatible format The class includes a shader and the opengl calls to plot the data.  
+ <a href="classigl_1_1opengl_1_1MeshGL.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="MeshGL_8h_source.html">MeshGL.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
@@ -138,50 +141,62 @@ Public Types</h2></td></tr>
 , <a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a81a97b4082a52abc4e29f46574b07862a4d4b153582583c9f01bbb3339df59f36">DIRTY_ALL</a> = 0xFFFF
 <br />
  }</td></tr>
+<tr class="memdesc:a81a97b4082a52abc4e29f46574b07862"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitmask flags for keeping track of what needs to be (re)-uploaded to the GPU.  <a href="classigl_1_1opengl_1_1MeshGL.html#a81a97b4082a52abc4e29f46574b07862">More...</a><br /></td></tr>
 <tr class="separator:a81a97b4082a52abc4e29f46574b07862"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01084d9717aedaa252e1fcdf13657532"><td class="memItemLeft" align="right" valign="top">typedef unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a></td></tr>
 <tr class="separator:a01084d9717aedaa252e1fcdf13657532"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff43136617b15669459b7bd0558a98de"><td class="memItemLeft" align="right" valign="top">typedef unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#aff43136617b15669459b7bd0558a98de">GLint</a></td></tr>
 <tr class="separator:aff43136617b15669459b7bd0558a98de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf75306956e300b76bd4eae9d424e331"><td class="memItemLeft" align="right" valign="top">typedef Eigen::Matrix&lt; float, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#adf75306956e300b76bd4eae9d424e331">RowMatrixXf</a></td></tr>
-<tr class="separator:adf75306956e300b76bd4eae9d424e331"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a7f3f62f787ae30571191c5bf0a2ed7d7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a7f3f62f787ae30571191c5bf0a2ed7d7">MeshGL</a> ()</td></tr>
 <tr class="separator:a7f3f62f787ae30571191c5bf0a2ed7d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a660a7ab065d1f9f65b8c4dc1ae3d3a53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a660a7ab065d1f9f65b8c4dc1ae3d3a53">init</a> ()</td></tr>
+<tr class="memdesc:a660a7ab065d1f9f65b8c4dc1ae3d3a53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize shaders and buffers.  <br /></td></tr>
 <tr class="separator:a660a7ab065d1f9f65b8c4dc1ae3d3a53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4d74dcaa11d4e766d0ea38edd3b7275"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#ae4d74dcaa11d4e766d0ea38edd3b7275">free</a> ()</td></tr>
+<tr class="memdesc:ae4d74dcaa11d4e766d0ea38edd3b7275"><td class="mdescLeft">&#160;</td><td class="mdescRight">Release all resources.  <br /></td></tr>
 <tr class="separator:ae4d74dcaa11d4e766d0ea38edd3b7275"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65f06a596e4fadadce708ee31a3bff46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a65f06a596e4fadadce708ee31a3bff46">init_buffers</a> ()</td></tr>
+<tr class="memdesc:a65f06a596e4fadadce708ee31a3bff46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new set of OpenGL buffer objects.  <br /></td></tr>
 <tr class="separator:a65f06a596e4fadadce708ee31a3bff46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2dff112c00e25077a3fc6f44d7d771c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#ae2dff112c00e25077a3fc6f44d7d771c">bind_mesh</a> ()</td></tr>
+<tr class="memdesc:ae2dff112c00e25077a3fc6f44d7d771c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bind the underlying OpenGL buffer objects for subsequent mesh draw calls.  <br /></td></tr>
 <tr class="separator:ae2dff112c00e25077a3fc6f44d7d771c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a085cd4c4778f807dcbe2fd10a24927b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a085cd4c4778f807dcbe2fd10a24927b0">draw_mesh</a> (bool solid)</td></tr>
 <tr class="memdesc:a085cd4c4778f807dcbe2fd10a24927b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw the currently buffered mesh (either solid or wireframe)  <br /></td></tr>
 <tr class="separator:a085cd4c4778f807dcbe2fd10a24927b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2977d43a99119bd0993566007bea03c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a2977d43a99119bd0993566007bea03c8">bind_overlay_lines</a> ()</td></tr>
+<tr class="memdesc:a2977d43a99119bd0993566007bea03c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bind the underlying OpenGL buffer objects for subsequent line overlay draw calls.  <br /></td></tr>
 <tr class="separator:a2977d43a99119bd0993566007bea03c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10556864f8f669e8ecdd680245875e17"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a10556864f8f669e8ecdd680245875e17">draw_overlay_lines</a> ()</td></tr>
 <tr class="memdesc:a10556864f8f669e8ecdd680245875e17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw the currently buffered line overlay.  <br /></td></tr>
 <tr class="separator:a10556864f8f669e8ecdd680245875e17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a548e76bd0d60dcef7169c57c4eacbbb6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a548e76bd0d60dcef7169c57c4eacbbb6">bind_overlay_points</a> ()</td></tr>
+<tr class="memdesc:a548e76bd0d60dcef7169c57c4eacbbb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bind the underlying OpenGL buffer objects for subsequent point overlay draw calls.  <br /></td></tr>
 <tr class="separator:a548e76bd0d60dcef7169c57c4eacbbb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae3f03429b3c7034cd573479cceb7ee1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#aae3f03429b3c7034cd573479cceb7ee1">draw_overlay_points</a> ()</td></tr>
 <tr class="memdesc:aae3f03429b3c7034cd573479cceb7ee1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw the currently buffered point overlay.  <br /></td></tr>
 <tr class="separator:aae3f03429b3c7034cd573479cceb7ee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a401b4e66e56711b5ba59a70c72550665"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a401b4e66e56711b5ba59a70c72550665">init_text_rendering</a> ()</td></tr>
+<tr class="memdesc:a401b4e66e56711b5ba59a70c72550665"><td class="mdescLeft">&#160;</td><td class="mdescRight">Text Binding and Draw functions.  <br /></td></tr>
 <tr class="separator:a401b4e66e56711b5ba59a70c72550665"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab75a81f0cf002e40f42bda18ff797d87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#ab75a81f0cf002e40f42bda18ff797d87">bind_labels</a> (const <a class="el" href="structigl_1_1opengl_1_1MeshGL_1_1TextGL.html">TextGL</a> &amp;labels)</td></tr>
+<tr class="memdesc:ab75a81f0cf002e40f42bda18ff797d87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bind the underlying OpenGL buffer objects for subsequent text draw calls.  <br /></td></tr>
 <tr class="separator:ab75a81f0cf002e40f42bda18ff797d87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72dcfa1805cf603eb114c876f0bcb825"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a72dcfa1805cf603eb114c876f0bcb825">draw_labels</a> (const <a class="el" href="structigl_1_1opengl_1_1MeshGL_1_1TextGL.html">TextGL</a> &amp;labels)</td></tr>
+<tr class="memdesc:a72dcfa1805cf603eb114c876f0bcb825"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw the currently buffered text.  <br /></td></tr>
 <tr class="separator:a72dcfa1805cf603eb114c876f0bcb825"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaed2fed1bcb579d48298ede694fd2bc7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#aaed2fed1bcb579d48298ede694fd2bc7">free_buffers</a> ()</td></tr>
+<tr class="memdesc:aaed2fed1bcb579d48298ede694fd2bc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Release the OpenGL buffer objects.  <br /></td></tr>
 <tr class="separator:aaed2fed1bcb579d48298ede694fd2bc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
+<tr class="memitem:a17194504109bdabe4cc5d2c9a46cbd37"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> vbo_V <a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> vbo_V_uv <a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> vbo_V_normals <a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> vbo_V_ambient <a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> vbo_V_diffuse <a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> vbo_V_specular <a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> vbo_F <a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> vbo_tex <a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> vbo_lines_F <a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> vbo_lines_V <a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> vbo_lines_V_colors <a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> vbo_points_F <a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> vbo_points_V <a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> vbo_points_V_colors typedef Eigen::Matrix&lt; float, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a17194504109bdabe4cc5d2c9a46cbd37">RowMatrixXf</a></td></tr>
+<tr class="memdesc:a17194504109bdabe4cc5d2c9a46cbd37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vertices of the current mesh (#V x 3)  <br /></td></tr>
+<tr class="separator:a17194504109bdabe4cc5d2c9a46cbd37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae686c55861e1cef7843e91dcc9fb4c28"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#ae686c55861e1cef7843e91dcc9fb4c28">is_initialized</a> = false</td></tr>
 <tr class="separator:ae686c55861e1cef7843e91dcc9fb4c28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5617c68f0b8ffbd3b3ef755329602aee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a5617c68f0b8ffbd3b3ef755329602aee">vao_mesh</a></td></tr>
@@ -198,53 +213,25 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a6b1a3b4217dc66644b9b5f8df8cfe989"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:addb56e58d170cee18ace23fac9db790a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#addb56e58d170cee18ace23fac9db790a">shader_text</a></td></tr>
 <tr class="separator:addb56e58d170cee18ace23fac9db790a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b03591eed054785b74c5799a37a3c97"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a5b03591eed054785b74c5799a37a3c97">vbo_V</a></td></tr>
-<tr class="separator:a5b03591eed054785b74c5799a37a3c97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26d292adff83c8104e32bebb5673e7f8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a26d292adff83c8104e32bebb5673e7f8">vbo_V_uv</a></td></tr>
-<tr class="separator:a26d292adff83c8104e32bebb5673e7f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ec0b9722edbab0063b071419ce0cbbb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a2ec0b9722edbab0063b071419ce0cbbb">vbo_V_normals</a></td></tr>
-<tr class="separator:a2ec0b9722edbab0063b071419ce0cbbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc7c20af7679ac2d58d28aef1aefbffc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#acc7c20af7679ac2d58d28aef1aefbffc">vbo_V_ambient</a></td></tr>
-<tr class="separator:acc7c20af7679ac2d58d28aef1aefbffc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8b371dd68adb1b2c9c640bc7d0667ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#ad8b371dd68adb1b2c9c640bc7d0667ca">vbo_V_diffuse</a></td></tr>
-<tr class="separator:ad8b371dd68adb1b2c9c640bc7d0667ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f82dd474d798ec19c76fdfe3e7f77e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a7f82dd474d798ec19c76fdfe3e7f77e0">vbo_V_specular</a></td></tr>
-<tr class="separator:a7f82dd474d798ec19c76fdfe3e7f77e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa95a2e464179442c7898fb57b9c6ebfc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#aa95a2e464179442c7898fb57b9c6ebfc">vbo_F</a></td></tr>
-<tr class="separator:aa95a2e464179442c7898fb57b9c6ebfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08788749eee629f0639cb057f6bc83b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a08788749eee629f0639cb057f6bc83b7">vbo_tex</a></td></tr>
-<tr class="separator:a08788749eee629f0639cb057f6bc83b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1da16942e4abed0aef950702614a9151"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a1da16942e4abed0aef950702614a9151">vbo_lines_F</a></td></tr>
-<tr class="separator:a1da16942e4abed0aef950702614a9151"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6cfbb5e65beba50467e3d72fa0469796"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a6cfbb5e65beba50467e3d72fa0469796">vbo_lines_V</a></td></tr>
-<tr class="separator:a6cfbb5e65beba50467e3d72fa0469796"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d9ae54ae0f851346b977d78131acd7e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a5d9ae54ae0f851346b977d78131acd7e">vbo_lines_V_colors</a></td></tr>
-<tr class="separator:a5d9ae54ae0f851346b977d78131acd7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad922748c83a953d5a90a45e11461c3ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#ad922748c83a953d5a90a45e11461c3ff">vbo_points_F</a></td></tr>
-<tr class="separator:ad922748c83a953d5a90a45e11461c3ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2a89418cc4a511612436e5979d67032"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#ad2a89418cc4a511612436e5979d67032">vbo_points_V</a></td></tr>
-<tr class="separator:ad2a89418cc4a511612436e5979d67032"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f29aece963988ee6389a3ebd636dc5a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a4f29aece963988ee6389a3ebd636dc5a">vbo_points_V_colors</a></td></tr>
-<tr class="separator:a4f29aece963988ee6389a3ebd636dc5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2c590d6a4f3dff3752a3e205c04da61"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#adf75306956e300b76bd4eae9d424e331">RowMatrixXf</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#ac2c590d6a4f3dff3752a3e205c04da61">V_vbo</a></td></tr>
+<tr class="memitem:ac2c590d6a4f3dff3752a3e205c04da61"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a17194504109bdabe4cc5d2c9a46cbd37">RowMatrixXf</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#ac2c590d6a4f3dff3752a3e205c04da61">V_vbo</a></td></tr>
 <tr class="separator:ac2c590d6a4f3dff3752a3e205c04da61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e7f829d716584272bc822f7166398e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#adf75306956e300b76bd4eae9d424e331">RowMatrixXf</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a0e7f829d716584272bc822f7166398e7">V_normals_vbo</a></td></tr>
+<tr class="memitem:a0e7f829d716584272bc822f7166398e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a17194504109bdabe4cc5d2c9a46cbd37">RowMatrixXf</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a0e7f829d716584272bc822f7166398e7">V_normals_vbo</a></td></tr>
 <tr class="separator:a0e7f829d716584272bc822f7166398e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78d983cb7c4f65ee3f9f3888f584b9ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#adf75306956e300b76bd4eae9d424e331">RowMatrixXf</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a78d983cb7c4f65ee3f9f3888f584b9ce">V_ambient_vbo</a></td></tr>
+<tr class="memitem:a78d983cb7c4f65ee3f9f3888f584b9ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a17194504109bdabe4cc5d2c9a46cbd37">RowMatrixXf</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a78d983cb7c4f65ee3f9f3888f584b9ce">V_ambient_vbo</a></td></tr>
 <tr class="separator:a78d983cb7c4f65ee3f9f3888f584b9ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e339a0daa6dadbf0c72f653d752de2c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#adf75306956e300b76bd4eae9d424e331">RowMatrixXf</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a4e339a0daa6dadbf0c72f653d752de2c">V_diffuse_vbo</a></td></tr>
+<tr class="memitem:a4e339a0daa6dadbf0c72f653d752de2c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a17194504109bdabe4cc5d2c9a46cbd37">RowMatrixXf</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a4e339a0daa6dadbf0c72f653d752de2c">V_diffuse_vbo</a></td></tr>
 <tr class="separator:a4e339a0daa6dadbf0c72f653d752de2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed80f410684477bc78e3d84ffcce8752"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#adf75306956e300b76bd4eae9d424e331">RowMatrixXf</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#aed80f410684477bc78e3d84ffcce8752">V_specular_vbo</a></td></tr>
+<tr class="memitem:aed80f410684477bc78e3d84ffcce8752"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a17194504109bdabe4cc5d2c9a46cbd37">RowMatrixXf</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#aed80f410684477bc78e3d84ffcce8752">V_specular_vbo</a></td></tr>
 <tr class="separator:aed80f410684477bc78e3d84ffcce8752"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4356ffc0522f0b071145297e9362c154"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#adf75306956e300b76bd4eae9d424e331">RowMatrixXf</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a4356ffc0522f0b071145297e9362c154">V_uv_vbo</a></td></tr>
+<tr class="memitem:a4356ffc0522f0b071145297e9362c154"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a17194504109bdabe4cc5d2c9a46cbd37">RowMatrixXf</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a4356ffc0522f0b071145297e9362c154">V_uv_vbo</a></td></tr>
 <tr class="separator:a4356ffc0522f0b071145297e9362c154"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa953266e7d2e8ab68966c9c7b8207123"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#adf75306956e300b76bd4eae9d424e331">RowMatrixXf</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#aa953266e7d2e8ab68966c9c7b8207123">lines_V_vbo</a></td></tr>
+<tr class="memitem:aa953266e7d2e8ab68966c9c7b8207123"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a17194504109bdabe4cc5d2c9a46cbd37">RowMatrixXf</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#aa953266e7d2e8ab68966c9c7b8207123">lines_V_vbo</a></td></tr>
 <tr class="separator:aa953266e7d2e8ab68966c9c7b8207123"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d621ebb9b848feab4c9a32966f70f95"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#adf75306956e300b76bd4eae9d424e331">RowMatrixXf</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a2d621ebb9b848feab4c9a32966f70f95">lines_V_colors_vbo</a></td></tr>
+<tr class="memitem:a2d621ebb9b848feab4c9a32966f70f95"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a17194504109bdabe4cc5d2c9a46cbd37">RowMatrixXf</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a2d621ebb9b848feab4c9a32966f70f95">lines_V_colors_vbo</a></td></tr>
 <tr class="separator:a2d621ebb9b848feab4c9a32966f70f95"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92962f0de9d353681d78e0f4fdfbd572"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#adf75306956e300b76bd4eae9d424e331">RowMatrixXf</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a92962f0de9d353681d78e0f4fdfbd572">points_V_vbo</a></td></tr>
+<tr class="memitem:a92962f0de9d353681d78e0f4fdfbd572"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a17194504109bdabe4cc5d2c9a46cbd37">RowMatrixXf</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a92962f0de9d353681d78e0f4fdfbd572">points_V_vbo</a></td></tr>
 <tr class="separator:a92962f0de9d353681d78e0f4fdfbd572"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8bbeb3828c1e753047172f045582e01"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#adf75306956e300b76bd4eae9d424e331">RowMatrixXf</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#af8bbeb3828c1e753047172f045582e01">points_V_colors_vbo</a></td></tr>
+<tr class="memitem:af8bbeb3828c1e753047172f045582e01"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a17194504109bdabe4cc5d2c9a46cbd37">RowMatrixXf</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#af8bbeb3828c1e753047172f045582e01">points_V_colors_vbo</a></td></tr>
 <tr class="separator:af8bbeb3828c1e753047172f045582e01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ee2a8dddbfb9fdb9efc69ad84a80ab7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structigl_1_1opengl_1_1MeshGL_1_1TextGL.html">TextGL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a1ee2a8dddbfb9fdb9efc69ad84a80ab7">vertex_labels</a></td></tr>
 <tr class="separator:a1ee2a8dddbfb9fdb9efc69ad84a80ab7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -271,9 +258,12 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a8207c9ce024558a35b21486d18429ddb"><td class="memItemLeft" align="right" valign="top">Eigen::Matrix&lt; unsigned, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a8207c9ce024558a35b21486d18429ddb">points_F_vbo</a></td></tr>
 <tr class="separator:a8207c9ce024558a35b21486d18429ddb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b736f78d2d9bac1fa104b4dc8ddcf95"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a3b736f78d2d9bac1fa104b4dc8ddcf95">dirty</a></td></tr>
+<tr class="memdesc:a3b736f78d2d9bac1fa104b4dc8ddcf95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Marks dirty buffers that need to be uploaded to OpenGL.  <br /></td></tr>
 <tr class="separator:a3b736f78d2d9bac1fa104b4dc8ddcf95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Typedef Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Coverts mesh data inside a igl::ViewerData class in an OpenGL compatible format The class includes a shader and the opengl calls to plot the data. </p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a01084d9717aedaa252e1fcdf13657532" name="a01084d9717aedaa252e1fcdf13657532"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a01084d9717aedaa252e1fcdf13657532">&#9670;&#160;</a></span>GLuint</h2>
 
@@ -302,20 +292,6 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="adf75306956e300b76bd4eae9d424e331" name="adf75306956e300b76bd4eae9d424e331"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf75306956e300b76bd4eae9d424e331">&#9670;&#160;</a></span>RowMatrixXf</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef Eigen::Matrix&lt;float,Eigen::Dynamic,Eigen::Dynamic,Eigen::RowMajor&gt; <a class="el" href="classigl_1_1opengl_1_1MeshGL.html#adf75306956e300b76bd4eae9d424e331">igl::opengl::MeshGL::RowMatrixXf</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a81a97b4082a52abc4e29f46574b07862" name="a81a97b4082a52abc4e29f46574b07862"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a81a97b4082a52abc4e29f46574b07862">&#9670;&#160;</a></span>DirtyFlags</h2>
@@ -328,6 +304,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Bitmask flags for keeping track of what needs to be (re)-uploaded to the GPU. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a81a97b4082a52abc4e29f46574b07862a74c7703c522ac54d595f1daf5942aa82" name="a81a97b4082a52abc4e29f46574b07862a74c7703c522ac54d595f1daf5942aa82"></a>DIRTY_NONE&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a81a97b4082a52abc4e29f46574b07862a4a54f6964602500fffc8030b8efbaf53" name="a81a97b4082a52abc4e29f46574b07862a4a54f6964602500fffc8030b8efbaf53"></a>DIRTY_POSITION&#160;</td><td class="fielddoc"></td></tr>
@@ -383,6 +361,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Initialize shaders and buffers. </p>
+
 </div>
 </div>
 <a id="ae4d74dcaa11d4e766d0ea38edd3b7275" name="ae4d74dcaa11d4e766d0ea38edd3b7275"></a>
@@ -399,6 +379,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Release all resources. </p>
 
 </div>
 </div>
@@ -417,6 +399,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Create a new set of OpenGL buffer objects. </p>
+
 </div>
 </div>
 <a id="ae2dff112c00e25077a3fc6f44d7d771c" name="ae2dff112c00e25077a3fc6f44d7d771c"></a>
@@ -433,6 +417,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Bind the underlying OpenGL buffer objects for subsequent mesh draw calls. </p>
 
 </div>
 </div>
@@ -453,6 +439,12 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Draw the currently buffered mesh (either solid or wireframe) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">solid</td><td>Whether to draw the mesh as a solid or wireframe </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -470,6 +462,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Bind the underlying OpenGL buffer objects for subsequent line overlay draw calls. </p>
 
 </div>
 </div>
@@ -507,6 +501,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Bind the underlying OpenGL buffer objects for subsequent point overlay draw calls. </p>
+
 </div>
 </div>
 <a id="aae3f03429b3c7034cd573479cceb7ee1" name="aae3f03429b3c7034cd573479cceb7ee1"></a>
@@ -543,6 +539,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Text Binding and Draw functions. </p>
+
 </div>
 </div>
 <a id="ab75a81f0cf002e40f42bda18ff797d87" name="ab75a81f0cf002e40f42bda18ff797d87"></a>
@@ -560,6 +558,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Bind the underlying OpenGL buffer objects for subsequent text draw calls. </p>
 
 </div>
 </div>
@@ -579,6 +579,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Draw the currently buffered text. </p>
+
 </div>
 </div>
 <a id="aaed2fed1bcb579d48298ede694fd2bc7" name="aaed2fed1bcb579d48298ede694fd2bc7"></a>
@@ -596,9 +598,28 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Release the OpenGL buffer objects. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a17194504109bdabe4cc5d2c9a46cbd37" name="a17194504109bdabe4cc5d2c9a46cbd37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17194504109bdabe4cc5d2c9a46cbd37">&#9670;&#160;</a></span>RowMatrixXf</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> vbo_V <a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> vbo_V_uv <a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> vbo_V_normals <a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> vbo_V_ambient <a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> vbo_V_diffuse <a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> vbo_V_specular <a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> vbo_F <a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> vbo_tex <a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> vbo_lines_F <a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> vbo_lines_V <a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> vbo_lines_V_colors <a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> vbo_points_F <a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> vbo_points_V <a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> vbo_points_V_colors typedef Eigen::Matrix&lt;float,Eigen::Dynamic,Eigen::Dynamic,Eigen::RowMajor&gt; igl::opengl::MeshGL::RowMatrixXf</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Vertices of the current mesh (#V x 3) </p>
+<p>UV coordinates for the current mesh (#V x 2) Vertices of the current mesh (#V x 3) Ambient material (#V x 3) Diffuse material (#V x 3) Specular material (#V x 3) Faces of the mesh (#F x 3) Texture Indices of the line overlay Vertices of the line overlay Color values of the line overlay Indices of the point overlay Vertices of the point overlay Color values of the point overlay </p>
+
+</div>
+</div>
 <a id="ae686c55861e1cef7843e91dcc9fb4c28" name="ae686c55861e1cef7843e91dcc9fb4c28"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae686c55861e1cef7843e91dcc9fb4c28">&#9670;&#160;</a></span>is_initialized</h2>
 
@@ -711,202 +732,6 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a5b03591eed054785b74c5799a37a3c97" name="a5b03591eed054785b74c5799a37a3c97"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b03591eed054785b74c5799a37a3c97">&#9670;&#160;</a></span>vbo_V</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> igl::opengl::MeshGL::vbo_V</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a26d292adff83c8104e32bebb5673e7f8" name="a26d292adff83c8104e32bebb5673e7f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a26d292adff83c8104e32bebb5673e7f8">&#9670;&#160;</a></span>vbo_V_uv</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> igl::opengl::MeshGL::vbo_V_uv</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a2ec0b9722edbab0063b071419ce0cbbb" name="a2ec0b9722edbab0063b071419ce0cbbb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ec0b9722edbab0063b071419ce0cbbb">&#9670;&#160;</a></span>vbo_V_normals</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> igl::opengl::MeshGL::vbo_V_normals</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="acc7c20af7679ac2d58d28aef1aefbffc" name="acc7c20af7679ac2d58d28aef1aefbffc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc7c20af7679ac2d58d28aef1aefbffc">&#9670;&#160;</a></span>vbo_V_ambient</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> igl::opengl::MeshGL::vbo_V_ambient</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad8b371dd68adb1b2c9c640bc7d0667ca" name="ad8b371dd68adb1b2c9c640bc7d0667ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad8b371dd68adb1b2c9c640bc7d0667ca">&#9670;&#160;</a></span>vbo_V_diffuse</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> igl::opengl::MeshGL::vbo_V_diffuse</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7f82dd474d798ec19c76fdfe3e7f77e0" name="a7f82dd474d798ec19c76fdfe3e7f77e0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7f82dd474d798ec19c76fdfe3e7f77e0">&#9670;&#160;</a></span>vbo_V_specular</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> igl::opengl::MeshGL::vbo_V_specular</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa95a2e464179442c7898fb57b9c6ebfc" name="aa95a2e464179442c7898fb57b9c6ebfc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa95a2e464179442c7898fb57b9c6ebfc">&#9670;&#160;</a></span>vbo_F</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> igl::opengl::MeshGL::vbo_F</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a08788749eee629f0639cb057f6bc83b7" name="a08788749eee629f0639cb057f6bc83b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08788749eee629f0639cb057f6bc83b7">&#9670;&#160;</a></span>vbo_tex</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> igl::opengl::MeshGL::vbo_tex</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a1da16942e4abed0aef950702614a9151" name="a1da16942e4abed0aef950702614a9151"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1da16942e4abed0aef950702614a9151">&#9670;&#160;</a></span>vbo_lines_F</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> igl::opengl::MeshGL::vbo_lines_F</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a6cfbb5e65beba50467e3d72fa0469796" name="a6cfbb5e65beba50467e3d72fa0469796"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6cfbb5e65beba50467e3d72fa0469796">&#9670;&#160;</a></span>vbo_lines_V</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> igl::opengl::MeshGL::vbo_lines_V</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5d9ae54ae0f851346b977d78131acd7e" name="a5d9ae54ae0f851346b977d78131acd7e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d9ae54ae0f851346b977d78131acd7e">&#9670;&#160;</a></span>vbo_lines_V_colors</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> igl::opengl::MeshGL::vbo_lines_V_colors</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad922748c83a953d5a90a45e11461c3ff" name="ad922748c83a953d5a90a45e11461c3ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad922748c83a953d5a90a45e11461c3ff">&#9670;&#160;</a></span>vbo_points_F</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> igl::opengl::MeshGL::vbo_points_F</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad2a89418cc4a511612436e5979d67032" name="ad2a89418cc4a511612436e5979d67032"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad2a89418cc4a511612436e5979d67032">&#9670;&#160;</a></span>vbo_points_V</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> igl::opengl::MeshGL::vbo_points_V</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a4f29aece963988ee6389a3ebd636dc5a" name="a4f29aece963988ee6389a3ebd636dc5a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4f29aece963988ee6389a3ebd636dc5a">&#9670;&#160;</a></span>vbo_points_V_colors</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532">GLuint</a> igl::opengl::MeshGL::vbo_points_V_colors</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="ac2c590d6a4f3dff3752a3e205c04da61" name="ac2c590d6a4f3dff3752a3e205c04da61"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac2c590d6a4f3dff3752a3e205c04da61">&#9670;&#160;</a></span>V_vbo</h2>
 
@@ -914,7 +739,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#adf75306956e300b76bd4eae9d424e331">RowMatrixXf</a> igl::opengl::MeshGL::V_vbo</td>
+          <td class="memname"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a17194504109bdabe4cc5d2c9a46cbd37">RowMatrixXf</a> igl::opengl::MeshGL::V_vbo</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -928,7 +753,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#adf75306956e300b76bd4eae9d424e331">RowMatrixXf</a> igl::opengl::MeshGL::V_normals_vbo</td>
+          <td class="memname"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a17194504109bdabe4cc5d2c9a46cbd37">RowMatrixXf</a> igl::opengl::MeshGL::V_normals_vbo</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -942,7 +767,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#adf75306956e300b76bd4eae9d424e331">RowMatrixXf</a> igl::opengl::MeshGL::V_ambient_vbo</td>
+          <td class="memname"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a17194504109bdabe4cc5d2c9a46cbd37">RowMatrixXf</a> igl::opengl::MeshGL::V_ambient_vbo</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -956,7 +781,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#adf75306956e300b76bd4eae9d424e331">RowMatrixXf</a> igl::opengl::MeshGL::V_diffuse_vbo</td>
+          <td class="memname"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a17194504109bdabe4cc5d2c9a46cbd37">RowMatrixXf</a> igl::opengl::MeshGL::V_diffuse_vbo</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -970,7 +795,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#adf75306956e300b76bd4eae9d424e331">RowMatrixXf</a> igl::opengl::MeshGL::V_specular_vbo</td>
+          <td class="memname"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a17194504109bdabe4cc5d2c9a46cbd37">RowMatrixXf</a> igl::opengl::MeshGL::V_specular_vbo</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -984,7 +809,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#adf75306956e300b76bd4eae9d424e331">RowMatrixXf</a> igl::opengl::MeshGL::V_uv_vbo</td>
+          <td class="memname"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a17194504109bdabe4cc5d2c9a46cbd37">RowMatrixXf</a> igl::opengl::MeshGL::V_uv_vbo</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -998,7 +823,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#adf75306956e300b76bd4eae9d424e331">RowMatrixXf</a> igl::opengl::MeshGL::lines_V_vbo</td>
+          <td class="memname"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a17194504109bdabe4cc5d2c9a46cbd37">RowMatrixXf</a> igl::opengl::MeshGL::lines_V_vbo</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1012,7 +837,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#adf75306956e300b76bd4eae9d424e331">RowMatrixXf</a> igl::opengl::MeshGL::lines_V_colors_vbo</td>
+          <td class="memname"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a17194504109bdabe4cc5d2c9a46cbd37">RowMatrixXf</a> igl::opengl::MeshGL::lines_V_colors_vbo</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1026,7 +851,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#adf75306956e300b76bd4eae9d424e331">RowMatrixXf</a> igl::opengl::MeshGL::points_V_vbo</td>
+          <td class="memname"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a17194504109bdabe4cc5d2c9a46cbd37">RowMatrixXf</a> igl::opengl::MeshGL::points_V_vbo</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1040,7 +865,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#adf75306956e300b76bd4eae9d424e331">RowMatrixXf</a> igl::opengl::MeshGL::points_V_colors_vbo</td>
+          <td class="memname"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a17194504109bdabe4cc5d2c9a46cbd37">RowMatrixXf</a> igl::opengl::MeshGL::points_V_colors_vbo</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1226,6 +1051,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Marks dirty buffers that need to be uploaded to OpenGL. </p>
 
 </div>
 </div>

@@ -1,0 +1,80 @@
+\doxysection{assign\+\_\+scalar.\+h}
+\hypertarget{assign__scalar_8h_source}{}\label{assign__scalar_8h_source}\index{include/igl/copyleft/cgal/assign\_scalar.h@{include/igl/copyleft/cgal/assign\_scalar.h}}
+\mbox{\hyperlink{assign__scalar_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2015\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ Copyright\ (C)\ 2021\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ IGL\_COPYLEFT\_CGAL\_ASSIGN\_SCALAR\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ IGL\_COPYLEFT\_CGAL\_ASSIGN\_SCALAR\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}../../igl\_inline.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <CGAL/Exact\_predicates\_exact\_constructions\_kernel.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <CGAL/Exact\_predicates\_exact\_constructions\_kernel\_with\_sqrt.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#ifndef\ WIN32}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <CGAL/gmpxx.h>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00020\ \ \ \textcolor{keyword}{namespace\ }copyleft}
+\DoxyCodeLine{00021\ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{namespace\ }cgal}
+\DoxyCodeLine{00023\ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ RHS,\ \textcolor{keyword}{typename}\ LHS>}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a5ed0cef244df8ed5e76d2d55af9d57a8}{assign\_scalar}}(}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ RHS\ \&\ rhs,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ \&\ slow\_and\_more\_precise,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ LHS\ \&\ lhs);}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a5ed0cef244df8ed5e76d2d55af9d57a8}{assign\_scalar}}(}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ CGAL::Epeck::FT\ \&\ cgal,}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ CGAL::Epeck::FT\ \&\ d);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a5ed0cef244df8ed5e76d2d55af9d57a8}{assign\_scalar}}(}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ CGAL::Epeck::FT\ \&\ cgal,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \&\ d);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a5ed0cef244df8ed5e76d2d55af9d57a8}{assign\_scalar}}(}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ CGAL::Epeck::FT\ \&\ cgal,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\&\ d);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a5ed0cef244df8ed5e76d2d55af9d57a8}{assign\_scalar}}(}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \&\ c,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \&\ d);}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a5ed0cef244df8ed5e76d2d55af9d57a8}{assign\_scalar}}(}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ c,}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \&\ d);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a5ed0cef244df8ed5e76d2d55af9d57a8}{assign\_scalar}}(}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ c,}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\&\ d);}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a5ed0cef244df8ed5e76d2d55af9d57a8}{assign\_scalar}}(}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ CGAL::Exact\_predicates\_exact\_constructions\_kernel\_with\_sqrt::FT\ \&\ cgal,}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ CGAL::Exact\_predicates\_exact\_constructions\_kernel\_with\_sqrt::FT\ \&\ d);}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a5ed0cef244df8ed5e76d2d55af9d57a8}{assign\_scalar}}(}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ CGAL::Exact\_predicates\_exact\_constructions\_kernel\_with\_sqrt::FT\ \&\ cgal,}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \&\ d);}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a5ed0cef244df8ed5e76d2d55af9d57a8}{assign\_scalar}}(}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ CGAL::Exact\_predicates\_exact\_constructions\_kernel\_with\_sqrt::FT\ \&\ cgal,}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\&\ d);}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#ifndef\ WIN32}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a5ed0cef244df8ed5e76d2d55af9d57a8}{assign\_scalar}}(}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ CGAL::Simple\_cartesian<mpq\_class>::FT\ \&\ cgal,}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ CGAL::Simple\_cartesian<mpq\_class>::FT\ \&\ d);}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a5ed0cef244df8ed5e76d2d55af9d57a8}{assign\_scalar}}(}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ CGAL::Simple\_cartesian<mpq\_class>::FT\ \&\ cgal,}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \&\ d);}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a5ed0cef244df8ed5e76d2d55af9d57a8}{assign\_scalar}}(}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ CGAL::Simple\_cartesian<mpq\_class>::FT\ \&\ cgal,}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\&\ d);}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00102\ \ \ \ \ \}}
+\DoxyCodeLine{00103\ \ \ \}}
+\DoxyCodeLine{00104\ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#\ \ include\ "{}assign\_scalar.cpp"{}}}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

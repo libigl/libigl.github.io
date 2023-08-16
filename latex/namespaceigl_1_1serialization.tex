@@ -1,34 +1,594 @@
 \doxysection{igl\+::serialization Namespace Reference}
 \hypertarget{namespaceigl_1_1serialization}{}\label{namespaceigl_1_1serialization}\index{igl::serialization@{igl::serialization}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structigl_1_1serialization_1_1is__eigen__type}{is\+\_\+eigen\+\_\+type}}
+\item 
+struct \mbox{\hyperlink{structigl_1_1serialization_1_1is__eigen__type_3_01Eigen_1_1Array_3_01T_00_01R_00_01C_00_01P_00_01MR_00_01MC_01_4_01_4}{is\+\_\+eigen\+\_\+type$<$ Eigen\+::\+Array$<$ T, R, C, P, MR, MC $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{structigl_1_1serialization_1_1is__eigen__type_3_01Eigen_1_1Matrix_3_01T_00_01R_00_01C_00_01P_00_01MR_00_01MC_01_4_01_4}{is\+\_\+eigen\+\_\+type$<$ Eigen\+::\+Matrix$<$ T, R, C, P, MR, MC $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{structigl_1_1serialization_1_1is__eigen__type_3_01Eigen_1_1SparseMatrix_3_01T_00_01P_00_01I_01_4_01_4}{is\+\_\+eigen\+\_\+type$<$ Eigen\+::\+Sparse\+Matrix$<$ T, P, I $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{structigl_1_1serialization_1_1is__serializable}{is\+\_\+serializable}}
+\item 
+struct \mbox{\hyperlink{structigl_1_1serialization_1_1is__smart__ptr}{is\+\_\+smart\+\_\+ptr}}
+\item 
+struct \mbox{\hyperlink{structigl_1_1serialization_1_1is__smart__ptr_3_01std_1_1shared__ptr_3_01T_01_4_01_4}{is\+\_\+smart\+\_\+ptr$<$ std\+::shared\+\_\+ptr$<$ T $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{structigl_1_1serialization_1_1is__smart__ptr_3_01std_1_1unique__ptr_3_01T_01_4_01_4}{is\+\_\+smart\+\_\+ptr$<$ std\+::unique\+\_\+ptr$<$ T $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{structigl_1_1serialization_1_1is__smart__ptr_3_01std_1_1weak__ptr_3_01T_01_4_01_4}{is\+\_\+smart\+\_\+ptr$<$ std\+::weak\+\_\+ptr$<$ T $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{structigl_1_1serialization_1_1is__stl__container}{is\+\_\+stl\+\_\+container}}
+\item 
+struct \mbox{\hyperlink{structigl_1_1serialization_1_1is__stl__container_3_01std_1_1list_3_01T_01_4_01_4}{is\+\_\+stl\+\_\+container$<$ std\+::list$<$ T $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{structigl_1_1serialization_1_1is__stl__container_3_01std_1_1map_3_01T1_00_01T2_01_4_01_4}{is\+\_\+stl\+\_\+container$<$ std\+::map$<$ T1, T2 $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{structigl_1_1serialization_1_1is__stl__container_3_01std_1_1pair_3_01T1_00_01T2_01_4_01_4}{is\+\_\+stl\+\_\+container$<$ std\+::pair$<$ T1, T2 $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{structigl_1_1serialization_1_1is__stl__container_3_01std_1_1set_3_01T_01_4_01_4}{is\+\_\+stl\+\_\+container$<$ std\+::set$<$ T $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{structigl_1_1serialization_1_1is__stl__container_3_01std_1_1vector_3_01T1_00_01T2_01_4_01_4}{is\+\_\+stl\+\_\+container$<$ std\+::vector$<$ T1, T2 $>$ $>$}}
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespaceigl_1_1serialization_a2e254ccdb43b7d45ebed401c0ef5a5e2}{serialization}} (bool s, \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore}{igl\+::opengl\+::\+Viewer\+Core}} \&obj, std\+::vector$<$ char $>$ \&buffer)
+\item 
+template$<$$>$ void \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}} (const \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore}{igl\+::opengl\+::\+Viewer\+Core}} \&obj, std\+::vector$<$ char $>$ \&buffer)
+\item 
+template$<$$>$ void \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}} (\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore}{igl\+::opengl\+::\+Viewer\+Core}} \&obj, const std\+::vector$<$ char $>$ \&buffer)
 \item 
 void \mbox{\hyperlink{namespaceigl_1_1serialization_a1649a8d2e47dbd0d8305d4ef21c01f46}{serialization}} (bool s, \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData}{igl\+::opengl\+::\+Viewer\+Data}} \&obj, std\+::vector$<$ char $>$ \&buffer)
 \item 
 template$<$$>$ void \mbox{\hyperlink{namespaceigl_1_1serialization_adad6894cf81be99089c7935e41220b1b}{serialize}} (const \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData}{igl\+::opengl\+::\+Viewer\+Data}} \&obj, std\+::vector$<$ char $>$ \&buffer)
 \item 
 template$<$$>$ void \mbox{\hyperlink{namespaceigl_1_1serialization_a661d009dc0e13adb770d526d33eb3282}{deserialize}} (\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData}{igl\+::opengl\+::\+Viewer\+Data}} \&obj, const std\+::vector$<$ char $>$ \&buffer)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::enable\+\_\+if$<$!\mbox{\hyperlink{structigl_1_1serialization_1_1is__serializable}{is\+\_\+serializable}}$<$ T $>$\+::value, size\+\_\+t $>$\+::type \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{get\+Byte\+Size}} (const T \&obj)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::enable\+\_\+if$<$!\mbox{\hyperlink{structigl_1_1serialization_1_1is__serializable}{is\+\_\+serializable}}$<$ T $>$\+::value $>$\+::type \mbox{\hyperlink{namespaceigl_1_1serialization_a72b74420f3050a02a9156db372624aa9}{serialize}} (const T \&obj, std\+::vector$<$ char $>$ \&buffer, std\+::vector$<$ char $>$\+::iterator \&iter)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::enable\+\_\+if$<$!\mbox{\hyperlink{structigl_1_1serialization_1_1is__serializable}{is\+\_\+serializable}}$<$ T $>$\+::value $>$\+::type \mbox{\hyperlink{namespaceigl_1_1serialization_add78e70bc871c849c1cb81b9144f8436}{deserialize}} (T \&obj, std\+::vector$<$ char $>$\+::const\+\_\+iterator \&iter)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::enable\+\_\+if$<$ std\+::is\+\_\+fundamental$<$ T $>$\+::value, size\+\_\+t $>$\+::type \mbox{\hyperlink{namespaceigl_1_1serialization_abb8776a271b00b5e8a27fcee931bdecf}{get\+Byte\+Size}} (const T \&obj)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::enable\+\_\+if$<$ std\+::is\+\_\+fundamental$<$ T $>$\+::value $>$\+::type \mbox{\hyperlink{namespaceigl_1_1serialization_a4179f3f6df13c62d4090eb87b2661fe8}{serialize}} (const T \&obj, std\+::vector$<$ char $>$ \&buffer, std\+::vector$<$ char $>$\+::iterator \&iter)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::enable\+\_\+if$<$ std\+::is\+\_\+fundamental$<$ T $>$\+::value $>$\+::type \mbox{\hyperlink{namespaceigl_1_1serialization_a8960a6b036259ce41bbc7bd9a5d05c0c}{deserialize}} (T \&obj, std\+::vector$<$ char $>$\+::const\+\_\+iterator \&iter)
+\item 
+size\+\_\+t \mbox{\hyperlink{namespaceigl_1_1serialization_a84d367aadc23ab862e5f61432c50a5cf}{get\+Byte\+Size}} (const std\+::string \&obj)
+\item 
+void \mbox{\hyperlink{namespaceigl_1_1serialization_a8f10e0a1e90510293f7417252bc512e4}{serialize}} (const std\+::string \&obj, std\+::vector$<$ char $>$ \&buffer, std\+::vector$<$ char $>$\+::iterator \&iter)
+\item 
+void \mbox{\hyperlink{namespaceigl_1_1serialization_a50456a299c2457a663257bbac48d8fe4}{deserialize}} (std\+::string \&obj, std\+::vector$<$ char $>$\+::const\+\_\+iterator \&iter)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::enable\+\_\+if$<$ std\+::is\+\_\+enum$<$ T $>$\+::value, size\+\_\+t $>$\+::type \mbox{\hyperlink{namespaceigl_1_1serialization_a404220c082e8daa74c3795b874041338}{get\+Byte\+Size}} (const T \&obj)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::enable\+\_\+if$<$ std\+::is\+\_\+enum$<$ T $>$\+::value $>$\+::type \mbox{\hyperlink{namespaceigl_1_1serialization_ae84de0970e6e0bcf67b885966d97a3a2}{serialize}} (const T \&obj, std\+::vector$<$ char $>$ \&buffer, std\+::vector$<$ char $>$\+::iterator \&iter)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::enable\+\_\+if$<$ std\+::is\+\_\+enum$<$ T $>$\+::value $>$\+::type \mbox{\hyperlink{namespaceigl_1_1serialization_a7c9e4491ca40a209f2c2b8a0d9add801}{deserialize}} (T \&obj, std\+::vector$<$ char $>$\+::const\+\_\+iterator \&iter)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::enable\+\_\+if$<$ std\+::is\+\_\+base\+\_\+of$<$ \mbox{\hyperlink{structigl_1_1SerializableBase}{Serializable\+Base}}, T $>$\+::value, size\+\_\+t $>$\+::type \mbox{\hyperlink{namespaceigl_1_1serialization_ae6e6f15a0e5468ac96dfe7af0311360b}{get\+Byte\+Size}} (const T \&obj)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::enable\+\_\+if$<$ std\+::is\+\_\+base\+\_\+of$<$ \mbox{\hyperlink{structigl_1_1SerializableBase}{Serializable\+Base}}, T $>$\+::value $>$\+::type \mbox{\hyperlink{namespaceigl_1_1serialization_a7d44104999d6ec9032e121cf9f165db7}{serialize}} (const T \&obj, std\+::vector$<$ char $>$ \&buffer, std\+::vector$<$ char $>$\+::iterator \&iter)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::enable\+\_\+if$<$ std\+::is\+\_\+base\+\_\+of$<$ \mbox{\hyperlink{structigl_1_1SerializableBase}{Serializable\+Base}}, T $>$\+::value $>$\+::type \mbox{\hyperlink{namespaceigl_1_1serialization_a0caf4cb56f77576b016ee34f0ec8d786}{deserialize}} (T \&obj, std\+::vector$<$ char $>$\+::const\+\_\+iterator \&iter)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 $>$ }\\size\+\_\+t \mbox{\hyperlink{namespaceigl_1_1serialization_a075c1f3348e11db5458fcfbe9f5a9488}{get\+Byte\+Size}} (const std\+::pair$<$ T1, T2 $>$ \&obj)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1serialization_a9971fda39c129e951749f02e9a216ad4}{serialize}} (const std\+::pair$<$ T1, T2 $>$ \&obj, std\+::vector$<$ char $>$ \&buffer, std\+::vector$<$ char $>$\+::iterator \&iter)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1serialization_a045d7af0c0c1d99e7b00f6b3d827e4df}{deserialize}} (std\+::pair$<$ T1, T2 $>$ \&obj, std\+::vector$<$ char $>$\+::const\+\_\+iterator \&iter)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 $>$ }\\size\+\_\+t \mbox{\hyperlink{namespaceigl_1_1serialization_a9ffc4891d478ba736f88e5f425c6f220}{get\+Byte\+Size}} (const std\+::vector$<$ T1, T2 $>$ \&obj)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1serialization_a5109379ade03f0d6792da0e3fd2c30d8}{serialize}} (const std\+::vector$<$ T1, T2 $>$ \&obj, std\+::vector$<$ char $>$ \&buffer, std\+::vector$<$ char $>$\+::iterator \&iter)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1serialization_afd768eea7f3906abc8eab7188723d607}{deserialize}} (std\+::vector$<$ T1, T2 $>$ \&obj, std\+::vector$<$ char $>$\+::const\+\_\+iterator \&iter)
+\item 
+{\footnotesize template$<$typename T2 $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1serialization_ad7ae21e981da2db564afc613e90d63ff}{deserialize}} (std\+::vector$<$ bool, T2 $>$ \&obj, std\+::vector$<$ char $>$\+::const\+\_\+iterator \&iter)
+\item 
+{\footnotesize template$<$typename T $>$ }\\size\+\_\+t \mbox{\hyperlink{namespaceigl_1_1serialization_a122d5f324559b0af55f3d105de4097ef}{get\+Byte\+Size}} (const std\+::set$<$ T $>$ \&obj)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1serialization_aa32cc077c8644d1fb183cc716768c4c3}{serialize}} (const std\+::set$<$ T $>$ \&obj, std\+::vector$<$ char $>$ \&buffer, std\+::vector$<$ char $>$\+::iterator \&iter)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1serialization_a2de484c106fab6d06f216de5951b6f21}{deserialize}} (std\+::set$<$ T $>$ \&obj, std\+::vector$<$ char $>$\+::const\+\_\+iterator \&iter)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 $>$ }\\size\+\_\+t \mbox{\hyperlink{namespaceigl_1_1serialization_aa8dbbf547a7394995626e27c805c4165}{get\+Byte\+Size}} (const std\+::map$<$ T1, T2 $>$ \&obj)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1serialization_adac88a405ca115cf03f03b9155777979}{serialize}} (const std\+::map$<$ T1, T2 $>$ \&obj, std\+::vector$<$ char $>$ \&buffer, std\+::vector$<$ char $>$\+::iterator \&iter)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1serialization_aea0dcf06d621f264746e047f8c0abc12}{deserialize}} (std\+::map$<$ T1, T2 $>$ \&obj, std\+::vector$<$ char $>$\+::const\+\_\+iterator \&iter)
+\item 
+{\footnotesize template$<$typename T $>$ }\\size\+\_\+t \mbox{\hyperlink{namespaceigl_1_1serialization_a8907f2896adb0544e156b0603f7cabf6}{get\+Byte\+Size}} (const std\+::list$<$ T $>$ \&obj)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1serialization_a43e91b3aac72b975f23c226321bd43bc}{serialize}} (const std\+::list$<$ T $>$ \&obj, std\+::vector$<$ char $>$ \&buffer, std\+::vector$<$ char $>$\+::iterator \&iter)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1serialization_a83cc60f7d7686a6cabeb18aff95d59f4}{deserialize}} (std\+::list$<$ T $>$ \&obj, std\+::vector$<$ char $>$\+::const\+\_\+iterator \&iter)
+\item 
+{\footnotesize template$<$typename T , int R, int C, int P, int MR, int MC$>$ }\\size\+\_\+t \mbox{\hyperlink{namespaceigl_1_1serialization_af80a76a539869f6ed4e848d53972b188}{get\+Byte\+Size}} (const Eigen\+::\+Matrix$<$ T, R, C, P, MR, MC $>$ \&obj)
+\item 
+{\footnotesize template$<$typename T , int R, int C, int P, int MR, int MC$>$ }\\void \mbox{\hyperlink{namespaceigl_1_1serialization_a318e6ec8b9437846da5f2001d150589f}{serialize}} (const Eigen\+::\+Matrix$<$ T, R, C, P, MR, MC $>$ \&obj, std\+::vector$<$ char $>$ \&buffer, std\+::vector$<$ char $>$\+::iterator \&iter)
+\item 
+{\footnotesize template$<$typename T , int R, int C, int P, int MR, int MC$>$ }\\void \mbox{\hyperlink{namespaceigl_1_1serialization_af3f7855ea023a2bd1b659134e6d214f6}{deserialize}} (Eigen\+::\+Matrix$<$ T, R, C, P, MR, MC $>$ \&obj, std\+::vector$<$ char $>$\+::const\+\_\+iterator \&iter)
+\item 
+{\footnotesize template$<$typename T , int R, int C, int P, int MR, int MC$>$ }\\size\+\_\+t \mbox{\hyperlink{namespaceigl_1_1serialization_a5609ae8c73c888943110758b7b3c217b}{get\+Byte\+Size}} (const Eigen\+::\+Array$<$ T, R, C, P, MR, MC $>$ \&obj)
+\item 
+{\footnotesize template$<$typename T , int R, int C, int P, int MR, int MC$>$ }\\void \mbox{\hyperlink{namespaceigl_1_1serialization_a917ce57d681e1ed390f7c30e2ad2f950}{serialize}} (const Eigen\+::\+Array$<$ T, R, C, P, MR, MC $>$ \&obj, std\+::vector$<$ char $>$ \&buffer, std\+::vector$<$ char $>$\+::iterator \&iter)
+\item 
+{\footnotesize template$<$typename T , int R, int C, int P, int MR, int MC$>$ }\\void \mbox{\hyperlink{namespaceigl_1_1serialization_a3c6e96bcce4c45b5ca435e2823b1acf2}{deserialize}} (Eigen\+::\+Array$<$ T, R, C, P, MR, MC $>$ \&obj, std\+::vector$<$ char $>$\+::const\+\_\+iterator \&iter)
+\item 
+{\footnotesize template$<$typename T , int P, typename I $>$ }\\size\+\_\+t \mbox{\hyperlink{namespaceigl_1_1serialization_ac3c50781fca307af31410c0d46e43b00}{get\+Byte\+Size}} (const Eigen\+::\+Sparse\+Matrix$<$ T, P, I $>$ \&obj)
+\item 
+{\footnotesize template$<$typename T , int P, typename I $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1serialization_a8025ec19617a55b4dc0f8d56422d5ba7}{serialize}} (const Eigen\+::\+Sparse\+Matrix$<$ T, P, I $>$ \&obj, std\+::vector$<$ char $>$ \&buffer, std\+::vector$<$ char $>$\+::iterator \&iter)
+\item 
+{\footnotesize template$<$typename T , int P, typename I $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1serialization_adec8f299f913048b8b7c1e3fa655ba8a}{deserialize}} (Eigen\+::\+Sparse\+Matrix$<$ T, P, I $>$ \&obj, std\+::vector$<$ char $>$\+::const\+\_\+iterator \&iter)
+\item 
+{\footnotesize template$<$typename T , int P$>$ }\\size\+\_\+t \mbox{\hyperlink{namespaceigl_1_1serialization_a5b76baaad3440e60c414fa50298933c9}{get\+Byte\+Size}} (const Eigen\+::\+Quaternion$<$ T, P $>$ \&obj)
+\item 
+{\footnotesize template$<$typename T , int P$>$ }\\void \mbox{\hyperlink{namespaceigl_1_1serialization_ad6f8faa2af9e3e2a2c479896504f9958}{serialize}} (const Eigen\+::\+Quaternion$<$ T, P $>$ \&obj, std\+::vector$<$ char $>$ \&buffer, std\+::vector$<$ char $>$\+::iterator \&iter)
+\item 
+{\footnotesize template$<$typename T , int P$>$ }\\void \mbox{\hyperlink{namespaceigl_1_1serialization_ab4b79bcb1fdd5f06c1c1a481d241ceb3}{deserialize}} (Eigen\+::\+Quaternion$<$ T, P $>$ \&obj, std\+::vector$<$ char $>$\+::const\+\_\+iterator \&iter)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::enable\+\_\+if$<$ std\+::is\+\_\+pointer$<$ T $>$\+::value, size\+\_\+t $>$\+::type \mbox{\hyperlink{namespaceigl_1_1serialization_a662329203512e75245dcd8b103465f8d}{get\+Byte\+Size}} (const T \&obj)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::enable\+\_\+if$<$ std\+::is\+\_\+pointer$<$ T $>$\+::value $>$\+::type \mbox{\hyperlink{namespaceigl_1_1serialization_a36e8fb711c96020e1f091f13fe563357}{serialize}} (const T \&obj, std\+::vector$<$ char $>$ \&buffer, std\+::vector$<$ char $>$\+::iterator \&iter)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::enable\+\_\+if$<$ std\+::is\+\_\+pointer$<$ T $>$\+::value $>$\+::type \mbox{\hyperlink{namespaceigl_1_1serialization_aec05027c2f43b4d21cce0ed11ff05941}{deserialize}} (T \&obj, std\+::vector$<$ char $>$\+::const\+\_\+iterator \&iter)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::enable\+\_\+if$<$ \mbox{\hyperlink{structigl_1_1serialization_1_1is__smart__ptr}{serialization\+::is\+\_\+smart\+\_\+ptr}}$<$ T $>$\+::value, size\+\_\+t $>$\+::type \mbox{\hyperlink{namespaceigl_1_1serialization_a2b06284aac2b2e68d9f680f0cedc8742}{get\+Byte\+Size}} (const T \&obj)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::enable\+\_\+if$<$ \mbox{\hyperlink{structigl_1_1serialization_1_1is__smart__ptr}{serialization\+::is\+\_\+smart\+\_\+ptr}}$<$ T $>$\+::value $>$\+::type \mbox{\hyperlink{namespaceigl_1_1serialization_a622c1714568a7b2fb99f68ddfff0d0e2}{serialize}} (const T \&obj, std\+::vector$<$ char $>$ \&buffer, std\+::vector$<$ char $>$\+::iterator \&iter)
+\item 
+{\footnotesize template$<$template$<$ typename $>$ class T0, typename T1 $>$ }\\std\+::enable\+\_\+if$<$ \mbox{\hyperlink{structigl_1_1serialization_1_1is__smart__ptr}{serialization\+::is\+\_\+smart\+\_\+ptr}}$<$ T0$<$ T1 $>$ $>$\+::value $>$\+::type \mbox{\hyperlink{namespaceigl_1_1serialization_a0db8e1692dbecf68064e35448805c076}{deserialize}} (T0$<$ T1 $>$ \&obj, std\+::vector$<$ char $>$\+::const\+\_\+iterator \&iter)
+\item 
+{\footnotesize template$<$typename T $>$ }\\size\+\_\+t \mbox{\hyperlink{namespaceigl_1_1serialization_a4768d7b81d8f8987aaf78ba22e035992}{get\+Byte\+Size}} (const std\+::weak\+\_\+ptr$<$ T $>$ \&obj)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1serialization_ae7939080e2b31fb953c9eeb4860cffd6}{serialize}} (const std\+::weak\+\_\+ptr$<$ T $>$ \&obj, std\+::vector$<$ char $>$ \&buffer, std\+::vector$<$ char $>$\+::iterator \&iter)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1serialization_a9203926ab4a02cbd9c49b6d97f90a1d4}{deserialize}} (std\+::weak\+\_\+ptr$<$ T $>$ \&obj, std\+::vector$<$ char $>$\+::const\+\_\+iterator \&iter)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1serialization_a6c7716bf09df46541aa1c914cb3314bf}{serialize}} (const T \&obj, std\+::vector$<$ char $>$ \&buffer)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1serialization_a908ce0d359a8e918001746107712d241}{deserialize}} (T \&obj, const std\+::vector$<$ char $>$ \&buffer)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1serialization_abcf437bf8ec7e22c64c641140ef5567a}{update\+Memory\+Map}} (T \&obj, size\+\_\+t size)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1serialization_a03311dd87509fcf2b237a7f86764ac15}{update\+Memory\+Map}} (T \&obj, size\+\_\+t size, std\+::map$<$ std\+::uintptr\+\_\+t, \mbox{\hyperlink{structigl_1_1IndexedPointerBase}{Indexed\+Pointer\+Base}} \texorpdfstring{$\ast$}{*} $>$ \&memory\+Map)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
+\Hypertarget{namespaceigl_1_1serialization_a2e254ccdb43b7d45ebed401c0ef5a5e2}\label{namespaceigl_1_1serialization_a2e254ccdb43b7d45ebed401c0ef5a5e2} 
+\index{igl::serialization@{igl::serialization}!serialization@{serialization}}
+\index{serialization@{serialization}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{serialization()}{serialization()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void igl\+::serialization\+::serialization (\begin{DoxyParamCaption}\item[{bool}]{s,  }\item[{\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore}{igl\+::opengl\+::\+Viewer\+Core}} \&}]{obj,  }\item[{std\+::vector$<$ char $>$ \&}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}\label{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656} 
+\index{igl::serialization@{igl::serialization}!serialize@{serialize}}
+\index{serialize@{serialize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/20]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void igl\+::serialization\+::serialize (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore}{igl\+::opengl\+::\+Viewer\+Core}} \&}]{obj,  }\item[{std\+::vector$<$ char $>$ \&}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}\label{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8} 
+\index{igl::serialization@{igl::serialization}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/21]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void igl\+::serialization\+::deserialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore}{igl\+::opengl\+::\+Viewer\+Core}} \&}]{obj,  }\item[{const std\+::vector$<$ char $>$ \&}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
 \Hypertarget{namespaceigl_1_1serialization_a1649a8d2e47dbd0d8305d4ef21c01f46}\label{namespaceigl_1_1serialization_a1649a8d2e47dbd0d8305d4ef21c01f46} 
 \index{igl::serialization@{igl::serialization}!serialization@{serialization}}
 \index{serialization@{serialization}!igl::serialization@{igl::serialization}}
-\doxysubsubsection{\texorpdfstring{serialization()}{serialization()}}
+\doxysubsubsection{\texorpdfstring{serialization()}{serialization()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily void igl\+::serialization\+::serialization (\begin{DoxyParamCaption}\item[{bool}]{s,  }\item[{\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData}{igl\+::opengl\+::\+Viewer\+Data}} \&}]{obj,  }\item[{std\+::vector$<$ char $>$ \&}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 \Hypertarget{namespaceigl_1_1serialization_adad6894cf81be99089c7935e41220b1b}\label{namespaceigl_1_1serialization_adad6894cf81be99089c7935e41220b1b} 
 \index{igl::serialization@{igl::serialization}!serialize@{serialize}}
 \index{serialize@{serialize}!igl::serialization@{igl::serialization}}
-\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/20]}}
 {\footnotesize\ttfamily template$<$$>$ \\
 void igl\+::serialization\+::serialize (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData}{igl\+::opengl\+::\+Viewer\+Data}} \&}]{obj,  }\item[{std\+::vector$<$ char $>$ \&}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 \Hypertarget{namespaceigl_1_1serialization_a661d009dc0e13adb770d526d33eb3282}\label{namespaceigl_1_1serialization_a661d009dc0e13adb770d526d33eb3282} 
 \index{igl::serialization@{igl::serialization}!deserialize@{deserialize}}
 \index{deserialize@{deserialize}!igl::serialization@{igl::serialization}}
-\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/21]}}
 {\footnotesize\ttfamily template$<$$>$ \\
 void igl\+::serialization\+::deserialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData}{igl\+::opengl\+::\+Viewer\+Data}} \&}]{obj,  }\item[{const std\+::vector$<$ char $>$ \&}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}\label{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257} 
+\index{igl::serialization@{igl::serialization}!getByteSize@{getByteSize}}
+\index{getByteSize@{getByteSize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{getByteSize()}{getByteSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/17]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::enable\+\_\+if$<$!\mbox{\hyperlink{structigl_1_1serialization_1_1is__serializable}{is\+\_\+serializable}}$<$ T $>$\+::value, size\+\_\+t $>$\+::type igl\+::serialization\+::get\+Byte\+Size (\begin{DoxyParamCaption}\item[{const T \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_a72b74420f3050a02a9156db372624aa9}\label{namespaceigl_1_1serialization_a72b74420f3050a02a9156db372624aa9} 
+\index{igl::serialization@{igl::serialization}!serialize@{serialize}}
+\index{serialize@{serialize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [3/20]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::enable\+\_\+if$<$!\mbox{\hyperlink{structigl_1_1serialization_1_1is__serializable}{is\+\_\+serializable}}$<$ T $>$\+::value $>$\+::type igl\+::serialization\+::serialize (\begin{DoxyParamCaption}\item[{const T \&}]{obj,  }\item[{std\+::vector$<$ char $>$ \&}]{buffer,  }\item[{std\+::vector$<$ char $>$\+::iterator \&}]{iter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_add78e70bc871c849c1cb81b9144f8436}\label{namespaceigl_1_1serialization_add78e70bc871c849c1cb81b9144f8436} 
+\index{igl::serialization@{igl::serialization}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}\hspace{0.1cm}{\footnotesize\ttfamily [3/21]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::enable\+\_\+if$<$!\mbox{\hyperlink{structigl_1_1serialization_1_1is__serializable}{is\+\_\+serializable}}$<$ T $>$\+::value $>$\+::type igl\+::serialization\+::deserialize (\begin{DoxyParamCaption}\item[{T \&}]{obj,  }\item[{std\+::vector$<$ char $>$\+::const\+\_\+iterator \&}]{iter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_abb8776a271b00b5e8a27fcee931bdecf}\label{namespaceigl_1_1serialization_abb8776a271b00b5e8a27fcee931bdecf} 
+\index{igl::serialization@{igl::serialization}!getByteSize@{getByteSize}}
+\index{getByteSize@{getByteSize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{getByteSize()}{getByteSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/17]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::enable\+\_\+if$<$ std\+::is\+\_\+fundamental$<$ T $>$\+::value, size\+\_\+t $>$\+::type igl\+::serialization\+::get\+Byte\+Size (\begin{DoxyParamCaption}\item[{const T \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_a4179f3f6df13c62d4090eb87b2661fe8}\label{namespaceigl_1_1serialization_a4179f3f6df13c62d4090eb87b2661fe8} 
+\index{igl::serialization@{igl::serialization}!serialize@{serialize}}
+\index{serialize@{serialize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [4/20]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::enable\+\_\+if$<$ std\+::is\+\_\+fundamental$<$ T $>$\+::value $>$\+::type igl\+::serialization\+::serialize (\begin{DoxyParamCaption}\item[{const T \&}]{obj,  }\item[{std\+::vector$<$ char $>$ \&}]{buffer,  }\item[{std\+::vector$<$ char $>$\+::iterator \&}]{iter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_a8960a6b036259ce41bbc7bd9a5d05c0c}\label{namespaceigl_1_1serialization_a8960a6b036259ce41bbc7bd9a5d05c0c} 
+\index{igl::serialization@{igl::serialization}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}\hspace{0.1cm}{\footnotesize\ttfamily [4/21]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::enable\+\_\+if$<$ std\+::is\+\_\+fundamental$<$ T $>$\+::value $>$\+::type igl\+::serialization\+::deserialize (\begin{DoxyParamCaption}\item[{T \&}]{obj,  }\item[{std\+::vector$<$ char $>$\+::const\+\_\+iterator \&}]{iter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_a84d367aadc23ab862e5f61432c50a5cf}\label{namespaceigl_1_1serialization_a84d367aadc23ab862e5f61432c50a5cf} 
+\index{igl::serialization@{igl::serialization}!getByteSize@{getByteSize}}
+\index{getByteSize@{getByteSize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{getByteSize()}{getByteSize()}\hspace{0.1cm}{\footnotesize\ttfamily [3/17]}}
+{\footnotesize\ttfamily size\+\_\+t igl\+::serialization\+::get\+Byte\+Size (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_a8f10e0a1e90510293f7417252bc512e4}\label{namespaceigl_1_1serialization_a8f10e0a1e90510293f7417252bc512e4} 
+\index{igl::serialization@{igl::serialization}!serialize@{serialize}}
+\index{serialize@{serialize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [5/20]}}
+{\footnotesize\ttfamily void igl\+::serialization\+::serialize (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{obj,  }\item[{std\+::vector$<$ char $>$ \&}]{buffer,  }\item[{std\+::vector$<$ char $>$\+::iterator \&}]{iter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_a50456a299c2457a663257bbac48d8fe4}\label{namespaceigl_1_1serialization_a50456a299c2457a663257bbac48d8fe4} 
+\index{igl::serialization@{igl::serialization}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}\hspace{0.1cm}{\footnotesize\ttfamily [5/21]}}
+{\footnotesize\ttfamily void igl\+::serialization\+::deserialize (\begin{DoxyParamCaption}\item[{std\+::string \&}]{obj,  }\item[{std\+::vector$<$ char $>$\+::const\+\_\+iterator \&}]{iter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_a404220c082e8daa74c3795b874041338}\label{namespaceigl_1_1serialization_a404220c082e8daa74c3795b874041338} 
+\index{igl::serialization@{igl::serialization}!getByteSize@{getByteSize}}
+\index{getByteSize@{getByteSize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{getByteSize()}{getByteSize()}\hspace{0.1cm}{\footnotesize\ttfamily [4/17]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::enable\+\_\+if$<$ std\+::is\+\_\+enum$<$ T $>$\+::value, size\+\_\+t $>$\+::type igl\+::serialization\+::get\+Byte\+Size (\begin{DoxyParamCaption}\item[{const T \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_ae84de0970e6e0bcf67b885966d97a3a2}\label{namespaceigl_1_1serialization_ae84de0970e6e0bcf67b885966d97a3a2} 
+\index{igl::serialization@{igl::serialization}!serialize@{serialize}}
+\index{serialize@{serialize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [6/20]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::enable\+\_\+if$<$ std\+::is\+\_\+enum$<$ T $>$\+::value $>$\+::type igl\+::serialization\+::serialize (\begin{DoxyParamCaption}\item[{const T \&}]{obj,  }\item[{std\+::vector$<$ char $>$ \&}]{buffer,  }\item[{std\+::vector$<$ char $>$\+::iterator \&}]{iter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_a7c9e4491ca40a209f2c2b8a0d9add801}\label{namespaceigl_1_1serialization_a7c9e4491ca40a209f2c2b8a0d9add801} 
+\index{igl::serialization@{igl::serialization}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}\hspace{0.1cm}{\footnotesize\ttfamily [6/21]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::enable\+\_\+if$<$ std\+::is\+\_\+enum$<$ T $>$\+::value $>$\+::type igl\+::serialization\+::deserialize (\begin{DoxyParamCaption}\item[{T \&}]{obj,  }\item[{std\+::vector$<$ char $>$\+::const\+\_\+iterator \&}]{iter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_ae6e6f15a0e5468ac96dfe7af0311360b}\label{namespaceigl_1_1serialization_ae6e6f15a0e5468ac96dfe7af0311360b} 
+\index{igl::serialization@{igl::serialization}!getByteSize@{getByteSize}}
+\index{getByteSize@{getByteSize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{getByteSize()}{getByteSize()}\hspace{0.1cm}{\footnotesize\ttfamily [5/17]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::enable\+\_\+if$<$ std\+::is\+\_\+base\+\_\+of$<$ \mbox{\hyperlink{structigl_1_1SerializableBase}{Serializable\+Base}}, T $>$\+::value, size\+\_\+t $>$\+::type igl\+::serialization\+::get\+Byte\+Size (\begin{DoxyParamCaption}\item[{const T \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_a7d44104999d6ec9032e121cf9f165db7}\label{namespaceigl_1_1serialization_a7d44104999d6ec9032e121cf9f165db7} 
+\index{igl::serialization@{igl::serialization}!serialize@{serialize}}
+\index{serialize@{serialize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [7/20]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::enable\+\_\+if$<$ std\+::is\+\_\+base\+\_\+of$<$ \mbox{\hyperlink{structigl_1_1SerializableBase}{Serializable\+Base}}, T $>$\+::value $>$\+::type igl\+::serialization\+::serialize (\begin{DoxyParamCaption}\item[{const T \&}]{obj,  }\item[{std\+::vector$<$ char $>$ \&}]{buffer,  }\item[{std\+::vector$<$ char $>$\+::iterator \&}]{iter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_a0caf4cb56f77576b016ee34f0ec8d786}\label{namespaceigl_1_1serialization_a0caf4cb56f77576b016ee34f0ec8d786} 
+\index{igl::serialization@{igl::serialization}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}\hspace{0.1cm}{\footnotesize\ttfamily [7/21]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::enable\+\_\+if$<$ std\+::is\+\_\+base\+\_\+of$<$ \mbox{\hyperlink{structigl_1_1SerializableBase}{Serializable\+Base}}, T $>$\+::value $>$\+::type igl\+::serialization\+::deserialize (\begin{DoxyParamCaption}\item[{T \&}]{obj,  }\item[{std\+::vector$<$ char $>$\+::const\+\_\+iterator \&}]{iter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_a075c1f3348e11db5458fcfbe9f5a9488}\label{namespaceigl_1_1serialization_a075c1f3348e11db5458fcfbe9f5a9488} 
+\index{igl::serialization@{igl::serialization}!getByteSize@{getByteSize}}
+\index{getByteSize@{getByteSize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{getByteSize()}{getByteSize()}\hspace{0.1cm}{\footnotesize\ttfamily [6/17]}}
+{\footnotesize\ttfamily template$<$typename T1 , typename T2 $>$ \\
+size\+\_\+t igl\+::serialization\+::get\+Byte\+Size (\begin{DoxyParamCaption}\item[{const std\+::pair$<$ T1, T2 $>$ \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_a9971fda39c129e951749f02e9a216ad4}\label{namespaceigl_1_1serialization_a9971fda39c129e951749f02e9a216ad4} 
+\index{igl::serialization@{igl::serialization}!serialize@{serialize}}
+\index{serialize@{serialize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [8/20]}}
+{\footnotesize\ttfamily template$<$typename T1 , typename T2 $>$ \\
+void igl\+::serialization\+::serialize (\begin{DoxyParamCaption}\item[{const std\+::pair$<$ T1, T2 $>$ \&}]{obj,  }\item[{std\+::vector$<$ char $>$ \&}]{buffer,  }\item[{std\+::vector$<$ char $>$\+::iterator \&}]{iter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_a045d7af0c0c1d99e7b00f6b3d827e4df}\label{namespaceigl_1_1serialization_a045d7af0c0c1d99e7b00f6b3d827e4df} 
+\index{igl::serialization@{igl::serialization}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}\hspace{0.1cm}{\footnotesize\ttfamily [8/21]}}
+{\footnotesize\ttfamily template$<$typename T1 , typename T2 $>$ \\
+void igl\+::serialization\+::deserialize (\begin{DoxyParamCaption}\item[{std\+::pair$<$ T1, T2 $>$ \&}]{obj,  }\item[{std\+::vector$<$ char $>$\+::const\+\_\+iterator \&}]{iter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_a9ffc4891d478ba736f88e5f425c6f220}\label{namespaceigl_1_1serialization_a9ffc4891d478ba736f88e5f425c6f220} 
+\index{igl::serialization@{igl::serialization}!getByteSize@{getByteSize}}
+\index{getByteSize@{getByteSize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{getByteSize()}{getByteSize()}\hspace{0.1cm}{\footnotesize\ttfamily [7/17]}}
+{\footnotesize\ttfamily template$<$typename T1 , typename T2 $>$ \\
+size\+\_\+t igl\+::serialization\+::get\+Byte\+Size (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T1, T2 $>$ \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_a5109379ade03f0d6792da0e3fd2c30d8}\label{namespaceigl_1_1serialization_a5109379ade03f0d6792da0e3fd2c30d8} 
+\index{igl::serialization@{igl::serialization}!serialize@{serialize}}
+\index{serialize@{serialize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [9/20]}}
+{\footnotesize\ttfamily template$<$typename T1 , typename T2 $>$ \\
+void igl\+::serialization\+::serialize (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T1, T2 $>$ \&}]{obj,  }\item[{std\+::vector$<$ char $>$ \&}]{buffer,  }\item[{std\+::vector$<$ char $>$\+::iterator \&}]{iter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_afd768eea7f3906abc8eab7188723d607}\label{namespaceigl_1_1serialization_afd768eea7f3906abc8eab7188723d607} 
+\index{igl::serialization@{igl::serialization}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}\hspace{0.1cm}{\footnotesize\ttfamily [9/21]}}
+{\footnotesize\ttfamily template$<$typename T1 , typename T2 $>$ \\
+void igl\+::serialization\+::deserialize (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T1, T2 $>$ \&}]{obj,  }\item[{std\+::vector$<$ char $>$\+::const\+\_\+iterator \&}]{iter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_ad7ae21e981da2db564afc613e90d63ff}\label{namespaceigl_1_1serialization_ad7ae21e981da2db564afc613e90d63ff} 
+\index{igl::serialization@{igl::serialization}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}\hspace{0.1cm}{\footnotesize\ttfamily [10/21]}}
+{\footnotesize\ttfamily template$<$typename T2 $>$ \\
+void igl\+::serialization\+::deserialize (\begin{DoxyParamCaption}\item[{std\+::vector$<$ bool, T2 $>$ \&}]{obj,  }\item[{std\+::vector$<$ char $>$\+::const\+\_\+iterator \&}]{iter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_a122d5f324559b0af55f3d105de4097ef}\label{namespaceigl_1_1serialization_a122d5f324559b0af55f3d105de4097ef} 
+\index{igl::serialization@{igl::serialization}!getByteSize@{getByteSize}}
+\index{getByteSize@{getByteSize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{getByteSize()}{getByteSize()}\hspace{0.1cm}{\footnotesize\ttfamily [8/17]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+size\+\_\+t igl\+::serialization\+::get\+Byte\+Size (\begin{DoxyParamCaption}\item[{const std\+::set$<$ T $>$ \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_aa32cc077c8644d1fb183cc716768c4c3}\label{namespaceigl_1_1serialization_aa32cc077c8644d1fb183cc716768c4c3} 
+\index{igl::serialization@{igl::serialization}!serialize@{serialize}}
+\index{serialize@{serialize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [10/20]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void igl\+::serialization\+::serialize (\begin{DoxyParamCaption}\item[{const std\+::set$<$ T $>$ \&}]{obj,  }\item[{std\+::vector$<$ char $>$ \&}]{buffer,  }\item[{std\+::vector$<$ char $>$\+::iterator \&}]{iter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_a2de484c106fab6d06f216de5951b6f21}\label{namespaceigl_1_1serialization_a2de484c106fab6d06f216de5951b6f21} 
+\index{igl::serialization@{igl::serialization}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}\hspace{0.1cm}{\footnotesize\ttfamily [11/21]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void igl\+::serialization\+::deserialize (\begin{DoxyParamCaption}\item[{std\+::set$<$ T $>$ \&}]{obj,  }\item[{std\+::vector$<$ char $>$\+::const\+\_\+iterator \&}]{iter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_aa8dbbf547a7394995626e27c805c4165}\label{namespaceigl_1_1serialization_aa8dbbf547a7394995626e27c805c4165} 
+\index{igl::serialization@{igl::serialization}!getByteSize@{getByteSize}}
+\index{getByteSize@{getByteSize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{getByteSize()}{getByteSize()}\hspace{0.1cm}{\footnotesize\ttfamily [9/17]}}
+{\footnotesize\ttfamily template$<$typename T1 , typename T2 $>$ \\
+size\+\_\+t igl\+::serialization\+::get\+Byte\+Size (\begin{DoxyParamCaption}\item[{const std\+::map$<$ T1, T2 $>$ \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_adac88a405ca115cf03f03b9155777979}\label{namespaceigl_1_1serialization_adac88a405ca115cf03f03b9155777979} 
+\index{igl::serialization@{igl::serialization}!serialize@{serialize}}
+\index{serialize@{serialize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [11/20]}}
+{\footnotesize\ttfamily template$<$typename T1 , typename T2 $>$ \\
+void igl\+::serialization\+::serialize (\begin{DoxyParamCaption}\item[{const std\+::map$<$ T1, T2 $>$ \&}]{obj,  }\item[{std\+::vector$<$ char $>$ \&}]{buffer,  }\item[{std\+::vector$<$ char $>$\+::iterator \&}]{iter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_aea0dcf06d621f264746e047f8c0abc12}\label{namespaceigl_1_1serialization_aea0dcf06d621f264746e047f8c0abc12} 
+\index{igl::serialization@{igl::serialization}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}\hspace{0.1cm}{\footnotesize\ttfamily [12/21]}}
+{\footnotesize\ttfamily template$<$typename T1 , typename T2 $>$ \\
+void igl\+::serialization\+::deserialize (\begin{DoxyParamCaption}\item[{std\+::map$<$ T1, T2 $>$ \&}]{obj,  }\item[{std\+::vector$<$ char $>$\+::const\+\_\+iterator \&}]{iter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_a8907f2896adb0544e156b0603f7cabf6}\label{namespaceigl_1_1serialization_a8907f2896adb0544e156b0603f7cabf6} 
+\index{igl::serialization@{igl::serialization}!getByteSize@{getByteSize}}
+\index{getByteSize@{getByteSize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{getByteSize()}{getByteSize()}\hspace{0.1cm}{\footnotesize\ttfamily [10/17]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+size\+\_\+t igl\+::serialization\+::get\+Byte\+Size (\begin{DoxyParamCaption}\item[{const std\+::list$<$ T $>$ \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_a43e91b3aac72b975f23c226321bd43bc}\label{namespaceigl_1_1serialization_a43e91b3aac72b975f23c226321bd43bc} 
+\index{igl::serialization@{igl::serialization}!serialize@{serialize}}
+\index{serialize@{serialize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [12/20]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void igl\+::serialization\+::serialize (\begin{DoxyParamCaption}\item[{const std\+::list$<$ T $>$ \&}]{obj,  }\item[{std\+::vector$<$ char $>$ \&}]{buffer,  }\item[{std\+::vector$<$ char $>$\+::iterator \&}]{iter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_a83cc60f7d7686a6cabeb18aff95d59f4}\label{namespaceigl_1_1serialization_a83cc60f7d7686a6cabeb18aff95d59f4} 
+\index{igl::serialization@{igl::serialization}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}\hspace{0.1cm}{\footnotesize\ttfamily [13/21]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void igl\+::serialization\+::deserialize (\begin{DoxyParamCaption}\item[{std\+::list$<$ T $>$ \&}]{obj,  }\item[{std\+::vector$<$ char $>$\+::const\+\_\+iterator \&}]{iter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_af80a76a539869f6ed4e848d53972b188}\label{namespaceigl_1_1serialization_af80a76a539869f6ed4e848d53972b188} 
+\index{igl::serialization@{igl::serialization}!getByteSize@{getByteSize}}
+\index{getByteSize@{getByteSize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{getByteSize()}{getByteSize()}\hspace{0.1cm}{\footnotesize\ttfamily [11/17]}}
+{\footnotesize\ttfamily template$<$typename T , int R, int C, int P, int MR, int MC$>$ \\
+size\+\_\+t igl\+::serialization\+::get\+Byte\+Size (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix$<$ T, R, C, P, MR, MC $>$ \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_a318e6ec8b9437846da5f2001d150589f}\label{namespaceigl_1_1serialization_a318e6ec8b9437846da5f2001d150589f} 
+\index{igl::serialization@{igl::serialization}!serialize@{serialize}}
+\index{serialize@{serialize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [13/20]}}
+{\footnotesize\ttfamily template$<$typename T , int R, int C, int P, int MR, int MC$>$ \\
+void igl\+::serialization\+::serialize (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix$<$ T, R, C, P, MR, MC $>$ \&}]{obj,  }\item[{std\+::vector$<$ char $>$ \&}]{buffer,  }\item[{std\+::vector$<$ char $>$\+::iterator \&}]{iter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_af3f7855ea023a2bd1b659134e6d214f6}\label{namespaceigl_1_1serialization_af3f7855ea023a2bd1b659134e6d214f6} 
+\index{igl::serialization@{igl::serialization}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}\hspace{0.1cm}{\footnotesize\ttfamily [14/21]}}
+{\footnotesize\ttfamily template$<$typename T , int R, int C, int P, int MR, int MC$>$ \\
+void igl\+::serialization\+::deserialize (\begin{DoxyParamCaption}\item[{Eigen\+::\+Matrix$<$ T, R, C, P, MR, MC $>$ \&}]{obj,  }\item[{std\+::vector$<$ char $>$\+::const\+\_\+iterator \&}]{iter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_a5609ae8c73c888943110758b7b3c217b}\label{namespaceigl_1_1serialization_a5609ae8c73c888943110758b7b3c217b} 
+\index{igl::serialization@{igl::serialization}!getByteSize@{getByteSize}}
+\index{getByteSize@{getByteSize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{getByteSize()}{getByteSize()}\hspace{0.1cm}{\footnotesize\ttfamily [12/17]}}
+{\footnotesize\ttfamily template$<$typename T , int R, int C, int P, int MR, int MC$>$ \\
+size\+\_\+t igl\+::serialization\+::get\+Byte\+Size (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Array$<$ T, R, C, P, MR, MC $>$ \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_a917ce57d681e1ed390f7c30e2ad2f950}\label{namespaceigl_1_1serialization_a917ce57d681e1ed390f7c30e2ad2f950} 
+\index{igl::serialization@{igl::serialization}!serialize@{serialize}}
+\index{serialize@{serialize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [14/20]}}
+{\footnotesize\ttfamily template$<$typename T , int R, int C, int P, int MR, int MC$>$ \\
+void igl\+::serialization\+::serialize (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Array$<$ T, R, C, P, MR, MC $>$ \&}]{obj,  }\item[{std\+::vector$<$ char $>$ \&}]{buffer,  }\item[{std\+::vector$<$ char $>$\+::iterator \&}]{iter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_a3c6e96bcce4c45b5ca435e2823b1acf2}\label{namespaceigl_1_1serialization_a3c6e96bcce4c45b5ca435e2823b1acf2} 
+\index{igl::serialization@{igl::serialization}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}\hspace{0.1cm}{\footnotesize\ttfamily [15/21]}}
+{\footnotesize\ttfamily template$<$typename T , int R, int C, int P, int MR, int MC$>$ \\
+void igl\+::serialization\+::deserialize (\begin{DoxyParamCaption}\item[{Eigen\+::\+Array$<$ T, R, C, P, MR, MC $>$ \&}]{obj,  }\item[{std\+::vector$<$ char $>$\+::const\+\_\+iterator \&}]{iter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_ac3c50781fca307af31410c0d46e43b00}\label{namespaceigl_1_1serialization_ac3c50781fca307af31410c0d46e43b00} 
+\index{igl::serialization@{igl::serialization}!getByteSize@{getByteSize}}
+\index{getByteSize@{getByteSize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{getByteSize()}{getByteSize()}\hspace{0.1cm}{\footnotesize\ttfamily [13/17]}}
+{\footnotesize\ttfamily template$<$typename T , int P, typename I $>$ \\
+size\+\_\+t igl\+::serialization\+::get\+Byte\+Size (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Sparse\+Matrix$<$ T, P, I $>$ \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_a8025ec19617a55b4dc0f8d56422d5ba7}\label{namespaceigl_1_1serialization_a8025ec19617a55b4dc0f8d56422d5ba7} 
+\index{igl::serialization@{igl::serialization}!serialize@{serialize}}
+\index{serialize@{serialize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [15/20]}}
+{\footnotesize\ttfamily template$<$typename T , int P, typename I $>$ \\
+void igl\+::serialization\+::serialize (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Sparse\+Matrix$<$ T, P, I $>$ \&}]{obj,  }\item[{std\+::vector$<$ char $>$ \&}]{buffer,  }\item[{std\+::vector$<$ char $>$\+::iterator \&}]{iter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_adec8f299f913048b8b7c1e3fa655ba8a}\label{namespaceigl_1_1serialization_adec8f299f913048b8b7c1e3fa655ba8a} 
+\index{igl::serialization@{igl::serialization}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}\hspace{0.1cm}{\footnotesize\ttfamily [16/21]}}
+{\footnotesize\ttfamily template$<$typename T , int P, typename I $>$ \\
+void igl\+::serialization\+::deserialize (\begin{DoxyParamCaption}\item[{Eigen\+::\+Sparse\+Matrix$<$ T, P, I $>$ \&}]{obj,  }\item[{std\+::vector$<$ char $>$\+::const\+\_\+iterator \&}]{iter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_a5b76baaad3440e60c414fa50298933c9}\label{namespaceigl_1_1serialization_a5b76baaad3440e60c414fa50298933c9} 
+\index{igl::serialization@{igl::serialization}!getByteSize@{getByteSize}}
+\index{getByteSize@{getByteSize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{getByteSize()}{getByteSize()}\hspace{0.1cm}{\footnotesize\ttfamily [14/17]}}
+{\footnotesize\ttfamily template$<$typename T , int P$>$ \\
+size\+\_\+t igl\+::serialization\+::get\+Byte\+Size (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Quaternion$<$ T, P $>$ \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_ad6f8faa2af9e3e2a2c479896504f9958}\label{namespaceigl_1_1serialization_ad6f8faa2af9e3e2a2c479896504f9958} 
+\index{igl::serialization@{igl::serialization}!serialize@{serialize}}
+\index{serialize@{serialize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [16/20]}}
+{\footnotesize\ttfamily template$<$typename T , int P$>$ \\
+void igl\+::serialization\+::serialize (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Quaternion$<$ T, P $>$ \&}]{obj,  }\item[{std\+::vector$<$ char $>$ \&}]{buffer,  }\item[{std\+::vector$<$ char $>$\+::iterator \&}]{iter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_ab4b79bcb1fdd5f06c1c1a481d241ceb3}\label{namespaceigl_1_1serialization_ab4b79bcb1fdd5f06c1c1a481d241ceb3} 
+\index{igl::serialization@{igl::serialization}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}\hspace{0.1cm}{\footnotesize\ttfamily [17/21]}}
+{\footnotesize\ttfamily template$<$typename T , int P$>$ \\
+void igl\+::serialization\+::deserialize (\begin{DoxyParamCaption}\item[{Eigen\+::\+Quaternion$<$ T, P $>$ \&}]{obj,  }\item[{std\+::vector$<$ char $>$\+::const\+\_\+iterator \&}]{iter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_a662329203512e75245dcd8b103465f8d}\label{namespaceigl_1_1serialization_a662329203512e75245dcd8b103465f8d} 
+\index{igl::serialization@{igl::serialization}!getByteSize@{getByteSize}}
+\index{getByteSize@{getByteSize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{getByteSize()}{getByteSize()}\hspace{0.1cm}{\footnotesize\ttfamily [15/17]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::enable\+\_\+if$<$ std\+::is\+\_\+pointer$<$ T $>$\+::value, size\+\_\+t $>$\+::type igl\+::serialization\+::get\+Byte\+Size (\begin{DoxyParamCaption}\item[{const T \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_a36e8fb711c96020e1f091f13fe563357}\label{namespaceigl_1_1serialization_a36e8fb711c96020e1f091f13fe563357} 
+\index{igl::serialization@{igl::serialization}!serialize@{serialize}}
+\index{serialize@{serialize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [17/20]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::enable\+\_\+if$<$ std\+::is\+\_\+pointer$<$ T $>$\+::value $>$\+::type igl\+::serialization\+::serialize (\begin{DoxyParamCaption}\item[{const T \&}]{obj,  }\item[{std\+::vector$<$ char $>$ \&}]{buffer,  }\item[{std\+::vector$<$ char $>$\+::iterator \&}]{iter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_aec05027c2f43b4d21cce0ed11ff05941}\label{namespaceigl_1_1serialization_aec05027c2f43b4d21cce0ed11ff05941} 
+\index{igl::serialization@{igl::serialization}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}\hspace{0.1cm}{\footnotesize\ttfamily [18/21]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::enable\+\_\+if$<$ std\+::is\+\_\+pointer$<$ T $>$\+::value $>$\+::type igl\+::serialization\+::deserialize (\begin{DoxyParamCaption}\item[{T \&}]{obj,  }\item[{std\+::vector$<$ char $>$\+::const\+\_\+iterator \&}]{iter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_a2b06284aac2b2e68d9f680f0cedc8742}\label{namespaceigl_1_1serialization_a2b06284aac2b2e68d9f680f0cedc8742} 
+\index{igl::serialization@{igl::serialization}!getByteSize@{getByteSize}}
+\index{getByteSize@{getByteSize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{getByteSize()}{getByteSize()}\hspace{0.1cm}{\footnotesize\ttfamily [16/17]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::enable\+\_\+if$<$ \mbox{\hyperlink{structigl_1_1serialization_1_1is__smart__ptr}{serialization\+::is\+\_\+smart\+\_\+ptr}}$<$ T $>$\+::value, size\+\_\+t $>$\+::type igl\+::serialization\+::get\+Byte\+Size (\begin{DoxyParamCaption}\item[{const T \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_a622c1714568a7b2fb99f68ddfff0d0e2}\label{namespaceigl_1_1serialization_a622c1714568a7b2fb99f68ddfff0d0e2} 
+\index{igl::serialization@{igl::serialization}!serialize@{serialize}}
+\index{serialize@{serialize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [18/20]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::enable\+\_\+if$<$ \mbox{\hyperlink{structigl_1_1serialization_1_1is__smart__ptr}{serialization\+::is\+\_\+smart\+\_\+ptr}}$<$ T $>$\+::value $>$\+::type igl\+::serialization\+::serialize (\begin{DoxyParamCaption}\item[{const T \&}]{obj,  }\item[{std\+::vector$<$ char $>$ \&}]{buffer,  }\item[{std\+::vector$<$ char $>$\+::iterator \&}]{iter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_a0db8e1692dbecf68064e35448805c076}\label{namespaceigl_1_1serialization_a0db8e1692dbecf68064e35448805c076} 
+\index{igl::serialization@{igl::serialization}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}\hspace{0.1cm}{\footnotesize\ttfamily [19/21]}}
+{\footnotesize\ttfamily template$<$template$<$ typename $>$ class T0, typename T1 $>$ \\
+std\+::enable\+\_\+if$<$ \mbox{\hyperlink{structigl_1_1serialization_1_1is__smart__ptr}{serialization\+::is\+\_\+smart\+\_\+ptr}}$<$ T0$<$ T1 $>$ $>$\+::value $>$\+::type igl\+::serialization\+::deserialize (\begin{DoxyParamCaption}\item[{T0$<$ T1 $>$ \&}]{obj,  }\item[{std\+::vector$<$ char $>$\+::const\+\_\+iterator \&}]{iter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_a4768d7b81d8f8987aaf78ba22e035992}\label{namespaceigl_1_1serialization_a4768d7b81d8f8987aaf78ba22e035992} 
+\index{igl::serialization@{igl::serialization}!getByteSize@{getByteSize}}
+\index{getByteSize@{getByteSize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{getByteSize()}{getByteSize()}\hspace{0.1cm}{\footnotesize\ttfamily [17/17]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+size\+\_\+t igl\+::serialization\+::get\+Byte\+Size (\begin{DoxyParamCaption}\item[{const std\+::weak\+\_\+ptr$<$ T $>$ \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_ae7939080e2b31fb953c9eeb4860cffd6}\label{namespaceigl_1_1serialization_ae7939080e2b31fb953c9eeb4860cffd6} 
+\index{igl::serialization@{igl::serialization}!serialize@{serialize}}
+\index{serialize@{serialize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [19/20]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void igl\+::serialization\+::serialize (\begin{DoxyParamCaption}\item[{const std\+::weak\+\_\+ptr$<$ T $>$ \&}]{obj,  }\item[{std\+::vector$<$ char $>$ \&}]{buffer,  }\item[{std\+::vector$<$ char $>$\+::iterator \&}]{iter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_a9203926ab4a02cbd9c49b6d97f90a1d4}\label{namespaceigl_1_1serialization_a9203926ab4a02cbd9c49b6d97f90a1d4} 
+\index{igl::serialization@{igl::serialization}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}\hspace{0.1cm}{\footnotesize\ttfamily [20/21]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void igl\+::serialization\+::deserialize (\begin{DoxyParamCaption}\item[{std\+::weak\+\_\+ptr$<$ T $>$ \&}]{obj,  }\item[{std\+::vector$<$ char $>$\+::const\+\_\+iterator \&}]{iter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_a6c7716bf09df46541aa1c914cb3314bf}\label{namespaceigl_1_1serialization_a6c7716bf09df46541aa1c914cb3314bf} 
+\index{igl::serialization@{igl::serialization}!serialize@{serialize}}
+\index{serialize@{serialize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [20/20]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void igl\+::serialization\+::serialize (\begin{DoxyParamCaption}\item[{const T \&}]{obj,  }\item[{std\+::vector$<$ char $>$ \&}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_a908ce0d359a8e918001746107712d241}\label{namespaceigl_1_1serialization_a908ce0d359a8e918001746107712d241} 
+\index{igl::serialization@{igl::serialization}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}\hspace{0.1cm}{\footnotesize\ttfamily [21/21]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void igl\+::serialization\+::deserialize (\begin{DoxyParamCaption}\item[{T \&}]{obj,  }\item[{const std\+::vector$<$ char $>$ \&}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_abcf437bf8ec7e22c64c641140ef5567a}\label{namespaceigl_1_1serialization_abcf437bf8ec7e22c64c641140ef5567a} 
+\index{igl::serialization@{igl::serialization}!updateMemoryMap@{updateMemoryMap}}
+\index{updateMemoryMap@{updateMemoryMap}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{updateMemoryMap()}{updateMemoryMap()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void igl\+::serialization\+::update\+Memory\+Map (\begin{DoxyParamCaption}\item[{T \&}]{obj,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_1_1serialization_a03311dd87509fcf2b237a7f86764ac15}\label{namespaceigl_1_1serialization_a03311dd87509fcf2b237a7f86764ac15} 
+\index{igl::serialization@{igl::serialization}!updateMemoryMap@{updateMemoryMap}}
+\index{updateMemoryMap@{updateMemoryMap}!igl::serialization@{igl::serialization}}
+\doxysubsubsection{\texorpdfstring{updateMemoryMap()}{updateMemoryMap()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void igl\+::serialization\+::update\+Memory\+Map (\begin{DoxyParamCaption}\item[{T \&}]{obj,  }\item[{size\+\_\+t}]{size,  }\item[{std\+::map$<$ std\+::uintptr\+\_\+t, \mbox{\hyperlink{structigl_1_1IndexedPointerBase}{Indexed\+Pointer\+Base}} \texorpdfstring{$\ast$}{*} $>$ \&}]{memory\+Map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 

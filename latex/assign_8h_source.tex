@@ -1,0 +1,53 @@
+\doxysection{assign.\+h}
+\hypertarget{assign_8h_source}{}\label{assign_8h_source}\index{include/igl/copyleft/cgal/assign.h@{include/igl/copyleft/cgal/assign.h}}
+\mbox{\hyperlink{assign_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2016\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_COPYLEFT\_CGAL\_ASSIGN\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_COPYLEFT\_CGAL\_ASSIGN\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../../igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <CGAL/Exact\_predicates\_exact\_constructions\_kernel.h>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \ \ \textcolor{keyword}{namespace\ }copyleft}
+\DoxyCodeLine{00017\ \ \ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{namespace\ }cgal}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedC,\ \textcolor{keyword}{typename}\ DerivedD>}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a12c0c03c36999f6c7b35421c59ac9ca4}{assign}}(}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedC>\ \&\ C,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ slow\_and\_more\_precise,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedD>\ \&\ D);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedC,\ \textcolor{keyword}{typename}\ DerivedD>}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a12c0c03c36999f6c7b35421c59ac9ca4}{assign}}(}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedC>\ \&\ C,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedD>\ \&\ D);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ ReturnScalar,\ \textcolor{keyword}{typename}\ DerivedC>}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ Eigen::Matrix<}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ ReturnScalar,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ DerivedC::RowsAtCompileTime,\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ DerivedC::ColsAtCompileTime,\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ 1,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ DerivedC::MaxRowsAtCompileTime,\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ DerivedC::MaxColsAtCompileTime>\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a12c0c03c36999f6c7b35421c59ac9ca4}{assign}}(}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedC>\ \&\ C);}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \}}
+\DoxyCodeLine{00051\ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#\ \ include\ "{}assign.cpp"{}}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,7 +1,23 @@
 var searchData=
 [
-  ['xy_5fplane_5fquat_5fd_0',['XY_PLANE_QUAT_D',['../namespaceigl.html#a1e0bd2386fb8512b5fccf9abaab47952',1,'igl']]],
-  ['xy_5fplane_5fquat_5ff_1',['XY_PLANE_QUAT_F',['../namespaceigl.html#afc1c639c804d4e91dc1ffb424c5caf37',1,'igl']]],
-  ['xz_5fplane_5fquat_5fd_2',['XZ_PLANE_QUAT_D',['../namespaceigl.html#a83519a14c0cfc4eb50105894232e10a4',1,'igl']]],
-  ['xz_5fplane_5fquat_5ff_3',['XZ_PLANE_QUAT_F',['../namespaceigl.html#adf4ae9044c47ccad908df3775523d731',1,'igl']]]
+  ['w_0',['W',['../structigl_1_1ShapeupData.html#af535bbd96ee9c813d671f5894616468d',1,'igl::ShapeupData::W'],['../structigl_1_1SLIMData.html#ae8ac0c1d9f36a55353d22b9f9febdcb7',1,'igl::SLIMData::W']]],
+  ['w_1',['w',['../structigl_1_1KelvinletParams.html#a380fb26a53c0df41b307e301b2975b88',1,'igl::KelvinletParams']]],
+  ['w_2',['W',['../structigl_1_1AtA__cached__data.html#af2acb9033057849ab5cbbab9f6c25d88',1,'igl::AtA_cached_data']]],
+  ['w0_3',['W0',['../classigl_1_1BBWData.html#a82f5739b1b1f75e59e166007b147a03e',1,'igl::BBWData']]],
+  ['w_5fm_4',['W_m',['../structigl_1_1triangle_1_1SCAFData.html#a872fb66ab30d5b7ce69f7220985638c5',1,'igl::triangle::SCAFData']]],
+  ['w_5fs_5',['W_s',['../structigl_1_1triangle_1_1SCAFData.html#a72c7b07052ed5caf92b567a67da42050',1,'igl::triangle::SCAFData']]],
+  ['w_5ft_6',['w_T',['../structigl_1_1triangle_1_1SCAFData.html#a3b8bb93e723b86a149253bd4bd711f0c',1,'igl::triangle::SCAFData']]],
+  ['wgl_5fm_7',['WGL_M',['../structigl_1_1SLIMData.html#a8013a9e8c749e71e465272fd05e2b1a4',1,'igl::SLIMData']]],
+  ['white_8',['WHITE',['../namespaceigl.html#a42bdfa6acbe2c64f29cbd31426c86bfb',1,'igl']]],
+  ['white_5fambient_9',['WHITE_AMBIENT',['../namespaceigl.html#a4ace1077f98e7c25d1b590afc21001d4',1,'igl']]],
+  ['white_5fdiffuse_10',['WHITE_DIFFUSE',['../namespaceigl.html#af258223de150eac4510266bce6c15adc',1,'igl']]],
+  ['white_5fspecular_11',['WHITE_SPECULAR',['../namespaceigl.html#aa83f669c0c7352ed86d6991e28616eed',1,'igl']]],
+  ['widgets_12',['widgets',['../classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiPlugin.html#a171677f6d60063660ad994423837f4f9',1,'igl::opengl::glfw::imgui::ImGuiPlugin']]],
+  ['width_13',['width',['../structigl_1_1opengl_1_1gliGenericImage.html#a4b9cea678c1f456ca4f51ae855dfa6fe',1,'igl::opengl::gliGenericImage']]],
+  ['widthhi_14',['widthHi',['../structigl_1_1opengl_1_1TgaHeader.html#a722c96b3a8a79e1fdaac6e1432615779',1,'igl::opengl::TgaHeader']]],
+  ['widthlo_15',['widthLo',['../structigl_1_1opengl_1_1TgaHeader.html#a1b8359d1b543a53117aa19438b2beee3',1,'igl::opengl::TgaHeader']]],
+  ['window_16',['window',['../classigl_1_1opengl_1_1glfw_1_1Viewer.html#a8bd01c79b59e43407e1bb5c5ab227404',1,'igl::opengl::glfw::Viewer']]],
+  ['with_5fdynamics_17',['with_dynamics',['../structigl_1_1ArapDOFData.html#a4622abc143c3c0b1ce2d5facfc862a01',1,'igl::ArapDOFData::with_dynamics'],['../structigl_1_1ARAPData.html#a2ef0c86be0a56a52c99ed1a4dd376d46',1,'igl::ARAPData::with_dynamics']]],
+  ['wn_5fnon_5fmanifold_5fedge_5fcolor_18',['WN_NON_MANIFOLD_EDGE_COLOR',['../namespaceigl.html#a147760067e19822d9de2d3386c607b6e',1,'igl']]],
+  ['wn_5fopen_5fboundary_5fcolor_19',['WN_OPEN_BOUNDARY_COLOR',['../namespaceigl.html#af16c584a27f3dcfaa597e5864861931f',1,'igl']]]
 ];

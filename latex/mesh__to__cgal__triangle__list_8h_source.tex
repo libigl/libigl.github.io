@@ -1,0 +1,40 @@
+\doxysection{mesh\+\_\+to\+\_\+cgal\+\_\+triangle\+\_\+list.\+h}
+\hypertarget{mesh__to__cgal__triangle__list_8h_source}{}\label{mesh__to__cgal__triangle__list_8h_source}\index{include/igl/copyleft/cgal/mesh\_to\_cgal\_triangle\_list.h@{include/igl/copyleft/cgal/mesh\_to\_cgal\_triangle\_list.h}}
+\mbox{\hyperlink{mesh__to__cgal__triangle__list_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2014\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_COPYLEFT\_CGAL\_MESH\_TO\_CGAL\_TRIANGLE\_LIST\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_COPYLEFT\_CGAL\_MESH\_TO\_CGAL\_TRIANGLE\_LIST\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../../igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}CGAL\_includes.hpp"{}}}
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \ \ \textcolor{keyword}{namespace\ }copyleft}
+\DoxyCodeLine{00016\ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{namespace\ }cgal}
+\DoxyCodeLine{00018\ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Kernel>}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_ac9d72d2b7b5a3aa61b67b44df084c7db}{mesh\_to\_cgal\_triangle\_list}}(}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ std::vector<CGAL::Triangle\_3<Kernel>\ >\ \&\ T);}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+\DoxyCodeLine{00035\ \ \ \}}
+\DoxyCodeLine{00036\ \}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#\ \ include\ "{}mesh\_to\_cgal\_triangle\_list.cpp"{}}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

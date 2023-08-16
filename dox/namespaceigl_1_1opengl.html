@@ -112,9 +112,20 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structigl_1_1opengl_1_1gliGenericImage.html">gliGenericImage</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html">MeshGL</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coverts mesh data inside a igl::ViewerData class in an OpenGL compatible format The class includes a shader and the opengl calls to plot the data.  <a href="classigl_1_1opengl_1_1MeshGL.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structigl_1_1opengl_1_1TgaFooter.html">TgaFooter</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structigl_1_1opengl_1_1TgaHeader.html">TgaHeader</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerCore.html">ViewerCore</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Basic class of the 3D mesh viewer.  <a href="classigl_1_1opengl_1_1ViewerCore.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html">ViewerData</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Object being drawn (i.e., mesh and its accessories) by the <a class="el" href="classigl_1_1opengl_1_1ViewerCore.html" title="Basic class of the 3D mesh viewer.">ViewerCore</a>.  <a href="classigl_1_1opengl_1_1ViewerData.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -122,6 +133,86 @@ Functions</h2></td></tr>
 <tr class="memitem:a967f6e5284d63e98cbd501388672bff9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1opengl.html#a967f6e5284d63e98cbd501388672bff9">render_to_tga</a> (const std::string tga_file, const int width, const int height, const bool alpha)</td></tr>
 <tr class="memdesc:a967f6e5284d63e98cbd501388672bff9"><td class="mdescLeft">&#160;</td><td class="mdescRight">alpha whether to include alpha channel  <br /></td></tr>
 <tr class="separator:a967f6e5284d63e98cbd501388672bff9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a276e885ccdcfd9e60b772c3c4bb2f866"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1opengl.html#a276e885ccdcfd9e60b772c3c4bb2f866">texture_from_tga</a> (const std::string tga_file, GLuint &amp;id)</td></tr>
+<tr class="memdesc:a276e885ccdcfd9e60b772c3c4bb2f866"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read an image from a .tga file and use it as a texture.  <br /></td></tr>
+<tr class="separator:a276e885ccdcfd9e60b772c3c4bb2f866"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73e1f94f7c5006844213837713652e0f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structigl_1_1opengl_1_1gliGenericImage.html">gliGenericImage</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1opengl.html#a73e1f94f7c5006844213837713652e0f">gliReadTGA</a> (FILE *fp, char *name, int hflip, int vflip)</td></tr>
+<tr class="separator:a73e1f94f7c5006844213837713652e0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1581cf9fab6f2f7dbc495dc8c601bd9b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1opengl.html#a1581cf9fab6f2f7dbc495dc8c601bd9b">gli_verbose</a> (int new_verbose)</td></tr>
+<tr class="separator:a1581cf9fab6f2f7dbc495dc8c601bd9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7b723fc81098ef1841429fb1e127d76"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1opengl.html#ab7b723fc81098ef1841429fb1e127d76">gliVerbose</a> (int newVerbose)</td></tr>
+<tr class="separator:ab7b723fc81098ef1841429fb1e127d76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ee614bf7fc62ec302b276934bc9a8cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1opengl.html#a0ee614bf7fc62ec302b276934bc9a8cc">writeTGA</a> (<a class="el" href="structigl_1_1opengl_1_1gliGenericImage.html">gliGenericImage</a> *image, FILE *fp)</td></tr>
+<tr class="separator:a0ee614bf7fc62ec302b276934bc9a8cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18546398e939980318ed1cdbc9ccd2cc"><td class="memItemLeft" align="right" valign="top">GLint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1opengl.html#a18546398e939980318ed1cdbc9ccd2cc">bind_vertex_attrib_array</a> (const GLuint program_shader, const std::string &amp;name, GLuint bufferID, const Eigen::Matrix&lt; float, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor &gt; &amp;M, bool refresh)</td></tr>
+<tr class="memdesc:a18546398e939980318ed1cdbc9ccd2cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bind a per-vertex array attribute and refresh its contents from an Eigen matrix.  <br /></td></tr>
+<tr class="separator:a18546398e939980318ed1cdbc9ccd2cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb53eea84ee235ebd173c8c150ce4759"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1opengl.html#afb53eea84ee235ebd173c8c150ce4759">create_index_vbo</a> (const Eigen::MatrixXi &amp;F, GLuint &amp;F_vbo_id)</td></tr>
+<tr class="memdesc:afb53eea84ee235ebd173c8c150ce4759"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a VBO (Vertex Buffer Object) for a list of indices: GL_ELEMENT_ARRAY_BUFFER_ARB for the triangle indices (F)  <br /></td></tr>
+<tr class="separator:afb53eea84ee235ebd173c8c150ce4759"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09b4597fbcc534310ba6cd68ad18e41f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1opengl.html#a09b4597fbcc534310ba6cd68ad18e41f">create_mesh_vbo</a> (const Eigen::MatrixXd &amp;V, const Eigen::MatrixXi &amp;F, GLuint &amp;V_vbo_id, GLuint &amp;F_vbo_id)</td></tr>
+<tr class="memdesc:a09b4597fbcc534310ba6cd68ad18e41f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a VBO (Vertex Buffer Object) for a mesh.  <br /></td></tr>
+<tr class="separator:a09b4597fbcc534310ba6cd68ad18e41f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33dff64f122b8ae53a54fb2c9b71445b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1opengl.html#a33dff64f122b8ae53a54fb2c9b71445b">create_mesh_vbo</a> (const Eigen::MatrixXd &amp;V, const Eigen::MatrixXi &amp;F, const Eigen::MatrixXd &amp;N, GLuint &amp;V_vbo_id, GLuint &amp;F_vbo_id, GLuint &amp;N_vbo_id)</td></tr>
+<tr class="memdesc:a33dff64f122b8ae53a54fb2c9b71445b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
+<tr class="separator:a33dff64f122b8ae53a54fb2c9b71445b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a387615839bfa5d4d521532cd18e96b23"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1opengl.html#a387615839bfa5d4d521532cd18e96b23">create_shader_program</a> (const std::string &amp;geom_source, const std::string &amp;vert_source, const std::string &amp;frag_source, const std::map&lt; std::string, GLuint &gt; &amp;attrib, GLuint &amp;id)</td></tr>
+<tr class="memdesc:a387615839bfa5d4d521532cd18e96b23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a shader program with a vertex and fragments shader loading from source strings and vertex attributes assigned from a map before linking the shaders to the program, making it ready to use with glUseProgram(id)  <br /></td></tr>
+<tr class="separator:a387615839bfa5d4d521532cd18e96b23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb61cde775b172998ae6e6f9dffd5d96"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1opengl.html#acb61cde775b172998ae6e6f9dffd5d96">create_shader_program</a> (const std::string &amp;vert_source, const std::string &amp;frag_source, const std::map&lt; std::string, GLuint &gt; &amp;attrib, GLuint &amp;id)</td></tr>
+<tr class="memdesc:acb61cde775b172998ae6e6f9dffd5d96"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
+<tr class="separator:acb61cde775b172998ae6e6f9dffd5d96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8804baac0135e31d5b9f585a1adb5cb5"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1opengl.html#a8804baac0135e31d5b9f585a1adb5cb5">create_shader_program</a> (const std::string &amp;geom_source, const std::string &amp;vert_source, const std::string &amp;frag_source, const std::map&lt; std::string, GLuint &gt; &amp;attrib)</td></tr>
+<tr class="memdesc:a8804baac0135e31d5b9f585a1adb5cb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
+<tr class="separator:a8804baac0135e31d5b9f585a1adb5cb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69e00ecaf2b3546583b44f5876a9f32c"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1opengl.html#a69e00ecaf2b3546583b44f5876a9f32c">create_shader_program</a> (const std::string &amp;vert_source, const std::string &amp;frag_source, const std::map&lt; std::string, GLuint &gt; &amp;attrib)</td></tr>
+<tr class="memdesc:a69e00ecaf2b3546583b44f5876a9f32c"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
+<tr class="separator:a69e00ecaf2b3546583b44f5876a9f32c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d8948cd3db199a58744bcb5ecb8e010"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a4d8948cd3db199a58744bcb5ecb8e010"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1opengl.html#a4d8948cd3db199a58744bcb5ecb8e010">create_vector_vbo</a> (const Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;V, GLuint &amp;V_vbo_id)</td></tr>
+<tr class="memdesc:a4d8948cd3db199a58744bcb5ecb8e010"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a VBO (Vertex Buffer Object) for a list of vectors: GL_ARRAY_BUFFER for the vectors (V)  <br /></td></tr>
+<tr class="separator:a4d8948cd3db199a58744bcb5ecb8e010"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04d4be929fb0aefff3d0bee345e159c5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1opengl.html#a04d4be929fb0aefff3d0bee345e159c5">destroy_shader_program</a> (const GLuint id)</td></tr>
+<tr class="memdesc:a04d4be929fb0aefff3d0bee345e159c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Properly destroy a shader program.  <br /></td></tr>
+<tr class="separator:a04d4be929fb0aefff3d0bee345e159c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab44717ffa90f441c2b8597a3809e516a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1opengl.html#ab44717ffa90f441c2b8597a3809e516a">gl_type_size</a> (const GLenum type)</td></tr>
+<tr class="memdesc:ab44717ffa90f441c2b8597a3809e516a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of bytes for a given OpenGL type.  <br /></td></tr>
+<tr class="separator:ab44717ffa90f441c2b8597a3809e516a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2d55d2b5f33e5c392361023b7c49c8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1opengl.html#ac2d55d2b5f33e5c392361023b7c49c8f">init_render_to_texture</a> (const size_t width, const size_t height, const bool depth_texture, GLuint &amp;tex_id, GLuint &amp;fbo_id, GLuint &amp;d_id)</td></tr>
+<tr class="memdesc:ac2d55d2b5f33e5c392361023b7c49c8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a frame buffer that renders color to a RGBA texture a depth to a "render buffer".  <br /></td></tr>
+<tr class="separator:ac2d55d2b5f33e5c392361023b7c49c8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6b653878f685eeea5feff5bc55d65b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1opengl.html#ab6b653878f685eeea5feff5bc55d65b0">init_render_to_texture</a> (const size_t width, const size_t height, GLuint &amp;tex_id, GLuint &amp;fbo_id, GLuint &amp;dfbo_id)</td></tr>
+<tr class="memdesc:ab6b653878f685eeea5feff5bc55d65b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
+<tr class="separator:ab6b653878f685eeea5feff5bc55d65b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d28d636421f0c47d69d4dc2b73fbe39"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1opengl.html#a7d28d636421f0c47d69d4dc2b73fbe39">load_shader</a> (const std::string &amp;src, const GLenum type)</td></tr>
+<tr class="memdesc:a7d28d636421f0c47d69d4dc2b73fbe39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and compiles a shader from a given string.  <br /></td></tr>
+<tr class="separator:a7d28d636421f0c47d69d4dc2b73fbe39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad53ec95dc32499a84b78cc753c0be4b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1opengl.html#ad53ec95dc32499a84b78cc753c0be4b4">print_program_info_log</a> (const GLuint obj)</td></tr>
+<tr class="memdesc:ad53ec95dc32499a84b78cc753c0be4b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the information log for a program object.  <br /></td></tr>
+<tr class="separator:ad53ec95dc32499a84b78cc753c0be4b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2c5575db902618e488ef49d8ab34358"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1opengl.html#ad2c5575db902618e488ef49d8ab34358">print_shader_info_log</a> (const GLuint obj)</td></tr>
+<tr class="memdesc:ad2c5575db902618e488ef49d8ab34358"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the info log for a shader object.  <br /></td></tr>
+<tr class="separator:ad2c5575db902618e488ef49d8ab34358"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad678bcaf9e800de821aab97429b0ceee"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ad678bcaf9e800de821aab97429b0ceee"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1opengl.html#ad678bcaf9e800de821aab97429b0ceee">read_pixels</a> (const GLuint width, const GLuint height, Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;R, Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;G, Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;B, Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;A, Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;D)</td></tr>
+<tr class="memdesc:ad678bcaf9e800de821aab97429b0ceee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read full viewport into color, alpha and depth arrays suitable for <a class="el" href="namespaceigl_1_1png.html#a22afcde86706a6cdc101ab5058461bbf" title="Writes an image to a png file.">igl::png::writePNG</a>.  <br /></td></tr>
+<tr class="separator:ad678bcaf9e800de821aab97429b0ceee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb894bef3132fc177a66d54235c66133"><td class="memItemLeft" align="right" valign="top">GLenum&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1opengl.html#aeb894bef3132fc177a66d54235c66133">report_gl_error</a> (const std::string id)</td></tr>
+<tr class="memdesc:aeb894bef3132fc177a66d54235c66133"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print last OpenGL error to stderr prefixed by specified id string.  <br /></td></tr>
+<tr class="separator:aeb894bef3132fc177a66d54235c66133"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94637f36af5a94bbe26eaaecf41bf8ba"><td class="memItemLeft" align="right" valign="top">GLenum&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1opengl.html#a94637f36af5a94bbe26eaaecf41bf8ba">report_gl_error</a> ()</td></tr>
+<tr class="memdesc:a94637f36af5a94bbe26eaaecf41bf8ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
+<tr class="separator:a94637f36af5a94bbe26eaaecf41bf8ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefa41e1672680581a7f43a0633d85776"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1opengl.html#aefa41e1672680581a7f43a0633d85776">uniform_type_to_string</a> (const GLenum type)</td></tr>
+<tr class="memdesc:aefa41e1672680581a7f43a0633d85776"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a GL uniform variable type (say, returned from glGetActiveUniform) and output a string naming that type.  <br /></td></tr>
+<tr class="separator:aefa41e1672680581a7f43a0633d85776"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35c6b235682036b135e9a0cb32b6d3cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1opengl.html#a35c6b235682036b135e9a0cb32b6d3cf">decompress_verasansmono_atlas</a> (unsigned char *_fontatlas)</td></tr>
+<tr class="memdesc:a35c6b235682036b135e9a0cb32b6d3cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decompress the vera sans mono font atlas.  <br /></td></tr>
+<tr class="separator:a35c6b235682036b135e9a0cb32b6d3cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87b82a5ef0d8e4ba0e84f940804ac380"><td class="memTemplParams" colspan="2">template&lt;typename DerivedV , typename DerivedF &gt; </td></tr>
+<tr class="memitem:a87b82a5ef0d8e4ba0e84f940804ac380"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1opengl.html#a87b82a5ef0d8e4ba0e84f940804ac380">vertex_array</a> (const Eigen::PlainObjectBase&lt; DerivedV &gt; &amp;V, const Eigen::PlainObjectBase&lt; DerivedF &gt; &amp;F, GLuint &amp;va_id, GLuint &amp;ab_id, GLuint &amp;eab_id)</td></tr>
+<tr class="memdesc:a87b82a5ef0d8e4ba0e84f940804ac380"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a GL_VERTEX_ARRAY for a given mesh (V,F)  <br /></td></tr>
+<tr class="separator:a87b82a5ef0d8e4ba0e84f940804ac380"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a967f6e5284d63e98cbd501388672bff9" name="a967f6e5284d63e98cbd501388672bff9"></a>
@@ -163,6 +254,1101 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>alpha whether to include alpha channel </p>
+
+</div>
+</div>
+<a id="a276e885ccdcfd9e60b772c3c4bb2f866" name="a276e885ccdcfd9e60b772c3c4bb2f866"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a276e885ccdcfd9e60b772c3c4bb2f866">&#9670;&#160;</a></span>texture_from_tga()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool igl::opengl::texture_from_tga </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>tga_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLuint &amp;&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read an image from a .tga file and use it as a texture. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">tga_file</td><td>path to .tga file </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">id</td><td>of generated openGL texture </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true on success, false on failure </dd></dl>
+
+</div>
+</div>
+<a id="a73e1f94f7c5006844213837713652e0f" name="a73e1f94f7c5006844213837713652e0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73e1f94f7c5006844213837713652e0f">&#9670;&#160;</a></span>gliReadTGA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structigl_1_1opengl_1_1gliGenericImage.html">gliGenericImage</a> * igl::opengl::gliReadTGA </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>hflip</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>vflip</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1581cf9fab6f2f7dbc495dc8c601bd9b" name="a1581cf9fab6f2f7dbc495dc8c601bd9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1581cf9fab6f2f7dbc495dc8c601bd9b">&#9670;&#160;</a></span>gli_verbose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int igl::opengl::gli_verbose </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>new_verbose</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab7b723fc81098ef1841429fb1e127d76" name="ab7b723fc81098ef1841429fb1e127d76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7b723fc81098ef1841429fb1e127d76">&#9670;&#160;</a></span>gliVerbose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int igl::opengl::gliVerbose </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>newVerbose</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0ee614bf7fc62ec302b276934bc9a8cc" name="a0ee614bf7fc62ec302b276934bc9a8cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ee614bf7fc62ec302b276934bc9a8cc">&#9670;&#160;</a></span>writeTGA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void igl::opengl::writeTGA </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structigl_1_1opengl_1_1gliGenericImage.html">gliGenericImage</a> *&#160;</td>
+          <td class="paramname"><em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a18546398e939980318ed1cdbc9ccd2cc" name="a18546398e939980318ed1cdbc9ccd2cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18546398e939980318ed1cdbc9ccd2cc">&#9670;&#160;</a></span>bind_vertex_attrib_array()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLint igl::opengl::bind_vertex_attrib_array </td>
+          <td>(</td>
+          <td class="paramtype">const GLuint&#160;</td>
+          <td class="paramname"><em>program_shader</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLuint&#160;</td>
+          <td class="paramname"><em>bufferID</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::Matrix&lt; float, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor &gt; &amp;&#160;</td>
+          <td class="paramname"><em>M</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>refresh</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bind a per-vertex array attribute and refresh its contents from an Eigen matrix. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">program_shader</td><td>id of shader program </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>name of attribute in vertex shader </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">bufferID</td><td>id of buffer to bind to </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">M</td><td>#V by dim matrix of per-vertex data </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">refresh</td><td>whether to actually call glBufferData or just bind the buffer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>id of named attribute in shader </dd></dl>
+
+</div>
+</div>
+<a id="afb53eea84ee235ebd173c8c150ce4759" name="afb53eea84ee235ebd173c8c150ce4759"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb53eea84ee235ebd173c8c150ce4759">&#9670;&#160;</a></span>create_index_vbo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void igl::opengl::create_index_vbo </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::MatrixXi &amp;&#160;</td>
+          <td class="paramname"><em>F</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLuint &amp;&#160;</td>
+          <td class="paramname"><em>F_vbo_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a VBO (Vertex Buffer Object) for a list of indices: GL_ELEMENT_ARRAY_BUFFER_ARB for the triangle indices (F) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">F</td><td>#F by 3 eigen Matrix of face (triangle) indices </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">F_vbo_id</td><td>buffer id for face indices </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a09b4597fbcc534310ba6cd68ad18e41f" name="a09b4597fbcc534310ba6cd68ad18e41f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09b4597fbcc534310ba6cd68ad18e41f">&#9670;&#160;</a></span>create_mesh_vbo() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void igl::opengl::create_mesh_vbo </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
+          <td class="paramname"><em>V</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::MatrixXi &amp;&#160;</td>
+          <td class="paramname"><em>F</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLuint &amp;&#160;</td>
+          <td class="paramname"><em>V_vbo_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLuint &amp;&#160;</td>
+          <td class="paramname"><em>F_vbo_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a VBO (Vertex Buffer Object) for a mesh. </p>
+<p>Actually two VBOs: one GL_ARRAY_BUFFER for the vertex positions (V) and one GL_ELEMENT_ARRAY_BUFFER for the triangle indices (F)</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">V</td><td>#V by 3 eigen Matrix of mesh vertex 3D positions </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">F</td><td>#F by 3 eigen Matrix of face (triangle) indices </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">V_vbo_id</td><td>buffer id for vertex positions </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">F_vbo_id</td><td>buffer id for face indices</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>when using glDrawElements VBOs for V and F using MatrixXd and MatrixXi will have types GL_DOUBLE and GL_UNSIGNED_INT respectively </dd></dl>
+
+</div>
+</div>
+<a id="a33dff64f122b8ae53a54fb2c9b71445b" name="a33dff64f122b8ae53a54fb2c9b71445b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33dff64f122b8ae53a54fb2c9b71445b">&#9670;&#160;</a></span>create_mesh_vbo() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void igl::opengl::create_mesh_vbo </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
+          <td class="paramname"><em>V</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::MatrixXi &amp;&#160;</td>
+          <td class="paramname"><em>F</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
+          <td class="paramname"><em>N</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLuint &amp;&#160;</td>
+          <td class="paramname"><em>V_vbo_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLuint &amp;&#160;</td>
+          <td class="paramname"><em>F_vbo_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLuint &amp;&#160;</td>
+          <td class="paramname"><em>N_vbo_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">N</td><td>#V by 3 eigen Matrix of mesh vertex 3D normals </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">N_vbo_id</td><td>buffer id for vertex positions </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a387615839bfa5d4d521532cd18e96b23" name="a387615839bfa5d4d521532cd18e96b23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a387615839bfa5d4d521532cd18e96b23">&#9670;&#160;</a></span>create_shader_program() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool igl::opengl::create_shader_program </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>geom_source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>vert_source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>frag_source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::map&lt; std::string, GLuint &gt; &amp;&#160;</td>
+          <td class="paramname"><em>attrib</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLuint &amp;&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a shader program with a vertex and fragments shader loading from source strings and vertex attributes assigned from a map before linking the shaders to the program, making it ready to use with glUseProgram(id) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">geom_source</td><td>string containing source code of geometry shader (can be "" to mean use default pass-through) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">vert_source</td><td>string containing source code of vertex shader </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">frag_source</td><td>string containing source code of fragment shader </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">attrib</td><td>map containing table of vertex attribute strings add their correspondingly ids (generated previously using glBindAttribLocation) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">id</td><td>index id of created shader, set to 0 on error </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true on success, false on error</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Caller is responsible for making sure that current value of id is not leaking a shader (since it will be overwritten)</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="namespaceigl_1_1opengl.html#a04d4be929fb0aefff3d0bee345e159c5" title="Properly destroy a shader program.">destroy_shader_program</a> </dd></dl>
+
+</div>
+</div>
+<a id="acb61cde775b172998ae6e6f9dffd5d96" name="acb61cde775b172998ae6e6f9dffd5d96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb61cde775b172998ae6e6f9dffd5d96">&#9670;&#160;</a></span>create_shader_program() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool igl::opengl::create_shader_program </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>vert_source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>frag_source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::map&lt; std::string, GLuint &gt; &amp;&#160;</td>
+          <td class="paramname"><em>attrib</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLuint &amp;&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+
+</div>
+</div>
+<a id="a8804baac0135e31d5b9f585a1adb5cb5" name="a8804baac0135e31d5b9f585a1adb5cb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8804baac0135e31d5b9f585a1adb5cb5">&#9670;&#160;</a></span>create_shader_program() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLuint igl::opengl::create_shader_program </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>geom_source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>vert_source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>frag_source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::map&lt; std::string, GLuint &gt; &amp;&#160;</td>
+          <td class="paramname"><em>attrib</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+<dl class="section return"><dt>Returns</dt><dd>index id of created shader, set to 0 on error </dd></dl>
+
+</div>
+</div>
+<a id="a69e00ecaf2b3546583b44f5876a9f32c" name="a69e00ecaf2b3546583b44f5876a9f32c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69e00ecaf2b3546583b44f5876a9f32c">&#9670;&#160;</a></span>create_shader_program() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLuint igl::opengl::create_shader_program </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>vert_source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>frag_source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::map&lt; std::string, GLuint &gt; &amp;&#160;</td>
+          <td class="paramname"><em>attrib</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+<dl class="section return"><dt>Returns</dt><dd>index id of created shader, set to 0 on error </dd></dl>
+
+</div>
+</div>
+<a id="a4d8948cd3db199a58744bcb5ecb8e010" name="a4d8948cd3db199a58744bcb5ecb8e010"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d8948cd3db199a58744bcb5ecb8e010">&#9670;&#160;</a></span>create_vector_vbo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void igl::opengl::create_vector_vbo </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;&#160;</td>
+          <td class="paramname"><em>V</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLuint &amp;&#160;</td>
+          <td class="paramname"><em>V_vbo_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a VBO (Vertex Buffer Object) for a list of vectors: GL_ARRAY_BUFFER for the vectors (V) </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>should be a eigen matrix primitive type like int or double </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">V</td><td>m by n eigen Matrix of type T values </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">V_vbo_id</td><td>buffer id for vectors </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a04d4be929fb0aefff3d0bee345e159c5" name="a04d4be929fb0aefff3d0bee345e159c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04d4be929fb0aefff3d0bee345e159c5">&#9670;&#160;</a></span>destroy_shader_program()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool igl::opengl::destroy_shader_program </td>
+          <td>(</td>
+          <td class="paramtype">const GLuint&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Properly destroy a shader program. </p>
+<p>Detach and delete each of its shaders and delete it</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>index id of created shader, set to 0 on error </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true on success, false on error</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>caller is responsible for making sure he doesn't foolishly continue to use id as if it still contains a program</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="namespaceigl_1_1opengl.html#a387615839bfa5d4d521532cd18e96b23" title="Create a shader program with a vertex and fragments shader loading from source strings and vertex att...">create_shader_program</a> </dd></dl>
+
+</div>
+</div>
+<a id="ab44717ffa90f441c2b8597a3809e516a" name="ab44717ffa90f441c2b8597a3809e516a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab44717ffa90f441c2b8597a3809e516a">&#9670;&#160;</a></span>gl_type_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int igl::opengl::gl_type_size </td>
+          <td>(</td>
+          <td class="paramtype">const GLenum&#160;</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the number of bytes for a given OpenGL type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>enum value of opengl type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>size in bytes of type </dd></dl>
+
+</div>
+</div>
+<a id="ac2d55d2b5f33e5c392361023b7c49c8f" name="ac2d55d2b5f33e5c392361023b7c49c8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2d55d2b5f33e5c392361023b7c49c8f">&#9670;&#160;</a></span>init_render_to_texture() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void igl::opengl::init_render_to_texture </td>
+          <td>(</td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>depth_texture</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLuint &amp;&#160;</td>
+          <td class="paramname"><em>tex_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLuint &amp;&#160;</td>
+          <td class="paramname"><em>fbo_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLuint &amp;&#160;</td>
+          <td class="paramname"><em>d_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a frame buffer that renders color to a RGBA texture a depth to a "render buffer". </p>
+<p>After calling this, you can use with something like:</p>
+<div class="fragment"><div class="line">glBindFramebuffer(GL_FRAMEBUFFER, fbo_id);</div>
+<div class="line"><span class="keywordflow">if</span>(!depth_texture)</div>
+<div class="line">{</div>
+<div class="line">  glBindRenderbuffer(GL_RENDERBUFFER, d_id);</div>
+<div class="line">}</div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// draw scene ...</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// clean up</span></div>
+<div class="line">glBindFramebuffer(GL_FRAMEBUFFER,0);</div>
+<div class="line"><span class="keywordflow">if</span>(!depth_texture)</div>
+<div class="line">{</div>
+<div class="line">  glBindRenderbuffer(GL_RENDERBUFFER, 0);</div>
+<div class="line">}</div>
+<div class="line"><span class="comment">// Later ...</span></div>
+<div class="line">glActiveTexture(GL_TEXTURE0+0);</div>
+<div class="line">glBindTexture(GL_TEXTURE_2D,tex_id);</div>
+<div class="line"><span class="keywordflow">if</span>(depth_texture)</div>
+<div class="line">{</div>
+<div class="line">  glActiveTexture(GL_TEXTURE0+1);</div>
+<div class="line">  glBindTexture(GL_TEXTURE_2D,d_id);</div>
+<div class="line">}</div>
+<div class="line"><span class="comment">// draw textures</span></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">width</td><td>image width </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">height</td><td>image height </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">depth_texture</td><td>whether to create a texture for depth or to create a render buffer for depth </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">tex_id</td><td>id of the texture </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">fbo_id</td><td>id of the frame buffer object </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">d_id</td><td>id of the depth texture or frame buffer object </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab6b653878f685eeea5feff5bc55d65b0" name="ab6b653878f685eeea5feff5bc55d65b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6b653878f685eeea5feff5bc55d65b0">&#9670;&#160;</a></span>init_render_to_texture() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void igl::opengl::init_render_to_texture </td>
+          <td>(</td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLuint &amp;&#160;</td>
+          <td class="paramname"><em>tex_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLuint &amp;&#160;</td>
+          <td class="paramname"><em>fbo_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLuint &amp;&#160;</td>
+          <td class="paramname"><em>dfbo_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+<p>Wrapper with depth_texture = false for legacy reasons </p>
+
+</div>
+</div>
+<a id="a7d28d636421f0c47d69d4dc2b73fbe39" name="a7d28d636421f0c47d69d4dc2b73fbe39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d28d636421f0c47d69d4dc2b73fbe39">&#9670;&#160;</a></span>load_shader()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLuint igl::opengl::load_shader </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const GLenum&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates and compiles a shader from a given string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">src</td><td>string containing GLSL shader code </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>GLSL type of shader, one of: GL_VERTEX_SHADER GL_FRAGMENT_SHADER GL_GEOMETRY_SHADER </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>index id of the newly created shader, 0 on error</dd></dl>
+<p>Will immediately return 0 if src is empty. </p>
+
+</div>
+</div>
+<a id="ad53ec95dc32499a84b78cc753c0be4b4" name="ad53ec95dc32499a84b78cc753c0be4b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad53ec95dc32499a84b78cc753c0be4b4">&#9670;&#160;</a></span>print_program_info_log()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void igl::opengl::print_program_info_log </td>
+          <td>(</td>
+          <td class="paramtype">const GLuint&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Print the information log for a program object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>OpenGL index of program to print info log about </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad2c5575db902618e488ef49d8ab34358" name="ad2c5575db902618e488ef49d8ab34358"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2c5575db902618e488ef49d8ab34358">&#9670;&#160;</a></span>print_shader_info_log()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void igl::opengl::print_shader_info_log </td>
+          <td>(</td>
+          <td class="paramtype">const GLuint&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Print the info log for a shader object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>OpenGL index of shader to print info log about </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad678bcaf9e800de821aab97429b0ceee" name="ad678bcaf9e800de821aab97429b0ceee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad678bcaf9e800de821aab97429b0ceee">&#9670;&#160;</a></span>read_pixels()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void igl::opengl::read_pixels </td>
+          <td>(</td>
+          <td class="paramtype">const GLuint&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const GLuint&#160;</td>
+          <td class="paramname"><em>height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;&#160;</td>
+          <td class="paramname"><em>R</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;&#160;</td>
+          <td class="paramname"><em>G</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;&#160;</td>
+          <td class="paramname"><em>D</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read full viewport into color, alpha and depth arrays suitable for <a class="el" href="namespaceigl_1_1png.html#a22afcde86706a6cdc101ab5058461bbf" title="Writes an image to a png file.">igl::png::writePNG</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">width</td><td>width of viewport </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">height</td><td>height of viewport </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">R</td><td>width by height list of red values </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">G</td><td>width by height list of green values </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">B</td><td>width by height list of blue values </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">A</td><td>width by height list of alpha values </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">D</td><td>width by height list of depth values </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aeb894bef3132fc177a66d54235c66133" name="aeb894bef3132fc177a66d54235c66133"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb894bef3132fc177a66d54235c66133">&#9670;&#160;</a></span>report_gl_error() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLenum igl::opengl::report_gl_error </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Print last OpenGL error to stderr prefixed by specified id string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>string to appear before any error msgs </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>result of glGetError() <br  />
+ </dd></dl>
+
+</div>
+</div>
+<a id="a94637f36af5a94bbe26eaaecf41bf8ba" name="a94637f36af5a94bbe26eaaecf41bf8ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94637f36af5a94bbe26eaaecf41bf8ba">&#9670;&#160;</a></span>report_gl_error() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLenum igl::opengl::report_gl_error </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+
+</div>
+</div>
+<a id="aefa41e1672680581a7f43a0633d85776" name="aefa41e1672680581a7f43a0633d85776"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefa41e1672680581a7f43a0633d85776">&#9670;&#160;</a></span>uniform_type_to_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string igl::opengl::uniform_type_to_string </td>
+          <td>(</td>
+          <td class="paramtype">const GLenum&#160;</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert a GL uniform variable type (say, returned from glGetActiveUniform) and output a string naming that type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>enum for given type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>string name of that type </dd></dl>
+
+</div>
+</div>
+<a id="a35c6b235682036b135e9a0cb32b6d3cf" name="a35c6b235682036b135e9a0cb32b6d3cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35c6b235682036b135e9a0cb32b6d3cf">&#9670;&#160;</a></span>decompress_verasansmono_atlas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void igl::opengl::decompress_verasansmono_atlas </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char *&#160;</td>
+          <td class="paramname"><em>_fontatlas</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Decompress the vera sans mono font atlas. </p>
+
+</div>
+</div>
+<a id="a87b82a5ef0d8e4ba0e84f940804ac380" name="a87b82a5ef0d8e4ba0e84f940804ac380"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87b82a5ef0d8e4ba0e84f940804ac380">&#9670;&#160;</a></span>vertex_array()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DerivedV , typename DerivedF &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void igl::opengl::vertex_array </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::PlainObjectBase&lt; DerivedV &gt; &amp;&#160;</td>
+          <td class="paramname"><em>V</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::PlainObjectBase&lt; DerivedF &gt; &amp;&#160;</td>
+          <td class="paramname"><em>F</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLuint &amp;&#160;</td>
+          <td class="paramname"><em>va_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLuint &amp;&#160;</td>
+          <td class="paramname"><em>ab_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLuint &amp;&#160;</td>
+          <td class="paramname"><em>eab_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a GL_VERTEX_ARRAY for a given mesh (V,F) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">V</td><td>#V by dim list of mesh vertex positions </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">F</td><td>#F by 3 list of mesh triangle indices into V </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">va_id</td><td>id of vertex array </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">ab_id</td><td>id of array buffer (vertex buffer object) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">eab_id</td><td>id of element array buffer (element/face buffer object)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Unlike most libigl functions, the <b>input</b> Eigen matrices must be <code>Eigen::PlainObjectBase</code> because we want to directly access it's underlying storage. It cannot be <code>Eigen::MatrixBase</code> (see <a href="http://stackoverflow.com/questions/25094948/">http://stackoverflow.com/questions/25094948/</a>) </dd></dl>
 
 </div>
 </div>

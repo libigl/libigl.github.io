@@ -1,0 +1,22 @@
+\doxysection{include/igl/spectra/eigs.h File Reference}
+\hypertarget{spectra_2eigs_8h}{}\label{spectra_2eigs_8h}\index{include/igl/spectra/eigs.h@{include/igl/spectra/eigs.h}}
+{\ttfamily \#include \"{}../igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include \"{}../eigs.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse\+LU$>$}\newline
+{\ttfamily \#include \"{}eigs.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\item 
+namespace \mbox{\hyperlink{namespaceigl_1_1spectra}{igl\+::spectra}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Eigs\+Scalar , typename DerivedU , typename DerivedS , typename Solver  = Eigen\+::\+Sparse\+LU$<$\+Eigen\+::\+Sparse\+Matrix$<$\+Eigs\+Scalar$>$$>$$>$ }\\bool \mbox{\hyperlink{namespaceigl_1_1spectra_ad3d3fe017e5b3e83eaa8c9e997eceaf5}{igl\+::spectra\+::eigs}} (const Eigen\+::\+Sparse\+Matrix$<$ Eigs\+Scalar $>$ \&A, const Eigen\+::\+Sparse\+Matrix$<$ Eigs\+Scalar $>$ \&B, const int k, const \mbox{\hyperlink{namespaceigl_a39bb96a0597986315dc20d78ba46a50d}{igl\+::\+Eigs\+Type}} type, Eigen\+::\+Plain\+Object\+Base$<$ DerivedU $>$ \&U, Eigen\+::\+Plain\+Object\+Base$<$ DerivedS $>$ \&S)
+\begin{DoxyCompactList}\small\item\em Act like MATLAB\textquotesingle{}s eigs function. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Eigs\+Scalar , typename DerivedU , typename DerivedS , typename Solver  = Eigen\+::\+Sparse\+LU$<$\+Eigen\+::\+Sparse\+Matrix$<$\+Eigs\+Scalar$>$$>$$>$ }\\bool \mbox{\hyperlink{namespaceigl_1_1spectra_aa87761e316ed1ccddc5890a9b81ba177}{igl\+::spectra\+::eigs}} (const Eigen\+::\+Sparse\+Matrix$<$ Eigs\+Scalar $>$ \&A, const Eigen\+::\+Sparse\+Matrix$<$ Eigs\+Scalar $>$ \&B, const int k, const Eigs\+Scalar sigma, Eigen\+::\+Plain\+Object\+Base$<$ DerivedU $>$ \&U, Eigen\+::\+Plain\+Object\+Base$<$ DerivedS $>$ \&S)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}

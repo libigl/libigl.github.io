@@ -1,0 +1,140 @@
+\doxysection{igl\+::Serializable Class Reference}
+\hypertarget{classigl_1_1Serializable}{}\label{classigl_1_1Serializable}\index{igl::Serializable@{igl::Serializable}}
+
+
+{\ttfamily \#include $<$serialize.\+h$>$}
+
+Inheritance diagram for igl\+::Serializable\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classigl_1_1Serializable}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classigl_1_1Serializable_acb033c912f09e2c4fd7db8d4534199cc}{Init\+Serialization}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{classigl_1_1Serializable_aa73a685375a251a2c8f9ab9cff88accf}{Pre\+Serialization}} () const
+\item 
+virtual void \mbox{\hyperlink{classigl_1_1Serializable_a1e46d11958e0d2d478a78cf85dd0a545}{Post\+Serialization}} () const
+\item 
+virtual bool \mbox{\hyperlink{classigl_1_1Serializable_a5b28150e0cceca30b77da33419915be0}{Pre\+Deserialization}} ()
+\item 
+virtual void \mbox{\hyperlink{classigl_1_1Serializable_aa4bbf886e628a98ace9c7a1147a69245}{Post\+Deserialization}} ()
+\item 
+void \mbox{\hyperlink{classigl_1_1Serializable_a996403a9b5b754ae1b52cc4e76c155ba}{Serialize}} (std\+::vector$<$ char $>$ \&buffer) const override final
+\item 
+void \mbox{\hyperlink{classigl_1_1Serializable_a4918c7c9a8246439f7bf7d773e30b19f}{Deserialize}} (const std\+::vector$<$ char $>$ \&buffer) override final
+\item 
+\mbox{\hyperlink{classigl_1_1Serializable_a3cb2b4150c6ded707033e62db6dd1254}{Serializable}} ()
+\item 
+\mbox{\hyperlink{classigl_1_1Serializable_a7de72e44fca2693103fc1c3fd4096bf7}{Serializable}} (const \mbox{\hyperlink{classigl_1_1Serializable}{Serializable}} \&obj)
+\item 
+virtual \mbox{\hyperlink{classigl_1_1Serializable_abf548c0317c99ba76e9923534a1488d4}{\texorpdfstring{$\sim$}{\string~}\+Serializable}} ()
+\item 
+\mbox{\hyperlink{classigl_1_1Serializable}{Serializable}} \& \mbox{\hyperlink{classigl_1_1Serializable_ab728b67cff536f7042d16246d0a1fa75}{operator=}} (const \mbox{\hyperlink{classigl_1_1Serializable}{Serializable}} \&obj)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classigl_1_1Serializable_a188c1d173965b90be0f03b1096ba2604}{Add}} (T \&obj, std\+::string name, bool binary=false)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{structigl_1_1SerializableBase}{igl\+::\+Serializable\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{structigl_1_1SerializableBase_af8a100fdc54b6d75df0ee13d8bcd58ea}{\texorpdfstring{$\sim$}{\string~}\+Serializable\+Base}} ()=default
+\item 
+virtual void \mbox{\hyperlink{structigl_1_1SerializableBase_a099328a98539a13e14333918649fb929}{Serialize}} (std\+::vector$<$ char $>$ \&buffer) const =0
+\item 
+virtual void \mbox{\hyperlink{structigl_1_1SerializableBase_a166b38dd5a48351c6897cdd8b1b1212e}{Deserialize}} (const std\+::vector$<$ char $>$ \&buffer)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classigl_1_1Serializable_a3cb2b4150c6ded707033e62db6dd1254}\label{classigl_1_1Serializable_a3cb2b4150c6ded707033e62db6dd1254} 
+\index{igl::Serializable@{igl::Serializable}!Serializable@{Serializable}}
+\index{Serializable@{Serializable}!igl::Serializable@{igl::Serializable}}
+\doxysubsubsection{\texorpdfstring{Serializable()}{Serializable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily igl\+::\+Serializable\+::\+Serializable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classigl_1_1Serializable_a7de72e44fca2693103fc1c3fd4096bf7}\label{classigl_1_1Serializable_a7de72e44fca2693103fc1c3fd4096bf7} 
+\index{igl::Serializable@{igl::Serializable}!Serializable@{Serializable}}
+\index{Serializable@{Serializable}!igl::Serializable@{igl::Serializable}}
+\doxysubsubsection{\texorpdfstring{Serializable()}{Serializable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily igl\+::\+Serializable\+::\+Serializable (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classigl_1_1Serializable}{Serializable}} \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classigl_1_1Serializable_abf548c0317c99ba76e9923534a1488d4}\label{classigl_1_1Serializable_abf548c0317c99ba76e9923534a1488d4} 
+\index{igl::Serializable@{igl::Serializable}!````~Serializable@{\texorpdfstring{$\sim$}{\string~}Serializable}}
+\index{````~Serializable@{\texorpdfstring{$\sim$}{\string~}Serializable}!igl::Serializable@{igl::Serializable}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Serializable()}{\string~Serializable()}}
+{\footnotesize\ttfamily igl\+::\+Serializable\+::\texorpdfstring{$\sim$}{\string~}\+Serializable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classigl_1_1Serializable_acb033c912f09e2c4fd7db8d4534199cc}\label{classigl_1_1Serializable_acb033c912f09e2c4fd7db8d4534199cc} 
+\index{igl::Serializable@{igl::Serializable}!InitSerialization@{InitSerialization}}
+\index{InitSerialization@{InitSerialization}!igl::Serializable@{igl::Serializable}}
+\doxysubsubsection{\texorpdfstring{InitSerialization()}{InitSerialization()}}
+{\footnotesize\ttfamily virtual void igl\+::\+Serializable\+::\+Init\+Serialization (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\Hypertarget{classigl_1_1Serializable_aa73a685375a251a2c8f9ab9cff88accf}\label{classigl_1_1Serializable_aa73a685375a251a2c8f9ab9cff88accf} 
+\index{igl::Serializable@{igl::Serializable}!PreSerialization@{PreSerialization}}
+\index{PreSerialization@{PreSerialization}!igl::Serializable@{igl::Serializable}}
+\doxysubsubsection{\texorpdfstring{PreSerialization()}{PreSerialization()}}
+{\footnotesize\ttfamily bool igl\+::\+Serializable\+::\+Pre\+Serialization (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classigl_1_1Serializable_a1e46d11958e0d2d478a78cf85dd0a545}\label{classigl_1_1Serializable_a1e46d11958e0d2d478a78cf85dd0a545} 
+\index{igl::Serializable@{igl::Serializable}!PostSerialization@{PostSerialization}}
+\index{PostSerialization@{PostSerialization}!igl::Serializable@{igl::Serializable}}
+\doxysubsubsection{\texorpdfstring{PostSerialization()}{PostSerialization()}}
+{\footnotesize\ttfamily void igl\+::\+Serializable\+::\+Post\+Serialization (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classigl_1_1Serializable_a5b28150e0cceca30b77da33419915be0}\label{classigl_1_1Serializable_a5b28150e0cceca30b77da33419915be0} 
+\index{igl::Serializable@{igl::Serializable}!PreDeserialization@{PreDeserialization}}
+\index{PreDeserialization@{PreDeserialization}!igl::Serializable@{igl::Serializable}}
+\doxysubsubsection{\texorpdfstring{PreDeserialization()}{PreDeserialization()}}
+{\footnotesize\ttfamily bool igl\+::\+Serializable\+::\+Pre\+Deserialization (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classigl_1_1Serializable_aa4bbf886e628a98ace9c7a1147a69245}\label{classigl_1_1Serializable_aa4bbf886e628a98ace9c7a1147a69245} 
+\index{igl::Serializable@{igl::Serializable}!PostDeserialization@{PostDeserialization}}
+\index{PostDeserialization@{PostDeserialization}!igl::Serializable@{igl::Serializable}}
+\doxysubsubsection{\texorpdfstring{PostDeserialization()}{PostDeserialization()}}
+{\footnotesize\ttfamily void igl\+::\+Serializable\+::\+Post\+Deserialization (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classigl_1_1Serializable_a996403a9b5b754ae1b52cc4e76c155ba}\label{classigl_1_1Serializable_a996403a9b5b754ae1b52cc4e76c155ba} 
+\index{igl::Serializable@{igl::Serializable}!Serialize@{Serialize}}
+\index{Serialize@{Serialize}!igl::Serializable@{igl::Serializable}}
+\doxysubsubsection{\texorpdfstring{Serialize()}{Serialize()}}
+{\footnotesize\ttfamily void igl\+::\+Serializable\+::\+Serialize (\begin{DoxyParamCaption}\item[{std\+::vector$<$ char $>$ \&}]{buffer }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{structigl_1_1SerializableBase_a099328a98539a13e14333918649fb929}{igl\+::\+Serializable\+Base}}.
+
+\Hypertarget{classigl_1_1Serializable_a4918c7c9a8246439f7bf7d773e30b19f}\label{classigl_1_1Serializable_a4918c7c9a8246439f7bf7d773e30b19f} 
+\index{igl::Serializable@{igl::Serializable}!Deserialize@{Deserialize}}
+\index{Deserialize@{Deserialize}!igl::Serializable@{igl::Serializable}}
+\doxysubsubsection{\texorpdfstring{Deserialize()}{Deserialize()}}
+{\footnotesize\ttfamily void igl\+::\+Serializable\+::\+Deserialize (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ char $>$ \&}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{structigl_1_1SerializableBase_a166b38dd5a48351c6897cdd8b1b1212e}{igl\+::\+Serializable\+Base}}.
+
+\Hypertarget{classigl_1_1Serializable_ab728b67cff536f7042d16246d0a1fa75}\label{classigl_1_1Serializable_ab728b67cff536f7042d16246d0a1fa75} 
+\index{igl::Serializable@{igl::Serializable}!operator=@{operator=}}
+\index{operator=@{operator=}!igl::Serializable@{igl::Serializable}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1Serializable}{Serializable}} \& igl\+::\+Serializable\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classigl_1_1Serializable}{Serializable}} \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classigl_1_1Serializable_a188c1d173965b90be0f03b1096ba2604}\label{classigl_1_1Serializable_a188c1d173965b90be0f03b1096ba2604} 
+\index{igl::Serializable@{igl::Serializable}!Add@{Add}}
+\index{Add@{Add}!igl::Serializable@{igl::Serializable}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void igl\+::\+Serializable\+::\+Add (\begin{DoxyParamCaption}\item[{T \&}]{obj,  }\item[{std\+::string}]{name,  }\item[{bool}]{binary = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/igl/\mbox{\hyperlink{serialize_8h}{serialize.\+h}}\end{DoxyCompactItemize}

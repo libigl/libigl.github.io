@@ -1,0 +1,309 @@
+\doxysection{igl\+::triangle\+::SCAFData Struct Reference}
+\hypertarget{structigl_1_1triangle_1_1SCAFData}{}\label{structigl_1_1triangle_1_1SCAFData}\index{igl::triangle::SCAFData@{igl::triangle::SCAFData}}
+
+
+Use a similar interface to igl\+::slim Implement ready-\/to-\/use 2D version of the algorithm described in SCAF\+: Simplicial Complex Augmentation Framework for Bijective Maps Zhongshi Jiang, Scott Schaefer, Daniele Panozzo, ACM Trancaction on Graphics (Proc.  
+
+
+
+
+{\ttfamily \#include $<$scaf.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_ae55486f69eed6ae004b5bb6a8c2c6a80}{scaffold\+\_\+factor}} = 10
+\item 
+\mbox{\hyperlink{namespaceigl_a79904ddf7fe8d79169b339cf43f9e739}{igl\+::\+Mapping\+Energy\+Type}} \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a304f1afb39f94bc00a36cb97dc9bed78}{scaf\+\_\+energy}} = \mbox{\hyperlink{namespaceigl_a79904ddf7fe8d79169b339cf43f9e739a4aaaa0e435526b23bf5f26cfbb5c03b9}{igl\+::\+Mapping\+Energy\+Type\+::\+SYMMETRIC\+\_\+\+DIRICHLET}}
+\item 
+\mbox{\hyperlink{namespaceigl_a79904ddf7fe8d79169b339cf43f9e739}{igl\+::\+Mapping\+Energy\+Type}} \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_ae2eea844f25355115c7cd849bdda82ba}{slim\+\_\+energy}} = \mbox{\hyperlink{namespaceigl_a79904ddf7fe8d79169b339cf43f9e739a4aaaa0e435526b23bf5f26cfbb5c03b9}{igl\+::\+Mapping\+Energy\+Type\+::\+SYMMETRIC\+\_\+\+DIRICHLET}}
+\item 
+int \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a1c10494c9e1cbd014a2048dc72d11606}{dim}} = 2
+\item 
+double total\+\_\+energy double energy long \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_ad58afa3423af92e61b1924e94616054d}{mv\+\_\+num}} = 0
+\begin{DoxyCompactList}\small\item\em scaffold + isometric \end{DoxyCompactList}\item 
+double total\+\_\+energy double energy long \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a641680698597ffa20bca1e59da6b2e22}{mf\+\_\+num}} = 0
+\item 
+long \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a18067c1443737be1f417e90d1fe9e584}{sv\+\_\+num}} = 0
+\item 
+long \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a94f840ed8e0c2770c6c13a961b1581d0}{sf\+\_\+num}} = 0
+\item 
+long \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_ae7c53fecd100a4f6a6a613ad9e50571d}{v\+\_\+num}} \{\}
+\item 
+long \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_afd7fd9fd772acf1dfcadc62b0d1062cb}{f\+\_\+num}} = 0
+\item 
+Eigen\+::\+Matrix\+Xd m\+\_\+V Eigen\+::\+Matrix\+Xi m\+\_\+T Eigen\+::\+Matrix\+Xd w\+\_\+uv Eigen\+::\+Matrix\+Xi s\+\_\+T Eigen\+::\+Matrix\+Xi \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a3b8bb93e723b86a149253bd4bd711f0c}{w\+\_\+T}}
+\begin{DoxyCompactList}\small\item\em input initial mesh V \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xd m\+\_\+M Eigen\+::\+Vector\+Xd s\+\_\+M Eigen\+::\+Vector\+Xd w\+\_\+M double \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a2b918b3f73fccad2c82f19f47cb5a1c7}{mesh\+\_\+measure}}
+\begin{DoxyCompactList}\small\item\em mesh area or volume \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xi \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a89eded4c8e02d72fcf4bf709d1ca1e50}{frame\+\_\+ids}}
+\item 
+Eigen\+::\+Vector\+Xi \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a43a2e4167862852f80d8995e03ae6735}{fixed\+\_\+ids}}
+\item 
+std\+::map$<$ int, Eigen\+::\+Row\+Vector\+Xd $>$ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a82d05775cd272b601dc4047b46c7cc0e}{soft\+\_\+cons}}
+\item 
+double \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a7b4a8d9033915ba3b43f8b5c32ea1a82}{soft\+\_\+const\+\_\+p}} = 1e4
+\item 
+Eigen\+::\+Vector\+Xi \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a1b0b4e5567b0a6198c6a18a780962ef0}{internal\+\_\+bnd}}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a6726b2197b2d3a43bee132283368072c}{rect\+\_\+frame\+\_\+V}}
+\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_aece56e17f013e86d81dc71811599ad72}{component\+\_\+sizes}}
+\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_afaa1f1cac309e768f6d4d3799a15917f}{bnd\+\_\+sizes}}
+\item 
+bool \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a21d4d24a897514e86695a576d93d0f3f}{has\+\_\+pre\+\_\+calc}} = false
+\item 
+Eigen\+::\+Sparse\+Matrix$<$ double $>$ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a797666a3929fade8b470b44ece23f9f7}{Dx\+\_\+s}}
+\item 
+Eigen\+::\+Sparse\+Matrix$<$ double $>$ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a3890226c79693ee7c38242ca4cd27686}{Dy\+\_\+s}}
+\item 
+Eigen\+::\+Sparse\+Matrix$<$ double $>$ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a2800ae8d895f0200886e4a335aa3595a}{Dz\+\_\+s}}
+\item 
+Eigen\+::\+Sparse\+Matrix$<$ double $>$ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a12345ba334fa5c334f5d749af4fab1da}{Dx\+\_\+m}}
+\item 
+Eigen\+::\+Sparse\+Matrix$<$ double $>$ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_acef1d284e84103d24bed31fcdbef1660}{Dy\+\_\+m}}
+\item 
+Eigen\+::\+Sparse\+Matrix$<$ double $>$ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a65e5ef088aad19693b8c09e422510ace}{Dz\+\_\+m}}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a4d28a9a123b5114df60b0ca04a35b20e}{Ri\+\_\+m}}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a847b13c32a55c9798d7a367a878f556a}{Ji\+\_\+m}}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a1ca1c06f6009ef8b6bb690f28e87404b}{Ri\+\_\+s}}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a089b0c8f6cfbf73f14554e09ef4db86d}{Ji\+\_\+s}}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a872fb66ab30d5b7ce69f7220985638c5}{W\+\_\+m}}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a72c7b07052ed5caf92b567a67da42050}{W\+\_\+s}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Use a similar interface to igl\+::slim Implement ready-\/to-\/use 2D version of the algorithm described in SCAF\+: Simplicial Complex Augmentation Framework for Bijective Maps Zhongshi Jiang, Scott Schaefer, Daniele Panozzo, ACM Trancaction on Graphics (Proc. 
+
+SIGGRAPH Asia 2017) For a complete implementation and customized UI, please refer to \href{https://github.com/jiangzhongshi/scaffold-map}{\texttt{ https\+://github.\+com/jiangzhongshi/scaffold-\/map}} 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structigl_1_1triangle_1_1SCAFData_ae55486f69eed6ae004b5bb6a8c2c6a80}\label{structigl_1_1triangle_1_1SCAFData_ae55486f69eed6ae004b5bb6a8c2c6a80} 
+\index{igl::triangle::SCAFData@{igl::triangle::SCAFData}!scaffold\_factor@{scaffold\_factor}}
+\index{scaffold\_factor@{scaffold\_factor}!igl::triangle::SCAFData@{igl::triangle::SCAFData}}
+\doxysubsubsection{\texorpdfstring{scaffold\_factor}{scaffold\_factor}}
+{\footnotesize\ttfamily double igl\+::triangle\+::\+SCAFData\+::scaffold\+\_\+factor = 10}
+
+\Hypertarget{structigl_1_1triangle_1_1SCAFData_a304f1afb39f94bc00a36cb97dc9bed78}\label{structigl_1_1triangle_1_1SCAFData_a304f1afb39f94bc00a36cb97dc9bed78} 
+\index{igl::triangle::SCAFData@{igl::triangle::SCAFData}!scaf\_energy@{scaf\_energy}}
+\index{scaf\_energy@{scaf\_energy}!igl::triangle::SCAFData@{igl::triangle::SCAFData}}
+\doxysubsubsection{\texorpdfstring{scaf\_energy}{scaf\_energy}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceigl_a79904ddf7fe8d79169b339cf43f9e739}{igl\+::\+Mapping\+Energy\+Type}} igl\+::triangle\+::\+SCAFData\+::scaf\+\_\+energy = \mbox{\hyperlink{namespaceigl_a79904ddf7fe8d79169b339cf43f9e739a4aaaa0e435526b23bf5f26cfbb5c03b9}{igl\+::\+Mapping\+Energy\+Type\+::\+SYMMETRIC\+\_\+\+DIRICHLET}}}
+
+\Hypertarget{structigl_1_1triangle_1_1SCAFData_ae2eea844f25355115c7cd849bdda82ba}\label{structigl_1_1triangle_1_1SCAFData_ae2eea844f25355115c7cd849bdda82ba} 
+\index{igl::triangle::SCAFData@{igl::triangle::SCAFData}!slim\_energy@{slim\_energy}}
+\index{slim\_energy@{slim\_energy}!igl::triangle::SCAFData@{igl::triangle::SCAFData}}
+\doxysubsubsection{\texorpdfstring{slim\_energy}{slim\_energy}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceigl_a79904ddf7fe8d79169b339cf43f9e739}{igl\+::\+Mapping\+Energy\+Type}} igl\+::triangle\+::\+SCAFData\+::slim\+\_\+energy = \mbox{\hyperlink{namespaceigl_a79904ddf7fe8d79169b339cf43f9e739a4aaaa0e435526b23bf5f26cfbb5c03b9}{igl\+::\+Mapping\+Energy\+Type\+::\+SYMMETRIC\+\_\+\+DIRICHLET}}}
+
+\Hypertarget{structigl_1_1triangle_1_1SCAFData_a1c10494c9e1cbd014a2048dc72d11606}\label{structigl_1_1triangle_1_1SCAFData_a1c10494c9e1cbd014a2048dc72d11606} 
+\index{igl::triangle::SCAFData@{igl::triangle::SCAFData}!dim@{dim}}
+\index{dim@{dim}!igl::triangle::SCAFData@{igl::triangle::SCAFData}}
+\doxysubsubsection{\texorpdfstring{dim}{dim}}
+{\footnotesize\ttfamily int igl\+::triangle\+::\+SCAFData\+::dim = 2}
+
+\Hypertarget{structigl_1_1triangle_1_1SCAFData_ad58afa3423af92e61b1924e94616054d}\label{structigl_1_1triangle_1_1SCAFData_ad58afa3423af92e61b1924e94616054d} 
+\index{igl::triangle::SCAFData@{igl::triangle::SCAFData}!mv\_num@{mv\_num}}
+\index{mv\_num@{mv\_num}!igl::triangle::SCAFData@{igl::triangle::SCAFData}}
+\doxysubsubsection{\texorpdfstring{mv\_num}{mv\_num}}
+{\footnotesize\ttfamily double total\+\_\+energy double energy long igl\+::triangle\+::\+SCAFData\+::mv\+\_\+num = 0}
+
+
+
+scaffold + isometric 
+
+objective value \Hypertarget{structigl_1_1triangle_1_1SCAFData_a641680698597ffa20bca1e59da6b2e22}\label{structigl_1_1triangle_1_1SCAFData_a641680698597ffa20bca1e59da6b2e22} 
+\index{igl::triangle::SCAFData@{igl::triangle::SCAFData}!mf\_num@{mf\_num}}
+\index{mf\_num@{mf\_num}!igl::triangle::SCAFData@{igl::triangle::SCAFData}}
+\doxysubsubsection{\texorpdfstring{mf\_num}{mf\_num}}
+{\footnotesize\ttfamily double total\+\_\+energy double energy long igl\+::triangle\+::\+SCAFData\+::mf\+\_\+num = 0}
+
+\Hypertarget{structigl_1_1triangle_1_1SCAFData_a18067c1443737be1f417e90d1fe9e584}\label{structigl_1_1triangle_1_1SCAFData_a18067c1443737be1f417e90d1fe9e584} 
+\index{igl::triangle::SCAFData@{igl::triangle::SCAFData}!sv\_num@{sv\_num}}
+\index{sv\_num@{sv\_num}!igl::triangle::SCAFData@{igl::triangle::SCAFData}}
+\doxysubsubsection{\texorpdfstring{sv\_num}{sv\_num}}
+{\footnotesize\ttfamily long igl\+::triangle\+::\+SCAFData\+::sv\+\_\+num = 0}
+
+\Hypertarget{structigl_1_1triangle_1_1SCAFData_a94f840ed8e0c2770c6c13a961b1581d0}\label{structigl_1_1triangle_1_1SCAFData_a94f840ed8e0c2770c6c13a961b1581d0} 
+\index{igl::triangle::SCAFData@{igl::triangle::SCAFData}!sf\_num@{sf\_num}}
+\index{sf\_num@{sf\_num}!igl::triangle::SCAFData@{igl::triangle::SCAFData}}
+\doxysubsubsection{\texorpdfstring{sf\_num}{sf\_num}}
+{\footnotesize\ttfamily long igl\+::triangle\+::\+SCAFData\+::sf\+\_\+num = 0}
+
+\Hypertarget{structigl_1_1triangle_1_1SCAFData_ae7c53fecd100a4f6a6a613ad9e50571d}\label{structigl_1_1triangle_1_1SCAFData_ae7c53fecd100a4f6a6a613ad9e50571d} 
+\index{igl::triangle::SCAFData@{igl::triangle::SCAFData}!v\_num@{v\_num}}
+\index{v\_num@{v\_num}!igl::triangle::SCAFData@{igl::triangle::SCAFData}}
+\doxysubsubsection{\texorpdfstring{v\_num}{v\_num}}
+{\footnotesize\ttfamily long igl\+::triangle\+::\+SCAFData\+::v\+\_\+num \{\}}
+
+\Hypertarget{structigl_1_1triangle_1_1SCAFData_afd7fd9fd772acf1dfcadc62b0d1062cb}\label{structigl_1_1triangle_1_1SCAFData_afd7fd9fd772acf1dfcadc62b0d1062cb} 
+\index{igl::triangle::SCAFData@{igl::triangle::SCAFData}!f\_num@{f\_num}}
+\index{f\_num@{f\_num}!igl::triangle::SCAFData@{igl::triangle::SCAFData}}
+\doxysubsubsection{\texorpdfstring{f\_num}{f\_num}}
+{\footnotesize\ttfamily long igl\+::triangle\+::\+SCAFData\+::f\+\_\+num = 0}
+
+\Hypertarget{structigl_1_1triangle_1_1SCAFData_a3b8bb93e723b86a149253bd4bd711f0c}\label{structigl_1_1triangle_1_1SCAFData_a3b8bb93e723b86a149253bd4bd711f0c} 
+\index{igl::triangle::SCAFData@{igl::triangle::SCAFData}!w\_T@{w\_T}}
+\index{w\_T@{w\_T}!igl::triangle::SCAFData@{igl::triangle::SCAFData}}
+\doxysubsubsection{\texorpdfstring{w\_T}{w\_T}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd m\+\_\+V Eigen\+::\+Matrix\+Xi m\+\_\+T Eigen\+::\+Matrix\+Xd w\+\_\+uv Eigen\+::\+Matrix\+Xi s\+\_\+T Eigen\+::\+Matrix\+Xi igl\+::triangle\+::\+SCAFData\+::w\+\_\+T}
+
+
+
+input initial mesh V 
+
+input initial mesh F/T whole domain uv\+: mesh + free vertices scaffold domain tets\+: scaffold tets \Hypertarget{structigl_1_1triangle_1_1SCAFData_a2b918b3f73fccad2c82f19f47cb5a1c7}\label{structigl_1_1triangle_1_1SCAFData_a2b918b3f73fccad2c82f19f47cb5a1c7} 
+\index{igl::triangle::SCAFData@{igl::triangle::SCAFData}!mesh\_measure@{mesh\_measure}}
+\index{mesh\_measure@{mesh\_measure}!igl::triangle::SCAFData@{igl::triangle::SCAFData}}
+\doxysubsubsection{\texorpdfstring{mesh\_measure}{mesh\_measure}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd m\+\_\+M Eigen\+::\+Vector\+Xd s\+\_\+M Eigen\+::\+Vector\+Xd w\+\_\+M double igl\+::triangle\+::\+SCAFData\+::mesh\+\_\+measure}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ 0}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keywordtype}{double}\ proximal\_p\ =\ 0}
+
+\end{DoxyCode}
+
+
+mesh area or volume 
+
+scaffold area or volume area/volume weights for whole area or volume \Hypertarget{structigl_1_1triangle_1_1SCAFData_a89eded4c8e02d72fcf4bf709d1ca1e50}\label{structigl_1_1triangle_1_1SCAFData_a89eded4c8e02d72fcf4bf709d1ca1e50} 
+\index{igl::triangle::SCAFData@{igl::triangle::SCAFData}!frame\_ids@{frame\_ids}}
+\index{frame\_ids@{frame\_ids}!igl::triangle::SCAFData@{igl::triangle::SCAFData}}
+\doxysubsubsection{\texorpdfstring{frame\_ids}{frame\_ids}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xi igl\+::triangle\+::\+SCAFData\+::frame\+\_\+ids}
+
+\Hypertarget{structigl_1_1triangle_1_1SCAFData_a43a2e4167862852f80d8995e03ae6735}\label{structigl_1_1triangle_1_1SCAFData_a43a2e4167862852f80d8995e03ae6735} 
+\index{igl::triangle::SCAFData@{igl::triangle::SCAFData}!fixed\_ids@{fixed\_ids}}
+\index{fixed\_ids@{fixed\_ids}!igl::triangle::SCAFData@{igl::triangle::SCAFData}}
+\doxysubsubsection{\texorpdfstring{fixed\_ids}{fixed\_ids}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xi igl\+::triangle\+::\+SCAFData\+::fixed\+\_\+ids}
+
+\Hypertarget{structigl_1_1triangle_1_1SCAFData_a82d05775cd272b601dc4047b46c7cc0e}\label{structigl_1_1triangle_1_1SCAFData_a82d05775cd272b601dc4047b46c7cc0e} 
+\index{igl::triangle::SCAFData@{igl::triangle::SCAFData}!soft\_cons@{soft\_cons}}
+\index{soft\_cons@{soft\_cons}!igl::triangle::SCAFData@{igl::triangle::SCAFData}}
+\doxysubsubsection{\texorpdfstring{soft\_cons}{soft\_cons}}
+{\footnotesize\ttfamily std\+::map$<$int, Eigen\+::\+Row\+Vector\+Xd$>$ igl\+::triangle\+::\+SCAFData\+::soft\+\_\+cons}
+
+\Hypertarget{structigl_1_1triangle_1_1SCAFData_a7b4a8d9033915ba3b43f8b5c32ea1a82}\label{structigl_1_1triangle_1_1SCAFData_a7b4a8d9033915ba3b43f8b5c32ea1a82} 
+\index{igl::triangle::SCAFData@{igl::triangle::SCAFData}!soft\_const\_p@{soft\_const\_p}}
+\index{soft\_const\_p@{soft\_const\_p}!igl::triangle::SCAFData@{igl::triangle::SCAFData}}
+\doxysubsubsection{\texorpdfstring{soft\_const\_p}{soft\_const\_p}}
+{\footnotesize\ttfamily double igl\+::triangle\+::\+SCAFData\+::soft\+\_\+const\+\_\+p = 1e4}
+
+\Hypertarget{structigl_1_1triangle_1_1SCAFData_a1b0b4e5567b0a6198c6a18a780962ef0}\label{structigl_1_1triangle_1_1SCAFData_a1b0b4e5567b0a6198c6a18a780962ef0} 
+\index{igl::triangle::SCAFData@{igl::triangle::SCAFData}!internal\_bnd@{internal\_bnd}}
+\index{internal\_bnd@{internal\_bnd}!igl::triangle::SCAFData@{igl::triangle::SCAFData}}
+\doxysubsubsection{\texorpdfstring{internal\_bnd}{internal\_bnd}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xi igl\+::triangle\+::\+SCAFData\+::internal\+\_\+bnd}
+
+\Hypertarget{structigl_1_1triangle_1_1SCAFData_a6726b2197b2d3a43bee132283368072c}\label{structigl_1_1triangle_1_1SCAFData_a6726b2197b2d3a43bee132283368072c} 
+\index{igl::triangle::SCAFData@{igl::triangle::SCAFData}!rect\_frame\_V@{rect\_frame\_V}}
+\index{rect\_frame\_V@{rect\_frame\_V}!igl::triangle::SCAFData@{igl::triangle::SCAFData}}
+\doxysubsubsection{\texorpdfstring{rect\_frame\_V}{rect\_frame\_V}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd igl\+::triangle\+::\+SCAFData\+::rect\+\_\+frame\+\_\+V}
+
+\Hypertarget{structigl_1_1triangle_1_1SCAFData_aece56e17f013e86d81dc71811599ad72}\label{structigl_1_1triangle_1_1SCAFData_aece56e17f013e86d81dc71811599ad72} 
+\index{igl::triangle::SCAFData@{igl::triangle::SCAFData}!component\_sizes@{component\_sizes}}
+\index{component\_sizes@{component\_sizes}!igl::triangle::SCAFData@{igl::triangle::SCAFData}}
+\doxysubsubsection{\texorpdfstring{component\_sizes}{component\_sizes}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ igl\+::triangle\+::\+SCAFData\+::component\+\_\+sizes}
+
+\Hypertarget{structigl_1_1triangle_1_1SCAFData_afaa1f1cac309e768f6d4d3799a15917f}\label{structigl_1_1triangle_1_1SCAFData_afaa1f1cac309e768f6d4d3799a15917f} 
+\index{igl::triangle::SCAFData@{igl::triangle::SCAFData}!bnd\_sizes@{bnd\_sizes}}
+\index{bnd\_sizes@{bnd\_sizes}!igl::triangle::SCAFData@{igl::triangle::SCAFData}}
+\doxysubsubsection{\texorpdfstring{bnd\_sizes}{bnd\_sizes}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ igl\+::triangle\+::\+SCAFData\+::bnd\+\_\+sizes}
+
+\Hypertarget{structigl_1_1triangle_1_1SCAFData_a21d4d24a897514e86695a576d93d0f3f}\label{structigl_1_1triangle_1_1SCAFData_a21d4d24a897514e86695a576d93d0f3f} 
+\index{igl::triangle::SCAFData@{igl::triangle::SCAFData}!has\_pre\_calc@{has\_pre\_calc}}
+\index{has\_pre\_calc@{has\_pre\_calc}!igl::triangle::SCAFData@{igl::triangle::SCAFData}}
+\doxysubsubsection{\texorpdfstring{has\_pre\_calc}{has\_pre\_calc}}
+{\footnotesize\ttfamily bool igl\+::triangle\+::\+SCAFData\+::has\+\_\+pre\+\_\+calc = false}
+
+\Hypertarget{structigl_1_1triangle_1_1SCAFData_a797666a3929fade8b470b44ece23f9f7}\label{structigl_1_1triangle_1_1SCAFData_a797666a3929fade8b470b44ece23f9f7} 
+\index{igl::triangle::SCAFData@{igl::triangle::SCAFData}!Dx\_s@{Dx\_s}}
+\index{Dx\_s@{Dx\_s}!igl::triangle::SCAFData@{igl::triangle::SCAFData}}
+\doxysubsubsection{\texorpdfstring{Dx\_s}{Dx\_s}}
+{\footnotesize\ttfamily Eigen\+::\+Sparse\+Matrix$<$double$>$ igl\+::triangle\+::\+SCAFData\+::\+Dx\+\_\+s}
+
+\Hypertarget{structigl_1_1triangle_1_1SCAFData_a3890226c79693ee7c38242ca4cd27686}\label{structigl_1_1triangle_1_1SCAFData_a3890226c79693ee7c38242ca4cd27686} 
+\index{igl::triangle::SCAFData@{igl::triangle::SCAFData}!Dy\_s@{Dy\_s}}
+\index{Dy\_s@{Dy\_s}!igl::triangle::SCAFData@{igl::triangle::SCAFData}}
+\doxysubsubsection{\texorpdfstring{Dy\_s}{Dy\_s}}
+{\footnotesize\ttfamily Eigen\+::\+Sparse\+Matrix$<$double$>$ igl\+::triangle\+::\+SCAFData\+::\+Dy\+\_\+s}
+
+\Hypertarget{structigl_1_1triangle_1_1SCAFData_a2800ae8d895f0200886e4a335aa3595a}\label{structigl_1_1triangle_1_1SCAFData_a2800ae8d895f0200886e4a335aa3595a} 
+\index{igl::triangle::SCAFData@{igl::triangle::SCAFData}!Dz\_s@{Dz\_s}}
+\index{Dz\_s@{Dz\_s}!igl::triangle::SCAFData@{igl::triangle::SCAFData}}
+\doxysubsubsection{\texorpdfstring{Dz\_s}{Dz\_s}}
+{\footnotesize\ttfamily Eigen\+::\+Sparse\+Matrix$<$double$>$ igl\+::triangle\+::\+SCAFData\+::\+Dz\+\_\+s}
+
+\Hypertarget{structigl_1_1triangle_1_1SCAFData_a12345ba334fa5c334f5d749af4fab1da}\label{structigl_1_1triangle_1_1SCAFData_a12345ba334fa5c334f5d749af4fab1da} 
+\index{igl::triangle::SCAFData@{igl::triangle::SCAFData}!Dx\_m@{Dx\_m}}
+\index{Dx\_m@{Dx\_m}!igl::triangle::SCAFData@{igl::triangle::SCAFData}}
+\doxysubsubsection{\texorpdfstring{Dx\_m}{Dx\_m}}
+{\footnotesize\ttfamily Eigen\+::\+Sparse\+Matrix$<$double$>$ igl\+::triangle\+::\+SCAFData\+::\+Dx\+\_\+m}
+
+\Hypertarget{structigl_1_1triangle_1_1SCAFData_acef1d284e84103d24bed31fcdbef1660}\label{structigl_1_1triangle_1_1SCAFData_acef1d284e84103d24bed31fcdbef1660} 
+\index{igl::triangle::SCAFData@{igl::triangle::SCAFData}!Dy\_m@{Dy\_m}}
+\index{Dy\_m@{Dy\_m}!igl::triangle::SCAFData@{igl::triangle::SCAFData}}
+\doxysubsubsection{\texorpdfstring{Dy\_m}{Dy\_m}}
+{\footnotesize\ttfamily Eigen\+::\+Sparse\+Matrix$<$double$>$ igl\+::triangle\+::\+SCAFData\+::\+Dy\+\_\+m}
+
+\Hypertarget{structigl_1_1triangle_1_1SCAFData_a65e5ef088aad19693b8c09e422510ace}\label{structigl_1_1triangle_1_1SCAFData_a65e5ef088aad19693b8c09e422510ace} 
+\index{igl::triangle::SCAFData@{igl::triangle::SCAFData}!Dz\_m@{Dz\_m}}
+\index{Dz\_m@{Dz\_m}!igl::triangle::SCAFData@{igl::triangle::SCAFData}}
+\doxysubsubsection{\texorpdfstring{Dz\_m}{Dz\_m}}
+{\footnotesize\ttfamily Eigen\+::\+Sparse\+Matrix$<$double$>$ igl\+::triangle\+::\+SCAFData\+::\+Dz\+\_\+m}
+
+\Hypertarget{structigl_1_1triangle_1_1SCAFData_a4d28a9a123b5114df60b0ca04a35b20e}\label{structigl_1_1triangle_1_1SCAFData_a4d28a9a123b5114df60b0ca04a35b20e} 
+\index{igl::triangle::SCAFData@{igl::triangle::SCAFData}!Ri\_m@{Ri\_m}}
+\index{Ri\_m@{Ri\_m}!igl::triangle::SCAFData@{igl::triangle::SCAFData}}
+\doxysubsubsection{\texorpdfstring{Ri\_m}{Ri\_m}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd igl\+::triangle\+::\+SCAFData\+::\+Ri\+\_\+m}
+
+\Hypertarget{structigl_1_1triangle_1_1SCAFData_a847b13c32a55c9798d7a367a878f556a}\label{structigl_1_1triangle_1_1SCAFData_a847b13c32a55c9798d7a367a878f556a} 
+\index{igl::triangle::SCAFData@{igl::triangle::SCAFData}!Ji\_m@{Ji\_m}}
+\index{Ji\_m@{Ji\_m}!igl::triangle::SCAFData@{igl::triangle::SCAFData}}
+\doxysubsubsection{\texorpdfstring{Ji\_m}{Ji\_m}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd igl\+::triangle\+::\+SCAFData\+::\+Ji\+\_\+m}
+
+\Hypertarget{structigl_1_1triangle_1_1SCAFData_a1ca1c06f6009ef8b6bb690f28e87404b}\label{structigl_1_1triangle_1_1SCAFData_a1ca1c06f6009ef8b6bb690f28e87404b} 
+\index{igl::triangle::SCAFData@{igl::triangle::SCAFData}!Ri\_s@{Ri\_s}}
+\index{Ri\_s@{Ri\_s}!igl::triangle::SCAFData@{igl::triangle::SCAFData}}
+\doxysubsubsection{\texorpdfstring{Ri\_s}{Ri\_s}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd igl\+::triangle\+::\+SCAFData\+::\+Ri\+\_\+s}
+
+\Hypertarget{structigl_1_1triangle_1_1SCAFData_a089b0c8f6cfbf73f14554e09ef4db86d}\label{structigl_1_1triangle_1_1SCAFData_a089b0c8f6cfbf73f14554e09ef4db86d} 
+\index{igl::triangle::SCAFData@{igl::triangle::SCAFData}!Ji\_s@{Ji\_s}}
+\index{Ji\_s@{Ji\_s}!igl::triangle::SCAFData@{igl::triangle::SCAFData}}
+\doxysubsubsection{\texorpdfstring{Ji\_s}{Ji\_s}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd igl\+::triangle\+::\+SCAFData\+::\+Ji\+\_\+s}
+
+\Hypertarget{structigl_1_1triangle_1_1SCAFData_a872fb66ab30d5b7ce69f7220985638c5}\label{structigl_1_1triangle_1_1SCAFData_a872fb66ab30d5b7ce69f7220985638c5} 
+\index{igl::triangle::SCAFData@{igl::triangle::SCAFData}!W\_m@{W\_m}}
+\index{W\_m@{W\_m}!igl::triangle::SCAFData@{igl::triangle::SCAFData}}
+\doxysubsubsection{\texorpdfstring{W\_m}{W\_m}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd igl\+::triangle\+::\+SCAFData\+::\+W\+\_\+m}
+
+\Hypertarget{structigl_1_1triangle_1_1SCAFData_a72c7b07052ed5caf92b567a67da42050}\label{structigl_1_1triangle_1_1SCAFData_a72c7b07052ed5caf92b567a67da42050} 
+\index{igl::triangle::SCAFData@{igl::triangle::SCAFData}!W\_s@{W\_s}}
+\index{W\_s@{W\_s}!igl::triangle::SCAFData@{igl::triangle::SCAFData}}
+\doxysubsubsection{\texorpdfstring{W\_s}{W\_s}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd igl\+::triangle\+::\+SCAFData\+::\+W\+\_\+s}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/igl/triangle/\mbox{\hyperlink{scaf_8h}{scaf.\+h}}\end{DoxyCompactItemize}

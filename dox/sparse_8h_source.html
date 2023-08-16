@@ -109,7 +109,7 @@ $(document).ready(function(){initNavTree('sparse_8h_source.html',''); initResiza
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// obtain one at http://mozilla.org/MPL/2.0/.</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef IGL_SPARSE_H</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define IGL_SPARSE_H</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;igl_inline.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="igl__inline_8h.html">igl_inline.h</a>&quot;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="sparse_8h.html#aa93624b0b2836d2510e8c92ae951d817">   11</a></span><span class="preprocessor">#define EIGEN_YES_I_KNOW_SPARSE_MODULE_IS_NOT_STABLE_YET</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;Eigen/Dense&gt;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;Eigen/Sparse&gt;</span></div>
@@ -120,7 +120,7 @@ $(document).ready(function(){initNavTree('sparse_8h_source.html',''); initResiza
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">class </span>IndexVectorJ, </div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">class </span>ValueVector, </div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="namespaceigl.html#aa0031015feb34d6398264ceac841bc0c">   38</a></span>  IGL_INLINE <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#aa0031015feb34d6398264ceac841bc0c">sparse</a>(</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="namespaceigl.html#aa0031015feb34d6398264ceac841bc0c">   38</a></span>  <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#aa0031015feb34d6398264ceac841bc0c">sparse</a>(</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">const</span> IndexVectorI &amp; I,</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keyword">const</span> IndexVectorJ &amp; J,</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">const</span> ValueVector &amp; V,</div>
@@ -128,17 +128,17 @@ $(document).ready(function(){initNavTree('sparse_8h_source.html',''); initResiza
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keyword">const</span> <span class="keywordtype">size_t</span> n,</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    Eigen::SparseMatrix&lt;T&gt;&amp; X);</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> IndexVector, <span class="keyword">class</span> ValueVector, <span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="namespaceigl.html#a55e6cc04971d8a30de15d18272221aa9">   47</a></span>  IGL_INLINE <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#aa0031015feb34d6398264ceac841bc0c">sparse</a>(</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="namespaceigl.html#a55e6cc04971d8a30de15d18272221aa9">   47</a></span>  <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#aa0031015feb34d6398264ceac841bc0c">sparse</a>(</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keyword">const</span> IndexVector &amp; I,</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keyword">const</span> IndexVector &amp; J,</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keyword">const</span> ValueVector &amp; V,</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    Eigen::SparseMatrix&lt;T&gt;&amp; X);</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> DerivedD, <span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="namespaceigl.html#a1af79e7e819b442592de8d5db2e5829c">   60</a></span>  IGL_INLINE <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#aa0031015feb34d6398264ceac841bc0c">sparse</a>(</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="namespaceigl.html#a1af79e7e819b442592de8d5db2e5829c">   60</a></span>  <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#aa0031015feb34d6398264ceac841bc0c">sparse</a>(</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keyword">const</span> Eigen::PlainObjectBase&lt;DerivedD&gt;&amp; D,</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    Eigen::SparseMatrix&lt;T&gt;&amp; X);</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> DerivedD&gt;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="namespaceigl.html#aee96f9beefd8dd12066e82a32b314855">   65</a></span>  IGL_INLINE Eigen::SparseMatrix&lt;typename DerivedD::Scalar &gt; <a class="code hl_function" href="namespaceigl.html#aa0031015feb34d6398264ceac841bc0c">sparse</a>(</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="namespaceigl.html#aee96f9beefd8dd12066e82a32b314855">   65</a></span>  <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> Eigen::SparseMatrix&lt;typename DerivedD::Scalar &gt; <a class="code hl_function" href="namespaceigl.html#aa0031015feb34d6398264ceac841bc0c">sparse</a>(</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keyword">const</span> Eigen::PlainObjectBase&lt;DerivedD&gt;&amp; D);</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>}</div>
@@ -148,7 +148,9 @@ $(document).ready(function(){initNavTree('sparse_8h_source.html',''); initResiza
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="anamespaceigl_html"><div class="ttname"><a href="namespaceigl.html">igl</a></div><div class="ttdoc">Fake halfedge for fast and easy navigation on triangle meshes with vertex_triangle_adjacency and tria...</div><div class="ttdef"><b>Definition</b> AABB.h:17</div></div>
+<div class="ttc" id="aigl__inline_8h_html"><div class="ttname"><a href="igl__inline_8h.html">igl_inline.h</a></div></div>
+<div class="ttc" id="aigl__inline_8h_html_a838241279013352686271b4c4ce1f708"><div class="ttname"><a href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a></div><div class="ttdeci">#define IGL_INLINE</div><div class="ttdef"><b>Definition</b> igl_inline.h:15</div></div>
+<div class="ttc" id="anamespaceigl_html"><div class="ttname"><a href="namespaceigl.html">igl</a></div><div class="ttdef"><b>Definition</b> AABB.h:17</div></div>
 <div class="ttc" id="anamespaceigl_html_aa0031015feb34d6398264ceac841bc0c"><div class="ttname"><a href="namespaceigl.html#aa0031015feb34d6398264ceac841bc0c">igl::sparse</a></div><div class="ttdeci">void sparse(const IndexVectorI &amp;I, const IndexVectorJ &amp;J, const ValueVector &amp;V, const size_t m, const size_t n, Eigen::SparseMatrix&lt; T &gt; &amp;X)</div><div class="ttdoc">Build a sparse matrix from list of indices and values (I,J,V), functions like the sparse function in ...</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

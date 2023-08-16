@@ -109,14 +109,14 @@ $(document).ready(function(){initNavTree('is__edge__manifold_8h_source.html','')
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// obtain one at http://mozilla.org/MPL/2.0/.</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef IGL_IS_EDGE_MANIFOLD_H</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define IGL_IS_EDGE_MANIFOLD_H</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;igl_inline.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="igl__inline_8h.html">igl_inline.h</a>&quot;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;Eigen/Core&gt;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceigl.html">igl</a> </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>{</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> DerivedF&gt;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="namespaceigl.html#ab086008065bab7abde580f8bdea5d156">   24</a></span>  IGL_INLINE <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceigl.html#ab086008065bab7abde580f8bdea5d156">is_edge_manifold</a>(</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="namespaceigl.html#ab086008065bab7abde580f8bdea5d156">   24</a></span>  <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceigl.html#ab086008065bab7abde580f8bdea5d156">is_edge_manifold</a>(</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">const</span> Eigen::MatrixBase&lt;DerivedF&gt;&amp; F);</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keyword">template</span> &lt;</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">typename</span> DerivedF, </div>
@@ -124,7 +124,7 @@ $(document).ready(function(){initNavTree('is__edge__manifold_8h_source.html','')
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">typename</span> DerivedE,</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">typename</span> DerivedEMAP,</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">typename</span> DerivedBE&gt;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="namespaceigl.html#a7d04d883ce83ec8376b7eb4f22db6f03">   40</a></span>  IGL_INLINE <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceigl.html#ab086008065bab7abde580f8bdea5d156">is_edge_manifold</a>(</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="namespaceigl.html#a7d04d883ce83ec8376b7eb4f22db6f03">   40</a></span>  <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceigl.html#ab086008065bab7abde580f8bdea5d156">is_edge_manifold</a>(</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">const</span> Eigen::MatrixBase&lt;DerivedF&gt;&amp; F,</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    Eigen::PlainObjectBase&lt;DerivedBF&gt;&amp; BF,</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    Eigen::PlainObjectBase&lt;DerivedE&gt;&amp; E,</div>
@@ -135,7 +135,7 @@ $(document).ready(function(){initNavTree('is__edge__manifold_8h_source.html','')
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keyword">typename</span> DerivedEMAP,</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keyword">typename</span> DerivedBF,</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keyword">typename</span> DerivedBE&gt;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="namespaceigl.html#a1bd5dfc80e3180cb9f8cfbeb0049c2b5">   52</a></span>  IGL_INLINE <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceigl.html#ab086008065bab7abde580f8bdea5d156">is_edge_manifold</a>(</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="namespaceigl.html#a1bd5dfc80e3180cb9f8cfbeb0049c2b5">   52</a></span>  <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceigl.html#ab086008065bab7abde580f8bdea5d156">is_edge_manifold</a>(</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keyword">const</span> Eigen::MatrixBase&lt;DerivedF&gt;&amp; F,</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keyword">const</span> <span class="keyword">typename</span> DerivedF::Index ne,</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keyword">const</span> Eigen::MatrixBase&lt;DerivedEMAP&gt;&amp; EMAP,</div>
@@ -148,7 +148,9 @@ $(document).ready(function(){initNavTree('is__edge__manifold_8h_source.html','')
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="anamespaceigl_html"><div class="ttname"><a href="namespaceigl.html">igl</a></div><div class="ttdoc">Fake halfedge for fast and easy navigation on triangle meshes with vertex_triangle_adjacency and tria...</div><div class="ttdef"><b>Definition</b> AABB.h:17</div></div>
+<div class="ttc" id="aigl__inline_8h_html"><div class="ttname"><a href="igl__inline_8h.html">igl_inline.h</a></div></div>
+<div class="ttc" id="aigl__inline_8h_html_a838241279013352686271b4c4ce1f708"><div class="ttname"><a href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a></div><div class="ttdeci">#define IGL_INLINE</div><div class="ttdef"><b>Definition</b> igl_inline.h:15</div></div>
+<div class="ttc" id="anamespaceigl_html"><div class="ttname"><a href="namespaceigl.html">igl</a></div><div class="ttdef"><b>Definition</b> AABB.h:17</div></div>
 <div class="ttc" id="anamespaceigl_html_ab086008065bab7abde580f8bdea5d156"><div class="ttname"><a href="namespaceigl.html#ab086008065bab7abde580f8bdea5d156">igl::is_edge_manifold</a></div><div class="ttdeci">bool is_edge_manifold(const Eigen::MatrixBase&lt; DerivedF &gt; &amp;F)</div><div class="ttdoc">Check if the mesh is edge-manifold (every edge is incident one one face (boundary) or two oppositely ...</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

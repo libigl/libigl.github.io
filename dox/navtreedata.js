@@ -56,6 +56,7 @@ var NAVTREE =
       [ "File List", "files.html", "files_dup" ],
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
+        [ "Variables", "globals_vars.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
@@ -65,24 +66,31 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "AABB_8h.html",
-"bezier_8h.html#a0860a64b8a1678d63bea76c8b1999c78",
-"classigl_1_1MshLoader.html#aef8b7f77c90c3e62a944b2ba7ed600f5",
-"classigl_1_1opengl_1_1MeshGL.html#a4e339a0daa6dadbf0c72f653d752de2c",
-"classigl_1_1opengl_1_1ViewerData.html#acdbcfdf0a634addbd8e3f7fdbcd7a121",
-"colormap_8h.html#a1b823cd12b22dd7d7c16b36223e68deaa34771169730e68f97bd795796088a1bd",
-"edge__midpoints_8h_source.html",
-"functions_vars_q.html",
-"look__at_8h.html#ae46bcc8364a310c7a3bc0ee718b91fb1",
-"namespaceigl.html#a121c2475eac322f9100caf8433c66ad1",
-"namespaceigl.html#a500ef30b39ed4e46a12342238fddd1ea",
-"namespaceigl.html#a92ae0e8cefa226a1e493b33684b0b02ea53947827c1a799002057e5dc4ffe3a6e",
-"namespaceigl.html#ad8da00864c2893af6726906818520d94",
-"namespacemembers_func_b.html",
-"project__to__line_8h.html#aa6f357976c09a2f618f23fa9710bbf5c",
-"setunion_8h.html#a925a8ea3a2337a70f7cadc603e7e741e",
-"structigl_1_1AtA__cached__data.html#af2acb9033057849ab5cbbab9f6c25d88",
-"structigl_1_1active__set__params.html#aedbeba9b57ee5d34e00f84b3c8f5ce7b",
-"triangle__triangle__adjacency_8h.html#a7210f2492117b1c482907e6a47dbed75"
+"any__of_8h.html",
+"classigl_1_1BBWData.html#a82f5739b1b1f75e59e166007b147a03e",
+"classigl_1_1WindingNumberTree.html#a2551264e8045c3dee664537ae21011bc",
+"classigl_1_1matlab_1_1MatlabWorkspace.html#aa2a101b2341dc6433fcb2018aa1cddc5",
+"classigl_1_1opengl_1_1ViewerCore.html#ac9300aff89f5670193d72919da2669e9",
+"classigl_1_1opengl_1_1glfw_1_1Viewer.html#a71b77ba75ee7e094d5bf4f3b92f58ed3",
+"classigl_1_1opengl_1_1glfw_1_1imgui_1_1SelectionWidget.html#a02a271ea7aafcdfd2336af6d4fcce03f",
+"cr__vector__mass_8h.html",
+"exploded__view_8h.html",
+"grad_8h_source.html",
+"list__to__matrix_8h.html#ae5fd001a788d43f744d257d305ddb1b3",
+"namespaceigl.html#a00745ad61704fb8a6dc941ebf003f628",
+"namespaceigl.html#a4132693fc82720d3e947c09aad236d96",
+"namespaceigl.html#a805a632075fa2b99892f172b2063e8de",
+"namespaceigl.html#ac2d34543d4673ecc638e11d0340f7c38",
+"namespaceigl_1_1copyleft.html#a127b3a99bb9ceb2143b6a5c1a524574a",
+"namespaceigl_1_1png.html#ad1659de82481ccd9aba4cdb79af51a46",
+"order__facets__around__edge_8h.html",
+"print__vector_8h_source.html",
+"repdiag_8h.html#ad35357b4f4e8dbf29c3fad77850fb957",
+"slice_8h.html#a90268d9fb8c64692427036793191a8b7",
+"structigl_1_1HeatGeodesicsData.html#af41d42326cbaaff829b6e983e652cc33",
+"structigl_1_1embree_1_1EmbreeDevice.html#a427daf569f9d309423ae8543264bf93b",
+"structigl_1_1tinyply_1_1PlyFile.html#af37a0fb4443dadc094b66dbe0b363665",
+"triangle_2cdt_8h_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

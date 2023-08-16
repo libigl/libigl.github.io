@@ -1,0 +1,195 @@
+\doxysection{igl\+::copyleft\+::comiso Namespace Reference}
+\hypertarget{namespaceigl_1_1copyleft_1_1comiso}{}\label{namespaceigl_1_1copyleft_1_1comiso}\index{igl::copyleft::comiso@{igl::copyleft::comiso}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1comiso_a44179d4426eb13525cb26c01edcf6961}{frame\+\_\+field}} (const Eigen\+::\+Matrix\+Xd \&V, const Eigen\+::\+Matrix\+Xi \&F, const Eigen\+::\+Vector\+Xi \&b, const Eigen\+::\+Matrix\+Xd \&bc1, const Eigen\+::\+Matrix\+Xd \&bc2, Eigen\+::\+Matrix\+Xd \&FF1, Eigen\+::\+Matrix\+Xd \&FF2)
+\begin{DoxyCompactList}\small\item\em Generate a piecewise-\/constant frame-\/field field from a sparse set of constraints on faces using the algorithm proposed in\+: Frame Fields\+: Anisotropic and Non-\/\+Orthogonal Cross Fields Daniele Panozzo, Enrico Puppo, Marco Tarini, Olga Sorkine-\/\+Hornung, ACM Transactions on Graphics (SIGGRAPH, 2014) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedU $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1comiso_a177716489b4db91c9cd44fd166e4d40c}{miq}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&PD1, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&PD2, Eigen\+::\+Plain\+Object\+Base$<$ DerivedU $>$ \&UV, Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&FUV, double gradient\+Size=30.\+0, double stiffness=5.\+0, bool direct\+Round=false, unsigned int iter=5, unsigned int local\+Iter=5, bool do\+Round=true, bool singularity\+Round=true, const std\+::vector$<$ int $>$ \&round\+Vertices=std\+::vector$<$ int $>$(), const std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&hard\+Features=std\+::vector$<$ std\+::vector$<$ int $>$ $>$())
+\begin{DoxyCompactList}\small\item\em Global seamless parametrization aligned with a given per-\/face Jacobian (PD1, PD2). \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedU $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1comiso_a389d945e3b9c6738b15ccfced57e0b57}{miq}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&PD1\+\_\+combed, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&PD2\+\_\+combed, const Eigen\+::\+Matrix$<$ int, Eigen\+::\+Dynamic, 3 $>$ \&mismatch, const Eigen\+::\+Matrix$<$ int, Eigen\+::\+Dynamic, 1 $>$ \&singular, const Eigen\+::\+Matrix$<$ int, Eigen\+::\+Dynamic, 3 $>$ \&seams, Eigen\+::\+Plain\+Object\+Base$<$ DerivedU $>$ \&UV, Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&FUV, double gradient\+Size=30.\+0, double stiffness=5.\+0, bool direct\+Round=false, unsigned int iter=5, unsigned int local\+Iter=5, bool do\+Round=true, bool singularity\+Round=true, const std\+::vector$<$ int $>$ \&round\+Vertices=std\+::vector$<$ int $>$(), const std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&hard\+Features=std\+::vector$<$ std\+::vector$<$ int $>$ $>$())
+\begin{DoxyCompactList}\small\item\em miq Helper function that allows to directly provided pre-\/combed bisectors for an already cut mesh \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1comiso_aad4ec9310d3d45ff14351ff89709d454}{nrosy}} (const Eigen\+::\+Matrix\+Xd \&V, const Eigen\+::\+Matrix\+Xi \&F, const Eigen\+::\+Vector\+Xi \&b, const Eigen\+::\+Matrix\+Xd \&bc, const Eigen\+::\+Vector\+Xi \&b\+\_\+soft, const Eigen\+::\+Vector\+Xd \&w\+\_\+soft, const Eigen\+::\+Matrix\+Xd \&bc\+\_\+soft, int N, double soft, Eigen\+::\+Matrix\+Xd \&R, Eigen\+::\+Vector\+Xd \&S)
+\begin{DoxyCompactList}\small\item\em Generate a N-\/\+Ro\+Sy field from a sparse set of constraints. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1comiso_a49831418868dd21305c638a76196b156}{nrosy}} (const Eigen\+::\+Matrix\+Xd \&V, const Eigen\+::\+Matrix\+Xi \&F, const Eigen\+::\+Vector\+Xi \&b, const Eigen\+::\+Matrix\+Xd \&bc, int N, Eigen\+::\+Matrix\+Xd \&R, Eigen\+::\+Vector\+Xd \&S)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceigl_1_1copyleft_1_1comiso_a44179d4426eb13525cb26c01edcf6961}\label{namespaceigl_1_1copyleft_1_1comiso_a44179d4426eb13525cb26c01edcf6961} 
+\index{igl::copyleft::comiso@{igl::copyleft::comiso}!frame\_field@{frame\_field}}
+\index{frame\_field@{frame\_field}!igl::copyleft::comiso@{igl::copyleft::comiso}}
+\doxysubsubsection{\texorpdfstring{frame\_field()}{frame\_field()}}
+{\footnotesize\ttfamily void igl\+::copyleft\+::comiso\+::frame\+\_\+field (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Xi \&}]{F,  }\item[{const Eigen\+::\+Vector\+Xi \&}]{b,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{bc1,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{bc2,  }\item[{Eigen\+::\+Matrix\+Xd \&}]{FF1,  }\item[{Eigen\+::\+Matrix\+Xd \&}]{FF2 }\end{DoxyParamCaption})}
+
+
+
+Generate a piecewise-\/constant frame-\/field field from a sparse set of constraints on faces using the algorithm proposed in\+: Frame Fields\+: Anisotropic and Non-\/\+Orthogonal Cross Fields Daniele Panozzo, Enrico Puppo, Marco Tarini, Olga Sorkine-\/\+Hornung, ACM Transactions on Graphics (SIGGRAPH, 2014) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em V} & \#V by 3 list of mesh vertex coordinates \\
+\hline
+\mbox{\texttt{ in}}  & {\em F} & \#F by 3 list of mesh faces (must be triangles) \\
+\hline
+\mbox{\texttt{ in}}  & {\em b} & \#B by 1 list of constrained face indices \\
+\hline
+\mbox{\texttt{ in}}  & {\em bc1} & \#B by 3 list of the constrained first representative vector of the frame field (up to permutation and sign) \\
+\hline
+\mbox{\texttt{ in}}  & {\em bc2} & \#B by 3 list of the constrained second representative vector of the frame field (up to permutation and sign) \\
+\hline
+\mbox{\texttt{ out}}  & {\em FF1} & \#F by 3 the first representative vector of the frame field (up to permutation and sign) \\
+\hline
+\mbox{\texttt{ out}}  & {\em FF2} & \#F by 3 the second representative vector of the frame field (up to permutation and sign)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+it now supports only soft constraints, should be extended to support both hard and soft constraints 
+\end{DoxyNote}
+\Hypertarget{namespaceigl_1_1copyleft_1_1comiso_a177716489b4db91c9cd44fd166e4d40c}\label{namespaceigl_1_1copyleft_1_1comiso_a177716489b4db91c9cd44fd166e4d40c} 
+\index{igl::copyleft::comiso@{igl::copyleft::comiso}!miq@{miq}}
+\index{miq@{miq}!igl::copyleft::comiso@{igl::copyleft::comiso}}
+\doxysubsubsection{\texorpdfstring{miq()}{miq()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename DerivedV , typename DerivedF , typename DerivedU $>$ \\
+void igl\+::copyleft\+::comiso\+::miq (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&}]{F,  }\item[{const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&}]{PD1,  }\item[{const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&}]{PD2,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedU $>$ \&}]{UV,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&}]{FUV,  }\item[{double}]{gradient\+Size = {\ttfamily 30.0},  }\item[{double}]{stiffness = {\ttfamily 5.0},  }\item[{bool}]{direct\+Round = {\ttfamily false},  }\item[{unsigned int}]{iter = {\ttfamily 5},  }\item[{unsigned int}]{local\+Iter = {\ttfamily 5},  }\item[{bool}]{do\+Round = {\ttfamily true},  }\item[{bool}]{singularity\+Round = {\ttfamily true},  }\item[{const std\+::vector$<$ int $>$ \&}]{round\+Vertices = {\ttfamily std\+:\+:vector$<$~int~$>$()},  }\item[{const std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&}]{hard\+Features = {\ttfamily std\+:\+:vector$<$~std\+:\+:vector$<$~int~$>$~$>$()} }\end{DoxyParamCaption})}
+
+
+
+Global seamless parametrization aligned with a given per-\/face Jacobian (PD1, PD2). 
+
+The algorithm is based on \"{}\+Mixed-\/\+Integer Quadrangulation\"{} by D. Bommes, H. Zimmer, L. Kobbelt ACM SIGGRAPH 2009, Article No. 77 (\href{http://dl.acm.org/citation.cfm?id=1531383}{\texttt{ http\+://dl.\+acm.\+org/citation.\+cfm?id=1531383}}) We thank Nico Pietroni for providing a reference implementation of MIQ on which our code is based.
+
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000003}{Bug}}]Due to the way of handling of hard\+Features the algorithm may fail in difficult cases. 
+
+Meshes with boundaries are not hendled properly i.\+e., jagged edges along the boundary are possible \end{DoxyRefDesc}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em V} & \#V by 3 list of mesh vertex 3D positions \\
+\hline
+\mbox{\texttt{ in}}  & {\em F} & \#F by 3 list of faces indices in V \\
+\hline
+\mbox{\texttt{ in}}  & {\em PD1} & \#V by 3 first line of the Jacobian per triangle \\
+\hline
+\mbox{\texttt{ in}}  & {\em PD2} & \#V by 3 second line of the Jacobian per triangle (optional, if empty it will be a vector in the tangent plane orthogonal to PD1) \\
+\hline
+\mbox{\texttt{ in}}  & {\em gradient\+Size} & global scaling for the gradient (controls the quads resolution) \\
+\hline
+\mbox{\texttt{ in}}  & {\em stiffness} & weight for the stiffness iterations (Reserved but not used!) \\
+\hline
+\mbox{\texttt{ in}}  & {\em direct\+Round} & greedily round all integer variables at once (greatly improves optimization speed but lowers quality) \\
+\hline
+\mbox{\texttt{ in}}  & {\em iter} & stiffness iterations (0 = no stiffness) \\
+\hline
+\mbox{\texttt{ in}}  & {\em local\+Iter} & number of local iterations for the integer rounding \\
+\hline
+\mbox{\texttt{ in}}  & {\em do\+Round} & enables the integer rounding (disabling it could be useful for debugging) \\
+\hline
+\mbox{\texttt{ in}}  & {\em singularity\+Round} & set true/false to decide if the singularities\textquotesingle{} coordinates should be rounded to the nearest integers \\
+\hline
+\mbox{\texttt{ in}}  & {\em round\+Vertices} & id of additional vertices that should be snapped to integer coordinates \\
+\hline
+\mbox{\texttt{ in}}  & {\em hard\+Features} & \#H by 2 list of pairs of vertices that belongs to edges that should be snapped to integer coordinates \\
+\hline
+\mbox{\texttt{ out}}  & {\em UV} & \#\+UV by 2 list of vertices in 2D \\
+\hline
+\mbox{\texttt{ out}}  & {\em FUV} & \#\+FUV by 3 list of face indices in UV \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespaceigl_1_1copyleft_1_1comiso_a389d945e3b9c6738b15ccfced57e0b57}\label{namespaceigl_1_1copyleft_1_1comiso_a389d945e3b9c6738b15ccfced57e0b57} 
+\index{igl::copyleft::comiso@{igl::copyleft::comiso}!miq@{miq}}
+\index{miq@{miq}!igl::copyleft::comiso@{igl::copyleft::comiso}}
+\doxysubsubsection{\texorpdfstring{miq()}{miq()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename DerivedV , typename DerivedF , typename DerivedU $>$ \\
+void igl\+::copyleft\+::comiso\+::miq (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&}]{F,  }\item[{const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&}]{PD1\+\_\+combed,  }\item[{const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&}]{PD2\+\_\+combed,  }\item[{const Eigen\+::\+Matrix$<$ int, Eigen\+::\+Dynamic, 3 $>$ \&}]{mismatch,  }\item[{const Eigen\+::\+Matrix$<$ int, Eigen\+::\+Dynamic, 1 $>$ \&}]{singular,  }\item[{const Eigen\+::\+Matrix$<$ int, Eigen\+::\+Dynamic, 3 $>$ \&}]{seams,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedU $>$ \&}]{UV,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&}]{FUV,  }\item[{double}]{gradient\+Size = {\ttfamily 30.0},  }\item[{double}]{stiffness = {\ttfamily 5.0},  }\item[{bool}]{direct\+Round = {\ttfamily false},  }\item[{unsigned int}]{iter = {\ttfamily 5},  }\item[{unsigned int}]{local\+Iter = {\ttfamily 5},  }\item[{bool}]{do\+Round = {\ttfamily true},  }\item[{bool}]{singularity\+Round = {\ttfamily true},  }\item[{const std\+::vector$<$ int $>$ \&}]{round\+Vertices = {\ttfamily std\+:\+:vector$<$~int~$>$()},  }\item[{const std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&}]{hard\+Features = {\ttfamily std\+:\+:vector$<$~std\+:\+:vector$<$~int~$>$~$>$()} }\end{DoxyParamCaption})}
+
+
+
+miq Helper function that allows to directly provided pre-\/combed bisectors for an already cut mesh 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em V} & \#V by 3 list of mesh vertex 3D positions \\
+\hline
+\mbox{\texttt{ in}}  & {\em F} & \#F by 3 list of faces indices in V \\
+\hline
+\mbox{\texttt{ in}}  & {\em Additional} & Input\+: \\
+\hline
+\mbox{\texttt{ in}}  & {\em PD1\+\_\+combed} & \#F by 3 first combed Jacobian \\
+\hline
+\mbox{\texttt{ in}}  & {\em PD2\+\_\+combed} & \#F by 3 second combed Jacobian \\
+\hline
+\mbox{\texttt{ in}}  & {\em mismatch} & \#F by 3 list of per-\/corner integer PI/2 rotations \\
+\hline
+\mbox{\texttt{ in}}  & {\em singular} & \#V list of flag that denotes if a vertex is singular or not \\
+\hline
+\mbox{\texttt{ in}}  & {\em seams} & \#F by 3 list of per-\/corner flag that denotes seams \\
+\hline
+\mbox{\texttt{ out}}  & {\em UV} & \#\+UV by 2 list of vertices in 2D \\
+\hline
+\mbox{\texttt{ out}}  & {\em FUV} & \#\+FUV by 3 list of face indices in UV \\
+\hline
+\mbox{\texttt{ in}}  & {\em gradient\+Size} & global scaling for the gradient (controls the quads resolution) \\
+\hline
+\mbox{\texttt{ in}}  & {\em stiffness} & weight for the stiffness iterations (Reserved but not used!) \\
+\hline
+\mbox{\texttt{ in}}  & {\em direct\+Round} & greedily round all integer variables at once (greatly improves optimization speed but lowers quality) \\
+\hline
+\mbox{\texttt{ in}}  & {\em iter} & stiffness iterations (0 = no stiffness) \\
+\hline
+\mbox{\texttt{ in}}  & {\em local\+Iter} & number of local iterations for the integer rounding \\
+\hline
+\mbox{\texttt{ in}}  & {\em do\+Round} & enables the integer rounding (disabling it could be useful for debugging) \\
+\hline
+\mbox{\texttt{ in}}  & {\em singularity\+Round} & set true/false to decide if the singularities\textquotesingle{} coordinates should be rounded to the nearest integers \\
+\hline
+\mbox{\texttt{ in}}  & {\em round\+Vertices} & id of additional vertices that should be snapped to integer coordinates \\
+\hline
+\mbox{\texttt{ in}}  & {\em hard\+Features} & \#H by 2 list of pairs of vertices that belongs to edges that should be snapped to integer coordinates \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespaceigl_1_1copyleft_1_1comiso_aad4ec9310d3d45ff14351ff89709d454}\label{namespaceigl_1_1copyleft_1_1comiso_aad4ec9310d3d45ff14351ff89709d454} 
+\index{igl::copyleft::comiso@{igl::copyleft::comiso}!nrosy@{nrosy}}
+\index{nrosy@{nrosy}!igl::copyleft::comiso@{igl::copyleft::comiso}}
+\doxysubsubsection{\texorpdfstring{nrosy()}{nrosy()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void igl\+::copyleft\+::comiso\+::nrosy (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Xi \&}]{F,  }\item[{const Eigen\+::\+Vector\+Xi \&}]{b,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{bc,  }\item[{const Eigen\+::\+Vector\+Xi \&}]{b\+\_\+soft,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{w\+\_\+soft,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{bc\+\_\+soft,  }\item[{int}]{N,  }\item[{double}]{soft,  }\item[{Eigen\+::\+Matrix\+Xd \&}]{R,  }\item[{Eigen\+::\+Vector\+Xd \&}]{S }\end{DoxyParamCaption})}
+
+
+
+Generate a N-\/\+Ro\+Sy field from a sparse set of constraints. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em V} & \#V by 3 list of mesh vertex coordinates \\
+\hline
+\mbox{\texttt{ in}}  & {\em F} & \#F by 3 list of mesh faces (must be triangles) \\
+\hline
+\mbox{\texttt{ in}}  & {\em b} & \#B by 1 list of constrained face indices \\
+\hline
+\mbox{\texttt{ in}}  & {\em bc} & \#B by 3 list of representative vectors for the constrained faces \\
+\hline
+\mbox{\texttt{ in}}  & {\em b\+\_\+soft} & \#S by 1 b for soft constraints \\
+\hline
+\mbox{\texttt{ in}}  & {\em w\+\_\+soft} & \#S by 1 weight for the soft constraints (0-\/1) \\
+\hline
+\mbox{\texttt{ in}}  & {\em bc\+\_\+soft} & \#S by 3 bc for soft constraints \\
+\hline
+\mbox{\texttt{ in}}  & {\em N} & the degree of the N-\/\+Ro\+Sy vector field \\
+\hline
+\mbox{\texttt{ in}}  & {\em soft} & the strength of the soft constraints w.\+r.\+t. smoothness (0 -\/\texorpdfstring{$>$}{>} smoothness only, 1-\/\texorpdfstring{$>$}{>}constraints only) \\
+\hline
+\mbox{\texttt{ out}}  & {\em R} & \#F by 3 the representative vectors of the interpolated field \\
+\hline
+\mbox{\texttt{ out}}  & {\em S} & \#V by 1 the singularity index for each vertex (0 = regular) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespaceigl_1_1copyleft_1_1comiso_a49831418868dd21305c638a76196b156}\label{namespaceigl_1_1copyleft_1_1comiso_a49831418868dd21305c638a76196b156} 
+\index{igl::copyleft::comiso@{igl::copyleft::comiso}!nrosy@{nrosy}}
+\index{nrosy@{nrosy}!igl::copyleft::comiso@{igl::copyleft::comiso}}
+\doxysubsubsection{\texorpdfstring{nrosy()}{nrosy()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void igl\+::copyleft\+::comiso\+::nrosy (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Xi \&}]{F,  }\item[{const Eigen\+::\+Vector\+Xi \&}]{b,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{bc,  }\item[{int}]{N,  }\item[{Eigen\+::\+Matrix\+Xd \&}]{R,  }\item[{Eigen\+::\+Vector\+Xd \&}]{S }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+

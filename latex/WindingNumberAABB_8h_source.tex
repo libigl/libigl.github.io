@@ -24,40 +24,40 @@
 \DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{typename}\ Point,}
 \DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,\ }
 \DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF\ >}
-\DoxyCodeLine{00025\ \ \ \textcolor{keyword}{class\ }WindingNumberAABB\ :\ \textcolor{keyword}{public}\ WindingNumberTree<Point,DerivedV,DerivedF>}
+\DoxyCodeLine{00025\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classigl_1_1WindingNumberAABB}{WindingNumberAABB}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classigl_1_1WindingNumberTree}{WindingNumberTree}}<Point,DerivedV,DerivedF>}
 \DoxyCodeLine{00026\ \ \ \{}
 \DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ Point\ min\_corner;}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ Point\ max\_corner;}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV::Scalar\ total\_positive\_area;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ Point\ \mbox{\hyperlink{classigl_1_1WindingNumberAABB_a1bb8bdacb73ffcc51dd87c7471985062}{min\_corner}};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ Point\ \mbox{\hyperlink{classigl_1_1WindingNumberAABB_a8b85d3fdf0536e684abdc8f075468a7c}{max\_corner}};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV::Scalar\ \mbox{\hyperlink{classigl_1_1WindingNumberAABB_a1e812c725bccb889a16d26d1baa07882}{total\_positive\_area}};}
 \DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{public}:\ }
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \textcolor{keyword}{enum}\ SplitMethod}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classigl_1_1WindingNumberAABB_a601dafe3ce5d1146eef9f3100697d06a}{SplitMethod}}}
 \DoxyCodeLine{00033\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ CENTER\_ON\_LONGEST\_AXIS\ =\ 0,}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ MEDIAN\_ON\_LONGEST\_AXIS\ =\ 1,}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ NUM\_SPLIT\_METHODS\ =\ 2}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \}\ split\_method;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1WindingNumberAABB_a601dafe3ce5d1146eef9f3100697d06aa79c6c3322103c4a57e908d3c281fc299}{CENTER\_ON\_LONGEST\_AXIS}}\ =\ 0,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1WindingNumberAABB_a601dafe3ce5d1146eef9f3100697d06aa7f05f76d0576220ee857ded15df13f34}{MEDIAN\_ON\_LONGEST\_AXIS}}\ =\ 1,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1WindingNumberAABB_a601dafe3ce5d1146eef9f3100697d06aa801d1f5ff4e0d3ce45811981718789d1}{NUM\_SPLIT\_METHODS}}\ =\ 2}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \}\ \mbox{\hyperlink{classigl_1_1WindingNumberAABB_a9877c31ae6c8df5e23a5f85bf5391465}{split\_method}};}
 \DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ WindingNumberAABB():}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ total\_positive\_area(std::numeric\_limits<typename\ DerivedV::Scalar>::infinity()),}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ split\_method(MEDIAN\_ON\_LONGEST\_AXIS)}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1WindingNumberAABB_a4602c48892584b11309fc86116345bf6}{WindingNumberAABB}}():}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1WindingNumberAABB_a1e812c725bccb889a16d26d1baa07882}{total\_positive\_area}}(std::numeric\_limits<typename\ DerivedV::Scalar>::infinity()),}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1WindingNumberAABB_a9877c31ae6c8df5e23a5f85bf5391465}{split\_method}}(\mbox{\hyperlink{classigl_1_1WindingNumberAABB_a601dafe3ce5d1146eef9f3100697d06aa7f05f76d0576220ee857ded15df13f34}{MEDIAN\_ON\_LONGEST\_AXIS}})}
 \DoxyCodeLine{00042\ \ \ \ \ \ \ \{\}}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ WindingNumberAABB(}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F);}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ WindingNumberAABB(}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ WindingNumberTree<Point,DerivedV,DerivedF>\ \&\ parent,}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F);}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ set\_mesh(}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F);}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ init();}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ inside(\textcolor{keyword}{const}\ Point\ \&\ p)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ grow();}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1WindingNumberAABB_a4602c48892584b11309fc86116345bf6}{WindingNumberAABB}}(}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a2551264e8045c3dee664537ae21011bc}{V}},}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_ad18e9c1a1712406b55d3e0716a1b8082}{F}});}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1WindingNumberAABB_a4602c48892584b11309fc86116345bf6}{WindingNumberAABB}}(}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1WindingNumberTree}{WindingNumberTree<Point,DerivedV,DerivedF>}}\ \&\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a111e8645c2849defb6617b5adbe67810}{parent}},}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_ad18e9c1a1712406b55d3e0716a1b8082}{F}});}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1WindingNumberAABB_a26c689a9a8f4eb01144fe835155489d8}{set\_mesh}}(}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a2551264e8045c3dee664537ae21011bc}{V}},}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ \mbox{\hyperlink{classigl_1_1WindingNumberTree_ad18e9c1a1712406b55d3e0716a1b8082}{F}});}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1WindingNumberAABB_ab073553bd499470c8f2089ce13c5ad91}{init}}();}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1WindingNumberAABB_ab00692b233113017589f8239ed1f5d0a}{inside}}(\textcolor{keyword}{const}\ Point\ \&\ p)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1WindingNumberAABB_a097c24e0a4080986f3114d4ec286a1a0}{grow}}();}
 \DoxyCodeLine{00063\ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ min\ and\ max\ corners}}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ compute\_min\_max\_corners();}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ DerivedV::Scalar\ max\_abs\_winding\_number(\textcolor{keyword}{const}\ Point\ \&\ p)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ DerivedV::Scalar\ max\_simple\_abs\_winding\_number(\textcolor{keyword}{const}\ Point\ \&\ p)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1WindingNumberAABB_ad57ef39c800de0ae31c26cd12f10720f}{compute\_min\_max\_corners}}();}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ DerivedV::Scalar\ \mbox{\hyperlink{classigl_1_1WindingNumberAABB_ab9be5a4d4a462edf650f8d54067e1db1}{max\_abs\_winding\_number}}(\textcolor{keyword}{const}\ Point\ \&\ p)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ DerivedV::Scalar\ \mbox{\hyperlink{classigl_1_1WindingNumberAABB_a881f29e818ff7cffeb119e1721d03910}{max\_simple\_abs\_winding\_number}}(\textcolor{keyword}{const}\ Point\ \&\ p)\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00067\ \ \ \};}
 \DoxyCodeLine{00068\ \}}
 \DoxyCodeLine{00069\ }
@@ -81,7 +81,7 @@
 \DoxyCodeLine{00087\ \textcolor{preprocessor}{\#endif}}
 \DoxyCodeLine{00088\ }
 \DoxyCodeLine{00089\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int},\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
-\DoxyCodeLine{00090\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ igl::WindingNumberAABB<Point,DerivedV,DerivedF>::set\_mesh(}
+\DoxyCodeLine{00090\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1WindingNumberAABB_a26c689a9a8f4eb01144fe835155489d8}{igl::WindingNumberAABB<Point,DerivedV,DerivedF>::set\_mesh}}(}
 \DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
 \DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F)}
 \DoxyCodeLine{00093\ \{}
@@ -90,7 +90,7 @@
 \DoxyCodeLine{00096\ \}}
 \DoxyCodeLine{00097\ }
 \DoxyCodeLine{00098\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int},\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
-\DoxyCodeLine{00099\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ igl::WindingNumberAABB<Point,DerivedV,DerivedF>::init()}
+\DoxyCodeLine{00099\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1WindingNumberAABB_ab073553bd499470c8f2089ce13c5ad91}{igl::WindingNumberAABB<Point,DerivedV,DerivedF>::init}}()}
 \DoxyCodeLine{00100\ \{}
 \DoxyCodeLine{00101\ \ \ \textcolor{keyword}{using\ namespace\ }Eigen;}
 \DoxyCodeLine{00102\ \ \ assert(max\_corner.size()\ ==\ 3);}
@@ -102,35 +102,35 @@
 \DoxyCodeLine{00108\ \}}
 \DoxyCodeLine{00109\ }
 \DoxyCodeLine{00110\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int},\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
-\DoxyCodeLine{00111\ \textcolor{keyword}{inline}\ igl::WindingNumberAABB<Point,DerivedV,DerivedF>::WindingNumberAABB(}
+\DoxyCodeLine{00111\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1WindingNumberAABB_a4602c48892584b11309fc86116345bf6}{igl::WindingNumberAABB<Point,DerivedV,DerivedF>::WindingNumberAABB}}(}
 \DoxyCodeLine{00112\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
 \DoxyCodeLine{00113\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F):}
-\DoxyCodeLine{00114\ \ \ WindingNumberTree<Point,DerivedV,DerivedF>(V,F),}
+\DoxyCodeLine{00114\ \ \ \mbox{\hyperlink{classigl_1_1WindingNumberTree}{WindingNumberTree}}<Point,DerivedV,DerivedF>(V,F),}
 \DoxyCodeLine{00115\ \ \ min\_corner(),}
 \DoxyCodeLine{00116\ \ \ max\_corner(),}
 \DoxyCodeLine{00117\ \ \ total\_positive\_area(}
 \DoxyCodeLine{00118\ \ \ \ \ std::numeric\_limits<typename\ DerivedV::Scalar>::infinity()),}
 \DoxyCodeLine{00119\ \ \ split\_method(MEDIAN\_ON\_LONGEST\_AXIS)}
 \DoxyCodeLine{00120\ \{}
-\DoxyCodeLine{00121\ \ \ init();}
+\DoxyCodeLine{00121\ \ \ \mbox{\hyperlink{classigl_1_1WindingNumberAABB_ab073553bd499470c8f2089ce13c5ad91}{init}}();}
 \DoxyCodeLine{00122\ \}}
 \DoxyCodeLine{00123\ }
 \DoxyCodeLine{00124\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int},\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
-\DoxyCodeLine{00125\ \textcolor{keyword}{inline}\ igl::WindingNumberAABB<Point,DerivedV,DerivedF>::WindingNumberAABB(}
-\DoxyCodeLine{00126\ \ \ \textcolor{keyword}{const}\ WindingNumberTree<Point,DerivedV,DerivedF>\ \&\ parent,}
+\DoxyCodeLine{00125\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1WindingNumberAABB_a4602c48892584b11309fc86116345bf6}{igl::WindingNumberAABB<Point,DerivedV,DerivedF>::WindingNumberAABB}}(}
+\DoxyCodeLine{00126\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1WindingNumberTree}{WindingNumberTree<Point,DerivedV,DerivedF>}}\ \&\ parent,}
 \DoxyCodeLine{00127\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F):}
-\DoxyCodeLine{00128\ \ \ WindingNumberTree<Point,DerivedV,DerivedF>(parent,F),}
+\DoxyCodeLine{00128\ \ \ \mbox{\hyperlink{classigl_1_1WindingNumberTree}{WindingNumberTree}}<Point,DerivedV,DerivedF>(parent,F),}
 \DoxyCodeLine{00129\ \ \ min\_corner(),}
 \DoxyCodeLine{00130\ \ \ max\_corner(),}
 \DoxyCodeLine{00131\ \ \ total\_positive\_area(}
 \DoxyCodeLine{00132\ \ \ \ \ std::numeric\_limits<typename\ DerivedV::Scalar>::infinity()),}
 \DoxyCodeLine{00133\ \ \ split\_method(MEDIAN\_ON\_LONGEST\_AXIS)}
 \DoxyCodeLine{00134\ \{}
-\DoxyCodeLine{00135\ \ \ init();}
+\DoxyCodeLine{00135\ \ \ \mbox{\hyperlink{classigl_1_1WindingNumberAABB_ab073553bd499470c8f2089ce13c5ad91}{init}}();}
 \DoxyCodeLine{00136\ \}}
 \DoxyCodeLine{00137\ }
 \DoxyCodeLine{00138\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int},\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
-\DoxyCodeLine{00139\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ igl::WindingNumberAABB<Point,DerivedV,DerivedF>::grow()}
+\DoxyCodeLine{00139\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1WindingNumberAABB_a097c24e0a4080986f3114d4ec286a1a0}{igl::WindingNumberAABB<Point,DerivedV,DerivedF>::grow}}()}
 \DoxyCodeLine{00140\ \{}
 \DoxyCodeLine{00141\ \ \ \textcolor{keyword}{using\ namespace\ }std;}
 \DoxyCodeLine{00142\ \ \ \textcolor{keyword}{using\ namespace\ }Eigen;}
@@ -225,18 +225,18 @@
 \DoxyCodeLine{00231\ \ \ assert(right\_i\ ==\ rightF.rows());}
 \DoxyCodeLine{00232\ \ \ assert(left\_i\ ==\ leftF.rows());}
 \DoxyCodeLine{00233\ \ \ \textcolor{comment}{//\ Finally\ actually\ grow\ children\ and\ Recursively\ grow}}
-\DoxyCodeLine{00234\ \ \ WindingNumberAABB<Point,DerivedV,DerivedF>\ *\ leftWindingNumberAABB\ =\ }
-\DoxyCodeLine{00235\ \ \ \ \ \textcolor{keyword}{new}\ WindingNumberAABB<Point,DerivedV,DerivedF>(*\textcolor{keyword}{this},leftF);}
-\DoxyCodeLine{00236\ \ \ leftWindingNumberAABB-\/>grow();}
+\DoxyCodeLine{00234\ \ \ \mbox{\hyperlink{classigl_1_1WindingNumberAABB}{WindingNumberAABB<Point,DerivedV,DerivedF>}}\ *\ leftWindingNumberAABB\ =\ }
+\DoxyCodeLine{00235\ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classigl_1_1WindingNumberAABB}{WindingNumberAABB<Point,DerivedV,DerivedF>}}(*\textcolor{keyword}{this},leftF);}
+\DoxyCodeLine{00236\ \ \ leftWindingNumberAABB-\/>\mbox{\hyperlink{classigl_1_1WindingNumberAABB_a097c24e0a4080986f3114d4ec286a1a0}{grow}}();}
 \DoxyCodeLine{00237\ \ \ this-\/>children.push\_back(leftWindingNumberAABB);}
-\DoxyCodeLine{00238\ \ \ WindingNumberAABB<Point,DerivedV,DerivedF>\ *\ rightWindingNumberAABB\ =\ }
-\DoxyCodeLine{00239\ \ \ \ \ \textcolor{keyword}{new}\ WindingNumberAABB<Point,DerivedV,DerivedF>(*\textcolor{keyword}{this},rightF);}
-\DoxyCodeLine{00240\ \ \ rightWindingNumberAABB-\/>grow();}
+\DoxyCodeLine{00238\ \ \ \mbox{\hyperlink{classigl_1_1WindingNumberAABB}{WindingNumberAABB<Point,DerivedV,DerivedF>}}\ *\ rightWindingNumberAABB\ =\ }
+\DoxyCodeLine{00239\ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classigl_1_1WindingNumberAABB}{WindingNumberAABB<Point,DerivedV,DerivedF>}}(*\textcolor{keyword}{this},rightF);}
+\DoxyCodeLine{00240\ \ \ rightWindingNumberAABB-\/>\mbox{\hyperlink{classigl_1_1WindingNumberAABB_a097c24e0a4080986f3114d4ec286a1a0}{grow}}();}
 \DoxyCodeLine{00241\ \ \ this-\/>children.push\_back(rightWindingNumberAABB);}
 \DoxyCodeLine{00242\ \}}
 \DoxyCodeLine{00243\ }
 \DoxyCodeLine{00244\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int},\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
-\DoxyCodeLine{00245\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ igl::WindingNumberAABB<Point,DerivedV,DerivedF>::inside(\textcolor{keyword}{const}\ Point\ \&\ p)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00245\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1WindingNumberAABB_ab00692b233113017589f8239ed1f5d0a}{igl::WindingNumberAABB<Point,DerivedV,DerivedF>::inside}}(\textcolor{keyword}{const}\ Point\ \&\ p)\textcolor{keyword}{\ const}}
 \DoxyCodeLine{00246\ \textcolor{keyword}{}\{}
 \DoxyCodeLine{00247\ \ \ assert(p.size()\ ==\ max\_corner.size());}
 \DoxyCodeLine{00248\ \ \ assert(p.size()\ ==\ min\_corner.size());}
@@ -253,7 +253,7 @@
 \DoxyCodeLine{00260\ \}}
 \DoxyCodeLine{00261\ }
 \DoxyCodeLine{00262\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int},\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
-\DoxyCodeLine{00263\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ igl::WindingNumberAABB<Point,DerivedV,DerivedF>::compute\_min\_max\_corners()}
+\DoxyCodeLine{00263\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1WindingNumberAABB_ad57ef39c800de0ae31c26cd12f10720f}{igl::WindingNumberAABB<Point,DerivedV,DerivedF>::compute\_min\_max\_corners}}()}
 \DoxyCodeLine{00264\ \{}
 \DoxyCodeLine{00265\ \ \ \textcolor{keyword}{using\ namespace\ }std;}
 \DoxyCodeLine{00266\ \ \ \textcolor{comment}{//\ initialize\ corners}}
@@ -297,7 +297,7 @@
 \DoxyCodeLine{00304\ }
 \DoxyCodeLine{00305\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int},\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
 \DoxyCodeLine{00306\ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ DerivedV::Scalar}
-\DoxyCodeLine{00307\ igl::WindingNumberAABB<Point,DerivedV,DerivedF>::max\_abs\_winding\_number(\textcolor{keyword}{const}\ Point\ \&\ p)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00307\ \mbox{\hyperlink{classigl_1_1WindingNumberAABB_ab9be5a4d4a462edf650f8d54067e1db1}{igl::WindingNumberAABB<Point,DerivedV,DerivedF>::max\_abs\_winding\_number}}(\textcolor{keyword}{const}\ Point\ \&\ p)\textcolor{keyword}{\ const}}
 \DoxyCodeLine{00308\ \textcolor{keyword}{}\{}
 \DoxyCodeLine{00309\ \ \ \textcolor{keyword}{using\ namespace\ }std;}
 \DoxyCodeLine{00310\ \ \ \textcolor{comment}{//\ Only\ valid\ if\ not\ inside}}
@@ -312,7 +312,7 @@
 \DoxyCodeLine{00319\ }
 \DoxyCodeLine{00320\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Po\textcolor{keywordtype}{int},\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
 \DoxyCodeLine{00321\ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ DerivedV::Scalar\ }
-\DoxyCodeLine{00322\ \ \ igl::WindingNumberAABB<Point,DerivedV,DerivedF>::max\_simple\_abs\_winding\_number(}
+\DoxyCodeLine{00322\ \ \ \mbox{\hyperlink{classigl_1_1WindingNumberAABB_a881f29e818ff7cffeb119e1721d03910}{igl::WindingNumberAABB<Point,DerivedV,DerivedF>::max\_simple\_abs\_winding\_number}}(}
 \DoxyCodeLine{00323\ \ \ \textcolor{keyword}{const}\ Point\ \&\ p)\textcolor{keyword}{\ const}}
 \DoxyCodeLine{00324\ \textcolor{keyword}{}\{}
 \DoxyCodeLine{00325\ \ \ \textcolor{keyword}{using\ namespace\ }std;}
@@ -329,11 +329,11 @@
 \DoxyCodeLine{00336\ \ \ \textcolor{comment}{//MatrixXd\ BV((int)pow(2,3),3);}}
 \DoxyCodeLine{00337\ \ \ \textcolor{keyword}{typedef}}
 \DoxyCodeLine{00338\ \ \ \ \ Eigen::Matrix<typename\ DerivedV::Scalar,Eigen::Dynamic,Eigen::Dynamic>}
-\DoxyCodeLine{00339\ \ \ \ \ MatrixXS;}
+\DoxyCodeLine{00339\ \ \ \ \ \mbox{\hyperlink{classigl_1_1WindingNumberTree_aafe76333946b7ad3829b43a032fae8a1}{MatrixXS}};}
 \DoxyCodeLine{00340\ \ \ \textcolor{keyword}{typedef}}
 \DoxyCodeLine{00341\ \ \ \ \ Eigen::Matrix<typename\ DerivedF::Scalar,Eigen::Dynamic,Eigen::Dynamic>}
-\DoxyCodeLine{00342\ \ \ \ \ MatrixXF;}
-\DoxyCodeLine{00343\ \ \ MatrixXS\ BV((\textcolor{keywordtype}{int})(1<<3),3);}
+\DoxyCodeLine{00342\ \ \ \ \ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a08fd4eb30fce0b226f1b2dc2853daf04}{MatrixXF}};}
+\DoxyCodeLine{00343\ \ \ \mbox{\hyperlink{classigl_1_1WindingNumberTree_aafe76333946b7ad3829b43a032fae8a1}{MatrixXS}}\ BV((\textcolor{keywordtype}{int})(1<<3),3);}
 \DoxyCodeLine{00344\ \ \ BV\ <<}
 \DoxyCodeLine{00345\ \ \ \ \ min\_corner[0],min\_corner[1],min\_corner[2],}
 \DoxyCodeLine{00346\ \ \ \ \ min\_corner[0],min\_corner[1],max\_corner[2],}
@@ -343,7 +343,7 @@
 \DoxyCodeLine{00350\ \ \ \ \ max\_corner[0],min\_corner[1],max\_corner[2],}
 \DoxyCodeLine{00351\ \ \ \ \ max\_corner[0],max\_corner[1],min\_corner[2],}
 \DoxyCodeLine{00352\ \ \ \ \ max\_corner[0],max\_corner[1],max\_corner[2];}
-\DoxyCodeLine{00353\ \ \ MatrixXF\ BF(2*2*3,3);}
+\DoxyCodeLine{00353\ \ \ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a08fd4eb30fce0b226f1b2dc2853daf04}{MatrixXF}}\ BF(2*2*3,3);}
 \DoxyCodeLine{00354\ \ \ BF\ <<}
 \DoxyCodeLine{00355\ \ \ \ \ 0,6,4,}
 \DoxyCodeLine{00356\ \ \ \ \ 0,2,6,}
@@ -357,12 +357,12 @@
 \DoxyCodeLine{00364\ \ \ \ \ 0,5,1,}
 \DoxyCodeLine{00365\ \ \ \ \ 1,5,7,}
 \DoxyCodeLine{00366\ \ \ \ \ 1,7,3;}
-\DoxyCodeLine{00367\ \ \ MatrixXS\ BFN;}
+\DoxyCodeLine{00367\ \ \ \mbox{\hyperlink{classigl_1_1WindingNumberTree_aafe76333946b7ad3829b43a032fae8a1}{MatrixXS}}\ BFN;}
 \DoxyCodeLine{00368\ \ \ \mbox{\hyperlink{namespaceigl_a3d793baadcefcf122deae556812b2406}{per\_face\_normals}}(BV,BF,BFN);}
 \DoxyCodeLine{00369\ \ \ \textcolor{comment}{//\ end\ of\ precomputation}}
 \DoxyCodeLine{00370\ }
 \DoxyCodeLine{00371\ \ \ \textcolor{comment}{//\ Only\ keep\ those\ with\ positive\ dot\ products}}
-\DoxyCodeLine{00372\ \ \ MatrixXF\ PBF(BF.rows(),BF.cols());}
+\DoxyCodeLine{00372\ \ \ \mbox{\hyperlink{classigl_1_1WindingNumberTree_a08fd4eb30fce0b226f1b2dc2853daf04}{MatrixXF}}\ PBF(BF.rows(),BF.cols());}
 \DoxyCodeLine{00373\ \ \ \textcolor{keywordtype}{int}\ pbfi\ =\ 0;}
 \DoxyCodeLine{00374\ \ \ Point\ p2c\ =\ 0.5*(min\_corner+max\_corner)-\/p;}
 \DoxyCodeLine{00375\ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;i<BFN.rows();i++)}
@@ -382,9 +382,9 @@
 \DoxyCodeLine{00389\ \textcolor{comment}{//\ \_Define\_\ as\ a\ no-\/op\ rather\ than\ monkeying\ around\ with\ the\ proper\ code\ above}}
 \DoxyCodeLine{00390\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
 \DoxyCodeLine{00391\ \{}
-\DoxyCodeLine{00392\ \ \ \textcolor{keyword}{template}\ <>\ \textcolor{keyword}{inline}\ igl::WindingNumberAABB<Eigen::Matrix<double,\ 1,\ 3,\ 1,\ 1,\ 3>,Eigen::Matrix<double,\ -\/1,\ 2,\ 0,\ -\/1,\ 2>,Eigen::Matrix<int,\ -\/1,\ 2,\ 0,\ -\/1,\ 2>>::WindingNumberAABB(\textcolor{keyword}{const}\ Eigen::MatrixBase<Eigen::Matrix<double,\ -\/1,\ 2,\ 0,\ -\/1,\ 2>>\ \&\ V,\ \textcolor{keyword}{const}\ Eigen::MatrixBase<Eigen::Matrix<int,\ -\/1,\ 2,\ 0,\ -\/1,\ 2>>\ \&\ F)\{\};}
-\DoxyCodeLine{00393\ \ \ \textcolor{keyword}{template}\ <>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ igl::WindingNumberAABB<Eigen::Matrix<double,\ 1,\ 3,\ 1,\ 1,\ 3>,Eigen::Matrix<double,\ -\/1,\ 2,\ 0,\ -\/1,\ 2>,Eigen::Matrix<int,\ -\/1,\ 2,\ 0,\ -\/1,\ 2>>::grow()\{\};}
-\DoxyCodeLine{00394\ \ \ \textcolor{keyword}{template}\ <>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ igl::WindingNumberAABB<Eigen::Matrix<double,\ 1,\ 3,\ 1,\ 1,\ 3>,Eigen::Matrix<double,\ -\/1,\ 2,\ 0,\ -\/1,\ 2>,Eigen::Matrix<int,\ -\/1,\ 2,\ 0,\ -\/1,\ 2>>::init()\{\};}
+\DoxyCodeLine{00392\ \ \ \textcolor{keyword}{template}\ <>\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1WindingNumberAABB}{igl::WindingNumberAABB<Eigen::Matrix<double,\ 1,\ 3,\ 1,\ 1,\ 3>}},Eigen::Matrix<double,\ -\/1,\ 2,\ 0,\ -\/1,\ 2>,Eigen::Matrix<int,\ -\/1,\ 2,\ 0,\ -\/1,\ 2>>::WindingNumberAABB(\textcolor{keyword}{const}\ Eigen::MatrixBase<Eigen::Matrix<double,\ -\/1,\ 2,\ 0,\ -\/1,\ 2>>\ \&\ V,\ \textcolor{keyword}{const}\ Eigen::MatrixBase<Eigen::Matrix<int,\ -\/1,\ 2,\ 0,\ -\/1,\ 2>>\ \&\ F)\{\};}
+\DoxyCodeLine{00393\ \ \ \textcolor{keyword}{template}\ <>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1WindingNumberAABB}{igl::WindingNumberAABB<Eigen::Matrix<double,\ 1,\ 3,\ 1,\ 1,\ 3>}},Eigen::Matrix<double,\ -\/1,\ 2,\ 0,\ -\/1,\ 2>,Eigen::Matrix<int,\ -\/1,\ 2,\ 0,\ -\/1,\ 2>>::grow()\{\};}
+\DoxyCodeLine{00394\ \ \ \textcolor{keyword}{template}\ <>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1WindingNumberAABB}{igl::WindingNumberAABB<Eigen::Matrix<double,\ 1,\ 3,\ 1,\ 1,\ 3>}},Eigen::Matrix<double,\ -\/1,\ 2,\ 0,\ -\/1,\ 2>,Eigen::Matrix<int,\ -\/1,\ 2,\ 0,\ -\/1,\ 2>>::init()\{\};}
 \DoxyCodeLine{00395\ }
 \DoxyCodeLine{00396\ \}}
 \DoxyCodeLine{00397\ }

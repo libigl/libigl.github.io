@@ -1,0 +1,62 @@
+\doxysection{predicates.\+h}
+\hypertarget{predicates_8h_source}{}\label{predicates_8h_source}\index{include/igl/predicates/predicates.h@{include/igl/predicates/predicates.h}}
+\mbox{\hyperlink{predicates_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2019\ Qingnan\ Zhou\ <qnzhou@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ IGL\_PREDICATES\_PREDICATES\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ IGL\_PREDICATES\_PREDICATES\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{igl__inline_8h}{igl/igl\_inline.h}}>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}\ \{}
+\DoxyCodeLine{00016\ \ \ \textcolor{keyword}{namespace\ }predicates\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418b}{Orientation}}\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418baab6c31432785221bae58327ef5f6ea58}{POSITIVE}}=1,\ \mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418ba554a7418c4c0dafd902ebd377b87c80c}{INSIDE}}=1,}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418ba50546bf973283065b6ccf09faf7a580a}{NEGATIVE}}=-\/1,\ \mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418ba93da25bafef6761717afc6b25c17ea16}{OUTSIDE}}=-\/1,}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418bac514333ce2954c3110061a9d61666f8c}{COLLINEAR}}=0,\ \mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418ba9b1fc8879c96b8594f626bd204405336}{COPLANAR}}=0,\ \mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418bacfb327ad336ef0a1ba58a8651000d228}{COCIRCULAR}}=0,\ \mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418ba744ce244a9eef07f7a7fed2073d10947}{COSPHERICAL}}=0,\ \mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418ba6084ee8bb30ae219127db8b7aece408a}{DEGENERATE}}=0}
+\DoxyCodeLine{00024\ \ \ \ \ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1predicates_a7b443360a322c1ab15643ea1bad58d58}{exactinit}}();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Vector2D>}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418b}{Orientation}}\ \mbox{\hyperlink{namespaceigl_1_1predicates_ab85f8a0e2f35b55088ba76fa3e269a1a}{orient2d}}(}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Vector2D>\&\ pa,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Vector2D>\&\ pb,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Vector2D>\&\ pc);}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Vector3D>}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418b}{Orientation}}\ \mbox{\hyperlink{namespaceigl_1_1predicates_a16875914854207c54ce309a69d802292}{orient3d}}(}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Vector3D>\&\ pa,}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Vector3D>\&\ pb,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Vector3D>\&\ pc,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Vector3D>\&\ pd);}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Vector2D>}
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418b}{Orientation}}\ \mbox{\hyperlink{namespaceigl_1_1predicates_a34dc07d0d7c3e70d012a400c07fea6d5}{incircle}}(}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Vector2D>\&\ pa,}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Vector2D>\&\ pb,}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Vector2D>\&\ pc,}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Vector2D>\&\ pd);}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Vector3D>}
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418b}{Orientation}}\ \mbox{\hyperlink{namespaceigl_1_1predicates_aa3f8cfda1a577af57f2729330ca6a459}{insphere}}(}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Vector3D>\&\ pa,}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Vector3D>\&\ pb,}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Vector3D>\&\ pc,}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Vector3D>\&\ pd,}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Vector3D>\&\ pe);}
+\DoxyCodeLine{00101\ \ \ \}}
+\DoxyCodeLine{00102\ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#\ \ include\ "{}predicates.cpp"{}}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

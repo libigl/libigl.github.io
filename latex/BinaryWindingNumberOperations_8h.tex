@@ -1,0 +1,60 @@
+\doxysection{include/igl/copyleft/cgal/\+Binary\+Winding\+Number\+Operations.h File Reference}
+\hypertarget{BinaryWindingNumberOperations_8h}{}\label{BinaryWindingNumberOperations_8h}\index{include/igl/copyleft/cgal/BinaryWindingNumberOperations.h@{include/igl/copyleft/cgal/BinaryWindingNumberOperations.h}}
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include \"{}../../igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include \"{}../../\+Mesh\+Boolean\+Type.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1BinaryWindingNumberOperations}{igl\+::copyleft\+::cgal\+::\+Binary\+Winding\+Number\+Operations$<$ Op $>$}}
+\begin{DoxyCompactList}\small\item\em Binary winding number operations. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1BinaryWindingNumberOperations_3_01MESH__BOOLEAN__TYPE__UNION_01_4}{igl\+::copyleft\+::cgal\+::\+Binary\+Winding\+Number\+Operations$<$ MESH\+\_\+\+BOOLEAN\+\_\+\+TYPE\+\_\+\+UNION $>$}}
+\begin{DoxyCompactList}\small\item\em A ∪ B ∪ ... ∪ Z. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1BinaryWindingNumberOperations_3_01MESH__BOOLEAN__TYPE__INTERSECT_01_4}{igl\+::copyleft\+::cgal\+::\+Binary\+Winding\+Number\+Operations$<$ MESH\+\_\+\+BOOLEAN\+\_\+\+TYPE\+\_\+\+INTERSECT $>$}}
+\begin{DoxyCompactList}\small\item\em A ∩ B ∩ ... ∩ Z. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1BinaryWindingNumberOperations_3_01MESH__BOOLEAN__TYPE__MINUS_01_4}{igl\+::copyleft\+::cgal\+::\+Binary\+Winding\+Number\+Operations$<$ MESH\+\_\+\+BOOLEAN\+\_\+\+TYPE\+\_\+\+MINUS $>$}}
+\begin{DoxyCompactList}\small\item\em A \textbackslash{} B \textbackslash{} ... \textbackslash{} Z = A \textbackslash{} (B ∪ ... ∪ Z) \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1BinaryWindingNumberOperations_3_01MESH__BOOLEAN__TYPE__XOR_01_4}{igl\+::copyleft\+::cgal\+::\+Binary\+Winding\+Number\+Operations$<$ MESH\+\_\+\+BOOLEAN\+\_\+\+TYPE\+\_\+\+XOR $>$}}
+\begin{DoxyCompactList}\small\item\em A ∆ B ∆ ... ∆ Z (equivalent to set inside odd number of objects) \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1BinaryWindingNumberOperations_3_01MESH__BOOLEAN__TYPE__RESOLVE_01_4}{igl\+::copyleft\+::cgal\+::\+Binary\+Winding\+Number\+Operations$<$ MESH\+\_\+\+BOOLEAN\+\_\+\+TYPE\+\_\+\+RESOLVE $>$}}
+\begin{DoxyCompactList}\small\item\em Resolve all intersections without removing non-\/coplanar faces. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1WindingNumberFilter}{igl\+::copyleft\+::cgal\+::\+Winding\+Number\+Filter$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em Filter winding numbers according to keep policy. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1WindingNumberFilter_3_01KEEP__INSIDE_01_4}{igl\+::copyleft\+::cgal\+::\+Winding\+Number\+Filter$<$ KEEP\+\_\+\+INSIDE $>$}}
+\begin{DoxyCompactList}\small\item\em Keep inside policy. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1WindingNumberFilter_3_01KEEP__ALL_01_4}{igl\+::copyleft\+::cgal\+::\+Winding\+Number\+Filter$<$ KEEP\+\_\+\+ALL $>$}}
+\begin{DoxyCompactList}\small\item\em Keep all policy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\item 
+namespace \mbox{\hyperlink{namespaceigl_1_1copyleft}{igl\+::copyleft}}
+\item 
+namespace \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal}{igl\+::copyleft\+::cgal}}
+\begin{DoxyCompactList}\small\item\em Given a list of possible intersecting segments with endpoints, split segments to overlap only at endpoints. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1BinaryWindingNumberOperations}{Binary\+Winding\+Number\+Operations}}$<$ \mbox{\hyperlink{namespaceigl_a16cc7fd8778cd880be528227e0318b9facab2376ce17d445c5637c8a4bca36056}{MESH\+\_\+\+BOOLEAN\+\_\+\+TYPE\+\_\+\+UNION}} $>$ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a41dc481531d9dd2585c545308a2937d7}{igl\+::copyleft\+::cgal\+::\+Binary\+Union}}
+\item 
+typedef \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1BinaryWindingNumberOperations}{Binary\+Winding\+Number\+Operations}}$<$ \mbox{\hyperlink{namespaceigl_a16cc7fd8778cd880be528227e0318b9fa80c9b3b199544d1f6dae0412534ffc34}{MESH\+\_\+\+BOOLEAN\+\_\+\+TYPE\+\_\+\+INTERSECT}} $>$ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a3cad0d59d1e687e9faa8c93e15957b95}{igl\+::copyleft\+::cgal\+::\+Binary\+Intersect}}
+\item 
+typedef \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1BinaryWindingNumberOperations}{Binary\+Winding\+Number\+Operations}}$<$ \mbox{\hyperlink{namespaceigl_a16cc7fd8778cd880be528227e0318b9fa18e150636e973e60713171df46566a80}{MESH\+\_\+\+BOOLEAN\+\_\+\+TYPE\+\_\+\+MINUS}} $>$ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_adb0880ae718ceaa681706d8b827d54fe}{igl\+::copyleft\+::cgal\+::\+Binary\+Minus}}
+\item 
+typedef \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1BinaryWindingNumberOperations}{Binary\+Winding\+Number\+Operations}}$<$ \mbox{\hyperlink{namespaceigl_a16cc7fd8778cd880be528227e0318b9fa6b7ed81a5d01491212a128640544881b}{MESH\+\_\+\+BOOLEAN\+\_\+\+TYPE\+\_\+\+XOR}} $>$ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_acda076539de2c25a135eda9462171d87}{igl\+::copyleft\+::cgal\+::\+Binary\+Xor}}
+\item 
+typedef \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1BinaryWindingNumberOperations}{Binary\+Winding\+Number\+Operations}}$<$ \mbox{\hyperlink{namespaceigl_a16cc7fd8778cd880be528227e0318b9fad9961481f0ffb8a24865c88921cfe708}{MESH\+\_\+\+BOOLEAN\+\_\+\+TYPE\+\_\+\+RESOLVE}} $>$ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_ac06a2805099d616ad29e497091315ac0}{igl\+::copyleft\+::cgal\+::\+Binary\+Resolve}}
+\item 
+using \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_aca810a2d57eab3749b7a4f9379a9f008}{igl\+::copyleft\+::cgal\+::\+Keep\+Inside}} = \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1WindingNumberFilter}{Winding\+Number\+Filter}}$<$ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a652b3870ca0cbdd378a3b383ba9bd5f2a4fe1fa3cfe8bfbb3dd60b8c84f3118ce}{KEEP\+\_\+\+INSIDE}} $>$
+\item 
+using \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_aaab770fd7d59c9d5b18d15351d8c13d1}{igl\+::copyleft\+::cgal\+::\+Keep\+All}} = \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1WindingNumberFilter}{Winding\+Number\+Filter}}$<$ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a652b3870ca0cbdd378a3b383ba9bd5f2a224588758e6408e9ad5fff0b04142844}{KEEP\+\_\+\+ALL}} $>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a652b3870ca0cbdd378a3b383ba9bd5f2}{igl\+::copyleft\+::cgal\+::\+Keeper\+Type}} \{ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a652b3870ca0cbdd378a3b383ba9bd5f2a4fe1fa3cfe8bfbb3dd60b8c84f3118ce}{igl\+::copyleft\+::cgal\+::\+KEEP\+\_\+\+INSIDE}}
+, \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a652b3870ca0cbdd378a3b383ba9bd5f2a224588758e6408e9ad5fff0b04142844}{igl\+::copyleft\+::cgal\+::\+KEEP\+\_\+\+ALL}}
+ \}
+\begin{DoxyCompactList}\small\item\em Types of Keep policies. \end{DoxyCompactList}\end{DoxyCompactItemize}

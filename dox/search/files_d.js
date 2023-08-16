@@ -7,5 +7,6 @@ var searchData=
   ['normalize_5frow_5flengths_2eh_4',['normalize_row_lengths.h',['../normalize__row__lengths_8h.html',1,'']]],
   ['normalize_5frow_5fsums_2eh_5',['normalize_row_sums.h',['../normalize__row__sums_8h.html',1,'']]],
   ['normaltype_2eh_6',['NormalType.h',['../NormalType_8h.html',1,'']]],
-  ['null_2eh_7',['null.h',['../null_8h.html',1,'']]]
+  ['nrosy_2eh_7',['nrosy.h',['../nrosy_8h.html',1,'']]],
+  ['null_2eh_8',['null.h',['../null_8h.html',1,'']]]
 ];

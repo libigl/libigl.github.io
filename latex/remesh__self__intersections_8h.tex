@@ -1,0 +1,20 @@
+\doxysection{include/igl/copyleft/cgal/remesh\+\_\+self\+\_\+intersections.h File Reference}
+\hypertarget{remesh__self__intersections_8h}{}\label{remesh__self__intersections_8h}\index{include/igl/copyleft/cgal/remesh\_self\_intersections.h@{include/igl/copyleft/cgal/remesh\_self\_intersections.h}}
+{\ttfamily \#include \"{}../../igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include \"{}Remesh\+Self\+Intersections\+Param.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include \"{}remesh\+\_\+self\+\_\+intersections.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\item 
+namespace \mbox{\hyperlink{namespaceigl_1_1copyleft}{igl\+::copyleft}}
+\item 
+namespace \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal}{igl\+::copyleft\+::cgal}}
+\begin{DoxyCompactList}\small\item\em Given a list of possible intersecting segments with endpoints, split segments to overlap only at endpoints. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename Derived\+VV , typename Derived\+FF , typename Derived\+IF , typename DerivedJ , typename Derived\+IM $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a7169f4ae2fe2c11f7e878b41aa747fc2}{igl\+::copyleft\+::cgal\+::remesh\+\_\+self\+\_\+intersections}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const \mbox{\hyperlink{structigl_1_1copyleft_1_1cgal_1_1RemeshSelfIntersectionsParam}{Remesh\+Self\+Intersections\+Param}} \&params, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+VV $>$ \&VV, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+FF $>$ \&FF, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+IF $>$ \&IF, Eigen\+::\+Plain\+Object\+Base$<$ DerivedJ $>$ \&J, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+IM $>$ \&IM)
+\begin{DoxyCompactList}\small\item\em Given a triangle mesh (V,F) compute a new mesh (VV,FF) which is the same as (V,F) except that any self-\/intersecting triangles in (V,F) have been subdivided (new vertices and face created) so that the self-\/intersection contour lies exactly on edges in (VV,FF). \end{DoxyCompactList}\end{DoxyCompactItemize}

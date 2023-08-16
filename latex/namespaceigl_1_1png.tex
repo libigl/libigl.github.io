@@ -1,0 +1,193 @@
+\doxysection{igl\+::png Namespace Reference}
+\hypertarget{namespaceigl_1_1png}{}\label{namespaceigl_1_1png}\index{igl::png@{igl::png}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespaceigl_1_1png_ad1659de82481ccd9aba4cdb79af51a46}{read\+PNG}} (const std\+::string png\+\_\+file, Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&R, Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&G, Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&B, Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&A)
+\begin{DoxyCompactList}\small\item\em Read an image from a .png file into 4 memory buffers. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceigl_1_1png_acd7567dc26e8a0ea6bb934e73d588e69}{render\+\_\+to\+\_\+png}} (const std\+::string png\+\_\+file, const int width, const int height, const bool alpha=true, const bool fast=false)
+\begin{DoxyCompactList}\small\item\em Render current open GL image to .png file. \end{DoxyCompactList}\item 
+std\+::thread \mbox{\hyperlink{namespaceigl_1_1png_a18c85536f1c130fc72804d5a6294dce5}{render\+\_\+to\+\_\+png\+\_\+async}} (const std\+::string png\+\_\+file, const int width, const int height, const bool alpha=true, const bool fast=false)
+\begin{DoxyCompactList}\small\item\em Render current open GL image to .png file using a separate thread. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceigl_1_1png_ad3fe63f7a98c238e70f185337bdbcc65}{texture\+\_\+from\+\_\+file}} (const std\+::string filename, GLuint \&id)
+\begin{DoxyCompactList}\small\item\em Read an image from an image file and use it as a texture. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceigl_1_1png_aa1416af8c2bca7f8ff94e76da4158417}{texture\+\_\+from\+\_\+png}} (const std\+::string png\+\_\+file, const bool flip, GLuint \&id)
+\begin{DoxyCompactList}\small\item\em Read an image from a .png file and use it as a texture. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceigl_1_1png_a3cdc4feb99cf8c96b323ee751be42ac4}{texture\+\_\+from\+\_\+png}} (const std\+::string png\+\_\+file, GLuint \&id)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceigl_1_1png_a293b2e07c7f9f4bacdf1d075d646d7e2}{texture\+\_\+from\+\_\+png}} (const std\+::string png\+\_\+file, Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&R, Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&G, Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&B, Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&A)
+\item 
+bool \mbox{\hyperlink{namespaceigl_1_1png_a22afcde86706a6cdc101ab5058461bbf}{write\+PNG}} (const Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&R, const Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&G, const Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&B, const Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&A, const std\+::string png\+\_\+file)
+\begin{DoxyCompactList}\small\item\em Writes an image to a png file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceigl_1_1png_ad1659de82481ccd9aba4cdb79af51a46}\label{namespaceigl_1_1png_ad1659de82481ccd9aba4cdb79af51a46} 
+\index{igl::png@{igl::png}!readPNG@{readPNG}}
+\index{readPNG@{readPNG}!igl::png@{igl::png}}
+\doxysubsubsection{\texorpdfstring{readPNG()}{readPNG()}}
+{\footnotesize\ttfamily bool igl\+::png\+::read\+PNG (\begin{DoxyParamCaption}\item[{const std\+::string}]{png\+\_\+file,  }\item[{Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{R,  }\item[{Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{G,  }\item[{Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{B,  }\item[{Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{A }\end{DoxyParamCaption})}
+
+
+
+Read an image from a .png file into 4 memory buffers. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em png\+\_\+file} & path to .png file \\
+\hline
+\mbox{\texttt{ out}}  & {\em R} & red channel \\
+\hline
+\mbox{\texttt{ out}}  & {\em G} & green channel \\
+\hline
+\mbox{\texttt{ out}}  & {\em B} & blue channel \\
+\hline
+\mbox{\texttt{ out}}  & {\em A} & alpha channel \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false on failure 
+\end{DoxyReturn}
+\Hypertarget{namespaceigl_1_1png_acd7567dc26e8a0ea6bb934e73d588e69}\label{namespaceigl_1_1png_acd7567dc26e8a0ea6bb934e73d588e69} 
+\index{igl::png@{igl::png}!render\_to\_png@{render\_to\_png}}
+\index{render\_to\_png@{render\_to\_png}!igl::png@{igl::png}}
+\doxysubsubsection{\texorpdfstring{render\_to\_png()}{render\_to\_png()}}
+{\footnotesize\ttfamily bool igl\+::png\+::render\+\_\+to\+\_\+png (\begin{DoxyParamCaption}\item[{const std\+::string}]{png\+\_\+file,  }\item[{const int}]{width,  }\item[{const int}]{height,  }\item[{const bool}]{alpha = {\ttfamily true},  }\item[{const bool}]{fast = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Render current open GL image to .png file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em png\+\_\+file} & path to output .png file \\
+\hline
+\mbox{\texttt{ in}}  & {\em width} & width of scene and resulting image \\
+\hline
+\mbox{\texttt{ in}}  & {\em height} & height of scene and resulting image \\
+\hline
+\mbox{\texttt{ in}}  & {\em alpha} & whether to include alpha channel \\
+\hline
+\mbox{\texttt{ in}}  & {\em fast} & sacrifice compression ratio for speed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true only if no errors occurred
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+render\+\_\+to\+\_\+tga which is faster but writes .tga files 
+\end{DoxySeeAlso}
+\Hypertarget{namespaceigl_1_1png_a18c85536f1c130fc72804d5a6294dce5}\label{namespaceigl_1_1png_a18c85536f1c130fc72804d5a6294dce5} 
+\index{igl::png@{igl::png}!render\_to\_png\_async@{render\_to\_png\_async}}
+\index{render\_to\_png\_async@{render\_to\_png\_async}!igl::png@{igl::png}}
+\doxysubsubsection{\texorpdfstring{render\_to\_png\_async()}{render\_to\_png\_async()}}
+{\footnotesize\ttfamily std\+::thread igl\+::png\+::render\+\_\+to\+\_\+png\+\_\+async (\begin{DoxyParamCaption}\item[{const std\+::string}]{png\+\_\+file,  }\item[{const int}]{width,  }\item[{const int}]{height,  }\item[{const bool}]{alpha = {\ttfamily true},  }\item[{const bool}]{fast = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Render current open GL image to .png file using a separate thread. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em png\+\_\+file} & path to output .png file \\
+\hline
+\mbox{\texttt{ in}}  & {\em width} & width of scene and resulting image \\
+\hline
+\mbox{\texttt{ in}}  & {\em height} & height of scene and resulting image \\
+\hline
+\mbox{\texttt{ in}}  & {\em alpha} & whether to include alpha channel \\
+\hline
+\mbox{\texttt{ in}}  & {\em fast} & sacrifice compression ratio for speed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true only if no errors occurred
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{namespaceigl_1_1png_acd7567dc26e8a0ea6bb934e73d588e69}{render\+\_\+to\+\_\+png} 
+\end{DoxySeeAlso}
+\Hypertarget{namespaceigl_1_1png_ad3fe63f7a98c238e70f185337bdbcc65}\label{namespaceigl_1_1png_ad3fe63f7a98c238e70f185337bdbcc65} 
+\index{igl::png@{igl::png}!texture\_from\_file@{texture\_from\_file}}
+\index{texture\_from\_file@{texture\_from\_file}!igl::png@{igl::png}}
+\doxysubsubsection{\texorpdfstring{texture\_from\_file()}{texture\_from\_file()}}
+{\footnotesize\ttfamily bool igl\+::png\+::texture\+\_\+from\+\_\+file (\begin{DoxyParamCaption}\item[{const std\+::string}]{filename,  }\item[{GLuint \&}]{id }\end{DoxyParamCaption})}
+
+
+
+Read an image from an image file and use it as a texture. 
+
+Officially, only \sout{.tga and} .png are supported. Any filetype read by Image\+Magick\textquotesingle{}s {\ttfamily convert} will work via an unsafe system call.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em filename} & path to image file \\
+\hline
+\mbox{\texttt{ out}}  & {\em id} & of generated open\+GL texture \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false on failure 
+\end{DoxyReturn}
+\Hypertarget{namespaceigl_1_1png_aa1416af8c2bca7f8ff94e76da4158417}\label{namespaceigl_1_1png_aa1416af8c2bca7f8ff94e76da4158417} 
+\index{igl::png@{igl::png}!texture\_from\_png@{texture\_from\_png}}
+\index{texture\_from\_png@{texture\_from\_png}!igl::png@{igl::png}}
+\doxysubsubsection{\texorpdfstring{texture\_from\_png()}{texture\_from\_png()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool igl\+::png\+::texture\+\_\+from\+\_\+png (\begin{DoxyParamCaption}\item[{const std\+::string}]{png\+\_\+file,  }\item[{const bool}]{flip,  }\item[{GLuint \&}]{id }\end{DoxyParamCaption})}
+
+
+
+Read an image from a .png file and use it as a texture. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em png\+\_\+file} & path to .png file \\
+\hline
+\mbox{\texttt{ in}}  & {\em flip} & whether to flip the image vertically (A -\/-\/\texorpdfstring{$>$}{>} ∀) \\
+\hline
+\mbox{\texttt{ out}}  & {\em id} & of generated open\+GL texture \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false on failure 
+\end{DoxyReturn}
+\Hypertarget{namespaceigl_1_1png_a3cdc4feb99cf8c96b323ee751be42ac4}\label{namespaceigl_1_1png_a3cdc4feb99cf8c96b323ee751be42ac4} 
+\index{igl::png@{igl::png}!texture\_from\_png@{texture\_from\_png}}
+\index{texture\_from\_png@{texture\_from\_png}!igl::png@{igl::png}}
+\doxysubsubsection{\texorpdfstring{texture\_from\_png()}{texture\_from\_png()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool igl\+::png\+::texture\+\_\+from\+\_\+png (\begin{DoxyParamCaption}\item[{const std\+::string}]{png\+\_\+file,  }\item[{GLuint \&}]{id }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{namespaceigl_1_1png_a293b2e07c7f9f4bacdf1d075d646d7e2}\label{namespaceigl_1_1png_a293b2e07c7f9f4bacdf1d075d646d7e2} 
+\index{igl::png@{igl::png}!texture\_from\_png@{texture\_from\_png}}
+\index{texture\_from\_png@{texture\_from\_png}!igl::png@{igl::png}}
+\doxysubsubsection{\texorpdfstring{texture\_from\_png()}{texture\_from\_png()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool igl\+::png\+::texture\+\_\+from\+\_\+png (\begin{DoxyParamCaption}\item[{const std\+::string}]{png\+\_\+file,  }\item[{Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{R,  }\item[{Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{G,  }\item[{Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{B,  }\item[{Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{A }\end{DoxyParamCaption})}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000015}{Deprecated}}]use read\+PNG instead \end{DoxyRefDesc}
+\Hypertarget{namespaceigl_1_1png_a22afcde86706a6cdc101ab5058461bbf}\label{namespaceigl_1_1png_a22afcde86706a6cdc101ab5058461bbf} 
+\index{igl::png@{igl::png}!writePNG@{writePNG}}
+\index{writePNG@{writePNG}!igl::png@{igl::png}}
+\doxysubsubsection{\texorpdfstring{writePNG()}{writePNG()}}
+{\footnotesize\ttfamily bool igl\+::png\+::write\+PNG (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{R,  }\item[{const Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{G,  }\item[{const Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{B,  }\item[{const Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{A,  }\item[{const std\+::string}]{png\+\_\+file }\end{DoxyParamCaption})}
+
+
+
+Writes an image to a png file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em R} & red channel \\
+\hline
+\mbox{\texttt{ in}}  & {\em G} & green channel \\
+\hline
+\mbox{\texttt{ in}}  & {\em B} & blue channel \\
+\hline
+\mbox{\texttt{ in}}  & {\em A} & alpha channel \\
+\hline
+\mbox{\texttt{ in}}  & {\em png\+\_\+file} & path to .png file Returns true on success, false on failure \\
+\hline
+\end{DoxyParams}

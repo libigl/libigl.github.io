@@ -1,0 +1,59 @@
+\doxysection{submesh\+\_\+aabb\+\_\+tree.\+h}
+\hypertarget{submesh__aabb__tree_8h_source}{}\label{submesh__aabb__tree_8h_source}\index{include/igl/copyleft/cgal/submesh\_aabb\_tree.h@{include/igl/copyleft/cgal/submesh\_aabb\_tree.h}}
+\mbox{\hyperlink{submesh__aabb__tree_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2016\ Alec\ Jacobson}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ IGL\_COPYLET\_CGAL\_SUBMESH\_AABB\_TREE\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ IGL\_COPYLET\_CGAL\_SUBMESH\_AABB\_TREE\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}../../igl\_inline.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <CGAL/AABB\_tree.h>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <CGAL/AABB\_traits.h>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <CGAL/AABB\_triangle\_primitive.h>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <CGAL/intersections.h>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <CGAL/Exact\_predicates\_exact\_constructions\_kernel.h>}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \ \ \textcolor{keyword}{namespace\ }copyleft}
+\DoxyCodeLine{00025\ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{namespace\ }cgal}
+\DoxyCodeLine{00027\ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \textcolor{keyword}{template}<}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedI,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Kernel>}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a3b5cc8bbbcee4ed4567bc754a4e939c0}{submesh\_aabb\_tree}}(}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedV>\&\ V,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedF>\&\ F,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedI>\&\ I,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ CGAL::AABB\_tree<}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ CGAL::AABB\_traits<}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ Kernel,\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ CGAL::AABB\_triangle\_primitive<}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Kernel,\ \textcolor{keyword}{typename}\ std::vector<}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Kernel::Triangle\_3\ >::iterator\ >\ >\ >\ \&\ tree,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ std::vector<typename\ Kernel::Triangle\_3\ >\ \&\ triangles,}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ std::vector<bool>\ \&\ in\_I);}
+\DoxyCodeLine{00054\ \ \ \ \ \}}
+\DoxyCodeLine{00055\ \ \ \}}
+\DoxyCodeLine{00056\ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#\ \ include\ "{}submesh\_aabb\_tree.cpp"{}}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

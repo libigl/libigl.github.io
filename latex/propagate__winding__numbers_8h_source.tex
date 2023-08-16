@@ -1,0 +1,82 @@
+\doxysection{propagate\+\_\+winding\+\_\+numbers.\+h}
+\hypertarget{propagate__winding__numbers_8h_source}{}\label{propagate__winding__numbers_8h_source}\index{include/igl/copyleft/cgal/propagate\_winding\_numbers.h@{include/igl/copyleft/cgal/propagate\_winding\_numbers.h}}
+\mbox{\hyperlink{propagate__winding__numbers_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2015\ Qingnan\ Zhou\ <qnzhou@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ IGL\_COPYLEFT\_CGAL\_PROPAGATE\_WINDING\_NUMBERS\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ IGL\_COPYLEFT\_CGAL\_PROPAGATE\_WINDING\_NUMBERS\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}../../igl\_inline.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ The\ following\ methods\ compute\ the\ winding\ number\ on\ each\ side\ of\ each\ facet}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ or\ patch\ of\ a\ 3D\ mesh.\ \ The\ input\ mesh\ is\ valid\ if\ it\ splits\ the\ ambient}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ space,\ R\string^3,\ into\ subspaces\ with\ constant\ integer\ winding\ numbers.\ \ That\ is}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ the\ input\ mesh\ should\ be\ closed\ and\ for\ each\ directed\ edge\ the\ number\ of}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ clockwise\ facing\ facets\ should\ equal\ the\ number\ of\ counterclockwise\ facing}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ facets.}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \ \ \textcolor{keyword}{namespace\ }copyleft}
+\DoxyCodeLine{00025\ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{namespace\ }cgal}
+\DoxyCodeLine{00027\ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \textcolor{keyword}{template}<}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedL,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedW>}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_ab29a1ce9ef6539d66c1400a27db655d0}{propagate\_winding\_numbers}}(}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedV>\&\ V,}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedF>\&\ F,}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedL>\&\ labels,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedW>\&\ W);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \textcolor{comment}{//\ \(\backslash\)overload}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \textcolor{comment}{//\ @param[in]\ uE\ \ \ \ \#uE\ by\ 2\ list\ of\ vertex\_indices,\ represents\ undirected\ edges.}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \textcolor{comment}{//\ @param[in]\ uEC\ \ \#uE+1\ list\ of\ cumsums\ of\ directed\ edges\ sharing\ each\ unique\ edge}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \textcolor{comment}{//\ @param[in]\ uEE\ \ \#E\ list\ of\ indices\ into\ E\ (see\ \`{}igl::unique\_edge\_map`)}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \textcolor{comment}{//\ @param[in]\ num\_patches\ \ number\ of\ patches}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \textcolor{comment}{//\ @param[in]\ P\ \ \#F\ list\ of\ patch\ ids.}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \textcolor{comment}{//\ @param[in]\ num\_cells\ \ \ \ number\ of\ cells}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \textcolor{comment}{//\ @param[in]\ C\ \ \#P\ by\ 2\ list\ of\ cell\ ids\ on\ each\ side\ of\ each\ patch.}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \textcolor{keyword}{template}<}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DeriveduE,}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DeriveduEC,}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DeriveduEE,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedP,}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedC,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedL,}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedW>}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_ab29a1ce9ef6539d66c1400a27db655d0}{propagate\_winding\_numbers}}(}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedV>\&\ V,}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedF>\&\ F,}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DeriveduE>\&\ uE,}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DeriveduEC>\&\ uEC,}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DeriveduEE>\&\ uEE,}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ num\_patches,}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedP>\&\ P,}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ num\_cells,}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedC>\&\ C,}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedL>\&\ labels,}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedW>\&\ W);}
+\DoxyCodeLine{00088\ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \ \ \}}
+\DoxyCodeLine{00090\ \}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#\ \ include\ "{}propagate\_winding\_numbers.cpp"{}}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

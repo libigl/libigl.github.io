@@ -1,0 +1,1302 @@
+\doxysection{serialize.\+h}
+\hypertarget{serialize_8h_source}{}\label{serialize_8h_source}\index{include/igl/serialize.h@{include/igl/serialize.h}}
+\mbox{\hyperlink{serialize_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2014\ Christian\ Schüller\ <schuellchr@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_SERIALIZE\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_SERIALIZE\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ Functions\ to\ save\ and\ load\ a\ serialization\ of\ fundamental\ c++\ data\ types\ to}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ and\ from\ a\ binary\ file.\ STL\ containers,\ Eigen\ matrix\ types\ and\ nested\ data}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ structures\ are\ also\ supported.\ To\ serialize\ a\ user\ defined\ class\ implement}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ the\ interface\ Serializable\ or\ SerializableBase.}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ See\ also:\ xml/serialize\_xml.h}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ TODOs:}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ *\ arbitrary\ pointer\ graph\ structures}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{//\ Known\ issues:\ This\ is\ not\ written\ in\ libigl-\/style\ so\ it\ isn't\ (easily)}}
+\DoxyCodeLine{00024\ \textcolor{comment}{//\ "{}dualized"{}\ into\ the\ static\ library.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{//}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <type\_traits>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <numeric>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ <Eigen/Sparse>}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{igl__inline_8h}{igl\_inline.h}}"{}}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{comment}{//\ non-\/intrusive\ serialization\ helper\ macros}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ SERIALIZE\_TYPE(Type,Params)\ \(\backslash\)}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{namespace\ igl\ \{\ namespace\ serialization\ \{\ \(\backslash\)}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\ \ void\ \_serialization(bool\ s,Type\&\ obj,std::vector<char>\&\ buffer)\ \{Params\}\ \(\backslash\)}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\ \ template<>\ inline\ void\ serialize(const\ Type\&\ obj,std::vector<char>\&\ buffer)\ \{\ \(\backslash\)}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\ \ \ \ \_serialization(true,const\_cast<Type\&>(obj),buffer);\ \(\backslash\)}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\ \ \ \ \}\ \(\backslash\)}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\ \ template<>\ inline\ void\ deserialize(Type\&\ obj,const\ std::vector<char>\&\ buffer)\ \{\ \(\backslash\)}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\ \ \ \ \_serialization(false,obj,const\_cast<std::vector<char>\&>(buffer));\ \(\backslash\)}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\ \ \ \ \}\ \(\backslash\)}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\}\}}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ SERIALIZE\_TYPE\_SOURCE(Type,Params)\ \(\backslash\)}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{namespace\ igl\ \{\ namespace\ serialization\ \{\ \(\backslash\)}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\ \ void\ \_serialization(bool\ s,Type\&\ obj,std::vector<char>\&\ buffer)\ \{Params\}\ \(\backslash\)}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\ \ void\ \_serialize(const\ Type\&\ obj,std::vector<char>\&\ buffer)\ \{\ \(\backslash\)}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\ \ \ \ \_serialization(true,const\_cast<Type\&>(obj),buffer);\ \(\backslash\)}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\ \ \ \ \}\ \(\backslash\)}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\ \ void\ \_deserialize(Type\&\ obj,const\ std::vector<char>\&\ buffer)\ \{\ \(\backslash\)}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\ \ \ \ \_serialization(false,obj,const\_cast<std::vector<char>\&>(buffer));\ \(\backslash\)}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\ \ \ \ \}\ \(\backslash\)}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\}\}}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ SERIALIZE\_MEMBER(Object)\ igl::serializer(s,obj.Object,std::string(\#Object),buffer);}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ SERIALIZE\_MEMBER\_NAME(Object,Name)\ igl::serializer(s,obj.Object,std::string(Name),buffer);}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00073\ \{}
+\DoxyCodeLine{00074\ \ \ \textcolor{keyword}{struct\ }IndexedPointerBase;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \textcolor{comment}{//\ Serializes\ the\ given\ object\ either\ to\ a\ file\ or\ to\ a\ provided\ buffer}}
+\DoxyCodeLine{00077\ \ \ \textcolor{comment}{//\ Templates:}}
+\DoxyCodeLine{00078\ \ \ \textcolor{comment}{//\ \ \ T\ \ type\ of\ the\ object\ to\ serialize}}
+\DoxyCodeLine{00079\ \ \ \textcolor{comment}{//\ Inputs:}}
+\DoxyCodeLine{00080\ \ \ \textcolor{comment}{//\ \ \ obj\ \ \ \ \ \ \ \ object\ to\ serialize}}
+\DoxyCodeLine{00081\ \ \ \textcolor{comment}{//\ \ \ objectName\ unique\ object\ name,used\ for\ the\ identification}}
+\DoxyCodeLine{00082\ \ \ \textcolor{comment}{//\ \ \ overwrite\ \ set\ to\ true\ to\ overwrite\ an\ existing\ file}}
+\DoxyCodeLine{00083\ \ \ \textcolor{comment}{//\ \ \ filename\ \ \ name\ of\ the\ file\ containing\ the\ serialization}}
+\DoxyCodeLine{00084\ \ \ \textcolor{comment}{//\ Outputs:}}
+\DoxyCodeLine{00085\ \ \ \textcolor{comment}{//\ \ \ buffer\ \ \ \ \ binary\ serialization}}
+\DoxyCodeLine{00086\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00087\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00088\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a212b29890b63152674a53444a2003677}{serialize}}(\textcolor{keyword}{const}\ T\&\ obj,\textcolor{keyword}{const}\ std::string\&\ filename);}
+\DoxyCodeLine{00089\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00090\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a212b29890b63152674a53444a2003677}{serialize}}(\textcolor{keyword}{const}\ T\&\ obj,\textcolor{keyword}{const}\ std::string\&\ objectName,\textcolor{keyword}{const}\ std::string\&\ filename,\textcolor{keywordtype}{bool}\ overwrite\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00091\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00092\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a212b29890b63152674a53444a2003677}{serialize}}(\textcolor{keyword}{const}\ T\&\ obj,\textcolor{keyword}{const}\ std::string\&\ objectName,std::vector<char>\&\ buffer);}
+\DoxyCodeLine{00093\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00094\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a212b29890b63152674a53444a2003677}{serialize}}(\textcolor{keyword}{const}\ T\&\ obj,\textcolor{keyword}{const}\ std::string\&\ objectName,std::vector<char>\&\ buffer);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \textcolor{comment}{//\ Deserializes\ the\ given\ data\ from\ a\ file\ or\ buffer\ back\ to\ the\ provided\ object}}
+\DoxyCodeLine{00097\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00098\ \ \ \textcolor{comment}{//\ Templates:}}
+\DoxyCodeLine{00099\ \ \ \textcolor{comment}{//\ \ \ T\ \ type\ of\ the\ object\ to\ serialize}}
+\DoxyCodeLine{00100\ \ \ \textcolor{comment}{//\ Inputs:}}
+\DoxyCodeLine{00101\ \ \ \textcolor{comment}{//\ \ \ buffer\ \ \ \ \ binary\ serialization}}
+\DoxyCodeLine{00102\ \ \ \textcolor{comment}{//\ \ \ objectName\ unique\ object\ name,\ used\ for\ the\ identification}}
+\DoxyCodeLine{00103\ \ \ \textcolor{comment}{//\ \ \ filename\ \ \ name\ of\ the\ file\ containing\ the\ serialization}}
+\DoxyCodeLine{00104\ \ \ \textcolor{comment}{//\ Outputs:}}
+\DoxyCodeLine{00105\ \ \ \textcolor{comment}{//\ \ \ obj\ \ \ \ \ \ \ \ object\ to\ load\ back\ serialization\ to}}
+\DoxyCodeLine{00106\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00107\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00108\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a61617b81f6b89d6692a31f8d34c6d294}{deserialize}}(T\&\ obj,\textcolor{keyword}{const}\ std::string\&\ filename);}
+\DoxyCodeLine{00109\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00110\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a61617b81f6b89d6692a31f8d34c6d294}{deserialize}}(T\&\ obj,\textcolor{keyword}{const}\ std::string\&\ objectName,\textcolor{keyword}{const}\ std::string\&\ filename);}
+\DoxyCodeLine{00111\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00112\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a61617b81f6b89d6692a31f8d34c6d294}{deserialize}}(T\&\ obj,\textcolor{keyword}{const}\ std::string\&\ objectName,\textcolor{keyword}{const}\ std::vector<char>\&\ buffer);}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \textcolor{comment}{//\ Wrapper\ to\ expose\ both,\ the\ de-\/\ and\ serialization\ as\ one\ function}}
+\DoxyCodeLine{00115\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00116\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00117\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_ad1b7a7a566f0d4a5553987d4d25aedec}{serializer}}(\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a212b29890b63152674a53444a2003677}{serialize}},T\&\ obj,\textcolor{keyword}{const}\ std::string\&\ filename);}
+\DoxyCodeLine{00118\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00119\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_ad1b7a7a566f0d4a5553987d4d25aedec}{serializer}}(\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a212b29890b63152674a53444a2003677}{serialize}},T\&\ obj,\textcolor{keyword}{const}\ std::string\&\ objectName,\textcolor{keyword}{const}\ std::string\&\ filename,\textcolor{keywordtype}{bool}\ overwrite\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00120\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00121\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_ad1b7a7a566f0d4a5553987d4d25aedec}{serializer}}(\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a212b29890b63152674a53444a2003677}{serialize}},T\&\ obj,\textcolor{keyword}{const}\ std::string\&\ objectName,std::vector<char>\&\ buffer);}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \textcolor{comment}{//\ User\ defined\ types\ have\ to\ either\ overload\ the\ function\ igl::serialization::serialize()}}
+\DoxyCodeLine{00124\ \ \ \textcolor{comment}{//\ and\ igl::serialization::deserialize()\ for\ their\ type\ (non-\/intrusive\ serialization):}}
+\DoxyCodeLine{00125\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00126\ \ \ \textcolor{comment}{//\ namespace\ igl\ \{\ namespace\ serialization}}
+\DoxyCodeLine{00127\ \ \ \textcolor{comment}{//\ \{}}
+\DoxyCodeLine{00128\ \ \ \textcolor{comment}{//\ \ \ template<>}}
+\DoxyCodeLine{00129\ \ \ \textcolor{comment}{//\ \ \ inline\ void\ serialize(const\ UserType\&\ obj,std::vector<char>\&\ buffer)\ \{}}
+\DoxyCodeLine{00130\ \ \ \textcolor{comment}{//\ \ \ \ \ ::igl::serialize(obj.var,"{}var"{},buffer);}}
+\DoxyCodeLine{00131\ \ \ \textcolor{comment}{//\ \ \ \}}}
+\DoxyCodeLine{00132\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00133\ \ \ \textcolor{comment}{//\ \ \ template<>}}
+\DoxyCodeLine{00134\ \ \ \textcolor{comment}{//\ \ \ inline\ void\ deserialize(UserType\&\ obj,const\ std::vector<char>\&\ buffer)\ \{}}
+\DoxyCodeLine{00135\ \ \ \textcolor{comment}{//\ \ \ \ \ ::igl::deserialize(obj.var,"{}var"{},buffer);}}
+\DoxyCodeLine{00136\ \ \ \textcolor{comment}{//\ \ \ \}}}
+\DoxyCodeLine{00137\ \ \ \textcolor{comment}{//\ \}\}}}
+\DoxyCodeLine{00138\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00139\ \ \ \textcolor{comment}{//\ or\ use\ this\ macro\ for\ convenience:}}
+\DoxyCodeLine{00140\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00141\ \ \ \textcolor{comment}{//\ SERIALIZE\_TYPE(UserType,}}
+\DoxyCodeLine{00142\ \ \ \textcolor{comment}{//\ \ \ SERIALIZE\_MEMBER(var)}}
+\DoxyCodeLine{00143\ \ \ \textcolor{comment}{//\ )}}
+\DoxyCodeLine{00144\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00145\ \ \ \textcolor{comment}{//\ or\ to\ derive\ from\ the\ class\ Serializable\ and\ add\ their\ the\ members}}
+\DoxyCodeLine{00146\ \ \ \textcolor{comment}{//\ in\ InitSerialization\ like\ the\ following:}}
+\DoxyCodeLine{00147\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00148\ \ \ \textcolor{comment}{//\ class\ UserType\ :\ public\ igl::Serializable\ \{}}
+\DoxyCodeLine{00149\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00150\ \ \ \textcolor{comment}{//\ \ \ int\ var;}}
+\DoxyCodeLine{00151\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00152\ \ \ \textcolor{comment}{//\ \ \ void\ InitSerialization()\ \{}}
+\DoxyCodeLine{00153\ \ \ \textcolor{comment}{//\ \ \ \ \ this-\/>Add(var,"{}var"{});}}
+\DoxyCodeLine{00154\ \ \ \textcolor{comment}{//\ \ \ \}}}
+\DoxyCodeLine{00155\ \ \ \textcolor{comment}{//\ \};}}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \textcolor{comment}{//\ Base\ interface\ for\ user\ defined\ types}}
+\DoxyCodeLine{00158\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1SerializableBase}{SerializableBase}}}
+\DoxyCodeLine{00159\ \ \ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{structigl_1_1SerializableBase_af8a100fdc54b6d75df0ee13d8bcd58ea}{\string~SerializableBase}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structigl_1_1SerializableBase_a099328a98539a13e14333918649fb929}{Serialize}}(std::vector<char>\&\ buffer)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structigl_1_1SerializableBase_a166b38dd5a48351c6897cdd8b1b1212e}{Deserialize}}(\textcolor{keyword}{const}\ std::vector<char>\&\ buffer)\ =\ 0;}
+\DoxyCodeLine{00163\ \ \ \};}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \ \ \textcolor{comment}{//\ Convenient\ interface\ for\ user\ defined\ types}}
+\DoxyCodeLine{00166\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classigl_1_1Serializable}{Serializable}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structigl_1_1SerializableBase}{SerializableBase}}}
+\DoxyCodeLine{00167\ \ \ \{}
+\DoxyCodeLine{00168\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keyword}{struct\ }SerializationObject\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structigl_1_1SerializableBase}{SerializableBase}}}
+\DoxyCodeLine{00172\ \ \ \ \ \{}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a85ec0330094fed10f10bb12010bbcdbfa6ce976e8f061b2b5cfe4d0c50c3405dd}{Binary}};}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ std::string\ Name;}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ std::unique\_ptr<T>\ Object;}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Serialize(std::vector<char>\&\ buffer)\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_a212b29890b63152674a53444a2003677}{igl::serialize}}(*Object,Name,buffer);}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Deserialize(\textcolor{keyword}{const}\ std::vector<char>\&\ buffer)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_a61617b81f6b89d6692a31f8d34c6d294}{igl::deserialize}}(*Object,Name,buffer);}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00184\ \ \ \ \ \};}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keyword}{mutable}\ \textcolor{keywordtype}{bool}\ initialized;}
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keyword}{mutable}\ std::vector<SerializableBase*>\ objects;}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{comment}{//\ You\ **MUST**\ Override\ this\ function\ to\ add\ your\ member\ variables\ which}}
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{comment}{//\ should\ be\ serialized}}
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{comment}{//\ http://stackoverflow.com/a/6634382/148668}}
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1Serializable_acb033c912f09e2c4fd7db8d4534199cc}{InitSerialization}}()\ =\ 0;}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{comment}{//\ Following\ functions\ can\ be\ overridden\ to\ handle\ the\ specific\ events.}}
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{comment}{//\ Return\ false\ to\ prevent\ the\ de-\//serialization\ of\ an\ object.}}
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1Serializable_aa73a685375a251a2c8f9ab9cff88accf}{PreSerialization}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1Serializable_a1e46d11958e0d2d478a78cf85dd0a545}{PostSerialization}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1Serializable_a5b28150e0cceca30b77da33419915be0}{PreDeserialization}}();}
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1Serializable_aa4bbf886e628a98ace9c7a1147a69245}{PostDeserialization}}();}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{comment}{//\ Default\ implementation\ of\ SerializableBase\ interface}}
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1Serializable_a996403a9b5b754ae1b52cc4e76c155ba}{Serialize}}(std::vector<char>\&\ buffer)\ \textcolor{keyword}{const}\ \textcolor{keyword}{override}\ \textcolor{keyword}{final};}
+\DoxyCodeLine{00206\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1Serializable_a4918c7c9a8246439f7bf7d773e30b19f}{Deserialize}}(\textcolor{keyword}{const}\ std::vector<char>\&\ buffer)\ \textcolor{keyword}{override}\ \textcolor{keyword}{final};}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{comment}{//\ Default\ constructor,\ destructor,\ assignment\ and\ copy\ constructor}}
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1Serializable_a3cb2b4150c6ded707033e62db6dd1254}{Serializable}}();}
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1Serializable_a3cb2b4150c6ded707033e62db6dd1254}{Serializable}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1Serializable}{Serializable}}\&\ obj);}
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1Serializable_abf548c0317c99ba76e9923534a1488d4}{\string~Serializable}}();}
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1Serializable}{Serializable}}\&\ \mbox{\hyperlink{classigl_1_1Serializable_ab728b67cff536f7042d16246d0a1fa75}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1Serializable}{Serializable}}\&\ obj);}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \ \ \ \ \textcolor{comment}{//\ Use\ this\ function\ to\ add\ your\ variables\ which\ should\ be\ serialized}}
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1Serializable_a188c1d173965b90be0f03b1096ba2604}{Add}}(T\&\ obj,std::string\ name,\textcolor{keywordtype}{bool}\ binary\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00217\ \ \ \};}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ \ \ \textcolor{comment}{//\ structure\ for\ pointer\ handling}}
+\DoxyCodeLine{00220\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1IndexedPointerBase}{IndexedPointerBase}}}
+\DoxyCodeLine{00221\ \ \ \{}
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keyword}{enum}\ \{\ \mbox{\hyperlink{structigl_1_1IndexedPointerBase_a8390c40d2ba9f148dfaf27333cea05a7afaa476756f33e45df87cd4fb89b8f590}{BEGIN}},\mbox{\hyperlink{structigl_1_1IndexedPointerBase_a8390c40d2ba9f148dfaf27333cea05a7a88deaa1599d6b518d22adb3f3b9dbcf8}{END}}\ \}\ \mbox{\hyperlink{structigl_1_1IndexedPointerBase_a7d0c1da86a8fcaf740d7f06d24ebae75}{Type}};}
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structigl_1_1IndexedPointerBase_aed73bfc59e3a768cdcc8584b309e49f4}{Index}};}
+\DoxyCodeLine{00224\ \ \ \};}
+\DoxyCodeLine{00225\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00226\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1IndexedPointer}{IndexedPointer}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structigl_1_1IndexedPointerBase}{IndexedPointerBase}}}
+\DoxyCodeLine{00227\ \ \ \{}
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{keyword}{const}\ T*\ \mbox{\hyperlink{structigl_1_1IndexedPointer_ab9623ca482e39cfd78e57880573cd17e}{Object}};}
+\DoxyCodeLine{00229\ \ \ \};}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \ \ \textcolor{comment}{//\ internal\ functions}}
+\DoxyCodeLine{00232\ \ \ \textcolor{keyword}{namespace\ }serialization}
+\DoxyCodeLine{00233\ \ \ \{}
+\DoxyCodeLine{00234\ \ \ \ \ \textcolor{comment}{//\ compile\ time\ type\ checks}}
+\DoxyCodeLine{00235\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00236\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1serialization_1_1is__stl__container}{is\_stl\_container}}\ \{\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structigl_1_1serialization_1_1is__stl__container_a615c8d14c3eaa680dc4dd380f032fa78}{value}}\ =\ \textcolor{keyword}{false};\ \};}
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T1,\textcolor{keyword}{typename}\ T2>}
+\DoxyCodeLine{00238\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1serialization_1_1is__stl__container}{is\_stl\_container}}<std::pair<T1,T2>\ >\ \{\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structigl_1_1serialization_1_1is__stl__container_a615c8d14c3eaa680dc4dd380f032fa78}{value}}\ =\ \textcolor{keyword}{true};\ \};}
+\DoxyCodeLine{00239\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T1,\textcolor{keyword}{typename}\ T2>}
+\DoxyCodeLine{00240\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1serialization_1_1is__stl__container}{is\_stl\_container}}<std::vector<T1,T2>\ >\ \{\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structigl_1_1serialization_1_1is__stl__container_a615c8d14c3eaa680dc4dd380f032fa78}{value}}\ =\ \textcolor{keyword}{true};\ \};}
+\DoxyCodeLine{00241\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00242\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1serialization_1_1is__stl__container}{is\_stl\_container}}<std::set<T>\ >\ \{\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structigl_1_1serialization_1_1is__stl__container_a615c8d14c3eaa680dc4dd380f032fa78}{value}}\ =\ \textcolor{keyword}{true};\ \};}
+\DoxyCodeLine{00243\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T1,\textcolor{keyword}{typename}\ T2>}
+\DoxyCodeLine{00244\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1serialization_1_1is__stl__container}{is\_stl\_container}}<std::map<T1,T2>\ >\ \{\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structigl_1_1serialization_1_1is__stl__container_a615c8d14c3eaa680dc4dd380f032fa78}{value}}\ =\ \textcolor{keyword}{true};\ \};}
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00246\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1serialization_1_1is__stl__container}{is\_stl\_container}}<std::list<T>\ >\ \{\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structigl_1_1serialization_1_1is__stl__container_a615c8d14c3eaa680dc4dd380f032fa78}{value}}\ =\ \textcolor{keyword}{true};\ \};}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00249\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1serialization_1_1is__eigen__type}{is\_eigen\_type}}\ \{\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structigl_1_1serialization_1_1is__eigen__type_aa39f7b5e45c6288bd5ca41ed97235c33}{value}}\ =\ \textcolor{keyword}{false};\ \};}
+\DoxyCodeLine{00250\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\textcolor{keywordtype}{int}\ R,\textcolor{keywordtype}{int}\ C,\textcolor{keywordtype}{int}\ P,\textcolor{keywordtype}{int}\ MR,\textcolor{keywordtype}{int}\ MC>}
+\DoxyCodeLine{00251\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1serialization_1_1is__eigen__type}{is\_eigen\_type}}<Eigen::Matrix<T,R,C,P,MR,MC>\ >\ \{\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structigl_1_1serialization_1_1is__eigen__type_aa39f7b5e45c6288bd5ca41ed97235c33}{value}}\ =\ \textcolor{keyword}{true};\ \};}
+\DoxyCodeLine{00252\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\textcolor{keywordtype}{int}\ R,\textcolor{keywordtype}{int}\ C,\textcolor{keywordtype}{int}\ P,\textcolor{keywordtype}{int}\ MR,\textcolor{keywordtype}{int}\ MC>}
+\DoxyCodeLine{00253\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1serialization_1_1is__eigen__type}{is\_eigen\_type}}<Eigen::Array<T,R,C,P,MR,MC>\ >\ \{\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structigl_1_1serialization_1_1is__eigen__type_aa39f7b5e45c6288bd5ca41ed97235c33}{value}}\ =\ \textcolor{keyword}{true};\ \};}
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\textcolor{keywordtype}{int}\ P,\textcolor{keyword}{typename}\ I>}
+\DoxyCodeLine{00255\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1serialization_1_1is__eigen__type}{is\_eigen\_type}}<Eigen::SparseMatrix<T,P,I>\ >\ \{\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structigl_1_1serialization_1_1is__eigen__type_aa39f7b5e45c6288bd5ca41ed97235c33}{value}}\ =\ \textcolor{keyword}{true};\ \};}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00257\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00258\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1serialization_1_1is__smart__ptr}{is\_smart\_ptr}}\ \{\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structigl_1_1serialization_1_1is__smart__ptr_ad33949932a25aea9b5ba099260ea1648}{value}}\ =\ \textcolor{keyword}{false};\ \};}
+\DoxyCodeLine{00259\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00260\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1serialization_1_1is__smart__ptr}{is\_smart\_ptr}}<std::shared\_ptr<T>\ >\ \{\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structigl_1_1serialization_1_1is__smart__ptr_ad33949932a25aea9b5ba099260ea1648}{value}}\ =\ \textcolor{keyword}{true};\ \};}
+\DoxyCodeLine{00261\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00262\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1serialization_1_1is__smart__ptr}{is\_smart\_ptr}}<std::unique\_ptr<T>\ >\ \{\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structigl_1_1serialization_1_1is__smart__ptr_ad33949932a25aea9b5ba099260ea1648}{value}}\ =\ \textcolor{keyword}{true};\ \};}
+\DoxyCodeLine{00263\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00264\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1serialization_1_1is__smart__ptr}{is\_smart\_ptr}}<std::weak\_ptr<T>\ >\ \{\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structigl_1_1serialization_1_1is__smart__ptr_ad33949932a25aea9b5ba099260ea1648}{value}}\ =\ \textcolor{keyword}{true};\ \};}
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00266\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00267\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1serialization_1_1is__serializable}{is\_serializable}}\ \{}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structigl_1_1serialization_1_1is__serializable_a726172bca5924d401497e0dfebfbc557}{value}}\ =\ std::is\_fundamental<T>::value\ ||\ std::is\_same<std::string,T>::value\ ||\ std::is\_enum<T>::value\ ||\ std::is\_base\_of<SerializableBase,T>::value}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ ||\ \mbox{\hyperlink{structigl_1_1serialization_1_1is__stl__container}{is\_stl\_container<T>::value}}\ ||\ \mbox{\hyperlink{structigl_1_1serialization_1_1is__eigen__type}{is\_eigen\_type<T>::value}}\ ||\ std::is\_pointer<T>::value\ ||\ \mbox{\hyperlink{structigl_1_1serialization_1_1is__smart__ptr}{serialization::is\_smart\_ptr<T>::value}};}
+\DoxyCodeLine{00270\ \ \ \ \ \};}
+\DoxyCodeLine{00271\ }
+\DoxyCodeLine{00272\ \ \ \ \ \textcolor{comment}{//\ non\ serializable\ types}}
+\DoxyCodeLine{00273\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00274\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<!is\_serializable<T>::value,\textcolor{keywordtype}{size\_t}>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ T\&\ obj);}
+\DoxyCodeLine{00275\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00276\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<!is\_serializable<T>::value>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ T\&\ obj,std::vector<char>\&\ buffer,std::vector<char>::iterator\&\ iter);}
+\DoxyCodeLine{00277\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00278\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<!is\_serializable<T>::value>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(T\&\ obj,std::vector<char>::const\_iterator\&\ iter);}
+\DoxyCodeLine{00279\ }
+\DoxyCodeLine{00280\ \ \ \ \ \textcolor{comment}{//\ fundamental\ types}}
+\DoxyCodeLine{00281\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00282\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<std::is\_fundamental<T>::value,\textcolor{keywordtype}{size\_t}>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ T\&\ obj);}
+\DoxyCodeLine{00283\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00284\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<std::is\_fundamental<T>::value>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ T\&\ obj,std::vector<char>\&\ buffer,std::vector<char>::iterator\&\ iter);}
+\DoxyCodeLine{00285\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00286\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<std::is\_fundamental<T>::value>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(T\&\ obj,std::vector<char>::const\_iterator\&\ iter);}
+\DoxyCodeLine{00287\ }
+\DoxyCodeLine{00288\ \ \ \ \ \textcolor{comment}{//\ std::string}}
+\DoxyCodeLine{00289\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ std::string\&\ obj);}
+\DoxyCodeLine{00290\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ std::string\&\ obj,std::vector<char>\&\ buffer,std::vector<char>::iterator\&\ iter);}
+\DoxyCodeLine{00291\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(std::string\&\ obj,std::vector<char>::const\_iterator\&\ iter);}
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00293\ \ \ \ \ \textcolor{comment}{//\ enum\ types}}
+\DoxyCodeLine{00294\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00295\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<std::is\_enum<T>::value,\textcolor{keywordtype}{size\_t}>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ T\&\ obj);}
+\DoxyCodeLine{00296\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00297\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<std::is\_enum<T>::value>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ T\&\ obj,std::vector<char>\&\ buffer,std::vector<char>::iterator\&\ iter);}
+\DoxyCodeLine{00298\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00299\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<std::is\_enum<T>::value>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(T\&\ obj,std::vector<char>::const\_iterator\&\ iter);}
+\DoxyCodeLine{00300\ }
+\DoxyCodeLine{00301\ \ \ \ \ \textcolor{comment}{//\ SerializableBase}}
+\DoxyCodeLine{00302\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00303\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<std::is\_base\_of<SerializableBase,T>::value,\textcolor{keywordtype}{size\_t}>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ T\&\ obj);}
+\DoxyCodeLine{00304\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00305\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<std::is\_base\_of<SerializableBase,T>::value>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ T\&\ obj,std::vector<char>\&\ buffer,std::vector<char>::iterator\&\ iter);}
+\DoxyCodeLine{00306\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00307\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<std::is\_base\_of<SerializableBase,T>::value>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(T\&\ obj,std::vector<char>::const\_iterator\&\ iter);}
+\DoxyCodeLine{00308\ }
+\DoxyCodeLine{00309\ \ \ \ \ \textcolor{comment}{//\ stl\ containers}}
+\DoxyCodeLine{00310\ \ \ \ \ \textcolor{comment}{//\ std::pair}}
+\DoxyCodeLine{00311\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T1,\textcolor{keyword}{typename}\ T2>}
+\DoxyCodeLine{00312\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ std::pair<T1,T2>\&\ obj);}
+\DoxyCodeLine{00313\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T1,\textcolor{keyword}{typename}\ T2>}
+\DoxyCodeLine{00314\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ std::pair<T1,T2>\&\ obj,std::vector<char>\&\ buffer,std::vector<char>::iterator\&\ iter);}
+\DoxyCodeLine{00315\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T1,\textcolor{keyword}{typename}\ T2>}
+\DoxyCodeLine{00316\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(std::pair<T1,T2>\&\ obj,std::vector<char>::const\_iterator\&\ iter);}
+\DoxyCodeLine{00317\ }
+\DoxyCodeLine{00318\ \ \ \ \ \textcolor{comment}{//\ std::vector}}
+\DoxyCodeLine{00319\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T1,\textcolor{keyword}{typename}\ T2>}
+\DoxyCodeLine{00320\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ std::vector<T1,T2>\&\ obj);}
+\DoxyCodeLine{00321\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T1,\textcolor{keyword}{typename}\ T2>}
+\DoxyCodeLine{00322\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ std::vector<T1,T2>\&\ obj,std::vector<char>\&\ buffer,std::vector<char>::iterator\&\ iter);}
+\DoxyCodeLine{00323\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T1,\textcolor{keyword}{typename}\ T2>}
+\DoxyCodeLine{00324\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(std::vector<T1,T2>\&\ obj,std::vector<char>::const\_iterator\&\ iter);}
+\DoxyCodeLine{00325\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T2>}
+\DoxyCodeLine{00326\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(std::vector<bool,T2>\&\ obj,std::vector<char>::const\_iterator\&\ iter);}
+\DoxyCodeLine{00327\ }
+\DoxyCodeLine{00328\ \ \ \ \ \textcolor{comment}{//\ std::set}}
+\DoxyCodeLine{00329\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00330\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ std::set<T>\&\ obj);}
+\DoxyCodeLine{00331\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00332\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ std::set<T>\&\ obj,std::vector<char>\&\ buffer,std::vector<char>::iterator\&\ iter);}
+\DoxyCodeLine{00333\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00334\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(std::set<T>\&\ obj,std::vector<char>::const\_iterator\&\ iter);}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00336\ \ \ \ \ \textcolor{comment}{//\ std::map}}
+\DoxyCodeLine{00337\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T1,\textcolor{keyword}{typename}\ T2>}
+\DoxyCodeLine{00338\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ std::map<T1,T2>\&\ obj);}
+\DoxyCodeLine{00339\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T1,\textcolor{keyword}{typename}\ T2>}
+\DoxyCodeLine{00340\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ std::map<T1,T2>\&\ obj,std::vector<char>\&\ buffer,std::vector<char>::iterator\&\ iter);}
+\DoxyCodeLine{00341\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T1,\textcolor{keyword}{typename}\ T2>}
+\DoxyCodeLine{00342\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(std::map<T1,T2>\&\ obj,std::vector<char>::const\_iterator\&\ iter);}
+\DoxyCodeLine{00343\ }
+\DoxyCodeLine{00344\ \ \ \ \ \textcolor{comment}{//\ std::list}}
+\DoxyCodeLine{00345\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00346\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ std::list<T>\&\ obj);}
+\DoxyCodeLine{00347\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00348\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ std::list<T>\&\ obj,\ std::vector<char>\&\ buffer,\ std::vector<char>::iterator\&\ iter);}
+\DoxyCodeLine{00349\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00350\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(std::list<T>\&\ obj,\ std::vector<char>::const\_iterator\&\ iter);}
+\DoxyCodeLine{00351\ }
+\DoxyCodeLine{00352\ \ \ \ \ \textcolor{comment}{//\ Eigen\ types}}
+\DoxyCodeLine{00353\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keywordtype}{int}\ R,\textcolor{keywordtype}{int}\ C,\textcolor{keywordtype}{int}\ P,\textcolor{keywordtype}{int}\ MR,\textcolor{keywordtype}{int}\ MC>}
+\DoxyCodeLine{00354\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ Eigen::Matrix<T,R,C,P,MR,MC>\&\ obj);}
+\DoxyCodeLine{00355\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keywordtype}{int}\ R,\textcolor{keywordtype}{int}\ C,\textcolor{keywordtype}{int}\ P,\textcolor{keywordtype}{int}\ MR,\textcolor{keywordtype}{int}\ MC>}
+\DoxyCodeLine{00356\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ Eigen::Matrix<T,R,C,P,MR,MC>\&\ obj,std::vector<char>\&\ buffer,std::vector<char>::iterator\&\ iter);}
+\DoxyCodeLine{00357\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keywordtype}{int}\ R,\textcolor{keywordtype}{int}\ C,\textcolor{keywordtype}{int}\ P,\textcolor{keywordtype}{int}\ MR,\textcolor{keywordtype}{int}\ MC>}
+\DoxyCodeLine{00358\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(Eigen::Matrix<T,R,C,P,MR,MC>\&\ obj,std::vector<char>::const\_iterator\&\ iter);}
+\DoxyCodeLine{00359\ }
+\DoxyCodeLine{00360\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keywordtype}{int}\ R,\textcolor{keywordtype}{int}\ C,\textcolor{keywordtype}{int}\ P,\textcolor{keywordtype}{int}\ MR,\textcolor{keywordtype}{int}\ MC>}
+\DoxyCodeLine{00361\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ Eigen::Array<T,R,C,P,MR,MC>\&\ obj);}
+\DoxyCodeLine{00362\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keywordtype}{int}\ R,\textcolor{keywordtype}{int}\ C,\textcolor{keywordtype}{int}\ P,\textcolor{keywordtype}{int}\ MR,\textcolor{keywordtype}{int}\ MC>}
+\DoxyCodeLine{00363\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ Eigen::Array<T,R,C,P,MR,MC>\&\ obj,std::vector<char>\&\ buffer,std::vector<char>::iterator\&\ iter);}
+\DoxyCodeLine{00364\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keywordtype}{int}\ R,\textcolor{keywordtype}{int}\ C,\textcolor{keywordtype}{int}\ P,\textcolor{keywordtype}{int}\ MR,\textcolor{keywordtype}{int}\ MC>}
+\DoxyCodeLine{00365\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(Eigen::Array<T,R,C,P,MR,MC>\&\ obj,std::vector<char>::const\_iterator\&\ iter);}
+\DoxyCodeLine{00366\ }
+\DoxyCodeLine{00367\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keywordtype}{int}\ P,\textcolor{keyword}{typename}\ I>}
+\DoxyCodeLine{00368\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ Eigen::SparseMatrix<T,P,I>\&\ obj);}
+\DoxyCodeLine{00369\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keywordtype}{int}\ P,\textcolor{keyword}{typename}\ I>}
+\DoxyCodeLine{00370\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ Eigen::SparseMatrix<T,P,I>\&\ obj,std::vector<char>\&\ buffer,std::vector<char>::iterator\&\ iter);}
+\DoxyCodeLine{00371\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keywordtype}{int}\ P,\textcolor{keyword}{typename}\ I>}
+\DoxyCodeLine{00372\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(Eigen::SparseMatrix<T,P,I>\&\ obj,std::vector<char>::const\_iterator\&\ iter);}
+\DoxyCodeLine{00373\ }
+\DoxyCodeLine{00374\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keywordtype}{int}\ P>}
+\DoxyCodeLine{00375\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ Eigen::Quaternion<T,P>\&\ obj);}
+\DoxyCodeLine{00376\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keywordtype}{int}\ P>}
+\DoxyCodeLine{00377\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ Eigen::Quaternion<T,P>\&\ obj,std::vector<char>\&\ buffer,std::vector<char>::iterator\&\ iter);}
+\DoxyCodeLine{00378\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keywordtype}{int}\ P>}
+\DoxyCodeLine{00379\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(Eigen::Quaternion<T,P>\&\ obj,std::vector<char>::const\_iterator\&\ iter);}
+\DoxyCodeLine{00380\ }
+\DoxyCodeLine{00381\ \ \ \ \ \textcolor{comment}{//\ raw\ pointers}}
+\DoxyCodeLine{00382\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00383\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<std::is\_pointer<T>::value,\textcolor{keywordtype}{size\_t}>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ T\&\ obj);}
+\DoxyCodeLine{00384\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00385\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<std::is\_pointer<T>::value>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ T\&\ obj,std::vector<char>\&\ buffer,std::vector<char>::iterator\&\ iter);}
+\DoxyCodeLine{00386\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00387\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<std::is\_pointer<T>::value>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(T\&\ obj,std::vector<char>::const\_iterator\&\ iter);}
+\DoxyCodeLine{00388\ }
+\DoxyCodeLine{00389\ \ \ \ \ \textcolor{comment}{//\ std::shared\_ptr\ and\ std::unique\_ptr}}
+\DoxyCodeLine{00390\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00391\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<serialization::is\_smart\_ptr<T>::value,\textcolor{keywordtype}{size\_t}>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ T\&\ obj);}
+\DoxyCodeLine{00392\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00393\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<serialization::is\_smart\_ptr<T>::value>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ T\&\ obj,std::vector<char>\&\ buffer,std::vector<char>::iterator\&\ iter);}
+\DoxyCodeLine{00394\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{template}<\textcolor{keyword}{typename}>\ \textcolor{keyword}{class\ }T0,\ \textcolor{keyword}{typename}\ T1>}
+\DoxyCodeLine{00395\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<serialization::is\_smart\_ptr<T0<T1>\ >::value>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(T0<T1>\&\ obj,std::vector<char>::const\_iterator\&\ iter);}
+\DoxyCodeLine{00396\ }
+\DoxyCodeLine{00397\ \ \ \ \ \textcolor{comment}{//\ std::weak\_ptr}}
+\DoxyCodeLine{00398\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00399\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ std::weak\_ptr<T>\&\ obj);}
+\DoxyCodeLine{00400\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00401\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ std::weak\_ptr<T>\&\ obj,std::vector<char>\&\ buffer,std::vector<char>::iterator\&\ iter);}
+\DoxyCodeLine{00402\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00403\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(std::weak\_ptr<T>\&\ obj,std::vector<char>::const\_iterator\&\ iter);}
+\DoxyCodeLine{00404\ }
+\DoxyCodeLine{00405\ \ \ \ \ \textcolor{comment}{//\ functions\ to\ overload\ for\ non-\/intrusive\ serialization}}
+\DoxyCodeLine{00406\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00407\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ T\&\ obj,std::vector<char>\&\ buffer);}
+\DoxyCodeLine{00408\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00409\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(T\&\ obj,\textcolor{keyword}{const}\ std::vector<char>\&\ buffer);}
+\DoxyCodeLine{00410\ }
+\DoxyCodeLine{00411\ \ \ \ \ \textcolor{comment}{//\ helper\ functions}}
+\DoxyCodeLine{00412\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00413\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_abcf437bf8ec7e22c64c641140ef5567a}{updateMemoryMap}}(T\&\ obj,\textcolor{keywordtype}{size\_t}\ size);}
+\DoxyCodeLine{00414\ \ \ \}}
+\DoxyCodeLine{00415\ \}}
+\DoxyCodeLine{00416\ }
+\DoxyCodeLine{00417\ \textcolor{comment}{//\ Always\ include\ inlines\ for\ these\ functions}}
+\DoxyCodeLine{00418\ }
+\DoxyCodeLine{00419\ \textcolor{comment}{//\ IMPLEMENTATION}}
+\DoxyCodeLine{00420\ }
+\DoxyCodeLine{00421\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00422\ \{}
+\DoxyCodeLine{00423\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00424\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a212b29890b63152674a53444a2003677}{serialize}}(\textcolor{keyword}{const}\ T\&\ obj,\textcolor{keyword}{const}\ std::string\&\ filename)}
+\DoxyCodeLine{00425\ \ \ \{}
+\DoxyCodeLine{00426\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceigl_a212b29890b63152674a53444a2003677}{serialize}}(obj,\textcolor{stringliteral}{"{}obj"{}},filename,\textcolor{keyword}{true});}
+\DoxyCodeLine{00427\ \ \ \}}
+\DoxyCodeLine{00428\ }
+\DoxyCodeLine{00429\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00430\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a212b29890b63152674a53444a2003677}{serialize}}(\textcolor{keyword}{const}\ T\&\ obj,\textcolor{keyword}{const}\ std::string\&\ objectName,\textcolor{keyword}{const}\ std::string\&\ filename,\textcolor{keywordtype}{bool}\ overwrite)}
+\DoxyCodeLine{00431\ \ \ \{}
+\DoxyCodeLine{00432\ \ \ \ \ \textcolor{keywordtype}{bool}\ success\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00433\ }
+\DoxyCodeLine{00434\ \ \ \ \ std::vector<char>\ buffer;}
+\DoxyCodeLine{00435\ }
+\DoxyCodeLine{00436\ \ \ \ \ std::ios\_base::openmode\ \mbox{\hyperlink{namespaceigl_a037858abb04a677ebd5cdf660de0b0ae}{mode}}\ =\ std::ios::out\ |\ std::ios::binary;}
+\DoxyCodeLine{00437\ }
+\DoxyCodeLine{00438\ \ \ \ \ \textcolor{keywordflow}{if}(overwrite)}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_a037858abb04a677ebd5cdf660de0b0ae}{mode}}\ |=\ std::ios::trunc;}
+\DoxyCodeLine{00440\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_a037858abb04a677ebd5cdf660de0b0ae}{mode}}\ |=\ std::ios::app;}
+\DoxyCodeLine{00442\ }
+\DoxyCodeLine{00443\ \ \ \ \ std::ofstream\ file(filename.c\_str(),\mbox{\hyperlink{namespaceigl_a037858abb04a677ebd5cdf660de0b0ae}{mode}});}
+\DoxyCodeLine{00444\ }
+\DoxyCodeLine{00445\ \ \ \ \ \textcolor{keywordflow}{if}(file.is\_open())}
+\DoxyCodeLine{00446\ \ \ \ \ \{}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_a212b29890b63152674a53444a2003677}{serialize}}(obj,objectName,buffer);}
+\DoxyCodeLine{00448\ }
+\DoxyCodeLine{00449\ \ \ \ \ \ \ file.write(\&buffer[0],buffer.size());}
+\DoxyCodeLine{00450\ }
+\DoxyCodeLine{00451\ \ \ \ \ \ \ file.close();}
+\DoxyCodeLine{00452\ }
+\DoxyCodeLine{00453\ \ \ \ \ \ \ success\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00454\ \ \ \ \ \}}
+\DoxyCodeLine{00455\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00456\ \ \ \ \ \{}
+\DoxyCodeLine{00457\ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}serialization:\ file\ "{}}\ <<\ filename\ <<\ \textcolor{stringliteral}{"{}\ not\ found!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00458\ \ \ \ \ \}}
+\DoxyCodeLine{00459\ }
+\DoxyCodeLine{00460\ \ \ \ \ \textcolor{keywordflow}{return}\ success;}
+\DoxyCodeLine{00461\ \ \ \}}
+\DoxyCodeLine{00462\ }
+\DoxyCodeLine{00463\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00464\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a212b29890b63152674a53444a2003677}{serialize}}(\textcolor{keyword}{const}\ T\&\ obj,\textcolor{keyword}{const}\ std::string\&\ objectName,std::vector<char>\&\ buffer)}
+\DoxyCodeLine{00465\ \ \ \{}
+\DoxyCodeLine{00466\ \ \ \ \ \textcolor{comment}{//\ serialize\ object\ data}}
+\DoxyCodeLine{00467\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size\ =\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{serialization::getByteSize}}(obj);}
+\DoxyCodeLine{00468\ \ \ \ \ std::vector<char>\ tmp(size);}
+\DoxyCodeLine{00469\ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ tmp.begin();}
+\DoxyCodeLine{00470\ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialization::serialize}}(obj,tmp,it);}
+\DoxyCodeLine{00471\ }
+\DoxyCodeLine{00472\ \ \ \ \ std::string\ objectType(\textcolor{keyword}{typeid}(obj).name());}
+\DoxyCodeLine{00473\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ newObjectSize\ =\ tmp.size();}
+\DoxyCodeLine{00474\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ newHeaderSize\ =\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{serialization::getByteSize}}(objectName)\ +\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{serialization::getByteSize}}(objectType)\ +\ \textcolor{keyword}{sizeof}(size\_t);}
+\DoxyCodeLine{00475\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ curSize\ =\ buffer.size();}
+\DoxyCodeLine{00476\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ newSize\ =\ curSize\ +\ newHeaderSize\ +\ newObjectSize;}
+\DoxyCodeLine{00477\ }
+\DoxyCodeLine{00478\ \ \ \ \ buffer.resize(newSize);}
+\DoxyCodeLine{00479\ }
+\DoxyCodeLine{00480\ \ \ \ \ std::vector<char>::iterator\ iter\ =\ buffer.begin()+curSize;}
+\DoxyCodeLine{00481\ }
+\DoxyCodeLine{00482\ \ \ \ \ \textcolor{comment}{//\ serialize\ object\ header\ (name/type/size)}}
+\DoxyCodeLine{00483\ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialization::serialize}}(objectName,buffer,iter);}
+\DoxyCodeLine{00484\ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialization::serialize}}(objectType,buffer,iter);}
+\DoxyCodeLine{00485\ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialization::serialize}}(newObjectSize,buffer,iter);}
+\DoxyCodeLine{00486\ }
+\DoxyCodeLine{00487\ \ \ \ \ \textcolor{comment}{//\ copy\ serialized\ data\ to\ buffer}}
+\DoxyCodeLine{00488\ \ \ \ \ iter\ =\ std::copy(tmp.begin(),tmp.end(),iter);}
+\DoxyCodeLine{00489\ }
+\DoxyCodeLine{00490\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00491\ \ \ \}}
+\DoxyCodeLine{00492\ }
+\DoxyCodeLine{00493\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00494\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a61617b81f6b89d6692a31f8d34c6d294}{deserialize}}(T\&\ obj,\textcolor{keyword}{const}\ std::string\&\ filename)}
+\DoxyCodeLine{00495\ \ \ \{}
+\DoxyCodeLine{00496\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceigl_a61617b81f6b89d6692a31f8d34c6d294}{deserialize}}(obj,\textcolor{stringliteral}{"{}obj"{}},filename);}
+\DoxyCodeLine{00497\ \ \ \}}
+\DoxyCodeLine{00498\ }
+\DoxyCodeLine{00499\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00500\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a61617b81f6b89d6692a31f8d34c6d294}{deserialize}}(T\&\ obj,\textcolor{keyword}{const}\ std::string\&\ objectName,\textcolor{keyword}{const}\ std::string\&\ filename)}
+\DoxyCodeLine{00501\ \ \ \{}
+\DoxyCodeLine{00502\ \ \ \ \ \textcolor{keywordtype}{bool}\ success\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00503\ }
+\DoxyCodeLine{00504\ \ \ \ \ std::ifstream\ file(filename.c\_str(),std::ios::binary);}
+\DoxyCodeLine{00505\ }
+\DoxyCodeLine{00506\ \ \ \ \ \textcolor{keywordflow}{if}(file.is\_open())}
+\DoxyCodeLine{00507\ \ \ \ \ \{}
+\DoxyCodeLine{00508\ \ \ \ \ \ \ file.seekg(0,std::ios::end);}
+\DoxyCodeLine{00509\ \ \ \ \ \ \ std::streamoff\ size\ =\ file.tellg();}
+\DoxyCodeLine{00510\ \ \ \ \ \ \ file.seekg(0,std::ios::beg);}
+\DoxyCodeLine{00511\ }
+\DoxyCodeLine{00512\ \ \ \ \ \ \ std::vector<char>\ buffer(size);}
+\DoxyCodeLine{00513\ \ \ \ \ \ \ file.read(\&buffer[0],size);}
+\DoxyCodeLine{00514\ }
+\DoxyCodeLine{00515\ \ \ \ \ \ \ success\ =\ \mbox{\hyperlink{namespaceigl_a61617b81f6b89d6692a31f8d34c6d294}{deserialize}}(obj,\ objectName,\ buffer);}
+\DoxyCodeLine{00516\ \ \ \ \ \ \ file.close();}
+\DoxyCodeLine{00517\ \ \ \ \ \}}
+\DoxyCodeLine{00518\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00519\ \ \ \ \ \{}
+\DoxyCodeLine{00520\ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}serialization:\ file\ "{}}\ <<\ filename\ <<\ \textcolor{stringliteral}{"{}\ not\ found!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00521\ \ \ \ \ \}}
+\DoxyCodeLine{00522\ }
+\DoxyCodeLine{00523\ \ \ \ \ \textcolor{keywordflow}{return}\ success;}
+\DoxyCodeLine{00524\ \ \ \}}
+\DoxyCodeLine{00525\ }
+\DoxyCodeLine{00526\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00527\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a61617b81f6b89d6692a31f8d34c6d294}{deserialize}}(T\&\ obj,\textcolor{keyword}{const}\ std::string\&\ objectName,\textcolor{keyword}{const}\ std::vector<char>\&\ buffer)}
+\DoxyCodeLine{00528\ \ \ \{}
+\DoxyCodeLine{00529\ \ \ \ \ \textcolor{keywordtype}{bool}\ success\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00530\ }
+\DoxyCodeLine{00531\ \ \ \ \ \textcolor{comment}{//\ find\ suitable\ object\ header}}
+\DoxyCodeLine{00532\ \ \ \ \ \textcolor{keyword}{auto}\ objectIter\ =\ buffer.cend();}
+\DoxyCodeLine{00533\ \ \ \ \ \textcolor{keyword}{auto}\ iter\ =\ buffer.cbegin();}
+\DoxyCodeLine{00534\ \ \ \ \ \textcolor{keywordflow}{while}(iter\ !=\ buffer.end())}
+\DoxyCodeLine{00535\ \ \ \ \ \{}
+\DoxyCodeLine{00536\ \ \ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{00537\ \ \ \ \ \ \ std::string\ type;}
+\DoxyCodeLine{00538\ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size;}
+\DoxyCodeLine{00539\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{serialization::deserialize}}(name,iter);}
+\DoxyCodeLine{00540\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{serialization::deserialize}}(type,iter);}
+\DoxyCodeLine{00541\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{serialization::deserialize}}(size,iter);}
+\DoxyCodeLine{00542\ }
+\DoxyCodeLine{00543\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(name\ ==\ objectName\ \&\&\ type\ ==\ \textcolor{keyword}{typeid}(obj).name())}
+\DoxyCodeLine{00544\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00545\ \ \ \ \ \ \ \ \ objectIter\ =\ iter;}
+\DoxyCodeLine{00546\ \ \ \ \ \ \ \ \ \textcolor{comment}{//break;\ //\ find\ first\ suitable\ object\ header}}
+\DoxyCodeLine{00547\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00548\ }
+\DoxyCodeLine{00549\ \ \ \ \ \ \ iter+=size;}
+\DoxyCodeLine{00550\ \ \ \ \ \}}
+\DoxyCodeLine{00551\ }
+\DoxyCodeLine{00552\ \ \ \ \ \textcolor{keywordflow}{if}(objectIter\ !=\ buffer.end())}
+\DoxyCodeLine{00553\ \ \ \ \ \{}
+\DoxyCodeLine{00554\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{serialization::deserialize}}(obj,objectIter);}
+\DoxyCodeLine{00555\ \ \ \ \ \ \ success\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00556\ \ \ \ \ \}}
+\DoxyCodeLine{00557\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00558\ \ \ \ \ \{}
+\DoxyCodeLine{00559\ \ \ \ \ \ \ obj\ =\ T();}
+\DoxyCodeLine{00560\ \ \ \ \ \}}
+\DoxyCodeLine{00561\ }
+\DoxyCodeLine{00562\ \ \ \ \ \textcolor{keywordflow}{return}\ success;}
+\DoxyCodeLine{00563\ \ \ \}}
+\DoxyCodeLine{00564\ }
+\DoxyCodeLine{00565\ \ \ \textcolor{comment}{//\ Wrapper\ function\ which\ combines\ both,\ de-\/\ and\ serialization}}
+\DoxyCodeLine{00566\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00567\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_ad1b7a7a566f0d4a5553987d4d25aedec}{serializer}}(\textcolor{keywordtype}{bool}\ s,T\&\ obj,\textcolor{keyword}{const}\ std::string\&\ filename)}
+\DoxyCodeLine{00568\ \ \ \{}
+\DoxyCodeLine{00569\ \ \ \ \ \textcolor{keywordflow}{return}\ s\ ?\ \mbox{\hyperlink{namespaceigl_a212b29890b63152674a53444a2003677}{serialize}}(obj,filename)\ :\ \mbox{\hyperlink{namespaceigl_a61617b81f6b89d6692a31f8d34c6d294}{deserialize}}(obj,filename);}
+\DoxyCodeLine{00570\ \ \ \}}
+\DoxyCodeLine{00571\ }
+\DoxyCodeLine{00572\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00573\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_ad1b7a7a566f0d4a5553987d4d25aedec}{serializer}}(\textcolor{keywordtype}{bool}\ s,T\&\ obj,\textcolor{keyword}{const}\ std::string\&\ objectName,\textcolor{keyword}{const}\ std::string\&\ filename,\textcolor{keywordtype}{bool}\ overwrite)}
+\DoxyCodeLine{00574\ \ \ \{}
+\DoxyCodeLine{00575\ \ \ \ \ \textcolor{keywordflow}{return}\ s\ ?\ \mbox{\hyperlink{namespaceigl_a212b29890b63152674a53444a2003677}{serialize}}(obj,objectName,filename,overwrite)\ :\ \mbox{\hyperlink{namespaceigl_a61617b81f6b89d6692a31f8d34c6d294}{deserialize}}(obj,objectName,filename);}
+\DoxyCodeLine{00576\ \ \ \}}
+\DoxyCodeLine{00577\ }
+\DoxyCodeLine{00578\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00579\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_ad1b7a7a566f0d4a5553987d4d25aedec}{serializer}}(\textcolor{keywordtype}{bool}\ s,T\&\ obj,\textcolor{keyword}{const}\ std::string\&\ objectName,std::vector<char>\&\ buffer)}
+\DoxyCodeLine{00580\ \ \ \{}
+\DoxyCodeLine{00581\ \ \ \ \ \textcolor{keywordflow}{return}\ s\ ?\ \mbox{\hyperlink{namespaceigl_a212b29890b63152674a53444a2003677}{serialize}}(obj,objectName,buffer)\ :\ \mbox{\hyperlink{namespaceigl_a61617b81f6b89d6692a31f8d34c6d294}{deserialize}}(obj,objectName,buffer);}
+\DoxyCodeLine{00582\ \ \ \}}
+\DoxyCodeLine{00583\ }
+\DoxyCodeLine{00584\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1Serializable_aa73a685375a251a2c8f9ab9cff88accf}{Serializable::PreSerialization}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00585\ \textcolor{keyword}{\ \ }\{}
+\DoxyCodeLine{00586\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00587\ \ \ \}}
+\DoxyCodeLine{00588\ }
+\DoxyCodeLine{00589\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1Serializable_a1e46d11958e0d2d478a78cf85dd0a545}{Serializable::PostSerialization}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00590\ \textcolor{keyword}{\ \ }\{}
+\DoxyCodeLine{00591\ \ \ \}}
+\DoxyCodeLine{00592\ }
+\DoxyCodeLine{00593\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1Serializable_a5b28150e0cceca30b77da33419915be0}{Serializable::PreDeserialization}}()}
+\DoxyCodeLine{00594\ \ \ \{}
+\DoxyCodeLine{00595\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00596\ \ \ \}}
+\DoxyCodeLine{00597\ }
+\DoxyCodeLine{00598\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1Serializable_aa4bbf886e628a98ace9c7a1147a69245}{Serializable::PostDeserialization}}()}
+\DoxyCodeLine{00599\ \ \ \{}
+\DoxyCodeLine{00600\ \ \ \}}
+\DoxyCodeLine{00601\ }
+\DoxyCodeLine{00602\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1Serializable_a996403a9b5b754ae1b52cc4e76c155ba}{Serializable::Serialize}}(std::vector<char>\&\ buffer)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00603\ \textcolor{keyword}{\ \ }\{}
+\DoxyCodeLine{00604\ \ \ \ \ \textcolor{keywordflow}{if}(this-\/>\mbox{\hyperlink{classigl_1_1Serializable_aa73a685375a251a2c8f9ab9cff88accf}{PreSerialization}}())}
+\DoxyCodeLine{00605\ \ \ \ \ \{}
+\DoxyCodeLine{00606\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(initialized\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{00607\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00608\ \ \ \ \ \ \ \ \ objects.clear();}
+\DoxyCodeLine{00609\ \ \ \ \ \ \ \ \ (\textcolor{keyword}{const\_cast<}\mbox{\hyperlink{classigl_1_1Serializable}{Serializable}}*\textcolor{keyword}{>}(\textcolor{keyword}{this}))-\/>InitSerialization();}
+\DoxyCodeLine{00610\ \ \ \ \ \ \ \ \ initialized\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00611\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00612\ }
+\DoxyCodeLine{00613\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ v\ :\ objects)}
+\DoxyCodeLine{00614\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00615\ \ \ \ \ \ \ \ \ v-\/>Serialize(buffer);}
+\DoxyCodeLine{00616\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00617\ }
+\DoxyCodeLine{00618\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classigl_1_1Serializable_a1e46d11958e0d2d478a78cf85dd0a545}{PostSerialization}}();}
+\DoxyCodeLine{00619\ \ \ \ \ \}}
+\DoxyCodeLine{00620\ \ \ \}}
+\DoxyCodeLine{00621\ }
+\DoxyCodeLine{00622\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1Serializable_a4918c7c9a8246439f7bf7d773e30b19f}{Serializable::Deserialize}}(\textcolor{keyword}{const}\ std::vector<char>\&\ buffer)}
+\DoxyCodeLine{00623\ \ \ \{}
+\DoxyCodeLine{00624\ \ \ \ \ \textcolor{keywordflow}{if}(this-\/>\mbox{\hyperlink{classigl_1_1Serializable_a5b28150e0cceca30b77da33419915be0}{PreDeserialization}}())}
+\DoxyCodeLine{00625\ \ \ \ \ \{}
+\DoxyCodeLine{00626\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(initialized\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{00627\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00628\ \ \ \ \ \ \ \ \ objects.clear();}
+\DoxyCodeLine{00629\ \ \ \ \ \ \ \ \ (\textcolor{keyword}{const\_cast<}\mbox{\hyperlink{classigl_1_1Serializable}{Serializable}}*\textcolor{keyword}{>}(\textcolor{keyword}{this}))-\/>InitSerialization();}
+\DoxyCodeLine{00630\ \ \ \ \ \ \ \ \ initialized\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00631\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00632\ }
+\DoxyCodeLine{00633\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\&\ v\ :\ objects)}
+\DoxyCodeLine{00634\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00635\ \ \ \ \ \ \ \ \ v-\/>Deserialize(buffer);}
+\DoxyCodeLine{00636\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00637\ }
+\DoxyCodeLine{00638\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classigl_1_1Serializable_aa4bbf886e628a98ace9c7a1147a69245}{PostDeserialization}}();}
+\DoxyCodeLine{00639\ \ \ \ \ \}}
+\DoxyCodeLine{00640\ \ \ \}}
+\DoxyCodeLine{00641\ }
+\DoxyCodeLine{00642\ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1Serializable_a3cb2b4150c6ded707033e62db6dd1254}{Serializable::Serializable}}()}
+\DoxyCodeLine{00643\ \ \ \{}
+\DoxyCodeLine{00644\ \ \ \ \ initialized\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00645\ \ \ \}}
+\DoxyCodeLine{00646\ }
+\DoxyCodeLine{00647\ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1Serializable_a3cb2b4150c6ded707033e62db6dd1254}{Serializable::Serializable}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1Serializable}{Serializable}}\&\ obj)}
+\DoxyCodeLine{00648\ \ \ \{}
+\DoxyCodeLine{00649\ \ \ \ \ initialized\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00650\ \ \ \ \ objects.clear();}
+\DoxyCodeLine{00651\ \ \ \}}
+\DoxyCodeLine{00652\ }
+\DoxyCodeLine{00653\ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1Serializable_abf548c0317c99ba76e9923534a1488d4}{Serializable::\string~Serializable}}()}
+\DoxyCodeLine{00654\ \ \ \{}
+\DoxyCodeLine{00655\ \ \ \ \ initialized\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00656\ \ \ \ \ objects.clear();}
+\DoxyCodeLine{00657\ \ \ \}}
+\DoxyCodeLine{00658\ }
+\DoxyCodeLine{00659\ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1Serializable}{Serializable}}\&\ \mbox{\hyperlink{classigl_1_1Serializable_ab728b67cff536f7042d16246d0a1fa75}{Serializable::operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1Serializable}{Serializable}}\&\ obj)}
+\DoxyCodeLine{00660\ \ \ \{}
+\DoxyCodeLine{00661\ \ \ \ \ \textcolor{keywordflow}{if}(\textcolor{keyword}{this}\ !=\ \&obj)}
+\DoxyCodeLine{00662\ \ \ \ \ \{}
+\DoxyCodeLine{00663\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(initialized)}
+\DoxyCodeLine{00664\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00665\ \ \ \ \ \ \ \ \ initialized\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00666\ \ \ \ \ \ \ \ \ objects.clear();}
+\DoxyCodeLine{00667\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00668\ \ \ \ \ \}}
+\DoxyCodeLine{00669\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00670\ \ \ \}}
+\DoxyCodeLine{00671\ }
+\DoxyCodeLine{00672\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00673\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1Serializable_a188c1d173965b90be0f03b1096ba2604}{Serializable::Add}}(T\&\ obj,\textcolor{keyword}{const}\ std::string\ name,\textcolor{keywordtype}{bool}\ binary)}
+\DoxyCodeLine{00674\ \ \ \{}
+\DoxyCodeLine{00675\ \ \ \ \ \textcolor{keyword}{auto}\ \textcolor{keywordtype}{object}\ =\ \textcolor{keyword}{new}\ SerializationObject<T>();}
+\DoxyCodeLine{00676\ \ \ \ \ \textcolor{keywordtype}{object}-\/>Binary\ =\ binary;}
+\DoxyCodeLine{00677\ \ \ \ \ \textcolor{keywordtype}{object}-\/>Name\ =\ name;}
+\DoxyCodeLine{00678\ \ \ \ \ \textcolor{keywordtype}{object}-\/>Object\ =\ std::unique\_ptr<T>(\&obj);}
+\DoxyCodeLine{00679\ }
+\DoxyCodeLine{00680\ \ \ \ \ objects.push\_back(\textcolor{keywordtype}{object});}
+\DoxyCodeLine{00681\ \ \ \}}
+\DoxyCodeLine{00682\ }
+\DoxyCodeLine{00683\ \ \ \textcolor{keyword}{namespace\ }serialization}
+\DoxyCodeLine{00684\ \ \ \{}
+\DoxyCodeLine{00685\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00686\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<!is\_serializable<T>::value,\textcolor{keywordtype}{size\_t}>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ T\&\ obj)}
+\DoxyCodeLine{00687\ \ \ \ \ \{}
+\DoxyCodeLine{00688\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{sizeof}(std::vector<char>::size\_type);}
+\DoxyCodeLine{00689\ \ \ \ \ \}}
+\DoxyCodeLine{00690\ }
+\DoxyCodeLine{00691\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00692\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<!is\_serializable<T>::value>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ T\&\ obj,std::vector<char>\&\ buffer,std::vector<char>::iterator\&\ iter)}
+\DoxyCodeLine{00693\ \ \ \ \ \{}
+\DoxyCodeLine{00694\ \ \ \ \ \ \ \textcolor{comment}{//\ data}}
+\DoxyCodeLine{00695\ \ \ \ \ \ \ std::vector<char>\ tmp;}
+\DoxyCodeLine{00696\ \ \ \ \ \ \ serialize<>(obj,tmp);}
+\DoxyCodeLine{00697\ }
+\DoxyCodeLine{00698\ \ \ \ \ \ \ \textcolor{comment}{//\ size}}
+\DoxyCodeLine{00699\ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size\ =\ buffer.size();}
+\DoxyCodeLine{00700\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialization::serialize}}(tmp.size(),buffer,iter);}
+\DoxyCodeLine{00701\ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ cur\ =\ iter\ -\/\ buffer.begin();}
+\DoxyCodeLine{00702\ }
+\DoxyCodeLine{00703\ \ \ \ \ \ \ buffer.resize(size+tmp.size());}
+\DoxyCodeLine{00704\ \ \ \ \ \ \ iter\ =\ buffer.begin()+cur;}
+\DoxyCodeLine{00705\ \ \ \ \ \ \ iter\ =\ std::copy(tmp.begin(),tmp.end(),iter);}
+\DoxyCodeLine{00706\ \ \ \ \ \}}
+\DoxyCodeLine{00707\ }
+\DoxyCodeLine{00708\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00709\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<!is\_serializable<T>::value>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(T\&\ obj,std::vector<char>::const\_iterator\&\ iter)}
+\DoxyCodeLine{00710\ \ \ \ \ \{}
+\DoxyCodeLine{00711\ \ \ \ \ \ \ std::vector<char>::size\_type\ size;}
+\DoxyCodeLine{00712\ \ \ \ \ \ \ serialization::deserialize<>(size,iter);}
+\DoxyCodeLine{00713\ }
+\DoxyCodeLine{00714\ \ \ \ \ \ \ std::vector<char>\ tmp;}
+\DoxyCodeLine{00715\ \ \ \ \ \ \ tmp.resize(size);}
+\DoxyCodeLine{00716\ \ \ \ \ \ \ std::copy(iter,iter+size,tmp.begin());}
+\DoxyCodeLine{00717\ }
+\DoxyCodeLine{00718\ \ \ \ \ \ \ deserialize<>(obj,tmp);}
+\DoxyCodeLine{00719\ \ \ \ \ \ \ iter\ +=\ size;}
+\DoxyCodeLine{00720\ \ \ \ \ \}}
+\DoxyCodeLine{00721\ }
+\DoxyCodeLine{00722\ \ \ \ \ \textcolor{comment}{//\ fundamental\ types}}
+\DoxyCodeLine{00723\ }
+\DoxyCodeLine{00724\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00725\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<std::is\_fundamental<T>::value,\textcolor{keywordtype}{size\_t}>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ T\&\ obj)}
+\DoxyCodeLine{00726\ \ \ \ \ \{}
+\DoxyCodeLine{00727\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{sizeof}(T);}
+\DoxyCodeLine{00728\ \ \ \ \ \}}
+\DoxyCodeLine{00729\ }
+\DoxyCodeLine{00730\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00731\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<std::is\_fundamental<T>::value>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ T\&\ obj,std::vector<char>\&\ buffer,std::vector<char>::iterator\&\ iter)}
+\DoxyCodeLine{00732\ \ \ \ \ \{}
+\DoxyCodeLine{00733\ \ \ \ \ \ \ \textcolor{comment}{//serialization::updateMemoryMap(obj,sizeof(T));}}
+\DoxyCodeLine{00734\ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t*\ ptr\ =\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }uint8\_t*\textcolor{keyword}{>}(\&obj);}
+\DoxyCodeLine{00735\ \ \ \ \ \ \ iter\ =\ std::copy(ptr,ptr+\textcolor{keyword}{sizeof}(T),iter);}
+\DoxyCodeLine{00736\ \ \ \ \ \}}
+\DoxyCodeLine{00737\ }
+\DoxyCodeLine{00738\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00739\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<std::is\_fundamental<T>::value>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(T\&\ obj,std::vector<char>::const\_iterator\&\ iter)}
+\DoxyCodeLine{00740\ \ \ \ \ \{}
+\DoxyCodeLine{00741\ \ \ \ \ \ \ uint8\_t*\ ptr\ =\ \textcolor{keyword}{reinterpret\_cast<}uint8\_t*\textcolor{keyword}{>}(\&obj);}
+\DoxyCodeLine{00742\ \ \ \ \ \ \ std::copy(iter,iter+\textcolor{keyword}{sizeof}(T),ptr);}
+\DoxyCodeLine{00743\ \ \ \ \ \ \ iter\ +=\ \textcolor{keyword}{sizeof}(T);}
+\DoxyCodeLine{00744\ \ \ \ \ \}}
+\DoxyCodeLine{00745\ }
+\DoxyCodeLine{00746\ \ \ \ \ \textcolor{comment}{//\ std::string}}
+\DoxyCodeLine{00747\ }
+\DoxyCodeLine{00748\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ std::string\&\ obj)}
+\DoxyCodeLine{00749\ \ \ \ \ \{}
+\DoxyCodeLine{00750\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(obj.length())+obj.length()*\textcolor{keyword}{sizeof}(uint8\_t);}
+\DoxyCodeLine{00751\ \ \ \ \ \}}
+\DoxyCodeLine{00752\ }
+\DoxyCodeLine{00753\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ std::string\&\ obj,std::vector<char>\&\ buffer,std::vector<char>::iterator\&\ iter)}
+\DoxyCodeLine{00754\ \ \ \ \ \{}
+\DoxyCodeLine{00755\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialization::serialize}}(obj.length(),buffer,iter);}
+\DoxyCodeLine{00756\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ cur\ :\ obj)}
+\DoxyCodeLine{00757\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00758\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialization::serialize}}(cur,buffer,iter);}
+\DoxyCodeLine{00759\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00760\ \ \ \ \ \}}
+\DoxyCodeLine{00761\ }
+\DoxyCodeLine{00762\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(std::string\&\ obj,std::vector<char>::const\_iterator\&\ iter)}
+\DoxyCodeLine{00763\ \ \ \ \ \{}
+\DoxyCodeLine{00764\ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size;}
+\DoxyCodeLine{00765\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{serialization::deserialize}}(size,iter);}
+\DoxyCodeLine{00766\ }
+\DoxyCodeLine{00767\ \ \ \ \ \ \ std::string\ str(size,\textcolor{charliteral}{'\(\backslash\)0'});}
+\DoxyCodeLine{00768\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i=0;\ i<size;\ ++i)}
+\DoxyCodeLine{00769\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00770\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{serialization::deserialize}}(str.at(i),iter);}
+\DoxyCodeLine{00771\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00772\ }
+\DoxyCodeLine{00773\ \ \ \ \ \ \ obj\ =\ str;}
+\DoxyCodeLine{00774\ \ \ \ \ \}}
+\DoxyCodeLine{00775\ }
+\DoxyCodeLine{00776\ \ \ \ \ \textcolor{comment}{//\ enum\ types}}
+\DoxyCodeLine{00777\ }
+\DoxyCodeLine{00778\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00779\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<std::is\_enum<T>::value,\textcolor{keywordtype}{size\_t}>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ T\&\ obj)}
+\DoxyCodeLine{00780\ \ \ \ \ \{}
+\DoxyCodeLine{00781\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{sizeof}(T);}
+\DoxyCodeLine{00782\ \ \ \ \ \}}
+\DoxyCodeLine{00783\ }
+\DoxyCodeLine{00784\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00785\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<std::is\_enum<T>::value>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ T\&\ obj,std::vector<char>\&\ buffer,std::vector<char>::iterator\&\ iter)}
+\DoxyCodeLine{00786\ \ \ \ \ \{}
+\DoxyCodeLine{00787\ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t*\ ptr\ =\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }uint8\_t*\textcolor{keyword}{>}(\&obj);}
+\DoxyCodeLine{00788\ \ \ \ \ \ \ iter\ =\ std::copy(ptr,ptr+\textcolor{keyword}{sizeof}(T),iter);}
+\DoxyCodeLine{00789\ \ \ \ \ \}}
+\DoxyCodeLine{00790\ }
+\DoxyCodeLine{00791\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00792\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<std::is\_enum<T>::value>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(T\&\ obj,std::vector<char>::const\_iterator\&\ iter)}
+\DoxyCodeLine{00793\ \ \ \ \ \{}
+\DoxyCodeLine{00794\ \ \ \ \ \ \ uint8\_t*\ ptr\ =\ \textcolor{keyword}{reinterpret\_cast<}uint8\_t*\textcolor{keyword}{>}(\&obj);}
+\DoxyCodeLine{00795\ \ \ \ \ \ \ std::copy(iter,iter+\textcolor{keyword}{sizeof}(T),ptr);}
+\DoxyCodeLine{00796\ \ \ \ \ \ \ iter\ +=\ \textcolor{keyword}{sizeof}(T);}
+\DoxyCodeLine{00797\ \ \ \ \ \}}
+\DoxyCodeLine{00798\ }
+\DoxyCodeLine{00799\ \ \ \ \ \textcolor{comment}{//\ SerializableBase}}
+\DoxyCodeLine{00800\ }
+\DoxyCodeLine{00801\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00802\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<std::is\_base\_of<SerializableBase,T>::value,\textcolor{keywordtype}{size\_t}>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ T\&\ obj)}
+\DoxyCodeLine{00803\ \ \ \ \ \{}
+\DoxyCodeLine{00804\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{sizeof}(std::vector<char>::size\_type);}
+\DoxyCodeLine{00805\ \ \ \ \ \}}
+\DoxyCodeLine{00806\ }
+\DoxyCodeLine{00807\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00808\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<std::is\_base\_of<SerializableBase,T>::value>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ T\&\ obj,std::vector<char>\&\ buffer,std::vector<char>::iterator\&\ iter)}
+\DoxyCodeLine{00809\ \ \ \ \ \{}
+\DoxyCodeLine{00810\ \ \ \ \ \ \ \textcolor{comment}{//\ data}}
+\DoxyCodeLine{00811\ \ \ \ \ \ \ std::vector<char>\ tmp;}
+\DoxyCodeLine{00812\ \ \ \ \ \ \ obj.Serialize(tmp);}
+\DoxyCodeLine{00813\ }
+\DoxyCodeLine{00814\ \ \ \ \ \ \ \textcolor{comment}{//\ size}}
+\DoxyCodeLine{00815\ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size\ =\ buffer.size();}
+\DoxyCodeLine{00816\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialization::serialize}}(tmp.size(),buffer,iter);}
+\DoxyCodeLine{00817\ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ cur\ =\ iter\ -\/\ buffer.begin();}
+\DoxyCodeLine{00818\ }
+\DoxyCodeLine{00819\ \ \ \ \ \ \ buffer.resize(size+tmp.size());}
+\DoxyCodeLine{00820\ \ \ \ \ \ \ iter\ =\ buffer.begin()+cur;}
+\DoxyCodeLine{00821\ \ \ \ \ \ \ iter\ =\ std::copy(tmp.begin(),tmp.end(),iter);}
+\DoxyCodeLine{00822\ \ \ \ \ \}}
+\DoxyCodeLine{00823\ }
+\DoxyCodeLine{00824\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00825\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<std::is\_base\_of<SerializableBase,T>::value>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(T\&\ obj,std::vector<char>::const\_iterator\&\ iter)}
+\DoxyCodeLine{00826\ \ \ \ \ \{}
+\DoxyCodeLine{00827\ \ \ \ \ \ \ std::vector<char>::size\_type\ size;}
+\DoxyCodeLine{00828\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{serialization::deserialize}}(size,iter);}
+\DoxyCodeLine{00829\ }
+\DoxyCodeLine{00830\ \ \ \ \ \ \ std::vector<char>\ tmp;}
+\DoxyCodeLine{00831\ \ \ \ \ \ \ tmp.resize(size);}
+\DoxyCodeLine{00832\ \ \ \ \ \ \ std::copy(iter,iter+size,tmp.begin());}
+\DoxyCodeLine{00833\ }
+\DoxyCodeLine{00834\ \ \ \ \ \ \ obj.Deserialize(tmp);}
+\DoxyCodeLine{00835\ \ \ \ \ \ \ iter\ +=\ size;}
+\DoxyCodeLine{00836\ \ \ \ \ \}}
+\DoxyCodeLine{00837\ }
+\DoxyCodeLine{00838\ \ \ \ \ \textcolor{comment}{//\ STL\ containers}}
+\DoxyCodeLine{00839\ }
+\DoxyCodeLine{00840\ \ \ \ \ \textcolor{comment}{//\ std::pair}}
+\DoxyCodeLine{00841\ }
+\DoxyCodeLine{00842\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T1,\textcolor{keyword}{typename}\ T2>}
+\DoxyCodeLine{00843\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ std::pair<T1,T2>\&\ obj)}
+\DoxyCodeLine{00844\ \ \ \ \ \{}
+\DoxyCodeLine{00845\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(obj.first)+\mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(obj.second);}
+\DoxyCodeLine{00846\ \ \ \ \ \}}
+\DoxyCodeLine{00847\ }
+\DoxyCodeLine{00848\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T1,\textcolor{keyword}{typename}\ T2>}
+\DoxyCodeLine{00849\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ std::pair<T1,T2>\&\ obj,std::vector<char>\&\ buffer,std::vector<char>::iterator\&\ iter)}
+\DoxyCodeLine{00850\ \ \ \ \ \{}
+\DoxyCodeLine{00851\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialization::serialize}}(obj.first,buffer,iter);}
+\DoxyCodeLine{00852\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialization::serialize}}(obj.second,buffer,iter);}
+\DoxyCodeLine{00853\ \ \ \ \ \}}
+\DoxyCodeLine{00854\ }
+\DoxyCodeLine{00855\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T1,\textcolor{keyword}{typename}\ T2>}
+\DoxyCodeLine{00856\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(std::pair<T1,T2>\&\ obj,std::vector<char>::const\_iterator\&\ iter)}
+\DoxyCodeLine{00857\ \ \ \ \ \{}
+\DoxyCodeLine{00858\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{serialization::deserialize}}(obj.first,iter);}
+\DoxyCodeLine{00859\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{serialization::deserialize}}(obj.second,iter);}
+\DoxyCodeLine{00860\ \ \ \ \ \}}
+\DoxyCodeLine{00861\ }
+\DoxyCodeLine{00862\ \ \ \ \ \textcolor{comment}{//\ std::vector}}
+\DoxyCodeLine{00863\ }
+\DoxyCodeLine{00864\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T1,\textcolor{keyword}{typename}\ T2>}
+\DoxyCodeLine{00865\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ std::vector<T1,T2>\&\ obj)}
+\DoxyCodeLine{00866\ \ \ \ \ \{}
+\DoxyCodeLine{00867\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::accumulate(obj.begin(),obj.end(),\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}),[](\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\&\ acc,\textcolor{keyword}{const}\ T1\&\ cur)\ \{\ return\ acc+getByteSize(cur);\ \});}
+\DoxyCodeLine{00868\ \ \ \ \ \}}
+\DoxyCodeLine{00869\ }
+\DoxyCodeLine{00870\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T1,\textcolor{keyword}{typename}\ T2>}
+\DoxyCodeLine{00871\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ std::vector<T1,T2>\&\ obj,std::vector<char>\&\ buffer,std::vector<char>::iterator\&\ iter)}
+\DoxyCodeLine{00872\ \ \ \ \ \{}
+\DoxyCodeLine{00873\ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size\ =\ obj.size();}
+\DoxyCodeLine{00874\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialization::serialize}}(size,buffer,iter);}
+\DoxyCodeLine{00875\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{const}\ T1\&\ cur\ :\ obj)}
+\DoxyCodeLine{00876\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00877\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialization::serialize}}(cur,buffer,iter);}
+\DoxyCodeLine{00878\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00879\ \ \ \ \ \}}
+\DoxyCodeLine{00880\ }
+\DoxyCodeLine{00881\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T1,\textcolor{keyword}{typename}\ T2>}
+\DoxyCodeLine{00882\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(std::vector<T1,T2>\&\ obj,std::vector<char>::const\_iterator\&\ iter)}
+\DoxyCodeLine{00883\ \ \ \ \ \{}
+\DoxyCodeLine{00884\ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size;}
+\DoxyCodeLine{00885\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{serialization::deserialize}}(size,iter);}
+\DoxyCodeLine{00886\ }
+\DoxyCodeLine{00887\ \ \ \ \ \ \ obj.resize(size);}
+\DoxyCodeLine{00888\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(T1\&\ v\ :\ obj)}
+\DoxyCodeLine{00889\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00890\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{serialization::deserialize}}(v,iter);}
+\DoxyCodeLine{00891\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00892\ \ \ \ \ \}}
+\DoxyCodeLine{00893\ }
+\DoxyCodeLine{00894\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T2>}
+\DoxyCodeLine{00895\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(std::vector<bool,T2>\&\ obj,std::vector<char>::const\_iterator\&\ iter)}
+\DoxyCodeLine{00896\ \ \ \ \ \{}
+\DoxyCodeLine{00897\ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size;}
+\DoxyCodeLine{00898\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{serialization::deserialize}}(size,iter);}
+\DoxyCodeLine{00899\ }
+\DoxyCodeLine{00900\ \ \ \ \ \ \ obj.resize(size);}
+\DoxyCodeLine{00901\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;i<obj.size();i++)}
+\DoxyCodeLine{00902\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00903\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ val;}
+\DoxyCodeLine{00904\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{serialization::deserialize}}(val,iter);}
+\DoxyCodeLine{00905\ \ \ \ \ \ \ \ \ obj[i]\ =\ val;}
+\DoxyCodeLine{00906\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00907\ \ \ \ \ \}}
+\DoxyCodeLine{00908\ }
+\DoxyCodeLine{00909\ \ \ \ \ \textcolor{comment}{//std::set}}
+\DoxyCodeLine{00910\ }
+\DoxyCodeLine{00911\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00912\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ std::set<T>\&\ obj)}
+\DoxyCodeLine{00913\ \ \ \ \ \{}
+\DoxyCodeLine{00914\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::accumulate(obj.begin(),obj.end(),\mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(obj.size()),[](\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\&\ acc,\textcolor{keyword}{const}\ T\&\ cur)\ \{\ return\ acc+getByteSize(cur);\ \});}
+\DoxyCodeLine{00915\ \ \ \ \ \}}
+\DoxyCodeLine{00916\ }
+\DoxyCodeLine{00917\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00918\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ std::set<T>\&\ obj,std::vector<char>\&\ buffer,std::vector<char>::iterator\&\ iter)}
+\DoxyCodeLine{00919\ \ \ \ \ \{}
+\DoxyCodeLine{00920\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialization::serialize}}(obj.size(),buffer,iter);}
+\DoxyCodeLine{00921\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{const}\ T\&\ cur\ :\ obj)}
+\DoxyCodeLine{00922\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00923\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialization::serialize}}(cur,buffer,iter);}
+\DoxyCodeLine{00924\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00925\ \ \ \ \ \}}
+\DoxyCodeLine{00926\ }
+\DoxyCodeLine{00927\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00928\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(std::set<T>\&\ obj,std::vector<char>::const\_iterator\&\ iter)}
+\DoxyCodeLine{00929\ \ \ \ \ \{}
+\DoxyCodeLine{00930\ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size;}
+\DoxyCodeLine{00931\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{serialization::deserialize}}(size,iter);}
+\DoxyCodeLine{00932\ }
+\DoxyCodeLine{00933\ \ \ \ \ \ \ obj.clear();}
+\DoxyCodeLine{00934\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i=0;\ i<size;\ ++i)}
+\DoxyCodeLine{00935\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00936\ \ \ \ \ \ \ \ \ T\ val;}
+\DoxyCodeLine{00937\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{serialization::deserialize}}(val,iter);}
+\DoxyCodeLine{00938\ \ \ \ \ \ \ \ \ obj.insert(val);}
+\DoxyCodeLine{00939\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00940\ \ \ \ \ \}}
+\DoxyCodeLine{00941\ }
+\DoxyCodeLine{00942\ \ \ \ \ \textcolor{comment}{//\ std::map}}
+\DoxyCodeLine{00943\ }
+\DoxyCodeLine{00944\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T1,\textcolor{keyword}{typename}\ T2>}
+\DoxyCodeLine{00945\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ std::map<T1,T2>\&\ obj)}
+\DoxyCodeLine{00946\ \ \ \ \ \{}
+\DoxyCodeLine{00947\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::accumulate(obj.begin(),obj.end(),\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}),[](\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\&\ acc,\textcolor{keyword}{const}\ std::pair<T1,T2>\&\ cur)\ \{\ return\ acc+getByteSize(cur);\ \});}
+\DoxyCodeLine{00948\ \ \ \ \ \}}
+\DoxyCodeLine{00949\ }
+\DoxyCodeLine{00950\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T1,\textcolor{keyword}{typename}\ T2>}
+\DoxyCodeLine{00951\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ std::map<T1,T2>\&\ obj,std::vector<char>\&\ buffer,std::vector<char>::iterator\&\ iter)}
+\DoxyCodeLine{00952\ \ \ \ \ \{}
+\DoxyCodeLine{00953\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialization::serialize}}(obj.size(),buffer,iter);}
+\DoxyCodeLine{00954\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ cur\ :\ obj)}
+\DoxyCodeLine{00955\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00956\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialization::serialize}}(cur,buffer,iter);}
+\DoxyCodeLine{00957\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00958\ \ \ \ \ \}}
+\DoxyCodeLine{00959\ }
+\DoxyCodeLine{00960\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T1,\textcolor{keyword}{typename}\ T2>}
+\DoxyCodeLine{00961\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(std::map<T1,T2>\&\ obj,std::vector<char>::const\_iterator\&\ iter)}
+\DoxyCodeLine{00962\ \ \ \ \ \{}
+\DoxyCodeLine{00963\ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size;}
+\DoxyCodeLine{00964\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{serialization::deserialize}}(size,iter);}
+\DoxyCodeLine{00965\ }
+\DoxyCodeLine{00966\ \ \ \ \ \ \ obj.clear();}
+\DoxyCodeLine{00967\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i=0;\ i<size;\ ++i)}
+\DoxyCodeLine{00968\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00969\ \ \ \ \ \ \ \ \ std::pair<T1,T2>\ pair;}
+\DoxyCodeLine{00970\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{serialization::deserialize}}(pair,iter);}
+\DoxyCodeLine{00971\ \ \ \ \ \ \ \ \ obj.insert(pair);}
+\DoxyCodeLine{00972\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00973\ \ \ \ \ \}}
+\DoxyCodeLine{00974\ }
+\DoxyCodeLine{00975\ \ \ \ \ \textcolor{comment}{//std::list}}
+\DoxyCodeLine{00976\ }
+\DoxyCodeLine{00977\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00978\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ std::list<T>\&\ obj)}
+\DoxyCodeLine{00979\ \ \ \ \ \{}
+\DoxyCodeLine{00980\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::accumulate(obj.begin(),\ obj.end(),\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(obj.size()),\ [](\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\&\ acc,\ \textcolor{keyword}{const}\ T\&\ cur)\ \{\ return\ acc\ +\ getByteSize(cur);\ \});}
+\DoxyCodeLine{00981\ \ \ \ \ \}}
+\DoxyCodeLine{00982\ }
+\DoxyCodeLine{00983\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00984\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ std::list<T>\&\ obj,\ std::vector<char>\&\ buffer,\ std::vector<char>::iterator\&\ iter)}
+\DoxyCodeLine{00985\ \ \ \ \ \{}
+\DoxyCodeLine{00986\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialization::serialize}}(obj.size(),\ buffer,\ iter);}
+\DoxyCodeLine{00987\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ T\&\ cur\ :\ obj)}
+\DoxyCodeLine{00988\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00989\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialization::serialize}}(cur,\ buffer,\ iter);}
+\DoxyCodeLine{00990\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00991\ \ \ \ \ \}}
+\DoxyCodeLine{00992\ }
+\DoxyCodeLine{00993\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00994\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(std::list<T>\&\ obj,\ std::vector<char>::const\_iterator\&\ iter)}
+\DoxyCodeLine{00995\ \ \ \ \ \{}
+\DoxyCodeLine{00996\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size;}
+\DoxyCodeLine{00997\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{serialization::deserialize}}(size,\ iter);}
+\DoxyCodeLine{00998\ }
+\DoxyCodeLine{00999\ \ \ \ \ \ \ \ \ obj.clear();}
+\DoxyCodeLine{01000\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ size;\ ++i)}
+\DoxyCodeLine{01001\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01002\ \ \ \ \ \ \ \ \ \ \ \ \ T\ val;}
+\DoxyCodeLine{01003\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{serialization::deserialize}}(val,\ iter);}
+\DoxyCodeLine{01004\ \ \ \ \ \ \ \ \ \ \ \ \ obj.emplace\_back(val);}
+\DoxyCodeLine{01005\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01006\ \ \ \ \ \}}
+\DoxyCodeLine{01007\ }
+\DoxyCodeLine{01008\ }
+\DoxyCodeLine{01009\ \ \ \ \ \textcolor{comment}{//\ Eigen\ types}}
+\DoxyCodeLine{01010\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keywordtype}{int}\ R,\textcolor{keywordtype}{int}\ C,\textcolor{keywordtype}{int}\ P,\textcolor{keywordtype}{int}\ MR,\textcolor{keywordtype}{int}\ MC>}
+\DoxyCodeLine{01011\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ Eigen::Matrix<T,R,C,P,MR,MC>\&\ obj)}
+\DoxyCodeLine{01012\ \ \ \ \ \{}
+\DoxyCodeLine{01013\ \ \ \ \ \ \ \textcolor{comment}{//\ space\ for\ numbers\ of\ rows,cols\ and\ data}}
+\DoxyCodeLine{01014\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 2*\textcolor{keyword}{sizeof}(\textcolor{keyword}{typename}\ Eigen::Matrix<T,R,C,P,MR,MC>::Index)+\textcolor{keyword}{sizeof}(T)*obj.rows()*obj.cols();}
+\DoxyCodeLine{01015\ \ \ \ \ \}}
+\DoxyCodeLine{01016\ }
+\DoxyCodeLine{01017\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keywordtype}{int}\ R,\textcolor{keywordtype}{int}\ C,\textcolor{keywordtype}{int}\ P,\textcolor{keywordtype}{int}\ MR,\textcolor{keywordtype}{int}\ MC>}
+\DoxyCodeLine{01018\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ Eigen::Matrix<T,R,C,P,MR,MC>\&\ obj,std::vector<char>\&\ buffer,std::vector<char>::iterator\&\ iter)}
+\DoxyCodeLine{01019\ \ \ \ \ \{}
+\DoxyCodeLine{01020\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialization::serialize}}(obj.rows(),buffer,iter);}
+\DoxyCodeLine{01021\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialization::serialize}}(obj.cols(),buffer,iter);}
+\DoxyCodeLine{01022\ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size\ =\ \textcolor{keyword}{sizeof}(T)*obj.rows()*obj.cols();}
+\DoxyCodeLine{01023\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ ptr\ =\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }uint8\_t*\textcolor{keyword}{>}(obj.data());}
+\DoxyCodeLine{01024\ \ \ \ \ \ \ iter\ =\ std::copy(ptr,ptr+size,iter);}
+\DoxyCodeLine{01025\ \ \ \ \ \}}
+\DoxyCodeLine{01026\ }
+\DoxyCodeLine{01027\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keywordtype}{int}\ R,\textcolor{keywordtype}{int}\ C,\textcolor{keywordtype}{int}\ P,\textcolor{keywordtype}{int}\ MR,\textcolor{keywordtype}{int}\ MC>}
+\DoxyCodeLine{01028\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(Eigen::Matrix<T,R,C,P,MR,MC>\&\ obj,std::vector<char>::const\_iterator\&\ iter)}
+\DoxyCodeLine{01029\ \ \ \ \ \{}
+\DoxyCodeLine{01030\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Eigen::Matrix<T,R,C,P,MR,MC>::Index\ rows,cols;}
+\DoxyCodeLine{01031\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{serialization::deserialize}}(rows,iter);}
+\DoxyCodeLine{01032\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{serialization::deserialize}}(cols,iter);}
+\DoxyCodeLine{01033\ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size\ =\ \textcolor{keyword}{sizeof}(T)*rows*cols;}
+\DoxyCodeLine{01034\ \ \ \ \ \ \ obj.resize(rows,cols);}
+\DoxyCodeLine{01035\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ ptr\ =\ \textcolor{keyword}{reinterpret\_cast<}uint8\_t*\textcolor{keyword}{>}(obj.data());}
+\DoxyCodeLine{01036\ \ \ \ \ \ \ std::copy(iter,iter+size,ptr);}
+\DoxyCodeLine{01037\ \ \ \ \ \ \ iter+=size;}
+\DoxyCodeLine{01038\ \ \ \ \ \}}
+\DoxyCodeLine{01039\ }
+\DoxyCodeLine{01040\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keywordtype}{int}\ R,\textcolor{keywordtype}{int}\ C,\textcolor{keywordtype}{int}\ P,\textcolor{keywordtype}{int}\ MR,\textcolor{keywordtype}{int}\ MC>}
+\DoxyCodeLine{01041\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ Eigen::Array<T,R,C,P,MR,MC>\&\ obj)}
+\DoxyCodeLine{01042\ \ \ \ \ \{}
+\DoxyCodeLine{01043\ \ \ \ \ \ \ \textcolor{comment}{//\ space\ for\ numbers\ of\ rows,cols\ and\ data}}
+\DoxyCodeLine{01044\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 2*\textcolor{keyword}{sizeof}(\textcolor{keyword}{typename}\ Eigen::Array<T,R,C,P,MR,MC>::Index)+\textcolor{keyword}{sizeof}(T)*obj.rows()*obj.cols();}
+\DoxyCodeLine{01045\ \ \ \ \ \}}
+\DoxyCodeLine{01046\ }
+\DoxyCodeLine{01047\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keywordtype}{int}\ R,\textcolor{keywordtype}{int}\ C,\textcolor{keywordtype}{int}\ P,\textcolor{keywordtype}{int}\ MR,\textcolor{keywordtype}{int}\ MC>}
+\DoxyCodeLine{01048\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ Eigen::Array<T,R,C,P,MR,MC>\&\ obj,std::vector<char>\&\ buffer,std::vector<char>::iterator\&\ iter)}
+\DoxyCodeLine{01049\ \ \ \ \ \{}
+\DoxyCodeLine{01050\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialization::serialize}}(obj.rows(),buffer,iter);}
+\DoxyCodeLine{01051\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialization::serialize}}(obj.cols(),buffer,iter);}
+\DoxyCodeLine{01052\ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size\ =\ \textcolor{keyword}{sizeof}(T)*obj.rows()*obj.cols();}
+\DoxyCodeLine{01053\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ ptr\ =\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }uint8\_t*\textcolor{keyword}{>}(obj.data());}
+\DoxyCodeLine{01054\ \ \ \ \ \ \ iter\ =\ std::copy(ptr,ptr+size,iter);}
+\DoxyCodeLine{01055\ \ \ \ \ \}}
+\DoxyCodeLine{01056\ }
+\DoxyCodeLine{01057\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keywordtype}{int}\ R,\textcolor{keywordtype}{int}\ C,\textcolor{keywordtype}{int}\ P,\textcolor{keywordtype}{int}\ MR,\textcolor{keywordtype}{int}\ MC>}
+\DoxyCodeLine{01058\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(Eigen::Array<T,R,C,P,MR,MC>\&\ obj,std::vector<char>::const\_iterator\&\ iter)}
+\DoxyCodeLine{01059\ \ \ \ \ \{}
+\DoxyCodeLine{01060\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Eigen::Array<T,R,C,P,MR,MC>::Index\ rows,cols;}
+\DoxyCodeLine{01061\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{serialization::deserialize}}(rows,iter);}
+\DoxyCodeLine{01062\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{serialization::deserialize}}(cols,iter);}
+\DoxyCodeLine{01063\ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size\ =\ \textcolor{keyword}{sizeof}(T)*rows*cols;}
+\DoxyCodeLine{01064\ \ \ \ \ \ \ obj.resize(rows,cols);}
+\DoxyCodeLine{01065\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ ptr\ =\ \textcolor{keyword}{reinterpret\_cast<}uint8\_t*\textcolor{keyword}{>}(obj.data());}
+\DoxyCodeLine{01066\ \ \ \ \ \ \ std::copy(iter,iter+size,ptr);}
+\DoxyCodeLine{01067\ \ \ \ \ \ \ iter+=size;}
+\DoxyCodeLine{01068\ \ \ \ \ \}}
+\DoxyCodeLine{01069\ }
+\DoxyCodeLine{01070\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keywordtype}{int}\ P,\textcolor{keyword}{typename}\ I>}
+\DoxyCodeLine{01071\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ Eigen::SparseMatrix<T,P,I>\&\ obj)}
+\DoxyCodeLine{01072\ \ \ \ \ \{}
+\DoxyCodeLine{01073\ \ \ \ \ \ \ \textcolor{comment}{//\ space\ for\ numbers\ of\ rows,cols,nonZeros\ and\ tripplets\ with\ data\ (rowIdx,colIdx,value)}}
+\DoxyCodeLine{01074\ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size\ =\ \textcolor{keyword}{sizeof}(\textcolor{keyword}{typename}\ Eigen::SparseMatrix<T,P,I>::Index);}
+\DoxyCodeLine{01075\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 3*size+(\textcolor{keyword}{sizeof}(T)+2*size)*obj.nonZeros();}
+\DoxyCodeLine{01076\ \ \ \ \ \}}
+\DoxyCodeLine{01077\ }
+\DoxyCodeLine{01078\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keywordtype}{int}\ P,\textcolor{keyword}{typename}\ I>}
+\DoxyCodeLine{01079\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ Eigen::SparseMatrix<T,P,I>\&\ obj,std::vector<char>\&\ buffer,std::vector<char>::iterator\&\ iter)}
+\DoxyCodeLine{01080\ \ \ \ \ \{}
+\DoxyCodeLine{01081\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialization::serialize}}(obj.rows(),buffer,iter);}
+\DoxyCodeLine{01082\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialization::serialize}}(obj.cols(),buffer,iter);}
+\DoxyCodeLine{01083\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialization::serialize}}(obj.nonZeros(),buffer,iter);}
+\DoxyCodeLine{01084\ }
+\DoxyCodeLine{01085\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ k=0;k<obj.outerSize();++k)}
+\DoxyCodeLine{01086\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{typename}\ Eigen::SparseMatrix<T,P,I>::InnerIterator\ it(obj,k);it;++it)}
+\DoxyCodeLine{01088\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01089\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialization::serialize}}(it.row(),buffer,iter);}
+\DoxyCodeLine{01090\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialization::serialize}}(it.col(),buffer,iter);}
+\DoxyCodeLine{01091\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialization::serialize}}(it.value(),buffer,iter);}
+\DoxyCodeLine{01092\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01093\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01094\ \ \ \ \ \}}
+\DoxyCodeLine{01095\ }
+\DoxyCodeLine{01096\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keywordtype}{int}\ P,\textcolor{keyword}{typename}\ I>}
+\DoxyCodeLine{01097\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(Eigen::SparseMatrix<T,P,I>\&\ obj,std::vector<char>::const\_iterator\&\ iter)}
+\DoxyCodeLine{01098\ \ \ \ \ \{}
+\DoxyCodeLine{01099\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Eigen::SparseMatrix<T,P,I>::Index\ rows,cols,nonZeros;}
+\DoxyCodeLine{01100\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{serialization::deserialize}}(rows,iter);}
+\DoxyCodeLine{01101\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{serialization::deserialize}}(cols,iter);}
+\DoxyCodeLine{01102\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{serialization::deserialize}}(nonZeros,iter);}
+\DoxyCodeLine{01103\ }
+\DoxyCodeLine{01104\ \ \ \ \ \ \ obj.resize(rows,cols);}
+\DoxyCodeLine{01105\ \ \ \ \ \ \ obj.setZero();}
+\DoxyCodeLine{01106\ }
+\DoxyCodeLine{01107\ \ \ \ \ \ \ std::vector<Eigen::Triplet<T,I>\ >\ triplets;}
+\DoxyCodeLine{01108\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;i<nonZeros;i++)}
+\DoxyCodeLine{01109\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01110\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Eigen::SparseMatrix<T,P,I>::Index\ rowId,colId;}
+\DoxyCodeLine{01111\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{serialization::deserialize}}(rowId,iter);}
+\DoxyCodeLine{01112\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{serialization::deserialize}}(colId,iter);}
+\DoxyCodeLine{01113\ \ \ \ \ \ \ \ \ T\ value;}
+\DoxyCodeLine{01114\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{serialization::deserialize}}(value,iter);}
+\DoxyCodeLine{01115\ \ \ \ \ \ \ \ \ triplets.push\_back(Eigen::Triplet<T,I>(rowId,colId,value));}
+\DoxyCodeLine{01116\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01117\ \ \ \ \ \ \ obj.setFromTriplets(triplets.begin(),triplets.end());}
+\DoxyCodeLine{01118\ \ \ \ \ \}}
+\DoxyCodeLine{01119\ }
+\DoxyCodeLine{01120\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keywordtype}{int}\ P>}
+\DoxyCodeLine{01121\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ Eigen::Quaternion<T,P>\&\ obj)}
+\DoxyCodeLine{01122\ \ \ \ \ \{}
+\DoxyCodeLine{01123\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{sizeof}(T)*4;}
+\DoxyCodeLine{01124\ \ \ \ \ \}}
+\DoxyCodeLine{01125\ }
+\DoxyCodeLine{01126\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keywordtype}{int}\ P>}
+\DoxyCodeLine{01127\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ Eigen::Quaternion<T,P>\&\ obj,std::vector<char>\&\ buffer,std::vector<char>::iterator\&\ iter)}
+\DoxyCodeLine{01128\ \ \ \ \ \{}
+\DoxyCodeLine{01129\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialization::serialize}}(obj.w(),buffer,iter);}
+\DoxyCodeLine{01130\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialization::serialize}}(obj.x(),buffer,iter);}
+\DoxyCodeLine{01131\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialization::serialize}}(obj.y(),buffer,iter);}
+\DoxyCodeLine{01132\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialization::serialize}}(obj.z(),buffer,iter);}
+\DoxyCodeLine{01133\ \ \ \ \ \}}
+\DoxyCodeLine{01134\ }
+\DoxyCodeLine{01135\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keywordtype}{int}\ P>}
+\DoxyCodeLine{01136\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(Eigen::Quaternion<T,P>\&\ obj,std::vector<char>::const\_iterator\&\ iter)}
+\DoxyCodeLine{01137\ \ \ \ \ \{}
+\DoxyCodeLine{01138\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{serialization::deserialize}}(obj.w(),iter);}
+\DoxyCodeLine{01139\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{serialization::deserialize}}(obj.x(),iter);}
+\DoxyCodeLine{01140\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{serialization::deserialize}}(obj.y(),iter);}
+\DoxyCodeLine{01141\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{serialization::deserialize}}(obj.z(),iter);}
+\DoxyCodeLine{01142\ \ \ \ \ \}}
+\DoxyCodeLine{01143\ }
+\DoxyCodeLine{01144\ \ \ \ \ \textcolor{comment}{//\ pointers}}
+\DoxyCodeLine{01145\ }
+\DoxyCodeLine{01146\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{01147\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<std::is\_pointer<T>::value,\textcolor{keywordtype}{size\_t}>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ T\&\ obj)}
+\DoxyCodeLine{01148\ \ \ \ \ \{}
+\DoxyCodeLine{01149\ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size\ =\ \textcolor{keyword}{sizeof}(bool);}
+\DoxyCodeLine{01150\ }
+\DoxyCodeLine{01151\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(obj)}
+\DoxyCodeLine{01152\ \ \ \ \ \ \ \ \ size\ +=\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(*obj);}
+\DoxyCodeLine{01153\ }
+\DoxyCodeLine{01154\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ size;}
+\DoxyCodeLine{01155\ \ \ \ \ \}}
+\DoxyCodeLine{01156\ }
+\DoxyCodeLine{01157\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{01158\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<std::is\_pointer<T>::value>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ T\&\ obj,std::vector<char>\&\ buffer,std::vector<char>::iterator\&\ iter)}
+\DoxyCodeLine{01159\ \ \ \ \ \{}
+\DoxyCodeLine{01160\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialization::serialize}}(obj\ ==\ \textcolor{keyword}{nullptr},buffer,iter);}
+\DoxyCodeLine{01161\ }
+\DoxyCodeLine{01162\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(obj)}
+\DoxyCodeLine{01163\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialization::serialize}}(*obj,buffer,iter);}
+\DoxyCodeLine{01164\ \ \ \ \ \}}
+\DoxyCodeLine{01165\ }
+\DoxyCodeLine{01166\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{01167\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<std::is\_pointer<T>::value>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(T\&\ obj,std::vector<char>::const\_iterator\&\ iter)}
+\DoxyCodeLine{01168\ \ \ \ \ \{}
+\DoxyCodeLine{01169\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isNullPtr;}
+\DoxyCodeLine{01170\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{serialization::deserialize}}(isNullPtr,iter);}
+\DoxyCodeLine{01171\ }
+\DoxyCodeLine{01172\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(isNullPtr)}
+\DoxyCodeLine{01173\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01174\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(obj)}
+\DoxyCodeLine{01175\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01176\ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}serialization:\ possible\ memory\ leak\ in\ serialization\ for\ '"{}}\ <<\ \textcolor{keyword}{typeid}(obj).name()\ <<\ \textcolor{stringliteral}{"{}'"{}}\ <<\ std::endl;}
+\DoxyCodeLine{01177\ \ \ \ \ \ \ \ \ \ \ obj\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{01178\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01179\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01180\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{01181\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01182\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(obj)}
+\DoxyCodeLine{01183\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01184\ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}serialization:\ possible\ memory\ corruption\ in\ deserialization\ for\ '"{}}\ <<\ \textcolor{keyword}{typeid}(obj).name()\ <<\ \textcolor{stringliteral}{"{}'"{}}\ <<\ std::endl;}
+\DoxyCodeLine{01185\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01186\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{01187\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01188\ \ \ \ \ \ \ \ \ \ \ obj\ =\ \textcolor{keyword}{new}\ \textcolor{keyword}{typename}\ std::remove\_pointer<T>::type();}
+\DoxyCodeLine{01189\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01190\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{serialization::deserialize}}(*obj,iter);}
+\DoxyCodeLine{01191\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01192\ \ \ \ \ \}}
+\DoxyCodeLine{01193\ }
+\DoxyCodeLine{01194\ \ \ \ \ \textcolor{comment}{//\ std::shared\_ptr\ and\ std::unique\_ptr}}
+\DoxyCodeLine{01195\ }
+\DoxyCodeLine{01196\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{01197\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<serialization::is\_smart\_ptr<T>::value,\textcolor{keywordtype}{size\_t}>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ T\&\ obj)}
+\DoxyCodeLine{01198\ \ \ \ \ \{}
+\DoxyCodeLine{01199\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(obj.get());}
+\DoxyCodeLine{01200\ \ \ \ \ \}}
+\DoxyCodeLine{01201\ }
+\DoxyCodeLine{01202\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{01203\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<serialization::is\_smart\_ptr<T>::value>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ T\&\ obj,std::vector<char>\&\ buffer,std::vector<char>::iterator\&\ iter)}
+\DoxyCodeLine{01204\ \ \ \ \ \{}
+\DoxyCodeLine{01205\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(obj.get(),buffer,iter);}
+\DoxyCodeLine{01206\ \ \ \ \ \}}
+\DoxyCodeLine{01207\ }
+\DoxyCodeLine{01208\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{template}<\textcolor{keyword}{typename}>\ \textcolor{keyword}{class\ }T0,\textcolor{keyword}{typename}\ T1>}
+\DoxyCodeLine{01209\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<serialization::is\_smart\_ptr<T0<T1>\ >::value>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(T0<T1>\&\ obj,std::vector<char>::const\_iterator\&\ iter)}
+\DoxyCodeLine{01210\ \ \ \ \ \{}
+\DoxyCodeLine{01211\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isNullPtr;}
+\DoxyCodeLine{01212\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{serialization::deserialize}}(isNullPtr,iter);}
+\DoxyCodeLine{01213\ }
+\DoxyCodeLine{01214\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(isNullPtr)}
+\DoxyCodeLine{01215\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01216\ \ \ \ \ \ \ \ \ obj.reset();}
+\DoxyCodeLine{01217\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01218\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{01219\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01220\ \ \ \ \ \ \ \ \ obj\ =\ T0<T1>(\textcolor{keyword}{new}\ T1());}
+\DoxyCodeLine{01221\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{serialization::deserialize}}(*obj,iter);}
+\DoxyCodeLine{01222\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01223\ \ \ \ \ \}}
+\DoxyCodeLine{01224\ }
+\DoxyCodeLine{01225\ \ \ \ \ \textcolor{comment}{//\ std::weak\_ptr}}
+\DoxyCodeLine{01226\ }
+\DoxyCodeLine{01227\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{01228\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ std::weak\_ptr<T>\&\ obj)}
+\DoxyCodeLine{01229\ \ \ \ \ \{}
+\DoxyCodeLine{01230\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{sizeof}(size\_t);}
+\DoxyCodeLine{01231\ \ \ \ \ \}}
+\DoxyCodeLine{01232\ }
+\DoxyCodeLine{01233\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{01234\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ std::weak\_ptr<T>\&\ obj,std::vector<char>\&\ buffer,std::vector<char>::iterator\&\ iter)}
+\DoxyCodeLine{01235\ \ \ \ \ \{}
+\DoxyCodeLine{01236\ }
+\DoxyCodeLine{01237\ \ \ \ \ \}}
+\DoxyCodeLine{01238\ }
+\DoxyCodeLine{01239\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{01240\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(std::weak\_ptr<T>\&\ obj,std::vector<char>::const\_iterator\&\ iter)}
+\DoxyCodeLine{01241\ \ \ \ \ \{}
+\DoxyCodeLine{01242\ }
+\DoxyCodeLine{01243\ \ \ \ \ \}}
+\DoxyCodeLine{01244\ }
+\DoxyCodeLine{01245\ \ \ \ \ \textcolor{comment}{//\ functions\ to\ overload\ for\ non-\/intrusive\ serialization}}
+\DoxyCodeLine{01246\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{01247\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ T\&\ obj,std::vector<char>\&\ buffer)}
+\DoxyCodeLine{01248\ \ \ \ \ \{}
+\DoxyCodeLine{01249\ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{keyword}{typeid}(obj).name()\ <<\ \textcolor{stringliteral}{"{}\ is\ not\ serializable:\ derive\ from\ igl::Serializable\ or\ specialize\ the\ template\ function\ igl::serialization::serialize(const\ T\&\ obj,std::vector<char>\&\ buffer)"{}}\ <<\ std::endl;}
+\DoxyCodeLine{01250\ \ \ \ \ \}}
+\DoxyCodeLine{01251\ }
+\DoxyCodeLine{01252\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{01253\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(T\&\ obj,\textcolor{keyword}{const}\ std::vector<char>\&\ buffer)}
+\DoxyCodeLine{01254\ \ \ \ \ \{}
+\DoxyCodeLine{01255\ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{keyword}{typeid}(obj).name()\ <<\ \textcolor{stringliteral}{"{}\ is\ not\ deserializable:\ derive\ from\ igl::Serializable\ or\ specialize\ the\ template\ function\ igl::serialization::deserialize(T\&\ obj,\ const\ std::vector<char>\&\ buffer)"{}}\ <<\ std::endl;}
+\DoxyCodeLine{01256\ \ \ \ \ \}}
+\DoxyCodeLine{01257\ }
+\DoxyCodeLine{01258\ \ \ \ \ \textcolor{comment}{//\ helper\ functions}}
+\DoxyCodeLine{01259\ }
+\DoxyCodeLine{01260\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{01261\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_abcf437bf8ec7e22c64c641140ef5567a}{updateMemoryMap}}(T\&\ obj,\textcolor{keywordtype}{size\_t}\ size,std::map<std::uintptr\_t,IndexedPointerBase*>\&\ memoryMap)}
+\DoxyCodeLine{01262\ \ \ \ \ \{}
+\DoxyCodeLine{01263\ \ \ \ \ \ \ \textcolor{comment}{//\ check\ if\ object\ is\ already\ serialized}}
+\DoxyCodeLine{01264\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ startPtr\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structigl_1_1IndexedPointer}{IndexedPointer<T>}}();}
+\DoxyCodeLine{01265\ \ \ \ \ \ \ startPtr-\/>Object\ =\ \&obj;}
+\DoxyCodeLine{01266\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ startBasePtr\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{structigl_1_1IndexedPointerBase}{IndexedPointerBase}}*\textcolor{keyword}{>}(startPtr);}
+\DoxyCodeLine{01267\ \ \ \ \ \ \ startBasePtr-\/>\mbox{\hyperlink{structigl_1_1IndexedPointerBase_a7d0c1da86a8fcaf740d7f06d24ebae75}{Type}}\ =\ \mbox{\hyperlink{structigl_1_1IndexedPointerBase_a8390c40d2ba9f148dfaf27333cea05a7afaa476756f33e45df87cd4fb89b8f590}{IndexedPointerBase::BEGIN}};}
+\DoxyCodeLine{01268\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ startAddress\ =\ \textcolor{keyword}{reinterpret\_cast<}std::uintptr\_t\textcolor{keyword}{>}(\&obj);}
+\DoxyCodeLine{01269\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ p\ =\ std::pair<std::uintptr\_t,IndexedPointerBase*>(startAddress,startBasePtr);}
+\DoxyCodeLine{01270\ }
+\DoxyCodeLine{01271\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ el\ =\ memoryMap.insert(p);}
+\DoxyCodeLine{01272\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ iter\ =\ ++el.first;\ \textcolor{comment}{//\ next\ elememt}}
+\DoxyCodeLine{01273\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(el.second\ \&\&\ (iter\ ==\ memoryMap.end()\ ||\ iter-\/>second-\/>Type\ !=\ \mbox{\hyperlink{structigl_1_1IndexedPointerBase_a8390c40d2ba9f148dfaf27333cea05a7a88deaa1599d6b518d22adb3f3b9dbcf8}{IndexedPointerBase::END}}))}
+\DoxyCodeLine{01274\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01275\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ not\ yet\ serialized}}
+\DoxyCodeLine{01276\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ endPtr\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structigl_1_1IndexedPointer}{IndexedPointer<T>}}();}
+\DoxyCodeLine{01277\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ endBasePtr\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{structigl_1_1IndexedPointerBase}{IndexedPointerBase}}*\textcolor{keyword}{>}(endPtr);}
+\DoxyCodeLine{01278\ \ \ \ \ \ \ \ \ endBasePtr-\/>\mbox{\hyperlink{structigl_1_1IndexedPointerBase_a7d0c1da86a8fcaf740d7f06d24ebae75}{Type}}\ =\ \mbox{\hyperlink{structigl_1_1IndexedPointerBase_a8390c40d2ba9f148dfaf27333cea05a7a88deaa1599d6b518d22adb3f3b9dbcf8}{IndexedPointerBase::END}};}
+\DoxyCodeLine{01279\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ endAddress\ =\ \textcolor{keyword}{reinterpret\_cast<}std::uintptr\_t\textcolor{keyword}{>}(\&obj)\ +\ size\ -\/\ 1;}
+\DoxyCodeLine{01280\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ p\ =\ std::pair<std::uintptr\_t,IndexedPointerBase*>(endAddress,endBasePtr);}
+\DoxyCodeLine{01281\ }
+\DoxyCodeLine{01282\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ insert\ end\ address}}
+\DoxyCodeLine{01283\ \ \ \ \ \ \ \ \ memoryMap.insert(el.first,p);}
+\DoxyCodeLine{01284\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01285\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{01286\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01287\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ already\ serialized}}
+\DoxyCodeLine{01288\ }
+\DoxyCodeLine{01289\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ remove\ inserted\ address}}
+\DoxyCodeLine{01290\ \ \ \ \ \ \ \ \ memoryMap.erase(el.first);}
+\DoxyCodeLine{01291\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01292\ \ \ \ \ \}}
+\DoxyCodeLine{01293\ \ \ \}}
+\DoxyCodeLine{01294\ \}}
+\DoxyCodeLine{01295\ }
+\DoxyCodeLine{01296\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

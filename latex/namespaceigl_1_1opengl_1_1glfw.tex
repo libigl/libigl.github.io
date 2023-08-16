@@ -1,7 +1,46 @@
 \doxysection{igl\+::opengl\+::glfw Namespace Reference}
 \hypertarget{namespaceigl_1_1opengl_1_1glfw}{}\label{namespaceigl_1_1opengl_1_1glfw}\index{igl::opengl::glfw@{igl::opengl::glfw}}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl_1_1opengl_1_1glfw_1_1imgui}{imgui}}
+\item 
+namespace \mbox{\hyperlink{namespaceigl_1_1opengl_1_1glfw_1_1serialization}{serialization}}
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}}
-\end{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin}{Viewer\+Plugin}}
+\begin{DoxyCompactList}\small\item\em Abstract class for plugins All plugins MUST have this class as their parent and may implement any/all the callbacks marked {\ttfamily virtual} here. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespaceigl_1_1opengl_1_1glfw_a74a2d1824668b9763e32bd964a4344c6}{background\+\_\+window}} (GLFWwindow \texorpdfstring{$\ast$}{*}\&window)
+\begin{DoxyCompactList}\small\item\em Create a background window with a valid core profile opengl context set to current. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceigl_1_1opengl_1_1glfw_a74a2d1824668b9763e32bd964a4344c6}\label{namespaceigl_1_1opengl_1_1glfw_a74a2d1824668b9763e32bd964a4344c6} 
+\index{igl::opengl::glfw@{igl::opengl::glfw}!background\_window@{background\_window}}
+\index{background\_window@{background\_window}!igl::opengl::glfw@{igl::opengl::glfw}}
+\doxysubsubsection{\texorpdfstring{background\_window()}{background\_window()}}
+{\footnotesize\ttfamily bool igl\+::opengl\+::glfw\+::background\+\_\+window (\begin{DoxyParamCaption}\item[{GLFWwindow \texorpdfstring{$\ast$}{*}\&}]{window }\end{DoxyParamCaption})}
+
+
+
+Create a background window with a valid core profile opengl context set to current. 
+
+After you\textquotesingle{}re finished with this window you may call {\ttfamily glfw\+Destroy\+Window(window)}
+
+After you\textquotesingle{}re finished with glfw you should call {\ttfamily glfw\+Terminate()}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em window} & pointer to glfw window \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true iff success 
+\end{DoxyReturn}

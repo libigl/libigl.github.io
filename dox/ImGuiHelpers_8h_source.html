@@ -110,7 +110,7 @@ $(document).ready(function(){initNavTree('ImGuiHelpers_8h_source.html',''); init
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef IGL_OPENGL_GLFW_IMGUI_IMGUIHELPERS_H</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define IGL_OPENGL_GLFW_IMGUI_IMGUIHELPERS_H</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;ImGuiTraits.h&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="ImGuiTraits_8h.html">ImGuiTraits.h</a>&quot;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;imgui.h&gt;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;string&gt;</span></div>
@@ -196,9 +196,9 @@ $(document).ready(function(){initNavTree('ImGuiHelpers_8h_source.html',''); init
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>{</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  <span class="keyword">const</span> <span class="keywordtype">char</span> *fmt = format;</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  <span class="keywordflow">if</span> (format == <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    fmt = ImGuiDataTypeTraits&lt;T&gt;::format;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    fmt = <a class="code hl_class" href="classImGui_1_1ImGuiDataTypeTraits.html">ImGuiDataTypeTraits&lt;T&gt;::format</a>;</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  }</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceImGui.html#a0fb91683a93c61f90f7c448466266f3c">SliderScalar</a>(label, ImGuiDataTypeTraits&lt;T&gt;::value, value, &amp;min, &amp;max, fmt);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceImGui.html#a0fb91683a93c61f90f7c448466266f3c">SliderScalar</a>(label, <a class="code hl_class" href="classImGui_1_1ImGuiDataTypeTraits.html">ImGuiDataTypeTraits&lt;T&gt;::value</a>, value, &amp;min, &amp;max, fmt);</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>}</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Getter, <span class="keyword">typename</span> Setter&gt;</div>
@@ -213,6 +213,8 @@ $(document).ready(function(){initNavTree('ImGuiHelpers_8h_source.html',''); init
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>} <span class="comment">// namespace ImGui</span></div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="preprocessor">#endif </span><span class="comment">// IGL_OPENGL_GLFW_IMGUI_IMGUIHELPERS_H</span></div>
+<div class="ttc" id="aImGuiTraits_8h_html"><div class="ttname"><a href="ImGuiTraits_8h.html">ImGuiTraits.h</a></div></div>
+<div class="ttc" id="aclassImGui_1_1ImGuiDataTypeTraits_html"><div class="ttname"><a href="classImGui_1_1ImGuiDataTypeTraits.html">ImGui::ImGuiDataTypeTraits</a></div><div class="ttdef"><b>Definition</b> ImGuiTraits.h:20</div></div>
 <div class="ttc" id="anamespaceImGui_html"><div class="ttname"><a href="namespaceImGui.html">ImGui</a></div><div class="ttdef"><b>Definition</b> ImGuiHelpers.h:26</div></div>
 <div class="ttc" id="anamespaceImGui_html_a010b32e950ef1eb7a43808f0c0bd04d2"><div class="ttname"><a href="namespaceImGui.html#a010b32e950ef1eb7a43808f0c0bd04d2">ImGui::Combo</a></div><div class="ttdeci">bool Combo(const char *label, int *idx, std::vector&lt; std::string &gt; &amp;values)</div><div class="ttdef"><b>Definition</b> ImGuiHelpers.h:36</div></div>
 <div class="ttc" id="anamespaceImGui_html_a01e8908c9ff42e3510168251a97f1d48"><div class="ttname"><a href="namespaceImGui.html#a01e8908c9ff42e3510168251a97f1d48">ImGui::Checkbox</a></div><div class="ttdeci">bool Checkbox(const char *label, Getter get, Setter set)</div><div class="ttdef"><b>Definition</b> ImGuiHelpers.h:105</div></div>

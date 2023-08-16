@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['halfedgeiterator_0',['HalfEdgeIterator',['../classigl_1_1HalfEdgeIterator.html',1,'igl']]],
-  ['heatgeodesicsdata_1',['HeatGeodesicsData',['../structigl_1_1HeatGeodesicsData.html',1,'igl']]],
-  ['hit_2',['Hit',['../structigl_1_1embree_1_1EmbreeRenderer_1_1Hit.html',1,'igl::embree::EmbreeRenderer::Hit'],['../structigl_1_1Hit.html',1,'igl::Hit']]]
+  ['fastwindingnumberbvh_0',['FastWindingNumberBVH',['../structigl_1_1FastWindingNumberBVH.html',1,'igl']]],
+  ['filememorybuffer_1',['FileMemoryBuffer',['../structigl_1_1FileMemoryBuffer.html',1,'igl']]],
+  ['filememorystream_2',['FileMemoryStream',['../structigl_1_1FileMemoryStream.html',1,'igl']]]
 ];

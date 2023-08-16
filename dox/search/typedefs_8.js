@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vectordims_0',['VectorDIMS',['../classigl_1_1AABB.html#a115da153746506529eaaa70fb01ffffb',1,'igl::AABB']]]
+  ['objectlist_0',['ObjectList',['../classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh.html#ac56b1000b340eb1fbc5be68ce0290773',1,'igl::copyleft::cgal::SelfIntersectMesh']]]
 ];

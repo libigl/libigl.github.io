@@ -1,0 +1,169 @@
+\doxysection{Binary\+Winding\+Number\+Operations.\+h}
+\hypertarget{BinaryWindingNumberOperations_8h_source}{}\label{BinaryWindingNumberOperations_8h_source}\index{include/igl/copyleft/cgal/BinaryWindingNumberOperations.h@{include/igl/copyleft/cgal/BinaryWindingNumberOperations.h}}
+\mbox{\hyperlink{BinaryWindingNumberOperations_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2015\ Qingnan\ Zhou\ <qnzhou@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ IGL\_COPYLEFT\_CGAL\_BINARY\_WINDING\_NUMBER\_OPERATIONS\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ IGL\_COPYLEFT\_CGAL\_BINARY\_WINDING\_NUMBER\_OPERATIONS\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}../../igl\_inline.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}../../MeshBooleanType.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ TODO:\ This\ is\ not\ written\ according\ to\ libigl\ style.\ These\ should\ be}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ function\ handles.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ Why\ is\ this\ templated\ on\ DerivedW}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//}}
+\DoxyCodeLine{00022\ \textcolor{comment}{//\ These\ are\ all\ generalized\ to\ n-\/ary\ operations}}
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \ \ \textcolor{keyword}{namespace\ }copyleft}
+\DoxyCodeLine{00026\ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{namespace\ }cgal}
+\DoxyCodeLine{00028\ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <igl::MeshBooleanType\ Op>}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1BinaryWindingNumberOperations}{BinaryWindingNumberOperations}}\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ DerivedW>}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedW::Scalar\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1BinaryWindingNumberOperations_a3fabae52904c1510a224fad78262d84d}{operator()}}(}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedW>\&\ \textcolor{comment}{/*win\_nums*/})\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ (std::runtime\_error(\textcolor{stringliteral}{"{}not\ implemented!"{}}));}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <>}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1BinaryWindingNumberOperations}{BinaryWindingNumberOperations}}<\mbox{\hyperlink{namespaceigl_a16cc7fd8778cd880be528227e0318b9facab2376ce17d445c5637c8a4bca36056}{MESH\_BOOLEAN\_TYPE\_UNION}}>\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ DerivedW>}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedW::Scalar\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1BinaryWindingNumberOperations_3_01MESH__BOOLEAN__TYPE__UNION_01_4_ae546e0b15fb6309bdf23609e2c2e848a}{operator()}}(}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedW>\&\ win\_nums)\textcolor{keyword}{\ const\ }}
+\DoxyCodeLine{00047\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;i<win\_nums.size();i++)}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(win\_nums(i)\ >\ 0)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <>}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1BinaryWindingNumberOperations}{BinaryWindingNumberOperations}}<\mbox{\hyperlink{namespaceigl_a16cc7fd8778cd880be528227e0318b9fa80c9b3b199544d1f6dae0412534ffc34}{MESH\_BOOLEAN\_TYPE\_INTERSECT}}>\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ DerivedW>}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedW::Scalar\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1BinaryWindingNumberOperations_3_01MESH__BOOLEAN__TYPE__INTERSECT_01_4_a3948ef15620fffd84e960309d4ca30a8}{operator()}}(}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedW>\&\ win\_nums)\textcolor{keyword}{\ const\ }}
+\DoxyCodeLine{00063\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;i<win\_nums.size();i++)}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(win\_nums(i)<=0)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <>}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1BinaryWindingNumberOperations}{BinaryWindingNumberOperations}}<\mbox{\hyperlink{namespaceigl_a16cc7fd8778cd880be528227e0318b9fa18e150636e973e60713171df46566a80}{MESH\_BOOLEAN\_TYPE\_MINUS}}>\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ DerivedW>}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedW::Scalar\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1BinaryWindingNumberOperations_3_01MESH__BOOLEAN__TYPE__MINUS_01_4_a53d1dc2d998fe1a5800e17d49f3a3777}{operator()}}(}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedW>\&\ win\_nums)\textcolor{keyword}{\ const\ }}
+\DoxyCodeLine{00079\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ assert(win\_nums.size()>1);}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Union\ of\ objects\ 1\ through\ n-\/1}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ union\_rest\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 1;i<win\_nums.size();i++)}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ union\_rest\ =\ union\_rest\ ||\ win\_nums(i)\ >\ 0;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(union\_rest)\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Must\ be\ in\ object\ 0\ and\ not\ in\ union\ of\ objects\ 1\ through\ n-\/1}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ win\_nums(0)\ >\ 0\ \&\&\ !union\_rest;}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <>}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1BinaryWindingNumberOperations}{BinaryWindingNumberOperations}}<\mbox{\hyperlink{namespaceigl_a16cc7fd8778cd880be528227e0318b9fa6b7ed81a5d01491212a128640544881b}{MESH\_BOOLEAN\_TYPE\_XOR}}>\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ DerivedW>}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedW::Scalar\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1BinaryWindingNumberOperations_3_01MESH__BOOLEAN__TYPE__XOR_01_4_ae9bbc6dfb8c326a145df037587c23bc6}{operator()}}(}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedW>\&\ win\_nums)\textcolor{keyword}{\ const\ }}
+\DoxyCodeLine{00100\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ inside\ an\ odd\ number\ of\ objects}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceigl_a83819bb842f4bc4c8af21a98e1db44b3}{count}}\ =\ 0;}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;i<win\_nums.size();i++)}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(win\_nums(i)\ >\ 0)\ \mbox{\hyperlink{namespaceigl_a83819bb842f4bc4c8af21a98e1db44b3}{count}}++;}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceigl_a83819bb842f4bc4c8af21a98e1db44b3}{count}}\ \%\ 2\ ==\ 1;}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <>}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1BinaryWindingNumberOperations}{BinaryWindingNumberOperations}}<\mbox{\hyperlink{namespaceigl_a16cc7fd8778cd880be528227e0318b9fad9961481f0ffb8a24865c88921cfe708}{MESH\_BOOLEAN\_TYPE\_RESOLVE}}>\ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ DerivedW>}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedW::Scalar\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1BinaryWindingNumberOperations_3_01MESH__BOOLEAN__TYPE__RESOLVE_01_4_a2b607e6a92afa2b10a5b7a7038334e0a}{operator()}}(}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedW>\&\ \textcolor{comment}{/*win\_nums*/})\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1BinaryWindingNumberOperations}{BinaryWindingNumberOperations<MESH\_BOOLEAN\_TYPE\_UNION>}}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a41dc481531d9dd2585c545308a2937d7}{BinaryUnion}};}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1BinaryWindingNumberOperations}{BinaryWindingNumberOperations<MESH\_BOOLEAN\_TYPE\_INTERSECT>}}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a3cad0d59d1e687e9faa8c93e15957b95}{BinaryIntersect}};}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1BinaryWindingNumberOperations}{BinaryWindingNumberOperations<MESH\_BOOLEAN\_TYPE\_MINUS>}}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_adb0880ae718ceaa681706d8b827d54fe}{BinaryMinus}};}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1BinaryWindingNumberOperations}{BinaryWindingNumberOperations<MESH\_BOOLEAN\_TYPE\_XOR>}}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_acda076539de2c25a135eda9462171d87}{BinaryXor}};}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1BinaryWindingNumberOperations}{BinaryWindingNumberOperations<MESH\_BOOLEAN\_TYPE\_RESOLVE>}}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_ac06a2805099d616ad29e497091315ac0}{BinaryResolve}};}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a652b3870ca0cbdd378a3b383ba9bd5f2}{KeeperType}}\ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a652b3870ca0cbdd378a3b383ba9bd5f2a4fe1fa3cfe8bfbb3dd60b8c84f3118ce}{KEEP\_INSIDE}},}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a652b3870ca0cbdd378a3b383ba9bd5f2a224588758e6408e9ad5fff0b04142844}{KEEP\_ALL}}}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \textcolor{keyword}{template}<KeeperType\ T>}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1WindingNumberFilter}{WindingNumberFilter}}\ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ DerivedW>}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{short}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1WindingNumberFilter_a23a9c15da75b897a93ffb58b43185806}{operator()}}(}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedW>\&\ \textcolor{comment}{/*win\_nums*/})\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Not\ implemented"{}});}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1WindingNumberFilter}{WindingNumberFilter}}<\mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a652b3870ca0cbdd378a3b383ba9bd5f2a4fe1fa3cfe8bfbb3dd60b8c84f3118ce}{KEEP\_INSIDE}}>\ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{short}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1WindingNumberFilter_3_01KEEP__INSIDE_01_4_a0a00cb276a93ddb80e9e325ea7d686ae}{operator()}}(T\ out\_w,\ T\ in\_w)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (in\_w\ >\ 0\ \&\&\ out\_w\ <=\ 0)\ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (in\_w\ <=\ 0\ \&\&\ out\_w\ >\ 0)\ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1WindingNumberFilter}{WindingNumberFilter}}<\mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a652b3870ca0cbdd378a3b383ba9bd5f2a224588758e6408e9ad5fff0b04142844}{KEEP\_ALL}}>\ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{short}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1WindingNumberFilter_3_01KEEP__ALL_01_4_aea1dcbebfc17c872245db0d554e2ce66}{operator()}}(T\ \textcolor{comment}{/*out\_w*/},\ T\ \textcolor{comment}{/*in\_w*/})\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1WindingNumberFilter_3_01KEEP__INSIDE_01_4}{KeepInside}}\ =\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1WindingNumberFilter}{WindingNumberFilter<KEEP\_INSIDE>}};}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1WindingNumberFilter_3_01KEEP__ALL_01_4}{KeepAll}}\ =\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1WindingNumberFilter}{WindingNumberFilter<KEEP\_ALL>}};}
+\DoxyCodeLine{00171\ \ \ \ \ \}}
+\DoxyCodeLine{00172\ \ \ \}}
+\DoxyCodeLine{00173\ \}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -109,7 +109,7 @@ $(document).ready(function(){initNavTree('forward__kinematics_8h_source.html',''
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// obtain one at http://mozilla.org/MPL/2.0/.</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef IGL_FORWARD_KINEMATICS_H</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define IGL_FORWARD_KINEMATICS_H</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;igl_inline.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="igl__inline_8h.html">igl_inline.h</a>&quot;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;Eigen/Core&gt;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;Eigen/Geometry&gt;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;Eigen/StdVector&gt;</span></div>
@@ -117,7 +117,7 @@ $(document).ready(function(){initNavTree('forward__kinematics_8h_source.html',''
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceigl.html">igl</a></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="namespaceigl.html#a583ee685a22b43577be16d088b6d3f29">   28</a></span>  IGL_INLINE <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#a583ee685a22b43577be16d088b6d3f29">forward_kinematics</a>(</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="namespaceigl.html#a583ee685a22b43577be16d088b6d3f29">   28</a></span>  <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#a583ee685a22b43577be16d088b6d3f29">forward_kinematics</a>(</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">const</span> Eigen::MatrixXd &amp; C,</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">const</span> Eigen::MatrixXi &amp; BE,</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">const</span> Eigen::VectorXi &amp; P,</div>
@@ -127,7 +127,7 @@ $(document).ready(function(){initNavTree('forward__kinematics_8h_source.html',''
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    std::vector&lt;</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>      Eigen::Quaterniond,Eigen::aligned_allocator&lt;Eigen::Quaterniond&gt; &gt; &amp; vQ,</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    std::vector&lt;Eigen::Vector3d&gt; &amp; vT);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="namespaceigl.html#a4346a6b4e9b7d07955fe6ab59399e82e">   40</a></span>  IGL_INLINE <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#a583ee685a22b43577be16d088b6d3f29">forward_kinematics</a>(</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="namespaceigl.html#a4346a6b4e9b7d07955fe6ab59399e82e">   40</a></span>  <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#a583ee685a22b43577be16d088b6d3f29">forward_kinematics</a>(</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">const</span> Eigen::MatrixXd &amp; C,</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keyword">const</span> Eigen::MatrixXi &amp; BE,</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keyword">const</span> Eigen::VectorXi &amp; P,</div>
@@ -136,7 +136,7 @@ $(document).ready(function(){initNavTree('forward__kinematics_8h_source.html',''
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    std::vector&lt;</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>      Eigen::Quaterniond,Eigen::aligned_allocator&lt;Eigen::Quaterniond&gt; &gt; &amp; vQ,</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    std::vector&lt;Eigen::Vector3d&gt; &amp; vT);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="namespaceigl.html#a9be847e42a2d294cdb9014c5b04d5649">   51</a></span>  IGL_INLINE <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#a583ee685a22b43577be16d088b6d3f29">forward_kinematics</a>(</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="namespaceigl.html#a9be847e42a2d294cdb9014c5b04d5649">   51</a></span>  <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#a583ee685a22b43577be16d088b6d3f29">forward_kinematics</a>(</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keyword">const</span> Eigen::MatrixXd &amp; C,</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keyword">const</span> Eigen::MatrixXi &amp; BE,</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keyword">const</span> Eigen::VectorXi &amp; P,</div>
@@ -144,7 +144,7 @@ $(document).ready(function(){initNavTree('forward__kinematics_8h_source.html',''
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>      Eigen::Quaterniond,Eigen::aligned_allocator&lt;Eigen::Quaterniond&gt; &gt; &amp; dQ,</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keyword">const</span> std::vector&lt;Eigen::Vector3d&gt; &amp; dT,</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    Eigen::MatrixXd &amp; T);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="namespaceigl.html#adedacc380a9c0e97fcb830413a407aee">   60</a></span>  IGL_INLINE <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#a583ee685a22b43577be16d088b6d3f29">forward_kinematics</a>(</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="namespaceigl.html#adedacc380a9c0e97fcb830413a407aee">   60</a></span>  <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#a583ee685a22b43577be16d088b6d3f29">forward_kinematics</a>(</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keyword">const</span> Eigen::MatrixXd &amp; C,</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keyword">const</span> Eigen::MatrixXi &amp; BE,</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keyword">const</span> Eigen::VectorXi &amp; P,</div>
@@ -157,7 +157,9 @@ $(document).ready(function(){initNavTree('forward__kinematics_8h_source.html',''
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">#  include &quot;forward_kinematics.cpp&quot;</span></div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="anamespaceigl_html"><div class="ttname"><a href="namespaceigl.html">igl</a></div><div class="ttdoc">Fake halfedge for fast and easy navigation on triangle meshes with vertex_triangle_adjacency and tria...</div><div class="ttdef"><b>Definition</b> AABB.h:17</div></div>
+<div class="ttc" id="aigl__inline_8h_html"><div class="ttname"><a href="igl__inline_8h.html">igl_inline.h</a></div></div>
+<div class="ttc" id="aigl__inline_8h_html_a838241279013352686271b4c4ce1f708"><div class="ttname"><a href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a></div><div class="ttdeci">#define IGL_INLINE</div><div class="ttdef"><b>Definition</b> igl_inline.h:15</div></div>
+<div class="ttc" id="anamespaceigl_html"><div class="ttname"><a href="namespaceigl.html">igl</a></div><div class="ttdef"><b>Definition</b> AABB.h:17</div></div>
 <div class="ttc" id="anamespaceigl_html_a583ee685a22b43577be16d088b6d3f29"><div class="ttname"><a href="namespaceigl.html#a583ee685a22b43577be16d088b6d3f29">igl::forward_kinematics</a></div><div class="ttdeci">void forward_kinematics(const Eigen::MatrixXd &amp;C, const Eigen::MatrixXi &amp;BE, const Eigen::VectorXi &amp;P, const std::vector&lt; Eigen::Quaterniond, Eigen::aligned_allocator&lt; Eigen::Quaterniond &gt; &gt; &amp;dQ, const std::vector&lt; Eigen::Vector3d &gt; &amp;dT, std::vector&lt; Eigen::Quaterniond, Eigen::aligned_allocator&lt; Eigen::Quaterniond &gt; &gt; &amp;vQ, std::vector&lt; Eigen::Vector3d &gt; &amp;vT)</div><div class="ttdoc">Given a skeleton and a set of relative bone rotations compute absolute rigid transformations for each...</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

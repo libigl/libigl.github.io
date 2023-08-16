@@ -1,0 +1,119 @@
+\doxysection{include/igl/copyleft/opengl2/tga.h File Reference}
+\hypertarget{tga_8h}{}\label{tga_8h}\index{include/igl/copyleft/opengl2/tga.h@{include/igl/copyleft/opengl2/tga.h}}
+{\ttfamily \#include \"{}../../igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include \"{}../../opengl2/gl.\+h\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \"{}tga.\+cpp\"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structigl_1_1opengl_1_1gliGenericImage}{igl\+::opengl\+::gli\+Generic\+Image}}
+\item 
+struct \mbox{\hyperlink{structigl_1_1opengl_1_1TgaHeader}{igl\+::opengl\+::\+Tga\+Header}}
+\item 
+struct \mbox{\hyperlink{structigl_1_1opengl_1_1TgaFooter}{igl\+::opengl\+::\+Tga\+Footer}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\item 
+namespace \mbox{\hyperlink{namespaceigl_1_1opengl}{igl\+::opengl}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{tga_8h_ab156f476db7f104c90fa7b0399ddd3ff}{TGA\+\_\+\+TYPE\+\_\+\+MAPPED}}~1
+\item 
+\#define \mbox{\hyperlink{tga_8h_a8405fb70d17247ba8aaa29c6b52427c9}{TGA\+\_\+\+TYPE\+\_\+\+COLOR}}~2
+\item 
+\#define \mbox{\hyperlink{tga_8h_aab0599a347b51d21819b0bc15ea7c739}{TGA\+\_\+\+TYPE\+\_\+\+GRAY}}~3
+\item 
+\#define \mbox{\hyperlink{tga_8h_acece3594761b286efc7361f3ecd585f4}{TGA\+\_\+\+TYPE\+\_\+\+MAPPED\+\_\+\+RLE}}~9
+\item 
+\#define \mbox{\hyperlink{tga_8h_a9a94d1ec65a824ddbe1140156faf9ae8}{TGA\+\_\+\+TYPE\+\_\+\+COLOR\+\_\+\+RLE}}~10
+\item 
+\#define \mbox{\hyperlink{tga_8h_a775afb7106c6c774df99b231839d968c}{TGA\+\_\+\+TYPE\+\_\+\+GRAY\+\_\+\+RLE}}~11
+\item 
+\#define \mbox{\hyperlink{tga_8h_adad5aeaff1e2387d9a4a4b3ea27f1281}{TGA\+\_\+\+DESC\+\_\+\+ABITS}}~0x0f
+\item 
+\#define \mbox{\hyperlink{tga_8h_a255757244f4fbec43538dd2ea229b107}{TGA\+\_\+\+DESC\+\_\+\+HORIZONTAL}}~0x10
+\item 
+\#define \mbox{\hyperlink{tga_8h_ac55820adc49b98690e41d85f03a22dd7}{TGA\+\_\+\+DESC\+\_\+\+VERTICAL}}~0x20
+\item 
+\#define \mbox{\hyperlink{tga_8h_a327b7b6807f6870a4b6ea87ae702597e}{TGA\+\_\+\+SIGNATURE}}~\"{}TRUEVISION-\/XFILE\"{}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structigl_1_1opengl_1_1gliGenericImage}{gli\+Generic\+Image}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceigl_1_1opengl_a73e1f94f7c5006844213837713652e0f}{igl\+::opengl\+::gli\+Read\+TGA}} (FILE \texorpdfstring{$\ast$}{*}fp, char \texorpdfstring{$\ast$}{*}name, int hflip, int vflip)
+\item 
+int \mbox{\hyperlink{namespaceigl_1_1opengl_a1581cf9fab6f2f7dbc495dc8c601bd9b}{igl\+::opengl\+::gli\+\_\+verbose}} (int new\+\_\+verbose)
+\item 
+int \mbox{\hyperlink{namespaceigl_1_1opengl_ab7b723fc81098ef1841429fb1e127d76}{igl\+::opengl\+::gli\+Verbose}} (int new\+Verbose)
+\item 
+void \mbox{\hyperlink{namespaceigl_1_1opengl_a0ee614bf7fc62ec302b276934bc9a8cc}{igl\+::opengl\+::write\+TGA}} (\mbox{\hyperlink{structigl_1_1opengl_1_1gliGenericImage}{gli\+Generic\+Image}} \texorpdfstring{$\ast$}{*}image, FILE \texorpdfstring{$\ast$}{*}fp)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{tga_8h_ab156f476db7f104c90fa7b0399ddd3ff}\label{tga_8h_ab156f476db7f104c90fa7b0399ddd3ff} 
+\index{tga.h@{tga.h}!TGA\_TYPE\_MAPPED@{TGA\_TYPE\_MAPPED}}
+\index{TGA\_TYPE\_MAPPED@{TGA\_TYPE\_MAPPED}!tga.h@{tga.h}}
+\doxysubsubsection{\texorpdfstring{TGA\_TYPE\_MAPPED}{TGA\_TYPE\_MAPPED}}
+{\footnotesize\ttfamily \#define TGA\+\_\+\+TYPE\+\_\+\+MAPPED~1}
+
+\Hypertarget{tga_8h_a8405fb70d17247ba8aaa29c6b52427c9}\label{tga_8h_a8405fb70d17247ba8aaa29c6b52427c9} 
+\index{tga.h@{tga.h}!TGA\_TYPE\_COLOR@{TGA\_TYPE\_COLOR}}
+\index{TGA\_TYPE\_COLOR@{TGA\_TYPE\_COLOR}!tga.h@{tga.h}}
+\doxysubsubsection{\texorpdfstring{TGA\_TYPE\_COLOR}{TGA\_TYPE\_COLOR}}
+{\footnotesize\ttfamily \#define TGA\+\_\+\+TYPE\+\_\+\+COLOR~2}
+
+\Hypertarget{tga_8h_aab0599a347b51d21819b0bc15ea7c739}\label{tga_8h_aab0599a347b51d21819b0bc15ea7c739} 
+\index{tga.h@{tga.h}!TGA\_TYPE\_GRAY@{TGA\_TYPE\_GRAY}}
+\index{TGA\_TYPE\_GRAY@{TGA\_TYPE\_GRAY}!tga.h@{tga.h}}
+\doxysubsubsection{\texorpdfstring{TGA\_TYPE\_GRAY}{TGA\_TYPE\_GRAY}}
+{\footnotesize\ttfamily \#define TGA\+\_\+\+TYPE\+\_\+\+GRAY~3}
+
+\Hypertarget{tga_8h_acece3594761b286efc7361f3ecd585f4}\label{tga_8h_acece3594761b286efc7361f3ecd585f4} 
+\index{tga.h@{tga.h}!TGA\_TYPE\_MAPPED\_RLE@{TGA\_TYPE\_MAPPED\_RLE}}
+\index{TGA\_TYPE\_MAPPED\_RLE@{TGA\_TYPE\_MAPPED\_RLE}!tga.h@{tga.h}}
+\doxysubsubsection{\texorpdfstring{TGA\_TYPE\_MAPPED\_RLE}{TGA\_TYPE\_MAPPED\_RLE}}
+{\footnotesize\ttfamily \#define TGA\+\_\+\+TYPE\+\_\+\+MAPPED\+\_\+\+RLE~9}
+
+\Hypertarget{tga_8h_a9a94d1ec65a824ddbe1140156faf9ae8}\label{tga_8h_a9a94d1ec65a824ddbe1140156faf9ae8} 
+\index{tga.h@{tga.h}!TGA\_TYPE\_COLOR\_RLE@{TGA\_TYPE\_COLOR\_RLE}}
+\index{TGA\_TYPE\_COLOR\_RLE@{TGA\_TYPE\_COLOR\_RLE}!tga.h@{tga.h}}
+\doxysubsubsection{\texorpdfstring{TGA\_TYPE\_COLOR\_RLE}{TGA\_TYPE\_COLOR\_RLE}}
+{\footnotesize\ttfamily \#define TGA\+\_\+\+TYPE\+\_\+\+COLOR\+\_\+\+RLE~10}
+
+\Hypertarget{tga_8h_a775afb7106c6c774df99b231839d968c}\label{tga_8h_a775afb7106c6c774df99b231839d968c} 
+\index{tga.h@{tga.h}!TGA\_TYPE\_GRAY\_RLE@{TGA\_TYPE\_GRAY\_RLE}}
+\index{TGA\_TYPE\_GRAY\_RLE@{TGA\_TYPE\_GRAY\_RLE}!tga.h@{tga.h}}
+\doxysubsubsection{\texorpdfstring{TGA\_TYPE\_GRAY\_RLE}{TGA\_TYPE\_GRAY\_RLE}}
+{\footnotesize\ttfamily \#define TGA\+\_\+\+TYPE\+\_\+\+GRAY\+\_\+\+RLE~11}
+
+\Hypertarget{tga_8h_adad5aeaff1e2387d9a4a4b3ea27f1281}\label{tga_8h_adad5aeaff1e2387d9a4a4b3ea27f1281} 
+\index{tga.h@{tga.h}!TGA\_DESC\_ABITS@{TGA\_DESC\_ABITS}}
+\index{TGA\_DESC\_ABITS@{TGA\_DESC\_ABITS}!tga.h@{tga.h}}
+\doxysubsubsection{\texorpdfstring{TGA\_DESC\_ABITS}{TGA\_DESC\_ABITS}}
+{\footnotesize\ttfamily \#define TGA\+\_\+\+DESC\+\_\+\+ABITS~0x0f}
+
+\Hypertarget{tga_8h_a255757244f4fbec43538dd2ea229b107}\label{tga_8h_a255757244f4fbec43538dd2ea229b107} 
+\index{tga.h@{tga.h}!TGA\_DESC\_HORIZONTAL@{TGA\_DESC\_HORIZONTAL}}
+\index{TGA\_DESC\_HORIZONTAL@{TGA\_DESC\_HORIZONTAL}!tga.h@{tga.h}}
+\doxysubsubsection{\texorpdfstring{TGA\_DESC\_HORIZONTAL}{TGA\_DESC\_HORIZONTAL}}
+{\footnotesize\ttfamily \#define TGA\+\_\+\+DESC\+\_\+\+HORIZONTAL~0x10}
+
+\Hypertarget{tga_8h_ac55820adc49b98690e41d85f03a22dd7}\label{tga_8h_ac55820adc49b98690e41d85f03a22dd7} 
+\index{tga.h@{tga.h}!TGA\_DESC\_VERTICAL@{TGA\_DESC\_VERTICAL}}
+\index{TGA\_DESC\_VERTICAL@{TGA\_DESC\_VERTICAL}!tga.h@{tga.h}}
+\doxysubsubsection{\texorpdfstring{TGA\_DESC\_VERTICAL}{TGA\_DESC\_VERTICAL}}
+{\footnotesize\ttfamily \#define TGA\+\_\+\+DESC\+\_\+\+VERTICAL~0x20}
+
+\Hypertarget{tga_8h_a327b7b6807f6870a4b6ea87ae702597e}\label{tga_8h_a327b7b6807f6870a4b6ea87ae702597e} 
+\index{tga.h@{tga.h}!TGA\_SIGNATURE@{TGA\_SIGNATURE}}
+\index{TGA\_SIGNATURE@{TGA\_SIGNATURE}!tga.h@{tga.h}}
+\doxysubsubsection{\texorpdfstring{TGA\_SIGNATURE}{TGA\_SIGNATURE}}
+{\footnotesize\ttfamily \#define TGA\+\_\+\+SIGNATURE~\"{}TRUEVISION-\/XFILE\"{}}
+

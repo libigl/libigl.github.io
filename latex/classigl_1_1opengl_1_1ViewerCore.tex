@@ -1,0 +1,842 @@
+\doxysection{igl\+::opengl\+::Viewer\+Core Class Reference}
+\hypertarget{classigl_1_1opengl_1_1ViewerCore}{}\label{classigl_1_1opengl_1_1ViewerCore}\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+
+
+Basic class of the 3D mesh viewer.  
+
+
+
+
+{\ttfamily \#include $<$Viewer\+Core.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a98926e7cdb35ee656e63a7c59170e3f7}{Rotation\+Type}} \{ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a98926e7cdb35ee656e63a7c59170e3f7a3b5e4dfd95c75e3f539673c93687a486}{ROTATION\+\_\+\+TYPE\+\_\+\+TRACKBALL}} = 0
+, \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a98926e7cdb35ee656e63a7c59170e3f7a875594dfcb07d40f24a2a23f1fb5e707}{ROTATION\+\_\+\+TYPE\+\_\+\+TWO\+\_\+\+AXIS\+\_\+\+VALUATOR\+\_\+\+FIXED\+\_\+\+UP}} = 1
+, \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a98926e7cdb35ee656e63a7c59170e3f7aa593ef19a5acec687845255504b6e047}{ROTATION\+\_\+\+TYPE\+\_\+\+NO\+\_\+\+ROTATION}} = 2
+, \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a98926e7cdb35ee656e63a7c59170e3f7a4a849da575de5b5d0f162268a9d4b257}{NUM\+\_\+\+ROTATION\+\_\+\+TYPES}} = 3
+ \}
+\begin{DoxyCompactList}\small\item\em Type of user interface for changing the view rotation based on the mouse draggin. \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_abf6d6d469f220b00d789a94de0b7e322}{GLuint}} = \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{Mesh\+GL\+::\+GLuint}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_aba6009cae01df3339e47379273fb63d8}{Viewer\+Core}} ()
+\item 
+void \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a6f525e146e98914dcd4ef52434c96642}{init}} ()
+\begin{DoxyCompactList}\small\item\em Initialization. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a9b3ee2325572f2356ff583d4277076e7}{shut}} ()
+\begin{DoxyCompactList}\small\item\em Shutdown. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a81fb05d66aab6266a6bca831dede58c6}{Init\+Serialization}} ()
+\begin{DoxyCompactList}\small\item\em Serialization code. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_af63c12332a679e70836aa9a06e5cfe26}{align\+\_\+camera\+\_\+center}} (const Eigen\+::\+Matrix\+Xd \&V, const Eigen\+::\+Matrix\+Xi \&F)
+\begin{DoxyCompactList}\small\item\em Adjust the view to see the entire model. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a223cdcbfaac5e2b442245de60b329985}{align\+\_\+camera\+\_\+center}} (const Eigen\+::\+Matrix\+Xd \&V)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a4643441c3f4ef95bfcd1cb713482e893}{get\+\_\+scale\+\_\+and\+\_\+shift\+\_\+to\+\_\+fit\+\_\+mesh}} (const Eigen\+::\+Matrix\+Xd \&V, const Eigen\+::\+Matrix\+Xi \&F, float \&zoom, Eigen\+::\+Vector3f \&shift)
+\begin{DoxyCompactList}\small\item\em Determines how much to zoom and shift such that the mesh fills the unit box (centered at the origin) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_ab90f987fc0725a05b7f9f2f696dff521}{get\+\_\+scale\+\_\+and\+\_\+shift\+\_\+to\+\_\+fit\+\_\+mesh}} (const Eigen\+::\+Matrix\+Xd \&V, float \&zoom, Eigen\+::\+Vector3f \&shift)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_afe47055b35fa1c275ba1c461dbe6f48c}{clear\+\_\+framebuffers}} ()
+\begin{DoxyCompactList}\small\item\em Clear the frame buffers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_ac9300aff89f5670193d72919da2669e9}{draw}} (\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData}{Viewer\+Data}} \&data, bool update\+\_\+matrices=true)
+\begin{DoxyCompactList}\small\item\em Draw everything. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_ac71664aeca9d06a4b82b1905d6dd9603}{initialize\+\_\+shadow\+\_\+pass}} ()
+\begin{DoxyCompactList}\small\item\em initialize shadow pass \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a61bcd7c8bcdf37823b7016d7947cfdc2}{deinitialize\+\_\+shadow\+\_\+pass}} ()
+\begin{DoxyCompactList}\small\item\em deinitialize shadow pass \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a9d89918cb49bc067628649f1c5de9286}{draw\+\_\+shadow\+\_\+pass}} (\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData}{Viewer\+Data}} \&data, bool update\+\_\+matrices=true)
+\begin{DoxyCompactList}\small\item\em Draw everything to shadow map. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a7b9146789734337e9a33e66be00d1ed1}{draw\+\_\+buffer}} (\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData}{Viewer\+Data}} \&data, bool update\+\_\+matrices, Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&R, Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&G, Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&B, Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&A)
+\begin{DoxyCompactList}\small\item\em Render given \doxylink{classigl_1_1opengl_1_1ViewerData}{Viewer\+Data} to a buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a117278256764d36c1921a88e01a0bb70}{draw\+\_\+labels}} (\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData}{Viewer\+Data}} \&data, const \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL}{igl\+::opengl\+::\+Mesh\+GL\+::\+Text\+GL}} \&labels)
+\begin{DoxyCompactList}\small\item\em Draw the text lables. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a7a40f95d62d64bdd0146913d83d169f4}{set\+\_\+rotation\+\_\+type}} (const \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a98926e7cdb35ee656e63a7c59170e3f7}{Rotation\+Type}} \&value)
+\begin{DoxyCompactList}\small\item\em Set the current rotation type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_ab6ddc96259d604b00c011e3006562235}{set}} (unsigned int \&property\+\_\+mask, bool value=true) const
+\begin{DoxyCompactList}\small\item\em Set a \doxylink{classigl_1_1opengl_1_1ViewerData}{Viewer\+Data} visualization option for this viewport. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_aeb3336ff441b92aa6204a6dfa5ca1590}{unset}} (unsigned int \&property\+\_\+mask) const
+\begin{DoxyCompactList}\small\item\em Unset a \doxylink{classigl_1_1opengl_1_1ViewerData}{Viewer\+Data} visualization option for this viewport. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a702da4e528a02c275db5b8419a55574c}{toggle}} (unsigned int \&property\+\_\+mask) const
+\begin{DoxyCompactList}\small\item\em Toggle a \doxylink{classigl_1_1opengl_1_1ViewerData}{Viewer\+Data} visualization option for this viewport. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a493ec6e303409859f8cd4a0d051e9ab9}{is\+\_\+set}} (unsigned int property\+\_\+mask) const
+\begin{DoxyCompactList}\small\item\em Check whether a \doxylink{classigl_1_1opengl_1_1ViewerData}{Viewer\+Data} visualization option is set for this viewport. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a8c46aaef34782825955b44914f1ff4e4}{delete\+\_\+shadow\+\_\+buffers}} ()
+\begin{DoxyCompactList}\small\item\em delete the shadow buffers \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a8872ebeb991df99eeb3b6f8b30985bd9}{generate\+\_\+shadow\+\_\+buffers}} ()
+\begin{DoxyCompactList}\small\item\em generate the shadow buffers \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a5f07057a523de442ed33b6f37c6fb9aa}{id}} = 1u
+\begin{DoxyCompactList}\small\item\em Unique identifier. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector4f \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_ac7d36f7eb1fd942ae1c59331b85ac1b5}{background\+\_\+color}}
+\begin{DoxyCompactList}\small\item\em Background color as RGBA. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector3f \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a0d867e974e28d96a5eed96d428488dea}{light\+\_\+position}}
+\begin{DoxyCompactList}\small\item\em Light position (or direction to light) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a7cad009ba7e679f5832a021553bf10db}{is\+\_\+directional\+\_\+light}}
+\begin{DoxyCompactList}\small\item\em Whether to treat {\ttfamily light\+\_\+position} as a point or direction. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a4a153c9d31dff1017c4caffe6eebf87c}{is\+\_\+shadow\+\_\+mapping}}
+\begin{DoxyCompactList}\small\item\em Whether shadow mapping is on. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_abf6d6d469f220b00d789a94de0b7e322}{GLuint}} \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a11b2aa3b4ff5accd89ef87f05f237c06}{shadow\+\_\+width}}
+\begin{DoxyCompactList}\small\item\em Width of the shadow map. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_abf6d6d469f220b00d789a94de0b7e322}{GLuint}} \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a37e5b11cd02bdff53ad7eae8ec423baa}{shadow\+\_\+height}}
+\begin{DoxyCompactList}\small\item\em Height of the shadow map. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_abf6d6d469f220b00d789a94de0b7e322}{GLuint}} \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a2f3169902f8c42f6c31ba3762abead3e}{shadow\+\_\+depth\+\_\+tex}}
+\begin{DoxyCompactList}\small\item\em Shadow map depth texture. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_abf6d6d469f220b00d789a94de0b7e322}{GLuint}} \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_afd17569a8d5c8a1c7b166f43193681d9}{shadow\+\_\+depth\+\_\+fbo}}
+\begin{DoxyCompactList}\small\item\em Shadow map depth framebuffer object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_abf6d6d469f220b00d789a94de0b7e322}{GLuint}} \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a18ec88b6f39284bf830d3d4b42b717a2}{shadow\+\_\+color\+\_\+rbo}}
+\begin{DoxyCompactList}\small\item\em Shadow map color render buffer object. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_ac6ada2422d9e89406a568be1b5f7fbfa}{lighting\+\_\+factor}}
+\begin{DoxyCompactList}\small\item\em Factor of lighting (0\+: no lighting, 1\+: full lighting) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a98926e7cdb35ee656e63a7c59170e3f7}{Rotation\+Type}} \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_aea6244401b22237d6510a59e73113365}{rotation\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em Type of rotation interaction. \end{DoxyCompactList}\item 
+Eigen\+::\+Quaternionf \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a85441f0f93d81efb22cc3b1dee6b1c8a}{trackball\+\_\+angle}}
+\begin{DoxyCompactList}\small\item\em View rotation as quaternion. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a5717161004565ecbadf383fb240aeaa8}{camera\+\_\+base\+\_\+zoom}}
+\begin{DoxyCompactList}\small\item\em Base zoom of camera. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_af15d81d2985299c4e8e50f2e4b4bfd5e}{camera\+\_\+zoom}}
+\begin{DoxyCompactList}\small\item\em Current zoom of camera. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a4badc6acee08ee0074f653f44ab6dc4e}{orthographic}}
+\begin{DoxyCompactList}\small\item\em Whether camera is orthographic (or perspective) \end{DoxyCompactList}\item 
+Eigen\+::\+Vector3f \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_ac6e599685f7fca9a1eb43ac27b531fee}{camera\+\_\+base\+\_\+translation}}
+\begin{DoxyCompactList}\small\item\em Base translation of camera. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector3f \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_af56aa360721e1bd887a09bef4ae538f5}{camera\+\_\+translation}}
+\begin{DoxyCompactList}\small\item\em Current translation of camera. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector3f \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a8aa43f770960d01777f231fee029df96}{camera\+\_\+eye}}
+\begin{DoxyCompactList}\small\item\em Current \"{}eye\"{} / origin position of camera. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector3f \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_acda53fe2a7f869c8fd2cd64c7a8e2c94}{camera\+\_\+up}}
+\begin{DoxyCompactList}\small\item\em Current \"{}up\"{} vector of camera. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector3f \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_aa4e897c91e56e7673fc5ade43a326876}{camera\+\_\+center}}
+\begin{DoxyCompactList}\small\item\em Current \"{}look at\"{} position of camera. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_ab5b4dfc976923e309cb6b1aca1a40191}{camera\+\_\+view\+\_\+angle}}
+\begin{DoxyCompactList}\small\item\em Current view angle of camera. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a326debb07a53fd66125e501640fdf95e}{camera\+\_\+dnear}}
+\begin{DoxyCompactList}\small\item\em Near plane of camera. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_adf9d260c23f0e717d2dbf0981527266d}{camera\+\_\+dfar}}
+\begin{DoxyCompactList}\small\item\em Far plane of camera. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a3203aaf5f618f360b3122e158817073e}{depth\+\_\+test}}
+\begin{DoxyCompactList}\small\item\em Whether testing for depth is enabled. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a0effd92cbb0d11dcf1a5939fc5fc098d}{is\+\_\+animating}}
+\begin{DoxyCompactList}\small\item\em Whether \"{}animating\"{} (continuous drawing) is enabled. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_af68e5b73ab3fe7d9355ec83a8161bae8}{animation\+\_\+max\+\_\+fps}}
+\begin{DoxyCompactList}\small\item\em Max fps of animation loop (e.\+g. 30fps or 60fps) \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a0b226fe4db0e931c5e8129943984fa5a}{object\+\_\+scale}}
+\begin{DoxyCompactList}\small\item\em Caches the two-\/norm between the min/max point of the bounding box. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector4f \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_ac5a0f15fc245747e1d83b8e718f2e74f}{viewport}}
+\begin{DoxyCompactList}\small\item\em Viewport size. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix4f \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a8ce15c9d27268543847a0d83c2010cb6}{view}}
+\begin{DoxyCompactList}\small\item\em Open\+GL view transformation matrix on last render pass. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix4f \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a50af5081883025581f00b0918b3d9d30}{proj}}
+\begin{DoxyCompactList}\small\item\em Open\+GL proj transformation matrix on last render pass. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix4f \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a472fb0721242e3ec4fbc276e97bb99b2}{norm}}
+\begin{DoxyCompactList}\small\item\em Open\+GL norm transformation matrix on last render pass. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix4f \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_ad663368df73cb1ef5c96938ae9d078a3}{shadow\+\_\+view}}
+\begin{DoxyCompactList}\small\item\em Open\+GL shadow\+\_\+view transformation matrix on last render pass. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix4f \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a01ebd332e07be1edd427a08d0220d587}{shadow\+\_\+proj}}
+\begin{DoxyCompactList}\small\item\em Open\+GL shadow\+\_\+proj transformation matrix on last render pass. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Basic class of the 3D mesh viewer. 
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_abf6d6d469f220b00d789a94de0b7e322}\label{classigl_1_1opengl_1_1ViewerCore_abf6d6d469f220b00d789a94de0b7e322} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!GLuint@{GLuint}}
+\index{GLuint@{GLuint}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{GLuint}{GLuint}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_abf6d6d469f220b00d789a94de0b7e322}{igl\+::opengl\+::\+Viewer\+Core\+::\+GLuint}} =  \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{Mesh\+GL\+::\+GLuint}}}
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_a98926e7cdb35ee656e63a7c59170e3f7}\label{classigl_1_1opengl_1_1ViewerCore_a98926e7cdb35ee656e63a7c59170e3f7} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!RotationType@{RotationType}}
+\index{RotationType@{RotationType}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{RotationType}{RotationType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a98926e7cdb35ee656e63a7c59170e3f7}{igl\+::opengl\+::\+Viewer\+Core\+::\+Rotation\+Type}}}
+
+
+
+Type of user interface for changing the view rotation based on the mouse draggin. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ROTATION\_TYPE\_TRACKBALL@{ROTATION\_TYPE\_TRACKBALL}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!ROTATION\_TYPE\_TRACKBALL@{ROTATION\_TYPE\_TRACKBALL}}}\Hypertarget{classigl_1_1opengl_1_1ViewerCore_a98926e7cdb35ee656e63a7c59170e3f7a3b5e4dfd95c75e3f539673c93687a486}\label{classigl_1_1opengl_1_1ViewerCore_a98926e7cdb35ee656e63a7c59170e3f7a3b5e4dfd95c75e3f539673c93687a486} 
+ROTATION\+\_\+\+TYPE\+\_\+\+TRACKBALL&Typical trackball rotation (like Meshlab) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ROTATION\_TYPE\_TWO\_AXIS\_VALUATOR\_FIXED\_UP@{ROTATION\_TYPE\_TWO\_AXIS\_VALUATOR\_FIXED\_UP}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!ROTATION\_TYPE\_TWO\_AXIS\_VALUATOR\_FIXED\_UP@{ROTATION\_TYPE\_TWO\_AXIS\_VALUATOR\_FIXED\_UP}}}\Hypertarget{classigl_1_1opengl_1_1ViewerCore_a98926e7cdb35ee656e63a7c59170e3f7a875594dfcb07d40f24a2a23f1fb5e707}\label{classigl_1_1opengl_1_1ViewerCore_a98926e7cdb35ee656e63a7c59170e3f7a875594dfcb07d40f24a2a23f1fb5e707} 
+ROTATION\+\_\+\+TYPE\+\_\+\+TWO\+\_\+\+AXIS\+\_\+\+VALUATOR\+\_\+\+FIXED\+\_\+\+UP&Fixed up rotation (like Blender, Maya, etc.) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ROTATION\_TYPE\_NO\_ROTATION@{ROTATION\_TYPE\_NO\_ROTATION}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!ROTATION\_TYPE\_NO\_ROTATION@{ROTATION\_TYPE\_NO\_ROTATION}}}\Hypertarget{classigl_1_1opengl_1_1ViewerCore_a98926e7cdb35ee656e63a7c59170e3f7aa593ef19a5acec687845255504b6e047}\label{classigl_1_1opengl_1_1ViewerCore_a98926e7cdb35ee656e63a7c59170e3f7aa593ef19a5acec687845255504b6e047} 
+ROTATION\+\_\+\+TYPE\+\_\+\+NO\+\_\+\+ROTATION&No rotation suitable for 2D. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NUM\_ROTATION\_TYPES@{NUM\_ROTATION\_TYPES}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!NUM\_ROTATION\_TYPES@{NUM\_ROTATION\_TYPES}}}\Hypertarget{classigl_1_1opengl_1_1ViewerCore_a98926e7cdb35ee656e63a7c59170e3f7a4a849da575de5b5d0f162268a9d4b257}\label{classigl_1_1opengl_1_1ViewerCore_a98926e7cdb35ee656e63a7c59170e3f7a4a849da575de5b5d0f162268a9d4b257} 
+NUM\+\_\+\+ROTATION\+\_\+\+TYPES&Total number of rotation types. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_aba6009cae01df3339e47379273fb63d8}\label{classigl_1_1opengl_1_1ViewerCore_aba6009cae01df3339e47379273fb63d8} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!ViewerCore@{ViewerCore}}
+\index{ViewerCore@{ViewerCore}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{ViewerCore()}{ViewerCore()}}
+{\footnotesize\ttfamily igl\+::opengl\+::\+Viewer\+Core\+::\+Viewer\+Core (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_a6f525e146e98914dcd4ef52434c96642}\label{classigl_1_1opengl_1_1ViewerCore_a6f525e146e98914dcd4ef52434c96642} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!init@{init}}
+\index{init@{init}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void igl\+::opengl\+::\+Viewer\+Core\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialization. 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_a9b3ee2325572f2356ff583d4277076e7}\label{classigl_1_1opengl_1_1ViewerCore_a9b3ee2325572f2356ff583d4277076e7} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!shut@{shut}}
+\index{shut@{shut}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{shut()}{shut()}}
+{\footnotesize\ttfamily void igl\+::opengl\+::\+Viewer\+Core\+::shut (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Shutdown. 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_a81fb05d66aab6266a6bca831dede58c6}\label{classigl_1_1opengl_1_1ViewerCore_a81fb05d66aab6266a6bca831dede58c6} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!InitSerialization@{InitSerialization}}
+\index{InitSerialization@{InitSerialization}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{InitSerialization()}{InitSerialization()}}
+{\footnotesize\ttfamily void igl\+::opengl\+::\+Viewer\+Core\+::\+Init\+Serialization (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Serialization code. 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_af63c12332a679e70836aa9a06e5cfe26}\label{classigl_1_1opengl_1_1ViewerCore_af63c12332a679e70836aa9a06e5cfe26} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!align\_camera\_center@{align\_camera\_center}}
+\index{align\_camera\_center@{align\_camera\_center}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{align\_camera\_center()}{align\_camera\_center()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void igl\+::opengl\+::\+Viewer\+Core\+::align\+\_\+camera\+\_\+center (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Xi \&}]{F }\end{DoxyParamCaption})}
+
+
+
+Adjust the view to see the entire model. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em V} & \#V by 3 list of vertex positions \\
+\hline
+\mbox{\texttt{ in}}  & {\em F} & \#F by 3 list of triangle indices into V \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_a223cdcbfaac5e2b442245de60b329985}\label{classigl_1_1opengl_1_1ViewerCore_a223cdcbfaac5e2b442245de60b329985} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!align\_camera\_center@{align\_camera\_center}}
+\index{align\_camera\_center@{align\_camera\_center}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{align\_camera\_center()}{align\_camera\_center()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void igl\+::opengl\+::\+Viewer\+Core\+::align\+\_\+camera\+\_\+center (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{V }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_a4643441c3f4ef95bfcd1cb713482e893}\label{classigl_1_1opengl_1_1ViewerCore_a4643441c3f4ef95bfcd1cb713482e893} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!get\_scale\_and\_shift\_to\_fit\_mesh@{get\_scale\_and\_shift\_to\_fit\_mesh}}
+\index{get\_scale\_and\_shift\_to\_fit\_mesh@{get\_scale\_and\_shift\_to\_fit\_mesh}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{get\_scale\_and\_shift\_to\_fit\_mesh()}{get\_scale\_and\_shift\_to\_fit\_mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void igl\+::opengl\+::\+Viewer\+Core\+::get\+\_\+scale\+\_\+and\+\_\+shift\+\_\+to\+\_\+fit\+\_\+mesh (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Xi \&}]{F,  }\item[{float \&}]{zoom,  }\item[{Eigen\+::\+Vector3f \&}]{shift }\end{DoxyParamCaption})}
+
+
+
+Determines how much to zoom and shift such that the mesh fills the unit box (centered at the origin) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em V} & \#V by 3 list of vertex positions \\
+\hline
+\mbox{\texttt{ in}}  & {\em F} & \#F by 3 list of triangle indices into V \\
+\hline
+\mbox{\texttt{ out}}  & {\em zoom} & zoom factor \\
+\hline
+\mbox{\texttt{ out}}  & {\em shift} & 3d shift \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_ab90f987fc0725a05b7f9f2f696dff521}\label{classigl_1_1opengl_1_1ViewerCore_ab90f987fc0725a05b7f9f2f696dff521} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!get\_scale\_and\_shift\_to\_fit\_mesh@{get\_scale\_and\_shift\_to\_fit\_mesh}}
+\index{get\_scale\_and\_shift\_to\_fit\_mesh@{get\_scale\_and\_shift\_to\_fit\_mesh}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{get\_scale\_and\_shift\_to\_fit\_mesh()}{get\_scale\_and\_shift\_to\_fit\_mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void igl\+::opengl\+::\+Viewer\+Core\+::get\+\_\+scale\+\_\+and\+\_\+shift\+\_\+to\+\_\+fit\+\_\+mesh (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{V,  }\item[{float \&}]{zoom,  }\item[{Eigen\+::\+Vector3f \&}]{shift }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_afe47055b35fa1c275ba1c461dbe6f48c}\label{classigl_1_1opengl_1_1ViewerCore_afe47055b35fa1c275ba1c461dbe6f48c} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!clear\_framebuffers@{clear\_framebuffers}}
+\index{clear\_framebuffers@{clear\_framebuffers}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{clear\_framebuffers()}{clear\_framebuffers()}}
+{\footnotesize\ttfamily void igl\+::opengl\+::\+Viewer\+Core\+::clear\+\_\+framebuffers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clear the frame buffers. 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_ac9300aff89f5670193d72919da2669e9}\label{classigl_1_1opengl_1_1ViewerCore_ac9300aff89f5670193d72919da2669e9} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!draw@{draw}}
+\index{draw@{draw}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void igl\+::opengl\+::\+Viewer\+Core\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData}{Viewer\+Data}} \&}]{data,  }\item[{bool}]{update\+\_\+matrices = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Draw everything. 
+
+\begin{DoxyNote}{Note}
+data cannot be const because it is being set to \"{}clean\"{}
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data} & which \doxylink{classigl_1_1opengl_1_1ViewerData}{Viewer\+Data} to draw \\
+\hline
+\mbox{\texttt{ in}}  & {\em update\+\_\+matrices} & whether to update view, proj, and norm matrices in shaders \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_ac71664aeca9d06a4b82b1905d6dd9603}\label{classigl_1_1opengl_1_1ViewerCore_ac71664aeca9d06a4b82b1905d6dd9603} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!initialize\_shadow\_pass@{initialize\_shadow\_pass}}
+\index{initialize\_shadow\_pass@{initialize\_shadow\_pass}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{initialize\_shadow\_pass()}{initialize\_shadow\_pass()}}
+{\footnotesize\ttfamily void igl\+::opengl\+::\+Viewer\+Core\+::initialize\+\_\+shadow\+\_\+pass (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+initialize shadow pass 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_a61bcd7c8bcdf37823b7016d7947cfdc2}\label{classigl_1_1opengl_1_1ViewerCore_a61bcd7c8bcdf37823b7016d7947cfdc2} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!deinitialize\_shadow\_pass@{deinitialize\_shadow\_pass}}
+\index{deinitialize\_shadow\_pass@{deinitialize\_shadow\_pass}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{deinitialize\_shadow\_pass()}{deinitialize\_shadow\_pass()}}
+{\footnotesize\ttfamily void igl\+::opengl\+::\+Viewer\+Core\+::deinitialize\+\_\+shadow\+\_\+pass (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+deinitialize shadow pass 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_a9d89918cb49bc067628649f1c5de9286}\label{classigl_1_1opengl_1_1ViewerCore_a9d89918cb49bc067628649f1c5de9286} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!draw\_shadow\_pass@{draw\_shadow\_pass}}
+\index{draw\_shadow\_pass@{draw\_shadow\_pass}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{draw\_shadow\_pass()}{draw\_shadow\_pass()}}
+{\footnotesize\ttfamily void igl\+::opengl\+::\+Viewer\+Core\+::draw\+\_\+shadow\+\_\+pass (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData}{Viewer\+Data}} \&}]{data,  }\item[{bool}]{update\+\_\+matrices = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Draw everything to shadow map. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data} & which \doxylink{classigl_1_1opengl_1_1ViewerData}{Viewer\+Data} to draw \\
+\hline
+\mbox{\texttt{ in}}  & {\em update\+\_\+matrices} & whether to update view, proj, and norm \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_a7b9146789734337e9a33e66be00d1ed1}\label{classigl_1_1opengl_1_1ViewerCore_a7b9146789734337e9a33e66be00d1ed1} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!draw\_buffer@{draw\_buffer}}
+\index{draw\_buffer@{draw\_buffer}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{draw\_buffer()}{draw\_buffer()}}
+{\footnotesize\ttfamily void igl\+::opengl\+::\+Viewer\+Core\+::draw\+\_\+buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData}{Viewer\+Data}} \&}]{data,  }\item[{bool}]{update\+\_\+matrices,  }\item[{Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{R,  }\item[{Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{G,  }\item[{Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{B,  }\item[{Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{A }\end{DoxyParamCaption})}
+
+
+
+Render given \doxylink{classigl_1_1opengl_1_1ViewerData}{Viewer\+Data} to a buffer. 
+
+The width and height are determined by non-\/zeros dimensions of R (and G,B,A should match) or – if both are zero — are set to this core\textquotesingle{}s viewport sizes.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data} & which \doxylink{classigl_1_1opengl_1_1ViewerData}{Viewer\+Data} to draw \\
+\hline
+\mbox{\texttt{ in}}  & {\em update\+\_\+matrices} & whether to update view, proj, and norm matrices in shaders \\
+\hline
+\mbox{\texttt{ out}}  & {\em R} & width by height red pixel color values \\
+\hline
+\mbox{\texttt{ out}}  & {\em G} & width by height green pixel color values \\
+\hline
+\mbox{\texttt{ out}}  & {\em B} & width by height blue pixel color values \\
+\hline
+\mbox{\texttt{ out}}  & {\em A} & width by height alpha pixel color values \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_a117278256764d36c1921a88e01a0bb70}\label{classigl_1_1opengl_1_1ViewerCore_a117278256764d36c1921a88e01a0bb70} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!draw\_labels@{draw\_labels}}
+\index{draw\_labels@{draw\_labels}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{draw\_labels()}{draw\_labels()}}
+{\footnotesize\ttfamily void igl\+::opengl\+::\+Viewer\+Core\+::draw\+\_\+labels (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData}{Viewer\+Data}} \&}]{data,  }\item[{const \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL}{igl\+::opengl\+::\+Mesh\+GL\+::\+Text\+GL}} \&}]{labels }\end{DoxyParamCaption})}
+
+
+
+Draw the text lables. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data} & which \doxylink{classigl_1_1opengl_1_1ViewerData}{Viewer\+Data} to draw \\
+\hline
+\mbox{\texttt{ in}}  & {\em labels} & text labels to draw \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_a7a40f95d62d64bdd0146913d83d169f4}\label{classigl_1_1opengl_1_1ViewerCore_a7a40f95d62d64bdd0146913d83d169f4} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!set\_rotation\_type@{set\_rotation\_type}}
+\index{set\_rotation\_type@{set\_rotation\_type}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{set\_rotation\_type()}{set\_rotation\_type()}}
+{\footnotesize\ttfamily void igl\+::opengl\+::\+Viewer\+Core\+::set\+\_\+rotation\+\_\+type (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a98926e7cdb35ee656e63a7c59170e3f7}{Rotation\+Type}} \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the current rotation type. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & the new rotation type \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_ab6ddc96259d604b00c011e3006562235}\label{classigl_1_1opengl_1_1ViewerCore_ab6ddc96259d604b00c011e3006562235} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!set@{set}}
+\index{set@{set}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily void igl\+::opengl\+::\+Viewer\+Core\+::set (\begin{DoxyParamCaption}\item[{unsigned int \&}]{property\+\_\+mask,  }\item[{bool}]{value = {\ttfamily true} }\end{DoxyParamCaption}) const}
+
+
+
+Set a \doxylink{classigl_1_1opengl_1_1ViewerData}{Viewer\+Data} visualization option for this viewport. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em property\+\_\+mask} & a bit mask of visualization option \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & whether to set or unset the property \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_aeb3336ff441b92aa6204a6dfa5ca1590}\label{classigl_1_1opengl_1_1ViewerCore_aeb3336ff441b92aa6204a6dfa5ca1590} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!unset@{unset}}
+\index{unset@{unset}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{unset()}{unset()}}
+{\footnotesize\ttfamily void igl\+::opengl\+::\+Viewer\+Core\+::unset (\begin{DoxyParamCaption}\item[{unsigned int \&}]{property\+\_\+mask }\end{DoxyParamCaption}) const}
+
+
+
+Unset a \doxylink{classigl_1_1opengl_1_1ViewerData}{Viewer\+Data} visualization option for this viewport. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em property\+\_\+mask} & a bit mask of visualization option \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_a702da4e528a02c275db5b8419a55574c}\label{classigl_1_1opengl_1_1ViewerCore_a702da4e528a02c275db5b8419a55574c} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!toggle@{toggle}}
+\index{toggle@{toggle}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{toggle()}{toggle()}}
+{\footnotesize\ttfamily void igl\+::opengl\+::\+Viewer\+Core\+::toggle (\begin{DoxyParamCaption}\item[{unsigned int \&}]{property\+\_\+mask }\end{DoxyParamCaption}) const}
+
+
+
+Toggle a \doxylink{classigl_1_1opengl_1_1ViewerData}{Viewer\+Data} visualization option for this viewport. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em property\+\_\+mask} & a bit mask of visualization option \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_a493ec6e303409859f8cd4a0d051e9ab9}\label{classigl_1_1opengl_1_1ViewerCore_a493ec6e303409859f8cd4a0d051e9ab9} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!is\_set@{is\_set}}
+\index{is\_set@{is\_set}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{is\_set()}{is\_set()}}
+{\footnotesize\ttfamily bool igl\+::opengl\+::\+Viewer\+Core\+::is\+\_\+set (\begin{DoxyParamCaption}\item[{unsigned int}]{property\+\_\+mask }\end{DoxyParamCaption}) const}
+
+
+
+Check whether a \doxylink{classigl_1_1opengl_1_1ViewerData}{Viewer\+Data} visualization option is set for this viewport. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em property\+\_\+mask} & a bit mask of visualization option \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the property is set 
+\end{DoxyReturn}
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_a8c46aaef34782825955b44914f1ff4e4}\label{classigl_1_1opengl_1_1ViewerCore_a8c46aaef34782825955b44914f1ff4e4} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!delete\_shadow\_buffers@{delete\_shadow\_buffers}}
+\index{delete\_shadow\_buffers@{delete\_shadow\_buffers}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{delete\_shadow\_buffers()}{delete\_shadow\_buffers()}}
+{\footnotesize\ttfamily void igl\+::opengl\+::\+Viewer\+Core\+::delete\+\_\+shadow\+\_\+buffers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+delete the shadow buffers 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_a8872ebeb991df99eeb3b6f8b30985bd9}\label{classigl_1_1opengl_1_1ViewerCore_a8872ebeb991df99eeb3b6f8b30985bd9} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!generate\_shadow\_buffers@{generate\_shadow\_buffers}}
+\index{generate\_shadow\_buffers@{generate\_shadow\_buffers}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{generate\_shadow\_buffers()}{generate\_shadow\_buffers()}}
+{\footnotesize\ttfamily void igl\+::opengl\+::\+Viewer\+Core\+::generate\+\_\+shadow\+\_\+buffers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+generate the shadow buffers 
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_a5f07057a523de442ed33b6f37c6fb9aa}\label{classigl_1_1opengl_1_1ViewerCore_a5f07057a523de442ed33b6f37c6fb9aa} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!id@{id}}
+\index{id@{id}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily unsigned int igl\+::opengl\+::\+Viewer\+Core\+::id = 1u}
+
+
+
+Unique identifier. 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_ac7d36f7eb1fd942ae1c59331b85ac1b5}\label{classigl_1_1opengl_1_1ViewerCore_ac7d36f7eb1fd942ae1c59331b85ac1b5} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!background\_color@{background\_color}}
+\index{background\_color@{background\_color}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{background\_color}{background\_color}}
+{\footnotesize\ttfamily Eigen\+::\+Vector4f igl\+::opengl\+::\+Viewer\+Core\+::background\+\_\+color}
+
+
+
+Background color as RGBA. 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_a0d867e974e28d96a5eed96d428488dea}\label{classigl_1_1opengl_1_1ViewerCore_a0d867e974e28d96a5eed96d428488dea} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!light\_position@{light\_position}}
+\index{light\_position@{light\_position}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{light\_position}{light\_position}}
+{\footnotesize\ttfamily Eigen\+::\+Vector3f igl\+::opengl\+::\+Viewer\+Core\+::light\+\_\+position}
+
+
+
+Light position (or direction to light) 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_a7cad009ba7e679f5832a021553bf10db}\label{classigl_1_1opengl_1_1ViewerCore_a7cad009ba7e679f5832a021553bf10db} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!is\_directional\_light@{is\_directional\_light}}
+\index{is\_directional\_light@{is\_directional\_light}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{is\_directional\_light}{is\_directional\_light}}
+{\footnotesize\ttfamily bool igl\+::opengl\+::\+Viewer\+Core\+::is\+\_\+directional\+\_\+light}
+
+
+
+Whether to treat {\ttfamily light\+\_\+position} as a point or direction. 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_a4a153c9d31dff1017c4caffe6eebf87c}\label{classigl_1_1opengl_1_1ViewerCore_a4a153c9d31dff1017c4caffe6eebf87c} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!is\_shadow\_mapping@{is\_shadow\_mapping}}
+\index{is\_shadow\_mapping@{is\_shadow\_mapping}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{is\_shadow\_mapping}{is\_shadow\_mapping}}
+{\footnotesize\ttfamily bool igl\+::opengl\+::\+Viewer\+Core\+::is\+\_\+shadow\+\_\+mapping}
+
+
+
+Whether shadow mapping is on. 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_a11b2aa3b4ff5accd89ef87f05f237c06}\label{classigl_1_1opengl_1_1ViewerCore_a11b2aa3b4ff5accd89ef87f05f237c06} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!shadow\_width@{shadow\_width}}
+\index{shadow\_width@{shadow\_width}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{shadow\_width}{shadow\_width}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_abf6d6d469f220b00d789a94de0b7e322}{GLuint}} igl\+::opengl\+::\+Viewer\+Core\+::shadow\+\_\+width}
+
+
+
+Width of the shadow map. 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_a37e5b11cd02bdff53ad7eae8ec423baa}\label{classigl_1_1opengl_1_1ViewerCore_a37e5b11cd02bdff53ad7eae8ec423baa} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!shadow\_height@{shadow\_height}}
+\index{shadow\_height@{shadow\_height}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{shadow\_height}{shadow\_height}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_abf6d6d469f220b00d789a94de0b7e322}{GLuint}} igl\+::opengl\+::\+Viewer\+Core\+::shadow\+\_\+height}
+
+
+
+Height of the shadow map. 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_a2f3169902f8c42f6c31ba3762abead3e}\label{classigl_1_1opengl_1_1ViewerCore_a2f3169902f8c42f6c31ba3762abead3e} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!shadow\_depth\_tex@{shadow\_depth\_tex}}
+\index{shadow\_depth\_tex@{shadow\_depth\_tex}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{shadow\_depth\_tex}{shadow\_depth\_tex}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_abf6d6d469f220b00d789a94de0b7e322}{GLuint}} igl\+::opengl\+::\+Viewer\+Core\+::shadow\+\_\+depth\+\_\+tex}
+
+
+
+Shadow map depth texture. 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_afd17569a8d5c8a1c7b166f43193681d9}\label{classigl_1_1opengl_1_1ViewerCore_afd17569a8d5c8a1c7b166f43193681d9} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!shadow\_depth\_fbo@{shadow\_depth\_fbo}}
+\index{shadow\_depth\_fbo@{shadow\_depth\_fbo}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{shadow\_depth\_fbo}{shadow\_depth\_fbo}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_abf6d6d469f220b00d789a94de0b7e322}{GLuint}} igl\+::opengl\+::\+Viewer\+Core\+::shadow\+\_\+depth\+\_\+fbo}
+
+
+
+Shadow map depth framebuffer object. 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_a18ec88b6f39284bf830d3d4b42b717a2}\label{classigl_1_1opengl_1_1ViewerCore_a18ec88b6f39284bf830d3d4b42b717a2} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!shadow\_color\_rbo@{shadow\_color\_rbo}}
+\index{shadow\_color\_rbo@{shadow\_color\_rbo}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{shadow\_color\_rbo}{shadow\_color\_rbo}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_abf6d6d469f220b00d789a94de0b7e322}{GLuint}} igl\+::opengl\+::\+Viewer\+Core\+::shadow\+\_\+color\+\_\+rbo}
+
+
+
+Shadow map color render buffer object. 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_ac6ada2422d9e89406a568be1b5f7fbfa}\label{classigl_1_1opengl_1_1ViewerCore_ac6ada2422d9e89406a568be1b5f7fbfa} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!lighting\_factor@{lighting\_factor}}
+\index{lighting\_factor@{lighting\_factor}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{lighting\_factor}{lighting\_factor}}
+{\footnotesize\ttfamily float igl\+::opengl\+::\+Viewer\+Core\+::lighting\+\_\+factor}
+
+
+
+Factor of lighting (0\+: no lighting, 1\+: full lighting) 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_aea6244401b22237d6510a59e73113365}\label{classigl_1_1opengl_1_1ViewerCore_aea6244401b22237d6510a59e73113365} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!rotation\_type@{rotation\_type}}
+\index{rotation\_type@{rotation\_type}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{rotation\_type}{rotation\_type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a98926e7cdb35ee656e63a7c59170e3f7}{Rotation\+Type}} igl\+::opengl\+::\+Viewer\+Core\+::rotation\+\_\+type}
+
+
+
+Type of rotation interaction. 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_a85441f0f93d81efb22cc3b1dee6b1c8a}\label{classigl_1_1opengl_1_1ViewerCore_a85441f0f93d81efb22cc3b1dee6b1c8a} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!trackball\_angle@{trackball\_angle}}
+\index{trackball\_angle@{trackball\_angle}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{trackball\_angle}{trackball\_angle}}
+{\footnotesize\ttfamily Eigen\+::\+Quaternionf igl\+::opengl\+::\+Viewer\+Core\+::trackball\+\_\+angle}
+
+
+
+View rotation as quaternion. 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_a5717161004565ecbadf383fb240aeaa8}\label{classigl_1_1opengl_1_1ViewerCore_a5717161004565ecbadf383fb240aeaa8} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!camera\_base\_zoom@{camera\_base\_zoom}}
+\index{camera\_base\_zoom@{camera\_base\_zoom}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{camera\_base\_zoom}{camera\_base\_zoom}}
+{\footnotesize\ttfamily float igl\+::opengl\+::\+Viewer\+Core\+::camera\+\_\+base\+\_\+zoom}
+
+
+
+Base zoom of camera. 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_af15d81d2985299c4e8e50f2e4b4bfd5e}\label{classigl_1_1opengl_1_1ViewerCore_af15d81d2985299c4e8e50f2e4b4bfd5e} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!camera\_zoom@{camera\_zoom}}
+\index{camera\_zoom@{camera\_zoom}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{camera\_zoom}{camera\_zoom}}
+{\footnotesize\ttfamily float igl\+::opengl\+::\+Viewer\+Core\+::camera\+\_\+zoom}
+
+
+
+Current zoom of camera. 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_a4badc6acee08ee0074f653f44ab6dc4e}\label{classigl_1_1opengl_1_1ViewerCore_a4badc6acee08ee0074f653f44ab6dc4e} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!orthographic@{orthographic}}
+\index{orthographic@{orthographic}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{orthographic}{orthographic}}
+{\footnotesize\ttfamily bool igl\+::opengl\+::\+Viewer\+Core\+::orthographic}
+
+
+
+Whether camera is orthographic (or perspective) 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_ac6e599685f7fca9a1eb43ac27b531fee}\label{classigl_1_1opengl_1_1ViewerCore_ac6e599685f7fca9a1eb43ac27b531fee} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!camera\_base\_translation@{camera\_base\_translation}}
+\index{camera\_base\_translation@{camera\_base\_translation}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{camera\_base\_translation}{camera\_base\_translation}}
+{\footnotesize\ttfamily Eigen\+::\+Vector3f igl\+::opengl\+::\+Viewer\+Core\+::camera\+\_\+base\+\_\+translation}
+
+
+
+Base translation of camera. 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_af56aa360721e1bd887a09bef4ae538f5}\label{classigl_1_1opengl_1_1ViewerCore_af56aa360721e1bd887a09bef4ae538f5} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!camera\_translation@{camera\_translation}}
+\index{camera\_translation@{camera\_translation}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{camera\_translation}{camera\_translation}}
+{\footnotesize\ttfamily Eigen\+::\+Vector3f igl\+::opengl\+::\+Viewer\+Core\+::camera\+\_\+translation}
+
+
+
+Current translation of camera. 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_a8aa43f770960d01777f231fee029df96}\label{classigl_1_1opengl_1_1ViewerCore_a8aa43f770960d01777f231fee029df96} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!camera\_eye@{camera\_eye}}
+\index{camera\_eye@{camera\_eye}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{camera\_eye}{camera\_eye}}
+{\footnotesize\ttfamily Eigen\+::\+Vector3f igl\+::opengl\+::\+Viewer\+Core\+::camera\+\_\+eye}
+
+
+
+Current \"{}eye\"{} / origin position of camera. 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_acda53fe2a7f869c8fd2cd64c7a8e2c94}\label{classigl_1_1opengl_1_1ViewerCore_acda53fe2a7f869c8fd2cd64c7a8e2c94} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!camera\_up@{camera\_up}}
+\index{camera\_up@{camera\_up}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{camera\_up}{camera\_up}}
+{\footnotesize\ttfamily Eigen\+::\+Vector3f igl\+::opengl\+::\+Viewer\+Core\+::camera\+\_\+up}
+
+
+
+Current \"{}up\"{} vector of camera. 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_aa4e897c91e56e7673fc5ade43a326876}\label{classigl_1_1opengl_1_1ViewerCore_aa4e897c91e56e7673fc5ade43a326876} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!camera\_center@{camera\_center}}
+\index{camera\_center@{camera\_center}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{camera\_center}{camera\_center}}
+{\footnotesize\ttfamily Eigen\+::\+Vector3f igl\+::opengl\+::\+Viewer\+Core\+::camera\+\_\+center}
+
+
+
+Current \"{}look at\"{} position of camera. 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_ab5b4dfc976923e309cb6b1aca1a40191}\label{classigl_1_1opengl_1_1ViewerCore_ab5b4dfc976923e309cb6b1aca1a40191} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!camera\_view\_angle@{camera\_view\_angle}}
+\index{camera\_view\_angle@{camera\_view\_angle}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{camera\_view\_angle}{camera\_view\_angle}}
+{\footnotesize\ttfamily float igl\+::opengl\+::\+Viewer\+Core\+::camera\+\_\+view\+\_\+angle}
+
+
+
+Current view angle of camera. 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_a326debb07a53fd66125e501640fdf95e}\label{classigl_1_1opengl_1_1ViewerCore_a326debb07a53fd66125e501640fdf95e} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!camera\_dnear@{camera\_dnear}}
+\index{camera\_dnear@{camera\_dnear}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{camera\_dnear}{camera\_dnear}}
+{\footnotesize\ttfamily float igl\+::opengl\+::\+Viewer\+Core\+::camera\+\_\+dnear}
+
+
+
+Near plane of camera. 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_adf9d260c23f0e717d2dbf0981527266d}\label{classigl_1_1opengl_1_1ViewerCore_adf9d260c23f0e717d2dbf0981527266d} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!camera\_dfar@{camera\_dfar}}
+\index{camera\_dfar@{camera\_dfar}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{camera\_dfar}{camera\_dfar}}
+{\footnotesize\ttfamily float igl\+::opengl\+::\+Viewer\+Core\+::camera\+\_\+dfar}
+
+
+
+Far plane of camera. 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_a3203aaf5f618f360b3122e158817073e}\label{classigl_1_1opengl_1_1ViewerCore_a3203aaf5f618f360b3122e158817073e} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!depth\_test@{depth\_test}}
+\index{depth\_test@{depth\_test}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{depth\_test}{depth\_test}}
+{\footnotesize\ttfamily bool igl\+::opengl\+::\+Viewer\+Core\+::depth\+\_\+test}
+
+
+
+Whether testing for depth is enabled. 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_a0effd92cbb0d11dcf1a5939fc5fc098d}\label{classigl_1_1opengl_1_1ViewerCore_a0effd92cbb0d11dcf1a5939fc5fc098d} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!is\_animating@{is\_animating}}
+\index{is\_animating@{is\_animating}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{is\_animating}{is\_animating}}
+{\footnotesize\ttfamily bool igl\+::opengl\+::\+Viewer\+Core\+::is\+\_\+animating}
+
+
+
+Whether \"{}animating\"{} (continuous drawing) is enabled. 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_af68e5b73ab3fe7d9355ec83a8161bae8}\label{classigl_1_1opengl_1_1ViewerCore_af68e5b73ab3fe7d9355ec83a8161bae8} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!animation\_max\_fps@{animation\_max\_fps}}
+\index{animation\_max\_fps@{animation\_max\_fps}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{animation\_max\_fps}{animation\_max\_fps}}
+{\footnotesize\ttfamily double igl\+::opengl\+::\+Viewer\+Core\+::animation\+\_\+max\+\_\+fps}
+
+
+
+Max fps of animation loop (e.\+g. 30fps or 60fps) 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_a0b226fe4db0e931c5e8129943984fa5a}\label{classigl_1_1opengl_1_1ViewerCore_a0b226fe4db0e931c5e8129943984fa5a} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!object\_scale@{object\_scale}}
+\index{object\_scale@{object\_scale}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{object\_scale}{object\_scale}}
+{\footnotesize\ttfamily float igl\+::opengl\+::\+Viewer\+Core\+::object\+\_\+scale}
+
+
+
+Caches the two-\/norm between the min/max point of the bounding box. 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_ac5a0f15fc245747e1d83b8e718f2e74f}\label{classigl_1_1opengl_1_1ViewerCore_ac5a0f15fc245747e1d83b8e718f2e74f} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!viewport@{viewport}}
+\index{viewport@{viewport}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{viewport}{viewport}}
+{\footnotesize\ttfamily Eigen\+::\+Vector4f igl\+::opengl\+::\+Viewer\+Core\+::viewport}
+
+
+
+Viewport size. 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_a8ce15c9d27268543847a0d83c2010cb6}\label{classigl_1_1opengl_1_1ViewerCore_a8ce15c9d27268543847a0d83c2010cb6} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!view@{view}}
+\index{view@{view}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{view}{view}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix4f igl\+::opengl\+::\+Viewer\+Core\+::view}
+
+
+
+Open\+GL view transformation matrix on last render pass. 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_a50af5081883025581f00b0918b3d9d30}\label{classigl_1_1opengl_1_1ViewerCore_a50af5081883025581f00b0918b3d9d30} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!proj@{proj}}
+\index{proj@{proj}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{proj}{proj}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix4f igl\+::opengl\+::\+Viewer\+Core\+::proj}
+
+
+
+Open\+GL proj transformation matrix on last render pass. 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_a472fb0721242e3ec4fbc276e97bb99b2}\label{classigl_1_1opengl_1_1ViewerCore_a472fb0721242e3ec4fbc276e97bb99b2} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!norm@{norm}}
+\index{norm@{norm}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{norm}{norm}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix4f igl\+::opengl\+::\+Viewer\+Core\+::norm}
+
+
+
+Open\+GL norm transformation matrix on last render pass. 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_ad663368df73cb1ef5c96938ae9d078a3}\label{classigl_1_1opengl_1_1ViewerCore_ad663368df73cb1ef5c96938ae9d078a3} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!shadow\_view@{shadow\_view}}
+\index{shadow\_view@{shadow\_view}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{shadow\_view}{shadow\_view}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix4f igl\+::opengl\+::\+Viewer\+Core\+::shadow\+\_\+view}
+
+
+
+Open\+GL shadow\+\_\+view transformation matrix on last render pass. 
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerCore_a01ebd332e07be1edd427a08d0220d587}\label{classigl_1_1opengl_1_1ViewerCore_a01ebd332e07be1edd427a08d0220d587} 
+\index{igl::opengl::ViewerCore@{igl::opengl::ViewerCore}!shadow\_proj@{shadow\_proj}}
+\index{shadow\_proj@{shadow\_proj}!igl::opengl::ViewerCore@{igl::opengl::ViewerCore}}
+\doxysubsubsection{\texorpdfstring{shadow\_proj}{shadow\_proj}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix4f igl\+::opengl\+::\+Viewer\+Core\+::shadow\+\_\+proj}
+
+
+
+Open\+GL shadow\+\_\+proj transformation matrix on last render pass. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/igl/opengl/\mbox{\hyperlink{ViewerCore_8h}{Viewer\+Core.\+h}}\end{DoxyCompactItemize}

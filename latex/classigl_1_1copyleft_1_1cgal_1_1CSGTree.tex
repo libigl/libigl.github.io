@@ -1,0 +1,207 @@
+\doxysection{igl\+::copyleft\+::cgal\+::CSGTree Class Reference}
+\hypertarget{classigl_1_1copyleft_1_1cgal_1_1CSGTree}{}\label{classigl_1_1copyleft_1_1cgal_1_1CSGTree}\index{igl::copyleft::cgal::CSGTree@{igl::copyleft::cgal::CSGTree}}
+
+
+Class for defining and computing a constructive solid geometry result out of a tree of boolean operations on \"{}solid\"{} triangle meshes.  
+
+
+
+
+{\ttfamily \#include $<$CSGTree.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef CGAL\+::\+Epeck\+::\+FT \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a18a9ad9cb7b41afddc6f08130fc65097}{Exact\+Scalar}}
+\item 
+typedef Eigen\+::\+Matrix\+Xi \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_ad2512324b6d4407909bf27cf2b037582}{POBF}}
+\item 
+typedef Eigen\+::\+Matrix$<$ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a18a9ad9cb7b41afddc6f08130fc65097}{Exact\+Scalar}}, Eigen\+::\+Dynamic, 3 $>$ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_aefc0d8db2c34331db60bc9ee55598fa2}{Matrix\+X3E}}
+\item 
+typedef Eigen\+::\+Vector\+Xi \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a8fb704a30594f2e748c56364789f63ee}{VectorJ}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_ac850bef944e82e6a8d4c441eb5bf4b2e}{CSGTree}} ()
+\item 
+\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a6e4671e18efb3605b188030f2c280697}{CSGTree}} (const \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree}{CSGTree}} \&other)
+\item 
+\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree}{CSGTree}} \& \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a21f9d9f0cca9c5c5677544f457c25619}{operator=}} (\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree}{CSGTree}} other)
+\item 
+\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a63cb96b3b9605d09d66a39502c8c743e}{CSGTree}} (\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree}{CSGTree}} \&\&other)
+\item 
+\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_acf6a400a39f9682f3a2599b2d73ca9b6}{CSGTree}} (const \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree}{CSGTree}} \&A, const \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree}{CSGTree}} \&B, const \mbox{\hyperlink{namespaceigl_a16cc7fd8778cd880be528227e0318b9f}{Mesh\+Boolean\+Type}} \&type)
+\begin{DoxyCompactList}\small\item\em Construct and compute a boolean operation on existing \doxylink{classigl_1_1copyleft_1_1cgal_1_1CSGTree}{CSGTree} nodes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a17bc4ad9c9287cfd2e044d7d9fdeeddb}{CSGTree}} (const \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree}{CSGTree}} \&A, const \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree}{CSGTree}} \&B, const std\+::string \&s)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV $>$ }\\\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a1eaa3c506d76bc6199ea373c2a67b3aa}{CSGTree}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a85f3719f6999f1416d8a7511b21c067e}{V}}, const \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_ad2512324b6d4407909bf27cf2b037582}{POBF}} \&\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a4b5ee0dfee26aef628e72dbdcbd63e4d}{F}})
+\begin{DoxyCompactList}\small\item\em \"{}\+Leaf\"{} node with identity operation on assumed \"{}solid\"{} mesh (V,F) \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_aefc0d8db2c34331db60bc9ee55598fa2}{Matrix\+X3E}} \& \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a85f3719f6999f1416d8a7511b21c067e}{V}} () const
+\item 
+{\footnotesize template$<$typename DerivedV $>$ }\\DerivedV \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a720acd8b16e42f753f398329a6fb84e2}{cast\+\_\+V}} () const
+\item 
+const \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_ad2512324b6d4407909bf27cf2b037582}{POBF}} \& \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a4b5ee0dfee26aef628e72dbdcbd63e4d}{F}} () const
+\item 
+const \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a8fb704a30594f2e748c56364789f63ee}{VectorJ}} \& \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_adbdf2c265c262700f814f81142a1360c}{J}} () const
+\item 
+const size\+\_\+t \& \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a071090585c60ad3aaa29cc9358066b8c}{number\+\_\+of\+\_\+birth\+\_\+faces}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a4bcf6226b570374a7ae5605e89a4c47c}{swap}} (\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree}{CSGTree}} \&first, \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree}{CSGTree}} \&second)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for defining and computing a constructive solid geometry result out of a tree of boolean operations on \"{}solid\"{} triangle meshes. 
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a18a9ad9cb7b41afddc6f08130fc65097}\label{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a18a9ad9cb7b41afddc6f08130fc65097} 
+\index{igl::copyleft::cgal::CSGTree@{igl::copyleft::cgal::CSGTree}!ExactScalar@{ExactScalar}}
+\index{ExactScalar@{ExactScalar}!igl::copyleft::cgal::CSGTree@{igl::copyleft::cgal::CSGTree}}
+\doxysubsubsection{\texorpdfstring{ExactScalar}{ExactScalar}}
+{\footnotesize\ttfamily typedef CGAL\+::\+Epeck\+::\+FT \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a18a9ad9cb7b41afddc6f08130fc65097}{igl\+::copyleft\+::cgal\+::\+CSGTree\+::\+Exact\+Scalar}}}
+
+\Hypertarget{classigl_1_1copyleft_1_1cgal_1_1CSGTree_ad2512324b6d4407909bf27cf2b037582}\label{classigl_1_1copyleft_1_1cgal_1_1CSGTree_ad2512324b6d4407909bf27cf2b037582} 
+\index{igl::copyleft::cgal::CSGTree@{igl::copyleft::cgal::CSGTree}!POBF@{POBF}}
+\index{POBF@{POBF}!igl::copyleft::cgal::CSGTree@{igl::copyleft::cgal::CSGTree}}
+\doxysubsubsection{\texorpdfstring{POBF}{POBF}}
+{\footnotesize\ttfamily typedef Eigen\+::\+Matrix\+Xi \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_ad2512324b6d4407909bf27cf2b037582}{igl\+::copyleft\+::cgal\+::\+CSGTree\+::\+POBF}}}
+
+\Hypertarget{classigl_1_1copyleft_1_1cgal_1_1CSGTree_aefc0d8db2c34331db60bc9ee55598fa2}\label{classigl_1_1copyleft_1_1cgal_1_1CSGTree_aefc0d8db2c34331db60bc9ee55598fa2} 
+\index{igl::copyleft::cgal::CSGTree@{igl::copyleft::cgal::CSGTree}!MatrixX3E@{MatrixX3E}}
+\index{MatrixX3E@{MatrixX3E}!igl::copyleft::cgal::CSGTree@{igl::copyleft::cgal::CSGTree}}
+\doxysubsubsection{\texorpdfstring{MatrixX3E}{MatrixX3E}}
+{\footnotesize\ttfamily typedef Eigen\+::\+Matrix$<$\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a18a9ad9cb7b41afddc6f08130fc65097}{Exact\+Scalar}},Eigen\+::\+Dynamic,3$>$ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_aefc0d8db2c34331db60bc9ee55598fa2}{igl\+::copyleft\+::cgal\+::\+CSGTree\+::\+Matrix\+X3E}}}
+
+\Hypertarget{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a8fb704a30594f2e748c56364789f63ee}\label{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a8fb704a30594f2e748c56364789f63ee} 
+\index{igl::copyleft::cgal::CSGTree@{igl::copyleft::cgal::CSGTree}!VectorJ@{VectorJ}}
+\index{VectorJ@{VectorJ}!igl::copyleft::cgal::CSGTree@{igl::copyleft::cgal::CSGTree}}
+\doxysubsubsection{\texorpdfstring{VectorJ}{VectorJ}}
+{\footnotesize\ttfamily typedef Eigen\+::\+Vector\+Xi \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a8fb704a30594f2e748c56364789f63ee}{igl\+::copyleft\+::cgal\+::\+CSGTree\+::\+VectorJ}}}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classigl_1_1copyleft_1_1cgal_1_1CSGTree_ac850bef944e82e6a8d4c441eb5bf4b2e}\label{classigl_1_1copyleft_1_1cgal_1_1CSGTree_ac850bef944e82e6a8d4c441eb5bf4b2e} 
+\index{igl::copyleft::cgal::CSGTree@{igl::copyleft::cgal::CSGTree}!CSGTree@{CSGTree}}
+\index{CSGTree@{CSGTree}!igl::copyleft::cgal::CSGTree@{igl::copyleft::cgal::CSGTree}}
+\doxysubsubsection{\texorpdfstring{CSGTree()}{CSGTree()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily igl\+::copyleft\+::cgal\+::\+CSGTree\+::\+CSGTree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a6e4671e18efb3605b188030f2c280697}\label{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a6e4671e18efb3605b188030f2c280697} 
+\index{igl::copyleft::cgal::CSGTree@{igl::copyleft::cgal::CSGTree}!CSGTree@{CSGTree}}
+\index{CSGTree@{CSGTree}!igl::copyleft::cgal::CSGTree@{igl::copyleft::cgal::CSGTree}}
+\doxysubsubsection{\texorpdfstring{CSGTree()}{CSGTree()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily igl\+::copyleft\+::cgal\+::\+CSGTree\+::\+CSGTree (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree}{CSGTree}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a63cb96b3b9605d09d66a39502c8c743e}\label{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a63cb96b3b9605d09d66a39502c8c743e} 
+\index{igl::copyleft::cgal::CSGTree@{igl::copyleft::cgal::CSGTree}!CSGTree@{CSGTree}}
+\index{CSGTree@{CSGTree}!igl::copyleft::cgal::CSGTree@{igl::copyleft::cgal::CSGTree}}
+\doxysubsubsection{\texorpdfstring{CSGTree()}{CSGTree()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily igl\+::copyleft\+::cgal\+::\+CSGTree\+::\+CSGTree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree}{CSGTree}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classigl_1_1copyleft_1_1cgal_1_1CSGTree_acf6a400a39f9682f3a2599b2d73ca9b6}\label{classigl_1_1copyleft_1_1cgal_1_1CSGTree_acf6a400a39f9682f3a2599b2d73ca9b6} 
+\index{igl::copyleft::cgal::CSGTree@{igl::copyleft::cgal::CSGTree}!CSGTree@{CSGTree}}
+\index{CSGTree@{CSGTree}!igl::copyleft::cgal::CSGTree@{igl::copyleft::cgal::CSGTree}}
+\doxysubsubsection{\texorpdfstring{CSGTree()}{CSGTree()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily igl\+::copyleft\+::cgal\+::\+CSGTree\+::\+CSGTree (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree}{CSGTree}} \&}]{A,  }\item[{const \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree}{CSGTree}} \&}]{B,  }\item[{const \mbox{\hyperlink{namespaceigl_a16cc7fd8778cd880be528227e0318b9f}{Mesh\+Boolean\+Type}} \&}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct and compute a boolean operation on existing \doxylink{classigl_1_1copyleft_1_1cgal_1_1CSGTree}{CSGTree} nodes. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em A} & Solid result of previous CSG operation (or identity, see below) \\
+\hline
+\mbox{\texttt{ in}}  & {\em B} & Solid result of previous CSG operation (or identity, see below) \\
+\hline
+\mbox{\texttt{ in}}  & {\em type} & type of mesh boolean to compute ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a17bc4ad9c9287cfd2e044d7d9fdeeddb}\label{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a17bc4ad9c9287cfd2e044d7d9fdeeddb} 
+\index{igl::copyleft::cgal::CSGTree@{igl::copyleft::cgal::CSGTree}!CSGTree@{CSGTree}}
+\index{CSGTree@{CSGTree}!igl::copyleft::cgal::CSGTree@{igl::copyleft::cgal::CSGTree}}
+\doxysubsubsection{\texorpdfstring{CSGTree()}{CSGTree()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily igl\+::copyleft\+::cgal\+::\+CSGTree\+::\+CSGTree (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree}{CSGTree}} \&}]{A,  }\item[{const \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree}{CSGTree}} \&}]{B,  }\item[{const std\+::string \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a1eaa3c506d76bc6199ea373c2a67b3aa}\label{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a1eaa3c506d76bc6199ea373c2a67b3aa} 
+\index{igl::copyleft::cgal::CSGTree@{igl::copyleft::cgal::CSGTree}!CSGTree@{CSGTree}}
+\index{CSGTree@{CSGTree}!igl::copyleft::cgal::CSGTree@{igl::copyleft::cgal::CSGTree}}
+\doxysubsubsection{\texorpdfstring{CSGTree()}{CSGTree()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$typename DerivedV $>$ \\
+igl\+::copyleft\+::cgal\+::\+CSGTree\+::\+CSGTree (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_ad2512324b6d4407909bf27cf2b037582}{POBF}} \&}]{F }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\"{}\+Leaf\"{} node with identity operation on assumed \"{}solid\"{} mesh (V,F) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em V} & \doxylink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a85f3719f6999f1416d8a7511b21c067e}{V} by 3 list of mesh vertices (in any precision, will be converted to exact) \\
+\hline
+\mbox{\texttt{ in}}  & {\em F} & \doxylink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a4b5ee0dfee26aef628e72dbdcbd63e4d}{F} by 3 list of mesh face indices into V \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a21f9d9f0cca9c5c5677544f457c25619}\label{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a21f9d9f0cca9c5c5677544f457c25619} 
+\index{igl::copyleft::cgal::CSGTree@{igl::copyleft::cgal::CSGTree}!operator=@{operator=}}
+\index{operator=@{operator=}!igl::copyleft::cgal::CSGTree@{igl::copyleft::cgal::CSGTree}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree}{CSGTree}} \& igl\+::copyleft\+::cgal\+::\+CSGTree\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree}{CSGTree}}}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a85f3719f6999f1416d8a7511b21c067e}\label{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a85f3719f6999f1416d8a7511b21c067e} 
+\index{igl::copyleft::cgal::CSGTree@{igl::copyleft::cgal::CSGTree}!V@{V}}
+\index{V@{V}!igl::copyleft::cgal::CSGTree@{igl::copyleft::cgal::CSGTree}}
+\doxysubsubsection{\texorpdfstring{V()}{V()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_aefc0d8db2c34331db60bc9ee55598fa2}{Matrix\+X3E}} \& igl\+::copyleft\+::cgal\+::\+CSGTree\+::V (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a720acd8b16e42f753f398329a6fb84e2}\label{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a720acd8b16e42f753f398329a6fb84e2} 
+\index{igl::copyleft::cgal::CSGTree@{igl::copyleft::cgal::CSGTree}!cast\_V@{cast\_V}}
+\index{cast\_V@{cast\_V}!igl::copyleft::cgal::CSGTree@{igl::copyleft::cgal::CSGTree}}
+\doxysubsubsection{\texorpdfstring{cast\_V()}{cast\_V()}}
+{\footnotesize\ttfamily template$<$typename DerivedV $>$ \\
+DerivedV igl\+::copyleft\+::cgal\+::\+CSGTree\+::cast\+\_\+V (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a4b5ee0dfee26aef628e72dbdcbd63e4d}\label{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a4b5ee0dfee26aef628e72dbdcbd63e4d} 
+\index{igl::copyleft::cgal::CSGTree@{igl::copyleft::cgal::CSGTree}!F@{F}}
+\index{F@{F}!igl::copyleft::cgal::CSGTree@{igl::copyleft::cgal::CSGTree}}
+\doxysubsubsection{\texorpdfstring{F()}{F()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_ad2512324b6d4407909bf27cf2b037582}{POBF}} \& igl\+::copyleft\+::cgal\+::\+CSGTree\+::F (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classigl_1_1copyleft_1_1cgal_1_1CSGTree_adbdf2c265c262700f814f81142a1360c}\label{classigl_1_1copyleft_1_1cgal_1_1CSGTree_adbdf2c265c262700f814f81142a1360c} 
+\index{igl::copyleft::cgal::CSGTree@{igl::copyleft::cgal::CSGTree}!J@{J}}
+\index{J@{J}!igl::copyleft::cgal::CSGTree@{igl::copyleft::cgal::CSGTree}}
+\doxysubsubsection{\texorpdfstring{J()}{J()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a8fb704a30594f2e748c56364789f63ee}{VectorJ}} \& igl\+::copyleft\+::cgal\+::\+CSGTree\+::J (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a071090585c60ad3aaa29cc9358066b8c}\label{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a071090585c60ad3aaa29cc9358066b8c} 
+\index{igl::copyleft::cgal::CSGTree@{igl::copyleft::cgal::CSGTree}!number\_of\_birth\_faces@{number\_of\_birth\_faces}}
+\index{number\_of\_birth\_faces@{number\_of\_birth\_faces}!igl::copyleft::cgal::CSGTree@{igl::copyleft::cgal::CSGTree}}
+\doxysubsubsection{\texorpdfstring{number\_of\_birth\_faces()}{number\_of\_birth\_faces()}}
+{\footnotesize\ttfamily const size\+\_\+t \& igl\+::copyleft\+::cgal\+::\+CSGTree\+::number\+\_\+of\+\_\+birth\+\_\+faces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a4bcf6226b570374a7ae5605e89a4c47c}\label{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a4bcf6226b570374a7ae5605e89a4c47c} 
+\index{igl::copyleft::cgal::CSGTree@{igl::copyleft::cgal::CSGTree}!swap@{swap}}
+\index{swap@{swap}!igl::copyleft::cgal::CSGTree@{igl::copyleft::cgal::CSGTree}}
+\doxysubsubsection{\texorpdfstring{swap}{swap}}
+{\footnotesize\ttfamily void swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree}{CSGTree}} \&}]{first,  }\item[{\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree}{CSGTree}} \&}]{second }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/igl/copyleft/cgal/\mbox{\hyperlink{CSGTree_8h}{CSGTree.\+h}}\end{DoxyCompactItemize}

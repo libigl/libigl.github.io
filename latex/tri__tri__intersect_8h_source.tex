@@ -1,0 +1,167 @@
+\doxysection{tri\+\_\+tri\+\_\+intersect.\+h}
+\hypertarget{tri__tri__intersect_8h_source}{}\label{tri__tri__intersect_8h_source}\index{include/igl/tri\_tri\_intersect.h@{include/igl/tri\_tri\_intersect.h}}
+\mbox{\hyperlink{tri__tri__intersect_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2021\ Vladimir\ S.\ FONOV\ <vladimir.fonov@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*\ \ }}
+\DoxyCodeLine{00011\ \textcolor{comment}{*\ \ C++\ version\ based\ on\ the\ routines\ published\ in\ \ \ \ }}
+\DoxyCodeLine{00012\ \textcolor{comment}{*\ \ "{}Fast\ and\ Robust\ Triangle-\/Triangle\ Overlap\ Test\ \ \ \ \ \ }}
+\DoxyCodeLine{00013\ \textcolor{comment}{*\ \ \ Using\ Orientation\ Predicates"{}\ \ P.\ Guigue\ -\/\ O.\ Devillers}}
+\DoxyCodeLine{00014\ \textcolor{comment}{*\ \ }}
+\DoxyCodeLine{00015\ \textcolor{comment}{*\ \ Works\ with\ Eigen\ data\ structures\ instead\ of\ plain\ C\ arrays}}
+\DoxyCodeLine{00016\ \textcolor{comment}{*\ \ returns\ bool\ values}}
+\DoxyCodeLine{00017\ \textcolor{comment}{*\ }}
+\DoxyCodeLine{00018\ \textcolor{comment}{*\ \ Code\ is\ rewritten\ to\ get\ rid\ of\ the\ macros\ and\ use\ C++\ lambda\ and\ }}
+\DoxyCodeLine{00019\ \textcolor{comment}{*\ \ inline\ functions\ instead}}
+\DoxyCodeLine{00020\ \textcolor{comment}{*\ \ }}
+\DoxyCodeLine{00021\ \textcolor{comment}{*\ \ Original\ notice:\ }}
+\DoxyCodeLine{00022\ \textcolor{comment}{*}}
+\DoxyCodeLine{00023\ \textcolor{comment}{*\ \ Triangle-\/Triangle\ Overlap\ Test\ Routines\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00024\ \textcolor{comment}{*\ \ July,\ 2002\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00025\ \textcolor{comment}{*\ \ Updated\ December\ 2003}}
+\DoxyCodeLine{00026\ \textcolor{comment}{*}}
+\DoxyCodeLine{00027\ \textcolor{comment}{*\ \ Updated\ by\ Vladimir\ S.\ FONOV\ }}
+\DoxyCodeLine{00028\ \textcolor{comment}{*\ \ March,\ 2023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00029\ \textcolor{comment}{*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00030\ \textcolor{comment}{*\ \ This\ file\ contains\ C\ implementation\ of\ algorithms\ for\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00031\ \textcolor{comment}{*\ \ performing\ two\ and\ three-\/dimensional\ triangle-\/triangle\ intersection\ test\ }}
+\DoxyCodeLine{00032\ \textcolor{comment}{*\ \ The\ algorithms\ and\ underlying\ theory\ are\ described\ in\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00033\ \textcolor{comment}{*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00034\ \textcolor{comment}{*\ "{}Fast\ and\ Robust\ Triangle-\/Triangle\ Overlap\ Test\ }}
+\DoxyCodeLine{00035\ \textcolor{comment}{*\ \ Using\ Orientation\ Predicates"{}\ \ P.\ Guigue\ -\/\ O.\ Devillers}}
+\DoxyCodeLine{00036\ \textcolor{comment}{*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00037\ \textcolor{comment}{*\ \ Journal\ of\ Graphics\ Tools,\ 8(1),\ 2003\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00038\ \textcolor{comment}{*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00039\ \textcolor{comment}{*\ \ Several\ geometric\ predicates\ are\ defined.\ \ Their\ parameters\ are\ all\ \ \ \ \ \ }}
+\DoxyCodeLine{00040\ \textcolor{comment}{*\ \ points.\ \ Each\ point\ is\ an\ array\ of\ two\ or\ three\ double\ precision\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00041\ \textcolor{comment}{*\ \ floating\ point\ numbers.\ The\ geometric\ predicates\ implemented\ in\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00042\ \textcolor{comment}{*\ \ this\ file\ are:\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00043\ \textcolor{comment}{*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00044\ \textcolor{comment}{*\ \ \ \ int\ tri\_tri\_overlap\_test\_3d(p1,q1,r1,p2,q2,r2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00045\ \textcolor{comment}{*\ \ \ \ int\ tri\_tri\_overlap\_test\_2d(p1,q1,r1,p2,q2,r2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00046\ \textcolor{comment}{*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00047\ \textcolor{comment}{*\ \ \ \ int\ tri\_tri\_intersection\_test\_3d(p1,q1,r1,p2,q2,r2,}}
+\DoxyCodeLine{00048\ \textcolor{comment}{*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ coplanar,source,target)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00049\ \textcolor{comment}{*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00050\ \textcolor{comment}{*\ \ \ \ \ \ \ is\ a\ version\ that\ computes\ the\ segment\ of\ intersection\ when\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00051\ \textcolor{comment}{*\ \ \ \ \ \ \ the\ triangles\ overlap\ (and\ are\ not\ coplanar)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00052\ \textcolor{comment}{*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00053\ \textcolor{comment}{*\ \ \ \ each\ function\ returns\ 1\ if\ the\ triangles\ (including\ their\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00054\ \textcolor{comment}{*\ \ \ \ boundary)\ intersect,\ otherwise\ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00055\ \textcolor{comment}{*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00056\ \textcolor{comment}{*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00057\ \textcolor{comment}{*\ \ Other\ information\ are\ available\ from\ the\ Web\ page\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00058\ \textcolor{comment}{*\ \ http://www.acm.org/jgt/papers/GuigueDevillers03/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00059\ \textcolor{comment}{*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00060\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00063\ \textcolor{comment}{Original\ MIT\ License\ (from\ https://github.com/erich666/jgt-\/code)}}
+\DoxyCodeLine{00064\ \textcolor{comment}{Copyright\ (c)\ <year>\ <copyright\ holders>}}
+\DoxyCodeLine{00065\ \textcolor{comment}{}}
+\DoxyCodeLine{00066\ \textcolor{comment}{Permission\ is\ hereby\ granted,\ free\ of\ charge,\ to\ any\ person\ obtaining\ a\ copy\ of\ this\ software}}
+\DoxyCodeLine{00067\ \textcolor{comment}{and\ associated\ documentation\ files\ (the\ "{}Software"{}),\ to\ deal\ in\ the\ Software\ without}}
+\DoxyCodeLine{00068\ \textcolor{comment}{restriction,\ including\ without\ limitation\ the\ rights\ to\ use,\ copy,\ modify,\ merge,\ publish,}}
+\DoxyCodeLine{00069\ \textcolor{comment}{distribute,\ sublicense,\ and/or\ sell\ copies\ of\ the\ Software,\ and\ to\ permit\ persons\ to\ whom\ the}}
+\DoxyCodeLine{00070\ \textcolor{comment}{Software\ is\ furnished\ to\ do\ so,\ subject\ to\ the\ following\ conditions:}}
+\DoxyCodeLine{00071\ \textcolor{comment}{}}
+\DoxyCodeLine{00072\ \textcolor{comment}{The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be\ included\ in\ all\ copies\ or}}
+\DoxyCodeLine{00073\ \textcolor{comment}{substantial\ portions\ of\ the\ Software.}}
+\DoxyCodeLine{00074\ \textcolor{comment}{}}
+\DoxyCodeLine{00075\ \textcolor{comment}{THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,\ EXPRESS\ OR\ IMPLIED,\ INCLUDING}}
+\DoxyCodeLine{00076\ \textcolor{comment}{BUT\ NOT\ LIMITED\ TO\ THE\ WARRANTIES\ OF\ MERCHANTABILITY,\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ AND}}
+\DoxyCodeLine{00077\ \textcolor{comment}{NONINFRINGEMENT.\ IN\ NO\ EVENT\ SHALL\ THE\ AUTHORS\ OR\ COPYRIGHT\ HOLDERS\ BE\ LIABLE\ FOR\ ANY\ CLAIM,}}
+\DoxyCodeLine{00078\ \textcolor{comment}{DAMAGES\ OR\ OTHER\ LIABILITY,\ WHETHER\ IN\ AN\ ACTION\ OF\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING}}
+\DoxyCodeLine{00079\ \textcolor{comment}{FROM,\ OUT\ OF\ OR\ IN\ CONNECTION\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN\ THE\ SOFTWARE.}}
+\DoxyCodeLine{00080\ \textcolor{comment}{}}
+\DoxyCodeLine{00081\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#ifndef\ IGL\_TRI\_TRI\_INTERSECT\_H}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ IGL\_TRI\_TRI\_INTERSECT\_H}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{igl__inline_8h}{igl\_inline.h}}"{}}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}\ \{}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{comment}{//\ Three-\/dimensional\ Triangle-\/Triangle\ overlap\ test}}
+\DoxyCodeLine{00094\ \textcolor{comment}{//\ \ \ if\ triangles\ are\ co-\/planar}}
+\DoxyCodeLine{00095\ \textcolor{comment}{//}}
+\DoxyCodeLine{00096\ \textcolor{comment}{//\ Input:}}
+\DoxyCodeLine{00097\ \textcolor{comment}{//\ \ \ p1,q1,r1\ \ -\/\ vertices\ of\ the\ 1st\ triangle\ (3D)}}
+\DoxyCodeLine{00098\ \textcolor{comment}{//\ \ \ p2,q2,r2\ \ -\/\ vertices\ of\ the\ 2nd\ triangle\ (3D)}}
+\DoxyCodeLine{00099\ \textcolor{comment}{//}}
+\DoxyCodeLine{00100\ \textcolor{comment}{//\ Output:}}
+\DoxyCodeLine{00101\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00102\ \textcolor{comment}{//\ \ \ Return\ true\ if\ two\ triangles\ overlap}}
+\DoxyCodeLine{00103\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedP1,\textcolor{keyword}{typename}\ DerivedQ1,\textcolor{keyword}{typename}\ DerivedR1,}
+\DoxyCodeLine{00104\ \textcolor{keyword}{typename}\ DerivedP2,\textcolor{keyword}{typename}\ DerivedQ2,\textcolor{keyword}{typename}\ DerivedR2>\ }
+\DoxyCodeLine{00105\ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a62161fdfef57c22542b38d735550b635}{tri\_tri\_overlap\_test\_3d}}(}
+\DoxyCodeLine{00106\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedP1>\ \&\ \ p1,\ }
+\DoxyCodeLine{00107\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedQ1>\ \&\ \ q1,\ }
+\DoxyCodeLine{00108\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedR1>\ \&\ \ r1,\ }
+\DoxyCodeLine{00109\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedP2>\ \&\ \ p2,\ }
+\DoxyCodeLine{00110\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedQ2>\ \&\ \ q2,\ }
+\DoxyCodeLine{00111\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedR2>\ \&\ \ r2);}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{comment}{//\ Three-\/dimensional\ Triangle-\/Triangle\ Intersection\ Test}}
+\DoxyCodeLine{00115\ \textcolor{comment}{//\ additionaly\ computes\ the\ segment\ of\ intersection\ of\ the\ two\ triangles\ if\ it\ exists.\ }}
+\DoxyCodeLine{00116\ \textcolor{comment}{//\ coplanar\ returns\ whether\ the\ triangles\ are\ coplanar,\ }}
+\DoxyCodeLine{00117\ \textcolor{comment}{//\ source\ and\ target\ are\ the\ endpoints\ of\ the\ line\ segment\ of\ intersection\ }}
+\DoxyCodeLine{00118\ \textcolor{comment}{//}}
+\DoxyCodeLine{00119\ \textcolor{comment}{//\ Input:}}
+\DoxyCodeLine{00120\ \textcolor{comment}{//\ \ \ p1,q1,r1\ \ -\/\ vertices\ of\ the\ 1st\ triangle\ (3D)}}
+\DoxyCodeLine{00121\ \textcolor{comment}{//\ \ \ p2,q2,r2\ \ -\/\ vertices\ of\ the\ 2nd\ triangle\ (3D)}}
+\DoxyCodeLine{00122\ \textcolor{comment}{//}}
+\DoxyCodeLine{00123\ \textcolor{comment}{//\ Output:}}
+\DoxyCodeLine{00124\ \textcolor{comment}{//\ \ \ coplanar\ -\/\ flag\ if\ two\ triangles\ are\ coplanar}}
+\DoxyCodeLine{00125\ \textcolor{comment}{//\ \ \ source\ -\/\ 1st\ point\ of\ intersection\ (if\ exists)}}
+\DoxyCodeLine{00126\ \textcolor{comment}{//\ \ \ target\ -\/\ 2nd\ point\ in\ intersection\ (if\ exists)}}
+\DoxyCodeLine{00127\ \textcolor{comment}{//}}
+\DoxyCodeLine{00128\ \textcolor{comment}{//\ \ \ Return\ true\ if\ two\ triangles\ intersect}}
+\DoxyCodeLine{00129\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedP1,\textcolor{keyword}{typename}\ DerivedQ1,\textcolor{keyword}{typename}\ DerivedR1,}
+\DoxyCodeLine{00130\ \textcolor{keyword}{typename}\ DerivedP2,\textcolor{keyword}{typename}\ DerivedQ2,\textcolor{keyword}{typename}\ DerivedR2,}
+\DoxyCodeLine{00131\ \textcolor{keyword}{typename}\ DerivedS,\textcolor{keyword}{typename}\ DerivedT>}
+\DoxyCodeLine{00132\ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a56ff893a73c2642eeec2692d37aad4d0}{tri\_tri\_intersection\_test\_3d}}(}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedP1>\ \&\ p1,\ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedQ1>\ \&\ q1,\ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedR1>\ \&\ r1,\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedP2>\ \&\ p2,\ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedQ2>\ \&\ q2,\ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedR2>\ \&\ r2,}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{bool}\ \&\ coplanar,\ }
+\DoxyCodeLine{00136\ \ \ \ \ Eigen::MatrixBase<DerivedS>\ \&\ source,\ }
+\DoxyCodeLine{00137\ \ \ \ \ Eigen::MatrixBase<DerivedT>\ \&\ target\ );}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \textcolor{comment}{//\ Two\ dimensional\ Triangle-\/Triangle\ Overlap\ Test}}
+\DoxyCodeLine{00142\ \textcolor{comment}{//\ Input:}}
+\DoxyCodeLine{00143\ \textcolor{comment}{//\ \ \ p1,q1,r1\ \ -\/\ vertices\ of\ the\ 1st\ triangle\ (2D)}}
+\DoxyCodeLine{00144\ \textcolor{comment}{//\ \ \ p2,q2,r2\ \ -\/\ vertices\ of\ the\ 2nd\ triangle\ (2D)}}
+\DoxyCodeLine{00145\ \textcolor{comment}{//}}
+\DoxyCodeLine{00146\ \textcolor{comment}{//\ Output:}}
+\DoxyCodeLine{00147\ \textcolor{comment}{//\ \ \ Return\ true\ if\ two\ triangles\ overlap}}
+\DoxyCodeLine{00148\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedP1,\textcolor{keyword}{typename}\ DerivedQ1,\textcolor{keyword}{typename}\ DerivedR1,}
+\DoxyCodeLine{00149\ \textcolor{keyword}{typename}\ DerivedP2,\textcolor{keyword}{typename}\ DerivedQ2,\textcolor{keyword}{typename}\ DerivedR2>}
+\DoxyCodeLine{00150\ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_ac4e80369c0a74cc009ec973dd70fd752}{tri\_tri\_overlap\_test\_2d}}(}
+\DoxyCodeLine{00151\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedP1>\ \&p1,\ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedQ1>\ \&q1,\ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedR1>\ \&r1,}
+\DoxyCodeLine{00152\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedP2>\ \&p2,\ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedQ2>\ \&q2,\ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedR2>\ \&r2);}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \};}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#\ \ include\ "{}tri\_tri\_intersect.cpp"{}}}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ IGL\_TRI\_TRI\_INTERSECT\_H}}
+
+\end{DoxyCode}

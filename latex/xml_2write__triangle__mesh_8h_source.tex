@@ -1,0 +1,40 @@
+\doxysection{write\+\_\+triangle\+\_\+mesh.\+h}
+\hypertarget{xml_2write__triangle__mesh_8h_source}{}\label{xml_2write__triangle__mesh_8h_source}\index{include/igl/xml/write\_triangle\_mesh.h@{include/igl/xml/write\_triangle\_mesh.h}}
+\mbox{\hyperlink{xml_2write__triangle__mesh_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2016\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_XML\_WRITE\_TRIANGLE\_MESH\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_XML\_WRITE\_TRIANGLE\_MESH\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}../FileEncoding.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \ \ \textcolor{keyword}{namespace\ }xml}
+\DoxyCodeLine{00019\ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_1_1xml_a7753fb4de2038a79b3effc502e076cc7}{write\_triangle\_mesh}}(}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ str,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedV>\&\ V,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedF>\&\ F,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceigl_a85ec0330094fed10f10bb12010bbcdbf}{FileEncoding}}\ fe\ =\ \mbox{\hyperlink{namespaceigl_a85ec0330094fed10f10bb12010bbcdbfa76b8d0dcd02ccaf203c167ced6d7ef31}{FileEncoding::Ascii}});}
+\DoxyCodeLine{00036\ \ \ \}}
+\DoxyCodeLine{00037\ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#\ \ include\ "{}write\_triangle\_mesh.cpp"{}}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00044\ }
+
+\end{DoxyCode}

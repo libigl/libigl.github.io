@@ -12,7 +12,7 @@
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_OPENGL\_GLFW\_IMGUI\_IMGUIHELPERS\_H}}
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_OPENGL\_GLFW\_IMGUI\_IMGUIHELPERS\_H}}
 \DoxyCodeLine{00010\ }
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}ImGuiTraits.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ImGuiTraits_8h}{ImGuiTraits.h}}"{}}}
 \DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <imgui.h>}}
 \DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <string>}}
@@ -98,9 +98,9 @@
 \DoxyCodeLine{00096\ \{}
 \DoxyCodeLine{00097\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *fmt\ =\ format;}
 \DoxyCodeLine{00098\ \ \ \textcolor{keywordflow}{if}\ (format\ ==\ \textcolor{keyword}{nullptr})\ \{}
-\DoxyCodeLine{00099\ \ \ \ \ fmt\ =\ ImGuiDataTypeTraits<T>::format;}
+\DoxyCodeLine{00099\ \ \ \ \ fmt\ =\ \mbox{\hyperlink{classImGui_1_1ImGuiDataTypeTraits}{ImGuiDataTypeTraits<T>::format}};}
 \DoxyCodeLine{00100\ \ \ \}}
-\DoxyCodeLine{00101\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceImGui_a0fb91683a93c61f90f7c448466266f3c}{SliderScalar}}(label,\ ImGuiDataTypeTraits<T>::value,\ value,\ \&min,\ \&max,\ fmt);}
+\DoxyCodeLine{00101\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceImGui_a0fb91683a93c61f90f7c448466266f3c}{SliderScalar}}(label,\ \mbox{\hyperlink{classImGui_1_1ImGuiDataTypeTraits}{ImGuiDataTypeTraits<T>::value}},\ value,\ \&min,\ \&max,\ fmt);}
 \DoxyCodeLine{00102\ \}}
 \DoxyCodeLine{00103\ }
 \DoxyCodeLine{00104\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Getter,\ \textcolor{keyword}{typename}\ Setter>}

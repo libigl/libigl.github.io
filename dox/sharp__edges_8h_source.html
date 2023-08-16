@@ -103,7 +103,7 @@ $(document).ready(function(){initNavTree('sharp__edges_8h_source.html',''); init
 <a href="sharp__edges_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef IGL_SHARP_EDGES_H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define IGL_SHARP_EDGES_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;igl/igl_inline.h&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;<a class="code" href="igl__inline_8h.html">igl/igl_inline.h</a>&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;Eigen/Core&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
@@ -118,7 +118,7 @@ $(document).ready(function(){initNavTree('sharp__edges_8h_source.html',''); init
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">typename</span> DerivedEMAP,</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">typename</span> uE2Etype,</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">typename</span> sharptype&gt;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="namespaceigl.html#a0b1cfc3d745b201faa8129b75d5a3b79">   33</a></span>  IGL_INLINE <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#a0b1cfc3d745b201faa8129b75d5a3b79">sharp_edges</a>(</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="namespaceigl.html#a0b1cfc3d745b201faa8129b75d5a3b79">   33</a></span>  <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#a0b1cfc3d745b201faa8129b75d5a3b79">sharp_edges</a>(</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">const</span> Eigen::MatrixBase&lt;DerivedV&gt; &amp; V,</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">const</span> Eigen::MatrixBase&lt;DerivedF&gt; &amp; F,</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">const</span> <span class="keyword">typename</span> DerivedV::Scalar angle,</div>
@@ -132,7 +132,7 @@ $(document).ready(function(){initNavTree('sharp__edges_8h_source.html',''); init
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keyword">typename</span> DerivedV,</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keyword">typename</span> DerivedF,</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keyword">typename</span> DerivedSE&gt;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="namespaceigl.html#a7002429ac13c0e1d678e1e9d9aea99d8">   48</a></span>  IGL_INLINE <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#a0b1cfc3d745b201faa8129b75d5a3b79">sharp_edges</a>(</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="namespaceigl.html#a7002429ac13c0e1d678e1e9d9aea99d8">   48</a></span>  <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#a0b1cfc3d745b201faa8129b75d5a3b79">sharp_edges</a>(</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keyword">const</span> Eigen::MatrixBase&lt;DerivedV&gt; &amp; V,</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keyword">const</span> Eigen::MatrixBase&lt;DerivedF&gt; &amp; F,</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keyword">const</span> <span class="keyword">typename</span> DerivedV::Scalar angle,</div>
@@ -145,7 +145,9 @@ $(document).ready(function(){initNavTree('sharp__edges_8h_source.html',''); init
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="preprocessor">#endif </span></div>
-<div class="ttc" id="anamespaceigl_html"><div class="ttname"><a href="namespaceigl.html">igl</a></div><div class="ttdoc">Fake halfedge for fast and easy navigation on triangle meshes with vertex_triangle_adjacency and tria...</div><div class="ttdef"><b>Definition</b> AABB.h:17</div></div>
+<div class="ttc" id="aigl__inline_8h_html"><div class="ttname"><a href="igl__inline_8h.html">igl_inline.h</a></div></div>
+<div class="ttc" id="aigl__inline_8h_html_a838241279013352686271b4c4ce1f708"><div class="ttname"><a href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a></div><div class="ttdeci">#define IGL_INLINE</div><div class="ttdef"><b>Definition</b> igl_inline.h:15</div></div>
+<div class="ttc" id="anamespaceigl_html"><div class="ttname"><a href="namespaceigl.html">igl</a></div><div class="ttdef"><b>Definition</b> AABB.h:17</div></div>
 <div class="ttc" id="anamespaceigl_html_a0b1cfc3d745b201faa8129b75d5a3b79"><div class="ttname"><a href="namespaceigl.html#a0b1cfc3d745b201faa8129b75d5a3b79">igl::sharp_edges</a></div><div class="ttdeci">void sharp_edges(const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, const Eigen::MatrixBase&lt; DerivedF &gt; &amp;F, const typename DerivedV::Scalar angle, Eigen::PlainObjectBase&lt; DerivedSE &gt; &amp;SE, Eigen::PlainObjectBase&lt; DerivedE &gt; &amp;E, Eigen::PlainObjectBase&lt; DeriveduE &gt; &amp;uE, Eigen::PlainObjectBase&lt; DerivedEMAP &gt; &amp;EMAP, std::vector&lt; std::vector&lt; uE2Etype &gt; &gt; &amp;uE2E, std::vector&lt; sharptype &gt; &amp;sharp)</div><div class="ttdoc">Given a mesh, compute sharp edges.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

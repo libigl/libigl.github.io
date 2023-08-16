@@ -1,0 +1,128 @@
+\doxysection{tetrahedralize.\+h}
+\hypertarget{tetrahedralize_8h_source}{}\label{tetrahedralize_8h_source}\index{include/igl/copyleft/tetgen/tetrahedralize.h@{include/igl/copyleft/tetgen/tetrahedralize.h}}
+\mbox{\hyperlink{tetrahedralize_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2013\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_COPYLEFT\_TETGEN\_TETRAHEDRALIZE\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_COPYLEFT\_TETGEN\_TETRAHEDRALIZE\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../../igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifndef\ TETLIBRARY}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ TETLIBRARY\ }}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <tetgen.h>}\ \textcolor{comment}{//\ Defined\ REAL}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \ \ \textcolor{keyword}{namespace\ }copyleft}
+\DoxyCodeLine{00023\ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{namespace\ }tetgen}
+\DoxyCodeLine{00025\ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen_a1fc3157f647538d164f586e08dfe9a85}{tetrahedralize}}(}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<REAL>\ >\ \&V,\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<int>\ >\ \ \&F,\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<REAL>\ >\ \&H,\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<REAL>\ >\ \&R,\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ switches,\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ std::vector<std::vector<REAL\ >\ >\ \&\ TV,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ std::vector<std::vector<int\ >\ >\ \ \&\ TT,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ std::vector<std::vector<int\ >\ >\ \ \&\ TF,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ std::vector<std::vector<REAL\ >\ >\ \&TR,\ \ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ std::vector<std::vector<int\ >\ >\ \&TN,\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ std::vector<std::vector<int\ >\ >\ \&PT,\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ std::vector<std::vector<int\ >\ >\ \&FT,\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \&\ numRegions);\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen_a1fc3157f647538d164f586e08dfe9a85}{tetrahedralize}}(}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<REAL\ >\ >\ \&\ V,\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<int>\ >\ \&\ F,\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ switches,}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ std::vector<std::vector<REAL\ >\ >\ \&\ TV,\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ std::vector<std::vector<int\ >\ >\ \&\ TT,\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ std::vector<std::vector<int>\ >\ \&\ TF);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedTV,\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedTT,\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedTF>}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen_a1fc3157f647538d164f586e08dfe9a85}{tetrahedralize}}(}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\&\ V,}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\&\ F,}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ switches,}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedTV>\&\ TV,}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedTT>\&\ TT,}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedTF>\&\ TF);}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen_a1fc3157f647538d164f586e08dfe9a85}{tetrahedralize}}(}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<REAL\ >\ >\ \&\ V,\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<int>\ >\ \&\ F,\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<int>\ \&\ VM,}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<int>\ \&\ FM,}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ switches,}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ std::vector<std::vector<REAL\ >\ >\ \&\ TV,\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ std::vector<std::vector<int\ >\ >\ \&\ TT,\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ std::vector<std::vector<int>\ >\ \&\ TF,}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ std::vector<int>\ \&\ TM);}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVM,}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFM,}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedTV,\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedTT,\ }
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedTF,\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedTM>}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen_a1fc3157f647538d164f586e08dfe9a85}{tetrahedralize}}(}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\&\ V,}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\&\ F,}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedVM>\&\ VM,}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedFM>\&\ FM,}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ switches,}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedTV>\&\ TV,}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedTT>\&\ TT,}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedTF>\&\ TF,}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedTM>\&\ TM);}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedH,}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedR,}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedTV,}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedTT,}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedTF,}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedTR>\ \ \ \ \ \ }
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen_a1fc3157f647538d164f586e08dfe9a85}{tetrahedralize}}(}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\&\ V,}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\&\ F,}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedH>\&\ H,}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedR>\&\ R,}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ switches,}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedTV>\&\ TV,}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedTT>\&\ TT,}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedTF>\&\ TF,}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedTR>\&\ TR,\ }
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedTT>\&\ TN,\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedTT>\&\ PT,\ }
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedTT>\&\ FT,\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \&\ numRegions);\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00141\ \ \ \ \}}
+\DoxyCodeLine{00142\ \ \ \}}
+\DoxyCodeLine{00143\ \}}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#\ \ include\ "{}tetrahedralize.cpp"{}}}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00151\ }
+
+\end{DoxyCode}

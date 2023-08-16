@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['rowmatrixxf_0',['RowMatrixXf',['../classigl_1_1opengl_1_1MeshGL.html#adf75306956e300b76bd4eae9d424e331',1,'igl::opengl::MeshGL']]],
-  ['rowvectordims_1',['RowVectorDIMS',['../classigl_1_1AABB.html#ac5abf414cbc2c2eec477945798d08261',1,'igl::AABB']]]
+  ['keepall_0',['KeepAll',['../namespaceigl_1_1copyleft_1_1cgal.html#aaab770fd7d59c9d5b18d15351d8c13d1',1,'igl::copyleft::cgal']]],
+  ['keepinside_1',['KeepInside',['../namespaceigl_1_1copyleft_1_1cgal.html#aca810a2d57eab3749b7a4f9379a9f008',1,'igl::copyleft::cgal']]]
 ];

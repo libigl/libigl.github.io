@@ -3,11 +3,65 @@
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+{\footnotesize template$<$typename Eigs\+Scalar , typename DerivedU , typename DerivedS , typename Solver  = Eigen\+::\+Sparse\+LU$<$\+Eigen\+::\+Sparse\+Matrix$<$\+Eigs\+Scalar$>$$>$$>$ }\\bool \mbox{\hyperlink{namespaceigl_1_1spectra_ad3d3fe017e5b3e83eaa8c9e997eceaf5}{eigs}} (const Eigen\+::\+Sparse\+Matrix$<$ Eigs\+Scalar $>$ \&A, const Eigen\+::\+Sparse\+Matrix$<$ Eigs\+Scalar $>$ \&B, const int k, const \mbox{\hyperlink{namespaceigl_a39bb96a0597986315dc20d78ba46a50d}{igl\+::\+Eigs\+Type}} type, Eigen\+::\+Plain\+Object\+Base$<$ DerivedU $>$ \&U, Eigen\+::\+Plain\+Object\+Base$<$ DerivedS $>$ \&S)
+\begin{DoxyCompactList}\small\item\em Act like MATLAB\textquotesingle{}s eigs function. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Eigs\+Scalar , typename DerivedU , typename DerivedS , typename Solver  = Eigen\+::\+Sparse\+LU$<$\+Eigen\+::\+Sparse\+Matrix$<$\+Eigs\+Scalar$>$$>$$>$ }\\bool \mbox{\hyperlink{namespaceigl_1_1spectra_aa87761e316ed1ccddc5890a9b81ba177}{eigs}} (const Eigen\+::\+Sparse\+Matrix$<$ Eigs\+Scalar $>$ \&A, const Eigen\+::\+Sparse\+Matrix$<$ Eigs\+Scalar $>$ \&B, const int k, const Eigs\+Scalar sigma, Eigen\+::\+Plain\+Object\+Base$<$ DerivedU $>$ \&U, Eigen\+::\+Plain\+Object\+Base$<$ DerivedS $>$ \&S)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename DerivedV , typename DerivedF , typename Derived\+V\+\_\+uv $>$ }\\bool \mbox{\hyperlink{namespaceigl_1_1spectra_adb72a973b3fc7104bbc4c5f52321924d}{lscm}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+V\+\_\+uv $>$ \&V\+\_\+uv)
 \begin{DoxyCompactList}\small\item\em Compute a free-\/boundary least-\/squares conformal map parametrization. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
+\Hypertarget{namespaceigl_1_1spectra_ad3d3fe017e5b3e83eaa8c9e997eceaf5}\label{namespaceigl_1_1spectra_ad3d3fe017e5b3e83eaa8c9e997eceaf5} 
+\index{igl::spectra@{igl::spectra}!eigs@{eigs}}
+\index{eigs@{eigs}!igl::spectra@{igl::spectra}}
+\doxysubsubsection{\texorpdfstring{eigs()}{eigs()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Eigs\+Scalar , typename DerivedU , typename DerivedS , typename Solver  = Eigen\+::\+Sparse\+LU$<$\+Eigen\+::\+Sparse\+Matrix$<$\+Eigs\+Scalar$>$$>$$>$ \\
+bool igl\+::spectra\+::eigs (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Sparse\+Matrix$<$ Eigs\+Scalar $>$ \&}]{A,  }\item[{const Eigen\+::\+Sparse\+Matrix$<$ Eigs\+Scalar $>$ \&}]{B,  }\item[{const int}]{k,  }\item[{const \mbox{\hyperlink{namespaceigl_a39bb96a0597986315dc20d78ba46a50d}{igl\+::\+Eigs\+Type}}}]{type,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedU $>$ \&}]{U,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedS $>$ \&}]{S }\end{DoxyParamCaption})}
+
+
+
+Act like MATLAB\textquotesingle{}s eigs function. 
+
+Compute the first/last k eigen pairs of the generalized eigen value problem\+: \begin{DoxyVerb} A u = s B u
+\end{DoxyVerb}
+ Solutions are approximate and sorted.
+
+Ideally one should use ARPACK and the Eigen unsupported ARPACK module. This implementation does simple, naive power iterations.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em A} & \#A by \#A symmetric matrix \\
+\hline
+\mbox{\texttt{ in}}  & {\em B} & \#A by \#A symmetric positive-\/definite matrix \\
+\hline
+\mbox{\texttt{ in}}  & {\em k} & number of eigen pairs to compute \\
+\hline
+\mbox{\texttt{ in}}  & {\em type} & whether to extract from the high or low end \\
+\hline
+\mbox{\texttt{ out}}  & {\em sU} & \#A by k list of sorted eigen vectors (descending) \\
+\hline
+\mbox{\texttt{ out}}  & {\em sS} & k list of sorted eigen values (descending)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000020}{Bug}}]only the \textquotesingle{}sm\textquotesingle{} small magnitude eigen values are well supported\end{DoxyRefDesc}
+\Hypertarget{namespaceigl_1_1spectra_aa87761e316ed1ccddc5890a9b81ba177}\label{namespaceigl_1_1spectra_aa87761e316ed1ccddc5890a9b81ba177} 
+\index{igl::spectra@{igl::spectra}!eigs@{eigs}}
+\index{eigs@{eigs}!igl::spectra@{igl::spectra}}
+\doxysubsubsection{\texorpdfstring{eigs()}{eigs()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Eigs\+Scalar , typename DerivedU , typename DerivedS , typename Solver  = Eigen\+::\+Sparse\+LU$<$\+Eigen\+::\+Sparse\+Matrix$<$\+Eigs\+Scalar$>$$>$$>$ \\
+bool igl\+::spectra\+::eigs (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Sparse\+Matrix$<$ Eigs\+Scalar $>$ \&}]{A,  }\item[{const Eigen\+::\+Sparse\+Matrix$<$ Eigs\+Scalar $>$ \&}]{B,  }\item[{const int}]{k,  }\item[{const Eigs\+Scalar}]{sigma,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedU $>$ \&}]{U,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedS $>$ \&}]{S }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em sigma} & shift to apply to A, as in A ← A + sigma B \\
+\hline
+\end{DoxyParams}
 \Hypertarget{namespaceigl_1_1spectra_adb72a973b3fc7104bbc4c5f52321924d}\label{namespaceigl_1_1spectra_adb72a973b3fc7104bbc4c5f52321924d} 
 \index{igl::spectra@{igl::spectra}!lscm@{lscm}}
 \index{lscm@{lscm}!igl::spectra@{igl::spectra}}

@@ -1,0 +1,91 @@
+\doxysection{Viewer\+Plugin.\+h}
+\hypertarget{ViewerPlugin_8h_source}{}\label{ViewerPlugin_8h_source}\index{include/igl/opengl/glfw/ViewerPlugin.h@{include/igl/opengl/glfw/ViewerPlugin.h}}
+\mbox{\hyperlink{ViewerPlugin_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2014\ Daniele\ Panozzo\ <daniele.panozzo@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_OPENGL\_GLFW\_VIEWERPLUGIN\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_OPENGL\_GLFW\_VIEWERPLUGIN\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ TODO:}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ *\ create\ plugins/skeleton.h}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ *\ pass\ time\ in\ draw\ function}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ *\ remove\ Preview3D\ from\ comments}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ *\ clean\ comments}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{igl__inline_8h}{igl/igl\_inline.h}}>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \ \ \textcolor{keyword}{namespace\ }opengl}
+\DoxyCodeLine{00023\ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{namespace\ }glfw}
+\DoxyCodeLine{00025\ \ \ \ \ \{}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \textcolor{comment}{//\ Forward\ declaration\ of\ the\ viewer}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \textcolor{keyword}{class\ }Viewer;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin}{ViewerPlugin}}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_aaa201a229466fe2fdb9e688adae177ff}{ViewerPlugin}}()\ \{\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a4c317c187d10b026253cc8e04c481679}{plugin\_name}}\ =\ \textcolor{stringliteral}{"{}dummy"{}};\}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_ab41d175335ef456af27247a235e3ca9d}{\string~ViewerPlugin}}()\{\}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_ab3a866951292cb886c834cc9dd8f7707}{init}}(\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}}\ *\_viewer)\ \{\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a77a47b3e363e6501c572e7ccf0bd60cb}{viewer}}\ =\ \_viewer;\ \}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a7db7367d0ae2de0143ab6735305fb46e}{shutdown}}()\ \{\ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_aced5a668c69237187f3f843f4d8dffee}{load}}(std::string\ filename)\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a8791f4d2643fc0ddcbba9e5c65659bae}{save}}(std::string\ filename)\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_ae14a053bb6fb981bfc20285a82e31d20}{serialize}}(std::vector<char>\&\ buffer)\textcolor{keyword}{\ const\ }}
+\DoxyCodeLine{00053\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a2dd38857a78fdd009b3757e5c9d42166}{deserialize}}(\textcolor{keyword}{const}\ std::vector<char>\&\ buffer)}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a4dacec0528c6a7c3e601823e92230630}{post\_load}}()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a97b4bf21e6fcfe3126cd42b5d61b1a54}{pre\_draw}}()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_aa296760b1a17bd148794673165857ce2}{post\_draw}}()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a728a7ab835c779be44097369f312a5cd}{post\_resize}}(\textcolor{keywordtype}{int}\ w,\ \textcolor{keywordtype}{int}\ h)\ \{\ \}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_aebff5957169e2181ed6d69915d668c90}{mouse\_down}}(\textcolor{keywordtype}{int}\ button,\ \textcolor{keywordtype}{int}\ modifier)}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a5cae093301878ead08232c11d68660a6}{mouse\_up}}(\textcolor{keywordtype}{int}\ button,\ \textcolor{keywordtype}{int}\ modifier)}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_aa6a8e31b6a0bf9862b5e9d57cbe2e665}{mouse\_move}}(\textcolor{keywordtype}{int}\ mouse\_x,\ \textcolor{keywordtype}{int}\ mouse\_y)}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_aa42a1c4ba8c4fd147bf786a4e469cae3}{mouse\_scroll}}(\textcolor{keywordtype}{float}\ delta\_y)}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_acc4fe69574da3f28b1ee4ade613532f3}{key\_pressed}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ key,\ \textcolor{keywordtype}{int}\ modifiers)}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_afea9153fa5c900c1b09b2169bb0be09f}{key\_down}}(\textcolor{keywordtype}{int}\ key,\ \textcolor{keywordtype}{int}\ modifiers)}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a8a92255343b90b13a208da451614768d}{key\_up}}(\textcolor{keywordtype}{int}\ key,\ \textcolor{keywordtype}{int}\ modifiers)}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a4c317c187d10b026253cc8e04c481679}{plugin\_name}};}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Pointer\ to\ the\ main\ Viewer\ class}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}}\ *\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a77a47b3e363e6501c572e7ccf0bd60cb}{viewer}};}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \textcolor{keyword}{namespace\ }serialization}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1opengl_1_1glfw_1_1serialization_a2f75a846bf03885854cba96886e91bcb}{serialize}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin}{ViewerPlugin}}\&\ obj,std::vector<char>\&\ buffer)}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ obj.\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_ae14a053bb6fb981bfc20285a82e31d20}{serialize}}(buffer);}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1opengl_1_1glfw_1_1serialization_ad853158b6327f88d5904d8cc11dd24fa}{deserialize}}(\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin}{ViewerPlugin}}\&\ obj,\textcolor{keyword}{const}\ std::vector<char>\&\ buffer)}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ obj.\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a2dd38857a78fdd009b3757e5c9d42166}{deserialize}}(buffer);}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \ \ \}}
+\DoxyCodeLine{00100\ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

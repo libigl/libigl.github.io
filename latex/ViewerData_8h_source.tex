@@ -13,7 +13,7 @@
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_VIEWERDATA\_H}}
 \DoxyCodeLine{00010\ }
 \DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{MeshGL_8h}{MeshGL.h}}"{}}}
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <igl/igl\_inline.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{igl__inline_8h}{igl/igl\_inline.h}}>}}
 \DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{colormap_8h}{igl/colormap.h}}>}}
 \DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <cassert>}}
 \DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <cstdint>}}
@@ -21,356 +21,250 @@
 \DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <memory>}}
 \DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{00019\ }
-\DoxyCodeLine{00020\ \textcolor{comment}{//\ Alec:\ This\ is\ a\ mesh\ class\ containing\ a\ variety\ of\ data\ types\ (normals,}}
-\DoxyCodeLine{00021\ \textcolor{comment}{//\ overlays,\ material\ colors,\ etc.)}}
-\DoxyCodeLine{00022\ \textcolor{comment}{//}}
-\DoxyCodeLine{00023\ \textcolor{comment}{//\ WARNING:\ Eigen\ data\ members\ (such\ as\ Eigen::Vector4f)\ should\ explicitly}}
-\DoxyCodeLine{00024\ \textcolor{comment}{//\ disable\ alignment\ (e.g.\ use\ \`{}Eigen::Matrix<float,\ 4,\ 1,\ Eigen::DontAlign>`),}}
-\DoxyCodeLine{00025\ \textcolor{comment}{//\ in\ order\ to\ avoid\ alignment\ issues\ further\ down\ the\ line\ (esp.\ if\ the}}
-\DoxyCodeLine{00026\ \textcolor{comment}{//\ structure\ are\ stored\ in\ a\ std::vector).}}
-\DoxyCodeLine{00027\ \textcolor{comment}{//}}
-\DoxyCodeLine{00028\ \textcolor{comment}{//\ See\ this\ thread\ for\ a\ more\ detailed\ discussion:}}
-\DoxyCodeLine{00029\ \textcolor{comment}{//\ https://github.com/libigl/libigl/pull/1029}}
-\DoxyCodeLine{00030\ \textcolor{comment}{//}}
-\DoxyCodeLine{00031\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
-\DoxyCodeLine{00032\ \{}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00034\ \textcolor{comment}{//\ TODO:\ write\ documentation}}
-\DoxyCodeLine{00035\ \textcolor{keyword}{namespace\ }opengl}
-\DoxyCodeLine{00036\ \{}
-\DoxyCodeLine{00037\ }
-\DoxyCodeLine{00038\ \textcolor{comment}{//\ Forward\ declaration}}
-\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }ViewerCore;}
-\DoxyCodeLine{00040\ }
-\DoxyCodeLine{00041\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData}{ViewerData}}}
-\DoxyCodeLine{00042\ \{}
-\DoxyCodeLine{00043\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00044\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a10dc4232031537b418990130935bc2c4}{ViewerData}}();}
+\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }opengl}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }ViewerCore;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData}{ViewerData}}}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a10dc4232031537b418990130935bc2c4}{ViewerData}}();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00044\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a0e629ca52441beda8c45b8199752fe12}{clear}}();}
 \DoxyCodeLine{00045\ }
-\DoxyCodeLine{00046\ \ \ \textcolor{comment}{//\ Empty\ all\ fields}}
-\DoxyCodeLine{00047\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a0e629ca52441beda8c45b8199752fe12}{clear}}();}
-\DoxyCodeLine{00048\ }
-\DoxyCodeLine{00049\ \ \ \textcolor{comment}{//\ Change\ the\ visualization\ mode,\ invalidating\ the\ cache\ if\ necessary}}
-\DoxyCodeLine{00050\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a8084db372fc87a38ced9ba838f9368f1}{set\_face\_based}}(\textcolor{keywordtype}{bool}\ newvalue);}
+\DoxyCodeLine{00050\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a8084db372fc87a38ced9ba838f9368f1}{set\_face\_based}}(\textcolor{keywordtype}{bool}\ newvalue);}
 \DoxyCodeLine{00051\ }
-\DoxyCodeLine{00052\ \ \ \textcolor{comment}{//\ Helpers\ that\ can\ draw\ the\ most\ common\ meshes}}
-\DoxyCodeLine{00053\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a6b5956da8759fb7800b11b8216184468}{set\_mesh}}(\textcolor{keyword}{const}\ Eigen::MatrixXd\&\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a1e9e01dcbb96b329c8da0dbb71c47554}{V}},\ \textcolor{keyword}{const}\ Eigen::MatrixXi\&\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_ac31a200e07734a7dbe33f991dca0cc87}{F}});}
-\DoxyCodeLine{00054\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a8693588093bd351fd98b252bb1bd340f}{set\_vertices}}(\textcolor{keyword}{const}\ Eigen::MatrixXd\&\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a1e9e01dcbb96b329c8da0dbb71c47554}{V}});}
-\DoxyCodeLine{00055\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_acdbcfdf0a634addbd8e3f7fdbcd7a121}{set\_normals}}(\textcolor{keyword}{const}\ Eigen::MatrixXd\&\ N);}
-\DoxyCodeLine{00056\ }
-\DoxyCodeLine{00057\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_ade91972b4cf683917540b9f10e2574ca}{set\_visible}}(\textcolor{keywordtype}{bool}\ value,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ core\_id\ =\ 1);}
-\DoxyCodeLine{00058\ }
-\DoxyCodeLine{00059\ \ \ \textcolor{comment}{//\ Set\ the\ color\ of\ the\ mesh}}
-\DoxyCodeLine{00060\ \ \ \textcolor{comment}{//}}
-\DoxyCodeLine{00061\ \ \ \textcolor{comment}{//\ Inputs:}}
-\DoxyCodeLine{00062\ \ \ \textcolor{comment}{//\ \ \ C\ \ \#V|\#F|1\ by\ 3\ list\ of\ colors}}
-\DoxyCodeLine{00063\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_ab44012abab5b16b87b76a622839292f5}{set\_colors}}(\textcolor{keyword}{const}\ Eigen::MatrixXd\ \&C);}
-\DoxyCodeLine{00064\ }
-\DoxyCodeLine{00065\ \ \ \textcolor{comment}{//\ Set\ per-\/vertex\ UV\ coordinates}}
-\DoxyCodeLine{00066\ \ \ \textcolor{comment}{//}}
-\DoxyCodeLine{00067\ \ \ \textcolor{comment}{//\ Inputs:}}
-\DoxyCodeLine{00068\ \ \ \textcolor{comment}{//\ \ \ UV\ \ \#V\ by\ 2\ list\ of\ UV\ coordinates\ (indexed\ by\ F)}}
-\DoxyCodeLine{00069\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a5a4a3bd973759305cf8fda10d5e2a999}{set\_uv}}(\textcolor{keyword}{const}\ Eigen::MatrixXd\&\ UV);}
-\DoxyCodeLine{00070\ }
-\DoxyCodeLine{00071\ \ \ \textcolor{comment}{//\ Set\ per-\/corner\ UV\ coordinates}}
-\DoxyCodeLine{00072\ \ \ \textcolor{comment}{//}}
-\DoxyCodeLine{00073\ \ \ \textcolor{comment}{//\ Inputs:}}
-\DoxyCodeLine{00074\ \ \ \textcolor{comment}{//\ \ \ UV\_V\ \ \#UV\ by\ 2\ list\ of\ UV\ coordinates}}
-\DoxyCodeLine{00075\ \ \ \textcolor{comment}{//\ \ \ UV\_F\ \ \#F\ by\ 3\ list\ of\ UV\ indices\ into\ UV\_V}}
-\DoxyCodeLine{00076\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a2ce2dbe479d1f212ae038b929ff06944}{set\_uv}}(\textcolor{keyword}{const}\ Eigen::MatrixXd\&\ UV\_V,\ \textcolor{keyword}{const}\ Eigen::MatrixXi\&\ UV\_F);}
-\DoxyCodeLine{00077\ }
-\DoxyCodeLine{00078\ \ \ \textcolor{comment}{//\ Set\ the\ texture\ associated\ with\ the\ mesh.}}
-\DoxyCodeLine{00079\ \ \ \textcolor{comment}{//}}
-\DoxyCodeLine{00080\ \ \ \textcolor{comment}{//\ Inputs:}}
-\DoxyCodeLine{00081\ \ \ \textcolor{comment}{//\ \ \ R\ \ width\ by\ height\ image\ matrix\ of\ red\ channel}}
-\DoxyCodeLine{00082\ \ \ \textcolor{comment}{//\ \ \ G\ \ width\ by\ height\ image\ matrix\ of\ green\ channel}}
-\DoxyCodeLine{00083\ \ \ \textcolor{comment}{//\ \ \ B\ \ width\ by\ height\ image\ matrix\ of\ blue\ channel}}
-\DoxyCodeLine{00084\ \ \ \textcolor{comment}{//}}
-\DoxyCodeLine{00085\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a6144ce04e80b4c7632f2c417ee7b347e}{set\_texture}}(}
-\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<unsigned\ char,Eigen::Dynamic,Eigen::Dynamic>\&\ R,}
-\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<unsigned\ char,Eigen::Dynamic,Eigen::Dynamic>\&\ G,}
-\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<unsigned\ char,Eigen::Dynamic,Eigen::Dynamic>\&\ B);}
+\DoxyCodeLine{00057\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a6b5956da8759fb7800b11b8216184468}{set\_mesh}}(\textcolor{keyword}{const}\ Eigen::MatrixXd\&\ V,\ \textcolor{keyword}{const}\ Eigen::MatrixXi\&\ F);}
+\DoxyCodeLine{00062\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a8693588093bd351fd98b252bb1bd340f}{set\_vertices}}(\textcolor{keyword}{const}\ Eigen::MatrixXd\&\ V);}
+\DoxyCodeLine{00068\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_acdbcfdf0a634addbd8e3f7fdbcd7a121}{set\_normals}}(\textcolor{keyword}{const}\ Eigen::MatrixXd\&\ N);}
+\DoxyCodeLine{00072\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_ade91972b4cf683917540b9f10e2574ca}{set\_visible}}(\textcolor{keywordtype}{bool}\ value,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ core\_id\ =\ 1);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00077\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_ab44012abab5b16b87b76a622839292f5}{set\_colors}}(\textcolor{keyword}{const}\ Eigen::MatrixXd\ \&C);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00082\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a5a4a3bd973759305cf8fda10d5e2a999}{set\_uv}}(\textcolor{keyword}{const}\ Eigen::MatrixXd\&\ UV);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00088\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a2ce2dbe479d1f212ae038b929ff06944}{set\_uv}}(\textcolor{keyword}{const}\ Eigen::MatrixXd\&\ UV\_V,\ \textcolor{keyword}{const}\ Eigen::MatrixXi\&\ UV\_F);}
 \DoxyCodeLine{00089\ }
-\DoxyCodeLine{00090\ \ \ \textcolor{comment}{//\ Set\ the\ texture\ associated\ with\ the\ mesh.}}
-\DoxyCodeLine{00091\ \ \ \textcolor{comment}{//}}
-\DoxyCodeLine{00092\ \ \ \textcolor{comment}{//\ Inputs:}}
-\DoxyCodeLine{00093\ \ \ \textcolor{comment}{//\ \ \ R\ \ width\ by\ height\ image\ matrix\ of\ red\ channel}}
-\DoxyCodeLine{00094\ \ \ \textcolor{comment}{//\ \ \ G\ \ width\ by\ height\ image\ matrix\ of\ green\ channel}}
-\DoxyCodeLine{00095\ \ \ \textcolor{comment}{//\ \ \ B\ \ width\ by\ height\ image\ matrix\ of\ blue\ channel}}
-\DoxyCodeLine{00096\ \ \ \textcolor{comment}{//\ \ \ A\ \ width\ by\ height\ image\ matrix\ of\ alpha\ channel}}
-\DoxyCodeLine{00097\ \ \ \textcolor{comment}{//}}
-\DoxyCodeLine{00098\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a31b0ee7aad967741d39ae1239fd044b2}{set\_texture}}(}
-\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<unsigned\ char,Eigen::Dynamic,Eigen::Dynamic>\&\ R,}
-\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<unsigned\ char,Eigen::Dynamic,Eigen::Dynamic>\&\ G,}
-\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<unsigned\ char,Eigen::Dynamic,Eigen::Dynamic>\&\ B,}
-\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<unsigned\ char,Eigen::Dynamic,Eigen::Dynamic>\&\ A);}
-\DoxyCodeLine{00103\ }
-\DoxyCodeLine{00104\ \ \ \textcolor{comment}{//\ Set\ pseudo-\/colorable\ scalar\ data\ associated\ with\ the\ mesh.}}
-\DoxyCodeLine{00105\ \ \ \textcolor{comment}{//}}
-\DoxyCodeLine{00106\ \ \ \textcolor{comment}{//\ Inputs:}}
-\DoxyCodeLine{00107\ \ \ \textcolor{comment}{//\ \ \ caxis\_min\ \ caxis\ minimum\ bound}}
-\DoxyCodeLine{00108\ \ \ \textcolor{comment}{//\ \ \ caxis\_max\ \ caxis\ maximum\ bound}}
-\DoxyCodeLine{00109\ \ \ \textcolor{comment}{//\ \ \ D\ \ \#V|\#F\ by\ 1\ list\ of\ scalar\ values}}
-\DoxyCodeLine{00110\ \ \ \textcolor{comment}{//\ \ \ cmap\ colormap\ type}}
-\DoxyCodeLine{00111\ \ \ \textcolor{comment}{//\ \ \ num\_steps\ number\ of\ intervals\ to\ discretize\ the\ colormap}}
-\DoxyCodeLine{00112\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a98694f52952594b855d30a37d4780583}{set\_data}}(}
-\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::VectorXd\ \&\ D,}
-\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{double}\ caxis\_min,}
-\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{double}\ caxis\_max,}
-\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{namespaceigl_a1b823cd12b22dd7d7c16b36223e68dea}{igl::ColorMapType}}\ cmap\ =\ \mbox{\hyperlink{namespaceigl_a1b823cd12b22dd7d7c16b36223e68deaac0949b6bec17c57dae985f9945f0ba87}{igl::COLOR\_MAP\_TYPE\_VIRIDIS}},}
-\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{int}\ num\_steps\ =\ 21);}
-\DoxyCodeLine{00118\ }
-\DoxyCodeLine{00119\ \ \ \textcolor{comment}{//\ Use\ min(D)\ and\ max(D)\ to\ set\ caxis.}}
-\DoxyCodeLine{00120\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_afb52a51dc0c98336f047636474b58d03}{set\_data}}(\textcolor{keyword}{const}\ Eigen::VectorXd\ \&\ D,}
-\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{namespaceigl_a1b823cd12b22dd7d7c16b36223e68dea}{igl::ColorMapType}}\ cmap\ =\ \mbox{\hyperlink{namespaceigl_a1b823cd12b22dd7d7c16b36223e68deaac0949b6bec17c57dae985f9945f0ba87}{igl::COLOR\_MAP\_TYPE\_VIRIDIS}},}
-\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{int}\ num\_steps\ =\ 21);}
-\DoxyCodeLine{00123\ }
-\DoxyCodeLine{00124\ \ \ \textcolor{comment}{//\ Not\ to\ be\ confused\ with\ set\_colors,\ this\ creates\ a\ \_texture\_\ that\ will\ be}}
-\DoxyCodeLine{00125\ \ \ \textcolor{comment}{//\ referenced\ to\ pseudocolor\ according\ to\ the\ scalar\ field\ passed\ to\ set\_data.}}
-\DoxyCodeLine{00126\ \ \ \textcolor{comment}{//}}
-\DoxyCodeLine{00127\ \ \ \textcolor{comment}{//\ Inputs:}}
-\DoxyCodeLine{00128\ \ \ \textcolor{comment}{//\ \ \ CM\ \ \#CM\ by\ 3\ list\ of\ colors}}
-\DoxyCodeLine{00129\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a15cf9f668ca87a84eb0b7267f12a711d}{set\_colormap}}(\textcolor{keyword}{const}\ Eigen::MatrixXd\ \&\ CM);}
-\DoxyCodeLine{00130\ }
-\DoxyCodeLine{00131\ \ \ \textcolor{comment}{//\ Sets\ points\ given\ a\ list\ of\ point\ vertices.\ In\ constrast\ to\ \`{}add\_points`}}
-\DoxyCodeLine{00132\ \ \ \textcolor{comment}{//\ this\ will\ (purposefully)\ clober\ existing\ points.}}
-\DoxyCodeLine{00133\ \ \ \textcolor{comment}{//}}
-\DoxyCodeLine{00134\ \ \ \textcolor{comment}{//\ Inputs:}}
-\DoxyCodeLine{00135\ \ \ \textcolor{comment}{//\ \ \ P\ \ \#P\ by\ 3\ list\ of\ vertex\ positions}}
-\DoxyCodeLine{00136\ \ \ \textcolor{comment}{//\ \ \ C\ \ \#P|1\ by\ 3\ color(s)}}
-\DoxyCodeLine{00137\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_ad1b409133abec077712c12d401b66c1c}{set\_points}}(}
-\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\&\ P,}
-\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\&\ C);}
-\DoxyCodeLine{00140\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a519cbb4c31b87388d0340cfb9b064a6c}{add\_points}}(\textcolor{keyword}{const}\ Eigen::MatrixXd\&\ P,\ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\&\ C);}
-\DoxyCodeLine{00141\ }
-\DoxyCodeLine{00142\ \ \ \textcolor{comment}{//\ Clear\ the\ point\ data}}
-\DoxyCodeLine{00143\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a8616372b1deb7a76028b3c7fbabcf69f}{clear\_points}}();}
-\DoxyCodeLine{00144\ }
-\DoxyCodeLine{00145\ \ \ \textcolor{comment}{//\ Sets\ edges\ given\ a\ list\ of\ edge\ vertices\ and\ edge\ indices.\ In\ constrast}}
-\DoxyCodeLine{00146\ \ \ \textcolor{comment}{//\ to\ \`{}add\_edges`\ this\ will\ (purposefully)\ clober\ existing\ edges.}}
-\DoxyCodeLine{00147\ \ \ \textcolor{comment}{//}}
-\DoxyCodeLine{00148\ \ \ \textcolor{comment}{//\ Inputs:}}
-\DoxyCodeLine{00149\ \ \ \textcolor{comment}{//\ \ \ P\ \ \#P\ by\ 3\ list\ of\ vertex\ positions}}
-\DoxyCodeLine{00150\ \ \ \textcolor{comment}{//\ \ \ E\ \ \#E\ by\ 2\ list\ of\ edge\ indices\ into\ P}}
-\DoxyCodeLine{00151\ \ \ \textcolor{comment}{//\ \ \ C\ \ \#E|1\ by\ 3\ color(s)}}
-\DoxyCodeLine{00152\ }
-\DoxyCodeLine{00153\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a1e44f7353f684813eb2bdfd4447ec013}{set\_edges}}\ (\textcolor{keyword}{const}\ Eigen::MatrixXd\&\ P,\ \textcolor{keyword}{const}\ Eigen::MatrixXi\&\ E,\ \textcolor{keyword}{const}\ Eigen::MatrixXd\&\ C);}
-\DoxyCodeLine{00154\ \ \ \textcolor{comment}{//\ Alec:\ This\ is\ very\ confusing.\ Why\ does\ add\_edges\ have\ a\ different\ API\ from}}
-\DoxyCodeLine{00155\ \ \ \textcolor{comment}{//\ set\_edges?}}
-\DoxyCodeLine{00156\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_ab96f3118a759b4e73c6ce06baf8237a1}{add\_edges}}\ (\textcolor{keyword}{const}\ Eigen::MatrixXd\&\ P1,\ \textcolor{keyword}{const}\ Eigen::MatrixXd\&\ P2,\ \textcolor{keyword}{const}\ Eigen::MatrixXd\&\ C);}
-\DoxyCodeLine{00157\ \ \ \textcolor{comment}{//\ Sets\ edges\ given\ a\ list\ of\ points\ and\ eminating\ vectors}}
-\DoxyCodeLine{00158\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a27e63443ae90288a36332a929e81db27}{set\_edges\_from\_vector\_field}}(}
-\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\&\ P,\ }
-\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\&\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a1e9e01dcbb96b329c8da0dbb71c47554}{V}},\ }
-\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\&\ C);}
-\DoxyCodeLine{00162\ }
-\DoxyCodeLine{00163\ \ \ \textcolor{comment}{//\ Clear\ the\ edge\ data}}
-\DoxyCodeLine{00164\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_af16a28d0194c68eaaf4f4d50844b56b0}{clear\_edges}}();}
-\DoxyCodeLine{00165\ }
-\DoxyCodeLine{00166\ \ \ \textcolor{comment}{//\ Sets\ /\ Adds\ text\ labels\ at\ the\ given\ positions\ in\ 3D.}}
-\DoxyCodeLine{00167\ \ \ \textcolor{comment}{//\ Note:\ This\ requires\ the\ ImGui\ viewer\ plugin\ to\ display\ text\ labels.}}
-\DoxyCodeLine{00168\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a625c2c733a166f00d11f5f092ae9aae5}{add\_label}}\ (\textcolor{keyword}{const}\ Eigen::VectorXd\&\ P,\ \ \textcolor{keyword}{const}\ std::string\&\ str);}
-\DoxyCodeLine{00169\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a8d22a72b41cb6bb79ef6073b3e1ab7cc}{set\_labels}}\ (\textcolor{keyword}{const}\ Eigen::MatrixXd\&\ P,\ \ \textcolor{keyword}{const}\ std::vector<std::string>\&\ str);}
-\DoxyCodeLine{00170\ }
-\DoxyCodeLine{00171\ \ \ \textcolor{comment}{//\ Clear\ the\ label\ data}}
-\DoxyCodeLine{00172\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_abcec779e4217d99e5a977a2b80488a49}{clear\_labels}}\ ();}
-\DoxyCodeLine{00173\ }
-\DoxyCodeLine{00174\ \ \ \textcolor{comment}{//\ Computes\ the\ normals\ of\ the\ mesh}}
-\DoxyCodeLine{00175\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a5f3e8af93eb8958843450b1cba81117a}{compute\_normals}}();}
+\DoxyCodeLine{00097\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a31b0ee7aad967741d39ae1239fd044b2}{set\_texture}}(}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<unsigned\ char,Eigen::Dynamic,Eigen::Dynamic>\&\ R,}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<unsigned\ char,Eigen::Dynamic,Eigen::Dynamic>\&\ G,}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<unsigned\ char,Eigen::Dynamic,Eigen::Dynamic>\&\ B,}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<unsigned\ char,Eigen::Dynamic,Eigen::Dynamic>\&\ A);}
+\DoxyCodeLine{00103\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a6144ce04e80b4c7632f2c417ee7b347e}{set\_texture}}(}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<unsigned\ char,Eigen::Dynamic,Eigen::Dynamic>\&\ R,}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<unsigned\ char,Eigen::Dynamic,Eigen::Dynamic>\&\ G,}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<unsigned\ char,Eigen::Dynamic,Eigen::Dynamic>\&\ B);}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00115\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a98694f52952594b855d30a37d4780583}{set\_data}}(}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::VectorXd\ \&\ D,}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{double}\ caxis\_min,}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{double}\ caxis\_max,}
+\DoxyCodeLine{00119\ \ \ \ \ \mbox{\hyperlink{namespaceigl_a1b823cd12b22dd7d7c16b36223e68dea}{igl::ColorMapType}}\ cmap\ =\ \mbox{\hyperlink{namespaceigl_a1b823cd12b22dd7d7c16b36223e68deaac0949b6bec17c57dae985f9945f0ba87}{igl::COLOR\_MAP\_TYPE\_VIRIDIS}},}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{int}\ num\_steps\ =\ 21);}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00124\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_afb52a51dc0c98336f047636474b58d03}{set\_data}}(\textcolor{keyword}{const}\ Eigen::VectorXd\ \&\ D,}
+\DoxyCodeLine{00125\ \ \ \ \ \mbox{\hyperlink{namespaceigl_a1b823cd12b22dd7d7c16b36223e68dea}{igl::ColorMapType}}\ cmap\ =\ \mbox{\hyperlink{namespaceigl_a1b823cd12b22dd7d7c16b36223e68deaac0949b6bec17c57dae985f9945f0ba87}{igl::COLOR\_MAP\_TYPE\_VIRIDIS}},}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{int}\ num\_steps\ =\ 21);}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00132\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a15cf9f668ca87a84eb0b7267f12a711d}{set\_colormap}}(\textcolor{keyword}{const}\ Eigen::MatrixXd\ \&\ CM);}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00139\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_ad1b409133abec077712c12d401b66c1c}{set\_points}}(}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\&\ P,}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\&\ C);}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00147\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a519cbb4c31b87388d0340cfb9b064a6c}{add\_points}}(\textcolor{keyword}{const}\ Eigen::MatrixXd\&\ P,\ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\&\ C);}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00150\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a8616372b1deb7a76028b3c7fbabcf69f}{clear\_points}}();}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00158\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a1e44f7353f684813eb2bdfd4447ec013}{set\_edges}}\ (\textcolor{keyword}{const}\ Eigen::MatrixXd\&\ P,\ \textcolor{keyword}{const}\ Eigen::MatrixXi\&\ E,\ \textcolor{keyword}{const}\ Eigen::MatrixXd\&\ C);}
+\DoxyCodeLine{00166\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_ab96f3118a759b4e73c6ce06baf8237a1}{add\_edges}}\ (\textcolor{keyword}{const}\ Eigen::MatrixXd\&\ P1,\ \textcolor{keyword}{const}\ Eigen::MatrixXd\&\ P2,\ \textcolor{keyword}{const}\ Eigen::MatrixXd\&\ C);}
+\DoxyCodeLine{00172\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a27e63443ae90288a36332a929e81db27}{set\_edges\_from\_vector\_field}}(}
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\&\ P,\ }
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\&\ V,\ }
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\&\ C);}
 \DoxyCodeLine{00176\ }
-\DoxyCodeLine{00177\ \ \ \textcolor{comment}{//\ Assigns\ uniform\ colors\ to\ all\ faces/vertices}}
-\DoxyCodeLine{00178\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a72cdd66751812e1fccdea4b39dedcdc9}{uniform\_colors}}(}
-\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Vector3d\&\ diffuse,}
-\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Vector3d\&\ ambient,}
-\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Vector3d\&\ specular);}
-\DoxyCodeLine{00182\ }
-\DoxyCodeLine{00183\ \ \ \textcolor{comment}{//\ Assigns\ uniform\ colors\ to\ all\ faces/vertices}}
-\DoxyCodeLine{00184\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_af4a25b86dfdadcbfb0e21f8e6704184d}{uniform\_colors}}(}
-\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Vector4d\&\ ambient,}
-\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Vector4d\&\ diffuse,}
-\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Vector4d\&\ specular);}
-\DoxyCodeLine{00188\ }
-\DoxyCodeLine{00189\ \ \ \textcolor{comment}{//\ Generate\ a\ normal\ image\ matcap}}
-\DoxyCodeLine{00190\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a170b1068013a0db447a3f8639b56cbeb}{normal\_matcap}}();}
-\DoxyCodeLine{00191\ }
-\DoxyCodeLine{00192\ \ \ \textcolor{comment}{//\ Generates\ a\ default\ grid\ texture\ (without\ uvs)}}
-\DoxyCodeLine{00193\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_ac1b9f6bfe13ca76f6a159bcd52b20741}{grid\_texture}}();}
-\DoxyCodeLine{00194\ }
-\DoxyCodeLine{00195\ \ \ \textcolor{comment}{//\ Copy\ visualization\ options\ from\ one\ viewport\ to\ another}}
-\DoxyCodeLine{00196\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_aa83ab9452baf5a19fa8a81a93517995e}{copy\_options}}(\textcolor{keyword}{const}\ ViewerCore\ \&from,\ \textcolor{keyword}{const}\ ViewerCore\ \&to);}
-\DoxyCodeLine{00197\ }
-\DoxyCodeLine{00198\ \ \ Eigen::MatrixXd\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a1e9e01dcbb96b329c8da0dbb71c47554}{V}};\ \textcolor{comment}{//\ Vertices\ of\ the\ current\ mesh\ (\#V\ x\ 3)}}
-\DoxyCodeLine{00199\ \ \ Eigen::MatrixXi\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_ac31a200e07734a7dbe33f991dca0cc87}{F}};\ \textcolor{comment}{//\ Faces\ of\ the\ mesh\ (\#F\ x\ 3)}}
-\DoxyCodeLine{00200\ }
-\DoxyCodeLine{00201\ \ \ \textcolor{comment}{//\ Per\ face\ attributes}}
-\DoxyCodeLine{00202\ \ \ Eigen::MatrixXd\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_aeec664532756aad3b3f766ce329079ca}{F\_normals}};\ \textcolor{comment}{//\ One\ normal\ per\ face}}
-\DoxyCodeLine{00203\ }
-\DoxyCodeLine{00204\ \ \ Eigen::MatrixXd\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_afe6ef623c7e209d3781b917a01d48955}{F\_material\_ambient}};\ \textcolor{comment}{//\ Per\ face\ ambient\ color}}
-\DoxyCodeLine{00205\ \ \ Eigen::MatrixXd\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a730f37a2897ce216609b603730809a86}{F\_material\_diffuse}};\ \textcolor{comment}{//\ Per\ face\ diffuse\ color}}
-\DoxyCodeLine{00206\ \ \ Eigen::MatrixXd\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_ab30e4c295b861f8b984788447c38f448}{F\_material\_specular}};\ \textcolor{comment}{//\ Per\ face\ specular\ color}}
-\DoxyCodeLine{00207\ }
-\DoxyCodeLine{00208\ \ \ \textcolor{comment}{//\ Per\ vertex\ attributes}}
-\DoxyCodeLine{00209\ \ \ Eigen::MatrixXd\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a5921328dc84338fdaff1d36fd33f7904}{V\_normals}};\ \textcolor{comment}{//\ One\ normal\ per\ vertex}}
-\DoxyCodeLine{00210\ }
-\DoxyCodeLine{00211\ \ \ Eigen::MatrixXd\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a45b988b99e4b313bd90e922a43ec3e43}{V\_material\_ambient}};\ \textcolor{comment}{//\ Per\ vertex\ ambient\ color}}
-\DoxyCodeLine{00212\ \ \ Eigen::MatrixXd\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a5e4d82600723b93429c5c322c40cd82b}{V\_material\_diffuse}};\ \textcolor{comment}{//\ Per\ vertex\ diffuse\ color}}
-\DoxyCodeLine{00213\ \ \ Eigen::MatrixXd\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a1dd3cb542e88094e4e04f004d65f0ee3}{V\_material\_specular}};\ \textcolor{comment}{//\ Per\ vertex\ specular\ color}}
-\DoxyCodeLine{00214\ }
-\DoxyCodeLine{00215\ \ \ \textcolor{comment}{//\ UV\ parametrization}}
-\DoxyCodeLine{00216\ \ \ Eigen::MatrixXd\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_ac8ba30a1b613c8f981f417f74d9a819b}{V\_uv}};\ \textcolor{comment}{//\ UV\ vertices}}
-\DoxyCodeLine{00217\ \ \ Eigen::MatrixXi\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_ac9fabaddf2b5060e3a314190225b7550}{F\_uv}};\ \textcolor{comment}{//\ optional\ faces\ for\ UVs}}
-\DoxyCodeLine{00218\ }
-\DoxyCodeLine{00219\ \ \ \textcolor{comment}{//\ Texture}}
-\DoxyCodeLine{00220\ \ \ Eigen::Matrix<unsigned\ char,Eigen::Dynamic,Eigen::Dynamic>\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_aaebb492303daeefd974e7ca311e984c9}{texture\_R}};}
-\DoxyCodeLine{00221\ \ \ Eigen::Matrix<unsigned\ char,Eigen::Dynamic,Eigen::Dynamic>\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a3af234699020c70f4e6b9bc57fa6b92e}{texture\_G}};}
-\DoxyCodeLine{00222\ \ \ Eigen::Matrix<unsigned\ char,Eigen::Dynamic,Eigen::Dynamic>\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_af207f1c16b4c27e2dd59894bcf858b40}{texture\_B}};}
-\DoxyCodeLine{00223\ \ \ Eigen::Matrix<unsigned\ char,Eigen::Dynamic,Eigen::Dynamic>\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_af40d9523a09820b10d37569a5194c5f0}{texture\_A}};}
-\DoxyCodeLine{00224\ }
-\DoxyCodeLine{00225\ \ \ \textcolor{comment}{//\ Overlays}}
-\DoxyCodeLine{00226\ }
-\DoxyCodeLine{00227\ \ \ \textcolor{comment}{//\ Lines\ plotted\ over\ the\ scene}}
-\DoxyCodeLine{00228\ \ \ \textcolor{comment}{//\ (Every\ row\ contains\ 9\ doubles\ in\ the\ following\ format\ S\_x,\ S\_y,\ S\_z,\ T\_x,\ T\_y,\ T\_z,\ C\_r,\ C\_g,\ C\_b),}}
-\DoxyCodeLine{00229\ \ \ \textcolor{comment}{//\ with\ S\ and\ T\ the\ coordinates\ of\ the\ two\ vertices\ of\ the\ line\ in\ global\ coordinates,\ and\ C\ the\ color\ in\ floating\ point\ rgb\ format}}
-\DoxyCodeLine{00230\ \ \ Eigen::MatrixXd\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_aff11136d9ea4d163b3d9f4f4597aa4ab}{lines}};}
-\DoxyCodeLine{00231\ }
-\DoxyCodeLine{00232\ \ \ \textcolor{comment}{//\ Points\ plotted\ over\ the\ scene}}
-\DoxyCodeLine{00233\ \ \ \textcolor{comment}{//\ (Every\ row\ contains\ 6\ doubles\ in\ the\ following\ format\ P\_x,\ P\_y,\ P\_z,\ C\_r,\ C\_g,\ C\_b),}}
-\DoxyCodeLine{00234\ \ \ \textcolor{comment}{//\ with\ P\ the\ position\ in\ global\ coordinates\ of\ the\ center\ of\ the\ point,\ and\ C\ the\ color\ in\ floating\ point\ rgb\ format}}
-\DoxyCodeLine{00235\ \ \ Eigen::MatrixXd\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a122498f1c59106d673b9d1d747e1771e}{points}};}
+\DoxyCodeLine{00178\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_af16a28d0194c68eaaf4f4d50844b56b0}{clear\_edges}}();}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00184\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a8d22a72b41cb6bb79ef6073b3e1ab7cc}{set\_labels}}\ (\textcolor{keyword}{const}\ Eigen::MatrixXd\&\ P,\ \ \textcolor{keyword}{const}\ std::vector<std::string>\&\ str);}
+\DoxyCodeLine{00188\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a625c2c733a166f00d11f5f092ae9aae5}{add\_label}}\ (\textcolor{keyword}{const}\ Eigen::VectorXd\&\ P,\ \ \textcolor{keyword}{const}\ std::string\&\ str);}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00191\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_abcec779e4217d99e5a977a2b80488a49}{clear\_labels}}\ ();}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00194\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a5f3e8af93eb8958843450b1cba81117a}{compute\_normals}}();}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00200\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a1a94fe7f69d2838c4873313f0173dddd}{uniform\_colors}}(}
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Vector3d\&\ ambient,}
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Vector3d\&\ diffuse,}
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Vector3d\&\ specular);}
+\DoxyCodeLine{00205\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_af4a25b86dfdadcbfb0e21f8e6704184d}{uniform\_colors}}(}
+\DoxyCodeLine{00206\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Vector4d\&\ ambient,}
+\DoxyCodeLine{00207\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Vector4d\&\ diffuse,}
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Vector4d\&\ specular);}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00211\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a170b1068013a0db447a3f8639b56cbeb}{normal\_matcap}}();}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00214\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_ac1b9f6bfe13ca76f6a159bcd52b20741}{grid\_texture}}();}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00219\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_aa83ab9452baf5a19fa8a81a93517995e}{copy\_options}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore}{ViewerCore}}\ \&from,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore}{ViewerCore}}\ \&to);}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00222\ \ \ Eigen::MatrixXd\ V}
+\DoxyCodeLine{00224\ \ \ Eigen::MatrixXi\ F}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \ \ \textcolor{comment}{//\ Per\ face\ attributes}}
+\DoxyCodeLine{00228\ \textcolor{comment}{}\ \ Eigen::MatrixXd\ F\_normals}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00231\ \ \ Eigen::MatrixXd\ F\_material\_ambient}
+\DoxyCodeLine{00233\ \ \ Eigen::MatrixXd\ F\_material\_diffuse}
+\DoxyCodeLine{00235\ \ \ Eigen::MatrixXd\ F\_material\_specular}
 \DoxyCodeLine{00236\ }
-\DoxyCodeLine{00237\ \ \ \textcolor{comment}{//\ Text\ labels\ plotted\ over\ the\ scene}}
-\DoxyCodeLine{00238\ \ \ \textcolor{comment}{//\ Textp\ contains,\ in\ the\ i-\/th\ row,\ the\ position\ in\ global\ coordinates\ where\ the\ i-\/th\ label\ should\ be\ anchored}}
-\DoxyCodeLine{00239\ \ \ \textcolor{comment}{//\ Texts\ contains\ in\ the\ i-\/th\ position\ the\ text\ of\ the\ i-\/th\ label}}
-\DoxyCodeLine{00240\ \ \ Eigen::MatrixXd\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a85ad664931092ac71180eace4b261e5e}{vertex\_labels\_positions}};}
-\DoxyCodeLine{00241\ \ \ Eigen::MatrixXd\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a99782a2ed9ebb595ff5a3d3ac94f79f4}{face\_labels\_positions}};}
-\DoxyCodeLine{00242\ \ \ Eigen::MatrixXd\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_abfa9b318d297cc4f503c863415ebf60f}{labels\_positions}};}
-\DoxyCodeLine{00243\ \ \ std::vector<std::string>\ \ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a597b7698fe9eb9db99eefd2f7b0a322b}{vertex\_labels\_strings}};}
-\DoxyCodeLine{00244\ \ \ std::vector<std::string>\ \ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a1b4574c220d5c69932d56d6004480aa4}{face\_labels\_strings}};}
-\DoxyCodeLine{00245\ \ \ std::vector<std::string>\ \ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_ad6facef9a63af410174c510ac1fe5778}{labels\_strings}};}
-\DoxyCodeLine{00246\ }
-\DoxyCodeLine{00247\ \ \ \textcolor{comment}{//\ Marks\ dirty\ buffers\ that\ need\ to\ be\ uploaded\ to\ OpenGL}}
-\DoxyCodeLine{00248\ \ \ uint32\_t\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a30686f942a7b6141aeff0b06ea6871d2}{dirty}};}
-\DoxyCodeLine{00249\ }
-\DoxyCodeLine{00250\ \ \ \textcolor{comment}{//\ Enable\ per-\/face\ or\ per-\/vertex\ properties}}
-\DoxyCodeLine{00251\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a67bbf06b914264df68d96c53dcbdbb68}{face\_based}};}
-\DoxyCodeLine{00252\ }
-\DoxyCodeLine{00253\ \ \ \textcolor{comment}{//\ Enable\ double-\/sided\ lighting\ on\ faces}}
-\DoxyCodeLine{00254\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a025f22d7d0c46ecabb3330ada2aa92c1}{double\_sided}};}
-\DoxyCodeLine{00255\ }
-\DoxyCodeLine{00256\ \ \ \textcolor{comment}{//\ Invert\ mesh\ normals}}
-\DoxyCodeLine{00257\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a25b4e769d28d918ceffff12e6349f2da}{invert\_normals}};}
-\DoxyCodeLine{00258\ }
-\DoxyCodeLine{00259\ \ \ \textcolor{comment}{//\ Visualization\ options}}
-\DoxyCodeLine{00260\ \ \ \textcolor{comment}{//\ Each\ option\ is\ a\ binary\ mask\ specifying\ on\ which\ viewport\ each\ option\ is\ set.}}
-\DoxyCodeLine{00261\ \ \ \textcolor{comment}{//\ When\ using\ a\ single\ viewport,\ standard\ boolean\ can\ still\ be\ used\ for\ simplicity.}}
-\DoxyCodeLine{00262\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_afe1e980442c1d2d86faea50cebfb6eb4}{is\_visible}};}
-\DoxyCodeLine{00263\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_ad50148662ac832150337443a8c8c0542}{show\_overlay}};}
-\DoxyCodeLine{00264\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a8e7a5e55f1fd6b16d89edff8390c1231}{show\_overlay\_depth}};}
-\DoxyCodeLine{00265\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_aa1d8580c70fa8b02fe1599d317183e08}{show\_texture}};}
-\DoxyCodeLine{00266\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a77f6c02ac80653d0f6e993d833cc4322}{use\_matcap}};}
-\DoxyCodeLine{00267\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a31d80fb665dc7cfa4a05b009cdb082e3}{show\_faces}};}
-\DoxyCodeLine{00268\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_af5a440f3bd2561a57459f88d7b59e3a5}{show\_lines}};}
-\DoxyCodeLine{00269\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_ae6ed71c996b82039afd47f48ad5c02bd}{show\_vertex\_labels}};}
-\DoxyCodeLine{00270\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_aef7839330c3ba448c33b8f56e68f1c51}{show\_face\_labels}};}
-\DoxyCodeLine{00271\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_aa15ff82f63580806342dcfe36a8e3a25}{show\_custom\_labels}};}
-\DoxyCodeLine{00272\ }
-\DoxyCodeLine{00273\ \ \ \textcolor{comment}{//\ Point\ size\ /\ line\ width}}
-\DoxyCodeLine{00274\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_aeba732f62241985d64c25c192b257b53}{point\_size}};}
-\DoxyCodeLine{00275\ \ \ \textcolor{comment}{//\ line\_width\ is\ NOT\ SUPPORTED\ on\ Mac\ OS\ and\ Windows}}
-\DoxyCodeLine{00276\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a911794621ca711ed7f9066cef7947d10}{line\_width}};}
-\DoxyCodeLine{00277\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a4fcf3f0531c5bd39d5813f8601aec34a}{label\_size}};}
-\DoxyCodeLine{00278\ \ \ Eigen::Matrix<float,\ 4,\ 1,\ Eigen::DontAlign>\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a981249e04431e0ba10806716fbaeca4a}{line\_color}};}
-\DoxyCodeLine{00279\ \ \ Eigen::Matrix<float,\ 4,\ 1,\ Eigen::DontAlign>\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a44f9c5e7aa2b2f29137961fdf546d482}{label\_color}};}
-\DoxyCodeLine{00280\ }
-\DoxyCodeLine{00281\ \ \ \textcolor{comment}{//\ Shape\ material}}
-\DoxyCodeLine{00282\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a353aa83301f02d6536e8b42c7a848330}{shininess}};}
-\DoxyCodeLine{00283\ }
-\DoxyCodeLine{00284\ \ \ \textcolor{comment}{//\ Unique\ identifier}}
-\DoxyCodeLine{00285\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_ab4dffe26e465cd09471b9c84f27d763e}{id}};}
-\DoxyCodeLine{00286\ }
-\DoxyCodeLine{00287\ \ \ \textcolor{comment}{//\ OpenGL\ representation\ of\ the\ mesh}}
-\DoxyCodeLine{00288\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL}{igl::opengl::MeshGL}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a41c281eb989bf0905d2382a281365a6c}{meshgl}};}
-\DoxyCodeLine{00289\ }
-\DoxyCodeLine{00290\ \ \ \textcolor{comment}{//\ Update\ contents\ from\ a\ 'Data'\ instance}}
-\DoxyCodeLine{00291\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a7eabe8a43ffa772906fd320906a6438e}{update\_labels}}(}
-\DoxyCodeLine{00292\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL}{igl::opengl::MeshGL}}\&\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a41c281eb989bf0905d2382a281365a6c}{meshgl}},}
-\DoxyCodeLine{00293\ \ \ \ \ \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL}{igl::opengl::MeshGL::TextGL}}\&\ GL\_labels,}
-\DoxyCodeLine{00294\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\&\ positions,}
-\DoxyCodeLine{00295\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\&\ strings}
-\DoxyCodeLine{00296\ \ \ );}
-\DoxyCodeLine{00297\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a174d8b6b04e22a0e04642487e424f68d}{updateGL}}(}
-\DoxyCodeLine{00298\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData}{igl::opengl::ViewerData}}\&\ data,}
-\DoxyCodeLine{00299\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a25b4e769d28d918ceffff12e6349f2da}{invert\_normals}},}
-\DoxyCodeLine{00300\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL}{igl::opengl::MeshGL}}\&\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a41c281eb989bf0905d2382a281365a6c}{meshgl}});}
-\DoxyCodeLine{00301\ \ \ \};}
-\DoxyCodeLine{00302\ }
-\DoxyCodeLine{00303\ \}\ \textcolor{comment}{//\ namespace\ opengl}}
-\DoxyCodeLine{00304\ \}\ \textcolor{comment}{//\ namespace\ igl}}
-\DoxyCodeLine{00305\ }
-\DoxyCodeLine{00307\ }
-\DoxyCodeLine{00308\ \textcolor{preprocessor}{\#include\ <igl/serialize.h>}}
-\DoxyCodeLine{00309\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
-\DoxyCodeLine{00310\ \{}
-\DoxyCodeLine{00311\ \ \ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl_1_1serialization_a1649a8d2e47dbd0d8305d4ef21c01f46}{serialization}}}
-\DoxyCodeLine{00312\ \ \ \{}
-\DoxyCodeLine{00313\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_a1649a8d2e47dbd0d8305d4ef21c01f46}{serialization}}(\textcolor{keywordtype}{bool}\ s,\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData}{igl::opengl::ViewerData}}\&\ obj,\ std::vector<char>\&\ buffer)}
-\DoxyCodeLine{00314\ \ \ \ \ \{}
-\DoxyCodeLine{00315\ \ \ \ \ \ \ SERIALIZE\_MEMBER(V);}
-\DoxyCodeLine{00316\ \ \ \ \ \ \ SERIALIZE\_MEMBER(F);}
-\DoxyCodeLine{00317\ \ \ \ \ \ \ SERIALIZE\_MEMBER(F\_normals);}
-\DoxyCodeLine{00318\ \ \ \ \ \ \ SERIALIZE\_MEMBER(F\_material\_ambient);}
-\DoxyCodeLine{00319\ \ \ \ \ \ \ SERIALIZE\_MEMBER(F\_material\_diffuse);}
-\DoxyCodeLine{00320\ \ \ \ \ \ \ SERIALIZE\_MEMBER(F\_material\_specular);}
-\DoxyCodeLine{00321\ \ \ \ \ \ \ SERIALIZE\_MEMBER(V\_normals);}
-\DoxyCodeLine{00322\ \ \ \ \ \ \ SERIALIZE\_MEMBER(V\_material\_ambient);}
-\DoxyCodeLine{00323\ \ \ \ \ \ \ SERIALIZE\_MEMBER(V\_material\_diffuse);}
-\DoxyCodeLine{00324\ \ \ \ \ \ \ SERIALIZE\_MEMBER(V\_material\_specular);}
-\DoxyCodeLine{00325\ \ \ \ \ \ \ SERIALIZE\_MEMBER(V\_uv);}
-\DoxyCodeLine{00326\ \ \ \ \ \ \ SERIALIZE\_MEMBER(F\_uv);}
-\DoxyCodeLine{00327\ \ \ \ \ \ \ SERIALIZE\_MEMBER(texture\_R);}
-\DoxyCodeLine{00328\ \ \ \ \ \ \ SERIALIZE\_MEMBER(texture\_G);}
-\DoxyCodeLine{00329\ \ \ \ \ \ \ SERIALIZE\_MEMBER(texture\_B);}
-\DoxyCodeLine{00330\ \ \ \ \ \ \ SERIALIZE\_MEMBER(texture\_A);}
-\DoxyCodeLine{00331\ \ \ \ \ \ \ SERIALIZE\_MEMBER(lines);}
-\DoxyCodeLine{00332\ \ \ \ \ \ \ SERIALIZE\_MEMBER(points);}
-\DoxyCodeLine{00333\ \ \ \ \ \ \ SERIALIZE\_MEMBER(labels\_positions);}
-\DoxyCodeLine{00334\ \ \ \ \ \ \ SERIALIZE\_MEMBER(labels\_strings);}
-\DoxyCodeLine{00335\ \ \ \ \ \ \ SERIALIZE\_MEMBER(dirty);}
-\DoxyCodeLine{00336\ \ \ \ \ \ \ SERIALIZE\_MEMBER(face\_based);}
-\DoxyCodeLine{00337\ \ \ \ \ \ \ SERIALIZE\_MEMBER(show\_faces);}
-\DoxyCodeLine{00338\ \ \ \ \ \ \ SERIALIZE\_MEMBER(show\_lines);}
-\DoxyCodeLine{00339\ \ \ \ \ \ \ SERIALIZE\_MEMBER(invert\_normals);}
-\DoxyCodeLine{00340\ \ \ \ \ \ \ SERIALIZE\_MEMBER(show\_overlay);}
-\DoxyCodeLine{00341\ \ \ \ \ \ \ SERIALIZE\_MEMBER(show\_overlay\_depth);}
-\DoxyCodeLine{00342\ \ \ \ \ \ \ SERIALIZE\_MEMBER(show\_vertex\_labels);}
-\DoxyCodeLine{00343\ \ \ \ \ \ \ SERIALIZE\_MEMBER(show\_face\_labels);}
-\DoxyCodeLine{00344\ \ \ \ \ \ \ SERIALIZE\_MEMBER(show\_custom\_labels);}
-\DoxyCodeLine{00345\ \ \ \ \ \ \ SERIALIZE\_MEMBER(show\_texture);}
-\DoxyCodeLine{00346\ \ \ \ \ \ \ SERIALIZE\_MEMBER(double\_sided);}
-\DoxyCodeLine{00347\ \ \ \ \ \ \ SERIALIZE\_MEMBER(point\_size);}
-\DoxyCodeLine{00348\ \ \ \ \ \ \ SERIALIZE\_MEMBER(line\_width);}
-\DoxyCodeLine{00349\ \ \ \ \ \ \ SERIALIZE\_MEMBER(line\_color);}
-\DoxyCodeLine{00350\ \ \ \ \ \ \ SERIALIZE\_MEMBER(shininess);}
-\DoxyCodeLine{00351\ \ \ \ \ \ \ SERIALIZE\_MEMBER(\textcolor{keywordtype}{id});}
-\DoxyCodeLine{00352\ \ \ \ \ \}}
-\DoxyCodeLine{00353\ \ \ \ \ \textcolor{keyword}{template}<>}
-\DoxyCodeLine{00354\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_adad6894cf81be99089c7935e41220b1b}{serialize}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData}{igl::opengl::ViewerData}}\&\ obj,\ std::vector<char>\&\ buffer)}
-\DoxyCodeLine{00355\ \ \ \ \ \{}
-\DoxyCodeLine{00356\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_a1649a8d2e47dbd0d8305d4ef21c01f46}{serialization}}(\textcolor{keyword}{true},\ \textcolor{keyword}{const\_cast<}\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData}{igl::opengl::ViewerData}}\&\textcolor{keyword}{>}(obj),\ buffer);}
-\DoxyCodeLine{00357\ \ \ \ \ \}}
-\DoxyCodeLine{00358\ \ \ \ \ \textcolor{keyword}{template}<>}
-\DoxyCodeLine{00359\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_a661d009dc0e13adb770d526d33eb3282}{deserialize}}(\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData}{igl::opengl::ViewerData}}\&\ obj,\ \textcolor{keyword}{const}\ std::vector<char>\&\ buffer)}
-\DoxyCodeLine{00360\ \ \ \ \ \{}
-\DoxyCodeLine{00361\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_a1649a8d2e47dbd0d8305d4ef21c01f46}{serialization}}(\textcolor{keyword}{false},\ obj,\ \textcolor{keyword}{const\_cast<}std::vector<char>\&\textcolor{keyword}{>}(buffer));}
-\DoxyCodeLine{00362\ \ \ \ \ \ \ obj.\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a30686f942a7b6141aeff0b06ea6871d2}{dirty}}\ =\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a81a97b4082a52abc4e29f46574b07862a4d4b153582583c9f01bbb3339df59f36}{igl::opengl::MeshGL::DIRTY\_ALL}};}
-\DoxyCodeLine{00363\ \ \ \ \ \}}
-\DoxyCodeLine{00364\ \ \ \}}
-\DoxyCodeLine{00365\ \}}
-\DoxyCodeLine{00366\ }
-\DoxyCodeLine{00367\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
-\DoxyCodeLine{00368\ \textcolor{preprocessor}{\#\ \ include\ "{}ViewerData.cpp"{}}}
-\DoxyCodeLine{00369\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00370\ }
-\DoxyCodeLine{00371\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00237\ \ \ \textcolor{comment}{//\ Per\ vertex\ attributes}}
+\DoxyCodeLine{00239\ \textcolor{comment}{}\ \ Eigen::MatrixXd\ V\_normals}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00242\ \ \ Eigen::MatrixXd\ V\_material\_ambient}
+\DoxyCodeLine{00244\ \ \ Eigen::MatrixXd\ V\_material\_diffuse}
+\DoxyCodeLine{00246\ \ \ Eigen::MatrixXd\ V\_material\_specular}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00248\ \ \ \textcolor{comment}{//\ UV\ parametrization}}
+\DoxyCodeLine{00250\ \textcolor{comment}{}\ \ Eigen::MatrixXd\ V\_uv}
+\DoxyCodeLine{00252\ \ \ Eigen::MatrixXi\ F\_uv}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00254\ \ \ \textcolor{comment}{//\ Texture}}
+\DoxyCodeLine{00256\ \textcolor{comment}{}\ \ Eigen::Matrix<unsigned\ char,Eigen::Dynamic,Eigen::Dynamic>\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_aba8461f27f6021bee49d4277d349c958}{texture\_R}};}
+\DoxyCodeLine{00258\ \ \ Eigen::Matrix<unsigned\ char,Eigen::Dynamic,Eigen::Dynamic>\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a3af234699020c70f4e6b9bc57fa6b92e}{texture\_G}};}
+\DoxyCodeLine{00260\ \ \ Eigen::Matrix<unsigned\ char,Eigen::Dynamic,Eigen::Dynamic>\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_af207f1c16b4c27e2dd59894bcf858b40}{texture\_B}};}
+\DoxyCodeLine{00262\ \ \ Eigen::Matrix<unsigned\ char,Eigen::Dynamic,Eigen::Dynamic>\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_af40d9523a09820b10d37569a5194c5f0}{texture\_A}};}
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00264\ \ \ \textcolor{comment}{//\ Overlays}}
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00268\ \ \ \textcolor{comment}{//\ with\ S\ and\ T\ the\ coordinates\ of\ the\ two\ vertices\ of\ the\ line\ in\ global\ coordinates,\ and\ C\ the\ color\ in\ floating\ point\ rgb\ format}}
+\DoxyCodeLine{00269\ \ \ Eigen::MatrixXd\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_aff11136d9ea4d163b3d9f4f4597aa4ab}{lines}};}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00274\ \ \ Eigen::MatrixXd\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a122498f1c59106d673b9d1d747e1771e}{points}};}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00276\ \ \ \textcolor{comment}{//\ Text\ labels\ plotted\ over\ the\ scene}}
+\DoxyCodeLine{00277\ \ \ \textcolor{comment}{//\ Textp\ contains,\ in\ the\ i-\/th\ row,\ the\ position\ in\ global\ coordinates\ where\ the\ i-\/th\ label\ should\ be\ anchored}}
+\DoxyCodeLine{00278\ \ \ \textcolor{comment}{//\ Texts\ contains\ in\ the\ i-\/th\ position\ the\ text\ of\ the\ i-\/th\ label}}
+\DoxyCodeLine{00280\ \textcolor{comment}{}\ \ Eigen::MatrixXd\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a85ad664931092ac71180eace4b261e5e}{vertex\_labels\_positions}};}
+\DoxyCodeLine{00282\ \ \ Eigen::MatrixXd\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a99782a2ed9ebb595ff5a3d3ac94f79f4}{face\_labels\_positions}};}
+\DoxyCodeLine{00284\ \ \ Eigen::MatrixXd\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_abfa9b318d297cc4f503c863415ebf60f}{labels\_positions}};}
+\DoxyCodeLine{00286\ \ \ std::vector<std::string>\ \ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a597b7698fe9eb9db99eefd2f7b0a322b}{vertex\_labels\_strings}};}
+\DoxyCodeLine{00288\ \ \ std::vector<std::string>\ \ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a1b4574c220d5c69932d56d6004480aa4}{face\_labels\_strings}};}
+\DoxyCodeLine{00290\ \ \ std::vector<std::string>\ \ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_ad6facef9a63af410174c510ac1fe5778}{labels\_strings}};}
+\DoxyCodeLine{00291\ }
+\DoxyCodeLine{00293\ \ \ uint32\_t\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a30686f942a7b6141aeff0b06ea6871d2}{dirty}};}
+\DoxyCodeLine{00294\ }
+\DoxyCodeLine{00296\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a67bbf06b914264df68d96c53dcbdbb68}{face\_based}};}
+\DoxyCodeLine{00297\ }
+\DoxyCodeLine{00299\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a025f22d7d0c46ecabb3330ada2aa92c1}{double\_sided}};}
+\DoxyCodeLine{00300\ }
+\DoxyCodeLine{00302\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a25b4e769d28d918ceffff12e6349f2da}{invert\_normals}};}
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00307\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_afe1e980442c1d2d86faea50cebfb6eb4}{is\_visible}};}
+\DoxyCodeLine{00308\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_ad50148662ac832150337443a8c8c0542}{show\_overlay}};}
+\DoxyCodeLine{00309\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a8e7a5e55f1fd6b16d89edff8390c1231}{show\_overlay\_depth}};}
+\DoxyCodeLine{00310\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_aa1d8580c70fa8b02fe1599d317183e08}{show\_texture}};}
+\DoxyCodeLine{00311\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a77f6c02ac80653d0f6e993d833cc4322}{use\_matcap}};}
+\DoxyCodeLine{00312\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a31d80fb665dc7cfa4a05b009cdb082e3}{show\_faces}};}
+\DoxyCodeLine{00313\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_af5a440f3bd2561a57459f88d7b59e3a5}{show\_lines}};}
+\DoxyCodeLine{00314\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_ae6ed71c996b82039afd47f48ad5c02bd}{show\_vertex\_labels}};}
+\DoxyCodeLine{00315\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_aef7839330c3ba448c33b8f56e68f1c51}{show\_face\_labels}};}
+\DoxyCodeLine{00316\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_aa15ff82f63580806342dcfe36a8e3a25}{show\_custom\_labels}};}
+\DoxyCodeLine{00317\ }
+\DoxyCodeLine{00319\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_aeba732f62241985d64c25c192b257b53}{point\_size}};}
+\DoxyCodeLine{00321\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a911794621ca711ed7f9066cef7947d10}{line\_width}};}
+\DoxyCodeLine{00323\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a4fcf3f0531c5bd39d5813f8601aec34a}{label\_size}};}
+\DoxyCodeLine{00325\ \ \ Eigen::Matrix<float,\ 4,\ 1,\ Eigen::DontAlign>\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a981249e04431e0ba10806716fbaeca4a}{line\_color}};}
+\DoxyCodeLine{00327\ \ \ Eigen::Matrix<float,\ 4,\ 1,\ Eigen::DontAlign>\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a44f9c5e7aa2b2f29137961fdf546d482}{label\_color}};}
+\DoxyCodeLine{00328\ }
+\DoxyCodeLine{00331\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a353aa83301f02d6536e8b42c7a848330}{shininess}};}
+\DoxyCodeLine{00332\ }
+\DoxyCodeLine{00334\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_ab4dffe26e465cd09471b9c84f27d763e}{id}};}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00337\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL}{igl::opengl::MeshGL}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a41c281eb989bf0905d2382a281365a6c}{meshgl}};}
+\DoxyCodeLine{00338\ }
+\DoxyCodeLine{00345\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a7eabe8a43ffa772906fd320906a6438e}{update\_labels}}(}
+\DoxyCodeLine{00346\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL}{igl::opengl::MeshGL}}\&\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a41c281eb989bf0905d2382a281365a6c}{meshgl}},}
+\DoxyCodeLine{00347\ \ \ \ \ \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL}{igl::opengl::MeshGL::TextGL}}\&\ GL\_labels,}
+\DoxyCodeLine{00348\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\&\ positions,}
+\DoxyCodeLine{00349\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\&\ strings}
+\DoxyCodeLine{00350\ \ \ );}
+\DoxyCodeLine{00355\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a174d8b6b04e22a0e04642487e424f68d}{updateGL}}(}
+\DoxyCodeLine{00356\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData}{igl::opengl::ViewerData}}\&\ data,}
+\DoxyCodeLine{00357\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a25b4e769d28d918ceffff12e6349f2da}{invert\_normals}},}
+\DoxyCodeLine{00358\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL}{igl::opengl::MeshGL}}\&\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a41c281eb989bf0905d2382a281365a6c}{meshgl}});}
+\DoxyCodeLine{00359\ \ \ \};}
+\DoxyCodeLine{00360\ }
+\DoxyCodeLine{00361\ \}\ \textcolor{comment}{//\ namespace\ opengl}}
+\DoxyCodeLine{00362\ \}\ \textcolor{comment}{//\ namespace\ igl}}
+\DoxyCodeLine{00363\ }
+\DoxyCodeLine{00365\ }
+\DoxyCodeLine{00366\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{serialize_8h}{igl/serialize.h}}>}}
+\DoxyCodeLine{00367\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00368\ \{}
+\DoxyCodeLine{00369\ \ \ \textcolor{keyword}{namespace\ }serialization}
+\DoxyCodeLine{00370\ \ \ \{}
+\DoxyCodeLine{00371\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_a2e254ccdb43b7d45ebed401c0ef5a5e2}{serialization}}(\textcolor{keywordtype}{bool}\ s,\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData}{igl::opengl::ViewerData}}\&\ obj,\ std::vector<char>\&\ buffer)}
+\DoxyCodeLine{00372\ \ \ \ \ \{}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(V);}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(F);}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(F\_normals);}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(F\_material\_ambient);}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(F\_material\_diffuse);}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(F\_material\_specular);}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(V\_normals);}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(V\_material\_ambient);}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(V\_material\_diffuse);}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(V\_material\_specular);}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(V\_uv);}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(F\_uv);}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(texture\_R);}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(texture\_G);}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(texture\_B);}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(texture\_A);}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(lines);}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(points);}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(labels\_positions);}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(labels\_strings);}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(dirty);}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(face\_based);}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(show\_faces);}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(show\_lines);}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(invert\_normals);}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(show\_overlay);}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(show\_overlay\_depth);}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(show\_vertex\_labels);}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(show\_face\_labels);}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(show\_custom\_labels);}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(show\_texture);}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(double\_sided);}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(point\_size);}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(line\_width);}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(line\_color);}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(shininess);}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00410\ \ \ \ \ \}}
+\DoxyCodeLine{00411\ \ \ \ \ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00412\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData}{igl::opengl::ViewerData}}\&\ obj,\ std::vector<char>\&\ buffer)}
+\DoxyCodeLine{00413\ \ \ \ \ \{}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_a2e254ccdb43b7d45ebed401c0ef5a5e2}{serialization}}(\textcolor{keyword}{true},\ \textcolor{keyword}{const\_cast<}\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData}{igl::opengl::ViewerData}}\&\textcolor{keyword}{>}(obj),\ buffer);}
+\DoxyCodeLine{00415\ \ \ \ \ \}}
+\DoxyCodeLine{00416\ \ \ \ \ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00417\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData}{igl::opengl::ViewerData}}\&\ obj,\ \textcolor{keyword}{const}\ std::vector<char>\&\ buffer)}
+\DoxyCodeLine{00418\ \ \ \ \ \{}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_a2e254ccdb43b7d45ebed401c0ef5a5e2}{serialization}}(\textcolor{keyword}{false},\ obj,\ \textcolor{keyword}{const\_cast<}std::vector<char>\&\textcolor{keyword}{>}(buffer));}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ obj.\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a30686f942a7b6141aeff0b06ea6871d2}{dirty}}\ =\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a81a97b4082a52abc4e29f46574b07862a4d4b153582583c9f01bbb3339df59f36}{igl::opengl::MeshGL::DIRTY\_ALL}};}
+\DoxyCodeLine{00421\ \ \ \ \ \}}
+\DoxyCodeLine{00422\ \ \ \}}
+\DoxyCodeLine{00423\ \}}
+\DoxyCodeLine{00424\ }
+\DoxyCodeLine{00425\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00426\ \textcolor{preprocessor}{\#\ \ include\ "{}ViewerData.cpp"{}}}
+\DoxyCodeLine{00427\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00428\ }
+\DoxyCodeLine{00429\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['fastwindingnumberbvh_0',['FastWindingNumberBVH',['../structigl_1_1FastWindingNumberBVH.html',1,'igl']]],
-  ['filememorybuffer_1',['FileMemoryBuffer',['../structigl_1_1FileMemoryBuffer.html',1,'igl']]],
-  ['filememorystream_2',['FileMemoryStream',['../structigl_1_1FileMemoryStream.html',1,'igl']]]
+  ['embreedevice_0',['EmbreeDevice',['../structigl_1_1embree_1_1EmbreeDevice.html',1,'igl::embree']]],
+  ['embreeintersector_1',['EmbreeIntersector',['../classigl_1_1embree_1_1EmbreeIntersector.html',1,'igl::embree']]]
 ];

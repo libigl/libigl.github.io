@@ -1,0 +1,42 @@
+\doxysection{include/igl/mosek/mosek\+\_\+quadprog.h File Reference}
+\hypertarget{mosek__quadprog_8h}{}\label{mosek__quadprog_8h}\index{include/igl/mosek/mosek\_quadprog.h@{include/igl/mosek/mosek\_quadprog.h}}
+{\ttfamily \#include \"{}../igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$mosek.\+h$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include \"{}mosek\+\_\+quadprog.\+cpp\"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structigl_1_1mosek_1_1MosekData}{igl\+::mosek\+::\+Mosek\+Data}}
+\begin{DoxyCompactList}\small\item\em Structure for holding MOSEK data for solving a quadratic program. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\item 
+namespace \mbox{\hyperlink{namespaceigl_1_1mosek}{igl\+::mosek}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{mosek__quadprog_8h_aa93624b0b2836d2510e8c92ae951d817}{EIGEN\+\_\+\+YES\+\_\+\+I\+\_\+\+KNOW\+\_\+\+SPARSE\+\_\+\+MODULE\+\_\+\+IS\+\_\+\+NOT\+\_\+\+STABLE\+\_\+\+YET}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Index , typename Scalar $>$ }\\bool \mbox{\hyperlink{namespaceigl_1_1mosek_ac3c815fd0f5ecdf826ee9c99ec7b3986}{igl\+::mosek\+::mosek\+\_\+quadprog}} (const Index n, std\+::vector$<$ Index $>$ \&Qi, std\+::vector$<$ Index $>$ \&Qj, std\+::vector$<$ Scalar $>$ \&Qv, const std\+::vector$<$ Scalar $>$ \&c, const Scalar cf, const Index m, std\+::vector$<$ Scalar $>$ \&Av, std\+::vector$<$ Index $>$ \&Ari, const std\+::vector$<$ Index $>$ \&Acp, const std\+::vector$<$ Scalar $>$ \&lc, const std\+::vector$<$ Scalar $>$ \&uc, const std\+::vector$<$ Scalar $>$ \&lx, const std\+::vector$<$ Scalar $>$ \&ux, \mbox{\hyperlink{structigl_1_1mosek_1_1MosekData}{Mosek\+Data}} \&mosek\+\_\+data, std\+::vector$<$ Scalar $>$ \&x)
+\item 
+bool \mbox{\hyperlink{namespaceigl_1_1mosek_ae8dd7efbfb34f538f281eefe39783757}{igl\+::mosek\+::mosek\+\_\+quadprog}} (const Eigen\+::\+Sparse\+Matrix$<$ double $>$ \&Q, const Eigen\+::\+Vector\+Xd \&c, const double cf, const Eigen\+::\+Sparse\+Matrix$<$ double $>$ \&A, const Eigen\+::\+Vector\+Xd \&lc, const Eigen\+::\+Vector\+Xd \&uc, const Eigen\+::\+Vector\+Xd \&lx, const Eigen\+::\+Vector\+Xd \&ux, \mbox{\hyperlink{structigl_1_1mosek_1_1MosekData}{Mosek\+Data}} \&mosek\+\_\+data, Eigen\+::\+Vector\+Xd \&x)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{mosek__quadprog_8h_aa93624b0b2836d2510e8c92ae951d817}\label{mosek__quadprog_8h_aa93624b0b2836d2510e8c92ae951d817} 
+\index{mosek\_quadprog.h@{mosek\_quadprog.h}!EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET@{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}}
+\index{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET@{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}!mosek\_quadprog.h@{mosek\_quadprog.h}}
+\doxysubsubsection{\texorpdfstring{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}{EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}}
+{\footnotesize\ttfamily \#define EIGEN\+\_\+\+YES\+\_\+\+I\+\_\+\+KNOW\+\_\+\+SPARSE\+\_\+\+MODULE\+\_\+\+IS\+\_\+\+NOT\+\_\+\+STABLE\+\_\+\+YET}
+

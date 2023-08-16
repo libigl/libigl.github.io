@@ -1,0 +1,70 @@
+\doxysection{wire\+\_\+mesh.\+h}
+\hypertarget{wire__mesh_8h_source}{}\label{wire__mesh_8h_source}\index{include/igl/copyleft/cgal/wire\_mesh.h@{include/igl/copyleft/cgal/wire\_mesh.h}}
+\mbox{\hyperlink{wire__mesh_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ IGL\_COPYLEFT\_CGAL\_WIRE\_MESH\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ IGL\_COPYLEFT\_CGAL\_WIRE\_MESH\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}../../igl\_inline.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00007\ \ \ \textcolor{keyword}{namespace\ }copyleft}
+\DoxyCodeLine{00008\ \ \ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{namespace\ }cgal}
+\DoxyCodeLine{00010\ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedWV,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedWE,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Derivedth,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedJ>}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a1da8adecc2e7b09a987748532fb975d2}{wire\_mesh}}(}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedWV>\ \&\ WV,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedWE>\ \&\ WE,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedth>\ \&\ th,}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ poly\_size,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ solid,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedJ>\ \&\ J);}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedWV,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedWE,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedJ>}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a1da8adecc2e7b09a987748532fb975d2}{wire\_mesh}}(}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedWV>\ \&\ WV,}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedWE>\ \&\ WE,}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ th,}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ poly\_size,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ solid,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedJ>\ \&\ J);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedWV,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedWE,}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedJ>}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a1da8adecc2e7b09a987748532fb975d2}{wire\_mesh}}(}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedWV>\ \&\ WV,}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedWE>\ \&\ WE,}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ th,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ poly\_size,}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedJ>\ \&\ J);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \ \ \}}
+\DoxyCodeLine{00079\ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#\ \ include\ "{}wire\_mesh.cpp"{}}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

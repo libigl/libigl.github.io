@@ -1,0 +1,51 @@
+\doxysection{insert\+\_\+into\+\_\+cdt.\+h}
+\hypertarget{insert__into__cdt_8h_source}{}\label{insert__into__cdt_8h_source}\index{include/igl/copyleft/cgal/insert\_into\_cdt.h@{include/igl/copyleft/cgal/insert\_into\_cdt.h}}
+\mbox{\hyperlink{insert__into__cdt_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2016\ Alec\ Jacobson}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_COPYLEFT\_CGAL\_INSERT\_INTO\_CDT\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_COPYLEFT\_CGAL\_INSERT\_INTO\_CDT\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../../igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <CGAL/double.h>}\ \textcolor{comment}{//\ Workaround\ https://github.com/CGAL/cgal/issues/2182\ with\ CGAL\ 4.10-\/1}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <CGAL/Plane\_3.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <CGAL/Constrained\_Delaunay\_triangulation\_2.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <CGAL/Constrained\_triangulation\_plus\_2.h>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \ \ \textcolor{keyword}{namespace\ }copyleft}
+\DoxyCodeLine{00020\ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{namespace\ }cgal}
+\DoxyCodeLine{00022\ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Kernel>}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_ada1796699e0d1f0830cc933d704cc918}{insert\_into\_cdt}}(}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ CGAL::Object\ \&\ obj,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ CGAL::Plane\_3<Kernel>\ \&\ P,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ CGAL::Constrained\_triangulation\_plus\_2<}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ CGAL::Constrained\_Delaunay\_triangulation\_2<}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ Kernel,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ CGAL::Triangulation\_data\_structure\_2<}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CGAL::Triangulation\_vertex\_base\_2<Kernel>,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CGAL::Constrained\_triangulation\_face\_base\_2<\ Kernel>}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ >,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ CGAL::Exact\_intersections\_tag}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ >}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ >}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \&\ cdt);}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \}}
+\DoxyCodeLine{00053\ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#\ \ include\ "{}insert\_into\_cdt.cpp"{}}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

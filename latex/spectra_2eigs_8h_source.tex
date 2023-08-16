@@ -1,0 +1,56 @@
+\doxysection{eigs.\+h}
+\hypertarget{spectra_2eigs_8h_source}{}\label{spectra_2eigs_8h_source}\index{include/igl/spectra/eigs.h@{include/igl/spectra/eigs.h}}
+\mbox{\hyperlink{spectra_2eigs_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2023\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_SPECTRA\_EIGS\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_SPECTRA\_EIGS\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}../eigs.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <Eigen/Sparse>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <Eigen/SparseLU>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \ \ \textcolor{keyword}{namespace\ }spectra}
+\DoxyCodeLine{00019\ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ EigsScalar,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedU,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedS,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Solver\ =\ Eigen::SparseLU<Eigen::SparseMatrix<EigsScalar>>\ >}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_1_1spectra_ad3d3fe017e5b3e83eaa8c9e997eceaf5}{eigs}}(}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<EigsScalar>\ \&\ A,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<EigsScalar>\ \&\ B,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ k,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceigl_a39bb96a0597986315dc20d78ba46a50d}{igl::EigsType}}\ type,}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedU>\ \&\ U,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedS>\ \&\ S);}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ EigsScalar,}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedU,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedS,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Solver\ =\ Eigen::SparseLU<Eigen::SparseMatrix<EigsScalar>>\ >}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_1_1spectra_ad3d3fe017e5b3e83eaa8c9e997eceaf5}{eigs}}(}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<EigsScalar>\ \&\ A,}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<EigsScalar>\ \&\ B,}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ k,}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \textcolor{keyword}{const}\ EigsScalar\ sigma,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedU>\ \&\ U,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedS>\ \&\ S);}
+\DoxyCodeLine{00065\ \ \ \}}
+\DoxyCodeLine{00066\ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#include\ "{}eigs.cpp"{}}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

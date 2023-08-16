@@ -102,12 +102,12 @@ $(document).ready(function(){initNavTree('swept__volume_8h_source.html',''); ini
 <div class="contents">
 <a href="swept__volume_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef IGL_SWEPT_VOLUME_H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define IGL_SWEPT_VOLUME_H</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;igl_inline.h&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="igl__inline_8h.html">igl_inline.h</a>&quot;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;Eigen/Core&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;Eigen/Geometry&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceigl.html">igl</a></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="namespaceigl.html#a525f425d4315f9547a6e82782d7d672b">   21</a></span>  IGL_INLINE <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#a525f425d4315f9547a6e82782d7d672b">swept_volume</a>(</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="namespaceigl.html#a525f425d4315f9547a6e82782d7d672b">   21</a></span>  <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#a525f425d4315f9547a6e82782d7d672b">swept_volume</a>(</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">const</span> Eigen::MatrixXd &amp; V,</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">const</span> Eigen::MatrixXi &amp; F,</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">const</span> std::function&lt;Eigen::Affine3d(<span class="keyword">const</span> <span class="keywordtype">double</span> t)&gt; &amp; transform,</div>
@@ -124,7 +124,9 @@ $(document).ready(function(){initNavTree('swept__volume_8h_source.html',''); ini
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="anamespaceigl_html"><div class="ttname"><a href="namespaceigl.html">igl</a></div><div class="ttdoc">Fake halfedge for fast and easy navigation on triangle meshes with vertex_triangle_adjacency and tria...</div><div class="ttdef"><b>Definition</b> AABB.h:17</div></div>
+<div class="ttc" id="aigl__inline_8h_html"><div class="ttname"><a href="igl__inline_8h.html">igl_inline.h</a></div></div>
+<div class="ttc" id="aigl__inline_8h_html_a838241279013352686271b4c4ce1f708"><div class="ttname"><a href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a></div><div class="ttdeci">#define IGL_INLINE</div><div class="ttdef"><b>Definition</b> igl_inline.h:15</div></div>
+<div class="ttc" id="anamespaceigl_html"><div class="ttname"><a href="namespaceigl.html">igl</a></div><div class="ttdef"><b>Definition</b> AABB.h:17</div></div>
 <div class="ttc" id="anamespaceigl_html_a525f425d4315f9547a6e82782d7d672b"><div class="ttname"><a href="namespaceigl.html#a525f425d4315f9547a6e82782d7d672b">igl::swept_volume</a></div><div class="ttdeci">void swept_volume(const Eigen::MatrixXd &amp;V, const Eigen::MatrixXi &amp;F, const std::function&lt; Eigen::Affine3d(const double t)&gt; &amp;transform, const size_t steps, const size_t grid_res, const size_t isolevel, Eigen::MatrixXd &amp;SV, Eigen::MatrixXi &amp;SF)</div><div class="ttdoc">Compute the surface of the swept volume of a solid object with surface (V,F) mesh under going rigid m...</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

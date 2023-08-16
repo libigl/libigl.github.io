@@ -204,7 +204,7 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class which contains data of a matlab workspace which can be written to a .mat file and loaded from matlab. </p>
 <p>This depends on matlab at compile time (though it shouldn't necessarily have to) but it does not depend on running the matlab engine at run-time.</p>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000005">Bug:</a></b></dt><dd>Treats all matrices as doubles (this may actually be desired for some "index" matrices since matlab's sparse command takes doubles rather than int class matrices). It is of course not desired when dealing with logicals or uint's for images. </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000008">Bug:</a></b></dt><dd>Treats all matrices as doubles (this may actually be desired for some "index" matrices since matlab's sparse command takes doubles rather than int class matrices). It is of course not desired when dealing with logicals or uint's for images. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a883c693b38494b37dd359ff7de942c14" name="a883c693b38494b37dd359ff7de942c14"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a883c693b38494b37dd359ff7de942c14">&#9670;&#160;</a></span>MatlabWorkspace()</h2>
@@ -405,7 +405,7 @@ template&lt;typename DerivedM &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true on success, false on failure</dd></dl>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000007">Bug:</a></b></dt><dd>Assumes DerivedM is using column major ordering </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000010">Bug:</a></b></dt><dd>Assumes DerivedM is using column major ordering </dd></dl>
 
 </div>
 </div>
@@ -805,7 +805,7 @@ template&lt;typename DerivedM &gt; </div>
 </div><div class="memdoc">
 
 <p>Find a certain matrix by name. </p>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000008">Bug:</a></b></dt><dd>Outputs the first found (not necessarily unique lists).</dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000011">Bug:</a></b></dt><dd>Outputs the first found (not necessarily unique lists).</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">DerivedM</td><td>eigen matrix (e.g. MatrixXd) </td></tr>

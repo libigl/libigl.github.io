@@ -1,0 +1,68 @@
+\doxysection{triangulate.\+h}
+\hypertarget{triangle_2triangulate_8h_source}{}\label{triangle_2triangulate_8h_source}\index{include/igl/triangle/triangulate.h@{include/igl/triangle/triangulate.h}}
+\mbox{\hyperlink{triangle_2triangulate_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2014\ Daniele\ Panozzo\ <daniele.panozzo@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ Copyright\ (C)\ 2017\ Alec\ Jacobson}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ IGL\_TRIANGLE\_TRIANGULATE\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ IGL\_TRIANGLE\_TRIANGULATE\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}../igl\_inline.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \textcolor{keyword}{namespace\ }triangle}
+\DoxyCodeLine{00018\ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedE,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedH,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVM,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedEM,}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV2,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF2,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVM2,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedE2,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedEM2>}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1triangle_ae4d5a5fa0ad34c41ec9e3361be3f249a}{triangulate}}(}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedE>\ \&\ E,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedH>\ \&\ H,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedVM>\ \&\ VM,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEM>\ \&\ EM,}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ flags,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedV2>\ \&\ V2,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedF2>\ \&\ F2,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedVM2>\ \&\ VM2,}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedE2>\ \ \&\ E2,}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedEM2>\ \&\ EM2);}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedE,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedH,}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV2,}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF2>}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1triangle_ae4d5a5fa0ad34c41ec9e3361be3f249a}{triangulate}}(}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedE>\ \&\ E,}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedH>\ \&\ H,}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ flags,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedV2>\ \&\ V2,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedF2>\ \&\ F2);}
+\DoxyCodeLine{00069\ \ \ \}}
+\DoxyCodeLine{00070\ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#\ \ include\ "{}triangulate.cpp"{}}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

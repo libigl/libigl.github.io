@@ -109,7 +109,7 @@ $(document).ready(function(){initNavTree('unproject_8h_source.html',''); initRes
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// obtain one at http://mozilla.org/MPL/2.0/.</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef IGL_UNPROJECT_H</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define IGL_UNPROJECT_H</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;igl_inline.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="igl__inline_8h.html">igl_inline.h</a>&quot;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;Eigen/Core&gt;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceigl.html">igl</a></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
@@ -119,14 +119,14 @@ $(document).ready(function(){initNavTree('unproject_8h_source.html',''); initRes
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">typename</span> Derivedproj,</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">typename</span> Derivedviewport,</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">typename</span> Derivedscene&gt;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="namespaceigl.html#a04b29a2138c5fa4268400e42b8df04a9">   30</a></span>  IGL_INLINE <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#a04b29a2138c5fa4268400e42b8df04a9">unproject</a>(</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="namespaceigl.html#a04b29a2138c5fa4268400e42b8df04a9">   30</a></span>  <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#a04b29a2138c5fa4268400e42b8df04a9">unproject</a>(</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">const</span> Eigen::MatrixBase&lt;Derivedwin&gt;&amp;  win,</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">const</span> Eigen::MatrixBase&lt;Derivedmodel&gt;&amp; model,</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">const</span> Eigen::MatrixBase&lt;Derivedproj&gt;&amp; proj,</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">const</span> Eigen::MatrixBase&lt;Derivedviewport&gt;&amp;  viewport,</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    Eigen::PlainObjectBase&lt;Derivedscene&gt; &amp; scene);</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Scalar&gt;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="namespaceigl.html#ac545f7c2b0b725169a3785ba8e5bdbc2">   38</a></span>  IGL_INLINE Eigen::Matrix&lt;Scalar,3,1&gt; <a class="code hl_function" href="namespaceigl.html#a04b29a2138c5fa4268400e42b8df04a9">unproject</a>(</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="namespaceigl.html#ac545f7c2b0b725169a3785ba8e5bdbc2">   38</a></span>  <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> Eigen::Matrix&lt;Scalar,3,1&gt; <a class="code hl_function" href="namespaceigl.html#a04b29a2138c5fa4268400e42b8df04a9">unproject</a>(</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">const</span> Eigen::Matrix&lt;Scalar,3,1&gt;&amp;  win,</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keyword">const</span> Eigen::Matrix&lt;Scalar,4,4&gt;&amp; model,</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">const</span> Eigen::Matrix&lt;Scalar,4,4&gt;&amp; proj,</div>
@@ -138,7 +138,9 @@ $(document).ready(function(){initNavTree('unproject_8h_source.html',''); initRes
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="anamespaceigl_html"><div class="ttname"><a href="namespaceigl.html">igl</a></div><div class="ttdoc">Fake halfedge for fast and easy navigation on triangle meshes with vertex_triangle_adjacency and tria...</div><div class="ttdef"><b>Definition</b> AABB.h:17</div></div>
+<div class="ttc" id="aigl__inline_8h_html"><div class="ttname"><a href="igl__inline_8h.html">igl_inline.h</a></div></div>
+<div class="ttc" id="aigl__inline_8h_html_a838241279013352686271b4c4ce1f708"><div class="ttname"><a href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a></div><div class="ttdeci">#define IGL_INLINE</div><div class="ttdef"><b>Definition</b> igl_inline.h:15</div></div>
+<div class="ttc" id="anamespaceigl_html"><div class="ttname"><a href="namespaceigl.html">igl</a></div><div class="ttdef"><b>Definition</b> AABB.h:17</div></div>
 <div class="ttc" id="anamespaceigl_html_a04b29a2138c5fa4268400e42b8df04a9"><div class="ttname"><a href="namespaceigl.html#a04b29a2138c5fa4268400e42b8df04a9">igl::unproject</a></div><div class="ttdeci">void unproject(const Eigen::MatrixBase&lt; Derivedwin &gt; &amp;win, const Eigen::MatrixBase&lt; Derivedmodel &gt; &amp;model, const Eigen::MatrixBase&lt; Derivedproj &gt; &amp;proj, const Eigen::MatrixBase&lt; Derivedviewport &gt; &amp;viewport, Eigen::PlainObjectBase&lt; Derivedscene &gt; &amp;scene)</div><div class="ttdoc">Eigen reimplementation of gluUnproject.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

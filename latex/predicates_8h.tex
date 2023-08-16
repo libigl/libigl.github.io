@@ -1,0 +1,56 @@
+\doxysection{include/igl/predicates/predicates.h File Reference}
+\hypertarget{predicates_8h}{}\label{predicates_8h}\index{include/igl/predicates/predicates.h@{include/igl/predicates/predicates.h}}
+{\ttfamily \#include $<$igl/igl\+\_\+inline.\+h$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include \"{}predicates.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\item 
+namespace \mbox{\hyperlink{namespaceigl_1_1predicates}{igl\+::predicates}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{predicates_8h_af6196aa109252fd62e2322824145b870}{IGL\+\_\+\+PREDICATES\+\_\+\+PREDICATES\+\_\+H}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418b}{igl\+::predicates\+::\+Orientation}} \{ \newline
+\mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418baab6c31432785221bae58327ef5f6ea58}{igl\+::predicates\+::\+POSITIVE}} =1
+, \mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418ba554a7418c4c0dafd902ebd377b87c80c}{igl\+::predicates\+::\+INSIDE}} =1
+, \mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418ba50546bf973283065b6ccf09faf7a580a}{igl\+::predicates\+::\+NEGATIVE}} =-\/1
+, \mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418ba93da25bafef6761717afc6b25c17ea16}{igl\+::predicates\+::\+OUTSIDE}} =-\/1
+, \newline
+\mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418bac514333ce2954c3110061a9d61666f8c}{igl\+::predicates\+::\+COLLINEAR}} =0
+, \mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418ba9b1fc8879c96b8594f626bd204405336}{igl\+::predicates\+::\+COPLANAR}} =0
+, \mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418bacfb327ad336ef0a1ba58a8651000d228}{igl\+::predicates\+::\+COCIRCULAR}} =0
+, \mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418ba744ce244a9eef07f7a7fed2073d10947}{igl\+::predicates\+::\+COSPHERICAL}} =0
+, \newline
+\mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418ba6084ee8bb30ae219127db8b7aece408a}{igl\+::predicates\+::\+DEGENERATE}} =0
+ \}
+\begin{DoxyCompactList}\small\item\em Types of orientations and other predicate results. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespaceigl_1_1predicates_a7b443360a322c1ab15643ea1bad58d58}{igl\+::predicates\+::exactinit}} ()
+\begin{DoxyCompactList}\small\item\em Initialize internal variable used by predciates. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Vector2D $>$ }\\\mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418b}{Orientation}} \mbox{\hyperlink{namespaceigl_1_1predicates_ab85f8a0e2f35b55088ba76fa3e269a1a}{igl\+::predicates\+::orient2d}} (const Eigen\+::\+Matrix\+Base$<$ Vector2D $>$ \&pa, const Eigen\+::\+Matrix\+Base$<$ Vector2D $>$ \&pb, const Eigen\+::\+Matrix\+Base$<$ Vector2D $>$ \&pc)
+\begin{DoxyCompactList}\small\item\em Compute the orientation of the triangle formed by pa, pb, pc. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Vector3D $>$ }\\\mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418b}{Orientation}} \mbox{\hyperlink{namespaceigl_1_1predicates_a16875914854207c54ce309a69d802292}{igl\+::predicates\+::orient3d}} (const Eigen\+::\+Matrix\+Base$<$ Vector3D $>$ \&pa, const Eigen\+::\+Matrix\+Base$<$ Vector3D $>$ \&pb, const Eigen\+::\+Matrix\+Base$<$ Vector3D $>$ \&pc, const Eigen\+::\+Matrix\+Base$<$ Vector3D $>$ \&pd)
+\begin{DoxyCompactList}\small\item\em Compute the orientation of the tetrahedron formed by pa, pb, pc, pd. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Vector2D $>$ }\\\mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418b}{Orientation}} \mbox{\hyperlink{namespaceigl_1_1predicates_a34dc07d0d7c3e70d012a400c07fea6d5}{igl\+::predicates\+::incircle}} (const Eigen\+::\+Matrix\+Base$<$ Vector2D $>$ \&pa, const Eigen\+::\+Matrix\+Base$<$ Vector2D $>$ \&pb, const Eigen\+::\+Matrix\+Base$<$ Vector2D $>$ \&pc, const Eigen\+::\+Matrix\+Base$<$ Vector2D $>$ \&pd)
+\begin{DoxyCompactList}\small\item\em Decide whether a point is inside/outside/on a circle. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Vector3D $>$ }\\\mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418b}{Orientation}} \mbox{\hyperlink{namespaceigl_1_1predicates_aa3f8cfda1a577af57f2729330ca6a459}{igl\+::predicates\+::insphere}} (const Eigen\+::\+Matrix\+Base$<$ Vector3D $>$ \&pa, const Eigen\+::\+Matrix\+Base$<$ Vector3D $>$ \&pb, const Eigen\+::\+Matrix\+Base$<$ Vector3D $>$ \&pc, const Eigen\+::\+Matrix\+Base$<$ Vector3D $>$ \&pd, const Eigen\+::\+Matrix\+Base$<$ Vector3D $>$ \&pe)
+\begin{DoxyCompactList}\small\item\em Decide whether a point is inside/outside/on a sphere. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{predicates_8h_af6196aa109252fd62e2322824145b870}\label{predicates_8h_af6196aa109252fd62e2322824145b870} 
+\index{predicates.h@{predicates.h}!IGL\_PREDICATES\_PREDICATES\_H@{IGL\_PREDICATES\_PREDICATES\_H}}
+\index{IGL\_PREDICATES\_PREDICATES\_H@{IGL\_PREDICATES\_PREDICATES\_H}!predicates.h@{predicates.h}}
+\doxysubsubsection{\texorpdfstring{IGL\_PREDICATES\_PREDICATES\_H}{IGL\_PREDICATES\_PREDICATES\_H}}
+{\footnotesize\ttfamily \#define IGL\+\_\+\+PREDICATES\+\_\+\+PREDICATES\+\_\+H}
+

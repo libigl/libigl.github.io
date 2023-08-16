@@ -1,0 +1,46 @@
+\doxysection{half\+\_\+space\+\_\+box.\+h}
+\hypertarget{half__space__box_8h_source}{}\label{half__space__box_8h_source}\index{include/igl/copyleft/cgal/half\_space\_box.h@{include/igl/copyleft/cgal/half\_space\_box.h}}
+\mbox{\hyperlink{half__space__box_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ IGL\_COPYLEFT\_CGAL\_HALF\_SPACE\_BOX\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ IGL\_COPYLEFT\_CGAL\_HALF\_SPACE\_BOX\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}../../igl\_inline.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <CGAL/Exact\_predicates\_exact\_constructions\_kernel.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <CGAL/Plane\_3.h>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \ \ \textcolor{keyword}{namespace\ }copyleft}
+\DoxyCodeLine{00011\ \ \ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{namespace\ }cgal}
+\DoxyCodeLine{00013\ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedV>}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a9139148a9ac6f9b4b152790a827c0427}{half\_space\_box}}(}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ CGAL::Plane\_3<CGAL::Epeck>\ \&\ P,}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ Eigen::Matrix<CGAL::Epeck::FT,8,3>\ \&\ BV,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ Eigen::Matrix<int,12,3>\ \&\ BF);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Derivedp,\ \textcolor{keyword}{typename}\ Derivedn,\ \textcolor{keyword}{typename}\ DerivedV>}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a9139148a9ac6f9b4b152790a827c0427}{half\_space\_box}}(}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedp>\ \&\ p,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedn>\ \&\ n,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ Eigen::Matrix<CGAL::Epeck::FT,8,3>\ \&\ BV,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ Eigen::Matrix<int,12,3>\ \&\ BF);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Derivedequ,\ \textcolor{keyword}{typename}\ DerivedV>}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a9139148a9ac6f9b4b152790a827c0427}{half\_space\_box}}(}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedequ>\ \&\ equ,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ Eigen::Matrix<CGAL::Epeck::FT,8,3>\ \&\ BV,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ Eigen::Matrix<int,12,3>\ \&\ BF);}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+\DoxyCodeLine{00047\ \ \ \}}
+\DoxyCodeLine{00048\ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#\ \ include\ "{}half\_space\_box.cpp"{}}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

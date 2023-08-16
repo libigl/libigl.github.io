@@ -1,0 +1,58 @@
+\doxysection{remesh\+\_\+intersections.\+h}
+\hypertarget{remesh__intersections_8h_source}{}\label{remesh__intersections_8h_source}\index{include/igl/copyleft/cgal/remesh\_intersections.h@{include/igl/copyleft/cgal/remesh\_intersections.h}}
+\mbox{\hyperlink{remesh__intersections_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2015\ Qingnan\ Zhou\ <qnzhou@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ IGL\_COPYLEFT\_CGAL\_REMESH\_INTERSECTIONS\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ IGL\_COPYLEFT\_CGAL\_REMESH\_INTERSECTIONS\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}../../igl\_inline.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}CGAL\_includes.hpp"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \ \ \textcolor{keyword}{namespace\ }copyleft}
+\DoxyCodeLine{00019\ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{namespace\ }cgal}
+\DoxyCodeLine{00021\ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Kernel,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVV,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFF,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedJ,}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedIM>}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a99d687331f910fef280e3a0e5f5370c7}{remesh\_intersections}}(}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<CGAL::Triangle\_3<Kernel>\ >\ \&\ T,}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::map<}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF::Index,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ std::pair<typename\ DerivedF::Index,\ CGAL::Object>\ >\ >\ \&\ offending,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ stitch\_all,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ slow\_and\_more\_precise\_rounding,}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedVV>\ \&\ VV,}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedFF>\ \&\ FF,}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedJ>\ \&\ J,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedIM>\ \&\ IM);}
+\DoxyCodeLine{00064\ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \ \ \}}
+\DoxyCodeLine{00066\ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#\ \ include\ "{}remesh\_intersections.cpp"{}}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

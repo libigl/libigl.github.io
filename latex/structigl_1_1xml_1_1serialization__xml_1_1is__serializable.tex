@@ -1,0 +1,47 @@
+\doxysection{igl\+::xml\+::serialization\+\_\+xml\+::is\+\_\+serializable\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{structigl_1_1xml_1_1serialization__xml_1_1is__serializable}{}\label{structigl_1_1xml_1_1serialization__xml_1_1is__serializable}\index{igl::xml::serialization\_xml::is\_serializable$<$ T $>$@{igl::xml::serialization\_xml::is\_serializable$<$ T $>$}}
+
+
+{\ttfamily \#include $<$serialize\+\_\+xml.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{structigl_1_1xml_1_1serialization__xml_1_1is__serializable_a4b41b502fa5db4da6b5796e2761b5404}{T0}} = typename std\+::remove\+\_\+pointer$<$ T $>$\+::type
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const bool \mbox{\hyperlink{structigl_1_1xml_1_1serialization__xml_1_1is__serializable_ab3d1e25411a041e2295cc436d63c0359}{value}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{structigl_1_1xml_1_1serialization__xml_1_1is__serializable_a4b41b502fa5db4da6b5796e2761b5404}\label{structigl_1_1xml_1_1serialization__xml_1_1is__serializable_a4b41b502fa5db4da6b5796e2761b5404} 
+\index{igl::xml::serialization\_xml::is\_serializable$<$ T $>$@{igl::xml::serialization\_xml::is\_serializable$<$ T $>$}!T0@{T0}}
+\index{T0@{T0}!igl::xml::serialization\_xml::is\_serializable$<$ T $>$@{igl::xml::serialization\_xml::is\_serializable$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{T0}{T0}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{structigl_1_1xml_1_1serialization__xml_1_1is__serializable}{igl\+::xml\+::serialization\+\_\+xml\+::is\+\_\+serializable}}$<$ T $>$\+::\+T0 =  typename std\+::remove\+\_\+pointer$<$T$>$\+::type}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structigl_1_1xml_1_1serialization__xml_1_1is__serializable_ab3d1e25411a041e2295cc436d63c0359}\label{structigl_1_1xml_1_1serialization__xml_1_1is__serializable_ab3d1e25411a041e2295cc436d63c0359} 
+\index{igl::xml::serialization\_xml::is\_serializable$<$ T $>$@{igl::xml::serialization\_xml::is\_serializable$<$ T $>$}!value@{value}}
+\index{value@{value}!igl::xml::serialization\_xml::is\_serializable$<$ T $>$@{igl::xml::serialization\_xml::is\_serializable$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+const bool \mbox{\hyperlink{structigl_1_1xml_1_1serialization__xml_1_1is__serializable}{igl\+::xml\+::serialization\+\_\+xml\+::is\+\_\+serializable}}$<$ T $>$\+::value\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ std::is\_fundamental<T0>::value\ ||\ std::is\_same<std::string,T0>::value\ ||\ std::is\_base\_of<XMLSerializableBase,T0>::value}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ ||\ \mbox{\hyperlink{structigl_1_1xml_1_1serialization__xml_1_1is__stl__container_a4609daae883c101f7418692fabb507d6}{is\_stl\_container<T0>::value}}\ ||\ \mbox{\hyperlink{structigl_1_1xml_1_1serialization__xml_1_1is__eigen__type_aa102ada515f00091c001d238fb29c5c7}{is\_eigen\_type<T0>::value}}}
+
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/igl/xml/\mbox{\hyperlink{serialize__xml_8h}{serialize\+\_\+xml.\+h}}\end{DoxyCompactItemize}

@@ -12,160 +12,148 @@
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_OPENGL\_MESHGL\_H}}
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_OPENGL\_MESHGL\_H}}
 \DoxyCodeLine{00010\ }
-\DoxyCodeLine{00011\ \textcolor{comment}{//\ Coverts\ mesh\ data\ inside\ a\ igl::ViewerData\ class\ in\ an\ OpenGL}}
-\DoxyCodeLine{00012\ \textcolor{comment}{//\ compatible\ format\ The\ class\ includes\ a\ shader\ and\ the\ opengl\ calls\ to\ plot}}
-\DoxyCodeLine{00013\ \textcolor{comment}{//\ the\ data}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{igl__inline_8h}{igl/igl\_inline.h}}>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
 \DoxyCodeLine{00014\ }
-\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <igl/igl\_inline.h>}}
-\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
-\DoxyCodeLine{00017\ }
-\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
-\DoxyCodeLine{00019\ \{}
-\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }opengl}
-\DoxyCodeLine{00021\ \{}
-\DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL}{MeshGL}}}
-\DoxyCodeLine{00024\ \{}
-\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00026\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}};}
-\DoxyCodeLine{00027\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_aff43136617b15669459b7bd0558a98de}{GLint}};}
-\DoxyCodeLine{00028\ }
-\DoxyCodeLine{00029\ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a81a97b4082a52abc4e29f46574b07862}{DirtyFlags}}}
-\DoxyCodeLine{00030\ \ \ \{}
-\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a81a97b4082a52abc4e29f46574b07862a74c7703c522ac54d595f1daf5942aa82}{DIRTY\_NONE}}\ \ \ \ \ \ \ \ \ \ \ =\ 0x0000,}
-\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a81a97b4082a52abc4e29f46574b07862a4a54f6964602500fffc8030b8efbaf53}{DIRTY\_POSITION}}\ \ \ \ \ \ \ =\ 0x0001,}
-\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a81a97b4082a52abc4e29f46574b07862a41863cc7afb01318f1d967aed020646f}{DIRTY\_UV}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x0002,}
-\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a81a97b4082a52abc4e29f46574b07862a19fc3ec303c095118570872edf5984ce}{DIRTY\_NORMAL}}\ \ \ \ \ \ \ \ \ =\ 0x0004,}
-\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a81a97b4082a52abc4e29f46574b07862a730020e8027f0ec0ad2ba17e26d041c7}{DIRTY\_AMBIENT}}\ \ \ \ \ \ \ \ =\ 0x0008,}
-\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a81a97b4082a52abc4e29f46574b07862ae0905eb3d16e7a3eaaef98ec919a6db4}{DIRTY\_DIFFUSE}}\ \ \ \ \ \ \ \ =\ 0x0010,}
-\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a81a97b4082a52abc4e29f46574b07862a617deaa4d8124f11e88918615c4b480d}{DIRTY\_SPECULAR}}\ \ \ \ \ \ \ =\ 0x0020,}
-\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a81a97b4082a52abc4e29f46574b07862a97b37dac2060b53dac9457c62a64cb45}{DIRTY\_TEXTURE}}\ \ \ \ \ \ \ \ =\ 0x0040,}
-\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a81a97b4082a52abc4e29f46574b07862a16d9e53c38eaf623595bec0cb2c6e9ce}{DIRTY\_FACE}}\ \ \ \ \ \ \ \ \ \ \ =\ 0x0080,}
-\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a81a97b4082a52abc4e29f46574b07862a6aa154e6351dae713b8d906e9578eccb}{DIRTY\_MESH}}\ \ \ \ \ \ \ \ \ \ \ =\ 0x00FF,}
-\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a81a97b4082a52abc4e29f46574b07862aa075ba76208fbc56dafdd9a97507d6c9}{DIRTY\_OVERLAY\_LINES}}\ \ =\ 0x0100,}
-\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a81a97b4082a52abc4e29f46574b07862aef505d40c946f8b6a958f0bb0f3ad14c}{DIRTY\_OVERLAY\_POINTS}}\ =\ 0x0200,}
-\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a81a97b4082a52abc4e29f46574b07862ac25cd698e5a5aaf3e00576023fe5d767}{DIRTY\_VERTEX\_LABELS}}\ \ =\ 0x0400,}
-\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a81a97b4082a52abc4e29f46574b07862a89e96137f93afef25d31aa80fa1d412f}{DIRTY\_FACE\_LABELS}}\ \ \ \ =\ 0x0800,}
-\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a81a97b4082a52abc4e29f46574b07862ae51dc021e56be62128930315f107bf5c}{DIRTY\_CUSTOM\_LABELS}}\ \ =\ 0x1000,}
-\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a81a97b4082a52abc4e29f46574b07862a4d4b153582583c9f01bbb3339df59f36}{DIRTY\_ALL}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 0xFFFF}
-\DoxyCodeLine{00047\ \ \ \};}
-\DoxyCodeLine{00048\ }
-\DoxyCodeLine{00049\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_ae686c55861e1cef7843e91dcc9fb4c28}{is\_initialized}}\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00050\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a5617c68f0b8ffbd3b3ef755329602aee}{vao\_mesh}};}
-\DoxyCodeLine{00051\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_ad3f519b91f31b489d79b94c94d4003ba}{vao\_overlay\_lines}};}
-\DoxyCodeLine{00052\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a57fc22aba7844b357e505e7d79329d85}{vao\_overlay\_points}};}
-\DoxyCodeLine{00053\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_ae6d3d187265dc88a18a397319dbee0b9}{shader\_mesh}};}
-\DoxyCodeLine{00054\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a9b676988f8fac368e6295ee1e685dbce}{shader\_overlay\_lines}};}
-\DoxyCodeLine{00055\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a6b1a3b4217dc66644b9b5f8df8cfe989}{shader\_overlay\_points}};}
-\DoxyCodeLine{00056\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_addb56e58d170cee18ace23fac9db790a}{shader\_text}};}
-\DoxyCodeLine{00057\ }
-\DoxyCodeLine{00058\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a5b03591eed054785b74c5799a37a3c97}{vbo\_V}};\ \textcolor{comment}{//\ Vertices\ of\ the\ current\ mesh\ (\#V\ x\ 3)}}
-\DoxyCodeLine{00059\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a26d292adff83c8104e32bebb5673e7f8}{vbo\_V\_uv}};\ \textcolor{comment}{//\ UV\ coordinates\ for\ the\ current\ mesh\ (\#V\ x\ 2)}}
-\DoxyCodeLine{00060\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a2ec0b9722edbab0063b071419ce0cbbb}{vbo\_V\_normals}};\ \textcolor{comment}{//\ Vertices\ of\ the\ current\ mesh\ (\#V\ x\ 3)}}
-\DoxyCodeLine{00061\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_acc7c20af7679ac2d58d28aef1aefbffc}{vbo\_V\_ambient}};\ \textcolor{comment}{//\ Ambient\ material\ \ (\#V\ x\ 3)}}
-\DoxyCodeLine{00062\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_ad8b371dd68adb1b2c9c640bc7d0667ca}{vbo\_V\_diffuse}};\ \textcolor{comment}{//\ Diffuse\ material\ \ (\#V\ x\ 3)}}
-\DoxyCodeLine{00063\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a7f82dd474d798ec19c76fdfe3e7f77e0}{vbo\_V\_specular}};\ \textcolor{comment}{//\ Specular\ material\ \ (\#V\ x\ 3)}}
-\DoxyCodeLine{00064\ }
-\DoxyCodeLine{00065\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_aa95a2e464179442c7898fb57b9c6ebfc}{vbo\_F}};\ \textcolor{comment}{//\ Faces\ of\ the\ mesh\ (\#F\ x\ 3)}}
-\DoxyCodeLine{00066\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a08788749eee629f0639cb057f6bc83b7}{vbo\_tex}};\ \textcolor{comment}{//\ Texture}}
-\DoxyCodeLine{00067\ }
-\DoxyCodeLine{00068\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a1da16942e4abed0aef950702614a9151}{vbo\_lines\_F}};\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Indices\ of\ the\ line\ overlay}}
-\DoxyCodeLine{00069\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a6cfbb5e65beba50467e3d72fa0469796}{vbo\_lines\_V}};\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Vertices\ of\ the\ line\ overlay}}
-\DoxyCodeLine{00070\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a5d9ae54ae0f851346b977d78131acd7e}{vbo\_lines\_V\_colors}};\ \ \textcolor{comment}{//\ Color\ values\ of\ the\ line\ overlay}}
-\DoxyCodeLine{00071\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_ad922748c83a953d5a90a45e11461c3ff}{vbo\_points\_F}};\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Indices\ of\ the\ point\ overlay}}
-\DoxyCodeLine{00072\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_ad2a89418cc4a511612436e5979d67032}{vbo\_points\_V}};\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Vertices\ of\ the\ point\ overlay}}
-\DoxyCodeLine{00073\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a4f29aece963988ee6389a3ebd636dc5a}{vbo\_points\_V\_colors}};\ \textcolor{comment}{//\ Color\ values\ of\ the\ point\ overlay}}
-\DoxyCodeLine{00074\ }
-\DoxyCodeLine{00075\ \ \ \textcolor{comment}{//\ Temporary\ copy\ of\ the\ content\ of\ each\ VBO}}
-\DoxyCodeLine{00076\ \ \ \textcolor{keyword}{typedef}\ Eigen::Matrix<float,Eigen::Dynamic,Eigen::Dynamic,Eigen::RowMajor>\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_adf75306956e300b76bd4eae9d424e331}{RowMatrixXf}};}
-\DoxyCodeLine{00077\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_adf75306956e300b76bd4eae9d424e331}{RowMatrixXf}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_ac2c590d6a4f3dff3752a3e205c04da61}{V\_vbo}};}
-\DoxyCodeLine{00078\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_adf75306956e300b76bd4eae9d424e331}{RowMatrixXf}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a0e7f829d716584272bc822f7166398e7}{V\_normals\_vbo}};}
-\DoxyCodeLine{00079\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_adf75306956e300b76bd4eae9d424e331}{RowMatrixXf}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a78d983cb7c4f65ee3f9f3888f584b9ce}{V\_ambient\_vbo}};}
-\DoxyCodeLine{00080\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_adf75306956e300b76bd4eae9d424e331}{RowMatrixXf}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a4e339a0daa6dadbf0c72f653d752de2c}{V\_diffuse\_vbo}};}
-\DoxyCodeLine{00081\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_adf75306956e300b76bd4eae9d424e331}{RowMatrixXf}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_aed80f410684477bc78e3d84ffcce8752}{V\_specular\_vbo}};}
-\DoxyCodeLine{00082\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_adf75306956e300b76bd4eae9d424e331}{RowMatrixXf}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a4356ffc0522f0b071145297e9362c154}{V\_uv\_vbo}};}
-\DoxyCodeLine{00083\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_adf75306956e300b76bd4eae9d424e331}{RowMatrixXf}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_aa953266e7d2e8ab68966c9c7b8207123}{lines\_V\_vbo}};}
-\DoxyCodeLine{00084\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_adf75306956e300b76bd4eae9d424e331}{RowMatrixXf}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a2d621ebb9b848feab4c9a32966f70f95}{lines\_V\_colors\_vbo}};}
-\DoxyCodeLine{00085\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_adf75306956e300b76bd4eae9d424e331}{RowMatrixXf}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a92962f0de9d353681d78e0f4fdfbd572}{points\_V\_vbo}};}
-\DoxyCodeLine{00086\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_adf75306956e300b76bd4eae9d424e331}{RowMatrixXf}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_af8bbeb3828c1e753047172f045582e01}{points\_V\_colors\_vbo}};}
-\DoxyCodeLine{00087\ }
-\DoxyCodeLine{00088\ \ \ \textcolor{comment}{//\ Text\ Rendering}}
-\DoxyCodeLine{00089\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL}{TextGL}}}
-\DoxyCodeLine{00090\ \ \ \{\ }
-\DoxyCodeLine{00091\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL_af66b6c41f56c315289d6aca3a4e98a21}{dirty\_flag}};}
-\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL_a31dbb00383bcb99a9f1ce96b7f619b13}{vao\_labels}};}
-\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL_a33b847b339528f059d36c9a38e0881db}{vbo\_labels\_pos}};}
-\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL_a695e1db76908c5d849b476c1abc83152}{vbo\_labels\_characters}};}
-\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL_aae3773156de41b27b3aebaa5b9eb815d}{vbo\_labels\_offset}};\ }
-\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL_a5d83a33c2a09a7777488a5667191174b}{vbo\_labels\_indices}};}
-\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_adf75306956e300b76bd4eae9d424e331}{RowMatrixXf}}\ \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL_a17a65298cba27505cac6364d1e8066c3}{label\_pos\_vbo}};}
-\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_adf75306956e300b76bd4eae9d424e331}{RowMatrixXf}}\ \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL_a7dda782f5eee9bb2f72bfe48e56184fb}{label\_char\_vbo}};}
-\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_adf75306956e300b76bd4eae9d424e331}{RowMatrixXf}}\ \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL_abf25e0a6903c0a37f6b5ddf8e0ab98a7}{label\_offset\_vbo}};}
-\DoxyCodeLine{00100\ \ \ \ \ Eigen::Matrix<unsigned,\ Eigen::Dynamic,\ Eigen::Dynamic,\ Eigen::RowMajor>\ \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL_a0e66567a11ab394ad0252e0da7def9f3}{label\_indices\_vbo}};}
-\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL_a226328ca297a344dc8abe024dc392b67}{init\_buffers}}();}
-\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL_afd22585e8cfab8d6b9a92d67d0dd42df}{free\_buffers}}();}
-\DoxyCodeLine{00103\ \ \ \};}
-\DoxyCodeLine{00104\ \ \ \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL}{TextGL}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a1ee2a8dddbfb9fdb9efc69ad84a80ab7}{vertex\_labels}};}
-\DoxyCodeLine{00105\ \ \ \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL}{TextGL}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_ad10fc12cd5f708c39d2d5b8ba9b276f5}{face\_labels}};\ \ }
-\DoxyCodeLine{00106\ \ \ \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL}{TextGL}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_ab7495df16869f13f7714a8072a3e1da0}{custom\_labels}};}
-\DoxyCodeLine{00107\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a6edcfc95e183e2f7959e3636d9e56967}{font\_atlas}};}
-\DoxyCodeLine{00108\ }
-\DoxyCodeLine{00109\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_af2cb2d30575300b0d13d551ad6ec74aa}{tex\_u}};}
-\DoxyCodeLine{00110\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a54d5896d8ee438cfdfe99e2a3b760852}{tex\_v}};}
-\DoxyCodeLine{00111\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_aff43136617b15669459b7bd0558a98de}{GLint}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_ad2a87b02ac4d2a5d285cb8008742b1b5}{tex\_filter}};}
-\DoxyCodeLine{00112\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_aff43136617b15669459b7bd0558a98de}{GLint}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_af50502e1d1ad9ed8a4993e832d52b45b}{tex\_wrap}};}
-\DoxyCodeLine{00113\ \ \ Eigen::Matrix<char,Eigen::Dynamic,1>\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a4244c2dfada501746521483c45a19568}{tex}};}
-\DoxyCodeLine{00114\ }
-\DoxyCodeLine{00115\ \ \ Eigen::Matrix<unsigned,\ Eigen::Dynamic,\ Eigen::Dynamic,\ Eigen::RowMajor>\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a250f1b8c09a20471d7fc029ed5dae56f}{F\_vbo}};}
-\DoxyCodeLine{00116\ \ \ Eigen::Matrix<unsigned,\ Eigen::Dynamic,\ Eigen::Dynamic,\ Eigen::RowMajor>\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a62beff09ea2f25888e3544a61b70e862}{lines\_F\_vbo}};}
-\DoxyCodeLine{00117\ \ \ Eigen::Matrix<unsigned,\ Eigen::Dynamic,\ Eigen::Dynamic,\ Eigen::RowMajor>\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a8207c9ce024558a35b21486d18429ddb}{points\_F\_vbo}};}
-\DoxyCodeLine{00118\ }
-\DoxyCodeLine{00119\ \ \ \textcolor{comment}{//\ Marks\ dirty\ buffers\ that\ need\ to\ be\ uploaded\ to\ OpenGL}}
-\DoxyCodeLine{00120\ \ \ uint32\_t\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a3b736f78d2d9bac1fa104b4dc8ddcf95}{dirty}};}
-\DoxyCodeLine{00121\ }
-\DoxyCodeLine{00122\ \ \ IGL\_INLINE\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a7f3f62f787ae30571191c5bf0a2ed7d7}{MeshGL}}();}
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }opengl}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL}{MeshGL}}}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}};}
+\DoxyCodeLine{00026\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_aff43136617b15669459b7bd0558a98de}{GLint}};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00030\ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a81a97b4082a52abc4e29f46574b07862}{DirtyFlags}}}
+\DoxyCodeLine{00031\ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a81a97b4082a52abc4e29f46574b07862a74c7703c522ac54d595f1daf5942aa82}{DIRTY\_NONE}}\ \ \ \ \ \ \ \ \ \ \ =\ 0x0000,}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a81a97b4082a52abc4e29f46574b07862a4a54f6964602500fffc8030b8efbaf53}{DIRTY\_POSITION}}\ \ \ \ \ \ \ =\ 0x0001,}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a81a97b4082a52abc4e29f46574b07862a41863cc7afb01318f1d967aed020646f}{DIRTY\_UV}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x0002,}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a81a97b4082a52abc4e29f46574b07862a19fc3ec303c095118570872edf5984ce}{DIRTY\_NORMAL}}\ \ \ \ \ \ \ \ \ =\ 0x0004,}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a81a97b4082a52abc4e29f46574b07862a730020e8027f0ec0ad2ba17e26d041c7}{DIRTY\_AMBIENT}}\ \ \ \ \ \ \ \ =\ 0x0008,}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a81a97b4082a52abc4e29f46574b07862ae0905eb3d16e7a3eaaef98ec919a6db4}{DIRTY\_DIFFUSE}}\ \ \ \ \ \ \ \ =\ 0x0010,}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a81a97b4082a52abc4e29f46574b07862a617deaa4d8124f11e88918615c4b480d}{DIRTY\_SPECULAR}}\ \ \ \ \ \ \ =\ 0x0020,}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a81a97b4082a52abc4e29f46574b07862a97b37dac2060b53dac9457c62a64cb45}{DIRTY\_TEXTURE}}\ \ \ \ \ \ \ \ =\ 0x0040,}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a81a97b4082a52abc4e29f46574b07862a16d9e53c38eaf623595bec0cb2c6e9ce}{DIRTY\_FACE}}\ \ \ \ \ \ \ \ \ \ \ =\ 0x0080,}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a81a97b4082a52abc4e29f46574b07862a6aa154e6351dae713b8d906e9578eccb}{DIRTY\_MESH}}\ \ \ \ \ \ \ \ \ \ \ =\ 0x00FF,}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a81a97b4082a52abc4e29f46574b07862aa075ba76208fbc56dafdd9a97507d6c9}{DIRTY\_OVERLAY\_LINES}}\ \ =\ 0x0100,}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a81a97b4082a52abc4e29f46574b07862aef505d40c946f8b6a958f0bb0f3ad14c}{DIRTY\_OVERLAY\_POINTS}}\ =\ 0x0200,}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a81a97b4082a52abc4e29f46574b07862ac25cd698e5a5aaf3e00576023fe5d767}{DIRTY\_VERTEX\_LABELS}}\ \ =\ 0x0400,}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a81a97b4082a52abc4e29f46574b07862a89e96137f93afef25d31aa80fa1d412f}{DIRTY\_FACE\_LABELS}}\ \ \ \ =\ 0x0800,}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a81a97b4082a52abc4e29f46574b07862ae51dc021e56be62128930315f107bf5c}{DIRTY\_CUSTOM\_LABELS}}\ \ =\ 0x1000,}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a81a97b4082a52abc4e29f46574b07862a4d4b153582583c9f01bbb3339df59f36}{DIRTY\_ALL}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 0xFFFF}
+\DoxyCodeLine{00048\ \ \ \};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_ae686c55861e1cef7843e91dcc9fb4c28}{is\_initialized}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00051\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a5617c68f0b8ffbd3b3ef755329602aee}{vao\_mesh}};}
+\DoxyCodeLine{00052\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_ad3f519b91f31b489d79b94c94d4003ba}{vao\_overlay\_lines}};}
+\DoxyCodeLine{00053\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a57fc22aba7844b357e505e7d79329d85}{vao\_overlay\_points}};}
+\DoxyCodeLine{00054\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_ae6d3d187265dc88a18a397319dbee0b9}{shader\_mesh}};}
+\DoxyCodeLine{00055\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a9b676988f8fac368e6295ee1e685dbce}{shader\_overlay\_lines}};}
+\DoxyCodeLine{00056\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a6b1a3b4217dc66644b9b5f8df8cfe989}{shader\_overlay\_points}};}
+\DoxyCodeLine{00057\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_addb56e58d170cee18ace23fac9db790a}{shader\_text}};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00060\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ vbo\_V}
+\DoxyCodeLine{00062\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ vbo\_V\_uv}
+\DoxyCodeLine{00064\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ vbo\_V\_normals}
+\DoxyCodeLine{00066\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ vbo\_V\_ambient}
+\DoxyCodeLine{00068\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ vbo\_V\_diffuse}
+\DoxyCodeLine{00070\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ vbo\_V\_specular}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00073\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ vbo\_F}
+\DoxyCodeLine{00075\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ vbo\_tex}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00078\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ vbo\_lines\_F}
+\DoxyCodeLine{00080\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ vbo\_lines\_V}
+\DoxyCodeLine{00082\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ vbo\_lines\_V\_colors}
+\DoxyCodeLine{00084\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ vbo\_points\_F}
+\DoxyCodeLine{00086\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ vbo\_points\_V}
+\DoxyCodeLine{00088\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ vbo\_points\_V\_colors}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \textcolor{comment}{//\ Temporary\ copy\ of\ the\ content\ of\ each\ VBO}}
+\DoxyCodeLine{00091\ \ \ \textcolor{keyword}{typedef}\ Eigen::Matrix<float,Eigen::Dynamic,Eigen::Dynamic,Eigen::RowMajor>\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a17194504109bdabe4cc5d2c9a46cbd37}{RowMatrixXf}};}
+\DoxyCodeLine{00092\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a17194504109bdabe4cc5d2c9a46cbd37}{RowMatrixXf}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_ac2c590d6a4f3dff3752a3e205c04da61}{V\_vbo}};}
+\DoxyCodeLine{00093\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a17194504109bdabe4cc5d2c9a46cbd37}{RowMatrixXf}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a0e7f829d716584272bc822f7166398e7}{V\_normals\_vbo}};}
+\DoxyCodeLine{00094\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a17194504109bdabe4cc5d2c9a46cbd37}{RowMatrixXf}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a78d983cb7c4f65ee3f9f3888f584b9ce}{V\_ambient\_vbo}};}
+\DoxyCodeLine{00095\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a17194504109bdabe4cc5d2c9a46cbd37}{RowMatrixXf}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a4e339a0daa6dadbf0c72f653d752de2c}{V\_diffuse\_vbo}};}
+\DoxyCodeLine{00096\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a17194504109bdabe4cc5d2c9a46cbd37}{RowMatrixXf}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_aed80f410684477bc78e3d84ffcce8752}{V\_specular\_vbo}};}
+\DoxyCodeLine{00097\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a17194504109bdabe4cc5d2c9a46cbd37}{RowMatrixXf}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a4356ffc0522f0b071145297e9362c154}{V\_uv\_vbo}};}
+\DoxyCodeLine{00098\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a17194504109bdabe4cc5d2c9a46cbd37}{RowMatrixXf}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_aa953266e7d2e8ab68966c9c7b8207123}{lines\_V\_vbo}};}
+\DoxyCodeLine{00099\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a17194504109bdabe4cc5d2c9a46cbd37}{RowMatrixXf}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a2d621ebb9b848feab4c9a32966f70f95}{lines\_V\_colors\_vbo}};}
+\DoxyCodeLine{00100\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a17194504109bdabe4cc5d2c9a46cbd37}{RowMatrixXf}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a92962f0de9d353681d78e0f4fdfbd572}{points\_V\_vbo}};}
+\DoxyCodeLine{00101\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a17194504109bdabe4cc5d2c9a46cbd37}{RowMatrixXf}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_af8bbeb3828c1e753047172f045582e01}{points\_V\_colors\_vbo}};}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \textcolor{comment}{//\ Text\ Rendering}}
+\DoxyCodeLine{00104\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL}{TextGL}}}
+\DoxyCodeLine{00105\ \ \ \{\ }
+\DoxyCodeLine{00106\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL_af66b6c41f56c315289d6aca3a4e98a21}{dirty\_flag}};}
+\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL_a31dbb00383bcb99a9f1ce96b7f619b13}{vao\_labels}};}
+\DoxyCodeLine{00108\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL_a33b847b339528f059d36c9a38e0881db}{vbo\_labels\_pos}};}
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL_a695e1db76908c5d849b476c1abc83152}{vbo\_labels\_characters}};}
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL_aae3773156de41b27b3aebaa5b9eb815d}{vbo\_labels\_offset}};\ }
+\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL_a5d83a33c2a09a7777488a5667191174b}{vbo\_labels\_indices}};}
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a17194504109bdabe4cc5d2c9a46cbd37}{RowMatrixXf}}\ \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL_a17a65298cba27505cac6364d1e8066c3}{label\_pos\_vbo}};}
+\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a17194504109bdabe4cc5d2c9a46cbd37}{RowMatrixXf}}\ \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL_a7dda782f5eee9bb2f72bfe48e56184fb}{label\_char\_vbo}};}
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a17194504109bdabe4cc5d2c9a46cbd37}{RowMatrixXf}}\ \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL_abf25e0a6903c0a37f6b5ddf8e0ab98a7}{label\_offset\_vbo}};}
+\DoxyCodeLine{00115\ \ \ \ \ Eigen::Matrix<unsigned,\ Eigen::Dynamic,\ Eigen::Dynamic,\ Eigen::RowMajor>\ \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL_a0e66567a11ab394ad0252e0da7def9f3}{label\_indices\_vbo}};}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL_a226328ca297a344dc8abe024dc392b67}{init\_buffers}}();}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL_afd22585e8cfab8d6b9a92d67d0dd42df}{free\_buffers}}();}
+\DoxyCodeLine{00118\ \ \ \};}
+\DoxyCodeLine{00119\ \ \ \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL}{TextGL}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a1ee2a8dddbfb9fdb9efc69ad84a80ab7}{vertex\_labels}};}
+\DoxyCodeLine{00120\ \ \ \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL}{TextGL}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_ad10fc12cd5f708c39d2d5b8ba9b276f5}{face\_labels}};\ \ }
+\DoxyCodeLine{00121\ \ \ \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL}{TextGL}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_ab7495df16869f13f7714a8072a3e1da0}{custom\_labels}};}
+\DoxyCodeLine{00122\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a6edcfc95e183e2f7959e3636d9e56967}{font\_atlas}};}
 \DoxyCodeLine{00123\ }
-\DoxyCodeLine{00124\ \ \ \textcolor{comment}{//\ Initialize\ shaders\ and\ buffers}}
-\DoxyCodeLine{00125\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a660a7ab065d1f9f65b8c4dc1ae3d3a53}{init}}();}
-\DoxyCodeLine{00126\ }
-\DoxyCodeLine{00127\ \ \ \textcolor{comment}{//\ Release\ all\ resources}}
-\DoxyCodeLine{00128\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_ae4d74dcaa11d4e766d0ea38edd3b7275}{free}}();}
+\DoxyCodeLine{00124\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_af2cb2d30575300b0d13d551ad6ec74aa}{tex\_u}};}
+\DoxyCodeLine{00125\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a54d5896d8ee438cfdfe99e2a3b760852}{tex\_v}};}
+\DoxyCodeLine{00126\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_aff43136617b15669459b7bd0558a98de}{GLint}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_ad2a87b02ac4d2a5d285cb8008742b1b5}{tex\_filter}};}
+\DoxyCodeLine{00127\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_aff43136617b15669459b7bd0558a98de}{GLint}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_af50502e1d1ad9ed8a4993e832d52b45b}{tex\_wrap}};}
+\DoxyCodeLine{00128\ \ \ Eigen::Matrix<char,Eigen::Dynamic,1>\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a4244c2dfada501746521483c45a19568}{tex}};}
 \DoxyCodeLine{00129\ }
-\DoxyCodeLine{00130\ \ \ \textcolor{comment}{//\ Create\ a\ new\ set\ of\ OpenGL\ buffer\ objects}}
-\DoxyCodeLine{00131\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a65f06a596e4fadadce708ee31a3bff46}{init\_buffers}}();}
-\DoxyCodeLine{00132\ }
-\DoxyCodeLine{00133\ \ \ \textcolor{comment}{//\ Bind\ the\ underlying\ OpenGL\ buffer\ objects\ for\ subsequent\ mesh\ draw\ calls}}
-\DoxyCodeLine{00134\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_ae2dff112c00e25077a3fc6f44d7d771c}{bind\_mesh}}();}
-\DoxyCodeLine{00135\ }
-\DoxyCodeLine{00137\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a085cd4c4778f807dcbe2fd10a24927b0}{draw\_mesh}}(\textcolor{keywordtype}{bool}\ solid);}
+\DoxyCodeLine{00130\ \ \ Eigen::Matrix<unsigned,\ Eigen::Dynamic,\ Eigen::Dynamic,\ Eigen::RowMajor>\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a250f1b8c09a20471d7fc029ed5dae56f}{F\_vbo}};}
+\DoxyCodeLine{00131\ \ \ Eigen::Matrix<unsigned,\ Eigen::Dynamic,\ Eigen::Dynamic,\ Eigen::RowMajor>\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a62beff09ea2f25888e3544a61b70e862}{lines\_F\_vbo}};}
+\DoxyCodeLine{00132\ \ \ Eigen::Matrix<unsigned,\ Eigen::Dynamic,\ Eigen::Dynamic,\ Eigen::RowMajor>\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a8207c9ce024558a35b21486d18429ddb}{points\_F\_vbo}};}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00135\ \ \ uint32\_t\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a3b736f78d2d9bac1fa104b4dc8ddcf95}{dirty}};}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a7f3f62f787ae30571191c5bf0a2ed7d7}{MeshGL}}();}
 \DoxyCodeLine{00138\ }
-\DoxyCodeLine{00139\ \ \ \textcolor{comment}{//\ Bind\ the\ underlying\ OpenGL\ buffer\ objects\ for\ subsequent\ line\ overlay\ draw\ calls}}
-\DoxyCodeLine{00140\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a2977d43a99119bd0993566007bea03c8}{bind\_overlay\_lines}}();}
+\DoxyCodeLine{00140\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a660a7ab065d1f9f65b8c4dc1ae3d3a53}{init}}();}
 \DoxyCodeLine{00141\ }
-\DoxyCodeLine{00143\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a10556864f8f669e8ecdd680245875e17}{draw\_overlay\_lines}}();}
+\DoxyCodeLine{00143\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_ae4d74dcaa11d4e766d0ea38edd3b7275}{free}}();}
 \DoxyCodeLine{00144\ }
-\DoxyCodeLine{00145\ \ \ \textcolor{comment}{//\ Bind\ the\ underlying\ OpenGL\ buffer\ objects\ for\ subsequent\ point\ overlay\ draw\ calls}}
-\DoxyCodeLine{00146\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a548e76bd0d60dcef7169c57c4eacbbb6}{bind\_overlay\_points}}();}
+\DoxyCodeLine{00146\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a65f06a596e4fadadce708ee31a3bff46}{init\_buffers}}();}
 \DoxyCodeLine{00147\ }
-\DoxyCodeLine{00149\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_aae3f03429b3c7034cd573479cceb7ee1}{draw\_overlay\_points}}();}
+\DoxyCodeLine{00149\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_ae2dff112c00e25077a3fc6f44d7d771c}{bind\_mesh}}();}
 \DoxyCodeLine{00150\ }
-\DoxyCodeLine{00151\ \ \ \textcolor{comment}{//\ Text\ Binding\ and\ Draw\ functions}}
-\DoxyCodeLine{00152\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a401b4e66e56711b5ba59a70c72550665}{init\_text\_rendering}}();}
-\DoxyCodeLine{00153\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_ab75a81f0cf002e40f42bda18ff797d87}{bind\_labels}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL}{TextGL}}\&\ labels);}
-\DoxyCodeLine{00154\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a72dcfa1805cf603eb114c876f0bcb825}{draw\_labels}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL}{TextGL}}\&\ labels);}
+\DoxyCodeLine{00154\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a085cd4c4778f807dcbe2fd10a24927b0}{draw\_mesh}}(\textcolor{keywordtype}{bool}\ solid);}
 \DoxyCodeLine{00155\ }
-\DoxyCodeLine{00156\ \ \ \textcolor{comment}{//\ Release\ the\ OpenGL\ buffer\ objects}}
-\DoxyCodeLine{00157\ \ \ IGL\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_aaed2fed1bcb579d48298ede694fd2bc7}{free\_buffers}}();}
+\DoxyCodeLine{00157\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a2977d43a99119bd0993566007bea03c8}{bind\_overlay\_lines}}();}
 \DoxyCodeLine{00158\ }
-\DoxyCodeLine{00159\ \};}
-\DoxyCodeLine{00160\ }
-\DoxyCodeLine{00161\ \}}
-\DoxyCodeLine{00162\ \}}
-\DoxyCodeLine{00163\ }
-\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
-\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#\ \ include\ "{}MeshGL.cpp"{}}}
-\DoxyCodeLine{00166\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00160\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a10556864f8f669e8ecdd680245875e17}{draw\_overlay\_lines}}();}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00163\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a548e76bd0d60dcef7169c57c4eacbbb6}{bind\_overlay\_points}}();}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00166\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_aae3f03429b3c7034cd573479cceb7ee1}{draw\_overlay\_points}}();}
 \DoxyCodeLine{00167\ }
-\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00169\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a401b4e66e56711b5ba59a70c72550665}{init\_text\_rendering}}();}
+\DoxyCodeLine{00171\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_ab75a81f0cf002e40f42bda18ff797d87}{bind\_labels}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL}{TextGL}}\&\ labels);}
+\DoxyCodeLine{00173\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a72dcfa1805cf603eb114c876f0bcb825}{draw\_labels}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL}{TextGL}}\&\ labels);}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00176\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_aaed2fed1bcb579d48298ede694fd2bc7}{free\_buffers}}();}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \};}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \}}
+\DoxyCodeLine{00181\ \}}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\#\ \ include\ "{}MeshGL.cpp"{}}}
+\DoxyCodeLine{00185\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

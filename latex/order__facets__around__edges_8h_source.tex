@@ -1,0 +1,87 @@
+\doxysection{order\+\_\+facets\+\_\+around\+\_\+edges.\+h}
+\hypertarget{order__facets__around__edges_8h_source}{}\label{order__facets__around__edges_8h_source}\index{include/igl/copyleft/cgal/order\_facets\_around\_edges.h@{include/igl/copyleft/cgal/order\_facets\_around\_edges.h}}
+\mbox{\hyperlink{order__facets__around__edges_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2015\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_COPYLEFT\_CGAL\_ORDER\_FACETS\_AROUND\_EDGES\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_COPYLEFT\_CGAL\_ORDER\_FACETS\_AROUND\_EDGES\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../../igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <CGAL/Exact\_predicates\_exact\_constructions\_kernel.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \textcolor{keyword}{namespace\ }copyleft}
+\DoxyCodeLine{00018\ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{namespace\ }cgal}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \textcolor{keyword}{template}<}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedN,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DeriveduE,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ uE2EType,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ uE2oEType,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ uE2CType\ >}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ std::enable\_if<!std::is\_same<\textcolor{keyword}{typename}\ DerivedV::Scalar,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ CGAL::Exact\_predicates\_exact\_constructions\_kernel::FT>::value,\ \textcolor{keywordtype}{void}>::type}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_afc6ed199484566caed79fdc9ca79d92a}{order\_facets\_around\_edges}}(}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedV>\&\ V,}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedF>\&\ F,}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedN>\&\ N,}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DeriveduE>\&\ uE,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<uE2EType>\ >\&\ uE2E,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ std::vector<std::vector<uE2oEType>\ >\&\ uE2oE,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ std::vector<std::vector<uE2CType\ >\ >\&\ uE2C\ );}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \textcolor{keyword}{template}<}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedN,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DeriveduE,}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ uE2EType,}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ uE2oEType,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ uE2CType\ >}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ std::enable\_if<std::is\_same<\textcolor{keyword}{typename}\ DerivedV::Scalar,}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ CGAL::Exact\_predicates\_exact\_constructions\_kernel::FT>::value,\ \textcolor{keywordtype}{void}>::type}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_afc6ed199484566caed79fdc9ca79d92a}{order\_facets\_around\_edges}}(}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedV>\&\ V,}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedF>\&\ F,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedN>\&\ N,}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DeriveduE>\&\ uE,}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<uE2EType>\ >\&\ uE2E,}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ std::vector<std::vector<uE2oEType>\ >\&\ uE2oE,}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ std::vector<std::vector<uE2CType\ >\ >\&\ uE2C\ );}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \textcolor{keyword}{template}<}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DeriveduE,}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ uE2EType,}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ uE2oEType,}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ uE2CType\ >}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_afc6ed199484566caed79fdc9ca79d92a}{order\_facets\_around\_edges}}(}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedV>\&\ V,}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedF>\&\ F,}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DeriveduE>\&\ uE,}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<uE2EType>\ >\&\ uE2E,}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ std::vector<std::vector<uE2oEType>\ >\&\ uE2oE,}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ std::vector<std::vector<uE2CType\ >\ >\&\ uE2C\ );}
+\DoxyCodeLine{00096\ \ \ \ \ \}}
+\DoxyCodeLine{00097\ \ \ \}}
+\DoxyCodeLine{00098\ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#include\ "{}order\_facets\_around\_edges.cpp"{}}}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

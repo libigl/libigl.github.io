@@ -105,12 +105,153 @@ $(document).ready(function(){initNavTree('namespaceigl_1_1spectra.html',''); ini
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ad3d3fe017e5b3e83eaa8c9e997eceaf5"><td class="memTemplParams" colspan="2">template&lt;typename EigsScalar , typename DerivedU , typename DerivedS , typename Solver  = Eigen::SparseLU&lt;Eigen::SparseMatrix&lt;EigsScalar&gt;&gt;&gt; </td></tr>
+<tr class="memitem:ad3d3fe017e5b3e83eaa8c9e997eceaf5"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1spectra.html#ad3d3fe017e5b3e83eaa8c9e997eceaf5">eigs</a> (const Eigen::SparseMatrix&lt; EigsScalar &gt; &amp;A, const Eigen::SparseMatrix&lt; EigsScalar &gt; &amp;B, const int k, const <a class="el" href="namespaceigl.html#a39bb96a0597986315dc20d78ba46a50d">igl::EigsType</a> type, Eigen::PlainObjectBase&lt; DerivedU &gt; &amp;U, Eigen::PlainObjectBase&lt; DerivedS &gt; &amp;S)</td></tr>
+<tr class="memdesc:ad3d3fe017e5b3e83eaa8c9e997eceaf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Act like MATLAB's eigs function.  <br /></td></tr>
+<tr class="separator:ad3d3fe017e5b3e83eaa8c9e997eceaf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa87761e316ed1ccddc5890a9b81ba177"><td class="memTemplParams" colspan="2">template&lt;typename EigsScalar , typename DerivedU , typename DerivedS , typename Solver  = Eigen::SparseLU&lt;Eigen::SparseMatrix&lt;EigsScalar&gt;&gt;&gt; </td></tr>
+<tr class="memitem:aa87761e316ed1ccddc5890a9b81ba177"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1spectra.html#aa87761e316ed1ccddc5890a9b81ba177">eigs</a> (const Eigen::SparseMatrix&lt; EigsScalar &gt; &amp;A, const Eigen::SparseMatrix&lt; EigsScalar &gt; &amp;B, const int k, const EigsScalar sigma, Eigen::PlainObjectBase&lt; DerivedU &gt; &amp;U, Eigen::PlainObjectBase&lt; DerivedS &gt; &amp;S)</td></tr>
+<tr class="memdesc:aa87761e316ed1ccddc5890a9b81ba177"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
+<tr class="separator:aa87761e316ed1ccddc5890a9b81ba177"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb72a973b3fc7104bbc4c5f52321924d"><td class="memTemplParams" colspan="2">template&lt;typename DerivedV , typename DerivedF , typename DerivedV_uv &gt; </td></tr>
 <tr class="memitem:adb72a973b3fc7104bbc4c5f52321924d"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1spectra.html#adb72a973b3fc7104bbc4c5f52321924d">lscm</a> (const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, const Eigen::MatrixBase&lt; DerivedF &gt; &amp;F, Eigen::PlainObjectBase&lt; DerivedV_uv &gt; &amp;V_uv)</td></tr>
 <tr class="memdesc:adb72a973b3fc7104bbc4c5f52321924d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute a free-boundary least-squares conformal map parametrization.  <br /></td></tr>
 <tr class="separator:adb72a973b3fc7104bbc4c5f52321924d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ad3d3fe017e5b3e83eaa8c9e997eceaf5" name="ad3d3fe017e5b3e83eaa8c9e997eceaf5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3d3fe017e5b3e83eaa8c9e997eceaf5">&#9670;&#160;</a></span>eigs() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename EigsScalar , typename DerivedU , typename DerivedS , typename Solver  = Eigen::SparseLU&lt;Eigen::SparseMatrix&lt;EigsScalar&gt;&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool igl::spectra::eigs </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::SparseMatrix&lt; EigsScalar &gt; &amp;&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::SparseMatrix&lt; EigsScalar &gt; &amp;&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>k</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceigl.html#a39bb96a0597986315dc20d78ba46a50d">igl::EigsType</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::PlainObjectBase&lt; DerivedU &gt; &amp;&#160;</td>
+          <td class="paramname"><em>U</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::PlainObjectBase&lt; DerivedS &gt; &amp;&#160;</td>
+          <td class="paramname"><em>S</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Act like MATLAB's eigs function. </p>
+<p>Compute the first/last k eigen pairs of the generalized eigen value problem: </p><pre class="fragment"> A u = s B u
+</pre><p> Solutions are approximate and sorted.</p>
+<p>Ideally one should use ARPACK and the Eigen unsupported ARPACK module. This implementation does simple, naive power iterations.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">A</td><td>#A by #A symmetric matrix </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">B</td><td>#A by #A symmetric positive-definite matrix </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">k</td><td>number of eigen pairs to compute </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>whether to extract from the high or low end </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">sU</td><td>#A by k list of sorted eigen vectors (descending) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">sS</td><td>k list of sorted eigen values (descending)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000020">Bug:</a></b></dt><dd>only the 'sm' small magnitude eigen values are well supported</dd></dl>
+
+</div>
+</div>
+<a id="aa87761e316ed1ccddc5890a9b81ba177" name="aa87761e316ed1ccddc5890a9b81ba177"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa87761e316ed1ccddc5890a9b81ba177">&#9670;&#160;</a></span>eigs() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename EigsScalar , typename DerivedU , typename DerivedS , typename Solver  = Eigen::SparseLU&lt;Eigen::SparseMatrix&lt;EigsScalar&gt;&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool igl::spectra::eigs </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::SparseMatrix&lt; EigsScalar &gt; &amp;&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::SparseMatrix&lt; EigsScalar &gt; &amp;&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>k</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const EigsScalar&#160;</td>
+          <td class="paramname"><em>sigma</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::PlainObjectBase&lt; DerivedU &gt; &amp;&#160;</td>
+          <td class="paramname"><em>U</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::PlainObjectBase&lt; DerivedS &gt; &amp;&#160;</td>
+          <td class="paramname"><em>S</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">sigma</td><td>shift to apply to A, as in A ← A + sigma B </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="adb72a973b3fc7104bbc4c5f52321924d" name="adb72a973b3fc7104bbc4c5f52321924d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adb72a973b3fc7104bbc4c5f52321924d">&#9670;&#160;</a></span>lscm()</h2>
 

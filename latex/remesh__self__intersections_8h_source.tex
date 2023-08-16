@@ -1,0 +1,52 @@
+\doxysection{remesh\+\_\+self\+\_\+intersections.\+h}
+\hypertarget{remesh__self__intersections_8h_source}{}\label{remesh__self__intersections_8h_source}\index{include/igl/copyleft/cgal/remesh\_self\_intersections.h@{include/igl/copyleft/cgal/remesh\_self\_intersections.h}}
+\mbox{\hyperlink{remesh__self__intersections_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2014\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_COPYLEFT\_CGAL\_REMESH\_SELF\_INTERSECTIONS\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_COPYLEFT\_CGAL\_REMESH\_SELF\_INTERSECTIONS\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../../igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{RemeshSelfIntersectionsParam_8h}{RemeshSelfIntersectionsParam.h}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
+\DoxyCodeLine{00014\ \ \ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \textcolor{keyword}{namespace\ }copyleft}
+\DoxyCodeLine{00018\ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{namespace\ }cgal}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVV,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFF,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedIF,}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedJ,}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedIM>}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a7169f4ae2fe2c11f7e878b41aa747fc2}{remesh\_self\_intersections}}(}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structigl_1_1copyleft_1_1cgal_1_1RemeshSelfIntersectionsParam}{RemeshSelfIntersectionsParam}}\ \&\ params,}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedVV>\ \&\ VV,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedFF>\ \&\ FF,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedIF>\ \&\ IF,}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedJ>\ \&\ J,}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedIM>\ \&\ IM);}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \ \ \}}
+\DoxyCodeLine{00073\ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#\ \ include\ "{}remesh\_self\_intersections.cpp"{}}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00078\ \ \ }
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

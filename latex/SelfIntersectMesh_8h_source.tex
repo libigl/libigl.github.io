@@ -1,0 +1,867 @@
+\doxysection{Self\+Intersect\+Mesh.\+h}
+\hypertarget{SelfIntersectMesh_8h_source}{}\label{SelfIntersectMesh_8h_source}\index{include/igl/copyleft/cgal/SelfIntersectMesh.h@{include/igl/copyleft/cgal/SelfIntersectMesh.h}}
+\mbox{\hyperlink{SelfIntersectMesh_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2014\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_COPYLEFT\_CGAL\_SELFINTERSECTMESH\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_COPYLEFT\_CGAL\_SELFINTERSECTMESH\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}CGAL\_includes.hpp"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{RemeshSelfIntersectionsParam_8h}{RemeshSelfIntersectionsParam.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}../../unique.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}../../default\_num\_threads.h"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <cstdio>}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{comment}{//\#define\ IGL\_SELFINTERSECTMESH\_TIMING}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#ifndef\ IGL\_FIRST\_HIT\_EXCEPTION}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ IGL\_FIRST\_HIT\_EXCEPTION\ 10}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ The\ easiest\ way\ to\ keep\ track\ of\ everything\ is\ to\ use\ a\ class}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00032\ \{}
+\DoxyCodeLine{00033\ \ \ \textcolor{keyword}{namespace\ }copyleft}
+\DoxyCodeLine{00034\ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{namespace\ }cgal}
+\DoxyCodeLine{00036\ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Kernel,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVV,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFF,}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedIF,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedJ,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedIM>}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh}{SelfIntersectMesh}}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh}{SelfIntersectMesh}}<}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ Kernel,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ DerivedV,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ DerivedF,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ DerivedVV,}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ DerivedFF,}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ DerivedIF,}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ DerivedJ,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ DerivedIM>\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh}{Self}};}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 3D\ Primitives}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ CGAL::Point\_3<Kernel>\ \ \ \ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_aca08ae5f7bd9e8af5294cd2466a2cadc}{Point\_3}};}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ CGAL::Segment\_3<Kernel>\ \ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a1152aad98bdadc62f3feeaecf591f88c}{Segment\_3}};}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ CGAL::Triangle\_3<Kernel>\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a08b88627a638dec1767ad4964dae7fe7}{Triangle\_3}};}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ CGAL::Plane\_3<Kernel>\ \ \ \ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a92476bfc974726de0e270389a8aa3fd8}{Plane\_3}};}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ CGAL::Tetrahedron\_3<Kernel>\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a12f97e8f7dc8e610ba28b91a41493e9c}{Tetrahedron\_3}};}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 2D\ Primitives}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ CGAL::Point\_2<Kernel>\ \ \ \ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a1e43e61638ea86fb97689db5459ff36c}{Point\_2}};}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ CGAL::Segment\_2<Kernel>\ \ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_ab5b32c5b4d976f5cc1f5fa4b574b7fea}{Segment\_2}};}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ CGAL::Triangle\_2<Kernel>\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_afe79a42e91a71b4ba98a4901b574db58}{Triangle\_2}};}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 2D\ Constrained\ Delaunay\ Triangulation\ types}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ CGAL::Exact\_intersections\_tag\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_afcf79dbfec1a9a9a01c17dc67514ce61}{Itag}};}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Axis-\/align\ boxes\ for\ all-\/pairs\ self-\/intersection\ detection}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ std::vector<Triangle\_3>\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_ad833c0bbf165d35d5ef416f144d7ae52}{Triangles}};}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ Triangles::iterator\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_ae54c0c45d541cefe848b5a698e636c28}{TrianglesIterator}};}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ Triangles::const\_iterator\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_aff339eeedc761f657b0ac97ffdfc1824}{TrianglesConstIterator}};}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ CGAL::Box\_intersection\_d::Box\_with\_handle\_d<double,3,TrianglesIterator>}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a3ecb2a1e8a582bfc5a0be109bc6a0afd}{Box}};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Input\ mesh}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a93ef8bc8113137c9421d8599c420c6b7}{V}};}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a3ffd426cf9b46ee61f0d189c52856313}{F}};}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Number\ of\ self-\/intersecting\ triangle\ pairs}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ DerivedF::Index\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a3be180f5be3130421d1df3738caa3922}{Index}};}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a3be180f5be3130421d1df3738caa3922}{Index}}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a1e6d46c014d357bc3919258b48e5c3ae}{count}};}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ std::vector<std::pair<Index,\ CGAL::Object>>\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_ac56b1000b340eb1fbc5be68ce0290773}{ObjectList}};}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Using\ a\ vector\ here\ makes\ this\ **not**\ output\ sensitive}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_ad833c0bbf165d35d5ef416f144d7ae52}{Triangles}}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a5c0c06babba1e8ed96fec7d3b2a35204}{T}};}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ std::vector<Index>\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_ad79e3e94166c02959a885f1765a391aa}{IndexList}};}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_ad79e3e94166c02959a885f1765a391aa}{IndexList}}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a13efd5482d0e7e1db8cd0470f326dea3}{lIF}};}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \#F-\/long\ list\ of\ faces\ with\ intersections\ mapping\ to\ the\ order\ in}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ which\ they\ were\ first\ found}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ std::map<Index,ObjectList>\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_af9bc58c53ef0b45d3b5ee56fe65e8554}{offending}};}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Make\ a\ short\ name\ for\ the\ edge\ map's\ key}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ std::pair<Index,Index>\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a228a539b03cd925f72ab37028914c18a}{EMK}};}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Make\ a\ short\ name\ for\ the\ type\ stored\ at\ each\ edge,\ the\ edge\ map's}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ value}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ std::vector<Index>\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_aeef7725804828596abe690dcb4524a4e}{EMV}};}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Make\ a\ short\ name\ for\ the\ edge\ map}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ std::map<EMK,EMV>\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_aa66c8e9c68c444272a378daee20dc0bc}{EdgeMap}};}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Maps\ edges\ of\ offending\ faces\ to\ all\ incident\ offending\ faces}}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ std::vector<std::pair<TrianglesIterator,\ TrianglesIterator>\ >}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a2af1c41e04b0470ae61744e419646522}{candidate\_triangle\_pairs}};}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1copyleft_1_1cgal_1_1RemeshSelfIntersectionsParam}{RemeshSelfIntersectionsParam}}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a4f0bfd48f1b39ab00b7fc5bf4e34733f}{params}};}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh}{SelfIntersectMesh}}(}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a93ef8bc8113137c9421d8599c420c6b7}{V}},}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a3ffd426cf9b46ee61f0d189c52856313}{F}},}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structigl_1_1copyleft_1_1cgal_1_1RemeshSelfIntersectionsParam}{RemeshSelfIntersectionsParam}}\ \&\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a4f0bfd48f1b39ab00b7fc5bf4e34733f}{params}},}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedVV>\ \&\ VV,}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedFF>\ \&\ FF,}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedIF>\ \&\ IF,}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedJ>\ \&\ J,}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedIM>\ \&\ IM);}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ mark\_offensive(\textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a3be180f5be3130421d1df3738caa3922}{Index}}\ f);}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ count\_intersection(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a3be180f5be3130421d1df3738caa3922}{Index}}\ fa,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a3be180f5be3130421d1df3738caa3922}{Index}}\ fb);}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ intersect(}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a08b88627a638dec1767ad4964dae7fe7}{Triangle\_3}}\ \&\ A,}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a08b88627a638dec1767ad4964dae7fe7}{Triangle\_3}}\ \&\ B,}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a3be180f5be3130421d1df3738caa3922}{Index}}\ fa,}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a3be180f5be3130421d1df3738caa3922}{Index}}\ fb);}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ single\_shared\_vertex(}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a08b88627a638dec1767ad4964dae7fe7}{Triangle\_3}}\ \&\ A,}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a08b88627a638dec1767ad4964dae7fe7}{Triangle\_3}}\ \&\ B,}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a3be180f5be3130421d1df3738caa3922}{Index}}\ fa,}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a3be180f5be3130421d1df3738caa3922}{Index}}\ fb,}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a3be180f5be3130421d1df3738caa3922}{Index}}\ va,}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a3be180f5be3130421d1df3738caa3922}{Index}}\ vb);}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ single\_shared\_vertex(}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a08b88627a638dec1767ad4964dae7fe7}{Triangle\_3}}\ \&\ A,}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a08b88627a638dec1767ad4964dae7fe7}{Triangle\_3}}\ \&\ B,}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a3be180f5be3130421d1df3738caa3922}{Index}}\ fa,}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a3be180f5be3130421d1df3738caa3922}{Index}}\ fb,}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a3be180f5be3130421d1df3738caa3922}{Index}}\ va);}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ double\_shared\_vertex(}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a08b88627a638dec1767ad4964dae7fe7}{Triangle\_3}}\ \&\ A,}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a08b88627a638dec1767ad4964dae7fe7}{Triangle\_3}}\ \&\ B,}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a3be180f5be3130421d1df3738caa3922}{Index}}\ fa,}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a3be180f5be3130421d1df3738caa3922}{Index}}\ fb,}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::pair<Index,Index>\ >\ shared);}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_ad6b7a9069d13185a3919b36d0e606f8c}{box\_intersect}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a3ecb2a1e8a582bfc5a0be109bc6a0afd}{Box}}\&\ a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a3ecb2a1e8a582bfc5a0be109bc6a0afd}{Box}}\&\ b);}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a1f15ee5b85962d795332dc26ed293695}{process\_intersecting\_boxes}}();}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Getters:}}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//const\ IndexList\&\ get\_lIF()\ const\{\ return\ lIF;\}}}
+\DoxyCodeLine{00231\ \textcolor{comment}{}\ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_acda8f3656a13b903a25e7cdb3040764e}{box\_intersect\_static}}(}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh}{SelfIntersectMesh}}\ *\ SIM,}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a3ecb2a1e8a582bfc5a0be109bc6a0afd}{Box}}\ \&a,}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a3ecb2a1e8a582bfc5a0be109bc6a0afd}{Box}}\ \&b);}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ std::mutex\ m\_offending\_lock;}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00238\ \ \ \ \ \}}
+\DoxyCodeLine{00239\ \ \ \}}
+\DoxyCodeLine{00240\ \}}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \textcolor{comment}{//\ Implementation}}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mesh__to__cgal__triangle__list_8h}{mesh\_to\_cgal\_triangle\_list.h}}"{}}}
+\DoxyCodeLine{00245\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{remesh__intersections_8h}{remesh\_intersections.h}}"{}}}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00247\ \textcolor{preprocessor}{\#include\ "{}../../REDRUM.h"{}}}
+\DoxyCodeLine{00248\ \textcolor{preprocessor}{\#include\ "{}../../get\_seconds.h"{}}}
+\DoxyCodeLine{00249\ \textcolor{preprocessor}{\#include\ "{}../../C\_STR.h"{}}}
+\DoxyCodeLine{00250\ }
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00252\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00253\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00254\ \textcolor{preprocessor}{\#include\ <exception>}}
+\DoxyCodeLine{00255\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00256\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00258\ \textcolor{comment}{//\ References:}}
+\DoxyCodeLine{00259\ \textcolor{comment}{//\ http://minregret.googlecode.com/svn/trunk/skyline/src/extern/CGAL-\/3.3.1/examples/Polyhedron/polyhedron\_self\_intersection.cpp}}
+\DoxyCodeLine{00260\ \textcolor{comment}{//\ http://www.cgal.org/Manual/3.9/examples/Boolean\_set\_operations\_2/do\_intersect.cpp}}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00262\ \textcolor{comment}{//\ Q:\ Should\ we\ be\ using\ CGAL::Polyhedron\_3?}}
+\DoxyCodeLine{00263\ \textcolor{comment}{//\ A:\ No!\ Input\ is\ just\ a\ list\ of\ unoriented\ triangles.\ Polyhedron\_3\ requires}}
+\DoxyCodeLine{00264\ \textcolor{comment}{//\ a\ 2-\/manifold.}}
+\DoxyCodeLine{00265\ \textcolor{comment}{//\ A:\ But!\ It\ seems\ we\ could\ use\ CGAL::Triangulation\_3.\ Though\ it\ won't\ be\ easy}}
+\DoxyCodeLine{00266\ \textcolor{comment}{//\ to\ take\ advantage\ of\ functions\ like\ insert\_in\_facet\ because\ we\ want\ to}}
+\DoxyCodeLine{00267\ \textcolor{comment}{//\ constrain\ segments.\ Hmmm.\ Actually\ Triangulation\_3\ doesn't\ look\ right...}}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00269\ \textcolor{comment}{//\ CGAL's\ box\_self\_intersection\_d\ uses\ C-\/style\ function\ callbacks\ without}}
+\DoxyCodeLine{00270\ \textcolor{comment}{//\ userdata.\ This\ is\ a\ leapfrog\ method\ for\ calling\ a\ member\ function.\ It\ should}}
+\DoxyCodeLine{00271\ \textcolor{comment}{//\ be\ bound\ as\ if\ the\ prototype\ was:}}
+\DoxyCodeLine{00272\ \textcolor{comment}{//\ \ \ static\ void\ box\_intersect(const\ Box\ \&a,\ const\ Box\ \&b)}}
+\DoxyCodeLine{00273\ \textcolor{comment}{//\ using\ boost:}}
+\DoxyCodeLine{00274\ \textcolor{comment}{//\ \ boost::function<void(const\ Box\ \&a,const\ Box\ \&b)>\ cb}}
+\DoxyCodeLine{00275\ \textcolor{comment}{//\ \ \ \ =\ boost::bind(\&::box\_intersect,\ this,\ \_1,\_2);}}
+\DoxyCodeLine{00276\ \textcolor{comment}{//}}
+\DoxyCodeLine{00277\ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00278\ \ \ \textcolor{keyword}{typename}\ Kernel,}
+\DoxyCodeLine{00279\ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00280\ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00281\ \ \ \textcolor{keyword}{typename}\ DerivedVV,}
+\DoxyCodeLine{00282\ \ \ \textcolor{keyword}{typename}\ DerivedFF,}
+\DoxyCodeLine{00283\ \ \ \textcolor{keyword}{typename}\ DerivedIF,}
+\DoxyCodeLine{00284\ \ \ \textcolor{keyword}{typename}\ DerivedJ,}
+\DoxyCodeLine{00285\ \ \ \textcolor{keyword}{typename}\ DerivedIM>}
+\DoxyCodeLine{00286\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh}{igl::copyleft::cgal::SelfIntersectMesh}}<}
+\DoxyCodeLine{00287\ \ \ Kernel,}
+\DoxyCodeLine{00288\ \ \ DerivedV,}
+\DoxyCodeLine{00289\ \ \ DerivedF,}
+\DoxyCodeLine{00290\ \ \ DerivedVV,}
+\DoxyCodeLine{00291\ \ \ DerivedFF,}
+\DoxyCodeLine{00292\ \ \ DerivedIF,}
+\DoxyCodeLine{00293\ \ \ DerivedJ,}
+\DoxyCodeLine{00294\ \ \ DerivedIM>::box\_intersect\_static(}
+\DoxyCodeLine{00295\ \ \ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh}{Self}}\ *\ SIM,}
+\DoxyCodeLine{00296\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{typename}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a3ecb2a1e8a582bfc5a0be109bc6a0afd}{Self::Box}}\ \&a,}
+\DoxyCodeLine{00297\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{typename}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a3ecb2a1e8a582bfc5a0be109bc6a0afd}{Self::Box}}\ \&b)}
+\DoxyCodeLine{00298\ \{}
+\DoxyCodeLine{00299\ \ \ SIM-\/>\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_ad6b7a9069d13185a3919b36d0e606f8c}{box\_intersect}}(a,b);}
+\DoxyCodeLine{00300\ \}}
+\DoxyCodeLine{00301\ }
+\DoxyCodeLine{00302\ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00303\ \ \ \textcolor{keyword}{typename}\ Kernel,}
+\DoxyCodeLine{00304\ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00305\ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00306\ \ \ \textcolor{keyword}{typename}\ DerivedVV,}
+\DoxyCodeLine{00307\ \ \ \textcolor{keyword}{typename}\ DerivedFF,}
+\DoxyCodeLine{00308\ \ \ \textcolor{keyword}{typename}\ DerivedIF,}
+\DoxyCodeLine{00309\ \ \ \textcolor{keyword}{typename}\ DerivedJ,}
+\DoxyCodeLine{00310\ \ \ \textcolor{keyword}{typename}\ DerivedIM>}
+\DoxyCodeLine{00311\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh}{igl::copyleft::cgal::SelfIntersectMesh}}<}
+\DoxyCodeLine{00312\ \ \ Kernel,}
+\DoxyCodeLine{00313\ \ \ DerivedV,}
+\DoxyCodeLine{00314\ \ \ DerivedF,}
+\DoxyCodeLine{00315\ \ \ DerivedVV,}
+\DoxyCodeLine{00316\ \ \ DerivedFF,}
+\DoxyCodeLine{00317\ \ \ DerivedIF,}
+\DoxyCodeLine{00318\ \ \ DerivedJ,}
+\DoxyCodeLine{00319\ \ \ DerivedIM>::SelfIntersectMesh(}
+\DoxyCodeLine{00320\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00321\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00322\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structigl_1_1copyleft_1_1cgal_1_1RemeshSelfIntersectionsParam}{RemeshSelfIntersectionsParam}}\ \&\ params,}
+\DoxyCodeLine{00323\ \ \ Eigen::PlainObjectBase<DerivedVV>\ \&\ VV,}
+\DoxyCodeLine{00324\ \ \ Eigen::PlainObjectBase<DerivedFF>\ \&\ FF,}
+\DoxyCodeLine{00325\ \ \ Eigen::PlainObjectBase<DerivedIF>\ \&\ IF,}
+\DoxyCodeLine{00326\ \ \ Eigen::PlainObjectBase<DerivedJ>\ \&\ J,}
+\DoxyCodeLine{00327\ \ \ Eigen::PlainObjectBase<DerivedIM>\ \&\ IM):}
+\DoxyCodeLine{00328\ \ \ V(V),}
+\DoxyCodeLine{00329\ \ \ F(F),}
+\DoxyCodeLine{00330\ \ \ \mbox{\hyperlink{namespaceigl_a83819bb842f4bc4c8af21a98e1db44b3}{count}}(0),}
+\DoxyCodeLine{00331\ \ \ T(),}
+\DoxyCodeLine{00332\ \ \ lIF(),}
+\DoxyCodeLine{00333\ \ \ offending(),}
+\DoxyCodeLine{00334\ \ \ params(params)}
+\DoxyCodeLine{00335\ \{}
+\DoxyCodeLine{00336\ \ \ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00337\ \ \ \textcolor{keyword}{using\ namespace\ }Eigen;}
+\DoxyCodeLine{00338\ }
+\DoxyCodeLine{00339\ \textcolor{preprocessor}{\#ifdef\ IGL\_SELFINTERSECTMESH\_TIMING}}
+\DoxyCodeLine{00340\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&\ tictoc\ =\ []()\ -\/>\ \textcolor{keywordtype}{double}}
+\DoxyCodeLine{00341\ \ \ \{}
+\DoxyCodeLine{00342\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ t\_start\ =\ \mbox{\hyperlink{namespaceigl_a14a7a848b8b1eb296b5c8b80efc05efc}{igl::get\_seconds}}();}
+\DoxyCodeLine{00343\ \ \ \ \ \textcolor{keywordtype}{double}\ diff\ =\ \mbox{\hyperlink{namespaceigl_a14a7a848b8b1eb296b5c8b80efc05efc}{igl::get\_seconds}}()-\/t\_start;}
+\DoxyCodeLine{00344\ \ \ \ \ t\_start\ +=\ diff;}
+\DoxyCodeLine{00345\ \ \ \ \ \textcolor{keywordflow}{return}\ diff;}
+\DoxyCodeLine{00346\ \ \ \};}
+\DoxyCodeLine{00347\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ log\_time\ =\ [\&](\textcolor{keyword}{const}\ std::string\&\ label)\ -\/>\ \textcolor{keywordtype}{void}\{}
+\DoxyCodeLine{00348\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%50s:\ \%0.5lf\(\backslash\)n"{}},}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \mbox{\hyperlink{C__STR_8h_a0694d2f2211a224ad161925f11cc2c31}{C\_STR}}(\textcolor{stringliteral}{"{}SelfIntersectMesh."{}}\ <<\ label),tictoc());}
+\DoxyCodeLine{00350\ \ \ \};}
+\DoxyCodeLine{00351\ \ \ tictoc();}
+\DoxyCodeLine{00352\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00353\ }
+\DoxyCodeLine{00354\ \ \ \textcolor{comment}{//\ Compute\ and\ process\ self\ intersections}}
+\DoxyCodeLine{00355\ \ \ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_ac9d72d2b7b5a3aa61b67b44df084c7db}{mesh\_to\_cgal\_triangle\_list}}(\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a93ef8bc8113137c9421d8599c420c6b7}{V}},\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a3ffd426cf9b46ee61f0d189c52856313}{F}},\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a5c0c06babba1e8ed96fec7d3b2a35204}{T}});}
+\DoxyCodeLine{00356\ \textcolor{preprocessor}{\#ifdef\ IGL\_SELFINTERSECTMESH\_TIMING}}
+\DoxyCodeLine{00357\ \ \ log\_time(\textcolor{stringliteral}{"{}convert\_to\_triangle\_list"{}});}
+\DoxyCodeLine{00358\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00359\ \ \ \textcolor{comment}{//\ http://www.cgal.org/Manual/latest/doc\_html/cgal\_manual/Box\_intersection\_d/Chapter\_main.html\#Section\_63.5}}
+\DoxyCodeLine{00360\ \ \ \textcolor{comment}{//\ Create\ the\ corresponding\ vector\ of\ bounding\ boxes}}
+\DoxyCodeLine{00361\ \ \ std::vector<Box>\ boxes;}
+\DoxyCodeLine{00362\ \ \ boxes.reserve(\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a5c0c06babba1e8ed96fec7d3b2a35204}{T}}.size());}
+\DoxyCodeLine{00363\ \ \ \textcolor{keywordflow}{for}\ (}
+\DoxyCodeLine{00364\ \ \ \ \ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_ae54c0c45d541cefe848b5a698e636c28}{TrianglesIterator}}\ tit\ =\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a5c0c06babba1e8ed96fec7d3b2a35204}{T}}.begin();}
+\DoxyCodeLine{00365\ \ \ \ \ tit\ !=\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a5c0c06babba1e8ed96fec7d3b2a35204}{T}}.end();}
+\DoxyCodeLine{00366\ \ \ \ \ ++tit)}
+\DoxyCodeLine{00367\ \ \ \{}
+\DoxyCodeLine{00368\ \ \ \ \ \textcolor{keywordflow}{if}\ (!tit-\/>is\_degenerate())}
+\DoxyCodeLine{00369\ \ \ \ \ \{}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ boxes.push\_back(\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a3ecb2a1e8a582bfc5a0be109bc6a0afd}{Box}}(tit-\/>bbox(),\ tit));}
+\DoxyCodeLine{00371\ \ \ \ \ \}}
+\DoxyCodeLine{00372\ \ \ \}}
+\DoxyCodeLine{00373\ \ \ \textcolor{comment}{//\ Leapfrog\ callback}}
+\DoxyCodeLine{00374\ \ \ std::function<void(\textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a3ecb2a1e8a582bfc5a0be109bc6a0afd}{Box}}\ \&a,\textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a3ecb2a1e8a582bfc5a0be109bc6a0afd}{Box}}\ \&b)>\ cb\ =}
+\DoxyCodeLine{00375\ \ \ \ \ std::bind(\&\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_acda8f3656a13b903a25e7cdb3040764e}{box\_intersect\_static}},\ \textcolor{keyword}{this},}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \textcolor{comment}{//\ Explicitly\ use\ std\ namespace\ to\ avoid\ confusion\ with\ boost\ (who\ puts}}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \textcolor{comment}{//\ \_1\ etc.\ in\ global\ namespace)}}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ std::placeholders::\_1,}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ std::placeholders::\_2);}
+\DoxyCodeLine{00380\ \textcolor{preprocessor}{\#ifdef\ IGL\_SELFINTERSECTMESH\_TIMING}}
+\DoxyCodeLine{00381\ \ \ log\_time(\textcolor{stringliteral}{"{}box\_and\_bind"{}});}
+\DoxyCodeLine{00382\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00383\ \ \ \textcolor{comment}{//\ Run\ the\ self\ intersection\ algorithm\ with\ all\ defaults}}
+\DoxyCodeLine{00384\ \ \ CGAL::box\_self\_intersection\_d(boxes.begin(),\ boxes.end(),cb);}
+\DoxyCodeLine{00385\ \textcolor{preprocessor}{\#ifdef\ IGL\_SELFINTERSECTMESH\_TIMING}}
+\DoxyCodeLine{00386\ \ \ log\_time(\textcolor{stringliteral}{"{}box\_intersection\_d"{}});}
+\DoxyCodeLine{00387\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00388\ \ \ \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{00389\ \ \ \ \ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a1f15ee5b85962d795332dc26ed293695}{process\_intersecting\_boxes}}();}
+\DoxyCodeLine{00390\ \ \ \}\textcolor{keywordflow}{catch}(\textcolor{keywordtype}{int}\ e)}
+\DoxyCodeLine{00391\ \ \ \{}
+\DoxyCodeLine{00392\ \ \ \ \ \textcolor{comment}{//\ Rethrow\ if\ not\ IGL\_FIRST\_HIT\_EXCEPTION}}
+\DoxyCodeLine{00393\ \ \ \ \ \textcolor{keywordflow}{if}(e\ !=\ \mbox{\hyperlink{SelfIntersectMesh_8h_a80fe8a5758f21b2e4e9eee2ed44a2f2e}{IGL\_FIRST\_HIT\_EXCEPTION}})}
+\DoxyCodeLine{00394\ \ \ \ \ \{}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ e;}
+\DoxyCodeLine{00396\ \ \ \ \ \}}
+\DoxyCodeLine{00397\ \ \ \ \ \textcolor{comment}{//\ Otherwise\ just\ fall\ through}}
+\DoxyCodeLine{00398\ \ \ \}}
+\DoxyCodeLine{00399\ \textcolor{preprocessor}{\#ifdef\ IGL\_SELFINTERSECTMESH\_TIMING}}
+\DoxyCodeLine{00400\ \ \ log\_time(\textcolor{stringliteral}{"{}resolve\_intersection"{}});}
+\DoxyCodeLine{00401\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00402\ }
+\DoxyCodeLine{00403\ \ \ \textcolor{comment}{//\ Convert\ lIF\ to\ Eigen\ matrix}}
+\DoxyCodeLine{00404\ \ \ assert(\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a13efd5482d0e7e1db8cd0470f326dea3}{lIF}}.size()\%2\ ==\ 0);}
+\DoxyCodeLine{00405\ \ \ IF.resize(\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a13efd5482d0e7e1db8cd0470f326dea3}{lIF}}.size()/2,2);}
+\DoxyCodeLine{00406\ \ \ \{}
+\DoxyCodeLine{00407\ \ \ \ \ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a3be180f5be3130421d1df3738caa3922}{Index}}\ i=0;}
+\DoxyCodeLine{00408\ \ \ \ \ \textcolor{keywordflow}{for}(}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ IndexList::const\_iterator\ ifit\ =\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a13efd5482d0e7e1db8cd0470f326dea3}{lIF}}.begin();}
+\DoxyCodeLine{00410\ \ \ \ \ \ \ ifit!=\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a13efd5482d0e7e1db8cd0470f326dea3}{lIF}}.end();}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ )}
+\DoxyCodeLine{00412\ \ \ \ \ \{}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ IF(i,0)\ =\ (*ifit);}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ ifit++;}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ IF(i,1)\ =\ (*ifit);}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ ifit++;}
+\DoxyCodeLine{00417\ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00418\ \ \ \ \ \}}
+\DoxyCodeLine{00419\ \ \ \}}
+\DoxyCodeLine{00420\ \textcolor{preprocessor}{\#ifdef\ IGL\_SELFINTERSECTMESH\_TIMING}}
+\DoxyCodeLine{00421\ \ \ log\_time(\textcolor{stringliteral}{"{}store\_intersecting\_face\_pairs"{}});}
+\DoxyCodeLine{00422\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00423\ }
+\DoxyCodeLine{00424\ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a4f0bfd48f1b39ab00b7fc5bf4e34733f}{params}}.\mbox{\hyperlink{structigl_1_1copyleft_1_1cgal_1_1RemeshSelfIntersectionsParam_a99e906696e0b6792b6c8b1c64a11072d}{detect\_only}})}
+\DoxyCodeLine{00425\ \ \ \{}
+\DoxyCodeLine{00426\ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00427\ \ \ \}}
+\DoxyCodeLine{00428\ }
+\DoxyCodeLine{00429\ \ \ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a99d687331f910fef280e3a0e5f5370c7}{remesh\_intersections}}(}
+\DoxyCodeLine{00430\ \ \ \ \ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a93ef8bc8113137c9421d8599c420c6b7}{V}},\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a3ffd426cf9b46ee61f0d189c52856313}{F}},\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a5c0c06babba1e8ed96fec7d3b2a35204}{T}},\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_af9bc58c53ef0b45d3b5ee56fe65e8554}{offending}},}
+\DoxyCodeLine{00431\ \ \ \ \ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a4f0bfd48f1b39ab00b7fc5bf4e34733f}{params}}.\mbox{\hyperlink{structigl_1_1copyleft_1_1cgal_1_1RemeshSelfIntersectionsParam_ae1aa81388a94d26294c74a51ae3cf906}{stitch\_all}},\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a4f0bfd48f1b39ab00b7fc5bf4e34733f}{params}}.\mbox{\hyperlink{structigl_1_1copyleft_1_1cgal_1_1RemeshSelfIntersectionsParam_a2e8863d911e7f8ef63354a70eea2b470}{slow\_and\_more\_precise\_rounding}},VV,FF,J,IM);}
+\DoxyCodeLine{00432\ }
+\DoxyCodeLine{00433\ \textcolor{preprocessor}{\#ifdef\ IGL\_SELFINTERSECTMESH\_TIMING}}
+\DoxyCodeLine{00434\ \ \ log\_time(\textcolor{stringliteral}{"{}remesh\_intersection"{}});}
+\DoxyCodeLine{00435\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00436\ \}}
+\DoxyCodeLine{00437\ }
+\DoxyCodeLine{00438\ }
+\DoxyCodeLine{00439\ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00440\ \ \ \textcolor{keyword}{typename}\ Kernel,}
+\DoxyCodeLine{00441\ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00442\ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00443\ \ \ \textcolor{keyword}{typename}\ DerivedVV,}
+\DoxyCodeLine{00444\ \ \ \textcolor{keyword}{typename}\ DerivedFF,}
+\DoxyCodeLine{00445\ \ \ \textcolor{keyword}{typename}\ DerivedIF,}
+\DoxyCodeLine{00446\ \ \ \textcolor{keyword}{typename}\ DerivedJ,}
+\DoxyCodeLine{00447\ \ \ \textcolor{keyword}{typename}\ DerivedIM>}
+\DoxyCodeLine{00448\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh}{igl::copyleft::cgal::SelfIntersectMesh}}<}
+\DoxyCodeLine{00449\ \ \ Kernel,}
+\DoxyCodeLine{00450\ \ \ DerivedV,}
+\DoxyCodeLine{00451\ \ \ DerivedF,}
+\DoxyCodeLine{00452\ \ \ DerivedVV,}
+\DoxyCodeLine{00453\ \ \ DerivedFF,}
+\DoxyCodeLine{00454\ \ \ DerivedIF,}
+\DoxyCodeLine{00455\ \ \ DerivedJ,}
+\DoxyCodeLine{00456\ \ \ DerivedIM>::mark\_offensive(\textcolor{keyword}{const}\ Index\ f)}
+\DoxyCodeLine{00457\ \{}
+\DoxyCodeLine{00458\ \ \ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00459\ \ \ lIF.push\_back(f);}
+\DoxyCodeLine{00460\ \ \ \textcolor{keywordflow}{if}(offending.count(f)\ ==\ 0)}
+\DoxyCodeLine{00461\ \ \ \{}
+\DoxyCodeLine{00462\ \ \ \ \ \textcolor{comment}{//\ first\ time\ marking,\ initialize\ with\ new\ id\ and\ empty\ list}}
+\DoxyCodeLine{00463\ \ \ \ \ offending[f]\ =\ \{\};}
+\DoxyCodeLine{00464\ \ \ \}}
+\DoxyCodeLine{00465\ \}}
+\DoxyCodeLine{00466\ }
+\DoxyCodeLine{00467\ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00468\ \ \ \textcolor{keyword}{typename}\ Kernel,}
+\DoxyCodeLine{00469\ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00470\ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00471\ \ \ \textcolor{keyword}{typename}\ DerivedVV,}
+\DoxyCodeLine{00472\ \ \ \textcolor{keyword}{typename}\ DerivedFF,}
+\DoxyCodeLine{00473\ \ \ \textcolor{keyword}{typename}\ DerivedIF,}
+\DoxyCodeLine{00474\ \ \ \textcolor{keyword}{typename}\ DerivedJ,}
+\DoxyCodeLine{00475\ \ \ \textcolor{keyword}{typename}\ DerivedIM>}
+\DoxyCodeLine{00476\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh}{igl::copyleft::cgal::SelfIntersectMesh}}<}
+\DoxyCodeLine{00477\ \ \ Kernel,}
+\DoxyCodeLine{00478\ \ \ DerivedV,}
+\DoxyCodeLine{00479\ \ \ DerivedF,}
+\DoxyCodeLine{00480\ \ \ DerivedVV,}
+\DoxyCodeLine{00481\ \ \ DerivedFF,}
+\DoxyCodeLine{00482\ \ \ DerivedIF,}
+\DoxyCodeLine{00483\ \ \ DerivedJ,}
+\DoxyCodeLine{00484\ \ \ DerivedIM>::count\_intersection(}
+\DoxyCodeLine{00485\ \ \ \textcolor{keyword}{const}\ Index\ fa,}
+\DoxyCodeLine{00486\ \ \ \textcolor{keyword}{const}\ Index\ fb)}
+\DoxyCodeLine{00487\ \{}
+\DoxyCodeLine{00488\ \ \ std::lock\_guard<std::mutex>\ guard(m\_offending\_lock);}
+\DoxyCodeLine{00489\ \ \ mark\_offensive(fa);}
+\DoxyCodeLine{00490\ \ \ mark\_offensive(fb);}
+\DoxyCodeLine{00491\ \ \ this-\/>\mbox{\hyperlink{namespaceigl_a83819bb842f4bc4c8af21a98e1db44b3}{count}}++;}
+\DoxyCodeLine{00492\ \ \ \textcolor{comment}{//\ We\ found\ the\ first\ intersection}}
+\DoxyCodeLine{00493\ \ \ \textcolor{keywordflow}{if}(params.first\_only\ \&\&\ this-\/>count\ >=\ 1)}
+\DoxyCodeLine{00494\ \ \ \{}
+\DoxyCodeLine{00495\ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{SelfIntersectMesh_8h_a80fe8a5758f21b2e4e9eee2ed44a2f2e}{IGL\_FIRST\_HIT\_EXCEPTION}};}
+\DoxyCodeLine{00496\ \ \ \}}
+\DoxyCodeLine{00497\ }
+\DoxyCodeLine{00498\ \}}
+\DoxyCodeLine{00499\ }
+\DoxyCodeLine{00500\ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00501\ \ \ \textcolor{keyword}{typename}\ Kernel,}
+\DoxyCodeLine{00502\ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00503\ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00504\ \ \ \textcolor{keyword}{typename}\ DerivedVV,}
+\DoxyCodeLine{00505\ \ \ \textcolor{keyword}{typename}\ DerivedFF,}
+\DoxyCodeLine{00506\ \ \ \textcolor{keyword}{typename}\ DerivedIF,}
+\DoxyCodeLine{00507\ \ \ \textcolor{keyword}{typename}\ DerivedJ,}
+\DoxyCodeLine{00508\ \ \ \textcolor{keyword}{typename}\ DerivedIM>}
+\DoxyCodeLine{00509\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh}{igl::copyleft::cgal::SelfIntersectMesh}}<}
+\DoxyCodeLine{00510\ \ \ Kernel,}
+\DoxyCodeLine{00511\ \ \ DerivedV,}
+\DoxyCodeLine{00512\ \ \ DerivedF,}
+\DoxyCodeLine{00513\ \ \ DerivedVV,}
+\DoxyCodeLine{00514\ \ \ DerivedFF,}
+\DoxyCodeLine{00515\ \ \ DerivedIF,}
+\DoxyCodeLine{00516\ \ \ DerivedJ,}
+\DoxyCodeLine{00517\ \ \ DerivedIM>\mbox{\hyperlink{namespaceigl_a4f72acbb659a5c1d291a4cff36910a87}{::intersect}}(}
+\DoxyCodeLine{00518\ \ \ \textcolor{keyword}{const}\ Triangle\_3\ \&\ A,}
+\DoxyCodeLine{00519\ \ \ \textcolor{keyword}{const}\ Triangle\_3\ \&\ B,}
+\DoxyCodeLine{00520\ \ \ \textcolor{keyword}{const}\ Index\ fa,}
+\DoxyCodeLine{00521\ \ \ \textcolor{keyword}{const}\ Index\ fb)}
+\DoxyCodeLine{00522\ \{}
+\DoxyCodeLine{00523\ \ \ \textcolor{comment}{//\ Determine\ whether\ there\ is\ an\ intersection}}
+\DoxyCodeLine{00524\ \ \ \textcolor{keywordflow}{if}(!CGAL::do\_intersect(A,B))}
+\DoxyCodeLine{00525\ \ \ \{}
+\DoxyCodeLine{00526\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00527\ \ \ \}}
+\DoxyCodeLine{00528\ \ \ count\_intersection(fa,fb);}
+\DoxyCodeLine{00529\ \ \ \textcolor{keywordflow}{if}(!params.detect\_only)}
+\DoxyCodeLine{00530\ \ \ \{}
+\DoxyCodeLine{00531\ \ \ \ \ \textcolor{comment}{//\ Construct\ intersection}}
+\DoxyCodeLine{00532\ \ \ \ \ CGAL::Object\ result\ =\ CGAL::intersection(A,B);}
+\DoxyCodeLine{00533\ \ \ \ \ \textcolor{comment}{//\ Could\ avoid\ this\ mutex\ if\ \`{}offending`\ was\ per-\/thread\ and\ passed\ as\ input}}
+\DoxyCodeLine{00534\ \ \ \ \ \textcolor{comment}{//\ reference.}}
+\DoxyCodeLine{00535\ \ \ \ \ std::lock\_guard<std::mutex>\ guard(m\_offending\_lock);}
+\DoxyCodeLine{00536\ \ \ \ \ offending[fa].push\_back(\{fb,\ result\});}
+\DoxyCodeLine{00537\ \ \ \ \ offending[fb].push\_back(\{fa,\ result\});}
+\DoxyCodeLine{00538\ \ \ \}}
+\DoxyCodeLine{00539\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00540\ \}}
+\DoxyCodeLine{00541\ }
+\DoxyCodeLine{00542\ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00543\ \ \ \textcolor{keyword}{typename}\ Kernel,}
+\DoxyCodeLine{00544\ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00545\ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00546\ \ \ \textcolor{keyword}{typename}\ DerivedVV,}
+\DoxyCodeLine{00547\ \ \ \textcolor{keyword}{typename}\ DerivedFF,}
+\DoxyCodeLine{00548\ \ \ \textcolor{keyword}{typename}\ DerivedIF,}
+\DoxyCodeLine{00549\ \ \ \textcolor{keyword}{typename}\ DerivedJ,}
+\DoxyCodeLine{00550\ \ \ \textcolor{keyword}{typename}\ DerivedIM>}
+\DoxyCodeLine{00551\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh}{igl::copyleft::cgal::SelfIntersectMesh}}<}
+\DoxyCodeLine{00552\ \ \ Kernel,}
+\DoxyCodeLine{00553\ \ \ DerivedV,}
+\DoxyCodeLine{00554\ \ \ DerivedF,}
+\DoxyCodeLine{00555\ \ \ DerivedVV,}
+\DoxyCodeLine{00556\ \ \ DerivedFF,}
+\DoxyCodeLine{00557\ \ \ DerivedIF,}
+\DoxyCodeLine{00558\ \ \ DerivedJ,}
+\DoxyCodeLine{00559\ \ \ DerivedIM>::single\_shared\_vertex(}
+\DoxyCodeLine{00560\ \ \ \textcolor{keyword}{const}\ Triangle\_3\ \&\ A,}
+\DoxyCodeLine{00561\ \ \ \textcolor{keyword}{const}\ Triangle\_3\ \&\ B,}
+\DoxyCodeLine{00562\ \ \ \textcolor{keyword}{const}\ Index\ fa,}
+\DoxyCodeLine{00563\ \ \ \textcolor{keyword}{const}\ Index\ fb,}
+\DoxyCodeLine{00564\ \ \ \textcolor{keyword}{const}\ Index\ va,}
+\DoxyCodeLine{00565\ \ \ \textcolor{keyword}{const}\ Index\ vb)}
+\DoxyCodeLine{00566\ \{}
+\DoxyCodeLine{00567\ \ \ \textcolor{keywordflow}{if}(single\_shared\_vertex(A,B,fa,fb,va))}
+\DoxyCodeLine{00568\ \ \ \{}
+\DoxyCodeLine{00569\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00570\ \ \ \}}
+\DoxyCodeLine{00571\ \ \ \textcolor{keywordflow}{return}\ single\_shared\_vertex(B,A,fb,fa,vb);}
+\DoxyCodeLine{00572\ \}}
+\DoxyCodeLine{00573\ }
+\DoxyCodeLine{00574\ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00575\ \ \ \textcolor{keyword}{typename}\ Kernel,}
+\DoxyCodeLine{00576\ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00577\ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00578\ \ \ \textcolor{keyword}{typename}\ DerivedVV,}
+\DoxyCodeLine{00579\ \ \ \textcolor{keyword}{typename}\ DerivedFF,}
+\DoxyCodeLine{00580\ \ \ \textcolor{keyword}{typename}\ DerivedIF,}
+\DoxyCodeLine{00581\ \ \ \textcolor{keyword}{typename}\ DerivedJ,}
+\DoxyCodeLine{00582\ \ \ \textcolor{keyword}{typename}\ DerivedIM>}
+\DoxyCodeLine{00583\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh}{igl::copyleft::cgal::SelfIntersectMesh}}<}
+\DoxyCodeLine{00584\ \ \ Kernel,}
+\DoxyCodeLine{00585\ \ \ DerivedV,}
+\DoxyCodeLine{00586\ \ \ DerivedF,}
+\DoxyCodeLine{00587\ \ \ DerivedVV,}
+\DoxyCodeLine{00588\ \ \ DerivedFF,}
+\DoxyCodeLine{00589\ \ \ DerivedIF,}
+\DoxyCodeLine{00590\ \ \ DerivedJ,}
+\DoxyCodeLine{00591\ \ \ DerivedIM>::single\_shared\_vertex(}
+\DoxyCodeLine{00592\ \ \ \textcolor{keyword}{const}\ Triangle\_3\ \&\ A,}
+\DoxyCodeLine{00593\ \ \ \textcolor{keyword}{const}\ Triangle\_3\ \&\ B,}
+\DoxyCodeLine{00594\ \ \ \textcolor{keyword}{const}\ Index\ fa,}
+\DoxyCodeLine{00595\ \ \ \textcolor{keyword}{const}\ Index\ fb,}
+\DoxyCodeLine{00596\ \ \ \textcolor{keyword}{const}\ Index\ va)}
+\DoxyCodeLine{00597\ \{}
+\DoxyCodeLine{00598\ \ \ \textcolor{comment}{//\ This\ was\ not\ a\ good\ idea.\ It\ will\ not\ handle\ coplanar\ triangles\ well.}}
+\DoxyCodeLine{00599\ \ \ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00600\ \ \ Segment\_3\ sa(}
+\DoxyCodeLine{00601\ \ \ \ \ A.vertex((va+1)\%3),}
+\DoxyCodeLine{00602\ \ \ \ \ A.vertex((va+2)\%3));}
+\DoxyCodeLine{00603\ }
+\DoxyCodeLine{00604\ \ \ \textcolor{keywordflow}{if}(CGAL::do\_intersect(sa,B))}
+\DoxyCodeLine{00605\ \ \ \{}
+\DoxyCodeLine{00606\ \ \ \ \ \textcolor{comment}{//\ can't\ put\ count\_intersection(fa,fb)\ here\ since\ we\ use\ intersect\ below}}
+\DoxyCodeLine{00607\ \ \ \ \ \textcolor{comment}{//\ and\ then\ it\ will\ be\ counted\ twice.}}
+\DoxyCodeLine{00608\ \ \ \ \ \textcolor{keywordflow}{if}(params.detect\_only)}
+\DoxyCodeLine{00609\ \ \ \ \ \{}
+\DoxyCodeLine{00610\ \ \ \ \ \ \ count\_intersection(fa,fb);}
+\DoxyCodeLine{00611\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00612\ \ \ \ \ \}}
+\DoxyCodeLine{00613\ \ \ \ \ CGAL::Object\ result\ =\ CGAL::intersection(sa,B);}
+\DoxyCodeLine{00614\ \ \ \ \ \textcolor{keywordflow}{if}(\textcolor{keyword}{const}\ Point\_3\ *\ p\ =\ CGAL::object\_cast<Point\_3\ >(\&result))}
+\DoxyCodeLine{00615\ \ \ \ \ \{}
+\DoxyCodeLine{00616\ \ \ \ \ \ \ \textcolor{comment}{//\ Single\ intersection\ -\/-\/>\ segment\ from\ shared\ point\ to\ intersection}}
+\DoxyCodeLine{00617\ \ \ \ \ \ \ CGAL::Object\ seg\ =\ CGAL::make\_object(Segment\_3(}
+\DoxyCodeLine{00618\ \ \ \ \ \ \ \ \ A.vertex(va),}
+\DoxyCodeLine{00619\ \ \ \ \ \ \ \ \ *p));}
+\DoxyCodeLine{00620\ \ \ \ \ \ \ count\_intersection(fa,fb);}
+\DoxyCodeLine{00621\ \ \ \ \ \ \ std::lock\_guard<std::mutex>\ guard(m\_offending\_lock);}
+\DoxyCodeLine{00622\ \ \ \ \ \ \ offending[fa].push\_back(\{fb,\ seg\});}
+\DoxyCodeLine{00623\ \ \ \ \ \ \ offending[fb].push\_back(\{fa,\ seg\});}
+\DoxyCodeLine{00624\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00625\ \ \ \ \ \}\textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(CGAL::object\_cast<Segment\_3\ >(\&result))}
+\DoxyCodeLine{00626\ \ \ \ \ \{}
+\DoxyCodeLine{00627\ \ \ \ \ \ \ \textcolor{comment}{//\ Need\ to\ do\ full\ test.\ Intersection\ could\ be\ a\ general\ poly.}}
+\DoxyCodeLine{00628\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ test\ =\ \mbox{\hyperlink{namespaceigl_a4f72acbb659a5c1d291a4cff36910a87}{intersect}}(A,B,fa,fb);}
+\DoxyCodeLine{00629\ \ \ \ \ \ \ ((void)test);}
+\DoxyCodeLine{00630\ \ \ \ \ \ \ assert(test\ \&\&\ \textcolor{stringliteral}{"{}intersect\ should\ agree\ with\ do\_intersect"{}});}
+\DoxyCodeLine{00631\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00632\ \ \ \ \ \}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{00633\ \ \ \ \ \{}
+\DoxyCodeLine{00634\ \ \ \ \ \ \ cerr<<\mbox{\hyperlink{REDRUM_8h_a9a954bf9d94073044b1769eb33a7bf5a}{REDRUM}}(\textcolor{stringliteral}{"{}Segment\ ∩\ triangle\ neither\ point\ nor\ segment?"{}})<<endl;}
+\DoxyCodeLine{00635\ \ \ \ \ \ \ assert(\textcolor{keyword}{false});}
+\DoxyCodeLine{00636\ \ \ \ \ \}}
+\DoxyCodeLine{00637\ \ \ \}}
+\DoxyCodeLine{00638\ }
+\DoxyCodeLine{00639\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00640\ \}}
+\DoxyCodeLine{00641\ }
+\DoxyCodeLine{00642\ }
+\DoxyCodeLine{00643\ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00644\ \ \ \textcolor{keyword}{typename}\ Kernel,}
+\DoxyCodeLine{00645\ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00646\ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00647\ \ \ \textcolor{keyword}{typename}\ DerivedVV,}
+\DoxyCodeLine{00648\ \ \ \textcolor{keyword}{typename}\ DerivedFF,}
+\DoxyCodeLine{00649\ \ \ \textcolor{keyword}{typename}\ DerivedIF,}
+\DoxyCodeLine{00650\ \ \ \textcolor{keyword}{typename}\ DerivedJ,}
+\DoxyCodeLine{00651\ \ \ \textcolor{keyword}{typename}\ DerivedIM>}
+\DoxyCodeLine{00652\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh}{igl::copyleft::cgal::SelfIntersectMesh}}<}
+\DoxyCodeLine{00653\ \ \ Kernel,}
+\DoxyCodeLine{00654\ \ \ DerivedV,}
+\DoxyCodeLine{00655\ \ \ DerivedF,}
+\DoxyCodeLine{00656\ \ \ DerivedVV,}
+\DoxyCodeLine{00657\ \ \ DerivedFF,}
+\DoxyCodeLine{00658\ \ \ DerivedIF,}
+\DoxyCodeLine{00659\ \ \ DerivedJ,}
+\DoxyCodeLine{00660\ \ \ DerivedIM>::double\_shared\_vertex(}
+\DoxyCodeLine{00661\ \ \ \textcolor{keyword}{const}\ Triangle\_3\ \&\ A,}
+\DoxyCodeLine{00662\ \ \ \textcolor{keyword}{const}\ Triangle\_3\ \&\ B,}
+\DoxyCodeLine{00663\ \ \ \textcolor{keyword}{const}\ Index\ fa,}
+\DoxyCodeLine{00664\ \ \ \textcolor{keyword}{const}\ Index\ fb,}
+\DoxyCodeLine{00665\ \ \ \textcolor{keyword}{const}\ std::vector<std::pair<Index,Index>\ >\ shared)}
+\DoxyCodeLine{00666\ \{}
+\DoxyCodeLine{00667\ \ \ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00668\ }
+\DoxyCodeLine{00669\ \ \ \textcolor{comment}{//\ must\ be\ co-\/planar}}
+\DoxyCodeLine{00670\ \ \ \textcolor{keywordflow}{if}(}
+\DoxyCodeLine{00671\ \ \ \ \ A.supporting\_plane()\ !=\ B.supporting\_plane()\ \&\&}
+\DoxyCodeLine{00672\ \ \ \ \ A.supporting\_plane()\ !=\ B.supporting\_plane().opposite())}
+\DoxyCodeLine{00673\ \ \ \{}
+\DoxyCodeLine{00674\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00675\ \ \ \}}
+\DoxyCodeLine{00676\ \ \ \textcolor{comment}{//\ Since\ A\ and\ B\ are\ non-\/degenerate\ the\ intersection\ must\ be\ a\ polygon}}
+\DoxyCodeLine{00677\ \ \ \textcolor{comment}{//\ (triangle).\ Either}}
+\DoxyCodeLine{00678\ \ \ \textcolor{comment}{//\ \ \ -\/\ the\ vertex\ of\ A\ (B)\ opposite\ the\ shared\ edge\ of\ lies\ on\ B\ (A),\ or}}
+\DoxyCodeLine{00679\ \ \ \textcolor{comment}{//\ \ \ -\/\ an\ edge\ of\ A\ intersects\ and\ edge\ of\ B\ without\ sharing\ a\ vertex}}
+\DoxyCodeLine{00680\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00681\ \ \ \textcolor{comment}{//\ Determine\ if\ the\ vertex\ opposite\ edge\ (a0,a1)\ in\ triangle\ A\ lies\ in}}
+\DoxyCodeLine{00682\ \ \ \textcolor{comment}{//\ (intersects)\ triangle\ B}}
+\DoxyCodeLine{00683\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&\ opposite\_point\_inside\ =\ [](}
+\DoxyCodeLine{00684\ \ \ \ \ \textcolor{keyword}{const}\ Triangle\_3\ \&\ A,\ \textcolor{keyword}{const}\ Index\ a0,\ \textcolor{keyword}{const}\ Index\ a1,\ \textcolor{keyword}{const}\ Triangle\_3\ \&\ B)}
+\DoxyCodeLine{00685\ \ \ \ \ -\/>\ \textcolor{keywordtype}{bool}}
+\DoxyCodeLine{00686\ \ \ \{}
+\DoxyCodeLine{00687\ \ \ \ \ \textcolor{comment}{//\ get\ opposite\ index}}
+\DoxyCodeLine{00688\ \ \ \ \ Index\ a2\ =\ -\/1;}
+\DoxyCodeLine{00689\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ c\ =\ 0;c<3;c++)}
+\DoxyCodeLine{00690\ \ \ \ \ \{}
+\DoxyCodeLine{00691\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(c\ !=\ a0\ \&\&\ c\ !=\ a1)}
+\DoxyCodeLine{00692\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00693\ \ \ \ \ \ \ \ \ a2\ =\ c;}
+\DoxyCodeLine{00694\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00695\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00696\ \ \ \ \ \}}
+\DoxyCodeLine{00697\ \ \ \ \ assert(a2\ !=\ -\/1);}
+\DoxyCodeLine{00698\ \ \ \ \ \textcolor{keywordtype}{bool}\ ret\ =\ CGAL::do\_intersect(A.vertex(a2),B);}
+\DoxyCodeLine{00699\ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{00700\ \ \ \};}
+\DoxyCodeLine{00701\ }
+\DoxyCodeLine{00702\ \ \ \textcolor{comment}{//\ Determine\ if\ edge\ opposite\ vertex\ va\ in\ triangle\ A\ intersects\ edge}}
+\DoxyCodeLine{00703\ \ \ \textcolor{comment}{//\ opposite\ vertex\ vb\ in\ triangle\ B.}}
+\DoxyCodeLine{00704\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&\ opposite\_edges\_intersect\ =\ [](}
+\DoxyCodeLine{00705\ \ \ \ \ \textcolor{keyword}{const}\ Triangle\_3\ \&\ A,\ \textcolor{keyword}{const}\ Index\ va,}
+\DoxyCodeLine{00706\ \ \ \ \ \textcolor{keyword}{const}\ Triangle\_3\ \&\ B,\ \textcolor{keyword}{const}\ Index\ vb)\ -\/>\ \textcolor{keywordtype}{bool}}
+\DoxyCodeLine{00707\ \ \ \{}
+\DoxyCodeLine{00708\ \ \ \ \ Segment\_3\ sa(\ A.vertex((va+1)\%3),\ A.vertex((va+2)\%3));}
+\DoxyCodeLine{00709\ \ \ \ \ Segment\_3\ sb(\ B.vertex((vb+1)\%3),\ B.vertex((vb+2)\%3));}
+\DoxyCodeLine{00710\ \ \ \ \ \textcolor{keywordtype}{bool}\ ret\ =\ CGAL::do\_intersect(sa,sb);}
+\DoxyCodeLine{00711\ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{00712\ \ \ \};}
+\DoxyCodeLine{00713\ }
+\DoxyCodeLine{00714\ \ \ \textcolor{keywordflow}{if}(}
+\DoxyCodeLine{00715\ \ \ \ \ !opposite\_point\_inside(A,shared[0].first,shared[1].first,B)\ \&\&}
+\DoxyCodeLine{00716\ \ \ \ \ !opposite\_point\_inside(B,shared[0].second,shared[1].second,A)\ \&\&}
+\DoxyCodeLine{00717\ \ \ \ \ !opposite\_edges\_intersect(A,shared[0].first,B,shared[1].second)\ \&\&}
+\DoxyCodeLine{00718\ \ \ \ \ !opposite\_edges\_intersect(A,shared[1].first,B,shared[0].second))}
+\DoxyCodeLine{00719\ \ \ \{}
+\DoxyCodeLine{00720\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00721\ \ \ \}}
+\DoxyCodeLine{00722\ }
+\DoxyCodeLine{00723\ \ \ \textcolor{comment}{//\ there\ is\ an\ intersection\ indeed}}
+\DoxyCodeLine{00724\ \ \ count\_intersection(fa,fb);}
+\DoxyCodeLine{00725\ \ \ \textcolor{keywordflow}{if}(params.detect\_only)}
+\DoxyCodeLine{00726\ \ \ \{}
+\DoxyCodeLine{00727\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00728\ \ \ \}}
+\DoxyCodeLine{00729\ \ \ \textcolor{comment}{//\ Construct\ intersection}}
+\DoxyCodeLine{00730\ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00731\ \ \ \{}
+\DoxyCodeLine{00732\ \ \ \ \ \textcolor{comment}{//\ This\ can\ fail\ for\ Epick\ but\ not\ Epeck}}
+\DoxyCodeLine{00733\ \ \ \ \ CGAL::Object\ result\ =\ CGAL::intersection(A,B);}
+\DoxyCodeLine{00734\ \ \ \ \ \textcolor{keywordflow}{if}(!result.empty())}
+\DoxyCodeLine{00735\ \ \ \ \ \{}
+\DoxyCodeLine{00736\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(CGAL::object\_cast<Segment\_3\ >(\&result))}
+\DoxyCodeLine{00737\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00738\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ not\ coplanar}}
+\DoxyCodeLine{00739\ \ \ \ \ \ \ \ \ assert(\textcolor{keyword}{false}\ \&\&}
+\DoxyCodeLine{00740\ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Co-\/planar\ non-\/degenerate\ triangles\ should\ intersect\ over\ triangle"{}});}
+\DoxyCodeLine{00741\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00742\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(CGAL::object\_cast<Point\_3\ >(\&result))}
+\DoxyCodeLine{00743\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00744\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ this\ "{}shouldn't"{}\ happen\ but\ does\ for\ inexact}}
+\DoxyCodeLine{00745\ \ \ \ \ \ \ \ \ assert(\textcolor{keyword}{false}\ \&\&}
+\DoxyCodeLine{00746\ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Co-\/planar\ non-\/degenerate\ triangles\ should\ intersect\ over\ triangle"{}});}
+\DoxyCodeLine{00747\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00748\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00749\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00750\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Triangle\ object}}
+\DoxyCodeLine{00751\ \ \ \ \ \ \ \ \ std::lock\_guard<std::mutex>\ guard(m\_offending\_lock);}
+\DoxyCodeLine{00752\ \ \ \ \ \ \ \ \ offending[fa].push\_back(\{fb,\ result\});}
+\DoxyCodeLine{00753\ \ \ \ \ \ \ \ \ offending[fb].push\_back(\{fa,\ result\});}
+\DoxyCodeLine{00754\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00755\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00756\ \ \ \ \ \}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{00757\ \ \ \ \ \{}
+\DoxyCodeLine{00758\ \ \ \ \ \ \ \textcolor{comment}{//\ CGAL::intersection\ is\ disagreeing\ with\ do\_intersect}}
+\DoxyCodeLine{00759\ \ \ \ \ \ \ assert(\textcolor{keyword}{false}\ \&\&\ \textcolor{stringliteral}{"{}CGAL::intersection\ should\ agree\ with\ predicate\ tests"{}});}
+\DoxyCodeLine{00760\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00761\ \ \ \ \ \}}
+\DoxyCodeLine{00762\ \ \ \}\textcolor{keywordflow}{catch}(...)}
+\DoxyCodeLine{00763\ \ \ \{}
+\DoxyCodeLine{00764\ \ \ \ \ \textcolor{comment}{//\ This\ catches\ some\ cgal\ assertion:}}
+\DoxyCodeLine{00765\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ CGAL\ error:\ assertion\ violation!}}
+\DoxyCodeLine{00766\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ Expression\ :\ is\_finite(d)}}
+\DoxyCodeLine{00767\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ File\ \ \ \ \ \ \ :\ /opt/local/include/CGAL/GMP/Gmpq\_type.h}}
+\DoxyCodeLine{00768\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ Line\ \ \ \ \ \ \ :\ 132}}
+\DoxyCodeLine{00769\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ Explanation:}}
+\DoxyCodeLine{00770\ \ \ \ \ \textcolor{comment}{//\ But\ only\ if\ NDEBUG\ is\ not\ defined,\ otherwise\ there's\ an\ uncaught}}
+\DoxyCodeLine{00771\ \ \ \ \ \textcolor{comment}{//\ "{}Floating\ point\ exception:\ 8"{}\ SIGFPE}}
+\DoxyCodeLine{00772\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00773\ \ \ \}}
+\DoxyCodeLine{00774\ \ \ \textcolor{comment}{//\ No\ intersection.}}
+\DoxyCodeLine{00775\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00776\ \}}
+\DoxyCodeLine{00777\ }
+\DoxyCodeLine{00778\ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00779\ \ \ \textcolor{keyword}{typename}\ Kernel,}
+\DoxyCodeLine{00780\ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00781\ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00782\ \ \ \textcolor{keyword}{typename}\ DerivedVV,}
+\DoxyCodeLine{00783\ \ \ \textcolor{keyword}{typename}\ DerivedFF,}
+\DoxyCodeLine{00784\ \ \ \textcolor{keyword}{typename}\ DerivedIF,}
+\DoxyCodeLine{00785\ \ \ \textcolor{keyword}{typename}\ DerivedJ,}
+\DoxyCodeLine{00786\ \ \ \textcolor{keyword}{typename}\ DerivedIM>}
+\DoxyCodeLine{00787\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh}{igl::copyleft::cgal::SelfIntersectMesh}}<}
+\DoxyCodeLine{00788\ \ \ Kernel,}
+\DoxyCodeLine{00789\ \ \ DerivedV,}
+\DoxyCodeLine{00790\ \ \ DerivedF,}
+\DoxyCodeLine{00791\ \ \ DerivedVV,}
+\DoxyCodeLine{00792\ \ \ DerivedFF,}
+\DoxyCodeLine{00793\ \ \ DerivedIF,}
+\DoxyCodeLine{00794\ \ \ DerivedJ,}
+\DoxyCodeLine{00795\ \ \ DerivedIM>::box\_intersect(}
+\DoxyCodeLine{00796\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a3ecb2a1e8a582bfc5a0be109bc6a0afd}{Box}}\&\ a,}
+\DoxyCodeLine{00797\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a3ecb2a1e8a582bfc5a0be109bc6a0afd}{Box}}\&\ b)}
+\DoxyCodeLine{00798\ \{}
+\DoxyCodeLine{00799\ \ \ candidate\_triangle\_pairs.push\_back(\{a.handle(),\ b.handle()\});}
+\DoxyCodeLine{00800\ \}}
+\DoxyCodeLine{00801\ }
+\DoxyCodeLine{00802\ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00803\ \ \ \textcolor{keyword}{typename}\ Kernel,}
+\DoxyCodeLine{00804\ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00805\ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00806\ \ \ \textcolor{keyword}{typename}\ DerivedVV,}
+\DoxyCodeLine{00807\ \ \ \textcolor{keyword}{typename}\ DerivedFF,}
+\DoxyCodeLine{00808\ \ \ \textcolor{keyword}{typename}\ DerivedIF,}
+\DoxyCodeLine{00809\ \ \ \textcolor{keyword}{typename}\ DerivedJ,}
+\DoxyCodeLine{00810\ \ \ \textcolor{keyword}{typename}\ DerivedIM>}
+\DoxyCodeLine{00811\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh}{igl::copyleft::cgal::SelfIntersectMesh}}<}
+\DoxyCodeLine{00812\ \ \ Kernel,}
+\DoxyCodeLine{00813\ \ \ DerivedV,}
+\DoxyCodeLine{00814\ \ \ DerivedF,}
+\DoxyCodeLine{00815\ \ \ DerivedVV,}
+\DoxyCodeLine{00816\ \ \ DerivedFF,}
+\DoxyCodeLine{00817\ \ \ DerivedIF,}
+\DoxyCodeLine{00818\ \ \ DerivedJ,}
+\DoxyCodeLine{00819\ \ \ DerivedIM>::process\_intersecting\_boxes()}
+\DoxyCodeLine{00820\ \{}
+\DoxyCodeLine{00821\ \ \ std::mutex\ exception\_mutex;}
+\DoxyCodeLine{00822\ \ \ \textcolor{keywordtype}{bool}\ exception\_fired\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00823\ \ \ \textcolor{keywordtype}{int}\ exception\ =\ -\/1;}
+\DoxyCodeLine{00824\ \ \ \textcolor{comment}{//\ Eventually\ switching\ to\ igl::parallel\_for\ would\ be\ good,\ but\ currently}}
+\DoxyCodeLine{00825\ \ \ \textcolor{comment}{//\ igl::parallel\_for\ does\ not\ provide\ a\ way\ to\ catch\ exceptions\ fired\ on\ a}}
+\DoxyCodeLine{00826\ \ \ \textcolor{comment}{//\ spawned\ thread\ \_outside\_\ of\ its\ loop-\/chunk\ which\ is\ the\ mechanism\ used\ here}}
+\DoxyCodeLine{00827\ \ \ \textcolor{comment}{//\ to\ bail\ out\ early\ when\ \`{}first\_only=true`\ to\ avoid}}
+\DoxyCodeLine{00828\ \ \ \textcolor{comment}{//\ O(\#candidate\_triangle\_pairs)\ behavior.}}
+\DoxyCodeLine{00829\ \ \ \textcolor{keyword}{auto}\ process\_chunk\ =\ [\&](\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ first,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ last)\ -\/>\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00830\ \ \ \{}
+\DoxyCodeLine{00831\ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00832\ \ \ \ \ \{}
+\DoxyCodeLine{00833\ \ \ \ \ \ \ assert(last\ >=\ first);}
+\DoxyCodeLine{00834\ }
+\DoxyCodeLine{00835\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i=first;\ i<last;\ i++)}
+\DoxyCodeLine{00836\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00837\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(exception\_fired)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00838\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a3be180f5be3130421d1df3738caa3922}{Index}}\ fa=T.size(),\ fb=T.size();}
+\DoxyCodeLine{00839\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00840\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ tri\_pair\ =\ candidate\_triangle\_pairs[i];}
+\DoxyCodeLine{00841\ \ \ \ \ \ \ \ \ \ \ fa\ =\ tri\_pair.first\ -\/\ T.begin();}
+\DoxyCodeLine{00842\ \ \ \ \ \ \ \ \ \ \ fb\ =\ tri\_pair.second\ -\/\ T.begin();}
+\DoxyCodeLine{00843\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00844\ \ \ \ \ \ \ \ \ assert(fa\ <\ T.size());}
+\DoxyCodeLine{00845\ \ \ \ \ \ \ \ \ assert(fb\ <\ T.size());}
+\DoxyCodeLine{00846\ }
+\DoxyCodeLine{00847\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(exception\_fired)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00848\ }
+\DoxyCodeLine{00849\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a08b88627a638dec1767ad4964dae7fe7}{Triangle\_3}}\&\ A\ =\ T[fa];}
+\DoxyCodeLine{00850\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a08b88627a638dec1767ad4964dae7fe7}{Triangle\_3}}\&\ B\ =\ T[fb];}
+\DoxyCodeLine{00851\ }
+\DoxyCodeLine{00852\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Number\ of\ combinatorially\ shared\ vertices}}
+\DoxyCodeLine{00853\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a3be180f5be3130421d1df3738caa3922}{Index}}\ comb\_shared\_vertices\ =\ 0;}
+\DoxyCodeLine{00854\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Number\ of\ geometrically\ shared\ vertices\ (*not*\ including}}
+\DoxyCodeLine{00855\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ combinatorially\ shared)}}
+\DoxyCodeLine{00856\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a3be180f5be3130421d1df3738caa3922}{Index}}\ geo\_shared\_vertices\ =\ 0;}
+\DoxyCodeLine{00857\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Keep\ track\ of\ shared\ vertex\ indices}}
+\DoxyCodeLine{00858\ \ \ \ \ \ \ \ \ std::vector<std::pair<Index,Index>\ >\ shared;}
+\DoxyCodeLine{00859\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a3be180f5be3130421d1df3738caa3922}{Index}}\ ea,eb;}
+\DoxyCodeLine{00860\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(ea=0;ea<3;ea++)}
+\DoxyCodeLine{00861\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00862\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(eb=0;eb<3;eb++)}
+\DoxyCodeLine{00863\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00864\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(F(fa,ea)\ ==\ F(fb,eb))}
+\DoxyCodeLine{00865\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00866\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ comb\_shared\_vertices++;}
+\DoxyCodeLine{00867\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ shared.emplace\_back(ea,eb);}
+\DoxyCodeLine{00868\ \ \ \ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(A.vertex(ea)\ ==\ B.vertex(eb))}
+\DoxyCodeLine{00869\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00870\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ geo\_shared\_vertices++;}
+\DoxyCodeLine{00871\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ shared.emplace\_back(ea,eb);}
+\DoxyCodeLine{00872\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00873\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00874\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00875\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh_a3be180f5be3130421d1df3738caa3922}{Index}}\ total\_shared\_vertices\ =}
+\DoxyCodeLine{00876\ \ \ \ \ \ \ \ \ \ \ comb\_shared\_vertices\ +\ geo\_shared\_vertices;}
+\DoxyCodeLine{00877\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(exception\_fired)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00878\ }
+\DoxyCodeLine{00879\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(comb\_shared\_vertices==\ 3)}
+\DoxyCodeLine{00880\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00881\ \ \ \ \ \ \ \ \ \ \ assert(shared.size()\ ==\ 3);}
+\DoxyCodeLine{00882\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Combinatorially\ duplicate\ face,\ these\ should\ be\ removed\ by}}
+\DoxyCodeLine{00883\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ preprocessing}}
+\DoxyCodeLine{00884\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00885\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00886\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(total\_shared\_vertices==\ 3)}
+\DoxyCodeLine{00887\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00888\ \ \ \ \ \ \ \ \ \ \ assert(shared.size()\ ==\ 3);}
+\DoxyCodeLine{00889\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Geometrically\ duplicate\ face,\ these\ should\ be\ removed\ by}}
+\DoxyCodeLine{00890\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ preprocessing}}
+\DoxyCodeLine{00891\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00892\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00893\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(total\_shared\_vertices\ ==\ 2)}
+\DoxyCodeLine{00894\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00895\ \ \ \ \ \ \ \ \ \ \ assert(shared.size()\ ==\ 2);}
+\DoxyCodeLine{00896\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Q:\ What\ about\ coplanar?}}
+\DoxyCodeLine{00897\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00898\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ o\ \ \ \ o}}
+\DoxyCodeLine{00899\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ |\(\backslash\)\ \ /|}}
+\DoxyCodeLine{00900\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ |\ \(\backslash\)/\ |}}
+\DoxyCodeLine{00901\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ |\ /\(\backslash\)\ |}}
+\DoxyCodeLine{00902\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ |/\ \ \(\backslash\)|}}
+\DoxyCodeLine{00903\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ o-\/-\/-\/-\/o}}
+\DoxyCodeLine{00904\ \ \ \ \ \ \ \ \ \ \ double\_shared\_vertex(A,B,fa,fb,shared);}
+\DoxyCodeLine{00905\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00906\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00907\ \ \ \ \ \ \ \ \ assert(total\_shared\_vertices<=1);}
+\DoxyCodeLine{00908\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(total\_shared\_vertices==1)}
+\DoxyCodeLine{00909\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00910\ \ \ \ \ \ \ \ \ \ \ single\_shared\_vertex(A,B,fa,fb,shared[0].first,shared[0].second);}
+\DoxyCodeLine{00911\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{00912\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00913\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_a4f72acbb659a5c1d291a4cff36910a87}{intersect}}(A,B,fa,fb);}
+\DoxyCodeLine{00914\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00915\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00916\ \ \ \ \ \}\textcolor{keywordflow}{catch}(\textcolor{keywordtype}{int}\ e)}
+\DoxyCodeLine{00917\ \ \ \ \ \{}
+\DoxyCodeLine{00918\ \ \ \ \ \ \ std::lock\_guard<std::mutex>\ exception\_lock(exception\_mutex);}
+\DoxyCodeLine{00919\ \ \ \ \ \ \ exception\_fired\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00920\ \ \ \ \ \ \ exception\ =\ e;}
+\DoxyCodeLine{00921\ \ \ \ \ \}}
+\DoxyCodeLine{00922\ \ \ \};}
+\DoxyCodeLine{00923\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ num\_threads\ =\ \mbox{\hyperlink{namespaceigl_aa03c54b4a3c8a07853528d49455f4fcc}{default\_num\_threads}}();}
+\DoxyCodeLine{00924\ \ \ assert(num\_threads\ >\ 0);}
+\DoxyCodeLine{00925\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ num\_pairs\ =\ candidate\_triangle\_pairs.size();}
+\DoxyCodeLine{00926\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ chunk\_size\ =\ num\_pairs\ /\ num\_threads;}
+\DoxyCodeLine{00927\ \ \ std::vector<std::thread>\ threads;}
+\DoxyCodeLine{00928\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i=0;\ i<num\_threads-\/1;\ i++)}
+\DoxyCodeLine{00929\ \ \ \{}
+\DoxyCodeLine{00930\ \ \ \ \ threads.emplace\_back(process\_chunk,\ i*chunk\_size,\ (i+1)*chunk\_size);}
+\DoxyCodeLine{00931\ \ \ \}}
+\DoxyCodeLine{00932\ \ \ \textcolor{comment}{//\ Do\ some\ work\ in\ the\ master\ thread.}}
+\DoxyCodeLine{00933\ \ \ process\_chunk((num\_threads-\/1)*chunk\_size,\ num\_pairs);}
+\DoxyCodeLine{00934\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ t\ :\ threads)}
+\DoxyCodeLine{00935\ \ \ \{}
+\DoxyCodeLine{00936\ \ \ \ \ \textcolor{keywordflow}{if}\ (t.joinable())\ t.join();}
+\DoxyCodeLine{00937\ \ \ \}}
+\DoxyCodeLine{00938\ \ \ \textcolor{keywordflow}{if}(exception\_fired)\ \textcolor{keywordflow}{throw}\ exception;}
+\DoxyCodeLine{00939\ \ \ \textcolor{comment}{//process\_chunk(0,\ candidate\_triangle\_pairs.size());}}
+\DoxyCodeLine{00940\ \}}
+\DoxyCodeLine{00941\ }
+\DoxyCodeLine{00942\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

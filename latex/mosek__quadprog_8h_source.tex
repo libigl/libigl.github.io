@@ -1,0 +1,126 @@
+\doxysection{mosek\+\_\+quadprog.\+h}
+\hypertarget{mosek__quadprog_8h_source}{}\label{mosek__quadprog_8h_source}\index{include/igl/mosek/mosek\_quadprog.h@{include/igl/mosek/mosek\_quadprog.h}}
+\mbox{\hyperlink{mosek__quadprog_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2013\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_MOSEK\_MOSEK\_QUADPROG\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_MOSEK\_MOSEK\_QUADPROG\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <mosek.h>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ EIGEN\_YES\_I\_KNOW\_SPARSE\_MODULE\_IS\_NOT\_STABLE\_YET}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <Eigen/Sparse>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \ \ \textcolor{keyword}{namespace\ }mosek}
+\DoxyCodeLine{00023\ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1mosek_1_1MosekData}{MosekData}}}
+\DoxyCodeLine{00026\ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ std::map<MSKiparame,int>\ \mbox{\hyperlink{structigl_1_1mosek_1_1MosekData_aba2c4deb012a66ca78341756dec1586c}{intparam}};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ std::map<MSKdparame,double>\ \mbox{\hyperlink{structigl_1_1mosek_1_1MosekData_ac3cb900ad6ecd139a44600378334de1d}{douparam}};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \mbox{\hyperlink{structigl_1_1mosek_1_1MosekData_ac2d07362881e6e51044b00eb2ae4f19e}{MosekData}}();}
+\DoxyCodeLine{00033\ \ \ \ \ \};}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\ Solve\ a\ convex\ quadratic\ optimization\ problem\ with\ linear\ and\ constant}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//\ bounds.\ Given\ in\ the\ form:}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ Minimize:\ ½\ *\ xT\ *\ Q⁰\ *\ x\ +\ cT\ *\ x\ +\ cf}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ Subject\ to:\ lc\ ≤\ Ax\ ≤\ uc}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lx\ ≤\ x\ ≤\ ux}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//\ where\ we\ are\ trying\ to\ find\ the\ optimal\ vector\ of\ values\ x.\ }}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//\ \(\backslash\)note\ Q⁰\ must\ be\ symmetric}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{comment}{//\ \(\backslash\)note\ Because\ of\ how\ MOSEK\ accepts\ different\ parts\ of\ the\ system,\ Q}}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//\ should\ be\ stored\ in\ IJV\ (aka\ Coordinate)\ format\ and\ should\ only\ include}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{//\ entries\ in\ the\ lower\ triangle.\ A\ should\ be\ stored\ in\ Column\ compressed}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{//\ (aka\ Harwell\ Boeing)\ format.\ As\ described:}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{comment}{//\ http://netlib.org/linalg/html\_templates/node92.html}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{//\ or}}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{comment}{//\ http://en.wikipedia.org/wiki/Sparse\_matrix}}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{//\ \ \ \#Compressed\_sparse\_column\_.28CSC\_or\_CCS.29}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{comment}{//\ @tparam\ Index\ \ type\ for\ index\ variables}}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{comment}{//\ @tparam\ Scalar\ \ type\ for\ floating\ point\ variables\ (gets\ cast\ to\ double?)}}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{comment}{//\ @param[in]\ n\ \ number\ of\ variables,\ i.e.\ size\ of\ x}}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{comment}{//\ @param[in]\ Qi\ \ vector\ of\ qnnz\ row\ indices\ of\ non-\/zeros\ in\ LOWER\ TRIANGLE\ ONLY\ of}}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ Q⁰}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{//\ @param[in]\ Qj\ \ vector\ of\ qnnz\ column\ indices\ of\ non-\/zeros\ in\ LOWER\ TRIANGLE\ ONLY}}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ of\ Q⁰}}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{//\ @param[in]\ Qv\ \ vector\ of\ qnnz\ values\ of\ non-\/zeros\ in\ LOWER\ TRIANGLE\ ONLY\ of\ Q⁰,\ }}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ such\ that:}}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ Q⁰(Qi[k],Qj[k])\ =\ Qv[k]\ for\ k\ ∈\ [0,Qnnz-\/1],\ where\ Qnnz\ is\ the}}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ number\ of\ non-\/zeros\ in\ Q⁰}}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{comment}{//\ @param[in]\ c\ \ \ (optional)\ vector\ of\ n\ values\ of\ c,\ transpose\ of\ coefficient\ row}}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ vector\ of\ linear\ terms,\ EMPTY\ means\ c\ ==\ 0}}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{comment}{//\ @param[in]\ cf\ \ (ignored)\ value\ of\ constant\ term\ in\ objective,\ 0\ means\ cf\ ==\ 0,\ so}}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ optional\ only\ in\ the\ sense\ that\ it\ is\ mandatory}}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{comment}{//\ @param[in]\ m\ \ number\ of\ constraints,\ therefore\ also\ number\ of\ rows\ in\ linear}}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ constraint\ coefficient\ matrix\ A,\ and\ in\ linear\ constraint\ bound}}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ vectors\ lc\ and\ uc}}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{comment}{//\ @param[in]\ Av\ \ vector\ of\ non-\/zero\ values\ of\ A,\ in\ column\ compressed\ order}}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{comment}{//\ @param[in]\ Ari\ \ vector\ of\ row\ indices\ corresponding\ to\ non-\/zero\ values\ of\ A,}}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{comment}{//\ @param[in]\ Acp\ \ vector\ of\ indices\ into\ Ari\ and\ Av\ of\ the\ first\ entry\ for\ each}}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ column\ of\ A,\ size(Acp)\ =\ (\#\ columns\ of\ A)\ +\ 1\ =\ n\ +\ 1}}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{comment}{//\ @param[in]\ lc\ \ vector\ of\ m\ linear\ constraint\ lower\ bounds}}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{comment}{//\ @param[in]\ uc\ \ vector\ of\ m\ linear\ constraint\ upper\ bounds}}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{comment}{//\ @param[in]\ lx\ \ vector\ of\ n\ constant\ lower\ bounds}}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{comment}{//\ @param[in]\ ux\ \ vector\ of\ n\ constant\ upper\ bounds}}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{comment}{//\ @param[out]\ x\ \ vector\ of\ size\ n\ to\ hold\ output\ of\ optimization}}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{comment}{//\ @return\ true\ only\ if\ optimization\ was\ successful\ with\ no\ errors}}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{comment}{//\ \(\backslash\)note\ All\ indices\ are\ 0-\/based}}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Index,\ \textcolor{keyword}{typename}\ Scalar>}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_1_1mosek_ac3c815fd0f5ecdf826ee9c99ec7b3986}{mosek\_quadprog}}(}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Index\ n,}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \textcolor{comment}{/*\ mosek\ won't\ allow\ this\ to\ be\ const*/}\ std::vector<Index>\ \&\ Qi,}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \textcolor{comment}{/*\ mosek\ won't\ allow\ this\ to\ be\ const*/}\ std::vector<Index>\ \&\ Qj,}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \textcolor{comment}{/*\ mosek\ won't\ allow\ this\ to\ be\ const*/}\ std::vector<Scalar>\ \&\ Qv,}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<Scalar>\ \&\ c,}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Scalar\ cf,}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Index\ m,}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \textcolor{comment}{/*\ mosek\ won't\ allow\ this\ to\ be\ const*/}\ std::vector<Scalar>\ \&\ Av,}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \textcolor{comment}{/*\ mosek\ won't\ allow\ this\ to\ be\ const*/}\ std::vector<Index>\ \&\ Ari,}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<Index>\ \&\ Acp,}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<Scalar>\ \&\ lc,}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<Scalar>\ \&\ uc,}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<Scalar>\ \&\ lx,}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<Scalar>\ \&\ ux,}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1mosek_1_1MosekData}{MosekData}}\ \&\ mosek\_data,}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ std::vector<Scalar>\ \&\ x);}
+\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_1_1mosek_ac3c815fd0f5ecdf826ee9c99ec7b3986}{mosek\_quadprog}}(}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<double>\ \&\ Q,}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::VectorXd\ \&\ c,}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ cf,}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<double>\ \&\ A,}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::VectorXd\ \&\ lc,}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::VectorXd\ \&\ uc,}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::VectorXd\ \&\ lx,}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::VectorXd\ \&\ ux,}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1mosek_1_1MosekData}{MosekData}}\ \&\ mosek\_data,}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ Eigen::VectorXd\ \&\ x);}
+\DoxyCodeLine{00132\ \ \ \}}
+\DoxyCodeLine{00133\ \}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#\ \ include\ "{}mosek\_quadprog.cpp"{}}}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

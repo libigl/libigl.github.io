@@ -74,7 +74,7 @@ Class which contains data of a matlab workspace which can be written to a .mat f
 This depends on matlab at compile time (though it shouldn\textquotesingle{}t necessarily have to) but it does not depend on running the matlab engine at run-\/time.
 
 \begin{DoxyRefDesc}{Bug}
-\item[\mbox{\hyperlink{bug__bug000005}{Bug}}]Treats all matrices as doubles (this may actually be desired for some \"{}index\"{} matrices since matlab\textquotesingle{}s sparse command takes doubles rather than int class matrices). It is of course not desired when dealing with logicals or uint\textquotesingle{}s for images. \end{DoxyRefDesc}
+\item[\mbox{\hyperlink{bug__bug000008}{Bug}}]Treats all matrices as doubles (this may actually be desired for some \"{}index\"{} matrices since matlab\textquotesingle{}s sparse command takes doubles rather than int class matrices). It is of course not desired when dealing with logicals or uint\textquotesingle{}s for images. \end{DoxyRefDesc}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -166,7 +166,7 @@ Assign data to a variable name in the workspace.
 true on success, false on failure
 \end{DoxyReturn}
 \begin{DoxyRefDesc}{Bug}
-\item[\mbox{\hyperlink{bug__bug000007}{Bug}}]Assumes DerivedM is using column major ordering \end{DoxyRefDesc}
+\item[\mbox{\hyperlink{bug__bug000010}{Bug}}]Assumes DerivedM is using column major ordering \end{DoxyRefDesc}
 \Hypertarget{classigl_1_1matlab_1_1MatlabWorkspace_a952294f80ded66d91bcc32352a87d35e}\label{classigl_1_1matlab_1_1MatlabWorkspace_a952294f80ded66d91bcc32352a87d35e} 
 \index{igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}!save@{save}}
 \index{save@{save}!igl::matlab::MatlabWorkspace@{igl::matlab::MatlabWorkspace}}
@@ -297,7 +297,7 @@ bool igl\+::matlab\+::\+Matlab\+Workspace\+::find (\begin{DoxyParamCaption}\item
 Find a certain matrix by name. 
 
 \begin{DoxyRefDesc}{Bug}
-\item[\mbox{\hyperlink{bug__bug000008}{Bug}}]Outputs the first found (not necessarily unique lists).\end{DoxyRefDesc}
+\item[\mbox{\hyperlink{bug__bug000011}{Bug}}]Outputs the first found (not necessarily unique lists).\end{DoxyRefDesc}
 
 
 

@@ -104,12 +104,15 @@ $(document).ready(function(){initNavTree('classigl_1_1HalfEdgeIterator.html','')
 </div><!--header-->
 <div class="contents">
 
+<p>Fake halfedge for fast and easy navigation on triangle meshes with vertex_triangle_adjacency and triangle_triangle adjacency.  
+ <a href="classigl_1_1HalfEdgeIterator.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="HalfEdgeIterator_8h_source.html">HalfEdgeIterator.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ade6f831eefbe8752706db4e8c5ffebb9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1HalfEdgeIterator.html#ade6f831eefbe8752706db4e8c5ffebb9">HalfEdgeIterator</a> (const Eigen::MatrixBase&lt; DerivedF &gt; &amp;_F, const Eigen::MatrixBase&lt; DerivedFF &gt; &amp;_FF, const Eigen::MatrixBase&lt; DerivedFFi &gt; &amp;_FFi, int _fi, int _ei, bool _reverse=false)</td></tr>
-<tr class="memdesc:ade6f831eefbe8752706db4e8c5ffebb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Init the <a class="el" href="classigl_1_1HalfEdgeIterator.html">HalfEdgeIterator</a> by specifying Face,Edge Index and Orientation.  <br /></td></tr>
+<tr class="memdesc:ade6f831eefbe8752706db4e8c5ffebb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Init the <a class="el" href="classigl_1_1HalfEdgeIterator.html" title="Fake halfedge for fast and easy navigation on triangle meshes with vertex_triangle_adjacency and tria...">HalfEdgeIterator</a> by specifying Face,Edge Index and Orientation.  <br /></td></tr>
 <tr class="separator:ade6f831eefbe8752706db4e8c5ffebb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8be83ead1050fd4901b863cb32d2492e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1HalfEdgeIterator.html#a8be83ead1050fd4901b863cb32d2492e">flipF</a> ()</td></tr>
 <tr class="memdesc:a8be83ead1050fd4901b863cb32d2492e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change Face.  <br /></td></tr>
@@ -136,10 +139,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a7b95717e2fe5d396d933bd9b48d4e82c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get edge index.  <br /></td></tr>
 <tr class="separator:a7b95717e2fe5d396d933bd9b48d4e82c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ce6e514ed49e9684b0c0fd0dd48e0d6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1HalfEdgeIterator.html#a8ce6e514ed49e9684b0c0fd0dd48e0d6">operator==</a> (<a class="el" href="classigl_1_1HalfEdgeIterator.html">HalfEdgeIterator</a> &amp;p2)</td></tr>
-<tr class="memdesc:a8ce6e514ed49e9684b0c0fd0dd48e0d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if two <a class="el" href="classigl_1_1HalfEdgeIterator.html">HalfEdgeIterator</a> are the same.  <br /></td></tr>
+<tr class="memdesc:a8ce6e514ed49e9684b0c0fd0dd48e0d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if two <a class="el" href="classigl_1_1HalfEdgeIterator.html" title="Fake halfedge for fast and easy navigation on triangle meshes with vertex_triangle_adjacency and tria...">HalfEdgeIterator</a> are the same.  <br /></td></tr>
 <tr class="separator:a8ce6e514ed49e9684b0c0fd0dd48e0d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename DerivedF, typename DerivedFF, typename DerivedFFi&gt;<br />
+class igl::HalfEdgeIterator&lt; DerivedF, DerivedFF, DerivedFFi &gt;</div><p>Fake halfedge for fast and easy navigation on triangle meshes with vertex_triangle_adjacency and triangle_triangle adjacency. </p>
+<p>Note: this is different to classical Half Edge data structure. Instead, it follows cell-tuple in [Brisson, 1989] "Representing geometric structures in d dimensions: topology and order." This class can achieve local navigation similar to half edge in OpenMesh But the logic behind each atom operation is different. So this should be more properly called TriangleTupleIterator.</p>
+<p>Each tuple contains information on (face, edge, vertex) and encoded by (face, edge \in {0,1,2}, bool reverse) </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ade6f831eefbe8752706db4e8c5ffebb9" name="ade6f831eefbe8752706db4e8c5ffebb9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ade6f831eefbe8752706db4e8c5ffebb9">&#9670;&#160;</a></span>HalfEdgeIterator()</h2>
 
@@ -192,7 +200,7 @@ template&lt;typename DerivedF , typename DerivedFF , typename DerivedFFi &gt; </
       </table>
 </div><div class="memdoc">
 
-<p>Init the <a class="el" href="classigl_1_1HalfEdgeIterator.html">HalfEdgeIterator</a> by specifying Face,Edge Index and Orientation. </p>
+<p>Init the <a class="el" href="classigl_1_1HalfEdgeIterator.html" title="Fake halfedge for fast and easy navigation on triangle meshes with vertex_triangle_adjacency and tria...">HalfEdgeIterator</a> by specifying Face,Edge Index and Orientation. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">F</td><td>F by 3 list of "faces" </td></tr>
@@ -401,8 +409,8 @@ template&lt;typename DerivedF , typename DerivedFF , typename DerivedFFi &gt; </
       </table>
 </div><div class="memdoc">
 
-<p>Check if two <a class="el" href="classigl_1_1HalfEdgeIterator.html">HalfEdgeIterator</a> are the same. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if two <a class="el" href="classigl_1_1HalfEdgeIterator.html">HalfEdgeIterator</a> are the same </dd></dl>
+<p>Check if two <a class="el" href="classigl_1_1HalfEdgeIterator.html" title="Fake halfedge for fast and easy navigation on triangle meshes with vertex_triangle_adjacency and tria...">HalfEdgeIterator</a> are the same. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if two <a class="el" href="classigl_1_1HalfEdgeIterator.html" title="Fake halfedge for fast and easy navigation on triangle meshes with vertex_triangle_adjacency and tria...">HalfEdgeIterator</a> are the same </dd></dl>
 
 </div>
 </div>

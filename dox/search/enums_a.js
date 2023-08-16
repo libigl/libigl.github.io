@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['tetrahedralizedgriptype_0',['TetrahedralizedGripType',['../namespaceigl.html#ac3bae8c76c2714f3cce8b651ae93fae2',1,'igl']]],
-  ['type_1',['Type',['../namespaceigl_1_1tinyply.html#a635cb7fe81c17c2be5899e7caea506cd',1,'igl::tinyply']]]
+  ['peredgenormalsweightingtype_0',['PerEdgeNormalsWeightingType',['../namespaceigl.html#a347183daf701cad3537c990f8ce0cf55',1,'igl']]],
+  ['pervertexnormalsweightingtype_1',['PerVertexNormalsWeightingType',['../namespaceigl.html#a9bd1d9465ddaaed7691194b99b3b9f94',1,'igl']]]
 ];

@@ -70,7 +70,7 @@ bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a255c85c9f14fdd975cad
 \item 
 void \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a44a2a81590392c586815cf9b3f8f7e56}{draw}} ()
 \item 
-{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_aca9dc39fe9096f4c85e4438f3fc033c2}{draw\+\_\+buffer}} (igl\+::opengl\+::\+Viewer\+Core \&\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a4fc39cbf6a2d68d0eaf63bef3fd49464}{core}}, Eigen\+::\+Matrix$<$ T, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&R, Eigen\+::\+Matrix$<$ T, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&G, Eigen\+::\+Matrix$<$ T, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&B, Eigen\+::\+Matrix$<$ T, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&A, Eigen\+::\+Matrix$<$ T, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&D)
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_aca9dc39fe9096f4c85e4438f3fc033c2}{draw\+\_\+buffer}} (\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore}{igl\+::opengl\+::\+Viewer\+Core}} \&\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a4fc39cbf6a2d68d0eaf63bef3fd49464}{core}}, Eigen\+::\+Matrix$<$ T, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&R, Eigen\+::\+Matrix$<$ T, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&G, Eigen\+::\+Matrix$<$ T, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&B, Eigen\+::\+Matrix$<$ T, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&A, Eigen\+::\+Matrix$<$ T, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&D)
 \item 
 void \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a4e66c632d62c6d8d0eaf5a31c21848cc}{resize}} (int w, int h)
 \item 
@@ -92,9 +92,9 @@ bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a39e77515f09c4b58990c
 \item 
 size\+\_\+t \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_abd34d1bc45213bcd14ee95300fdc499d}{mesh\+\_\+index}} (const int id) const
 \item 
-Viewer\+Core \& \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a4fc39cbf6a2d68d0eaf63bef3fd49464}{core}} (unsigned core\+\_\+id=0)
+\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore}{Viewer\+Core}} \& \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a4fc39cbf6a2d68d0eaf63bef3fd49464}{core}} (unsigned core\+\_\+id=0)
 \item 
-const Viewer\+Core \& \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_aca329644bd355f2f3dc6aa117964274f}{core}} (unsigned core\+\_\+id=0) const
+const \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore}{Viewer\+Core}} \& \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_aca329644bd355f2f3dc6aa117964274f}{core}} (unsigned core\+\_\+id=0) const
 \item 
 int \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a783a5b2ee8eb31fd76fb16e356bcf550}{append\+\_\+core}} (Eigen\+::\+Vector4f viewport, bool append\+\_\+empty=false)
 \item 
@@ -117,13 +117,13 @@ int \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a29f39289f861509167438
 \item 
 GLFWwindow \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a8bd01c79b59e43407e1bb5c5ab227404}{window}}
 \item 
-std\+::vector$<$ Viewer\+Core $>$ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_aaaa8e5c0215617964f3e191a28827f2b}{core\+\_\+list}}
+std\+::vector$<$ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore}{Viewer\+Core}} $>$ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_aaaa8e5c0215617964f3e191a28827f2b}{core\+\_\+list}}
 \item 
 size\+\_\+t \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a23fe17253347c87eb8383d61d33f7cd1}{selected\+\_\+core\+\_\+index}}
 \item 
 int \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_af9cea96c79080e073dadf1e3658c77eb}{next\+\_\+core\+\_\+id}}
 \item 
-std\+::vector$<$ Viewer\+Plugin \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a71b77ba75ee7e094d5bf4f3b92f58ed3}{plugins}}
+std\+::vector$<$ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin}{Viewer\+Plugin}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a71b77ba75ee7e094d5bf4f3b92f58ed3}{plugins}}
 \item 
 Eigen\+::\+Quaternionf \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a9c1329d7db58b4193b0f6124dd423d43}{down\+\_\+rotation}}
 \item 
@@ -387,7 +387,7 @@ Translation&\\
 \index{draw\_buffer@{draw\_buffer}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
 \doxysubsubsection{\texorpdfstring{draw\_buffer()}{draw\_buffer()}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-void igl\+::opengl\+::glfw\+::\+Viewer\+::draw\+\_\+buffer (\begin{DoxyParamCaption}\item[{igl\+::opengl\+::\+Viewer\+Core \&}]{core,  }\item[{Eigen\+::\+Matrix$<$ T, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{R,  }\item[{Eigen\+::\+Matrix$<$ T, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{G,  }\item[{Eigen\+::\+Matrix$<$ T, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{B,  }\item[{Eigen\+::\+Matrix$<$ T, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{A,  }\item[{Eigen\+::\+Matrix$<$ T, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{D }\end{DoxyParamCaption})}
+void igl\+::opengl\+::glfw\+::\+Viewer\+::draw\+\_\+buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore}{igl\+::opengl\+::\+Viewer\+Core}} \&}]{core,  }\item[{Eigen\+::\+Matrix$<$ T, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{R,  }\item[{Eigen\+::\+Matrix$<$ T, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{G,  }\item[{Eigen\+::\+Matrix$<$ T, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{B,  }\item[{Eigen\+::\+Matrix$<$ T, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{A,  }\item[{Eigen\+::\+Matrix$<$ T, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{D }\end{DoxyParamCaption})}
 
 \Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a4e66c632d62c6d8d0eaf5a31c21848cc}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a4e66c632d62c6d8d0eaf5a31c21848cc} 
 \index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!resize@{resize}}
@@ -453,13 +453,13 @@ void igl\+::opengl\+::glfw\+::\+Viewer\+::draw\+\_\+buffer (\begin{DoxyParamCapt
 \index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!core@{core}}
 \index{core@{core}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
 \doxysubsubsection{\texorpdfstring{core()}{core()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily Viewer\+Core \& igl\+::opengl\+::glfw\+::\+Viewer\+::core (\begin{DoxyParamCaption}\item[{unsigned}]{core\+\_\+id = {\ttfamily 0} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore}{Viewer\+Core}} \& igl\+::opengl\+::glfw\+::\+Viewer\+::core (\begin{DoxyParamCaption}\item[{unsigned}]{core\+\_\+id = {\ttfamily 0} }\end{DoxyParamCaption})}
 
 \Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_aca329644bd355f2f3dc6aa117964274f}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_aca329644bd355f2f3dc6aa117964274f} 
 \index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!core@{core}}
 \index{core@{core}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
 \doxysubsubsection{\texorpdfstring{core()}{core()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily const Viewer\+Core \& igl\+::opengl\+::glfw\+::\+Viewer\+::core (\begin{DoxyParamCaption}\item[{unsigned}]{core\+\_\+id = {\ttfamily 0} }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore}{Viewer\+Core}} \& igl\+::opengl\+::glfw\+::\+Viewer\+::core (\begin{DoxyParamCaption}\item[{unsigned}]{core\+\_\+id = {\ttfamily 0} }\end{DoxyParamCaption}) const}
 
 \Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a783a5b2ee8eb31fd76fb16e356bcf550}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a783a5b2ee8eb31fd76fb16e356bcf550} 
 \index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!append\_core@{append\_core}}
@@ -522,7 +522,7 @@ void igl\+::opengl\+::glfw\+::\+Viewer\+::draw\+\_\+buffer (\begin{DoxyParamCapt
 \index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!core\_list@{core\_list}}
 \index{core\_list@{core\_list}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
 \doxysubsubsection{\texorpdfstring{core\_list}{core\_list}}
-{\footnotesize\ttfamily std\+::vector$<$Viewer\+Core$>$ igl\+::opengl\+::glfw\+::\+Viewer\+::core\+\_\+list}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore}{Viewer\+Core}}$>$ igl\+::opengl\+::glfw\+::\+Viewer\+::core\+\_\+list}
 
 \Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a23fe17253347c87eb8383d61d33f7cd1}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a23fe17253347c87eb8383d61d33f7cd1} 
 \index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!selected\_core\_index@{selected\_core\_index}}
@@ -540,7 +540,7 @@ void igl\+::opengl\+::glfw\+::\+Viewer\+::draw\+\_\+buffer (\begin{DoxyParamCapt
 \index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!plugins@{plugins}}
 \index{plugins@{plugins}!igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}}
 \doxysubsubsection{\texorpdfstring{plugins}{plugins}}
-{\footnotesize\ttfamily std\+::vector$<$Viewer\+Plugin\texorpdfstring{$\ast$}{*}$>$ igl\+::opengl\+::glfw\+::\+Viewer\+::plugins}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin}{Viewer\+Plugin}}\texorpdfstring{$\ast$}{*}$>$ igl\+::opengl\+::glfw\+::\+Viewer\+::plugins}
 
 \Hypertarget{classigl_1_1opengl_1_1glfw_1_1Viewer_a9c1329d7db58b4193b0f6124dd423d43}\label{classigl_1_1opengl_1_1glfw_1_1Viewer_a9c1329d7db58b4193b0f6124dd423d43} 
 \index{igl::opengl::glfw::Viewer@{igl::opengl::glfw::Viewer}!down\_rotation@{down\_rotation}}

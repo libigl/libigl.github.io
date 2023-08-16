@@ -1,0 +1,84 @@
+\doxysection{minkowski\+\_\+sum.\+h}
+\hypertarget{minkowski__sum_8h_source}{}\label{minkowski__sum_8h_source}\index{include/igl/copyleft/cgal/minkowski\_sum.h@{include/igl/copyleft/cgal/minkowski\_sum.h}}
+\mbox{\hyperlink{minkowski__sum_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2016\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_COPYLEFT\_CGAL\_MINKOWSKI\_SUM\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_COPYLEFT\_CGAL\_MINKOWSKI\_SUM\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}../../igl\_inline.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \ \ \textcolor{keyword}{namespace\ }copyleft}
+\DoxyCodeLine{00017\ \ \ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{namespace\ }cgal}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVA,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFA,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVB,}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFB,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedW,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedG,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedJ>}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_aae36641a8877fe6384673c10bef5d05c}{minkowski\_sum}}(}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedVA>\ \&\ VA,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedFA>\ \&\ FA,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedVB>\ \&\ VB,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedFB>\ \&\ FB,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ resolve\_overlaps,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedW>\ \&\ W,}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedG>\ \&\ G,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedJ>\ \&\ J);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVA,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFA,}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ sType,\ \textcolor{keywordtype}{int}\ sCols,\ \textcolor{keywordtype}{int}\ sOptions,}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ dType,\ \textcolor{keywordtype}{int}\ dCols,\ \textcolor{keywordtype}{int}\ dOptions,}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedW,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedG,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedJ>}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_aae36641a8877fe6384673c10bef5d05c}{minkowski\_sum}}(}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedVA>\ \&\ VA,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedFA>\ \&\ FA,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<sType,1,sCols,sOptions>\ \&\ s,}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<dType,1,dCols,dOptions>\ \&\ d,}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ resolve\_overlaps,}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedW>\ \&\ W,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedG>\ \&\ G,}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedJ>\ \&\ J);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVA,}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFA,}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ sType,\ \textcolor{keywordtype}{int}\ sCols,\ \textcolor{keywordtype}{int}\ sOptions,}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ dType,\ \textcolor{keywordtype}{int}\ dCols,\ \textcolor{keywordtype}{int}\ dOptions,}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedW,}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedG,}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedJ>}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_aae36641a8877fe6384673c10bef5d05c}{minkowski\_sum}}(}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedVA>\ \&\ VA,}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedFA>\ \&\ FA,}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<sType,1,sCols,sOptions>\ \&\ s,}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<dType,1,dCols,dOptions>\ \&\ d,}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedW>\ \&\ W,}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedG>\ \&\ G,}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedJ>\ \&\ J);}
+\DoxyCodeLine{00091\ \ \ \ \ \}}
+\DoxyCodeLine{00092\ \ \ \}}
+\DoxyCodeLine{00093\ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#\ \ include\ "{}minkowski\_sum.cpp"{}}}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

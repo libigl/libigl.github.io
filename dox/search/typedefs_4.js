@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['matrixxdims_0',['MatrixXDIMS',['../classigl_1_1AABB.html#aa509e281d53292cd5a54a186d166a741',1,'igl::AABB']]],
-  ['matrixxf_1',['MatrixXF',['../classigl_1_1WindingNumberTree.html#a08fd4eb30fce0b226f1b2dc2853daf04',1,'igl::WindingNumberTree']]],
-  ['matrixxs_2',['MatrixXS',['../structigl_1_1ArapDOFData.html#ac85269765634e0b98c0f57447849b4ca',1,'igl::ArapDOFData::MatrixXS'],['../classigl_1_1WindingNumberTree.html#aafe76333946b7ad3829b43a032fae8a1',1,'igl::WindingNumberTree::MatrixXS']]],
-  ['min_5fheap_3',['min_heap',['../namespaceigl.html#acd3e0aca98df4cd1576aecb262342dbf',1,'igl']]]
+  ['glint_0',['GLint',['../classigl_1_1opengl_1_1MeshGL.html#aff43136617b15669459b7bd0558a98de',1,'igl::opengl::MeshGL']]],
+  ['gluint_1',['GLuint',['../classigl_1_1opengl_1_1MeshGL.html#a01084d9717aedaa252e1fcdf13657532',1,'igl::opengl::MeshGL::GLuint'],['../classigl_1_1opengl_1_1ViewerCore.html#abf6d6d469f220b00d789a94de0b7e322',1,'igl::opengl::ViewerCore::GLuint']]]
 ];

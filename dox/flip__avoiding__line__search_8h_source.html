@@ -109,14 +109,14 @@ $(document).ready(function(){initNavTree('flip__avoiding__line__search_8h_source
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// obtain one at http://mozilla.org/MPL/2.0/.</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef IGL_FLIP_AVOIDING_LINE_SEARCH_H</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define IGL_FLIP_AVOIDING_LINE_SEARCH_H</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;igl_inline.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="igl__inline_8h.html">igl_inline.h</a>&quot;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="PI_8h.html">PI.h</a>&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;Eigen/Dense&gt;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceigl.html">igl</a></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="namespaceigl.html#ae63ab7ae87908c83fc544443d41b87e5">   34</a></span>  IGL_INLINE <span class="keywordtype">double</span> <a class="code hl_function" href="namespaceigl.html#ae63ab7ae87908c83fc544443d41b87e5">flip_avoiding_line_search</a>(</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="namespaceigl.html#ae63ab7ae87908c83fc544443d41b87e5">   34</a></span>  <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> <span class="keywordtype">double</span> <a class="code hl_function" href="namespaceigl.html#ae63ab7ae87908c83fc544443d41b87e5">flip_avoiding_line_search</a>(</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">const</span> Eigen::MatrixXi &amp; F,</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    Eigen::MatrixXd&amp; cur_v,</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">const</span> Eigen::MatrixXd&amp; dst_v,</div>
@@ -131,7 +131,9 @@ $(document).ready(function(){initNavTree('flip__avoiding__line__search_8h_source
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aPI_8h_html"><div class="ttname"><a href="PI_8h.html">PI.h</a></div></div>
-<div class="ttc" id="anamespaceigl_html"><div class="ttname"><a href="namespaceigl.html">igl</a></div><div class="ttdoc">Fake halfedge for fast and easy navigation on triangle meshes with vertex_triangle_adjacency and tria...</div><div class="ttdef"><b>Definition</b> AABB.h:17</div></div>
+<div class="ttc" id="aigl__inline_8h_html"><div class="ttname"><a href="igl__inline_8h.html">igl_inline.h</a></div></div>
+<div class="ttc" id="aigl__inline_8h_html_a838241279013352686271b4c4ce1f708"><div class="ttname"><a href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a></div><div class="ttdeci">#define IGL_INLINE</div><div class="ttdef"><b>Definition</b> igl_inline.h:15</div></div>
+<div class="ttc" id="anamespaceigl_html"><div class="ttname"><a href="namespaceigl.html">igl</a></div><div class="ttdef"><b>Definition</b> AABB.h:17</div></div>
 <div class="ttc" id="anamespaceigl_html_ae63ab7ae87908c83fc544443d41b87e5"><div class="ttname"><a href="namespaceigl.html#ae63ab7ae87908c83fc544443d41b87e5">igl::flip_avoiding_line_search</a></div><div class="ttdeci">double flip_avoiding_line_search(const Eigen::MatrixXi &amp;F, Eigen::MatrixXd &amp;cur_v, const Eigen::MatrixXd &amp;dst_v, std::function&lt; double(Eigen::MatrixXd &amp;)&gt; &amp;energy, double cur_energy=-1)</div><div class="ttdoc">A bisection line search for a mesh based energy that avoids triangle flips as suggested in &quot;Bijective...</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

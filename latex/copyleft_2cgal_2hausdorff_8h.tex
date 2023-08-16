@@ -1,0 +1,21 @@
+\doxysection{include/igl/copyleft/cgal/hausdorff.h File Reference}
+\hypertarget{copyleft_2cgal_2hausdorff_8h}{}\label{copyleft_2cgal_2hausdorff_8h}\index{include/igl/copyleft/cgal/hausdorff.h@{include/igl/copyleft/cgal/hausdorff.h}}
+{\ttfamily \#include \"{}../../igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include \"{}CGAL\+\_\+includes.\+hpp\"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \"{}hausdorff.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\item 
+namespace \mbox{\hyperlink{namespaceigl_1_1copyleft}{igl\+::copyleft}}
+\item 
+namespace \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal}{igl\+::copyleft\+::cgal}}
+\begin{DoxyCompactList}\small\item\em Given a list of possible intersecting segments with endpoints, split segments to overlap only at endpoints. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV , typename Kernel , typename Scalar $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a3ac0ac630b70601fd761c3f55877c178}{igl\+::copyleft\+::cgal\+::hausdorff}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const CGAL\+::\+AABB\+\_\+tree$<$ CGAL\+::\+AABB\+\_\+traits$<$ Kernel, CGAL\+::\+AABB\+\_\+triangle\+\_\+primitive$<$ Kernel, typename std\+::vector$<$ CGAL\+::\+Triangle\+\_\+3$<$ Kernel $>$ $>$\+::iterator $>$ $>$ $>$ \&treeB, const std\+::vector$<$ CGAL\+::\+Triangle\+\_\+3$<$ Kernel $>$ $>$ \&TB, Scalar \&l, Scalar \&u)
+\begin{DoxyCompactList}\small\item\em Compute lower and upper bounds (l,u) on the Hausdorff distance between a triangle (V) and a pointset (e.\+g., mesh, triangle soup) given by a distance function handle (dist\+\_\+to\+\_\+B). \end{DoxyCompactList}\end{DoxyCompactItemize}

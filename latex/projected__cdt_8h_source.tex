@@ -1,0 +1,47 @@
+\doxysection{projected\+\_\+cdt.\+h}
+\hypertarget{projected__cdt_8h_source}{}\label{projected__cdt_8h_source}\index{include/igl/copyleft/cgal/projected\_cdt.h@{include/igl/copyleft/cgal/projected\_cdt.h}}
+\mbox{\hyperlink{projected__cdt_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2016\ Alec\ Jacobson}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_COPYLEFT\_CGAL\_PROJECTED\_CDT\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_COPYLEFT\_CGAL\_PROJECTED\_CDT\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../../igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <CGAL/Plane\_3.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <CGAL/Point\_3.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <CGAL/Object.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \ \ \textcolor{keyword}{namespace\ }copyleft}
+\DoxyCodeLine{00019\ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{namespace\ }cgal}
+\DoxyCodeLine{00021\ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Kernel,\ \textcolor{keyword}{typename}\ Index>}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_ad6b773fa54359274318604d433dd2e9a}{projected\_cdt}}(}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<CGAL::Object>\ \&\ objects,}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ CGAL::Plane\_3<Kernel>\ \&\ P,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ std::vector<CGAL::Point\_3<Kernel>\ >\&\ vertices,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ std::vector<std::vector<Index>\ >\&\ faces);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\ \textcolor{keyword}{typename}\ Kernel,\ \textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_ad6b773fa54359274318604d433dd2e9a}{projected\_cdt}}(}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<CGAL::Object>\ \&\ objects,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ CGAL::Plane\_3<Kernel>\ \&\ P,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedF>\ \&\ F);}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \}}
+\DoxyCodeLine{00055\ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#\ \ include\ "{}projected\_cdt.cpp"{}}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

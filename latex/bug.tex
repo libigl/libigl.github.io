@@ -2,44 +2,60 @@
 \hypertarget{bug}{}\label{bug}\index{Bug List@{Bug List}}
 
 \begin{DoxyRefList}
-\item[Member \doxylink{namespaceigl_a73748b03f3e779d764d30d920653aba6}{igl\+::dated\+\_\+copy} (const std\+::string \&src\+\_\+path, const std\+::string \&dir)]\label{bug__bug000001}%
+\item[Member \doxylink{namespaceigl_1_1copyleft_1_1cgal_a538a22d0da720af8d4bc8943eeb78ccd}{igl\+::copyleft\+::cgal\+::point\+\_\+mesh\+\_\+squared\+\_\+distance} (const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+P $>$ \&P, const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+V $>$ \&V, const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+F $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ Derivedsqr\+D $>$ \&sqrD, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+I $>$ \&I, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+C $>$ \&C)]\label{bug__bug000001}%
 \Hypertarget{bug__bug000001}%
-This function does not work under windows  
-\item[Member \doxylink{namespaceigl_a7bae61a0f8a1bbe72e7832381c9beca5}{igl\+::doublearea} (const Eigen\+::\+Matrix\+Base$<$ Derived\+V $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ Derived\+F $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ Deriveddbl\+A $>$ \&dblA)]\label{bug__bug000002}%
+This only computes distances to triangles. So unreferenced vertices and degenerate triangles (segments) are ignored.  
+\item[Member \doxylink{namespaceigl_1_1copyleft_1_1cgal_a7169f4ae2fe2c11f7e878b41aa747fc2}{igl\+::copyleft\+::cgal\+::remesh\+\_\+self\+\_\+intersections} (const Eigen\+::\+Matrix\+Base$<$ Derived\+V $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ Derived\+F $>$ \&F, const \doxylink{structigl_1_1copyleft_1_1cgal_1_1RemeshSelfIntersectionsParam}{Remesh\+Self\+Intersections\+Param} \&params, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+VV $>$ \&VV, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+FF $>$ \&FF, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+IF $>$ \&IF, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+J $>$ \&J, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+IM $>$ \&IM)]\label{bug__bug000002}%
 \Hypertarget{bug__bug000002}%
-For dim==3 complexity is O(\#V + \#F). Not just O(\#F). This is a big deal if you have 1 million unreferenced vertices and 1 face.  
-\item[Member \doxylink{namespaceigl_a64901d7f496bd1cccbccceddbc091603}{igl\+::hausdorff} (const Eigen\+::\+Matrix\+Base$<$ Derived\+VA $>$ \&VA, const Eigen\+::\+Matrix\+Base$<$ Derived\+FA $>$ \&FA, const Eigen\+::\+Matrix\+Base$<$ Derived\+VB $>$ \&VB, const Eigen\+::\+Matrix\+Base$<$ Derived\+FB $>$ \&FB, Scalar \&d)]\label{bug__bug000003}%
+If an existing edge in (V,F) lies exactly on another face then any resulting additional vertices along that edge may not get properly connected so that the output mesh has the same global topology. This is because … 
+\item[Member \doxylink{namespaceigl_1_1copyleft_1_1comiso_a177716489b4db91c9cd44fd166e4d40c}{igl\+::copyleft\+::comiso\+::miq} (const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+V $>$ \&V, const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+F $>$ \&F, const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+V $>$ \&PD1, const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+V $>$ \&PD2, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+U $>$ \&UV, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+F $>$ \&FUV, double gradient\+Size=30.\+0, double stiffness=5.\+0, bool direct\+Round=false, unsigned int iter=5, unsigned int local\+Iter=5, bool do\+Round=true, bool singularity\+Round=true, const std\+::vector$<$ int $>$ \&round\+Vertices=std\+::vector$<$ int $>$(), const std\+::vector\texorpdfstring{$<$}{<} std\+::vector$<$ int $>$ \texorpdfstring{$>$}{>} \&hard\+Features=std\+::vector\texorpdfstring{$<$}{<} std\+::vector$<$ int $>$ \texorpdfstring{$>$}{>}())]\label{bug__bug000003}%
 \Hypertarget{bug__bug000003}%
-This is only computing max(min(va,\+B),min(vb,\+A)). This is better than max(min(va,\+Vb),min(vb,\+Va)). This (at least) is missing \"{}edge-\/edge\"{} cases like the distance between the two different triangulations of a non-\/planar quad in 3D. Even simpler, consider the Hausdorff distance between the non-\/convex, block letter V polygon (with 7 vertices) in 2D and its convex hull. The Hausdorff distance is defined by the midpoint in the middle of the segment across the concavity and some non-\/vertex point {\itshape on the edge} of the V. Known issue\+: due to the issue above, this also means that unreferenced vertices can give unexpected results. Therefore, we assume the inputs have no unreferenced vertices. 
-\item[Member \doxylink{namespaceigl_aedd09a46e564a0d19ae4f97891b95de9}{igl\+::is\+\_\+planar} (const Eigen\+::\+Matrix\+Xd \&V)]\label{bug__bug000004}%
+Due to the way of handling of hard\+Features the algorithm may fail in difficult cases. 
+
+
+
+Meshes with boundaries are not hendled properly i.\+e., jagged edges along the boundary are possible  
+\item[Member \doxylink{namespaceigl_a73748b03f3e779d764d30d920653aba6}{igl\+::dated\+\_\+copy} (const std\+::string \&src\+\_\+path, const std\+::string \&dir)]\label{bug__bug000004}%
 \Hypertarget{bug__bug000004}%
-Doesn\textquotesingle{}t determine if vertex is flat if it doesn\textquotesingle{}t lie on the XY plane.  
-\item[Class \doxylink{classigl_1_1matlab_1_1MatlabWorkspace}{igl\+::matlab\+::Matlab\+Workspace} ]\label{bug__bug000005}%
+This function does not work under windows  
+\item[Member \doxylink{namespaceigl_a7bae61a0f8a1bbe72e7832381c9beca5}{igl\+::doublearea} (const Eigen\+::\+Matrix\+Base$<$ Derived\+V $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ Derived\+F $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ Deriveddbl\+A $>$ \&dblA)]\label{bug__bug000005}%
 \Hypertarget{bug__bug000005}%
-Treats all matrices as doubles (this may actually be desired for some \"{}index\"{} matrices since matlab\textquotesingle{}s sparse command takes doubles rather than int class matrices). It is of course not desired when dealing with logicals or uint\textquotesingle{}s for images.  
-\item[Member \doxylink{classigl_1_1matlab_1_1MatlabWorkspace_a4fe9cb0440cddb78e69dd3fb36632262}{igl\+::matlab\+::Matlab\+Workspace\+::find} (const std\+::string \&name, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+M $>$ \&M)]\label{bug__bug000008}%
-\Hypertarget{bug__bug000008}%
-Outputs the first found (not necessarily unique lists). 
-\item[Member \doxylink{classigl_1_1matlab_1_1MatlabWorkspace_a0e8f887139665c6bb6ce1d86736985ea}{igl\+::matlab\+::Matlab\+Workspace\+::save} (const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+M $>$ \&M, const std\+::string \&name)]\label{bug__bug000007}%
+For dim==3 complexity is O(\#V + \#F). Not just O(\#F). This is a big deal if you have 1 million unreferenced vertices and 1 face.  
+\item[Member \doxylink{namespaceigl_a64901d7f496bd1cccbccceddbc091603}{igl\+::hausdorff} (const Eigen\+::\+Matrix\+Base$<$ Derived\+VA $>$ \&VA, const Eigen\+::\+Matrix\+Base$<$ Derived\+FA $>$ \&FA, const Eigen\+::\+Matrix\+Base$<$ Derived\+VB $>$ \&VB, const Eigen\+::\+Matrix\+Base$<$ Derived\+FB $>$ \&FB, Scalar \&d)]\label{bug__bug000006}%
+\Hypertarget{bug__bug000006}%
+This is only computing max(min(va,\+B),min(vb,\+A)). This is better than max(min(va,\+Vb),min(vb,\+Va)). This (at least) is missing \"{}edge-\/edge\"{} cases like the distance between the two different triangulations of a non-\/planar quad in 3D. Even simpler, consider the Hausdorff distance between the non-\/convex, block letter V polygon (with 7 vertices) in 2D and its convex hull. The Hausdorff distance is defined by the midpoint in the middle of the segment across the concavity and some non-\/vertex point {\itshape on the edge} of the V. Known issue\+: due to the issue above, this also means that unreferenced vertices can give unexpected results. Therefore, we assume the inputs have no unreferenced vertices. 
+\item[Member \doxylink{namespaceigl_aedd09a46e564a0d19ae4f97891b95de9}{igl\+::is\+\_\+planar} (const Eigen\+::\+Matrix\+Xd \&V)]\label{bug__bug000007}%
 \Hypertarget{bug__bug000007}%
-Assumes DerivedM is using column major ordering  
-\item[Member \doxylink{namespaceigl_a2b6d36d1a68f0978c2b20b1586ccc18f}{igl\+::mvc} (const Eigen\+::\+Matrix\+Xd \&V, const Eigen\+::\+Matrix\+Xd \&C, Eigen\+::\+Matrix\+Xd \&W)]\label{bug__bug000009}%
-\Hypertarget{bug__bug000009}%
-implementation is listed as \"{}\+Broken\"{}  
-\item[Member \doxylink{namespaceigl_aa7ea97ba9a25206eb1ba9d7469b371d1}{igl\+::orientable\+\_\+patches} (const Eigen\+::\+Matrix\+Base$<$ Derived\+F $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+C $>$ \&C, Eigen\+::\+Sparse\+Matrix$<$ AScalar $>$ \&A)]\label{bug__bug000010}%
-\Hypertarget{bug__bug000010}%
-This will detect a moebius strip as a single patch (manifold, non-\/orientable) and also non-\/manfiold, yet orientable patches. So the {\itshape name} of this function is inappropriate.  
-\item[Member \doxylink{namespaceigl_ae9616bb9fd33e6c00dcb4e8f91952091}{igl\+::point\+\_\+mesh\+\_\+squared\+\_\+distance} (const Eigen\+::\+Matrix\+Base$<$ Derived\+P $>$ \&P, const Eigen\+::\+Matrix\+Base$<$ Derived\+V $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ Derived\+Ele $>$ \&Ele, Eigen\+::\+Plain\+Object\+Base$<$ Derivedsqr\+D $>$ \&sqrD, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+I $>$ \&I, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+C $>$ \&C)]\label{bug__bug000011}%
+Doesn\textquotesingle{}t determine if vertex is flat if it doesn\textquotesingle{}t lie on the XY plane.  
+\item[Class \doxylink{classigl_1_1matlab_1_1MatlabWorkspace}{igl\+::matlab\+::Matlab\+Workspace} ]\label{bug__bug000008}%
+\Hypertarget{bug__bug000008}%
+Treats all matrices as doubles (this may actually be desired for some \"{}index\"{} matrices since matlab\textquotesingle{}s sparse command takes doubles rather than int class matrices). It is of course not desired when dealing with logicals or uint\textquotesingle{}s for images.  
+\item[Member \doxylink{classigl_1_1matlab_1_1MatlabWorkspace_a4fe9cb0440cddb78e69dd3fb36632262}{igl\+::matlab\+::Matlab\+Workspace\+::find} (const std\+::string \&name, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+M $>$ \&M)]\label{bug__bug000011}%
 \Hypertarget{bug__bug000011}%
-This only computes distances to given primitives. So unreferenced vertices are ignored. However, degenerate primitives are handled correctly\+: triangle \mbox{[}1 2 2\mbox{]} is treated as a segment \mbox{[}1 2\mbox{]}, and triangle \mbox{[}1 1 1\mbox{]} is treated as a point. So one {\itshape could} add extra combinatorially degenerate rows to Ele for all unreferenced vertices to also get distances to points.  
-\item[Member \doxylink{namespaceigl_af7eb3109db11f7024416cd77670e4bb6}{igl\+::project} (const Eigen\+::\+Matrix\+Base$<$ Derived\+V $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ Derived\+M $>$ \&model, const Eigen\+::\+Matrix\+Base$<$ Derived\+N $>$ \&proj, const Eigen\+::\+Matrix\+Base$<$ Derived\+O $>$ \&viewport, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+P $>$ \&P)]\label{bug__bug000012}%
+Outputs the first found (not necessarily unique lists). 
+\item[Member \doxylink{classigl_1_1matlab_1_1MatlabWorkspace_a0e8f887139665c6bb6ce1d86736985ea}{igl\+::matlab\+::Matlab\+Workspace\+::save} (const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+M $>$ \&M, const std\+::string \&name)]\label{bug__bug000010}%
+\Hypertarget{bug__bug000010}%
+Assumes DerivedM is using column major ordering  
+\item[Member \doxylink{namespaceigl_a2b6d36d1a68f0978c2b20b1586ccc18f}{igl\+::mvc} (const Eigen\+::\+Matrix\+Xd \&V, const Eigen\+::\+Matrix\+Xd \&C, Eigen\+::\+Matrix\+Xd \&W)]\label{bug__bug000012}%
 \Hypertarget{bug__bug000012}%
-The compiler will not complain if V and P are Vector3d, but the result will be incorrect. 
-\item[Member \doxylink{namespaceigl_aa40ef4e0517c71c597272824497377b2}{igl\+::read\+MESH} (const std\+::string mesh\+\_\+file\+\_\+name, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+V $>$ \&V, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+T $>$ \&T, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+F $>$ \&F)]\label{bug__bug000013}%
+implementation is listed as \"{}\+Broken\"{}  
+\item[Member \doxylink{namespaceigl_aa7ea97ba9a25206eb1ba9d7469b371d1}{igl\+::orientable\+\_\+patches} (const Eigen\+::\+Matrix\+Base$<$ Derived\+F $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+C $>$ \&C, Eigen\+::\+Sparse\+Matrix$<$ AScalar $>$ \&A)]\label{bug__bug000013}%
 \Hypertarget{bug__bug000013}%
-Holes and regions are not supported  
-\item[Member \doxylink{namespaceigl_a71568db686b70c51b2b3ea414c348a86}{igl\+::read\+MSH} (const std\+::string \&msh, Eigen\+::\+Matrix\+Xd \&X, Eigen\+::\+Matrix\+Xi \&Tri, Eigen\+::\+Matrix\+Xi \&Tet, Eigen\+::\+Vector\+Xi \&Tri\+Tag, Eigen\+::\+Vector\+Xi \&Tet\+Tag, std\+::vector$<$ std\+::string $>$ \&XFields, std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&XF, std\+::vector$<$ std\+::string $>$ \&EFields, std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&TriF, std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&TetF)]\label{bug__bug000014}%
+This will detect a moebius strip as a single patch (manifold, non-\/orientable) and also non-\/manfiold, yet orientable patches. So the {\itshape name} of this function is inappropriate.  
+\item[Member \doxylink{namespaceigl_ae9616bb9fd33e6c00dcb4e8f91952091}{igl\+::point\+\_\+mesh\+\_\+squared\+\_\+distance} (const Eigen\+::\+Matrix\+Base$<$ Derived\+P $>$ \&P, const Eigen\+::\+Matrix\+Base$<$ Derived\+V $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ Derived\+Ele $>$ \&Ele, Eigen\+::\+Plain\+Object\+Base$<$ Derivedsqr\+D $>$ \&sqrD, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+I $>$ \&I, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+C $>$ \&C)]\label{bug__bug000014}%
 \Hypertarget{bug__bug000014}%
+This only computes distances to given primitives. So unreferenced vertices are ignored. However, degenerate primitives are handled correctly\+: triangle \mbox{[}1 2 2\mbox{]} is treated as a segment \mbox{[}1 2\mbox{]}, and triangle \mbox{[}1 1 1\mbox{]} is treated as a point. So one {\itshape could} add extra combinatorially degenerate rows to Ele for all unreferenced vertices to also get distances to points.  
+\item[Member \doxylink{namespaceigl_1_1predicates_a67aaad068b039718bf983418a9143b94}{igl\+::predicates\+::ear\+\_\+clipping} (const Eigen\+::\+Matrix\+Base$<$ Derived\+P $>$ \&P, const Eigen\+::\+Matrix\+Base$<$ Derived\+RT $>$ \&RT, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+I $>$ \&I, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+F $>$ \&eF, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+P $>$ \&nP)]\label{bug__bug000015}%
+\Hypertarget{bug__bug000015}%
+\href{https://github.com/libigl/libigl/issues/1563}{\texttt{ https\+://github.\+com/libigl/libigl/issues/1563}}  
+\item[Member \doxylink{namespaceigl_af7eb3109db11f7024416cd77670e4bb6}{igl\+::project} (const Eigen\+::\+Matrix\+Base$<$ Derived\+V $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ Derived\+M $>$ \&model, const Eigen\+::\+Matrix\+Base$<$ Derived\+N $>$ \&proj, const Eigen\+::\+Matrix\+Base$<$ Derived\+O $>$ \&viewport, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+P $>$ \&P)]\label{bug__bug000016}%
+\Hypertarget{bug__bug000016}%
+The compiler will not complain if V and P are Vector3d, but the result will be incorrect. 
+\item[Member \doxylink{namespaceigl_aa40ef4e0517c71c597272824497377b2}{igl\+::read\+MESH} (const std\+::string mesh\+\_\+file\+\_\+name, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+V $>$ \&V, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+T $>$ \&T, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+F $>$ \&F)]\label{bug__bug000017}%
+\Hypertarget{bug__bug000017}%
+Holes and regions are not supported  
+\item[Member \doxylink{namespaceigl_a71568db686b70c51b2b3ea414c348a86}{igl\+::read\+MSH} (const std\+::string \&msh, Eigen\+::\+Matrix\+Xd \&X, Eigen\+::\+Matrix\+Xi \&Tri, Eigen\+::\+Matrix\+Xi \&Tet, Eigen\+::\+Vector\+Xi \&Tri\+Tag, Eigen\+::\+Vector\+Xi \&Tet\+Tag, std\+::vector$<$ std\+::string $>$ \&XFields, std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&XF, std\+::vector$<$ std\+::string $>$ \&EFields, std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&TriF, std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&TetF)]\label{bug__bug000018}%
+\Hypertarget{bug__bug000018}%
 only version 2.\+2 of .msh file is supported (gmsh 3.\+X) 
 
 
@@ -57,36 +73,39 @@ only the 1st tag per element is returned (physical)
 
 
 same element fields are expected to be associated with surface elements and volumetric elements  
-\item[Member \doxylink{namespaceigl_a094f93a7b569504f70587f81f75fd879}{igl\+::signed\+\_\+distance} (const Eigen\+::\+Matrix\+Base$<$ Derived\+P $>$ \&P, const Eigen\+::\+Matrix\+Base$<$ Derived\+V $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ Derived\+F $>$ \&F, const Signed\+Distance\+Type sign\+\_\+type, const typename Derived\+V\+::\+Scalar lower\+\_\+bound, const typename Derived\+V\+::\+Scalar upper\+\_\+bound, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+S $>$ \&S, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+I $>$ \&I, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+C $>$ \&C, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+N $>$ \&N)]\label{bug__bug000015}%
-\Hypertarget{bug__bug000015}%
-This only computes distances to triangles. So unreferenced vertices and degenerate triangles are ignored.  
-\item[Member \doxylink{namespaceigl_a3b7376c37ca3ec7bb7dc4cf7fdecfe36}{igl\+::svd3x3} (const Eigen\+::\+Matrix$<$ T, 3, 3 $>$ \&A, Eigen\+::\+Matrix$<$ T, 3, 3 $>$ \&U, Eigen\+::\+Matrix$<$ T, 3, 1 $>$ \&S, Eigen\+::\+Matrix$<$ T, 3, 3 $>$ \&V)]\label{bug__bug000016}%
-\Hypertarget{bug__bug000016}%
-this will not work correctly for double precision.  
-\item[Member \doxylink{namespaceigl_a4153817f124410a202847cbf878d271b}{igl\+::svd3x3\+\_\+avx} (const Eigen\+::\+Matrix$<$ T, 3 \texorpdfstring{$\ast$}{*}8, 3 $>$ \&A, Eigen\+::\+Matrix$<$ T, 3 \texorpdfstring{$\ast$}{*}8, 3 $>$ \&U, Eigen\+::\+Matrix$<$ T, 3 \texorpdfstring{$\ast$}{*}8, 1 $>$ \&S, Eigen\+::\+Matrix$<$ T, 3 \texorpdfstring{$\ast$}{*}8, 3 $>$ \&V)]\label{bug__bug000017}%
-\Hypertarget{bug__bug000017}%
-this will not work correctly for double precision.  
-\item[Member \doxylink{namespaceigl_ae67ee73993135205bd97cfc9c8453d68}{igl\+::svd3x3\+\_\+sse} (const Eigen\+::\+Matrix$<$ T, 3 \texorpdfstring{$\ast$}{*}4, 3 $>$ \&A, Eigen\+::\+Matrix$<$ T, 3 \texorpdfstring{$\ast$}{*}4, 3 $>$ \&U, Eigen\+::\+Matrix$<$ T, 3 \texorpdfstring{$\ast$}{*}4, 1 $>$ \&S, Eigen\+::\+Matrix$<$ T, 3 \texorpdfstring{$\ast$}{*}4, 3 $>$ \&V)]\label{bug__bug000018}%
-\Hypertarget{bug__bug000018}%
-this will not work correctly for double precision.  
-\item[Member \doxylink{namespaceigl_abab7f0da5952b09f2ba7ffee0f9a0d58}{igl\+::topological\+\_\+hole\+\_\+fill} (const Eigen\+::\+Matrix\+Base$<$ Derived\+F $>$ \&F, const Eigen\+::\+Matrix\+Base$<$ Derivedb $>$ \&b, const std\+::vector$<$ Vector\+Index $>$ \&holes, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+F\+\_\+filled $>$ \&F\+\_\+filled)]\label{bug__bug000019}%
+\item[Member \doxylink{namespaceigl_a094f93a7b569504f70587f81f75fd879}{igl\+::signed\+\_\+distance} (const Eigen\+::\+Matrix\+Base$<$ Derived\+P $>$ \&P, const Eigen\+::\+Matrix\+Base$<$ Derived\+V $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ Derived\+F $>$ \&F, const Signed\+Distance\+Type sign\+\_\+type, const typename Derived\+V\+::\+Scalar lower\+\_\+bound, const typename Derived\+V\+::\+Scalar upper\+\_\+bound, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+S $>$ \&S, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+I $>$ \&I, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+C $>$ \&C, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+N $>$ \&N)]\label{bug__bug000019}%
 \Hypertarget{bug__bug000019}%
-Why does this add a new vertex for each hole? Why not use a fan?  
-\item[Member \doxylink{namespaceigl_a04b29a2138c5fa4268400e42b8df04a9}{igl\+::unproject} (const Eigen\+::\+Matrix\+Base$<$ Derivedwin $>$ \&win, const Eigen\+::\+Matrix\+Base$<$ Derivedmodel $>$ \&model, const Eigen\+::\+Matrix\+Base$<$ Derivedproj $>$ \&proj, const Eigen\+::\+Matrix\+Base$<$ Derivedviewport $>$ \&viewport, Eigen\+::\+Plain\+Object\+Base$<$ Derivedscene $>$ \&scene)]\label{bug__bug000020}%
+This only computes distances to triangles. So unreferenced vertices and degenerate triangles are ignored.  
+\item[Member \doxylink{namespaceigl_1_1spectra_ad3d3fe017e5b3e83eaa8c9e997eceaf5}{igl\+::spectra\+::eigs} (const Eigen\+::\+Sparse\+Matrix$<$ Eigs\+Scalar $>$ \&A, const Eigen\+::\+Sparse\+Matrix$<$ Eigs\+Scalar $>$ \&B, const int k, const \doxylink{namespaceigl_a39bb96a0597986315dc20d78ba46a50d}{igl\+::\+Eigs\+Type} type, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+U $>$ \&U, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+S $>$ \&S)]\label{bug__bug000020}%
 \Hypertarget{bug__bug000020}%
-The compiler will not complain if V and P are Vector3d, but the result will be incorrect.  
-\item[Member \doxylink{namespaceigl_acabdf409439e0498066a620d30db6899}{igl\+::vertex\+\_\+triangle\+\_\+adjacency} (const typename Derived\+F\+::\+Scalar n, const Eigen\+::\+Matrix\+Base$<$ Derived\+F $>$ \&F, std\+::vector\texorpdfstring{$<$}{<} std\+::vector$<$ VFType $>$ \texorpdfstring{$>$}{>} \&VF, std\+::vector\texorpdfstring{$<$}{<} std\+::vector$<$ VFi\+Type $>$ \texorpdfstring{$>$}{>} \&VFi)]\label{bug__bug000021}%
+only the \textquotesingle{}sm\textquotesingle{} small magnitude eigen values are well supported 
+\item[Member \doxylink{namespaceigl_a3b7376c37ca3ec7bb7dc4cf7fdecfe36}{igl\+::svd3x3} (const Eigen\+::\+Matrix$<$ T, 3, 3 $>$ \&A, Eigen\+::\+Matrix$<$ T, 3, 3 $>$ \&U, Eigen\+::\+Matrix$<$ T, 3, 1 $>$ \&S, Eigen\+::\+Matrix$<$ T, 3, 3 $>$ \&V)]\label{bug__bug000021}%
 \Hypertarget{bug__bug000021}%
+this will not work correctly for double precision.  
+\item[Member \doxylink{namespaceigl_a4153817f124410a202847cbf878d271b}{igl\+::svd3x3\+\_\+avx} (const Eigen\+::\+Matrix$<$ T, 3 \texorpdfstring{$\ast$}{*}8, 3 $>$ \&A, Eigen\+::\+Matrix$<$ T, 3 \texorpdfstring{$\ast$}{*}8, 3 $>$ \&U, Eigen\+::\+Matrix$<$ T, 3 \texorpdfstring{$\ast$}{*}8, 1 $>$ \&S, Eigen\+::\+Matrix$<$ T, 3 \texorpdfstring{$\ast$}{*}8, 3 $>$ \&V)]\label{bug__bug000022}%
+\Hypertarget{bug__bug000022}%
+this will not work correctly for double precision.  
+\item[Member \doxylink{namespaceigl_ae67ee73993135205bd97cfc9c8453d68}{igl\+::svd3x3\+\_\+sse} (const Eigen\+::\+Matrix$<$ T, 3 \texorpdfstring{$\ast$}{*}4, 3 $>$ \&A, Eigen\+::\+Matrix$<$ T, 3 \texorpdfstring{$\ast$}{*}4, 3 $>$ \&U, Eigen\+::\+Matrix$<$ T, 3 \texorpdfstring{$\ast$}{*}4, 1 $>$ \&S, Eigen\+::\+Matrix$<$ T, 3 \texorpdfstring{$\ast$}{*}4, 3 $>$ \&V)]\label{bug__bug000023}%
+\Hypertarget{bug__bug000023}%
+this will not work correctly for double precision.  
+\item[Member \doxylink{namespaceigl_abab7f0da5952b09f2ba7ffee0f9a0d58}{igl\+::topological\+\_\+hole\+\_\+fill} (const Eigen\+::\+Matrix\+Base$<$ Derived\+F $>$ \&F, const Eigen\+::\+Matrix\+Base$<$ Derivedb $>$ \&b, const std\+::vector$<$ Vector\+Index $>$ \&holes, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+F\+\_\+filled $>$ \&F\+\_\+filled)]\label{bug__bug000024}%
+\Hypertarget{bug__bug000024}%
+Why does this add a new vertex for each hole? Why not use a fan?  
+\item[Member \doxylink{namespaceigl_a04b29a2138c5fa4268400e42b8df04a9}{igl\+::unproject} (const Eigen\+::\+Matrix\+Base$<$ Derivedwin $>$ \&win, const Eigen\+::\+Matrix\+Base$<$ Derivedmodel $>$ \&model, const Eigen\+::\+Matrix\+Base$<$ Derivedproj $>$ \&proj, const Eigen\+::\+Matrix\+Base$<$ Derivedviewport $>$ \&viewport, Eigen\+::\+Plain\+Object\+Base$<$ Derivedscene $>$ \&scene)]\label{bug__bug000025}%
+\Hypertarget{bug__bug000025}%
+The compiler will not complain if V and P are Vector3d, but the result will be incorrect.  
+\item[Member \doxylink{namespaceigl_acabdf409439e0498066a620d30db6899}{igl\+::vertex\+\_\+triangle\+\_\+adjacency} (const typename Derived\+F\+::\+Scalar n, const Eigen\+::\+Matrix\+Base$<$ Derived\+F $>$ \&F, std\+::vector\texorpdfstring{$<$}{<} std\+::vector$<$ VFType $>$ \texorpdfstring{$>$}{>} \&VF, std\+::vector\texorpdfstring{$<$}{<} std\+::vector$<$ VFi\+Type $>$ \texorpdfstring{$>$}{>} \&VFi)]\label{bug__bug000026}%
+\Hypertarget{bug__bug000026}%
 this should not take V as an input parameter. 
 
 
 
 if a facet is combinatorially degenerate then faces will appear multiple times in VF and correspondingly in VFI (j appears twice in F.\+row(i) then i will appear twice in VF\mbox{[}j\mbox{]})  
-\item[Member \doxylink{namespaceigl_a6a6b14a1061d9ce7d0ef20880e604186}{igl\+::write\+MESH} (const std\+::string mesh\+\_\+file\+\_\+name, const std\+::vector\texorpdfstring{$<$}{<} std\+::vector$<$ Scalar $>$ \texorpdfstring{$>$}{>} \&V, const std\+::vector\texorpdfstring{$<$}{<} std\+::vector$<$ Index $>$ \texorpdfstring{$>$}{>} \&T, const std\+::vector\texorpdfstring{$<$}{<} std\+::vector$<$ Index $>$ \texorpdfstring{$>$}{>} \&F)]\label{bug__bug000022}%
-\Hypertarget{bug__bug000022}%
+\item[Member \doxylink{namespaceigl_a6a6b14a1061d9ce7d0ef20880e604186}{igl\+::write\+MESH} (const std\+::string mesh\+\_\+file\+\_\+name, const std\+::vector\texorpdfstring{$<$}{<} std\+::vector$<$ Scalar $>$ \texorpdfstring{$>$}{>} \&V, const std\+::vector\texorpdfstring{$<$}{<} std\+::vector$<$ Index $>$ \texorpdfstring{$>$}{>} \&T, const std\+::vector\texorpdfstring{$<$}{<} std\+::vector$<$ Index $>$ \texorpdfstring{$>$}{>} \&F)]\label{bug__bug000027}%
+\Hypertarget{bug__bug000027}%
 Holes and regions are not supported  
-\item[Member \doxylink{namespaceigl_a2df694c52f937d065a10d20c184ddfc4}{igl\+::write\+MSH} (const std\+::string \&msh, const Eigen\+::\+Matrix\+Xd \&X, const Eigen\+::\+Matrix\+Xi \&Tri, const Eigen\+::\+Matrix\+Xi \&Tet, const Eigen\+::\+Matrix\+Xi \&Tri\+Tag, const Eigen\+::\+Matrix\+Xi \&Tet\+Tag, const std\+::vector$<$ std\+::string $>$ \&XFields, const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&XF, const std\+::vector$<$ std\+::string $>$ \&EFields, const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&TriF, const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&TetF)]\label{bug__bug000023}%
-\Hypertarget{bug__bug000023}%
+\item[Member \doxylink{namespaceigl_a2df694c52f937d065a10d20c184ddfc4}{igl\+::write\+MSH} (const std\+::string \&msh, const Eigen\+::\+Matrix\+Xd \&X, const Eigen\+::\+Matrix\+Xi \&Tri, const Eigen\+::\+Matrix\+Xi \&Tet, const Eigen\+::\+Matrix\+Xi \&Tri\+Tag, const Eigen\+::\+Matrix\+Xi \&Tet\+Tag, const std\+::vector$<$ std\+::string $>$ \&XFields, const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&XF, const std\+::vector$<$ std\+::string $>$ \&EFields, const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&TriF, const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&TetF)]\label{bug__bug000028}%
+\Hypertarget{bug__bug000028}%
 files are always stored in binary format 
 
 
@@ -108,7 +127,7 @@ the tag id is duplicated for physical (0) and elementary (1)
 
 
 same element fields are expected to be associated with surface elements and volumetric elements  
-\item[Member \doxylink{namespaceigl_a1a1761a85ec5cdef44ce8104d0ccdc3f}{igl\+::write\+OBJ} (const std\+::string str, const Eigen\+::\+Matrix\+Base$<$ Derived\+V $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ Derived\+F $>$ \&F, const Eigen\+::\+Matrix\+Base$<$ Derived\+CN $>$ \&CN, const Eigen\+::\+Matrix\+Base$<$ Derived\+FN $>$ \&FN, const Eigen\+::\+Matrix\+Base$<$ Derived\+TC $>$ \&TC, const Eigen\+::\+Matrix\+Base$<$ Derived\+FTC $>$ \&FTC)]\label{bug__bug000024}%
-\Hypertarget{bug__bug000024}%
+\item[Member \doxylink{namespaceigl_a1a1761a85ec5cdef44ce8104d0ccdc3f}{igl\+::write\+OBJ} (const std\+::string str, const Eigen\+::\+Matrix\+Base$<$ Derived\+V $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ Derived\+F $>$ \&F, const Eigen\+::\+Matrix\+Base$<$ Derived\+CN $>$ \&CN, const Eigen\+::\+Matrix\+Base$<$ Derived\+FN $>$ \&FN, const Eigen\+::\+Matrix\+Base$<$ Derived\+TC $>$ \&TC, const Eigen\+::\+Matrix\+Base$<$ Derived\+FTC $>$ \&FTC)]\label{bug__bug000029}%
+\Hypertarget{bug__bug000029}%
 Horrifyingly, this does not have the same order of parameters as read\+OBJ.
 \end{DoxyRefList}

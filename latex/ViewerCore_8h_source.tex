@@ -1,0 +1,206 @@
+\doxysection{Viewer\+Core.\+h}
+\hypertarget{ViewerCore_8h_source}{}\label{ViewerCore_8h_source}\index{include/igl/opengl/ViewerCore.h@{include/igl/opengl/ViewerCore.h}}
+\mbox{\hyperlink{ViewerCore_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2014\ Daniele\ Panozzo\ <daniele.panozzo@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_OPENGL\_VIEWERCORE\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_OPENGL\_VIEWERCORE\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{MeshGL_8h}{igl/opengl/MeshGL.h}}>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{igl__inline_8h}{igl/igl\_inline.h}}>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <Eigen/Geometry>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{namespace\ }opengl}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{comment}{//\ Forward\ declaration}}
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }ViewerData;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore}{ViewerCore}}}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_abf6d6d469f220b00d789a94de0b7e322}{GLuint}}\ =\ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{MeshGL::GLuint}};}
+\DoxyCodeLine{00030\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_aba6009cae01df3339e47379273fb63d8}{ViewerCore}}();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00033\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a6f525e146e98914dcd4ef52434c96642}{init}}();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00036\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a9b3ee2325572f2356ff583d4277076e7}{shut}}();}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00039\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a81fb05d66aab6266a6bca831dede58c6}{InitSerialization}}();}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00044\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_af63c12332a679e70836aa9a06e5cfe26}{align\_camera\_center}}(}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\&\ V,}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\&\ F);}
+\DoxyCodeLine{00048\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a223cdcbfaac5e2b442245de60b329985}{align\_camera\_center}}(}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\&\ V);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00057\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a4643441c3f4ef95bfcd1cb713482e893}{get\_scale\_and\_shift\_to\_fit\_mesh}}(}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\&\ V,}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\&\ F,}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{float}\ \&\ zoom,}
+\DoxyCodeLine{00061\ \ \ \ \ Eigen::Vector3f\&\ shift);}
+\DoxyCodeLine{00063\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_ab90f987fc0725a05b7f9f2f696dff521}{get\_scale\_and\_shift\_to\_fit\_mesh}}(}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\&\ V,}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{float}\ \&\ zoom,}
+\DoxyCodeLine{00066\ \ \ \ \ Eigen::Vector3f\&\ shift);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00069\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_afe47055b35fa1c275ba1c461dbe6f48c}{clear\_framebuffers}}();}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00078\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_ac9300aff89f5670193d72919da2669e9}{draw}}(\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData}{ViewerData}}\&\ data,\ \textcolor{keywordtype}{bool}\ update\_matrices\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00080\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_ac71664aeca9d06a4b82b1905d6dd9603}{initialize\_shadow\_pass}}();}
+\DoxyCodeLine{00082\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a61bcd7c8bcdf37823b7016d7947cfdc2}{deinitialize\_shadow\_pass}}();}
+\DoxyCodeLine{00086\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a9d89918cb49bc067628649f1c5de9286}{draw\_shadow\_pass}}(\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData}{ViewerData}}\&\ data,\ \textcolor{keywordtype}{bool}\ update\_matrices\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00099\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a7b9146789734337e9a33e66be00d1ed1}{draw\_buffer}}(}
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData}{ViewerData}}\&\ data,}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{bool}\ update\_matrices,}
+\DoxyCodeLine{00102\ \ \ \ \ Eigen::Matrix<unsigned\ char,Eigen::Dynamic,Eigen::Dynamic>\&\ R,}
+\DoxyCodeLine{00103\ \ \ \ \ Eigen::Matrix<unsigned\ char,Eigen::Dynamic,Eigen::Dynamic>\&\ G,}
+\DoxyCodeLine{00104\ \ \ \ \ Eigen::Matrix<unsigned\ char,Eigen::Dynamic,Eigen::Dynamic>\&\ B,}
+\DoxyCodeLine{00105\ \ \ \ \ Eigen::Matrix<unsigned\ char,Eigen::Dynamic,Eigen::Dynamic>\&\ A);}
+\DoxyCodeLine{00109\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a117278256764d36c1921a88e01a0bb70}{draw\_labels}}(}
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData}{ViewerData}}\&\ data,}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL}{igl::opengl::MeshGL::TextGL}}\&\ labels}
+\DoxyCodeLine{00112\ \ \ );}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00116\ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a98926e7cdb35ee656e63a7c59170e3f7}{RotationType}}}
+\DoxyCodeLine{00117\ \ \ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a98926e7cdb35ee656e63a7c59170e3f7a3b5e4dfd95c75e3f539673c93687a486}{ROTATION\_TYPE\_TRACKBALL}}\ =\ 0,}
+\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a98926e7cdb35ee656e63a7c59170e3f7a875594dfcb07d40f24a2a23f1fb5e707}{ROTATION\_TYPE\_TWO\_AXIS\_VALUATOR\_FIXED\_UP}}\ =\ 1,}
+\DoxyCodeLine{00123\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a98926e7cdb35ee656e63a7c59170e3f7aa593ef19a5acec687845255504b6e047}{ROTATION\_TYPE\_NO\_ROTATION}}\ =\ 2,}
+\DoxyCodeLine{00125\ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a98926e7cdb35ee656e63a7c59170e3f7a4a849da575de5b5d0f162268a9d4b257}{NUM\_ROTATION\_TYPES}}\ =\ 3}
+\DoxyCodeLine{00126\ \ \ \};}
+\DoxyCodeLine{00129\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a7a40f95d62d64bdd0146913d83d169f4}{set\_rotation\_type}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a98926e7cdb35ee656e63a7c59170e3f7}{RotationType}}\ \&\ value);}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00134\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_ab6ddc96259d604b00c011e3006562235}{set}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \&property\_mask,\ \textcolor{keywordtype}{bool}\ value\ =\ \textcolor{keyword}{true})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00138\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_aeb3336ff441b92aa6204a6dfa5ca1590}{unset}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \&property\_mask)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00142\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a702da4e528a02c275db5b8419a55574c}{toggle}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \&property\_mask)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00147\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a493ec6e303409859f8cd4a0d051e9ab9}{is\_set}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ property\_mask)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00150\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a8c46aaef34782825955b44914f1ff4e4}{delete\_shadow\_buffers}}();}
+\DoxyCodeLine{00152\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a8872ebeb991df99eeb3b6f8b30985bd9}{generate\_shadow\_buffers}}();}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Properties}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00157\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id}\ =\ 1u;}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00160\ \ \ Eigen::Vector4f\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_ac7d36f7eb1fd942ae1c59331b85ac1b5}{background\_color}};}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00163\ \ \ Eigen::Vector3f\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a0d867e974e28d96a5eed96d428488dea}{light\_position}};}
+\DoxyCodeLine{00165\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a7cad009ba7e679f5832a021553bf10db}{is\_directional\_light}};}
+\DoxyCodeLine{00167\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a4a153c9d31dff1017c4caffe6eebf87c}{is\_shadow\_mapping}};}
+\DoxyCodeLine{00169\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_abf6d6d469f220b00d789a94de0b7e322}{GLuint}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a11b2aa3b4ff5accd89ef87f05f237c06}{shadow\_width}};}
+\DoxyCodeLine{00171\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_abf6d6d469f220b00d789a94de0b7e322}{GLuint}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a37e5b11cd02bdff53ad7eae8ec423baa}{shadow\_height}};}
+\DoxyCodeLine{00173\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_abf6d6d469f220b00d789a94de0b7e322}{GLuint}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a2f3169902f8c42f6c31ba3762abead3e}{shadow\_depth\_tex}};}
+\DoxyCodeLine{00175\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_abf6d6d469f220b00d789a94de0b7e322}{GLuint}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_afd17569a8d5c8a1c7b166f43193681d9}{shadow\_depth\_fbo}};}
+\DoxyCodeLine{00177\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_abf6d6d469f220b00d789a94de0b7e322}{GLuint}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a18ec88b6f39284bf830d3d4b42b717a2}{shadow\_color\_rbo}};}
+\DoxyCodeLine{00179\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_ac6ada2422d9e89406a568be1b5f7fbfa}{lighting\_factor}};}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00182\ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a98926e7cdb35ee656e63a7c59170e3f7}{RotationType}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_aea6244401b22237d6510a59e73113365}{rotation\_type}};}
+\DoxyCodeLine{00184\ \ \ Eigen::Quaternionf\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a85441f0f93d81efb22cc3b1dee6b1c8a}{trackball\_angle}};}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00187\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a5717161004565ecbadf383fb240aeaa8}{camera\_base\_zoom}};}
+\DoxyCodeLine{00189\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_af15d81d2985299c4e8e50f2e4b4bfd5e}{camera\_zoom}};}
+\DoxyCodeLine{00191\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a4badc6acee08ee0074f653f44ab6dc4e}{orthographic}};}
+\DoxyCodeLine{00193\ \ \ Eigen::Vector3f\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_ac6e599685f7fca9a1eb43ac27b531fee}{camera\_base\_translation}};}
+\DoxyCodeLine{00195\ \ \ Eigen::Vector3f\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_af56aa360721e1bd887a09bef4ae538f5}{camera\_translation}};}
+\DoxyCodeLine{00197\ \ \ Eigen::Vector3f\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a8aa43f770960d01777f231fee029df96}{camera\_eye}};}
+\DoxyCodeLine{00199\ \ \ Eigen::Vector3f\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_acda53fe2a7f869c8fd2cd64c7a8e2c94}{camera\_up}};}
+\DoxyCodeLine{00201\ \ \ Eigen::Vector3f\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_aa4e897c91e56e7673fc5ade43a326876}{camera\_center}};}
+\DoxyCodeLine{00203\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_ab5b4dfc976923e309cb6b1aca1a40191}{camera\_view\_angle}};}
+\DoxyCodeLine{00205\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a326debb07a53fd66125e501640fdf95e}{camera\_dnear}};}
+\DoxyCodeLine{00207\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_adf9d260c23f0e717d2dbf0981527266d}{camera\_dfar}};}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00210\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a3203aaf5f618f360b3122e158817073e}{depth\_test}};}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00213\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a0effd92cbb0d11dcf1a5939fc5fc098d}{is\_animating}};}
+\DoxyCodeLine{00215\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_af68e5b73ab3fe7d9355ec83a8161bae8}{animation\_max\_fps}};}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00218\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a0b226fe4db0e931c5e8129943984fa5a}{object\_scale}};}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00221\ \ \ Eigen::Vector4f\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_ac5a0f15fc245747e1d83b8e718f2e74f}{viewport}};}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00224\ \ \ Eigen::Matrix4f\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a8ce15c9d27268543847a0d83c2010cb6}{view}};}
+\DoxyCodeLine{00226\ \ \ Eigen::Matrix4f\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a50af5081883025581f00b0918b3d9d30}{proj}};}
+\DoxyCodeLine{00228\ \ \ Eigen::Matrix4f\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a472fb0721242e3ec4fbc276e97bb99b2}{norm}};}
+\DoxyCodeLine{00230\ \ \ Eigen::Matrix4f\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_ad663368df73cb1ef5c96938ae9d078a3}{shadow\_view}};}
+\DoxyCodeLine{00232\ \ \ Eigen::Matrix4f\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a01ebd332e07be1edd427a08d0220d587}{shadow\_proj}};}
+\DoxyCodeLine{00233\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ EIGEN\_MAKE\_ALIGNED\_OPERATOR\_NEW}
+\DoxyCodeLine{00235\ \};}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00237\ \}}
+\DoxyCodeLine{00238\ \}}
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00240\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{serialize_8h}{igl/serialize.h}}>}}
+\DoxyCodeLine{00241\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}\ \{}
+\DoxyCodeLine{00242\ \ \ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl_1_1serialization_a2e254ccdb43b7d45ebed401c0ef5a5e2}{serialization}}\ \{}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_a2e254ccdb43b7d45ebed401c0ef5a5e2}{serialization}}(\textcolor{keywordtype}{bool}\ s,\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore}{igl::opengl::ViewerCore}}\&\ obj,\ std::vector<char>\&\ buffer)}
+\DoxyCodeLine{00245\ \ \ \ \ \{}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(background\_color);}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(light\_position);}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(lighting\_factor);}
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(trackball\_angle);}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(rotation\_type);}
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(camera\_base\_zoom);}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(camera\_zoom);}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(orthographic);}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(camera\_base\_translation);}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(camera\_translation);}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(camera\_view\_angle);}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(camera\_dnear);}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(camera\_dfar);}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(camera\_eye);}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(camera\_center);}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(camera\_up);}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(depth\_test);}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(is\_animating);}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(animation\_max\_fps);}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(object\_scale);}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(viewport);}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(view);}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(proj);}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \mbox{\hyperlink{serialize_8h_af22988dcc713e8306d3125625ac2784d}{SERIALIZE\_MEMBER}}(norm);}
+\DoxyCodeLine{00277\ \ \ \ \ \}}
+\DoxyCodeLine{00278\ }
+\DoxyCodeLine{00279\ \ \ \ \ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00280\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore}{igl::opengl::ViewerCore}}\&\ obj,\ std::vector<char>\&\ buffer)}
+\DoxyCodeLine{00281\ \ \ \ \ \{}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_a2e254ccdb43b7d45ebed401c0ef5a5e2}{serialization}}(\textcolor{keyword}{true},\ \textcolor{keyword}{const\_cast<}\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore}{igl::opengl::ViewerCore}}\&\textcolor{keyword}{>}(obj),\ buffer);}
+\DoxyCodeLine{00283\ \ \ \ \ \}}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00285\ \ \ \ \ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00286\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore}{igl::opengl::ViewerCore}}\&\ obj,\ \textcolor{keyword}{const}\ std::vector<char>\&\ buffer)}
+\DoxyCodeLine{00287\ \ \ \ \ \{}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1serialization_a2e254ccdb43b7d45ebed401c0ef5a5e2}{serialization}}(\textcolor{keyword}{false},\ obj,\ \textcolor{keyword}{const\_cast<}std::vector<char>\&\textcolor{keyword}{>}(buffer));}
+\DoxyCodeLine{00289\ \ \ \ \ \}}
+\DoxyCodeLine{00290\ \ \ \}}
+\DoxyCodeLine{00291\ \}}
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00293\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00294\ \textcolor{preprocessor}{\#\ \ include\ "{}ViewerCore.cpp"{}}}
+\DoxyCodeLine{00295\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00296\ }
+\DoxyCodeLine{00297\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

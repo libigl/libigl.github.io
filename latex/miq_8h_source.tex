@@ -1,0 +1,71 @@
+\doxysection{miq.\+h}
+\hypertarget{miq_8h_source}{}\label{miq_8h_source}\index{include/igl/copyleft/comiso/miq.h@{include/igl/copyleft/comiso/miq.h}}
+\mbox{\hyperlink{miq_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2014\ Daniele\ Panozzo\ <daniele.panozzo@gmail.com>,\ Olga\ Diamanti\ <olga.diam@gmail.com>,\ Kevin\ Walliman\ <wkevin@student.ethz.ch>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_COMISO\_MIQ\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_COMISO\_MIQ\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../../igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \ \ \textcolor{keyword}{namespace\ }copyleft}
+\DoxyCodeLine{00017\ \ \ \{}
+\DoxyCodeLine{00018\ \ \ \textcolor{keyword}{namespace\ }comiso}
+\DoxyCodeLine{00019\ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF,\ \textcolor{keyword}{typename}\ DerivedU>}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1comiso_a177716489b4db91c9cd44fd166e4d40c}{miq}}(}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedV>\ \&V,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedF>\ \&F,}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedV>\ \&PD1,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedV>\ \&PD2,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedU>\ \&UV,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedF>\ \&FUV,}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ gradientSize\ =\ 30.0,}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ stiffness\ =\ 5.0,}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ directRound\ =\ \textcolor{keyword}{false},}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iter\ =\ 5,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ localIter\ =\ 5,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ doRound\ =\ \textcolor{keyword}{true},}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ singularityRound\ =\ \textcolor{keyword}{true},}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<int>\ \&roundVertices\ =\ std::vector<int>(),}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<int>>\ \&hardFeatures\ =\ std::vector<std::vector<int>\ >());}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF,\ \textcolor{keyword}{typename}\ DerivedU>}
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1comiso_a177716489b4db91c9cd44fd166e4d40c}{miq}}(}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedV>\ \&V,}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedF>\ \&F,}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedV>\ \&PD1\_combed,}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedV>\ \&PD2\_combed,}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<int,\ Eigen::Dynamic,\ 3>\ \&mismatch,}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<int,\ Eigen::Dynamic,\ 1>\ \&singular,}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<int,\ Eigen::Dynamic,\ 3>\ \&seams,}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedU>\ \&UV,}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedF>\ \&FUV,}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ gradientSize\ =\ 30.0,}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ stiffness\ =\ 5.0,}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ directRound\ =\ \textcolor{keyword}{false},}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iter\ =\ 5,}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ localIter\ =\ 5,}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ doRound\ =\ \textcolor{keyword}{true},}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ singularityRound\ =\ \textcolor{keyword}{true},}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<int>\ \&roundVertices\ =\ std::vector<int>(),}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<int>>\ \&hardFeatures\ =\ std::vector<std::vector<int>\ >());}
+\DoxyCodeLine{00105\ \ \ \};}
+\DoxyCodeLine{00106\ \};}
+\DoxyCodeLine{00107\ \};}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#include\ "{}miq.cpp"{}}}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

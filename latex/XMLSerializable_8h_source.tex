@@ -1,0 +1,231 @@
+\doxysection{XMLSerializable.\+h}
+\hypertarget{XMLSerializable_8h_source}{}\label{XMLSerializable_8h_source}\index{include/igl/xml/XMLSerializable.h@{include/igl/xml/XMLSerializable.h}}
+\mbox{\hyperlink{XMLSerializable_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ IGL\_XML\_XMLSERIALIZABLE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ IGL\_XML\_XMLSERIALIZABLE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{serialize__xml_8h}{serialize\_xml.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}../igl\_inline.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}../serialize.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <tinyxml2.h>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ Interface\ for\ xml-\/serializable\ class\ see\ serialize\_xml.h}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ Pretty\ sure\ all\ of\ these\ IGL\_INLINE\ should\ be\ inline}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \textcolor{keyword}{namespace\ }xml}
+\DoxyCodeLine{00018\ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//\ interface\ for\ user\ defined\ types}}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1xml_1_1XMLSerializableBase}{XMLSerializableBase}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structigl_1_1SerializableBase}{SerializableBase}}}
+\DoxyCodeLine{00021\ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structigl_1_1xml_1_1XMLSerializableBase_a517d693cbc463bcedc883a282216a026}{Serialize}}(std::vector<char>\&\ buffer)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structigl_1_1xml_1_1XMLSerializableBase_a59d82376a03ed7a4fc997f68757e37b5}{Deserialize}}(\textcolor{keyword}{const}\ std::vector<char>\&\ buffer)\ =\ 0;}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structigl_1_1xml_1_1XMLSerializableBase_a18da61f47097cd7aec2004d9a1d2ab58}{Serialize}}(tinyxml2::XMLDocument*\ doc,tinyxml2::XMLElement*\ element)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structigl_1_1xml_1_1XMLSerializableBase_a44e99b363647c4142b9ad751f0049ef4}{Deserialize}}(\textcolor{keyword}{const}\ tinyxml2::XMLDocument*\ doc,\textcolor{keyword}{const}\ tinyxml2::XMLElement*\ element)\ =\ 0;}
+\DoxyCodeLine{00026\ \ \ \ \ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//\ Convenient\ interface\ for\ user\ defined\ types}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable}{XMLSerializable}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structigl_1_1xml_1_1XMLSerializableBase}{XMLSerializableBase}}}
+\DoxyCodeLine{00030\ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \textcolor{keyword}{struct\ }XMLSerializationObject:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structigl_1_1xml_1_1XMLSerializableBase}{XMLSerializableBase}}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a85ec0330094fed10f10bb12010bbcdbfa6ce976e8f061b2b5cfe4d0c50c3405dd}{Binary}};}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ std::string\ Name;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ T*\ Object;}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Serialize(std::vector<char>\&\ buffer)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_a212b29890b63152674a53444a2003677}{serialize}}(*Object,Name,buffer);}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Deserialize(\textcolor{keyword}{const}\ std::vector<char>\&\ buffer)\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_a61617b81f6b89d6692a31f8d34c6d294}{deserialize}}(*Object,Name,buffer);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Serialize(tinyxml2::XMLDocument*\ doc,tinyxml2::XMLElement*\ element)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1xml_a4b93ad3bd3048c8531279640196fce70}{serialize\_xml}}(*Object,Name,doc,element,\mbox{\hyperlink{namespaceigl_a85ec0330094fed10f10bb12010bbcdbfa6ce976e8f061b2b5cfe4d0c50c3405dd}{Binary}});}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Deserialize(\textcolor{keyword}{const}\ tinyxml2::XMLDocument*\ doc,\textcolor{keyword}{const}\ tinyxml2::XMLElement*\ element)\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1xml_a23401b2c5d4afa0a58b59ed8900221d7}{deserialize\_xml}}(*Object,Name,doc,element);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \textcolor{keyword}{mutable}\ \textcolor{keywordtype}{bool}\ initialized;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \textcolor{keyword}{mutable}\ std::vector<XMLSerializableBase*>\ objects;}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \textcolor{comment}{//\ Override\ this\ function\ to\ add\ your\ member\ variables\ which\ should\ be\ serialized}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable_a9eaa9537e952b1690ef555291d5ead29}{InitSerialization}}()\ =\ 0;}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \textcolor{comment}{//\ Following\ functions\ can\ be\ overridden\ to\ handle\ the\ specific\ events.}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \textcolor{comment}{//\ Return\ false\ to\ prevent\ the\ de-\//serialization\ of\ an\ object.}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable_abf3f755cfea1da128bbdd5e27965554e}{PreSerialization}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable_a21a30014349c628a69f9b0af0e18626d}{PostSerialization}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable_a1a910807c7365730bd491d5b823091f4}{PreDeserialization}}();}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable_aa8342a7e45a04fffe4e9b60dc0925140}{PostDeserialization}}();}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \textcolor{comment}{//\ Default\ implementation\ of\ XMLSerializableBase\ interface}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable_a4470d7345d6ba58548094d440bd65784}{Serialize}}(std::vector<char>\&\ buffer)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable_acb068f80ba0e27097d9f3cdc1cc1b60e}{Deserialize}}(\textcolor{keyword}{const}\ std::vector<char>\&\ buffer);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable_a4470d7345d6ba58548094d440bd65784}{Serialize}}(tinyxml2::XMLDocument*\ doc,tinyxml2::XMLElement*\ element)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable_acb068f80ba0e27097d9f3cdc1cc1b60e}{Deserialize}}(\textcolor{keyword}{const}\ tinyxml2::XMLDocument*\ doc,\textcolor{keyword}{const}\ tinyxml2::XMLElement*\ element);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \textcolor{comment}{//\ Default\ constructor,\ destructor,\ assignment\ and\ copy\ constructor}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable_aa17b3dc515f4851bb1a0c6d97201f3a5}{XMLSerializable}}();}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable_aa17b3dc515f4851bb1a0c6d97201f3a5}{XMLSerializable}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable}{XMLSerializable}}\&\ obj);}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable_a66308b713433b39ae2c82795ec80bd6c}{\string~XMLSerializable}}();}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable}{XMLSerializable}}\&\ \mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable_a1e17f3a1f9a8ee74e5ad4b2d83515ea4}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable}{XMLSerializable}}\&\ obj);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \textcolor{comment}{//\ Use\ this\ function\ to\ add\ your\ variables\ which\ should\ be\ serialized}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable_a685dd64c3898a03ff47bf28029616f3f}{Add}}(T\&\ obj,std::string\ name,\textcolor{keywordtype}{bool}\ binary\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00087\ \ \ \ \ \};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{comment}{//\ IMPLEMENTATION}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable_abf3f755cfea1da128bbdd5e27965554e}{XMLSerializable::PreSerialization}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00092\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00094\ \ \ \ \ \}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable_a21a30014349c628a69f9b0af0e18626d}{XMLSerializable::PostSerialization}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00097\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00098\ \ \ \ \ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable_a1a910807c7365730bd491d5b823091f4}{XMLSerializable::PreDeserialization}}()}
+\DoxyCodeLine{00101\ \ \ \ \ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00103\ \ \ \ \ \}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable_aa8342a7e45a04fffe4e9b60dc0925140}{XMLSerializable::PostDeserialization}}()}
+\DoxyCodeLine{00106\ \ \ \ \ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable_a4470d7345d6ba58548094d440bd65784}{XMLSerializable::Serialize}}(std::vector<char>\&\ buffer)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00110\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(this-\/>\mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable_abf3f755cfea1da128bbdd5e27965554e}{PreSerialization}}())}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(initialized\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ objects.clear();}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ (\textcolor{keyword}{const\_cast<}\mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable}{XMLSerializable}}*\textcolor{keyword}{>}(\textcolor{keyword}{this}))-\/>InitSerialization();}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ initialized\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i=0;i<objects.size();i++)}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ objects[i]-\/>\mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable_a4470d7345d6ba58548094d440bd65784}{Serialize}}(buffer);}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable_a21a30014349c628a69f9b0af0e18626d}{PostSerialization}}();}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00125\ \ \ \ \ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable_acb068f80ba0e27097d9f3cdc1cc1b60e}{XMLSerializable::Deserialize}}(\textcolor{keyword}{const}\ std::vector<char>\&\ buffer)}
+\DoxyCodeLine{00128\ \ \ \ \ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(this-\/>\mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable_a1a910807c7365730bd491d5b823091f4}{PreDeserialization}}())}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(initialized\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ objects.clear();}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ (\textcolor{keyword}{const\_cast<}\mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable}{XMLSerializable}}*\textcolor{keyword}{>}(\textcolor{keyword}{this}))-\/>InitSerialization();}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ initialized\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i=0;i<objects.size();i++)}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ objects[i]-\/>\mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable_acb068f80ba0e27097d9f3cdc1cc1b60e}{Deserialize}}(buffer);}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable_aa8342a7e45a04fffe4e9b60dc0925140}{PostDeserialization}}();}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00143\ \ \ \ \ \}}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable_a4470d7345d6ba58548094d440bd65784}{XMLSerializable::Serialize}}(tinyxml2::XMLDocument*\ doc,tinyxml2::XMLElement*\ element)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00146\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(this-\/>\mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable_abf3f755cfea1da128bbdd5e27965554e}{PreSerialization}}())}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(initialized\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ objects.clear();}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ (\textcolor{keyword}{const\_cast<}\mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable}{XMLSerializable}}*\textcolor{keyword}{>}(\textcolor{keyword}{this}))-\/>InitSerialization();}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ initialized\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i=0;i<objects.size();i++)}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ objects[i]-\/>\mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable_a4470d7345d6ba58548094d440bd65784}{Serialize}}(doc,element);}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable_a21a30014349c628a69f9b0af0e18626d}{PostSerialization}}();}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00161\ \ \ \ \ \}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable_acb068f80ba0e27097d9f3cdc1cc1b60e}{XMLSerializable::Deserialize}}(\textcolor{keyword}{const}\ tinyxml2::XMLDocument*\ doc,\textcolor{keyword}{const}\ tinyxml2::XMLElement*\ element)}
+\DoxyCodeLine{00164\ \ \ \ \ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(this-\/>\mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable_a1a910807c7365730bd491d5b823091f4}{PreDeserialization}}())}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(initialized\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ objects.clear();}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ (\textcolor{keyword}{const\_cast<}\mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable}{XMLSerializable}}*\textcolor{keyword}{>}(\textcolor{keyword}{this}))-\/>InitSerialization();}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ initialized\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i=0;i<objects.size();i++)}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ objects[i]-\/>\mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable_acb068f80ba0e27097d9f3cdc1cc1b60e}{Deserialize}}(doc,element);}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable_aa8342a7e45a04fffe4e9b60dc0925140}{PostDeserialization}}();}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00179\ \ \ \ \ \}}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable_aa17b3dc515f4851bb1a0c6d97201f3a5}{XMLSerializable::XMLSerializable}}()}
+\DoxyCodeLine{00182\ \ \ \ \ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ initialized\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00184\ \ \ \ \ \}}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable_aa17b3dc515f4851bb1a0c6d97201f3a5}{XMLSerializable::XMLSerializable}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable}{XMLSerializable}}\&\ obj)}
+\DoxyCodeLine{00187\ \ \ \ \ \{}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ initialized\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ objects.clear();}
+\DoxyCodeLine{00190\ \ \ \ \ \}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable_a66308b713433b39ae2c82795ec80bd6c}{XMLSerializable::\string~XMLSerializable}}()}
+\DoxyCodeLine{00193\ \ \ \ \ \{}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ initialized\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ objects.clear();}
+\DoxyCodeLine{00196\ \ \ \ \ \}}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable}{XMLSerializable}}\&\ \mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable_a1e17f3a1f9a8ee74e5ad4b2d83515ea4}{XMLSerializable::operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable}{XMLSerializable}}\&\ obj)}
+\DoxyCodeLine{00200\ \ \ \ \ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\textcolor{keyword}{this}\ !=\ \&obj)}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(initialized)}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ initialized\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ objects.clear();}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00210\ \ \ \ \ \}}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00213\ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1xml_1_1XMLSerializable_a685dd64c3898a03ff47bf28029616f3f}{XMLSerializable::Add}}(T\&\ obj,std::string\ name,\textcolor{keywordtype}{bool}\ binary)}
+\DoxyCodeLine{00214\ \ \ \ \ \{}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ XMLSerializationObject<T>*\ \textcolor{keywordtype}{object}\ =\ \textcolor{keyword}{new}\ XMLSerializationObject<T>();}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \textcolor{keywordtype}{object}-\/>Binary\ =\ binary;}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \textcolor{keywordtype}{object}-\/>Name\ =\ name;}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \textcolor{keywordtype}{object}-\/>Object\ =\ \&obj;}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \ \ \ \ \ \ objects.push\_back(\textcolor{keywordtype}{object});}
+\DoxyCodeLine{00221\ \ \ \ \ \}}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ \ \ \}}
+\DoxyCodeLine{00224\ \}}
+\DoxyCodeLine{00225\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

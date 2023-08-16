@@ -98,17 +98,39 @@ $(document).ready(function(){initNavTree('namespaceigl_1_1mosek.html',''); initR
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">igl::mosek Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structigl_1_1mosek_1_1MosekData.html">MosekData</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure for holding MOSEK data for solving a quadratic program.  <a href="structigl_1_1mosek_1_1MosekData.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a4de18238d9facc388d5238acc014a99a"><td class="memTemplParams" colspan="2">template&lt;typename DerivedV , typename DerivedEle , typename Derivedb , typename Derivedbc , typename DerivedW &gt; </td></tr>
-<tr class="memitem:a4de18238d9facc388d5238acc014a99a"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1mosek.html#a4de18238d9facc388d5238acc014a99a">bbw</a> (const Eigen::PlainObjectBase&lt; DerivedV &gt; &amp;V, const Eigen::PlainObjectBase&lt; DerivedEle &gt; &amp;Ele, const Eigen::PlainObjectBase&lt; Derivedb &gt; &amp;b, const Eigen::PlainObjectBase&lt; Derivedbc &gt; &amp;bc, <a class="el" href="classigl_1_1BBWData.html">igl::BBWData</a> &amp;data, igl::mosek::MosekData &amp;mosek_data, Eigen::PlainObjectBase&lt; DerivedW &gt; &amp;W)</td></tr>
+<tr class="memitem:a4de18238d9facc388d5238acc014a99a"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1mosek.html#a4de18238d9facc388d5238acc014a99a">bbw</a> (const Eigen::PlainObjectBase&lt; DerivedV &gt; &amp;V, const Eigen::PlainObjectBase&lt; DerivedEle &gt; &amp;Ele, const Eigen::PlainObjectBase&lt; Derivedb &gt; &amp;b, const Eigen::PlainObjectBase&lt; Derivedbc &gt; &amp;bc, <a class="el" href="classigl_1_1BBWData.html">igl::BBWData</a> &amp;data, <a class="el" href="structigl_1_1mosek_1_1MosekData.html">igl::mosek::MosekData</a> &amp;mosek_data, Eigen::PlainObjectBase&lt; DerivedW &gt; &amp;W)</td></tr>
 <tr class="memdesc:a4de18238d9facc388d5238acc014a99a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute Bounded Biharmonic Weights on a given domain (V,Ele) with a given set of boundary conditions.  <br /></td></tr>
 <tr class="separator:a4de18238d9facc388d5238acc014a99a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a45e29a7f2bbd8971a901b1abf3905a"><td class="memItemLeft" align="right" valign="top">MSKrescodee&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1mosek.html#a9a45e29a7f2bbd8971a901b1abf3905a">mosek_guarded</a> (const MSKrescodee r)</td></tr>
+<tr class="memdesc:a9a45e29a7f2bbd8971a901b1abf3905a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Little function to wrap around mosek call to handle errors.  <br /></td></tr>
+<tr class="separator:a9a45e29a7f2bbd8971a901b1abf3905a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f3aa08d915942cff4225bfacef36482"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1mosek.html#a4f3aa08d915942cff4225bfacef36482">mosek_linprog</a> (const Eigen::VectorXd &amp;c, const Eigen::SparseMatrix&lt; double &gt; &amp;A, const Eigen::VectorXd &amp;lc, const Eigen::VectorXd &amp;uc, const Eigen::VectorXd &amp;lx, const Eigen::VectorXd &amp;ux, Eigen::VectorXd &amp;x)</td></tr>
+<tr class="memdesc:a4f3aa08d915942cff4225bfacef36482"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve a linear program using mosek.  <br /></td></tr>
+<tr class="separator:a4f3aa08d915942cff4225bfacef36482"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d1ac5ef5d1c0eb4520f23534d858fa3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1mosek.html#a1d1ac5ef5d1c0eb4520f23534d858fa3">mosek_linprog</a> (const Eigen::VectorXd &amp;c, const Eigen::SparseMatrix&lt; double &gt; &amp;A, const Eigen::VectorXd &amp;lc, const Eigen::VectorXd &amp;uc, const Eigen::VectorXd &amp;lx, const Eigen::VectorXd &amp;ux, const MSKenv_t &amp;env, Eigen::VectorXd &amp;x)</td></tr>
+<tr class="memdesc:a1d1ac5ef5d1c0eb4520f23534d858fa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
+<tr class="separator:a1d1ac5ef5d1c0eb4520f23534d858fa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3c815fd0f5ecdf826ee9c99ec7b3986"><td class="memTemplParams" colspan="2">template&lt;typename Index , typename Scalar &gt; </td></tr>
+<tr class="memitem:ac3c815fd0f5ecdf826ee9c99ec7b3986"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1mosek.html#ac3c815fd0f5ecdf826ee9c99ec7b3986">mosek_quadprog</a> (const Index n, std::vector&lt; Index &gt; &amp;Qi, std::vector&lt; Index &gt; &amp;Qj, std::vector&lt; Scalar &gt; &amp;Qv, const std::vector&lt; Scalar &gt; &amp;c, const Scalar cf, const Index m, std::vector&lt; Scalar &gt; &amp;Av, std::vector&lt; Index &gt; &amp;Ari, const std::vector&lt; Index &gt; &amp;Acp, const std::vector&lt; Scalar &gt; &amp;lc, const std::vector&lt; Scalar &gt; &amp;uc, const std::vector&lt; Scalar &gt; &amp;lx, const std::vector&lt; Scalar &gt; &amp;ux, <a class="el" href="structigl_1_1mosek_1_1MosekData.html">MosekData</a> &amp;mosek_data, std::vector&lt; Scalar &gt; &amp;x)</td></tr>
+<tr class="separator:ac3c815fd0f5ecdf826ee9c99ec7b3986"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8dd7efbfb34f538f281eefe39783757"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1mosek.html#ae8dd7efbfb34f538f281eefe39783757">mosek_quadprog</a> (const Eigen::SparseMatrix&lt; double &gt; &amp;Q, const Eigen::VectorXd &amp;c, const double cf, const Eigen::SparseMatrix&lt; double &gt; &amp;A, const Eigen::VectorXd &amp;lc, const Eigen::VectorXd &amp;uc, const Eigen::VectorXd &amp;lx, const Eigen::VectorXd &amp;ux, <a class="el" href="structigl_1_1mosek_1_1MosekData.html">MosekData</a> &amp;mosek_data, Eigen::VectorXd &amp;x)</td></tr>
+<tr class="memdesc:ae8dd7efbfb34f538f281eefe39783757"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
+<tr class="separator:ae8dd7efbfb34f538f281eefe39783757"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a4de18238d9facc388d5238acc014a99a" name="a4de18238d9facc388d5238acc014a99a"></a>
@@ -152,7 +174,7 @@ template&lt;typename DerivedV , typename DerivedEle , typename Derivedb , typena
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">igl::mosek::MosekData &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structigl_1_1mosek_1_1MosekData.html">igl::mosek::MosekData</a> &amp;&#160;</td>
           <td class="paramname"><em>mosek_data</em>, </td>
         </tr>
         <tr>
@@ -193,6 +215,390 @@ template&lt;typename DerivedV , typename DerivedEle , typename Derivedb , typena
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true on success, false on failure </dd></dl>
+
+</div>
+</div>
+<a id="a9a45e29a7f2bbd8971a901b1abf3905a" name="a9a45e29a7f2bbd8971a901b1abf3905a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a45e29a7f2bbd8971a901b1abf3905a">&#9670;&#160;</a></span>mosek_guarded()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MSKrescodee igl::mosek::mosek_guarded </td>
+          <td>(</td>
+          <td class="paramtype">const MSKrescodee&#160;</td>
+          <td class="paramname"><em>r</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Little function to wrap around mosek call to handle errors. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">r</td><td>mosek error code returned from mosek call </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>r untouched </dd></dl>
+
+</div>
+</div>
+<a id="a4f3aa08d915942cff4225bfacef36482" name="a4f3aa08d915942cff4225bfacef36482"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f3aa08d915942cff4225bfacef36482">&#9670;&#160;</a></span>mosek_linprog() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool igl::mosek::mosek_linprog </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::SparseMatrix&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
+          <td class="paramname"><em>lc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
+          <td class="paramname"><em>uc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
+          <td class="paramname"><em>lx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
+          <td class="paramname"><em>ux</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::VectorXd &amp;&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Solve a linear program using mosek. </p>
+<p>Given in the form: </p><pre class="fragment">min c'x
+s.t. lc &lt;= A x &lt;= uc
+     lx &lt;= x &lt;= ux
+</pre> <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">c</td><td>#x list of linear objective coefficients </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">A</td><td>#A by #x matrix of linear inequality constraint coefficients </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lc</td><td>#A list of lower constraint bounds </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uc</td><td>#A list of upper constraint bounds </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lx</td><td>#x list of lower variable bounds </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ux</td><td>#x list of upper variable bounds </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">x</td><td>#x list of solution values </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true iff success. </dd></dl>
+
+</div>
+</div>
+<a id="a1d1ac5ef5d1c0eb4520f23534d858fa3" name="a1d1ac5ef5d1c0eb4520f23534d858fa3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d1ac5ef5d1c0eb4520f23534d858fa3">&#9670;&#160;</a></span>mosek_linprog() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool igl::mosek::mosek_linprog </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::SparseMatrix&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
+          <td class="paramname"><em>lc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
+          <td class="paramname"><em>uc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
+          <td class="paramname"><em>lx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
+          <td class="paramname"><em>ux</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const MSKenv_t &amp;&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::VectorXd &amp;&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+<p>Wrapper that keeps mosek environment alive (if licence checking is becoming a bottleneck)</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">env</td><td>mosek environment </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac3c815fd0f5ecdf826ee9c99ec7b3986" name="ac3c815fd0f5ecdf826ee9c99ec7b3986"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3c815fd0f5ecdf826ee9c99ec7b3986">&#9670;&#160;</a></span>mosek_quadprog() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Index , typename Scalar &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool igl::mosek::mosek_quadprog </td>
+          <td>(</td>
+          <td class="paramtype">const Index&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; Index &gt; &amp;&#160;</td>
+          <td class="paramname"><em>Qi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; Index &gt; &amp;&#160;</td>
+          <td class="paramname"><em>Qj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; Scalar &gt; &amp;&#160;</td>
+          <td class="paramname"><em>Qv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; Scalar &gt; &amp;&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Scalar&#160;</td>
+          <td class="paramname"><em>cf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Index&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; Scalar &gt; &amp;&#160;</td>
+          <td class="paramname"><em>Av</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; Index &gt; &amp;&#160;</td>
+          <td class="paramname"><em>Ari</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; Index &gt; &amp;&#160;</td>
+          <td class="paramname"><em>Acp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; Scalar &gt; &amp;&#160;</td>
+          <td class="paramname"><em>lc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; Scalar &gt; &amp;&#160;</td>
+          <td class="paramname"><em>uc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; Scalar &gt; &amp;&#160;</td>
+          <td class="paramname"><em>lx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; Scalar &gt; &amp;&#160;</td>
+          <td class="paramname"><em>ux</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structigl_1_1mosek_1_1MosekData.html">MosekData</a> &amp;&#160;</td>
+          <td class="paramname"><em>mosek_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; Scalar &gt; &amp;&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae8dd7efbfb34f538f281eefe39783757" name="ae8dd7efbfb34f538f281eefe39783757"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8dd7efbfb34f538f281eefe39783757">&#9670;&#160;</a></span>mosek_quadprog() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool igl::mosek::mosek_quadprog </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::SparseMatrix&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>Q</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>cf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::SparseMatrix&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
+          <td class="paramname"><em>lc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
+          <td class="paramname"><em>uc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
+          <td class="paramname"><em>lx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
+          <td class="paramname"><em>ux</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structigl_1_1mosek_1_1MosekData.html">MosekData</a> &amp;&#160;</td>
+          <td class="paramname"><em>mosek_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::VectorXd &amp;&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Q</td><td>n by n square quadratic coefficients matrix <b>only lower triangle is used</b>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">c</td><td>n-long vector of linear coefficients </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cf</td><td>constant coefficient </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">A</td><td>m by n square linear coefficienst matrix of inequality constraints </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lc</td><td>m-long vector of lower bounds for linear inequality constraints </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uc</td><td>m-long vector of upper bounds for linear inequality constraints </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lx</td><td>n-long vector of lower bounds </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ux</td><td>n-long vector of upper bounds </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mosek_data</td><td>parameters struct </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">x</td><td>n-long solution vector </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true only if optimization finishes without error </dd></dl>
 
 </div>
 </div>

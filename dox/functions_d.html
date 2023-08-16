@@ -104,8 +104,16 @@ $(document).ready(function(){initNavTree('functions_d.html',''); initResizable()
 <li>data_list&#160;:&#160;<a class="el" href="classigl_1_1opengl_1_1glfw_1_1Viewer.html#afe88232cf93c9a8f40dc7c8388e4bef9">igl::opengl::glfw::Viewer</a></li>
 <li>DClose&#160;:&#160;<a class="el" href="structigl_1_1ShapeupData.html#a66e93b7a80094c16e905dab75839fdfa">igl::ShapeupData</a></li>
 <li>deinit()&#160;:&#160;<a class="el" href="classigl_1_1embree_1_1EmbreeIntersector.html#a61c0079def921d5288cd1cef5d173761">igl::embree::EmbreeIntersector</a></li>
+<li>deinitialize_shadow_pass()&#160;:&#160;<a class="el" href="classigl_1_1opengl_1_1ViewerCore.html#a61bcd7c8bcdf37823b7016d7947cfdc2">igl::opengl::ViewerCore</a></li>
 <li>delete_children()&#160;:&#160;<a class="el" href="classigl_1_1WindingNumberTree.html#abff1f1dff02ab9ae24b81a7b534aa9dc">igl::WindingNumberTree&lt; Point, DerivedV, DerivedF &gt;</a></li>
-<li>dim&#160;:&#160;<a class="el" href="structigl_1_1ArapDOFData.html#ac4591d80505f9c48bdb0dd9c7069b612">igl::ArapDOFData&lt; LbsMatrixType, SSCALAR &gt;</a>, <a class="el" href="structigl_1_1IndexDimLessThan.html#ad360d49f66b41cc13e63b9bbbfd68e67">igl::IndexDimLessThan&lt; T &gt;</a>, <a class="el" href="structigl_1_1SLIMData.html#ad058f54a17eb3978975d7aebecb896f1">igl::SLIMData</a></li>
+<li>delete_shadow_buffers()&#160;:&#160;<a class="el" href="classigl_1_1opengl_1_1ViewerCore.html#a8c46aaef34782825955b44914f1ff4e4">igl::opengl::ViewerCore</a></li>
+<li>depth_test&#160;:&#160;<a class="el" href="classigl_1_1opengl_1_1ViewerCore.html#a3203aaf5f618f360b3122e158817073e">igl::opengl::ViewerCore</a></li>
+<li>descriptor&#160;:&#160;<a class="el" href="structigl_1_1opengl_1_1TgaHeader.html#a779340ae1bf56c23a8cd3ea2f7ce9fbe">igl::opengl::TgaHeader</a></li>
+<li>deserialize()&#160;:&#160;<a class="el" href="classigl_1_1opengl_1_1glfw_1_1ViewerPlugin.html#a2dd38857a78fdd009b3757e5c9d42166">igl::opengl::glfw::ViewerPlugin</a></li>
+<li>Deserialize()&#160;:&#160;<a class="el" href="classigl_1_1Serializable.html#a4918c7c9a8246439f7bf7d773e30b19f">igl::Serializable</a>, <a class="el" href="structigl_1_1SerializableBase.html#a166b38dd5a48351c6897cdd8b1b1212e">igl::SerializableBase</a>, <a class="el" href="classigl_1_1xml_1_1XMLSerializable.html#aeeb899827a2457c822e62dcf0bc8cec9">igl::xml::XMLSerializable</a>, <a class="el" href="structigl_1_1xml_1_1XMLSerializableBase.html#a59d82376a03ed7a4fc997f68757e37b5">igl::xml::XMLSerializableBase</a></li>
+<li>detect_only&#160;:&#160;<a class="el" href="structigl_1_1copyleft_1_1cgal_1_1RemeshSelfIntersectionsParam.html#a99e906696e0b6792b6c8b1c64a11072d">igl::copyleft::cgal::RemeshSelfIntersectionsParam</a></li>
+<li>developerDirectoryOffset&#160;:&#160;<a class="el" href="structigl_1_1opengl_1_1TgaFooter.html#a47d60444f61e028bde79964aedffa062">igl::opengl::TgaFooter</a></li>
+<li>dim&#160;:&#160;<a class="el" href="structigl_1_1ArapDOFData.html#ac4591d80505f9c48bdb0dd9c7069b612">igl::ArapDOFData&lt; LbsMatrixType, SSCALAR &gt;</a>, <a class="el" href="structigl_1_1IndexDimLessThan.html#ad360d49f66b41cc13e63b9bbbfd68e67">igl::IndexDimLessThan&lt; T &gt;</a>, <a class="el" href="structigl_1_1SLIMData.html#ad058f54a17eb3978975d7aebecb896f1">igl::SLIMData</a>, <a class="el" href="structigl_1_1triangle_1_1SCAFData.html#a1c10494c9e1cbd014a2048dc72d11606">igl::triangle::SCAFData</a></li>
 <li>Dirichlet&#160;:&#160;<a class="el" href="structigl_1_1HeatGeodesicsData.html#a5034635f3dc79483e11d21bbfb4b0bf4">igl::HeatGeodesicsData&lt; Scalar &gt;</a></li>
 <li>dirty&#160;:&#160;<a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a3b736f78d2d9bac1fa104b4dc8ddcf95">igl::opengl::MeshGL</a>, <a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a30686f942a7b6141aeff0b06ea6871d2">igl::opengl::ViewerData</a></li>
 <li>DIRTY_ALL&#160;:&#160;<a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a81a97b4082a52abc4e29f46574b07862a4d4b153582583c9f01bbb3339df59f36">igl::opengl::MeshGL</a></li>
@@ -127,25 +135,38 @@ $(document).ready(function(){initNavTree('functions_d.html',''); initResizable()
 <li>DIRTY_VERTEX_LABELS&#160;:&#160;<a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a81a97b4082a52abc4e29f46574b07862ac25cd698e5a5aaf3e00576023fe5d767">igl::opengl::MeshGL</a></li>
 <li>DirtyFlags&#160;:&#160;<a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a81a97b4082a52abc4e29f46574b07862">igl::opengl::MeshGL</a></li>
 <li>Div&#160;:&#160;<a class="el" href="structigl_1_1HeatGeodesicsData.html#a241e25f910cae127fcdbf84397837852">igl::HeatGeodesicsData&lt; Scalar &gt;</a></li>
+<li>dot&#160;:&#160;<a class="el" href="structigl_1_1opengl_1_1TgaFooter.html#a81351ace2c4a97e6c0051c86c2494db2">igl::opengl::TgaFooter</a></li>
 <li>double_sided&#160;:&#160;<a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a025f22d7d0c46ecabb3330ada2aa92c1">igl::opengl::ViewerData</a></li>
+<li>douparam&#160;:&#160;<a class="el" href="structigl_1_1mosek_1_1MosekData.html#ac3cb900ad6ecd139a44600378334de1d">igl::mosek::MosekData</a></li>
 <li>down&#160;:&#160;<a class="el" href="classigl_1_1opengl_1_1glfw_1_1Viewer.html#a409f232f38459dc2324c4fdf183c2078">igl::opengl::glfw::Viewer</a></li>
 <li>down_mouse_x&#160;:&#160;<a class="el" href="classigl_1_1opengl_1_1glfw_1_1Viewer.html#ac91c9394d85d316396b106de08c58608">igl::opengl::glfw::Viewer</a></li>
 <li>down_mouse_y&#160;:&#160;<a class="el" href="classigl_1_1opengl_1_1glfw_1_1Viewer.html#afa9b382392394eebb987433cf101863a">igl::opengl::glfw::Viewer</a></li>
 <li>down_mouse_z&#160;:&#160;<a class="el" href="classigl_1_1opengl_1_1glfw_1_1Viewer.html#a7f612d15279ba7c7b87051db936bf90a">igl::opengl::glfw::Viewer</a></li>
 <li>down_rotation&#160;:&#160;<a class="el" href="classigl_1_1opengl_1_1glfw_1_1Viewer.html#a9c1329d7db58b4193b0f6124dd423d43">igl::opengl::glfw::Viewer</a></li>
 <li>down_translation&#160;:&#160;<a class="el" href="classigl_1_1opengl_1_1glfw_1_1Viewer.html#a5191fcde2387530399dcbdb2545fc486">igl::opengl::glfw::Viewer</a></li>
-<li>draw()&#160;:&#160;<a class="el" href="classigl_1_1opengl_1_1glfw_1_1Viewer.html#a44a2a81590392c586815cf9b3f8f7e56">igl::opengl::glfw::Viewer</a></li>
-<li>draw_buffer()&#160;:&#160;<a class="el" href="classigl_1_1opengl_1_1glfw_1_1Viewer.html#aca9dc39fe9096f4c85e4438f3fc033c2">igl::opengl::glfw::Viewer</a></li>
-<li>draw_labels()&#160;:&#160;<a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a72dcfa1805cf603eb114c876f0bcb825">igl::opengl::MeshGL</a></li>
+<li>draw()&#160;:&#160;<a class="el" href="classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiMenu.html#af1d757baf7adad37bbfec7638773df7b">igl::opengl::glfw::imgui::ImGuiMenu</a>, <a class="el" href="classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget.html#a978027bebed054f7b0f8190a7d56567a">igl::opengl::glfw::imgui::ImGuiWidget</a>, <a class="el" href="classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuizmoWidget.html#ac4f11d5151f9fa45c8bae307210e3549">igl::opengl::glfw::imgui::ImGuizmoWidget</a>, <a class="el" href="classigl_1_1opengl_1_1glfw_1_1imgui_1_1SelectionWidget.html#ade740af672d969767138be0c86bfb5cc">igl::opengl::glfw::imgui::SelectionWidget</a>, <a class="el" href="classigl_1_1opengl_1_1glfw_1_1Viewer.html#a44a2a81590392c586815cf9b3f8f7e56">igl::opengl::glfw::Viewer</a>, <a class="el" href="classigl_1_1opengl_1_1ViewerCore.html#ac9300aff89f5670193d72919da2669e9">igl::opengl::ViewerCore</a></li>
+<li>draw_buffer()&#160;:&#160;<a class="el" href="classigl_1_1opengl_1_1glfw_1_1Viewer.html#aca9dc39fe9096f4c85e4438f3fc033c2">igl::opengl::glfw::Viewer</a>, <a class="el" href="classigl_1_1opengl_1_1ViewerCore.html#a7b9146789734337e9a33e66be00d1ed1">igl::opengl::ViewerCore</a></li>
+<li>draw_custom_window()&#160;:&#160;<a class="el" href="classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiMenu.html#a9bb29a16cab677df5831984ebffd64e7">igl::opengl::glfw::imgui::ImGuiMenu</a></li>
+<li>draw_labels()&#160;:&#160;<a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a72dcfa1805cf603eb114c876f0bcb825">igl::opengl::MeshGL</a>, <a class="el" href="classigl_1_1opengl_1_1ViewerCore.html#a117278256764d36c1921a88e01a0bb70">igl::opengl::ViewerCore</a></li>
 <li>draw_mesh()&#160;:&#160;<a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a085cd4c4778f807dcbe2fd10a24927b0">igl::opengl::MeshGL</a></li>
 <li>draw_overlay_lines()&#160;:&#160;<a class="el" href="classigl_1_1opengl_1_1MeshGL.html#a10556864f8f669e8ecdd680245875e17">igl::opengl::MeshGL</a></li>
 <li>draw_overlay_points()&#160;:&#160;<a class="el" href="classigl_1_1opengl_1_1MeshGL.html#aae3f03429b3c7034cd573479cceb7ee1">igl::opengl::MeshGL</a></li>
+<li>draw_shadow_pass()&#160;:&#160;<a class="el" href="classigl_1_1opengl_1_1ViewerCore.html#a9d89918cb49bc067628649f1c5de9286">igl::opengl::ViewerCore</a></li>
+<li>draw_text()&#160;:&#160;<a class="el" href="classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiPlugin.html#a2270d449d33fb26a0f8be0f60c3e1f6d">igl::opengl::glfw::imgui::ImGuiPlugin</a></li>
+<li>draw_viewer_menu()&#160;:&#160;<a class="el" href="classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiMenu.html#aa709d034165692bd4fcd2447fbf4626d">igl::opengl::glfw::imgui::ImGuiMenu</a></li>
+<li>draw_viewer_window()&#160;:&#160;<a class="el" href="classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiMenu.html#a33548b5ba00fa871ba9f797b6599ff8b">igl::opengl::glfw::imgui::ImGuiMenu</a></li>
 <li>DShape&#160;:&#160;<a class="el" href="structigl_1_1ShapeupData.html#a5b7cfcb103d08fa1670778ce4b97fd19">igl::ShapeupData</a></li>
 <li>DSmooth&#160;:&#160;<a class="el" href="structigl_1_1ShapeupData.html#a3bae129bea0caa841708f28a05a6b2b1">igl::ShapeupData</a></li>
 <li>dummyV&#160;:&#160;<a class="el" href="classigl_1_1WindingNumberTree.html#aff17a52f56dd5b58cd354d547d216cdb">igl::WindingNumberTree&lt; Point, DerivedV, DerivedF &gt;</a></li>
 <li>Dx&#160;:&#160;<a class="el" href="structigl_1_1SLIMData.html#a6b244e29028952a6bbb1012f06e5f6b0">igl::SLIMData</a></li>
+<li>Dx_m&#160;:&#160;<a class="el" href="structigl_1_1triangle_1_1SCAFData.html#a12345ba334fa5c334f5d749af4fab1da">igl::triangle::SCAFData</a></li>
+<li>Dx_s&#160;:&#160;<a class="el" href="structigl_1_1triangle_1_1SCAFData.html#a797666a3929fade8b470b44ece23f9f7">igl::triangle::SCAFData</a></li>
 <li>Dy&#160;:&#160;<a class="el" href="structigl_1_1SLIMData.html#a8d0be8e241b33ab953d23e40b5ecb663">igl::SLIMData</a></li>
+<li>Dy_m&#160;:&#160;<a class="el" href="structigl_1_1triangle_1_1SCAFData.html#acef1d284e84103d24bed31fcdbef1660">igl::triangle::SCAFData</a></li>
+<li>Dy_s&#160;:&#160;<a class="el" href="structigl_1_1triangle_1_1SCAFData.html#a3890226c79693ee7c38242ca4cd27686">igl::triangle::SCAFData</a></li>
 <li>Dz&#160;:&#160;<a class="el" href="structigl_1_1SLIMData.html#a879c8a130f88110d97c39dbd4fbb679d">igl::SLIMData</a></li>
+<li>Dz_m&#160;:&#160;<a class="el" href="structigl_1_1triangle_1_1SCAFData.html#a65e5ef088aad19693b8c09e422510ace">igl::triangle::SCAFData</a></li>
+<li>Dz_s&#160;:&#160;<a class="el" href="structigl_1_1triangle_1_1SCAFData.html#a2800ae8d895f0200886e4a335aa3595a">igl::triangle::SCAFData</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -1,0 +1,98 @@
+\doxysection{scaf.\+h}
+\hypertarget{scaf_8h_source}{}\label{scaf_8h_source}\index{include/igl/triangle/scaf.h@{include/igl/triangle/scaf.h}}
+\mbox{\hyperlink{scaf_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2018\ Zhongshi\ Jiang\ <jiangzs@nyu.edu>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_SCAF\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_SCAF\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}../slim.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}../igl\_inline.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}../MappingEnergyType.h"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \textcolor{keyword}{namespace\ }triangle}
+\DoxyCodeLine{00018\ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData}{SCAFData}}}
+\DoxyCodeLine{00025\ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_ae55486f69eed6ae004b5bb6a8c2c6a80}{scaffold\_factor}}\ =\ 10;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_a79904ddf7fe8d79169b339cf43f9e739}{igl::MappingEnergyType}}\ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a304f1afb39f94bc00a36cb97dc9bed78}{scaf\_energy}}\ =\ \mbox{\hyperlink{namespaceigl_a79904ddf7fe8d79169b339cf43f9e739a4aaaa0e435526b23bf5f26cfbb5c03b9}{igl::MappingEnergyType::SYMMETRIC\_DIRICHLET}};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_a79904ddf7fe8d79169b339cf43f9e739}{igl::MappingEnergyType}}\ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_ae2eea844f25355115c7cd849bdda82ba}{slim\_energy}}\ =\ \mbox{\hyperlink{namespaceigl_a79904ddf7fe8d79169b339cf43f9e739a4aaaa0e435526b23bf5f26cfbb5c03b9}{igl::MappingEnergyType::SYMMETRIC\_DIRICHLET}};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \textcolor{comment}{//\ Output}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a1c10494c9e1cbd014a2048dc72d11606}{dim}}\ =\ 2;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ total\_energy}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ energy}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_ad58afa3423af92e61b1924e94616054d}{mv\_num}}\ =\ 0,\ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a641680698597ffa20bca1e59da6b2e22}{mf\_num}}\ =\ 0;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a18067c1443737be1f417e90d1fe9e584}{sv\_num}}\ =\ 0,\ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a94f840ed8e0c2770c6c13a961b1581d0}{sf\_num}}\ =\ 0;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_ae7c53fecd100a4f6a6a613ad9e50571d}{v\_num}}\{\},\ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_afd7fd9fd772acf1dfcadc62b0d1062cb}{f\_num}}\ =\ 0;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ Eigen::MatrixXd\ m\_V}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ Eigen::MatrixXi\ m\_T}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \textcolor{comment}{//\ INTERNAL}}
+\DoxyCodeLine{00046\ \textcolor{comment}{}\ \ \ \ \ \ Eigen::MatrixXd\ w\_uv}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ Eigen::MatrixXi\ s\_T}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ Eigen::MatrixXi\ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a3b8bb93e723b86a149253bd4bd711f0c}{w\_T}};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ Eigen::VectorXd\ m\_M}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ Eigen::VectorXd\ s\_M}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ Eigen::VectorXd\ w\_M}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a2b918b3f73fccad2c82f19f47cb5a1c7}{mesh\_measure}}\ =\ 0}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ proximal\_p\ =\ 0;}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ Eigen::VectorXi\ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a89eded4c8e02d72fcf4bf709d1ca1e50}{frame\_ids}};}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ Eigen::VectorXi\ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a43a2e4167862852f80d8995e03ae6735}{fixed\_ids}};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ std::map<int,\ Eigen::RowVectorXd>\ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a82d05775cd272b601dc4047b46c7cc0e}{soft\_cons}};}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a7b4a8d9033915ba3b43f8b5c32ea1a82}{soft\_const\_p}}\ =\ 1e4;}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ Eigen::VectorXi\ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a1b0b4e5567b0a6198c6a18a780962ef0}{internal\_bnd}};}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ Eigen::MatrixXd\ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a6726b2197b2d3a43bee132283368072c}{rect\_frame\_V}};}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \textcolor{comment}{//\ multi-\/chart\ support}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_aece56e17f013e86d81dc71811599ad72}{component\_sizes}};}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_afaa1f1cac309e768f6d4d3799a15917f}{bnd\_sizes}};}
+\DoxyCodeLine{00072\ \ \ \ \ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \textcolor{comment}{//\ reweightedARAP\ interior\ variables.}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a21d4d24a897514e86695a576d93d0f3f}{has\_pre\_calc}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ Eigen::SparseMatrix<double>\ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a797666a3929fade8b470b44ece23f9f7}{Dx\_s}},\ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a3890226c79693ee7c38242ca4cd27686}{Dy\_s}},\ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a2800ae8d895f0200886e4a335aa3595a}{Dz\_s}};}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ Eigen::SparseMatrix<double>\ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a12345ba334fa5c334f5d749af4fab1da}{Dx\_m}},\ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_acef1d284e84103d24bed31fcdbef1660}{Dy\_m}},\ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a65e5ef088aad19693b8c09e422510ace}{Dz\_m}};}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ Eigen::MatrixXd\ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a4d28a9a123b5114df60b0ca04a35b20e}{Ri\_m}},\ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a847b13c32a55c9798d7a367a878f556a}{Ji\_m}},\ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a1ca1c06f6009ef8b6bb690f28e87404b}{Ri\_s}},\ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a089b0c8f6cfbf73f14554e09ef4db86d}{Ji\_s}};}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ Eigen::MatrixXd\ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a872fb66ab30d5b7ce69f7220985638c5}{W\_m}},\ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData_a72c7b07052ed5caf92b567a67da42050}{W\_s}};}
+\DoxyCodeLine{00079\ \ \ \ \ \};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1triangle_a03d5ece31e4a17a719f9f84cae3abc60}{scaf\_precompute}}(}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\ \&V,}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&F,}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\ \&V\_init,}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData}{triangle::SCAFData}}\ \&data,}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_a79904ddf7fe8d79169b339cf43f9e739}{MappingEnergyType}}\ slim\_energy,}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ Eigen::VectorXi\&\ b,}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ Eigen::MatrixXd\&\ bc,}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ soft\_p);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ Eigen::MatrixXd\ \mbox{\hyperlink{namespaceigl_1_1triangle_af0b4e101055d768d68ced968dd25c578}{scaf\_solve}}(\mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData}{triangle::SCAFData}}\ \&data,\ \textcolor{keywordtype}{int}\ iter\_num);}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00117\ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1triangle_a127da61612f0261ab9984b131ceadf79}{scaf\_system}}(\mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData}{triangle::SCAFData}}\ \&s,\ Eigen::SparseMatrix<double>\ \&L,\ Eigen::VectorXd\ \&rhs);}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keyword}{namespace\ }scaf}
+\DoxyCodeLine{00120\ \ \ \ \ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespaceigl_1_1triangle_1_1scaf_a684a4bf5b4e9a6eb695edb2563bd7377}{compute\_energy}}(\mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData}{SCAFData}}\ \&s,\ \textcolor{keyword}{const}\ Eigen::MatrixXd\ \&w\_uv,\ \textcolor{keywordtype}{bool}\ whole);}
+\DoxyCodeLine{00127\ \ \ \ \ \}}
+\DoxyCodeLine{00128\ \ \ \}}
+\DoxyCodeLine{00129\ \}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#\ \ include\ "{}scaf.cpp"{}}}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//IGL\_SCAF\_H}}
+
+\end{DoxyCode}

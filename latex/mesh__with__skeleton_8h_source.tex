@@ -1,0 +1,58 @@
+\doxysection{mesh\+\_\+with\+\_\+skeleton.\+h}
+\hypertarget{mesh__with__skeleton_8h_source}{}\label{mesh__with__skeleton_8h_source}\index{include/igl/copyleft/tetgen/mesh\_with\_skeleton.h@{include/igl/copyleft/tetgen/mesh\_with\_skeleton.h}}
+\mbox{\hyperlink{mesh__with__skeleton_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2013\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_COPYLEFT\_TETGEN\_MESH\_WITH\_SKELETON\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_COPYLEFT\_TETGEN\_MESH\_WITH\_SKELETON\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../../igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \ \ \textcolor{keyword}{namespace\ }copyleft}
+\DoxyCodeLine{00017\ \ \ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{namespace\ }tetgen}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen_a52e7d474be94d6836bf773d1ec2d6533}{mesh\_with\_skeleton}}(}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\ \&\ V,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ F,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\ \&\ C,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::VectorXi\ \&\ \textcolor{comment}{/*P*/},}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ BE,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ CE,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ samples\_per\_bone,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\ tetgen\_flags,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ Eigen::MatrixXd\ \&\ VV,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ Eigen::MatrixXi\ \&\ TT,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ Eigen::MatrixXi\ \&\ FF);}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen_a52e7d474be94d6836bf773d1ec2d6533}{mesh\_with\_skeleton}}(}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\ \&\ V,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ F,}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\ \&\ C,}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::VectorXi\ \&\ \textcolor{comment}{/*P*/},}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ BE,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ CE,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ samples\_per\_bone,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ Eigen::MatrixXd\ \&\ VV,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ Eigen::MatrixXi\ \&\ TT,}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ Eigen::MatrixXi\ \&\ FF);}
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+\DoxyCodeLine{00062\ \ \ \}}
+\DoxyCodeLine{00063\ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#\ \ include\ "{}mesh\_with\_skeleton.cpp"{}}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

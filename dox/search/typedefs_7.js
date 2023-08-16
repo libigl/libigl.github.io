@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['scalar_0',['Scalar',['../classigl_1_1AABB.html#a6ca257118a7e22bb815a0a00bd2ef63d',1,'igl::AABB']]],
-  ['shapeup_5fprojection_5ffunction_1',['shapeup_projection_function',['../namespaceigl.html#af2b7710824b3b35bfcda5dd2d5c723f5',1,'igl']]],
-  ['structindex_2',['StructIndex',['../classigl_1_1MshLoader.html#aabbaacccd2590b3fb7090a6ffedd81b1',1,'igl::MshLoader']]],
-  ['structvector_3',['StructVector',['../classigl_1_1MshLoader.html#a68d74708a3c79e49975b4253fd17a0e7',1,'igl::MshLoader']]]
+  ['matrixx3e_0',['MatrixX3E',['../classigl_1_1copyleft_1_1cgal_1_1CSGTree.html#aefc0d8db2c34331db60bc9ee55598fa2',1,'igl::copyleft::cgal::CSGTree']]],
+  ['matrixxdims_1',['MatrixXDIMS',['../classigl_1_1AABB.html#aa509e281d53292cd5a54a186d166a741',1,'igl::AABB']]],
+  ['matrixxf_2',['MatrixXF',['../classigl_1_1WindingNumberTree.html#a08fd4eb30fce0b226f1b2dc2853daf04',1,'igl::WindingNumberTree']]],
+  ['matrixxs_3',['MatrixXS',['../structigl_1_1ArapDOFData.html#ac85269765634e0b98c0f57447849b4ca',1,'igl::ArapDOFData::MatrixXS'],['../classigl_1_1WindingNumberTree.html#aafe76333946b7ad3829b43a032fae8a1',1,'igl::WindingNumberTree::MatrixXS']]],
+  ['min_5fheap_4',['min_heap',['../namespaceigl.html#acd3e0aca98df4cd1576aecb262342dbf',1,'igl']]]
 ];

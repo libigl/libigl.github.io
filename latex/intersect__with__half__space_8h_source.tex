@@ -1,0 +1,71 @@
+\doxysection{intersect\+\_\+with\+\_\+half\+\_\+space.\+h}
+\hypertarget{intersect__with__half__space_8h_source}{}\label{intersect__with__half__space_8h_source}\index{include/igl/copyleft/cgal/intersect\_with\_half\_space.h@{include/igl/copyleft/cgal/intersect\_with\_half\_space.h}}
+\mbox{\hyperlink{intersect__with__half__space_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ IGL\_COPYLEFT\_CGAL\_INTERSECT\_WITH\_HALF\_SPACE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ IGL\_COPYLEFT\_CGAL\_INTERSECT\_WITH\_HALF\_SPACE\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}../../igl\_inline.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <CGAL/Exact\_predicates\_exact\_constructions\_kernel.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <CGAL/Plane\_3.h>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \ \ \textcolor{keyword}{namespace\ }copyleft}
+\DoxyCodeLine{00011\ \ \ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{namespace\ }cgal}
+\DoxyCodeLine{00013\ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Derivedp,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Derivedn,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVC,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFC,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedJ>}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_acbf85761952ab999a6d3a69e91017ee1}{intersect\_with\_half\_space}}(}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV\ >\ \&\ V,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF\ >\ \&\ F,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedp\ >\ \&\ p,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedn\ >\ \&\ n,}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedVC\ >\ \&\ VC,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedFC\ >\ \&\ FC,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedJ\ >\ \&\ J);}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Derivedequ,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVC,}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFC,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedJ>}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_acbf85761952ab999a6d3a69e91017ee1}{intersect\_with\_half\_space}}(}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV\ >\ \&\ V,}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF\ >\ \&\ F,}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedequ\ >\ \&\ equ,}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedVC\ >\ \&\ VC,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedFC\ >\ \&\ FC,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedJ\ >\ \&\ J);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedVC,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFC,}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedJ>}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_acbf85761952ab999a6d3a69e91017ee1}{intersect\_with\_half\_space}}(}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV\ >\ \&\ V,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF\ >\ \&\ F,}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ CGAL::Plane\_3<CGAL::Epeck>\ \&\ P,}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedVC\ >\ \&\ VC,}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedFC\ >\ \&\ FC,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedJ\ >\ \&\ J);}
+\DoxyCodeLine{00073\ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \}}
+\DoxyCodeLine{00075\ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#\ \ include\ "{}intersect\_with\_half\_space.cpp"{}}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

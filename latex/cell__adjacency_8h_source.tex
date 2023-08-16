@@ -1,0 +1,42 @@
+\doxysection{cell\+\_\+adjacency.\+h}
+\hypertarget{cell__adjacency_8h_source}{}\label{cell__adjacency_8h_source}\index{include/igl/copyleft/cgal/cell\_adjacency.h@{include/igl/copyleft/cgal/cell\_adjacency.h}}
+\mbox{\hyperlink{cell__adjacency_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2016\ Qingnan\ Zhou\ <qnzhou@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ IGL\_COPYLEFT\_CGAL\_CELL\_ADJACENCY\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ IGL\_COPYLEFT\_CGAL\_CELL\_ADJACENCY\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}../../igl\_inline.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <tuple>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \ \ \textcolor{keyword}{namespace\ }copyleft}
+\DoxyCodeLine{00020\ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{namespace\ }cgal}
+\DoxyCodeLine{00022\ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\ \textcolor{keyword}{typename}\ DerivedC\ >}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a5f57dae2a4485cc2651abfb51f55cf0e}{cell\_adjacency}}(}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedC>\&\ per\_patch\_cells,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ num\_cells,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ std::vector<std::set<std::tuple<typename\ DerivedC::Scalar,\ bool,\ size\_t>\ >\ >\&}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_a4c905c0e9124bb38a79769497fa9b48b}{adjacency\_list}});}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00040\ \ \ \}}
+\DoxyCodeLine{00041\ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#\ \ include\ "{}cell\_adjacency.cpp"{}}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

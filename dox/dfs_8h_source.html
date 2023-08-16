@@ -102,7 +102,7 @@ $(document).ready(function(){initNavTree('dfs_8h_source.html',''); initResizable
 <div class="contents">
 <a href="dfs_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef IGL_DFS_H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define IGL_DFS_H</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;igl_inline.h&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="igl__inline_8h.html">igl_inline.h</a>&quot;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;Eigen/Core&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceigl.html">igl</a></div>
@@ -112,7 +112,7 @@ $(document).ready(function(){initNavTree('dfs_8h_source.html',''); initResizable
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">typename</span> DerivedD,</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">typename</span> DerivedP,</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">typename</span> DerivedC&gt;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="namespaceigl.html#a9bed0a54e4a3d573a8ca709f613d2b8c">   25</a></span>  IGL_INLINE <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#a9bed0a54e4a3d573a8ca709f613d2b8c">dfs</a>(</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="namespaceigl.html#a9bed0a54e4a3d573a8ca709f613d2b8c">   25</a></span>  <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#a9bed0a54e4a3d573a8ca709f613d2b8c">dfs</a>(</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">const</span> std::vector&lt;std::vector&lt;AType&gt; &gt; &amp; A,</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">const</span> <span class="keywordtype">size_t</span> s,</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    Eigen::PlainObjectBase&lt;DerivedD&gt; &amp; D,</div>
@@ -123,7 +123,7 @@ $(document).ready(function(){initNavTree('dfs_8h_source.html',''); initResizable
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">typename</span> DType,</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">typename</span> PType,</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">typename</span> CType&gt;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="namespaceigl.html#a95618dab6ef7c11351e352297c2d77fc">   37</a></span>  IGL_INLINE <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#a9bed0a54e4a3d573a8ca709f613d2b8c">dfs</a>(</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="namespaceigl.html#a95618dab6ef7c11351e352297c2d77fc">   37</a></span>  <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#a9bed0a54e4a3d573a8ca709f613d2b8c">dfs</a>(</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">const</span> std::vector&lt;std::vector&lt;AType&gt; &gt; &amp; A,</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">const</span> <span class="keywordtype">size_t</span> s,</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    std::vector&lt;DType&gt; &amp; D,</div>
@@ -135,7 +135,9 @@ $(document).ready(function(){initNavTree('dfs_8h_source.html',''); initResizable
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#  include &quot;dfs.cpp&quot;</span></div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="anamespaceigl_html"><div class="ttname"><a href="namespaceigl.html">igl</a></div><div class="ttdoc">Fake halfedge for fast and easy navigation on triangle meshes with vertex_triangle_adjacency and tria...</div><div class="ttdef"><b>Definition</b> AABB.h:17</div></div>
+<div class="ttc" id="aigl__inline_8h_html"><div class="ttname"><a href="igl__inline_8h.html">igl_inline.h</a></div></div>
+<div class="ttc" id="aigl__inline_8h_html_a838241279013352686271b4c4ce1f708"><div class="ttname"><a href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a></div><div class="ttdeci">#define IGL_INLINE</div><div class="ttdef"><b>Definition</b> igl_inline.h:15</div></div>
+<div class="ttc" id="anamespaceigl_html"><div class="ttname"><a href="namespaceigl.html">igl</a></div><div class="ttdef"><b>Definition</b> AABB.h:17</div></div>
 <div class="ttc" id="anamespaceigl_html_a9bed0a54e4a3d573a8ca709f613d2b8c"><div class="ttname"><a href="namespaceigl.html#a9bed0a54e4a3d573a8ca709f613d2b8c">igl::dfs</a></div><div class="ttdeci">void dfs(const std::vector&lt; std::vector&lt; AType &gt; &gt; &amp;A, const size_t s, Eigen::PlainObjectBase&lt; DerivedD &gt; &amp;D, Eigen::PlainObjectBase&lt; DerivedP &gt; &amp;P, Eigen::PlainObjectBase&lt; DerivedC &gt; &amp;C)</div><div class="ttdoc">Traverse a directed graph represented by an adjacency list using depth first search.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

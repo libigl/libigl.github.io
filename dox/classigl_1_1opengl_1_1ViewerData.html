@@ -105,6 +105,9 @@ $(document).ready(function(){initNavTree('classigl_1_1opengl_1_1ViewerData.html'
 </div><!--header-->
 <div class="contents">
 
+<p>Object being drawn (i.e., mesh and its accessories) by the <a class="el" href="classigl_1_1opengl_1_1ViewerCore.html" title="Basic class of the 3D mesh viewer.">ViewerCore</a>.  
+ <a href="classigl_1_1opengl_1_1ViewerData.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="ViewerData_8h_source.html">ViewerData.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -112,129 +115,154 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a10dc4232031537b418990130935bc2c4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a10dc4232031537b418990130935bc2c4">ViewerData</a> ()</td></tr>
 <tr class="separator:a10dc4232031537b418990130935bc2c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e629ca52441beda8c45b8199752fe12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a0e629ca52441beda8c45b8199752fe12">clear</a> ()</td></tr>
+<tr class="memdesc:a0e629ca52441beda8c45b8199752fe12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Empty all fields.  <br /></td></tr>
 <tr class="separator:a0e629ca52441beda8c45b8199752fe12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8084db372fc87a38ced9ba838f9368f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a8084db372fc87a38ced9ba838f9368f1">set_face_based</a> (bool newvalue)</td></tr>
+<tr class="memdesc:a8084db372fc87a38ced9ba838f9368f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change whether drawing per-vertex or per-face; invalidating cache if necessary.  <br /></td></tr>
 <tr class="separator:a8084db372fc87a38ced9ba838f9368f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b5956da8759fb7800b11b8216184468"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a6b5956da8759fb7800b11b8216184468">set_mesh</a> (const Eigen::MatrixXd &amp;<a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a1e9e01dcbb96b329c8da0dbb71c47554">V</a>, const Eigen::MatrixXi &amp;<a class="el" href="classigl_1_1opengl_1_1ViewerData.html#ac31a200e07734a7dbe33f991dca0cc87">F</a>)</td></tr>
+<tr class="memitem:a6b5956da8759fb7800b11b8216184468"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a6b5956da8759fb7800b11b8216184468">set_mesh</a> (const Eigen::MatrixXd &amp;V, const Eigen::MatrixXi &amp;F)</td></tr>
+<tr class="memdesc:a6b5956da8759fb7800b11b8216184468"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the current mesh.  <br /></td></tr>
 <tr class="separator:a6b5956da8759fb7800b11b8216184468"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8693588093bd351fd98b252bb1bd340f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a8693588093bd351fd98b252bb1bd340f">set_vertices</a> (const Eigen::MatrixXd &amp;<a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a1e9e01dcbb96b329c8da0dbb71c47554">V</a>)</td></tr>
+<tr class="memitem:a8693588093bd351fd98b252bb1bd340f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a8693588093bd351fd98b252bb1bd340f">set_vertices</a> (const Eigen::MatrixXd &amp;V)</td></tr>
+<tr class="memdesc:a8693588093bd351fd98b252bb1bd340f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set just the vertices.  <br /></td></tr>
 <tr class="separator:a8693588093bd351fd98b252bb1bd340f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acdbcfdf0a634addbd8e3f7fdbcd7a121"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#acdbcfdf0a634addbd8e3f7fdbcd7a121">set_normals</a> (const Eigen::MatrixXd &amp;N)</td></tr>
+<tr class="memdesc:acdbcfdf0a634addbd8e3f7fdbcd7a121"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the normals of a mesh.  <br /></td></tr>
 <tr class="separator:acdbcfdf0a634addbd8e3f7fdbcd7a121"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade91972b4cf683917540b9f10e2574ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#ade91972b4cf683917540b9f10e2574ca">set_visible</a> (bool value, unsigned int core_id=1)</td></tr>
+<tr class="memdesc:ade91972b4cf683917540b9f10e2574ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set whether this object is visible.  <br /></td></tr>
 <tr class="separator:ade91972b4cf683917540b9f10e2574ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab44012abab5b16b87b76a622839292f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#ab44012abab5b16b87b76a622839292f5">set_colors</a> (const Eigen::MatrixXd &amp;C)</td></tr>
+<tr class="memdesc:ab44012abab5b16b87b76a622839292f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the color of the mesh.  <br /></td></tr>
 <tr class="separator:ab44012abab5b16b87b76a622839292f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a4a3bd973759305cf8fda10d5e2a999"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a5a4a3bd973759305cf8fda10d5e2a999">set_uv</a> (const Eigen::MatrixXd &amp;UV)</td></tr>
+<tr class="memdesc:a5a4a3bd973759305cf8fda10d5e2a999"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set per-vertex UV coordinates.  <br /></td></tr>
 <tr class="separator:a5a4a3bd973759305cf8fda10d5e2a999"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ce2dbe479d1f212ae038b929ff06944"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a2ce2dbe479d1f212ae038b929ff06944">set_uv</a> (const Eigen::MatrixXd &amp;UV_V, const Eigen::MatrixXi &amp;UV_F)</td></tr>
+<tr class="memdesc:a2ce2dbe479d1f212ae038b929ff06944"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set per-corner UV coordinates.  <br /></td></tr>
 <tr class="separator:a2ce2dbe479d1f212ae038b929ff06944"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6144ce04e80b4c7632f2c417ee7b347e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a6144ce04e80b4c7632f2c417ee7b347e">set_texture</a> (const Eigen::Matrix&lt; unsigned char, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;R, const Eigen::Matrix&lt; unsigned char, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;G, const Eigen::Matrix&lt; unsigned char, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;B)</td></tr>
-<tr class="separator:a6144ce04e80b4c7632f2c417ee7b347e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31b0ee7aad967741d39ae1239fd044b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a31b0ee7aad967741d39ae1239fd044b2">set_texture</a> (const Eigen::Matrix&lt; unsigned char, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;R, const Eigen::Matrix&lt; unsigned char, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;G, const Eigen::Matrix&lt; unsigned char, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;B, const Eigen::Matrix&lt; unsigned char, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;A)</td></tr>
+<tr class="memdesc:a31b0ee7aad967741d39ae1239fd044b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the texture associated with the mesh.  <br /></td></tr>
 <tr class="separator:a31b0ee7aad967741d39ae1239fd044b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6144ce04e80b4c7632f2c417ee7b347e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a6144ce04e80b4c7632f2c417ee7b347e">set_texture</a> (const Eigen::Matrix&lt; unsigned char, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;R, const Eigen::Matrix&lt; unsigned char, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;G, const Eigen::Matrix&lt; unsigned char, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;B)</td></tr>
+<tr class="memdesc:a6144ce04e80b4c7632f2c417ee7b347e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
+<tr class="separator:a6144ce04e80b4c7632f2c417ee7b347e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98694f52952594b855d30a37d4780583"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a98694f52952594b855d30a37d4780583">set_data</a> (const Eigen::VectorXd &amp;D, double caxis_min, double caxis_max, <a class="el" href="namespaceigl.html#a1b823cd12b22dd7d7c16b36223e68dea">igl::ColorMapType</a> cmap=<a class="el" href="namespaceigl.html#a1b823cd12b22dd7d7c16b36223e68deaac0949b6bec17c57dae985f9945f0ba87">igl::COLOR_MAP_TYPE_VIRIDIS</a>, int num_steps=21)</td></tr>
+<tr class="memdesc:a98694f52952594b855d30a37d4780583"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set pseudo-color-able scalar data associated with the mesh.  <br /></td></tr>
 <tr class="separator:a98694f52952594b855d30a37d4780583"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb52a51dc0c98336f047636474b58d03"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#afb52a51dc0c98336f047636474b58d03">set_data</a> (const Eigen::VectorXd &amp;D, <a class="el" href="namespaceigl.html#a1b823cd12b22dd7d7c16b36223e68dea">igl::ColorMapType</a> cmap=<a class="el" href="namespaceigl.html#a1b823cd12b22dd7d7c16b36223e68deaac0949b6bec17c57dae985f9945f0ba87">igl::COLOR_MAP_TYPE_VIRIDIS</a>, int num_steps=21)</td></tr>
+<tr class="memdesc:afb52a51dc0c98336f047636474b58d03"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
 <tr class="separator:afb52a51dc0c98336f047636474b58d03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15cf9f668ca87a84eb0b7267f12a711d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a15cf9f668ca87a84eb0b7267f12a711d">set_colormap</a> (const Eigen::MatrixXd &amp;CM)</td></tr>
+<tr class="memdesc:a15cf9f668ca87a84eb0b7267f12a711d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Not to be confused with set_colors, this creates a <em>texture</em> that will be referenced to pseudocolor according to the scalar field passed to set_data.  <br /></td></tr>
 <tr class="separator:a15cf9f668ca87a84eb0b7267f12a711d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1b409133abec077712c12d401b66c1c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#ad1b409133abec077712c12d401b66c1c">set_points</a> (const Eigen::MatrixXd &amp;P, const Eigen::MatrixXd &amp;C)</td></tr>
+<tr class="memdesc:ad1b409133abec077712c12d401b66c1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets points given a list of point vertices.  <br /></td></tr>
 <tr class="separator:ad1b409133abec077712c12d401b66c1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a519cbb4c31b87388d0340cfb9b064a6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a519cbb4c31b87388d0340cfb9b064a6c">add_points</a> (const Eigen::MatrixXd &amp;P, const Eigen::MatrixXd &amp;C)</td></tr>
+<tr class="memdesc:a519cbb4c31b87388d0340cfb9b064a6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add points given a list of point vertices.  <br /></td></tr>
 <tr class="separator:a519cbb4c31b87388d0340cfb9b064a6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8616372b1deb7a76028b3c7fbabcf69f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a8616372b1deb7a76028b3c7fbabcf69f">clear_points</a> ()</td></tr>
+<tr class="memdesc:a8616372b1deb7a76028b3c7fbabcf69f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the point data.  <br /></td></tr>
 <tr class="separator:a8616372b1deb7a76028b3c7fbabcf69f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e44f7353f684813eb2bdfd4447ec013"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a1e44f7353f684813eb2bdfd4447ec013">set_edges</a> (const Eigen::MatrixXd &amp;P, const Eigen::MatrixXi &amp;E, const Eigen::MatrixXd &amp;C)</td></tr>
+<tr class="memdesc:a1e44f7353f684813eb2bdfd4447ec013"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets edges given a list of edge vertices and edge indices.  <br /></td></tr>
 <tr class="separator:a1e44f7353f684813eb2bdfd4447ec013"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab96f3118a759b4e73c6ce06baf8237a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#ab96f3118a759b4e73c6ce06baf8237a1">add_edges</a> (const Eigen::MatrixXd &amp;P1, const Eigen::MatrixXd &amp;P2, const Eigen::MatrixXd &amp;C)</td></tr>
+<tr class="memdesc:ab96f3118a759b4e73c6ce06baf8237a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add edges given a list of edge start and end positions and colors.  <br /></td></tr>
 <tr class="separator:ab96f3118a759b4e73c6ce06baf8237a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27e63443ae90288a36332a929e81db27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a27e63443ae90288a36332a929e81db27">set_edges_from_vector_field</a> (const Eigen::MatrixXd &amp;P, const Eigen::MatrixXd &amp;<a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a1e9e01dcbb96b329c8da0dbb71c47554">V</a>, const Eigen::MatrixXd &amp;C)</td></tr>
+<tr class="memitem:a27e63443ae90288a36332a929e81db27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a27e63443ae90288a36332a929e81db27">set_edges_from_vector_field</a> (const Eigen::MatrixXd &amp;P, const Eigen::MatrixXd &amp;V, const Eigen::MatrixXd &amp;C)</td></tr>
+<tr class="memdesc:a27e63443ae90288a36332a929e81db27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets edges given a list of points and eminating vectors.  <br /></td></tr>
 <tr class="separator:a27e63443ae90288a36332a929e81db27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af16a28d0194c68eaaf4f4d50844b56b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#af16a28d0194c68eaaf4f4d50844b56b0">clear_edges</a> ()</td></tr>
+<tr class="memdesc:af16a28d0194c68eaaf4f4d50844b56b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the edge data.  <br /></td></tr>
 <tr class="separator:af16a28d0194c68eaaf4f4d50844b56b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a625c2c733a166f00d11f5f092ae9aae5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a625c2c733a166f00d11f5f092ae9aae5">add_label</a> (const Eigen::VectorXd &amp;P, const std::string &amp;str)</td></tr>
-<tr class="separator:a625c2c733a166f00d11f5f092ae9aae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d22a72b41cb6bb79ef6073b3e1ab7cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a8d22a72b41cb6bb79ef6073b3e1ab7cc">set_labels</a> (const Eigen::MatrixXd &amp;P, const std::vector&lt; std::string &gt; &amp;str)</td></tr>
+<tr class="memdesc:a8d22a72b41cb6bb79ef6073b3e1ab7cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets / Adds text labels at the given positions in 3D.  <br /></td></tr>
 <tr class="separator:a8d22a72b41cb6bb79ef6073b3e1ab7cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a625c2c733a166f00d11f5f092ae9aae5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a625c2c733a166f00d11f5f092ae9aae5">add_label</a> (const Eigen::VectorXd &amp;P, const std::string &amp;str)</td></tr>
+<tr class="memdesc:a625c2c733a166f00d11f5f092ae9aae5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets / Adds text labels at the given positions in 3D.  <br /></td></tr>
+<tr class="separator:a625c2c733a166f00d11f5f092ae9aae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abcec779e4217d99e5a977a2b80488a49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#abcec779e4217d99e5a977a2b80488a49">clear_labels</a> ()</td></tr>
+<tr class="memdesc:abcec779e4217d99e5a977a2b80488a49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the label data.  <br /></td></tr>
 <tr class="separator:abcec779e4217d99e5a977a2b80488a49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f3e8af93eb8958843450b1cba81117a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a5f3e8af93eb8958843450b1cba81117a">compute_normals</a> ()</td></tr>
+<tr class="memdesc:a5f3e8af93eb8958843450b1cba81117a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the normals of the mesh.  <br /></td></tr>
 <tr class="separator:a5f3e8af93eb8958843450b1cba81117a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72cdd66751812e1fccdea4b39dedcdc9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a72cdd66751812e1fccdea4b39dedcdc9">uniform_colors</a> (const Eigen::Vector3d &amp;diffuse, const Eigen::Vector3d &amp;ambient, const Eigen::Vector3d &amp;specular)</td></tr>
-<tr class="separator:a72cdd66751812e1fccdea4b39dedcdc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a94fe7f69d2838c4873313f0173dddd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a1a94fe7f69d2838c4873313f0173dddd">uniform_colors</a> (const Eigen::Vector3d &amp;ambient, const Eigen::Vector3d &amp;diffuse, const Eigen::Vector3d &amp;specular)</td></tr>
+<tr class="memdesc:a1a94fe7f69d2838c4873313f0173dddd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assigns uniform colors to all faces/vertices.  <br /></td></tr>
+<tr class="separator:a1a94fe7f69d2838c4873313f0173dddd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4a25b86dfdadcbfb0e21f8e6704184d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#af4a25b86dfdadcbfb0e21f8e6704184d">uniform_colors</a> (const Eigen::Vector4d &amp;ambient, const Eigen::Vector4d &amp;diffuse, const Eigen::Vector4d &amp;specular)</td></tr>
+<tr class="memdesc:af4a25b86dfdadcbfb0e21f8e6704184d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
 <tr class="separator:af4a25b86dfdadcbfb0e21f8e6704184d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a170b1068013a0db447a3f8639b56cbeb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a170b1068013a0db447a3f8639b56cbeb">normal_matcap</a> ()</td></tr>
+<tr class="memdesc:a170b1068013a0db447a3f8639b56cbeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a normal image matcap.  <br /></td></tr>
 <tr class="separator:a170b1068013a0db447a3f8639b56cbeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1b9f6bfe13ca76f6a159bcd52b20741"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#ac1b9f6bfe13ca76f6a159bcd52b20741">grid_texture</a> ()</td></tr>
+<tr class="memdesc:ac1b9f6bfe13ca76f6a159bcd52b20741"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a default grid texture (without uvs)  <br /></td></tr>
 <tr class="separator:ac1b9f6bfe13ca76f6a159bcd52b20741"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa83ab9452baf5a19fa8a81a93517995e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#aa83ab9452baf5a19fa8a81a93517995e">copy_options</a> (const ViewerCore &amp;from, const ViewerCore &amp;to)</td></tr>
+<tr class="memitem:aa83ab9452baf5a19fa8a81a93517995e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#aa83ab9452baf5a19fa8a81a93517995e">copy_options</a> (const <a class="el" href="classigl_1_1opengl_1_1ViewerCore.html">ViewerCore</a> &amp;from, const <a class="el" href="classigl_1_1opengl_1_1ViewerCore.html">ViewerCore</a> &amp;to)</td></tr>
+<tr class="memdesc:aa83ab9452baf5a19fa8a81a93517995e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy visualization options from one viewport to another.  <br /></td></tr>
 <tr class="separator:aa83ab9452baf5a19fa8a81a93517995e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7eabe8a43ffa772906fd320906a6438e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a7eabe8a43ffa772906fd320906a6438e">update_labels</a> (<a class="el" href="classigl_1_1opengl_1_1MeshGL.html">igl::opengl::MeshGL</a> &amp;<a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a41c281eb989bf0905d2382a281365a6c">meshgl</a>, <a class="el" href="structigl_1_1opengl_1_1MeshGL_1_1TextGL.html">igl::opengl::MeshGL::TextGL</a> &amp;GL_labels, const Eigen::MatrixXd &amp;positions, const std::vector&lt; std::string &gt; &amp;strings)</td></tr>
+<tr class="memdesc:a7eabe8a43ffa772906fd320906a6438e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update contents from a 'Data' instance.  <br /></td></tr>
 <tr class="separator:a7eabe8a43ffa772906fd320906a6438e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a174d8b6b04e22a0e04642487e424f68d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a174d8b6b04e22a0e04642487e424f68d">updateGL</a> (const <a class="el" href="classigl_1_1opengl_1_1ViewerData.html">igl::opengl::ViewerData</a> &amp;data, const bool <a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a25b4e769d28d918ceffff12e6349f2da">invert_normals</a>, <a class="el" href="classigl_1_1opengl_1_1MeshGL.html">igl::opengl::MeshGL</a> &amp;<a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a41c281eb989bf0905d2382a281365a6c">meshgl</a>)</td></tr>
+<tr class="memdesc:a174d8b6b04e22a0e04642487e424f68d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the meshgl object.  <br /></td></tr>
 <tr class="separator:a174d8b6b04e22a0e04642487e424f68d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a1e9e01dcbb96b329c8da0dbb71c47554"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a1e9e01dcbb96b329c8da0dbb71c47554">V</a></td></tr>
-<tr class="separator:a1e9e01dcbb96b329c8da0dbb71c47554"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac31a200e07734a7dbe33f991dca0cc87"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXi&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#ac31a200e07734a7dbe33f991dca0cc87">F</a></td></tr>
-<tr class="separator:ac31a200e07734a7dbe33f991dca0cc87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeec664532756aad3b3f766ce329079ca"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#aeec664532756aad3b3f766ce329079ca">F_normals</a></td></tr>
-<tr class="separator:aeec664532756aad3b3f766ce329079ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe6ef623c7e209d3781b917a01d48955"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#afe6ef623c7e209d3781b917a01d48955">F_material_ambient</a></td></tr>
-<tr class="separator:afe6ef623c7e209d3781b917a01d48955"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a730f37a2897ce216609b603730809a86"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a730f37a2897ce216609b603730809a86">F_material_diffuse</a></td></tr>
-<tr class="separator:a730f37a2897ce216609b603730809a86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab30e4c295b861f8b984788447c38f448"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#ab30e4c295b861f8b984788447c38f448">F_material_specular</a></td></tr>
-<tr class="separator:ab30e4c295b861f8b984788447c38f448"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5921328dc84338fdaff1d36fd33f7904"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a5921328dc84338fdaff1d36fd33f7904">V_normals</a></td></tr>
-<tr class="separator:a5921328dc84338fdaff1d36fd33f7904"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45b988b99e4b313bd90e922a43ec3e43"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a45b988b99e4b313bd90e922a43ec3e43">V_material_ambient</a></td></tr>
-<tr class="separator:a45b988b99e4b313bd90e922a43ec3e43"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e4d82600723b93429c5c322c40cd82b"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a5e4d82600723b93429c5c322c40cd82b">V_material_diffuse</a></td></tr>
-<tr class="separator:a5e4d82600723b93429c5c322c40cd82b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1dd3cb542e88094e4e04f004d65f0ee3"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a1dd3cb542e88094e4e04f004d65f0ee3">V_material_specular</a></td></tr>
-<tr class="separator:a1dd3cb542e88094e4e04f004d65f0ee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8ba30a1b613c8f981f417f74d9a819b"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#ac8ba30a1b613c8f981f417f74d9a819b">V_uv</a></td></tr>
-<tr class="separator:ac8ba30a1b613c8f981f417f74d9a819b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9fabaddf2b5060e3a314190225b7550"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXi&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#ac9fabaddf2b5060e3a314190225b7550">F_uv</a></td></tr>
-<tr class="separator:ac9fabaddf2b5060e3a314190225b7550"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaebb492303daeefd974e7ca311e984c9"><td class="memItemLeft" align="right" valign="top">Eigen::Matrix&lt; unsigned char, Eigen::Dynamic, Eigen::Dynamic &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#aaebb492303daeefd974e7ca311e984c9">texture_R</a></td></tr>
-<tr class="separator:aaebb492303daeefd974e7ca311e984c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba8461f27f6021bee49d4277d349c958"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd V Eigen::MatrixXi F Eigen::MatrixXd F_normals Eigen::MatrixXd F_material_ambient Eigen::MatrixXd F_material_diffuse Eigen::MatrixXd F_material_specular Eigen::MatrixXd V_normals Eigen::MatrixXd V_material_ambient Eigen::MatrixXd V_material_diffuse Eigen::MatrixXd V_material_specular Eigen::MatrixXd V_uv Eigen::MatrixXi F_uv Eigen::Matrix&lt; unsigned char, Eigen::Dynamic, Eigen::Dynamic &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#aba8461f27f6021bee49d4277d349c958">texture_R</a></td></tr>
+<tr class="memdesc:aba8461f27f6021bee49d4277d349c958"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vertices of the current mesh (#V x 3)  <br /></td></tr>
+<tr class="separator:aba8461f27f6021bee49d4277d349c958"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3af234699020c70f4e6b9bc57fa6b92e"><td class="memItemLeft" align="right" valign="top">Eigen::Matrix&lt; unsigned char, Eigen::Dynamic, Eigen::Dynamic &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a3af234699020c70f4e6b9bc57fa6b92e">texture_G</a></td></tr>
+<tr class="memdesc:a3af234699020c70f4e6b9bc57fa6b92e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Texture green colors.  <br /></td></tr>
 <tr class="separator:a3af234699020c70f4e6b9bc57fa6b92e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af207f1c16b4c27e2dd59894bcf858b40"><td class="memItemLeft" align="right" valign="top">Eigen::Matrix&lt; unsigned char, Eigen::Dynamic, Eigen::Dynamic &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#af207f1c16b4c27e2dd59894bcf858b40">texture_B</a></td></tr>
+<tr class="memdesc:af207f1c16b4c27e2dd59894bcf858b40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Texture blue colors.  <br /></td></tr>
 <tr class="separator:af207f1c16b4c27e2dd59894bcf858b40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af40d9523a09820b10d37569a5194c5f0"><td class="memItemLeft" align="right" valign="top">Eigen::Matrix&lt; unsigned char, Eigen::Dynamic, Eigen::Dynamic &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#af40d9523a09820b10d37569a5194c5f0">texture_A</a></td></tr>
+<tr class="memdesc:af40d9523a09820b10d37569a5194c5f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Texture alpha values.  <br /></td></tr>
 <tr class="separator:af40d9523a09820b10d37569a5194c5f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff11136d9ea4d163b3d9f4f4597aa4ab"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#aff11136d9ea4d163b3d9f4f4597aa4ab">lines</a></td></tr>
+<tr class="memdesc:aff11136d9ea4d163b3d9f4f4597aa4ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lines plotted over the scene (Every row contains 9 doubles in the following format S_x, S_y, S_z, T_x, T_y, T_z, C_r, C_g, C_b),.  <br /></td></tr>
 <tr class="separator:aff11136d9ea4d163b3d9f4f4597aa4ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a122498f1c59106d673b9d1d747e1771e"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a122498f1c59106d673b9d1d747e1771e">points</a></td></tr>
+<tr class="memdesc:a122498f1c59106d673b9d1d747e1771e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Points plotted over the scene (Every row contains 6 doubles in the following format P_x, P_y, P_z, C_r, C_g, C_b), with P the position in global coordinates of the center of the point, and C the color in floating point rgb format.  <br /></td></tr>
 <tr class="separator:a122498f1c59106d673b9d1d747e1771e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85ad664931092ac71180eace4b261e5e"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a85ad664931092ac71180eace4b261e5e">vertex_labels_positions</a></td></tr>
+<tr class="memdesc:a85ad664931092ac71180eace4b261e5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Text positions of vertices.  <br /></td></tr>
 <tr class="separator:a85ad664931092ac71180eace4b261e5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99782a2ed9ebb595ff5a3d3ac94f79f4"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a99782a2ed9ebb595ff5a3d3ac94f79f4">face_labels_positions</a></td></tr>
+<tr class="memdesc:a99782a2ed9ebb595ff5a3d3ac94f79f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Text positions of faces.  <br /></td></tr>
 <tr class="separator:a99782a2ed9ebb595ff5a3d3ac94f79f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abfa9b318d297cc4f503c863415ebf60f"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#abfa9b318d297cc4f503c863415ebf60f">labels_positions</a></td></tr>
+<tr class="memdesc:abfa9b318d297cc4f503c863415ebf60f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Text positions of labels.  <br /></td></tr>
 <tr class="separator:abfa9b318d297cc4f503c863415ebf60f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a597b7698fe9eb9db99eefd2f7b0a322b"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a597b7698fe9eb9db99eefd2f7b0a322b">vertex_labels_strings</a></td></tr>
+<tr class="memdesc:a597b7698fe9eb9db99eefd2f7b0a322b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Text strings of labels at vertices.  <br /></td></tr>
 <tr class="separator:a597b7698fe9eb9db99eefd2f7b0a322b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b4574c220d5c69932d56d6004480aa4"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a1b4574c220d5c69932d56d6004480aa4">face_labels_strings</a></td></tr>
+<tr class="memdesc:a1b4574c220d5c69932d56d6004480aa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Text strings of labels at faces.  <br /></td></tr>
 <tr class="separator:a1b4574c220d5c69932d56d6004480aa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6facef9a63af410174c510ac1fe5778"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#ad6facef9a63af410174c510ac1fe5778">labels_strings</a></td></tr>
+<tr class="memdesc:ad6facef9a63af410174c510ac1fe5778"><td class="mdescLeft">&#160;</td><td class="mdescRight">Text strings of labels.  <br /></td></tr>
 <tr class="separator:ad6facef9a63af410174c510ac1fe5778"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30686f942a7b6141aeff0b06ea6871d2"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a30686f942a7b6141aeff0b06ea6871d2">dirty</a></td></tr>
+<tr class="memdesc:a30686f942a7b6141aeff0b06ea6871d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Marks dirty buffers that need to be uploaded to OpenGL.  <br /></td></tr>
 <tr class="separator:a30686f942a7b6141aeff0b06ea6871d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67bbf06b914264df68d96c53dcbdbb68"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a67bbf06b914264df68d96c53dcbdbb68">face_based</a></td></tr>
+<tr class="memdesc:a67bbf06b914264df68d96c53dcbdbb68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable per-face or per-vertex properties.  <br /></td></tr>
 <tr class="separator:a67bbf06b914264df68d96c53dcbdbb68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a025f22d7d0c46ecabb3330ada2aa92c1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a025f22d7d0c46ecabb3330ada2aa92c1">double_sided</a></td></tr>
+<tr class="memdesc:a025f22d7d0c46ecabb3330ada2aa92c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable double-sided lighting on faces.  <br /></td></tr>
 <tr class="separator:a025f22d7d0c46ecabb3330ada2aa92c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25b4e769d28d918ceffff12e6349f2da"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a25b4e769d28d918ceffff12e6349f2da">invert_normals</a></td></tr>
+<tr class="memdesc:a25b4e769d28d918ceffff12e6349f2da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invert mesh normals.  <br /></td></tr>
 <tr class="separator:a25b4e769d28d918ceffff12e6349f2da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe1e980442c1d2d86faea50cebfb6eb4"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#afe1e980442c1d2d86faea50cebfb6eb4">is_visible</a></td></tr>
+<tr class="memdesc:afe1e980442c1d2d86faea50cebfb6eb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visualization options Each option is a binary mask specifying on which viewport each option is set.  <br /></td></tr>
 <tr class="separator:afe1e980442c1d2d86faea50cebfb6eb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad50148662ac832150337443a8c8c0542"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#ad50148662ac832150337443a8c8c0542">show_overlay</a></td></tr>
 <tr class="separator:ad50148662ac832150337443a8c8c0542"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -255,23 +283,35 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:aa15ff82f63580806342dcfe36a8e3a25"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#aa15ff82f63580806342dcfe36a8e3a25">show_custom_labels</a></td></tr>
 <tr class="separator:aa15ff82f63580806342dcfe36a8e3a25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeba732f62241985d64c25c192b257b53"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#aeba732f62241985d64c25c192b257b53">point_size</a></td></tr>
+<tr class="memdesc:aeba732f62241985d64c25c192b257b53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Point size / line width.  <br /></td></tr>
 <tr class="separator:aeba732f62241985d64c25c192b257b53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a911794621ca711ed7f9066cef7947d10"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a911794621ca711ed7f9066cef7947d10">line_width</a></td></tr>
+<tr class="memdesc:a911794621ca711ed7f9066cef7947d10"><td class="mdescLeft">&#160;</td><td class="mdescRight">line_width is NOT SUPPORTED on Mac OS and Windows  <br /></td></tr>
 <tr class="separator:a911794621ca711ed7f9066cef7947d10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4fcf3f0531c5bd39d5813f8601aec34a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a4fcf3f0531c5bd39d5813f8601aec34a">label_size</a></td></tr>
+<tr class="memdesc:a4fcf3f0531c5bd39d5813f8601aec34a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of lables.  <br /></td></tr>
 <tr class="separator:a4fcf3f0531c5bd39d5813f8601aec34a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a981249e04431e0ba10806716fbaeca4a"><td class="memItemLeft" align="right" valign="top">Eigen::Matrix&lt; float, 4, 1, Eigen::DontAlign &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a981249e04431e0ba10806716fbaeca4a">line_color</a></td></tr>
+<tr class="memdesc:a981249e04431e0ba10806716fbaeca4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Color of lines.  <br /></td></tr>
 <tr class="separator:a981249e04431e0ba10806716fbaeca4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44f9c5e7aa2b2f29137961fdf546d482"><td class="memItemLeft" align="right" valign="top">Eigen::Matrix&lt; float, 4, 1, Eigen::DontAlign &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a44f9c5e7aa2b2f29137961fdf546d482">label_color</a></td></tr>
+<tr class="memdesc:a44f9c5e7aa2b2f29137961fdf546d482"><td class="mdescLeft">&#160;</td><td class="mdescRight">Color of labels.  <br /></td></tr>
 <tr class="separator:a44f9c5e7aa2b2f29137961fdf546d482"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a353aa83301f02d6536e8b42c7a848330"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a353aa83301f02d6536e8b42c7a848330">shininess</a></td></tr>
+<tr class="memdesc:a353aa83301f02d6536e8b42c7a848330"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shape material shininess.  <br /></td></tr>
 <tr class="separator:a353aa83301f02d6536e8b42c7a848330"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4dffe26e465cd09471b9c84f27d763e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#ab4dffe26e465cd09471b9c84f27d763e">id</a></td></tr>
+<tr class="memdesc:ab4dffe26e465cd09471b9c84f27d763e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique identifier.  <br /></td></tr>
 <tr class="separator:ab4dffe26e465cd09471b9c84f27d763e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41c281eb989bf0905d2382a281365a6c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classigl_1_1opengl_1_1MeshGL.html">igl::opengl::MeshGL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a41c281eb989bf0905d2382a281365a6c">meshgl</a></td></tr>
+<tr class="memdesc:a41c281eb989bf0905d2382a281365a6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">OpenGL representation of the mesh.  <br /></td></tr>
 <tr class="separator:a41c281eb989bf0905d2382a281365a6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Object being drawn (i.e., mesh and its accessories) by the <a class="el" href="classigl_1_1opengl_1_1ViewerCore.html" title="Basic class of the 3D mesh viewer.">ViewerCore</a>. </p>
+<dl class="section warning"><dt>Warning</dt><dd>Eigen data members (such as Eigen::Vector4f) should explicitly disable alignment (e.g. use <code>Eigen::Matrix&lt;float, 4, 1, Eigen::DontAlign&gt;</code>), in order to avoid alignment issues further down the line (esp. if the structure are stored in a std::vector).</dd></dl>
+<p>See this thread for a more detailed discussion: <a href="https://github.com/libigl/libigl/pull/1029">https://github.com/libigl/libigl/pull/1029</a> </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a10dc4232031537b418990130935bc2c4" name="a10dc4232031537b418990130935bc2c4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a10dc4232031537b418990130935bc2c4">&#9670;&#160;</a></span>ViewerData()</h2>
 
@@ -305,6 +345,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Empty all fields. </p>
+
 </div>
 </div>
 <a id="a8084db372fc87a38ced9ba838f9368f1" name="a8084db372fc87a38ced9ba838f9368f1"></a>
@@ -322,6 +364,15 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Change whether drawing per-vertex or per-face; invalidating cache if necessary. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">newvalue</td><td>whether face based <br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -351,6 +402,16 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Set the current mesh. </p>
+<p>Call this once at the beginning and whenever <b>both</b> the vertices and faces are changing.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">V</td><td>#V by 3 list of mesh vertex positions </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">F</td><td>#F by 3/4 list of mesh faces (triangles/tets) </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a8693588093bd351fd98b252bb1bd340f" name="a8693588093bd351fd98b252bb1bd340f"></a>
@@ -369,6 +430,15 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Set just the vertices. </p>
+<p>Call this if <em>just</em> the vertices are changing. You may need to call compute_normals to update the lighting correctly.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">V</td><td>#V by 3 list of mesh vertex positions </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="acdbcfdf0a634addbd8e3f7fdbcd7a121" name="acdbcfdf0a634addbd8e3f7fdbcd7a121"></a>
@@ -386,6 +456,15 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Set the normals of a mesh. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">N</td><td>#V|#F|3#F by 3 list of mesh normals</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a5f3e8af93eb8958843450b1cba81117a" title="Computes the normals of the mesh.">compute_normals</a> </dd></dl>
 
 </div>
 </div>
@@ -415,6 +494,15 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Set whether this object is visible. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>true iff this object is visible </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">core_id</td><td>Index of the core to set (default is 0) </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="ab44012abab5b16b87b76a622839292f5" name="ab44012abab5b16b87b76a622839292f5"></a>
@@ -433,6 +521,14 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Set the color of the mesh. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">C</td><td>#V|#F|1 by 3 list of colors </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a5a4a3bd973759305cf8fda10d5e2a999" name="a5a4a3bd973759305cf8fda10d5e2a999"></a>
@@ -450,6 +546,14 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Set per-vertex UV coordinates. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">UV</td><td>#V by 2 list of UV coordinates (indexed by F) </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -479,44 +583,19 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a6144ce04e80b4c7632f2c417ee7b347e" name="a6144ce04e80b4c7632f2c417ee7b347e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6144ce04e80b4c7632f2c417ee7b347e">&#9670;&#160;</a></span>set_texture() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void igl::opengl::ViewerData::set_texture </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::Matrix&lt; unsigned char, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;&#160;</td>
-          <td class="paramname"><em>R</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::Matrix&lt; unsigned char, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;&#160;</td>
-          <td class="paramname"><em>G</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::Matrix&lt; unsigned char, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;&#160;</td>
-          <td class="paramname"><em>B</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Set per-corner UV coordinates. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">UV_V</td><td>#UV by 2 list of UV coordinates </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">UV_F</td><td>#F by 3 list of UV indices into UV_V </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
 <a id="a31b0ee7aad967741d39ae1239fd044b2" name="a31b0ee7aad967741d39ae1239fd044b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a31b0ee7aad967741d39ae1239fd044b2">&#9670;&#160;</a></span>set_texture() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a31b0ee7aad967741d39ae1239fd044b2">&#9670;&#160;</a></span>set_texture() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -552,6 +631,53 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Set the texture associated with the mesh. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">R</td><td>width by height image matrix of red channel </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">G</td><td>width by height image matrix of green channel </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">B</td><td>width by height image matrix of blue channel </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">A</td><td>width by height image matrix of alpha channel </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6144ce04e80b4c7632f2c417ee7b347e" name="a6144ce04e80b4c7632f2c417ee7b347e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6144ce04e80b4c7632f2c417ee7b347e">&#9670;&#160;</a></span>set_texture() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void igl::opengl::ViewerData::set_texture </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::Matrix&lt; unsigned char, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;&#160;</td>
+          <td class="paramname"><em>R</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::Matrix&lt; unsigned char, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;&#160;</td>
+          <td class="paramname"><em>G</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::Matrix&lt; unsigned char, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;&#160;</td>
+          <td class="paramname"><em>B</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
 
 </div>
 </div>
@@ -599,6 +725,18 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Set pseudo-color-able scalar data associated with the mesh. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">caxis_min</td><td>caxis minimum bound </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">caxis_max</td><td>caxis maximum bound </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">D</td><td>#V|#F by 1 list of scalar values </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cmap</td><td>colormap type </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">num_steps</td><td>number of intervals to discretize the colormap </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="afb52a51dc0c98336f047636474b58d03" name="afb52a51dc0c98336f047636474b58d03"></a>
@@ -633,6 +771,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+<p>Use min(D) and max(D) to set caxis. </p>
+
 </div>
 </div>
 <a id="a15cf9f668ca87a84eb0b7267f12a711d" name="a15cf9f668ca87a84eb0b7267f12a711d"></a>
@@ -650,6 +791,14 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Not to be confused with set_colors, this creates a <em>texture</em> that will be referenced to pseudocolor according to the scalar field passed to set_data. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">CM</td><td>#CM by 3 list of colors </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -679,6 +828,16 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Sets points given a list of point vertices. </p>
+<p>In constrast to <code>add_points</code> this will (purposefully) clober existing points.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">P</td><td>#P by 3 list of vertex positions </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">C</td><td>#P|1 by 3 color(s) </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a519cbb4c31b87388d0340cfb9b064a6c" name="a519cbb4c31b87388d0340cfb9b064a6c"></a>
@@ -707,6 +866,15 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Add points given a list of point vertices. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">P</td><td>#P by 3 list of vertex positions </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">C</td><td>#P|1 by 3 color(s) </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a8616372b1deb7a76028b3c7fbabcf69f" name="a8616372b1deb7a76028b3c7fbabcf69f"></a>
@@ -723,6 +891,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Clear the point data. </p>
 
 </div>
 </div>
@@ -758,6 +928,17 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Sets edges given a list of edge vertices and edge indices. </p>
+<p>In constrast to <code>add_edges</code> this will (purposefully) clober existing edges.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">P</td><td>#P by 3 list of vertex positions </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">E</td><td>#E by 2 list of edge indices into P </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">C</td><td>#E|1 by 3 color(s) </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="ab96f3118a759b4e73c6ce06baf8237a1" name="ab96f3118a759b4e73c6ce06baf8237a1"></a>
@@ -791,6 +972,17 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Add edges given a list of edge start and end positions and colors. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">P1</td><td>#P by 3 list of edge start positions </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">P2</td><td>#P by 3 list of edge end positions </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">C</td><td>#P|1 by 3 color(s) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>This is very confusing. Why does add_edges have a different API from set_edges? </dd></dl>
 
 </div>
 </div>
@@ -826,6 +1018,16 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Sets edges given a list of points and eminating vectors. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">P</td><td>#P by 3 list of vertex positions </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">V</td><td>#P by 3 list of eminating vectors </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">C</td><td>#P|1 by 3 color(s) </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="af16a28d0194c68eaaf4f4d50844b56b0" name="af16a28d0194c68eaaf4f4d50844b56b0"></a>
@@ -843,33 +1045,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a625c2c733a166f00d11f5f092ae9aae5" name="a625c2c733a166f00d11f5f092ae9aae5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a625c2c733a166f00d11f5f092ae9aae5">&#9670;&#160;</a></span>add_label()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void igl::opengl::ViewerData::add_label </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>P</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>str</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Clear the edge data. </p>
 
 </div>
 </div>
@@ -899,6 +1075,53 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Sets / Adds text labels at the given positions in 3D. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">P</td><td>#P by 3 list of vertex positions </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>#P list of text labels </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>This requires the <a class="el" href="namespaceImGui.html">ImGui</a> viewer plugin to display text labels. </dd></dl>
+
+</div>
+</div>
+<a id="a625c2c733a166f00d11f5f092ae9aae5" name="a625c2c733a166f00d11f5f092ae9aae5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a625c2c733a166f00d11f5f092ae9aae5">&#9670;&#160;</a></span>add_label()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void igl::opengl::ViewerData::add_label </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
+          <td class="paramname"><em>P</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>str</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets / Adds text labels at the given positions in 3D. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">P</td><td>3D position of the label </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>text label </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="abcec779e4217d99e5a977a2b80488a49" name="abcec779e4217d99e5a977a2b80488a49"></a>
@@ -915,6 +1138,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Clear the label data. </p>
 
 </div>
 </div>
@@ -933,10 +1158,12 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Computes the normals of the mesh. </p>
+
 </div>
 </div>
-<a id="a72cdd66751812e1fccdea4b39dedcdc9" name="a72cdd66751812e1fccdea4b39dedcdc9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a72cdd66751812e1fccdea4b39dedcdc9">&#9670;&#160;</a></span>uniform_colors() <span class="overload">[1/2]</span></h2>
+<a id="a1a94fe7f69d2838c4873313f0173dddd" name="a1a94fe7f69d2838c4873313f0173dddd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a94fe7f69d2838c4873313f0173dddd">&#9670;&#160;</a></span>uniform_colors() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -945,13 +1172,13 @@ Public Attributes</h2></td></tr>
           <td class="memname">void igl::opengl::ViewerData::uniform_colors </td>
           <td>(</td>
           <td class="paramtype">const Eigen::Vector3d &amp;&#160;</td>
-          <td class="paramname"><em>diffuse</em>, </td>
+          <td class="paramname"><em>ambient</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const Eigen::Vector3d &amp;&#160;</td>
-          <td class="paramname"><em>ambient</em>, </td>
+          <td class="paramname"><em>diffuse</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -966,6 +1193,16 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Assigns uniform colors to all faces/vertices. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ambient</td><td>ambient color </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">diffuse</td><td>diffuse color </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">specular</td><td>specular color </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1001,6 +1238,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+
 </div>
 </div>
 <a id="a170b1068013a0db447a3f8639b56cbeb" name="a170b1068013a0db447a3f8639b56cbeb"></a>
@@ -1017,6 +1256,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Generate a normal image matcap. </p>
 
 </div>
 </div>
@@ -1035,6 +1276,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Generates a default grid texture (without uvs) </p>
+
 </div>
 </div>
 <a id="aa83ab9452baf5a19fa8a81a93517995e" name="aa83ab9452baf5a19fa8a81a93517995e"></a>
@@ -1046,13 +1289,13 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">void igl::opengl::ViewerData::copy_options </td>
           <td>(</td>
-          <td class="paramtype">const ViewerCore &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classigl_1_1opengl_1_1ViewerCore.html">ViewerCore</a> &amp;&#160;</td>
           <td class="paramname"><em>from</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const ViewerCore &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classigl_1_1opengl_1_1ViewerCore.html">ViewerCore</a> &amp;&#160;</td>
           <td class="paramname"><em>to</em>&#160;</td>
         </tr>
         <tr>
@@ -1062,6 +1305,15 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Copy visualization options from one viewport to another. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">from</td><td>source viewport </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">to</td><td>destination viewport </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1103,6 +1355,17 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Update contents from a 'Data' instance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">meshgl</td><td>mesh to be updated </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">GL_labels</td><td>labels to be updated </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">positions</td><td>positions of the labels </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">strings</td><td>strings of the labels </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a174d8b6b04e22a0e04642487e424f68d" name="a174d8b6b04e22a0e04642487e424f68d"></a>
@@ -1137,188 +1400,33 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Update the meshgl object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>data to be used for the update </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">invert_normals</td><td>whether to invert normals </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">meshgl</td><td>mesh to be updated </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a1e9e01dcbb96b329c8da0dbb71c47554" name="a1e9e01dcbb96b329c8da0dbb71c47554"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1e9e01dcbb96b329c8da0dbb71c47554">&#9670;&#160;</a></span>V</h2>
+<a id="aba8461f27f6021bee49d4277d349c958" name="aba8461f27f6021bee49d4277d349c958"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba8461f27f6021bee49d4277d349c958">&#9670;&#160;</a></span>texture_R</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Eigen::MatrixXd igl::opengl::ViewerData::V</td>
+          <td class="memname">Eigen::MatrixXd V Eigen::MatrixXi F Eigen::MatrixXd F_normals Eigen::MatrixXd F_material_ambient Eigen::MatrixXd F_material_diffuse Eigen::MatrixXd F_material_specular Eigen::MatrixXd V_normals Eigen::MatrixXd V_material_ambient Eigen::MatrixXd V_material_diffuse Eigen::MatrixXd V_material_specular Eigen::MatrixXd V_uv Eigen::MatrixXi F_uv Eigen::Matrix&lt;unsigned char,Eigen::Dynamic,Eigen::Dynamic&gt; igl::opengl::ViewerData::texture_R</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="ac31a200e07734a7dbe33f991dca0cc87" name="ac31a200e07734a7dbe33f991dca0cc87"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac31a200e07734a7dbe33f991dca0cc87">&#9670;&#160;</a></span>F</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Eigen::MatrixXi igl::opengl::ViewerData::F</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aeec664532756aad3b3f766ce329079ca" name="aeec664532756aad3b3f766ce329079ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeec664532756aad3b3f766ce329079ca">&#9670;&#160;</a></span>F_normals</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Eigen::MatrixXd igl::opengl::ViewerData::F_normals</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="afe6ef623c7e209d3781b917a01d48955" name="afe6ef623c7e209d3781b917a01d48955"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe6ef623c7e209d3781b917a01d48955">&#9670;&#160;</a></span>F_material_ambient</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Eigen::MatrixXd igl::opengl::ViewerData::F_material_ambient</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a730f37a2897ce216609b603730809a86" name="a730f37a2897ce216609b603730809a86"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a730f37a2897ce216609b603730809a86">&#9670;&#160;</a></span>F_material_diffuse</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Eigen::MatrixXd igl::opengl::ViewerData::F_material_diffuse</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ab30e4c295b861f8b984788447c38f448" name="ab30e4c295b861f8b984788447c38f448"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab30e4c295b861f8b984788447c38f448">&#9670;&#160;</a></span>F_material_specular</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Eigen::MatrixXd igl::opengl::ViewerData::F_material_specular</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5921328dc84338fdaff1d36fd33f7904" name="a5921328dc84338fdaff1d36fd33f7904"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5921328dc84338fdaff1d36fd33f7904">&#9670;&#160;</a></span>V_normals</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Eigen::MatrixXd igl::opengl::ViewerData::V_normals</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a45b988b99e4b313bd90e922a43ec3e43" name="a45b988b99e4b313bd90e922a43ec3e43"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a45b988b99e4b313bd90e922a43ec3e43">&#9670;&#160;</a></span>V_material_ambient</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Eigen::MatrixXd igl::opengl::ViewerData::V_material_ambient</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5e4d82600723b93429c5c322c40cd82b" name="a5e4d82600723b93429c5c322c40cd82b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e4d82600723b93429c5c322c40cd82b">&#9670;&#160;</a></span>V_material_diffuse</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Eigen::MatrixXd igl::opengl::ViewerData::V_material_diffuse</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a1dd3cb542e88094e4e04f004d65f0ee3" name="a1dd3cb542e88094e4e04f004d65f0ee3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1dd3cb542e88094e4e04f004d65f0ee3">&#9670;&#160;</a></span>V_material_specular</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Eigen::MatrixXd igl::opengl::ViewerData::V_material_specular</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac8ba30a1b613c8f981f417f74d9a819b" name="ac8ba30a1b613c8f981f417f74d9a819b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac8ba30a1b613c8f981f417f74d9a819b">&#9670;&#160;</a></span>V_uv</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Eigen::MatrixXd igl::opengl::ViewerData::V_uv</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac9fabaddf2b5060e3a314190225b7550" name="ac9fabaddf2b5060e3a314190225b7550"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac9fabaddf2b5060e3a314190225b7550">&#9670;&#160;</a></span>F_uv</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Eigen::MatrixXi igl::opengl::ViewerData::F_uv</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aaebb492303daeefd974e7ca311e984c9" name="aaebb492303daeefd974e7ca311e984c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaebb492303daeefd974e7ca311e984c9">&#9670;&#160;</a></span>texture_R</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Eigen::Matrix&lt;unsigned char,Eigen::Dynamic,Eigen::Dynamic&gt; igl::opengl::ViewerData::texture_R</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Vertices of the current mesh (#V x 3) </p>
+<p>Faces of the mesh (#F x 3) One normal per face Per face ambient color Per face diffuse color Per face specular color One normal per vertex Per vertex ambient color Per vertex diffuse color Per vertex specular color UV vertices optional faces for UVs Texture red colors </p>
 
 </div>
 </div>
@@ -1334,6 +1442,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Texture green colors. </p>
+
 </div>
 </div>
 <a id="af207f1c16b4c27e2dd59894bcf858b40" name="af207f1c16b4c27e2dd59894bcf858b40"></a>
@@ -1347,6 +1457,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Texture blue colors. </p>
 
 </div>
 </div>
@@ -1362,6 +1474,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Texture alpha values. </p>
+
 </div>
 </div>
 <a id="aff11136d9ea4d163b3d9f4f4597aa4ab" name="aff11136d9ea4d163b3d9f4f4597aa4ab"></a>
@@ -1375,6 +1489,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Lines plotted over the scene (Every row contains 9 doubles in the following format S_x, S_y, S_z, T_x, T_y, T_z, C_r, C_g, C_b),. </p>
 
 </div>
 </div>
@@ -1390,6 +1506,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Points plotted over the scene (Every row contains 6 doubles in the following format P_x, P_y, P_z, C_r, C_g, C_b), with P the position in global coordinates of the center of the point, and C the color in floating point rgb format. </p>
+
 </div>
 </div>
 <a id="a85ad664931092ac71180eace4b261e5e" name="a85ad664931092ac71180eace4b261e5e"></a>
@@ -1403,6 +1521,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Text positions of vertices. </p>
 
 </div>
 </div>
@@ -1418,6 +1538,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Text positions of faces. </p>
+
 </div>
 </div>
 <a id="abfa9b318d297cc4f503c863415ebf60f" name="abfa9b318d297cc4f503c863415ebf60f"></a>
@@ -1431,6 +1553,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Text positions of labels. </p>
 
 </div>
 </div>
@@ -1446,6 +1570,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Text strings of labels at vertices. </p>
+
 </div>
 </div>
 <a id="a1b4574c220d5c69932d56d6004480aa4" name="a1b4574c220d5c69932d56d6004480aa4"></a>
@@ -1459,6 +1585,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Text strings of labels at faces. </p>
 
 </div>
 </div>
@@ -1474,6 +1602,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Text strings of labels. </p>
+
 </div>
 </div>
 <a id="a30686f942a7b6141aeff0b06ea6871d2" name="a30686f942a7b6141aeff0b06ea6871d2"></a>
@@ -1487,6 +1617,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Marks dirty buffers that need to be uploaded to OpenGL. </p>
 
 </div>
 </div>
@@ -1502,6 +1634,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Enable per-face or per-vertex properties. </p>
+
 </div>
 </div>
 <a id="a025f22d7d0c46ecabb3330ada2aa92c1" name="a025f22d7d0c46ecabb3330ada2aa92c1"></a>
@@ -1515,6 +1649,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Enable double-sided lighting on faces. </p>
 
 </div>
 </div>
@@ -1530,6 +1666,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Invert mesh normals. </p>
+
 </div>
 </div>
 <a id="afe1e980442c1d2d86faea50cebfb6eb4" name="afe1e980442c1d2d86faea50cebfb6eb4"></a>
@@ -1543,6 +1681,9 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Visualization options Each option is a binary mask specifying on which viewport each option is set. </p>
+<p>When using a single viewport, standard boolean can still be used for simplicity. </p>
 
 </div>
 </div>
@@ -1684,6 +1825,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Point size / line width. </p>
+
 </div>
 </div>
 <a id="a911794621ca711ed7f9066cef7947d10" name="a911794621ca711ed7f9066cef7947d10"></a>
@@ -1697,6 +1840,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>line_width is NOT SUPPORTED on Mac OS and Windows </p>
 
 </div>
 </div>
@@ -1712,6 +1857,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Size of lables. </p>
+
 </div>
 </div>
 <a id="a981249e04431e0ba10806716fbaeca4a" name="a981249e04431e0ba10806716fbaeca4a"></a>
@@ -1725,6 +1872,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Color of lines. </p>
 
 </div>
 </div>
@@ -1740,6 +1889,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Color of labels. </p>
+
 </div>
 </div>
 <a id="a353aa83301f02d6536e8b42c7a848330" name="a353aa83301f02d6536e8b42c7a848330"></a>
@@ -1753,6 +1904,9 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Shape material shininess. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000013">Deprecated:</a></b></dt><dd>unused? </dd></dl>
 
 </div>
 </div>
@@ -1768,6 +1922,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Unique identifier. </p>
+
 </div>
 </div>
 <a id="a41c281eb989bf0905d2382a281365a6c" name="a41c281eb989bf0905d2382a281365a6c"></a>
@@ -1781,6 +1937,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>OpenGL representation of the mesh. </p>
 
 </div>
 </div>

@@ -2,6 +2,11 @@
 \hypertarget{classigl_1_1HalfEdgeIterator}{}\label{classigl_1_1HalfEdgeIterator}\index{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$@{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$}}
 
 
+Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency.  
+
+
+
+
 {\ttfamily \#include $<$Half\+Edge\+Iterator.\+h$>$}
 
 \doxysubsubsection*{Public Member Functions}
@@ -28,6 +33,15 @@ int \mbox{\hyperlink{classigl_1_1HalfEdgeIterator_a7b95717e2fe5d396d933bd9b48d4e
 bool \mbox{\hyperlink{classigl_1_1HalfEdgeIterator_a8ce6e514ed49e9684b0c0fd0dd48e0d6}{operator==}} (\mbox{\hyperlink{classigl_1_1HalfEdgeIterator}{Half\+Edge\+Iterator}} \&p2)
 \begin{DoxyCompactList}\small\item\em Check if two \doxylink{classigl_1_1HalfEdgeIterator}{Half\+Edge\+Iterator} are the same. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename DerivedF, typename Derived\+FF, typename Derived\+FFi$>$\newline
+class igl\+::\+Half\+Edge\+Iterator$<$ Derived\+F, Derived\+FF, Derived\+FFi $>$}
+Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. 
+
+Note\+: this is different to classical Half Edge data structure. Instead, it follows cell-\/tuple in \mbox{[}Brisson, 1989\mbox{]} \"{}\+Representing geometric structures in d dimensions\+: topology and order.\"{} This class can achieve local navigation similar to half edge in Open\+Mesh But the logic behind each atom operation is different. So this should be more properly called Triangle\+Tuple\+Iterator.
+
+Each tuple contains information on (face, edge, vertex) and encoded by (face, edge \textbackslash{}in \{0,1,2\}, bool reverse) 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{classigl_1_1HalfEdgeIterator_ade6f831eefbe8752706db4e8c5ffebb9}\label{classigl_1_1HalfEdgeIterator_ade6f831eefbe8752706db4e8c5ffebb9} 

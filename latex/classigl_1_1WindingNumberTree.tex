@@ -9,6 +9,12 @@ Space partitioning tree for computing winding number hierarchically.
 
 {\ttfamily \#include $<$Winding\+Number\+Tree.\+h$>$}
 
+Inheritance diagram for igl\+::Winding\+Number\+Tree\texorpdfstring{$<$}{<} Point, DerivedV, DerivedF \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classigl_1_1WindingNumberTree}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -162,6 +168,10 @@ void \mbox{\hyperlink{classigl_1_1WindingNumberTree}{igl\+::\+Winding\+Number\+T
 {\footnotesize\ttfamily template$<$typename Point , typename DerivedV , typename DerivedF $>$ \\
 void \mbox{\hyperlink{classigl_1_1WindingNumberTree}{igl\+::\+Winding\+Number\+Tree}}$<$ Point, DerivedV, DerivedF $>$\+::set\+\_\+mesh (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&}]{F }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
+
+
+Reimplemented in \mbox{\hyperlink{classigl_1_1WindingNumberAABB_a26c689a9a8f4eb01144fe835155489d8}{igl\+::\+Winding\+Number\+AABB$<$ Point, Derived\+V, Derived\+F $>$}}.
+
 \Hypertarget{classigl_1_1WindingNumberTree_a6aeaed6e361921d5e5fc817264ea4303}\label{classigl_1_1WindingNumberTree_a6aeaed6e361921d5e5fc817264ea4303} 
 \index{igl::WindingNumberTree$<$ Point, DerivedV, DerivedF $>$@{igl::WindingNumberTree$<$ Point, DerivedV, DerivedF $>$}!set\_method@{set\_method}}
 \index{set\_method@{set\_method}!igl::WindingNumberTree$<$ Point, DerivedV, DerivedF $>$@{igl::WindingNumberTree$<$ Point, DerivedV, DerivedF $>$}}
@@ -197,12 +207,20 @@ const \mbox{\hyperlink{classigl_1_1WindingNumberTree}{igl\+::\+Winding\+Number\+
 {\footnotesize\ttfamily template$<$typename Point , typename DerivedV , typename DerivedF $>$ \\
 void \mbox{\hyperlink{classigl_1_1WindingNumberTree}{igl\+::\+Winding\+Number\+Tree}}$<$ Point, DerivedV, DerivedF $>$\+::grow\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
+
+
+Reimplemented in \mbox{\hyperlink{classigl_1_1WindingNumberAABB_a097c24e0a4080986f3114d4ec286a1a0}{igl\+::\+Winding\+Number\+AABB$<$ Point, Derived\+V, Derived\+F $>$}}, and \mbox{\hyperlink{classigl_1_1WindingNumberAABB_a4bf7e011c9eb1dfde7f4f27d282aea73}{igl\+::\+Winding\+Number\+AABB$<$ Point, Derived\+V, Derived\+F $>$}}.
+
 \Hypertarget{classigl_1_1WindingNumberTree_a02580f4446de4f2e50ae461dd05856f7}\label{classigl_1_1WindingNumberTree_a02580f4446de4f2e50ae461dd05856f7} 
 \index{igl::WindingNumberTree$<$ Point, DerivedV, DerivedF $>$@{igl::WindingNumberTree$<$ Point, DerivedV, DerivedF $>$}!inside@{inside}}
 \index{inside@{inside}!igl::WindingNumberTree$<$ Point, DerivedV, DerivedF $>$@{igl::WindingNumberTree$<$ Point, DerivedV, DerivedF $>$}}
 \doxysubsubsection{\texorpdfstring{inside()}{inside()}}
 {\footnotesize\ttfamily template$<$typename Point , typename DerivedV , typename DerivedF $>$ \\
 bool \mbox{\hyperlink{classigl_1_1WindingNumberTree}{igl\+::\+Winding\+Number\+Tree}}$<$ Point, DerivedV, DerivedF $>$\+::inside (\begin{DoxyParamCaption}\item[{const Point \&}]{p }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classigl_1_1WindingNumberAABB_ab00692b233113017589f8239ed1f5d0a}{igl\+::\+Winding\+Number\+AABB$<$ Point, Derived\+V, Derived\+F $>$}}.
 
 \Hypertarget{classigl_1_1WindingNumberTree_ad38f25af1a8db78d093a7f81dc2b1f95}\label{classigl_1_1WindingNumberTree_ad38f25af1a8db78d093a7f81dc2b1f95} 
 \index{igl::WindingNumberTree$<$ Point, DerivedV, DerivedF $>$@{igl::WindingNumberTree$<$ Point, DerivedV, DerivedF $>$}!winding\_number@{winding\_number}}
@@ -239,12 +257,20 @@ void \mbox{\hyperlink{classigl_1_1WindingNumberTree}{igl\+::\+Winding\+Number\+T
 {\footnotesize\ttfamily template$<$typename Point , typename DerivedV , typename DerivedF $>$ \\
 Derived\+V\+::\+Scalar \mbox{\hyperlink{classigl_1_1WindingNumberTree}{igl\+::\+Winding\+Number\+Tree}}$<$ Point, DerivedV, DerivedF $>$\+::max\+\_\+abs\+\_\+winding\+\_\+number (\begin{DoxyParamCaption}\item[{const Point \&}]{p }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
+
+
+Reimplemented in \mbox{\hyperlink{classigl_1_1WindingNumberAABB_ab9be5a4d4a462edf650f8d54067e1db1}{igl\+::\+Winding\+Number\+AABB$<$ Point, Derived\+V, Derived\+F $>$}}.
+
 \Hypertarget{classigl_1_1WindingNumberTree_a09df6ec29cff08ffcca5ca01b29d5695}\label{classigl_1_1WindingNumberTree_a09df6ec29cff08ffcca5ca01b29d5695} 
 \index{igl::WindingNumberTree$<$ Point, DerivedV, DerivedF $>$@{igl::WindingNumberTree$<$ Point, DerivedV, DerivedF $>$}!max\_simple\_abs\_winding\_number@{max\_simple\_abs\_winding\_number}}
 \index{max\_simple\_abs\_winding\_number@{max\_simple\_abs\_winding\_number}!igl::WindingNumberTree$<$ Point, DerivedV, DerivedF $>$@{igl::WindingNumberTree$<$ Point, DerivedV, DerivedF $>$}}
 \doxysubsubsection{\texorpdfstring{max\_simple\_abs\_winding\_number()}{max\_simple\_abs\_winding\_number()}}
 {\footnotesize\ttfamily template$<$typename Point , typename DerivedV , typename DerivedF $>$ \\
 Derived\+V\+::\+Scalar \mbox{\hyperlink{classigl_1_1WindingNumberTree}{igl\+::\+Winding\+Number\+Tree}}$<$ Point, DerivedV, DerivedF $>$\+::max\+\_\+simple\+\_\+abs\+\_\+winding\+\_\+number (\begin{DoxyParamCaption}\item[{const Point \&}]{p }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classigl_1_1WindingNumberAABB_a881f29e818ff7cffeb119e1721d03910}{igl\+::\+Winding\+Number\+AABB$<$ Point, Derived\+V, Derived\+F $>$}}.
 
 \Hypertarget{classigl_1_1WindingNumberTree_a6977fc49ea141561d07410e157f75bdb}\label{classigl_1_1WindingNumberTree_a6977fc49ea141561d07410e157f75bdb} 
 \index{igl::WindingNumberTree$<$ Point, DerivedV, DerivedF $>$@{igl::WindingNumberTree$<$ Point, DerivedV, DerivedF $>$}!cached\_winding\_number@{cached\_winding\_number}}

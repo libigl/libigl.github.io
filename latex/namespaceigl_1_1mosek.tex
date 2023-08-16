@@ -1,10 +1,25 @@
 \doxysection{igl\+::mosek Namespace Reference}
 \hypertarget{namespaceigl_1_1mosek}{}\label{namespaceigl_1_1mosek}\index{igl::mosek@{igl::mosek}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structigl_1_1mosek_1_1MosekData}{Mosek\+Data}}
+\begin{DoxyCompactList}\small\item\em Structure for holding MOSEK data for solving a quadratic program. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename DerivedV , typename Derived\+Ele , typename Derivedb , typename Derivedbc , typename DerivedW $>$ }\\bool \mbox{\hyperlink{namespaceigl_1_1mosek_a4de18238d9facc388d5238acc014a99a}{bbw}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+Ele $>$ \&Ele, const Eigen\+::\+Plain\+Object\+Base$<$ Derivedb $>$ \&b, const Eigen\+::\+Plain\+Object\+Base$<$ Derivedbc $>$ \&bc, \mbox{\hyperlink{classigl_1_1BBWData}{igl\+::\+BBWData}} \&data, igl\+::mosek\+::\+Mosek\+Data \&mosek\+\_\+data, Eigen\+::\+Plain\+Object\+Base$<$ DerivedW $>$ \&W)
-\begin{DoxyCompactList}\small\item\em Compute Bounded Biharmonic Weights on a given domain (V,Ele) with a given set of boundary conditions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+{\footnotesize template$<$typename DerivedV , typename Derived\+Ele , typename Derivedb , typename Derivedbc , typename DerivedW $>$ }\\bool \mbox{\hyperlink{namespaceigl_1_1mosek_a4de18238d9facc388d5238acc014a99a}{bbw}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+Ele $>$ \&Ele, const Eigen\+::\+Plain\+Object\+Base$<$ Derivedb $>$ \&b, const Eigen\+::\+Plain\+Object\+Base$<$ Derivedbc $>$ \&bc, \mbox{\hyperlink{classigl_1_1BBWData}{igl\+::\+BBWData}} \&data, \mbox{\hyperlink{structigl_1_1mosek_1_1MosekData}{igl\+::mosek\+::\+Mosek\+Data}} \&mosek\+\_\+data, Eigen\+::\+Plain\+Object\+Base$<$ DerivedW $>$ \&W)
+\begin{DoxyCompactList}\small\item\em Compute Bounded Biharmonic Weights on a given domain (V,Ele) with a given set of boundary conditions. \end{DoxyCompactList}\item 
+MSKrescodee \mbox{\hyperlink{namespaceigl_1_1mosek_a9a45e29a7f2bbd8971a901b1abf3905a}{mosek\+\_\+guarded}} (const MSKrescodee r)
+\begin{DoxyCompactList}\small\item\em Little function to wrap around mosek call to handle errors. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceigl_1_1mosek_a4f3aa08d915942cff4225bfacef36482}{mosek\+\_\+linprog}} (const Eigen\+::\+Vector\+Xd \&c, const Eigen\+::\+Sparse\+Matrix$<$ double $>$ \&A, const Eigen\+::\+Vector\+Xd \&lc, const Eigen\+::\+Vector\+Xd \&uc, const Eigen\+::\+Vector\+Xd \&lx, const Eigen\+::\+Vector\+Xd \&ux, Eigen\+::\+Vector\+Xd \&x)
+\begin{DoxyCompactList}\small\item\em Solve a linear program using mosek. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceigl_1_1mosek_a1d1ac5ef5d1c0eb4520f23534d858fa3}{mosek\+\_\+linprog}} (const Eigen\+::\+Vector\+Xd \&c, const Eigen\+::\+Sparse\+Matrix$<$ double $>$ \&A, const Eigen\+::\+Vector\+Xd \&lc, const Eigen\+::\+Vector\+Xd \&uc, const Eigen\+::\+Vector\+Xd \&lx, const Eigen\+::\+Vector\+Xd \&ux, const MSKenv\+\_\+t \&env, Eigen\+::\+Vector\+Xd \&x)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Index , typename Scalar $>$ }\\bool \mbox{\hyperlink{namespaceigl_1_1mosek_ac3c815fd0f5ecdf826ee9c99ec7b3986}{mosek\+\_\+quadprog}} (const Index n, std\+::vector$<$ Index $>$ \&Qi, std\+::vector$<$ Index $>$ \&Qj, std\+::vector$<$ Scalar $>$ \&Qv, const std\+::vector$<$ Scalar $>$ \&c, const Scalar cf, const Index m, std\+::vector$<$ Scalar $>$ \&Av, std\+::vector$<$ Index $>$ \&Ari, const std\+::vector$<$ Index $>$ \&Acp, const std\+::vector$<$ Scalar $>$ \&lc, const std\+::vector$<$ Scalar $>$ \&uc, const std\+::vector$<$ Scalar $>$ \&lx, const std\+::vector$<$ Scalar $>$ \&ux, \mbox{\hyperlink{structigl_1_1mosek_1_1MosekData}{Mosek\+Data}} \&mosek\+\_\+data, std\+::vector$<$ Scalar $>$ \&x)
+\item 
+bool \mbox{\hyperlink{namespaceigl_1_1mosek_ae8dd7efbfb34f538f281eefe39783757}{mosek\+\_\+quadprog}} (const Eigen\+::\+Sparse\+Matrix$<$ double $>$ \&Q, const Eigen\+::\+Vector\+Xd \&c, const double cf, const Eigen\+::\+Sparse\+Matrix$<$ double $>$ \&A, const Eigen\+::\+Vector\+Xd \&lc, const Eigen\+::\+Vector\+Xd \&uc, const Eigen\+::\+Vector\+Xd \&lx, const Eigen\+::\+Vector\+Xd \&ux, \mbox{\hyperlink{structigl_1_1mosek_1_1MosekData}{Mosek\+Data}} \&mosek\+\_\+data, Eigen\+::\+Vector\+Xd \&x)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -13,7 +28,7 @@
 \index{bbw@{bbw}!igl::mosek@{igl::mosek}}
 \doxysubsubsection{\texorpdfstring{bbw()}{bbw()}}
 {\footnotesize\ttfamily template$<$typename DerivedV , typename Derived\+Ele , typename Derivedb , typename Derivedbc , typename DerivedW $>$ \\
-bool igl\+::mosek\+::bbw (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+Ele $>$ \&}]{Ele,  }\item[{const Eigen\+::\+Plain\+Object\+Base$<$ Derivedb $>$ \&}]{b,  }\item[{const Eigen\+::\+Plain\+Object\+Base$<$ Derivedbc $>$ \&}]{bc,  }\item[{\mbox{\hyperlink{classigl_1_1BBWData}{igl\+::\+BBWData}} \&}]{data,  }\item[{igl\+::mosek\+::\+Mosek\+Data \&}]{mosek\+\_\+data,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedW $>$ \&}]{W }\end{DoxyParamCaption})}
+bool igl\+::mosek\+::bbw (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+Ele $>$ \&}]{Ele,  }\item[{const Eigen\+::\+Plain\+Object\+Base$<$ Derivedb $>$ \&}]{b,  }\item[{const Eigen\+::\+Plain\+Object\+Base$<$ Derivedbc $>$ \&}]{bc,  }\item[{\mbox{\hyperlink{classigl_1_1BBWData}{igl\+::\+BBWData}} \&}]{data,  }\item[{\mbox{\hyperlink{structigl_1_1mosek_1_1MosekData}{igl\+::mosek\+::\+Mosek\+Data}} \&}]{mosek\+\_\+data,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedW $>$ \&}]{W }\end{DoxyParamCaption})}
 
 
 
@@ -51,4 +66,116 @@ Compute Bounded Biharmonic Weights on a given domain (V,Ele) with a given set of
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 true on success, false on failure 
+\end{DoxyReturn}
+\Hypertarget{namespaceigl_1_1mosek_a9a45e29a7f2bbd8971a901b1abf3905a}\label{namespaceigl_1_1mosek_a9a45e29a7f2bbd8971a901b1abf3905a} 
+\index{igl::mosek@{igl::mosek}!mosek\_guarded@{mosek\_guarded}}
+\index{mosek\_guarded@{mosek\_guarded}!igl::mosek@{igl::mosek}}
+\doxysubsubsection{\texorpdfstring{mosek\_guarded()}{mosek\_guarded()}}
+{\footnotesize\ttfamily MSKrescodee igl\+::mosek\+::mosek\+\_\+guarded (\begin{DoxyParamCaption}\item[{const MSKrescodee}]{r }\end{DoxyParamCaption})}
+
+
+
+Little function to wrap around mosek call to handle errors. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em r} & mosek error code returned from mosek call \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+r untouched 
+\end{DoxyReturn}
+\Hypertarget{namespaceigl_1_1mosek_a4f3aa08d915942cff4225bfacef36482}\label{namespaceigl_1_1mosek_a4f3aa08d915942cff4225bfacef36482} 
+\index{igl::mosek@{igl::mosek}!mosek\_linprog@{mosek\_linprog}}
+\index{mosek\_linprog@{mosek\_linprog}!igl::mosek@{igl::mosek}}
+\doxysubsubsection{\texorpdfstring{mosek\_linprog()}{mosek\_linprog()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool igl\+::mosek\+::mosek\+\_\+linprog (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{c,  }\item[{const Eigen\+::\+Sparse\+Matrix$<$ double $>$ \&}]{A,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{lc,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{uc,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{lx,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{ux,  }\item[{Eigen\+::\+Vector\+Xd \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Solve a linear program using mosek. 
+
+Given in the form\+: \begin{DoxyVerb}min c'x
+s.t. lc <= A x <= uc
+     lx <= x <= ux
+\end{DoxyVerb}
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em c} & \#x list of linear objective coefficients \\
+\hline
+\mbox{\texttt{ in}}  & {\em A} & \#A by \#x matrix of linear inequality constraint coefficients \\
+\hline
+\mbox{\texttt{ in}}  & {\em lc} & \#A list of lower constraint bounds \\
+\hline
+\mbox{\texttt{ in}}  & {\em uc} & \#A list of upper constraint bounds \\
+\hline
+\mbox{\texttt{ in}}  & {\em lx} & \#x list of lower variable bounds \\
+\hline
+\mbox{\texttt{ in}}  & {\em ux} & \#x list of upper variable bounds \\
+\hline
+\mbox{\texttt{ out}}  & {\em x} & \#x list of solution values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true iff success. 
+\end{DoxyReturn}
+\Hypertarget{namespaceigl_1_1mosek_a1d1ac5ef5d1c0eb4520f23534d858fa3}\label{namespaceigl_1_1mosek_a1d1ac5ef5d1c0eb4520f23534d858fa3} 
+\index{igl::mosek@{igl::mosek}!mosek\_linprog@{mosek\_linprog}}
+\index{mosek\_linprog@{mosek\_linprog}!igl::mosek@{igl::mosek}}
+\doxysubsubsection{\texorpdfstring{mosek\_linprog()}{mosek\_linprog()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool igl\+::mosek\+::mosek\+\_\+linprog (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{c,  }\item[{const Eigen\+::\+Sparse\+Matrix$<$ double $>$ \&}]{A,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{lc,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{uc,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{lx,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{ux,  }\item[{const MSKenv\+\_\+t \&}]{env,  }\item[{Eigen\+::\+Vector\+Xd \&}]{x }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+Wrapper that keeps mosek environment alive (if licence checking is becoming a bottleneck)
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em env} & mosek environment \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespaceigl_1_1mosek_ac3c815fd0f5ecdf826ee9c99ec7b3986}\label{namespaceigl_1_1mosek_ac3c815fd0f5ecdf826ee9c99ec7b3986} 
+\index{igl::mosek@{igl::mosek}!mosek\_quadprog@{mosek\_quadprog}}
+\index{mosek\_quadprog@{mosek\_quadprog}!igl::mosek@{igl::mosek}}
+\doxysubsubsection{\texorpdfstring{mosek\_quadprog()}{mosek\_quadprog()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Index , typename Scalar $>$ \\
+bool igl\+::mosek\+::mosek\+\_\+quadprog (\begin{DoxyParamCaption}\item[{const Index}]{n,  }\item[{std\+::vector$<$ Index $>$ \&}]{Qi,  }\item[{std\+::vector$<$ Index $>$ \&}]{Qj,  }\item[{std\+::vector$<$ Scalar $>$ \&}]{Qv,  }\item[{const std\+::vector$<$ Scalar $>$ \&}]{c,  }\item[{const Scalar}]{cf,  }\item[{const Index}]{m,  }\item[{std\+::vector$<$ Scalar $>$ \&}]{Av,  }\item[{std\+::vector$<$ Index $>$ \&}]{Ari,  }\item[{const std\+::vector$<$ Index $>$ \&}]{Acp,  }\item[{const std\+::vector$<$ Scalar $>$ \&}]{lc,  }\item[{const std\+::vector$<$ Scalar $>$ \&}]{uc,  }\item[{const std\+::vector$<$ Scalar $>$ \&}]{lx,  }\item[{const std\+::vector$<$ Scalar $>$ \&}]{ux,  }\item[{\mbox{\hyperlink{structigl_1_1mosek_1_1MosekData}{Mosek\+Data}} \&}]{mosek\+\_\+data,  }\item[{std\+::vector$<$ Scalar $>$ \&}]{x }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceigl_1_1mosek_ae8dd7efbfb34f538f281eefe39783757}\label{namespaceigl_1_1mosek_ae8dd7efbfb34f538f281eefe39783757} 
+\index{igl::mosek@{igl::mosek}!mosek\_quadprog@{mosek\_quadprog}}
+\index{mosek\_quadprog@{mosek\_quadprog}!igl::mosek@{igl::mosek}}
+\doxysubsubsection{\texorpdfstring{mosek\_quadprog()}{mosek\_quadprog()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool igl\+::mosek\+::mosek\+\_\+quadprog (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Sparse\+Matrix$<$ double $>$ \&}]{Q,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{c,  }\item[{const double}]{cf,  }\item[{const Eigen\+::\+Sparse\+Matrix$<$ double $>$ \&}]{A,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{lc,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{uc,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{lx,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{ux,  }\item[{\mbox{\hyperlink{structigl_1_1mosek_1_1MosekData}{Mosek\+Data}} \&}]{mosek\+\_\+data,  }\item[{Eigen\+::\+Vector\+Xd \&}]{x }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Q} & n by n square quadratic coefficients matrix {\bfseries{only lower triangle is used}}. \\
+\hline
+\mbox{\texttt{ in}}  & {\em c} & n-\/long vector of linear coefficients \\
+\hline
+\mbox{\texttt{ in}}  & {\em cf} & constant coefficient \\
+\hline
+\mbox{\texttt{ in}}  & {\em A} & m by n square linear coefficienst matrix of inequality constraints \\
+\hline
+\mbox{\texttt{ in}}  & {\em lc} & m-\/long vector of lower bounds for linear inequality constraints \\
+\hline
+\mbox{\texttt{ in}}  & {\em uc} & m-\/long vector of upper bounds for linear inequality constraints \\
+\hline
+\mbox{\texttt{ in}}  & {\em lx} & n-\/long vector of lower bounds \\
+\hline
+\mbox{\texttt{ in}}  & {\em ux} & n-\/long vector of upper bounds \\
+\hline
+\mbox{\texttt{ in}}  & {\em mosek\+\_\+data} & parameters struct \\
+\hline
+\mbox{\texttt{ out}}  & {\em x} & n-\/long solution vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true only if optimization finishes without error 
 \end{DoxyReturn}

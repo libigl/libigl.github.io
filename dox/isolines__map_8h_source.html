@@ -102,7 +102,7 @@ $(document).ready(function(){initNavTree('isolines__map_8h_source.html',''); ini
 <div class="contents">
 <a href="isolines__map_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef IGL_ISOLINES_MAP_H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define IGL_ISOLINES_MAP_H</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;igl_inline.h&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="igl__inline_8h.html">igl_inline.h</a>&quot;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;Eigen/Core&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceigl.html">igl</a></div>
@@ -111,7 +111,7 @@ $(document).ready(function(){initNavTree('isolines__map_8h_source.html',''); ini
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">typename</span> DerivedCM,</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">typename</span> Derivediso_color,</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">typename</span> DerivedICM &gt;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="namespaceigl.html#ac262ba447b16b5edccade00d31f39722">   21</a></span>  IGL_INLINE <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#ac262ba447b16b5edccade00d31f39722">isolines_map</a>(</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="namespaceigl.html#ac262ba447b16b5edccade00d31f39722">   21</a></span>  <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#ac262ba447b16b5edccade00d31f39722">isolines_map</a>(</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">const</span> Eigen::MatrixBase&lt;DerivedCM&gt; &amp; CM, </div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">const</span> Eigen::MatrixBase&lt;Derivediso_color&gt; &amp; iso_color,</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> interval_thickness,</div>
@@ -120,7 +120,7 @@ $(document).ready(function(){initNavTree('isolines__map_8h_source.html',''); ini
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <span class="keyword">template</span> &lt;</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">typename</span> DerivedCM,</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">typename</span> DerivedICM&gt;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="namespaceigl.html#a807d847189eeb2aa93fb387f81452494">   31</a></span>  IGL_INLINE <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#ac262ba447b16b5edccade00d31f39722">isolines_map</a>(</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="namespaceigl.html#a807d847189eeb2aa93fb387f81452494">   31</a></span>  <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#ac262ba447b16b5edccade00d31f39722">isolines_map</a>(</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">const</span> Eigen::MatrixBase&lt;DerivedCM&gt; &amp; CM, </div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    Eigen::PlainObjectBase&lt;DerivedICM&gt; &amp; ICM);</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>}</div>
@@ -130,7 +130,9 @@ $(document).ready(function(){initNavTree('isolines__map_8h_source.html',''); ini
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="anamespaceigl_html"><div class="ttname"><a href="namespaceigl.html">igl</a></div><div class="ttdoc">Fake halfedge for fast and easy navigation on triangle meshes with vertex_triangle_adjacency and tria...</div><div class="ttdef"><b>Definition</b> AABB.h:17</div></div>
+<div class="ttc" id="aigl__inline_8h_html"><div class="ttname"><a href="igl__inline_8h.html">igl_inline.h</a></div></div>
+<div class="ttc" id="aigl__inline_8h_html_a838241279013352686271b4c4ce1f708"><div class="ttname"><a href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a></div><div class="ttdeci">#define IGL_INLINE</div><div class="ttdef"><b>Definition</b> igl_inline.h:15</div></div>
+<div class="ttc" id="anamespaceigl_html"><div class="ttname"><a href="namespaceigl.html">igl</a></div><div class="ttdef"><b>Definition</b> AABB.h:17</div></div>
 <div class="ttc" id="anamespaceigl_html_ac262ba447b16b5edccade00d31f39722"><div class="ttname"><a href="namespaceigl.html#ac262ba447b16b5edccade00d31f39722">igl::isolines_map</a></div><div class="ttdeci">void isolines_map(const Eigen::MatrixBase&lt; DerivedCM &gt; &amp;CM, const Eigen::MatrixBase&lt; Derivediso_color &gt; &amp;iso_color, const int interval_thickness, const int iso_thickness, Eigen::PlainObjectBase&lt; DerivedICM &gt; &amp;ICM)</div><div class="ttdoc">Inject a given colormap with evenly spaced isolines.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

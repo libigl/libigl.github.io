@@ -1,0 +1,71 @@
+\doxysection{tetgenio\+\_\+to\+\_\+tetmesh.\+h}
+\hypertarget{tetgenio__to__tetmesh_8h_source}{}\label{tetgenio__to__tetmesh_8h_source}\index{include/igl/copyleft/tetgen/tetgenio\_to\_tetmesh.h@{include/igl/copyleft/tetgen/tetgenio\_to\_tetmesh.h}}
+\mbox{\hyperlink{tetgenio__to__tetmesh_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2013\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_COPYLEFT\_TETGEN\_TETGENIO\_TO\_TETMESH\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_COPYLEFT\_TETGEN\_TETGENIO\_TO\_TETMESH\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../../igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ TETLIBRARY}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ TETLIBRARY\ }}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}tetgen.h"{}}\ \textcolor{comment}{//\ Defined\ tetgenio,\ REAL}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00019\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \ \ \textcolor{keyword}{namespace\ }copyleft}
+\DoxyCodeLine{00022\ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{namespace\ }tetgen}
+\DoxyCodeLine{00024\ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen_a63ecd5e93119c4b9eb62440cc0970294}{tetgenio\_to\_tetmesh}}(}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ tetgenio\ \&\ out,}
+\DoxyCodeLine{00039\ \ \ \ \ std::vector<std::vector<REAL\ >\ >\ \&\ V,}
+\DoxyCodeLine{00040\ \ \ \ \ std::vector<std::vector<int>\ >\ \&\ T,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ std::vector<std::vector<int>\ >\ \&\ F,\ }
+\DoxyCodeLine{00042\ \ \ \ \ std::vector<std::vector<REAL>\ >\ \&\ R,\textcolor{comment}{//\ region\ marks\ for\ tetrahedrons}}
+\DoxyCodeLine{00043\ \ \ \ \ std::vector<std::vector<int\ >\ >\ \&N,\ \textcolor{comment}{//\ neighborlist\ per\ tet}}
+\DoxyCodeLine{00044\ \ \ \ \ std::vector<std::vector<int\ >\ >\ \&PT,\ \textcolor{comment}{//\ Point\ to\ tet\ list\ per\ point}}
+\DoxyCodeLine{00045\ \ \ \ \ std::vector<std::vector<int\ >\ >\ \&FT,\ \textcolor{comment}{//\ face\ to\ tet\ list}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \&\ nR);\ \textcolor{comment}{//\ number\ of\ regions\ \ \ \ }}
+\DoxyCodeLine{00048\ \textcolor{comment}{}\ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen_a63ecd5e93119c4b9eb62440cc0970294}{tetgenio\_to\_tetmesh}}(}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ tetgenio\ \&\ out,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ std::vector<std::vector<REAL\ >\ >\ \&\ V,\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ std::vector<std::vector<int>\ >\ \&\ T,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ std::vector<std::vector<int>\ >\ \&\ F);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen_a63ecd5e93119c4b9eb62440cc0970294}{tetgenio\_to\_tetmesh}}(}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ tetgenio\ \&\ out,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ std::vector<std::vector<REAL\ >\ >\ \&\ V,\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ std::vector<std::vector<int>\ >\ \&\ T);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedT,\ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen_a63ecd5e93119c4b9eb62440cc0970294}{tetgenio\_to\_tetmesh}}(}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ tetgenio\ \&\ out,}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedV>\&\ V,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedT>\&\ T,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedF>\&\ F);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedT>}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen_a63ecd5e93119c4b9eb62440cc0970294}{tetgenio\_to\_tetmesh}}(}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ tetgenio\ \&\ out,}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedV>\&\ V,}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedT>\&\ T);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \}}
+\DoxyCodeLine{00073\ \ \ \}}
+\DoxyCodeLine{00074\ \}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#\ \ include\ "{}tetgenio\_to\_tetmesh.cpp"{}}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

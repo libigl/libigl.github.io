@@ -1,0 +1,378 @@
+\doxysection{igl\+::copyleft\+::tetgen Namespace Reference}
+\hypertarget{namespaceigl_1_1copyleft_1_1tetgen}{}\label{namespaceigl_1_1copyleft_1_1tetgen}\index{igl::copyleft::tetgen@{igl::copyleft::tetgen}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structigl_1_1copyleft_1_1tetgen_1_1CDTParam}{CDTParam}}
+\begin{DoxyCompactList}\small\item\em Parameters for controling the CDT. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename Derived\+TV , typename Derived\+TT , typename Derived\+TF $>$ }\\bool \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen_a5b8924e16ae31504decc1139bef2de8c}{cdt}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F, const \mbox{\hyperlink{structigl_1_1copyleft_1_1tetgen_1_1CDTParam}{CDTParam}} \&param, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TV $>$ \&TV, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TT $>$ \&TT, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TF $>$ \&TF)
+\begin{DoxyCompactList}\small\item\em Create a constrained delaunay tessellation containing convex hull of the given {\bfseries{non-\/selfintersecting}} mesh. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen_a53b3df1461233005a151e1613e16784d}{mesh\+\_\+to\+\_\+tetgenio}} (const std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&V, const std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&F, const std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&H, const std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&R, tetgenio \&in)
+\begin{DoxyCompactList}\small\item\em Load a vertex list and face list into a tetgenio object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen_a4d7690b5f50749a1aa41dfb088f64629}{mesh\+\_\+to\+\_\+tetgenio}} (const std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&V, const std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&F, tetgenio \&in)
+\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF $>$ }\\bool \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen_a74882aad7fdf5792ea49ca1b970985b4}{mesh\+\_\+to\+\_\+tetgenio}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F, tetgenio \&in)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedH , typename DerivedR $>$ }\\bool \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen_afcdd28237561a6754d98f58cc6bd9483}{mesh\+\_\+to\+\_\+tetgenio}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedH $>$ \&H, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedR $>$ \&R, tetgenio \&in)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen_a52e7d474be94d6836bf773d1ec2d6533}{mesh\+\_\+with\+\_\+skeleton}} (const Eigen\+::\+Matrix\+Xd \&V, const Eigen\+::\+Matrix\+Xi \&F, const Eigen\+::\+Matrix\+Xd \&C, const Eigen\+::\+Vector\+Xi \&, const Eigen\+::\+Matrix\+Xi \&BE, const Eigen\+::\+Matrix\+Xi \&CE, const int samples\+\_\+per\+\_\+bone, const std\+::string \&tetgen\+\_\+flags, Eigen\+::\+Matrix\+Xd \&VV, Eigen\+::\+Matrix\+Xi \&TT, Eigen\+::\+Matrix\+Xi \&FF)
+\begin{DoxyCompactList}\small\item\em Mesh the interior of a given surface with tetrahedra which are graded (tend to be small near the surface and large inside) and conform to the given handles and samplings thereof. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen_acbfa8a496d77f7278355e9660515aa3e}{mesh\+\_\+with\+\_\+skeleton}} (const Eigen\+::\+Matrix\+Xd \&V, const Eigen\+::\+Matrix\+Xi \&F, const Eigen\+::\+Matrix\+Xd \&C, const Eigen\+::\+Vector\+Xi \&, const Eigen\+::\+Matrix\+Xi \&BE, const Eigen\+::\+Matrix\+Xi \&CE, const int samples\+\_\+per\+\_\+bone, Eigen\+::\+Matrix\+Xd \&VV, Eigen\+::\+Matrix\+Xi \&TT, Eigen\+::\+Matrix\+Xi \&FF)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen_a26ef29c9024cbc26643ab5cd1129b43a}{read\+\_\+into\+\_\+tetgenio}} (const std\+::string \&path, tetgenio \&in)
+\begin{DoxyCompactList}\small\item\em Read a mesh or point set into tetgenio (input object for calling tetgen). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen_a63ecd5e93119c4b9eb62440cc0970294}{tetgenio\+\_\+to\+\_\+tetmesh}} (const tetgenio \&out, std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&V, std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&T, std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&F, std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&R, std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&N, std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&PT, std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&FT, size\+\_\+t \&nR)
+\begin{DoxyCompactList}\small\item\em Extract a tetrahedral mesh from a tetgenio object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen_ae61f5bd1bef2af521f0c09c47a979af5}{tetgenio\+\_\+to\+\_\+tetmesh}} (const tetgenio \&out, std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&V, std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&T, std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&F)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen_ae60d719de3a41a70e8c4fa08d2d33e59}{tetgenio\+\_\+to\+\_\+tetmesh}} (const tetgenio \&out, std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&V, std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&T)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedT , typename DerivedF $>$ }\\bool \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen_a62c127834e91e67b7e4ebe347d4c23bb}{tetgenio\+\_\+to\+\_\+tetmesh}} (const tetgenio \&out, Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, Eigen\+::\+Plain\+Object\+Base$<$ DerivedT $>$ \&T, Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedT $>$ }\\bool \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen_a0ba8a207f28e5fc5eedb946f50562f18}{tetgenio\+\_\+to\+\_\+tetmesh}} (const tetgenio \&out, Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, Eigen\+::\+Plain\+Object\+Base$<$ DerivedT $>$ \&T)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen_a1fc3157f647538d164f586e08dfe9a85}{tetrahedralize}} (const std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&V, const std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&F, const std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&H, const std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&R, const std\+::string switches, std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&TV, std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&TT, std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&TF, std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&TR, std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&TN, std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&PT, std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&FT, size\+\_\+t \&num\+Regions)
+\begin{DoxyCompactList}\small\item\em Mesh the interior of a surface mesh (V,F) using tetgen. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen_ab4136f1f19b670bb69a05b211b6f51bb}{tetrahedralize}} (const std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&V, const std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&F, const std\+::string switches, std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&TV, std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&TT, std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&TF)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename Derived\+TV , typename Derived\+TT , typename Derived\+TF $>$ }\\int \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen_a8a5fdfe393bd442def86f9f936df2ed2}{tetrahedralize}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const std\+::string switches, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TV $>$ \&TV, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TT $>$ \&TT, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TF $>$ \&TF)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen_a956297a4e1a76096f6dcec3c807087e3}{tetrahedralize}} (const std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&V, const std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&F, const std\+::vector$<$ int $>$ \&VM, const std\+::vector$<$ int $>$ \&FM, const std\+::string switches, std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&TV, std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&TT, std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&TF, std\+::vector$<$ int $>$ \&TM)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename Derived\+VM , typename Derived\+FM , typename Derived\+TV , typename Derived\+TT , typename Derived\+TF , typename Derived\+TM $>$ }\\int \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen_a9935cb2c069f907c5e9922bd46e1de72}{tetrahedralize}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const Eigen\+::\+Matrix\+Base$<$ Derived\+VM $>$ \&VM, const Eigen\+::\+Matrix\+Base$<$ Derived\+FM $>$ \&FM, const std\+::string switches, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TV $>$ \&TV, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TT $>$ \&TT, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TF $>$ \&TF, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TM $>$ \&TM)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedH , typename DerivedR , typename Derived\+TV , typename Derived\+TT , typename Derived\+TF , typename Derived\+TR $>$ }\\int \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen_a5fd2ea548c768b65074feb6b75b90649}{tetrahedralize}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const Eigen\+::\+Matrix\+Base$<$ DerivedH $>$ \&H, const Eigen\+::\+Matrix\+Base$<$ DerivedR $>$ \&R, const std\+::string switches, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TV $>$ \&TV, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TT $>$ \&TT, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TF $>$ \&TF, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TR $>$ \&TR, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TT $>$ \&TN, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TT $>$ \&PT, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TT $>$ \&FT, size\+\_\+t \&num\+Regions)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceigl_1_1copyleft_1_1tetgen_a5b8924e16ae31504decc1139bef2de8c}\label{namespaceigl_1_1copyleft_1_1tetgen_a5b8924e16ae31504decc1139bef2de8c} 
+\index{igl::copyleft::tetgen@{igl::copyleft::tetgen}!cdt@{cdt}}
+\index{cdt@{cdt}!igl::copyleft::tetgen@{igl::copyleft::tetgen}}
+\doxysubsubsection{\texorpdfstring{cdt()}{cdt()}}
+{\footnotesize\ttfamily template$<$typename DerivedV , typename DerivedF , typename Derived\+TV , typename Derived\+TT , typename Derived\+TF $>$ \\
+bool igl\+::copyleft\+::tetgen\+::cdt (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&}]{F,  }\item[{const \mbox{\hyperlink{structigl_1_1copyleft_1_1tetgen_1_1CDTParam}{CDTParam}} \&}]{param,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TV $>$ \&}]{TV,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TT $>$ \&}]{TT,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TF $>$ \&}]{TF }\end{DoxyParamCaption})}
+
+
+
+Create a constrained delaunay tessellation containing convex hull of the given {\bfseries{non-\/selfintersecting}} mesh. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em V} & \#V by 3 list of input mesh vertices \\
+\hline
+\mbox{\texttt{ in}}  & {\em F} & \#F by 3 list of input mesh facets \\
+\hline
+\mbox{\texttt{ in}}  & {\em param} & see above \\
+\hline
+\mbox{\texttt{ out}}  & {\em TV} & \#\+TV by 3 list of output mesh vertices (V come first) \\
+\hline
+\mbox{\texttt{ out}}  & {\em TT} & \#\+TT by 3 list of tetrahedra indices into TV. \\
+\hline
+\mbox{\texttt{ out}}  & {\em TF} & \#\+TF by 3 list of facets from F potentially subdivided. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespaceigl_1_1copyleft_1_1tetgen_a53b3df1461233005a151e1613e16784d}\label{namespaceigl_1_1copyleft_1_1tetgen_a53b3df1461233005a151e1613e16784d} 
+\index{igl::copyleft::tetgen@{igl::copyleft::tetgen}!mesh\_to\_tetgenio@{mesh\_to\_tetgenio}}
+\index{mesh\_to\_tetgenio@{mesh\_to\_tetgenio}!igl::copyleft::tetgen@{igl::copyleft::tetgen}}
+\doxysubsubsection{\texorpdfstring{mesh\_to\_tetgenio()}{mesh\_to\_tetgenio()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily bool igl\+::copyleft\+::tetgen\+::mesh\+\_\+to\+\_\+tetgenio (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&}]{V,  }\item[{const std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&}]{F,  }\item[{const std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&}]{H,  }\item[{const std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&}]{R,  }\item[{tetgenio \&}]{in }\end{DoxyParamCaption})}
+
+
+
+Load a vertex list and face list into a tetgenio object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em V} & \#V by 3 vertex position list \\
+\hline
+\mbox{\texttt{ in}}  & {\em F} & \#F list of polygon face indices into V (0-\/indexed) \\
+\hline
+\mbox{\texttt{ out}}  & {\em in} & tetgenio input object \\
+\hline
+\mbox{\texttt{ out}}  & {\em H} & \#H list of seed point inside each hole \\
+\hline
+\mbox{\texttt{ out}}  & {\em R} & \#R list of seed point inside each region ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false on error 
+\end{DoxyReturn}
+\Hypertarget{namespaceigl_1_1copyleft_1_1tetgen_a4d7690b5f50749a1aa41dfb088f64629}\label{namespaceigl_1_1copyleft_1_1tetgen_a4d7690b5f50749a1aa41dfb088f64629} 
+\index{igl::copyleft::tetgen@{igl::copyleft::tetgen}!mesh\_to\_tetgenio@{mesh\_to\_tetgenio}}
+\index{mesh\_to\_tetgenio@{mesh\_to\_tetgenio}!igl::copyleft::tetgen@{igl::copyleft::tetgen}}
+\doxysubsubsection{\texorpdfstring{mesh\_to\_tetgenio()}{mesh\_to\_tetgenio()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily bool igl\+::copyleft\+::tetgen\+::mesh\+\_\+to\+\_\+tetgenio (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&}]{V,  }\item[{const std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&}]{F,  }\item[{tetgenio \&}]{in }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceigl_1_1copyleft_1_1tetgen_a74882aad7fdf5792ea49ca1b970985b4}\label{namespaceigl_1_1copyleft_1_1tetgen_a74882aad7fdf5792ea49ca1b970985b4} 
+\index{igl::copyleft::tetgen@{igl::copyleft::tetgen}!mesh\_to\_tetgenio@{mesh\_to\_tetgenio}}
+\index{mesh\_to\_tetgenio@{mesh\_to\_tetgenio}!igl::copyleft::tetgen@{igl::copyleft::tetgen}}
+\doxysubsubsection{\texorpdfstring{mesh\_to\_tetgenio()}{mesh\_to\_tetgenio()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename DerivedV , typename DerivedF $>$ \\
+bool igl\+::copyleft\+::tetgen\+::mesh\+\_\+to\+\_\+tetgenio (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&}]{F,  }\item[{tetgenio \&}]{in }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{namespaceigl_1_1copyleft_1_1tetgen_afcdd28237561a6754d98f58cc6bd9483}\label{namespaceigl_1_1copyleft_1_1tetgen_afcdd28237561a6754d98f58cc6bd9483} 
+\index{igl::copyleft::tetgen@{igl::copyleft::tetgen}!mesh\_to\_tetgenio@{mesh\_to\_tetgenio}}
+\index{mesh\_to\_tetgenio@{mesh\_to\_tetgenio}!igl::copyleft::tetgen@{igl::copyleft::tetgen}}
+\doxysubsubsection{\texorpdfstring{mesh\_to\_tetgenio()}{mesh\_to\_tetgenio()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename DerivedV , typename DerivedF , typename DerivedH , typename DerivedR $>$ \\
+bool igl\+::copyleft\+::tetgen\+::mesh\+\_\+to\+\_\+tetgenio (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&}]{F,  }\item[{const Eigen\+::\+Plain\+Object\+Base$<$ DerivedH $>$ \&}]{H,  }\item[{const Eigen\+::\+Plain\+Object\+Base$<$ DerivedR $>$ \&}]{R,  }\item[{tetgenio \&}]{in }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{namespaceigl_1_1copyleft_1_1tetgen_a52e7d474be94d6836bf773d1ec2d6533}\label{namespaceigl_1_1copyleft_1_1tetgen_a52e7d474be94d6836bf773d1ec2d6533} 
+\index{igl::copyleft::tetgen@{igl::copyleft::tetgen}!mesh\_with\_skeleton@{mesh\_with\_skeleton}}
+\index{mesh\_with\_skeleton@{mesh\_with\_skeleton}!igl::copyleft::tetgen@{igl::copyleft::tetgen}}
+\doxysubsubsection{\texorpdfstring{mesh\_with\_skeleton()}{mesh\_with\_skeleton()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool igl\+::copyleft\+::tetgen\+::mesh\+\_\+with\+\_\+skeleton (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Xi \&}]{F,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{C,  }\item[{const Eigen\+::\+Vector\+Xi \&}]{,  }\item[{const Eigen\+::\+Matrix\+Xi \&}]{BE,  }\item[{const Eigen\+::\+Matrix\+Xi \&}]{CE,  }\item[{const int}]{samples\+\_\+per\+\_\+bone,  }\item[{const std\+::string \&}]{tetgen\+\_\+flags,  }\item[{Eigen\+::\+Matrix\+Xd \&}]{VV,  }\item[{Eigen\+::\+Matrix\+Xi \&}]{TT,  }\item[{Eigen\+::\+Matrix\+Xi \&}]{FF }\end{DoxyParamCaption})}
+
+
+
+Mesh the interior of a given surface with tetrahedra which are graded (tend to be small near the surface and large inside) and conform to the given handles and samplings thereof. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em V} & \#V by 3 list of mesh vertex positions \\
+\hline
+\mbox{\texttt{ in}}  & {\em F} & \#F by 3 list of triangle indices \\
+\hline
+\mbox{\texttt{ in}}  & {\em C} & \#C by 3 list of vertex positions \\
+\hline
+\mbox{\texttt{ in}}  & {\em P} & \#P list of point handle indices \\
+\hline
+\mbox{\texttt{ in}}  & {\em BE} & \#\+BE by 2 list of bone-\/edge indices \\
+\hline
+\mbox{\texttt{ in}}  & {\em CE} & \#\+CE by 2 list of cage-\/edge indices \\
+\hline
+\mbox{\texttt{ in}}  & {\em samples\+\_\+per\+\_\+bone} & \#samples to add per bone \\
+\hline
+\mbox{\texttt{ in}}  & {\em tetgen\+\_\+flags} & flags to pass to tetgen \{\"{}\"{}-\/-\/\texorpdfstring{$>$}{>}\"{}pq2\+Y\"{}\} otherwise you\textquotesingle{}re on your own and it\textquotesingle{}s your funeral if you pass nonsense flags \\
+\hline
+\mbox{\texttt{ out}}  & {\em VV} & \#\+VV by 3 list of tet-\/mesh vertex positions \\
+\hline
+\mbox{\texttt{ out}}  & {\em TT} & \#\+TT by 4 list of tetrahedra indices \\
+\hline
+\mbox{\texttt{ out}}  & {\em FF} & \#\+FF by 3 list of surface triangle indices \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true only on success 
+\end{DoxyReturn}
+\Hypertarget{namespaceigl_1_1copyleft_1_1tetgen_acbfa8a496d77f7278355e9660515aa3e}\label{namespaceigl_1_1copyleft_1_1tetgen_acbfa8a496d77f7278355e9660515aa3e} 
+\index{igl::copyleft::tetgen@{igl::copyleft::tetgen}!mesh\_with\_skeleton@{mesh\_with\_skeleton}}
+\index{mesh\_with\_skeleton@{mesh\_with\_skeleton}!igl::copyleft::tetgen@{igl::copyleft::tetgen}}
+\doxysubsubsection{\texorpdfstring{mesh\_with\_skeleton()}{mesh\_with\_skeleton()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool igl\+::copyleft\+::tetgen\+::mesh\+\_\+with\+\_\+skeleton (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Xi \&}]{F,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{C,  }\item[{const Eigen\+::\+Vector\+Xi \&}]{,  }\item[{const Eigen\+::\+Matrix\+Xi \&}]{BE,  }\item[{const Eigen\+::\+Matrix\+Xi \&}]{CE,  }\item[{const int}]{samples\+\_\+per\+\_\+bone,  }\item[{Eigen\+::\+Matrix\+Xd \&}]{VV,  }\item[{Eigen\+::\+Matrix\+Xi \&}]{TT,  }\item[{Eigen\+::\+Matrix\+Xi \&}]{FF }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{namespaceigl_1_1copyleft_1_1tetgen_a26ef29c9024cbc26643ab5cd1129b43a}\label{namespaceigl_1_1copyleft_1_1tetgen_a26ef29c9024cbc26643ab5cd1129b43a} 
+\index{igl::copyleft::tetgen@{igl::copyleft::tetgen}!read\_into\_tetgenio@{read\_into\_tetgenio}}
+\index{read\_into\_tetgenio@{read\_into\_tetgenio}!igl::copyleft::tetgen@{igl::copyleft::tetgen}}
+\doxysubsubsection{\texorpdfstring{read\_into\_tetgenio()}{read\_into\_tetgenio()}}
+{\footnotesize\ttfamily bool igl\+::copyleft\+::tetgen\+::read\+\_\+into\+\_\+tetgenio (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path,  }\item[{tetgenio \&}]{in }\end{DoxyParamCaption})}
+
+
+
+Read a mesh or point set into tetgenio (input object for calling tetgen). 
+
+Many file formats are already supported by tetgen\+: .off .ply .node .ply .medit .vtk etc. Notably it does not support .obj which is loaded by hand here (also demonstrating how to load points/faces programmatically)
+
+If the file extension is not recognized the filename is assumed to be the basename of a collection describe a tetmesh, (of which at least the .node file must exist)\+: \mbox{[}filename\mbox{]}.node \mbox{[}filename\mbox{]}.ele \mbox{[}filename\mbox{]}.face \mbox{[}filename\mbox{]}.edge \mbox{[}filename\mbox{]}.vol
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em path} & path to file or basename to files \\
+\hline
+\mbox{\texttt{ out}}  & {\em in} & tetgenio input object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false on error 
+\end{DoxyReturn}
+\Hypertarget{namespaceigl_1_1copyleft_1_1tetgen_a63ecd5e93119c4b9eb62440cc0970294}\label{namespaceigl_1_1copyleft_1_1tetgen_a63ecd5e93119c4b9eb62440cc0970294} 
+\index{igl::copyleft::tetgen@{igl::copyleft::tetgen}!tetgenio\_to\_tetmesh@{tetgenio\_to\_tetmesh}}
+\index{tetgenio\_to\_tetmesh@{tetgenio\_to\_tetmesh}!igl::copyleft::tetgen@{igl::copyleft::tetgen}}
+\doxysubsubsection{\texorpdfstring{tetgenio\_to\_tetmesh()}{tetgenio\_to\_tetmesh()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily bool igl\+::copyleft\+::tetgen\+::tetgenio\+\_\+to\+\_\+tetmesh (\begin{DoxyParamCaption}\item[{const tetgenio \&}]{out,  }\item[{std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&}]{V,  }\item[{std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&}]{T,  }\item[{std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&}]{F,  }\item[{std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&}]{R,  }\item[{std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&}]{N,  }\item[{std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&}]{PT,  }\item[{std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&}]{FT,  }\item[{size\+\_\+t \&}]{nR }\end{DoxyParamCaption})}
+
+
+
+Extract a tetrahedral mesh from a tetgenio object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em out} & tetgenio output object \\
+\hline
+\mbox{\texttt{ out}}  & {\em V} & \#V by 3 vertex position list \\
+\hline
+\mbox{\texttt{ out}}  & {\em T} & \#T by 4 list of tetrahedra indices into V \\
+\hline
+\mbox{\texttt{ out}}  & {\em F} & \#F by 3 list of marked facets \\
+\hline
+\mbox{\texttt{ out}}  & {\em R} & \#T list of region IDs for tetrahedra \\
+\hline
+\mbox{\texttt{ out}}  & {\em N} & \#T by 2 list of neighbors for each tetrahedron \\
+\hline
+\mbox{\texttt{ out}}  & {\em PT} & \#V list of incident tetrahedron for each vertex \\
+\hline
+\mbox{\texttt{ out}}  & {\em FT} & \#F by 2 list of tetrahedra sharing each face \\
+\hline
+\mbox{\texttt{ out}}  & {\em nR} & number of regions in output mesh \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false on error 
+\end{DoxyReturn}
+\Hypertarget{namespaceigl_1_1copyleft_1_1tetgen_ae61f5bd1bef2af521f0c09c47a979af5}\label{namespaceigl_1_1copyleft_1_1tetgen_ae61f5bd1bef2af521f0c09c47a979af5} 
+\index{igl::copyleft::tetgen@{igl::copyleft::tetgen}!tetgenio\_to\_tetmesh@{tetgenio\_to\_tetmesh}}
+\index{tetgenio\_to\_tetmesh@{tetgenio\_to\_tetmesh}!igl::copyleft::tetgen@{igl::copyleft::tetgen}}
+\doxysubsubsection{\texorpdfstring{tetgenio\_to\_tetmesh()}{tetgenio\_to\_tetmesh()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily bool igl\+::copyleft\+::tetgen\+::tetgenio\+\_\+to\+\_\+tetmesh (\begin{DoxyParamCaption}\item[{const tetgenio \&}]{out,  }\item[{std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&}]{V,  }\item[{std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&}]{T,  }\item[{std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&}]{F }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{namespaceigl_1_1copyleft_1_1tetgen_ae60d719de3a41a70e8c4fa08d2d33e59}\label{namespaceigl_1_1copyleft_1_1tetgen_ae60d719de3a41a70e8c4fa08d2d33e59} 
+\index{igl::copyleft::tetgen@{igl::copyleft::tetgen}!tetgenio\_to\_tetmesh@{tetgenio\_to\_tetmesh}}
+\index{tetgenio\_to\_tetmesh@{tetgenio\_to\_tetmesh}!igl::copyleft::tetgen@{igl::copyleft::tetgen}}
+\doxysubsubsection{\texorpdfstring{tetgenio\_to\_tetmesh()}{tetgenio\_to\_tetmesh()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily bool igl\+::copyleft\+::tetgen\+::tetgenio\+\_\+to\+\_\+tetmesh (\begin{DoxyParamCaption}\item[{const tetgenio \&}]{out,  }\item[{std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&}]{V,  }\item[{std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&}]{T }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{namespaceigl_1_1copyleft_1_1tetgen_a62c127834e91e67b7e4ebe347d4c23bb}\label{namespaceigl_1_1copyleft_1_1tetgen_a62c127834e91e67b7e4ebe347d4c23bb} 
+\index{igl::copyleft::tetgen@{igl::copyleft::tetgen}!tetgenio\_to\_tetmesh@{tetgenio\_to\_tetmesh}}
+\index{tetgenio\_to\_tetmesh@{tetgenio\_to\_tetmesh}!igl::copyleft::tetgen@{igl::copyleft::tetgen}}
+\doxysubsubsection{\texorpdfstring{tetgenio\_to\_tetmesh()}{tetgenio\_to\_tetmesh()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily template$<$typename DerivedV , typename DerivedT , typename DerivedF $>$ \\
+bool igl\+::copyleft\+::tetgen\+::tetgenio\+\_\+to\+\_\+tetmesh (\begin{DoxyParamCaption}\item[{const tetgenio \&}]{out,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedT $>$ \&}]{T,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&}]{F }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{namespaceigl_1_1copyleft_1_1tetgen_a0ba8a207f28e5fc5eedb946f50562f18}\label{namespaceigl_1_1copyleft_1_1tetgen_a0ba8a207f28e5fc5eedb946f50562f18} 
+\index{igl::copyleft::tetgen@{igl::copyleft::tetgen}!tetgenio\_to\_tetmesh@{tetgenio\_to\_tetmesh}}
+\index{tetgenio\_to\_tetmesh@{tetgenio\_to\_tetmesh}!igl::copyleft::tetgen@{igl::copyleft::tetgen}}
+\doxysubsubsection{\texorpdfstring{tetgenio\_to\_tetmesh()}{tetgenio\_to\_tetmesh()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily template$<$typename DerivedV , typename DerivedT $>$ \\
+bool igl\+::copyleft\+::tetgen\+::tetgenio\+\_\+to\+\_\+tetmesh (\begin{DoxyParamCaption}\item[{const tetgenio \&}]{out,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedT $>$ \&}]{T }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{namespaceigl_1_1copyleft_1_1tetgen_a1fc3157f647538d164f586e08dfe9a85}\label{namespaceigl_1_1copyleft_1_1tetgen_a1fc3157f647538d164f586e08dfe9a85} 
+\index{igl::copyleft::tetgen@{igl::copyleft::tetgen}!tetrahedralize@{tetrahedralize}}
+\index{tetrahedralize@{tetrahedralize}!igl::copyleft::tetgen@{igl::copyleft::tetgen}}
+\doxysubsubsection{\texorpdfstring{tetrahedralize()}{tetrahedralize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily int igl\+::copyleft\+::tetgen\+::tetrahedralize (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&}]{V,  }\item[{const std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&}]{F,  }\item[{const std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&}]{H,  }\item[{const std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&}]{R,  }\item[{const std\+::string}]{switches,  }\item[{std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&}]{TV,  }\item[{std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&}]{TT,  }\item[{std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&}]{TF,  }\item[{std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&}]{TR,  }\item[{std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&}]{TN,  }\item[{std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&}]{PT,  }\item[{std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&}]{FT,  }\item[{size\+\_\+t \&}]{num\+Regions }\end{DoxyParamCaption})}
+
+
+
+Mesh the interior of a surface mesh (V,F) using tetgen. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em V} & \#V by 3 vertex position list \\
+\hline
+\mbox{\texttt{ in}}  & {\em F} & \#F list of polygon face indices into V (0-\/indexed) \\
+\hline
+\mbox{\texttt{ in}}  & {\em H} & \#H by 3 list of seed points inside holes \\
+\hline
+\mbox{\texttt{ in}}  & {\em R} & \#R by 5 list of region attributes ~\newline
+ \\
+\hline
+\mbox{\texttt{ in}}  & {\em switches} & string of tetgen options (See tetgen documentation) e.\+g. \"{}pq1.\+414a0.\+01\"{} tries to mesh the interior of a given surface with quality and area constraints \"{}\"{} will mesh the convex hull constrained to pass through V (ignores F) \\
+\hline
+\mbox{\texttt{ out}}  & {\em TV} & \#\+TV by 3 vertex position list \\
+\hline
+\mbox{\texttt{ out}}  & {\em TT} & \#\+TT by 4 list of tet face indices \\
+\hline
+\mbox{\texttt{ out}}  & {\em TF} & \#\+TF by 3 list of triangle face indices \\
+\hline
+\mbox{\texttt{ out}}  & {\em TR} & \#\+TT list of region ID for each tetrahedron ~\newline
+ \\
+\hline
+\mbox{\texttt{ out}}  & {\em TN} & \#\+TT by 4 list of indices neighbors for each tetrahedron \\
+\hline
+\mbox{\texttt{ out}}  & {\em PT} & \#\+TV list of incident tetrahedron for a vertex \\
+\hline
+\mbox{\texttt{ out}}  & {\em FT} & \#\+TF by 2 list of tetrahedrons sharing a triface ~\newline
+ \\
+\hline
+\mbox{\texttt{ out}}  & {\em num\+Regions} & Number of regions in output mesh \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status\+: 0 success 1 tetgen threw exception 2 tetgen did not crash but could not create any tets (probably there are holes, duplicate faces etc.) -\/1 other error 
+\end{DoxyReturn}
+\Hypertarget{namespaceigl_1_1copyleft_1_1tetgen_ab4136f1f19b670bb69a05b211b6f51bb}\label{namespaceigl_1_1copyleft_1_1tetgen_ab4136f1f19b670bb69a05b211b6f51bb} 
+\index{igl::copyleft::tetgen@{igl::copyleft::tetgen}!tetrahedralize@{tetrahedralize}}
+\index{tetrahedralize@{tetrahedralize}!igl::copyleft::tetgen@{igl::copyleft::tetgen}}
+\doxysubsubsection{\texorpdfstring{tetrahedralize()}{tetrahedralize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily int igl\+::copyleft\+::tetgen\+::tetrahedralize (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&}]{V,  }\item[{const std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&}]{F,  }\item[{const std\+::string}]{switches,  }\item[{std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&}]{TV,  }\item[{std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&}]{TT,  }\item[{std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&}]{TF }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{namespaceigl_1_1copyleft_1_1tetgen_a8a5fdfe393bd442def86f9f936df2ed2}\label{namespaceigl_1_1copyleft_1_1tetgen_a8a5fdfe393bd442def86f9f936df2ed2} 
+\index{igl::copyleft::tetgen@{igl::copyleft::tetgen}!tetrahedralize@{tetrahedralize}}
+\index{tetrahedralize@{tetrahedralize}!igl::copyleft::tetgen@{igl::copyleft::tetgen}}
+\doxysubsubsection{\texorpdfstring{tetrahedralize()}{tetrahedralize()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$typename DerivedV , typename DerivedF , typename Derived\+TV , typename Derived\+TT , typename Derived\+TF $>$ \\
+int igl\+::copyleft\+::tetgen\+::tetrahedralize (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&}]{F,  }\item[{const std\+::string}]{switches,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TV $>$ \&}]{TV,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TT $>$ \&}]{TT,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TF $>$ \&}]{TF }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{namespaceigl_1_1copyleft_1_1tetgen_a956297a4e1a76096f6dcec3c807087e3}\label{namespaceigl_1_1copyleft_1_1tetgen_a956297a4e1a76096f6dcec3c807087e3} 
+\index{igl::copyleft::tetgen@{igl::copyleft::tetgen}!tetrahedralize@{tetrahedralize}}
+\index{tetrahedralize@{tetrahedralize}!igl::copyleft::tetgen@{igl::copyleft::tetgen}}
+\doxysubsubsection{\texorpdfstring{tetrahedralize()}{tetrahedralize()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily int igl\+::copyleft\+::tetgen\+::tetrahedralize (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&}]{V,  }\item[{const std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&}]{F,  }\item[{const std\+::vector$<$ int $>$ \&}]{VM,  }\item[{const std\+::vector$<$ int $>$ \&}]{FM,  }\item[{const std\+::string}]{switches,  }\item[{std\+::vector$<$ std\+::vector$<$ REAL $>$ $>$ \&}]{TV,  }\item[{std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&}]{TT,  }\item[{std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&}]{TF,  }\item[{std\+::vector$<$ int $>$ \&}]{TM }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{namespaceigl_1_1copyleft_1_1tetgen_a9935cb2c069f907c5e9922bd46e1de72}\label{namespaceigl_1_1copyleft_1_1tetgen_a9935cb2c069f907c5e9922bd46e1de72} 
+\index{igl::copyleft::tetgen@{igl::copyleft::tetgen}!tetrahedralize@{tetrahedralize}}
+\index{tetrahedralize@{tetrahedralize}!igl::copyleft::tetgen@{igl::copyleft::tetgen}}
+\doxysubsubsection{\texorpdfstring{tetrahedralize()}{tetrahedralize()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$typename DerivedV , typename DerivedF , typename Derived\+VM , typename Derived\+FM , typename Derived\+TV , typename Derived\+TT , typename Derived\+TF , typename Derived\+TM $>$ \\
+int igl\+::copyleft\+::tetgen\+::tetrahedralize (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&}]{F,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+VM $>$ \&}]{VM,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+FM $>$ \&}]{FM,  }\item[{const std\+::string}]{switches,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TV $>$ \&}]{TV,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TT $>$ \&}]{TT,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TF $>$ \&}]{TF,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TM $>$ \&}]{TM }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+\Hypertarget{namespaceigl_1_1copyleft_1_1tetgen_a5fd2ea548c768b65074feb6b75b90649}\label{namespaceigl_1_1copyleft_1_1tetgen_a5fd2ea548c768b65074feb6b75b90649} 
+\index{igl::copyleft::tetgen@{igl::copyleft::tetgen}!tetrahedralize@{tetrahedralize}}
+\index{tetrahedralize@{tetrahedralize}!igl::copyleft::tetgen@{igl::copyleft::tetgen}}
+\doxysubsubsection{\texorpdfstring{tetrahedralize()}{tetrahedralize()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$typename DerivedV , typename DerivedF , typename DerivedH , typename DerivedR , typename Derived\+TV , typename Derived\+TT , typename Derived\+TF , typename Derived\+TR $>$ \\
+int igl\+::copyleft\+::tetgen\+::tetrahedralize (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&}]{F,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedH $>$ \&}]{H,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedR $>$ \&}]{R,  }\item[{const std\+::string}]{switches,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TV $>$ \&}]{TV,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TT $>$ \&}]{TT,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TF $>$ \&}]{TF,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TR $>$ \&}]{TR,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TT $>$ \&}]{TN,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TT $>$ \&}]{PT,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TT $>$ \&}]{FT,  }\item[{size\+\_\+t \&}]{num\+Regions }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+

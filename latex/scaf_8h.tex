@@ -1,0 +1,31 @@
+\doxysection{include/igl/triangle/scaf.h File Reference}
+\hypertarget{scaf_8h}{}\label{scaf_8h}\index{include/igl/triangle/scaf.h@{include/igl/triangle/scaf.h}}
+{\ttfamily \#include \"{}../slim.\+h\"{}}\newline
+{\ttfamily \#include \"{}../igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include \"{}../\+Mapping\+Energy\+Type.\+h\"{}}\newline
+{\ttfamily \#include \"{}scaf.\+cpp\"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData}{igl\+::triangle\+::\+SCAFData}}
+\begin{DoxyCompactList}\small\item\em Use a similar interface to igl\+::slim Implement ready-\/to-\/use 2D version of the algorithm described in SCAF\+: Simplicial Complex Augmentation Framework for Bijective Maps Zhongshi Jiang, Scott Schaefer, Daniele Panozzo, ACM Trancaction on Graphics (Proc. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\item 
+namespace \mbox{\hyperlink{namespaceigl_1_1triangle}{igl\+::triangle}}
+\item 
+namespace \mbox{\hyperlink{namespaceigl_1_1triangle_1_1scaf}{igl\+::triangle\+::scaf}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespaceigl_1_1triangle_a03d5ece31e4a17a719f9f84cae3abc60}{igl\+::triangle\+::scaf\+\_\+precompute}} (const Eigen\+::\+Matrix\+Xd \&V, const Eigen\+::\+Matrix\+Xi \&F, const Eigen\+::\+Matrix\+Xd \&V\+\_\+init, \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData}{triangle\+::\+SCAFData}} \&data, \mbox{\hyperlink{namespaceigl_a79904ddf7fe8d79169b339cf43f9e739}{Mapping\+Energy\+Type}} slim\+\_\+energy, Eigen\+::\+Vector\+Xi \&b, Eigen\+::\+Matrix\+Xd \&bc, double soft\+\_\+p)
+\begin{DoxyCompactList}\small\item\em Compute necessary information to start using SCAF. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{namespaceigl_1_1triangle_af0b4e101055d768d68ced968dd25c578}{igl\+::triangle\+::scaf\+\_\+solve}} (\mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData}{triangle\+::\+SCAFData}} \&data, int iter\+\_\+num)
+\begin{DoxyCompactList}\small\item\em Run iter\+\_\+num iterations of SCAF, with precomputed data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceigl_1_1triangle_a127da61612f0261ab9984b131ceadf79}{igl\+::triangle\+::scaf\+\_\+system}} (\mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData}{triangle\+::\+SCAFData}} \&s, Eigen\+::\+Sparse\+Matrix$<$ double $>$ \&L, Eigen\+::\+Vector\+Xd \&rhs)
+\begin{DoxyCompactList}\small\item\em Set up the SCAF system L \texorpdfstring{$\ast$}{*} uv = rhs, without solving it. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespaceigl_1_1triangle_1_1scaf_a684a4bf5b4e9a6eb695edb2563bd7377}{igl\+::triangle\+::scaf\+::compute\+\_\+energy}} (\mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData}{SCAFData}} \&s, const Eigen\+::\+Matrix\+Xd \&w\+\_\+uv, bool whole)
+\begin{DoxyCompactList}\small\item\em Compute SCAF energy. \end{DoxyCompactList}\end{DoxyCompactItemize}

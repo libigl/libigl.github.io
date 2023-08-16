@@ -1,12 +1,9 @@
 \doxysection{igl Namespace Reference}
 \hypertarget{namespaceigl}{}\label{namespaceigl}\index{igl@{igl}}
-
-
-Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency.  
-
-
 \doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl_1_1anttweakbar}{anttweakbar}}
 \item 
 namespace \mbox{\hyperlink{namespaceigl_1_1copyleft}{copyleft}}
 \item 
@@ -20,11 +17,19 @@ namespace \mbox{\hyperlink{namespaceigl_1_1mosek}{mosek}}
 \item 
 namespace \mbox{\hyperlink{namespaceigl_1_1opengl}{opengl}}
 \item 
+namespace \mbox{\hyperlink{namespaceigl_1_1png}{png}}
+\item 
+namespace \mbox{\hyperlink{namespaceigl_1_1predicates}{predicates}}
+\item 
 namespace \mbox{\hyperlink{namespaceigl_1_1serialization}{serialization}}
 \item 
 namespace \mbox{\hyperlink{namespaceigl_1_1spectra}{spectra}}
 \item 
 namespace \mbox{\hyperlink{namespaceigl_1_1tinyply}{tinyply}}
+\item 
+namespace \mbox{\hyperlink{namespaceigl_1_1triangle}{triangle}}
+\item 
+namespace \mbox{\hyperlink{namespaceigl_1_1xml}{xml}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
@@ -48,13 +53,17 @@ struct \mbox{\hyperlink{structigl_1_1FileMemoryBuffer}{File\+Memory\+Buffer}}
 struct \mbox{\hyperlink{structigl_1_1FileMemoryStream}{File\+Memory\+Stream}}
 \begin{DoxyCompactList}\small\item\em Class to convert a FILE \texorpdfstring{$\ast$}{*} to an std\+::istream. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classigl_1_1HalfEdgeIterator}{Half\+Edge\+Iterator}}
-\item 
+\begin{DoxyCompactList}\small\item\em Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structigl_1_1HeatGeodesicsData}{Heat\+Geodesics\+Data}}
 \begin{DoxyCompactList}\small\item\em Precomputation data for heat\+\_\+geodesics\+\_\+solve. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structigl_1_1Hit}{Hit}}
 \begin{DoxyCompactList}\small\item\em Reimplementation of the embree\+::\+Hit struct from embree1.\+0. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structigl_1_1IndexDimLessThan}{Index\+Dim\+Less\+Than}}
 \begin{DoxyCompactList}\small\item\em Comparison struct for use with functions like std\+::sort. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structigl_1_1IndexedPointer}{Indexed\+Pointer}}
+\item 
+struct \mbox{\hyperlink{structigl_1_1IndexedPointerBase}{Indexed\+Pointer\+Base}}
+\item 
 struct \mbox{\hyperlink{structigl_1_1IndexEquals}{Index\+Equals}}
 \begin{DoxyCompactList}\small\item\em Comparison struct used by unique. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structigl_1_1IndexLessThan}{Index\+Less\+Than}}
@@ -73,6 +82,10 @@ class \mbox{\hyperlink{classigl_1_1MshLoader}{Msh\+Loader}}
 \begin{DoxyCompactList}\small\item\em Class for loading information from .msh file depends only on c++stl library. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classigl_1_1MshSaver}{Msh\+Saver}}
 \begin{DoxyCompactList}\small\item\em Class for dumping information to .msh file depends only on c++stl library current implementation works only with 3D information. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classigl_1_1Serializable}{Serializable}}
+\item 
+struct \mbox{\hyperlink{structigl_1_1SerializableBase}{Serializable\+Base}}
+\item 
 struct \mbox{\hyperlink{structigl_1_1ShapeupData}{Shapeup\+Data}}
 \begin{DoxyCompactList}\small\item\em Parameters and precomputed data for Shape\+Up. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structigl_1_1SLIMData}{SLIMData}}
@@ -81,6 +94,8 @@ class \mbox{\hyperlink{classigl_1_1SortableRow}{Sortable\+Row}}
 \begin{DoxyCompactList}\small\item\em A row of things that can be sorted against other rows. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classigl_1_1Timer}{Timer}}
 \begin{DoxyCompactList}\small\item\em Simple timer class. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classigl_1_1WindingNumberAABB}{Winding\+Number\+AABB}}
+\begin{DoxyCompactList}\small\item\em Class for building an \doxylink{classigl_1_1AABB}{AABB} tree to implement the divide and conquer algorithm described in \mbox{[}Jacobson et al. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classigl_1_1WindingNumberTree}{Winding\+Number\+Tree}}
 \begin{DoxyCompactList}\small\item\em Space partitioning tree for computing winding number hierarchically. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Typedefs}
@@ -1213,9 +1228,9 @@ void \mbox{\hyperlink{namespaceigl_a3ac6a5f35466ea9216e1de32fecaf032}{per\+\_\+v
 \begin{DoxyCompactList}\small\item\em Determine if a given mesh induces a piecewise constant winding number field\+: Is this mesh valid input to solid set operations. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename DerivedF $>$ }\\bool \mbox{\hyperlink{namespaceigl_a4321fc08252fa849e3fa6f47f3047fd9}{piecewise\+\_\+constant\+\_\+winding\+\_\+number}} (const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F)
 \begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename DerivedA , typename DerivedX $>$ }\\IGL\+\_\+\+DEPRECATED void \mbox{\hyperlink{namespaceigl_ad498ebcab984468e7f07b426d677af29}{pinv}} (const Eigen\+::\+Matrix\+Base$<$ DerivedA $>$ \&A, typename Derived\+A\+::\+Scalar tol, Eigen\+::\+Plain\+Object\+Base$<$ DerivedX $>$ \&X)
+{\footnotesize template$<$typename DerivedA , typename DerivedX $>$ }\\\mbox{\hyperlink{deprecated_8h_a2c4333bea63e89fcd3f6f22e3fbe50bf}{IGL\+\_\+\+DEPRECATED}} void \mbox{\hyperlink{namespaceigl_ad498ebcab984468e7f07b426d677af29}{pinv}} (const Eigen\+::\+Matrix\+Base$<$ DerivedA $>$ \&A, typename Derived\+A\+::\+Scalar tol, Eigen\+::\+Plain\+Object\+Base$<$ DerivedX $>$ \&X)
 \begin{DoxyCompactList}\small\item\em Compute the Moore-\/\+Penrose pseudoinverse. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename DerivedA , typename DerivedX $>$ }\\IGL\+\_\+\+DEPRECATED void \mbox{\hyperlink{namespaceigl_a2425e60144957f17b755fe8831ec8673}{pinv}} (const Eigen\+::\+Matrix\+Base$<$ DerivedA $>$ \&A, Eigen\+::\+Plain\+Object\+Base$<$ DerivedX $>$ \&X)
+{\footnotesize template$<$typename DerivedA , typename DerivedX $>$ }\\\mbox{\hyperlink{deprecated_8h_a2c4333bea63e89fcd3f6f22e3fbe50bf}{IGL\+\_\+\+DEPRECATED}} void \mbox{\hyperlink{namespaceigl_a2425e60144957f17b755fe8831ec8673}{pinv}} (const Eigen\+::\+Matrix\+Base$<$ DerivedA $>$ \&A, Eigen\+::\+Plain\+Object\+Base$<$ DerivedX $>$ \&X)
 \begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename DerivedV , typename DerivedF $>$ }\\void \mbox{\hyperlink{namespaceigl_a4a6123b286eebf1eb6e5ca4957ae2b89}{planarize\+\_\+quad\+\_\+mesh}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&Vin, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const int max\+Iter, const double \&threshold, Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&Vout)
 \begin{DoxyCompactList}\small\item\em Planarizes a given quad mesh using the algorithm described in the paper \"{}\+Shape-\/\+Up\+: Shaping Discrete Geometry with Projections\"{} by S. \end{DoxyCompactList}\item 
@@ -1249,6 +1264,10 @@ bool \mbox{\hyperlink{namespaceigl_a0dad55e28df3f93b606cddb108b85e9d}{point\+\_\
 \begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespaceigl_a0f935d00d75dd71d9b65d2f6a7fe4a19}{print\+\_\+ijv}} (const Eigen\+::\+Sparse\+Matrix$<$ T $>$ \&X, const int offset=0)
 \begin{DoxyCompactList}\small\item\em Prints a 3 column matrix representing \mbox{[}I,J,V\mbox{]} = find(\+X). \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespaceigl_a5d05e9d7e5d74e1a763370ff141d3628}{print\+\_\+vector}} (std\+::vector$<$ std\+::vector$<$ T $>$ $>$ \&v)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespaceigl_a59761c584c133e800d3e0f34dfa717cc}{print\+\_\+vector}} (std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ T $>$ $>$ $>$ \&v)
+\item 
 {\footnotesize template$<$typename DerivedX , typename DerivedY , typename Scalar , typename DerivedR , typename DerivedT $>$ }\\void \mbox{\hyperlink{namespaceigl_abb69dbb018159a761459ceee76dd1fd0}{procrustes}} (const Eigen\+::\+Matrix\+Base$<$ DerivedX $>$ \&X, const Eigen\+::\+Matrix\+Base$<$ DerivedY $>$ \&Y, bool include\+Scaling, bool include\+Reflections, Scalar \&scale, Eigen\+::\+Plain\+Object\+Base$<$ DerivedR $>$ \&R, Eigen\+::\+Plain\+Object\+Base$<$ DerivedT $>$ \&t)
 \begin{DoxyCompactList}\small\item\em Solve Procrustes problem in d dimensions. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename DerivedX , typename DerivedY , typename Scalar , int DIM, int TType$>$ }\\void \mbox{\hyperlink{namespaceigl_a3256b2f17cb8bf71950143ab00f2fe23}{procrustes}} (const Eigen\+::\+Matrix\+Base$<$ DerivedX $>$ \&X, const Eigen\+::\+Matrix\+Base$<$ DerivedY $>$ \&Y, bool include\+Scaling, bool include\+Reflections, Eigen\+::\+Transform$<$ Scalar, DIM, TType $>$ \&T)
@@ -1505,6 +1524,24 @@ void \mbox{\hyperlink{namespaceigl_a32d8c4634efb1346c13c78dc765a3550}{sample\+\_
 \begin{DoxyCompactList}\small\item\em Finds all UV-\/space boundaries of a mesh. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Derived\+Source , typename Derived\+Dir $>$ }\\bool \mbox{\hyperlink{namespaceigl_ab4c9b0f32a7605d9de8575ba478e0817}{segment\+\_\+segment\+\_\+intersect}} (const Eigen\+::\+Matrix\+Base$<$ Derived\+Source $>$ \&p, const Eigen\+::\+Matrix\+Base$<$ Derived\+Dir $>$ \&r, const Eigen\+::\+Matrix\+Base$<$ Derived\+Source $>$ \&q, const Eigen\+::\+Matrix\+Base$<$ Derived\+Dir $>$ \&s, double \&t, double \&u, double eps=1e-\/6)
 \begin{DoxyCompactList}\small\item\em Determine whether two line segments A,B intersect. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{namespaceigl_a212b29890b63152674a53444a2003677}{serialize}} (const T \&obj, const std\+::string \&filename)
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{namespaceigl_ab2bd82ed66c652d0930f6b460886010b}{serialize}} (const T \&obj, const std\+::string \&object\+Name, const std\+::string \&filename, bool overwrite=false)
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{namespaceigl_af1e1aa7b19e544f9f8d0e5d2872c1b21}{serialize}} (const T \&obj, const std\+::string \&object\+Name, std\+::vector$<$ char $>$ \&buffer)
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{namespaceigl_a61617b81f6b89d6692a31f8d34c6d294}{deserialize}} (T \&obj, const std\+::string \&filename)
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{namespaceigl_aa8dfda78a1c420b40f80b07d1c3f8b2e}{deserialize}} (T \&obj, const std\+::string \&object\+Name, const std\+::string \&filename)
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{namespaceigl_a5dd8043bf43851bafaa6e264162eefce}{deserialize}} (T \&obj, const std\+::string \&object\+Name, const std\+::vector$<$ char $>$ \&buffer)
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{namespaceigl_ad1b7a7a566f0d4a5553987d4d25aedec}{serializer}} (bool \mbox{\hyperlink{namespaceigl_a212b29890b63152674a53444a2003677}{serialize}}, T \&obj, const std\+::string \&filename)
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{namespaceigl_a8dba28198b48a2a0432d5c4e640484e4}{serializer}} (bool \mbox{\hyperlink{namespaceigl_a212b29890b63152674a53444a2003677}{serialize}}, T \&obj, const std\+::string \&object\+Name, const std\+::string \&filename, bool overwrite=false)
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{namespaceigl_af28b32c6f34213f61257beff8a2927ca}{serializer}} (bool \mbox{\hyperlink{namespaceigl_a212b29890b63152674a53444a2003677}{serialize}}, T \&obj, const std\+::string \&object\+Name, std\+::vector$<$ char $>$ \&buffer)
+\item 
 {\footnotesize template$<$typename DerivedA , typename DerivedB , typename DerivedC , typename Derived\+IA $>$ }\\void \mbox{\hyperlink{namespaceigl_ad9fa51487804e5c3f67e72d4ff8fceb1}{setdiff}} (const Eigen\+::\+Matrix\+Base$<$ DerivedA $>$ \&A, const Eigen\+::\+Matrix\+Base$<$ DerivedB $>$ \&B, Eigen\+::\+Plain\+Object\+Base$<$ DerivedC $>$ \&C, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+IA $>$ \&IA)
 \begin{DoxyCompactList}\small\item\em Set difference of elements of matrices. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename DerivedA , typename DerivedB , typename DerivedC , typename Derived\+IA , typename Derived\+IB $>$ }\\void \mbox{\hyperlink{namespaceigl_a925a8ea3a2337a70f7cadc603e7e741e}{setunion}} (const Eigen\+::\+Dense\+Base$<$ DerivedA $>$ \&A, const Eigen\+::\+Dense\+Base$<$ DerivedB $>$ \&B, Eigen\+::\+Plain\+Object\+Base$<$ DerivedC $>$ \&C, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+IA $>$ \&IA, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+IB $>$ \&IB)
@@ -1549,9 +1586,9 @@ void \mbox{\hyperlink{namespaceigl_a571aed34e627db21360984824ccc7838}{shortest\+
 \begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename DerivedV , typename DerivedE , typename Derived\+EN , typename Derived\+VN , typename Derivedq , typename Scalar , typename Derivedc , typename Derivedn $>$ }\\void \mbox{\hyperlink{namespaceigl_a5011d0263ec9b3347530d3d807596671}{signed\+\_\+distance\+\_\+pseudonormal}} (const \mbox{\hyperlink{classigl_1_1AABB}{AABB}}$<$ DerivedV, 2 $>$ \&tree, const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedE $>$ \&E, const Eigen\+::\+Matrix\+Base$<$ Derived\+EN $>$ \&EN, const Eigen\+::\+Matrix\+Base$<$ Derived\+VN $>$ \&VN, const Eigen\+::\+Matrix\+Base$<$ Derivedq $>$ \&q, Scalar \&s, Scalar \&sqrd, int \&i, Eigen\+::\+Plain\+Object\+Base$<$ Derivedc $>$ \&c, Eigen\+::\+Plain\+Object\+Base$<$ Derivedn $>$ \&n)
 \begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename DerivedV , typename DerivedF , typename Derivedq $>$ }\\Derived\+V\+::\+Scalar \mbox{\hyperlink{namespaceigl_a75576a9807c547b55f797639412650d6}{signed\+\_\+distance\+\_\+winding\+\_\+number}} (const \mbox{\hyperlink{classigl_1_1AABB}{AABB}}$<$ DerivedV, 3 $>$ \&tree, const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const igl\+::\+Winding\+Number\+AABB$<$ Derivedq, DerivedV, DerivedF $>$ \&hier, const Eigen\+::\+Matrix\+Base$<$ Derivedq $>$ \&q)
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename Derivedq $>$ }\\Derived\+V\+::\+Scalar \mbox{\hyperlink{namespaceigl_a75576a9807c547b55f797639412650d6}{signed\+\_\+distance\+\_\+winding\+\_\+number}} (const \mbox{\hyperlink{classigl_1_1AABB}{AABB}}$<$ DerivedV, 3 $>$ \&tree, const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const \mbox{\hyperlink{classigl_1_1WindingNumberAABB}{igl\+::\+Winding\+Number\+AABB}}$<$ Derivedq, DerivedV, DerivedF $>$ \&hier, const Eigen\+::\+Matrix\+Base$<$ Derivedq $>$ \&q)
 \begin{DoxyCompactList}\small\item\em Computes signed distance to mesh using winding number with precomputed \doxylink{classigl_1_1AABB}{AABB}. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename DerivedV , typename DerivedF , typename Derivedq , typename Scalar , typename Derivedc $>$ }\\void \mbox{\hyperlink{namespaceigl_ad184a41c6d66cebef9a4714a2d59326f}{signed\+\_\+distance\+\_\+winding\+\_\+number}} (const \mbox{\hyperlink{classigl_1_1AABB}{AABB}}$<$ DerivedV, 3 $>$ \&tree, const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const igl\+::\+Winding\+Number\+AABB$<$ Derivedq, DerivedV, DerivedF $>$ \&hier, const Eigen\+::\+Matrix\+Base$<$ Derivedq $>$ \&q, Scalar \&s, Scalar \&sqrd, int \&i, Eigen\+::\+Plain\+Object\+Base$<$ Derivedc $>$ \&c)
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename Derivedq , typename Scalar , typename Derivedc $>$ }\\void \mbox{\hyperlink{namespaceigl_ad184a41c6d66cebef9a4714a2d59326f}{signed\+\_\+distance\+\_\+winding\+\_\+number}} (const \mbox{\hyperlink{classigl_1_1AABB}{AABB}}$<$ DerivedV, 3 $>$ \&tree, const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const \mbox{\hyperlink{classigl_1_1WindingNumberAABB}{igl\+::\+Winding\+Number\+AABB}}$<$ Derivedq, DerivedV, DerivedF $>$ \&hier, const Eigen\+::\+Matrix\+Base$<$ Derivedq $>$ \&q, Scalar \&s, Scalar \&sqrd, int \&i, Eigen\+::\+Plain\+Object\+Base$<$ Derivedc $>$ \&c)
 \begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename DerivedV , typename DerivedF , typename Derivedq , typename Scalar , typename Derivedc $>$ }\\void \mbox{\hyperlink{namespaceigl_af25f0719d3f6108b4917e1511a4941f5}{signed\+\_\+distance\+\_\+winding\+\_\+number}} (const \mbox{\hyperlink{classigl_1_1AABB}{AABB}}$<$ DerivedV, 2 $>$ \&tree, const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const Eigen\+::\+Matrix\+Base$<$ Derivedq $>$ \&q, Scalar \&s, Scalar \&sqrd, int \&i, Eigen\+::\+Plain\+Object\+Base$<$ Derivedc $>$ \&c)
 \begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
@@ -1729,6 +1766,12 @@ void \mbox{\hyperlink{namespaceigl_a030deb66b915a2f498701588640ee3a4}{swept\+\_\
 \begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespaceigl_a5fa327db1af41a1e29e474981b963409}{transpose\+\_\+blocks}} (const Eigen\+::\+Matrix$<$ T, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&A, const size\+\_\+t k, const size\+\_\+t dim, Eigen\+::\+Matrix$<$ T, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&B)
 \begin{DoxyCompactList}\small\item\em Transpose blocks of a matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derived\+P1 , typename Derived\+Q1 , typename Derived\+R1 , typename Derived\+P2 , typename Derived\+Q2 , typename Derived\+R2 $>$ }\\bool \mbox{\hyperlink{namespaceigl_a62161fdfef57c22542b38d735550b635}{tri\+\_\+tri\+\_\+overlap\+\_\+test\+\_\+3d}} (const Eigen\+::\+Matrix\+Base$<$ Derived\+P1 $>$ \&p1, const Eigen\+::\+Matrix\+Base$<$ Derived\+Q1 $>$ \&q1, const Eigen\+::\+Matrix\+Base$<$ Derived\+R1 $>$ \&r1, const Eigen\+::\+Matrix\+Base$<$ Derived\+P2 $>$ \&p2, const Eigen\+::\+Matrix\+Base$<$ Derived\+Q2 $>$ \&q2, const Eigen\+::\+Matrix\+Base$<$ Derived\+R2 $>$ \&r2)
+\item 
+{\footnotesize template$<$typename Derived\+P1 , typename Derived\+Q1 , typename Derived\+R1 , typename Derived\+P2 , typename Derived\+Q2 , typename Derived\+R2 , typename DerivedS , typename DerivedT $>$ }\\bool \mbox{\hyperlink{namespaceigl_a56ff893a73c2642eeec2692d37aad4d0}{tri\+\_\+tri\+\_\+intersection\+\_\+test\+\_\+3d}} (const Eigen\+::\+Matrix\+Base$<$ Derived\+P1 $>$ \&p1, const Eigen\+::\+Matrix\+Base$<$ Derived\+Q1 $>$ \&q1, const Eigen\+::\+Matrix\+Base$<$ Derived\+R1 $>$ \&r1, const Eigen\+::\+Matrix\+Base$<$ Derived\+P2 $>$ \&p2, const Eigen\+::\+Matrix\+Base$<$ Derived\+Q2 $>$ \&q2, const Eigen\+::\+Matrix\+Base$<$ Derived\+R2 $>$ \&r2, bool \&coplanar, Eigen\+::\+Matrix\+Base$<$ DerivedS $>$ \&source, Eigen\+::\+Matrix\+Base$<$ DerivedT $>$ \&target)
+\item 
+{\footnotesize template$<$typename Derived\+P1 , typename Derived\+Q1 , typename Derived\+R1 , typename Derived\+P2 , typename Derived\+Q2 , typename Derived\+R2 $>$ }\\bool \mbox{\hyperlink{namespaceigl_ac4e80369c0a74cc009ec973dd70fd752}{tri\+\_\+tri\+\_\+overlap\+\_\+test\+\_\+2d}} (const Eigen\+::\+Matrix\+Base$<$ Derived\+P1 $>$ \&p1, const Eigen\+::\+Matrix\+Base$<$ Derived\+Q1 $>$ \&q1, const Eigen\+::\+Matrix\+Base$<$ Derived\+R1 $>$ \&r1, const Eigen\+::\+Matrix\+Base$<$ Derived\+P2 $>$ \&p2, const Eigen\+::\+Matrix\+Base$<$ Derived\+Q2 $>$ \&q2, const Eigen\+::\+Matrix\+Base$<$ Derived\+R2 $>$ \&r2)
+\item 
 {\footnotesize template$<$typename DerivedE , typename Derivedcap $>$ }\\void \mbox{\hyperlink{namespaceigl_a9ce1a2b984f20466ffc7732ab29501ba}{triangle\+\_\+fan}} (const Eigen\+::\+Matrix\+Base$<$ DerivedE $>$ \&E, Eigen\+::\+Plain\+Object\+Base$<$ Derivedcap $>$ \&cap)
 \begin{DoxyCompactList}\small\item\em Given a list of faces tessellate all of the \"{}exterior\"{} edges forming another list of. \end{DoxyCompactList}\item 
 Eigen\+::\+Matrix\+Xi \mbox{\hyperlink{namespaceigl_a6b17a92c69587c651fe1b4d549235a9d}{triangle\+\_\+fan}} (const Eigen\+::\+Matrix\+Xi \&E)
@@ -2001,15 +2044,18 @@ const double \mbox{\hyperlink{namespaceigl_ad63b4ffb0ea045dc3cd8a516ba072090}{DO
 const float \mbox{\hyperlink{namespaceigl_af7ed44be1be4ade1ba7a4e7b382085db}{FLOAT\+\_\+\+ONE}} = 1
 \item 
 constexpr double \mbox{\hyperlink{namespaceigl_af3c65fcb2a063b19e572a9d982b5dcdc}{PI}} = 3.\+1415926535897932384626433832795
-\begin{DoxyCompactList}\small\item\em π \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em π \end{DoxyCompactList}\item 
+const char \mbox{\hyperlink{namespaceigl_a89d712ab3a824b8712b6f228dc8242cf}{CHAR\+\_\+\+ZERO}} = 0
+\item 
+const int \mbox{\hyperlink{namespaceigl_ad26002c6ec8c14b1b4a7acc5db59b1e4}{INT\+\_\+\+ZERO}} = 0
+\item 
+const unsigned int \mbox{\hyperlink{namespaceigl_a3d956292d4f64a8ce6b1e1d92a9f9d24}{UNSIGNED\+\_\+\+INT\+\_\+\+ZERO}} = 0
+\item 
+const double \mbox{\hyperlink{namespaceigl_af1cef568dc365b5b596341a5b7f06867}{DOUBLE\+\_\+\+ZERO}} = 0
+\item 
+const float \mbox{\hyperlink{namespaceigl_aec3a0ea947dabbe9fc09e7e8da909613}{FLOAT\+\_\+\+ZERO}} = 0
+\end{DoxyCompactItemize}
 
-
-\doxysubsection{Detailed Description}
-Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. 
-
-Note\+: this is different to classical Half Edge data structure. Instead, it follows cell-\/tuple in \mbox{[}Brisson, 1989\mbox{]} \"{}\+Representing geometric structures in d dimensions\+: topology and order.\"{} This class can achieve local navigation similar to half edge in Open\+Mesh But the logic behind each atom operation is different. So this should be more properly called Triangle\+Tuple\+Iterator.
-
-Each tuple contains information on (face, edge, vertex) and encoded by (face, edge \textbackslash{}in \{0,1,2\}, bool reverse) 
 
 \doxysubsection{Typedef Documentation}
 \Hypertarget{namespaceigl_af967096efcc39e806f0c2b374e2ccc5f}\label{namespaceigl_af967096efcc39e806f0c2b374e2ccc5f} 
@@ -6246,7 +6292,7 @@ Copy the given file to a new file with the same basename in {\ttfamily dir} dire
 \begin{DoxyReturn}{Returns}
 whether the copy was successful
 \end{DoxyReturn}
-\hypertarget{namespaceigl_autotoc_md5}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md5}
+\hypertarget{namespaceigl_autotoc_md6}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md6}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{namespaceigl_a73748b03f3e779d764d30d920653aba6}{dated\_copy}}(\textcolor{stringliteral}{"{}/path/to/foo"{}},\textcolor{stringliteral}{"{}/bar/"{}});}
@@ -6256,7 +6302,7 @@ whether the copy was successful
 
 
 \begin{DoxyRefDesc}{Bug}
-\item[\mbox{\hyperlink{bug__bug000001}{Bug}}]This function does not work under windows \end{DoxyRefDesc}
+\item[\mbox{\hyperlink{bug__bug000004}{Bug}}]This function does not work under windows \end{DoxyRefDesc}
 \Hypertarget{namespaceigl_ad50bddf10510ab0ef1bda0bb11641fef}\label{namespaceigl_ad50bddf10510ab0ef1bda0bb11641fef} 
 \index{igl@{igl}!dated\_copy@{dated\_copy}}
 \index{dated\_copy@{dated\_copy}!igl@{igl}}
@@ -6898,7 +6944,7 @@ Computes twice the area for each input triangle or quad.
 \hline
 \end{DoxyParams}
 \begin{DoxyRefDesc}{Bug}
-\item[\mbox{\hyperlink{bug__bug000002}{Bug}}]For dim==3 complexity is O(\#V + \#F). Not just O(\#F). This is a big deal if you have 1 million unreferenced vertices and 1 face. \end{DoxyRefDesc}
+\item[\mbox{\hyperlink{bug__bug000005}{Bug}}]For dim==3 complexity is O(\#V + \#F). Not just O(\#F). This is a big deal if you have 1 million unreferenced vertices and 1 face. \end{DoxyRefDesc}
 \Hypertarget{namespaceigl_adb2512ac1588eb6929dee61b2fb70955}\label{namespaceigl_adb2512ac1588eb6929dee61b2fb70955} 
 \index{igl@{igl}!doublearea@{doublearea}}
 \index{doublearea@{doublearea}!igl@{igl}}
@@ -7488,7 +7534,7 @@ Compute the first/last k eigen pairs of the generalized eigen value problem\+:
 Ideally one should use ARPACK and the Eigen unsupported ARPACK module. This implementation does simple, naive power iterations.
 \end{DoxyNote}
 \begin{DoxySeeAlso}{See also}
-spectra\+::eigs
+\doxylink{namespaceigl_1_1spectra_ad3d3fe017e5b3e83eaa8c9e997eceaf5}{spectra\+::eigs}
 \end{DoxySeeAlso}
 
 \begin{DoxyParams}[1]{Parameters}
@@ -7943,7 +7989,7 @@ This is especially useful if the face list contains only surface faces and you w
 \mbox{\texttt{ out}}  & {\em IM} & \#V by 1 list of indices such that\+: RF = IM(\+F) and RT = IM(\+T) and RV(\+IM,\+:) = V\\
 \hline
 \end{DoxyParams}
-\hypertarget{namespaceigl_autotoc_md9}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md9}
+\hypertarget{namespaceigl_autotoc_md10}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md10}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{comment}{//\ Tet\ mesh\ in\ (V,T,F)}}
@@ -8073,7 +8119,7 @@ Identify triangles where two meshes interesect using AABBTree and tri\+\_\+tri\+
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
-copyleft\+::cgal\+::intersect\+\_\+other 
+\doxylink{namespaceigl_1_1copyleft_1_1cgal_aad0ee9bfc55573ac2ac722c5d6e6d8bc}{copyleft\+::cgal\+::intersect\+\_\+other} 
 \end{DoxySeeAlso}
 \Hypertarget{namespaceigl_a768af49174bc1daafe45f9eedda6eb8f}\label{namespaceigl_a768af49174bc1daafe45f9eedda6eb8f} 
 \index{igl@{igl}!fast\_find\_intersections@{fast\_find\_intersections}}
@@ -8117,7 +8163,7 @@ Identify triangles where mesh intersects itself using AABBTree and tri\+\_\+tri\
 whether any self-\/interections were found
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
-copyleft\+::cgal\+::remesh\+\_\+self\+\_\+intersections 
+\doxylink{namespaceigl_1_1copyleft_1_1cgal_a7169f4ae2fe2c11f7e878b41aa747fc2}{copyleft\+::cgal\+::remesh\+\_\+self\+\_\+intersections} 
 \end{DoxySeeAlso}
 \Hypertarget{namespaceigl_aa607a0b8a29847a27f3e92685a652d51}\label{namespaceigl_aa607a0b8a29847a27f3e92685a652d51} 
 \index{igl@{igl}!fast\_find\_self\_intersections@{fast\_find\_self\_intersections}}
@@ -8145,7 +8191,7 @@ al 2018\mbox{]}.
 
 Given a set of 3D points P, with normals N, areas A, along with octree data, and an expansion order, we define a taylor series expansion at each octree cell.
 
-The octree data is designed to come from \doxylink{namespaceigl_a3ff69240d0614e6f4ab20ff15b2f21a4}{igl\+::octree}, and the areas (if not obtained at scan time), may be calculated using igl\+::copyleft\+::cgal\+::point\+\_\+areas.
+The octree data is designed to come from \doxylink{namespaceigl_a3ff69240d0614e6f4ab20ff15b2f21a4}{igl\+::octree}, and the areas (if not obtained at scan time), may be calculated using \doxylink{namespaceigl_1_1copyleft_1_1cgal_a1240cef3d039ac518baca44025fe1adc}{igl\+::copyleft\+::cgal\+::point\+\_\+areas}.
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -8169,7 +8215,7 @@ The octree data is designed to come from \doxylink{namespaceigl_a3ff69240d0614e6
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
-copyleft\+::cgal\+::point\+\_\+areas, \doxylink{namespaceigl_a6f2969bd735df2588ce37026375ddefe}{knn} 
+\doxylink{namespaceigl_1_1copyleft_1_1cgal_a1240cef3d039ac518baca44025fe1adc}{copyleft\+::cgal\+::point\+\_\+areas}, \doxylink{namespaceigl_a6f2969bd735df2588ce37026375ddefe}{knn} 
 \end{DoxySeeAlso}
 \Hypertarget{namespaceigl_a9f25aa098c2a53832cc8d86022bf0691}\label{namespaceigl_a9f25aa098c2a53832cc8d86022bf0691} 
 \index{igl@{igl}!fast\_winding\_number@{fast\_winding\_number}}
@@ -8988,7 +9034,7 @@ Current time in seconds.
 \begin{DoxyReturn}{Returns}
 the current time in seconds since epoch
 \end{DoxyReturn}
-\hypertarget{namespaceigl_autotoc_md10}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md10}
+\hypertarget{namespaceigl_autotoc_md11}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md11}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&\ tictoc\ =\ []()}
@@ -9332,7 +9378,7 @@ This is the
 d(\+A,\+B) = max ( max min d(a,b) , max min d(b,a) ) a∈A b∈B b∈B a∈A
 
 \begin{DoxyRefDesc}{Bug}
-\item[\mbox{\hyperlink{bug__bug000003}{Bug}}]This is only computing max(min(va,\+B),min(vb,\+A)). This is better than max(min(va,\+Vb),min(vb,\+Va)). This (at least) is missing \"{}edge-\/edge\"{} cases like the distance between the two different triangulations of a non-\/planar quad in 3D. Even simpler, consider the Hausdorff distance between the non-\/convex, block letter V polygon (with 7 vertices) in 2D and its convex hull. The Hausdorff distance is defined by the midpoint in the middle of the segment across the concavity and some non-\/vertex point {\itshape on the edge} of the V. Known issue\+: due to the issue above, this also means that unreferenced vertices can give unexpected results. Therefore, we assume the inputs have no unreferenced vertices.\end{DoxyRefDesc}
+\item[\mbox{\hyperlink{bug__bug000006}{Bug}}]This is only computing max(min(va,\+B),min(vb,\+A)). This is better than max(min(va,\+Vb),min(vb,\+Va)). This (at least) is missing \"{}edge-\/edge\"{} cases like the distance between the two different triangulations of a non-\/planar quad in 3D. Even simpler, consider the Hausdorff distance between the non-\/convex, block letter V polygon (with 7 vertices) in 2D and its convex hull. The Hausdorff distance is defined by the midpoint in the middle of the segment across the concavity and some non-\/vertex point {\itshape on the edge} of the V. Known issue\+: due to the issue above, this also means that unreferenced vertices can give unexpected results. Therefore, we assume the inputs have no unreferenced vertices.\end{DoxyRefDesc}
 
 
 
@@ -10180,7 +10226,7 @@ Determine if a set of points lies on the XY plane.
 true if a mesh has constant value of 0 in z coordinate
 \end{DoxyReturn}
 \begin{DoxyRefDesc}{Bug}
-\item[\mbox{\hyperlink{bug__bug000004}{Bug}}]Doesn\textquotesingle{}t determine if vertex is flat if it doesn\textquotesingle{}t lie on the XY plane. \end{DoxyRefDesc}
+\item[\mbox{\hyperlink{bug__bug000007}{Bug}}]Doesn\textquotesingle{}t determine if vertex is flat if it doesn\textquotesingle{}t lie on the XY plane. \end{DoxyRefDesc}
 \Hypertarget{namespaceigl_a036d4412fb94156420eff091457a73b3}\label{namespaceigl_a036d4412fb94156420eff091457a73b3} 
 \index{igl@{igl}!is\_readable@{is\_readable}}
 \index{is\_readable@{is\_readable}!igl@{igl}}
@@ -11782,7 +11828,7 @@ This is a routine to print a matrix using format suitable for pasting into the m
 \begin{DoxyReturn}{Returns}
 Formatted matrix
 \end{DoxyReturn}
-\hypertarget{namespaceigl_autotoc_md11}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md11}
+\hypertarget{namespaceigl_autotoc_md12}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md12}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{comment}{//\ M\ :=\ [1\ 2\ 3;4\ 5\ 6];}}
@@ -11822,7 +11868,7 @@ const std\+::string igl\+::matlab\+\_\+format (\begin{DoxyParamCaption}\item[{co
 
 Same but for sparse matrices. 
 
-Print IJV format into an auxiliary variable and then print a call to sparse which will construct the sparse matrix\hypertarget{namespaceigl_autotoc_md12}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md12}
+Print IJV format into an auxiliary variable and then print a call to sparse which will construct the sparse matrix\hypertarget{namespaceigl_autotoc_md13}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md13}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{comment}{//\ S\ :=\ [0\ 2\ 3;4\ 5\ 0];}}
@@ -11870,7 +11916,7 @@ Just build and return the format.
 \begin{DoxyReturn}{Returns}
 eigen IOFormat object
 \end{DoxyReturn}
-\hypertarget{namespaceigl_autotoc_md13}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md13}
+\hypertarget{namespaceigl_autotoc_md14}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md14}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{comment}{//\ M\ :=\ [1\ 2\ 3;4\ 5\ 6];}}
@@ -12346,7 +12392,7 @@ Mean value coordinates for a polygon.
 \hline
 \end{DoxyParams}
 \begin{DoxyRefDesc}{Bug}
-\item[\mbox{\hyperlink{bug__bug000009}{Bug}}]implementation is listed as \"{}\+Broken\"{} \end{DoxyRefDesc}
+\item[\mbox{\hyperlink{bug__bug000012}{Bug}}]implementation is listed as \"{}\+Broken\"{} \end{DoxyRefDesc}
 \Hypertarget{namespaceigl_a330d1e74582084d2c5d7002ecab40baf}\label{namespaceigl_a330d1e74582084d2c5d7002ecab40baf} 
 \index{igl@{igl}!nchoosek@{nchoosek}}
 \index{nchoosek@{nchoosek}!igl@{igl}}
@@ -12690,7 +12736,7 @@ Compute connected components of facets connected by manifold edges.
 \hline
 \end{DoxyParams}
 \begin{DoxyRefDesc}{Bug}
-\item[\mbox{\hyperlink{bug__bug000010}{Bug}}]This will detect a moebius strip as a single patch (manifold, non-\/orientable) and also non-\/manfiold, yet orientable patches. So the {\itshape name} of this function is inappropriate. \end{DoxyRefDesc}
+\item[\mbox{\hyperlink{bug__bug000013}{Bug}}]This will detect a moebius strip as a single patch (manifold, non-\/orientable) and also non-\/manfiold, yet orientable patches. So the {\itshape name} of this function is inappropriate. \end{DoxyRefDesc}
 \Hypertarget{namespaceigl_ad5c31bf9a8576f1775affb93a5722e85}\label{namespaceigl_ad5c31bf9a8576f1775affb93a5722e85} 
 \index{igl@{igl}!orientable\_patches@{orientable\_patches}}
 \index{orientable\_patches@{orientable\_patches}!igl@{igl}}
@@ -13172,7 +13218,7 @@ Function like PHP\textquotesingle{}s pathinfo to return information about path.
 \mbox{\texttt{ out}}  & {\em filename} & string containing filename (characters of basename before last \textquotesingle{}.\textquotesingle{})\\
 \hline
 \end{DoxyParams}
-\hypertarget{namespaceigl_autotoc_md14}{}\doxyparagraph{\texorpdfstring{Examples}{Examples}}\label{namespaceigl_autotoc_md14}
+\hypertarget{namespaceigl_autotoc_md15}{}\doxyparagraph{\texorpdfstring{Examples}{Examples}}\label{namespaceigl_autotoc_md15}
 \begin{DoxyVerb} input                     | dirname        basename       ext    filename
  "/"                       | "/"            ""             ""     ""
  "//"                      | "/"            ""             ""     ""
@@ -13375,7 +13421,7 @@ Compute face normals via vertex position list, face list.
 \mbox{\texttt{ out}}  & {\em N} & \#F by 3 eigen Matrix of mesh face (triangle) 3D normals\\
 \hline
 \end{DoxyParams}
-\hypertarget{namespaceigl_autotoc_md15}{}\doxyparagraph{\texorpdfstring{Example}{Example}}\label{namespaceigl_autotoc_md15}
+\hypertarget{namespaceigl_autotoc_md16}{}\doxyparagraph{\texorpdfstring{Example}{Example}}\label{namespaceigl_autotoc_md16}
 // Give degenerate faces (1/3,1/3,1/3)\texorpdfstring{$^\wedge$}{\string^}0.5 per\+\_\+face\+\_\+normals(V,F,Vector3d(1,1,1).normalized(),N); \Hypertarget{namespaceigl_aa5e240d2506aa22bb2a07edd7636d6cb}\label{namespaceigl_aa5e240d2506aa22bb2a07edd7636d6cb} 
 \index{igl@{igl}!per\_face\_normals@{per\_face\_normals}}
 \index{per\_face\_normals@{per\_face\_normals}!igl@{igl}}
@@ -13548,7 +13594,7 @@ bool igl\+::piecewise\+\_\+constant\+\_\+winding\+\_\+number (\begin{DoxyParamCa
 
 Determine if a given mesh induces a piecewise constant winding number field\+: Is this mesh valid input to solid set operations. 
 
-{\bfseries{Assumes}} that {\ttfamily (V,F)} contains no self-\/intersections (including degeneracies and co-\/incidences). If there are co-\/planar and co-\/incident vertex placements, a mesh could {\itshape fail} this combinatorial test but still induce a piecewise-\/constant winding number {\itshape geometrically}. For example, consider a hemisphere with boundary and then pinch the boundary \"{}shut\"{} along a line segment. The \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+\_\+bullet-\/proof\+\_\+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} check is to first resolve all self-\/intersections in {\ttfamily (V,F) -\/\texorpdfstring{$>$}{>} (SV,SF)} (i.\+e. what the {\ttfamily igl\+::copyleft\+::cgal\+::piecewise\+\_\+constant\+\_\+winding\+\_\+number} overload does).
+{\bfseries{Assumes}} that {\ttfamily (V,F)} contains no self-\/intersections (including degeneracies and co-\/incidences). If there are co-\/planar and co-\/incident vertex placements, a mesh could {\itshape fail} this combinatorial test but still induce a piecewise-\/constant winding number {\itshape geometrically}. For example, consider a hemisphere with boundary and then pinch the boundary \"{}shut\"{} along a line segment. The \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+\_\+bullet-\/proof\+\_\+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} check is to first resolve all self-\/intersections in {\ttfamily (V,F) -\/\texorpdfstring{$>$}{>} (SV,SF)} (i.\+e. what the {\ttfamily \doxylink{namespaceigl_1_1copyleft_1_1cgal_a55276c7ddaadbfad9b0ddf0beeb756fe}{igl\+::copyleft\+::cgal\+::piecewise\+\_\+constant\+\_\+winding\+\_\+number}} overload does).
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -13580,7 +13626,7 @@ This is an overloaded member function, provided for convenience. It differs from
 \index{pinv@{pinv}!igl@{igl}}
 \doxysubsubsection{\texorpdfstring{pinv()}{pinv()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily template$<$typename DerivedA , typename DerivedX $>$ \\
-IGL\+\_\+\+DEPRECATED void igl\+::pinv (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedA $>$ \&}]{A,  }\item[{typename Derived\+A\+::\+Scalar}]{tol,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedX $>$ \&}]{X }\end{DoxyParamCaption})}
+\mbox{\hyperlink{deprecated_8h_a2c4333bea63e89fcd3f6f22e3fbe50bf}{IGL\+\_\+\+DEPRECATED}} void igl\+::pinv (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedA $>$ \&}]{A,  }\item[{typename Derived\+A\+::\+Scalar}]{tol,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedX $>$ \&}]{X }\end{DoxyParamCaption})}
 
 
 
@@ -13596,13 +13642,13 @@ Compute the Moore-\/\+Penrose pseudoinverse.
 \hline
 \end{DoxyParams}
 \begin{DoxyRefDesc}{Deprecated}
-\item[\mbox{\hyperlink{deprecated__deprecated000013}{Deprecated}}]Use {\ttfamily Eigen\+::\+Complete\+Orthogonal\+Decomposition\texorpdfstring{$<$}{<}Eigen\+::\+Matrix\+Xd\texorpdfstring{$>$}{>}} {\ttfamily .solve()} or {\ttfamily .pseudoinverse()} instead. \end{DoxyRefDesc}
+\item[\mbox{\hyperlink{deprecated__deprecated000014}{Deprecated}}]Use {\ttfamily Eigen\+::\+Complete\+Orthogonal\+Decomposition\texorpdfstring{$<$}{<}Eigen\+::\+Matrix\+Xd\texorpdfstring{$>$}{>}} {\ttfamily .solve()} or {\ttfamily .pseudoinverse()} instead. \end{DoxyRefDesc}
 \Hypertarget{namespaceigl_a2425e60144957f17b755fe8831ec8673}\label{namespaceigl_a2425e60144957f17b755fe8831ec8673} 
 \index{igl@{igl}!pinv@{pinv}}
 \index{pinv@{pinv}!igl@{igl}}
 \doxysubsubsection{\texorpdfstring{pinv()}{pinv()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily template$<$typename DerivedA , typename DerivedX $>$ \\
-IGL\+\_\+\+DEPRECATED void igl\+::pinv (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedA $>$ \&}]{A,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedX $>$ \&}]{X }\end{DoxyParamCaption})}
+\mbox{\hyperlink{deprecated_8h_a2c4333bea63e89fcd3f6f22e3fbe50bf}{IGL\+\_\+\+DEPRECATED}} void igl\+::pinv (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedA $>$ \&}]{A,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedX $>$ \&}]{X }\end{DoxyParamCaption})}
 
 
 
@@ -13687,7 +13733,7 @@ Compute distances from a set of points P to a triangle mesh (V,F)
 \hline
 \end{DoxyParams}
 \begin{DoxyRefDesc}{Bug}
-\item[\mbox{\hyperlink{bug__bug000011}{Bug}}]This only computes distances to given primitives. So unreferenced vertices are ignored. However, degenerate primitives are handled correctly\+: triangle \mbox{[}1 2 2\mbox{]} is treated as a segment \mbox{[}1 2\mbox{]}, and triangle \mbox{[}1 1 1\mbox{]} is treated as a point. So one {\itshape could} add extra combinatorially degenerate rows to Ele for all unreferenced vertices to also get distances to points. \end{DoxyRefDesc}
+\item[\mbox{\hyperlink{bug__bug000014}{Bug}}]This only computes distances to given primitives. So unreferenced vertices are ignored. However, degenerate primitives are handled correctly\+: triangle \mbox{[}1 2 2\mbox{]} is treated as a segment \mbox{[}1 2\mbox{]}, and triangle \mbox{[}1 1 1\mbox{]} is treated as a point. So one {\itshape could} add extra combinatorially degenerate rows to Ele for all unreferenced vertices to also get distances to points. \end{DoxyRefDesc}
 \Hypertarget{namespaceigl_a3de253885cbe07d8d264d21d6ba8a193}\label{namespaceigl_a3de253885cbe07d8d264d21d6ba8a193} 
 \index{igl@{igl}!point\_simplex\_squared\_distance@{point\_simplex\_squared\_distance}}
 \index{point\_simplex\_squared\_distance@{point\_simplex\_squared\_distance}!igl@{igl}}
@@ -13980,6 +14026,20 @@ That is, each row is the row index, column index and value for each non zero ent
 \begin{DoxySeeAlso}{See also}
 \doxylink{namespaceigl_a64d87355c9c3b734e7658eed10bdd764}{matlab\+\_\+format} 
 \end{DoxySeeAlso}
+\Hypertarget{namespaceigl_a5d05e9d7e5d74e1a763370ff141d3628}\label{namespaceigl_a5d05e9d7e5d74e1a763370ff141d3628} 
+\index{igl@{igl}!print\_vector@{print\_vector}}
+\index{print\_vector@{print\_vector}!igl@{igl}}
+\doxysubsubsection{\texorpdfstring{print\_vector()}{print\_vector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void igl\+::print\+\_\+vector (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ T $>$ $>$ \&}]{v }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceigl_a59761c584c133e800d3e0f34dfa717cc}\label{namespaceigl_a59761c584c133e800d3e0f34dfa717cc} 
+\index{igl@{igl}!print\_vector@{print\_vector}}
+\index{print\_vector@{print\_vector}!igl@{igl}}
+\doxysubsubsection{\texorpdfstring{print\_vector()}{print\_vector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void igl\+::print\+\_\+vector (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ T $>$ $>$ $>$ \&}]{v }\end{DoxyParamCaption})}
+
 \Hypertarget{namespaceigl_abb69dbb018159a761459ceee76dd1fd0}\label{namespaceigl_abb69dbb018159a761459ceee76dd1fd0} 
 \index{igl@{igl}!procrustes@{procrustes}}
 \index{procrustes@{procrustes}!igl@{igl}}
@@ -14021,7 +14081,7 @@ Given two point sets X,Y in R\texorpdfstring{$^\wedge$}{\string^}d find best sca
 \mbox{\texttt{ out}}  & {\em t} & translation\\
 \hline
 \end{DoxyParams}
-\hypertarget{namespaceigl_autotoc_md16}{}\doxyparagraph{\texorpdfstring{Example}{Example}}\label{namespaceigl_autotoc_md16}
+\hypertarget{namespaceigl_autotoc_md17}{}\doxyparagraph{\texorpdfstring{Example}{Example}}\label{namespaceigl_autotoc_md17}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{MatrixXd\ X,\ Y;\ (containing\ 3d\ points\ as\ rows)}
@@ -14052,7 +14112,7 @@ Same as above but returns Eigen transformation object.
 \\
 \hline
 \end{DoxyParams}
-\hypertarget{namespaceigl_autotoc_md17}{}\doxyparagraph{\texorpdfstring{Example}{Example}}\label{namespaceigl_autotoc_md17}
+\hypertarget{namespaceigl_autotoc_md18}{}\doxyparagraph{\texorpdfstring{Example}{Example}}\label{namespaceigl_autotoc_md18}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{MatrixXd\ X,\ Y;\ (containing\ 3d\ points\ as\ rows)}
@@ -14149,13 +14209,13 @@ This is an overloaded member function, provided for convenience. It differs from
 \hline
 \end{DoxyParams}
 \begin{DoxyRefDesc}{Bug}
-\item[\mbox{\hyperlink{bug__bug000012}{Bug}}]The compiler will not complain if V and P are Vector3d, but the result will be incorrect.\end{DoxyRefDesc}
-\hypertarget{namespaceigl_autotoc_md18}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md18}
+\item[\mbox{\hyperlink{bug__bug000016}{Bug}}]The compiler will not complain if V and P are Vector3d, but the result will be incorrect.\end{DoxyRefDesc}
+\hypertarget{namespaceigl_autotoc_md19}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md19}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{igl::opengl::glfw::Viewer}}\ vr;}
 \DoxyCodeLine{...}
-\DoxyCodeLine{igl::project(V,vr.\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a4fc39cbf6a2d68d0eaf63bef3fd49464}{core}}().view,vr.\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a4fc39cbf6a2d68d0eaf63bef3fd49464}{core}}().proj,vr.\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a4fc39cbf6a2d68d0eaf63bef3fd49464}{core}}().viewport,P);}
+\DoxyCodeLine{igl::project(V,vr.\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a4fc39cbf6a2d68d0eaf63bef3fd49464}{core}}().\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a8ce15c9d27268543847a0d83c2010cb6}{view}},vr.\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a4fc39cbf6a2d68d0eaf63bef3fd49464}{core}}().\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a50af5081883025581f00b0918b3d9d30}{proj}},vr.\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a4fc39cbf6a2d68d0eaf63bef3fd49464}{core}}().\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_ac5a0f15fc245747e1d83b8e718f2e74f}{viewport}},P);}
 
 \end{DoxyCode}
  \Hypertarget{namespaceigl_a33f14c3d07d3f875efa80645432c32b8}\label{namespaceigl_a33f14c3d07d3f875efa80645432c32b8} 
@@ -15042,7 +15102,7 @@ Read contents of file into a buffer of uint8\+\_\+t bytes.
 \mbox{\texttt{ out}}  & {\em file\+Buffer\+Bytes} & contents of file as vector of bytes\\
 \hline
 \end{DoxyParams}
-\hypertarget{namespaceigl_autotoc_md19}{}\doxyparagraph{\texorpdfstring{Side effects\+:}{Side effects:}}\label{namespaceigl_autotoc_md19}
+\hypertarget{namespaceigl_autotoc_md20}{}\doxyparagraph{\texorpdfstring{Side effects\+:}{Side effects:}}\label{namespaceigl_autotoc_md20}
 closes fp 
 \begin{DoxyExceptions}{Exceptions}
 {\em runtime\+\_\+error} & on error \\
@@ -15276,7 +15336,7 @@ Load a tetrahedral volume mesh from a .mesh file.
 \hline
 \end{DoxyParams}
 \begin{DoxyRefDesc}{Bug}
-\item[\mbox{\hyperlink{bug__bug000013}{Bug}}]Holes and regions are not supported \end{DoxyRefDesc}
+\item[\mbox{\hyperlink{bug__bug000017}{Bug}}]Holes and regions are not supported \end{DoxyRefDesc}
 \Hypertarget{namespaceigl_a078957e6e3c6a1f4cff7de4d0a28956d}\label{namespaceigl_a078957e6e3c6a1f4cff7de4d0a28956d} 
 \index{igl@{igl}!readMESH@{readMESH}}
 \index{readMESH@{readMESH}!igl@{igl}}
@@ -15354,7 +15414,7 @@ read triangle surface mesh and tetrahedral volume mesh from .msh file
 true on success 
 \end{DoxyReturn}
 \begin{DoxyRefDesc}{Bug}
-\item[\mbox{\hyperlink{bug__bug000014}{Bug}}]only version 2.\+2 of .msh file is supported (gmsh 3.\+X) 
+\item[\mbox{\hyperlink{bug__bug000018}{Bug}}]only version 2.\+2 of .msh file is supported (gmsh 3.\+X) 
 
 only triangle surface elements and tetrahedral volumetric elements are supported 
 
@@ -15773,7 +15833,7 @@ Read a mesh from an ascii/binary stl file.
 \begin{DoxyReturn}{Returns}
 true on success, false on errors
 \end{DoxyReturn}
-\hypertarget{namespaceigl_autotoc_md25}{}\doxyparagraph{\texorpdfstring{Example}{Example}}\label{namespaceigl_autotoc_md25}
+\hypertarget{namespaceigl_autotoc_md26}{}\doxyparagraph{\texorpdfstring{Example}{Example}}\label{namespaceigl_autotoc_md26}
 \begin{DoxyVerb}bool success = readSTL(filename,temp_V,F,N);
 remove_duplicate_vertices(temp_V,0,V,SVI,SVJ);
 for_each(F.data(),F.data()+F.size(),[&SVJ](int & f){f=SVJ(f);});
@@ -16083,7 +16143,7 @@ Act like matlab\textquotesingle{}s Y = X(\+I) for std vectors where I contains a
 \hline
 \end{DoxyParams}
 \begin{DoxyRefDesc}{Deprecated}
-\item[\mbox{\hyperlink{deprecated__deprecated000014}{Deprecated}}]This is the same as slice but for std\+::vectors. Used only by \doxylink{namespaceigl_aea54a5804527aa194785e403870ba7db}{igl\+::sort} internally. \end{DoxyRefDesc}
+\item[\mbox{\hyperlink{deprecated__deprecated000016}{Deprecated}}]This is the same as slice but for std\+::vectors. Used only by \doxylink{namespaceigl_aea54a5804527aa194785e403870ba7db}{igl\+::sort} internally. \end{DoxyRefDesc}
 \Hypertarget{namespaceigl_ad35357b4f4e8dbf29c3fad77850fb957}\label{namespaceigl_ad35357b4f4e8dbf29c3fad77850fb957} 
 \index{igl@{igl}!repdiag@{repdiag}}
 \index{repdiag@{repdiag}!igl@{igl}}
@@ -16634,6 +16694,69 @@ A\+: p + t\texorpdfstring{$\ast$}{*}r \+: t \textbackslash{}in \mbox{[}0,1\mbox{
 \begin{DoxyReturn}{Returns}
 true if intersection 
 \end{DoxyReturn}
+\Hypertarget{namespaceigl_a212b29890b63152674a53444a2003677}\label{namespaceigl_a212b29890b63152674a53444a2003677} 
+\index{igl@{igl}!serialize@{serialize}}
+\index{serialize@{serialize}!igl@{igl}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool igl\+::serialize (\begin{DoxyParamCaption}\item[{const T \&}]{obj,  }\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_ab2bd82ed66c652d0930f6b460886010b}\label{namespaceigl_ab2bd82ed66c652d0930f6b460886010b} 
+\index{igl@{igl}!serialize@{serialize}}
+\index{serialize@{serialize}!igl@{igl}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool igl\+::serialize (\begin{DoxyParamCaption}\item[{const T \&}]{obj,  }\item[{const std\+::string \&}]{object\+Name,  }\item[{const std\+::string \&}]{filename,  }\item[{bool}]{overwrite = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_af1e1aa7b19e544f9f8d0e5d2872c1b21}\label{namespaceigl_af1e1aa7b19e544f9f8d0e5d2872c1b21} 
+\index{igl@{igl}!serialize@{serialize}}
+\index{serialize@{serialize}!igl@{igl}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool igl\+::serialize (\begin{DoxyParamCaption}\item[{const T \&}]{obj,  }\item[{const std\+::string \&}]{object\+Name,  }\item[{std\+::vector$<$ char $>$ \&}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_a61617b81f6b89d6692a31f8d34c6d294}\label{namespaceigl_a61617b81f6b89d6692a31f8d34c6d294} 
+\index{igl@{igl}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!igl@{igl}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool igl\+::deserialize (\begin{DoxyParamCaption}\item[{T \&}]{obj,  }\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_aa8dfda78a1c420b40f80b07d1c3f8b2e}\label{namespaceigl_aa8dfda78a1c420b40f80b07d1c3f8b2e} 
+\index{igl@{igl}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!igl@{igl}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool igl\+::deserialize (\begin{DoxyParamCaption}\item[{T \&}]{obj,  }\item[{const std\+::string \&}]{object\+Name,  }\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_a5dd8043bf43851bafaa6e264162eefce}\label{namespaceigl_a5dd8043bf43851bafaa6e264162eefce} 
+\index{igl@{igl}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!igl@{igl}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool igl\+::deserialize (\begin{DoxyParamCaption}\item[{T \&}]{obj,  }\item[{const std\+::string \&}]{object\+Name,  }\item[{const std\+::vector$<$ char $>$ \&}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_ad1b7a7a566f0d4a5553987d4d25aedec}\label{namespaceigl_ad1b7a7a566f0d4a5553987d4d25aedec} 
+\index{igl@{igl}!serializer@{serializer}}
+\index{serializer@{serializer}!igl@{igl}}
+\doxysubsubsection{\texorpdfstring{serializer()}{serializer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool igl\+::serializer (\begin{DoxyParamCaption}\item[{bool}]{serialize,  }\item[{T \&}]{obj,  }\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_a8dba28198b48a2a0432d5c4e640484e4}\label{namespaceigl_a8dba28198b48a2a0432d5c4e640484e4} 
+\index{igl@{igl}!serializer@{serializer}}
+\index{serializer@{serializer}!igl@{igl}}
+\doxysubsubsection{\texorpdfstring{serializer()}{serializer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool igl\+::serializer (\begin{DoxyParamCaption}\item[{bool}]{serialize,  }\item[{T \&}]{obj,  }\item[{const std\+::string \&}]{object\+Name,  }\item[{const std\+::string \&}]{filename,  }\item[{bool}]{overwrite = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceigl_af28b32c6f34213f61257beff8a2927ca}\label{namespaceigl_af28b32c6f34213f61257beff8a2927ca} 
+\index{igl@{igl}!serializer@{serializer}}
+\index{serializer@{serializer}!igl@{igl}}
+\doxysubsubsection{\texorpdfstring{serializer()}{serializer()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool igl\+::serializer (\begin{DoxyParamCaption}\item[{bool}]{serialize,  }\item[{T \&}]{obj,  }\item[{const std\+::string \&}]{object\+Name,  }\item[{std\+::vector$<$ char $>$ \&}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
 \Hypertarget{namespaceigl_ad9fa51487804e5c3f67e72d4ff8fceb1}\label{namespaceigl_ad9fa51487804e5c3f67e72d4ff8fceb1} 
 \index{igl@{igl}!setdiff@{setdiff}}
 \index{setdiff@{setdiff}!igl@{igl}}
@@ -17019,7 +17142,7 @@ Computes signed distance to a mesh.
 \hline
 \end{DoxyParams}
 \begin{DoxyRefDesc}{Bug}
-\item[\mbox{\hyperlink{bug__bug000015}{Bug}}]This only computes distances to triangles. So unreferenced vertices and degenerate triangles are ignored. \end{DoxyRefDesc}
+\item[\mbox{\hyperlink{bug__bug000019}{Bug}}]This only computes distances to triangles. So unreferenced vertices and degenerate triangles are ignored. \end{DoxyRefDesc}
 \Hypertarget{namespaceigl_a9379f935afc42d6fbad6340c07639c54}\label{namespaceigl_a9379f935afc42d6fbad6340c07639c54} 
 \index{igl@{igl}!signed\_distance@{signed\_distance}}
 \index{signed\_distance@{signed\_distance}!igl@{igl}}
@@ -17115,7 +17238,7 @@ This is an overloaded member function, provided for convenience. It differs from
 \index{signed\_distance\_winding\_number@{signed\_distance\_winding\_number}!igl@{igl}}
 \doxysubsubsection{\texorpdfstring{signed\_distance\_winding\_number()}{signed\_distance\_winding\_number()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
 {\footnotesize\ttfamily template$<$typename DerivedV , typename DerivedF , typename Derivedq $>$ \\
-Derived\+V\+::\+Scalar igl\+::signed\+\_\+distance\+\_\+winding\+\_\+number (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classigl_1_1AABB}{AABB}}$<$ DerivedV, 3 $>$ \&}]{tree,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&}]{F,  }\item[{const igl\+::\+Winding\+Number\+AABB$<$ Derivedq, DerivedV, DerivedF $>$ \&}]{hier,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derivedq $>$ \&}]{q }\end{DoxyParamCaption})}
+Derived\+V\+::\+Scalar igl\+::signed\+\_\+distance\+\_\+winding\+\_\+number (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classigl_1_1AABB}{AABB}}$<$ DerivedV, 3 $>$ \&}]{tree,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&}]{F,  }\item[{const \mbox{\hyperlink{classigl_1_1WindingNumberAABB}{igl\+::\+Winding\+Number\+AABB}}$<$ Derivedq, DerivedV, DerivedF $>$ \&}]{hier,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derivedq $>$ \&}]{q }\end{DoxyParamCaption})}
 
 
 
@@ -17123,7 +17246,7 @@ Computes signed distance to mesh using winding number with precomputed \doxylink
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em tree} & \doxylink{classigl_1_1AABB}{AABB} acceleration tree (see cgal/point\+\_\+mesh\+\_\+squared\+\_\+distance.\+h) \\
+\mbox{\texttt{ in}}  & {\em tree} & \doxylink{classigl_1_1AABB}{AABB} acceleration tree (see \doxylink{copyleft_2cgal_2point__mesh__squared__distance_8h}{cgal/point\+\_\+mesh\+\_\+squared\+\_\+distance.\+h}) \\
 \hline
 \mbox{\texttt{ in}}  & {\em hier} & Winding number evaluation hierarchy \\
 \hline
@@ -17138,7 +17261,7 @@ signed distance to mesh
 \index{signed\_distance\_winding\_number@{signed\_distance\_winding\_number}!igl@{igl}}
 \doxysubsubsection{\texorpdfstring{signed\_distance\_winding\_number()}{signed\_distance\_winding\_number()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
 {\footnotesize\ttfamily template$<$typename DerivedV , typename DerivedF , typename Derivedq , typename Scalar , typename Derivedc $>$ \\
-void igl\+::signed\+\_\+distance\+\_\+winding\+\_\+number (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classigl_1_1AABB}{AABB}}$<$ DerivedV, 3 $>$ \&}]{tree,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&}]{F,  }\item[{const igl\+::\+Winding\+Number\+AABB$<$ Derivedq, DerivedV, DerivedF $>$ \&}]{hier,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derivedq $>$ \&}]{q,  }\item[{Scalar \&}]{s,  }\item[{Scalar \&}]{sqrd,  }\item[{int \&}]{i,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derivedc $>$ \&}]{c }\end{DoxyParamCaption})}
+void igl\+::signed\+\_\+distance\+\_\+winding\+\_\+number (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classigl_1_1AABB}{AABB}}$<$ DerivedV, 3 $>$ \&}]{tree,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&}]{F,  }\item[{const \mbox{\hyperlink{classigl_1_1WindingNumberAABB}{igl\+::\+Winding\+Number\+AABB}}$<$ Derivedq, DerivedV, DerivedF $>$ \&}]{hier,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derivedq $>$ \&}]{q,  }\item[{Scalar \&}]{s,  }\item[{Scalar \&}]{sqrd,  }\item[{int \&}]{i,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derivedc $>$ \&}]{c }\end{DoxyParamCaption})}
 
 
 
@@ -17175,7 +17298,7 @@ void igl\+::signed\+\_\+distance\+\_\+fast\+\_\+winding\+\_\+number (\begin{Doxy
 
 Calculates signed distance at query points P, using fast winding number for sign. 
 
-\hypertarget{namespaceigl_autotoc_md29}{}\doxyparagraph{\texorpdfstring{Usage\+:}{Usage:}}\label{namespaceigl_autotoc_md29}
+\hypertarget{namespaceigl_autotoc_md30}{}\doxyparagraph{\texorpdfstring{Usage\+:}{Usage:}}\label{namespaceigl_autotoc_md30}
 Vector\+Xd S; ~\newline
  Vector\+Xd V, P; //where V is mesh vertices, P are query points Vector\+Xi F; ~\newline
  \doxylink{structigl_1_1FastWindingNumberBVH}{igl\+::\+Fast\+Winding\+Number\+BVH} fwn\+\_\+bvh; \doxylink{namespaceigl_af9a50987fefc0df065fb3e2cde90c92e}{igl\+::fast\+\_\+winding\+\_\+number}(V.\+cast$<$float$>$(), F, 2, fwn\+\_\+bvh); igl\+::signed\+\_\+distance\+\_\+fast\+\_\+winding\+\_\+number(\+P,\+V,\+F,tree,fwn\+\_\+bvh,\+S);
@@ -17359,7 +17482,7 @@ This is a fast version of \doxylink{namespaceigl_a547a8704200d3af48fe92105c15a32
 \mbox{\texttt{ out}}  & {\em Y} & \#R by \#C matrix\\
 \hline
 \end{DoxyParams}
-\hypertarget{namespaceigl_autotoc_md30}{}\doxyparagraph{\texorpdfstring{Example}{Example}}\label{namespaceigl_autotoc_md30}
+\hypertarget{namespaceigl_autotoc_md31}{}\doxyparagraph{\texorpdfstring{Example}{Example}}\label{namespaceigl_autotoc_md31}
 \begin{DoxyVerb}// Construct and slice up Laplacian
 SparseMatrix<double> L,L_sliced;
 igl::cotmatrix(V,F,L);
@@ -18130,7 +18253,7 @@ Build a sparse matrix from list of indices and values (I,J,V), functions like th
 \hline
 \end{DoxyParams}
 \begin{DoxyRefDesc}{Deprecated}
-\item[\mbox{\hyperlink{deprecated__deprecated000015}{Deprecated}}]just use Eigen\+::\+Sparse\+Matrix$<$$>$.\+set\+From\+Triplets() \end{DoxyRefDesc}
+\item[\mbox{\hyperlink{deprecated__deprecated000017}{Deprecated}}]just use Eigen\+::\+Sparse\+Matrix$<$$>$.\+set\+From\+Triplets() \end{DoxyRefDesc}
 \Hypertarget{namespaceigl_a55e6cc04971d8a30de15d18272221aa9}\label{namespaceigl_a55e6cc04971d8a30de15d18272221aa9} 
 \index{igl@{igl}!sparse@{sparse}}
 \index{sparse@{sparse}!igl@{igl}}
@@ -18203,7 +18326,7 @@ Divides the construction in two phases, one for fixing the sparsity pattern, and
 \mbox{\texttt{ out}}  & {\em X} & m by n matrix of type T whose entries are to be found\\
 \hline
 \end{DoxyParams}
-\hypertarget{namespaceigl_autotoc_md31}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md31}
+\hypertarget{namespaceigl_autotoc_md32}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md32}
 \begin{DoxyVerb}  Eigen::SparseMatrix<double> A;
   std::vector<Eigen::Triplet<double> > IJV;
   slim_buildA(IJV);
@@ -18567,7 +18690,7 @@ this SVD algorithm guarantees that det(\+U) = det(\+V) = 1, but this comes at th
 \hline
 \end{DoxyParams}
 \begin{DoxyRefDesc}{Bug}
-\item[\mbox{\hyperlink{bug__bug000016}{Bug}}]this will not work correctly for double precision. \end{DoxyRefDesc}
+\item[\mbox{\hyperlink{bug__bug000021}{Bug}}]this will not work correctly for double precision. \end{DoxyRefDesc}
 \Hypertarget{namespaceigl_a4153817f124410a202847cbf878d271b}\label{namespaceigl_a4153817f124410a202847cbf878d271b} 
 \index{igl@{igl}!svd3x3\_avx@{svd3x3\_avx}}
 \index{svd3x3\_avx@{svd3x3\_avx}!igl@{igl}}
@@ -18591,7 +18714,7 @@ Super fast 3x3 SVD according to \href{http://pages.cs.wisc.edu/~sifakis/project_
 \hline
 \end{DoxyParams}
 \begin{DoxyRefDesc}{Bug}
-\item[\mbox{\hyperlink{bug__bug000017}{Bug}}]this will not work correctly for double precision. \end{DoxyRefDesc}
+\item[\mbox{\hyperlink{bug__bug000022}{Bug}}]this will not work correctly for double precision. \end{DoxyRefDesc}
 \Hypertarget{namespaceigl_ae67ee73993135205bd97cfc9c8453d68}\label{namespaceigl_ae67ee73993135205bd97cfc9c8453d68} 
 \index{igl@{igl}!svd3x3\_sse@{svd3x3\_sse}}
 \index{svd3x3\_sse@{svd3x3\_sse}!igl@{igl}}
@@ -18611,7 +18734,7 @@ void igl\+::svd3x3\+\_\+sse (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Mat
 \hline
 \end{DoxyParams}
 \begin{DoxyRefDesc}{Bug}
-\item[\mbox{\hyperlink{bug__bug000018}{Bug}}]this will not work correctly for double precision. \end{DoxyRefDesc}
+\item[\mbox{\hyperlink{bug__bug000023}{Bug}}]this will not work correctly for double precision. \end{DoxyRefDesc}
 \Hypertarget{namespaceigl_a525f425d4315f9547a6e82782d7d672b}\label{namespaceigl_a525f425d4315f9547a6e82782d7d672b} 
 \index{igl@{igl}!swept\_volume@{swept\_volume}}
 \index{swept\_volume@{swept\_volume}!igl@{igl}}
@@ -18834,7 +18957,7 @@ Topological fill hole on a mesh, with one additional vertex each hole Index of n
 \hline
 \end{DoxyParams}
 \begin{DoxyRefDesc}{Bug}
-\item[\mbox{\hyperlink{bug__bug000019}{Bug}}]Why does this add a new vertex for each hole? Why not use a fan? \end{DoxyRefDesc}
+\item[\mbox{\hyperlink{bug__bug000024}{Bug}}]Why does this add a new vertex for each hole? Why not use a fan? \end{DoxyRefDesc}
 \Hypertarget{namespaceigl_a4c72a7f89ae16b8e5196c4cd37fb2689}\label{namespaceigl_a4c72a7f89ae16b8e5196c4cd37fb2689} 
 \index{igl@{igl}!trackball@{trackball}}
 \index{trackball@{trackball}!igl@{igl}}
@@ -18935,8 +19058,29 @@ Transpose blocks of a matrix.
 \mbox{\texttt{ out}}  & {\em B} & n\texorpdfstring{$\ast$}{*}k by m (dim\+: 1) or n by m\texorpdfstring{$\ast$}{*}k (dim\+: 2) eigen Matrix of type T values, NOT allowed to be the same as A\\
 \hline
 \end{DoxyParams}
-\hypertarget{namespaceigl_autotoc_md32}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md32}
-A = \mbox{[} 1 2 3 4 5 6 7 8 101 102 103 104 105 106 107 108 201 202 203 204 205 206 207 208\mbox{]}; transpose\+\_\+blocks(\+A,1,3,\+B); B -\/\texorpdfstring{$>$}{>} \mbox{[} 1 5 2 6 3 7 4 8 101 105 102 106 103 107 104 108 201 205 202 206 203 207 204 208\mbox{]}; \Hypertarget{namespaceigl_a9ce1a2b984f20466ffc7732ab29501ba}\label{namespaceigl_a9ce1a2b984f20466ffc7732ab29501ba} 
+\hypertarget{namespaceigl_autotoc_md33}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md33}
+A = \mbox{[} 1 2 3 4 5 6 7 8 101 102 103 104 105 106 107 108 201 202 203 204 205 206 207 208\mbox{]}; transpose\+\_\+blocks(\+A,1,3,\+B); B -\/\texorpdfstring{$>$}{>} \mbox{[} 1 5 2 6 3 7 4 8 101 105 102 106 103 107 104 108 201 205 202 206 203 207 204 208\mbox{]}; \Hypertarget{namespaceigl_a62161fdfef57c22542b38d735550b635}\label{namespaceigl_a62161fdfef57c22542b38d735550b635} 
+\index{igl@{igl}!tri\_tri\_overlap\_test\_3d@{tri\_tri\_overlap\_test\_3d}}
+\index{tri\_tri\_overlap\_test\_3d@{tri\_tri\_overlap\_test\_3d}!igl@{igl}}
+\doxysubsubsection{\texorpdfstring{tri\_tri\_overlap\_test\_3d()}{tri\_tri\_overlap\_test\_3d()}}
+{\footnotesize\ttfamily template$<$typename Derived\+P1 , typename Derived\+Q1 , typename Derived\+R1 , typename Derived\+P2 , typename Derived\+Q2 , typename Derived\+R2 $>$ \\
+bool igl\+::tri\+\_\+tri\+\_\+overlap\+\_\+test\+\_\+3d (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+P1 $>$ \&}]{p1,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+Q1 $>$ \&}]{q1,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+R1 $>$ \&}]{r1,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+P2 $>$ \&}]{p2,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+Q2 $>$ \&}]{q2,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+R2 $>$ \&}]{r2 }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceigl_a56ff893a73c2642eeec2692d37aad4d0}\label{namespaceigl_a56ff893a73c2642eeec2692d37aad4d0} 
+\index{igl@{igl}!tri\_tri\_intersection\_test\_3d@{tri\_tri\_intersection\_test\_3d}}
+\index{tri\_tri\_intersection\_test\_3d@{tri\_tri\_intersection\_test\_3d}!igl@{igl}}
+\doxysubsubsection{\texorpdfstring{tri\_tri\_intersection\_test\_3d()}{tri\_tri\_intersection\_test\_3d()}}
+{\footnotesize\ttfamily template$<$typename Derived\+P1 , typename Derived\+Q1 , typename Derived\+R1 , typename Derived\+P2 , typename Derived\+Q2 , typename Derived\+R2 , typename DerivedS , typename DerivedT $>$ \\
+bool igl\+::tri\+\_\+tri\+\_\+intersection\+\_\+test\+\_\+3d (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+P1 $>$ \&}]{p1,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+Q1 $>$ \&}]{q1,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+R1 $>$ \&}]{r1,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+P2 $>$ \&}]{p2,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+Q2 $>$ \&}]{q2,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+R2 $>$ \&}]{r2,  }\item[{bool \&}]{coplanar,  }\item[{Eigen\+::\+Matrix\+Base$<$ DerivedS $>$ \&}]{source,  }\item[{Eigen\+::\+Matrix\+Base$<$ DerivedT $>$ \&}]{target }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceigl_ac4e80369c0a74cc009ec973dd70fd752}\label{namespaceigl_ac4e80369c0a74cc009ec973dd70fd752} 
+\index{igl@{igl}!tri\_tri\_overlap\_test\_2d@{tri\_tri\_overlap\_test\_2d}}
+\index{tri\_tri\_overlap\_test\_2d@{tri\_tri\_overlap\_test\_2d}!igl@{igl}}
+\doxysubsubsection{\texorpdfstring{tri\_tri\_overlap\_test\_2d()}{tri\_tri\_overlap\_test\_2d()}}
+{\footnotesize\ttfamily template$<$typename Derived\+P1 , typename Derived\+Q1 , typename Derived\+R1 , typename Derived\+P2 , typename Derived\+Q2 , typename Derived\+R2 $>$ \\
+bool igl\+::tri\+\_\+tri\+\_\+overlap\+\_\+test\+\_\+2d (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+P1 $>$ \&}]{p1,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+Q1 $>$ \&}]{q1,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+R1 $>$ \&}]{r1,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+P2 $>$ \&}]{p2,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+Q2 $>$ \&}]{q2,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+R2 $>$ \&}]{r2 }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceigl_a9ce1a2b984f20466ffc7732ab29501ba}\label{namespaceigl_a9ce1a2b984f20466ffc7732ab29501ba} 
 \index{igl@{igl}!triangle\_fan@{triangle\_fan}}
 \index{triangle\_fan@{triangle\_fan}!igl@{igl}}
 \doxysubsubsection{\texorpdfstring{triangle\_fan()}{triangle\_fan()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -19395,7 +19539,7 @@ It is usual much faster if your algorithm can be written in terms of (u\+EC,u\+E
 \mbox{\texttt{ out}}  & {\em u\+EE} & \#E list of indices into E, so that the consecutive segment of indices u\+EE.\+segment(u\+EC(i),u\+EC(i+1)-\/u\+EC(i)) lists all directed edges sharing the ith unique edge.\\
 \hline
 \end{DoxyParams}
-\hypertarget{namespaceigl_autotoc_md33}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md33}
+\hypertarget{namespaceigl_autotoc_md34}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md34}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{comment}{//\ Using\ uE2E}}
@@ -19514,7 +19658,7 @@ Eigen reimplementation of glu\+Unproject.
 \hline
 \end{DoxyParams}
 \begin{DoxyRefDesc}{Bug}
-\item[\mbox{\hyperlink{bug__bug000020}{Bug}}]The compiler will not complain if V and P are Vector3d, but the result will be incorrect. \end{DoxyRefDesc}
+\item[\mbox{\hyperlink{bug__bug000025}{Bug}}]The compiler will not complain if V and P are Vector3d, but the result will be incorrect. \end{DoxyRefDesc}
 \Hypertarget{namespaceigl_ac545f7c2b0b725169a3785ba8e5bdbc2}\label{namespaceigl_ac545f7c2b0b725169a3785ba8e5bdbc2} 
 \index{igl@{igl}!unproject@{unproject}}
 \index{unproject@{unproject}!igl@{igl}}
@@ -19691,13 +19835,13 @@ Unproject a screen location (using current opengl viewport, projection, and mode
 \begin{DoxyReturn}{Returns}
 true if there\textquotesingle{}s a hit
 \end{DoxyReturn}
-\hypertarget{namespaceigl_autotoc_md34}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md34}
+\hypertarget{namespaceigl_autotoc_md35}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md35}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{igl::opengl::glfw::Viewer}}\ vr;}
 \DoxyCodeLine{...}
 \DoxyCodeLine{igl::unproject\_onto\_mesh(}
-\DoxyCodeLine{\ \ pos,vr.\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a4fc39cbf6a2d68d0eaf63bef3fd49464}{core}}().view,vr.\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a4fc39cbf6a2d68d0eaf63bef3fd49464}{core}}().proj,vr.\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a4fc39cbf6a2d68d0eaf63bef3fd49464}{core}}().viewport,V,F,fid,bc);}
+\DoxyCodeLine{\ \ pos,vr.\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a4fc39cbf6a2d68d0eaf63bef3fd49464}{core}}().\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a8ce15c9d27268543847a0d83c2010cb6}{view}},vr.\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a4fc39cbf6a2d68d0eaf63bef3fd49464}{core}}().\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_a50af5081883025581f00b0918b3d9d30}{proj}},vr.\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer_a4fc39cbf6a2d68d0eaf63bef3fd49464}{core}}().\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore_ac5a0f15fc245747e1d83b8e718f2e74f}{viewport}},V,F,fid,bc);}
 
 \end{DoxyCode}
  \Hypertarget{namespaceigl_af4d029fbc6f770b7dec469f743858d8f}\label{namespaceigl_af4d029fbc6f770b7dec469f743858d8f} 
@@ -19770,7 +19914,7 @@ To pass a list of attributes this function takes an std\+::vector of std\+::refe
 \mbox{\texttt{ out}}  & {\em J} & \#F\texorpdfstring{$\ast$}{*}3 by 1 list of indices so that A\mbox{[}\mbox{]}(i,j) = U.\+row(i+j\texorpdfstring{$\ast$}{*}\#F)\\
 \hline
 \end{DoxyParams}
-\hypertarget{namespaceigl_autotoc_md35}{}\doxyparagraph{\texorpdfstring{Matlibberish Example}{Matlibberish Example}}\label{namespaceigl_autotoc_md35}
+\hypertarget{namespaceigl_autotoc_md36}{}\doxyparagraph{\texorpdfstring{Matlibberish Example}{Matlibberish Example}}\label{namespaceigl_autotoc_md36}
 \mbox{[}V,F,TC,FTC\mbox{]} = read\+OBJ(\textquotesingle{}\texorpdfstring{$\sim$}{\string~}/\+Downloads/kiwis/kiwi.obj\textquotesingle{}); \mbox{[}U,G\mbox{]} = unzip\+\_\+corners(cat(3,\+F,\+FTC)); \% display mesh tsurf(G,V(\+U(\+:,1),\+:)); \% display texture coordinates tsurf(G,TC(\+U(\+:,2),\+:)); \Hypertarget{namespaceigl_a7897e133babd19415648e5aaef9cc63a}\label{namespaceigl_a7897e133babd19415648e5aaef9cc63a} 
 \index{igl@{igl}!upsample@{upsample}}
 \index{upsample@{upsample}!igl@{igl}}
@@ -19969,7 +20113,7 @@ vertex\+\_\+face\+\_\+adjacency constructs the vertex-\/face topology of a given
 \doxylink{namespaceigl_a0efd6c6b371a55178d53cf0afacf34ee}{edges}, \doxylink{namespaceigl_acbfe6ae19ab6f94e36b3d92be1159fe9}{cotmatrix}, \doxylink{namespaceigl_afc7d0ecd1acd535cee662dd648fdbd80}{diag}, vv
 \end{DoxySeeAlso}
 \begin{DoxyRefDesc}{Bug}
-\item[\mbox{\hyperlink{bug__bug000021}{Bug}}]this should not take V as an input parameter. 
+\item[\mbox{\hyperlink{bug__bug000026}{Bug}}]this should not take V as an input parameter. 
 
 if a facet is combinatorially degenerate then faces will appear multiple times in VF and correspondingly in VFI (j appears twice in F.\+row(i) then i will appear twice in VF\mbox{[}j\mbox{]}) \end{DoxyRefDesc}
 \Hypertarget{namespaceigl_a44c886a9ced7765ce3e2f03332bbcf91}\label{namespaceigl_a44c886a9ced7765ce3e2f03332bbcf91} 
@@ -20313,7 +20457,7 @@ save a tetrahedral volume mesh to a .mesh file
 true on success, false on errors
 \end{DoxyReturn}
 \begin{DoxyRefDesc}{Bug}
-\item[\mbox{\hyperlink{bug__bug000022}{Bug}}]Holes and regions are not supported \end{DoxyRefDesc}
+\item[\mbox{\hyperlink{bug__bug000027}{Bug}}]Holes and regions are not supported \end{DoxyRefDesc}
 \Hypertarget{namespaceigl_ac173c671f0c9f633abe3daa005455507}\label{namespaceigl_ac173c671f0c9f633abe3daa005455507} 
 \index{igl@{igl}!writeMESH@{writeMESH}}
 \index{writeMESH@{writeMESH}!igl@{igl}}
@@ -20384,7 +20528,7 @@ write triangle surface mesh and tetrahedral volume mesh to .msh file
 \hline
 \end{DoxyParams}
 \begin{DoxyRefDesc}{Bug}
-\item[\mbox{\hyperlink{bug__bug000023}{Bug}}]files are always stored in binary format 
+\item[\mbox{\hyperlink{bug__bug000028}{Bug}}]files are always stored in binary format 
 
 file format is 2.\+2 
 
@@ -20427,7 +20571,7 @@ Write a mesh in an ascii obj file.
 true on success, false on error
 \end{DoxyReturn}
 \begin{DoxyRefDesc}{Bug}
-\item[\mbox{\hyperlink{bug__bug000024}{Bug}}]Horrifyingly, this does not have the same order of parameters as read\+OBJ.\end{DoxyRefDesc}
+\item[\mbox{\hyperlink{bug__bug000029}{Bug}}]Horrifyingly, this does not have the same order of parameters as read\+OBJ.\end{DoxyRefDesc}
 
 
 \begin{DoxySeeAlso}{See also}
@@ -21085,4 +21229,34 @@ Often one needs a reference to a dummy variable containing one as its value, for
 
 
 π 
+
+\Hypertarget{namespaceigl_a89d712ab3a824b8712b6f228dc8242cf}\label{namespaceigl_a89d712ab3a824b8712b6f228dc8242cf} 
+\index{igl@{igl}!CHAR\_ZERO@{CHAR\_ZERO}}
+\index{CHAR\_ZERO@{CHAR\_ZERO}!igl@{igl}}
+\doxysubsubsection{\texorpdfstring{CHAR\_ZERO}{CHAR\_ZERO}}
+{\footnotesize\ttfamily const char igl\+::\+CHAR\+\_\+\+ZERO = 0}
+
+\Hypertarget{namespaceigl_ad26002c6ec8c14b1b4a7acc5db59b1e4}\label{namespaceigl_ad26002c6ec8c14b1b4a7acc5db59b1e4} 
+\index{igl@{igl}!INT\_ZERO@{INT\_ZERO}}
+\index{INT\_ZERO@{INT\_ZERO}!igl@{igl}}
+\doxysubsubsection{\texorpdfstring{INT\_ZERO}{INT\_ZERO}}
+{\footnotesize\ttfamily const int igl\+::\+INT\+\_\+\+ZERO = 0}
+
+\Hypertarget{namespaceigl_a3d956292d4f64a8ce6b1e1d92a9f9d24}\label{namespaceigl_a3d956292d4f64a8ce6b1e1d92a9f9d24} 
+\index{igl@{igl}!UNSIGNED\_INT\_ZERO@{UNSIGNED\_INT\_ZERO}}
+\index{UNSIGNED\_INT\_ZERO@{UNSIGNED\_INT\_ZERO}!igl@{igl}}
+\doxysubsubsection{\texorpdfstring{UNSIGNED\_INT\_ZERO}{UNSIGNED\_INT\_ZERO}}
+{\footnotesize\ttfamily const unsigned int igl\+::\+UNSIGNED\+\_\+\+INT\+\_\+\+ZERO = 0}
+
+\Hypertarget{namespaceigl_af1cef568dc365b5b596341a5b7f06867}\label{namespaceigl_af1cef568dc365b5b596341a5b7f06867} 
+\index{igl@{igl}!DOUBLE\_ZERO@{DOUBLE\_ZERO}}
+\index{DOUBLE\_ZERO@{DOUBLE\_ZERO}!igl@{igl}}
+\doxysubsubsection{\texorpdfstring{DOUBLE\_ZERO}{DOUBLE\_ZERO}}
+{\footnotesize\ttfamily const double igl\+::\+DOUBLE\+\_\+\+ZERO = 0}
+
+\Hypertarget{namespaceigl_aec3a0ea947dabbe9fc09e7e8da909613}\label{namespaceigl_aec3a0ea947dabbe9fc09e7e8da909613} 
+\index{igl@{igl}!FLOAT\_ZERO@{FLOAT\_ZERO}}
+\index{FLOAT\_ZERO@{FLOAT\_ZERO}!igl@{igl}}
+\doxysubsubsection{\texorpdfstring{FLOAT\_ZERO}{FLOAT\_ZERO}}
+{\footnotesize\ttfamily const float igl\+::\+FLOAT\+\_\+\+ZERO = 0}
 

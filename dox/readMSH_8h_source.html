@@ -109,7 +109,7 @@ $(document).ready(function(){initNavTree('readMSH_8h_source.html',''); initResiz
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// with this file, You can obtain one at http://mozilla.org/MPL/2.0/.</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef IGL_READ_MSH_H</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define IGL_READ_MSH_H</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;igl_inline.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="igl__inline_8h.html">igl_inline.h</a>&quot;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;Eigen/Core&gt;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;string&gt;</span></div>
@@ -118,7 +118,7 @@ $(document).ready(function(){initNavTree('readMSH_8h_source.html',''); initResiz
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceigl.html">igl</a> </div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="namespaceigl.html#a71568db686b70c51b2b3ea414c348a86">   38</a></span>    IGL_INLINE <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceigl.html#a71568db686b70c51b2b3ea414c348a86">readMSH</a>(</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="namespaceigl.html#a71568db686b70c51b2b3ea414c348a86">   38</a></span>    <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceigl.html#a71568db686b70c51b2b3ea414c348a86">readMSH</a>(</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>      <span class="keyword">const</span> std::string &amp;msh,</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>      Eigen::MatrixXd &amp;X,</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>      Eigen::MatrixXi &amp;Tri,</div>
@@ -131,19 +131,19 @@ $(document).ready(function(){initNavTree('readMSH_8h_source.html',''); initResiz
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>      std::vector&lt;Eigen::MatrixXd&gt; &amp;TriF,</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>      std::vector&lt;Eigen::MatrixXd&gt; &amp;TetF</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>      );</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="namespaceigl.html#a9956ff8bc4304147a7f610f179c3495c">   52</a></span>    IGL_INLINE <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceigl.html#a71568db686b70c51b2b3ea414c348a86">readMSH</a>(<span class="keyword">const</span> std::string &amp;msh,</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="namespaceigl.html#a9956ff8bc4304147a7f610f179c3495c">   52</a></span>    <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceigl.html#a71568db686b70c51b2b3ea414c348a86">readMSH</a>(<span class="keyword">const</span> std::string &amp;msh,</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                Eigen::MatrixXd &amp;X,</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                Eigen::MatrixXi &amp;Tri,</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                Eigen::MatrixXi &amp;Tet,</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                Eigen::VectorXi &amp;TriTag,</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                Eigen::VectorXi &amp;TetTag</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                );</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="namespaceigl.html#ad08141617b9f2a3cc5f716f36d3e6d39">   60</a></span>    IGL_INLINE <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceigl.html#a71568db686b70c51b2b3ea414c348a86">readMSH</a>(<span class="keyword">const</span> std::string &amp;msh,</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="namespaceigl.html#ad08141617b9f2a3cc5f716f36d3e6d39">   60</a></span>    <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceigl.html#a71568db686b70c51b2b3ea414c348a86">readMSH</a>(<span class="keyword">const</span> std::string &amp;msh,</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                Eigen::MatrixXd &amp;X,</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                Eigen::MatrixXi &amp;Tri,</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                Eigen::VectorXi &amp;TriTag</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                );</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="namespaceigl.html#a30ec5a47228d26d15ff5eb57ef91468a">   66</a></span>    IGL_INLINE <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceigl.html#a71568db686b70c51b2b3ea414c348a86">readMSH</a>(<span class="keyword">const</span> std::string &amp;msh,</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="namespaceigl.html#a30ec5a47228d26d15ff5eb57ef91468a">   66</a></span>    <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceigl.html#a71568db686b70c51b2b3ea414c348a86">readMSH</a>(<span class="keyword">const</span> std::string &amp;msh,</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                Eigen::MatrixXd &amp;X,</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                Eigen::MatrixXi &amp;Tri</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                );</div>
@@ -156,7 +156,9 @@ $(document).ready(function(){initNavTree('readMSH_8h_source.html',''); initResiz
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="preprocessor">#endif </span><span class="comment">//IGL_READ_MSH_H</span></div>
-<div class="ttc" id="anamespaceigl_html"><div class="ttname"><a href="namespaceigl.html">igl</a></div><div class="ttdoc">Fake halfedge for fast and easy navigation on triangle meshes with vertex_triangle_adjacency and tria...</div><div class="ttdef"><b>Definition</b> AABB.h:17</div></div>
+<div class="ttc" id="aigl__inline_8h_html"><div class="ttname"><a href="igl__inline_8h.html">igl_inline.h</a></div></div>
+<div class="ttc" id="aigl__inline_8h_html_a838241279013352686271b4c4ce1f708"><div class="ttname"><a href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a></div><div class="ttdeci">#define IGL_INLINE</div><div class="ttdef"><b>Definition</b> igl_inline.h:15</div></div>
+<div class="ttc" id="anamespaceigl_html"><div class="ttname"><a href="namespaceigl.html">igl</a></div><div class="ttdef"><b>Definition</b> AABB.h:17</div></div>
 <div class="ttc" id="anamespaceigl_html_a71568db686b70c51b2b3ea414c348a86"><div class="ttname"><a href="namespaceigl.html#a71568db686b70c51b2b3ea414c348a86">igl::readMSH</a></div><div class="ttdeci">bool readMSH(const std::string &amp;msh, Eigen::MatrixXd &amp;X, Eigen::MatrixXi &amp;Tri, Eigen::MatrixXi &amp;Tet, Eigen::VectorXi &amp;TriTag, Eigen::VectorXi &amp;TetTag, std::vector&lt; std::string &gt; &amp;XFields, std::vector&lt; Eigen::MatrixXd &gt; &amp;XF, std::vector&lt; std::string &gt; &amp;EFields, std::vector&lt; Eigen::MatrixXd &gt; &amp;TriF, std::vector&lt; Eigen::MatrixXd &gt; &amp;TetF)</div><div class="ttdoc">read triangle surface mesh and tetrahedral volume mesh from .msh file</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

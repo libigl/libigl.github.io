@@ -1,0 +1,68 @@
+\doxysection{Im\+Gui\+Widget.\+h}
+\hypertarget{ImGuiWidget_8h_source}{}\label{ImGuiWidget_8h_source}\index{include/igl/opengl/glfw/imgui/ImGuiWidget.h@{include/igl/opengl/glfw/imgui/ImGuiWidget.h}}
+\mbox{\hyperlink{ImGuiWidget_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2022\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_OPENGL\_GLFW\_IMGUI\_IMGUIWIDGET\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_OPENGL\_GLFW\_IMGUI\_IMGUIWIDGET\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ImGuiPlugin_8h}{ImGuiPlugin.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ImGuiWidget_8h}{ImGuiWidget.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}../../../igl\_inline.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \ \ \textcolor{keyword}{namespace\ }opengl}
+\DoxyCodeLine{00019\ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{namespace\ }glfw}
+\DoxyCodeLine{00021\ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \textcolor{keyword}{class\ }Viewer;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \textcolor{keyword}{namespace\ }imgui}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Forward\ declaration\ of\ the\ parent\ plugin}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }ImGuiPlugin;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget}{ImGuiWidget}}\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_a1a902f44cacdd1010b1b750fd221f8ef}{ImGuiWidget}}()\{\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_a29581a458a08fc27f8c494fdc0ccdce5}{name}}\ =\ \textcolor{stringliteral}{"{}dummy"{}};\ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_a42229944f49fb269b4a149cabbc492de}{\string~ImGuiWidget}}()\{\}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_aeb7f0b078901e68a35f59ddb80da0f66}{init}}(\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}}\ *\_viewer,\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiPlugin}{ImGuiPlugin}}\ *\_plugin)}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_a1a80a6d3b0e9077beaa02b2ec8aa7bd4}{viewer}}\ =\ \_viewer;\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_abbbbfb1419a0cdfdcc5f3b0ac8370f85}{plugin}}\ =\ \_plugin;\ \}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_a15b2430e518e62272b86cc33641c6860}{shutdown}}()\ \{\}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_a978027bebed054f7b0f8190a7d56567a}{draw}}()\ \{\}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_acfe42061d0f6fb3995421e2a2dcee0d8}{mouse\_down}}(\textcolor{keywordtype}{int}\ button,\ \textcolor{keywordtype}{int}\ modifier)}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_a9d82ffbc9b7317e617232a2682b7c5ff}{mouse\_up}}(\textcolor{keywordtype}{int}\ button,\ \textcolor{keywordtype}{int}\ modifier)}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_a4c09eef628ff76c10b2142c2901f9ffc}{mouse\_move}}(\textcolor{keywordtype}{int}\ mouse\_x,\ \textcolor{keywordtype}{int}\ mouse\_y)}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_a8f845e4338763276932a487db0c1c6eb}{key\_pressed}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ key,\ \textcolor{keywordtype}{int}\ modifiers)}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_aa7fa66da205f8e054f8be0fdf7904e6e}{key\_down}}(\textcolor{keywordtype}{int}\ key,\ \textcolor{keywordtype}{int}\ modifiers)}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_aa08d3adebc82a8c28df9f571247f40cb}{key\_up}}(\textcolor{keywordtype}{int}\ key,\ \textcolor{keywordtype}{int}\ modifiers)}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_a29581a458a08fc27f8c494fdc0ccdce5}{name}};}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Pointer\ to\ ImGuiPlugin's\ parent\ viewer}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}}\ *\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_a1a80a6d3b0e9077beaa02b2ec8aa7bd4}{viewer}};}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Pointer\ to\ parent\ ImGuiPlugin\ class}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiPlugin}{ImGuiPlugin}}\ *\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_abbbbfb1419a0cdfdcc5f3b0ac8370f85}{plugin}};}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \ \ \}}
+\DoxyCodeLine{00062\ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00065\ }
+
+\end{DoxyCode}

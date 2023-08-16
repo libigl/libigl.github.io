@@ -1,0 +1,22 @@
+\doxysection{include/igl/copyleft/cgal/subdivide\+\_\+segments.h File Reference}
+\hypertarget{subdivide__segments_8h}{}\label{subdivide__segments_8h}\index{include/igl/copyleft/cgal/subdivide\_segments.h@{include/igl/copyleft/cgal/subdivide\_segments.h}}
+{\ttfamily \#include \"{}../../igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$CGAL/\+Segment\+\_\+2.\+h$>$}\newline
+{\ttfamily \#include $<$CGAL/\+Point\+\_\+2.\+h$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \"{}subdivide\+\_\+segments.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\item 
+namespace \mbox{\hyperlink{namespaceigl_1_1copyleft}{igl\+::copyleft}}
+\item 
+namespace \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal}{igl\+::copyleft\+::cgal}}
+\begin{DoxyCompactList}\small\item\em Given a list of possible intersecting segments with endpoints, split segments to overlap only at endpoints. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedE , typename Kernel , typename Derived\+VI , typename Derived\+EI , typename DerivedJ , typename Derived\+IM $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a347c87769a3b67d0bee379fb78705679}{igl\+::copyleft\+::cgal\+::subdivide\+\_\+segments}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedE $>$ \&E, const std\+::vector$<$ std\+::vector$<$ CGAL\+::\+Point\+\_\+2$<$ Kernel $>$ $>$ $>$ \&steiner, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+VI $>$ \&VI, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+EI $>$ \&EI, Eigen\+::\+Plain\+Object\+Base$<$ DerivedJ $>$ \&J, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+IM $>$ \&IM)
+\begin{DoxyCompactList}\small\item\em Insert steiner points to subdivide a given set of line segments. \end{DoxyCompactList}\end{DoxyCompactItemize}

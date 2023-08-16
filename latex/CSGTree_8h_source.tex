@@ -1,0 +1,174 @@
+\doxysection{CSGTree.\+h}
+\hypertarget{CSGTree_8h_source}{}\label{CSGTree_8h_source}\index{include/igl/copyleft/cgal/CSGTree.h@{include/igl/copyleft/cgal/CSGTree.h}}
+\mbox{\hyperlink{CSGTree_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2015\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_COPYLEFT\_CGAL\_CSG\_TREE\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_COPYLEFT\_CGAL\_CSG\_TREE\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}../../MeshBooleanType.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{string__to__mesh__boolean__type_8h}{string\_to\_mesh\_boolean\_type.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mesh__boolean_8h}{mesh\_boolean.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <CGAL/Exact\_predicates\_exact\_constructions\_kernel.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <CGAL/number\_utils.h>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \ \ \textcolor{keyword}{namespace\ }copyleft}
+\DoxyCodeLine{00020\ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{namespace\ }cgal}
+\DoxyCodeLine{00022\ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree}{CSGTree}}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ CGAL::Epeck::FT\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a18a9ad9cb7b41afddc6f08130fc65097}{ExactScalar}};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//typedef\ Eigen::PlainObjectBase<DerivedF>\ POBF;}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ Eigen::MatrixXi\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_ad2512324b6d4407909bf27cf2b037582}{POBF}};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ Eigen::Matrix<ExactScalar,Eigen::Dynamic,3>\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_aefc0d8db2c34331db60bc9ee55598fa2}{MatrixX3E}};}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ Eigen::VectorXi\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a8fb704a30594f2e748c56364789f63ee}{VectorJ}};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_aefc0d8db2c34331db60bc9ee55598fa2}{MatrixX3E}}\ m\_V;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_ad2512324b6d4407909bf27cf2b037582}{POBF}}\ m\_F;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a8fb704a30594f2e748c56364789f63ee}{VectorJ}}\ m\_J;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ m\_number\_of\_birth\_faces;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_ac850bef944e82e6a8d4c441eb5bf4b2e}{CSGTree}}()}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//typedef\ Eigen::MatrixXd\ MatrixX3E;}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//typedef\ Eigen::MatrixXi\ POBF;}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ http://stackoverflow.com/a/3279550/148668}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a6e4671e18efb3605b188030f2c280697}{CSGTree}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree}{CSGTree}}\ \&\ other)}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ :}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ copy\ things}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ m\_V(other.m\_V),}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ This\ is\ an\ issue\ if\ m\_F\ is\ templated}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ https://forum.kde.org/viewtopic.php?f=74\&t=128414}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ m\_F(other.m\_F),}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ m\_J(other.m\_J),}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ m\_number\_of\_birth\_faces(other.m\_number\_of\_birth\_faces)}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ copy-\/swap\ idiom}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a4bcf6226b570374a7ae5605e89a4c47c}{swap}}(\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree}{CSGTree}}\&\ first,\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree}{CSGTree}}\&\ second)}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }std::swap;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ swap\ things}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a4bcf6226b570374a7ae5605e89a4c47c}{swap}}(first.m\_V,second.m\_V);}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ This\ is\ an\ issue\ if\ m\_F\ is\ templated,\ similar\ to}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ https://forum.kde.org/viewtopic.php?f=74\&t=128414}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a4bcf6226b570374a7ae5605e89a4c47c}{swap}}(first.m\_F,second.m\_F);}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a4bcf6226b570374a7ae5605e89a4c47c}{swap}}(first.m\_J,second.m\_J);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a4bcf6226b570374a7ae5605e89a4c47c}{swap}}(first.m\_number\_of\_birth\_faces,second.m\_number\_of\_birth\_faces);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Pass-\/by-\/value\ (aka\ copy)}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree}{CSGTree}}\&\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a21f9d9f0cca9c5c5677544f457c25619}{operator=}}(\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree}{CSGTree}}\ other)}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a4bcf6226b570374a7ae5605e89a4c47c}{swap}}(*\textcolor{keyword}{this},other);}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a63cb96b3b9605d09d66a39502c8c743e}{CSGTree}}(\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree}{CSGTree}}\&\&\ other):}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ initialize\ via\ default\ constructor}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree}{CSGTree}}()\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a4bcf6226b570374a7ae5605e89a4c47c}{swap}}(*\textcolor{keyword}{this},other);}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_acf6a400a39f9682f3a2599b2d73ca9b6}{CSGTree}}(}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree}{CSGTree}}\ \&\ A,}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree}{CSGTree}}\ \&\ B,}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceigl_a16cc7fd8778cd880be528227e0318b9f}{MeshBooleanType}}\ \&\ type)}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ conduct\ boolean\ operation}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a06c593a5aedf52ccb8234edccc484607}{mesh\_boolean}}(A.\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a85f3719f6999f1416d8a7511b21c067e}{V}}(),A.\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a4b5ee0dfee26aef628e72dbdcbd63e4d}{F}}(),B.\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a85f3719f6999f1416d8a7511b21c067e}{V}}(),B.\mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a4b5ee0dfee26aef628e72dbdcbd63e4d}{F}}(),type,m\_V,m\_F,m\_J);}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ reindex\ m\_J}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ std::for\_each(m\_J.data(),m\_J.data()+m\_J.size(),}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\&](\textcolor{keyword}{typename}\ VectorJ::Scalar\ \&\ j)\ -\/>\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if(j\ <\ A.F().rows())}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ j\ =\ A.J()(j);}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ assert(j<(A.F().rows()+B.F().rows()));}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ j\ =\ A.number\_of\_birth\_faces()+(B.J()(j-\/A.F().rows()));}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ m\_number\_of\_birth\_faces\ =\ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ A.number\_of\_birth\_faces()\ +\ B.number\_of\_birth\_faces();}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a17bc4ad9c9287cfd2e044d7d9fdeeddb}{CSGTree}}(}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree}{CSGTree}}\ \&\ A,}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree}{CSGTree}}\ \&\ B,}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\ s):}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree}{CSGTree}}(A,B,\mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_ac105fc714db9b51b1c3945c51e6e5a19}{string\_to\_mesh\_boolean\_type}}(s))}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ do\ nothing\ (all\ done\ in\ constructor).}}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedV>}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a1eaa3c506d76bc6199ea373c2a67b3aa}{CSGTree}}(\textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedV>\ \&\ V,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_ad2512324b6d4407909bf27cf2b037582}{POBF}}\ \&\ F)\textcolor{comment}{//:}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Possible\ Eigen\ bug:}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ https://forum.kde.org/viewtopic.php?f=74\&t=128414}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//m\_V(V.template\ cast<ExactScalar>()),m\_F(F)}}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ m\_V\ =\ V.template\ cast<ExactScalar>();}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ m\_F\ =\ F;}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ number\ of\ faces}}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ m\_number\_of\_birth\_faces\ =\ m\_F.rows();}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ identity\ birth\ index}}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ m\_J\ =\ VectorJ::LinSpaced(}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_number\_of\_birth\_faces,0,m\_number\_of\_birth\_faces-\/1);}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Returns\ reference\ to\ resulting\ mesh\ vertices\ m\_V\ in\ exact\ scalar}}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ representation}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_aefc0d8db2c34331db60bc9ee55598fa2}{MatrixX3E}}\ \&\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a85f3719f6999f1416d8a7511b21c067e}{V}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00145\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_V;}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Returns\ mesh\ vertices\ in\ the\ desired\ output\ type,\ casting\ when}}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ appropriate\ to\ floating\ precision.}}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedV>}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ DerivedV\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a720acd8b16e42f753f398329a6fb84e2}{cast\_V}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00152\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ DerivedV\ dV;}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ dV.resize(m\_V.rows(),m\_V.cols());}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;i<m\_V.rows();i++)}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;j<m\_V.cols();j++)}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dV(i,j)\ =\ CGAL::to\_double(m\_V(i,j));}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ dV;}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Returns\ reference\ to\ resulting\ mesh\ faces\ m\_F}}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_ad2512324b6d4407909bf27cf2b037582}{POBF}}\ \&\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a4b5ee0dfee26aef628e72dbdcbd63e4d}{F}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00166\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_F;}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Returns\ reference\ to\ "{}birth\ parents"{}\ indices\ into\ [F1;F2;...;Fn]}}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ where\ F1,\ ...\ ,\ Fn\ are\ the\ face\ lists\ of\ the\ leaf\ ("{}original"{})\ input}}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ meshes.}}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a8fb704a30594f2e748c56364789f63ee}{VectorJ}}\ \&\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_adbdf2c265c262700f814f81142a1360c}{J}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00173\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_J;}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ number\ of\ leaf\ faces\ =\ \#F1\ +\ \#F2\ +\ ...\ +\ \#Fn}}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ \&\ \mbox{\hyperlink{classigl_1_1copyleft_1_1cgal_1_1CSGTree_a071090585c60ad3aaa29cc9358066b8c}{number\_of\_birth\_faces}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00178\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_number\_of\_birth\_faces;}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00182\ \ \ \ \ \}}
+\DoxyCodeLine{00183\ \ \ \}}
+\DoxyCodeLine{00184\ \}}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

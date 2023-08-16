@@ -1,0 +1,112 @@
+\doxysection{tga.\+h}
+\hypertarget{tga_8h_source}{}\label{tga_8h_source}\index{include/igl/copyleft/opengl2/tga.h@{include/igl/copyleft/opengl2/tga.h}}
+\mbox{\hyperlink{tga_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2015\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_OPENGL\_TGA\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_OPENGL\_TGA\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../../igl\_inline.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}../../opengl2/gl.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ See\ license\ in\ tga.cpp}}
+\DoxyCodeLine{00014\ \textcolor{comment}{/*\ tga.h\ -\/\ interface\ for\ TrueVision\ (TGA)\ image\ file\ loader\ */}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifdef\ \_WIN32}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <windows.h>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{namespace\ }opengl}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ GLsizei\ \ \mbox{\hyperlink{structigl_1_1opengl_1_1gliGenericImage_a4b9cea678c1f456ca4f51ae855dfa6fe}{width}};}
+\DoxyCodeLine{00028\ \ \ GLsizei\ \ \mbox{\hyperlink{structigl_1_1opengl_1_1gliGenericImage_a18debf49d844a43e223570ec613661b5}{height}};}
+\DoxyCodeLine{00029\ \ \ GLint\ \ \ \ \mbox{\hyperlink{structigl_1_1opengl_1_1gliGenericImage_aed1cc684c40345af9929084c10a064da}{components}};}
+\DoxyCodeLine{00030\ \ \ GLenum\ \ \ \mbox{\hyperlink{structigl_1_1opengl_1_1gliGenericImage_af39dc10c3dfb4c29d723ea6acf2bef93}{format}};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ GLsizei\ \ \mbox{\hyperlink{structigl_1_1opengl_1_1gliGenericImage_a6b0adad24116332273ff8a3bdcad9134}{cmapEntries}};}
+\DoxyCodeLine{00033\ \ \ GLenum\ \ \ \mbox{\hyperlink{structigl_1_1opengl_1_1gliGenericImage_a1117a79f68dcc6518a33c5843d32e931}{cmapFormat}};}
+\DoxyCodeLine{00034\ \ \ GLubyte\ *\mbox{\hyperlink{structigl_1_1opengl_1_1gliGenericImage_a13f7053e751f05b2ecbd6de7a7b1b42c}{cmap}};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ GLubyte\ *\mbox{\hyperlink{structigl_1_1opengl_1_1gliGenericImage_a7d4ae5d08c0ef150939c0e3d5e66aeb1}{pixels}};}
+\DoxyCodeLine{00037\ \ \ }
+\DoxyCodeLine{00038\ \}\ \mbox{\hyperlink{structigl_1_1opengl_1_1gliGenericImage}{gliGenericImage}};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00041\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structigl_1_1opengl_1_1TgaHeader_a05c35e909903ae38ffc83320d0a1c3b7}{idLength}};}
+\DoxyCodeLine{00042\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structigl_1_1opengl_1_1TgaHeader_aacbab4be043630a5212e15cca13bebef}{colorMapType}};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \textcolor{comment}{/*\ The\ image\ type.\ */}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ TGA\_TYPE\_MAPPED\ 1}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ TGA\_TYPE\_COLOR\ 2}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ TGA\_TYPE\_GRAY\ 3}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ TGA\_TYPE\_MAPPED\_RLE\ 9}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ TGA\_TYPE\_COLOR\_RLE\ 10}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ TGA\_TYPE\_GRAY\_RLE\ 11}}
+\DoxyCodeLine{00051\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structigl_1_1opengl_1_1TgaHeader_ac451a868a8f30c09bac13e0f29712196}{imageType}};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \textcolor{comment}{/*\ Color\ Map\ Specification.\ */}}
+\DoxyCodeLine{00054\ \ \ \textcolor{comment}{/*\ We\ need\ to\ separately\ specify\ high\ and\ low\ bytes\ to\ avoid\ endianness}}
+\DoxyCodeLine{00055\ \textcolor{comment}{\ \ \ \ \ and\ alignment\ problems.\ */}}
+\DoxyCodeLine{00056\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ colorMapIndexLo,\ \mbox{\hyperlink{structigl_1_1opengl_1_1TgaHeader_a4d62c0cc7fc849dac72282b708b3e7a7}{colorMapIndexHi}};}
+\DoxyCodeLine{00057\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ colorMapLengthLo,\ \mbox{\hyperlink{structigl_1_1opengl_1_1TgaHeader_a771c543d0cdae7611e0c3c68e9dd7caa}{colorMapLengthHi}};}
+\DoxyCodeLine{00058\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structigl_1_1opengl_1_1TgaHeader_a9fda84aa112e0b2832c520ce898e02e4}{colorMapSize}};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \textcolor{comment}{/*\ Image\ Specification.\ */}}
+\DoxyCodeLine{00061\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ xOriginLo,\ \mbox{\hyperlink{structigl_1_1opengl_1_1TgaHeader_a9990f4fe9dd27f38e9ce4cf32edff5f4}{xOriginHi}};}
+\DoxyCodeLine{00062\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ yOriginLo,\ \mbox{\hyperlink{structigl_1_1opengl_1_1TgaHeader_ae35b64f45518d8f4bed230107b410b97}{yOriginHi}};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ widthLo,\ \mbox{\hyperlink{structigl_1_1opengl_1_1TgaHeader_a722c96b3a8a79e1fdaac6e1432615779}{widthHi}};}
+\DoxyCodeLine{00065\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ heightLo,\ \mbox{\hyperlink{structigl_1_1opengl_1_1TgaHeader_a6f4d6d30a862397ff42de507475a82e5}{heightHi}};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structigl_1_1opengl_1_1TgaHeader_ac92bc96eaae7dcb3bd53fee5cdad6952}{bpp}};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \textcolor{comment}{/*\ Image\ descriptor.}}
+\DoxyCodeLine{00070\ \textcolor{comment}{\ \ \ \ \ 3-\/0:\ attribute\ bpp}}
+\DoxyCodeLine{00071\ \textcolor{comment}{\ \ \ \ \ 4:\ \ \ left-\/to-\/right\ ordering}}
+\DoxyCodeLine{00072\ \textcolor{comment}{\ \ \ \ \ 5:\ \ \ top-\/to-\/bottom\ ordering}}
+\DoxyCodeLine{00073\ \textcolor{comment}{\ \ \ \ \ 7-\/6:\ zero}}
+\DoxyCodeLine{00074\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ TGA\_DESC\_ABITS\ 0x0f}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ TGA\_DESC\_HORIZONTAL\ 0x10}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ TGA\_DESC\_VERTICAL\ 0x20}}
+\DoxyCodeLine{00078\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structigl_1_1opengl_1_1TgaHeader_a779340ae1bf56c23a8cd3ea2f7ce9fbe}{descriptor}};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \}\ \mbox{\hyperlink{structigl_1_1opengl_1_1TgaHeader}{TgaHeader}};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00083\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structigl_1_1opengl_1_1TgaFooter_a9d9eab04975df747cd799779fa415d44}{extensionAreaOffset}};}
+\DoxyCodeLine{00084\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structigl_1_1opengl_1_1TgaFooter_a47d60444f61e028bde79964aedffa062}{developerDirectoryOffset}};}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ TGA\_SIGNATURE\ "{}TRUEVISION-\/XFILE"{}}}
+\DoxyCodeLine{00086\ \ \ \textcolor{keywordtype}{char}\ signature[16];}
+\DoxyCodeLine{00087\ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structigl_1_1opengl_1_1TgaFooter_a81351ace2c4a97e6c0051c86c2494db2}{dot}};}
+\DoxyCodeLine{00088\ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structigl_1_1opengl_1_1TgaFooter_ae3ce9a6f81878871b85bdd825bb633b4}{null}};}
+\DoxyCodeLine{00089\ \}\ \mbox{\hyperlink{structigl_1_1opengl_1_1TgaFooter}{TgaFooter}};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{structigl_1_1opengl_1_1gliGenericImage}{gliGenericImage}}\ *\mbox{\hyperlink{namespaceigl_1_1opengl_a73e1f94f7c5006844213837713652e0f}{gliReadTGA}}(FILE\ *fp,\ \textcolor{keywordtype}{char}\ *name,\ \textcolor{keywordtype}{int}\ hflip,\ \textcolor{keywordtype}{int}\ vflip);}
+\DoxyCodeLine{00092\ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceigl_1_1opengl_a1581cf9fab6f2f7dbc495dc8c601bd9b}{gli\_verbose}}(\textcolor{keywordtype}{int}\ new\_verbose);}
+\DoxyCodeLine{00093\ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceigl_1_1opengl_ab7b723fc81098ef1841429fb1e127d76}{gliVerbose}}(\textcolor{keywordtype}{int}\ newVerbose);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1opengl_a0ee614bf7fc62ec302b276934bc9a8cc}{writeTGA}}(\ \mbox{\hyperlink{structigl_1_1opengl_1_1gliGenericImage}{gliGenericImage}}*\ image,\ FILE\ *fp);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \}\ \textcolor{comment}{//\ end\ of\ igl\ namespace}}
+\DoxyCodeLine{00100\ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#\ \ include\ "{}tga.cpp"{}}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}

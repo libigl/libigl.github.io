@@ -109,7 +109,7 @@ $(document).ready(function(){initNavTree('dihedral__angles_8h_source.html',''); 
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// obtain one at http://mozilla.org/MPL/2.0/.</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef IGL_DIHEDRAL_ANGLES_H</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define IGL_DIHEDRAL_ANGLES_H</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;igl_inline.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="igl__inline_8h.html">igl_inline.h</a>&quot;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;Eigen/Core&gt;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceigl.html">igl</a></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
@@ -118,7 +118,7 @@ $(document).ready(function(){initNavTree('dihedral__angles_8h_source.html',''); 
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">typename</span> DerivedT, </div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">typename</span> Derivedtheta,</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">typename</span> Derivedcos_theta&gt;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="namespaceigl.html#ae1d2eff20a5c7b15bbe61a1d53eadc9b">   26</a></span>  IGL_INLINE <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#ae1d2eff20a5c7b15bbe61a1d53eadc9b">dihedral_angles</a>(</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="namespaceigl.html#ae1d2eff20a5c7b15bbe61a1d53eadc9b">   26</a></span>  <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#ae1d2eff20a5c7b15bbe61a1d53eadc9b">dihedral_angles</a>(</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">const</span> Eigen::MatrixBase&lt;DerivedV&gt;&amp; V,</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">const</span> Eigen::MatrixBase&lt;DerivedT&gt;&amp; T,</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    Eigen::PlainObjectBase&lt;Derivedtheta&gt;&amp; theta,</div>
@@ -128,7 +128,7 @@ $(document).ready(function(){initNavTree('dihedral__angles_8h_source.html',''); 
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">typename</span> DerivedA, </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keyword">typename</span> Derivedtheta,</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">typename</span> Derivedcos_theta&gt;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="namespaceigl.html#af8fd16e614bedafbd69fa739a29a7622">   42</a></span>  IGL_INLINE <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#af8fd16e614bedafbd69fa739a29a7622">dihedral_angles_intrinsic</a>(</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="namespaceigl.html#af8fd16e614bedafbd69fa739a29a7622">   42</a></span>  <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#af8fd16e614bedafbd69fa739a29a7622">dihedral_angles_intrinsic</a>(</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keyword">const</span> Eigen::MatrixBase&lt;DerivedL&gt;&amp; L,</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keyword">const</span> Eigen::MatrixBase&lt;DerivedA&gt;&amp; A,</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    Eigen::PlainObjectBase&lt;Derivedtheta&gt;&amp; theta,</div>
@@ -141,7 +141,9 @@ $(document).ready(function(){initNavTree('dihedral__angles_8h_source.html',''); 
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="ttc" id="anamespaceigl_html"><div class="ttname"><a href="namespaceigl.html">igl</a></div><div class="ttdoc">Fake halfedge for fast and easy navigation on triangle meshes with vertex_triangle_adjacency and tria...</div><div class="ttdef"><b>Definition</b> AABB.h:17</div></div>
+<div class="ttc" id="aigl__inline_8h_html"><div class="ttname"><a href="igl__inline_8h.html">igl_inline.h</a></div></div>
+<div class="ttc" id="aigl__inline_8h_html_a838241279013352686271b4c4ce1f708"><div class="ttname"><a href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a></div><div class="ttdeci">#define IGL_INLINE</div><div class="ttdef"><b>Definition</b> igl_inline.h:15</div></div>
+<div class="ttc" id="anamespaceigl_html"><div class="ttname"><a href="namespaceigl.html">igl</a></div><div class="ttdef"><b>Definition</b> AABB.h:17</div></div>
 <div class="ttc" id="anamespaceigl_html_ae1d2eff20a5c7b15bbe61a1d53eadc9b"><div class="ttname"><a href="namespaceigl.html#ae1d2eff20a5c7b15bbe61a1d53eadc9b">igl::dihedral_angles</a></div><div class="ttdeci">void dihedral_angles(const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, const Eigen::MatrixBase&lt; DerivedT &gt; &amp;T, Eigen::PlainObjectBase&lt; Derivedtheta &gt; &amp;theta, Eigen::PlainObjectBase&lt; Derivedcos_theta &gt; &amp;cos_theta)</div><div class="ttdoc">Compute dihedral angles for all tets of a given tet mesh (V,T).</div></div>
 <div class="ttc" id="anamespaceigl_html_af8fd16e614bedafbd69fa739a29a7622"><div class="ttname"><a href="namespaceigl.html#af8fd16e614bedafbd69fa739a29a7622">igl::dihedral_angles_intrinsic</a></div><div class="ttdeci">void dihedral_angles_intrinsic(const Eigen::MatrixBase&lt; DerivedL &gt; &amp;L, const Eigen::MatrixBase&lt; DerivedA &gt; &amp;A, Eigen::PlainObjectBase&lt; Derivedtheta &gt; &amp;theta, Eigen::PlainObjectBase&lt; Derivedcos_theta &gt; &amp;cos_theta)</div><div class="ttdoc">This is an overloaded member function, provided for convenience. It differs from the above function o...</div></div>
 </div><!-- fragment --></div><!-- contents -->

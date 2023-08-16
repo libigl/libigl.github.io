@@ -110,7 +110,7 @@ $(document).ready(function(){initNavTree('direct__delta__mush_8h_source.html',''
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef IGL_DIRECT_DELTA_MUSH_H</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define IGL_DIRECT_DELTA_MUSH_H</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;igl_inline.h&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="igl__inline_8h.html">igl_inline.h</a>&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;Eigen/Core&gt;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;Eigen/Sparse&gt;</span></div>
@@ -122,7 +122,7 @@ $(document).ready(function(){initNavTree('direct__delta__mush_8h_source.html',''
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">typename</span> DerivedV,</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">typename</span> DerivedOmega,</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">typename</span> DerivedU&gt;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="namespaceigl.html#a24aaa9b2bd870165bee8f9c18c826496">   30</a></span>  IGL_INLINE <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#a24aaa9b2bd870165bee8f9c18c826496">direct_delta_mush</a>(</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="namespaceigl.html#a24aaa9b2bd870165bee8f9c18c826496">   30</a></span>  <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#a24aaa9b2bd870165bee8f9c18c826496">direct_delta_mush</a>(</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">const</span> Eigen::MatrixBase&lt;DerivedV&gt; &amp; V,</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">const</span> std::vector&lt;</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>      Eigen::Affine3d, Eigen::aligned_allocator&lt;Eigen::Affine3d&gt;</div>
@@ -134,7 +134,7 @@ $(document).ready(function(){initNavTree('direct__delta__mush_8h_source.html',''
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keyword">typename</span> DerivedF,</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keyword">typename</span> DerivedW,</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keyword">typename</span> DerivedOmega&gt;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="namespaceigl.html#a48dbae56ef5784518387be01caf9bb5c">   54</a></span>  IGL_INLINE <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#a48dbae56ef5784518387be01caf9bb5c">direct_delta_mush_precomputation</a>(</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="namespaceigl.html#a48dbae56ef5784518387be01caf9bb5c">   54</a></span>  <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#a48dbae56ef5784518387be01caf9bb5c">direct_delta_mush_precomputation</a>(</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keyword">const</span> Eigen::MatrixBase&lt;DerivedV&gt; &amp; V,</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keyword">const</span> Eigen::MatrixBase&lt;DerivedF&gt; &amp; F,</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keyword">const</span> Eigen::MatrixBase&lt;DerivedW&gt; &amp; W,</div>
@@ -150,7 +150,9 @@ $(document).ready(function(){initNavTree('direct__delta__mush_8h_source.html',''
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="anamespaceigl_html"><div class="ttname"><a href="namespaceigl.html">igl</a></div><div class="ttdoc">Fake halfedge for fast and easy navigation on triangle meshes with vertex_triangle_adjacency and tria...</div><div class="ttdef"><b>Definition</b> AABB.h:17</div></div>
+<div class="ttc" id="aigl__inline_8h_html"><div class="ttname"><a href="igl__inline_8h.html">igl_inline.h</a></div></div>
+<div class="ttc" id="aigl__inline_8h_html_a838241279013352686271b4c4ce1f708"><div class="ttname"><a href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a></div><div class="ttdeci">#define IGL_INLINE</div><div class="ttdef"><b>Definition</b> igl_inline.h:15</div></div>
+<div class="ttc" id="anamespaceigl_html"><div class="ttname"><a href="namespaceigl.html">igl</a></div><div class="ttdef"><b>Definition</b> AABB.h:17</div></div>
 <div class="ttc" id="anamespaceigl_html_a24aaa9b2bd870165bee8f9c18c826496"><div class="ttname"><a href="namespaceigl.html#a24aaa9b2bd870165bee8f9c18c826496">igl::direct_delta_mush</a></div><div class="ttdeci">void direct_delta_mush(const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, const std::vector&lt; Eigen::Affine3d, Eigen::aligned_allocator&lt; Eigen::Affine3d &gt; &gt; &amp;T, const Eigen::MatrixBase&lt; DerivedOmega &gt; &amp;Omega, Eigen::PlainObjectBase&lt; DerivedU &gt; &amp;U)</div><div class="ttdoc">Computes Direct Delta Mush Skinning (Variant 0) from &quot;Direct Delta Mush Skinning and Variants&quot;.</div></div>
 <div class="ttc" id="anamespaceigl_html_a48dbae56ef5784518387be01caf9bb5c"><div class="ttname"><a href="namespaceigl.html#a48dbae56ef5784518387be01caf9bb5c">igl::direct_delta_mush_precomputation</a></div><div class="ttdeci">void direct_delta_mush_precomputation(const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, const Eigen::MatrixBase&lt; DerivedF &gt; &amp;F, const Eigen::MatrixBase&lt; DerivedW &gt; &amp;W, const int p, const typename DerivedV::Scalar lambda, const typename DerivedV::Scalar kappa, const typename DerivedV::Scalar alpha, Eigen::PlainObjectBase&lt; DerivedOmega &gt; &amp;Omega)</div><div class="ttdoc">Precomputation for Direct Delta Mush Skinning.</div></div>
 </div><!-- fragment --></div><!-- contents -->

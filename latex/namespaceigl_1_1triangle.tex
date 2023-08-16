@@ -1,0 +1,178 @@
+\doxysection{igl\+::triangle Namespace Reference}
+\hypertarget{namespaceigl_1_1triangle}{}\label{namespaceigl_1_1triangle}\index{igl::triangle@{igl::triangle}}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl_1_1triangle_1_1scaf}{scaf}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData}{SCAFData}}
+\begin{DoxyCompactList}\small\item\em Use a similar interface to igl\+::slim Implement ready-\/to-\/use 2D version of the algorithm described in SCAF\+: Simplicial Complex Augmentation Framework for Bijective Maps Zhongshi Jiang, Scott Schaefer, Daniele Panozzo, ACM Trancaction on Graphics (Proc. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedE , typename Derived\+WV , typename Derived\+WF , typename Derived\+WE , typename DerivedJ $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1triangle_a34dc744bcebf7e2056a175852dfa3507}{cdt}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedE $>$ \&E, const std\+::string \&flags, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+WV $>$ \&WV, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+WF $>$ \&WF, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+WE $>$ \&WE, Eigen\+::\+Plain\+Object\+Base$<$ DerivedJ $>$ \&J)
+\begin{DoxyCompactList}\small\item\em Construct the constrained delaunay triangulation of the convex hull of a given set of points and segments in 2D. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceigl_1_1triangle_a03d5ece31e4a17a719f9f84cae3abc60}{scaf\+\_\+precompute}} (const Eigen\+::\+Matrix\+Xd \&V, const Eigen\+::\+Matrix\+Xi \&F, const Eigen\+::\+Matrix\+Xd \&V\+\_\+init, \mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData}{triangle\+::\+SCAFData}} \&data, \mbox{\hyperlink{namespaceigl_a79904ddf7fe8d79169b339cf43f9e739}{Mapping\+Energy\+Type}} slim\+\_\+energy, Eigen\+::\+Vector\+Xi \&b, Eigen\+::\+Matrix\+Xd \&bc, double soft\+\_\+p)
+\begin{DoxyCompactList}\small\item\em Compute necessary information to start using SCAF. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{namespaceigl_1_1triangle_af0b4e101055d768d68ced968dd25c578}{scaf\+\_\+solve}} (\mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData}{triangle\+::\+SCAFData}} \&data, int iter\+\_\+num)
+\begin{DoxyCompactList}\small\item\em Run iter\+\_\+num iterations of SCAF, with precomputed data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceigl_1_1triangle_a127da61612f0261ab9984b131ceadf79}{scaf\+\_\+system}} (\mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData}{triangle\+::\+SCAFData}} \&s, Eigen\+::\+Sparse\+Matrix$<$ double $>$ \&L, Eigen\+::\+Vector\+Xd \&rhs)
+\begin{DoxyCompactList}\small\item\em Set up the SCAF system L \texorpdfstring{$\ast$}{*} uv = rhs, without solving it. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedE , typename DerivedH , typename Derived\+VM , typename Derived\+EM , typename Derived\+V2 , typename Derived\+F2 , typename Derived\+VM2 , typename Derived\+E2 , typename Derived\+EM2 $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1triangle_ae4d5a5fa0ad34c41ec9e3361be3f249a}{triangulate}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedE $>$ \&E, const Eigen\+::\+Matrix\+Base$<$ DerivedH $>$ \&H, const Eigen\+::\+Matrix\+Base$<$ Derived\+VM $>$ \&VM, const Eigen\+::\+Matrix\+Base$<$ Derived\+EM $>$ \&EM, const std\+::string flags, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+V2 $>$ \&V2, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+F2 $>$ \&F2, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+VM2 $>$ \&VM2, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+E2 $>$ \&E2, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+EM2 $>$ \&EM2)
+\begin{DoxyCompactList}\small\item\em Triangulate the interior of a polygon using the triangle library. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedE , typename DerivedH , typename Derived\+V2 , typename Derived\+F2 $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1triangle_a367eb3edab7d75e3331b7a87330ae223}{triangulate}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedE $>$ \&E, const Eigen\+::\+Matrix\+Base$<$ DerivedH $>$ \&H, const std\+::string flags, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+V2 $>$ \&V2, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+F2 $>$ \&F2)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceigl_1_1triangle_a34dc744bcebf7e2056a175852dfa3507}\label{namespaceigl_1_1triangle_a34dc744bcebf7e2056a175852dfa3507} 
+\index{igl::triangle@{igl::triangle}!cdt@{cdt}}
+\index{cdt@{cdt}!igl::triangle@{igl::triangle}}
+\doxysubsubsection{\texorpdfstring{cdt()}{cdt()}}
+{\footnotesize\ttfamily template$<$typename DerivedV , typename DerivedE , typename Derived\+WV , typename Derived\+WF , typename Derived\+WE , typename DerivedJ $>$ \\
+void igl\+::triangle\+::cdt (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedE $>$ \&}]{E,  }\item[{const std\+::string \&}]{flags,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+WV $>$ \&}]{WV,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+WF $>$ \&}]{WF,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+WE $>$ \&}]{WE,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedJ $>$ \&}]{J }\end{DoxyParamCaption})}
+
+
+
+Construct the constrained delaunay triangulation of the convex hull of a given set of points and segments in 2D. 
+
+This differs from a direct call to triangulate because it will preprocess the input to remove duplicates and return an adjusted segment list on the output.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em V} & \#V by 2 list of texture mesh vertices \\
+\hline
+\mbox{\texttt{ in}}  & {\em E} & \#E by 2 list of constraint edge indices into V \\
+\hline
+\mbox{\texttt{ in}}  & {\em flags} & string of triangle flags should contain \"{}-\/c\"{} unless the some subset of segments are known to enclose all other points/segments. \\
+\hline
+\mbox{\texttt{ out}}  & {\em WV} & \#\+WV by 2 list of background mesh vertices \\
+\hline
+\mbox{\texttt{ out}}  & {\em WF} & \#\+WF by 2 list of background mesh triangle indices into WV \\
+\hline
+\mbox{\texttt{ out}}  & {\em WE} & \#\+WE by 2 list of constraint edge indices into WV (might be smaller than E because degenerate constraints have been removed) \\
+\hline
+\mbox{\texttt{ out}}  & {\em J} & \#V list of indices into WF/\+WE for each vertex in V \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespaceigl_1_1triangle_a03d5ece31e4a17a719f9f84cae3abc60}\label{namespaceigl_1_1triangle_a03d5ece31e4a17a719f9f84cae3abc60} 
+\index{igl::triangle@{igl::triangle}!scaf\_precompute@{scaf\_precompute}}
+\index{scaf\_precompute@{scaf\_precompute}!igl::triangle@{igl::triangle}}
+\doxysubsubsection{\texorpdfstring{scaf\_precompute()}{scaf\_precompute()}}
+{\footnotesize\ttfamily void igl\+::triangle\+::scaf\+\_\+precompute (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Xi \&}]{F,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{V\+\_\+init,  }\item[{\mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData}{triangle\+::\+SCAFData}} \&}]{data,  }\item[{\mbox{\hyperlink{namespaceigl_a79904ddf7fe8d79169b339cf43f9e739}{Mapping\+Energy\+Type}}}]{slim\+\_\+energy,  }\item[{Eigen\+::\+Vector\+Xi \&}]{b,  }\item[{Eigen\+::\+Matrix\+Xd \&}]{bc,  }\item[{double}]{soft\+\_\+p }\end{DoxyParamCaption})}
+
+
+
+Compute necessary information to start using SCAF. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em V} & \#V by 3 list of mesh vertex positions \\
+\hline
+\mbox{\texttt{ in}}  & {\em F} & \#F by 3/3 list of mesh faces (triangles/tets) \\
+\hline
+\mbox{\texttt{ in}}  & {\em V\+\_\+init} & \#V by 3 list of initial mesh vertex positions \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em data} & resulting precomputed data \\
+\hline
+\mbox{\texttt{ in}}  & {\em slim\+\_\+energy} & Energy type to minimize \\
+\hline
+\mbox{\texttt{ in}}  & {\em b} & list of boundary indices into V (soft constraint) \\
+\hline
+\mbox{\texttt{ in}}  & {\em bc} & \#b by dim list of boundary conditions (soft constraint) \\
+\hline
+\mbox{\texttt{ in}}  & {\em soft\+\_\+p} & Soft penalty factor (can be zero)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Why aren\textquotesingle{}t slim\+\_\+energy, b, bc, soft\+\_\+p const?
+\end{DoxyNote}
+\doxylink{scaf_8h}{include/igl/triangle/scaf.\+h} \Hypertarget{namespaceigl_1_1triangle_af0b4e101055d768d68ced968dd25c578}\label{namespaceigl_1_1triangle_af0b4e101055d768d68ced968dd25c578} 
+\index{igl::triangle@{igl::triangle}!scaf\_solve@{scaf\_solve}}
+\index{scaf\_solve@{scaf\_solve}!igl::triangle@{igl::triangle}}
+\doxysubsubsection{\texorpdfstring{scaf\_solve()}{scaf\_solve()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd igl\+::triangle\+::scaf\+\_\+solve (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData}{triangle\+::\+SCAFData}} \&}]{data,  }\item[{int}]{iter\+\_\+num }\end{DoxyParamCaption})}
+
+
+
+Run iter\+\_\+num iterations of SCAF, with precomputed data. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data} & precomputed data \\
+\hline
+\mbox{\texttt{ in}}  & {\em iter\+\_\+num} & number of iterations to run \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+resulting V\+\_\+o (in \doxylink{structigl_1_1SLIMData}{SLIMData})\+: \#V by dim list of mesh vertex positions 
+\end{DoxyReturn}
+\Hypertarget{namespaceigl_1_1triangle_a127da61612f0261ab9984b131ceadf79}\label{namespaceigl_1_1triangle_a127da61612f0261ab9984b131ceadf79} 
+\index{igl::triangle@{igl::triangle}!scaf\_system@{scaf\_system}}
+\index{scaf\_system@{scaf\_system}!igl::triangle@{igl::triangle}}
+\doxysubsubsection{\texorpdfstring{scaf\_system()}{scaf\_system()}}
+{\footnotesize\ttfamily void igl\+::triangle\+::scaf\+\_\+system (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structigl_1_1triangle_1_1SCAFData}{triangle\+::\+SCAFData}} \&}]{s,  }\item[{Eigen\+::\+Sparse\+Matrix$<$ double $>$ \&}]{L,  }\item[{Eigen\+::\+Vector\+Xd \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+Set up the SCAF system L \texorpdfstring{$\ast$}{*} uv = rhs, without solving it. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em s} & igl\+::\+SCAFData. Will be modified by energy and Jacobian computation. \\
+\hline
+\mbox{\texttt{ out}}  & {\em L} & m by m matrix \\
+\hline
+\mbox{\texttt{ out}}  & {\em rhs} & m by 1 vector with m = dim \texorpdfstring{$\ast$}{*} (\#\+V\+\_\+mesh + \#\+V\+\_\+scaf -\/ \#\+V\+\_\+frame) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespaceigl_1_1triangle_ae4d5a5fa0ad34c41ec9e3361be3f249a}\label{namespaceigl_1_1triangle_ae4d5a5fa0ad34c41ec9e3361be3f249a} 
+\index{igl::triangle@{igl::triangle}!triangulate@{triangulate}}
+\index{triangulate@{triangulate}!igl::triangle@{igl::triangle}}
+\doxysubsubsection{\texorpdfstring{triangulate()}{triangulate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename DerivedV , typename DerivedE , typename DerivedH , typename Derived\+VM , typename Derived\+EM , typename Derived\+V2 , typename Derived\+F2 , typename Derived\+VM2 , typename Derived\+E2 , typename Derived\+EM2 $>$ \\
+void igl\+::triangle\+::triangulate (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedE $>$ \&}]{E,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedH $>$ \&}]{H,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+VM $>$ \&}]{VM,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+EM $>$ \&}]{EM,  }\item[{const std\+::string}]{flags,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+V2 $>$ \&}]{V2,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+F2 $>$ \&}]{F2,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+VM2 $>$ \&}]{VM2,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+E2 $>$ \&}]{E2,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+EM2 $>$ \&}]{EM2 }\end{DoxyParamCaption})}
+
+
+
+Triangulate the interior of a polygon using the triangle library. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em V} & \#V by 2 list of 2D vertex positions \\
+\hline
+\mbox{\texttt{ in}}  & {\em E} & \#E by 2 list of vertex ids forming unoriented edges of the boundary of the polygon \\
+\hline
+\mbox{\texttt{ in}}  & {\em H} & \#H by 2 coordinates of points contained inside holes of the polygon \\
+\hline
+\mbox{\texttt{ in}}  & {\em VM} & \#V list of markers for input vertices \\
+\hline
+\mbox{\texttt{ in}}  & {\em EM} & \#E list of markers for input edges \\
+\hline
+\mbox{\texttt{ in}}  & {\em flags} & string of options pass to triangle (see triangle documentation) \\
+\hline
+\mbox{\texttt{ out}}  & {\em V2} & \#\+V2 by 2 coordinates of the vertives of the generated triangulation \\
+\hline
+\mbox{\texttt{ out}}  & {\em F2} & \#\+F2 by 3 list of indices forming the faces of the generated triangulation \\
+\hline
+\mbox{\texttt{ out}}  & {\em VM2} & \#\+V2 list of markers for output vertices \\
+\hline
+\mbox{\texttt{ out}}  & {\em E2} & \#\+E2 by 2 list of output edges \\
+\hline
+\mbox{\texttt{ out}}  & {\em EM2} & \#\+E2 list of markers for output edges \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespaceigl_1_1triangle_a367eb3edab7d75e3331b7a87330ae223}\label{namespaceigl_1_1triangle_a367eb3edab7d75e3331b7a87330ae223} 
+\index{igl::triangle@{igl::triangle}!triangulate@{triangulate}}
+\index{triangulate@{triangulate}!igl::triangle@{igl::triangle}}
+\doxysubsubsection{\texorpdfstring{triangulate()}{triangulate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename DerivedV , typename DerivedE , typename DerivedH , typename Derived\+V2 , typename Derived\+F2 $>$ \\
+void igl\+::triangle\+::triangulate (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedE $>$ \&}]{E,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedH $>$ \&}]{H,  }\item[{const std\+::string}]{flags,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+V2 $>$ \&}]{V2,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+F2 $>$ \&}]{F2 }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+

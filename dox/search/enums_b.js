@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['windingnumbermethod_0',['WindingNumberMethod',['../namespaceigl.html#a509f63ef3c5ff8b238920eb0fe3ceecf',1,'igl']]]
+  ['rotationtype_0',['RotationType',['../classigl_1_1opengl_1_1ViewerCore.html#a98926e7cdb35ee656e63a7c59170e3f7',1,'igl::opengl::ViewerCore']]]
 ];

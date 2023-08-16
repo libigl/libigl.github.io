@@ -1,0 +1,20 @@
+\doxysection{include/igl/copyleft/cgal/remesh\+\_\+intersections.h File Reference}
+\hypertarget{remesh__intersections_8h}{}\label{remesh__intersections_8h}\index{include/igl/copyleft/cgal/remesh\_intersections.h@{include/igl/copyleft/cgal/remesh\_intersections.h}}
+{\ttfamily \#include \"{}../../igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include \"{}CGAL\+\_\+includes.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}remesh\+\_\+intersections.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\item 
+namespace \mbox{\hyperlink{namespaceigl_1_1copyleft}{igl\+::copyleft}}
+\item 
+namespace \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal}{igl\+::copyleft\+::cgal}}
+\begin{DoxyCompactList}\small\item\em Given a list of possible intersecting segments with endpoints, split segments to overlap only at endpoints. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename Kernel , typename Derived\+VV , typename Derived\+FF , typename DerivedJ , typename Derived\+IM $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a99d687331f910fef280e3a0e5f5370c7}{igl\+::copyleft\+::cgal\+::remesh\+\_\+intersections}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const std\+::vector$<$ CGAL\+::\+Triangle\+\_\+3$<$ Kernel $>$ $>$ \&T, const std\+::map$<$ typename Derived\+F\+::\+Index, std\+::vector$<$ std\+::pair$<$ typename Derived\+F\+::\+Index, CGAL\+::\+Object $>$ $>$ $>$ \&offending, bool stitch\+\_\+all, bool slow\+\_\+and\+\_\+more\+\_\+precise\+\_\+rounding, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+VV $>$ \&VV, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+FF $>$ \&FF, Eigen\+::\+Plain\+Object\+Base$<$ DerivedJ $>$ \&J, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+IM $>$ \&IM)
+\begin{DoxyCompactList}\small\item\em Remesh faces according to results of intersection detection and construction (e.\+g. \end{DoxyCompactList}\end{DoxyCompactItemize}

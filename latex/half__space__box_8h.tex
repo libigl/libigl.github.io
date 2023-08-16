@@ -1,0 +1,25 @@
+\doxysection{include/igl/copyleft/cgal/half\+\_\+space\+\_\+box.h File Reference}
+\hypertarget{half__space__box_8h}{}\label{half__space__box_8h}\index{include/igl/copyleft/cgal/half\_space\_box.h@{include/igl/copyleft/cgal/half\_space\_box.h}}
+{\ttfamily \#include \"{}../../igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$CGAL/\+Exact\+\_\+predicates\+\_\+exact\+\_\+constructions\+\_\+kernel.\+h$>$}\newline
+{\ttfamily \#include $<$CGAL/\+Plane\+\_\+3.\+h$>$}\newline
+{\ttfamily \#include \"{}half\+\_\+space\+\_\+box.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\item 
+namespace \mbox{\hyperlink{namespaceigl_1_1copyleft}{igl\+::copyleft}}
+\item 
+namespace \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal}{igl\+::copyleft\+::cgal}}
+\begin{DoxyCompactList}\small\item\em Given a list of possible intersecting segments with endpoints, split segments to overlap only at endpoints. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a9139148a9ac6f9b4b152790a827c0427}{igl\+::copyleft\+::cgal\+::half\+\_\+space\+\_\+box}} (const CGAL\+::\+Plane\+\_\+3$<$ CGAL\+::\+Epeck $>$ \&P, const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, Eigen\+::\+Matrix$<$ CGAL\+::\+Epeck\+::\+FT, 8, 3 $>$ \&BV, Eigen\+::\+Matrix$<$ int, 12, 3 $>$ \&BF)
+\begin{DoxyCompactList}\small\item\em Construct a mesh of box (BV,BF) so that it contains the intersection of the half-\/space under the plane (P) and the bounding box of V, and does not contain any of the half-\/space above (P). \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derivedp , typename Derivedn , typename DerivedV $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_aa7726e6100f1c5c7645949fa2156cf2a}{igl\+::copyleft\+::cgal\+::half\+\_\+space\+\_\+box}} (const Eigen\+::\+Matrix\+Base$<$ Derivedp $>$ \&p, const Eigen\+::\+Matrix\+Base$<$ Derivedn $>$ \&n, const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, Eigen\+::\+Matrix$<$ CGAL\+::\+Epeck\+::\+FT, 8, 3 $>$ \&BV, Eigen\+::\+Matrix$<$ int, 12, 3 $>$ \&BF)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derivedequ , typename DerivedV $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_ad92813e51e83af95eb0961bf8756b557}{igl\+::copyleft\+::cgal\+::half\+\_\+space\+\_\+box}} (const Eigen\+::\+Matrix\+Base$<$ Derivedequ $>$ \&equ, const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, Eigen\+::\+Matrix$<$ CGAL\+::\+Epeck\+::\+FT, 8, 3 $>$ \&BV, Eigen\+::\+Matrix$<$ int, 12, 3 $>$ \&BF)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}

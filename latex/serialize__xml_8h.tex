@@ -1,0 +1,131 @@
+\doxysection{include/igl/xml/serialize\+\_\+xml.h File Reference}
+\hypertarget{serialize__xml_8h}{}\label{serialize__xml_8h}\index{include/igl/xml/serialize\_xml.h@{include/igl/xml/serialize\_xml.h}}
+{\ttfamily \#include \"{}../igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include $<$tinyxml2.\+h$>$}\newline
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include \"{}serialize\+\_\+xml.\+cpp\"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structigl_1_1xml_1_1serialization__xml_1_1is__stl__container}{igl\+::xml\+::serialization\+\_\+xml\+::is\+\_\+stl\+\_\+container$<$ T $>$}}
+\item 
+struct \mbox{\hyperlink{structigl_1_1xml_1_1serialization__xml_1_1is__stl__container_3_01std_1_1pair_3_01T1_00_01T2_01_4_01_4}{igl\+::xml\+::serialization\+\_\+xml\+::is\+\_\+stl\+\_\+container$<$ std\+::pair$<$ T1, T2 $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{structigl_1_1xml_1_1serialization__xml_1_1is__stl__container_3_01std_1_1vector_3_01T1_00_01T2_01_4_01_4}{igl\+::xml\+::serialization\+\_\+xml\+::is\+\_\+stl\+\_\+container$<$ std\+::vector$<$ T1, T2 $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{structigl_1_1xml_1_1serialization__xml_1_1is__stl__container_3_01std_1_1set_3_01T_01_4_01_4}{igl\+::xml\+::serialization\+\_\+xml\+::is\+\_\+stl\+\_\+container$<$ std\+::set$<$ T $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{structigl_1_1xml_1_1serialization__xml_1_1is__stl__container_3_01std_1_1map_3_01T1_00_01T2_01_4_01_4}{igl\+::xml\+::serialization\+\_\+xml\+::is\+\_\+stl\+\_\+container$<$ std\+::map$<$ T1, T2 $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{structigl_1_1xml_1_1serialization__xml_1_1is__eigen__type}{igl\+::xml\+::serialization\+\_\+xml\+::is\+\_\+eigen\+\_\+type$<$ T $>$}}
+\item 
+struct \mbox{\hyperlink{structigl_1_1xml_1_1serialization__xml_1_1is__eigen__type_3_01Eigen_1_1Matrix_3_01T_00_01R_00_01514ce92cafd2800841c034018462fddd}{igl\+::xml\+::serialization\+\_\+xml\+::is\+\_\+eigen\+\_\+type$<$ Eigen\+::\+Matrix$<$ T, R, C, P, MR, MC $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{structigl_1_1xml_1_1serialization__xml_1_1is__eigen__type_3_01Eigen_1_1SparseMatrix_3_01T_00_01P_00_01I_01_4_01_4}{igl\+::xml\+::serialization\+\_\+xml\+::is\+\_\+eigen\+\_\+type$<$ Eigen\+::\+Sparse\+Matrix$<$ T, P, I $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{structigl_1_1xml_1_1serialization__xml_1_1is__serializable}{igl\+::xml\+::serialization\+\_\+xml\+::is\+\_\+serializable$<$ T $>$}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\item 
+namespace \mbox{\hyperlink{namespaceigl_1_1xml}{igl\+::xml}}
+\item 
+namespace \mbox{\hyperlink{namespaceigl_1_1xml_1_1serialization__xml}{igl\+::xml\+::serialization\+\_\+xml}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1xml_a4b93ad3bd3048c8531279640196fce70}{igl\+::xml\+::serialize\+\_\+xml}} (const T \&obj, const std\+::string \&object\+Name, const std\+::string \&filename, bool binary=false, bool overwrite=false)
+\begin{DoxyCompactList}\small\item\em Serialize object to file. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1xml_ad0e3f5b1e39c5972bd4cea559be3d0d9}{igl\+::xml\+::serialize\+\_\+xml}} (const T \&obj, const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1xml_a9a7a08fad6455874e52e5e62caf552ac}{igl\+::xml\+::serialize\+\_\+xml}} (const T \&obj, const std\+::string \&object\+Name, tinyxml2\+::\+XMLDocument \texorpdfstring{$\ast$}{*}doc, tinyxml2\+::\+XMLElement \texorpdfstring{$\ast$}{*}element, bool binary=false)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1xml_a23401b2c5d4afa0a58b59ed8900221d7}{igl\+::xml\+::deserialize\+\_\+xml}} (T \&obj, const std\+::string \&object\+Name, const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em deserialize object to file \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1xml_a969abb79aec3ba0cd14544b9d0726e88}{igl\+::xml\+::deserialize\+\_\+xml}} (T \&obj, const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+\doxylink{serialize__xml_8h}{include/igl/xml/serialize\+\_\+xml.\+h}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1xml_af0e9c796310b35dfddf6425a48ab3661}{igl\+::xml\+::deserialize\+\_\+xml}} (T \&obj, const std\+::string \&object\+Name, const tinyxml2\+::\+XMLDocument \texorpdfstring{$\ast$}{*}doc, const tinyxml2\+::\+XMLElement \texorpdfstring{$\ast$}{*}element)
+\begin{DoxyCompactList}\small\item\em Deserialize to xml doc. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::enable\+\_\+if$<$ std\+::is\+\_\+fundamental$<$ T $>$\+::value $>$\+::type \mbox{\hyperlink{namespaceigl_1_1xml_1_1serialization__xml_a096176197f3cfda31ddba607f7e16221}{igl\+::xml\+::serialization\+\_\+xml\+::serialize}} (const T \&obj, tinyxml2\+::\+XMLDocument \texorpdfstring{$\ast$}{*}doc, tinyxml2\+::\+XMLElement \texorpdfstring{$\ast$}{*}element, const std\+::string \&name)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::enable\+\_\+if$<$ std\+::is\+\_\+fundamental$<$ T $>$\+::value $>$\+::type \mbox{\hyperlink{namespaceigl_1_1xml_1_1serialization__xml_a201f6a46a70c3ef948db93867db59741}{igl\+::xml\+::serialization\+\_\+xml\+::deserialize}} (T \&obj, const tinyxml2\+::\+XMLDocument \texorpdfstring{$\ast$}{*}doc, const tinyxml2\+::\+XMLElement \texorpdfstring{$\ast$}{*}element, const std\+::string \&name)
+\item 
+void \mbox{\hyperlink{namespaceigl_1_1xml_1_1serialization__xml_ab3ce5b88833cbf976248760995f7ff67}{igl\+::xml\+::serialization\+\_\+xml\+::serialize}} (const std\+::string \&obj, tinyxml2\+::\+XMLDocument \texorpdfstring{$\ast$}{*}doc, tinyxml2\+::\+XMLElement \texorpdfstring{$\ast$}{*}element, const std\+::string \&name)
+\item 
+void \mbox{\hyperlink{namespaceigl_1_1xml_1_1serialization__xml_aa1fa788ac3987acccacf901c803eeaee}{igl\+::xml\+::serialization\+\_\+xml\+::deserialize}} (std\+::string \&obj, const tinyxml2\+::\+XMLDocument \texorpdfstring{$\ast$}{*}doc, const tinyxml2\+::\+XMLElement \texorpdfstring{$\ast$}{*}element, const std\+::string \&name)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::enable\+\_\+if$<$ std\+::is\+\_\+base\+\_\+of$<$ \mbox{\hyperlink{structigl_1_1xml_1_1XMLSerializableBase}{XMLSerializable\+Base}}, T $>$\+::value $>$\+::type \mbox{\hyperlink{namespaceigl_1_1xml_1_1serialization__xml_a19d3753cb43507b97cb20267f13a47e5}{igl\+::xml\+::serialization\+\_\+xml\+::serialize}} (const T \&obj, tinyxml2\+::\+XMLDocument \texorpdfstring{$\ast$}{*}doc, tinyxml2\+::\+XMLElement \texorpdfstring{$\ast$}{*}element, const std\+::string \&name)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::enable\+\_\+if$<$ std\+::is\+\_\+base\+\_\+of$<$ \mbox{\hyperlink{structigl_1_1xml_1_1XMLSerializableBase}{XMLSerializable\+Base}}, T $>$\+::value $>$\+::type \mbox{\hyperlink{namespaceigl_1_1xml_1_1serialization__xml_a3c2531e49e9cb34ce7f43355861b5771}{igl\+::xml\+::serialization\+\_\+xml\+::deserialize}} (T \&obj, const tinyxml2\+::\+XMLDocument \texorpdfstring{$\ast$}{*}doc, const tinyxml2\+::\+XMLElement \texorpdfstring{$\ast$}{*}element, const std\+::string \&name)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1xml_1_1serialization__xml_a73d7324041fdb67abcf59649d100e172}{igl\+::xml\+::serialization\+\_\+xml\+::serialize}} (const std\+::pair$<$ T1, T2 $>$ \&obj, tinyxml2\+::\+XMLDocument \texorpdfstring{$\ast$}{*}doc, tinyxml2\+::\+XMLElement \texorpdfstring{$\ast$}{*}element, const std\+::string \&name)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1xml_1_1serialization__xml_a11927b02bc16e1096200fc7b8c2111bc}{igl\+::xml\+::serialization\+\_\+xml\+::deserialize}} (std\+::pair$<$ T1, T2 $>$ \&obj, const tinyxml2\+::\+XMLDocument \texorpdfstring{$\ast$}{*}doc, const tinyxml2\+::\+XMLElement \texorpdfstring{$\ast$}{*}element, const std\+::string \&name)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1xml_1_1serialization__xml_ab2a9320188b7aa82a9e09bf94d0244fe}{igl\+::xml\+::serialization\+\_\+xml\+::serialize}} (const std\+::vector$<$ T1, T2 $>$ \&obj, tinyxml2\+::\+XMLDocument \texorpdfstring{$\ast$}{*}doc, tinyxml2\+::\+XMLElement \texorpdfstring{$\ast$}{*}element, const std\+::string \&name)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1xml_1_1serialization__xml_a7674621de5fefebcb405b8d0890eca61}{igl\+::xml\+::serialization\+\_\+xml\+::deserialize}} (std\+::vector$<$ T1, T2 $>$ \&obj, const tinyxml2\+::\+XMLDocument \texorpdfstring{$\ast$}{*}doc, const tinyxml2\+::\+XMLElement \texorpdfstring{$\ast$}{*}element, const std\+::string \&name)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1xml_1_1serialization__xml_a5ba4b8c2785685d4d5d2935496ebb9cc}{igl\+::xml\+::serialization\+\_\+xml\+::serialize}} (const std\+::set$<$ T $>$ \&obj, tinyxml2\+::\+XMLDocument \texorpdfstring{$\ast$}{*}doc, tinyxml2\+::\+XMLElement \texorpdfstring{$\ast$}{*}element, const std\+::string \&name)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1xml_1_1serialization__xml_a04db1895d23e3178db19698f204b99c2}{igl\+::xml\+::serialization\+\_\+xml\+::deserialize}} (std\+::set$<$ T $>$ \&obj, const tinyxml2\+::\+XMLDocument \texorpdfstring{$\ast$}{*}doc, const tinyxml2\+::\+XMLElement \texorpdfstring{$\ast$}{*}element, const std\+::string \&name)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1xml_1_1serialization__xml_a82e82d98148f1f5c024090be68d58760}{igl\+::xml\+::serialization\+\_\+xml\+::serialize}} (const std\+::map$<$ T1, T2 $>$ \&obj, tinyxml2\+::\+XMLDocument \texorpdfstring{$\ast$}{*}doc, tinyxml2\+::\+XMLElement \texorpdfstring{$\ast$}{*}element, const std\+::string \&name)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1xml_1_1serialization__xml_ac141793996fdc35e9f07026426a4d899}{igl\+::xml\+::serialization\+\_\+xml\+::deserialize}} (std\+::map$<$ T1, T2 $>$ \&obj, const tinyxml2\+::\+XMLDocument \texorpdfstring{$\ast$}{*}doc, const tinyxml2\+::\+XMLElement \texorpdfstring{$\ast$}{*}element, const std\+::string \&name)
+\item 
+{\footnotesize template$<$typename T , int R, int C, int P, int MR, int MC$>$ }\\void \mbox{\hyperlink{namespaceigl_1_1xml_1_1serialization__xml_afc7605998fc9a94cd68ab52bd8005fd1}{igl\+::xml\+::serialization\+\_\+xml\+::serialize}} (const Eigen\+::\+Matrix$<$ T, R, C, P, MR, MC $>$ \&obj, const std\+::string \&name, const std\+::function$<$ std\+::string(const T \&) $>$ \&to\+\_\+string, tinyxml2\+::\+XMLDocument \texorpdfstring{$\ast$}{*}doc, tinyxml2\+::\+XMLElement \texorpdfstring{$\ast$}{*}element)
+\item 
+{\footnotesize template$<$typename T , int R, int C, int P, int MR, int MC$>$ }\\void \mbox{\hyperlink{namespaceigl_1_1xml_1_1serialization__xml_a333068715cf7d77c608f269b802274fd}{igl\+::xml\+::serialization\+\_\+xml\+::deserialize}} (const tinyxml2\+::\+XMLDocument \texorpdfstring{$\ast$}{*}doc, const tinyxml2\+::\+XMLElement \texorpdfstring{$\ast$}{*}element, const std\+::string \&name, const std\+::function$<$ void(const std\+::string \&, T \&)$>$ \&from\+\_\+string, Eigen\+::\+Matrix$<$ T, R, C, P, MR, MC $>$ \&obj)
+\item 
+{\footnotesize template$<$typename T , int R, int C, int P, int MR, int MC$>$ }\\void \mbox{\hyperlink{namespaceigl_1_1xml_1_1serialization__xml_aff45638807386a18c6fd804eafb22ddd}{igl\+::xml\+::serialization\+\_\+xml\+::serialize}} (const Eigen\+::\+Matrix$<$ T, R, C, P, MR, MC $>$ \&obj, tinyxml2\+::\+XMLDocument \texorpdfstring{$\ast$}{*}doc, tinyxml2\+::\+XMLElement \texorpdfstring{$\ast$}{*}element, const std\+::string \&name)
+\item 
+{\footnotesize template$<$typename T , int R, int C, int P, int MR, int MC$>$ }\\void \mbox{\hyperlink{namespaceigl_1_1xml_1_1serialization__xml_ad30f475a0741c02bc0f326a14748c542}{igl\+::xml\+::serialization\+\_\+xml\+::deserialize}} (Eigen\+::\+Matrix$<$ T, R, C, P, MR, MC $>$ \&obj, const tinyxml2\+::\+XMLDocument \texorpdfstring{$\ast$}{*}doc, const tinyxml2\+::\+XMLElement \texorpdfstring{$\ast$}{*}element, const std\+::string \&name)
+\item 
+{\footnotesize template$<$typename T , int P, typename I $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1xml_1_1serialization__xml_ac882240e12a411efcdf70572c4b7995f}{igl\+::xml\+::serialization\+\_\+xml\+::serialize}} (const Eigen\+::\+Sparse\+Matrix$<$ T, P, I $>$ \&obj, tinyxml2\+::\+XMLDocument \texorpdfstring{$\ast$}{*}doc, tinyxml2\+::\+XMLElement \texorpdfstring{$\ast$}{*}element, const std\+::string \&name)
+\item 
+{\footnotesize template$<$typename T , int P, typename I $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1xml_1_1serialization__xml_a26908d745e6ad1b7892f12e4a1751bf4}{igl\+::xml\+::serialization\+\_\+xml\+::deserialize}} (Eigen\+::\+Sparse\+Matrix$<$ T, P, I $>$ \&obj, const tinyxml2\+::\+XMLDocument \texorpdfstring{$\ast$}{*}doc, const tinyxml2\+::\+XMLElement \texorpdfstring{$\ast$}{*}element, const std\+::string \&name)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::enable\+\_\+if$<$ std\+::is\+\_\+pointer$<$ T $>$\+::value $>$\+::type \mbox{\hyperlink{namespaceigl_1_1xml_1_1serialization__xml_a13e338238e3fa51cf17153a5ff9dfe55}{igl\+::xml\+::serialization\+\_\+xml\+::serialize}} (const T \&obj, tinyxml2\+::\+XMLDocument \texorpdfstring{$\ast$}{*}doc, tinyxml2\+::\+XMLElement \texorpdfstring{$\ast$}{*}element, const std\+::string \&name)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::enable\+\_\+if$<$ std\+::is\+\_\+pointer$<$ T $>$\+::value $>$\+::type \mbox{\hyperlink{namespaceigl_1_1xml_1_1serialization__xml_ad650c18be479eb73d4647f32df5113f8}{igl\+::xml\+::serialization\+\_\+xml\+::deserialize}} (T \&obj, const tinyxml2\+::\+XMLDocument \texorpdfstring{$\ast$}{*}doc, const tinyxml2\+::\+XMLElement \texorpdfstring{$\ast$}{*}element, const std\+::string \&name)
+\item 
+tinyxml2\+::\+XMLElement \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceigl_1_1xml_1_1serialization__xml_a980d6091f00bdcc20821707c6c539f51}{igl\+::xml\+::serialization\+\_\+xml\+::get\+Element}} (tinyxml2\+::\+XMLDocument \texorpdfstring{$\ast$}{*}doc, tinyxml2\+::\+XMLElement \texorpdfstring{$\ast$}{*}element, const std\+::string \&name)
+\item 
+void \mbox{\hyperlink{namespaceigl_1_1xml_1_1serialization__xml_a8d82604f5696660178a6e8e67bf95eaa}{igl\+::xml\+::serialization\+\_\+xml\+::get\+Attribute}} (const char \texorpdfstring{$\ast$}{*}src, bool \&dest)
+\item 
+void \mbox{\hyperlink{namespaceigl_1_1xml_1_1serialization__xml_a666bc615c9996d4d294bb75867652bfc}{igl\+::xml\+::serialization\+\_\+xml\+::get\+Attribute}} (const char \texorpdfstring{$\ast$}{*}scr, char \&dest)
+\item 
+void \mbox{\hyperlink{namespaceigl_1_1xml_1_1serialization__xml_a4869626c26d34074a7469034ad0f8af3}{igl\+::xml\+::serialization\+\_\+xml\+::get\+Attribute}} (const char \texorpdfstring{$\ast$}{*}src, std\+::string \&dest)
+\item 
+void \mbox{\hyperlink{namespaceigl_1_1xml_1_1serialization__xml_aab4095892f97a0d1dedb10f1bbe8626c}{igl\+::xml\+::serialization\+\_\+xml\+::get\+Attribute}} (const char \texorpdfstring{$\ast$}{*}src, float \&dest)
+\item 
+void \mbox{\hyperlink{namespaceigl_1_1xml_1_1serialization__xml_a56cdc023723be62739734aabe5356a61}{igl\+::xml\+::serialization\+\_\+xml\+::get\+Attribute}} (const char \texorpdfstring{$\ast$}{*}src, double \&dest)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::enable\+\_\+if$<$ std\+::is\+\_\+integral$<$ T $>$\+::value \&\&std\+::is\+\_\+unsigned$<$ T $>$\+::value $>$\+::type \mbox{\hyperlink{namespaceigl_1_1xml_1_1serialization__xml_a62a4e9a244ad722c96880adbbdf19c11}{igl\+::xml\+::serialization\+\_\+xml\+::get\+Attribute}} (const char \texorpdfstring{$\ast$}{*}src, T \&dest)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::enable\+\_\+if$<$ std\+::is\+\_\+integral$<$ T $>$\+::value \&\&!std\+::is\+\_\+unsigned$<$ T $>$\+::value $>$\+::type \mbox{\hyperlink{namespaceigl_1_1xml_1_1serialization__xml_a8ca8d0c09995b0903c9c49916525aa95}{igl\+::xml\+::serialization\+\_\+xml\+::get\+Attribute}} (const char \texorpdfstring{$\ast$}{*}src, T \&dest)
+\item 
+void \mbox{\hyperlink{namespaceigl_1_1xml_1_1serialization__xml_ae4c6e0d899060da3b3cb91bec90d4814}{igl\+::xml\+::serialization\+\_\+xml\+::replace\+Sub\+String}} (std\+::string \&str, const std\+::string \&search, const std\+::string \&replace)
+\item 
+void \mbox{\hyperlink{namespaceigl_1_1xml_1_1serialization__xml_a38efc7a7879626d0b85999d46ce74c4b}{igl\+::xml\+::serialization\+\_\+xml\+::encode\+XMLElement\+Name}} (std\+::string \&name)
+\item 
+void \mbox{\hyperlink{namespaceigl_1_1xml_1_1serialization__xml_adc3dab66bd5b90c735a943aba48ec164}{igl\+::xml\+::serialization\+\_\+xml\+::decode\+XMLElement\+Name}} (std\+::string \&name)
+\item 
+std\+::string \mbox{\hyperlink{namespaceigl_1_1xml_1_1serialization__xml_ab6a0af3eb16f565987dccbbc5cca7f28}{igl\+::xml\+::serialization\+\_\+xml\+::base64\+\_\+encode}} (unsigned char const \texorpdfstring{$\ast$}{*}bytes\+\_\+to\+\_\+encode, unsigned int in\+\_\+len)
+\item 
+std\+::string \mbox{\hyperlink{namespaceigl_1_1xml_1_1serialization__xml_a65ae868113656b7c7724287d446ac9c0}{igl\+::xml\+::serialization\+\_\+xml\+::base64\+\_\+decode}} (std\+::string const \&encoded\+\_\+string)
+\end{DoxyCompactItemize}

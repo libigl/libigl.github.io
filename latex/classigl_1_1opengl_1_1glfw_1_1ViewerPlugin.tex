@@ -1,0 +1,301 @@
+\doxysection{igl\+::opengl\+::glfw\+::Viewer\+Plugin Class Reference}
+\hypertarget{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin}{}\label{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin}\index{igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}}
+
+
+Abstract class for plugins All plugins MUST have this class as their parent and may implement any/all the callbacks marked {\ttfamily virtual} here.  
+
+
+
+
+{\ttfamily \#include $<$Viewer\+Plugin.\+h$>$}
+
+Inheritance diagram for igl\+::opengl\+::glfw\+::Viewer\+Plugin\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_aaa201a229466fe2fdb9e688adae177ff}{Viewer\+Plugin}} ()
+\item 
+virtual \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_ab41d175335ef456af27247a235e3ca9d}{\texorpdfstring{$\sim$}{\string~}\+Viewer\+Plugin}} ()
+\item 
+virtual void \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_ab3a866951292cb886c834cc9dd8f7707}{init}} (\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}} \texorpdfstring{$\ast$}{*}\+\_\+viewer)
+\begin{DoxyCompactList}\small\item\em This function is called when the viewer is initialized (no mesh will be loaded at this stage) \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a7db7367d0ae2de0143ab6735305fb46e}{shutdown}} ()
+\begin{DoxyCompactList}\small\item\em This function is called before shutdown. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_aced5a668c69237187f3f843f4d8dffee}{load}} (std\+::string filename)
+\begin{DoxyCompactList}\small\item\em This function is called before a mesh is loaded. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a8791f4d2643fc0ddcbba9e5c65659bae}{save}} (std\+::string filename)
+\begin{DoxyCompactList}\small\item\em This function is called before a mesh is saved. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_ae14a053bb6fb981bfc20285a82e31d20}{serialize}} (std\+::vector$<$ char $>$ \&buffer) const
+\begin{DoxyCompactList}\small\item\em This function is called when the scene is serialized. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a2dd38857a78fdd009b3757e5c9d42166}{deserialize}} (const std\+::vector$<$ char $>$ \&buffer)
+\begin{DoxyCompactList}\small\item\em This function is called when the scene is deserialized. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a4dacec0528c6a7c3e601823e92230630}{post\+\_\+load}} ()
+\begin{DoxyCompactList}\small\item\em Runs immediately after a new mesh has been loaded. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a97b4bf21e6fcfe3126cd42b5d61b1a54}{pre\+\_\+draw}} ()
+\begin{DoxyCompactList}\small\item\em This function is called before the draw procedure of \doxylink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_aa296760b1a17bd148794673165857ce2}{post\+\_\+draw}} ()
+\begin{DoxyCompactList}\small\item\em This function is called after the draw procedure of \doxylink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a728a7ab835c779be44097369f312a5cd}{post\+\_\+resize}} (int w, int h)
+\begin{DoxyCompactList}\small\item\em This function is called after the window has been resized. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_aebff5957169e2181ed6d69915d668c90}{mouse\+\_\+down}} (int button, int modifier)
+\item 
+virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a5cae093301878ead08232c11d68660a6}{mouse\+\_\+up}} (int button, int modifier)
+\item 
+virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_aa6a8e31b6a0bf9862b5e9d57cbe2e665}{mouse\+\_\+move}} (int mouse\+\_\+x, int mouse\+\_\+y)
+\item 
+virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_aa42a1c4ba8c4fd147bf786a4e469cae3}{mouse\+\_\+scroll}} (float delta\+\_\+y)
+\item 
+virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_acc4fe69574da3f28b1ee4ade613532f3}{key\+\_\+pressed}} (unsigned int key, int modifiers)
+\item 
+virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_afea9153fa5c900c1b09b2169bb0be09f}{key\+\_\+down}} (int key, int modifiers)
+\item 
+virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a8a92255343b90b13a208da451614768d}{key\+\_\+up}} (int key, int modifiers)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a4c317c187d10b026253cc8e04c481679}{plugin\+\_\+name}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a77a47b3e363e6501c572e7ccf0bd60cb}{viewer}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract class for plugins All plugins MUST have this class as their parent and may implement any/all the callbacks marked {\ttfamily virtual} here. 
+
+Return value of callbacks\+: returning true to any of the callbacks tells \doxylink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer} that the event has been handled and that it should not be passed to other plugins or to other internal functions of \doxylink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer} 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_aaa201a229466fe2fdb9e688adae177ff}\label{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_aaa201a229466fe2fdb9e688adae177ff} 
+\index{igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}!ViewerPlugin@{ViewerPlugin}}
+\index{ViewerPlugin@{ViewerPlugin}!igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}}
+\doxysubsubsection{\texorpdfstring{ViewerPlugin()}{ViewerPlugin()}}
+{\footnotesize\ttfamily igl\+::opengl\+::glfw\+::\+Viewer\+Plugin\+::\+Viewer\+Plugin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_ab41d175335ef456af27247a235e3ca9d}\label{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_ab41d175335ef456af27247a235e3ca9d} 
+\index{igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}!````~ViewerPlugin@{\texorpdfstring{$\sim$}{\string~}ViewerPlugin}}
+\index{````~ViewerPlugin@{\texorpdfstring{$\sim$}{\string~}ViewerPlugin}!igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ViewerPlugin()}{\string~ViewerPlugin()}}
+{\footnotesize\ttfamily virtual igl\+::opengl\+::glfw\+::\+Viewer\+Plugin\+::\texorpdfstring{$\sim$}{\string~}\+Viewer\+Plugin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_ab3a866951292cb886c834cc9dd8f7707}\label{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_ab3a866951292cb886c834cc9dd8f7707} 
+\index{igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}!init@{init}}
+\index{init@{init}!igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily virtual void igl\+::opengl\+::glfw\+::\+Viewer\+Plugin\+::init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}} \texorpdfstring{$\ast$}{*}}]{\+\_\+viewer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+This function is called when the viewer is initialized (no mesh will be loaded at this stage) 
+
+
+
+Reimplemented in \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiPlugin_a9f04ab5b1759309dc6eacaec0617ccab}{igl\+::opengl\+::glfw\+::imgui\+::\+Im\+Gui\+Plugin}}.
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a7db7367d0ae2de0143ab6735305fb46e}\label{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a7db7367d0ae2de0143ab6735305fb46e} 
+\index{igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}!shutdown@{shutdown}}
+\index{shutdown@{shutdown}!igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}}
+\doxysubsubsection{\texorpdfstring{shutdown()}{shutdown()}}
+{\footnotesize\ttfamily virtual void igl\+::opengl\+::glfw\+::\+Viewer\+Plugin\+::shutdown (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+This function is called before shutdown. 
+
+
+
+Reimplemented in \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiPlugin_af5e1764750b95cbc2b701fa780ad6e57}{igl\+::opengl\+::glfw\+::imgui\+::\+Im\+Gui\+Plugin}}.
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_aced5a668c69237187f3f843f4d8dffee}\label{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_aced5a668c69237187f3f843f4d8dffee} 
+\index{igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}!load@{load}}
+\index{load@{load}!igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily virtual bool igl\+::opengl\+::glfw\+::\+Viewer\+Plugin\+::load (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+This function is called before a mesh is loaded. 
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a8791f4d2643fc0ddcbba9e5c65659bae}\label{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a8791f4d2643fc0ddcbba9e5c65659bae} 
+\index{igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}!save@{save}}
+\index{save@{save}!igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily virtual bool igl\+::opengl\+::glfw\+::\+Viewer\+Plugin\+::save (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+This function is called before a mesh is saved. 
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_ae14a053bb6fb981bfc20285a82e31d20}\label{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_ae14a053bb6fb981bfc20285a82e31d20} 
+\index{igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}!serialize@{serialize}}
+\index{serialize@{serialize}!igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily virtual bool igl\+::opengl\+::glfw\+::\+Viewer\+Plugin\+::serialize (\begin{DoxyParamCaption}\item[{std\+::vector$<$ char $>$ \&}]{buffer }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+This function is called when the scene is serialized. 
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a2dd38857a78fdd009b3757e5c9d42166}\label{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a2dd38857a78fdd009b3757e5c9d42166} 
+\index{igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily virtual bool igl\+::opengl\+::glfw\+::\+Viewer\+Plugin\+::deserialize (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ char $>$ \&}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+This function is called when the scene is deserialized. 
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a4dacec0528c6a7c3e601823e92230630}\label{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a4dacec0528c6a7c3e601823e92230630} 
+\index{igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}!post\_load@{post\_load}}
+\index{post\_load@{post\_load}!igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}}
+\doxysubsubsection{\texorpdfstring{post\_load()}{post\_load()}}
+{\footnotesize\ttfamily virtual bool igl\+::opengl\+::glfw\+::\+Viewer\+Plugin\+::post\+\_\+load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Runs immediately after a new mesh has been loaded. 
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a97b4bf21e6fcfe3126cd42b5d61b1a54}\label{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a97b4bf21e6fcfe3126cd42b5d61b1a54} 
+\index{igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}!pre\_draw@{pre\_draw}}
+\index{pre\_draw@{pre\_draw}!igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}}
+\doxysubsubsection{\texorpdfstring{pre\_draw()}{pre\_draw()}}
+{\footnotesize\ttfamily virtual bool igl\+::opengl\+::glfw\+::\+Viewer\+Plugin\+::pre\+\_\+draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+This function is called before the draw procedure of \doxylink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}. 
+
+
+
+Reimplemented in \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiPlugin_a0d0368061ce5468e24e9c4b5b2b1cc00}{igl\+::opengl\+::glfw\+::imgui\+::\+Im\+Gui\+Plugin}}.
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_aa296760b1a17bd148794673165857ce2}\label{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_aa296760b1a17bd148794673165857ce2} 
+\index{igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}!post\_draw@{post\_draw}}
+\index{post\_draw@{post\_draw}!igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}}
+\doxysubsubsection{\texorpdfstring{post\_draw()}{post\_draw()}}
+{\footnotesize\ttfamily virtual bool igl\+::opengl\+::glfw\+::\+Viewer\+Plugin\+::post\+\_\+draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+This function is called after the draw procedure of \doxylink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}. 
+
+
+
+Reimplemented in \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiPlugin_afacb6cbea78b509aa20af1196ac041e7}{igl\+::opengl\+::glfw\+::imgui\+::\+Im\+Gui\+Plugin}}.
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a728a7ab835c779be44097369f312a5cd}\label{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a728a7ab835c779be44097369f312a5cd} 
+\index{igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}!post\_resize@{post\_resize}}
+\index{post\_resize@{post\_resize}!igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}}
+\doxysubsubsection{\texorpdfstring{post\_resize()}{post\_resize()}}
+{\footnotesize\ttfamily virtual void igl\+::opengl\+::glfw\+::\+Viewer\+Plugin\+::post\+\_\+resize (\begin{DoxyParamCaption}\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+This function is called after the window has been resized. 
+
+
+
+Reimplemented in \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiPlugin_a613db77c391d43b6756f8d5d36043dd1}{igl\+::opengl\+::glfw\+::imgui\+::\+Im\+Gui\+Plugin}}.
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_aebff5957169e2181ed6d69915d668c90}\label{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_aebff5957169e2181ed6d69915d668c90} 
+\index{igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}!mouse\_down@{mouse\_down}}
+\index{mouse\_down@{mouse\_down}!igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}}
+\doxysubsubsection{\texorpdfstring{mouse\_down()}{mouse\_down()}}
+{\footnotesize\ttfamily virtual bool igl\+::opengl\+::glfw\+::\+Viewer\+Plugin\+::mouse\+\_\+down (\begin{DoxyParamCaption}\item[{int}]{button,  }\item[{int}]{modifier }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiPlugin_ab94d16f41e4750e9b706adaec855d142}{igl\+::opengl\+::glfw\+::imgui\+::\+Im\+Gui\+Plugin}}.
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a5cae093301878ead08232c11d68660a6}\label{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a5cae093301878ead08232c11d68660a6} 
+\index{igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}!mouse\_up@{mouse\_up}}
+\index{mouse\_up@{mouse\_up}!igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}}
+\doxysubsubsection{\texorpdfstring{mouse\_up()}{mouse\_up()}}
+{\footnotesize\ttfamily virtual bool igl\+::opengl\+::glfw\+::\+Viewer\+Plugin\+::mouse\+\_\+up (\begin{DoxyParamCaption}\item[{int}]{button,  }\item[{int}]{modifier }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiPlugin_a3d22553eb110ef0b1caa9fae80365faa}{igl\+::opengl\+::glfw\+::imgui\+::\+Im\+Gui\+Plugin}}.
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_aa6a8e31b6a0bf9862b5e9d57cbe2e665}\label{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_aa6a8e31b6a0bf9862b5e9d57cbe2e665} 
+\index{igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}!mouse\_move@{mouse\_move}}
+\index{mouse\_move@{mouse\_move}!igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}}
+\doxysubsubsection{\texorpdfstring{mouse\_move()}{mouse\_move()}}
+{\footnotesize\ttfamily virtual bool igl\+::opengl\+::glfw\+::\+Viewer\+Plugin\+::mouse\+\_\+move (\begin{DoxyParamCaption}\item[{int}]{mouse\+\_\+x,  }\item[{int}]{mouse\+\_\+y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiPlugin_adc44b28cf03c4d85de9e0b48440bbdcd}{igl\+::opengl\+::glfw\+::imgui\+::\+Im\+Gui\+Plugin}}.
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_aa42a1c4ba8c4fd147bf786a4e469cae3}\label{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_aa42a1c4ba8c4fd147bf786a4e469cae3} 
+\index{igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}!mouse\_scroll@{mouse\_scroll}}
+\index{mouse\_scroll@{mouse\_scroll}!igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}}
+\doxysubsubsection{\texorpdfstring{mouse\_scroll()}{mouse\_scroll()}}
+{\footnotesize\ttfamily virtual bool igl\+::opengl\+::glfw\+::\+Viewer\+Plugin\+::mouse\+\_\+scroll (\begin{DoxyParamCaption}\item[{float}]{delta\+\_\+y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiPlugin_a9389de276238544d47e932a754f0c4ce}{igl\+::opengl\+::glfw\+::imgui\+::\+Im\+Gui\+Plugin}}.
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_acc4fe69574da3f28b1ee4ade613532f3}\label{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_acc4fe69574da3f28b1ee4ade613532f3} 
+\index{igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}!key\_pressed@{key\_pressed}}
+\index{key\_pressed@{key\_pressed}!igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}}
+\doxysubsubsection{\texorpdfstring{key\_pressed()}{key\_pressed()}}
+{\footnotesize\ttfamily virtual bool igl\+::opengl\+::glfw\+::\+Viewer\+Plugin\+::key\+\_\+pressed (\begin{DoxyParamCaption}\item[{unsigned int}]{key,  }\item[{int}]{modifiers }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiPlugin_aa48f40af12c3b29e2c40f2c8863c2fe1}{igl\+::opengl\+::glfw\+::imgui\+::\+Im\+Gui\+Plugin}}.
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_afea9153fa5c900c1b09b2169bb0be09f}\label{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_afea9153fa5c900c1b09b2169bb0be09f} 
+\index{igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}!key\_down@{key\_down}}
+\index{key\_down@{key\_down}!igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}}
+\doxysubsubsection{\texorpdfstring{key\_down()}{key\_down()}}
+{\footnotesize\ttfamily virtual bool igl\+::opengl\+::glfw\+::\+Viewer\+Plugin\+::key\+\_\+down (\begin{DoxyParamCaption}\item[{int}]{key,  }\item[{int}]{modifiers }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiPlugin_a612047703b96087c1041102ab691ef8b}{igl\+::opengl\+::glfw\+::imgui\+::\+Im\+Gui\+Plugin}}.
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a8a92255343b90b13a208da451614768d}\label{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a8a92255343b90b13a208da451614768d} 
+\index{igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}!key\_up@{key\_up}}
+\index{key\_up@{key\_up}!igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}}
+\doxysubsubsection{\texorpdfstring{key\_up()}{key\_up()}}
+{\footnotesize\ttfamily virtual bool igl\+::opengl\+::glfw\+::\+Viewer\+Plugin\+::key\+\_\+up (\begin{DoxyParamCaption}\item[{int}]{key,  }\item[{int}]{modifiers }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiPlugin_a01966908594715af2a5c41b262878eca}{igl\+::opengl\+::glfw\+::imgui\+::\+Im\+Gui\+Plugin}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a4c317c187d10b026253cc8e04c481679}\label{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a4c317c187d10b026253cc8e04c481679} 
+\index{igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}!plugin\_name@{plugin\_name}}
+\index{plugin\_name@{plugin\_name}!igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}}
+\doxysubsubsection{\texorpdfstring{plugin\_name}{plugin\_name}}
+{\footnotesize\ttfamily std\+::string igl\+::opengl\+::glfw\+::\+Viewer\+Plugin\+::plugin\+\_\+name}
+
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a77a47b3e363e6501c572e7ccf0bd60cb}\label{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a77a47b3e363e6501c572e7ccf0bd60cb} 
+\index{igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}!viewer@{viewer}}
+\index{viewer@{viewer}!igl::opengl::glfw::ViewerPlugin@{igl::opengl::glfw::ViewerPlugin}}
+\doxysubsubsection{\texorpdfstring{viewer}{viewer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}}\texorpdfstring{$\ast$}{*} igl\+::opengl\+::glfw\+::\+Viewer\+Plugin\+::viewer\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/igl/opengl/glfw/\mbox{\hyperlink{ViewerPlugin_8h}{Viewer\+Plugin.\+h}}\end{DoxyCompactItemize}

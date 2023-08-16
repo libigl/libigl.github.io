@@ -1,0 +1,22 @@
+\doxysection{include/igl/copyleft/comiso/miq.h File Reference}
+\hypertarget{miq_8h}{}\label{miq_8h}\index{include/igl/copyleft/comiso/miq.h@{include/igl/copyleft/comiso/miq.h}}
+{\ttfamily \#include \"{}../../igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \"{}miq.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\item 
+namespace \mbox{\hyperlink{namespaceigl_1_1copyleft}{igl\+::copyleft}}
+\item 
+namespace \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1comiso}{igl\+::copyleft\+::comiso}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedU $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1comiso_a177716489b4db91c9cd44fd166e4d40c}{igl\+::copyleft\+::comiso\+::miq}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&PD1, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&PD2, Eigen\+::\+Plain\+Object\+Base$<$ DerivedU $>$ \&UV, Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&FUV, double gradient\+Size=30.\+0, double stiffness=5.\+0, bool direct\+Round=false, unsigned int iter=5, unsigned int local\+Iter=5, bool do\+Round=true, bool singularity\+Round=true, const std\+::vector$<$ int $>$ \&round\+Vertices=std\+::vector$<$ int $>$(), const std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&hard\+Features=std\+::vector$<$ std\+::vector$<$ int $>$ $>$())
+\begin{DoxyCompactList}\small\item\em Global seamless parametrization aligned with a given per-\/face Jacobian (PD1, PD2). \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedU $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1comiso_a389d945e3b9c6738b15ccfced57e0b57}{igl\+::copyleft\+::comiso\+::miq}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&PD1\+\_\+combed, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&PD2\+\_\+combed, const Eigen\+::\+Matrix$<$ int, Eigen\+::\+Dynamic, 3 $>$ \&mismatch, const Eigen\+::\+Matrix$<$ int, Eigen\+::\+Dynamic, 1 $>$ \&singular, const Eigen\+::\+Matrix$<$ int, Eigen\+::\+Dynamic, 3 $>$ \&seams, Eigen\+::\+Plain\+Object\+Base$<$ DerivedU $>$ \&UV, Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&FUV, double gradient\+Size=30.\+0, double stiffness=5.\+0, bool direct\+Round=false, unsigned int iter=5, unsigned int local\+Iter=5, bool do\+Round=true, bool singularity\+Round=true, const std\+::vector$<$ int $>$ \&round\+Vertices=std\+::vector$<$ int $>$(), const std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&hard\+Features=std\+::vector$<$ std\+::vector$<$ int $>$ $>$())
+\begin{DoxyCompactList}\small\item\em miq Helper function that allows to directly provided pre-\/combed bisectors for an already cut mesh \end{DoxyCompactList}\end{DoxyCompactItemize}

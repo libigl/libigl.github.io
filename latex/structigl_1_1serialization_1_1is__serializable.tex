@@ -1,0 +1,32 @@
+\doxysection{igl\+::serialization\+::is\+\_\+serializable\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{structigl_1_1serialization_1_1is__serializable}{}\label{structigl_1_1serialization_1_1is__serializable}\index{igl::serialization::is\_serializable$<$ T $>$@{igl::serialization::is\_serializable$<$ T $>$}}
+
+
+{\ttfamily \#include $<$serialize.\+h$>$}
+
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const bool \mbox{\hyperlink{structigl_1_1serialization_1_1is__serializable_a726172bca5924d401497e0dfebfbc557}{value}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structigl_1_1serialization_1_1is__serializable_a726172bca5924d401497e0dfebfbc557}\label{structigl_1_1serialization_1_1is__serializable_a726172bca5924d401497e0dfebfbc557} 
+\index{igl::serialization::is\_serializable$<$ T $>$@{igl::serialization::is\_serializable$<$ T $>$}!value@{value}}
+\index{value@{value}!igl::serialization::is\_serializable$<$ T $>$@{igl::serialization::is\_serializable$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+const bool \mbox{\hyperlink{structigl_1_1serialization_1_1is__serializable}{igl\+::serialization\+::is\+\_\+serializable}}$<$ T $>$\+::value\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ std::is\_fundamental<T>::value\ ||\ std::is\_same<std::string,T>::value\ ||\ std::is\_enum<T>::value\ ||\ std::is\_base\_of<SerializableBase,T>::value}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ||\ \mbox{\hyperlink{structigl_1_1serialization_1_1is__stl__container_a615c8d14c3eaa680dc4dd380f032fa78}{is\_stl\_container<T>::value}}\ ||\ \mbox{\hyperlink{structigl_1_1serialization_1_1is__eigen__type_aa39f7b5e45c6288bd5ca41ed97235c33}{is\_eigen\_type<T>::value}}\ ||\ std::is\_pointer<T>::value\ ||\ \mbox{\hyperlink{structigl_1_1serialization_1_1is__smart__ptr_ad33949932a25aea9b5ba099260ea1648}{serialization::is\_smart\_ptr<T>::value}}}
+
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/igl/\mbox{\hyperlink{serialize_8h}{serialize.\+h}}\end{DoxyCompactItemize}
