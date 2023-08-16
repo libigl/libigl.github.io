@@ -47,9 +47,17 @@ mkdocs serve
     linkchecker http://127.0.0.1:8000
     ```
 
+### Doxygen
+
+Doxygen documentation is generated from withing libigl source. Run 
+
+    cd libigl
+    doxygen docs/doxygen.conf
+
 ### Deployment
 
 Deployment has been automated through the use of GitHub Actions. The configuration file is located [here](https://github.com/libigl/libigl.github.io/blob/docs/.github/workflows/gh-pages.yml).
+
 
 ## References
 
