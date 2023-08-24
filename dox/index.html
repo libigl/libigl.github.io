@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>libigl: Main Page</title>
+<title>libigl: libigl - A simple C++ geometry processing library</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">libigl
+   <div id="projectname">libigl<span id="projectnumber">&#160;v2.5.0</span>
    </div>
   </td>
  </tr>
@@ -96,10 +96,38 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">libigl Documentation</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">libigl - A simple C++ geometry processing library </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a class="anchor" id="md_docs_2index"></a> This detailed documentation browser is automatically generated from the comments in libigl header (.h) files.</p>
+<p>In general, each function (e.g., <code>igl::func</code>) will be defined in a correspondingly named header file (e.g., <code>#include &lt;igl/func.h&gt;</code>).</p>
+<p>The <em>core</em> library only depends on the standard template library (<code>std::</code>) and Eigen. These functions reside directly the <a href="./namespaceigl.html"><code>igl::</code> namespace</a></p>
+<p>Functions with further dependencies reside in a corresonding sub-namespace. For example, the function <code><a class="el" href="namespaceigl_1_1spectra.html#adb72a973b3fc7104bbc4c5f52321924d" title="Compute a free-boundary least-squares conformal map parametrization.">igl::spectra::lscm</a></code> depends on the Spectra library so it resides in the <a href="./namespaceigl_1_1spectra.html"><code>igl::spectra::</code> namespace</a>.</p>
+<p>Functions which depend on external code under a copyleft license reside in the <a href="file:///Users/alecjacobson/Repos/libigl/dox/namespaceigl_1_1copyleft.html"><code>igl::copyleft::</code> namepsace</a>.</p>
+<p>Most libigl functions are templated over the Eigen matrix inputs and outputs. Callers can choose their own scalar types (e.g., <code>double</code>/<code>float</code>) and storage orders (<code>Eigen::ColMajor</code>/<code>Eigen::RowMajor</code>). Libigl can be used as a:</p>
+<ul>
+<li><b>header only library</b> (via CMake, make sure <code>LIBIGL_USE_STATIC_LIBRARY=OFF</code>) and insure that <code>IGL_STATIC_LIBRARY</code> is <em>not</em> defined_ when compiling &mdash; easiest if you're new to libigl, or</li>
+<li><b>static library</b> (<code>LIBIGL_USE_STATIC_LIBRARY=ON</code> → <code>IGL_STATIC_LIBRARY</code> is defined) &mdash; speeds up repeated compilation.</li>
+</ul>
+<p>The libigl static library is filled with <em>explicit template instantiations</em> for common Eigen inputs and outputs. If the library doesn't contain your types, you may get some form of linker error (e.g., <code>Undefined symbols for architecture</code>, <code>undefined reference to</code> or <code>unresolved external symbol</code>).</p>
+<p>You can fix this by:</p>
+<ol type="1">
+<li>Switching to header only mode for your project,</li>
+<li>Making a file in your project to compile the missing templates. E.g., <code>my_templates.cpp</code> <div class="fragment"><div class="line"><span class="preprocessor">#ifdef IGL_STATIC_LIBRARY</span></div>
+<div class="line"><span class="preprocessor">#undef IGL_STATIC_LIBRARY</span></div>
+<div class="line"><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="per__vertex__normals_8h.html">igl/per_vertex_normals.h</a>&gt;</span></div>
+<div class="line"><span class="keyword">template</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#a7d913043c5590b413bc2ea64adae0c17">igl::per_vertex_normals</a>&lt;Eigen::Matrix&lt;float, -1, -1, 0, -1, -1&gt;, Eigen::Matrix&lt;int, -1, -1, 0, -1, -1&gt;, Eigen::Matrix&lt;float, -1, -1, 0, -1, -1&gt; &gt;(Eigen::MatrixBase&lt;Eigen::Matrix&lt;float, -1, -1, 0, -1, -1&gt; &gt; <span class="keyword">const</span>&amp;, Eigen::MatrixBase&lt;Eigen::Matrix&lt;int, -1, -1, 0, -1, -1&gt; &gt; <span class="keyword">const</span>&amp;, Eigen::PlainObjectBase&lt;Eigen::Matrix&lt;float, -1, -1, 0, -1, -1&gt; &gt;&amp;); </div>
+<div class="ttc" id="anamespaceigl_html_a7d913043c5590b413bc2ea64adae0c17"><div class="ttname"><a href="namespaceigl.html#a7d913043c5590b413bc2ea64adae0c17">igl::per_vertex_normals</a></div><div class="ttdeci">void per_vertex_normals(const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, const Eigen::MatrixBase&lt; DerivedF &gt; &amp;F, const igl::PerVertexNormalsWeightingType weighting, Eigen::PlainObjectBase&lt; DerivedN &gt; &amp;N)</div><div class="ttdoc">Compute vertex normals via vertex position list, face list.</div></div>
+<div class="ttc" id="aper__vertex__normals_8h_html"><div class="ttname"><a href="per__vertex__normals_8h.html">per_vertex_normals.h</a></div></div>
+</div><!-- fragment --></li>
+<li><a href="https://github.com/libigl/libigl/pulls">Submit a PR</a> containing your missing template to the development branch of libigl</li>
+<li>Change your input/output types to match existing templates (e.g., <code>Eigen::MatrixXd</code>).</li>
+</ol>
+<p><a href="https://libigl.github.io/">https://libigl.github.io/</a></p>
+<p><a href="https://github.com/libigl/libigl/">https://github.com/libigl/libigl/</a> </p>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

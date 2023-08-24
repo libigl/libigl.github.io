@@ -23,8 +23,6 @@ var searchData=
   ['prey_20',['preY',['../structigl_1_1min__quad__with__fixed__data.html#a3db371095ff5ecf7dc8c42c3e34a3695',1,'igl::min_quad_with_fixed_data']]],
   ['print_5ftimings_21',['print_timings',['../structigl_1_1ArapDOFData.html#a941cf3932d352a19588b7b97b45ba9a0',1,'igl::ArapDOFData']]],
   ['proj_22',['proj',['../classigl_1_1opengl_1_1ViewerCore.html#a50af5081883025581f00b0918b3d9d30',1,'igl::opengl::ViewerCore']]],
-  ['properties_23',['properties',['../structigl_1_1tinyply_1_1PlyElement.html#a48289edd1b90a4a60a5f1bf2af42e494',1,'igl::tinyply::PlyElement']]],
-  ['propertytype_24',['propertyType',['../structigl_1_1tinyply_1_1PlyProperty.html#a1713211f746b7ad6c4a18ebff550dcdf',1,'igl::tinyply::PlyProperty']]],
-  ['proximal_5fp_25',['proximal_p',['../structigl_1_1SLIMData.html#a60fc6450c2b703e5daf5dae88a494c31',1,'igl::SLIMData']]],
-  ['ptolerance_26',['pTolerance',['../structigl_1_1ShapeupData.html#ab3e0f7ecfbc717b0341d220d04753657',1,'igl::ShapeupData']]]
+  ['proximal_5fp_23',['proximal_p',['../structigl_1_1SLIMData.html#a60fc6450c2b703e5daf5dae88a494c31',1,'igl::SLIMData::proximal_p'],['../structigl_1_1triangle_1_1SCAFData.html#aea587c106da8558a78a2c5414bfc0b27',1,'igl::triangle::SCAFData::proximal_p']]],
+  ['ptolerance_24',['pTolerance',['../structigl_1_1ShapeupData.html#ab3e0f7ecfbc717b0341d220d04753657',1,'igl::ShapeupData']]]
 ];

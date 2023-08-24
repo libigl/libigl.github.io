@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['grab_0',['GRAB',['../namespaceigl.html#a69c0d149c7cb41a263f858b695eeb988a8695c57e30e957161af26fe52d8a5826',1,'igl']]]
+  ['inside_0',['INSIDE',['../namespaceigl_1_1predicates.html#aacb20fd4a9b17ca7521e3d96e39d418ba554a7418c4c0dafd902ebd377b87c80c',1,'igl::predicates']]]
 ];

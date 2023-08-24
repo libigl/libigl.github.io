@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">libigl
+   <div id="projectname">libigl<span id="projectnumber">&#160;v2.5.0</span>
    </div>
   </td>
  </tr>
@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('blue__noise_8h.html',''); initResizabl
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="igl__inline_8h_source.html">igl_inline.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="generate__default__urbg_8h_source.html">generate_default_urbg.h</a>&quot;</code><br />
 <code>#include &lt;Eigen/Core&gt;</code><br />
 <code>#include &quot;blue_noise.cpp&quot;</code><br />
 </div>
@@ -116,10 +117,10 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a98228468c9d6608d031ea33dbf405a6c"><td class="memTemplParams" colspan="2">template&lt;typename DerivedV , typename DerivedF , typename DerivedB , typename DerivedFI , typename DerivedP &gt; </td></tr>
-<tr class="memitem:a98228468c9d6608d031ea33dbf405a6c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a98228468c9d6608d031ea33dbf405a6c">igl::blue_noise</a> (const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, const Eigen::MatrixBase&lt; DerivedF &gt; &amp;F, const typename DerivedV::Scalar r, Eigen::PlainObjectBase&lt; DerivedB &gt; &amp;B, Eigen::PlainObjectBase&lt; DerivedFI &gt; &amp;FI, Eigen::PlainObjectBase&lt; DerivedP &gt; &amp;P)</td></tr>
-<tr class="memdesc:a98228468c9d6608d031ea33dbf405a6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">"Fast Poisson Disk Sampling in Arbitrary Dimensions" [Bridson 2007].  <br /></td></tr>
-<tr class="separator:a98228468c9d6608d031ea33dbf405a6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6fdfaea612ac6f626571df84ba43dd0"><td class="memTemplParams" colspan="2">template&lt;typename DerivedV , typename DerivedF , typename DerivedB , typename DerivedFI , typename DerivedP , typename URBG  = DEFAULT_URBG&gt; </td></tr>
+<tr class="memitem:af6fdfaea612ac6f626571df84ba43dd0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#af6fdfaea612ac6f626571df84ba43dd0">igl::blue_noise</a> (const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, const Eigen::MatrixBase&lt; DerivedF &gt; &amp;F, const typename DerivedV::Scalar r, Eigen::PlainObjectBase&lt; DerivedB &gt; &amp;B, Eigen::PlainObjectBase&lt; DerivedFI &gt; &amp;FI, Eigen::PlainObjectBase&lt; DerivedP &gt; &amp;P, URBG &amp;&amp;urbg=<a class="el" href="namespaceigl.html#a23d8ca74669cc6ed33b89020ee4f9b2e">igl::generate_default_urbg</a>())</td></tr>
+<tr class="memdesc:af6fdfaea612ac6f626571df84ba43dd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">"Fast Poisson Disk Sampling in Arbitrary Dimensions" [Bridson 2007].  <br /></td></tr>
+<tr class="separator:af6fdfaea612ac6f626571df84ba43dd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

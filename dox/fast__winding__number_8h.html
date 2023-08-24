@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">libigl
+   <div id="projectname">libigl<span id="projectnumber">&#160;v2.5.0</span>
    </div>
   </td>
  </tr>
@@ -98,7 +98,6 @@ $(document).ready(function(){initNavTree('fast__winding__number_8h.html',''); in
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">fast_winding_number.h File Reference</div></div>
@@ -112,19 +111,9 @@ $(document).ready(function(){initNavTree('fast__winding__number_8h.html',''); in
 </div>
 <p><a href="fast__winding__number_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structigl_1_1FastWindingNumberBVH.html">igl::FastWindingNumberBVH</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure for caching precomputation for fast winding number for triangle soups.  <a href="structigl_1_1FastWindingNumberBVH.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceigl"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl.html">igl</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespaceigl_1_1FastWindingNumber"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1FastWindingNumber.html">igl::FastWindingNumber</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespaceigl_1_1FastWindingNumber_1_1HDK__Sample"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1FastWindingNumber_1_1HDK__Sample.html">igl::FastWindingNumber::HDK_Sample</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -150,15 +139,15 @@ Functions</h2></td></tr>
 <tr class="memdesc:ab8c8f607d6379a200ca2b06d48a177c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute approximate winding number of a triangle soup mesh according to "Fast Winding Numbers for Soups and Clouds" [Barill et al.  <br /></td></tr>
 <tr class="separator:ab8c8f607d6379a200ca2b06d48a177c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a903c781c6e83ef8f7cf2f8791a603cff"><td class="memTemplParams" colspan="2">template&lt;typename DerivedV , typename DerivedF &gt; </td></tr>
-<tr class="memitem:a903c781c6e83ef8f7cf2f8791a603cff"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a903c781c6e83ef8f7cf2f8791a603cff">igl::fast_winding_number</a> (const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, const Eigen::MatrixBase&lt; DerivedF &gt; &amp;F, const int order, <a class="el" href="structigl_1_1FastWindingNumberBVH.html">FastWindingNumberBVH</a> &amp;fwn_bvh)</td></tr>
+<tr class="memitem:a903c781c6e83ef8f7cf2f8791a603cff"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a903c781c6e83ef8f7cf2f8791a603cff">igl::fast_winding_number</a> (const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, const Eigen::MatrixBase&lt; DerivedF &gt; &amp;F, const int order, FastWindingNumberBVH &amp;fwn_bvh)</td></tr>
 <tr class="memdesc:a903c781c6e83ef8f7cf2f8791a603cff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Precomputation for computing approximate winding numbers of a triangle soup.  <br /></td></tr>
 <tr class="separator:a903c781c6e83ef8f7cf2f8791a603cff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82cd97bb9dcfdb31036cb2d61a8feec7"><td class="memTemplParams" colspan="2">template&lt;typename DerivedQ , typename DerivedW &gt; </td></tr>
-<tr class="memitem:a82cd97bb9dcfdb31036cb2d61a8feec7"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a82cd97bb9dcfdb31036cb2d61a8feec7">igl::fast_winding_number</a> (const <a class="el" href="structigl_1_1FastWindingNumberBVH.html">FastWindingNumberBVH</a> &amp;fwn_bvh, const float accuracy_scale, const Eigen::MatrixBase&lt; DerivedQ &gt; &amp;Q, Eigen::PlainObjectBase&lt; DerivedW &gt; &amp;W)</td></tr>
+<tr class="memitem:a82cd97bb9dcfdb31036cb2d61a8feec7"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a82cd97bb9dcfdb31036cb2d61a8feec7">igl::fast_winding_number</a> (const FastWindingNumberBVH &amp;fwn_bvh, const float accuracy_scale, const Eigen::MatrixBase&lt; DerivedQ &gt; &amp;Q, Eigen::PlainObjectBase&lt; DerivedW &gt; &amp;W)</td></tr>
 <tr class="memdesc:a82cd97bb9dcfdb31036cb2d61a8feec7"><td class="mdescLeft">&#160;</td><td class="mdescRight">After precomputation, compute winding number at a each of many points in a list.  <br /></td></tr>
 <tr class="separator:a82cd97bb9dcfdb31036cb2d61a8feec7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3142103ed9b3cdf64d5a81fbaa34dc4c"><td class="memTemplParams" colspan="2">template&lt;typename Derivedp &gt; </td></tr>
-<tr class="memitem:a3142103ed9b3cdf64d5a81fbaa34dc4c"><td class="memTemplItemLeft" align="right" valign="top">Derivedp::Scalar&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a3142103ed9b3cdf64d5a81fbaa34dc4c">igl::fast_winding_number</a> (const <a class="el" href="structigl_1_1FastWindingNumberBVH.html">FastWindingNumberBVH</a> &amp;fwn_bvh, const float accuracy_scale, const Eigen::MatrixBase&lt; Derivedp &gt; &amp;p)</td></tr>
+<tr class="memitem:a3142103ed9b3cdf64d5a81fbaa34dc4c"><td class="memTemplItemLeft" align="right" valign="top">Derivedp::Scalar&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a3142103ed9b3cdf64d5a81fbaa34dc4c">igl::fast_winding_number</a> (const FastWindingNumberBVH &amp;fwn_bvh, const float accuracy_scale, const Eigen::MatrixBase&lt; Derivedp &gt; &amp;p)</td></tr>
 <tr class="memdesc:a3142103ed9b3cdf64d5a81fbaa34dc4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">After precomputation, compute winding number at a single point.  <br /></td></tr>
 <tr class="separator:a3142103ed9b3cdf64d5a81fbaa34dc4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>

@@ -7,8 +7,33 @@
 \item 
 namespace \mbox{\hyperlink{namespaceigl}{igl}}
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{get__seconds_8h_a8d3d3b983b85cef5268dec298153cfb1}{IGL\+\_\+\+TICTOC\+\_\+\+LAMBDA}}
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 double \mbox{\hyperlink{namespaceigl_a14a7a848b8b1eb296b5c8b80efc05efc}{igl\+::get\+\_\+seconds}} ()
 \begin{DoxyCompactList}\small\item\em Current time in seconds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{get__seconds_8h_a8d3d3b983b85cef5268dec298153cfb1}\label{get__seconds_8h_a8d3d3b983b85cef5268dec298153cfb1} 
+\index{get\_seconds.h@{get\_seconds.h}!IGL\_TICTOC\_LAMBDA@{IGL\_TICTOC\_LAMBDA}}
+\index{IGL\_TICTOC\_LAMBDA@{IGL\_TICTOC\_LAMBDA}!get\_seconds.h@{get\_seconds.h}}
+\doxysubsubsection{\texorpdfstring{IGL\_TICTOC\_LAMBDA}{IGL\_TICTOC\_LAMBDA}}
+{\footnotesize\ttfamily \#define IGL\+\_\+\+TICTOC\+\_\+\+LAMBDA}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&\ tictoc\ =\ []()\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ t\_start\ =\ \mbox{\hyperlink{namespaceigl_a14a7a848b8b1eb296b5c8b80efc05efc}{igl::get\_seconds}}();\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ diff\ =\ \mbox{\hyperlink{namespaceigl_a14a7a848b8b1eb296b5c8b80efc05efc}{igl::get\_seconds}}()-\/t\_start;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ t\_start\ +=\ diff;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ diff;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \};}
+
+\end{DoxyCode}

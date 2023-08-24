@@ -24,11 +24,6 @@ var annotated_dup =
         [ "EmbreeDevice", "structigl_1_1embree_1_1EmbreeDevice.html", "structigl_1_1embree_1_1EmbreeDevice" ],
         [ "EmbreeIntersector", "classigl_1_1embree_1_1EmbreeIntersector.html", "classigl_1_1embree_1_1EmbreeIntersector" ]
       ] ],
-      [ "FastWindingNumber", "namespaceigl_1_1FastWindingNumber.html", [
-        [ "HDK_Sample", "namespaceigl_1_1FastWindingNumber_1_1HDK__Sample.html", [
-          [ "UT_SolidAngle", "classigl_1_1FastWindingNumber_1_1HDK__Sample_1_1UT__SolidAngle.html", null ]
-        ] ]
-      ] ],
       [ "matlab", "namespaceigl_1_1matlab.html", [
         [ "MatlabWorkspace", "classigl_1_1matlab_1_1MatlabWorkspace.html", "classigl_1_1matlab_1_1MatlabWorkspace" ]
       ] ],
@@ -71,14 +66,6 @@ var annotated_dup =
         [ "is_stl_container< std::set< T > >", "structigl_1_1serialization_1_1is__stl__container_3_01std_1_1set_3_01T_01_4_01_4.html", null ],
         [ "is_stl_container< std::vector< T1, T2 > >", "structigl_1_1serialization_1_1is__stl__container_3_01std_1_1vector_3_01T1_00_01T2_01_4_01_4.html", null ]
       ] ],
-      [ "tinyply", "namespaceigl_1_1tinyply.html", [
-        [ "Buffer", "classigl_1_1tinyply_1_1Buffer.html", "classigl_1_1tinyply_1_1Buffer" ],
-        [ "PlyData", "structigl_1_1tinyply_1_1PlyData.html", "structigl_1_1tinyply_1_1PlyData" ],
-        [ "PlyElement", "structigl_1_1tinyply_1_1PlyElement.html", "structigl_1_1tinyply_1_1PlyElement" ],
-        [ "PlyFile", "structigl_1_1tinyply_1_1PlyFile.html", "structigl_1_1tinyply_1_1PlyFile" ],
-        [ "PlyProperty", "structigl_1_1tinyply_1_1PlyProperty.html", "structigl_1_1tinyply_1_1PlyProperty" ],
-        [ "PropertyInfo", "structigl_1_1tinyply_1_1PropertyInfo.html", "structigl_1_1tinyply_1_1PropertyInfo" ]
-      ] ],
       [ "triangle", "namespaceigl_1_1triangle.html", [
         [ "SCAFData", "structigl_1_1triangle_1_1SCAFData.html", "structigl_1_1triangle_1_1SCAFData" ]
       ] ],
@@ -103,7 +90,6 @@ var annotated_dup =
       [ "ArapDOFData", "structigl_1_1ArapDOFData.html", "structigl_1_1ArapDOFData" ],
       [ "AtA_cached_data", "structigl_1_1AtA__cached__data.html", "structigl_1_1AtA__cached__data" ],
       [ "BBWData", "classigl_1_1BBWData.html", "classigl_1_1BBWData" ],
-      [ "FastWindingNumberBVH", "structigl_1_1FastWindingNumberBVH.html", "structigl_1_1FastWindingNumberBVH" ],
       [ "FileMemoryBuffer", "structigl_1_1FileMemoryBuffer.html", "structigl_1_1FileMemoryBuffer" ],
       [ "FileMemoryStream", "structigl_1_1FileMemoryStream.html", "structigl_1_1FileMemoryStream" ],
       [ "HalfEdgeIterator", "classigl_1_1HalfEdgeIterator.html", "classigl_1_1HalfEdgeIterator" ],

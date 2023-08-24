@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">libigl
+   <div id="projectname">libigl<span id="projectnumber">&#160;v2.5.0</span>
    </div>
   </td>
  </tr>
@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('randperm_8h.html',''); initResizable()
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="igl__inline_8h_source.html">igl_inline.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="generate__default__urbg_8h_source.html">generate_default_urbg.h</a>&quot;</code><br />
 <code>#include &lt;Eigen/Core&gt;</code><br />
 <code>#include &lt;random&gt;</code><br />
 <code>#include &quot;randperm.cpp&quot;</code><br />
@@ -117,14 +118,10 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af6a8c9883f7e9e06cc7eebc4dfac14cc"><td class="memTemplParams" colspan="2">template&lt;typename DerivedI , typename URBG &gt; </td></tr>
-<tr class="memitem:af6a8c9883f7e9e06cc7eebc4dfac14cc"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#af6a8c9883f7e9e06cc7eebc4dfac14cc">igl::randperm</a> (const int n, Eigen::PlainObjectBase&lt; DerivedI &gt; &amp;I, URBG &amp;&amp;urbg)</td></tr>
-<tr class="memdesc:af6a8c9883f7e9e06cc7eebc4dfac14cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Like matlab's randperm(n) but minus 1.  <br /></td></tr>
-<tr class="separator:af6a8c9883f7e9e06cc7eebc4dfac14cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4e8914162323ca2a9f9a4b8744a2637"><td class="memTemplParams" colspan="2">template&lt;typename DerivedI &gt; </td></tr>
-<tr class="memitem:af4e8914162323ca2a9f9a4b8744a2637"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#af4e8914162323ca2a9f9a4b8744a2637">igl::randperm</a> (const int n, Eigen::PlainObjectBase&lt; DerivedI &gt; &amp;I)</td></tr>
-<tr class="memdesc:af4e8914162323ca2a9f9a4b8744a2637"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
-<tr class="separator:af4e8914162323ca2a9f9a4b8744a2637"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7279a059983ae9a728c94ccc1983343d"><td class="memTemplParams" colspan="2">template&lt;typename DerivedI , typename URBG  = DEFAULT_URBG&gt; </td></tr>
+<tr class="memitem:a7279a059983ae9a728c94ccc1983343d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a7279a059983ae9a728c94ccc1983343d">igl::randperm</a> (const int n, Eigen::PlainObjectBase&lt; DerivedI &gt; &amp;I, URBG &amp;&amp;urbg=<a class="el" href="namespaceigl.html#a23d8ca74669cc6ed33b89020ee4f9b2e">igl::generate_default_urbg</a>())</td></tr>
+<tr class="memdesc:a7279a059983ae9a728c94ccc1983343d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Like matlab's randperm(n) but minus 1.  <br /></td></tr>
+<tr class="separator:a7279a059983ae9a728c94ccc1983343d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

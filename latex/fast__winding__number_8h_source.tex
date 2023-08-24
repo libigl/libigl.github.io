@@ -80,50 +80,52 @@
 \DoxyCodeLine{00129\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedA>\&\ A,}
 \DoxyCodeLine{00130\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedQ>\&\ Q,}
 \DoxyCodeLine{00131\ \ \ \ \ Eigen::PlainObjectBase<DerivedWN>\&\ WN);}
-\DoxyCodeLine{00133\ \ \ \textcolor{keyword}{namespace\ }FastWindingNumber\ \{\ \textcolor{keyword}{namespace\ }HDK\_Sample\{\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T1,\ \textcolor{keyword}{typename}\ T2>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classigl_1_1FastWindingNumber_1_1HDK__Sample_1_1UT__SolidAngle}{UT\_SolidAngle}};\}\ \}}
-\DoxyCodeLine{00136\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1FastWindingNumberBVH}{FastWindingNumberBVH}}\ \{}
-\DoxyCodeLine{00138\ \ \ \ \ \mbox{\hyperlink{classigl_1_1FastWindingNumber_1_1HDK__Sample_1_1UT__SolidAngle}{FastWindingNumber::HDK\_Sample::UT\_SolidAngle<float,float>}}\ ut\_solid\_angle;}
-\DoxyCodeLine{00139\ \ \ \ \ \textcolor{comment}{//\ Need\ copies\ of\ these\ so\ they\ stay\ alive\ between\ calls.}}
-\DoxyCodeLine{00140\ \ \ \ \ std::vector<FastWindingNumber::HDK\_Sample::UT\_Vector3T<float>\ >\ \mbox{\hyperlink{structigl_1_1FastWindingNumberBVH_a83bc6c2a2719b997980ae1ff85101f9a}{U}};}
-\DoxyCodeLine{00141\ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{structigl_1_1FastWindingNumberBVH_a6259ac2046b1f36c48f6bfe9167bfcc2}{F}};}
-\DoxyCodeLine{00142\ \ \ \};}
-\DoxyCodeLine{00150\ \ \ \textcolor{keyword}{template}\ <}
-\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
-\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
-\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedQ,}
-\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedW>}
-\DoxyCodeLine{00155\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_af9a50987fefc0df065fb3e2cde90c92e}{fast\_winding\_number}}(}
-\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
-\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
-\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedQ>\ \&\ Q,}
-\DoxyCodeLine{00159\ \ \ \ \ Eigen::PlainObjectBase<DerivedW>\ \&\ W);}
-\DoxyCodeLine{00168\ \ \ \textcolor{keyword}{template}\ <}
-\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
-\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF>}
-\DoxyCodeLine{00171\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_af9a50987fefc0df065fb3e2cde90c92e}{fast\_winding\_number}}(}
-\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
-\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
-\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ order,}
-\DoxyCodeLine{00175\ \ \ \ \ \mbox{\hyperlink{structigl_1_1FastWindingNumberBVH}{FastWindingNumberBVH}}\ \&\ fwn\_bvh);}
-\DoxyCodeLine{00183\ \ \ \textcolor{keyword}{template}\ <}
-\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedQ,}
-\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedW>}
-\DoxyCodeLine{00186\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_af9a50987fefc0df065fb3e2cde90c92e}{fast\_winding\_number}}(}
-\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structigl_1_1FastWindingNumberBVH}{FastWindingNumberBVH}}\ \&\ fwn\_bvh,}
-\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ accuracy\_scale,}
-\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedQ>\ \&\ Q,}
-\DoxyCodeLine{00190\ \ \ \ \ Eigen::PlainObjectBase<DerivedW>\ \&\ W);}
-\DoxyCodeLine{00197\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Derivedp>}
-\DoxyCodeLine{00198\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{typename}\ Derivedp::Scalar\ \mbox{\hyperlink{namespaceigl_af9a50987fefc0df065fb3e2cde90c92e}{fast\_winding\_number}}(}
-\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structigl_1_1FastWindingNumberBVH}{FastWindingNumberBVH}}\ \&\ fwn\_bvh,}
-\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ accuracy\_scale,}
-\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedp>\ \&\ p);}
-\DoxyCodeLine{00202\ \}}
-\DoxyCodeLine{00203\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
-\DoxyCodeLine{00204\ \textcolor{preprocessor}{\#\ \ include\ "{}fast\_winding\_number.cpp"{}}}
-\DoxyCodeLine{00205\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00206\ }
-\DoxyCodeLine{00207\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00133\ \ \ \textcolor{keyword}{namespace\ }FastWindingNumber\ \{\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keyword}{namespace\ }HDK\_Sample\{\ }
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T1,\ \textcolor{keyword}{typename}\ T2>\ \textcolor{keyword}{class\ }UT\_SolidAngle;\}\ \}}
+\DoxyCodeLine{00140\ \ \ \textcolor{keyword}{struct\ }FastWindingNumberBVH\ \{}
+\DoxyCodeLine{00142\ \ \ \ \ FastWindingNumber::HDK\_Sample::UT\_SolidAngle<float,float>\ ut\_solid\_angle;}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{comment}{//\ Need\ copies\ of\ these\ so\ they\ stay\ alive\ between\ calls.}}
+\DoxyCodeLine{00145\ \textcolor{comment}{}\ \ \ \ std::vector<FastWindingNumber::HDK\_Sample::UT\_Vector3T<float>\ >\ U;}
+\DoxyCodeLine{00146\ \ \ \ \ std::vector<int>\ F;}
+\DoxyCodeLine{00147\ \ \ \};}
+\DoxyCodeLine{00155\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedQ,}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedW>}
+\DoxyCodeLine{00160\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_af9a50987fefc0df065fb3e2cde90c92e}{fast\_winding\_number}}(}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedQ>\ \&\ Q,}
+\DoxyCodeLine{00164\ \ \ \ \ Eigen::PlainObjectBase<DerivedW>\ \&\ W);}
+\DoxyCodeLine{00173\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00176\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_af9a50987fefc0df065fb3e2cde90c92e}{fast\_winding\_number}}(}
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ order,}
+\DoxyCodeLine{00180\ \ \ \ \ FastWindingNumberBVH\ \&\ fwn\_bvh);}
+\DoxyCodeLine{00188\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedQ,}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedW>}
+\DoxyCodeLine{00191\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_af9a50987fefc0df065fb3e2cde90c92e}{fast\_winding\_number}}(}
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keyword}{const}\ FastWindingNumberBVH\ \&\ fwn\_bvh,}
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ accuracy\_scale,}
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedQ>\ \&\ Q,}
+\DoxyCodeLine{00195\ \ \ \ \ Eigen::PlainObjectBase<DerivedW>\ \&\ W);}
+\DoxyCodeLine{00202\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Derivedp>}
+\DoxyCodeLine{00203\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{typename}\ Derivedp::Scalar\ \mbox{\hyperlink{namespaceigl_af9a50987fefc0df065fb3e2cde90c92e}{fast\_winding\_number}}(}
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keyword}{const}\ FastWindingNumberBVH\ \&\ fwn\_bvh,}
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ accuracy\_scale,}
+\DoxyCodeLine{00206\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedp>\ \&\ p);}
+\DoxyCodeLine{00207\ \}}
+\DoxyCodeLine{00208\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00209\ \textcolor{preprocessor}{\#\ \ include\ "{}fast\_winding\_number.cpp"{}}}
+\DoxyCodeLine{00210\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00213\ }
 
 \end{DoxyCode}

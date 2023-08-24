@@ -27,7 +27,7 @@ var searchData=
   ['column_5fto_5fquats_24',['column_to_quats',['../namespaceigl.html#a012bb449a5e1b088fd42ed4eb801391a',1,'igl']]],
   ['columnize_25',['columnize',['../namespaceigl.html#a2ae4ea0e51288d468b77d2303f7b60e5',1,'igl']]],
   ['comb_5fcross_5ffield_26',['comb_cross_field',['../namespaceigl.html#a42d3578aca0da0bea74041ca2b239c1d',1,'igl']]],
-  ['comb_5fframe_5ffield_27',['comb_frame_field',['../namespaceigl.html#ad0e21e93774e17df3730af0dc7d3cb20',1,'igl']]],
+  ['comb_5fframe_5ffield_27',['comb_frame_field',['../namespaceigl.html#a406fa0cb0c3fafe5a7b06e31ba757329',1,'igl']]],
   ['comb_5fline_5ffield_28',['comb_line_field',['../namespaceigl.html#a702a263c5565f41ca8e4585619b746f7',1,'igl']]],
   ['combine_29',['combine',['../namespaceigl.html#a75f28ec0548f636eb6dc9551eca554bc',1,'igl::combine(const std::vector&lt; DerivedVV &gt; &amp;VV, const std::vector&lt; DerivedFF &gt; &amp;FF, Eigen::PlainObjectBase&lt; DerivedV &gt; &amp;V, Eigen::PlainObjectBase&lt; DerivedF &gt; &amp;F)'],['../namespaceigl.html#add396b23f15d16510156bfa839f58661',1,'igl::combine(const std::vector&lt; DerivedVV &gt; &amp;VV, const std::vector&lt; DerivedFF &gt; &amp;FF, Eigen::PlainObjectBase&lt; DerivedV &gt; &amp;V, Eigen::PlainObjectBase&lt; DerivedF &gt; &amp;F, Eigen::PlainObjectBase&lt; DerivedVsizes &gt; &amp;Vsizes, Eigen::PlainObjectBase&lt; DerivedFsizes &gt; &amp;Fsizes)']]],
   ['combo_30',['Combo',['../namespaceImGui.html#a023d8107acf5b52a1594c2b935b824f0',1,'ImGui::Combo(const char *label, int *idx, std::function&lt; const char *(int)&gt; getter, int items_count)'],['../namespaceImGui.html#a010b32e950ef1eb7a43808f0c0bd04d2',1,'ImGui::Combo(const char *label, int *idx, std::vector&lt; std::string &gt; &amp;values)']]],

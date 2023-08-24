@@ -6,6 +6,5 @@ var searchData=
   ['ri_3',['Ri',['../structigl_1_1SLIMData.html#a03aec7d4e2f3b357123d3c744b43e08c',1,'igl::SLIMData']]],
   ['ri_5fm_4',['Ri_m',['../structigl_1_1triangle_1_1SCAFData.html#a4d28a9a123b5114df60b0ca04a35b20e',1,'igl::triangle::SCAFData']]],
   ['ri_5fs_5',['Ri_s',['../structigl_1_1triangle_1_1SCAFData.html#a1ca1c06f6009ef8b6bb690f28e87404b',1,'igl::triangle::SCAFData']]],
-  ['rotation_5ftype_6',['rotation_type',['../classigl_1_1opengl_1_1ViewerCore.html#aea6244401b22237d6510a59e73113365',1,'igl::opengl::ViewerCore']]],
-  ['rowmatrixxf_7',['RowMatrixXf',['../classigl_1_1opengl_1_1MeshGL.html#a17194504109bdabe4cc5d2c9a46cbd37',1,'igl::opengl::MeshGL']]]
+  ['rotation_5ftype_6',['rotation_type',['../classigl_1_1opengl_1_1ViewerCore.html#aea6244401b22237d6510a59e73113365',1,'igl::opengl::ViewerCore']]]
 ];

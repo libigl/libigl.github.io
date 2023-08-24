@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">libigl
+   <div id="projectname">libigl<span id="projectnumber">&#160;v2.5.0</span>
    </div>
   </td>
  </tr>
@@ -114,24 +114,25 @@ $(document).ready(function(){initNavTree('comb__frame__field_8h_source.html','')
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;Eigen/Core&gt;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceigl.html">igl</a></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="namespaceigl.html#ad0e21e93774e17df3730af0dc7d3cb20">   29</a></span>  <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#ad0e21e93774e17df3730af0dc7d3cb20">comb_frame_field</a>(<span class="keyword">const</span> Eigen::MatrixBase&lt;DerivedV&gt; &amp;V,</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                                        <span class="keyword">const</span> Eigen::MatrixBase&lt;DerivedF&gt; &amp;F,</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                                        <span class="keyword">const</span> Eigen::MatrixBase&lt;DerivedP&gt; &amp;PD1,</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>                                        <span class="keyword">const</span> Eigen::MatrixBase&lt;DerivedP&gt; &amp;PD2,</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>                                        <span class="keyword">const</span> Eigen::MatrixBase&lt;DerivedP&gt; &amp;BIS1_combed,</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                                        <span class="keyword">const</span> Eigen::MatrixBase&lt;DerivedP&gt; &amp;BIS2_combed,</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                                        Eigen::PlainObjectBase&lt;DerivedP&gt; &amp;PD1_combed,</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                                        Eigen::PlainObjectBase&lt;DerivedP&gt; &amp;PD2_combed);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>}</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#ifndef IGL_STATIC_LIBRARY</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#include &quot;comb_frame_field.cpp&quot;</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> DerivedV, <span class="keyword">typename</span> DerivedF, <span class="keyword">typename</span> DerivedP&gt;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="namespaceigl.html#a406fa0cb0c3fafe5a7b06e31ba757329">   30</a></span>  <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#a406fa0cb0c3fafe5a7b06e31ba757329">comb_frame_field</a>(<span class="keyword">const</span> Eigen::MatrixBase&lt;DerivedV&gt; &amp;V,</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                                        <span class="keyword">const</span> Eigen::MatrixBase&lt;DerivedF&gt; &amp;F,</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>                                        <span class="keyword">const</span> Eigen::MatrixBase&lt;DerivedP&gt; &amp;PD1,</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>                                        <span class="keyword">const</span> Eigen::MatrixBase&lt;DerivedP&gt; &amp;PD2,</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                                        <span class="keyword">const</span> Eigen::MatrixBase&lt;DerivedP&gt; &amp;BIS1_combed,</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                                        <span class="keyword">const</span> Eigen::MatrixBase&lt;DerivedP&gt; &amp;BIS2_combed,</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                                        Eigen::PlainObjectBase&lt;DerivedP&gt; &amp;PD1_combed,</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                                        Eigen::PlainObjectBase&lt;DerivedP&gt; &amp;PD2_combed);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>}</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#ifndef IGL_STATIC_LIBRARY</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#include &quot;comb_frame_field.cpp&quot;</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aigl__inline_8h_html"><div class="ttname"><a href="igl__inline_8h.html">igl_inline.h</a></div></div>
 <div class="ttc" id="aigl__inline_8h_html_a838241279013352686271b4c4ce1f708"><div class="ttname"><a href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a></div><div class="ttdeci">#define IGL_INLINE</div><div class="ttdef"><b>Definition</b> igl_inline.h:15</div></div>
 <div class="ttc" id="anamespaceigl_html"><div class="ttname"><a href="namespaceigl.html">igl</a></div><div class="ttdef"><b>Definition</b> AABB.h:17</div></div>
-<div class="ttc" id="anamespaceigl_html_ad0e21e93774e17df3730af0dc7d3cb20"><div class="ttname"><a href="namespaceigl.html#ad0e21e93774e17df3730af0dc7d3cb20">igl::comb_frame_field</a></div><div class="ttdeci">void comb_frame_field(const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, const Eigen::MatrixBase&lt; DerivedF &gt; &amp;F, const Eigen::MatrixBase&lt; DerivedP &gt; &amp;PD1, const Eigen::MatrixBase&lt; DerivedP &gt; &amp;PD2, const Eigen::MatrixBase&lt; DerivedP &gt; &amp;BIS1_combed, const Eigen::MatrixBase&lt; DerivedP &gt; &amp;BIS2_combed, Eigen::PlainObjectBase&lt; DerivedP &gt; &amp;PD1_combed, Eigen::PlainObjectBase&lt; DerivedP &gt; &amp;PD2_combed)</div><div class="ttdoc">Computes principal matchings of the vectors of a frame field across face edges, and generates a combe...</div></div>
+<div class="ttc" id="anamespaceigl_html_a406fa0cb0c3fafe5a7b06e31ba757329"><div class="ttname"><a href="namespaceigl.html#a406fa0cb0c3fafe5a7b06e31ba757329">igl::comb_frame_field</a></div><div class="ttdeci">void comb_frame_field(const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, const Eigen::MatrixBase&lt; DerivedF &gt; &amp;F, const Eigen::MatrixBase&lt; DerivedP &gt; &amp;PD1, const Eigen::MatrixBase&lt; DerivedP &gt; &amp;PD2, const Eigen::MatrixBase&lt; DerivedP &gt; &amp;BIS1_combed, const Eigen::MatrixBase&lt; DerivedP &gt; &amp;BIS2_combed, Eigen::PlainObjectBase&lt; DerivedP &gt; &amp;PD1_combed, Eigen::PlainObjectBase&lt; DerivedP &gt; &amp;PD2_combed)</div><div class="ttdoc">Computes principal matchings of the vectors of a frame field across face edges, and generates a combe...</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

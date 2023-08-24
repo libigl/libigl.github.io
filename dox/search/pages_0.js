@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bug_20list_0',['Bug List',['../bug.html',1,'']]]
+  ['libigl_20_2d_20a_20simple_20c_2b_2b_20geometry_20processing_20library_0',['libigl - A simple C++ geometry processing library',['../index.html',1,'']]]
 ];

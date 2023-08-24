@@ -1,0 +1,19 @@
+\doxysection{include/igl/random\+\_\+points\+\_\+on\+\_\+mesh\+\_\+intrinsic.h File Reference}
+\hypertarget{random__points__on__mesh__intrinsic_8h}{}\label{random__points__on__mesh__intrinsic_8h}\index{include/igl/random\_points\_on\_mesh\_intrinsic.h@{include/igl/random\_points\_on\_mesh\_intrinsic.h}}
+{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include \"{}generate\+\_\+default\+\_\+urbg.\+h\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include \"{}random\+\_\+points\+\_\+on\+\_\+mesh\+\_\+intrinsic.\+cpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceigl}{igl}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DeriveddblA , typename DerivedB , typename Derived\+FI , typename URBG  = DEFAULT\+\_\+\+URBG$>$ }\\void \mbox{\hyperlink{namespaceigl_a17abb32491125229903977390f4149b6}{igl\+::random\+\_\+points\+\_\+on\+\_\+mesh\+\_\+intrinsic}} (const int n, const Eigen\+::\+Matrix\+Base$<$ DeriveddblA $>$ \&dblA, Eigen\+::\+Plain\+Object\+Base$<$ DerivedB $>$ \&B, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+FI $>$ \&FI, URBG \&\&urbg=\mbox{\hyperlink{namespaceigl_a23d8ca74669cc6ed33b89020ee4f9b2e}{igl\+::generate\+\_\+default\+\_\+urbg}}())
+\begin{DoxyCompactList}\small\item\em Randomly sample a mesh (V,F) n times. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DeriveddblA , typename DerivedF , typename ScalarB , typename Derived\+FI , typename URBG $>$ }\\void \mbox{\hyperlink{namespaceigl_a96aa82c3339685c664b22f768a8a6e0e}{igl\+::random\+\_\+points\+\_\+on\+\_\+mesh\+\_\+intrinsic}} (const int n, const Eigen\+::\+Matrix\+Base$<$ DeriveddblA $>$ \&dblA, const int num\+\_\+vertices, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Sparse\+Matrix$<$ ScalarB $>$ \&B, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+FI $>$ \&FI, URBG \&\&urbg)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}

@@ -6,6 +6,5 @@ var searchData=
   ['binarywindingnumberoperations_3c_20mesh_5fboolean_5ftype_5fminus_20_3e_3',['BinaryWindingNumberOperations&lt; MESH_BOOLEAN_TYPE_MINUS &gt;',['../classigl_1_1copyleft_1_1cgal_1_1BinaryWindingNumberOperations_3_01MESH__BOOLEAN__TYPE__MINUS_01_4.html',1,'igl::copyleft::cgal']]],
   ['binarywindingnumberoperations_3c_20mesh_5fboolean_5ftype_5fresolve_20_3e_4',['BinaryWindingNumberOperations&lt; MESH_BOOLEAN_TYPE_RESOLVE &gt;',['../classigl_1_1copyleft_1_1cgal_1_1BinaryWindingNumberOperations_3_01MESH__BOOLEAN__TYPE__RESOLVE_01_4.html',1,'igl::copyleft::cgal']]],
   ['binarywindingnumberoperations_3c_20mesh_5fboolean_5ftype_5funion_20_3e_5',['BinaryWindingNumberOperations&lt; MESH_BOOLEAN_TYPE_UNION &gt;',['../classigl_1_1copyleft_1_1cgal_1_1BinaryWindingNumberOperations_3_01MESH__BOOLEAN__TYPE__UNION_01_4.html',1,'igl::copyleft::cgal']]],
-  ['binarywindingnumberoperations_3c_20mesh_5fboolean_5ftype_5fxor_20_3e_6',['BinaryWindingNumberOperations&lt; MESH_BOOLEAN_TYPE_XOR &gt;',['../classigl_1_1copyleft_1_1cgal_1_1BinaryWindingNumberOperations_3_01MESH__BOOLEAN__TYPE__XOR_01_4.html',1,'igl::copyleft::cgal']]],
-  ['buffer_7',['Buffer',['../classigl_1_1tinyply_1_1Buffer.html',1,'igl::tinyply']]]
+  ['binarywindingnumberoperations_3c_20mesh_5fboolean_5ftype_5fxor_20_3e_6',['BinaryWindingNumberOperations&lt; MESH_BOOLEAN_TYPE_XOR &gt;',['../classigl_1_1copyleft_1_1cgal_1_1BinaryWindingNumberOperations_3_01MESH__BOOLEAN__TYPE__XOR_01_4.html',1,'igl::copyleft::cgal']]]
 ];

@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">libigl
+   <div id="projectname">libigl<span id="projectnumber">&#160;v2.5.0</span>
    </div>
   </td>
  </tr>
@@ -129,10 +129,14 @@ Functions</h2></td></tr>
 <tr class="memitem:a7edd289c72535b2014622b5fc55c397e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1predicates.html#a7edd289c72535b2014622b5fc55c397e">delaunay_triangulation</a> (const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, Eigen::PlainObjectBase&lt; DerivedF &gt; &amp;F)</td></tr>
 <tr class="memdesc:a7edd289c72535b2014622b5fc55c397e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a set of points in 2D, return a Delaunay triangulation of these points using predicates.  <br /></td></tr>
 <tr class="separator:a7edd289c72535b2014622b5fc55c397e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67aaad068b039718bf983418a9143b94"><td class="memTemplParams" colspan="2">template&lt;typename DerivedP , typename DerivedRT , typename DerivedF , typename DerivedI &gt; </td></tr>
-<tr class="memitem:a67aaad068b039718bf983418a9143b94"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1predicates.html#a67aaad068b039718bf983418a9143b94">ear_clipping</a> (const Eigen::MatrixBase&lt; DerivedP &gt; &amp;P, const Eigen::MatrixBase&lt; DerivedRT &gt; &amp;RT, Eigen::PlainObjectBase&lt; DerivedI &gt; &amp;I, Eigen::PlainObjectBase&lt; DerivedF &gt; &amp;eF, Eigen::PlainObjectBase&lt; DerivedP &gt; &amp;nP)</td></tr>
-<tr class="memdesc:a67aaad068b039718bf983418a9143b94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of ear clipping triangulation algorithm for a 2D polygon.  <br /></td></tr>
-<tr class="separator:a67aaad068b039718bf983418a9143b94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87050342a2559880af3a5d0b550bfd0a"><td class="memTemplParams" colspan="2">template&lt;typename DerivedP , typename DerivedRT , typename DerivedF , typename DerivedI &gt; </td></tr>
+<tr class="memitem:a87050342a2559880af3a5d0b550bfd0a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1predicates.html#a87050342a2559880af3a5d0b550bfd0a">ear_clipping</a> (const Eigen::MatrixBase&lt; DerivedP &gt; &amp;P, const Eigen::MatrixBase&lt; DerivedRT &gt; &amp;RT, Eigen::PlainObjectBase&lt; DerivedF &gt; &amp;eF, Eigen::PlainObjectBase&lt; DerivedI &gt; &amp;I)</td></tr>
+<tr class="memdesc:a87050342a2559880af3a5d0b550bfd0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of ear clipping triangulation algorithm for a 2D polygon.  <br /></td></tr>
+<tr class="separator:a87050342a2559880af3a5d0b550bfd0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada15b6ecd90806923001927e53180fd4"><td class="memTemplParams" colspan="2">template&lt;typename DerivedP , typename DerivedF &gt; </td></tr>
+<tr class="memitem:ada15b6ecd90806923001927e53180fd4"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1predicates.html#ada15b6ecd90806923001927e53180fd4">ear_clipping</a> (const Eigen::MatrixBase&lt; DerivedP &gt; &amp;P, Eigen::PlainObjectBase&lt; DerivedF &gt; &amp;eF)</td></tr>
+<tr class="memdesc:ada15b6ecd90806923001927e53180fd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
+<tr class="separator:ada15b6ecd90806923001927e53180fd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61e6a3ff4a055fb5e6c749d601d3e694"><td class="memTemplParams" colspan="2">template&lt;typename DerivedV , typename DerivedF &gt; </td></tr>
 <tr class="memitem:a61e6a3ff4a055fb5e6c749d601d3e694"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1predicates.html#a61e6a3ff4a055fb5e6c749d601d3e694">lexicographic_triangulation</a> (const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, Eigen::PlainObjectBase&lt; DerivedF &gt; &amp;F)</td></tr>
 <tr class="memdesc:a61e6a3ff4a055fb5e6c749d601d3e694"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a set of points in 2D, return a lexicographic triangulation of these points using predicates.  <br /></td></tr>
@@ -246,8 +250,8 @@ template&lt;typename DerivedV , typename DerivedF &gt; </div>
 
 </div>
 </div>
-<a id="a67aaad068b039718bf983418a9143b94" name="a67aaad068b039718bf983418a9143b94"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a67aaad068b039718bf983418a9143b94">&#9670;&#160;</a></span>ear_clipping()</h2>
+<a id="a87050342a2559880af3a5d0b550bfd0a" name="a87050342a2559880af3a5d0b550bfd0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87050342a2559880af3a5d0b550bfd0a">&#9670;&#160;</a></span>ear_clipping() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -269,20 +273,14 @@ template&lt;typename DerivedP , typename DerivedRT , typename DerivedF , typenam
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Eigen::PlainObjectBase&lt; DerivedI &gt; &amp;&#160;</td>
-          <td class="paramname"><em>I</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">Eigen::PlainObjectBase&lt; DerivedF &gt; &amp;&#160;</td>
           <td class="paramname"><em>eF</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Eigen::PlainObjectBase&lt; DerivedP &gt; &amp;&#160;</td>
-          <td class="paramname"><em>nP</em>&#160;</td>
+          <td class="paramtype">Eigen::PlainObjectBase&lt; DerivedI &gt; &amp;&#160;</td>
+          <td class="paramname"><em>I</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -293,18 +291,51 @@ template&lt;typename DerivedP , typename DerivedRT , typename DerivedF , typenam
 </div><div class="memdoc">
 
 <p>Implementation of ear clipping triangulation algorithm for a 2D polygon. </p>
-<p><a href="https://www.geometrictools.com/Documentation/TriangulationByEarClipping.pdf">https://www.geometrictools.com/Documentation/TriangulationByEarClipping.pdf</a> If the polygon is simple, all vertices will be clipped and the result mesh is (P,eF) Otherwise, the function will try to clip as many ears as possible.</p>
+<p><a href="https://www.geometrictools.com/Documentation/TriangulationByEarClipping.pdf">https://www.geometrictools.com/Documentation/TriangulationByEarClipping.pdf</a> If the polygon is simple and oriented counter-clockwise, all vertices will be clipped and the result mesh is (P,eF) Otherwise, the function will try to clip as many ears as possible.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">P</td><td>: n*2, size n 2D polygon </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">RT</td><td>n*1, preserved vertices (do not clip) marked as 1, otherwise 0 </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">I</td><td>: size #nP vector, maps index from nP to P, e.g. nP's ith vertex is origianlly I(i) in P </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">eF</td><td>clipped ears, in original index of P </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">nP</td><td>leftover vertices after clipping</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">I</td><td>: size #nP vector, maps index from nP to P, e.g. nP's ith vertex is origianlly I(i) in P</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000015">Bug:</a></b></dt><dd><a href="https://github.com/libigl/libigl/issues/1563">https://github.com/libigl/libigl/issues/1563</a> </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd>To result in a proper mesh, P should be oriented counter-clockwise with no self-intersections.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This implementation does not handle polygons with holes.</dd></dl>
+
+</div>
+</div>
+<a id="ada15b6ecd90806923001927e53180fd4" name="ada15b6ecd90806923001927e53180fd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada15b6ecd90806923001927e53180fd4">&#9670;&#160;</a></span>ear_clipping() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DerivedP , typename DerivedF &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool igl::predicates::ear_clipping </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::MatrixBase&lt; DerivedP &gt; &amp;&#160;</td>
+          <td class="paramname"><em>P</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::PlainObjectBase&lt; DerivedF &gt; &amp;&#160;</td>
+          <td class="paramname"><em>eF</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+<p>Reverses P if necessary. Orientation of output will match input </p><dl class="section return"><dt>Returns</dt><dd>true if mesh is proper (should correspond to input being a simple polygon in either orientation), false otherwise. </dd></dl>
 
 </div>
 </div>

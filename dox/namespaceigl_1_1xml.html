@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">libigl
+   <div id="projectname">libigl<span id="projectnumber">&#160;v2.5.0</span>
    </div>
   </td>
  </tr>
@@ -119,10 +119,6 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a485c1032084c25c1cd62a9441900113a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1xml.html#a485c1032084c25c1cd62a9441900113a">save_ReAntTweakBar</a> (::igl::anttweakbar::ReTwBar *bar, const char *file_name)</td></tr>
-<tr class="separator:a485c1032084c25c1cd62a9441900113a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aedda8870bc17dcd2f7e5dd63645a0cd8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1xml.html#aedda8870bc17dcd2f7e5dd63645a0cd8">load_ReAntTweakBar</a> (::igl::anttweakbar::ReTwBar *bar, const char *file_name)</td></tr>
-<tr class="separator:aedda8870bc17dcd2f7e5dd63645a0cd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b93ad3bd3048c8531279640196fce70"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a4b93ad3bd3048c8531279640196fce70"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1xml.html#a4b93ad3bd3048c8531279640196fce70">serialize_xml</a> (const T &amp;obj, const std::string &amp;objectName, const std::string &amp;filename, bool binary=false, bool overwrite=false)</td></tr>
 <tr class="memdesc:a4b93ad3bd3048c8531279640196fce70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize object to file.  <br /></td></tr>
@@ -157,62 +153,6 @@ Functions</h2></td></tr>
 <tr class="separator:ac3b53b95f8286c93479f1b11ae230682"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a485c1032084c25c1cd62a9441900113a" name="a485c1032084c25c1cd62a9441900113a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a485c1032084c25c1cd62a9441900113a">&#9670;&#160;</a></span>save_ReAntTweakBar()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool igl::xml::save_ReAntTweakBar </td>
-          <td>(</td>
-          <td class="paramtype">::igl::anttweakbar::ReTwBar *&#160;</td>
-          <td class="paramname"><em>bar</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>file_name</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aedda8870bc17dcd2f7e5dd63645a0cd8" name="aedda8870bc17dcd2f7e5dd63645a0cd8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aedda8870bc17dcd2f7e5dd63645a0cd8">&#9670;&#160;</a></span>load_ReAntTweakBar()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool igl::xml::load_ReAntTweakBar </td>
-          <td>(</td>
-          <td class="paramtype">::igl::anttweakbar::ReTwBar *&#160;</td>
-          <td class="paramname"><em>bar</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>file_name</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a4b93ad3bd3048c8531279640196fce70" name="a4b93ad3bd3048c8531279640196fce70"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4b93ad3bd3048c8531279640196fce70">&#9670;&#160;</a></span>serialize_xml() <span class="overload">[1/3]</span></h2>
 
@@ -373,8 +313,8 @@ template&lt;typename T &gt; </div>
 <p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">doc</td><td>contains current <a class="el" href="namespacetinyxml2.html">tinyxml2</a> virtual representation of the xml data </td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">element</td><td><a class="el" href="namespacetinyxml2.html">tinyxml2</a> virtual representation of the current xml node </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">doc</td><td>contains current tinyxml2 virtual representation of the xml data </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">element</td><td>tinyxml2 virtual representation of the current xml node </td></tr>
   </table>
   </dd>
 </dl>
@@ -511,8 +451,8 @@ template&lt;typename T &gt; </div>
 <p>Deserialize to xml doc. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">doc</td><td>contains current <a class="el" href="namespacetinyxml2.html">tinyxml2</a> virtual representation of the xml data </td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">element</td><td><a class="el" href="namespacetinyxml2.html">tinyxml2</a> virtual representation of the current xml node</td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">doc</td><td>contains current tinyxml2 virtual representation of the xml data </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">element</td><td>tinyxml2 virtual representation of the current xml node</td></tr>
   </table>
   </dd>
 </dl>

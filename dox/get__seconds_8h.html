@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">libigl
+   <div id="projectname">libigl<span id="projectnumber">&#160;v2.5.0</span>
    </div>
   </td>
  </tr>
@@ -99,6 +99,7 @@ $(document).ready(function(){initNavTree('get__seconds_8h.html',''); initResizab
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">get_seconds.h File Reference</div></div>
 </div><!--header-->
@@ -113,12 +114,40 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespaceigl"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl.html">igl</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a8d3d3b983b85cef5268dec298153cfb1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="get__seconds_8h.html#a8d3d3b983b85cef5268dec298153cfb1">IGL_TICTOC_LAMBDA</a></td></tr>
+<tr class="separator:a8d3d3b983b85cef5268dec298153cfb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a14a7a848b8b1eb296b5c8b80efc05efc"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a14a7a848b8b1eb296b5c8b80efc05efc">igl::get_seconds</a> ()</td></tr>
 <tr class="memdesc:a14a7a848b8b1eb296b5c8b80efc05efc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current time in seconds.  <br /></td></tr>
 <tr class="separator:a14a7a848b8b1eb296b5c8b80efc05efc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a8d3d3b983b85cef5268dec298153cfb1" name="a8d3d3b983b85cef5268dec298153cfb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d3d3b983b85cef5268dec298153cfb1">&#9670;&#160;</a></span>IGL_TICTOC_LAMBDA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IGL_TICTOC_LAMBDA</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">      <span class="keyword">const</span> <span class="keyword">auto</span> &amp; tictoc = []() \</div>
+<div class="line">      { \</div>
+<div class="line">        <span class="keyword">static</span> <span class="keywordtype">double</span> t_start = <a class="code hl_function" href="namespaceigl.html#a14a7a848b8b1eb296b5c8b80efc05efc">igl::get_seconds</a>(); \</div>
+<div class="line">        <span class="keywordtype">double</span> diff = <a class="code hl_function" href="namespaceigl.html#a14a7a848b8b1eb296b5c8b80efc05efc">igl::get_seconds</a>()-t_start; \</div>
+<div class="line">        t_start += diff; \</div>
+<div class="line">        <span class="keywordflow">return</span> diff; \</div>
+<div class="line">      };</div>
+<div class="ttc" id="anamespaceigl_html_a14a7a848b8b1eb296b5c8b80efc05efc"><div class="ttname"><a href="namespaceigl.html#a14a7a848b8b1eb296b5c8b80efc05efc">igl::get_seconds</a></div><div class="ttdeci">double get_seconds()</div><div class="ttdoc">Current time in seconds.</div></div>
+</div><!-- fragment -->
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

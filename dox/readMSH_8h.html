@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">libigl
+   <div id="projectname">libigl<span id="projectnumber">&#160;v2.5.0</span>
    </div>
   </td>
  </tr>
@@ -118,18 +118,22 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a71568db686b70c51b2b3ea414c348a86"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a71568db686b70c51b2b3ea414c348a86">igl::readMSH</a> (const std::string &amp;msh, Eigen::MatrixXd &amp;X, Eigen::MatrixXi &amp;Tri, Eigen::MatrixXi &amp;Tet, Eigen::VectorXi &amp;TriTag, Eigen::VectorXi &amp;TetTag, std::vector&lt; std::string &gt; &amp;XFields, std::vector&lt; Eigen::MatrixXd &gt; &amp;XF, std::vector&lt; std::string &gt; &amp;EFields, std::vector&lt; Eigen::MatrixXd &gt; &amp;TriF, std::vector&lt; Eigen::MatrixXd &gt; &amp;TetF)</td></tr>
-<tr class="memdesc:a71568db686b70c51b2b3ea414c348a86"><td class="mdescLeft">&#160;</td><td class="mdescRight">read triangle surface mesh and tetrahedral volume mesh from .msh file  <br /></td></tr>
-<tr class="separator:a71568db686b70c51b2b3ea414c348a86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9956ff8bc4304147a7f610f179c3495c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a9956ff8bc4304147a7f610f179c3495c">igl::readMSH</a> (const std::string &amp;msh, Eigen::MatrixXd &amp;X, Eigen::MatrixXi &amp;Tri, Eigen::MatrixXi &amp;Tet, Eigen::VectorXi &amp;TriTag, Eigen::VectorXi &amp;TetTag)</td></tr>
-<tr class="memdesc:a9956ff8bc4304147a7f610f179c3495c"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
-<tr class="separator:a9956ff8bc4304147a7f610f179c3495c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad08141617b9f2a3cc5f716f36d3e6d39"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl.html#ad08141617b9f2a3cc5f716f36d3e6d39">igl::readMSH</a> (const std::string &amp;msh, Eigen::MatrixXd &amp;X, Eigen::MatrixXi &amp;Tri, Eigen::VectorXi &amp;TriTag)</td></tr>
-<tr class="memdesc:ad08141617b9f2a3cc5f716f36d3e6d39"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
-<tr class="separator:ad08141617b9f2a3cc5f716f36d3e6d39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30ec5a47228d26d15ff5eb57ef91468a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a30ec5a47228d26d15ff5eb57ef91468a">igl::readMSH</a> (const std::string &amp;msh, Eigen::MatrixXd &amp;X, Eigen::MatrixXi &amp;Tri)</td></tr>
-<tr class="memdesc:a30ec5a47228d26d15ff5eb57ef91468a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
-<tr class="separator:a30ec5a47228d26d15ff5eb57ef91468a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9364f18a5e9db3da7b923ab9ee054481"><td class="memTemplParams" colspan="2">template&lt;int EigenMatrixOptions&gt; </td></tr>
+<tr class="memitem:a9364f18a5e9db3da7b923ab9ee054481"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a9364f18a5e9db3da7b923ab9ee054481">igl::readMSH</a> (const std::string &amp;msh, Eigen::Matrix&lt; double, Eigen::Dynamic, Eigen::Dynamic, EigenMatrixOptions &gt; &amp;X, Eigen::Matrix&lt; int, Eigen::Dynamic, Eigen::Dynamic, EigenMatrixOptions &gt; &amp;Tri, Eigen::Matrix&lt; int, Eigen::Dynamic, Eigen::Dynamic, EigenMatrixOptions &gt; &amp;Tet, Eigen::VectorXi &amp;TriTag, Eigen::VectorXi &amp;TetTag, std::vector&lt; std::string &gt; &amp;XFields, std::vector&lt; Eigen::Matrix&lt; double, Eigen::Dynamic, Eigen::Dynamic, EigenMatrixOptions &gt; &gt; &amp;XF, std::vector&lt; std::string &gt; &amp;EFields, std::vector&lt; Eigen::Matrix&lt; double, Eigen::Dynamic, Eigen::Dynamic, EigenMatrixOptions &gt; &gt; &amp;TriF, std::vector&lt; Eigen::Matrix&lt; double, Eigen::Dynamic, Eigen::Dynamic, EigenMatrixOptions &gt; &gt; &amp;TetF)</td></tr>
+<tr class="memdesc:a9364f18a5e9db3da7b923ab9ee054481"><td class="mdescLeft">&#160;</td><td class="mdescRight">read triangle surface mesh and tetrahedral volume mesh from .msh file  <br /></td></tr>
+<tr class="separator:a9364f18a5e9db3da7b923ab9ee054481"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadcaf1cbdf935ab8ae06264bc17a80b1"><td class="memTemplParams" colspan="2">template&lt;int EigenMatrixOptions&gt; </td></tr>
+<tr class="memitem:aadcaf1cbdf935ab8ae06264bc17a80b1"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#aadcaf1cbdf935ab8ae06264bc17a80b1">igl::readMSH</a> (const std::string &amp;msh, Eigen::Matrix&lt; double, Eigen::Dynamic, Eigen::Dynamic, EigenMatrixOptions &gt; &amp;X, Eigen::Matrix&lt; int, Eigen::Dynamic, Eigen::Dynamic, EigenMatrixOptions &gt; &amp;Tri, Eigen::Matrix&lt; int, Eigen::Dynamic, Eigen::Dynamic, EigenMatrixOptions &gt; &amp;Tet, Eigen::VectorXi &amp;TriTag, Eigen::VectorXi &amp;TetTag)</td></tr>
+<tr class="memdesc:aadcaf1cbdf935ab8ae06264bc17a80b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
+<tr class="separator:aadcaf1cbdf935ab8ae06264bc17a80b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3928fbb4033580f092da0afb953cc7c"><td class="memTemplParams" colspan="2">template&lt;int EigenMatrixOptions&gt; </td></tr>
+<tr class="memitem:ad3928fbb4033580f092da0afb953cc7c"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#ad3928fbb4033580f092da0afb953cc7c">igl::readMSH</a> (const std::string &amp;msh, Eigen::Matrix&lt; double, Eigen::Dynamic, Eigen::Dynamic, EigenMatrixOptions &gt; &amp;X, Eigen::Matrix&lt; int, Eigen::Dynamic, Eigen::Dynamic, EigenMatrixOptions &gt; &amp;Tri, Eigen::VectorXi &amp;TriTag)</td></tr>
+<tr class="memdesc:ad3928fbb4033580f092da0afb953cc7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
+<tr class="separator:ad3928fbb4033580f092da0afb953cc7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2a21df0040f4d7799d33535261164ac"><td class="memTemplParams" colspan="2">template&lt;int EigenMatrixOptions&gt; </td></tr>
+<tr class="memitem:af2a21df0040f4d7799d33535261164ac"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#af2a21df0040f4d7799d33535261164ac">igl::readMSH</a> (const std::string &amp;msh, Eigen::Matrix&lt; double, Eigen::Dynamic, Eigen::Dynamic, EigenMatrixOptions &gt; &amp;X, Eigen::Matrix&lt; int, Eigen::Dynamic, Eigen::Dynamic, EigenMatrixOptions &gt; &amp;Tri)</td></tr>
+<tr class="memdesc:af2a21df0040f4d7799d33535261164ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
+<tr class="separator:af2a21df0040f4d7799d33535261164ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

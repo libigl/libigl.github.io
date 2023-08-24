@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['textgl_0',['TextGL',['../structigl_1_1opengl_1_1MeshGL_1_1TextGL.html',1,'igl::opengl::MeshGL']]],
-  ['tgafooter_1',['TgaFooter',['../structigl_1_1opengl_1_1TgaFooter.html',1,'igl::opengl']]],
-  ['tgaheader_2',['TgaHeader',['../structigl_1_1opengl_1_1TgaHeader.html',1,'igl::opengl']]],
-  ['timer_3',['Timer',['../classigl_1_1Timer.html',1,'igl']]]
+  ['viewer_0',['Viewer',['../classigl_1_1opengl_1_1glfw_1_1Viewer.html',1,'igl::opengl::glfw']]],
+  ['viewercore_1',['ViewerCore',['../classigl_1_1opengl_1_1ViewerCore.html',1,'igl::opengl']]],
+  ['viewerdata_2',['ViewerData',['../classigl_1_1opengl_1_1ViewerData.html',1,'igl::opengl']]],
+  ['viewerplugin_3',['ViewerPlugin',['../classigl_1_1opengl_1_1glfw_1_1ViewerPlugin.html',1,'igl::opengl::glfw']]]
 ];

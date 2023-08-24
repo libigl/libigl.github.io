@@ -60,7 +60,7 @@ var searchData=
   ['constraint_5fthreshold_57',['constraint_threshold',['../structigl_1_1active__set__params.html#aeadffe312b9c2d67e835a261c0d7bf88',1,'igl::active_set_params']]],
   ['context_5f_58',['context_',['../classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiPlugin.html#ad8c78a06ac01dfd925fb210524f06524',1,'igl::opengl::glfw::imgui::ImGuiPlugin']]],
   ['core_5flist_59',['core_list',['../classigl_1_1opengl_1_1glfw_1_1Viewer.html#aaaa8e5c0215617964f3e191a28827f2b',1,'igl::opengl::glfw::Viewer']]],
-  ['count_60',['count',['../structigl_1_1tinyply_1_1PlyData.html#aa0182fb3033e2b89d49d4f2efa50a4bb',1,'igl::tinyply::PlyData::count'],['../classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh.html#a1e6d46c014d357bc3919258b48e5c3ae',1,'igl::copyleft::cgal::SelfIntersectMesh::count']]],
+  ['count_60',['count',['../classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh.html#a1e6d46c014d357bc3919258b48e5c3ae',1,'igl::copyleft::cgal::SelfIntersectMesh']]],
   ['csm_61',['CSM',['../structigl_1_1ArapDOFData.html#a903bc4a544d836de46879706dcb0485c',1,'igl::ArapDOFData']]],
   ['csm_5fm_62',['CSM_M',['../structigl_1_1ArapDOFData.html#a968d8afb1579266783ead1d7e051b8ce',1,'igl::ArapDOFData']]],
   ['current_5fmouse_5fx_63',['current_mouse_x',['../classigl_1_1opengl_1_1glfw_1_1Viewer.html#a3b0a689bb89ef9295e708cfcd2dbd51f',1,'igl::opengl::glfw::Viewer']]],

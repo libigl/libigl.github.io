@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">libigl
+   <div id="projectname">libigl<span id="projectnumber">&#160;v2.5.0</span>
    </div>
   </td>
  </tr>
@@ -305,9 +305,6 @@ template&lt;typename DerivedV , typename DerivedF , typename DerivedU &gt; </div
 
 <p>Global seamless parametrization aligned with a given per-face Jacobian (PD1, PD2). </p>
 <p>The algorithm is based on "Mixed-Integer Quadrangulation" by D. Bommes, H. Zimmer, L. Kobbelt ACM SIGGRAPH 2009, Article No. 77 (<a href="http://dl.acm.org/citation.cfm?id=1531383">http://dl.acm.org/citation.cfm?id=1531383</a>) We thank Nico Pietroni for providing a reference implementation of MIQ on which our code is based.</p>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000003">Bug:</a></b></dt><dd><p class="startdd">Due to the way of handling of hardFeatures the algorithm may fail in difficult cases. </p>
-<p class="enddd">Meshes with boundaries are not hendled properly i.e., jagged edges along the boundary are possible </p>
-</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">V</td><td>#V by 3 list of mesh vertex 3D positions </td></tr>

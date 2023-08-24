@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">libigl
+   <div id="projectname">libigl<span id="projectnumber">&#160;v2.5.0</span>
    </div>
   </td>
  </tr>
@@ -104,8 +104,7 @@ $(document).ready(function(){initNavTree('isolines_8h.html',''); initResizable()
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="igl__inline_8h_source.html">igl_inline.h</a>&quot;</code><br />
-<code>#include &lt;Eigen/Dense&gt;</code><br />
-<code>#include &lt;Eigen/Sparse&gt;</code><br />
+<code>#include &lt;Eigen/Core&gt;</code><br />
 <code>#include &quot;isolines.cpp&quot;</code><br />
 </div>
 <p><a href="isolines_8h_source.html">Go to the source code of this file.</a></p>
@@ -117,10 +116,10 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a452d173a83fb157842358417d16380d9"><td class="memTemplParams" colspan="2">template&lt;typename DerivedV , typename DerivedF , typename DerivedZ , typename DerivedIsoV , typename DerivedIsoE &gt; </td></tr>
-<tr class="memitem:a452d173a83fb157842358417d16380d9"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a452d173a83fb157842358417d16380d9">igl::isolines</a> (const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, const Eigen::MatrixBase&lt; DerivedF &gt; &amp;F, const Eigen::MatrixBase&lt; DerivedZ &gt; &amp;z, const int n, Eigen::PlainObjectBase&lt; DerivedIsoV &gt; &amp;isoV, Eigen::PlainObjectBase&lt; DerivedIsoE &gt; &amp;isoE)</td></tr>
-<tr class="memdesc:a452d173a83fb157842358417d16380d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs isolines for a function z given on a mesh (V,F)  <br /></td></tr>
-<tr class="separator:a452d173a83fb157842358417d16380d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24e807a90c41e3a89ee0171b1518c27d"><td class="memTemplParams" colspan="2">template&lt;typename DerivedV , typename DerivedF , typename DerivedS , typename Derivedvals , typename DerivediV , typename DerivediE , typename DerivedI &gt; </td></tr>
+<tr class="memitem:a24e807a90c41e3a89ee0171b1518c27d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a24e807a90c41e3a89ee0171b1518c27d">igl::isolines</a> (const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, const Eigen::MatrixBase&lt; DerivedF &gt; &amp;F, const Eigen::MatrixBase&lt; DerivedS &gt; &amp;S, const Eigen::MatrixBase&lt; Derivedvals &gt; &amp;vals, Eigen::PlainObjectBase&lt; DerivediV &gt; &amp;iV, Eigen::PlainObjectBase&lt; DerivediE &gt; &amp;iE, Eigen::PlainObjectBase&lt; DerivedI &gt; &amp;I)</td></tr>
+<tr class="memdesc:a24e807a90c41e3a89ee0171b1518c27d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute isolines of a scalar field on a triangle mesh.  <br /></td></tr>
+<tr class="separator:a24e807a90c41e3a89ee0171b1518c27d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

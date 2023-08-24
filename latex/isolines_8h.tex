@@ -1,8 +1,7 @@
 \doxysection{include/igl/isolines.h File Reference}
 \hypertarget{isolines_8h}{}\label{isolines_8h}\index{include/igl/isolines.h@{include/igl/isolines.h}}
 {\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
-{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
-{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
 {\ttfamily \#include \"{}isolines.\+cpp\"{}}\newline
 \doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
@@ -12,5 +11,5 @@ namespace \mbox{\hyperlink{namespaceigl}{igl}}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedZ , typename Derived\+IsoV , typename Derived\+IsoE $>$ }\\void \mbox{\hyperlink{namespaceigl_a452d173a83fb157842358417d16380d9}{igl\+::isolines}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const Eigen\+::\+Matrix\+Base$<$ DerivedZ $>$ \&z, const int n, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+IsoV $>$ \&isoV, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+IsoE $>$ \&isoE)
-\begin{DoxyCompactList}\small\item\em Constructs isolines for a function z given on a mesh (V,F) \end{DoxyCompactList}\end{DoxyCompactItemize}
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedS , typename Derivedvals , typename DerivediV , typename DerivediE , typename DerivedI $>$ }\\void \mbox{\hyperlink{namespaceigl_a24e807a90c41e3a89ee0171b1518c27d}{igl\+::isolines}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const Eigen\+::\+Matrix\+Base$<$ DerivedS $>$ \&S, const Eigen\+::\+Matrix\+Base$<$ Derivedvals $>$ \&vals, Eigen\+::\+Plain\+Object\+Base$<$ DerivediV $>$ \&iV, Eigen\+::\+Plain\+Object\+Base$<$ DerivediE $>$ \&iE, Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&I)
+\begin{DoxyCompactList}\small\item\em Compute isolines of a scalar field on a triangle mesh. \end{DoxyCompactList}\end{DoxyCompactItemize}

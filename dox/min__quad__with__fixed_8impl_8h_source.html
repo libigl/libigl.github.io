@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">libigl
+   <div id="projectname">libigl<span id="projectnumber">&#160;v2.5.0</span>
    </div>
   </td>
  </tr>
@@ -125,7 +125,7 @@ $(document).ready(function(){initNavTree('min__quad__with__fixed_8impl_8h_source
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;unsupported/Eigen/SparseExtra&gt;</span></div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;cassert&gt;</span></div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;cstdio&gt;</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;<a class="code" href="matlab__format_8h.html">igl/matlab_format.h</a>&gt;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &quot;<a class="code" href="matlab__format_8h.html">matlab_format.h</a>&quot;</span></div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;type_traits&gt;</span></div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Derivedknown&gt;</div>
@@ -222,16 +222,16 @@ $(document).ready(function(){initNavTree('min__quad__with__fixed_8impl_8h_source
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="comment">// PD implies symmetric</span></div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    data.<a class="code hl_variable" href="structigl_1_1min__quad__with__fixed__data.html#ab1604a8b1d543c6dfc4ac01dc42df0a6">Auu_sym</a> = <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="comment">// This is an annoying assertion unless EPS can be chosen in a nicer way.</span></div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="comment">//assert(is_symmetric(Auu,EPS&lt;double&gt;()));</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="comment">//assert(is_symmetric(Auu,EPS&lt;T&gt;()));</span></div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    assert(<a class="code hl_function" href="namespaceigl.html#a4f840791a21ca650ec1d68910c3ec900">is_symmetric</a>(Auu,1.0) &amp;&amp;</div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>      <span class="stringliteral">&quot;Auu should be symmetric if positive definite&quot;</span>);</div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>  }<span class="keywordflow">else</span></div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>  {</div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="comment">// determine if A(unknown,unknown) is symmetric and/or positive definite</span></div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    VectorXi AuuI,AuuJ;</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    MatrixXd AuuV;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    Matrix&lt;T,Eigen::Dynamic,Eigen::Dynamic&gt; AuuV;</div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <a class="code hl_function" href="namespaceigl.html#ad0ba264f987871035fb7d12de96fccab">find</a>(Auu,AuuI,AuuJ,AuuV);</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    data.<a class="code hl_variable" href="structigl_1_1min__quad__with__fixed__data.html#ab1604a8b1d543c6dfc4ac01dc42df0a6">Auu_sym</a> = <a class="code hl_function" href="namespaceigl.html#a4f840791a21ca650ec1d68910c3ec900">is_symmetric</a>(Auu,EPS&lt;double&gt;()*AuuV.maxCoeff());</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    data.<a class="code hl_variable" href="structigl_1_1min__quad__with__fixed__data.html#ab1604a8b1d543c6dfc4ac01dc42df0a6">Auu_sym</a> = <a class="code hl_function" href="namespaceigl.html#a4f840791a21ca650ec1d68910c3ec900">is_symmetric</a>(Auu,EPS&lt;T&gt;()*AuuV.maxCoeff());</div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  }</div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>  <span class="comment">// Determine number of linearly independent constraints</span></div>
@@ -336,17 +336,17 @@ $(document).ready(function(){initNavTree('min__quad__with__fixed_8impl_8h_source
 <div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    }<span class="keywordflow">else</span></div>
 <div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    {</div>
 <div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span><span class="preprocessor">#ifdef MIN_QUAD_WITH_FIXED_CPP_DEBUG</span></div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    cout&lt;&lt;<span class="stringliteral">&quot;    ldlt&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>        cout&lt;&lt;<span class="stringliteral">&quot;    ldlt/lu&quot;</span>&lt;&lt;endl;</div>
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>      <span class="comment">// Either not PD or there are equality constraints</span></div>
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>      SparseMatrix&lt;T&gt; NA;</div>
 <div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>      <a class="code hl_function" href="namespaceigl.html#a547a8704200d3af48fe92105c15a32ad">slice</a>(new_A,data.<a class="code hl_variable" href="structigl_1_1min__quad__with__fixed__data.html#ac680271bddf24abc8337ca15965a200d">unknown_lagrange</a>,data.<a class="code hl_variable" href="structigl_1_1min__quad__with__fixed__data.html#ac680271bddf24abc8337ca15965a200d">unknown_lagrange</a>,NA);</div>
 <div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>      data.NA = NA;</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>      <span class="comment">// Ideally we&#39;d use LDLT but Eigen doesn&#39;t support positive semi-definite</span></div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>      <span class="comment">// matrices:</span></div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>      <span class="comment">// http://forum.kde.org/viewtopic.php?f=74&amp;t=106962&amp;p=291990#p291990</span></div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>      <span class="keywordflow">if</span>(data.<a class="code hl_variable" href="structigl_1_1min__quad__with__fixed__data.html#ab1604a8b1d543c6dfc4ac01dc42df0a6">Auu_sym</a> &amp;&amp; <span class="keyword">false</span>)</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>      {</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>      <span class="keywordflow">if</span>(data.<a class="code hl_variable" href="structigl_1_1min__quad__with__fixed__data.html#ad3ec9b5eb512ccd82dc39fc7c670eae5">Auu_pd</a>)</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>      {</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span><span class="preprocessor">#ifdef MIN_QUAD_WITH_FIXED_CPP_DEBUG</span></div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        cout&lt;&lt;<span class="stringliteral">&quot;    ldlt&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>        data.<a class="code hl_variable" href="structigl_1_1min__quad__with__fixed__data.html#a1bd2d40db9381b99df7cafafa3e9b8ac">ldlt</a>.compute(NA);</div>
 <div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>        <span class="keywordflow">switch</span>(data.<a class="code hl_variable" href="structigl_1_1min__quad__with__fixed__data.html#a1bd2d40db9381b99df7cafafa3e9b8ac">ldlt</a>.info())</div>
 <div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        {</div>
@@ -747,7 +747,7 @@ $(document).ready(function(){initNavTree('min__quad__with__fixed_8impl_8h_source
 <div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span>    bcbc.head(dyn_n) =  bc;</div>
 <div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span>    <span class="keywordflow">return</span> bcbc;</div>
 <div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span>  };</div>
-<div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span>  <span class="keyword">const</span> Eigen::Matrix&lt;double,nn,1&gt; bcbc = make_bcbc();</div>
+<div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span>  <span class="keyword">const</span> Eigen::Matrix&lt;Scalar,nn,1&gt; bcbc = make_bcbc();</div>
 <div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span>  <span class="keyword">const</span> Eigen::Matrix&lt;Scalar,nn,1&gt; xx =</div>
 <div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span>    min_quad_with_fixed&lt;Scalar,nn,false&gt;(HH,ff,kk,bcbc);</div>
 <div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span>  <span class="keywordflow">return</span> xx.head(dyn_n);</div>

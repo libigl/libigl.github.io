@@ -39,10 +39,28 @@
 \DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
 \DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
 \DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{structigl_1_1Hit}{igl::Hit}}\ \&\ hit);}
-\DoxyCodeLine{00051\ \}}
-\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
-\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#\ \ include\ "{}ray\_mesh\_intersect.cpp"{}}}
-\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \textcolor{comment}{//\ Explicit\ function\ to\ check\ one\ triangle\ (given\ by\ index\ f)\ of\ the\ mesh.}}
+\DoxyCodeLine{00053\ \ \ \textcolor{comment}{//\ This\ function\ is\ used\ by\ ray\_mesh\_intersect\ to\ check\ each\ triangle.}}
+\DoxyCodeLine{00054\ \ \ \textcolor{comment}{//\ Outputs:}}
+\DoxyCodeLine{00055\ \ \ \textcolor{comment}{//\ \ \ hit\ \ hit\ with\ the\ given\ triangle,\ set\ only\ if\ it\ exists}}
+\DoxyCodeLine{00056\ \ \ \textcolor{comment}{//\ Returns\ true\ if\ there\ was\ a\ hit}}
+\DoxyCodeLine{00057\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedsource,}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{typename}\ Deriveddir,}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00062\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_afab2426f066fcd19c79646bcca3501b8}{ray\_triangle\_intersect}}(}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedsource>\ \&\ source,}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Deriveddir>\ \&\ dir,}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ f,}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{structigl_1_1Hit}{igl::Hit}}\&\ hit);}
+\DoxyCodeLine{00069\ \}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#\ \ include\ "{}ray\_mesh\_intersect.cpp"{}}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

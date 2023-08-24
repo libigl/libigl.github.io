@@ -1,6 +1,7 @@
 \doxysection{include/igl/randperm.h File Reference}
 \hypertarget{randperm_8h}{}\label{randperm_8h}\index{include/igl/randperm.h@{include/igl/randperm.h}}
 {\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include \"{}generate\+\_\+default\+\_\+urbg.\+h\"{}}\newline
 {\ttfamily \#include $<$Eigen/\+Core$>$}\newline
 {\ttfamily \#include $<$random$>$}\newline
 {\ttfamily \#include \"{}randperm.\+cpp\"{}}\newline
@@ -12,7 +13,5 @@ namespace \mbox{\hyperlink{namespaceigl}{igl}}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename DerivedI , typename URBG $>$ }\\void \mbox{\hyperlink{namespaceigl_af6a8c9883f7e9e06cc7eebc4dfac14cc}{igl\+::randperm}} (const int n, Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&I, URBG \&\&urbg)
-\begin{DoxyCompactList}\small\item\em Like matlab\textquotesingle{}s randperm(n) but minus 1. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename DerivedI $>$ }\\void \mbox{\hyperlink{namespaceigl_af4e8914162323ca2a9f9a4b8744a2637}{igl\+::randperm}} (const int n, Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&I)
-\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+{\footnotesize template$<$typename DerivedI , typename URBG  = DEFAULT\+\_\+\+URBG$>$ }\\void \mbox{\hyperlink{namespaceigl_a7279a059983ae9a728c94ccc1983343d}{igl\+::randperm}} (const int n, Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&I, URBG \&\&urbg=\mbox{\hyperlink{namespaceigl_a23d8ca74669cc6ed33b89020ee4f9b2e}{igl\+::generate\+\_\+default\+\_\+urbg}}())
+\begin{DoxyCompactList}\small\item\em Like matlab\textquotesingle{}s randperm(n) but minus 1. \end{DoxyCompactList}\end{DoxyCompactItemize}

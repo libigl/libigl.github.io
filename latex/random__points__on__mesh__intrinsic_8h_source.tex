@@ -1,0 +1,56 @@
+\doxysection{random\+\_\+points\+\_\+on\+\_\+mesh\+\_\+intrinsic.\+h}
+\hypertarget{random__points__on__mesh__intrinsic_8h_source}{}\label{random__points__on__mesh__intrinsic_8h_source}\index{include/igl/random\_points\_on\_mesh\_intrinsic.h@{include/igl/random\_points\_on\_mesh\_intrinsic.h}}
+\mbox{\hyperlink{random__points__on__mesh__intrinsic_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2013\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_RANDOM\_POINTS\_ON\_MESH\_INTRINSIC\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_RANDOM\_POINTS\_ON\_MESH\_INTRINSIC\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{igl__inline_8h}{igl\_inline.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{generate__default__urbg_8h}{generate\_default\_urbg.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <Eigen/Sparse>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00026\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{typename}\ DeriveddblA,}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedB,\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFI,}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{typename}\ URBG\ =\ \mbox{\hyperlink{namespaceigl_a60bbc303acee156af52ab587c4680502}{DEFAULT\_URBG}}>}
+\DoxyCodeLine{00031\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a17abb32491125229903977390f4149b6}{random\_points\_on\_mesh\_intrinsic}}(}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ n,}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DeriveddblA\ >\ \&\ dblA,}
+\DoxyCodeLine{00034\ \ \ \ \ Eigen::PlainObjectBase<DerivedB\ >\ \&\ B,}
+\DoxyCodeLine{00035\ \ \ \ \ Eigen::PlainObjectBase<DerivedFI\ >\ \&\ FI,}
+\DoxyCodeLine{00036\ \ \ \ \ URBG\ \&\&\ urbg\ =\ \mbox{\hyperlink{namespaceigl_a23d8ca74669cc6ed33b89020ee4f9b2e}{igl::generate\_default\_urbg}}());}
+\DoxyCodeLine{00044\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{typename}\ DeriveddblA,}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{typename}\ ScalarB,\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFI,}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{typename}\ URBG>}
+\DoxyCodeLine{00050\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a17abb32491125229903977390f4149b6}{random\_points\_on\_mesh\_intrinsic}}(}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ n,}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DeriveddblA\ >\ \&\ dblA,}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ num\_vertices,}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00055\ \ \ \ \ Eigen::SparseMatrix<ScalarB\ >\ \&\ B,}
+\DoxyCodeLine{00056\ \ \ \ \ Eigen::PlainObjectBase<DerivedFI\ >\ \&\ FI,}
+\DoxyCodeLine{00057\ \ \ \ \ URBG\ \&\&\ urbg);}
+\DoxyCodeLine{00058\ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#\ \ include\ "{}random\_points\_on\_mesh\_intrinsic.cpp"{}}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00065\ }
+
+\end{DoxyCode}

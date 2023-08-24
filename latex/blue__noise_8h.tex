@@ -1,6 +1,7 @@
 \doxysection{include/igl/blue\+\_\+noise.h File Reference}
 \hypertarget{blue__noise_8h}{}\label{blue__noise_8h}\index{include/igl/blue\_noise.h@{include/igl/blue\_noise.h}}
 {\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include \"{}generate\+\_\+default\+\_\+urbg.\+h\"{}}\newline
 {\ttfamily \#include $<$Eigen/\+Core$>$}\newline
 {\ttfamily \#include \"{}blue\+\_\+noise.\+cpp\"{}}\newline
 \doxysubsubsection*{Namespaces}
@@ -11,5 +12,5 @@ namespace \mbox{\hyperlink{namespaceigl}{igl}}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedB , typename Derived\+FI , typename DerivedP $>$ }\\void \mbox{\hyperlink{namespaceigl_a98228468c9d6608d031ea33dbf405a6c}{igl\+::blue\+\_\+noise}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const typename Derived\+V\+::\+Scalar r, Eigen\+::\+Plain\+Object\+Base$<$ DerivedB $>$ \&B, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+FI $>$ \&FI, Eigen\+::\+Plain\+Object\+Base$<$ DerivedP $>$ \&P)
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedB , typename Derived\+FI , typename DerivedP , typename URBG  = DEFAULT\+\_\+\+URBG$>$ }\\void \mbox{\hyperlink{namespaceigl_af6fdfaea612ac6f626571df84ba43dd0}{igl\+::blue\+\_\+noise}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const typename Derived\+V\+::\+Scalar r, Eigen\+::\+Plain\+Object\+Base$<$ DerivedB $>$ \&B, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+FI $>$ \&FI, Eigen\+::\+Plain\+Object\+Base$<$ DerivedP $>$ \&P, URBG \&\&urbg=\mbox{\hyperlink{namespaceigl_a23d8ca74669cc6ed33b89020ee4f9b2e}{igl\+::generate\+\_\+default\+\_\+urbg}}())
 \begin{DoxyCompactList}\small\item\em \"{}\+Fast Poisson Disk Sampling in Arbitrary Dimensions\"{} \mbox{[}Bridson 2007\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}

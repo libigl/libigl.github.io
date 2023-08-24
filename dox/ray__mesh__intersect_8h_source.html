@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">libigl
+   <div id="projectname">libigl<span id="projectnumber">&#160;v2.5.0</span>
    </div>
   </td>
  </tr>
@@ -137,16 +137,35 @@ $(document).ready(function(){initNavTree('ray__mesh__intersect_8h_source.html','
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keyword">const</span> Eigen::MatrixBase&lt;DerivedV&gt; &amp; V,</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keyword">const</span> Eigen::MatrixBase&lt;DerivedF&gt; &amp; F,</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <a class="code hl_struct" href="structigl_1_1Hit.html">igl::Hit</a> &amp; hit);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>}</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#ifndef IGL_STATIC_LIBRARY</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#  include &quot;ray_mesh_intersect.cpp&quot;</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="comment">// Explicit function to check one triangle (given by index f) of the mesh.</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="comment">// This function is used by ray_mesh_intersect to check each triangle.</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="comment">// Outputs:</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="comment">//   hit  hit with the given triangle, set only if it exists</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="comment">// Returns true if there was a hit</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keyword">template</span> &lt;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keyword">typename</span> Derivedsource,</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keyword">typename</span> Deriveddir,</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keyword">typename</span> DerivedV,</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keyword">typename</span> DerivedF&gt;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="namespaceigl.html#afab2426f066fcd19c79646bcca3501b8">   62</a></span>  <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceigl.html#afab2426f066fcd19c79646bcca3501b8">ray_triangle_intersect</a>(</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keyword">const</span> Eigen::MatrixBase&lt;Derivedsource&gt; &amp; source,</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keyword">const</span> Eigen::MatrixBase&lt;Deriveddir&gt; &amp; dir,</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keyword">const</span> Eigen::MatrixBase&lt;DerivedV&gt; &amp; V,</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keyword">const</span> Eigen::MatrixBase&lt;DerivedF&gt; &amp; F,</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> f,</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <a class="code hl_struct" href="structigl_1_1Hit.html">igl::Hit</a>&amp; hit);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>}</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">#ifndef IGL_STATIC_LIBRARY</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="preprocessor">#  include &quot;ray_mesh_intersect.cpp&quot;</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aHit_8h_html"><div class="ttname"><a href="Hit_8h.html">Hit.h</a></div></div>
 <div class="ttc" id="aigl__inline_8h_html"><div class="ttname"><a href="igl__inline_8h.html">igl_inline.h</a></div></div>
 <div class="ttc" id="aigl__inline_8h_html_a838241279013352686271b4c4ce1f708"><div class="ttname"><a href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a></div><div class="ttdeci">#define IGL_INLINE</div><div class="ttdef"><b>Definition</b> igl_inline.h:15</div></div>
 <div class="ttc" id="anamespaceigl_html"><div class="ttname"><a href="namespaceigl.html">igl</a></div><div class="ttdef"><b>Definition</b> AABB.h:17</div></div>
 <div class="ttc" id="anamespaceigl_html_adcb07bb96941cdba2a28b4239f88a246"><div class="ttname"><a href="namespaceigl.html#adcb07bb96941cdba2a28b4239f88a246">igl::ray_mesh_intersect</a></div><div class="ttdeci">bool ray_mesh_intersect(const Eigen::MatrixBase&lt; Derivedsource &gt; &amp;source, const Eigen::MatrixBase&lt; Deriveddir &gt; &amp;dir, const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, const Eigen::MatrixBase&lt; DerivedF &gt; &amp;F, std::vector&lt; igl::Hit &gt; &amp;hits)</div><div class="ttdoc">Shoot a ray against a mesh (V,F) and collect all hits.</div></div>
+<div class="ttc" id="anamespaceigl_html_afab2426f066fcd19c79646bcca3501b8"><div class="ttname"><a href="namespaceigl.html#afab2426f066fcd19c79646bcca3501b8">igl::ray_triangle_intersect</a></div><div class="ttdeci">bool ray_triangle_intersect(const Eigen::MatrixBase&lt; Derivedsource &gt; &amp;source, const Eigen::MatrixBase&lt; Deriveddir &gt; &amp;dir, const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, const Eigen::MatrixBase&lt; DerivedF &gt; &amp;F, const int f, igl::Hit &amp;hit)</div></div>
 <div class="ttc" id="astructigl_1_1Hit_html"><div class="ttname"><a href="structigl_1_1Hit.html">igl::Hit</a></div><div class="ttdoc">Reimplementation of the embree::Hit struct from embree1.0.</div><div class="ttdef"><b>Definition</b> Hit.h:18</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

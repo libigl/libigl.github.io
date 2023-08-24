@@ -1,0 +1,78 @@
+\doxysection{igl\+::stb Namespace Reference}
+\hypertarget{namespaceigl_1_1stb}{}\label{namespaceigl_1_1stb}\index{igl::stb@{igl::stb}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespaceigl_1_1stb_a8a19bf47d3a9a6088d95a112ed84dcd7}{read\+\_\+image}} (const std\+::string image\+\_\+file, Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&R, Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&G, Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&B, Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&A)
+\item 
+bool \mbox{\hyperlink{namespaceigl_1_1stb_aae720ac7f0dd06f3962f2563c202aed9}{write\+\_\+image}} (const std\+::string image\+\_\+file, const Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&R, const Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&G, const Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&B, const Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&A, const int quality=90)
+\begin{DoxyCompactList}\small\item\em Writes an image to a file. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceigl_1_1stb_a9f5d7b51fbbfaedf894402f7344fc808}{write\+\_\+image}} (const std\+::string image\+\_\+file, const int width, const int height, const unsigned char \texorpdfstring{$\ast$}{*}rgba\+\_\+data, const int quality=90)
+\begin{DoxyCompactList}\small\item\em Raw image writer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceigl_1_1stb_a8a19bf47d3a9a6088d95a112ed84dcd7}\label{namespaceigl_1_1stb_a8a19bf47d3a9a6088d95a112ed84dcd7} 
+\index{igl::stb@{igl::stb}!read\_image@{read\_image}}
+\index{read\_image@{read\_image}!igl::stb@{igl::stb}}
+\doxysubsubsection{\texorpdfstring{read\_image()}{read\_image()}}
+{\footnotesize\ttfamily bool igl\+::stb\+::read\+\_\+image (\begin{DoxyParamCaption}\item[{const std\+::string}]{image\+\_\+file,  }\item[{Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{R,  }\item[{Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{G,  }\item[{Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{B,  }\item[{Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{A }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceigl_1_1stb_aae720ac7f0dd06f3962f2563c202aed9}\label{namespaceigl_1_1stb_aae720ac7f0dd06f3962f2563c202aed9} 
+\index{igl::stb@{igl::stb}!write\_image@{write\_image}}
+\index{write\_image@{write\_image}!igl::stb@{igl::stb}}
+\doxysubsubsection{\texorpdfstring{write\_image()}{write\_image()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool igl\+::stb\+::write\+\_\+image (\begin{DoxyParamCaption}\item[{const std\+::string}]{image\+\_\+file,  }\item[{const Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{R,  }\item[{const Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{G,  }\item[{const Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{B,  }\item[{const Eigen\+::\+Matrix$<$ unsigned char, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \&}]{A,  }\item[{const int}]{quality = {\ttfamily 90} }\end{DoxyParamCaption})}
+
+
+
+Writes an image to a file. 
+
+Supported file formats (based on STB)\+:
+
+JPEG PNG TGA BMP
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em R} & red channel \\
+\hline
+\mbox{\texttt{ in}}  & {\em G} & green channel \\
+\hline
+\mbox{\texttt{ in}}  & {\em B} & blue channel \\
+\hline
+\mbox{\texttt{ in}}  & {\em A} & alpha channel \\
+\hline
+\mbox{\texttt{ in}}  & {\em image\+\_\+file} & path to image file \\
+\hline
+\mbox{\texttt{ in}}  & {\em quality} & (only for jpg file) jpeg quality \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false on errors 
+\end{DoxyReturn}
+\Hypertarget{namespaceigl_1_1stb_a9f5d7b51fbbfaedf894402f7344fc808}\label{namespaceigl_1_1stb_a9f5d7b51fbbfaedf894402f7344fc808} 
+\index{igl::stb@{igl::stb}!write\_image@{write\_image}}
+\index{write\_image@{write\_image}!igl::stb@{igl::stb}}
+\doxysubsubsection{\texorpdfstring{write\_image()}{write\_image()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool igl\+::stb\+::write\+\_\+image (\begin{DoxyParamCaption}\item[{const std\+::string}]{image\+\_\+file,  }\item[{const int}]{width,  }\item[{const int}]{height,  }\item[{const unsigned char \texorpdfstring{$\ast$}{*}}]{rgba\+\_\+data,  }\item[{const int}]{quality = {\ttfamily 90} }\end{DoxyParamCaption})}
+
+
+
+Raw image writer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em image\+\_\+file} & path to image file \\
+\hline
+\mbox{\texttt{ in}}  & {\em width} & image width \\
+\hline
+\mbox{\texttt{ in}}  & {\em height} & image height \\
+\hline
+\mbox{\texttt{ in}}  & {\em rgba\+\_\+data} & raw image data \\
+\hline
+\mbox{\texttt{ in}}  & {\em quality} & (only for jpg file) jpeg quality \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false on errors 
+\end{DoxyReturn}

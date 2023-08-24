@@ -42,6 +42,8 @@ enum \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a81a97b4082a52abc4e29f46574b0
 typedef unsigned int \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}}
 \item 
 typedef unsigned int \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_aff43136617b15669459b7bd0558a98de}{GLint}}
+\item 
+typedef Eigen\+::\+Matrix$<$ float, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic, Eigen\+::\+Row\+Major $>$ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_adf75306956e300b76bd4eae9d424e331}{Row\+Matrix\+Xf}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -77,8 +79,6 @@ void \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_aaed2fed1bcb579d48298ede694fd
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} vbo\+\_\+V \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} vbo\+\_\+\+V\+\_\+uv \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} vbo\+\_\+\+V\+\_\+normals \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} vbo\+\_\+\+V\+\_\+ambient \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} vbo\+\_\+\+V\+\_\+diffuse \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} vbo\+\_\+\+V\+\_\+specular \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} vbo\+\_\+F \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} vbo\+\_\+tex \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} vbo\+\_\+lines\+\_\+F \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} vbo\+\_\+lines\+\_\+V \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} vbo\+\_\+lines\+\_\+\+V\+\_\+colors \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} vbo\+\_\+points\+\_\+F \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} vbo\+\_\+points\+\_\+V \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} vbo\+\_\+points\+\_\+\+V\+\_\+colors typedef Eigen\+::\+Matrix$<$ float, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic, Eigen\+::\+Row\+Major $>$ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a17194504109bdabe4cc5d2c9a46cbd37}{Row\+Matrix\+Xf}}
-\begin{DoxyCompactList}\small\item\em Vertices of the current mesh (\#V x 3) \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_ae686c55861e1cef7843e91dcc9fb4c28}{is\+\_\+initialized}} = false
 \item 
 \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a5617c68f0b8ffbd3b3ef755329602aee}{vao\+\_\+mesh}}
@@ -95,25 +95,53 @@ bool \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_ae686c55861e1cef7843e91dcc9fb
 \item 
 \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_addb56e58d170cee18ace23fac9db790a}{shader\+\_\+text}}
 \item 
-\mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a17194504109bdabe4cc5d2c9a46cbd37}{Row\+Matrix\+Xf}} \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_ac2c590d6a4f3dff3752a3e205c04da61}{V\+\_\+vbo}}
+\mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a5b03591eed054785b74c5799a37a3c97}{vbo\+\_\+V}}
+\begin{DoxyCompactList}\small\item\em Vertices of the current mesh (\#V x 3) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a26d292adff83c8104e32bebb5673e7f8}{vbo\+\_\+\+V\+\_\+uv}}
+\begin{DoxyCompactList}\small\item\em UV coordinates for the current mesh (\#V x 2) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a2ec0b9722edbab0063b071419ce0cbbb}{vbo\+\_\+\+V\+\_\+normals}}
+\begin{DoxyCompactList}\small\item\em Vertices of the current mesh (\#V x 3) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_acc7c20af7679ac2d58d28aef1aefbffc}{vbo\+\_\+\+V\+\_\+ambient}}
+\begin{DoxyCompactList}\small\item\em Ambient material (\#V x 3) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_ad8b371dd68adb1b2c9c640bc7d0667ca}{vbo\+\_\+\+V\+\_\+diffuse}}
+\begin{DoxyCompactList}\small\item\em Diffuse material (\#V x 3) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a7f82dd474d798ec19c76fdfe3e7f77e0}{vbo\+\_\+\+V\+\_\+specular}}
+\begin{DoxyCompactList}\small\item\em Specular material (\#V x 3) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_aa95a2e464179442c7898fb57b9c6ebfc}{vbo\+\_\+F}}
+\begin{DoxyCompactList}\small\item\em Faces of the mesh (\#F x 3) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a08788749eee629f0639cb057f6bc83b7}{vbo\+\_\+tex}}
+\begin{DoxyCompactList}\small\item\em Texture. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a1da16942e4abed0aef950702614a9151}{vbo\+\_\+lines\+\_\+F}}
+\begin{DoxyCompactList}\small\item\em Indices of the line overlay. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a6cfbb5e65beba50467e3d72fa0469796}{vbo\+\_\+lines\+\_\+V}}
+\begin{DoxyCompactList}\small\item\em Vertices of the line overlay. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a5d9ae54ae0f851346b977d78131acd7e}{vbo\+\_\+lines\+\_\+\+V\+\_\+colors}}
+\begin{DoxyCompactList}\small\item\em Color values of the line overlay. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_ad922748c83a953d5a90a45e11461c3ff}{vbo\+\_\+points\+\_\+F}}
+\begin{DoxyCompactList}\small\item\em Indices of the point overlay. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_ad2a89418cc4a511612436e5979d67032}{vbo\+\_\+points\+\_\+V}}
+\begin{DoxyCompactList}\small\item\em Vertices of the point overlay. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a4f29aece963988ee6389a3ebd636dc5a}{vbo\+\_\+points\+\_\+\+V\+\_\+colors}}
+\begin{DoxyCompactList}\small\item\em Color values of the point overlay. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_adf75306956e300b76bd4eae9d424e331}{Row\+Matrix\+Xf}} \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_ac2c590d6a4f3dff3752a3e205c04da61}{V\+\_\+vbo}}
 \item 
-\mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a17194504109bdabe4cc5d2c9a46cbd37}{Row\+Matrix\+Xf}} \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a0e7f829d716584272bc822f7166398e7}{V\+\_\+normals\+\_\+vbo}}
+\mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_adf75306956e300b76bd4eae9d424e331}{Row\+Matrix\+Xf}} \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a0e7f829d716584272bc822f7166398e7}{V\+\_\+normals\+\_\+vbo}}
 \item 
-\mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a17194504109bdabe4cc5d2c9a46cbd37}{Row\+Matrix\+Xf}} \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a78d983cb7c4f65ee3f9f3888f584b9ce}{V\+\_\+ambient\+\_\+vbo}}
+\mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_adf75306956e300b76bd4eae9d424e331}{Row\+Matrix\+Xf}} \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a78d983cb7c4f65ee3f9f3888f584b9ce}{V\+\_\+ambient\+\_\+vbo}}
 \item 
-\mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a17194504109bdabe4cc5d2c9a46cbd37}{Row\+Matrix\+Xf}} \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a4e339a0daa6dadbf0c72f653d752de2c}{V\+\_\+diffuse\+\_\+vbo}}
+\mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_adf75306956e300b76bd4eae9d424e331}{Row\+Matrix\+Xf}} \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a4e339a0daa6dadbf0c72f653d752de2c}{V\+\_\+diffuse\+\_\+vbo}}
 \item 
-\mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a17194504109bdabe4cc5d2c9a46cbd37}{Row\+Matrix\+Xf}} \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_aed80f410684477bc78e3d84ffcce8752}{V\+\_\+specular\+\_\+vbo}}
+\mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_adf75306956e300b76bd4eae9d424e331}{Row\+Matrix\+Xf}} \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_aed80f410684477bc78e3d84ffcce8752}{V\+\_\+specular\+\_\+vbo}}
 \item 
-\mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a17194504109bdabe4cc5d2c9a46cbd37}{Row\+Matrix\+Xf}} \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a4356ffc0522f0b071145297e9362c154}{V\+\_\+uv\+\_\+vbo}}
+\mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_adf75306956e300b76bd4eae9d424e331}{Row\+Matrix\+Xf}} \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a4356ffc0522f0b071145297e9362c154}{V\+\_\+uv\+\_\+vbo}}
 \item 
-\mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a17194504109bdabe4cc5d2c9a46cbd37}{Row\+Matrix\+Xf}} \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_aa953266e7d2e8ab68966c9c7b8207123}{lines\+\_\+\+V\+\_\+vbo}}
+\mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_adf75306956e300b76bd4eae9d424e331}{Row\+Matrix\+Xf}} \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_aa953266e7d2e8ab68966c9c7b8207123}{lines\+\_\+\+V\+\_\+vbo}}
 \item 
-\mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a17194504109bdabe4cc5d2c9a46cbd37}{Row\+Matrix\+Xf}} \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a2d621ebb9b848feab4c9a32966f70f95}{lines\+\_\+\+V\+\_\+colors\+\_\+vbo}}
+\mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_adf75306956e300b76bd4eae9d424e331}{Row\+Matrix\+Xf}} \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a2d621ebb9b848feab4c9a32966f70f95}{lines\+\_\+\+V\+\_\+colors\+\_\+vbo}}
 \item 
-\mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a17194504109bdabe4cc5d2c9a46cbd37}{Row\+Matrix\+Xf}} \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a92962f0de9d353681d78e0f4fdfbd572}{points\+\_\+\+V\+\_\+vbo}}
+\mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_adf75306956e300b76bd4eae9d424e331}{Row\+Matrix\+Xf}} \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a92962f0de9d353681d78e0f4fdfbd572}{points\+\_\+\+V\+\_\+vbo}}
 \item 
-\mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a17194504109bdabe4cc5d2c9a46cbd37}{Row\+Matrix\+Xf}} \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_af8bbeb3828c1e753047172f045582e01}{points\+\_\+\+V\+\_\+colors\+\_\+vbo}}
+\mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_adf75306956e300b76bd4eae9d424e331}{Row\+Matrix\+Xf}} \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_af8bbeb3828c1e753047172f045582e01}{points\+\_\+\+V\+\_\+colors\+\_\+vbo}}
 \item 
 \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL}{Text\+GL}} \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a1ee2a8dddbfb9fdb9efc69ad84a80ab7}{vertex\+\_\+labels}}
 \item 
@@ -158,6 +186,12 @@ Coverts mesh data inside a igl\+::\+Viewer\+Data class in an Open\+GL compatible
 \index{GLint@{GLint}!igl::opengl::MeshGL@{igl::opengl::MeshGL}}
 \doxysubsubsection{\texorpdfstring{GLint}{GLint}}
 {\footnotesize\ttfamily typedef unsigned int \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_aff43136617b15669459b7bd0558a98de}{igl\+::opengl\+::\+Mesh\+GL\+::\+GLint}}}
+
+\Hypertarget{classigl_1_1opengl_1_1MeshGL_adf75306956e300b76bd4eae9d424e331}\label{classigl_1_1opengl_1_1MeshGL_adf75306956e300b76bd4eae9d424e331} 
+\index{igl::opengl::MeshGL@{igl::opengl::MeshGL}!RowMatrixXf@{RowMatrixXf}}
+\index{RowMatrixXf@{RowMatrixXf}!igl::opengl::MeshGL@{igl::opengl::MeshGL}}
+\doxysubsubsection{\texorpdfstring{RowMatrixXf}{RowMatrixXf}}
+{\footnotesize\ttfamily typedef Eigen\+::\+Matrix$<$float,Eigen\+::\+Dynamic,Eigen\+::\+Dynamic,Eigen\+::\+Row\+Major$>$ \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_adf75306956e300b76bd4eae9d424e331}{igl\+::opengl\+::\+Mesh\+GL\+::\+Row\+Matrix\+Xf}}}
 
 
 
@@ -388,17 +422,7 @@ Release the Open\+GL buffer objects.
 
 
 \doxysubsection{Member Data Documentation}
-\Hypertarget{classigl_1_1opengl_1_1MeshGL_a17194504109bdabe4cc5d2c9a46cbd37}\label{classigl_1_1opengl_1_1MeshGL_a17194504109bdabe4cc5d2c9a46cbd37} 
-\index{igl::opengl::MeshGL@{igl::opengl::MeshGL}!RowMatrixXf@{RowMatrixXf}}
-\index{RowMatrixXf@{RowMatrixXf}!igl::opengl::MeshGL@{igl::opengl::MeshGL}}
-\doxysubsubsection{\texorpdfstring{RowMatrixXf}{RowMatrixXf}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} vbo\+\_\+V \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} vbo\+\_\+\+V\+\_\+uv \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} vbo\+\_\+\+V\+\_\+normals \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} vbo\+\_\+\+V\+\_\+ambient \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} vbo\+\_\+\+V\+\_\+diffuse \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} vbo\+\_\+\+V\+\_\+specular \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} vbo\+\_\+F \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} vbo\+\_\+tex \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} vbo\+\_\+lines\+\_\+F \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} vbo\+\_\+lines\+\_\+V \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} vbo\+\_\+lines\+\_\+\+V\+\_\+colors \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} vbo\+\_\+points\+\_\+F \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} vbo\+\_\+points\+\_\+V \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} vbo\+\_\+points\+\_\+\+V\+\_\+colors typedef Eigen\+::\+Matrix$<$float,Eigen\+::\+Dynamic,Eigen\+::\+Dynamic,Eigen\+::\+Row\+Major$>$ igl\+::opengl\+::\+Mesh\+GL\+::\+Row\+Matrix\+Xf}
-
-
-
-Vertices of the current mesh (\#V x 3) 
-
-UV coordinates for the current mesh (\#V x 2) Vertices of the current mesh (\#V x 3) Ambient material (\#V x 3) Diffuse material (\#V x 3) Specular material (\#V x 3) Faces of the mesh (\#F x 3) Texture Indices of the line overlay Vertices of the line overlay Color values of the line overlay Indices of the point overlay Vertices of the point overlay Color values of the point overlay \Hypertarget{classigl_1_1opengl_1_1MeshGL_ae686c55861e1cef7843e91dcc9fb4c28}\label{classigl_1_1opengl_1_1MeshGL_ae686c55861e1cef7843e91dcc9fb4c28} 
+\Hypertarget{classigl_1_1opengl_1_1MeshGL_ae686c55861e1cef7843e91dcc9fb4c28}\label{classigl_1_1opengl_1_1MeshGL_ae686c55861e1cef7843e91dcc9fb4c28} 
 \index{igl::opengl::MeshGL@{igl::opengl::MeshGL}!is\_initialized@{is\_initialized}}
 \index{is\_initialized@{is\_initialized}!igl::opengl::MeshGL@{igl::opengl::MeshGL}}
 \doxysubsubsection{\texorpdfstring{is\_initialized}{is\_initialized}}
@@ -446,65 +470,205 @@ UV coordinates for the current mesh (\#V x 2) Vertices of the current mesh (\#V 
 \doxysubsubsection{\texorpdfstring{shader\_text}{shader\_text}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} igl\+::opengl\+::\+Mesh\+GL\+::shader\+\_\+text}
 
+\Hypertarget{classigl_1_1opengl_1_1MeshGL_a5b03591eed054785b74c5799a37a3c97}\label{classigl_1_1opengl_1_1MeshGL_a5b03591eed054785b74c5799a37a3c97} 
+\index{igl::opengl::MeshGL@{igl::opengl::MeshGL}!vbo\_V@{vbo\_V}}
+\index{vbo\_V@{vbo\_V}!igl::opengl::MeshGL@{igl::opengl::MeshGL}}
+\doxysubsubsection{\texorpdfstring{vbo\_V}{vbo\_V}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} igl\+::opengl\+::\+Mesh\+GL\+::vbo\+\_\+V}
+
+
+
+Vertices of the current mesh (\#V x 3) 
+
+\Hypertarget{classigl_1_1opengl_1_1MeshGL_a26d292adff83c8104e32bebb5673e7f8}\label{classigl_1_1opengl_1_1MeshGL_a26d292adff83c8104e32bebb5673e7f8} 
+\index{igl::opengl::MeshGL@{igl::opengl::MeshGL}!vbo\_V\_uv@{vbo\_V\_uv}}
+\index{vbo\_V\_uv@{vbo\_V\_uv}!igl::opengl::MeshGL@{igl::opengl::MeshGL}}
+\doxysubsubsection{\texorpdfstring{vbo\_V\_uv}{vbo\_V\_uv}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} igl\+::opengl\+::\+Mesh\+GL\+::vbo\+\_\+\+V\+\_\+uv}
+
+
+
+UV coordinates for the current mesh (\#V x 2) 
+
+\Hypertarget{classigl_1_1opengl_1_1MeshGL_a2ec0b9722edbab0063b071419ce0cbbb}\label{classigl_1_1opengl_1_1MeshGL_a2ec0b9722edbab0063b071419ce0cbbb} 
+\index{igl::opengl::MeshGL@{igl::opengl::MeshGL}!vbo\_V\_normals@{vbo\_V\_normals}}
+\index{vbo\_V\_normals@{vbo\_V\_normals}!igl::opengl::MeshGL@{igl::opengl::MeshGL}}
+\doxysubsubsection{\texorpdfstring{vbo\_V\_normals}{vbo\_V\_normals}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} igl\+::opengl\+::\+Mesh\+GL\+::vbo\+\_\+\+V\+\_\+normals}
+
+
+
+Vertices of the current mesh (\#V x 3) 
+
+\Hypertarget{classigl_1_1opengl_1_1MeshGL_acc7c20af7679ac2d58d28aef1aefbffc}\label{classigl_1_1opengl_1_1MeshGL_acc7c20af7679ac2d58d28aef1aefbffc} 
+\index{igl::opengl::MeshGL@{igl::opengl::MeshGL}!vbo\_V\_ambient@{vbo\_V\_ambient}}
+\index{vbo\_V\_ambient@{vbo\_V\_ambient}!igl::opengl::MeshGL@{igl::opengl::MeshGL}}
+\doxysubsubsection{\texorpdfstring{vbo\_V\_ambient}{vbo\_V\_ambient}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} igl\+::opengl\+::\+Mesh\+GL\+::vbo\+\_\+\+V\+\_\+ambient}
+
+
+
+Ambient material (\#V x 3) 
+
+\Hypertarget{classigl_1_1opengl_1_1MeshGL_ad8b371dd68adb1b2c9c640bc7d0667ca}\label{classigl_1_1opengl_1_1MeshGL_ad8b371dd68adb1b2c9c640bc7d0667ca} 
+\index{igl::opengl::MeshGL@{igl::opengl::MeshGL}!vbo\_V\_diffuse@{vbo\_V\_diffuse}}
+\index{vbo\_V\_diffuse@{vbo\_V\_diffuse}!igl::opengl::MeshGL@{igl::opengl::MeshGL}}
+\doxysubsubsection{\texorpdfstring{vbo\_V\_diffuse}{vbo\_V\_diffuse}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} igl\+::opengl\+::\+Mesh\+GL\+::vbo\+\_\+\+V\+\_\+diffuse}
+
+
+
+Diffuse material (\#V x 3) 
+
+\Hypertarget{classigl_1_1opengl_1_1MeshGL_a7f82dd474d798ec19c76fdfe3e7f77e0}\label{classigl_1_1opengl_1_1MeshGL_a7f82dd474d798ec19c76fdfe3e7f77e0} 
+\index{igl::opengl::MeshGL@{igl::opengl::MeshGL}!vbo\_V\_specular@{vbo\_V\_specular}}
+\index{vbo\_V\_specular@{vbo\_V\_specular}!igl::opengl::MeshGL@{igl::opengl::MeshGL}}
+\doxysubsubsection{\texorpdfstring{vbo\_V\_specular}{vbo\_V\_specular}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} igl\+::opengl\+::\+Mesh\+GL\+::vbo\+\_\+\+V\+\_\+specular}
+
+
+
+Specular material (\#V x 3) 
+
+\Hypertarget{classigl_1_1opengl_1_1MeshGL_aa95a2e464179442c7898fb57b9c6ebfc}\label{classigl_1_1opengl_1_1MeshGL_aa95a2e464179442c7898fb57b9c6ebfc} 
+\index{igl::opengl::MeshGL@{igl::opengl::MeshGL}!vbo\_F@{vbo\_F}}
+\index{vbo\_F@{vbo\_F}!igl::opengl::MeshGL@{igl::opengl::MeshGL}}
+\doxysubsubsection{\texorpdfstring{vbo\_F}{vbo\_F}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} igl\+::opengl\+::\+Mesh\+GL\+::vbo\+\_\+F}
+
+
+
+Faces of the mesh (\#F x 3) 
+
+\Hypertarget{classigl_1_1opengl_1_1MeshGL_a08788749eee629f0639cb057f6bc83b7}\label{classigl_1_1opengl_1_1MeshGL_a08788749eee629f0639cb057f6bc83b7} 
+\index{igl::opengl::MeshGL@{igl::opengl::MeshGL}!vbo\_tex@{vbo\_tex}}
+\index{vbo\_tex@{vbo\_tex}!igl::opengl::MeshGL@{igl::opengl::MeshGL}}
+\doxysubsubsection{\texorpdfstring{vbo\_tex}{vbo\_tex}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} igl\+::opengl\+::\+Mesh\+GL\+::vbo\+\_\+tex}
+
+
+
+Texture. 
+
+\Hypertarget{classigl_1_1opengl_1_1MeshGL_a1da16942e4abed0aef950702614a9151}\label{classigl_1_1opengl_1_1MeshGL_a1da16942e4abed0aef950702614a9151} 
+\index{igl::opengl::MeshGL@{igl::opengl::MeshGL}!vbo\_lines\_F@{vbo\_lines\_F}}
+\index{vbo\_lines\_F@{vbo\_lines\_F}!igl::opengl::MeshGL@{igl::opengl::MeshGL}}
+\doxysubsubsection{\texorpdfstring{vbo\_lines\_F}{vbo\_lines\_F}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} igl\+::opengl\+::\+Mesh\+GL\+::vbo\+\_\+lines\+\_\+F}
+
+
+
+Indices of the line overlay. 
+
+\Hypertarget{classigl_1_1opengl_1_1MeshGL_a6cfbb5e65beba50467e3d72fa0469796}\label{classigl_1_1opengl_1_1MeshGL_a6cfbb5e65beba50467e3d72fa0469796} 
+\index{igl::opengl::MeshGL@{igl::opengl::MeshGL}!vbo\_lines\_V@{vbo\_lines\_V}}
+\index{vbo\_lines\_V@{vbo\_lines\_V}!igl::opengl::MeshGL@{igl::opengl::MeshGL}}
+\doxysubsubsection{\texorpdfstring{vbo\_lines\_V}{vbo\_lines\_V}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} igl\+::opengl\+::\+Mesh\+GL\+::vbo\+\_\+lines\+\_\+V}
+
+
+
+Vertices of the line overlay. 
+
+\Hypertarget{classigl_1_1opengl_1_1MeshGL_a5d9ae54ae0f851346b977d78131acd7e}\label{classigl_1_1opengl_1_1MeshGL_a5d9ae54ae0f851346b977d78131acd7e} 
+\index{igl::opengl::MeshGL@{igl::opengl::MeshGL}!vbo\_lines\_V\_colors@{vbo\_lines\_V\_colors}}
+\index{vbo\_lines\_V\_colors@{vbo\_lines\_V\_colors}!igl::opengl::MeshGL@{igl::opengl::MeshGL}}
+\doxysubsubsection{\texorpdfstring{vbo\_lines\_V\_colors}{vbo\_lines\_V\_colors}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} igl\+::opengl\+::\+Mesh\+GL\+::vbo\+\_\+lines\+\_\+\+V\+\_\+colors}
+
+
+
+Color values of the line overlay. 
+
+\Hypertarget{classigl_1_1opengl_1_1MeshGL_ad922748c83a953d5a90a45e11461c3ff}\label{classigl_1_1opengl_1_1MeshGL_ad922748c83a953d5a90a45e11461c3ff} 
+\index{igl::opengl::MeshGL@{igl::opengl::MeshGL}!vbo\_points\_F@{vbo\_points\_F}}
+\index{vbo\_points\_F@{vbo\_points\_F}!igl::opengl::MeshGL@{igl::opengl::MeshGL}}
+\doxysubsubsection{\texorpdfstring{vbo\_points\_F}{vbo\_points\_F}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} igl\+::opengl\+::\+Mesh\+GL\+::vbo\+\_\+points\+\_\+F}
+
+
+
+Indices of the point overlay. 
+
+\Hypertarget{classigl_1_1opengl_1_1MeshGL_ad2a89418cc4a511612436e5979d67032}\label{classigl_1_1opengl_1_1MeshGL_ad2a89418cc4a511612436e5979d67032} 
+\index{igl::opengl::MeshGL@{igl::opengl::MeshGL}!vbo\_points\_V@{vbo\_points\_V}}
+\index{vbo\_points\_V@{vbo\_points\_V}!igl::opengl::MeshGL@{igl::opengl::MeshGL}}
+\doxysubsubsection{\texorpdfstring{vbo\_points\_V}{vbo\_points\_V}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} igl\+::opengl\+::\+Mesh\+GL\+::vbo\+\_\+points\+\_\+V}
+
+
+
+Vertices of the point overlay. 
+
+\Hypertarget{classigl_1_1opengl_1_1MeshGL_a4f29aece963988ee6389a3ebd636dc5a}\label{classigl_1_1opengl_1_1MeshGL_a4f29aece963988ee6389a3ebd636dc5a} 
+\index{igl::opengl::MeshGL@{igl::opengl::MeshGL}!vbo\_points\_V\_colors@{vbo\_points\_V\_colors}}
+\index{vbo\_points\_V\_colors@{vbo\_points\_V\_colors}!igl::opengl::MeshGL@{igl::opengl::MeshGL}}
+\doxysubsubsection{\texorpdfstring{vbo\_points\_V\_colors}{vbo\_points\_V\_colors}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a01084d9717aedaa252e1fcdf13657532}{GLuint}} igl\+::opengl\+::\+Mesh\+GL\+::vbo\+\_\+points\+\_\+\+V\+\_\+colors}
+
+
+
+Color values of the point overlay. 
+
 \Hypertarget{classigl_1_1opengl_1_1MeshGL_ac2c590d6a4f3dff3752a3e205c04da61}\label{classigl_1_1opengl_1_1MeshGL_ac2c590d6a4f3dff3752a3e205c04da61} 
 \index{igl::opengl::MeshGL@{igl::opengl::MeshGL}!V\_vbo@{V\_vbo}}
 \index{V\_vbo@{V\_vbo}!igl::opengl::MeshGL@{igl::opengl::MeshGL}}
 \doxysubsubsection{\texorpdfstring{V\_vbo}{V\_vbo}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a17194504109bdabe4cc5d2c9a46cbd37}{Row\+Matrix\+Xf}} igl\+::opengl\+::\+Mesh\+GL\+::\+V\+\_\+vbo}
+{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_adf75306956e300b76bd4eae9d424e331}{Row\+Matrix\+Xf}} igl\+::opengl\+::\+Mesh\+GL\+::\+V\+\_\+vbo}
 
 \Hypertarget{classigl_1_1opengl_1_1MeshGL_a0e7f829d716584272bc822f7166398e7}\label{classigl_1_1opengl_1_1MeshGL_a0e7f829d716584272bc822f7166398e7} 
 \index{igl::opengl::MeshGL@{igl::opengl::MeshGL}!V\_normals\_vbo@{V\_normals\_vbo}}
 \index{V\_normals\_vbo@{V\_normals\_vbo}!igl::opengl::MeshGL@{igl::opengl::MeshGL}}
 \doxysubsubsection{\texorpdfstring{V\_normals\_vbo}{V\_normals\_vbo}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a17194504109bdabe4cc5d2c9a46cbd37}{Row\+Matrix\+Xf}} igl\+::opengl\+::\+Mesh\+GL\+::\+V\+\_\+normals\+\_\+vbo}
+{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_adf75306956e300b76bd4eae9d424e331}{Row\+Matrix\+Xf}} igl\+::opengl\+::\+Mesh\+GL\+::\+V\+\_\+normals\+\_\+vbo}
 
 \Hypertarget{classigl_1_1opengl_1_1MeshGL_a78d983cb7c4f65ee3f9f3888f584b9ce}\label{classigl_1_1opengl_1_1MeshGL_a78d983cb7c4f65ee3f9f3888f584b9ce} 
 \index{igl::opengl::MeshGL@{igl::opengl::MeshGL}!V\_ambient\_vbo@{V\_ambient\_vbo}}
 \index{V\_ambient\_vbo@{V\_ambient\_vbo}!igl::opengl::MeshGL@{igl::opengl::MeshGL}}
 \doxysubsubsection{\texorpdfstring{V\_ambient\_vbo}{V\_ambient\_vbo}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a17194504109bdabe4cc5d2c9a46cbd37}{Row\+Matrix\+Xf}} igl\+::opengl\+::\+Mesh\+GL\+::\+V\+\_\+ambient\+\_\+vbo}
+{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_adf75306956e300b76bd4eae9d424e331}{Row\+Matrix\+Xf}} igl\+::opengl\+::\+Mesh\+GL\+::\+V\+\_\+ambient\+\_\+vbo}
 
 \Hypertarget{classigl_1_1opengl_1_1MeshGL_a4e339a0daa6dadbf0c72f653d752de2c}\label{classigl_1_1opengl_1_1MeshGL_a4e339a0daa6dadbf0c72f653d752de2c} 
 \index{igl::opengl::MeshGL@{igl::opengl::MeshGL}!V\_diffuse\_vbo@{V\_diffuse\_vbo}}
 \index{V\_diffuse\_vbo@{V\_diffuse\_vbo}!igl::opengl::MeshGL@{igl::opengl::MeshGL}}
 \doxysubsubsection{\texorpdfstring{V\_diffuse\_vbo}{V\_diffuse\_vbo}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a17194504109bdabe4cc5d2c9a46cbd37}{Row\+Matrix\+Xf}} igl\+::opengl\+::\+Mesh\+GL\+::\+V\+\_\+diffuse\+\_\+vbo}
+{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_adf75306956e300b76bd4eae9d424e331}{Row\+Matrix\+Xf}} igl\+::opengl\+::\+Mesh\+GL\+::\+V\+\_\+diffuse\+\_\+vbo}
 
 \Hypertarget{classigl_1_1opengl_1_1MeshGL_aed80f410684477bc78e3d84ffcce8752}\label{classigl_1_1opengl_1_1MeshGL_aed80f410684477bc78e3d84ffcce8752} 
 \index{igl::opengl::MeshGL@{igl::opengl::MeshGL}!V\_specular\_vbo@{V\_specular\_vbo}}
 \index{V\_specular\_vbo@{V\_specular\_vbo}!igl::opengl::MeshGL@{igl::opengl::MeshGL}}
 \doxysubsubsection{\texorpdfstring{V\_specular\_vbo}{V\_specular\_vbo}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a17194504109bdabe4cc5d2c9a46cbd37}{Row\+Matrix\+Xf}} igl\+::opengl\+::\+Mesh\+GL\+::\+V\+\_\+specular\+\_\+vbo}
+{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_adf75306956e300b76bd4eae9d424e331}{Row\+Matrix\+Xf}} igl\+::opengl\+::\+Mesh\+GL\+::\+V\+\_\+specular\+\_\+vbo}
 
 \Hypertarget{classigl_1_1opengl_1_1MeshGL_a4356ffc0522f0b071145297e9362c154}\label{classigl_1_1opengl_1_1MeshGL_a4356ffc0522f0b071145297e9362c154} 
 \index{igl::opengl::MeshGL@{igl::opengl::MeshGL}!V\_uv\_vbo@{V\_uv\_vbo}}
 \index{V\_uv\_vbo@{V\_uv\_vbo}!igl::opengl::MeshGL@{igl::opengl::MeshGL}}
 \doxysubsubsection{\texorpdfstring{V\_uv\_vbo}{V\_uv\_vbo}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a17194504109bdabe4cc5d2c9a46cbd37}{Row\+Matrix\+Xf}} igl\+::opengl\+::\+Mesh\+GL\+::\+V\+\_\+uv\+\_\+vbo}
+{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_adf75306956e300b76bd4eae9d424e331}{Row\+Matrix\+Xf}} igl\+::opengl\+::\+Mesh\+GL\+::\+V\+\_\+uv\+\_\+vbo}
 
 \Hypertarget{classigl_1_1opengl_1_1MeshGL_aa953266e7d2e8ab68966c9c7b8207123}\label{classigl_1_1opengl_1_1MeshGL_aa953266e7d2e8ab68966c9c7b8207123} 
 \index{igl::opengl::MeshGL@{igl::opengl::MeshGL}!lines\_V\_vbo@{lines\_V\_vbo}}
 \index{lines\_V\_vbo@{lines\_V\_vbo}!igl::opengl::MeshGL@{igl::opengl::MeshGL}}
 \doxysubsubsection{\texorpdfstring{lines\_V\_vbo}{lines\_V\_vbo}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a17194504109bdabe4cc5d2c9a46cbd37}{Row\+Matrix\+Xf}} igl\+::opengl\+::\+Mesh\+GL\+::lines\+\_\+\+V\+\_\+vbo}
+{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_adf75306956e300b76bd4eae9d424e331}{Row\+Matrix\+Xf}} igl\+::opengl\+::\+Mesh\+GL\+::lines\+\_\+\+V\+\_\+vbo}
 
 \Hypertarget{classigl_1_1opengl_1_1MeshGL_a2d621ebb9b848feab4c9a32966f70f95}\label{classigl_1_1opengl_1_1MeshGL_a2d621ebb9b848feab4c9a32966f70f95} 
 \index{igl::opengl::MeshGL@{igl::opengl::MeshGL}!lines\_V\_colors\_vbo@{lines\_V\_colors\_vbo}}
 \index{lines\_V\_colors\_vbo@{lines\_V\_colors\_vbo}!igl::opengl::MeshGL@{igl::opengl::MeshGL}}
 \doxysubsubsection{\texorpdfstring{lines\_V\_colors\_vbo}{lines\_V\_colors\_vbo}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a17194504109bdabe4cc5d2c9a46cbd37}{Row\+Matrix\+Xf}} igl\+::opengl\+::\+Mesh\+GL\+::lines\+\_\+\+V\+\_\+colors\+\_\+vbo}
+{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_adf75306956e300b76bd4eae9d424e331}{Row\+Matrix\+Xf}} igl\+::opengl\+::\+Mesh\+GL\+::lines\+\_\+\+V\+\_\+colors\+\_\+vbo}
 
 \Hypertarget{classigl_1_1opengl_1_1MeshGL_a92962f0de9d353681d78e0f4fdfbd572}\label{classigl_1_1opengl_1_1MeshGL_a92962f0de9d353681d78e0f4fdfbd572} 
 \index{igl::opengl::MeshGL@{igl::opengl::MeshGL}!points\_V\_vbo@{points\_V\_vbo}}
 \index{points\_V\_vbo@{points\_V\_vbo}!igl::opengl::MeshGL@{igl::opengl::MeshGL}}
 \doxysubsubsection{\texorpdfstring{points\_V\_vbo}{points\_V\_vbo}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a17194504109bdabe4cc5d2c9a46cbd37}{Row\+Matrix\+Xf}} igl\+::opengl\+::\+Mesh\+GL\+::points\+\_\+\+V\+\_\+vbo}
+{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_adf75306956e300b76bd4eae9d424e331}{Row\+Matrix\+Xf}} igl\+::opengl\+::\+Mesh\+GL\+::points\+\_\+\+V\+\_\+vbo}
 
 \Hypertarget{classigl_1_1opengl_1_1MeshGL_af8bbeb3828c1e753047172f045582e01}\label{classigl_1_1opengl_1_1MeshGL_af8bbeb3828c1e753047172f045582e01} 
 \index{igl::opengl::MeshGL@{igl::opengl::MeshGL}!points\_V\_colors\_vbo@{points\_V\_colors\_vbo}}
 \index{points\_V\_colors\_vbo@{points\_V\_colors\_vbo}!igl::opengl::MeshGL@{igl::opengl::MeshGL}}
 \doxysubsubsection{\texorpdfstring{points\_V\_colors\_vbo}{points\_V\_colors\_vbo}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_a17194504109bdabe4cc5d2c9a46cbd37}{Row\+Matrix\+Xf}} igl\+::opengl\+::\+Mesh\+GL\+::points\+\_\+\+V\+\_\+colors\+\_\+vbo}
+{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL_adf75306956e300b76bd4eae9d424e331}{Row\+Matrix\+Xf}} igl\+::opengl\+::\+Mesh\+GL\+::points\+\_\+\+V\+\_\+colors\+\_\+vbo}
 
 \Hypertarget{classigl_1_1opengl_1_1MeshGL_a1ee2a8dddbfb9fdb9efc69ad84a80ab7}\label{classigl_1_1opengl_1_1MeshGL_a1ee2a8dddbfb9fdb9efc69ad84a80ab7} 
 \index{igl::opengl::MeshGL@{igl::opengl::MeshGL}!vertex\_labels@{vertex\_labels}}

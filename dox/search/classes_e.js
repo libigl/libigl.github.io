@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['ut_5fsolidangle_0',['UT_SolidAngle',['../classigl_1_1FastWindingNumber_1_1HDK__Sample_1_1UT__SolidAngle.html',1,'igl::FastWindingNumber::HDK_Sample']]],
-  ['ut_5fsolidangle_3c_20float_2c_20float_20_3e_1',['UT_SolidAngle&lt; float, float &gt;',['../classigl_1_1FastWindingNumber_1_1HDK__Sample_1_1UT__SolidAngle.html',1,'igl::FastWindingNumber::HDK_Sample']]]
+  ['windingnumberaabb_0',['WindingNumberAABB',['../classigl_1_1WindingNumberAABB.html',1,'igl']]],
+  ['windingnumberfilter_1',['WindingNumberFilter',['../classigl_1_1copyleft_1_1cgal_1_1WindingNumberFilter.html',1,'igl::copyleft::cgal']]],
+  ['windingnumberfilter_3c_20keep_5fall_20_3e_2',['WindingNumberFilter&lt; KEEP_ALL &gt;',['../classigl_1_1copyleft_1_1cgal_1_1WindingNumberFilter_3_01KEEP__ALL_01_4.html',1,'igl::copyleft::cgal']]],
+  ['windingnumberfilter_3c_20keep_5finside_20_3e_3',['WindingNumberFilter&lt; KEEP_INSIDE &gt;',['../classigl_1_1copyleft_1_1cgal_1_1WindingNumberFilter_3_01KEEP__INSIDE_01_4.html',1,'igl::copyleft::cgal']]],
+  ['windingnumbertree_4',['WindingNumberTree',['../classigl_1_1WindingNumberTree.html',1,'igl']]]
 ];

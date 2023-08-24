@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">libigl
+   <div id="projectname">libigl<span id="projectnumber">&#160;v2.5.0</span>
    </div>
   </td>
  </tr>
@@ -108,6 +108,8 @@ $(document).ready(function(){initNavTree('namespaceigl_1_1opengl.html',''); init
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceigl_1_1opengl_1_1glfw"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1opengl_1_1glfw.html">glfw</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceigl_1_1opengl_1_1stb"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1opengl_1_1stb.html">stb</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
@@ -195,7 +197,7 @@ Functions</h2></td></tr>
 <tr class="separator:ad2c5575db902618e488ef49d8ab34358"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad678bcaf9e800de821aab97429b0ceee"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ad678bcaf9e800de821aab97429b0ceee"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1opengl.html#ad678bcaf9e800de821aab97429b0ceee">read_pixels</a> (const GLuint width, const GLuint height, Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;R, Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;G, Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;B, Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;A, Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;D)</td></tr>
-<tr class="memdesc:ad678bcaf9e800de821aab97429b0ceee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read full viewport into color, alpha and depth arrays suitable for <a class="el" href="namespaceigl_1_1png.html#a22afcde86706a6cdc101ab5058461bbf" title="Writes an image to a png file.">igl::png::writePNG</a>.  <br /></td></tr>
+<tr class="memdesc:ad678bcaf9e800de821aab97429b0ceee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read full viewport into color, alpha and depth arrays suitable for igl::png::writePNG.  <br /></td></tr>
 <tr class="separator:ad678bcaf9e800de821aab97429b0ceee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb894bef3132fc177a66d54235c66133"><td class="memItemLeft" align="right" valign="top">GLenum&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1opengl.html#aeb894bef3132fc177a66d54235c66133">report_gl_error</a> (const std::string id)</td></tr>
 <tr class="memdesc:aeb894bef3132fc177a66d54235c66133"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print last OpenGL error to stderr prefixed by specified id string.  <br /></td></tr>
@@ -1181,7 +1183,7 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Read full viewport into color, alpha and depth arrays suitable for <a class="el" href="namespaceigl_1_1png.html#a22afcde86706a6cdc101ab5058461bbf" title="Writes an image to a png file.">igl::png::writePNG</a>. </p>
+<p>Read full viewport into color, alpha and depth arrays suitable for igl::png::writePNG. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">width</td><td>width of viewport </td></tr>

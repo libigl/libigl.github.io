@@ -25,8 +25,7 @@
 var NAVTREE =
 [
   [ "libigl", "index.html", [
-    [ "Deprecated List", "deprecated.html", null ],
-    [ "Bug List", "bug.html", null ],
+    [ "libigl - A simple C++ geometry processing library", "index.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -66,31 +65,31 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "AABB_8h.html",
-"any__of_8h.html",
-"classigl_1_1BBWData.html#a82f5739b1b1f75e59e166007b147a03e",
-"classigl_1_1WindingNumberTree.html#a2551264e8045c3dee664537ae21011bc",
-"classigl_1_1matlab_1_1MatlabWorkspace.html#aa2a101b2341dc6433fcb2018aa1cddc5",
-"classigl_1_1opengl_1_1ViewerCore.html#ac9300aff89f5670193d72919da2669e9",
-"classigl_1_1opengl_1_1glfw_1_1Viewer.html#a71b77ba75ee7e094d5bf4f3b92f58ed3",
-"classigl_1_1opengl_1_1glfw_1_1imgui_1_1SelectionWidget.html#a02a271ea7aafcdfd2336af6d4fcce03f",
-"cr__vector__mass_8h.html",
-"exploded__view_8h.html",
-"grad_8h_source.html",
-"list__to__matrix_8h.html#ae5fd001a788d43f744d257d305ddb1b3",
-"namespaceigl.html#a00745ad61704fb8a6dc941ebf003f628",
-"namespaceigl.html#a4132693fc82720d3e947c09aad236d96",
-"namespaceigl.html#a805a632075fa2b99892f172b2063e8de",
-"namespaceigl.html#ac2d34543d4673ecc638e11d0340f7c38",
-"namespaceigl_1_1copyleft.html#a127b3a99bb9ceb2143b6a5c1a524574a",
-"namespaceigl_1_1png.html#ad1659de82481ccd9aba4cdb79af51a46",
-"order__facets__around__edge_8h.html",
-"print__vector_8h_source.html",
-"repdiag_8h.html#ad35357b4f4e8dbf29c3fad77850fb957",
-"slice_8h.html#a90268d9fb8c64692427036793191a8b7",
-"structigl_1_1HeatGeodesicsData.html#af41d42326cbaaff829b6e983e652cc33",
-"structigl_1_1embree_1_1EmbreeDevice.html#a427daf569f9d309423ae8543264bf93b",
-"structigl_1_1tinyply_1_1PlyFile.html#af37a0fb4443dadc094b66dbe0b363665",
-"triangle_2cdt_8h_source.html"
+"arap__dof_8h.html#acec31e2faca7eecae08c921a0430d0aa",
+"classigl_1_1HalfEdgeIterator.html#a302263a4590db215292b9df12a72ea98",
+"classigl_1_1WindingNumberTree.html#a4db0183d5e5fa19ee65fd73f403825ec",
+"classigl_1_1matlab_1_1MatlabWorkspace.html#afc574cd5f9775c05a71e040b8f33f7ef",
+"classigl_1_1opengl_1_1ViewerCore.html#aba6009cae01df3339e47379273fb63d8",
+"classigl_1_1opengl_1_1glfw_1_1Viewer.html#a2fd28960580797eae596372f32147777",
+"classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget.html#a42229944f49fb269b4a149cabbc492de",
+"cotmatrix__entries_8h.html",
+"embree_2shape__diameter__function_8h.html#a93025c9bea20cc5c7dcf9c3c0606a3df",
+"gaussian__curvature_8h.html",
+"lexicographic__triangulation_8h.html",
+"mosek__guarded_8h.html#a9a45e29a7f2bbd8971a901b1abf3905a",
+"namespaceigl.html#a39d02bea0e57dce707ada6bc3228d22a",
+"namespaceigl.html#a78da3ad1832aa83542b3dc3a28e1a8e1",
+"namespaceigl.html#aba39f8e29962d636cfae080188ec1da7",
+"namespaceigl.html#afa9c39cf6f0bef4857b1dc66360e4f52",
+"namespaceigl_1_1opengl.html#acb61cde775b172998ae6e6f9dffd5d96",
+"order__facets__around__edge_8h.html#a8689344acbbb3e7bec33eb425d59cdde",
+"print__vector_8h.html",
+"repdiag_8h.html#a8da20ed25cb6630b40cb666c4f0153fb",
+"slice_8h.html#a547a8704200d3af48fe92105c15a32ad",
+"structigl_1_1Hit.html#a74e794fbf1a39d404f1a666165fa2b63",
+"structigl_1_1embree_1_1EmbreeDevice.html#a892da2869d548a629ad118abe64b8791",
+"structigl_1_1triangle_1_1SCAFData.html#a82d05775cd272b601dc4047b46c7cc0e",
+"unproject__on__line_8h_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

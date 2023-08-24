@@ -12,28 +12,32 @@
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_BLUE\_NOISE\_H}}
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_BLUE\_NOISE\_H}}
 \DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{igl__inline_8h}{igl\_inline.h}}"{}}}
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
-\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
-\DoxyCodeLine{00013\ \{}
-\DoxyCodeLine{00028\ \ \ \textcolor{keyword}{template}\ <}
-\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
-\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedB,}
-\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFI,}
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedP>}
-\DoxyCodeLine{00034\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a98228468c9d6608d031ea33dbf405a6c}{blue\_noise}}(}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{typename}\ DerivedV::Scalar\ r,}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedB>\ \&\ B,}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedFI>\ \&\ FI,}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedP>\ \&\ P);}
-\DoxyCodeLine{00041\ \}}
-\DoxyCodeLine{00042\ }
-\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
-\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#\ \ include\ "{}blue\_noise.cpp"{}}}
-\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{generate__default__urbg_8h}{generate\_default\_urbg.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00031\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedB,}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFI,}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedP,}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{typename}\ URBG\ =\ \mbox{\hyperlink{namespaceigl_a60bbc303acee156af52ab587c4680502}{DEFAULT\_URBG}}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ >}
+\DoxyCodeLine{00039\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_af6fdfaea612ac6f626571df84ba43dd0}{blue\_noise}}(}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{typename}\ DerivedV::Scalar\ r,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedB>\ \&\ B,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedFI>\ \&\ FI,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedP>\ \&\ P,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ URBG\ \&\&\ urbg\ =\ \mbox{\hyperlink{namespaceigl_a23d8ca74669cc6ed33b89020ee4f9b2e}{igl::generate\_default\_urbg}}());}
+\DoxyCodeLine{00047\ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#\ \ include\ "{}blue\_noise.cpp"{}}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

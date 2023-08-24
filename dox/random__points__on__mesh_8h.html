@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">libigl
+   <div id="projectname">libigl<span id="projectnumber">&#160;v2.5.0</span>
    </div>
   </td>
  </tr>
@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('random__points__on__mesh_8h.html','');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="igl__inline_8h_source.html">igl_inline.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="generate__default__urbg_8h_source.html">generate_default_urbg.h</a>&quot;</code><br />
 <code>#include &lt;Eigen/Core&gt;</code><br />
 <code>#include &lt;Eigen/Sparse&gt;</code><br />
 <code>#include &quot;random_points_on_mesh.cpp&quot;</code><br />
@@ -117,18 +118,10 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aadf77b61b562219602e761c49ea41ce7"><td class="memTemplParams" colspan="2">template&lt;typename DerivedV , typename DerivedF , typename DerivedB , typename DerivedFI &gt; </td></tr>
-<tr class="memitem:aadf77b61b562219602e761c49ea41ce7"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#aadf77b61b562219602e761c49ea41ce7">igl::random_points_on_mesh</a> (const int n, const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, const Eigen::MatrixBase&lt; DerivedF &gt; &amp;F, Eigen::PlainObjectBase&lt; DerivedB &gt; &amp;B, Eigen::PlainObjectBase&lt; DerivedFI &gt; &amp;FI)</td></tr>
-<tr class="memdesc:aadf77b61b562219602e761c49ea41ce7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Randomly sample a mesh (V,F) n times.  <br /></td></tr>
-<tr class="separator:aadf77b61b562219602e761c49ea41ce7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5cb247c84e3a51b0eaeebf3ff34a6451"><td class="memTemplParams" colspan="2">template&lt;typename DerivedV , typename DerivedF , typename DerivedB , typename DerivedFI , typename DerivedX &gt; </td></tr>
-<tr class="memitem:a5cb247c84e3a51b0eaeebf3ff34a6451"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a5cb247c84e3a51b0eaeebf3ff34a6451">igl::random_points_on_mesh</a> (const int n, const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, const Eigen::MatrixBase&lt; DerivedF &gt; &amp;F, Eigen::PlainObjectBase&lt; DerivedB &gt; &amp;B, Eigen::PlainObjectBase&lt; DerivedFI &gt; &amp;FI, Eigen::PlainObjectBase&lt; DerivedX &gt; &amp;X)</td></tr>
-<tr class="memdesc:a5cb247c84e3a51b0eaeebf3ff34a6451"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
-<tr class="separator:a5cb247c84e3a51b0eaeebf3ff34a6451"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0eaf9511c674ee015c974db00b7b16c0"><td class="memTemplParams" colspan="2">template&lt;typename DerivedV , typename DerivedF , typename ScalarB , typename DerivedFI &gt; </td></tr>
-<tr class="memitem:a0eaf9511c674ee015c974db00b7b16c0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a0eaf9511c674ee015c974db00b7b16c0">igl::random_points_on_mesh</a> (const int n, const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, const Eigen::MatrixBase&lt; DerivedF &gt; &amp;F, Eigen::SparseMatrix&lt; ScalarB &gt; &amp;B, Eigen::PlainObjectBase&lt; DerivedFI &gt; &amp;FI)</td></tr>
-<tr class="memdesc:a0eaf9511c674ee015c974db00b7b16c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
-<tr class="separator:a0eaf9511c674ee015c974db00b7b16c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fc88d96c492e3bf962501af8bea413e"><td class="memTemplParams" colspan="2">template&lt;typename DerivedV , typename DerivedF , typename DerivedB , typename DerivedFI , typename DerivedX , typename URBG  = DEFAULT_URBG&gt; </td></tr>
+<tr class="memitem:a1fc88d96c492e3bf962501af8bea413e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a1fc88d96c492e3bf962501af8bea413e">igl::random_points_on_mesh</a> (const int n, const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, const Eigen::MatrixBase&lt; DerivedF &gt; &amp;F, Eigen::PlainObjectBase&lt; DerivedB &gt; &amp;B, Eigen::PlainObjectBase&lt; DerivedFI &gt; &amp;FI, Eigen::PlainObjectBase&lt; DerivedX &gt; &amp;X, URBG &amp;&amp;urbg=<a class="el" href="namespaceigl.html#a23d8ca74669cc6ed33b89020ee4f9b2e">igl::generate_default_urbg</a>())</td></tr>
+<tr class="memdesc:a1fc88d96c492e3bf962501af8bea413e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Randomly sample a mesh (V,F) n times.  <br /></td></tr>
+<tr class="separator:a1fc88d96c492e3bf962501af8bea413e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

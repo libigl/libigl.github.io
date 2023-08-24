@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">libigl
+   <div id="projectname">libigl<span id="projectnumber">&#160;v2.5.0</span>
    </div>
   </td>
  </tr>
@@ -110,33 +110,40 @@ $(document).ready(function(){initNavTree('blue__noise_8h_source.html',''); initR
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef IGL_BLUE_NOISE_H</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define IGL_BLUE_NOISE_H</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="igl__inline_8h.html">igl_inline.h</a>&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;Eigen/Core&gt;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceigl.html">igl</a></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <span class="keyword">template</span> &lt;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">typename</span> DerivedV,</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">typename</span> DerivedF,</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">typename</span> DerivedB,</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">typename</span> DerivedFI,</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">typename</span> DerivedP&gt;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="namespaceigl.html#a98228468c9d6608d031ea33dbf405a6c">   34</a></span>  <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#a98228468c9d6608d031ea33dbf405a6c">blue_noise</a>(</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>      <span class="keyword">const</span> Eigen::MatrixBase&lt;DerivedV&gt; &amp; V,</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>      <span class="keyword">const</span> Eigen::MatrixBase&lt;DerivedF&gt; &amp; F,</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>      <span class="keyword">const</span> <span class="keyword">typename</span> DerivedV::Scalar r,</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>      Eigen::PlainObjectBase&lt;DerivedB&gt; &amp; B,</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>      Eigen::PlainObjectBase&lt;DerivedFI&gt; &amp; FI,</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>      Eigen::PlainObjectBase&lt;DerivedP&gt; &amp; P);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#ifndef IGL_STATIC_LIBRARY</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#  include &quot;blue_noise.cpp&quot;</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="generate__default__urbg_8h.html">generate_default_urbg.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;Eigen/Core&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceigl.html">igl</a></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="keyword">template</span> &lt;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">typename</span> DerivedV,</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">typename</span> DerivedF,</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">typename</span> DerivedB,</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">typename</span> DerivedFI,</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">typename</span> DerivedP,</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">typename</span> URBG = <a class="code hl_typedef" href="namespaceigl.html#a60bbc303acee156af52ab587c4680502">DEFAULT_URBG</a></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>      &gt;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="namespaceigl.html#af6fdfaea612ac6f626571df84ba43dd0">   39</a></span>  <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl.html#af6fdfaea612ac6f626571df84ba43dd0">blue_noise</a>(</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>      <span class="keyword">const</span> Eigen::MatrixBase&lt;DerivedV&gt; &amp; V,</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>      <span class="keyword">const</span> Eigen::MatrixBase&lt;DerivedF&gt; &amp; F,</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>      <span class="keyword">const</span> <span class="keyword">typename</span> DerivedV::Scalar r,</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>      Eigen::PlainObjectBase&lt;DerivedB&gt; &amp; B,</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>      Eigen::PlainObjectBase&lt;DerivedFI&gt; &amp; FI,</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>      Eigen::PlainObjectBase&lt;DerivedP&gt; &amp; P,</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>      URBG &amp;&amp; urbg = <a class="code hl_function" href="namespaceigl.html#a23d8ca74669cc6ed33b89020ee4f9b2e">igl::generate_default_urbg</a>());</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#ifndef IGL_STATIC_LIBRARY</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#  include &quot;blue_noise.cpp&quot;</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="agenerate__default__urbg_8h_html"><div class="ttname"><a href="generate__default__urbg_8h.html">generate_default_urbg.h</a></div></div>
 <div class="ttc" id="aigl__inline_8h_html"><div class="ttname"><a href="igl__inline_8h.html">igl_inline.h</a></div></div>
 <div class="ttc" id="aigl__inline_8h_html_a838241279013352686271b4c4ce1f708"><div class="ttname"><a href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a></div><div class="ttdeci">#define IGL_INLINE</div><div class="ttdef"><b>Definition</b> igl_inline.h:15</div></div>
 <div class="ttc" id="anamespaceigl_html"><div class="ttname"><a href="namespaceigl.html">igl</a></div><div class="ttdef"><b>Definition</b> AABB.h:17</div></div>
-<div class="ttc" id="anamespaceigl_html_a98228468c9d6608d031ea33dbf405a6c"><div class="ttname"><a href="namespaceigl.html#a98228468c9d6608d031ea33dbf405a6c">igl::blue_noise</a></div><div class="ttdeci">void blue_noise(const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, const Eigen::MatrixBase&lt; DerivedF &gt; &amp;F, const typename DerivedV::Scalar r, Eigen::PlainObjectBase&lt; DerivedB &gt; &amp;B, Eigen::PlainObjectBase&lt; DerivedFI &gt; &amp;FI, Eigen::PlainObjectBase&lt; DerivedP &gt; &amp;P)</div><div class="ttdoc">&quot;Fast Poisson Disk Sampling in Arbitrary Dimensions&quot; [Bridson 2007].</div></div>
+<div class="ttc" id="anamespaceigl_html_a23d8ca74669cc6ed33b89020ee4f9b2e"><div class="ttname"><a href="namespaceigl.html#a23d8ca74669cc6ed33b89020ee4f9b2e">igl::generate_default_urbg</a></div><div class="ttdeci">DEFAULT_URBG generate_default_urbg()</div><div class="ttdef"><b>Definition</b> generate_default_urbg.h:7</div></div>
+<div class="ttc" id="anamespaceigl_html_a60bbc303acee156af52ab587c4680502"><div class="ttname"><a href="namespaceigl.html#a60bbc303acee156af52ab587c4680502">igl::DEFAULT_URBG</a></div><div class="ttdeci">std::mt19937 DEFAULT_URBG</div><div class="ttdef"><b>Definition</b> generate_default_urbg.h:6</div></div>
+<div class="ttc" id="anamespaceigl_html_af6fdfaea612ac6f626571df84ba43dd0"><div class="ttname"><a href="namespaceigl.html#af6fdfaea612ac6f626571df84ba43dd0">igl::blue_noise</a></div><div class="ttdeci">void blue_noise(const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, const Eigen::MatrixBase&lt; DerivedF &gt; &amp;F, const typename DerivedV::Scalar r, Eigen::PlainObjectBase&lt; DerivedB &gt; &amp;B, Eigen::PlainObjectBase&lt; DerivedFI &gt; &amp;FI, Eigen::PlainObjectBase&lt; DerivedP &gt; &amp;P, URBG &amp;&amp;urbg=igl::generate_default_urbg())</div><div class="ttdoc">&quot;Fast Poisson Disk Sampling in Arbitrary Dimensions&quot; [Bridson 2007].</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

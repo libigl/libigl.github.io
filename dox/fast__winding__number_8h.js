@@ -1,6 +1,5 @@
 var fast__winding__number_8h =
 [
-    [ "igl::FastWindingNumberBVH", "structigl_1_1FastWindingNumberBVH.html", "structigl_1_1FastWindingNumberBVH" ],
     [ "fast_winding_number", "fast__winding__number_8h.html#af9a50987fefc0df065fb3e2cde90c92e", null ],
     [ "fast_winding_number", "fast__winding__number_8h.html#a9f25aa098c2a53832cc8d86022bf0691", null ],
     [ "fast_winding_number", "fast__winding__number_8h.html#a397e83be466a676e5e932eb176222024", null ],

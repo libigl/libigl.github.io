@@ -27,7 +27,7 @@
 \DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <unsupported/Eigen/SparseExtra>}}
 \DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <cassert>}}
 \DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <cstdio>}}
-\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{matlab__format_8h}{igl/matlab\_format.h}}>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{matlab__format_8h}{matlab\_format.h}}"{}}}
 \DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <type\_traits>}}
 \DoxyCodeLine{00028\ }
 \DoxyCodeLine{00029\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ Derivedknown>}
@@ -124,16 +124,16 @@
 \DoxyCodeLine{00120\ \ \ \ \ \textcolor{comment}{//\ PD\ implies\ symmetric}}
 \DoxyCodeLine{00121\ \ \ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ab1604a8b1d543c6dfc4ac01dc42df0a6}{Auu\_sym}}\ =\ \textcolor{keyword}{true};}
 \DoxyCodeLine{00122\ \ \ \ \ \textcolor{comment}{//\ This\ is\ an\ annoying\ assertion\ unless\ EPS\ can\ be\ chosen\ in\ a\ nicer\ way.}}
-\DoxyCodeLine{00123\ \ \ \ \ \textcolor{comment}{//assert(is\_symmetric(Auu,EPS<double>()));}}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{comment}{//assert(is\_symmetric(Auu,EPS<T>()));}}
 \DoxyCodeLine{00124\ \ \ \ \ assert(\mbox{\hyperlink{namespaceigl_a4f840791a21ca650ec1d68910c3ec900}{is\_symmetric}}(Auu,1.0)\ \&\&}
 \DoxyCodeLine{00125\ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Auu\ should\ be\ symmetric\ if\ positive\ definite"{}});}
 \DoxyCodeLine{00126\ \ \ \}\textcolor{keywordflow}{else}}
 \DoxyCodeLine{00127\ \ \ \{}
 \DoxyCodeLine{00128\ \ \ \ \ \textcolor{comment}{//\ determine\ if\ A(unknown,unknown)\ is\ symmetric\ and/or\ positive\ definite}}
 \DoxyCodeLine{00129\ \ \ \ \ VectorXi\ AuuI,AuuJ;}
-\DoxyCodeLine{00130\ \ \ \ \ MatrixXd\ AuuV;}
+\DoxyCodeLine{00130\ \ \ \ \ Matrix<T,Eigen::Dynamic,Eigen::Dynamic>\ AuuV;}
 \DoxyCodeLine{00131\ \ \ \ \ \mbox{\hyperlink{namespaceigl_ad0ba264f987871035fb7d12de96fccab}{find}}(Auu,AuuI,AuuJ,AuuV);}
-\DoxyCodeLine{00132\ \ \ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ab1604a8b1d543c6dfc4ac01dc42df0a6}{Auu\_sym}}\ =\ \mbox{\hyperlink{namespaceigl_a4f840791a21ca650ec1d68910c3ec900}{is\_symmetric}}(Auu,EPS<double>()*AuuV.maxCoeff());}
+\DoxyCodeLine{00132\ \ \ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ab1604a8b1d543c6dfc4ac01dc42df0a6}{Auu\_sym}}\ =\ \mbox{\hyperlink{namespaceigl_a4f840791a21ca650ec1d68910c3ec900}{is\_symmetric}}(Auu,EPS<T>()*AuuV.maxCoeff());}
 \DoxyCodeLine{00133\ \ \ \}}
 \DoxyCodeLine{00134\ }
 \DoxyCodeLine{00135\ \ \ \textcolor{comment}{//\ Determine\ number\ of\ linearly\ independent\ constraints}}
@@ -238,17 +238,17 @@
 \DoxyCodeLine{00235\ \ \ \ \ \}\textcolor{keywordflow}{else}}
 \DoxyCodeLine{00236\ \ \ \ \ \{}
 \DoxyCodeLine{00237\ \textcolor{preprocessor}{\#ifdef\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
-\DoxyCodeLine{00238\ \ \ \ \ cout<<\textcolor{stringliteral}{"{}\ \ \ \ ldlt"{}}<<endl;}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ cout<<\textcolor{stringliteral}{"{}\ \ \ \ ldlt/lu"{}}<<endl;}
 \DoxyCodeLine{00239\ \textcolor{preprocessor}{\#endif}}
 \DoxyCodeLine{00240\ \ \ \ \ \ \ \textcolor{comment}{//\ Either\ not\ PD\ or\ there\ are\ equality\ constraints}}
 \DoxyCodeLine{00241\ \ \ \ \ \ \ SparseMatrix<T>\ NA;}
 \DoxyCodeLine{00242\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_a547a8704200d3af48fe92105c15a32ad}{slice}}(new\_A,data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ac680271bddf24abc8337ca15965a200d}{unknown\_lagrange}},data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ac680271bddf24abc8337ca15965a200d}{unknown\_lagrange}},NA);}
 \DoxyCodeLine{00243\ \ \ \ \ \ \ data.NA\ =\ NA;}
-\DoxyCodeLine{00244\ \ \ \ \ \ \ \textcolor{comment}{//\ Ideally\ we'd\ use\ LDLT\ but\ Eigen\ doesn't\ support\ positive\ semi-\/definite}}
-\DoxyCodeLine{00245\ \ \ \ \ \ \ \textcolor{comment}{//\ matrices:}}
-\DoxyCodeLine{00246\ \ \ \ \ \ \ \textcolor{comment}{//\ http://forum.kde.org/viewtopic.php?f=74\&t=106962\&p=291990\#p291990}}
-\DoxyCodeLine{00247\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ab1604a8b1d543c6dfc4ac01dc42df0a6}{Auu\_sym}}\ \&\&\ \textcolor{keyword}{false})}
-\DoxyCodeLine{00248\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ad3ec9b5eb512ccd82dc39fc7c670eae5}{Auu\_pd}})}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00246\ \textcolor{preprocessor}{\#ifdef\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ cout<<\textcolor{stringliteral}{"{}\ \ \ \ ldlt"{}}<<endl;}
+\DoxyCodeLine{00248\ \textcolor{preprocessor}{\#endif}}
 \DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a1bd2d40db9381b99df7cafafa3e9b8ac}{ldlt}}.compute(NA);}
 \DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a1bd2d40db9381b99df7cafafa3e9b8ac}{ldlt}}.info())}
 \DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \{}
@@ -649,7 +649,7 @@
 \DoxyCodeLine{00646\ \ \ \ \ bcbc.head(dyn\_n)\ =\ \ bc;}
 \DoxyCodeLine{00647\ \ \ \ \ \textcolor{keywordflow}{return}\ bcbc;}
 \DoxyCodeLine{00648\ \ \ \};}
-\DoxyCodeLine{00649\ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<double,nn,1>\ bcbc\ =\ make\_bcbc();}
+\DoxyCodeLine{00649\ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,nn,1>\ bcbc\ =\ make\_bcbc();}
 \DoxyCodeLine{00650\ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,nn,1>\ xx\ =}
 \DoxyCodeLine{00651\ \ \ \ \ min\_quad\_with\_fixed<Scalar,nn,false>(HH,ff,kk,bcbc);}
 \DoxyCodeLine{00652\ \ \ \textcolor{keywordflow}{return}\ xx.head(dyn\_n);}

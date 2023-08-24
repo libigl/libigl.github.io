@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['float32_0',['FLOAT32',['../namespaceigl_1_1tinyply.html#a635cb7fe81c17c2be5899e7caea506cda967d280b5c16d95f2947647dd2ca6cc2',1,'igl::tinyply']]],
-  ['float64_1',['FLOAT64',['../namespaceigl_1_1tinyply.html#a635cb7fe81c17c2be5899e7caea506cda139882c654db8a57f7c3092de1dd0b02',1,'igl::tinyply']]]
+  ['grab_0',['GRAB',['../namespaceigl.html#a69c0d149c7cb41a263f858b695eeb988a8695c57e30e957161af26fe52d8a5826',1,'igl']]]
 ];

@@ -22,8 +22,10 @@ enum class \mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96
 \item 
 {\footnotesize template$<$typename DerivedV , typename DerivedF $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1predicates_a7edd289c72535b2014622b5fc55c397e}{delaunay\+\_\+triangulation}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F)
 \begin{DoxyCompactList}\small\item\em Given a set of points in 2D, return a Delaunay triangulation of these points using predicates. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename DerivedP , typename Derived\+RT , typename DerivedF , typename DerivedI $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1predicates_a67aaad068b039718bf983418a9143b94}{ear\+\_\+clipping}} (const Eigen\+::\+Matrix\+Base$<$ DerivedP $>$ \&P, const Eigen\+::\+Matrix\+Base$<$ Derived\+RT $>$ \&RT, Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&I, Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&eF, Eigen\+::\+Plain\+Object\+Base$<$ DerivedP $>$ \&nP)
+{\footnotesize template$<$typename DerivedP , typename Derived\+RT , typename DerivedF , typename DerivedI $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1predicates_a87050342a2559880af3a5d0b550bfd0a}{ear\+\_\+clipping}} (const Eigen\+::\+Matrix\+Base$<$ DerivedP $>$ \&P, const Eigen\+::\+Matrix\+Base$<$ Derived\+RT $>$ \&RT, Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&eF, Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&I)
 \begin{DoxyCompactList}\small\item\em Implementation of ear clipping triangulation algorithm for a 2D polygon. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedP , typename DerivedF $>$ }\\bool \mbox{\hyperlink{namespaceigl_1_1predicates_ada15b6ecd90806923001927e53180fd4}{ear\+\_\+clipping}} (const Eigen\+::\+Matrix\+Base$<$ DerivedP $>$ \&P, Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&eF)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename DerivedV , typename DerivedF $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1predicates_a61e6a3ff4a055fb5e6c749d601d3e694}{lexicographic\+\_\+triangulation}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F)
 \begin{DoxyCompactList}\small\item\em Given a set of points in 2D, return a lexicographic triangulation of these points using predicates. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename DerivedP , typename DerivedQ $>$ }\\bool \mbox{\hyperlink{namespaceigl_1_1predicates_a7780c668969af51b6d39c023d8850192}{point\+\_\+inside\+\_\+convex\+\_\+polygon}} (const Eigen\+::\+Matrix\+Base$<$ DerivedP $>$ \&P, const Eigen\+::\+Matrix\+Base$<$ DerivedQ $>$ \&q)
@@ -114,18 +116,18 @@ Given a set of points in 2D, return a Delaunay triangulation of these points usi
 \mbox{\texttt{ out}}  & {\em F} & \#F by 3 of faces in Delaunay triangulation. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{namespaceigl_1_1predicates_a67aaad068b039718bf983418a9143b94}\label{namespaceigl_1_1predicates_a67aaad068b039718bf983418a9143b94} 
+\Hypertarget{namespaceigl_1_1predicates_a87050342a2559880af3a5d0b550bfd0a}\label{namespaceigl_1_1predicates_a87050342a2559880af3a5d0b550bfd0a} 
 \index{igl::predicates@{igl::predicates}!ear\_clipping@{ear\_clipping}}
 \index{ear\_clipping@{ear\_clipping}!igl::predicates@{igl::predicates}}
-\doxysubsubsection{\texorpdfstring{ear\_clipping()}{ear\_clipping()}}
+\doxysubsubsection{\texorpdfstring{ear\_clipping()}{ear\_clipping()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily template$<$typename DerivedP , typename Derived\+RT , typename DerivedF , typename DerivedI $>$ \\
-void igl\+::predicates\+::ear\+\_\+clipping (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedP $>$ \&}]{P,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+RT $>$ \&}]{RT,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&}]{I,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&}]{eF,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedP $>$ \&}]{nP }\end{DoxyParamCaption})}
+void igl\+::predicates\+::ear\+\_\+clipping (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedP $>$ \&}]{P,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+RT $>$ \&}]{RT,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&}]{eF,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&}]{I }\end{DoxyParamCaption})}
 
 
 
 Implementation of ear clipping triangulation algorithm for a 2D polygon. 
 
-\href{https://www.geometrictools.com/Documentation/TriangulationByEarClipping.pdf}{\texttt{ https\+://www.\+geometrictools.\+com/\+Documentation/\+Triangulation\+By\+Ear\+Clipping.\+pdf}} If the polygon is simple, all vertices will be clipped and the result mesh is (P,eF) Otherwise, the function will try to clip as many ears as possible.
+\href{https://www.geometrictools.com/Documentation/TriangulationByEarClipping.pdf}{\texttt{ https\+://www.\+geometrictools.\+com/\+Documentation/\+Triangulation\+By\+Ear\+Clipping.\+pdf}} If the polygon is simple and oriented counter-\/clockwise, all vertices will be clipped and the result mesh is (P,eF) Otherwise, the function will try to clip as many ears as possible.
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -133,15 +135,31 @@ Implementation of ear clipping triangulation algorithm for a 2D polygon.
 \hline
 \mbox{\texttt{ in}}  & {\em RT} & n\texorpdfstring{$\ast$}{*}1, preserved vertices (do not clip) marked as 1, otherwise 0 \\
 \hline
-\mbox{\texttt{ out}}  & {\em I} & \+: size \#nP vector, maps index from nP to P, e.\+g. nP\textquotesingle{}s ith vertex is origianlly I(i) in P \\
-\hline
 \mbox{\texttt{ out}}  & {\em eF} & clipped ears, in original index of P \\
 \hline
-\mbox{\texttt{ out}}  & {\em nP} & leftover vertices after clipping\\
+\mbox{\texttt{ out}}  & {\em I} & \+: size \#nP vector, maps index from nP to P, e.\+g. nP\textquotesingle{}s ith vertex is origianlly I(i) in P\\
 \hline
 \end{DoxyParams}
-\begin{DoxyRefDesc}{Bug}
-\item[\mbox{\hyperlink{bug__bug000015}{Bug}}]\href{https://github.com/libigl/libigl/issues/1563}{\texttt{ https\+://github.\+com/libigl/libigl/issues/1563}} \end{DoxyRefDesc}
+\begin{DoxyPrecond}{Precondition}
+To result in a proper mesh, P should be oriented counter-\/clockwise with no self-\/intersections.
+\end{DoxyPrecond}
+\begin{DoxyNote}{Note}
+This implementation does not handle polygons with holes.
+\end{DoxyNote}
+\Hypertarget{namespaceigl_1_1predicates_ada15b6ecd90806923001927e53180fd4}\label{namespaceigl_1_1predicates_ada15b6ecd90806923001927e53180fd4} 
+\index{igl::predicates@{igl::predicates}!ear\_clipping@{ear\_clipping}}
+\index{ear\_clipping@{ear\_clipping}!igl::predicates@{igl::predicates}}
+\doxysubsubsection{\texorpdfstring{ear\_clipping()}{ear\_clipping()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename DerivedP , typename DerivedF $>$ \\
+bool igl\+::predicates\+::ear\+\_\+clipping (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedP $>$ \&}]{P,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&}]{eF }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+Reverses P if necessary. Orientation of output will match input \begin{DoxyReturn}{Returns}
+true if mesh is proper (should correspond to input being a simple polygon in either orientation), false otherwise. 
+\end{DoxyReturn}
 \Hypertarget{namespaceigl_1_1predicates_a61e6a3ff4a055fb5e6c749d601d3e694}\label{namespaceigl_1_1predicates_a61e6a3ff4a055fb5e6c749d601d3e694} 
 \index{igl::predicates@{igl::predicates}!lexicographic\_triangulation@{lexicographic\_triangulation}}
 \index{lexicographic\_triangulation@{lexicographic\_triangulation}!igl::predicates@{igl::predicates}}

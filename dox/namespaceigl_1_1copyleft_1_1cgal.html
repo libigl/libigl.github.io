@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">libigl
+   <div id="projectname">libigl<span id="projectnumber">&#160;v2.5.0</span>
    </div>
   </td>
  </tr>
@@ -105,9 +105,6 @@ $(document).ready(function(){initNavTree('namespaceigl_1_1copyleft_1_1cgal.html'
   <div class="headertitle"><div class="title">igl::copyleft::cgal Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Given a list of possible intersecting segments with endpoints, split segments to overlap only at endpoints.  
-<a href="namespaceigl_1_1copyleft_1_1cgal.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -544,6 +541,7 @@ Functions</h2></td></tr>
 <tr class="separator:a7169f4ae2fe2c11f7e878b41aa747fc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4711ebc19670232979ddfafeea023a6c"><td class="memTemplParams" colspan="2">template&lt;typename DerivedV , typename DerivedE , typename DerivedVI , typename DerivedEI , typename DerivedJ , typename DerivedIM &gt; </td></tr>
 <tr class="memitem:a4711ebc19670232979ddfafeea023a6c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1copyleft_1_1cgal.html#a4711ebc19670232979ddfafeea023a6c">resolve_intersections</a> (const Eigen::PlainObjectBase&lt; DerivedV &gt; &amp;V, const Eigen::PlainObjectBase&lt; DerivedE &gt; &amp;E, Eigen::PlainObjectBase&lt; DerivedVI &gt; &amp;VI, Eigen::PlainObjectBase&lt; DerivedEI &gt; &amp;EI, Eigen::PlainObjectBase&lt; DerivedJ &gt; &amp;J, Eigen::PlainObjectBase&lt; DerivedIM &gt; &amp;IM)</td></tr>
+<tr class="memdesc:a4711ebc19670232979ddfafeea023a6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a list of possible intersecting segments with endpoints, split segments to overlap only at endpoints.  <br /></td></tr>
 <tr class="separator:a4711ebc19670232979ddfafeea023a6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aacfa81a78943385b9146fe53e121b380"><td class="memTemplParams" colspan="2">template&lt;typename Kernel , typename DerivedV &gt; </td></tr>
 <tr class="memitem:aacfa81a78943385b9146fe53e121b380"><td class="memTemplItemLeft" align="right" valign="top">CGAL::Point_2&lt; Kernel &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1copyleft_1_1cgal.html#aacfa81a78943385b9146fe53e121b380">row_to_point</a> (const Eigen::PlainObjectBase&lt; DerivedV &gt; &amp;V, const typename DerivedV::Index &amp;i)</td></tr>
@@ -599,20 +597,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a88a350d009b191ea77e7bb454a2936d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
 <tr class="separator:a88a350d009b191ea77e7bb454a2936d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Given a list of possible intersecting segments with endpoints, split segments to overlap only at endpoints. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">V</td><td>#V by 2 list of vertex positions </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">E</td><td>#E by 2 list of segment indices into V </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">VI</td><td>#VI by 2 list of output vertex positions, copies of V are always the first #V vertices </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">EI</td><td>#EI by 2 list of segment indices into V, #EI ≥ #E </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">J</td><td>#EI list of indices into E revealing "parent segments" </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">IM</td><td>#VI list of indices into VV of unique vertices. </td></tr>
-  </table>
-  </dd>
-</dl>
-</div><h2 class="groupheader">Typedef Documentation</h2>
+<h2 class="groupheader">Typedef Documentation</h2>
 <a id="a41dc481531d9dd2585c545308a2937d7" name="a41dc481531d9dd2585c545308a2937d7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a41dc481531d9dd2585c545308a2937d7">&#9670;&#160;</a></span>BinaryUnion</h2>
 
@@ -5115,7 +5100,6 @@ template&lt;typename Kernel , typename DerivedP , typename DerivedV , typename D
   </table>
   </dd>
 </dl>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000001">Bug:</a></b></dt><dd>This only computes distances to triangles. So unreferenced vertices and degenerate triangles (segments) are ignored. </dd></dl>
 
 </div>
 </div>
@@ -5160,8 +5144,10 @@ template&lt;typename Kernel , typename DerivedV , typename DerivedF &gt; </div>
 </div><div class="memdoc">
 
 <p>precomputation for point_mesh_squared_distance </p>
-<p>@parm[in] V #V by 3 list of vertex positions @parm[in] F #F by 3 list of triangle indices </p><dl class="params"><dt>Parameters</dt><dd>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">V</td><td>#V by 3 list of vertex positions </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">F</td><td>#F by 3 list of triangle indices </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">tree</td><td>CGAL's <a class="el" href="classigl_1_1AABB.html" title="Implementation of semi-general purpose axis-aligned bounding box hierarchy.">AABB</a> tree </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">T</td><td>list of CGAL triangles in order of F (for determining which was found in computation)</td></tr>
   </table>
@@ -5758,7 +5744,7 @@ template&lt;typename DerivedV , typename DerivedF , typename DerivedL , typename
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true iff the input induces a piecewise-constant winding number field.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>This shouldn't need to be in <a class="el" href="namespaceigl_1_1copyleft_1_1cgal.html" title="Given a list of possible intersecting segments with endpoints, split segments to overlap only at endp...">igl::copyleft::cgal</a>, it should instead take as input an index of the ambient cell and the winding number vector there. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This shouldn't need to be in <a class="el" href="namespaceigl_1_1copyleft_1_1cgal.html">igl::copyleft::cgal</a>, it should instead take as input an index of the ambient cell and the winding number vector there. </dd></dl>
 
 </div>
 </div>
@@ -6150,8 +6136,7 @@ template&lt;typename DerivedV , typename DerivedF , typename DerivedVV , typenam
   </table>
   </dd>
 </dl>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000002">Bug:</a></b></dt><dd>If an existing edge in (V,F) lies exactly on another face then any resulting additional vertices along that edge may not get properly connected so that the output mesh has the same global topology. This is because …</dd></dl>
-<h4><a class="anchor" id="autotoc_md5"></a>
+<h4><a class="anchor" id="autotoc_md6"></a>
 Example.</h4>
 <p>// resolve intersections igl::copyleft::cgal::remesh_self_intersections(V,F,params,VV,FF,IF,J,IM); // <em>apply</em> duplicate vertex mapping IM to FF for_each(FF.data(),FF.data()+FF.size(),[&amp;IM](int &amp; a){a=IM(a);}); // remove any vertices now unreferenced after duplicate mapping. igl::remove_unreferenced(VV,FF,SV,SF,UIM); // Now (SV,SF) is ready to extract outer hull igl::copyleft::cgal::outer_hull(SV,SF,G,J,flip); </p>
 
@@ -6208,6 +6193,19 @@ template&lt;typename DerivedV , typename DerivedE , typename DerivedVI , typenam
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Given a list of possible intersecting segments with endpoints, split segments to overlap only at endpoints. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">V</td><td>#V by 2 list of vertex positions </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">E</td><td>#E by 2 list of segment indices into V </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">VI</td><td>#VI by 2 list of output vertex positions, copies of V are always the first #V vertices </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">EI</td><td>#EI by 2 list of segment indices into V, #EI ≥ #E </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">J</td><td>#EI list of indices into E revealing "parent segments" </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">IM</td><td>#VI list of indices into VV of unique vertices. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
