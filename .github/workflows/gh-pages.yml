@@ -30,7 +30,7 @@ jobs:
 
       - name: Clone libigl & run doxygen 🤖
         run: |
-          git clone -b alecjacobson/doxygen https://github.com/libigl/libigl/
+          git clone https://github.com/libigl/libigl/
           cd libigl/
           (cat docs/doxygen.conf ; echo "OUTPUT_DIRECTORY=../docs/") | doxygen -
 
