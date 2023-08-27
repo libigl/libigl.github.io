@@ -15,15 +15,15 @@ class \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector}{Embree\+Intersec
 {\footnotesize template$<$typename DerivedP , typename DerivedN , typename DerivedS $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1embree_acffda2e4befd6b4388bc7fc6147131fe}{ambient\+\_\+occlusion}} (const \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector}{Embree\+Intersector}} \&ei, const Eigen\+::\+Matrix\+Base$<$ DerivedP $>$ \&P, const Eigen\+::\+Matrix\+Base$<$ DerivedN $>$ \&N, const int num\+\_\+samples, Eigen\+::\+Plain\+Object\+Base$<$ DerivedS $>$ \&S)
 \item 
 bool \mbox{\hyperlink{namespaceigl_1_1embree_abc213ed6fba98d34eda3f84e08195720}{bone\+\_\+heat}} (const Eigen\+::\+Matrix\+Xd \&V, const Eigen\+::\+Matrix\+Xi \&F, const Eigen\+::\+Matrix\+Xd \&C, const Eigen\+::\+Vector\+Xi \&P, const Eigen\+::\+Matrix\+Xi \&BE, const Eigen\+::\+Matrix\+Xi \&CE, Eigen\+::\+Matrix\+Xd \&W)
-\begin{DoxyCompactList}\small\item\em Compute skinning weights W given a surface mesh (V,F) and an internal skeleton (C,BE) according to \"{}\+Automatic Rigging\"{} \mbox{[}Baran and Popovic 2007\mbox{]}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Compute skinning weights W given a surface mesh (V,F) and an internal skeleton (C,BE) according to "{}\+Automatic Rigging"{} \mbox{[}Baran and Popovic 2007\mbox{]}. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename DerivedV , typename DerivedF , typename Derived\+SD , typename Derivedflag $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1embree_a445638aff9f180c63695a5b86172fdb1}{bone\+\_\+visible}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F, const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SD $>$ \&s, const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SD $>$ \&d, Eigen\+::\+Plain\+Object\+Base$<$ Derivedflag $>$ \&flag)
-\begin{DoxyCompactList}\small\item\em Test whether vertices of mesh are \"{}visible\"{} to a given bone, where \"{}visible\"{} is defined as in \mbox{[}Baran \& Popovic 07\mbox{]}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Test whether vertices of mesh are "{}visible"{} to a given bone, where "{}visible"{} is defined as in \mbox{[}Baran \& Popovic 07\mbox{]}. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename DerivedV , typename DerivedF , typename Derived\+SD , typename Derivedflag $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1embree_a58d462713a1a56f7c91fa6b74cfc5906}{bone\+\_\+visible}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F, const \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector}{Embree\+Intersector}} \&ei, const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SD $>$ \&s, const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SD $>$ \&d, Eigen\+::\+Plain\+Object\+Base$<$ Derivedflag $>$ \&flag)
 \begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Scalar\+Matrix , typename Index\+Matrix $>$ }\\Scalar\+Matrix \mbox{\hyperlink{namespaceigl_1_1embree_acd345c8c661526ebb4bab1605393afe8}{line\+\_\+mesh\+\_\+intersection}} (const Scalar\+Matrix \&V\+\_\+source, const Scalar\+Matrix \&N\+\_\+source, const Scalar\+Matrix \&V\+\_\+target, const Index\+Matrix \&F\+\_\+target)
 \begin{DoxyCompactList}\small\item\em Project the point cloud V\+\_\+source onto the triangle mesh V\+\_\+target,F\+\_\+target. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedI , typename DerivedC $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1embree_a50d8808b728c372e38d88371dee2cf0f}{reorient\+\_\+facets\+\_\+raycast}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F, int rays\+\_\+total, int rays\+\_\+minimum, bool facet\+\_\+wise, bool use\+\_\+parity, bool is\+\_\+verbose, Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&I, Eigen\+::\+Plain\+Object\+Base$<$ DerivedC $>$ \&C)
-\begin{DoxyCompactList}\small\item\em Orient each component (identified by C) of a mesh (V,F) using ambient occlusion such that the front side is less occluded than back side, as described in \"{}\+A Simple Method for Correcting Facet Orientations in \+Polygon Meshes Based on Ray Casting\"{} \mbox{[}Takayama et al. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Orient each component (identified by C) of a mesh (V,F) using ambient occlusion such that the front side is less occluded than back side, as described in "{}\+A Simple Method for Correcting Facet Orientations in \+Polygon Meshes Based on Ray Casting"{} \mbox{[}Takayama et al. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename DerivedV , typename DerivedF , typename Derived\+FF , typename DerivedI $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1embree_a7dd7d02a9d43ec8e0735b96166341d68}{reorient\+\_\+facets\+\_\+raycast}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+FF $>$ \&FF, Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&I)
 \item 
 {\footnotesize template$<$typename DerivedP , typename DerivedN , typename DerivedS $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1embree_a93025c9bea20cc5c7dcf9c3c0606a3df}{shape\+\_\+diameter\+\_\+function}} (const \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector}{Embree\+Intersector}} \&ei, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedP $>$ \&P, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedN $>$ \&N, const int num\+\_\+samples, Eigen\+::\+Plain\+Object\+Base$<$ DerivedS $>$ \&S)
@@ -34,7 +34,7 @@ bool \mbox{\hyperlink{namespaceigl_1_1embree_abc213ed6fba98d34eda3f84e08195720}{
 \begin{DoxyCompactList}\small\item\em Unproject a screen location (using current opengl viewport, projection, and model view) to a 3D position {\itshape inside} a given mesh. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Derivedobj $>$ }\\int \mbox{\hyperlink{namespaceigl_1_1embree_a63f92b1ed81cbd29ef63241517ba0968}{unproject\+\_\+in\+\_\+mesh}} (const Eigen\+::\+Vector2f \&pos, const Eigen\+::\+Matrix4f \&model, const Eigen\+::\+Matrix4f \&proj, const Eigen\+::\+Vector4f \&viewport, const \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector}{Embree\+Intersector}} \&ei, Eigen\+::\+Plain\+Object\+Base$<$ Derivedobj $>$ \&obj)
 \begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{namespaceigl_1_1embree_a6cf896ed44c9329729459a291ac33047}{unproject\+\_\+onto\+\_\+mesh}} (const Eigen\+::\+Vector2f \&pos, const Eigen\+::\+Matrix\+Xi \&F, const Eigen\+::\+Matrix4f \&model, const Eigen\+::\+Matrix4f \&proj, const Eigen\+::\+Vector4f \&viewport, const \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector}{Embree\+Intersector}} \&ei, int \&fid, Eigen\+::\+Vector3f \&bc)
+bool \mbox{\hyperlink{namespaceigl_1_1embree_a4fcd1606c732e3b9948bcc08bab31927}{unproject\+\_\+onto\+\_\+mesh}} (const Eigen\+::\+Vector2f \&pos, const Eigen\+::\+Matrix4f \&model, const Eigen\+::\+Matrix4f \&proj, const Eigen\+::\+Vector4f \&viewport, const \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector}{Embree\+Intersector}} \&ei, int \&fid, Eigen\+::\+Vector3f \&bc)
 \begin{DoxyCompactList}\small\item\em Unproject a screen location (using the given model, proj and viewport) to find the first hit on a mesh. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{namespaceigl_1_1embree_a227bbf88b8e795bea4558ab6018ea732}{unproject\+\_\+onto\+\_\+mesh}} (const Eigen\+::\+Vector2f \&pos, const Eigen\+::\+Matrix\+Xi \&F, const Eigen\+::\+Matrix4f \&model, const Eigen\+::\+Matrix4f \&proj, const Eigen\+::\+Vector4f \&viewport, const \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector}{Embree\+Intersector}} \&ei, int \&fid, int \&vid)
 \begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -80,7 +80,7 @@ void igl\+::embree\+::ambient\+\_\+occlusion (\begin{DoxyParamCaption}\item[{con
 
 
 
-Compute skinning weights W given a surface mesh (V,F) and an internal skeleton (C,BE) according to \"{}\+Automatic Rigging\"{} \mbox{[}Baran and Popovic 2007\mbox{]}. 
+Compute skinning weights W given a surface mesh (V,F) and an internal skeleton (C,BE) according to "{}\+Automatic Rigging"{} \mbox{[}Baran and Popovic 2007\mbox{]}. 
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -111,7 +111,7 @@ void igl\+::embree\+::bone\+\_\+visible (\begin{DoxyParamCaption}\item[{const Ei
 
 
 
-Test whether vertices of mesh are \"{}visible\"{} to a given bone, where \"{}visible\"{} is defined as in \mbox{[}Baran \& Popovic 07\mbox{]}. 
+Test whether vertices of mesh are "{}visible"{} to a given bone, where "{}visible"{} is defined as in \mbox{[}Baran \& Popovic 07\mbox{]}. 
 
 Instead of checking whether each point can see {\itshape any} of the bone, we just check if each point can see its own projection onto the bone segment. In other words, we project each vertex v onto the bone, projv. Then we check if there are any intersections between the line segment (projv-\/-\/\texorpdfstring{$>$}{>}v) and the mesh.
 
@@ -183,7 +183,7 @@ void igl\+::embree\+::reorient\+\_\+facets\+\_\+raycast (\begin{DoxyParamCaption
 
 
 
-Orient each component (identified by C) of a mesh (V,F) using ambient occlusion such that the front side is less occluded than back side, as described in \"{}\+A Simple Method for Correcting Facet Orientations in \+Polygon Meshes Based on Ray Casting\"{} \mbox{[}Takayama et al. 
+Orient each component (identified by C) of a mesh (V,F) using ambient occlusion such that the front side is less occluded than back side, as described in "{}\+A Simple Method for Correcting Facet Orientations in \+Polygon Meshes Based on Ray Casting"{} \mbox{[}Takayama et al. 
 
 2014\mbox{]}.
 
@@ -313,11 +313,11 @@ int igl\+::embree\+::unproject\+\_\+in\+\_\+mesh (\begin{DoxyParamCaption}\item[
 
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
 
-\Hypertarget{namespaceigl_1_1embree_a6cf896ed44c9329729459a291ac33047}\label{namespaceigl_1_1embree_a6cf896ed44c9329729459a291ac33047} 
+\Hypertarget{namespaceigl_1_1embree_a4fcd1606c732e3b9948bcc08bab31927}\label{namespaceigl_1_1embree_a4fcd1606c732e3b9948bcc08bab31927} 
 \index{igl::embree@{igl::embree}!unproject\_onto\_mesh@{unproject\_onto\_mesh}}
 \index{unproject\_onto\_mesh@{unproject\_onto\_mesh}!igl::embree@{igl::embree}}
 \doxysubsubsection{\texorpdfstring{unproject\_onto\_mesh()}{unproject\_onto\_mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily bool igl\+::embree\+::unproject\+\_\+onto\+\_\+mesh (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector2f \&}]{pos,  }\item[{const Eigen\+::\+Matrix\+Xi \&}]{F,  }\item[{const Eigen\+::\+Matrix4f \&}]{model,  }\item[{const Eigen\+::\+Matrix4f \&}]{proj,  }\item[{const Eigen\+::\+Vector4f \&}]{viewport,  }\item[{const \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector}{Embree\+Intersector}} \&}]{ei,  }\item[{int \&}]{fid,  }\item[{Eigen\+::\+Vector3f \&}]{bc }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool igl\+::embree\+::unproject\+\_\+onto\+\_\+mesh (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector2f \&}]{pos,  }\item[{const Eigen\+::\+Matrix4f \&}]{model,  }\item[{const Eigen\+::\+Matrix4f \&}]{proj,  }\item[{const Eigen\+::\+Vector4f \&}]{viewport,  }\item[{const \mbox{\hyperlink{classigl_1_1embree_1_1EmbreeIntersector}{Embree\+Intersector}} \&}]{ei,  }\item[{int \&}]{fid,  }\item[{Eigen\+::\+Vector3f \&}]{bc }\end{DoxyParamCaption})}
 
 
 
@@ -326,8 +326,6 @@ Unproject a screen location (using the given model, proj and viewport) to find t
 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em pos} & screen space coordinates \\
-\hline
-\mbox{\texttt{ in}}  & {\em F} & \#F by 3 face matrix \\
 \hline
 \mbox{\texttt{ in}}  & {\em model} & model matrix \\
 \hline

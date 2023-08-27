@@ -23,9 +23,9 @@ namespace \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen}{tetgen}}
 {\footnotesize template$<$typename Derived\+Values , typename Derived\+Points , typename Derived\+Vertices , typename Derived\+Indices , typename Derived\+Faces $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1copyleft_acd17c22c13a6d3000c4d3553c47122fe}{marching\+\_\+cubes}} (const Eigen\+::\+Matrix\+Base$<$ Derived\+Values $>$ \&values, const Eigen\+::\+Matrix\+Base$<$ Derived\+Points $>$ \&points, const Eigen\+::\+Matrix\+Base$<$ Derived\+Indices $>$ \&indices, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+Vertices $>$ \&vertices, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+Faces $>$ \&faces)
 \begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{namespaceigl_1_1copyleft_a127b3a99bb9ceb2143b6a5c1a524574a}{progressive\+\_\+hulls}} (const Eigen\+::\+Matrix\+Xd \&V, const Eigen\+::\+Matrix\+Xi \&F, const size\+\_\+t max\+\_\+m, Eigen\+::\+Matrix\+Xd \&U, Eigen\+::\+Matrix\+Xi \&G, Eigen\+::\+Vector\+Xi \&J)
-\begin{DoxyCompactList}\small\item\em Collapses edges until desired number of faces is achieved but ensures that new vertices are placed outside all previous meshes as per \"{}progressive hulls\"{} in \"{}\+Silhouette clipping\"{} \mbox{[}Sander et al. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Collapses edges until desired number of faces is achieved but ensures that new vertices are placed outside all previous meshes as per "{}progressive hulls"{} in "{}\+Silhouette clipping"{} \mbox{[}Sander et al. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{namespaceigl_1_1copyleft_a411d44b5d8f23907ab845053fbf98a2a}{progressive\+\_\+hulls\+\_\+cost\+\_\+and\+\_\+placement}} (const int e, const Eigen\+::\+Matrix\+Xd \&V, const Eigen\+::\+Matrix\+Xi \&F, const Eigen\+::\+Matrix\+Xi \&E, const Eigen\+::\+Vector\+Xi \&EMAP, const Eigen\+::\+Matrix\+Xi \&EF, const Eigen\+::\+Matrix\+Xi \&EI, double \&cost, Eigen\+::\+Row\+Vector\+Xd \&p)
-\begin{DoxyCompactList}\small\item\em A \"{}cost and placement\"{} compatible with {\ttfamily \doxylink{namespaceigl_a48e2a2c1ae537d160f7767a230be66b3}{igl\+::decimate}} implementing the \"{}progressive hulls\"{} algorithm in \"{}\+Silhouette clipping\"{} \mbox{[}Sander et al. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em A "{}cost and placement"{} compatible with {\ttfamily \doxylink{namespaceigl_a48e2a2c1ae537d160f7767a230be66b3}{igl\+::decimate}} implementing the "{}progressive hulls"{} algorithm in "{}\+Silhouette clipping"{} \mbox{[}Sander et al. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{namespaceigl_1_1copyleft_a61ed7a42a1c65a33d80828d77d2d940d}{quadprog}} (const Eigen\+::\+Matrix\+Xd \&G, const Eigen\+::\+Vector\+Xd \&g0, const Eigen\+::\+Matrix\+Xd \&CE, const Eigen\+::\+Vector\+Xd \&ce0, const Eigen\+::\+Matrix\+Xd \&CI, const Eigen\+::\+Vector\+Xd \&ci0, Eigen\+::\+Vector\+Xd \&x)
 \begin{DoxyCompactList}\small\item\em Solve a (dense) convex quadratric program. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -139,7 +139,7 @@ isovalue defaults to 0.\+0 \Hypertarget{namespaceigl_1_1copyleft_a127b3a99bb9ceb
 
 
 
-Collapses edges until desired number of faces is achieved but ensures that new vertices are placed outside all previous meshes as per \"{}progressive hulls\"{} in \"{}\+Silhouette clipping\"{} \mbox{[}Sander et al. 
+Collapses edges until desired number of faces is achieved but ensures that new vertices are placed outside all previous meshes as per "{}progressive hulls"{} in "{}\+Silhouette clipping"{} \mbox{[}Sander et al. 
 
 2000\mbox{]}.
 
@@ -172,7 +172,7 @@ true if m was reached (otherwise \#G \texorpdfstring{$>$}{>} m)
 
 
 
-A \"{}cost and placement\"{} compatible with {\ttfamily \doxylink{namespaceigl_a48e2a2c1ae537d160f7767a230be66b3}{igl\+::decimate}} implementing the \"{}progressive hulls\"{} algorithm in \"{}\+Silhouette clipping\"{} \mbox{[}Sander et al. 
+A "{}cost and placement"{} compatible with {\ttfamily \doxylink{namespaceigl_a48e2a2c1ae537d160f7767a230be66b3}{igl\+::decimate}} implementing the "{}progressive hulls"{} algorithm in "{}\+Silhouette clipping"{} \mbox{[}Sander et al. 
 
 2000\mbox{]}. This implementation fixes an issue that the original linear program becomes unstable for flat patches by introducing a small quadratic energy term pulling the collapsed edge toward its midpoint. This function is not really meant to be called directly but rather passed to {\ttfamily \doxylink{namespaceigl_a48e2a2c1ae537d160f7767a230be66b3}{igl\+::decimate}} as a handle.
 

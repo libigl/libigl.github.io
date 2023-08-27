@@ -20,51 +20,38 @@
 \DoxyCodeLine{00016\ }
 \DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
 \DoxyCodeLine{00018\ \{}
-\DoxyCodeLine{00031\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF,\ \textcolor{keyword}{typename}\ DerivedE,}
-\DoxyCodeLine{00032\ \ \ \textcolor{keyword}{typename}\ DerivedOE,\ \textcolor{keyword}{typename}\ ScalarM>}
-\DoxyCodeLine{00033\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}}
-\DoxyCodeLine{00034\ \ \ \mbox{\hyperlink{namespaceigl_a155a3161d49cae8b82074de9530cc94e}{cr\_vector\_mass}}(}
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\&\ V,}
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\&\ F,}
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedE>\&\ E,}
-\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedOE>\&\ oE,}
-\DoxyCodeLine{00039\ \ \ \ \ Eigen::SparseMatrix<ScalarM>\&\ M);}
-\DoxyCodeLine{00043\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF,\ \textcolor{keyword}{typename}\ DerivedE,}
-\DoxyCodeLine{00044\ \ \ \textcolor{keyword}{typename}\ DerivedOE,\ \textcolor{keyword}{typename}\ ScalarM>}
-\DoxyCodeLine{00045\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}}
-\DoxyCodeLine{00046\ \ \ \mbox{\hyperlink{namespaceigl_a155a3161d49cae8b82074de9530cc94e}{cr\_vector\_mass}}(}
-\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\&\ V,}
-\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\&\ F,}
-\DoxyCodeLine{00049\ \ \ \ \ Eigen::PlainObjectBase<DerivedE>\&\ E,}
-\DoxyCodeLine{00050\ \ \ \ \ Eigen::PlainObjectBase<DerivedOE>\&\ oE,}
-\DoxyCodeLine{00051\ \ \ \ \ Eigen::SparseMatrix<ScalarM>\&\ M);}
-\DoxyCodeLine{00059\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedF,\ \textcolor{keyword}{typename}\ DerivedL\_sq,\ \textcolor{keyword}{typename}\ DeriveddA,}
-\DoxyCodeLine{00060\ \ \ \textcolor{keyword}{typename}\ DerivedE,\ \textcolor{keyword}{typename}\ DerivedOE,\ \textcolor{keyword}{typename}\ ScalarM>}
-\DoxyCodeLine{00061\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}}
-\DoxyCodeLine{00062\ \ \ \mbox{\hyperlink{namespaceigl_a81f503ac65a78afac1977c24d418ce83}{cr\_vector\_mass\_intrinsic}}(}
-\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\&\ F,}
-\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedL\_sq>\&\ l\_sq,}
-\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DeriveddA>\&\ dA,}
-\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedE>\&\ E,}
-\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedOE>\&\ oE,}
-\DoxyCodeLine{00068\ \ \ \ \ Eigen::SparseMatrix<ScalarM>\&\ M);}
-\DoxyCodeLine{00071\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedF,\ \textcolor{keyword}{typename}\ DerivedL\_sq,\ \textcolor{keyword}{typename}\ DerivedE,}
-\DoxyCodeLine{00072\ \ \ \textcolor{keyword}{typename}\ DerivedOE,\ \textcolor{keyword}{typename}\ ScalarM>}
-\DoxyCodeLine{00073\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}}
-\DoxyCodeLine{00074\ \ \ \mbox{\hyperlink{namespaceigl_a81f503ac65a78afac1977c24d418ce83}{cr\_vector\_mass\_intrinsic}}(}
-\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\&\ F,}
-\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedL\_sq>\&\ l\_sq,}
-\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedE>\&\ E,}
-\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedOE>\&\ oE,}
-\DoxyCodeLine{00079\ \ \ \ \ Eigen::SparseMatrix<ScalarM>\&\ M);}
-\DoxyCodeLine{00080\ }
-\DoxyCodeLine{00081\ \}}
-\DoxyCodeLine{00082\ }
-\DoxyCodeLine{00083\ }
-\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
-\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#\ \ include\ "{}cr\_vector\_mass.cpp"{}}}
-\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00087\ }
-\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00028\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF,\ \textcolor{keyword}{typename}\ DerivedE,}
+\DoxyCodeLine{00029\ \ \ \textcolor{keyword}{typename}\ ScalarM>}
+\DoxyCodeLine{00030\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00031\ \ \ \mbox{\hyperlink{namespaceigl_adb956da2f2c2355242b2c267b86d8fea}{cr\_vector\_mass}}(}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\&\ V,}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\&\ F,}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedE>\&\ E,}
+\DoxyCodeLine{00035\ \ \ \ \ Eigen::SparseMatrix<ScalarM>\&\ M);}
+\DoxyCodeLine{00039\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF,\ \textcolor{keyword}{typename}\ DerivedE,}
+\DoxyCodeLine{00040\ \ \ \textcolor{keyword}{typename}\ ScalarM>}
+\DoxyCodeLine{00041\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00042\ \ \ \mbox{\hyperlink{namespaceigl_adb956da2f2c2355242b2c267b86d8fea}{cr\_vector\_mass}}(}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\&\ V,}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\&\ F,}
+\DoxyCodeLine{00045\ \ \ \ \ Eigen::PlainObjectBase<DerivedE>\&\ E,}
+\DoxyCodeLine{00046\ \ \ \ \ Eigen::SparseMatrix<ScalarM>\&\ M);}
+\DoxyCodeLine{00053\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedF,\ \textcolor{keyword}{typename}\ DeriveddA,}
+\DoxyCodeLine{00054\ \ \ \textcolor{keyword}{typename}\ DerivedE,\ \textcolor{keyword}{typename}\ ScalarM>}
+\DoxyCodeLine{00055\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00056\ \ \ \mbox{\hyperlink{namespaceigl_a10ed1159cd7e63e2d4993c501085be42}{cr\_vector\_mass\_intrinsic}}(}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\&\ F,}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DeriveddA>\&\ dA,}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedE>\&\ E,}
+\DoxyCodeLine{00060\ \ \ \ \ Eigen::SparseMatrix<ScalarM>\&\ M);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#\ \ include\ "{}cr\_vector\_mass.cpp"{}}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

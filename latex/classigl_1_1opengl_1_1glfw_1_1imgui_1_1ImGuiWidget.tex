@@ -2,7 +2,7 @@
 \hypertarget{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget}{}\label{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget}\index{igl::opengl::glfw::imgui::ImGuiWidget@{igl::opengl::glfw::imgui::ImGuiWidget}}
 
 
-Abstract class for imgui \"{}widgets\"{}.  
+Abstract class for imgui "{}widgets"{}.  
 
 
 
@@ -28,17 +28,17 @@ virtual void \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget
 \item 
 virtual void \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_a978027bebed054f7b0f8190a7d56567a}{draw}} ()
 \item 
-virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_acfe42061d0f6fb3995421e2a2dcee0d8}{mouse\+\_\+down}} (int button, int modifier)
+virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_a80e22fce8ca5f661a603204a302f8df8}{mouse\+\_\+down}} (int, int)
 \item 
-virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_a9d82ffbc9b7317e617232a2682b7c5ff}{mouse\+\_\+up}} (int button, int modifier)
+virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_a77a235a76055c0e6f2fd7a7c494a2787}{mouse\+\_\+up}} (int, int)
 \item 
-virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_a4c09eef628ff76c10b2142c2901f9ffc}{mouse\+\_\+move}} (int mouse\+\_\+x, int mouse\+\_\+y)
+virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_aa277e85727cd670d266316f8334ce6d0}{mouse\+\_\+move}} (int, int)
 \item 
-virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_a8f845e4338763276932a487db0c1c6eb}{key\+\_\+pressed}} (unsigned int key, int modifiers)
+virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_a4ce5c9b9a1723373dad8d6833f0845cf}{key\+\_\+pressed}} (unsigned int, int)
 \item 
-virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_aa7fa66da205f8e054f8be0fdf7904e6e}{key\+\_\+down}} (int key, int modifiers)
+virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_a4cb0def4d7ab8247ab0f8600cb114d6e}{key\+\_\+down}} (int, int)
 \item 
-virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_aa08d3adebc82a8c28df9f571247f40cb}{key\+\_\+up}} (int key, int modifiers)
+virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_a7973d43f58a10796cb7b65d5dc45eaef}{key\+\_\+up}} (int, int)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -55,7 +55,7 @@ std\+::string \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidge
 
 
 \doxysubsection{Detailed Description}
-Abstract class for imgui \"{}widgets\"{}. 
+Abstract class for imgui "{}widgets"{}. 
 
 A widget is something that uses imgui, but doesn\textquotesingle{}t own the entire imgui IO stack\+: the single \doxylink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiPlugin}{Im\+Gui\+Plugin} owns that and widgets are registered with it. 
 
@@ -105,57 +105,57 @@ Reimplemented in \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiMe
 
 Reimplemented in \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiMenu_af1d757baf7adad37bbfec7638773df7b}{igl\+::opengl\+::glfw\+::imgui\+::\+Im\+Gui\+Menu}}, \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuizmoWidget_ac4f11d5151f9fa45c8bae307210e3549}{igl\+::opengl\+::glfw\+::imgui\+::\+Im\+Guizmo\+Widget}}, and \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1SelectionWidget_ade740af672d969767138be0c86bfb5cc}{igl\+::opengl\+::glfw\+::imgui\+::\+Selection\+Widget}}.
 
-\Hypertarget{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_acfe42061d0f6fb3995421e2a2dcee0d8}\label{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_acfe42061d0f6fb3995421e2a2dcee0d8} 
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_a80e22fce8ca5f661a603204a302f8df8}\label{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_a80e22fce8ca5f661a603204a302f8df8} 
 \index{igl::opengl::glfw::imgui::ImGuiWidget@{igl::opengl::glfw::imgui::ImGuiWidget}!mouse\_down@{mouse\_down}}
 \index{mouse\_down@{mouse\_down}!igl::opengl::glfw::imgui::ImGuiWidget@{igl::opengl::glfw::imgui::ImGuiWidget}}
 \doxysubsubsection{\texorpdfstring{mouse\_down()}{mouse\_down()}}
-{\footnotesize\ttfamily virtual bool igl\+::opengl\+::glfw\+::imgui\+::\+Im\+Gui\+Widget\+::mouse\+\_\+down (\begin{DoxyParamCaption}\item[{int}]{button,  }\item[{int}]{modifier }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily virtual bool igl\+::opengl\+::glfw\+::imgui\+::\+Im\+Gui\+Widget\+::mouse\+\_\+down (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
 Reimplemented in \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1SelectionWidget_ae3d6749081504b9f20bad54a2c68d04e}{igl\+::opengl\+::glfw\+::imgui\+::\+Selection\+Widget}}.
 
-\Hypertarget{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_a9d82ffbc9b7317e617232a2682b7c5ff}\label{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_a9d82ffbc9b7317e617232a2682b7c5ff} 
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_a77a235a76055c0e6f2fd7a7c494a2787}\label{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_a77a235a76055c0e6f2fd7a7c494a2787} 
 \index{igl::opengl::glfw::imgui::ImGuiWidget@{igl::opengl::glfw::imgui::ImGuiWidget}!mouse\_up@{mouse\_up}}
 \index{mouse\_up@{mouse\_up}!igl::opengl::glfw::imgui::ImGuiWidget@{igl::opengl::glfw::imgui::ImGuiWidget}}
 \doxysubsubsection{\texorpdfstring{mouse\_up()}{mouse\_up()}}
-{\footnotesize\ttfamily virtual bool igl\+::opengl\+::glfw\+::imgui\+::\+Im\+Gui\+Widget\+::mouse\+\_\+up (\begin{DoxyParamCaption}\item[{int}]{button,  }\item[{int}]{modifier }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily virtual bool igl\+::opengl\+::glfw\+::imgui\+::\+Im\+Gui\+Widget\+::mouse\+\_\+up (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
 Reimplemented in \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1SelectionWidget_ae0ff41c5c07505684bc8555980b9b704}{igl\+::opengl\+::glfw\+::imgui\+::\+Selection\+Widget}}.
 
-\Hypertarget{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_a4c09eef628ff76c10b2142c2901f9ffc}\label{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_a4c09eef628ff76c10b2142c2901f9ffc} 
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_aa277e85727cd670d266316f8334ce6d0}\label{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_aa277e85727cd670d266316f8334ce6d0} 
 \index{igl::opengl::glfw::imgui::ImGuiWidget@{igl::opengl::glfw::imgui::ImGuiWidget}!mouse\_move@{mouse\_move}}
 \index{mouse\_move@{mouse\_move}!igl::opengl::glfw::imgui::ImGuiWidget@{igl::opengl::glfw::imgui::ImGuiWidget}}
 \doxysubsubsection{\texorpdfstring{mouse\_move()}{mouse\_move()}}
-{\footnotesize\ttfamily virtual bool igl\+::opengl\+::glfw\+::imgui\+::\+Im\+Gui\+Widget\+::mouse\+\_\+move (\begin{DoxyParamCaption}\item[{int}]{mouse\+\_\+x,  }\item[{int}]{mouse\+\_\+y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily virtual bool igl\+::opengl\+::glfw\+::imgui\+::\+Im\+Gui\+Widget\+::mouse\+\_\+move (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
 Reimplemented in \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1SelectionWidget_a5a4d5a218aa5064401a3d811dc40aaf6}{igl\+::opengl\+::glfw\+::imgui\+::\+Selection\+Widget}}.
 
-\Hypertarget{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_a8f845e4338763276932a487db0c1c6eb}\label{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_a8f845e4338763276932a487db0c1c6eb} 
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_a4ce5c9b9a1723373dad8d6833f0845cf}\label{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_a4ce5c9b9a1723373dad8d6833f0845cf} 
 \index{igl::opengl::glfw::imgui::ImGuiWidget@{igl::opengl::glfw::imgui::ImGuiWidget}!key\_pressed@{key\_pressed}}
 \index{key\_pressed@{key\_pressed}!igl::opengl::glfw::imgui::ImGuiWidget@{igl::opengl::glfw::imgui::ImGuiWidget}}
 \doxysubsubsection{\texorpdfstring{key\_pressed()}{key\_pressed()}}
-{\footnotesize\ttfamily virtual bool igl\+::opengl\+::glfw\+::imgui\+::\+Im\+Gui\+Widget\+::key\+\_\+pressed (\begin{DoxyParamCaption}\item[{unsigned int}]{key,  }\item[{int}]{modifiers }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily virtual bool igl\+::opengl\+::glfw\+::imgui\+::\+Im\+Gui\+Widget\+::key\+\_\+pressed (\begin{DoxyParamCaption}\item[{unsigned int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
 Reimplemented in \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1SelectionWidget_a649654a05afb36fceadb853f867bd79a}{igl\+::opengl\+::glfw\+::imgui\+::\+Selection\+Widget}}.
 
-\Hypertarget{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_aa7fa66da205f8e054f8be0fdf7904e6e}\label{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_aa7fa66da205f8e054f8be0fdf7904e6e} 
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_a4cb0def4d7ab8247ab0f8600cb114d6e}\label{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_a4cb0def4d7ab8247ab0f8600cb114d6e} 
 \index{igl::opengl::glfw::imgui::ImGuiWidget@{igl::opengl::glfw::imgui::ImGuiWidget}!key\_down@{key\_down}}
 \index{key\_down@{key\_down}!igl::opengl::glfw::imgui::ImGuiWidget@{igl::opengl::glfw::imgui::ImGuiWidget}}
 \doxysubsubsection{\texorpdfstring{key\_down()}{key\_down()}}
-{\footnotesize\ttfamily virtual bool igl\+::opengl\+::glfw\+::imgui\+::\+Im\+Gui\+Widget\+::key\+\_\+down (\begin{DoxyParamCaption}\item[{int}]{key,  }\item[{int}]{modifiers }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily virtual bool igl\+::opengl\+::glfw\+::imgui\+::\+Im\+Gui\+Widget\+::key\+\_\+down (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
-\Hypertarget{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_aa08d3adebc82a8c28df9f571247f40cb}\label{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_aa08d3adebc82a8c28df9f571247f40cb} 
+\Hypertarget{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_a7973d43f58a10796cb7b65d5dc45eaef}\label{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget_a7973d43f58a10796cb7b65d5dc45eaef} 
 \index{igl::opengl::glfw::imgui::ImGuiWidget@{igl::opengl::glfw::imgui::ImGuiWidget}!key\_up@{key\_up}}
 \index{key\_up@{key\_up}!igl::opengl::glfw::imgui::ImGuiWidget@{igl::opengl::glfw::imgui::ImGuiWidget}}
 \doxysubsubsection{\texorpdfstring{key\_up()}{key\_up()}}
-{\footnotesize\ttfamily virtual bool igl\+::opengl\+::glfw\+::imgui\+::\+Im\+Gui\+Widget\+::key\+\_\+up (\begin{DoxyParamCaption}\item[{int}]{key,  }\item[{int}]{modifiers }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily virtual bool igl\+::opengl\+::glfw\+::imgui\+::\+Im\+Gui\+Widget\+::key\+\_\+up (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 

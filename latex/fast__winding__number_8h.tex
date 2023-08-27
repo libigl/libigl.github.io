@@ -1,10 +1,10 @@
 \doxysection{include/igl/fast\+\_\+winding\+\_\+number.h File Reference}
 \hypertarget{fast__winding__number_8h}{}\label{fast__winding__number_8h}\index{include/igl/fast\_winding\_number.h@{include/igl/fast\_winding\_number.h}}
-{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
-{\ttfamily \#include \"{}Fast\+Winding\+Number\+For\+Soups.\+h\"{}}\newline
+{\ttfamily \#include "{}igl\+\_\+inline.\+h"{}}\newline
+{\ttfamily \#include "{}Fast\+Winding\+Number\+For\+Soups.\+h"{}}\newline
 {\ttfamily \#include $<$Eigen/\+Core$>$}\newline
 {\ttfamily \#include $<$vector$>$}\newline
-{\ttfamily \#include \"{}fast\+\_\+winding\+\_\+number.\+cpp\"{}}\newline
+{\ttfamily \#include "{}fast\+\_\+winding\+\_\+number.\+cpp"{}}\newline
 \doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
@@ -22,7 +22,7 @@ namespace \mbox{\hyperlink{namespaceigl}{igl}}
 {\footnotesize template$<$typename DerivedP , typename DerivedA , typename DerivedN , typename DerivedQ , typename Derived\+WN $>$ }\\void \mbox{\hyperlink{namespaceigl_ad8da00864c2893af6726906818520d94}{igl\+::fast\+\_\+winding\+\_\+number}} (const Eigen\+::\+Matrix\+Base$<$ DerivedP $>$ \&P, const Eigen\+::\+Matrix\+Base$<$ DerivedN $>$ \&N, const Eigen\+::\+Matrix\+Base$<$ DerivedA $>$ \&A, const Eigen\+::\+Matrix\+Base$<$ DerivedQ $>$ \&Q, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+WN $>$ \&WN)
 \begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedQ , typename DerivedW $>$ }\\void \mbox{\hyperlink{namespaceigl_ab8c8f607d6379a200ca2b06d48a177c7}{igl\+::fast\+\_\+winding\+\_\+number}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const Eigen\+::\+Matrix\+Base$<$ DerivedQ $>$ \&Q, Eigen\+::\+Plain\+Object\+Base$<$ DerivedW $>$ \&W)
-\begin{DoxyCompactList}\small\item\em Compute approximate winding number of a triangle soup mesh according to \"{}\+Fast Winding Numbers for Soups and Clouds\"{} \mbox{[}Barill et al. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Compute approximate winding number of a triangle soup mesh according to "{}\+Fast Winding Numbers for Soups and Clouds"{} \mbox{[}Barill et al. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename DerivedV , typename DerivedF $>$ }\\void \mbox{\hyperlink{namespaceigl_a903c781c6e83ef8f7cf2f8791a603cff}{igl\+::fast\+\_\+winding\+\_\+number}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const int order, Fast\+Winding\+Number\+BVH \&fwn\+\_\+bvh)
 \begin{DoxyCompactList}\small\item\em Precomputation for computing approximate winding numbers of a triangle soup. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename DerivedQ , typename DerivedW $>$ }\\void \mbox{\hyperlink{namespaceigl_a82cd97bb9dcfdb31036cb2d61a8feec7}{igl\+::fast\+\_\+winding\+\_\+number}} (const Fast\+Winding\+Number\+BVH \&fwn\+\_\+bvh, const float accuracy\+\_\+scale, const Eigen\+::\+Matrix\+Base$<$ DerivedQ $>$ \&Q, Eigen\+::\+Plain\+Object\+Base$<$ DerivedW $>$ \&W)

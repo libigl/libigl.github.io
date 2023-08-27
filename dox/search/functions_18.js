@@ -9,6 +9,6 @@ var searchData=
   ['_7etimer_6',['~Timer',['../classigl_1_1Timer.html#a2381e16bd653de578ae921e5fd6e1d34',1,'igl::Timer']]],
   ['_7eviewer_7',['~Viewer',['../classigl_1_1opengl_1_1glfw_1_1Viewer.html#a1c6647830a195ff39a8ec8ddfe62bba3',1,'igl::opengl::glfw::Viewer']]],
   ['_7eviewerplugin_8',['~ViewerPlugin',['../classigl_1_1opengl_1_1glfw_1_1ViewerPlugin.html#ab41d175335ef456af27247a235e3ca9d',1,'igl::opengl::glfw::ViewerPlugin']]],
-  ['_7ewindingnumbertree_9',['~WindingNumberTree',['../classigl_1_1WindingNumberTree.html#a415ddcf1557d35be4788f6173e6d105a',1,'igl::WindingNumberTree']]],
+  ['_7ewindingnumbertree_9',['~WindingNumberTree',['../classigl_1_1WindingNumberTree.html#ad05c76d3effab2368c2556e2e93acd68',1,'igl::WindingNumberTree']]],
   ['_7exmlserializable_10',['~XMLSerializable',['../classigl_1_1xml_1_1XMLSerializable.html#a66308b713433b39ae2c82795ec80bd6c',1,'igl::xml::XMLSerializable']]]
 ];

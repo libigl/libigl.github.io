@@ -3,18 +3,18 @@
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-bool \mbox{\hyperlink{namespaceigl_1_1opengl_1_1stb_ad37ee9758662d81c53e908cde9edcd08}{render\+\_\+to\+\_\+file}} (const std\+::string filename, const int width, const int height, const bool alpha=true, const bool fast=false)
+bool \mbox{\hyperlink{namespaceigl_1_1opengl_1_1stb_a8add79dc1ea61a4a6c731208a72ffb07}{render\+\_\+to\+\_\+file}} (const std\+::string filename, const int width, const int height, const bool alpha=true)
 \begin{DoxyCompactList}\small\item\em Render current open GL image to an image file. \end{DoxyCompactList}\item 
-std\+::thread \mbox{\hyperlink{namespaceigl_1_1opengl_1_1stb_ae87af90e0e05abffa53976168b0ee4b1}{render\+\_\+to\+\_\+file\+\_\+async}} (const std\+::string filename, const int width, const int height, const bool alpha=true, const bool fast=false)
+std\+::thread \mbox{\hyperlink{namespaceigl_1_1opengl_1_1stb_a1ed5c9922f64e421b15c535bb2229df8}{render\+\_\+to\+\_\+file\+\_\+async}} (const std\+::string filename, const int width, const int height, const bool alpha=true)
 \begin{DoxyCompactList}\small\item\em Render current open GL image to file using a separate thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{namespaceigl_1_1opengl_1_1stb_ad37ee9758662d81c53e908cde9edcd08}\label{namespaceigl_1_1opengl_1_1stb_ad37ee9758662d81c53e908cde9edcd08} 
+\Hypertarget{namespaceigl_1_1opengl_1_1stb_a8add79dc1ea61a4a6c731208a72ffb07}\label{namespaceigl_1_1opengl_1_1stb_a8add79dc1ea61a4a6c731208a72ffb07} 
 \index{igl::opengl::stb@{igl::opengl::stb}!render\_to\_file@{render\_to\_file}}
 \index{render\_to\_file@{render\_to\_file}!igl::opengl::stb@{igl::opengl::stb}}
 \doxysubsubsection{\texorpdfstring{render\_to\_file()}{render\_to\_file()}}
-{\footnotesize\ttfamily bool igl\+::opengl\+::stb\+::render\+\_\+to\+\_\+file (\begin{DoxyParamCaption}\item[{const std\+::string}]{filename,  }\item[{const int}]{width,  }\item[{const int}]{height,  }\item[{const bool}]{alpha = {\ttfamily true},  }\item[{const bool}]{fast = {\ttfamily false} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool igl\+::opengl\+::stb\+::render\+\_\+to\+\_\+file (\begin{DoxyParamCaption}\item[{const std\+::string}]{filename,  }\item[{const int}]{width,  }\item[{const int}]{height,  }\item[{const bool}]{alpha = {\ttfamily true} }\end{DoxyParamCaption})}
 
 
 
@@ -30,20 +30,18 @@ Render current open GL image to an image file.
 \hline
 \mbox{\texttt{ in}}  & {\em alpha} & whether to include alpha channel \\
 \hline
-\mbox{\texttt{ in}}  & {\em fast} & sacrifice compression ratio for speed \\
-\hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 true only if no errors occurred
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
-\doxylink{namespaceigl_1_1stb_aae720ac7f0dd06f3962f2563c202aed9}{igl\+::stb\+::write\+\_\+image}, \doxylink{namespaceigl_1_1opengl_1_1stb_ae87af90e0e05abffa53976168b0ee4b1}{render\+\_\+to\+\_\+file\+\_\+async} 
+\doxylink{namespaceigl_1_1stb_aae720ac7f0dd06f3962f2563c202aed9}{igl\+::stb\+::write\+\_\+image}, \doxylink{namespaceigl_1_1opengl_1_1stb_a1ed5c9922f64e421b15c535bb2229df8}{render\+\_\+to\+\_\+file\+\_\+async} 
 \end{DoxySeeAlso}
-\Hypertarget{namespaceigl_1_1opengl_1_1stb_ae87af90e0e05abffa53976168b0ee4b1}\label{namespaceigl_1_1opengl_1_1stb_ae87af90e0e05abffa53976168b0ee4b1} 
+\Hypertarget{namespaceigl_1_1opengl_1_1stb_a1ed5c9922f64e421b15c535bb2229df8}\label{namespaceigl_1_1opengl_1_1stb_a1ed5c9922f64e421b15c535bb2229df8} 
 \index{igl::opengl::stb@{igl::opengl::stb}!render\_to\_file\_async@{render\_to\_file\_async}}
 \index{render\_to\_file\_async@{render\_to\_file\_async}!igl::opengl::stb@{igl::opengl::stb}}
 \doxysubsubsection{\texorpdfstring{render\_to\_file\_async()}{render\_to\_file\_async()}}
-{\footnotesize\ttfamily std\+::thread igl\+::opengl\+::stb\+::render\+\_\+to\+\_\+file\+\_\+async (\begin{DoxyParamCaption}\item[{const std\+::string}]{filename,  }\item[{const int}]{width,  }\item[{const int}]{height,  }\item[{const bool}]{alpha = {\ttfamily true},  }\item[{const bool}]{fast = {\ttfamily false} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::thread igl\+::opengl\+::stb\+::render\+\_\+to\+\_\+file\+\_\+async (\begin{DoxyParamCaption}\item[{const std\+::string}]{filename,  }\item[{const int}]{width,  }\item[{const int}]{height,  }\item[{const bool}]{alpha = {\ttfamily true} }\end{DoxyParamCaption})}
 
 
 
@@ -59,12 +57,10 @@ Render current open GL image to file using a separate thread.
 \hline
 \mbox{\texttt{ in}}  & {\em alpha} & whether to include alpha channel \\
 \hline
-\mbox{\texttt{ in}}  & {\em fast} & sacrifice compression ratio for speed \\
-\hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 true only if no errors occurred
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
-\doxylink{namespaceigl_1_1opengl_1_1stb_ad37ee9758662d81c53e908cde9edcd08}{render\+\_\+to\+\_\+file} 
+\doxylink{namespaceigl_1_1opengl_1_1stb_a8add79dc1ea61a4a6c731208a72ffb07}{render\+\_\+to\+\_\+file} 
 \end{DoxySeeAlso}

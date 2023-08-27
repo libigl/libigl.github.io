@@ -1,0 +1,15 @@
+\doxysection{IGL\+\_\+\+ASSERT.\+h}
+\hypertarget{IGL__ASSERT_8h_source}{}\label{IGL__ASSERT_8h_source}\index{include/igl/IGL\_ASSERT.h@{include/igl/IGL\_ASSERT.h}}
+\mbox{\hyperlink{IGL__ASSERT_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ https://stackoverflow.com/a/985807/148668}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#ifndef\ IGL\_ASSERT}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ NDEBUG}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ IGL\_ASSERT(x)\ do\ \{\ (void)sizeof(x);\}\ while\ (0)}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ IGL\_ASSERT(x)\ assert(x)}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

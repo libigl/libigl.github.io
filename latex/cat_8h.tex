@@ -1,10 +1,10 @@
 \doxysection{include/igl/cat.h File Reference}
 \hypertarget{cat_8h}{}\label{cat_8h}\index{include/igl/cat.h@{include/igl/cat.h}}
-{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include "{}igl\+\_\+inline.\+h"{}}\newline
 {\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
 {\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
 {\ttfamily \#include $<$vector$>$}\newline
-{\ttfamily \#include \"{}cat.\+cpp\"{}}\newline
+{\ttfamily \#include "{}cat.\+cpp"{}}\newline
 \doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
@@ -25,7 +25,7 @@ namespace \mbox{\hyperlink{namespaceigl}{igl}}
 {\footnotesize template$<$class Mat $>$ }\\Mat \mbox{\hyperlink{namespaceigl_a203a47235dd090370a7dccffd385002f}{igl\+::cat}} (const int dim, const Mat \&A, const Mat \&B)
 \begin{DoxyCompactList}\small\item\em Perform concatenation of a two {\itshape dense} matrices along a single dimension If dim == 1, then C = \mbox{[}A;B\mbox{]}; If dim == 2 then C = \mbox{[}A B\mbox{]}. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Mat $>$ }\\void \mbox{\hyperlink{namespaceigl_a2b1d04cfbdfdbb8a94fa5712aa9b868e}{igl\+::cat}} (const std\+::vector$<$ std\+::vector$<$ Mat $>$ $>$ \&A, Mat \&C)
-\begin{DoxyCompactList}\small\item\em Concatenate a \"{}matrix\"{} of sub-\/blocks C = \mbox{[}A0;A1;A2;...;An\mbox{]} where Ai = \mbox{[}A\mbox{[}i\mbox{]}\mbox{[}0\mbox{]} A\mbox{[}i\mbox{]}\mbox{[}1\mbox{]} ... A\mbox{[}i\mbox{]}\mbox{[}m\mbox{]}\mbox{]};. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Concatenate a "{}matrix"{} of sub-\/blocks C = \mbox{[}A0;A1;A2;...;An\mbox{]} where Ai = \mbox{[}A\mbox{[}i\mbox{]}\mbox{[}0\mbox{]} A\mbox{[}i\mbox{]}\mbox{[}1\mbox{]} ... A\mbox{[}i\mbox{]}\mbox{[}m\mbox{]}\mbox{]};. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , typename DerivedC $>$ }\\void \mbox{\hyperlink{namespaceigl_a13402260035cb13a7110a755ae31c487}{igl\+::cat}} (const int dim, const std\+::vector$<$ T $>$ \&A, Eigen\+::\+Plain\+Object\+Base$<$ DerivedC $>$ \&C)
 \begin{DoxyCompactList}\small\item\em Concatenate a std\+::vector of matrices along the specified dimension. \end{DoxyCompactList}\end{DoxyCompactItemize}
 

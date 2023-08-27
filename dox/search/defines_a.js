@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['tetlibrary_0',['TETLIBRARY',['../copyleft_2tetgen_2cdt_8h.html#a27a4aa45fe153c617bcfdc9a135368e5',1,'TETLIBRARY:&#160;cdt.h'],['../mesh__to__tetgenio_8h.html#a27a4aa45fe153c617bcfdc9a135368e5',1,'TETLIBRARY:&#160;mesh_to_tetgenio.h'],['../read__into__tetgenio_8h.html#a27a4aa45fe153c617bcfdc9a135368e5',1,'TETLIBRARY:&#160;read_into_tetgenio.h'],['../tetgenio__to__tetmesh_8h.html#a27a4aa45fe153c617bcfdc9a135368e5',1,'TETLIBRARY:&#160;tetgenio_to_tetmesh.h'],['../tetrahedralize_8h.html#a27a4aa45fe153c617bcfdc9a135368e5',1,'TETLIBRARY:&#160;tetrahedralize.h']]],
+  ['tetlibrary_0',['tetlibrary',['../copyleft_2tetgen_2cdt_8h.html#a27a4aa45fe153c617bcfdc9a135368e5',1,'TETLIBRARY:&#160;cdt.h'],['../mesh__to__tetgenio_8h.html#a27a4aa45fe153c617bcfdc9a135368e5',1,'TETLIBRARY:&#160;mesh_to_tetgenio.h'],['../read__into__tetgenio_8h.html#a27a4aa45fe153c617bcfdc9a135368e5',1,'TETLIBRARY:&#160;read_into_tetgenio.h'],['../tetgenio__to__tetmesh_8h.html#a27a4aa45fe153c617bcfdc9a135368e5',1,'TETLIBRARY:&#160;tetgenio_to_tetmesh.h'],['../tetrahedralize_8h.html#a27a4aa45fe153c617bcfdc9a135368e5',1,'TETLIBRARY:&#160;tetrahedralize.h']]],
   ['tga_5fdesc_5fabits_1',['TGA_DESC_ABITS',['../tga_8h.html#adad5aeaff1e2387d9a4a4b3ea27f1281',1,'tga.h']]],
   ['tga_5fdesc_5fhorizontal_2',['TGA_DESC_HORIZONTAL',['../tga_8h.html#a255757244f4fbec43538dd2ea229b107',1,'tga.h']]],
   ['tga_5fdesc_5fvertical_3',['TGA_DESC_VERTICAL',['../tga_8h.html#ac55820adc49b98690e41d85f03a22dd7',1,'tga.h']]],

@@ -46,7 +46,7 @@ Derived\+V\+::\+Scalar \mbox{\hyperlink{classigl_1_1WindingNumberAABB_ab9be5a4d4
 \item 
 Derived\+V\+::\+Scalar \mbox{\hyperlink{classigl_1_1WindingNumberAABB_a881f29e818ff7cffeb119e1721d03910}{max\+\_\+simple\+\_\+abs\+\_\+winding\+\_\+number}} (const Point \&p) const
 \item 
-\mbox{\hyperlink{classigl_1_1WindingNumberAABB_a47450bc3a5089732f112a8a0a0a4ceb2}{Winding\+Number\+AABB}} (const Eigen\+::\+Matrix\+Base$<$ Eigen\+::\+Matrix$<$ double, -\/1, 2, 0, -\/1, 2 $>$ $>$ \&\mbox{\hyperlink{classigl_1_1WindingNumberTree_a2551264e8045c3dee664537ae21011bc}{V}}, const Eigen\+::\+Matrix\+Base$<$ Eigen\+::\+Matrix$<$ int, -\/1, 2, 0, -\/1, 2 $>$ $>$ \&\mbox{\hyperlink{classigl_1_1WindingNumberTree_ad18e9c1a1712406b55d3e0716a1b8082}{F}})
+\mbox{\hyperlink{classigl_1_1WindingNumberAABB_a8b9c44fee62a6ae054c4996291d5f778}{Winding\+Number\+AABB}} (const Eigen\+::\+Matrix\+Base$<$ Eigen\+::\+Matrix$<$ double, -\/1, 2, 0, -\/1, 2 $>$ $>$ \&, const Eigen\+::\+Matrix\+Base$<$ Eigen\+::\+Matrix$<$ int, -\/1, 2, 0, -\/1, 2 $>$ $>$ \&)
 \item 
 void \mbox{\hyperlink{classigl_1_1WindingNumberAABB_a4bf7e011c9eb1dfde7f4f27d282aea73}{grow}} ()
 \item 
@@ -61,11 +61,9 @@ void \mbox{\hyperlink{classigl_1_1WindingNumberAABB_a3e1bdac80951e5f13a04c069c9f
 \item 
 \mbox{\hyperlink{classigl_1_1WindingNumberTree_a87deecd231e1f190bf39c8c96e69aa6b}{Winding\+Number\+Tree}} (const \mbox{\hyperlink{classigl_1_1WindingNumberTree}{Winding\+Number\+Tree}}$<$ Point, DerivedV, DerivedF $>$ \&\mbox{\hyperlink{classigl_1_1WindingNumberTree_a111e8645c2849defb6617b5adbe67810}{parent}}, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&\mbox{\hyperlink{classigl_1_1WindingNumberTree_ad18e9c1a1712406b55d3e0716a1b8082}{F}})
 \item 
-virtual \mbox{\hyperlink{classigl_1_1WindingNumberTree_a415ddcf1557d35be4788f6173e6d105a}{\texorpdfstring{$\sim$}{\string~}\+Winding\+Number\+Tree}} ()
+virtual \mbox{\hyperlink{classigl_1_1WindingNumberTree_ad05c76d3effab2368c2556e2e93acd68}{\texorpdfstring{$\sim$}{\string~}\+Winding\+Number\+Tree}} ()
 \item 
 void \mbox{\hyperlink{classigl_1_1WindingNumberTree_abff1f1dff02ab9ae24b81a7b534aa9dc}{delete\+\_\+children}} ()
-\item 
-virtual void \mbox{\hyperlink{classigl_1_1WindingNumberTree_a2e3647b6ad15ff4d418f0a0cbc45af0b}{set\+\_\+mesh}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&\mbox{\hyperlink{classigl_1_1WindingNumberTree_a2551264e8045c3dee664537ae21011bc}{V}}, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&\mbox{\hyperlink{classigl_1_1WindingNumberTree_ad18e9c1a1712406b55d3e0716a1b8082}{F}})
 \item 
 void \mbox{\hyperlink{classigl_1_1WindingNumberTree_a6aeaed6e361921d5e5fc817264ea4303}{set\+\_\+method}} (const \mbox{\hyperlink{namespaceigl_a509f63ef3c5ff8b238920eb0fe3ceecf}{Winding\+Number\+Method}} \&m)
 \item 
@@ -75,21 +73,13 @@ const \mbox{\hyperlink{classigl_1_1WindingNumberTree_a08fd4eb30fce0b226f1b2dc285
 \item 
 const \mbox{\hyperlink{classigl_1_1WindingNumberTree_a08fd4eb30fce0b226f1b2dc2853daf04}{Matrix\+XF}} \& \mbox{\hyperlink{classigl_1_1WindingNumberTree_a476dbc98e75d9ee7cb22e13900812393}{getcap}} () const
 \item 
-virtual void \mbox{\hyperlink{classigl_1_1WindingNumberTree_aa23f528100b8899953f4eec7b11c2bb6}{grow}} ()
-\item 
-virtual bool \mbox{\hyperlink{classigl_1_1WindingNumberTree_a02580f4446de4f2e50ae461dd05856f7}{inside}} (const Point \&p) const
-\item 
 Derived\+V\+::\+Scalar \mbox{\hyperlink{classigl_1_1WindingNumberTree_ad38f25af1a8db78d093a7f81dc2b1f95}{winding\+\_\+number}} (const Point \&p) const
 \item 
 Derived\+V\+::\+Scalar \mbox{\hyperlink{classigl_1_1WindingNumberTree_a916c5b98a73f8c0ac810dc14470cdd93}{winding\+\_\+number\+\_\+all}} (const Point \&p) const
 \item 
 Derived\+V\+::\+Scalar \mbox{\hyperlink{classigl_1_1WindingNumberTree_af6031baede4515bddaab39fa44c87596}{winding\+\_\+number\+\_\+boundary}} (const Point \&p) const
 \item 
-void \mbox{\hyperlink{classigl_1_1WindingNumberTree_a5618b0faff1fc19922d780922f675e58}{print}} (const char \texorpdfstring{$\ast$}{*}tab=\"{}\"{})
-\item 
-virtual Derived\+V\+::\+Scalar \mbox{\hyperlink{classigl_1_1WindingNumberTree_a4db0183d5e5fa19ee65fd73f403825ec}{max\+\_\+abs\+\_\+winding\+\_\+number}} (const Point \&p) const
-\item 
-virtual Derived\+V\+::\+Scalar \mbox{\hyperlink{classigl_1_1WindingNumberTree_a09df6ec29cff08ffcca5ca01b29d5695}{max\+\_\+simple\+\_\+abs\+\_\+winding\+\_\+number}} (const Point \&p) const
+void \mbox{\hyperlink{classigl_1_1WindingNumberTree_a5618b0faff1fc19922d780922f675e58}{print}} (const char \texorpdfstring{$\ast$}{*}tab="{}"{})
 \item 
 virtual Derived\+V\+::\+Scalar \mbox{\hyperlink{classigl_1_1WindingNumberTree_a6977fc49ea141561d07410e157f75bdb}{cached\+\_\+winding\+\_\+number}} (const \mbox{\hyperlink{classigl_1_1WindingNumberTree}{Winding\+Number\+Tree}} \&that, const Point \&p) const
 \end{DoxyCompactItemize}
@@ -210,11 +200,11 @@ Constructor.
 {\footnotesize\ttfamily template$<$typename Point , typename DerivedV , typename DerivedF $>$ \\
 \mbox{\hyperlink{classigl_1_1WindingNumberAABB}{igl\+::\+Winding\+Number\+AABB}}$<$ Point, DerivedV, DerivedF $>$\+::\+Winding\+Number\+AABB (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classigl_1_1WindingNumberTree}{Winding\+Number\+Tree}}$<$ Point, DerivedV, DerivedF $>$ \&}]{parent,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&}]{F }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\Hypertarget{classigl_1_1WindingNumberAABB_a47450bc3a5089732f112a8a0a0a4ceb2}\label{classigl_1_1WindingNumberAABB_a47450bc3a5089732f112a8a0a0a4ceb2} 
+\Hypertarget{classigl_1_1WindingNumberAABB_a8b9c44fee62a6ae054c4996291d5f778}\label{classigl_1_1WindingNumberAABB_a8b9c44fee62a6ae054c4996291d5f778} 
 \index{igl::WindingNumberAABB$<$ Point, DerivedV, DerivedF $>$@{igl::WindingNumberAABB$<$ Point, DerivedV, DerivedF $>$}!WindingNumberAABB@{WindingNumberAABB}}
 \index{WindingNumberAABB@{WindingNumberAABB}!igl::WindingNumberAABB$<$ Point, DerivedV, DerivedF $>$@{igl::WindingNumberAABB$<$ Point, DerivedV, DerivedF $>$}}
 \doxysubsubsection{\texorpdfstring{WindingNumberAABB()}{WindingNumberAABB()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1WindingNumberAABB}{igl\+::\+Winding\+Number\+AABB}}$<$ Eigen\+::\+Matrix$<$ double, 1, 3, 1, 1, 3 $>$, Eigen\+::\+Matrix$<$ double,-\/1, 2, 0,-\/1, 2 $>$, Eigen\+::\+Matrix$<$ int,-\/1, 2, 0,-\/1, 2 $>$ $>$\+::\+Winding\+Number\+AABB (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ Eigen\+::\+Matrix$<$ double, -\/1, 2, 0, -\/1, 2 $>$ $>$ \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Eigen\+::\+Matrix$<$ int, -\/1, 2, 0, -\/1, 2 $>$ $>$ \&}]{F }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classigl_1_1WindingNumberAABB}{igl\+::\+Winding\+Number\+AABB}}$<$ Eigen\+::\+Matrix$<$ double, 1, 3, 1, 1, 3 $>$, Eigen\+::\+Matrix$<$ double,-\/1, 2, 0,-\/1, 2 $>$, Eigen\+::\+Matrix$<$ int,-\/1, 2, 0,-\/1, 2 $>$ $>$\+::\+Winding\+Number\+AABB (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ Eigen\+::\+Matrix$<$ double, -\/1, 2, 0, -\/1, 2 $>$ $>$ \&}]{,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Eigen\+::\+Matrix$<$ int, -\/1, 2, 0, -\/1, 2 $>$ $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -246,7 +236,7 @@ Reimplemented from \mbox{\hyperlink{classigl_1_1WindingNumberTree_a2e3647b6ad15f
 \index{init@{init}!igl::WindingNumberAABB$<$ Point, DerivedV, DerivedF $>$@{igl::WindingNumberAABB$<$ Point, DerivedV, DerivedF $>$}}
 \doxysubsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily template$<$typename Point , typename DerivedV , typename DerivedF $>$ \\
-void \mbox{\hyperlink{classigl_1_1WindingNumberAABB}{igl\+::\+Winding\+Number\+AABB}}$<$ Point, DerivedV, DerivedF $>$\+::init\hspace{0.3cm}{\ttfamily [inline]}}
+void \mbox{\hyperlink{classigl_1_1WindingNumberAABB}{igl\+::\+Winding\+Number\+AABB}}$<$ Point, DerivedV, DerivedF $>$\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 \Hypertarget{classigl_1_1WindingNumberAABB_ab00692b233113017589f8239ed1f5d0a}\label{classigl_1_1WindingNumberAABB_ab00692b233113017589f8239ed1f5d0a} 
 \index{igl::WindingNumberAABB$<$ Point, DerivedV, DerivedF $>$@{igl::WindingNumberAABB$<$ Point, DerivedV, DerivedF $>$}!inside@{inside}}
@@ -264,7 +254,7 @@ Reimplemented from \mbox{\hyperlink{classigl_1_1WindingNumberTree_a02580f4446de4
 \index{grow@{grow}!igl::WindingNumberAABB$<$ Point, DerivedV, DerivedF $>$@{igl::WindingNumberAABB$<$ Point, DerivedV, DerivedF $>$}}
 \doxysubsubsection{\texorpdfstring{grow()}{grow()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily template$<$typename Point , typename DerivedV , typename DerivedF $>$ \\
-void \mbox{\hyperlink{classigl_1_1WindingNumberAABB}{igl\+::\+Winding\+Number\+AABB}}$<$ Point, DerivedV, DerivedF $>$\+::grow\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+void \mbox{\hyperlink{classigl_1_1WindingNumberAABB}{igl\+::\+Winding\+Number\+AABB}}$<$ Point, DerivedV, DerivedF $>$\+::grow (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
@@ -275,7 +265,7 @@ Reimplemented from \mbox{\hyperlink{classigl_1_1WindingNumberTree_aa23f528100b88
 \index{compute\_min\_max\_corners@{compute\_min\_max\_corners}!igl::WindingNumberAABB$<$ Point, DerivedV, DerivedF $>$@{igl::WindingNumberAABB$<$ Point, DerivedV, DerivedF $>$}}
 \doxysubsubsection{\texorpdfstring{compute\_min\_max\_corners()}{compute\_min\_max\_corners()}}
 {\footnotesize\ttfamily template$<$typename Point , typename DerivedV , typename DerivedF $>$ \\
-void \mbox{\hyperlink{classigl_1_1WindingNumberAABB}{igl\+::\+Winding\+Number\+AABB}}$<$ Point, DerivedV, DerivedF $>$\+::compute\+\_\+min\+\_\+max\+\_\+corners\hspace{0.3cm}{\ttfamily [inline]}}
+void \mbox{\hyperlink{classigl_1_1WindingNumberAABB}{igl\+::\+Winding\+Number\+AABB}}$<$ Point, DerivedV, DerivedF $>$\+::compute\+\_\+min\+\_\+max\+\_\+corners (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 \Hypertarget{classigl_1_1WindingNumberAABB_ab9be5a4d4a462edf650f8d54067e1db1}\label{classigl_1_1WindingNumberAABB_ab9be5a4d4a462edf650f8d54067e1db1} 
 \index{igl::WindingNumberAABB$<$ Point, DerivedV, DerivedF $>$@{igl::WindingNumberAABB$<$ Point, DerivedV, DerivedF $>$}!max\_abs\_winding\_number@{max\_abs\_winding\_number}}

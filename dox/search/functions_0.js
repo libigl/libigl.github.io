@@ -2,7 +2,7 @@ var searchData=
 [
   ['accumarray_0',['accumarray',['../namespaceigl.html#aa6380cf19be5242826791dfb3b26b113',1,'igl::accumarray(const Eigen::MatrixBase&lt; DerivedS &gt; &amp;S, const typename DerivedA::Scalar V, Eigen::PlainObjectBase&lt; DerivedA &gt; &amp;A)'],['../namespaceigl.html#a8012b0115ea55d7e1ef308d01a37d65c',1,'igl::accumarray(const Eigen::MatrixBase&lt; DerivedS &gt; &amp;S, const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, Eigen::PlainObjectBase&lt; DerivedA &gt; &amp;A)']]],
   ['active_5fset_1',['active_set',['../namespaceigl.html#aebbfd2ea11fa90111a31666f48cc5f00',1,'igl']]],
-  ['add_2',['Add',['../classigl_1_1xml_1_1XMLSerializable.html#a685dd64c3898a03ff47bf28029616f3f',1,'igl::xml::XMLSerializable::Add()'],['../classigl_1_1Serializable.html#a188c1d173965b90be0f03b1096ba2604',1,'igl::Serializable::Add()']]],
+  ['add_2',['add',['../classigl_1_1xml_1_1XMLSerializable.html#a685dd64c3898a03ff47bf28029616f3f',1,'igl::xml::XMLSerializable::Add()'],['../classigl_1_1Serializable.html#a188c1d173965b90be0f03b1096ba2604',1,'igl::Serializable::Add()']]],
   ['add_5fedges_3',['add_edges',['../classigl_1_1opengl_1_1ViewerData.html#ab96f3118a759b4e73c6ce06baf8237a1',1,'igl::opengl::ViewerData']]],
   ['add_5flabel_4',['add_label',['../classigl_1_1opengl_1_1ViewerData.html#a625c2c733a166f00d11f5f092ae9aae5',1,'igl::opengl::ViewerData']]],
   ['add_5fpoints_5',['add_points',['../classigl_1_1opengl_1_1ViewerData.html#a519cbb4c31b87388d0340cfb9b064a6c',1,'igl::opengl::ViewerData']]],

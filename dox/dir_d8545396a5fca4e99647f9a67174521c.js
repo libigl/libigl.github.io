@@ -178,6 +178,7 @@ var dir_d8545396a5fca4e99647f9a67174521c =
     [ "histc.h", "histc_8h.html", "histc_8h" ],
     [ "Hit.h", "Hit_8h.html", "Hit_8h" ],
     [ "hsv_to_rgb.h", "hsv__to__rgb_8h.html", "hsv__to__rgb_8h" ],
+    [ "IGL_ASSERT.h", "IGL__ASSERT_8h.html", "IGL__ASSERT_8h" ],
     [ "igl_inline.h", "igl__inline_8h.html", "igl__inline_8h" ],
     [ "in_element.h", "in__element_8h.html", "in__element_8h" ],
     [ "IndexComparison.h", "IndexComparison_8h.html", "IndexComparison_8h" ],

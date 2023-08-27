@@ -1,8 +1,8 @@
 \doxysection{include/igl/embree/reorient\+\_\+facets\+\_\+raycast.h File Reference}
 \hypertarget{reorient__facets__raycast_8h}{}\label{reorient__facets__raycast_8h}\index{include/igl/embree/reorient\_facets\_raycast.h@{include/igl/embree/reorient\_facets\_raycast.h}}
-{\ttfamily \#include \"{}../igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include "{}../igl\+\_\+inline.\+h"{}}\newline
 {\ttfamily \#include $<$Eigen/\+Core$>$}\newline
-{\ttfamily \#include \"{}reorient\+\_\+facets\+\_\+raycast.\+cpp\"{}}\newline
+{\ttfamily \#include "{}reorient\+\_\+facets\+\_\+raycast.\+cpp"{}}\newline
 \doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
@@ -14,6 +14,6 @@ namespace \mbox{\hyperlink{namespaceigl_1_1embree}{igl\+::embree}}
 \begin{DoxyCompactItemize}
 \item 
 {\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedI , typename DerivedC $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1embree_a50d8808b728c372e38d88371dee2cf0f}{igl\+::embree\+::reorient\+\_\+facets\+\_\+raycast}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F, int rays\+\_\+total, int rays\+\_\+minimum, bool facet\+\_\+wise, bool use\+\_\+parity, bool is\+\_\+verbose, Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&I, Eigen\+::\+Plain\+Object\+Base$<$ DerivedC $>$ \&C)
-\begin{DoxyCompactList}\small\item\em Orient each component (identified by C) of a mesh (V,F) using ambient occlusion such that the front side is less occluded than back side, as described in \"{}\+A Simple Method for Correcting Facet Orientations in \+Polygon Meshes Based on Ray Casting\"{} \mbox{[}Takayama et al. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Orient each component (identified by C) of a mesh (V,F) using ambient occlusion such that the front side is less occluded than back side, as described in "{}\+A Simple Method for Correcting Facet Orientations in \+Polygon Meshes Based on Ray Casting"{} \mbox{[}Takayama et al. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename DerivedV , typename DerivedF , typename Derived\+FF , typename DerivedI $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1embree_a7dd7d02a9d43ec8e0735b96166341d68}{igl\+::embree\+::reorient\+\_\+facets\+\_\+raycast}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+FF $>$ \&FF, Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&I)
 \end{DoxyCompactItemize}

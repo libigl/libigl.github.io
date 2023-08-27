@@ -8,7 +8,7 @@ var classigl_1_1WindingNumberAABB =
     [ "WindingNumberAABB", "classigl_1_1WindingNumberAABB.html#a4602c48892584b11309fc86116345bf6", null ],
     [ "WindingNumberAABB", "classigl_1_1WindingNumberAABB.html#a98a0a9c17aa103c952a23b185d9161d2", null ],
     [ "WindingNumberAABB", "classigl_1_1WindingNumberAABB.html#afa8bb6cb49bf36c77f93931b5cca0c17", null ],
-    [ "WindingNumberAABB", "classigl_1_1WindingNumberAABB.html#a47450bc3a5089732f112a8a0a0a4ceb2", null ],
+    [ "WindingNumberAABB", "classigl_1_1WindingNumberAABB.html#a8b9c44fee62a6ae054c4996291d5f778", null ],
     [ "set_mesh", "classigl_1_1WindingNumberAABB.html#a26c689a9a8f4eb01144fe835155489d8", null ],
     [ "init", "classigl_1_1WindingNumberAABB.html#ab073553bd499470c8f2089ce13c5ad91", null ],
     [ "inside", "classigl_1_1WindingNumberAABB.html#ab00692b233113017589f8239ed1f5d0a", null ],

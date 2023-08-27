@@ -648,7 +648,7 @@
 \DoxyCodeLine{00644\ \ \ \ \ initialized\ =\ \textcolor{keyword}{false};}
 \DoxyCodeLine{00645\ \ \ \}}
 \DoxyCodeLine{00646\ }
-\DoxyCodeLine{00647\ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1Serializable_a3cb2b4150c6ded707033e62db6dd1254}{Serializable::Serializable}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1Serializable}{Serializable}}\&\ obj)}
+\DoxyCodeLine{00647\ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classigl_1_1Serializable_a3cb2b4150c6ded707033e62db6dd1254}{Serializable::Serializable}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1Serializable}{Serializable}}\&\ \textcolor{comment}{/*obj*/})}
 \DoxyCodeLine{00648\ \ \ \{}
 \DoxyCodeLine{00649\ \ \ \ \ initialized\ =\ \textcolor{keyword}{false};}
 \DoxyCodeLine{00650\ \ \ \ \ objects.clear();}
@@ -687,7 +687,7 @@
 \DoxyCodeLine{00683\ \ \ \textcolor{keyword}{namespace\ }serialization}
 \DoxyCodeLine{00684\ \ \ \{}
 \DoxyCodeLine{00685\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00686\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<!is\_serializable<T>::value,\textcolor{keywordtype}{size\_t}>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ T\&\ obj)}
+\DoxyCodeLine{00686\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<!is\_serializable<T>::value,\textcolor{keywordtype}{size\_t}>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ T\&\ \textcolor{comment}{/*obj*/})}
 \DoxyCodeLine{00687\ \ \ \ \ \{}
 \DoxyCodeLine{00688\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{sizeof}(std::vector<char>::size\_type);}
 \DoxyCodeLine{00689\ \ \ \ \ \}}
@@ -726,13 +726,13 @@
 \DoxyCodeLine{00722\ \ \ \ \ \textcolor{comment}{//\ fundamental\ types}}
 \DoxyCodeLine{00723\ }
 \DoxyCodeLine{00724\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00725\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<std::is\_fundamental<T>::value,\textcolor{keywordtype}{size\_t}>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ T\&\ obj)}
+\DoxyCodeLine{00725\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<std::is\_fundamental<T>::value,\textcolor{keywordtype}{size\_t}>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ T\&\ \textcolor{comment}{/*obj*/})}
 \DoxyCodeLine{00726\ \ \ \ \ \{}
 \DoxyCodeLine{00727\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{sizeof}(T);}
 \DoxyCodeLine{00728\ \ \ \ \ \}}
 \DoxyCodeLine{00729\ }
 \DoxyCodeLine{00730\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00731\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<std::is\_fundamental<T>::value>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ T\&\ obj,std::vector<char>\&\ buffer,std::vector<char>::iterator\&\ iter)}
+\DoxyCodeLine{00731\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<std::is\_fundamental<T>::value>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ T\&\ obj,std::vector<char>\&\ \textcolor{comment}{/*buffer*/},std::vector<char>::iterator\&\ iter)}
 \DoxyCodeLine{00732\ \ \ \ \ \{}
 \DoxyCodeLine{00733\ \ \ \ \ \ \ \textcolor{comment}{//serialization::updateMemoryMap(obj,sizeof(T));}}
 \DoxyCodeLine{00734\ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t*\ ptr\ =\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }uint8\_t*\textcolor{keyword}{>}(\&obj);}
@@ -780,13 +780,13 @@
 \DoxyCodeLine{00776\ \ \ \ \ \textcolor{comment}{//\ enum\ types}}
 \DoxyCodeLine{00777\ }
 \DoxyCodeLine{00778\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00779\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<std::is\_enum<T>::value,\textcolor{keywordtype}{size\_t}>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ T\&\ obj)}
+\DoxyCodeLine{00779\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<std::is\_enum<T>::value,\textcolor{keywordtype}{size\_t}>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ T\&\ \textcolor{comment}{/*obj*/})}
 \DoxyCodeLine{00780\ \ \ \ \ \{}
 \DoxyCodeLine{00781\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{sizeof}(T);}
 \DoxyCodeLine{00782\ \ \ \ \ \}}
 \DoxyCodeLine{00783\ }
 \DoxyCodeLine{00784\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00785\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<std::is\_enum<T>::value>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ T\&\ obj,std::vector<char>\&\ buffer,std::vector<char>::iterator\&\ iter)}
+\DoxyCodeLine{00785\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<std::is\_enum<T>::value>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ T\&\ obj,std::vector<char>\&\ \textcolor{comment}{/*buffer*/},std::vector<char>::iterator\&\ iter)}
 \DoxyCodeLine{00786\ \ \ \ \ \{}
 \DoxyCodeLine{00787\ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t*\ ptr\ =\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }uint8\_t*\textcolor{keyword}{>}(\&obj);}
 \DoxyCodeLine{00788\ \ \ \ \ \ \ iter\ =\ std::copy(ptr,ptr+\textcolor{keyword}{sizeof}(T),iter);}
@@ -803,7 +803,7 @@
 \DoxyCodeLine{00799\ \ \ \ \ \textcolor{comment}{//\ SerializableBase}}
 \DoxyCodeLine{00800\ }
 \DoxyCodeLine{00801\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00802\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<std::is\_base\_of<SerializableBase,T>::value,\textcolor{keywordtype}{size\_t}>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ T\&\ obj)}
+\DoxyCodeLine{00802\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<std::is\_base\_of<SerializableBase,T>::value,\textcolor{keywordtype}{size\_t}>::type\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ T\&\ \textcolor{comment}{/*obj*/})}
 \DoxyCodeLine{00803\ \ \ \ \ \{}
 \DoxyCodeLine{00804\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{sizeof}(std::vector<char>::size\_type);}
 \DoxyCodeLine{00805\ \ \ \ \ \}}
@@ -1122,7 +1122,7 @@
 \DoxyCodeLine{01118\ \ \ \ \ \}}
 \DoxyCodeLine{01119\ }
 \DoxyCodeLine{01120\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keywordtype}{int}\ P>}
-\DoxyCodeLine{01121\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ Eigen::Quaternion<T,P>\&\ obj)}
+\DoxyCodeLine{01121\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ Eigen::Quaternion<T,P>\&\ \textcolor{comment}{/*obj*/})}
 \DoxyCodeLine{01122\ \ \ \ \ \{}
 \DoxyCodeLine{01123\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{sizeof}(T)*4;}
 \DoxyCodeLine{01124\ \ \ \ \ \}}
@@ -1229,32 +1229,32 @@
 \DoxyCodeLine{01225\ \ \ \ \ \textcolor{comment}{//\ std::weak\_ptr}}
 \DoxyCodeLine{01226\ }
 \DoxyCodeLine{01227\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{01228\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ std::weak\_ptr<T>\&\ obj)}
+\DoxyCodeLine{01228\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{namespaceigl_1_1serialization_a4d015f75abeee7fe7b62fef24e29d257}{getByteSize}}(\textcolor{keyword}{const}\ std::weak\_ptr<T>\&\ \textcolor{comment}{/*obj*/})}
 \DoxyCodeLine{01229\ \ \ \ \ \{}
 \DoxyCodeLine{01230\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{sizeof}(size\_t);}
 \DoxyCodeLine{01231\ \ \ \ \ \}}
 \DoxyCodeLine{01232\ }
 \DoxyCodeLine{01233\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{01234\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ std::weak\_ptr<T>\&\ obj,std::vector<char>\&\ buffer,std::vector<char>::iterator\&\ iter)}
+\DoxyCodeLine{01234\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ std::weak\_ptr<T>\&\ \textcolor{comment}{/*obj*/},std::vector<char>\&\ \textcolor{comment}{/*buffer*/},std::vector<char>::iterator\&\ \textcolor{comment}{/*iter*/})}
 \DoxyCodeLine{01235\ \ \ \ \ \{}
 \DoxyCodeLine{01236\ }
 \DoxyCodeLine{01237\ \ \ \ \ \}}
 \DoxyCodeLine{01238\ }
 \DoxyCodeLine{01239\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{01240\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(std::weak\_ptr<T>\&\ obj,std::vector<char>::const\_iterator\&\ iter)}
+\DoxyCodeLine{01240\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(std::weak\_ptr<T>\&\ \textcolor{comment}{/*obj*/},std::vector<char>::const\_iterator\&\ \textcolor{comment}{/*iter*/})}
 \DoxyCodeLine{01241\ \ \ \ \ \{}
 \DoxyCodeLine{01242\ }
 \DoxyCodeLine{01243\ \ \ \ \ \}}
 \DoxyCodeLine{01244\ }
 \DoxyCodeLine{01245\ \ \ \ \ \textcolor{comment}{//\ functions\ to\ overload\ for\ non-\/intrusive\ serialization}}
 \DoxyCodeLine{01246\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{01247\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ T\&\ obj,std::vector<char>\&\ buffer)}
+\DoxyCodeLine{01247\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ad5038f9de6cb5ff584a2fa15e8060656}{serialize}}(\textcolor{keyword}{const}\ T\&\ obj,std::vector<char>\&\ \textcolor{comment}{/*buffer*/})}
 \DoxyCodeLine{01248\ \ \ \ \ \{}
 \DoxyCodeLine{01249\ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{keyword}{typeid}(obj).name()\ <<\ \textcolor{stringliteral}{"{}\ is\ not\ serializable:\ derive\ from\ igl::Serializable\ or\ specialize\ the\ template\ function\ igl::serialization::serialize(const\ T\&\ obj,std::vector<char>\&\ buffer)"{}}\ <<\ std::endl;}
 \DoxyCodeLine{01250\ \ \ \ \ \}}
 \DoxyCodeLine{01251\ }
 \DoxyCodeLine{01252\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{01253\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(T\&\ obj,\textcolor{keyword}{const}\ std::vector<char>\&\ buffer)}
+\DoxyCodeLine{01253\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_1_1serialization_ab68d390f1261e9e66efce49b9f265fd8}{deserialize}}(T\&\ obj,\textcolor{keyword}{const}\ std::vector<char>\&\ \textcolor{comment}{/*buffer*/})}
 \DoxyCodeLine{01254\ \ \ \ \ \{}
 \DoxyCodeLine{01255\ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{keyword}{typeid}(obj).name()\ <<\ \textcolor{stringliteral}{"{}\ is\ not\ deserializable:\ derive\ from\ igl::Serializable\ or\ specialize\ the\ template\ function\ igl::serialization::deserialize(T\&\ obj,\ const\ std::vector<char>\&\ buffer)"{}}\ <<\ std::endl;}
 \DoxyCodeLine{01256\ \ \ \ \ \}}

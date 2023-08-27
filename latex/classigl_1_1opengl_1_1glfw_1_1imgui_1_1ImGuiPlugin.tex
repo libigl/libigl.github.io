@@ -59,40 +59,16 @@ float \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiPlugin_a9cae1
 \item 
 virtual \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_ab41d175335ef456af27247a235e3ca9d}{\texorpdfstring{$\sim$}{\string~}\+Viewer\+Plugin}} ()
 \item 
-virtual void \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_ab3a866951292cb886c834cc9dd8f7707}{init}} (\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}} \texorpdfstring{$\ast$}{*}\+\_\+viewer)
-\begin{DoxyCompactList}\small\item\em This function is called when the viewer is initialized (no mesh will be loaded at this stage) \end{DoxyCompactList}\item 
-virtual void \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a7db7367d0ae2de0143ab6735305fb46e}{shutdown}} ()
-\begin{DoxyCompactList}\small\item\em This function is called before shutdown. \end{DoxyCompactList}\item 
-virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_aced5a668c69237187f3f843f4d8dffee}{load}} (std\+::string filename)
+virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a76ced1a477f7431a81e950040a40598e}{load}} (std\+::string)
 \begin{DoxyCompactList}\small\item\em This function is called before a mesh is loaded. \end{DoxyCompactList}\item 
-virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a8791f4d2643fc0ddcbba9e5c65659bae}{save}} (std\+::string filename)
+virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a288a14103b5fad5c7844ee81f6bb6547}{save}} (std\+::string)
 \begin{DoxyCompactList}\small\item\em This function is called before a mesh is saved. \end{DoxyCompactList}\item 
-virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_ae14a053bb6fb981bfc20285a82e31d20}{serialize}} (std\+::vector$<$ char $>$ \&buffer) const
+virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a8593e8cad8b38ae0d6fba1041f0ada0c}{serialize}} (std\+::vector$<$ char $>$ \&) const
 \begin{DoxyCompactList}\small\item\em This function is called when the scene is serialized. \end{DoxyCompactList}\item 
-virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a2dd38857a78fdd009b3757e5c9d42166}{deserialize}} (const std\+::vector$<$ char $>$ \&buffer)
+virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a32ce3d51d48a718dca4335bd57358fff}{deserialize}} (const std\+::vector$<$ char $>$ \&)
 \begin{DoxyCompactList}\small\item\em This function is called when the scene is deserialized. \end{DoxyCompactList}\item 
 virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a4dacec0528c6a7c3e601823e92230630}{post\+\_\+load}} ()
-\begin{DoxyCompactList}\small\item\em Runs immediately after a new mesh has been loaded. \end{DoxyCompactList}\item 
-virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a97b4bf21e6fcfe3126cd42b5d61b1a54}{pre\+\_\+draw}} ()
-\begin{DoxyCompactList}\small\item\em This function is called before the draw procedure of \doxylink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}. \end{DoxyCompactList}\item 
-virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_aa296760b1a17bd148794673165857ce2}{post\+\_\+draw}} ()
-\begin{DoxyCompactList}\small\item\em This function is called after the draw procedure of \doxylink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}. \end{DoxyCompactList}\item 
-virtual void \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a728a7ab835c779be44097369f312a5cd}{post\+\_\+resize}} (int w, int h)
-\begin{DoxyCompactList}\small\item\em This function is called after the window has been resized. \end{DoxyCompactList}\item 
-virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_aebff5957169e2181ed6d69915d668c90}{mouse\+\_\+down}} (int button, int modifier)
-\item 
-virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a5cae093301878ead08232c11d68660a6}{mouse\+\_\+up}} (int button, int modifier)
-\item 
-virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_aa6a8e31b6a0bf9862b5e9d57cbe2e665}{mouse\+\_\+move}} (int mouse\+\_\+x, int mouse\+\_\+y)
-\item 
-virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_aa42a1c4ba8c4fd147bf786a4e469cae3}{mouse\+\_\+scroll}} (float delta\+\_\+y)
-\item 
-virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_acc4fe69574da3f28b1ee4ade613532f3}{key\+\_\+pressed}} (unsigned int key, int modifiers)
-\item 
-virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_afea9153fa5c900c1b09b2169bb0be09f}{key\+\_\+down}} (int key, int modifiers)
-\item 
-virtual bool \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a8a92255343b90b13a208da451614768d}{key\+\_\+up}} (int key, int modifiers)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Runs immediately after a new mesh has been loaded. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -195,7 +171,7 @@ Reimplemented from \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a
 \index{igl::opengl::glfw::imgui::ImGuiPlugin@{igl::opengl::glfw::imgui::ImGuiPlugin}!post\_resize@{post\_resize}}
 \index{post\_resize@{post\_resize}!igl::opengl::glfw::imgui::ImGuiPlugin@{igl::opengl::glfw::imgui::ImGuiPlugin}}
 \doxysubsubsection{\texorpdfstring{post\_resize()}{post\_resize()}}
-{\footnotesize\ttfamily virtual void igl\+::opengl\+::glfw\+::imgui\+::\+Im\+Gui\+Plugin\+::post\+\_\+resize (\begin{DoxyParamCaption}\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily virtual void igl\+::opengl\+::glfw\+::imgui\+::\+Im\+Gui\+Plugin\+::post\+\_\+resize (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -203,7 +179,7 @@ This function is called after the window has been resized.
 
 
 
-Reimplemented from \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a728a7ab835c779be44097369f312a5cd}{igl\+::opengl\+::glfw\+::\+Viewer\+Plugin}}.
+Reimplemented from \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a7e897c2f3a5278b12ec0384b4f5c7323}{igl\+::opengl\+::glfw\+::\+Viewer\+Plugin}}.
 
 \Hypertarget{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiPlugin_ab94d16f41e4750e9b706adaec855d142}\label{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiPlugin_ab94d16f41e4750e9b706adaec855d142} 
 \index{igl::opengl::glfw::imgui::ImGuiPlugin@{igl::opengl::glfw::imgui::ImGuiPlugin}!mouse\_down@{mouse\_down}}
@@ -213,7 +189,7 @@ Reimplemented from \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a
 
 
 
-Reimplemented from \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_aebff5957169e2181ed6d69915d668c90}{igl\+::opengl\+::glfw\+::\+Viewer\+Plugin}}.
+Reimplemented from \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_ac8831500ec718fe02a25facf55efe6ff}{igl\+::opengl\+::glfw\+::\+Viewer\+Plugin}}.
 
 \Hypertarget{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiPlugin_a3d22553eb110ef0b1caa9fae80365faa}\label{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiPlugin_a3d22553eb110ef0b1caa9fae80365faa} 
 \index{igl::opengl::glfw::imgui::ImGuiPlugin@{igl::opengl::glfw::imgui::ImGuiPlugin}!mouse\_up@{mouse\_up}}
@@ -223,7 +199,7 @@ Reimplemented from \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a
 
 
 
-Reimplemented from \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a5cae093301878ead08232c11d68660a6}{igl\+::opengl\+::glfw\+::\+Viewer\+Plugin}}.
+Reimplemented from \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a03050a6a996680a5bb1ab50a23455b1c}{igl\+::opengl\+::glfw\+::\+Viewer\+Plugin}}.
 
 \Hypertarget{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiPlugin_adc44b28cf03c4d85de9e0b48440bbdcd}\label{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiPlugin_adc44b28cf03c4d85de9e0b48440bbdcd} 
 \index{igl::opengl::glfw::imgui::ImGuiPlugin@{igl::opengl::glfw::imgui::ImGuiPlugin}!mouse\_move@{mouse\_move}}
@@ -233,7 +209,7 @@ Reimplemented from \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a
 
 
 
-Reimplemented from \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_aa6a8e31b6a0bf9862b5e9d57cbe2e665}{igl\+::opengl\+::glfw\+::\+Viewer\+Plugin}}.
+Reimplemented from \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_aee4ae96a4a4dc41780869b3b427a5a9b}{igl\+::opengl\+::glfw\+::\+Viewer\+Plugin}}.
 
 \Hypertarget{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiPlugin_a9389de276238544d47e932a754f0c4ce}\label{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiPlugin_a9389de276238544d47e932a754f0c4ce} 
 \index{igl::opengl::glfw::imgui::ImGuiPlugin@{igl::opengl::glfw::imgui::ImGuiPlugin}!mouse\_scroll@{mouse\_scroll}}
@@ -243,7 +219,7 @@ Reimplemented from \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a
 
 
 
-Reimplemented from \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_aa42a1c4ba8c4fd147bf786a4e469cae3}{igl\+::opengl\+::glfw\+::\+Viewer\+Plugin}}.
+Reimplemented from \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_aa33c167dc734956d89d418ca68f37234}{igl\+::opengl\+::glfw\+::\+Viewer\+Plugin}}.
 
 \Hypertarget{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiPlugin_aa48f40af12c3b29e2c40f2c8863c2fe1}\label{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiPlugin_aa48f40af12c3b29e2c40f2c8863c2fe1} 
 \index{igl::opengl::glfw::imgui::ImGuiPlugin@{igl::opengl::glfw::imgui::ImGuiPlugin}!key\_pressed@{key\_pressed}}
@@ -253,7 +229,7 @@ Reimplemented from \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a
 
 
 
-Reimplemented from \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_acc4fe69574da3f28b1ee4ade613532f3}{igl\+::opengl\+::glfw\+::\+Viewer\+Plugin}}.
+Reimplemented from \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_aa5e725c599a18bf02a2bb51e192f4026}{igl\+::opengl\+::glfw\+::\+Viewer\+Plugin}}.
 
 \Hypertarget{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiPlugin_a612047703b96087c1041102ab691ef8b}\label{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiPlugin_a612047703b96087c1041102ab691ef8b} 
 \index{igl::opengl::glfw::imgui::ImGuiPlugin@{igl::opengl::glfw::imgui::ImGuiPlugin}!key\_down@{key\_down}}
@@ -263,7 +239,7 @@ Reimplemented from \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a
 
 
 
-Reimplemented from \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_afea9153fa5c900c1b09b2169bb0be09f}{igl\+::opengl\+::glfw\+::\+Viewer\+Plugin}}.
+Reimplemented from \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a43c4a637f5bb16911b72735677f27a7e}{igl\+::opengl\+::glfw\+::\+Viewer\+Plugin}}.
 
 \Hypertarget{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiPlugin_a01966908594715af2a5c41b262878eca}\label{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiPlugin_a01966908594715af2a5c41b262878eca} 
 \index{igl::opengl::glfw::imgui::ImGuiPlugin@{igl::opengl::glfw::imgui::ImGuiPlugin}!key\_up@{key\_up}}
@@ -273,7 +249,7 @@ Reimplemented from \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a
 
 
 
-Reimplemented from \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a8a92255343b90b13a208da451614768d}{igl\+::opengl\+::glfw\+::\+Viewer\+Plugin}}.
+Reimplemented from \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin_a3a5e371220157edf1698f0fddcc4035f}{igl\+::opengl\+::glfw\+::\+Viewer\+Plugin}}.
 
 \Hypertarget{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiPlugin_a2270d449d33fb26a0f8be0f60c3e1f6d}\label{classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiPlugin_a2270d449d33fb26a0f8be0f60c3e1f6d} 
 \index{igl::opengl::glfw::imgui::ImGuiPlugin@{igl::opengl::glfw::imgui::ImGuiPlugin}!draw\_text@{draw\_text}}

@@ -2,15 +2,15 @@
 \hypertarget{arap__dof_8h}{}\label{arap__dof_8h}\index{include/igl/arap\_dof.h@{include/igl/arap\_dof.h}}
 
 
-\"{}\+Fast Automatic Skinning Transformations\"{} \mbox{[}Jacobson et al. 2012\mbox{]}  
+"{}\+Fast Automatic Skinning Transformations"{} \mbox{[}Jacobson et al. 2012\mbox{]}  
 
 
-{\ttfamily \#include \"{}igl\+\_\+inline.\+h\"{}}\newline
+{\ttfamily \#include "{}igl\+\_\+inline.\+h"{}}\newline
 {\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
 {\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
-{\ttfamily \#include \"{}ARAPEnergy\+Type.\+h\"{}}\newline
+{\ttfamily \#include "{}ARAPEnergy\+Type.\+h"{}}\newline
 {\ttfamily \#include $<$vector$>$}\newline
-{\ttfamily \#include \"{}arap\+\_\+dof.\+cpp\"{}}\newline
+{\ttfamily \#include "{}arap\+\_\+dof.\+cpp"{}}\newline
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
@@ -25,7 +25,7 @@ namespace \mbox{\hyperlink{namespaceigl}{igl}}
 \begin{DoxyCompactItemize}
 \item 
 {\footnotesize template$<$typename Lbs\+Matrix\+Type , typename SSCALAR $>$ }\\bool \mbox{\hyperlink{namespaceigl_a26233fdaaff7c535c5cf9e54d58f6f80}{igl\+::arap\+\_\+dof\+\_\+precomputation}} (const Eigen\+::\+Matrix\+Xd \&V, const Eigen\+::\+Matrix\+Xi \&F, const Lbs\+Matrix\+Type \&M, const Eigen\+::\+Matrix$<$ int, Eigen\+::\+Dynamic, 1 $>$ \&G, \mbox{\hyperlink{structigl_1_1ArapDOFData}{Arap\+DOFData}}$<$ Lbs\+Matrix\+Type, SSCALAR $>$ \&data)
-\begin{DoxyCompactList}\small\item\em Precomputes the system to optimize for \"{}\+Fast Automatic Skinning \+Transformations\"{} \mbox{[}Jacobson et al. 2012\mbox{]} skinning degrees of freedom optimization using as-\/rigid-\/as-\/possible energy. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Precomputes the system to optimize for "{}\+Fast Automatic Skinning \+Transformations"{} \mbox{[}Jacobson et al. 2012\mbox{]} skinning degrees of freedom optimization using as-\/rigid-\/as-\/possible energy. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Lbs\+Matrix\+Type , typename SSCALAR $>$ }\\bool \mbox{\hyperlink{namespaceigl_acec31e2faca7eecae08c921a0430d0aa}{igl\+::arap\+\_\+dof\+\_\+recomputation}} (const Eigen\+::\+Matrix$<$ int, Eigen\+::\+Dynamic, 1 $>$ \&fixed\+\_\+dim, const Eigen\+::\+Sparse\+Matrix$<$ double $>$ \&A\+\_\+eq, \mbox{\hyperlink{structigl_1_1ArapDOFData}{Arap\+DOFData}}$<$ Lbs\+Matrix\+Type, SSCALAR $>$ \&data)
 \begin{DoxyCompactList}\small\item\em Should always be called after arap\+\_\+dof\+\_\+precomputation, but may be called in between successive calls to arap\+\_\+dof\+\_\+update, recomputes precomputation given that there are only changes in free and fixed. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Lbs\+Matrix\+Type , typename SSCALAR $>$ }\\bool \mbox{\hyperlink{namespaceigl_a31279c751ae3a7d24bc56dd4c8029d1e}{igl\+::arap\+\_\+dof\+\_\+update}} (const \mbox{\hyperlink{structigl_1_1ArapDOFData}{Arap\+DOFData}}$<$ Lbs\+Matrix\+Type, SSCALAR $>$ \&data, const Eigen\+::\+Matrix$<$ double, Eigen\+::\+Dynamic, 1 $>$ \&B\+\_\+eq, const Eigen\+::\+Matrix\+Xd \&L0, const int max\+\_\+iters, const double tol, Eigen\+::\+Matrix\+Xd \&L)
@@ -33,7 +33,7 @@ namespace \mbox{\hyperlink{namespaceigl}{igl}}
 
 
 \doxysubsection{Detailed Description}
-\"{}\+Fast Automatic Skinning Transformations\"{} \mbox{[}Jacobson et al. 2012\mbox{]} 
+"{}\+Fast Automatic Skinning Transformations"{} \mbox{[}Jacobson et al. 2012\mbox{]} 
 
 Arap DOF precomputation consists of two parts the computation. The first is that which depends solely on the mesh (V,F), the linear blend skinning weights (M) and the groups G. Then there\textquotesingle{}s the part that depends on the previous precomputation and the list of free and fixed vertices.\hypertarget{arap__dof_8h_autotoc_md2}{}\doxyparagraph{\texorpdfstring{Caller example\+:}{Caller example:}}\label{arap__dof_8h_autotoc_md2}
 \begin{DoxyVerb}Once:
@@ -44,7 +44,7 @@ Each frame:
     arap_dof_update(...)
   end
 \end{DoxyVerb}
- The code and variables differ from the description in Section 3 of \"{}\+Fast \+Automatic Skinning Transformations\"{} by \mbox{[}Jacobson et al. 2012\mbox{]}
+ The code and variables differ from the description in Section 3 of "{}\+Fast \+Automatic Skinning Transformations"{} by \mbox{[}Jacobson et al. 2012\mbox{]}
 
 Here is a useful conversion table\+: \begin{DoxyVerb}[article]                             [code]
 S = \tilde{K} T                       S = CSM * Lsep

@@ -74,7 +74,7 @@ void \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_ac1b9f6bfe13ca76f6a159bcd
 \begin{DoxyCompactList}\small\item\em Generates a default grid texture (without uvs) \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_aa83ab9452baf5a19fa8a81a93517995e}{copy\+\_\+options}} (const \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore}{Viewer\+Core}} \&from, const \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerCore}{Viewer\+Core}} \&to)
 \begin{DoxyCompactList}\small\item\em Copy visualization options from one viewport to another. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a7eabe8a43ffa772906fd320906a6438e}{update\+\_\+labels}} (\mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL}{igl\+::opengl\+::\+Mesh\+GL}} \&\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a41c281eb989bf0905d2382a281365a6c}{meshgl}}, \mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL}{igl\+::opengl\+::\+Mesh\+GL\+::\+Text\+GL}} \&GL\+\_\+labels, const Eigen\+::\+Matrix\+Xd \&positions, const std\+::vector$<$ std\+::string $>$ \&strings)
+void \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a2cc98ae34ce862918bc0ccafd8dace3d}{update\+\_\+labels}} (\mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL}{igl\+::opengl\+::\+Mesh\+GL\+::\+Text\+GL}} \&GL\+\_\+labels, const Eigen\+::\+Matrix\+Xd \&positions, const std\+::vector$<$ std\+::string $>$ \&strings)
 \begin{DoxyCompactList}\small\item\em Update contents from a \textquotesingle{}Data\textquotesingle{} instance. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a174d8b6b04e22a0e04642487e424f68d}{update\+GL}} (const \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData}{igl\+::opengl\+::\+Viewer\+Data}} \&data, const bool \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a25b4e769d28d918ceffff12e6349f2da}{invert\+\_\+normals}}, \mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL}{igl\+::opengl\+::\+Mesh\+GL}} \&\mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a41c281eb989bf0905d2382a281365a6c}{meshgl}})
 \begin{DoxyCompactList}\small\item\em Update the meshgl object. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -139,23 +139,23 @@ bool \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a25b4e769d28d918ceffff12e
 \begin{DoxyCompactList}\small\item\em Invert mesh normals. \end{DoxyCompactList}\item 
 unsigned int \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_afe1e980442c1d2d86faea50cebfb6eb4}{is\+\_\+visible}}
 \begin{DoxyCompactList}\small\item\em Visualization options Each option is a binary mask specifying on which viewport each option is set. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_aa15ff82f63580806342dcfe36a8e3a25}{show\+\_\+custom\+\_\+labels}}
+\item 
+unsigned int \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_aef7839330c3ba448c33b8f56e68f1c51}{show\+\_\+face\+\_\+labels}}
+\item 
+unsigned int \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a31d80fb665dc7cfa4a05b009cdb082e3}{show\+\_\+faces}}
+\item 
+unsigned int \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_af5a440f3bd2561a57459f88d7b59e3a5}{show\+\_\+lines}}
+\item 
 unsigned int \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_ad50148662ac832150337443a8c8c0542}{show\+\_\+overlay}}
 \item 
 unsigned int \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a8e7a5e55f1fd6b16d89edff8390c1231}{show\+\_\+overlay\+\_\+depth}}
 \item 
 unsigned int \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_aa1d8580c70fa8b02fe1599d317183e08}{show\+\_\+texture}}
 \item 
-unsigned int \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a77f6c02ac80653d0f6e993d833cc4322}{use\+\_\+matcap}}
-\item 
-unsigned int \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a31d80fb665dc7cfa4a05b009cdb082e3}{show\+\_\+faces}}
-\item 
-unsigned int \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_af5a440f3bd2561a57459f88d7b59e3a5}{show\+\_\+lines}}
-\item 
 unsigned int \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_ae6ed71c996b82039afd47f48ad5c02bd}{show\+\_\+vertex\+\_\+labels}}
 \item 
-unsigned int \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_aef7839330c3ba448c33b8f56e68f1c51}{show\+\_\+face\+\_\+labels}}
-\item 
-unsigned int \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_aa15ff82f63580806342dcfe36a8e3a25}{show\+\_\+custom\+\_\+labels}}
+unsigned int \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a77f6c02ac80653d0f6e993d833cc4322}{use\+\_\+matcap}}
 \item 
 float \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_aeba732f62241985d64c25c192b257b53}{point\+\_\+size}}
 \begin{DoxyCompactList}\small\item\em Point size / line width. \end{DoxyCompactList}\item 
@@ -657,11 +657,11 @@ Copy visualization options from one viewport to another.
 \mbox{\texttt{ in}}  & {\em to} & destination viewport \\
 \hline
 \end{DoxyParams}
-\Hypertarget{classigl_1_1opengl_1_1ViewerData_a7eabe8a43ffa772906fd320906a6438e}\label{classigl_1_1opengl_1_1ViewerData_a7eabe8a43ffa772906fd320906a6438e} 
+\Hypertarget{classigl_1_1opengl_1_1ViewerData_a2cc98ae34ce862918bc0ccafd8dace3d}\label{classigl_1_1opengl_1_1ViewerData_a2cc98ae34ce862918bc0ccafd8dace3d} 
 \index{igl::opengl::ViewerData@{igl::opengl::ViewerData}!update\_labels@{update\_labels}}
 \index{update\_labels@{update\_labels}!igl::opengl::ViewerData@{igl::opengl::ViewerData}}
 \doxysubsubsection{\texorpdfstring{update\_labels()}{update\_labels()}}
-{\footnotesize\ttfamily void igl\+::opengl\+::\+Viewer\+Data\+::update\+\_\+labels (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classigl_1_1opengl_1_1MeshGL}{igl\+::opengl\+::\+Mesh\+GL}} \&}]{meshgl,  }\item[{\mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL}{igl\+::opengl\+::\+Mesh\+GL\+::\+Text\+GL}} \&}]{GL\+\_\+labels,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{positions,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{strings }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void igl\+::opengl\+::\+Viewer\+Data\+::update\+\_\+labels (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structigl_1_1opengl_1_1MeshGL_1_1TextGL}{igl\+::opengl\+::\+Mesh\+GL\+::\+Text\+GL}} \&}]{GL\+\_\+labels,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{positions,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{strings }\end{DoxyParamCaption})}
 
 
 
@@ -669,8 +669,6 @@ Update contents from a \textquotesingle{}Data\textquotesingle{} instance.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in,out}}  & {\em meshgl} & mesh to be updated \\
-\hline
 \mbox{\texttt{ in,out}}  & {\em GL\+\_\+labels} & labels to be updated \\
 \hline
 \mbox{\texttt{ in}}  & {\em positions} & positions of the labels \\
@@ -990,7 +988,31 @@ Invert mesh normals.
 
 Visualization options Each option is a binary mask specifying on which viewport each option is set. 
 
-When using a single viewport, standard boolean can still be used for simplicity. \Hypertarget{classigl_1_1opengl_1_1ViewerData_ad50148662ac832150337443a8c8c0542}\label{classigl_1_1opengl_1_1ViewerData_ad50148662ac832150337443a8c8c0542} 
+When using a single viewport, standard boolean can still be used for simplicity. \Hypertarget{classigl_1_1opengl_1_1ViewerData_aa15ff82f63580806342dcfe36a8e3a25}\label{classigl_1_1opengl_1_1ViewerData_aa15ff82f63580806342dcfe36a8e3a25} 
+\index{igl::opengl::ViewerData@{igl::opengl::ViewerData}!show\_custom\_labels@{show\_custom\_labels}}
+\index{show\_custom\_labels@{show\_custom\_labels}!igl::opengl::ViewerData@{igl::opengl::ViewerData}}
+\doxysubsubsection{\texorpdfstring{show\_custom\_labels}{show\_custom\_labels}}
+{\footnotesize\ttfamily unsigned int igl\+::opengl\+::\+Viewer\+Data\+::show\+\_\+custom\+\_\+labels}
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerData_aef7839330c3ba448c33b8f56e68f1c51}\label{classigl_1_1opengl_1_1ViewerData_aef7839330c3ba448c33b8f56e68f1c51} 
+\index{igl::opengl::ViewerData@{igl::opengl::ViewerData}!show\_face\_labels@{show\_face\_labels}}
+\index{show\_face\_labels@{show\_face\_labels}!igl::opengl::ViewerData@{igl::opengl::ViewerData}}
+\doxysubsubsection{\texorpdfstring{show\_face\_labels}{show\_face\_labels}}
+{\footnotesize\ttfamily unsigned int igl\+::opengl\+::\+Viewer\+Data\+::show\+\_\+face\+\_\+labels}
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerData_a31d80fb665dc7cfa4a05b009cdb082e3}\label{classigl_1_1opengl_1_1ViewerData_a31d80fb665dc7cfa4a05b009cdb082e3} 
+\index{igl::opengl::ViewerData@{igl::opengl::ViewerData}!show\_faces@{show\_faces}}
+\index{show\_faces@{show\_faces}!igl::opengl::ViewerData@{igl::opengl::ViewerData}}
+\doxysubsubsection{\texorpdfstring{show\_faces}{show\_faces}}
+{\footnotesize\ttfamily unsigned int igl\+::opengl\+::\+Viewer\+Data\+::show\+\_\+faces}
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerData_af5a440f3bd2561a57459f88d7b59e3a5}\label{classigl_1_1opengl_1_1ViewerData_af5a440f3bd2561a57459f88d7b59e3a5} 
+\index{igl::opengl::ViewerData@{igl::opengl::ViewerData}!show\_lines@{show\_lines}}
+\index{show\_lines@{show\_lines}!igl::opengl::ViewerData@{igl::opengl::ViewerData}}
+\doxysubsubsection{\texorpdfstring{show\_lines}{show\_lines}}
+{\footnotesize\ttfamily unsigned int igl\+::opengl\+::\+Viewer\+Data\+::show\+\_\+lines}
+
+\Hypertarget{classigl_1_1opengl_1_1ViewerData_ad50148662ac832150337443a8c8c0542}\label{classigl_1_1opengl_1_1ViewerData_ad50148662ac832150337443a8c8c0542} 
 \index{igl::opengl::ViewerData@{igl::opengl::ViewerData}!show\_overlay@{show\_overlay}}
 \index{show\_overlay@{show\_overlay}!igl::opengl::ViewerData@{igl::opengl::ViewerData}}
 \doxysubsubsection{\texorpdfstring{show\_overlay}{show\_overlay}}
@@ -1008,41 +1030,17 @@ When using a single viewport, standard boolean can still be used for simplicity.
 \doxysubsubsection{\texorpdfstring{show\_texture}{show\_texture}}
 {\footnotesize\ttfamily unsigned int igl\+::opengl\+::\+Viewer\+Data\+::show\+\_\+texture}
 
-\Hypertarget{classigl_1_1opengl_1_1ViewerData_a77f6c02ac80653d0f6e993d833cc4322}\label{classigl_1_1opengl_1_1ViewerData_a77f6c02ac80653d0f6e993d833cc4322} 
-\index{igl::opengl::ViewerData@{igl::opengl::ViewerData}!use\_matcap@{use\_matcap}}
-\index{use\_matcap@{use\_matcap}!igl::opengl::ViewerData@{igl::opengl::ViewerData}}
-\doxysubsubsection{\texorpdfstring{use\_matcap}{use\_matcap}}
-{\footnotesize\ttfamily unsigned int igl\+::opengl\+::\+Viewer\+Data\+::use\+\_\+matcap}
-
-\Hypertarget{classigl_1_1opengl_1_1ViewerData_a31d80fb665dc7cfa4a05b009cdb082e3}\label{classigl_1_1opengl_1_1ViewerData_a31d80fb665dc7cfa4a05b009cdb082e3} 
-\index{igl::opengl::ViewerData@{igl::opengl::ViewerData}!show\_faces@{show\_faces}}
-\index{show\_faces@{show\_faces}!igl::opengl::ViewerData@{igl::opengl::ViewerData}}
-\doxysubsubsection{\texorpdfstring{show\_faces}{show\_faces}}
-{\footnotesize\ttfamily unsigned int igl\+::opengl\+::\+Viewer\+Data\+::show\+\_\+faces}
-
-\Hypertarget{classigl_1_1opengl_1_1ViewerData_af5a440f3bd2561a57459f88d7b59e3a5}\label{classigl_1_1opengl_1_1ViewerData_af5a440f3bd2561a57459f88d7b59e3a5} 
-\index{igl::opengl::ViewerData@{igl::opengl::ViewerData}!show\_lines@{show\_lines}}
-\index{show\_lines@{show\_lines}!igl::opengl::ViewerData@{igl::opengl::ViewerData}}
-\doxysubsubsection{\texorpdfstring{show\_lines}{show\_lines}}
-{\footnotesize\ttfamily unsigned int igl\+::opengl\+::\+Viewer\+Data\+::show\+\_\+lines}
-
 \Hypertarget{classigl_1_1opengl_1_1ViewerData_ae6ed71c996b82039afd47f48ad5c02bd}\label{classigl_1_1opengl_1_1ViewerData_ae6ed71c996b82039afd47f48ad5c02bd} 
 \index{igl::opengl::ViewerData@{igl::opengl::ViewerData}!show\_vertex\_labels@{show\_vertex\_labels}}
 \index{show\_vertex\_labels@{show\_vertex\_labels}!igl::opengl::ViewerData@{igl::opengl::ViewerData}}
 \doxysubsubsection{\texorpdfstring{show\_vertex\_labels}{show\_vertex\_labels}}
 {\footnotesize\ttfamily unsigned int igl\+::opengl\+::\+Viewer\+Data\+::show\+\_\+vertex\+\_\+labels}
 
-\Hypertarget{classigl_1_1opengl_1_1ViewerData_aef7839330c3ba448c33b8f56e68f1c51}\label{classigl_1_1opengl_1_1ViewerData_aef7839330c3ba448c33b8f56e68f1c51} 
-\index{igl::opengl::ViewerData@{igl::opengl::ViewerData}!show\_face\_labels@{show\_face\_labels}}
-\index{show\_face\_labels@{show\_face\_labels}!igl::opengl::ViewerData@{igl::opengl::ViewerData}}
-\doxysubsubsection{\texorpdfstring{show\_face\_labels}{show\_face\_labels}}
-{\footnotesize\ttfamily unsigned int igl\+::opengl\+::\+Viewer\+Data\+::show\+\_\+face\+\_\+labels}
-
-\Hypertarget{classigl_1_1opengl_1_1ViewerData_aa15ff82f63580806342dcfe36a8e3a25}\label{classigl_1_1opengl_1_1ViewerData_aa15ff82f63580806342dcfe36a8e3a25} 
-\index{igl::opengl::ViewerData@{igl::opengl::ViewerData}!show\_custom\_labels@{show\_custom\_labels}}
-\index{show\_custom\_labels@{show\_custom\_labels}!igl::opengl::ViewerData@{igl::opengl::ViewerData}}
-\doxysubsubsection{\texorpdfstring{show\_custom\_labels}{show\_custom\_labels}}
-{\footnotesize\ttfamily unsigned int igl\+::opengl\+::\+Viewer\+Data\+::show\+\_\+custom\+\_\+labels}
+\Hypertarget{classigl_1_1opengl_1_1ViewerData_a77f6c02ac80653d0f6e993d833cc4322}\label{classigl_1_1opengl_1_1ViewerData_a77f6c02ac80653d0f6e993d833cc4322} 
+\index{igl::opengl::ViewerData@{igl::opengl::ViewerData}!use\_matcap@{use\_matcap}}
+\index{use\_matcap@{use\_matcap}!igl::opengl::ViewerData@{igl::opengl::ViewerData}}
+\doxysubsubsection{\texorpdfstring{use\_matcap}{use\_matcap}}
+{\footnotesize\ttfamily unsigned int igl\+::opengl\+::\+Viewer\+Data\+::use\+\_\+matcap}
 
 \Hypertarget{classigl_1_1opengl_1_1ViewerData_aeba732f62241985d64c25c192b257b53}\label{classigl_1_1opengl_1_1ViewerData_aeba732f62241985d64c25c192b257b53} 
 \index{igl::opengl::ViewerData@{igl::opengl::ViewerData}!point\_size@{point\_size}}

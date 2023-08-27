@@ -5,7 +5,7 @@ var classigl_1_1WindingNumberTree =
     [ "WindingNumberTree", "classigl_1_1WindingNumberTree.html#a274ffae28f5b336b2db8c8a742f9452f", null ],
     [ "WindingNumberTree", "classigl_1_1WindingNumberTree.html#af073111a6a1cc5085c3084de1ee64287", null ],
     [ "WindingNumberTree", "classigl_1_1WindingNumberTree.html#a87deecd231e1f190bf39c8c96e69aa6b", null ],
-    [ "~WindingNumberTree", "classigl_1_1WindingNumberTree.html#a415ddcf1557d35be4788f6173e6d105a", null ],
+    [ "~WindingNumberTree", "classigl_1_1WindingNumberTree.html#ad05c76d3effab2368c2556e2e93acd68", null ],
     [ "delete_children", "classigl_1_1WindingNumberTree.html#abff1f1dff02ab9ae24b81a7b534aa9dc", null ],
     [ "set_mesh", "classigl_1_1WindingNumberTree.html#a2e3647b6ad15ff4d418f0a0cbc45af0b", null ],
     [ "set_method", "classigl_1_1WindingNumberTree.html#a6aeaed6e361921d5e5fc817264ea4303", null ],

@@ -14,6 +14,6 @@ var namespaceigl_1_1embree =
     [ "shape_diameter_function", "namespaceigl_1_1embree.html#a628ebea8ce36a70ecb61abd5502b5ba4", null ],
     [ "unproject_in_mesh", "namespaceigl_1_1embree.html#a80724fc46ca35d893a6253133fdf1f20", null ],
     [ "unproject_in_mesh", "namespaceigl_1_1embree.html#a63f92b1ed81cbd29ef63241517ba0968", null ],
-    [ "unproject_onto_mesh", "namespaceigl_1_1embree.html#a6cf896ed44c9329729459a291ac33047", null ],
+    [ "unproject_onto_mesh", "namespaceigl_1_1embree.html#a4fcd1606c732e3b9948bcc08bab31927", null ],
     [ "unproject_onto_mesh", "namespaceigl_1_1embree.html#a227bbf88b8e795bea4558ab6018ea732", null ]
 ];
