@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['m_0',['m',['../classigl_1_1opengl_1_1glfw_1_1imgui_1_1SelectionWidget.html#af5720982643465483fcd9a48d3b1160c',1,'igl::opengl::glfw::imgui::SelectionWidget::M'],['../structigl_1_1SLIMData.html#a2bc173c625140e700d6448680a9e4b1c',1,'igl::SLIMData::M'],['../structigl_1_1ArapDOFData.html#aa162503dfcb0aa7d40d662a9d4c9b906',1,'igl::ArapDOFData::m']]],
+  ['m_0',['m',['../structigl_1_1ArapDOFData.html#aa162503dfcb0aa7d40d662a9d4c9b906',1,'igl::ArapDOFData::m'],['../classigl_1_1opengl_1_1glfw_1_1imgui_1_1SelectionWidget.html#af5720982643465483fcd9a48d3b1160c',1,'igl::opengl::glfw::imgui::SelectionWidget::M'],['../structigl_1_1SLIMData.html#a2bc173c625140e700d6448680a9e4b1c',1,'igl::SLIMData::M']]],
   ['m_5fbox_1',['m_box',['../classigl_1_1AABB.html#ae5a1a951d07db942eed6d14f45af6e6b',1,'igl::AABB']]],
   ['m_5ffullsolve_2',['M_FullSolve',['../structigl_1_1ArapDOFData.html#a3494ef8635b2f2ca4617b49f5f46484a',1,'igl::ArapDOFData']]],
   ['m_5fleft_3',['m_left',['../classigl_1_1AABB.html#a235d9f0789affa75050a75fe1d9a3e84',1,'igl::AABB']]],
@@ -47,8 +47,8 @@ var searchData=
   ['matlabinterface_2eh_44',['matlabinterface.h',['../matlabinterface_8h.html',1,'']]],
   ['matlabworkspace_45',['matlabworkspace',['../classigl_1_1matlab_1_1MatlabWorkspace.html',1,'igl::matlab::MatlabWorkspace'],['../classigl_1_1matlab_1_1MatlabWorkspace.html#a883c693b38494b37dd359ff7de942c14',1,'igl::matlab::MatlabWorkspace::MatlabWorkspace()']]],
   ['matlabworkspace_2eh_46',['MatlabWorkspace.h',['../MatlabWorkspace_8h.html',1,'']]],
-  ['matlibberish_20example_47',['Matlibberish Example',['../namespaceigl.html#autotoc_md37',1,'']]],
-  ['matrices_48',['.dmat - dense matrices',['../readDMAT_8h.html#autotoc_md22',1,'']]],
+  ['matlibberish_20example_47',['Matlibberish Example',['../namespaceigl.html#autotoc_md38',1,'']]],
+  ['matrices_48',['.dmat - dense matrices',['../readDMAT_8h.html#autotoc_md23',1,'']]],
   ['matrix_5fto_5flist_49',['matrix_to_list',['../namespaceigl.html#aec3a51cfa07853b2b45e1226672e16da',1,'igl::matrix_to_list(const Eigen::MatrixBase&lt; DerivedM &gt; &amp;M)'],['../namespaceigl.html#adc8c8289cdddc4408bc1e12579de244c',1,'igl::matrix_to_list(const Eigen::MatrixBase&lt; DerivedM &gt; &amp;M, std::vector&lt; typename DerivedM::Scalar &gt; &amp;V)'],['../namespaceigl.html#ac9d68f355e17a7ba95194bfd46f3ce49',1,'igl::matrix_to_list(const Eigen::MatrixBase&lt; DerivedM &gt; &amp;M, std::vector&lt; std::vector&lt; typename DerivedM::Scalar &gt; &gt; &amp;V)']]],
   ['matrix_5fto_5flist_2eh_50',['matrix_to_list.h',['../matrix__to__list_8h.html',1,'']]],
   ['matrixx3e_51',['MatrixX3E',['../classigl_1_1copyleft_1_1cgal_1_1CSGTree.html#aefc0d8db2c34331db60bc9ee55598fa2',1,'igl::copyleft::cgal::CSGTree']]],
@@ -139,7 +139,7 @@ var searchData=
   ['mlsetscalar_136',['mlsetscalar',['../namespaceigl_1_1matlab.html#a45bb421821eac8eb06d80e3928db4090',1,'igl::matlab']]],
   ['mod_137',['mod',['../namespaceigl.html#a0394947bf9e27382711c730186ec631c',1,'igl::mod(const Eigen::PlainObjectBase&lt; DerivedA &gt; &amp;A, const int base)'],['../namespaceigl.html#ae574038db202105a0eccec2ef233be57',1,'igl::mod(const Eigen::PlainObjectBase&lt; DerivedA &gt; &amp;A, const int base, Eigen::PlainObjectBase&lt; DerivedB &gt; &amp;B)']]],
   ['mod_2eh_138',['mod.h',['../mod_8h.html',1,'']]],
-  ['mode_139',['mode',['../namespaceigl.html#a037858abb04a677ebd5cdf660de0b0ae',1,'igl::mode()'],['../classigl_1_1opengl_1_1glfw_1_1imgui_1_1SelectionWidget.html#ae14be8528fbe27e418cd45a7111b060b',1,'igl::opengl::glfw::imgui::SelectionWidget::mode'],['../classigl_1_1opengl_1_1glfw_1_1imgui_1_1SelectionWidget.html#a99183e4fc2aa21046a8fb2936b5be6d2',1,'igl::opengl::glfw::imgui::SelectionWidget::Mode']]],
+  ['mode_139',['mode',['../namespaceigl.html#a037858abb04a677ebd5cdf660de0b0ae',1,'igl::mode()'],['../classigl_1_1opengl_1_1glfw_1_1imgui_1_1SelectionWidget.html#a99183e4fc2aa21046a8fb2936b5be6d2',1,'igl::opengl::glfw::imgui::SelectionWidget::Mode'],['../classigl_1_1opengl_1_1glfw_1_1imgui_1_1SelectionWidget.html#ae14be8528fbe27e418cd45a7111b060b',1,'igl::opengl::glfw::imgui::SelectionWidget::mode']]],
   ['mode_2eh_140',['mode.h',['../mode_8h.html',1,'']]],
   ['moments_141',['moments',['../namespaceigl.html#ae9c8d358cf9fdbac0bd749920e072b84',1,'igl']]],
   ['moments_2eh_142',['moments.h',['../moments_8h.html',1,'']]],

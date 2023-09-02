@@ -1,5 +1,7 @@
 var NAVTREEINDEX20 =
 {
+"reorient__facets__raycast_8h.html#a50d8808b728c372e38d88371dee2cf0f":[3,0,1,0,1,7,0],
+"reorient__facets__raycast_8h.html#a7dd7d02a9d43ec8e0735b96166341d68":[3,0,1,0,1,7,1],
 "reorient__facets__raycast_8h_source.html":[3,0,1,0,1,7],
 "repdiag_8h.html":[3,0,1,0,352],
 "repdiag_8h.html#a4425112c9b09eccba5935d7390228b8f":[3,0,1,0,352,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX20 =
 "signed__distance_8h.html#af25f0719d3f6108b4917e1511a4941f5":[3,0,1,0,376,9],
 "signed__distance_8h_source.html":[3,0,1,0,376],
 "signed__distance__isosurface_8h.html":[3,0,1,0,0,0,59],
-"signed__distance__isosurface_8h.html#a240ec71bf9ed8497cca131ce80e30045":[3,0,1,0,0,0,59,0],
-"signed__distance__isosurface_8h_source.html":[3,0,1,0,0,0,59],
-"simplify__polyhedron_8h.html":[3,0,1,0,377]
+"signed__distance__isosurface_8h.html#a240ec71bf9ed8497cca131ce80e30045":[3,0,1,0,0,0,59,0]
 };

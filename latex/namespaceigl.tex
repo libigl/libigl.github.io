@@ -728,6 +728,8 @@ bool \mbox{\hyperlink{namespaceigl_a63e14036599fdc6d4f6706d26a542e92}{file\+\_\+
 \begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespaceigl_ab6758ca13380f9bd099c860aba705d45}{find}} (const Eigen\+::\+Sparse\+Vector$<$ T $>$ \&X, Eigen\+::\+Matrix$<$ int, Eigen\+::\+Dynamic, 1 $>$ \&I, Eigen\+::\+Matrix$<$ T, Eigen\+::\+Dynamic, 1 $>$ \&V)
 \begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int Rows\+At\+Compile\+Time, int Max\+Rows\+At\+Compile\+Time$>$ }\\std\+::vector$<$ int $>$ \mbox{\hyperlink{namespaceigl_a35cd54b6c6bf02c39e4caf02782fcfbc}{find}} (const Eigen\+::\+Array$<$ bool, Rows\+At\+Compile\+Time, 1, 0, Max\+Rows\+At\+Compile\+Time, 1 $>$ \&M)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedM , typename DerivedO $>$ }\\void \mbox{\hyperlink{namespaceigl_abb0edb6d4f1aed375b757bdc5c273246}{find\+\_\+cross\+\_\+field\+\_\+singularities}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const Eigen\+::\+Matrix\+Base$<$ DerivedM $>$ \&mismatch, Eigen\+::\+Plain\+Object\+Base$<$ DerivedO $>$ \&is\+Singularity, Eigen\+::\+Plain\+Object\+Base$<$ DerivedO $>$ \&singularity\+Index)
 \begin{DoxyCompactList}\small\item\em Computes singularities of a cross field, assumed combed. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedO $>$ }\\void \mbox{\hyperlink{namespaceigl_a6081a94201c4aee0d64d44fb108b82b3}{find\+\_\+cross\+\_\+field\+\_\+singularities}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&PD1, const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&PD2, Eigen\+::\+Plain\+Object\+Base$<$ DerivedO $>$ \&is\+Singularity, Eigen\+::\+Plain\+Object\+Base$<$ DerivedO $>$ \&singularity\+Index, bool is\+Combed=false)
@@ -1224,9 +1226,9 @@ bool \mbox{\hyperlink{namespaceigl_a0dad55e28df3f93b606cddb108b85e9d}{point\+\_\
 \begin{DoxyCompactList}\small\item\em Determine if 2d point is in a circle. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename DerivedP , typename DerivedV , typename Derived\+Ele , typename DerivedsqrD , typename DerivedI , typename DerivedC $>$ }\\void \mbox{\hyperlink{namespaceigl_ae9616bb9fd33e6c00dcb4e8f91952091}{point\+\_\+mesh\+\_\+squared\+\_\+distance}} (const Eigen\+::\+Matrix\+Base$<$ DerivedP $>$ \&P, const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ Derived\+Ele $>$ \&Ele, Eigen\+::\+Plain\+Object\+Base$<$ DerivedsqrD $>$ \&sqrD, Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&I, Eigen\+::\+Plain\+Object\+Base$<$ DerivedC $>$ \&C)
 \begin{DoxyCompactList}\small\item\em Compute distances from a set of points P to a triangle mesh (V,F) \end{DoxyCompactList}\item 
-{\footnotesize template$<$int DIM, typename Derivedp , typename DerivedV , typename Derived\+Ele , typename Derivedsqr\+\_\+d , typename Derivedc $>$ }\\void \mbox{\hyperlink{namespaceigl_a3de253885cbe07d8d264d21d6ba8a193}{point\+\_\+simplex\+\_\+squared\+\_\+distance}} (const Eigen\+::\+Matrix\+Base$<$ Derivedp $>$ \&p, const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ Derived\+Ele $>$ \&Ele, const typename Derived\+Ele\+::\+Index i, Derivedsqr\+\_\+d \&sqr\+\_\+d, Eigen\+::\+Matrix\+Base$<$ Derivedc $>$ \&c)
+{\footnotesize template$<$int DIM, typename Derivedp , typename DerivedV , typename Derived\+Ele , typename Derivedsqr\+\_\+d , typename Derivedc $>$ }\\void \mbox{\hyperlink{namespaceigl_a8c64da392edc068d98cf9c78ec8a6ee3}{point\+\_\+simplex\+\_\+squared\+\_\+distance}} (const Eigen\+::\+Matrix\+Base$<$ Derivedp $>$ \&p, const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ Derived\+Ele $>$ \&Ele, const typename Derived\+Ele\+::\+Index i, Derivedsqr\+\_\+d \&sqr\+\_\+d, Eigen\+::\+Plain\+Object\+Base$<$ Derivedc $>$ \&c)
 \begin{DoxyCompactList}\small\item\em Determine squared distance from a point to linear simplex. \end{DoxyCompactList}\item 
-{\footnotesize template$<$int DIM, typename Derivedp , typename DerivedV , typename Derived\+Ele , typename Derivedsqr\+\_\+d , typename Derivedc , typename Derivedb $>$ }\\void \mbox{\hyperlink{namespaceigl_add9fa7fb8d6e85604adbb9aebb990014}{point\+\_\+simplex\+\_\+squared\+\_\+distance}} (const Eigen\+::\+Matrix\+Base$<$ Derivedp $>$ \&p, const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ Derived\+Ele $>$ \&Ele, const typename Derived\+Ele\+::\+Index i, Derivedsqr\+\_\+d \&sqr\+\_\+d, Eigen\+::\+Matrix\+Base$<$ Derivedc $>$ \&c, Eigen\+::\+Plain\+Object\+Base$<$ Derivedb $>$ \&b)
+{\footnotesize template$<$int DIM, typename Derivedp , typename DerivedV , typename Derived\+Ele , typename Derivedsqr\+\_\+d , typename Derivedc , typename Derivedb $>$ }\\void \mbox{\hyperlink{namespaceigl_a937e7f60501c5fa10d8ddf3aba6e3d2e}{point\+\_\+simplex\+\_\+squared\+\_\+distance}} (const Eigen\+::\+Matrix\+Base$<$ Derivedp $>$ \&p, const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ Derived\+Ele $>$ \&Ele, const typename Derived\+Ele\+::\+Index i, Derivedsqr\+\_\+d \&sqr\+\_\+d, Eigen\+::\+Plain\+Object\+Base$<$ Derivedc $>$ \&c, Eigen\+::\+Plain\+Object\+Base$<$ Derivedb $>$ \&b)
 \begin{DoxyCompactList}\small\item\em Determine squared distance from a point to linear simplex. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename DerivedA , typename DerivedR , typename DerivedT , typename DerivedU , typename DerivedS , typename DerivedV $>$ }\\void \mbox{\hyperlink{namespaceigl_adef4fd6ebad61768a405ac601011aa83}{polar\+\_\+dec}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedA $>$ \&A, bool include\+Reflections, Eigen\+::\+Plain\+Object\+Base$<$ DerivedR $>$ \&R, Eigen\+::\+Plain\+Object\+Base$<$ DerivedT $>$ \&T, Eigen\+::\+Plain\+Object\+Base$<$ DerivedU $>$ \&U, Eigen\+::\+Plain\+Object\+Base$<$ DerivedS $>$ \&S, Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V)
 \begin{DoxyCompactList}\small\item\em Computes the polar decomposition (R,T) of a matrix A. \end{DoxyCompactList}\item 
@@ -1592,17 +1594,17 @@ void \mbox{\hyperlink{namespaceigl_a4d3b37a4f86172d30f35d330aed1e7fe}{simplify\+
 \begin{DoxyCompactList}\small\item\em Simplify a polyhedron represented as a triangle mesh (OV,OF) by collapsing any edge that doesn\textquotesingle{}t contribute to defining surface\textquotesingle{}s pointset. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename TX , typename TY , typename DerivedR , typename DerivedC $>$ }\\void \mbox{\hyperlink{namespaceigl_a547a8704200d3af48fe92105c15a32ad}{slice}} (const Eigen\+::\+Sparse\+Matrix$<$ TX $>$ \&X, const Eigen\+::\+Dense\+Base$<$ DerivedR $>$ \&R, const Eigen\+::\+Dense\+Base$<$ DerivedC $>$ \&C, Eigen\+::\+Sparse\+Matrix$<$ TY $>$ \&Y)
 \begin{DoxyCompactList}\small\item\em Act like the matlab X(row\+\_\+indices,col\+\_\+indices) operator, where row\+\_\+indices, col\+\_\+indices are non-\/negative integer indices. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename DerivedX , typename DerivedR , typename DerivedC , typename DerivedY $>$ }\\void \mbox{\hyperlink{namespaceigl_a90268d9fb8c64692427036793191a8b7}{slice}} (const Eigen\+::\+Dense\+Base$<$ DerivedX $>$ \&X, const Eigen\+::\+Dense\+Base$<$ DerivedR $>$ \&R, const Eigen\+::\+Dense\+Base$<$ DerivedC $>$ \&C, Eigen\+::\+Plain\+Object\+Base$<$ DerivedY $>$ \&Y)
-\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename MatX , typename DerivedR , typename MatY $>$ }\\void \mbox{\hyperlink{namespaceigl_ae747d042c40e074264e161b49906216d}{slice}} (const MatX \&X, const Eigen\+::\+Dense\+Base$<$ DerivedR $>$ \&R, const int dim, MatY \&Y)
 \begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{namespaceigl_aa05264f934b9cecbac042ef69735b74b}{slice}} (const std\+::vector$<$ T $>$ \&X, std\+::vector$<$ size\+\_\+t $>$ const \&R, std\+::vector$<$ T $>$ \&Y)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename DerivedX , typename DerivedY , typename DerivedR $>$ }\\void \mbox{\hyperlink{namespaceigl_aae8c4cf15b6f5f8cc16da9405b96be59}{slice}} (const Eigen\+::\+Dense\+Base$<$ DerivedX $>$ \&X, const Eigen\+::\+Dense\+Base$<$ DerivedR $>$ \&R, Eigen\+::\+Plain\+Object\+Base$<$ DerivedY $>$ \&Y)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedX , typename DerivedR , typename DerivedC , typename DerivedY $>$ }\\void \mbox{\hyperlink{namespaceigl_a90268d9fb8c64692427036793191a8b7}{slice}} (const Eigen\+::\+Dense\+Base$<$ DerivedX $>$ \&X, const Eigen\+::\+Dense\+Base$<$ DerivedR $>$ \&R, const Eigen\+::\+Dense\+Base$<$ DerivedC $>$ \&C, Eigen\+::\+Plain\+Object\+Base$<$ DerivedY $>$ \&Y)
 \begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename DerivedX , typename DerivedR $>$ }\\DerivedX \mbox{\hyperlink{namespaceigl_a86abeffa3ef136e9e35057e526618dc8}{slice}} (const Eigen\+::\+Dense\+Base$<$ DerivedX $>$ \&X, const Eigen\+::\+Dense\+Base$<$ DerivedR $>$ \&R)
 \begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename DerivedX , typename DerivedR $>$ }\\DerivedX \mbox{\hyperlink{namespaceigl_aa5271870d0385781c2236145ee9c3897}{slice}} (const Eigen\+::\+Dense\+Base$<$ DerivedX $>$ \&X, const Eigen\+::\+Dense\+Base$<$ DerivedR $>$ \&R, const int dim)
-\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{namespaceigl_aa05264f934b9cecbac042ef69735b74b}{slice}} (const std\+::vector$<$ T $>$ \&X, std\+::vector$<$ size\+\_\+t $>$ const \&R, std\+::vector$<$ T $>$ \&Y)
 \begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename TX , typename TY , typename DerivedI $>$ }\\void \mbox{\hyperlink{namespaceigl_a473da3d5636834fa6b0510d7a2f97628}{slice\+\_\+cached\+\_\+precompute}} (const Eigen\+::\+Sparse\+Matrix$<$ TX $>$ \&X, const Eigen\+::\+Matrix$<$ int, Eigen\+::\+Dynamic, 1 $>$ \&R, const Eigen\+::\+Matrix$<$ int, Eigen\+::\+Dynamic, 1 $>$ \&C, Eigen\+::\+Matrix\+Base$<$ DerivedI $>$ \&data, Eigen\+::\+Sparse\+Matrix$<$ TY $>$ \&Y)
 \begin{DoxyCompactList}\small\item\em Act like the matlab X(row\+\_\+indices,col\+\_\+indices) operator, where row\+\_\+indices, col\+\_\+indices are non-\/negative integer indices. \end{DoxyCompactList}\item 
@@ -1610,23 +1612,23 @@ void \mbox{\hyperlink{namespaceigl_a4d3b37a4f86172d30f35d330aed1e7fe}{simplify\+
 \begin{DoxyCompactList}\small\item\em Slice X by cached C,R indices into Y. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , typename DerivedR , typename DerivedC $>$ }\\void \mbox{\hyperlink{namespaceigl_ab893d0a94d4eb6a1c5422e7cfe368daf}{slice\+\_\+into}} (const Eigen\+::\+Sparse\+Matrix$<$ T $>$ \&X, const Eigen\+::\+Matrix\+Base$<$ DerivedR $>$ \&R, const Eigen\+::\+Matrix\+Base$<$ DerivedC $>$ \&C, Eigen\+::\+Sparse\+Matrix$<$ T $>$ \&Y)
 \begin{DoxyCompactList}\small\item\em Act like the matlab Y(row\+\_\+indices,col\+\_\+indices) = X. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename DerivedX , typename DerivedY , typename DerivedR , typename DerivedC $>$ }\\void \mbox{\hyperlink{namespaceigl_afce428bb768059c8d6f9563873f8e730}{slice\+\_\+into}} (const Eigen\+::\+Matrix\+Base$<$ DerivedX $>$ \&X, const Eigen\+::\+Matrix\+Base$<$ DerivedR $>$ \&R, const Eigen\+::\+Matrix\+Base$<$ DerivedC $>$ \&C, Eigen\+::\+Plain\+Object\+Base$<$ DerivedY $>$ \&Y)
-\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename MatX , typename MatY , typename DerivedR $>$ }\\void \mbox{\hyperlink{namespaceigl_a185ee703c7cf8760af368bcb0861d37f}{slice\+\_\+into}} (const MatX \&X, const Eigen\+::\+Matrix\+Base$<$ DerivedR $>$ \&R, const int dim, MatY \&Y)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedX , typename DerivedY , typename DerivedR , typename DerivedC $>$ }\\void \mbox{\hyperlink{namespaceigl_afce428bb768059c8d6f9563873f8e730}{slice\+\_\+into}} (const Eigen\+::\+Matrix\+Base$<$ DerivedX $>$ \&X, const Eigen\+::\+Matrix\+Base$<$ DerivedR $>$ \&R, const Eigen\+::\+Matrix\+Base$<$ DerivedC $>$ \&C, Eigen\+::\+Plain\+Object\+Base$<$ DerivedY $>$ \&Y)
 \begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename DerivedX , typename DerivedR , typename DerivedY $>$ }\\void \mbox{\hyperlink{namespaceigl_aa29b762b3094e33fd5167ca196de49ce}{slice\+\_\+into}} (const Eigen\+::\+Matrix\+Base$<$ DerivedX $>$ \&X, const Eigen\+::\+Matrix\+Base$<$ DerivedR $>$ \&R, Eigen\+::\+Plain\+Object\+Base$<$ DerivedY $>$ \&Y)
 \begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename DerivedX , typename DerivedY $>$ }\\void \mbox{\hyperlink{namespaceigl_aef569f1ee0e9cd71c2cfabd1e27e2f40}{slice\+\_\+mask}} (const Eigen\+::\+Dense\+Base$<$ DerivedX $>$ \&X, const Eigen\+::\+Array$<$ bool, Eigen\+::\+Dynamic, 1 $>$ \&R, const Eigen\+::\+Array$<$ bool, Eigen\+::\+Dynamic, 1 $>$ \&C, Eigen\+::\+Plain\+Object\+Base$<$ DerivedY $>$ \&Y)
+{\footnotesize template$<$typename XType , typename YType $>$ }\\void \mbox{\hyperlink{namespaceigl_acb30d6061d773254628256682b88b427}{slice\+\_\+mask}} (const Eigen\+::\+Sparse\+Matrix$<$ XType $>$ \&X, const Eigen\+::\+Array$<$ bool, Eigen\+::\+Dynamic, 1 $>$ \&R, const Eigen\+::\+Array$<$ bool, Eigen\+::\+Dynamic, 1 $>$ \&C, Eigen\+::\+Sparse\+Matrix$<$ YType $>$ \&Y)
 \begin{DoxyCompactList}\small\item\em Act like the matlab X(row\+\_\+mask,col\+\_\+mask) operator, where row\+\_\+mask, col\+\_\+mask are non-\/negative integer indices. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename DerivedX , typename DerivedY $>$ }\\void \mbox{\hyperlink{namespaceigl_ab448e84d310f37a2cffd09d50faad326}{slice\+\_\+mask}} (const Eigen\+::\+Dense\+Base$<$ DerivedX $>$ \&X, const Eigen\+::\+Array$<$ bool, Eigen\+::\+Dynamic, 1 $>$ \&R, const int dim, Eigen\+::\+Plain\+Object\+Base$<$ DerivedY $>$ \&Y)
+{\footnotesize template$<$typename XType , typename YType $>$ }\\void \mbox{\hyperlink{namespaceigl_a6770877236349590d6b4bbc2a6f616ad}{slice\+\_\+mask}} (const Eigen\+::\+Sparse\+Matrix$<$ XType $>$ \&X, const Eigen\+::\+Array$<$ bool, Eigen\+::\+Dynamic, 1 $>$ \&R, const int dim, Eigen\+::\+Sparse\+Matrix$<$ YType $>$ \&Y)
 \begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedX , typename DerivedY $>$ }\\void \mbox{\hyperlink{namespaceigl_aef569f1ee0e9cd71c2cfabd1e27e2f40}{slice\+\_\+mask}} (const Eigen\+::\+Dense\+Base$<$ DerivedX $>$ \&X, const Eigen\+::\+Array$<$ bool, Eigen\+::\+Dynamic, 1 $>$ \&R, const Eigen\+::\+Array$<$ bool, Eigen\+::\+Dynamic, 1 $>$ \&C, Eigen\+::\+Plain\+Object\+Base$<$ DerivedY $>$ \&Y)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedX , typename DerivedY $>$ }\\void \mbox{\hyperlink{namespaceigl_ab448e84d310f37a2cffd09d50faad326}{slice\+\_\+mask}} (const Eigen\+::\+Dense\+Base$<$ DerivedX $>$ \&X, const Eigen\+::\+Array$<$ bool, Eigen\+::\+Dynamic, 1 $>$ \&R, const int dim, Eigen\+::\+Plain\+Object\+Base$<$ DerivedY $>$ \&Y)
+\item 
 {\footnotesize template$<$typename DerivedX $>$ }\\DerivedX \mbox{\hyperlink{namespaceigl_afe884ab3e3a80bcea135959a5b9aa831}{slice\+\_\+mask}} (const Eigen\+::\+Dense\+Base$<$ DerivedX $>$ \&X, const Eigen\+::\+Array$<$ bool, Eigen\+::\+Dynamic, 1 $>$ \&R, const Eigen\+::\+Array$<$ bool, Eigen\+::\+Dynamic, 1 $>$ \&C)
 \begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename DerivedX $>$ }\\DerivedX \mbox{\hyperlink{namespaceigl_ae4dd189219e52c3496a80f36b82cbbce}{slice\+\_\+mask}} (const Eigen\+::\+Dense\+Base$<$ DerivedX $>$ \&X, const Eigen\+::\+Array$<$ bool, Eigen\+::\+Dynamic, 1 $>$ \&R, const int dim)
-\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename XType , typename YType $>$ }\\void \mbox{\hyperlink{namespaceigl_a6770877236349590d6b4bbc2a6f616ad}{slice\+\_\+mask}} (const Eigen\+::\+Sparse\+Matrix$<$ XType $>$ \&X, const Eigen\+::\+Array$<$ bool, Eigen\+::\+Dynamic, 1 $>$ \&R, const int dim, Eigen\+::\+Sparse\+Matrix$<$ YType $>$ \&Y)
-\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename XType , typename YType $>$ }\\void \mbox{\hyperlink{namespaceigl_acb30d6061d773254628256682b88b427}{slice\+\_\+mask}} (const Eigen\+::\+Sparse\+Matrix$<$ XType $>$ \&X, const Eigen\+::\+Array$<$ bool, Eigen\+::\+Dynamic, 1 $>$ \&R, const Eigen\+::\+Array$<$ bool, Eigen\+::\+Dynamic, 1 $>$ \&C, Eigen\+::\+Sparse\+Matrix$<$ YType $>$ \&Y)
 \begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename TX , typename TY , typename DerivedR , typename DerivedC $>$ }\\void \mbox{\hyperlink{namespaceigl_af8a1c0b05598d819b78e57f2525f5497}{slice\+\_\+sorted}} (const Eigen\+::\+Sparse\+Matrix$<$ TX $>$ \&X, const Eigen\+::\+Dense\+Base$<$ DerivedR $>$ \&R, const Eigen\+::\+Dense\+Base$<$ DerivedC $>$ \&C, Eigen\+::\+Sparse\+Matrix$<$ TY $>$ \&Y)
 \begin{DoxyCompactList}\small\item\em Act like the matlab X(row\+\_\+indices,col\+\_\+indices) operator, where row\+\_\+indices, col\+\_\+indices are non-\/negative integer indices. \end{DoxyCompactList}\item 
@@ -7424,7 +7426,7 @@ Given a set of undirected, unique edges such that all form a single connected co
 \hline
 \mbox{\texttt{ out}}  & {\em J} & \#I-\/1 list of indices into E of edges tracing I \\
 \hline
-\mbox{\texttt{ out}}  & {\em K} & \#I-\/1 list of indices into columns of E \{1,2\} so that K(i) means that E(i,\+K(i)) comes before the other (i.\+e., E(i,3-\/K(i)) ). This means that I(i) == E(J(i),K(i)) for i\texorpdfstring{$<$}{<}\#I, or I == E(sub2ind(size(\+E),J(\mbox{[}1\+:end end\mbox{]}),\mbox{[}K;3-\/K(end)\mbox{]})))) \\
+\mbox{\texttt{ out}}  & {\em K} & \#I-\/1 list of indices into columns of E \{0,1\} so that K(i) means that E(i,\+K(i)) comes before the other (i.\+e., E(i,3-\/K(i)) ). This means that I(i) == E(J(i),K(i)) for i\texorpdfstring{$<$}{<}\#I, or I == E(sub2ind(size(\+E),J(\mbox{[}1\+:end end\mbox{]}),\mbox{[}K;3-\/K(end)\mbox{]})))) \\
 \hline
 \end{DoxyParams}
 \Hypertarget{namespaceigl_a77bf75e3dc429d5ca9d830c137ac1b1f}\label{namespaceigl_a77bf75e3dc429d5ca9d830c137ac1b1f} 
@@ -8338,7 +8340,7 @@ true if file exists and is readable and false if file doesn\textquotesingle{}t e
 \Hypertarget{namespaceigl_ad0ba264f987871035fb7d12de96fccab}\label{namespaceigl_ad0ba264f987871035fb7d12de96fccab} 
 \index{igl@{igl}!find@{find}}
 \index{find@{find}!igl@{igl}}
-\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
 {\footnotesize\ttfamily template$<$typename T , typename DerivedI , typename DerivedJ , typename DerivedV $>$ \\
 void igl\+::find (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Sparse\+Matrix$<$ T $>$ \&}]{X,  }\item[{Eigen\+::\+Dense\+Base$<$ DerivedI $>$ \&}]{I,  }\item[{Eigen\+::\+Dense\+Base$<$ DerivedJ $>$ \&}]{J,  }\item[{Eigen\+::\+Dense\+Base$<$ DerivedV $>$ \&}]{V }\end{DoxyParamCaption})}
 
@@ -8367,7 +8369,7 @@ Like matlab\textquotesingle{}s \mbox{[}I,J,V\mbox{]} = find(\+X)
 \Hypertarget{namespaceigl_a2f6c699f94449b23813f0d80df36db8e}\label{namespaceigl_a2f6c699f94449b23813f0d80df36db8e} 
 \index{igl@{igl}!find@{find}}
 \index{find@{find}!igl@{igl}}
-\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
 {\footnotesize\ttfamily template$<$typename DerivedX , typename DerivedI , typename DerivedJ , typename DerivedV $>$ \\
 void igl\+::find (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Dense\+Base$<$ DerivedX $>$ \&}]{X,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&}]{I,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedJ $>$ \&}]{J,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&}]{V }\end{DoxyParamCaption})}
 
@@ -8378,7 +8380,7 @@ This is an overloaded member function, provided for convenience. It differs from
 \Hypertarget{namespaceigl_a1c874cf1ad179744026898ded3da4ea7}\label{namespaceigl_a1c874cf1ad179744026898ded3da4ea7} 
 \index{igl@{igl}!find@{find}}
 \index{find@{find}!igl@{igl}}
-\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
 {\footnotesize\ttfamily template$<$typename DerivedX , typename DerivedI $>$ \\
 void igl\+::find (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Dense\+Base$<$ DerivedX $>$ \&}]{X,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&}]{I }\end{DoxyParamCaption})}
 
@@ -8394,7 +8396,7 @@ This is an overloaded member function, provided for convenience. It differs from
 \Hypertarget{namespaceigl_ab6758ca13380f9bd099c860aba705d45}\label{namespaceigl_ab6758ca13380f9bd099c860aba705d45} 
 \index{igl@{igl}!find@{find}}
 \index{find@{find}!igl@{igl}}
-\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
 void igl\+::find (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Sparse\+Vector$<$ T $>$ \&}]{X,  }\item[{Eigen\+::\+Matrix$<$ int, Eigen\+::\+Dynamic, 1 $>$ \&}]{I,  }\item[{Eigen\+::\+Matrix$<$ T, Eigen\+::\+Dynamic, 1 $>$ \&}]{V }\end{DoxyParamCaption})}
 
@@ -8402,6 +8404,41 @@ void igl\+::find (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Sparse\+Vector
 
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
 
+\Hypertarget{namespaceigl_a35cd54b6c6bf02c39e4caf02782fcfbc}\label{namespaceigl_a35cd54b6c6bf02c39e4caf02782fcfbc} 
+\index{igl@{igl}!find@{find}}
+\index{find@{find}!igl@{igl}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily template$<$int Rows\+At\+Compile\+Time, int Max\+Rows\+At\+Compile\+Time$>$ \\
+std\+::vector$<$ int $>$ igl\+::find (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Array$<$ bool, Rows\+At\+Compile\+Time, 1, 0, Max\+Rows\+At\+Compile\+Time, 1 $>$ \&}]{M }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+This overload facilitates the use of bool masks for Eigen slicing 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Rows\+At\+Compile\+Time} & number of rows in M at compile time \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+indices of true entries in M
+\end{DoxyReturn}
+\label{namespaceigl_autotoc_md12}%
+\Hypertarget{namespaceigl_autotoc_md12}%
+ \doxysubparagraph*{Example}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceigl_acb30d6061d773254628256682b88b427}{igl::slice\_mask}}(A,\mbox{\hyperlink{namespaceigl_ad0ba264f987871035fb7d12de96fccab}{igl::find}}(M),\mbox{\hyperlink{namespaceigl_ad0ba264f987871035fb7d12de96fccab}{igl::find}}(N),B);}
+\DoxyCodeLine{\textcolor{comment}{//\ Is\ the\ same\ as}}
+\DoxyCodeLine{B\ =\ A(\mbox{\hyperlink{namespaceigl_ad0ba264f987871035fb7d12de96fccab}{igl::find}}(M),\mbox{\hyperlink{namespaceigl_ad0ba264f987871035fb7d12de96fccab}{igl::find}}(N));}
+
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{namespaceigl_acb30d6061d773254628256682b88b427}{slice\+\_\+mask} 
+\end{DoxySeeAlso}
 \Hypertarget{namespaceigl_abb0edb6d4f1aed375b757bdc5c273246}\label{namespaceigl_abb0edb6d4f1aed375b757bdc5c273246} 
 \index{igl@{igl}!find\_cross\_field\_singularities@{find\_cross\_field\_singularities}}
 \index{find\_cross\_field\_singularities@{find\_cross\_field\_singularities}!igl@{igl}}
@@ -8933,7 +8970,7 @@ Current time in seconds.
 \begin{DoxyReturn}{Returns}
 the current time in seconds since epoch
 \end{DoxyReturn}
-\hypertarget{namespaceigl_autotoc_md12}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md12}
+\hypertarget{namespaceigl_autotoc_md13}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md13}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&\ tictoc\ =\ []()}
@@ -11719,7 +11756,7 @@ This is a routine to print a matrix using format suitable for pasting into the m
 \begin{DoxyReturn}{Returns}
 Formatted matrix
 \end{DoxyReturn}
-\hypertarget{namespaceigl_autotoc_md13}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md13}
+\hypertarget{namespaceigl_autotoc_md14}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md14}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{comment}{//\ M\ :=\ [1\ 2\ 3;4\ 5\ 6];}}
@@ -11759,7 +11796,7 @@ const std\+::string igl\+::matlab\+\_\+format (\begin{DoxyParamCaption}\item[{co
 
 Same but for sparse matrices. 
 
-Print IJV format into an auxiliary variable and then print a call to sparse which will construct the sparse matrix\hypertarget{namespaceigl_autotoc_md14}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md14}
+Print IJV format into an auxiliary variable and then print a call to sparse which will construct the sparse matrix\hypertarget{namespaceigl_autotoc_md15}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md15}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{comment}{//\ S\ :=\ [0\ 2\ 3;4\ 5\ 0];}}
@@ -11807,7 +11844,7 @@ Just build and return the format.
 \begin{DoxyReturn}{Returns}
 eigen IOFormat object
 \end{DoxyReturn}
-\hypertarget{namespaceigl_autotoc_md15}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md15}
+\hypertarget{namespaceigl_autotoc_md16}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md16}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{comment}{//\ M\ :=\ [1\ 2\ 3;4\ 5\ 6];}}
@@ -13093,7 +13130,7 @@ Function like PHP\textquotesingle{}s pathinfo to return information about path.
 \mbox{\texttt{ out}}  & {\em filename} & string containing filename (characters of basename before last \textquotesingle{}.\textquotesingle{})\\
 \hline
 \end{DoxyParams}
-\hypertarget{namespaceigl_autotoc_md16}{}\doxyparagraph{\texorpdfstring{Examples}{Examples}}\label{namespaceigl_autotoc_md16}
+\hypertarget{namespaceigl_autotoc_md17}{}\doxyparagraph{\texorpdfstring{Examples}{Examples}}\label{namespaceigl_autotoc_md17}
 \begin{DoxyVerb} input                     | dirname        basename       ext    filename
  "/"                       | "/"            ""             ""     ""
  "//"                      | "/"            ""             ""     ""
@@ -13296,7 +13333,7 @@ Compute face normals via vertex position list, face list.
 \mbox{\texttt{ out}}  & {\em N} & \#F by 3 eigen Matrix of mesh face (triangle) 3D normals\\
 \hline
 \end{DoxyParams}
-\hypertarget{namespaceigl_autotoc_md17}{}\doxyparagraph{\texorpdfstring{Example}{Example}}\label{namespaceigl_autotoc_md17}
+\hypertarget{namespaceigl_autotoc_md18}{}\doxyparagraph{\texorpdfstring{Example}{Example}}\label{namespaceigl_autotoc_md18}
 // Give degenerate faces (1/3,1/3,1/3)\texorpdfstring{$^\wedge$}{\string^}0.5 per\+\_\+face\+\_\+normals(V,F,Vector3d(1,1,1).normalized(),N); \Hypertarget{namespaceigl_aa5e240d2506aa22bb2a07edd7636d6cb}\label{namespaceigl_aa5e240d2506aa22bb2a07edd7636d6cb} 
 \index{igl@{igl}!per\_face\_normals@{per\_face\_normals}}
 \index{per\_face\_normals@{per\_face\_normals}!igl@{igl}}
@@ -13605,12 +13642,12 @@ Compute distances from a set of points P to a triangle mesh (V,F)
 \mbox{\texttt{ out}}  & {\em C} & \#P by 3 list of closest points\\
 \hline
 \end{DoxyParams}
-\Hypertarget{namespaceigl_a3de253885cbe07d8d264d21d6ba8a193}\label{namespaceigl_a3de253885cbe07d8d264d21d6ba8a193} 
+\Hypertarget{namespaceigl_a8c64da392edc068d98cf9c78ec8a6ee3}\label{namespaceigl_a8c64da392edc068d98cf9c78ec8a6ee3} 
 \index{igl@{igl}!point\_simplex\_squared\_distance@{point\_simplex\_squared\_distance}}
 \index{point\_simplex\_squared\_distance@{point\_simplex\_squared\_distance}!igl@{igl}}
 \doxysubsubsection{\texorpdfstring{point\_simplex\_squared\_distance()}{point\_simplex\_squared\_distance()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily template$<$int DIM, typename Derivedp , typename DerivedV , typename Derived\+Ele , typename Derivedsqr\+\_\+d , typename Derivedc $>$ \\
-void igl\+::point\+\_\+simplex\+\_\+squared\+\_\+distance (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ Derivedp $>$ \&}]{p,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+Ele $>$ \&}]{Ele,  }\item[{const typename Derived\+Ele\+::\+Index}]{i,  }\item[{Derivedsqr\+\_\+d \&}]{sqr\+\_\+d,  }\item[{Eigen\+::\+Matrix\+Base$<$ Derivedc $>$ \&}]{c }\end{DoxyParamCaption})}
+void igl\+::point\+\_\+simplex\+\_\+squared\+\_\+distance (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ Derivedp $>$ \&}]{p,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+Ele $>$ \&}]{Ele,  }\item[{const typename Derived\+Ele\+::\+Index}]{i,  }\item[{Derivedsqr\+\_\+d \&}]{sqr\+\_\+d,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derivedc $>$ \&}]{c }\end{DoxyParamCaption})}
 
 
 
@@ -13631,12 +13668,12 @@ Determine squared distance from a point to linear simplex.
 \mbox{\texttt{ out}}  & {\em c} & closest point on Ele(i) \\
 \hline
 \end{DoxyParams}
-\Hypertarget{namespaceigl_add9fa7fb8d6e85604adbb9aebb990014}\label{namespaceigl_add9fa7fb8d6e85604adbb9aebb990014} 
+\Hypertarget{namespaceigl_a937e7f60501c5fa10d8ddf3aba6e3d2e}\label{namespaceigl_a937e7f60501c5fa10d8ddf3aba6e3d2e} 
 \index{igl@{igl}!point\_simplex\_squared\_distance@{point\_simplex\_squared\_distance}}
 \index{point\_simplex\_squared\_distance@{point\_simplex\_squared\_distance}!igl@{igl}}
 \doxysubsubsection{\texorpdfstring{point\_simplex\_squared\_distance()}{point\_simplex\_squared\_distance()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily template$<$int DIM, typename Derivedp , typename DerivedV , typename Derived\+Ele , typename Derivedsqr\+\_\+d , typename Derivedc , typename Derivedb $>$ \\
-void igl\+::point\+\_\+simplex\+\_\+squared\+\_\+distance (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ Derivedp $>$ \&}]{p,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+Ele $>$ \&}]{Ele,  }\item[{const typename Derived\+Ele\+::\+Index}]{i,  }\item[{Derivedsqr\+\_\+d \&}]{sqr\+\_\+d,  }\item[{Eigen\+::\+Matrix\+Base$<$ Derivedc $>$ \&}]{c,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derivedb $>$ \&}]{b }\end{DoxyParamCaption})}
+void igl\+::point\+\_\+simplex\+\_\+squared\+\_\+distance (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ Derivedp $>$ \&}]{p,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+Ele $>$ \&}]{Ele,  }\item[{const typename Derived\+Ele\+::\+Index}]{i,  }\item[{Derivedsqr\+\_\+d \&}]{sqr\+\_\+d,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derivedc $>$ \&}]{c,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derivedb $>$ \&}]{b }\end{DoxyParamCaption})}
 
 
 
@@ -14000,7 +14037,7 @@ Given two point sets X,Y in R\texorpdfstring{$^\wedge$}{\string^}d find best sca
 \mbox{\texttt{ out}}  & {\em t} & translation\\
 \hline
 \end{DoxyParams}
-\hypertarget{namespaceigl_autotoc_md18}{}\doxyparagraph{\texorpdfstring{Example}{Example}}\label{namespaceigl_autotoc_md18}
+\hypertarget{namespaceigl_autotoc_md19}{}\doxyparagraph{\texorpdfstring{Example}{Example}}\label{namespaceigl_autotoc_md19}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{MatrixXd\ X,\ Y;\ (containing\ 3d\ points\ as\ rows)}
@@ -14031,7 +14068,7 @@ Same as above but returns Eigen transformation object.
 \\
 \hline
 \end{DoxyParams}
-\hypertarget{namespaceigl_autotoc_md19}{}\doxyparagraph{\texorpdfstring{Example}{Example}}\label{namespaceigl_autotoc_md19}
+\hypertarget{namespaceigl_autotoc_md20}{}\doxyparagraph{\texorpdfstring{Example}{Example}}\label{namespaceigl_autotoc_md20}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{MatrixXd\ X,\ Y;\ (containing\ 3d\ points\ as\ rows)}
@@ -14127,7 +14164,7 @@ This is an overloaded member function, provided for convenience. It differs from
 \mbox{\texttt{ out}}  & {\em P} & \#V by 3 list of screen space points\\
 \hline
 \end{DoxyParams}
-\hypertarget{namespaceigl_autotoc_md20}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md20}
+\hypertarget{namespaceigl_autotoc_md21}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md21}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{igl::opengl::glfw::Viewer}}\ vr;}
@@ -15033,7 +15070,7 @@ Read contents of file into a buffer of uint8\+\_\+t bytes.
 \mbox{\texttt{ out}}  & {\em file\+Buffer\+Bytes} & contents of file as vector of bytes\\
 \hline
 \end{DoxyParams}
-\hypertarget{namespaceigl_autotoc_md21}{}\doxyparagraph{\texorpdfstring{Side effects\+:}{Side effects:}}\label{namespaceigl_autotoc_md21}
+\hypertarget{namespaceigl_autotoc_md22}{}\doxyparagraph{\texorpdfstring{Side effects\+:}{Side effects:}}\label{namespaceigl_autotoc_md22}
 closes fp 
 \begin{DoxyExceptions}{Exceptions}
 {\em runtime\+\_\+error} & on error \\
@@ -15653,8 +15690,12 @@ Read triangular mesh from ply file, filling in vertex positions, normals and tex
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-true on success, false on errors 
+true on success, false on errors
 \end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Unlike previous versions, all matrices are left untouched if they are not read from the file. ~\newline
+ 
+\end{DoxyNote}
 \Hypertarget{namespaceigl_a2d9d95305b4c4ad23b0ae936bf8ebe28}\label{namespaceigl_a2d9d95305b4c4ad23b0ae936bf8ebe28} 
 \index{igl@{igl}!readPLY@{readPLY}}
 \index{readPLY@{readPLY}!igl@{igl}}
@@ -15761,7 +15802,7 @@ Read a mesh from an ascii/binary stl file.
 \begin{DoxyReturn}{Returns}
 true on success, false on errors
 \end{DoxyReturn}
-\hypertarget{namespaceigl_autotoc_md27}{}\doxyparagraph{\texorpdfstring{Example}{Example}}\label{namespaceigl_autotoc_md27}
+\hypertarget{namespaceigl_autotoc_md28}{}\doxyparagraph{\texorpdfstring{Example}{Example}}\label{namespaceigl_autotoc_md28}
 \begin{DoxyVerb}bool success = readSTL(filename,temp_V,F,N);
 remove_duplicate_vertices(temp_V,0,V,SVI,SVJ);
 for_each(F.data(),F.data()+F.size(),[&SVJ](int & f){f=SVJ(f);});
@@ -17026,11 +17067,11 @@ Computes signed distance to a mesh.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em P} & \#P by 3 list of query point positions \\
+\mbox{\texttt{ in}}  & {\em P} & \#P by (2\texorpdfstring{$\vert$}{|}3) list of query point positions \\
 \hline
-\mbox{\texttt{ in}}  & {\em V} & \#V by 3 list of vertex positions \\
+\mbox{\texttt{ in}}  & {\em V} & \#V by (2\texorpdfstring{$\vert$}{|}3) list of vertex positions \\
 \hline
-\mbox{\texttt{ in}}  & {\em F} & \#F by ss list of triangle indices, ss should be 3 unless sign\+\_\+type == SIGNED\+\_\+\+DISTANCE\+\_\+\+TYPE\+\_\+\+UNSIGNED \\
+\mbox{\texttt{ in}}  & {\em F} & \#F by ss list of triangle indices, ss should be 3 unless sign\+\_\+type == SIGNED\+\_\+\+DISTANCE\+\_\+\+TYPE\+\_\+\+UNSIGNED \texorpdfstring{$\vert$}{|} SIGNED\+\_\+\+DISTANCE\+\_\+\+TYPE\+\_\+\+WINDING\+\_\+\+NUMBER \\
 \hline
 \mbox{\texttt{ in}}  & {\em sign\+\_\+type} & method for computing distance {\itshape sign} S \\
 \hline
@@ -17042,9 +17083,9 @@ Computes signed distance to a mesh.
 \hline
 \mbox{\texttt{ out}}  & {\em I} & \#P list of facet indices corresponding to smallest distances \\
 \hline
-\mbox{\texttt{ out}}  & {\em C} & \#P by 3 list of closest points \\
+\mbox{\texttt{ out}}  & {\em C} & \#P by (2\texorpdfstring{$\vert$}{|}3) list of closest points \\
 \hline
-\mbox{\texttt{ out}}  & {\em N} & \#P by 3 list of closest normals (only set if sign\+\_\+type=SIGNED\+\_\+\+DISTANCE\+\_\+\+TYPE\+\_\+\+PSEUDONORMAL)\\
+\mbox{\texttt{ out}}  & {\em N} & \#P by (2\texorpdfstring{$\vert$}{|}3) list of closest normals (only set if sign\+\_\+type=SIGNED\+\_\+\+DISTANCE\+\_\+\+TYPE\+\_\+\+PSEUDONORMAL)\\
 \hline
 \end{DoxyParams}
 \Hypertarget{namespaceigl_a9379f935afc42d6fbad6340c07639c54}\label{namespaceigl_a9379f935afc42d6fbad6340c07639c54} 
@@ -17202,7 +17243,7 @@ void igl\+::signed\+\_\+distance\+\_\+fast\+\_\+winding\+\_\+number (\begin{Doxy
 
 Calculates signed distance at query points P, using fast winding number for sign. 
 
-\hypertarget{namespaceigl_autotoc_md31}{}\doxyparagraph{\texorpdfstring{Usage\+:}{Usage:}}\label{namespaceigl_autotoc_md31}
+\hypertarget{namespaceigl_autotoc_md32}{}\doxyparagraph{\texorpdfstring{Usage\+:}{Usage:}}\label{namespaceigl_autotoc_md32}
 Vector\+Xd S; ~\newline
  Vector\+Xd V, P; //where V is mesh vertices, P are query points Vector\+Xi F; ~\newline
  igl\+::\+Fast\+Winding\+Number\+BVH fwn\+\_\+bvh; \doxylink{namespaceigl_af9a50987fefc0df065fb3e2cde90c92e}{igl\+::fast\+\_\+winding\+\_\+number}(V.\+cast$<$float$>$(), F, 2, fwn\+\_\+bvh); igl\+::signed\+\_\+distance\+\_\+fast\+\_\+winding\+\_\+number(\+P,\+V,\+F,tree,fwn\+\_\+bvh,\+S);
@@ -17287,29 +17328,27 @@ void igl\+::slice (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Sparse\+Matri
 
 Act like the matlab X(row\+\_\+indices,col\+\_\+indices) operator, where row\+\_\+indices, col\+\_\+indices are non-\/negative integer indices. 
 
-Inputs\+: X m by n matrix R list of row indices C list of column indices Output\+: Y \#R by \#C matrix
 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em X} & m by n matrix \\
+\hline
+\mbox{\texttt{ in}}  & {\em R} & list of row indices \\
+\hline
+\mbox{\texttt{ in}}  & {\em C} & list of column indices \\
+\hline
+\mbox{\texttt{ out}}  & {\em Y} & \#R by \#C matrix\\
+\hline
+\end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
-\doxylink{namespaceigl_aef569f1ee0e9cd71c2cfabd1e27e2f40}{slice\+\_\+mask}, \doxylink{namespaceigl_ab893d0a94d4eb6a1c5422e7cfe368daf}{slice\+\_\+into}
+\doxylink{namespaceigl_acb30d6061d773254628256682b88b427}{slice\+\_\+mask}, \doxylink{namespaceigl_ab893d0a94d4eb6a1c5422e7cfe368daf}{slice\+\_\+into}
 \end{DoxySeeAlso}
 \begin{DoxyNote}{Note}
 See also Eigen\textquotesingle{}s unary\+Expr \href{https://stackoverflow.com/a/49411587/148668}{\texttt{ https\+://stackoverflow.\+com/a/49411587/148668}} 
 \end{DoxyNote}
-\Hypertarget{namespaceigl_a90268d9fb8c64692427036793191a8b7}\label{namespaceigl_a90268d9fb8c64692427036793191a8b7} 
-\index{igl@{igl}!slice@{slice}}
-\index{slice@{slice}!igl@{igl}}
-\doxysubsubsection{\texorpdfstring{slice()}{slice()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
-{\footnotesize\ttfamily template$<$typename DerivedX , typename DerivedR , typename DerivedC , typename DerivedY $>$ \\
-void igl\+::slice (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Dense\+Base$<$ DerivedX $>$ \&}]{X,  }\item[{const Eigen\+::\+Dense\+Base$<$ DerivedR $>$ \&}]{R,  }\item[{const Eigen\+::\+Dense\+Base$<$ DerivedC $>$ \&}]{C,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedY $>$ \&}]{Y }\end{DoxyParamCaption})}
-
-
-
-This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
-
 \Hypertarget{namespaceigl_ae747d042c40e074264e161b49906216d}\label{namespaceigl_ae747d042c40e074264e161b49906216d} 
 \index{igl@{igl}!slice@{slice}}
 \index{slice@{slice}!igl@{igl}}
-\doxysubsubsection{\texorpdfstring{slice()}{slice()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
+\doxysubsubsection{\texorpdfstring{slice()}{slice()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
 {\footnotesize\ttfamily template$<$typename MatX , typename DerivedR , typename MatY $>$ \\
 void igl\+::slice (\begin{DoxyParamCaption}\item[{const MatX \&}]{X,  }\item[{const Eigen\+::\+Dense\+Base$<$ DerivedR $>$ \&}]{R,  }\item[{const int}]{dim,  }\item[{MatY \&}]{Y }\end{DoxyParamCaption})}
 
@@ -17327,6 +17366,17 @@ Wrapper to only slice in one direction
 \begin{DoxyNote}{Note}
 For now this is just a cheap wrapper. 
 \end{DoxyNote}
+\Hypertarget{namespaceigl_aa05264f934b9cecbac042ef69735b74b}\label{namespaceigl_aa05264f934b9cecbac042ef69735b74b} 
+\index{igl@{igl}!slice@{slice}}
+\index{slice@{slice}!igl@{igl}}
+\doxysubsubsection{\texorpdfstring{slice()}{slice()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void igl\+::slice (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T $>$ \&}]{X,  }\item[{std\+::vector$<$ size\+\_\+t $>$ const \&}]{R,  }\item[{std\+::vector$<$ T $>$ \&}]{Y }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
 \Hypertarget{namespaceigl_aae8c4cf15b6f5f8cc16da9405b96be59}\label{namespaceigl_aae8c4cf15b6f5f8cc16da9405b96be59} 
 \index{igl@{igl}!slice@{slice}}
 \index{slice@{slice}!igl@{igl}}
@@ -17338,10 +17388,21 @@ void igl\+::slice (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Dense\+Base$<
 
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
 
-Vector version \Hypertarget{namespaceigl_a86abeffa3ef136e9e35057e526618dc8}\label{namespaceigl_a86abeffa3ef136e9e35057e526618dc8} 
+Vector version  \Hypertarget{namespaceigl_a90268d9fb8c64692427036793191a8b7}\label{namespaceigl_a90268d9fb8c64692427036793191a8b7} 
 \index{igl@{igl}!slice@{slice}}
 \index{slice@{slice}!igl@{igl}}
 \doxysubsubsection{\texorpdfstring{slice()}{slice()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
+{\footnotesize\ttfamily template$<$typename DerivedX , typename DerivedR , typename DerivedC , typename DerivedY $>$ \\
+void igl\+::slice (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Dense\+Base$<$ DerivedX $>$ \&}]{X,  }\item[{const Eigen\+::\+Dense\+Base$<$ DerivedR $>$ \&}]{R,  }\item[{const Eigen\+::\+Dense\+Base$<$ DerivedC $>$ \&}]{C,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedY $>$ \&}]{Y }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+See \doxylink{slice_8h}{slice.\+h} for more details \Hypertarget{namespaceigl_a86abeffa3ef136e9e35057e526618dc8}\label{namespaceigl_a86abeffa3ef136e9e35057e526618dc8} 
+\index{igl@{igl}!slice@{slice}}
+\index{slice@{slice}!igl@{igl}}
+\doxysubsubsection{\texorpdfstring{slice()}{slice()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
 {\footnotesize\ttfamily template$<$typename DerivedX , typename DerivedR $>$ \\
 DerivedX igl\+::slice (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Dense\+Base$<$ DerivedX $>$ \&}]{X,  }\item[{const Eigen\+::\+Dense\+Base$<$ DerivedR $>$ \&}]{R }\end{DoxyParamCaption})}
 
@@ -17352,20 +17413,9 @@ This is an overloaded member function, provided for convenience. It differs from
 Vector\+Xi Y = slice(\+X,\+R); This templating is bad because the return type might not have the same size as {\ttfamily DerivedX}. This will probably only work if DerivedX has Dynamic as it\textquotesingle{}s non-\/trivial sizes or if the number of rows in R happens to equal the number of rows in {\ttfamily DerivedX}. \Hypertarget{namespaceigl_aa5271870d0385781c2236145ee9c3897}\label{namespaceigl_aa5271870d0385781c2236145ee9c3897} 
 \index{igl@{igl}!slice@{slice}}
 \index{slice@{slice}!igl@{igl}}
-\doxysubsubsection{\texorpdfstring{slice()}{slice()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
+\doxysubsubsection{\texorpdfstring{slice()}{slice()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
 {\footnotesize\ttfamily template$<$typename DerivedX , typename DerivedR $>$ \\
 DerivedX igl\+::slice (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Dense\+Base$<$ DerivedX $>$ \&}]{X,  }\item[{const Eigen\+::\+Dense\+Base$<$ DerivedR $>$ \&}]{R,  }\item[{const int}]{dim }\end{DoxyParamCaption})}
-
-
-
-This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
-
-\Hypertarget{namespaceigl_aa05264f934b9cecbac042ef69735b74b}\label{namespaceigl_aa05264f934b9cecbac042ef69735b74b} 
-\index{igl@{igl}!slice@{slice}}
-\index{slice@{slice}!igl@{igl}}
-\doxysubsubsection{\texorpdfstring{slice()}{slice()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
-{\footnotesize\ttfamily template$<$class T $>$ \\
-void igl\+::slice (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T $>$ \&}]{X,  }\item[{std\+::vector$<$ size\+\_\+t $>$ const \&}]{R,  }\item[{std\+::vector$<$ T $>$ \&}]{Y }\end{DoxyParamCaption})}
 
 
 
@@ -17397,7 +17447,7 @@ This is a fast version of \doxylink{namespaceigl_a547a8704200d3af48fe92105c15a32
 \mbox{\texttt{ out}}  & {\em Y} & \#R by \#C matrix\\
 \hline
 \end{DoxyParams}
-\hypertarget{namespaceigl_autotoc_md32}{}\doxyparagraph{\texorpdfstring{Example}{Example}}\label{namespaceigl_autotoc_md32}
+\hypertarget{namespaceigl_autotoc_md33}{}\doxyparagraph{\texorpdfstring{Example}{Example}}\label{namespaceigl_autotoc_md33}
 \begin{DoxyVerb}// Construct and slice up Laplacian
 SparseMatrix<double> L,L_sliced;
 igl::cotmatrix(V,F,L);
@@ -17452,24 +17502,16 @@ Act like the matlab Y(row\+\_\+indices,col\+\_\+indices) = X.
 \hline
 \mbox{\texttt{ in}}  & {\em Y} & ym by yn lhs matrix \\
 \hline
-\mbox{\texttt{ out}}  & {\em Y} & ym by yn lhs matrix, same as input but Y(\+R,\+C) = X \\
+\mbox{\texttt{ out}}  & {\em Y} & ym by yn lhs matrix, same as input but Y(\+R,\+C) = X\\
 \hline
 \end{DoxyParams}
-\Hypertarget{namespaceigl_afce428bb768059c8d6f9563873f8e730}\label{namespaceigl_afce428bb768059c8d6f9563873f8e730} 
-\index{igl@{igl}!slice\_into@{slice\_into}}
-\index{slice\_into@{slice\_into}!igl@{igl}}
-\doxysubsubsection{\texorpdfstring{slice\_into()}{slice\_into()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
-{\footnotesize\ttfamily template$<$typename DerivedX , typename DerivedY , typename DerivedR , typename DerivedC $>$ \\
-void igl\+::slice\+\_\+into (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedX $>$ \&}]{X,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedR $>$ \&}]{R,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedC $>$ \&}]{C,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedY $>$ \&}]{Y }\end{DoxyParamCaption})}
-
-
-
-This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
-
+\begin{DoxySeeAlso}{See also}
+\doxylink{namespaceigl_a547a8704200d3af48fe92105c15a32ad}{slice} 
+\end{DoxySeeAlso}
 \Hypertarget{namespaceigl_a185ee703c7cf8760af368bcb0861d37f}\label{namespaceigl_a185ee703c7cf8760af368bcb0861d37f} 
 \index{igl@{igl}!slice\_into@{slice\_into}}
 \index{slice\_into@{slice\_into}!igl@{igl}}
-\doxysubsubsection{\texorpdfstring{slice\_into()}{slice\_into()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+\doxysubsubsection{\texorpdfstring{slice\_into()}{slice\_into()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
 {\footnotesize\ttfamily template$<$typename MatX , typename MatY , typename DerivedR $>$ \\
 void igl\+::slice\+\_\+into (\begin{DoxyParamCaption}\item[{const MatX \&}]{X,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedR $>$ \&}]{R,  }\item[{const int}]{dim,  }\item[{MatY \&}]{Y }\end{DoxyParamCaption})}
 
@@ -17487,7 +17529,18 @@ Wrapper to only slice in one direction
 \begin{DoxyNote}{Note}
 For now this is just a cheap wrapper. 
 \end{DoxyNote}
-\Hypertarget{namespaceigl_aa29b762b3094e33fd5167ca196de49ce}\label{namespaceigl_aa29b762b3094e33fd5167ca196de49ce} 
+\Hypertarget{namespaceigl_afce428bb768059c8d6f9563873f8e730}\label{namespaceigl_afce428bb768059c8d6f9563873f8e730} 
+\index{igl@{igl}!slice\_into@{slice\_into}}
+\index{slice\_into@{slice\_into}!igl@{igl}}
+\doxysubsubsection{\texorpdfstring{slice\_into()}{slice\_into()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename DerivedX , typename DerivedY , typename DerivedR , typename DerivedC $>$ \\
+void igl\+::slice\+\_\+into (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedX $>$ \&}]{X,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedR $>$ \&}]{R,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedC $>$ \&}]{C,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedY $>$ \&}]{Y }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+See \doxylink{slice_8h}{slice.\+h} for more details \Hypertarget{namespaceigl_aa29b762b3094e33fd5167ca196de49ce}\label{namespaceigl_aa29b762b3094e33fd5167ca196de49ce} 
 \index{igl@{igl}!slice\_into@{slice\_into}}
 \index{slice\_into@{slice\_into}!igl@{igl}}
 \doxysubsubsection{\texorpdfstring{slice\_into()}{slice\_into()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
@@ -17498,12 +17551,12 @@ void igl\+::slice\+\_\+into (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Mat
 
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
 
-Vector version \Hypertarget{namespaceigl_aef569f1ee0e9cd71c2cfabd1e27e2f40}\label{namespaceigl_aef569f1ee0e9cd71c2cfabd1e27e2f40} 
+Vector version \Hypertarget{namespaceigl_acb30d6061d773254628256682b88b427}\label{namespaceigl_acb30d6061d773254628256682b88b427} 
 \index{igl@{igl}!slice\_mask@{slice\_mask}}
 \index{slice\_mask@{slice\_mask}!igl@{igl}}
 \doxysubsubsection{\texorpdfstring{slice\_mask()}{slice\_mask()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
-{\footnotesize\ttfamily template$<$typename DerivedX , typename DerivedY $>$ \\
-void igl\+::slice\+\_\+mask (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Dense\+Base$<$ DerivedX $>$ \&}]{X,  }\item[{const Eigen\+::\+Array$<$ bool, Eigen\+::\+Dynamic, 1 $>$ \&}]{R,  }\item[{const Eigen\+::\+Array$<$ bool, Eigen\+::\+Dynamic, 1 $>$ \&}]{C,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedY $>$ \&}]{Y }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily template$<$typename XType , typename YType $>$ \\
+void igl\+::slice\+\_\+mask (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Sparse\+Matrix$<$ XType $>$ \&}]{X,  }\item[{const Eigen\+::\+Array$<$ bool, Eigen\+::\+Dynamic, 1 $>$ \&}]{R,  }\item[{const Eigen\+::\+Array$<$ bool, Eigen\+::\+Dynamic, 1 $>$ \&}]{C,  }\item[{Eigen\+::\+Sparse\+Matrix$<$ YType $>$ \&}]{Y }\end{DoxyParamCaption})}
 
 
 
@@ -17521,14 +17574,14 @@ Act like the matlab X(row\+\_\+mask,col\+\_\+mask) operator, where row\+\_\+mask
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
-\doxylink{namespaceigl_aef569f1ee0e9cd71c2cfabd1e27e2f40}{slice\+\_\+mask} 
+\doxylink{namespaceigl_a547a8704200d3af48fe92105c15a32ad}{slice} 
 \end{DoxySeeAlso}
-\Hypertarget{namespaceigl_ab448e84d310f37a2cffd09d50faad326}\label{namespaceigl_ab448e84d310f37a2cffd09d50faad326} 
+\Hypertarget{namespaceigl_a6770877236349590d6b4bbc2a6f616ad}\label{namespaceigl_a6770877236349590d6b4bbc2a6f616ad} 
 \index{igl@{igl}!slice\_mask@{slice\_mask}}
 \index{slice\_mask@{slice\_mask}!igl@{igl}}
 \doxysubsubsection{\texorpdfstring{slice\_mask()}{slice\_mask()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
-{\footnotesize\ttfamily template$<$typename DerivedX , typename DerivedY $>$ \\
-void igl\+::slice\+\_\+mask (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Dense\+Base$<$ DerivedX $>$ \&}]{X,  }\item[{const Eigen\+::\+Array$<$ bool, Eigen\+::\+Dynamic, 1 $>$ \&}]{R,  }\item[{const int}]{dim,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedY $>$ \&}]{Y }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily template$<$typename XType , typename YType $>$ \\
+void igl\+::slice\+\_\+mask (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Sparse\+Matrix$<$ XType $>$ \&}]{X,  }\item[{const Eigen\+::\+Array$<$ bool, Eigen\+::\+Dynamic, 1 $>$ \&}]{R,  }\item[{const int}]{dim,  }\item[{Eigen\+::\+Sparse\+Matrix$<$ YType $>$ \&}]{Y }\end{DoxyParamCaption})}
 
 
 
@@ -17541,10 +17594,28 @@ Wrapper to only slice in one direction
 {\em \mbox{[}int\mbox{]}} & dim dimension to slice in 1 or 2, dim=1 -\/-\/\texorpdfstring{$>$}{>} X(\+R,\+:), dim=2 -\/-\/\texorpdfstring{$>$}{>} X(\+:,\+R) \\
 \hline
 \end{DoxyParams}
-\Hypertarget{namespaceigl_afe884ab3e3a80bcea135959a5b9aa831}\label{namespaceigl_afe884ab3e3a80bcea135959a5b9aa831} 
+\Hypertarget{namespaceigl_aef569f1ee0e9cd71c2cfabd1e27e2f40}\label{namespaceigl_aef569f1ee0e9cd71c2cfabd1e27e2f40} 
 \index{igl@{igl}!slice\_mask@{slice\_mask}}
 \index{slice\_mask@{slice\_mask}!igl@{igl}}
 \doxysubsubsection{\texorpdfstring{slice\_mask()}{slice\_mask()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$typename DerivedX , typename DerivedY $>$ \\
+void igl\+::slice\+\_\+mask (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Dense\+Base$<$ DerivedX $>$ \&}]{X,  }\item[{const Eigen\+::\+Array$<$ bool, Eigen\+::\+Dynamic, 1 $>$ \&}]{R,  }\item[{const Eigen\+::\+Array$<$ bool, Eigen\+::\+Dynamic, 1 $>$ \&}]{C,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedY $>$ \&}]{Y }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+See \doxylink{slice_8h}{slice.\+h} for more details \Hypertarget{namespaceigl_ab448e84d310f37a2cffd09d50faad326}\label{namespaceigl_ab448e84d310f37a2cffd09d50faad326} 
+\index{igl@{igl}!slice\_mask@{slice\_mask}}
+\index{slice\_mask@{slice\_mask}!igl@{igl}}
+\doxysubsubsection{\texorpdfstring{slice\_mask()}{slice\_mask()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$typename DerivedX , typename DerivedY $>$ \\
+void igl\+::slice\+\_\+mask (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Dense\+Base$<$ DerivedX $>$ \&}]{X,  }\item[{const Eigen\+::\+Array$<$ bool, Eigen\+::\+Dynamic, 1 $>$ \&}]{R,  }\item[{const int}]{dim,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedY $>$ \&}]{Y }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceigl_afe884ab3e3a80bcea135959a5b9aa831}\label{namespaceigl_afe884ab3e3a80bcea135959a5b9aa831} 
+\index{igl@{igl}!slice\_mask@{slice\_mask}}
+\index{slice\_mask@{slice\_mask}!igl@{igl}}
+\doxysubsubsection{\texorpdfstring{slice\_mask()}{slice\_mask()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
 {\footnotesize\ttfamily template$<$typename DerivedX $>$ \\
 DerivedX igl\+::slice\+\_\+mask (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Dense\+Base$<$ DerivedX $>$ \&}]{X,  }\item[{const Eigen\+::\+Array$<$ bool, Eigen\+::\+Dynamic, 1 $>$ \&}]{R,  }\item[{const Eigen\+::\+Array$<$ bool, Eigen\+::\+Dynamic, 1 $>$ \&}]{C }\end{DoxyParamCaption})}
 
@@ -17558,31 +17629,9 @@ This templating is bad because the return type might not have the same size as {
 \Hypertarget{namespaceigl_ae4dd189219e52c3496a80f36b82cbbce}\label{namespaceigl_ae4dd189219e52c3496a80f36b82cbbce} 
 \index{igl@{igl}!slice\_mask@{slice\_mask}}
 \index{slice\_mask@{slice\_mask}!igl@{igl}}
-\doxysubsubsection{\texorpdfstring{slice\_mask()}{slice\_mask()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+\doxysubsubsection{\texorpdfstring{slice\_mask()}{slice\_mask()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
 {\footnotesize\ttfamily template$<$typename DerivedX $>$ \\
 DerivedX igl\+::slice\+\_\+mask (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Dense\+Base$<$ DerivedX $>$ \&}]{X,  }\item[{const Eigen\+::\+Array$<$ bool, Eigen\+::\+Dynamic, 1 $>$ \&}]{R,  }\item[{const int}]{dim }\end{DoxyParamCaption})}
-
-
-
-This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
-
-\Hypertarget{namespaceigl_a6770877236349590d6b4bbc2a6f616ad}\label{namespaceigl_a6770877236349590d6b4bbc2a6f616ad} 
-\index{igl@{igl}!slice\_mask@{slice\_mask}}
-\index{slice\_mask@{slice\_mask}!igl@{igl}}
-\doxysubsubsection{\texorpdfstring{slice\_mask()}{slice\_mask()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
-{\footnotesize\ttfamily template$<$typename XType , typename YType $>$ \\
-void igl\+::slice\+\_\+mask (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Sparse\+Matrix$<$ XType $>$ \&}]{X,  }\item[{const Eigen\+::\+Array$<$ bool, Eigen\+::\+Dynamic, 1 $>$ \&}]{R,  }\item[{const int}]{dim,  }\item[{Eigen\+::\+Sparse\+Matrix$<$ YType $>$ \&}]{Y }\end{DoxyParamCaption})}
-
-
-
-This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
-
-\Hypertarget{namespaceigl_acb30d6061d773254628256682b88b427}\label{namespaceigl_acb30d6061d773254628256682b88b427} 
-\index{igl@{igl}!slice\_mask@{slice\_mask}}
-\index{slice\_mask@{slice\_mask}!igl@{igl}}
-\doxysubsubsection{\texorpdfstring{slice\_mask()}{slice\_mask()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
-{\footnotesize\ttfamily template$<$typename XType , typename YType $>$ \\
-void igl\+::slice\+\_\+mask (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Sparse\+Matrix$<$ XType $>$ \&}]{X,  }\item[{const Eigen\+::\+Array$<$ bool, Eigen\+::\+Dynamic, 1 $>$ \&}]{R,  }\item[{const Eigen\+::\+Array$<$ bool, Eigen\+::\+Dynamic, 1 $>$ \&}]{C,  }\item[{Eigen\+::\+Sparse\+Matrix$<$ YType $>$ \&}]{Y }\end{DoxyParamCaption})}
 
 
 
@@ -18239,7 +18288,7 @@ Divides the construction in two phases, one for fixing the sparsity pattern, and
 \mbox{\texttt{ out}}  & {\em X} & m by n matrix of type T whose entries are to be found\\
 \hline
 \end{DoxyParams}
-\hypertarget{namespaceigl_autotoc_md33}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md33}
+\hypertarget{namespaceigl_autotoc_md34}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md34}
 \begin{DoxyVerb}  Eigen::SparseMatrix<double> A;
   std::vector<Eigen::Triplet<double> > IJV;
   slim_buildA(IJV);
@@ -18959,7 +19008,7 @@ Transpose blocks of a matrix.
 \mbox{\texttt{ out}}  & {\em B} & n\texorpdfstring{$\ast$}{*}k by m (dim\+: 1) or n by m\texorpdfstring{$\ast$}{*}k (dim\+: 2) eigen Matrix of type T values, NOT allowed to be the same as A\\
 \hline
 \end{DoxyParams}
-\hypertarget{namespaceigl_autotoc_md34}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md34}
+\hypertarget{namespaceigl_autotoc_md35}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md35}
 A = \mbox{[} 1 2 3 4 5 6 7 8 101 102 103 104 105 106 107 108 201 202 203 204 205 206 207 208\mbox{]}; transpose\+\_\+blocks(\+A,1,3,\+B); B -\/\texorpdfstring{$>$}{>} \mbox{[} 1 5 2 6 3 7 4 8 101 105 102 106 103 107 104 108 201 205 202 206 203 207 204 208\mbox{]}; \Hypertarget{namespaceigl_a62161fdfef57c22542b38d735550b635}\label{namespaceigl_a62161fdfef57c22542b38d735550b635} 
 \index{igl@{igl}!tri\_tri\_overlap\_test\_3d@{tri\_tri\_overlap\_test\_3d}}
 \index{tri\_tri\_overlap\_test\_3d@{tri\_tri\_overlap\_test\_3d}!igl@{igl}}
@@ -19459,7 +19508,7 @@ It is usual much faster if your algorithm can be written in terms of (u\+EC,u\+E
 \mbox{\texttt{ out}}  & {\em u\+EE} & \#E list of indices into E, so that the consecutive segment of indices u\+EE.\+segment(u\+EC(i),u\+EC(i+1)-\/u\+EC(i)) lists all directed edges sharing the ith unique edge.\\
 \hline
 \end{DoxyParams}
-\hypertarget{namespaceigl_autotoc_md35}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md35}
+\hypertarget{namespaceigl_autotoc_md36}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md36}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{comment}{//\ Using\ uE2E}}
@@ -19753,7 +19802,7 @@ Unproject a screen location (using current opengl viewport, projection, and mode
 \begin{DoxyReturn}{Returns}
 true if there\textquotesingle{}s a hit
 \end{DoxyReturn}
-\hypertarget{namespaceigl_autotoc_md36}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md36}
+\hypertarget{namespaceigl_autotoc_md37}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md37}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{igl::opengl::glfw::Viewer}}\ vr;}
@@ -19832,7 +19881,7 @@ To pass a list of attributes this function takes an std\+::vector of std\+::refe
 \mbox{\texttt{ out}}  & {\em J} & \#F\texorpdfstring{$\ast$}{*}3 by 1 list of indices so that A\mbox{[}\mbox{]}(i,j) = U.\+row(i+j\texorpdfstring{$\ast$}{*}\#F)\\
 \hline
 \end{DoxyParams}
-\hypertarget{namespaceigl_autotoc_md37}{}\doxyparagraph{\texorpdfstring{Matlibberish Example}{Matlibberish Example}}\label{namespaceigl_autotoc_md37}
+\hypertarget{namespaceigl_autotoc_md38}{}\doxyparagraph{\texorpdfstring{Matlibberish Example}{Matlibberish Example}}\label{namespaceigl_autotoc_md38}
 \mbox{[}V,F,TC,FTC\mbox{]} = read\+OBJ(\textquotesingle{}\texorpdfstring{$\sim$}{\string~}/\+Downloads/kiwis/kiwi.obj\textquotesingle{}); \mbox{[}U,G\mbox{]} = unzip\+\_\+corners(cat(3,\+F,\+FTC)); \% display mesh tsurf(G,V(\+U(\+:,1),\+:)); \% display texture coordinates tsurf(G,TC(\+U(\+:,2),\+:)); \Hypertarget{namespaceigl_a7897e133babd19415648e5aaef9cc63a}\label{namespaceigl_a7897e133babd19415648e5aaef9cc63a} 
 \index{igl@{igl}!upsample@{upsample}}
 \index{upsample@{upsample}!igl@{igl}}

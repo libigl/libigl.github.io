@@ -128,22 +128,22 @@ Functions</h2></td></tr>
 <tr class="separator:a866564d1ac5b6f69fcee878f2ac2429d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h1><a class="anchor" id="autotoc_md22"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md23"></a>
 .dmat - dense matrices</h1>
 <hr  />
 <p>A .dmat file contains a dense matrix in column major order. It can contain ASCII or binary data. Note that it is uncompressed so binary only reduces the file size by 50%. But writing and reading binary is usually faster. In MATLAB, binary is almost 100x faster.</p>
-<h2><a class="anchor" id="autotoc_md24"></a>
+<h2><a class="anchor" id="autotoc_md25"></a>
 ASCII</h2>
 <p>The first line is a header containing: </p><pre class="fragment">[#cols] [#rows]
 </pre><p> Then the coefficients are printed in column-major order separated by spaces.</p>
-<h2><a class="anchor" id="autotoc_md25"></a>
+<h2><a class="anchor" id="autotoc_md26"></a>
 Binary</h2>
 <p>Binary files will also contain the ascii header, but it should read: </p><pre class="fragment">0 0
 </pre><p> Then there should be another header containing the size of the binary part: </p><pre class="fragment">[#cols] [#rows]
 </pre><p> Then coefficients are written in column-major order in Little-endian 8-byte double precision IEEE floating point format.</p>
 <p><b>Note:</b> Line endings must be &lsquo;&rsquo;<br  />
 '<code>aka</code>char(10)` aka line feeds.</p>
-<h4><a class="anchor" id="autotoc_md26"></a>
+<h4><a class="anchor" id="autotoc_md27"></a>
 Example:</h4>
 <pre class="fragment"> The matrix m = [1 2 3; 4 5 6];
 </pre><p> corresponds to a .dmat file containing: </p><pre class="fragment">  3 2

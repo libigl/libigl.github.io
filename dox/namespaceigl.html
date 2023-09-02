@@ -1342,6 +1342,10 @@ Skinning and Variants".  <br /></td></tr>
 <tr class="memitem:ab6758ca13380f9bd099c860aba705d45"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#ab6758ca13380f9bd099c860aba705d45">find</a> (const Eigen::SparseVector&lt; T &gt; &amp;X, Eigen::Matrix&lt; int, Eigen::Dynamic, 1 &gt; &amp;I, Eigen::Matrix&lt; T, Eigen::Dynamic, 1 &gt; &amp;V)</td></tr>
 <tr class="memdesc:ab6758ca13380f9bd099c860aba705d45"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
 <tr class="separator:ab6758ca13380f9bd099c860aba705d45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35cd54b6c6bf02c39e4caf02782fcfbc" id="r_a35cd54b6c6bf02c39e4caf02782fcfbc"><td class="memTemplParams" colspan="2">template&lt;int RowsAtCompileTime, int MaxRowsAtCompileTime&gt; </td></tr>
+<tr class="memitem:a35cd54b6c6bf02c39e4caf02782fcfbc"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a35cd54b6c6bf02c39e4caf02782fcfbc">find</a> (const Eigen::Array&lt; bool, RowsAtCompileTime, 1, 0, MaxRowsAtCompileTime, 1 &gt; &amp;M)</td></tr>
+<tr class="memdesc:a35cd54b6c6bf02c39e4caf02782fcfbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
+<tr class="separator:a35cd54b6c6bf02c39e4caf02782fcfbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb0edb6d4f1aed375b757bdc5c273246" id="r_abb0edb6d4f1aed375b757bdc5c273246"><td class="memTemplParams" colspan="2">template&lt;typename DerivedV , typename DerivedF , typename DerivedM , typename DerivedO &gt; </td></tr>
 <tr class="memitem:abb0edb6d4f1aed375b757bdc5c273246"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#abb0edb6d4f1aed375b757bdc5c273246">find_cross_field_singularities</a> (const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, const Eigen::MatrixBase&lt; DerivedF &gt; &amp;F, const Eigen::MatrixBase&lt; DerivedM &gt; &amp;mismatch, Eigen::PlainObjectBase&lt; DerivedO &gt; &amp;isSingularity, Eigen::PlainObjectBase&lt; DerivedO &gt; &amp;singularityIndex)</td></tr>
 <tr class="memdesc:abb0edb6d4f1aed375b757bdc5c273246"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes singularities of a cross field, assumed combed.  <br /></td></tr>
@@ -2267,14 +2271,14 @@ fitting digitized curves" [Schneider 1990].  <br /></td></tr>
 <tr class="memitem:ae9616bb9fd33e6c00dcb4e8f91952091"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#ae9616bb9fd33e6c00dcb4e8f91952091">point_mesh_squared_distance</a> (const Eigen::MatrixBase&lt; DerivedP &gt; &amp;P, const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, const Eigen::MatrixBase&lt; DerivedEle &gt; &amp;Ele, Eigen::PlainObjectBase&lt; DerivedsqrD &gt; &amp;sqrD, Eigen::PlainObjectBase&lt; DerivedI &gt; &amp;I, Eigen::PlainObjectBase&lt; DerivedC &gt; &amp;C)</td></tr>
 <tr class="memdesc:ae9616bb9fd33e6c00dcb4e8f91952091"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute distances from a set of points P to a triangle mesh (V,F)  <br /></td></tr>
 <tr class="separator:ae9616bb9fd33e6c00dcb4e8f91952091"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3de253885cbe07d8d264d21d6ba8a193" id="r_a3de253885cbe07d8d264d21d6ba8a193"><td class="memTemplParams" colspan="2">template&lt;int DIM, typename Derivedp , typename DerivedV , typename DerivedEle , typename Derivedsqr_d , typename Derivedc &gt; </td></tr>
-<tr class="memitem:a3de253885cbe07d8d264d21d6ba8a193"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a3de253885cbe07d8d264d21d6ba8a193">point_simplex_squared_distance</a> (const Eigen::MatrixBase&lt; Derivedp &gt; &amp;p, const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, const Eigen::MatrixBase&lt; DerivedEle &gt; &amp;Ele, const typename DerivedEle::Index i, Derivedsqr_d &amp;sqr_d, Eigen::MatrixBase&lt; Derivedc &gt; &amp;c)</td></tr>
-<tr class="memdesc:a3de253885cbe07d8d264d21d6ba8a193"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine squared distance from a point to linear simplex.  <br /></td></tr>
-<tr class="separator:a3de253885cbe07d8d264d21d6ba8a193"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add9fa7fb8d6e85604adbb9aebb990014" id="r_add9fa7fb8d6e85604adbb9aebb990014"><td class="memTemplParams" colspan="2">template&lt;int DIM, typename Derivedp , typename DerivedV , typename DerivedEle , typename Derivedsqr_d , typename Derivedc , typename Derivedb &gt; </td></tr>
-<tr class="memitem:add9fa7fb8d6e85604adbb9aebb990014"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#add9fa7fb8d6e85604adbb9aebb990014">point_simplex_squared_distance</a> (const Eigen::MatrixBase&lt; Derivedp &gt; &amp;p, const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, const Eigen::MatrixBase&lt; DerivedEle &gt; &amp;Ele, const typename DerivedEle::Index i, Derivedsqr_d &amp;sqr_d, Eigen::MatrixBase&lt; Derivedc &gt; &amp;c, Eigen::PlainObjectBase&lt; Derivedb &gt; &amp;b)</td></tr>
-<tr class="memdesc:add9fa7fb8d6e85604adbb9aebb990014"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine squared distance from a point to linear simplex.  <br /></td></tr>
-<tr class="separator:add9fa7fb8d6e85604adbb9aebb990014"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c64da392edc068d98cf9c78ec8a6ee3" id="r_a8c64da392edc068d98cf9c78ec8a6ee3"><td class="memTemplParams" colspan="2">template&lt;int DIM, typename Derivedp , typename DerivedV , typename DerivedEle , typename Derivedsqr_d , typename Derivedc &gt; </td></tr>
+<tr class="memitem:a8c64da392edc068d98cf9c78ec8a6ee3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a8c64da392edc068d98cf9c78ec8a6ee3">point_simplex_squared_distance</a> (const Eigen::MatrixBase&lt; Derivedp &gt; &amp;p, const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, const Eigen::MatrixBase&lt; DerivedEle &gt; &amp;Ele, const typename DerivedEle::Index i, Derivedsqr_d &amp;sqr_d, Eigen::PlainObjectBase&lt; Derivedc &gt; &amp;c)</td></tr>
+<tr class="memdesc:a8c64da392edc068d98cf9c78ec8a6ee3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine squared distance from a point to linear simplex.  <br /></td></tr>
+<tr class="separator:a8c64da392edc068d98cf9c78ec8a6ee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a937e7f60501c5fa10d8ddf3aba6e3d2e" id="r_a937e7f60501c5fa10d8ddf3aba6e3d2e"><td class="memTemplParams" colspan="2">template&lt;int DIM, typename Derivedp , typename DerivedV , typename DerivedEle , typename Derivedsqr_d , typename Derivedc , typename Derivedb &gt; </td></tr>
+<tr class="memitem:a937e7f60501c5fa10d8ddf3aba6e3d2e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a937e7f60501c5fa10d8ddf3aba6e3d2e">point_simplex_squared_distance</a> (const Eigen::MatrixBase&lt; Derivedp &gt; &amp;p, const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, const Eigen::MatrixBase&lt; DerivedEle &gt; &amp;Ele, const typename DerivedEle::Index i, Derivedsqr_d &amp;sqr_d, Eigen::PlainObjectBase&lt; Derivedc &gt; &amp;c, Eigen::PlainObjectBase&lt; Derivedb &gt; &amp;b)</td></tr>
+<tr class="memdesc:a937e7f60501c5fa10d8ddf3aba6e3d2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine squared distance from a point to linear simplex.  <br /></td></tr>
+<tr class="separator:a937e7f60501c5fa10d8ddf3aba6e3d2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adef4fd6ebad61768a405ac601011aa83" id="r_adef4fd6ebad61768a405ac601011aa83"><td class="memTemplParams" colspan="2">template&lt;typename DerivedA , typename DerivedR , typename DerivedT , typename DerivedU , typename DerivedS , typename DerivedV &gt; </td></tr>
 <tr class="memitem:adef4fd6ebad61768a405ac601011aa83"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#adef4fd6ebad61768a405ac601011aa83">polar_dec</a> (const Eigen::PlainObjectBase&lt; DerivedA &gt; &amp;A, bool includeReflections, Eigen::PlainObjectBase&lt; DerivedR &gt; &amp;R, Eigen::PlainObjectBase&lt; DerivedT &gt; &amp;T, Eigen::PlainObjectBase&lt; DerivedU &gt; &amp;U, Eigen::PlainObjectBase&lt; DerivedS &gt; &amp;S, Eigen::PlainObjectBase&lt; DerivedV &gt; &amp;V)</td></tr>
 <tr class="memdesc:adef4fd6ebad61768a405ac601011aa83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the polar decomposition (R,T) of a matrix A.  <br /></td></tr>
@@ -2964,18 +2968,22 @@ fitting digitized curves" [Schneider 1990].  <br /></td></tr>
 <tr class="memitem:a547a8704200d3af48fe92105c15a32ad"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a547a8704200d3af48fe92105c15a32ad">slice</a> (const Eigen::SparseMatrix&lt; TX &gt; &amp;X, const Eigen::DenseBase&lt; DerivedR &gt; &amp;R, const Eigen::DenseBase&lt; DerivedC &gt; &amp;C, Eigen::SparseMatrix&lt; TY &gt; &amp;Y)</td></tr>
 <tr class="memdesc:a547a8704200d3af48fe92105c15a32ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Act like the matlab X(row_indices,col_indices) operator, where row_indices, col_indices are non-negative integer indices.  <br /></td></tr>
 <tr class="separator:a547a8704200d3af48fe92105c15a32ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90268d9fb8c64692427036793191a8b7" id="r_a90268d9fb8c64692427036793191a8b7"><td class="memTemplParams" colspan="2">template&lt;typename DerivedX , typename DerivedR , typename DerivedC , typename DerivedY &gt; </td></tr>
-<tr class="memitem:a90268d9fb8c64692427036793191a8b7"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a90268d9fb8c64692427036793191a8b7">slice</a> (const Eigen::DenseBase&lt; DerivedX &gt; &amp;X, const Eigen::DenseBase&lt; DerivedR &gt; &amp;R, const Eigen::DenseBase&lt; DerivedC &gt; &amp;C, Eigen::PlainObjectBase&lt; DerivedY &gt; &amp;Y)</td></tr>
-<tr class="memdesc:a90268d9fb8c64692427036793191a8b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
-<tr class="separator:a90268d9fb8c64692427036793191a8b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae747d042c40e074264e161b49906216d" id="r_ae747d042c40e074264e161b49906216d"><td class="memTemplParams" colspan="2">template&lt;typename MatX , typename DerivedR , typename MatY &gt; </td></tr>
 <tr class="memitem:ae747d042c40e074264e161b49906216d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#ae747d042c40e074264e161b49906216d">slice</a> (const MatX &amp;X, const Eigen::DenseBase&lt; DerivedR &gt; &amp;R, const int dim, MatY &amp;Y)</td></tr>
 <tr class="memdesc:ae747d042c40e074264e161b49906216d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
 <tr class="separator:ae747d042c40e074264e161b49906216d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa05264f934b9cecbac042ef69735b74b" id="r_aa05264f934b9cecbac042ef69735b74b"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:aa05264f934b9cecbac042ef69735b74b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#aa05264f934b9cecbac042ef69735b74b">slice</a> (const std::vector&lt; T &gt; &amp;X, std::vector&lt; size_t &gt; const &amp;R, std::vector&lt; T &gt; &amp;Y)</td></tr>
+<tr class="memdesc:aa05264f934b9cecbac042ef69735b74b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
+<tr class="separator:aa05264f934b9cecbac042ef69735b74b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae8c4cf15b6f5f8cc16da9405b96be59" id="r_aae8c4cf15b6f5f8cc16da9405b96be59"><td class="memTemplParams" colspan="2">template&lt;typename DerivedX , typename DerivedY , typename DerivedR &gt; </td></tr>
 <tr class="memitem:aae8c4cf15b6f5f8cc16da9405b96be59"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#aae8c4cf15b6f5f8cc16da9405b96be59">slice</a> (const Eigen::DenseBase&lt; DerivedX &gt; &amp;X, const Eigen::DenseBase&lt; DerivedR &gt; &amp;R, Eigen::PlainObjectBase&lt; DerivedY &gt; &amp;Y)</td></tr>
 <tr class="memdesc:aae8c4cf15b6f5f8cc16da9405b96be59"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
 <tr class="separator:aae8c4cf15b6f5f8cc16da9405b96be59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90268d9fb8c64692427036793191a8b7" id="r_a90268d9fb8c64692427036793191a8b7"><td class="memTemplParams" colspan="2">template&lt;typename DerivedX , typename DerivedR , typename DerivedC , typename DerivedY &gt; </td></tr>
+<tr class="memitem:a90268d9fb8c64692427036793191a8b7"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a90268d9fb8c64692427036793191a8b7">slice</a> (const Eigen::DenseBase&lt; DerivedX &gt; &amp;X, const Eigen::DenseBase&lt; DerivedR &gt; &amp;R, const Eigen::DenseBase&lt; DerivedC &gt; &amp;C, Eigen::PlainObjectBase&lt; DerivedY &gt; &amp;Y)</td></tr>
+<tr class="memdesc:a90268d9fb8c64692427036793191a8b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
+<tr class="separator:a90268d9fb8c64692427036793191a8b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86abeffa3ef136e9e35057e526618dc8" id="r_a86abeffa3ef136e9e35057e526618dc8"><td class="memTemplParams" colspan="2">template&lt;typename DerivedX , typename DerivedR &gt; </td></tr>
 <tr class="memitem:a86abeffa3ef136e9e35057e526618dc8"><td class="memTemplItemLeft" align="right" valign="top">DerivedX&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a86abeffa3ef136e9e35057e526618dc8">slice</a> (const Eigen::DenseBase&lt; DerivedX &gt; &amp;X, const Eigen::DenseBase&lt; DerivedR &gt; &amp;R)</td></tr>
 <tr class="memdesc:a86abeffa3ef136e9e35057e526618dc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
@@ -2984,10 +2992,6 @@ fitting digitized curves" [Schneider 1990].  <br /></td></tr>
 <tr class="memitem:aa5271870d0385781c2236145ee9c3897"><td class="memTemplItemLeft" align="right" valign="top">DerivedX&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#aa5271870d0385781c2236145ee9c3897">slice</a> (const Eigen::DenseBase&lt; DerivedX &gt; &amp;X, const Eigen::DenseBase&lt; DerivedR &gt; &amp;R, const int dim)</td></tr>
 <tr class="memdesc:aa5271870d0385781c2236145ee9c3897"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
 <tr class="separator:aa5271870d0385781c2236145ee9c3897"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa05264f934b9cecbac042ef69735b74b" id="r_aa05264f934b9cecbac042ef69735b74b"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:aa05264f934b9cecbac042ef69735b74b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#aa05264f934b9cecbac042ef69735b74b">slice</a> (const std::vector&lt; T &gt; &amp;X, std::vector&lt; size_t &gt; const &amp;R, std::vector&lt; T &gt; &amp;Y)</td></tr>
-<tr class="memdesc:aa05264f934b9cecbac042ef69735b74b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
-<tr class="separator:aa05264f934b9cecbac042ef69735b74b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a473da3d5636834fa6b0510d7a2f97628" id="r_a473da3d5636834fa6b0510d7a2f97628"><td class="memTemplParams" colspan="2">template&lt;typename TX , typename TY , typename DerivedI &gt; </td></tr>
 <tr class="memitem:a473da3d5636834fa6b0510d7a2f97628"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a473da3d5636834fa6b0510d7a2f97628">slice_cached_precompute</a> (const Eigen::SparseMatrix&lt; TX &gt; &amp;X, const Eigen::Matrix&lt; int, Eigen::Dynamic, 1 &gt; &amp;R, const Eigen::Matrix&lt; int, Eigen::Dynamic, 1 &gt; &amp;C, Eigen::MatrixBase&lt; DerivedI &gt; &amp;data, Eigen::SparseMatrix&lt; TY &gt; &amp;Y)</td></tr>
 <tr class="memdesc:a473da3d5636834fa6b0510d7a2f97628"><td class="mdescLeft">&#160;</td><td class="mdescRight">Act like the matlab X(row_indices,col_indices) operator, where row_indices, col_indices are non-negative integer indices.  <br /></td></tr>
@@ -3000,25 +3004,32 @@ fitting digitized curves" [Schneider 1990].  <br /></td></tr>
 <tr class="memitem:ab893d0a94d4eb6a1c5422e7cfe368daf"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#ab893d0a94d4eb6a1c5422e7cfe368daf">slice_into</a> (const Eigen::SparseMatrix&lt; T &gt; &amp;X, const Eigen::MatrixBase&lt; DerivedR &gt; &amp;R, const Eigen::MatrixBase&lt; DerivedC &gt; &amp;C, Eigen::SparseMatrix&lt; T &gt; &amp;Y)</td></tr>
 <tr class="memdesc:ab893d0a94d4eb6a1c5422e7cfe368daf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Act like the matlab Y(row_indices,col_indices) = X.  <br /></td></tr>
 <tr class="separator:ab893d0a94d4eb6a1c5422e7cfe368daf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afce428bb768059c8d6f9563873f8e730" id="r_afce428bb768059c8d6f9563873f8e730"><td class="memTemplParams" colspan="2">template&lt;typename DerivedX , typename DerivedY , typename DerivedR , typename DerivedC &gt; </td></tr>
-<tr class="memitem:afce428bb768059c8d6f9563873f8e730"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#afce428bb768059c8d6f9563873f8e730">slice_into</a> (const Eigen::MatrixBase&lt; DerivedX &gt; &amp;X, const Eigen::MatrixBase&lt; DerivedR &gt; &amp;R, const Eigen::MatrixBase&lt; DerivedC &gt; &amp;C, Eigen::PlainObjectBase&lt; DerivedY &gt; &amp;Y)</td></tr>
-<tr class="memdesc:afce428bb768059c8d6f9563873f8e730"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
-<tr class="separator:afce428bb768059c8d6f9563873f8e730"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a185ee703c7cf8760af368bcb0861d37f" id="r_a185ee703c7cf8760af368bcb0861d37f"><td class="memTemplParams" colspan="2">template&lt;typename MatX , typename MatY , typename DerivedR &gt; </td></tr>
 <tr class="memitem:a185ee703c7cf8760af368bcb0861d37f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a185ee703c7cf8760af368bcb0861d37f">slice_into</a> (const MatX &amp;X, const Eigen::MatrixBase&lt; DerivedR &gt; &amp;R, const int dim, MatY &amp;Y)</td></tr>
 <tr class="memdesc:a185ee703c7cf8760af368bcb0861d37f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
 <tr class="separator:a185ee703c7cf8760af368bcb0861d37f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afce428bb768059c8d6f9563873f8e730" id="r_afce428bb768059c8d6f9563873f8e730"><td class="memTemplParams" colspan="2">template&lt;typename DerivedX , typename DerivedY , typename DerivedR , typename DerivedC &gt; </td></tr>
+<tr class="memitem:afce428bb768059c8d6f9563873f8e730"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#afce428bb768059c8d6f9563873f8e730">slice_into</a> (const Eigen::MatrixBase&lt; DerivedX &gt; &amp;X, const Eigen::MatrixBase&lt; DerivedR &gt; &amp;R, const Eigen::MatrixBase&lt; DerivedC &gt; &amp;C, Eigen::PlainObjectBase&lt; DerivedY &gt; &amp;Y)</td></tr>
+<tr class="memdesc:afce428bb768059c8d6f9563873f8e730"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
+<tr class="separator:afce428bb768059c8d6f9563873f8e730"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa29b762b3094e33fd5167ca196de49ce" id="r_aa29b762b3094e33fd5167ca196de49ce"><td class="memTemplParams" colspan="2">template&lt;typename DerivedX , typename DerivedR , typename DerivedY &gt; </td></tr>
 <tr class="memitem:aa29b762b3094e33fd5167ca196de49ce"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#aa29b762b3094e33fd5167ca196de49ce">slice_into</a> (const Eigen::MatrixBase&lt; DerivedX &gt; &amp;X, const Eigen::MatrixBase&lt; DerivedR &gt; &amp;R, Eigen::PlainObjectBase&lt; DerivedY &gt; &amp;Y)</td></tr>
 <tr class="memdesc:aa29b762b3094e33fd5167ca196de49ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
 <tr class="separator:aa29b762b3094e33fd5167ca196de49ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb30d6061d773254628256682b88b427" id="r_acb30d6061d773254628256682b88b427"><td class="memTemplParams" colspan="2">template&lt;typename XType , typename YType &gt; </td></tr>
+<tr class="memitem:acb30d6061d773254628256682b88b427"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#acb30d6061d773254628256682b88b427">slice_mask</a> (const Eigen::SparseMatrix&lt; XType &gt; &amp;X, const Eigen::Array&lt; bool, Eigen::Dynamic, 1 &gt; &amp;R, const Eigen::Array&lt; bool, Eigen::Dynamic, 1 &gt; &amp;C, Eigen::SparseMatrix&lt; YType &gt; &amp;Y)</td></tr>
+<tr class="memdesc:acb30d6061d773254628256682b88b427"><td class="mdescLeft">&#160;</td><td class="mdescRight">Act like the matlab X(row_mask,col_mask) operator, where row_mask, col_mask are non-negative integer indices.  <br /></td></tr>
+<tr class="separator:acb30d6061d773254628256682b88b427"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6770877236349590d6b4bbc2a6f616ad" id="r_a6770877236349590d6b4bbc2a6f616ad"><td class="memTemplParams" colspan="2">template&lt;typename XType , typename YType &gt; </td></tr>
+<tr class="memitem:a6770877236349590d6b4bbc2a6f616ad"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a6770877236349590d6b4bbc2a6f616ad">slice_mask</a> (const Eigen::SparseMatrix&lt; XType &gt; &amp;X, const Eigen::Array&lt; bool, Eigen::Dynamic, 1 &gt; &amp;R, const int dim, Eigen::SparseMatrix&lt; YType &gt; &amp;Y)</td></tr>
+<tr class="memdesc:a6770877236349590d6b4bbc2a6f616ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
+<tr class="separator:a6770877236349590d6b4bbc2a6f616ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef569f1ee0e9cd71c2cfabd1e27e2f40" id="r_aef569f1ee0e9cd71c2cfabd1e27e2f40"><td class="memTemplParams" colspan="2">template&lt;typename DerivedX , typename DerivedY &gt; </td></tr>
 <tr class="memitem:aef569f1ee0e9cd71c2cfabd1e27e2f40"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#aef569f1ee0e9cd71c2cfabd1e27e2f40">slice_mask</a> (const Eigen::DenseBase&lt; DerivedX &gt; &amp;X, const Eigen::Array&lt; bool, Eigen::Dynamic, 1 &gt; &amp;R, const Eigen::Array&lt; bool, Eigen::Dynamic, 1 &gt; &amp;C, Eigen::PlainObjectBase&lt; DerivedY &gt; &amp;Y)</td></tr>
-<tr class="memdesc:aef569f1ee0e9cd71c2cfabd1e27e2f40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Act like the matlab X(row_mask,col_mask) operator, where row_mask, col_mask are non-negative integer indices.  <br /></td></tr>
+<tr class="memdesc:aef569f1ee0e9cd71c2cfabd1e27e2f40"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
 <tr class="separator:aef569f1ee0e9cd71c2cfabd1e27e2f40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab448e84d310f37a2cffd09d50faad326" id="r_ab448e84d310f37a2cffd09d50faad326"><td class="memTemplParams" colspan="2">template&lt;typename DerivedX , typename DerivedY &gt; </td></tr>
 <tr class="memitem:ab448e84d310f37a2cffd09d50faad326"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#ab448e84d310f37a2cffd09d50faad326">slice_mask</a> (const Eigen::DenseBase&lt; DerivedX &gt; &amp;X, const Eigen::Array&lt; bool, Eigen::Dynamic, 1 &gt; &amp;R, const int dim, Eigen::PlainObjectBase&lt; DerivedY &gt; &amp;Y)</td></tr>
-<tr class="memdesc:ab448e84d310f37a2cffd09d50faad326"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
 <tr class="separator:ab448e84d310f37a2cffd09d50faad326"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe884ab3e3a80bcea135959a5b9aa831" id="r_afe884ab3e3a80bcea135959a5b9aa831"><td class="memTemplParams" colspan="2">template&lt;typename DerivedX &gt; </td></tr>
 <tr class="memitem:afe884ab3e3a80bcea135959a5b9aa831"><td class="memTemplItemLeft" align="right" valign="top">DerivedX&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#afe884ab3e3a80bcea135959a5b9aa831">slice_mask</a> (const Eigen::DenseBase&lt; DerivedX &gt; &amp;X, const Eigen::Array&lt; bool, Eigen::Dynamic, 1 &gt; &amp;R, const Eigen::Array&lt; bool, Eigen::Dynamic, 1 &gt; &amp;C)</td></tr>
@@ -3028,14 +3039,6 @@ fitting digitized curves" [Schneider 1990].  <br /></td></tr>
 <tr class="memitem:ae4dd189219e52c3496a80f36b82cbbce"><td class="memTemplItemLeft" align="right" valign="top">DerivedX&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#ae4dd189219e52c3496a80f36b82cbbce">slice_mask</a> (const Eigen::DenseBase&lt; DerivedX &gt; &amp;X, const Eigen::Array&lt; bool, Eigen::Dynamic, 1 &gt; &amp;R, const int dim)</td></tr>
 <tr class="memdesc:ae4dd189219e52c3496a80f36b82cbbce"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
 <tr class="separator:ae4dd189219e52c3496a80f36b82cbbce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6770877236349590d6b4bbc2a6f616ad" id="r_a6770877236349590d6b4bbc2a6f616ad"><td class="memTemplParams" colspan="2">template&lt;typename XType , typename YType &gt; </td></tr>
-<tr class="memitem:a6770877236349590d6b4bbc2a6f616ad"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a6770877236349590d6b4bbc2a6f616ad">slice_mask</a> (const Eigen::SparseMatrix&lt; XType &gt; &amp;X, const Eigen::Array&lt; bool, Eigen::Dynamic, 1 &gt; &amp;R, const int dim, Eigen::SparseMatrix&lt; YType &gt; &amp;Y)</td></tr>
-<tr class="memdesc:a6770877236349590d6b4bbc2a6f616ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
-<tr class="separator:a6770877236349590d6b4bbc2a6f616ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb30d6061d773254628256682b88b427" id="r_acb30d6061d773254628256682b88b427"><td class="memTemplParams" colspan="2">template&lt;typename XType , typename YType &gt; </td></tr>
-<tr class="memitem:acb30d6061d773254628256682b88b427"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#acb30d6061d773254628256682b88b427">slice_mask</a> (const Eigen::SparseMatrix&lt; XType &gt; &amp;X, const Eigen::Array&lt; bool, Eigen::Dynamic, 1 &gt; &amp;R, const Eigen::Array&lt; bool, Eigen::Dynamic, 1 &gt; &amp;C, Eigen::SparseMatrix&lt; YType &gt; &amp;Y)</td></tr>
-<tr class="memdesc:acb30d6061d773254628256682b88b427"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
-<tr class="separator:acb30d6061d773254628256682b88b427"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8a1c0b05598d819b78e57f2525f5497" id="r_af8a1c0b05598d819b78e57f2525f5497"><td class="memTemplParams" colspan="2">template&lt;typename TX , typename TY , typename DerivedR , typename DerivedC &gt; </td></tr>
 <tr class="memitem:af8a1c0b05598d819b78e57f2525f5497"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#af8a1c0b05598d819b78e57f2525f5497">slice_sorted</a> (const Eigen::SparseMatrix&lt; TX &gt; &amp;X, const Eigen::DenseBase&lt; DerivedR &gt; &amp;R, const Eigen::DenseBase&lt; DerivedC &gt; &amp;C, Eigen::SparseMatrix&lt; TY &gt; &amp;Y)</td></tr>
 <tr class="memdesc:af8a1c0b05598d819b78e57f2525f5497"><td class="mdescLeft">&#160;</td><td class="mdescRight">Act like the matlab X(row_indices,col_indices) operator, where row_indices, col_indices are non-negative integer indices.  <br /></td></tr>
@@ -15658,7 +15661,7 @@ template&lt;typename DerivedE , typename DerivedI , typename DerivedJ , typename
     <tr><td class="paramdir">[in]</td><td class="paramname">E</td><td>#E by 2 list of undirected edges </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">I</td><td>#E+1 list of nodes in order tracing the chain (loop), if the output is a loop then I(1) == I(end) </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">J</td><td>#I-1 list of indices into E of edges tracing I </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">K</td><td>#I-1 list of indices into columns of E {1,2} so that K(i) means that E(i,K(i)) comes before the other (i.e., E(i,3-K(i)) ). This means that I(i) == E(J(i),K(i)) for i&lt;#I, or I == E(sub2ind(size(E),J([1:end end]),[K;3-K(end)])))) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">K</td><td>#I-1 list of indices into columns of E {0,1} so that K(i) means that E(i,K(i)) comes before the other (i.e., E(i,3-K(i)) ). This means that I(i) == E(J(i),K(i)) for i&lt;#I, or I == E(sub2ind(size(E),J([1:end end]),[K;3-K(end)])))) </td></tr>
   </table>
   </dd>
 </dl>
@@ -17730,7 +17733,7 @@ template&lt;typename Derivedp &gt; </div>
 </div>
 </div>
 <a id="ad0ba264f987871035fb7d12de96fccab" name="ad0ba264f987871035fb7d12de96fccab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad0ba264f987871035fb7d12de96fccab">&#9670;&#160;</a></span>find() <span class="overload">[1/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0ba264f987871035fb7d12de96fccab">&#9670;&#160;</a></span>find() <span class="overload">[1/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -17790,7 +17793,7 @@ template&lt;typename T , typename DerivedI , typename DerivedJ , typename Derive
 </div>
 </div>
 <a id="a2f6c699f94449b23813f0d80df36db8e" name="a2f6c699f94449b23813f0d80df36db8e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f6c699f94449b23813f0d80df36db8e">&#9670;&#160;</a></span>find() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f6c699f94449b23813f0d80df36db8e">&#9670;&#160;</a></span>find() <span class="overload">[2/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -17834,7 +17837,7 @@ template&lt;typename DerivedX , typename DerivedI , typename DerivedJ , typename
 </div>
 </div>
 <a id="a1c874cf1ad179744026898ded3da4ea7" name="a1c874cf1ad179744026898ded3da4ea7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c874cf1ad179744026898ded3da4ea7">&#9670;&#160;</a></span>find() <span class="overload">[3/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c874cf1ad179744026898ded3da4ea7">&#9670;&#160;</a></span>find() <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -17872,7 +17875,7 @@ template&lt;typename DerivedX , typename DerivedI &gt; </div>
 </div>
 </div>
 <a id="ab6758ca13380f9bd099c860aba705d45" name="ab6758ca13380f9bd099c860aba705d45"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab6758ca13380f9bd099c860aba705d45">&#9670;&#160;</a></span>find() <span class="overload">[4/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6758ca13380f9bd099c860aba705d45">&#9670;&#160;</a></span>find() <span class="overload">[4/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -17906,6 +17909,42 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+
+</div>
+</div>
+<a id="a35cd54b6c6bf02c39e4caf02782fcfbc" name="a35cd54b6c6bf02c39e4caf02782fcfbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35cd54b6c6bf02c39e4caf02782fcfbc">&#9670;&#160;</a></span>find() <span class="overload">[5/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int RowsAtCompileTime, int MaxRowsAtCompileTime&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; int &gt; igl::find </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::Array&lt; bool, RowsAtCompileTime, 1, 0, MaxRowsAtCompileTime, 1 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>M</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+<p>This overload facilitates the use of bool masks for Eigen slicing </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">RowsAtCompileTime</td><td>number of rows in M at compile time </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>indices of true entries in M</dd></dl>
+<p><a class="anchor" id="autotoc_md12"></a> </p><h5>Example</h5>
+<div class="fragment"><div class="line"><a class="code hl_function" href="namespaceigl.html#acb30d6061d773254628256682b88b427">igl::slice_mask</a>(A,<a class="code hl_function" href="namespaceigl.html#ad0ba264f987871035fb7d12de96fccab">igl::find</a>(M),<a class="code hl_function" href="namespaceigl.html#ad0ba264f987871035fb7d12de96fccab">igl::find</a>(N),B);</div>
+<div class="line"><span class="comment">// Is the same as</span></div>
+<div class="line">B = A(<a class="code hl_function" href="namespaceigl.html#ad0ba264f987871035fb7d12de96fccab">igl::find</a>(M),<a class="code hl_function" href="namespaceigl.html#ad0ba264f987871035fb7d12de96fccab">igl::find</a>(N));</div>
+<div class="ttc" id="anamespaceigl_html_acb30d6061d773254628256682b88b427"><div class="ttname"><a href="namespaceigl.html#acb30d6061d773254628256682b88b427">igl::slice_mask</a></div><div class="ttdeci">void slice_mask(const Eigen::SparseMatrix&lt; XType &gt; &amp;X, const Eigen::Array&lt; bool, Eigen::Dynamic, 1 &gt; &amp;R, const Eigen::Array&lt; bool, Eigen::Dynamic, 1 &gt; &amp;C, Eigen::SparseMatrix&lt; YType &gt; &amp;Y)</div><div class="ttdoc">Act like the matlab X(row_mask,col_mask) operator, where row_mask, col_mask are non-negative integer ...</div></div>
+<div class="ttc" id="anamespaceigl_html_ad0ba264f987871035fb7d12de96fccab"><div class="ttname"><a href="namespaceigl.html#ad0ba264f987871035fb7d12de96fccab">igl::find</a></div><div class="ttdeci">void find(const Eigen::SparseMatrix&lt; T &gt; &amp;X, Eigen::DenseBase&lt; DerivedI &gt; &amp;I, Eigen::DenseBase&lt; DerivedJ &gt; &amp;J, Eigen::DenseBase&lt; DerivedV &gt; &amp;V)</div><div class="ttdoc">Find the non-zero entries and there respective indices in a sparse matrix.</div></div>
+</div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="namespaceigl.html#acb30d6061d773254628256682b88b427" title="Act like the matlab X(row_mask,col_mask) operator, where row_mask, col_mask are non-negative integer ...">slice_mask</a> </dd></dl>
 
 </div>
 </div>
@@ -19269,7 +19308,7 @@ template&lt;typename DerivedV , typename DerivedF , typename DerivedK &gt; </div
 
 <p>Current time in seconds. </p>
 <dl class="section return"><dt>Returns</dt><dd>the current time in seconds since epoch</dd></dl>
-<h4><a class="anchor" id="autotoc_md12"></a>
+<h4><a class="anchor" id="autotoc_md13"></a>
 Example:</h4>
 <div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keyword">auto</span> &amp; tictoc = []()</div>
 <div class="line">{</div>
@@ -26044,7 +26083,7 @@ template&lt;typename DerivedM &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Formatted matrix</dd></dl>
-<h4><a class="anchor" id="autotoc_md13"></a>
+<h4><a class="anchor" id="autotoc_md14"></a>
 Example:</h4>
 <div class="fragment"><div class="line"><span class="comment">// M := [1 2 3;4 5 6];</span></div>
 <div class="line">cout&lt;&lt;<a class="code hl_function" href="namespaceigl.html#a6b539a21fb577617710f5fce2046e65b">matlab_format</a>(M)&lt;&lt;endl;</div>
@@ -26126,7 +26165,7 @@ template&lt;typename DerivedS &gt; </div>
 
 <p>Same but for sparse matrices. </p>
 <p>Print IJV format into an auxiliary variable and then print a call to sparse which will construct the sparse matrix</p>
-<h4><a class="anchor" id="autotoc_md14"></a>
+<h4><a class="anchor" id="autotoc_md15"></a>
 Example:</h4>
 <div class="fragment"><div class="line"><span class="comment">// S := [0 2 3;4 5 0];</span></div>
 <div class="line">cout&lt;&lt;<a class="code hl_function" href="namespaceigl.html#a6b539a21fb577617710f5fce2046e65b">matlab_format</a>(S,<span class="stringliteral">&quot;S&quot;</span>)&lt;&lt;endl;</div>
@@ -26219,7 +26258,7 @@ Example:</h4>
 
 <p>Just build and return the format. </p>
 <dl class="section return"><dt>Returns</dt><dd>eigen IOFormat object</dd></dl>
-<h4><a class="anchor" id="autotoc_md15"></a>
+<h4><a class="anchor" id="autotoc_md16"></a>
 Example:</h4>
 <div class="fragment"><div class="line"><span class="comment">// M := [1 2 3;4 5 6];</span></div>
 <div class="line">cout&lt;&lt;M.format(<a class="code hl_function" href="namespaceigl.html#a6b539a21fb577617710f5fce2046e65b">matlab_format</a>())&lt;&lt;endl;</div>
@@ -29090,7 +29129,7 @@ template&lt;typename Index , typename DerivedE &gt; </div>
   </table>
   </dd>
 </dl>
-<h4><a class="anchor" id="autotoc_md16"></a>
+<h4><a class="anchor" id="autotoc_md17"></a>
 Examples</h4>
 <pre class="fragment"> input                     | dirname        basename       ext    filename
  "/"                       | "/"            ""             ""     ""
@@ -29647,7 +29686,7 @@ template&lt;typename DerivedV , typename DerivedF , typename DerivedZ , typename
   </table>
   </dd>
 </dl>
-<h4><a class="anchor" id="autotoc_md17"></a>
+<h4><a class="anchor" id="autotoc_md18"></a>
 Example</h4>
 <p>// Give degenerate faces (1/3,1/3,1/3)^0.5 per_face_normals(V,F,Vector3d(1,1,1).normalized(),N); </p>
 
@@ -30453,8 +30492,8 @@ template&lt;typename DerivedP , typename DerivedV , typename DerivedEle , typena
 
 </div>
 </div>
-<a id="a3de253885cbe07d8d264d21d6ba8a193" name="a3de253885cbe07d8d264d21d6ba8a193"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3de253885cbe07d8d264d21d6ba8a193">&#9670;&#160;</a></span>point_simplex_squared_distance() <span class="overload">[1/2]</span></h2>
+<a id="a8c64da392edc068d98cf9c78ec8a6ee3" name="a8c64da392edc068d98cf9c78ec8a6ee3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c64da392edc068d98cf9c78ec8a6ee3">&#9670;&#160;</a></span>point_simplex_squared_distance() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -30494,7 +30533,7 @@ template&lt;int DIM, typename Derivedp , typename DerivedV , typename DerivedEle
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Eigen::MatrixBase&lt; Derivedc &gt; &amp;&#160;</td>
+          <td class="paramtype">Eigen::PlainObjectBase&lt; Derivedc &gt; &amp;&#160;</td>
           <td class="paramname"><em>c</em>&#160;</td>
         </tr>
         <tr>
@@ -30520,8 +30559,8 @@ template&lt;int DIM, typename Derivedp , typename DerivedV , typename DerivedEle
 
 </div>
 </div>
-<a id="add9fa7fb8d6e85604adbb9aebb990014" name="add9fa7fb8d6e85604adbb9aebb990014"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#add9fa7fb8d6e85604adbb9aebb990014">&#9670;&#160;</a></span>point_simplex_squared_distance() <span class="overload">[2/2]</span></h2>
+<a id="a937e7f60501c5fa10d8ddf3aba6e3d2e" name="a937e7f60501c5fa10d8ddf3aba6e3d2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a937e7f60501c5fa10d8ddf3aba6e3d2e">&#9670;&#160;</a></span>point_simplex_squared_distance() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -30561,7 +30600,7 @@ template&lt;int DIM, typename Derivedp , typename DerivedV , typename DerivedEle
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Eigen::MatrixBase&lt; Derivedc &gt; &amp;&#160;</td>
+          <td class="paramtype">Eigen::PlainObjectBase&lt; Derivedc &gt; &amp;&#160;</td>
           <td class="paramname"><em>c</em>, </td>
         </tr>
         <tr>
@@ -31539,7 +31578,7 @@ template&lt;typename DerivedX , typename DerivedY , typename Scalar , typename D
   </table>
   </dd>
 </dl>
-<h4><a class="anchor" id="autotoc_md18"></a>
+<h4><a class="anchor" id="autotoc_md19"></a>
 Example</h4>
 <div class="fragment"><div class="line">MatrixXd X, Y; (containing 3d points as rows)</div>
 <div class="line"><span class="keywordtype">double</span> scale;</div>
@@ -31607,7 +31646,7 @@ template&lt;typename DerivedX , typename DerivedY , typename Scalar , int DIM, i
   </table>
   </dd>
 </dl>
-<h4><a class="anchor" id="autotoc_md19"></a>
+<h4><a class="anchor" id="autotoc_md20"></a>
 Example</h4>
 <div class="fragment"><div class="line">MatrixXd X, Y; (containing 3d points as rows)</div>
 <div class="line">AffineCompact3d T;</div>
@@ -31879,7 +31918,7 @@ template&lt;typename DerivedV , typename DerivedM , typename DerivedN , typename
   </table>
   </dd>
 </dl>
-<h4><a class="anchor" id="autotoc_md20"></a>
+<h4><a class="anchor" id="autotoc_md21"></a>
 Example:</h4>
 <div class="fragment"><div class="line"><a class="code hl_class" href="classigl_1_1opengl_1_1glfw_1_1Viewer.html">igl::opengl::glfw::Viewer</a> vr;</div>
 <div class="line">...</div>
@@ -34237,7 +34276,7 @@ template&lt;typename Derivedo , typename Derivedd , typename Derivedc , typename
   </table>
   </dd>
 </dl>
-<h4><a class="anchor" id="autotoc_md21"></a>
+<h4><a class="anchor" id="autotoc_md22"></a>
 Side effects:</h4>
 <p>closes fp </p><dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
@@ -35986,7 +36025,9 @@ template&lt;typename DerivedV , typename DerivedF , typename DerivedE , typename
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true on success, false on errors </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true on success, false on errors</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Unlike previous versions, all matrices are left untouched if they are not read from the file. <br  />
+ </dd></dl>
 
 </div>
 </div>
@@ -36395,7 +36436,7 @@ template&lt;typename DerivedV , typename DerivedF , typename DerivedN &gt; </div
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true on success, false on errors</dd></dl>
-<h4><a class="anchor" id="autotoc_md27"></a>
+<h4><a class="anchor" id="autotoc_md28"></a>
 Example</h4>
 <pre class="fragment">bool success = readSTL(filename,temp_V,F,N);
 remove_duplicate_vertices(temp_V,0,V,SVI,SVJ);
@@ -40050,16 +40091,16 @@ template&lt;typename DerivedP , typename DerivedV , typename DerivedF , typename
 <p>Computes signed distance to a mesh. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">P</td><td>#P by 3 list of query point positions </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">V</td><td>#V by 3 list of vertex positions </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">F</td><td>#F by ss list of triangle indices, ss should be 3 unless sign_type == SIGNED_DISTANCE_TYPE_UNSIGNED </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">P</td><td>#P by (2|3) list of query point positions </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">V</td><td>#V by (2|3) list of vertex positions </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">F</td><td>#F by ss list of triangle indices, ss should be 3 unless sign_type == SIGNED_DISTANCE_TYPE_UNSIGNED | SIGNED_DISTANCE_TYPE_WINDING_NUMBER </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">sign_type</td><td>method for computing distance <em>sign</em> S </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">lower_bound</td><td>lower bound of distances needed {std::numeric_limits::min} </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">upper_bound</td><td>lower bound of distances needed {std::numeric_limits::max} </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">S</td><td>#P list of smallest signed distances </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">I</td><td>#P list of facet indices corresponding to smallest distances </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">C</td><td>#P by 3 list of closest points </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">N</td><td>#P by 3 list of closest normals (only set if sign_type=SIGNED_DISTANCE_TYPE_PSEUDONORMAL)</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">C</td><td>#P by (2|3) list of closest points </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">N</td><td>#P by (2|3) list of closest normals (only set if sign_type=SIGNED_DISTANCE_TYPE_PSEUDONORMAL)</td></tr>
   </table>
   </dd>
 </dl>
@@ -40766,7 +40807,7 @@ template&lt;typename DerivedP , typename DerivedV , typename DerivedF , typename
 </div><div class="memdoc">
 
 <p>Calculates signed distance at query points P, using fast winding number for sign. </p>
-<h4><a class="anchor" id="autotoc_md31"></a>
+<h4><a class="anchor" id="autotoc_md32"></a>
 Usage:</h4>
 <p>VectorXd S; <br  />
  VectorXd V, P; //where V is mesh vertices, P are query points VectorXi F; <br  />
@@ -40950,58 +40991,22 @@ template&lt;typename TX , typename TY , typename DerivedR , typename DerivedC &g
 </div><div class="memdoc">
 
 <p>Act like the matlab X(row_indices,col_indices) operator, where row_indices, col_indices are non-negative integer indices. </p>
-<p>Inputs: X m by n matrix R list of row indices C list of column indices Output: Y #R by #C matrix</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="namespaceigl.html#aef569f1ee0e9cd71c2cfabd1e27e2f40" title="Act like the matlab X(row_mask,col_mask) operator, where row_mask, col_mask are non-negative integer ...">slice_mask</a>, <a class="el" href="namespaceigl.html#ab893d0a94d4eb6a1c5422e7cfe368daf" title="Act like the matlab Y(row_indices,col_indices) = X.">slice_into</a></dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">X</td><td>m by n matrix </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">R</td><td>list of row indices </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">C</td><td>list of column indices </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">Y</td><td>#R by #C matrix</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="namespaceigl.html#acb30d6061d773254628256682b88b427" title="Act like the matlab X(row_mask,col_mask) operator, where row_mask, col_mask are non-negative integer ...">slice_mask</a>, <a class="el" href="namespaceigl.html#ab893d0a94d4eb6a1c5422e7cfe368daf" title="Act like the matlab Y(row_indices,col_indices) = X.">slice_into</a></dd></dl>
 <dl class="section note"><dt>Note</dt><dd>See also Eigen's unaryExpr <a href="https://stackoverflow.com/a/49411587/148668">https://stackoverflow.com/a/49411587/148668</a> </dd></dl>
 
 </div>
 </div>
-<a id="a90268d9fb8c64692427036793191a8b7" name="a90268d9fb8c64692427036793191a8b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a90268d9fb8c64692427036793191a8b7">&#9670;&#160;</a></span>slice() <span class="overload">[2/7]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename DerivedX , typename DerivedR , typename DerivedC , typename DerivedY &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void igl::slice </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::DenseBase&lt; DerivedX &gt; &amp;&#160;</td>
-          <td class="paramname"><em>X</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::DenseBase&lt; DerivedR &gt; &amp;&#160;</td>
-          <td class="paramname"><em>R</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::DenseBase&lt; DerivedC &gt; &amp;&#160;</td>
-          <td class="paramname"><em>C</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Eigen::PlainObjectBase&lt; DerivedY &gt; &amp;&#160;</td>
-          <td class="paramname"><em>Y</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
-
-</div>
-</div>
 <a id="ae747d042c40e074264e161b49906216d" name="ae747d042c40e074264e161b49906216d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae747d042c40e074264e161b49906216d">&#9670;&#160;</a></span>slice() <span class="overload">[3/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae747d042c40e074264e161b49906216d">&#9670;&#160;</a></span>slice() <span class="overload">[2/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -41052,6 +41057,44 @@ template&lt;typename MatX , typename DerivedR , typename MatY &gt; </div>
 
 </div>
 </div>
+<a id="aa05264f934b9cecbac042ef69735b74b" name="aa05264f934b9cecbac042ef69735b74b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa05264f934b9cecbac042ef69735b74b">&#9670;&#160;</a></span>slice() <span class="overload">[3/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void igl::slice </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; size_t &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>R</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>Y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+
+</div>
+</div>
 <a id="aae8c4cf15b6f5f8cc16da9405b96be59" name="aae8c4cf15b6f5f8cc16da9405b96be59"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aae8c4cf15b6f5f8cc16da9405b96be59">&#9670;&#160;</a></span>slice() <span class="overload">[4/7]</span></h2>
 
@@ -41087,12 +41130,57 @@ template&lt;typename DerivedX , typename DerivedY , typename DerivedR &gt; </div
 </div><div class="memdoc">
 
 <p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
-<p>Vector version </p>
+<p>Vector version  </p>
+
+</div>
+</div>
+<a id="a90268d9fb8c64692427036793191a8b7" name="a90268d9fb8c64692427036793191a8b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90268d9fb8c64692427036793191a8b7">&#9670;&#160;</a></span>slice() <span class="overload">[5/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DerivedX , typename DerivedR , typename DerivedC , typename DerivedY &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void igl::slice </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::DenseBase&lt; DerivedX &gt; &amp;&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::DenseBase&lt; DerivedR &gt; &amp;&#160;</td>
+          <td class="paramname"><em>R</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::DenseBase&lt; DerivedC &gt; &amp;&#160;</td>
+          <td class="paramname"><em>C</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::PlainObjectBase&lt; DerivedY &gt; &amp;&#160;</td>
+          <td class="paramname"><em>Y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+<p>See <a class="el" href="slice_8h.html">slice.h</a> for more details </p>
 
 </div>
 </div>
 <a id="a86abeffa3ef136e9e35057e526618dc8" name="a86abeffa3ef136e9e35057e526618dc8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a86abeffa3ef136e9e35057e526618dc8">&#9670;&#160;</a></span>slice() <span class="overload">[5/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a86abeffa3ef136e9e35057e526618dc8">&#9670;&#160;</a></span>slice() <span class="overload">[6/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -41125,7 +41213,7 @@ template&lt;typename DerivedX , typename DerivedR &gt; </div>
 </div>
 </div>
 <a id="aa5271870d0385781c2236145ee9c3897" name="aa5271870d0385781c2236145ee9c3897"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa5271870d0385781c2236145ee9c3897">&#9670;&#160;</a></span>slice() <span class="overload">[6/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5271870d0385781c2236145ee9c3897">&#9670;&#160;</a></span>slice() <span class="overload">[7/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -41149,44 +41237,6 @@ template&lt;typename DerivedX , typename DerivedR &gt; </div>
           <td></td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>dim</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
-
-</div>
-</div>
-<a id="aa05264f934b9cecbac042ef69735b74b" name="aa05264f934b9cecbac042ef69735b74b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa05264f934b9cecbac042ef69735b74b">&#9670;&#160;</a></span>slice() <span class="overload">[7/7]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void igl::slice </td>
-          <td>(</td>
-          <td class="paramtype">const std::vector&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>X</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::vector&lt; size_t &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>R</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::vector&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>Y</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -41258,7 +41308,7 @@ template&lt;typename TX , typename TY , typename DerivedI &gt; </div>
   </table>
   </dd>
 </dl>
-<h4><a class="anchor" id="autotoc_md32"></a>
+<h4><a class="anchor" id="autotoc_md33"></a>
 Example</h4>
 <pre class="fragment">// Construct and slice up Laplacian
 SparseMatrix&lt;double&gt; L,L_sliced;
@@ -41369,59 +41419,16 @@ template&lt;typename T , typename DerivedR , typename DerivedC &gt; </div>
     <tr><td class="paramdir">[in]</td><td class="paramname">R</td><td>list of row indices </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">C</td><td>list of column indices </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">Y</td><td>ym by yn lhs matrix </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">Y</td><td>ym by yn lhs matrix, same as input but Y(R,C) = X </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">Y</td><td>ym by yn lhs matrix, same as input but Y(R,C) = X</td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="afce428bb768059c8d6f9563873f8e730" name="afce428bb768059c8d6f9563873f8e730"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afce428bb768059c8d6f9563873f8e730">&#9670;&#160;</a></span>slice_into() <span class="overload">[2/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename DerivedX , typename DerivedY , typename DerivedR , typename DerivedC &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void igl::slice_into </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::MatrixBase&lt; DerivedX &gt; &amp;&#160;</td>
-          <td class="paramname"><em>X</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::MatrixBase&lt; DerivedR &gt; &amp;&#160;</td>
-          <td class="paramname"><em>R</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::MatrixBase&lt; DerivedC &gt; &amp;&#160;</td>
-          <td class="paramname"><em>C</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Eigen::PlainObjectBase&lt; DerivedY &gt; &amp;&#160;</td>
-          <td class="paramname"><em>Y</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="namespaceigl.html#a547a8704200d3af48fe92105c15a32ad" title="Act like the matlab X(row_indices,col_indices) operator, where row_indices, col_indices are non-negat...">slice</a> </dd></dl>
 
 </div>
 </div>
 <a id="a185ee703c7cf8760af368bcb0861d37f" name="a185ee703c7cf8760af368bcb0861d37f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a185ee703c7cf8760af368bcb0861d37f">&#9670;&#160;</a></span>slice_into() <span class="overload">[3/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a185ee703c7cf8760af368bcb0861d37f">&#9670;&#160;</a></span>slice_into() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -41472,6 +41479,51 @@ template&lt;typename MatX , typename MatY , typename DerivedR &gt; </div>
 
 </div>
 </div>
+<a id="afce428bb768059c8d6f9563873f8e730" name="afce428bb768059c8d6f9563873f8e730"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afce428bb768059c8d6f9563873f8e730">&#9670;&#160;</a></span>slice_into() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DerivedX , typename DerivedY , typename DerivedR , typename DerivedC &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void igl::slice_into </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::MatrixBase&lt; DerivedX &gt; &amp;&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::MatrixBase&lt; DerivedR &gt; &amp;&#160;</td>
+          <td class="paramname"><em>R</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::MatrixBase&lt; DerivedC &gt; &amp;&#160;</td>
+          <td class="paramname"><em>C</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::PlainObjectBase&lt; DerivedY &gt; &amp;&#160;</td>
+          <td class="paramname"><em>Y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+<p>See <a class="el" href="slice_8h.html">slice.h</a> for more details </p>
+
+</div>
+</div>
 <a id="aa29b762b3094e33fd5167ca196de49ce" name="aa29b762b3094e33fd5167ca196de49ce"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa29b762b3094e33fd5167ca196de49ce">&#9670;&#160;</a></span>slice_into() <span class="overload">[4/4]</span></h2>
 
@@ -41511,8 +41563,113 @@ template&lt;typename DerivedX , typename DerivedR , typename DerivedY &gt; </div
 
 </div>
 </div>
+<a id="acb30d6061d773254628256682b88b427" name="acb30d6061d773254628256682b88b427"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb30d6061d773254628256682b88b427">&#9670;&#160;</a></span>slice_mask() <span class="overload">[1/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename XType , typename YType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void igl::slice_mask </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::SparseMatrix&lt; XType &gt; &amp;&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::Array&lt; bool, Eigen::Dynamic, 1 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>R</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::Array&lt; bool, Eigen::Dynamic, 1 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>C</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::SparseMatrix&lt; YType &gt; &amp;&#160;</td>
+          <td class="paramname"><em>Y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Act like the matlab X(row_mask,col_mask) operator, where row_mask, col_mask are non-negative integer indices. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">X</td><td>m by n matrix </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">R</td><td>m list of row bools </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">C</td><td>n list of column bools </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">Y</td><td>#trues-in-R by #trues-in-C matrix</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="namespaceigl.html#a547a8704200d3af48fe92105c15a32ad" title="Act like the matlab X(row_indices,col_indices) operator, where row_indices, col_indices are non-negat...">slice</a> </dd></dl>
+
+</div>
+</div>
+<a id="a6770877236349590d6b4bbc2a6f616ad" name="a6770877236349590d6b4bbc2a6f616ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6770877236349590d6b4bbc2a6f616ad">&#9670;&#160;</a></span>slice_mask() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename XType , typename YType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void igl::slice_mask </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::SparseMatrix&lt; XType &gt; &amp;&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::Array&lt; bool, Eigen::Dynamic, 1 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>R</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>dim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::SparseMatrix&lt; YType &gt; &amp;&#160;</td>
+          <td class="paramname"><em>Y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+<p>Wrapper to only slice in one direction</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">[int]</td><td>dim dimension to slice in 1 or 2, dim=1 --&gt; X(R,:), dim=2 --&gt; X(:,R) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="aef569f1ee0e9cd71c2cfabd1e27e2f40" name="aef569f1ee0e9cd71c2cfabd1e27e2f40"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aef569f1ee0e9cd71c2cfabd1e27e2f40">&#9670;&#160;</a></span>slice_mask() <span class="overload">[1/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aef569f1ee0e9cd71c2cfabd1e27e2f40">&#9670;&#160;</a></span>slice_mask() <span class="overload">[3/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -41551,22 +41708,13 @@ template&lt;typename DerivedX , typename DerivedY &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Act like the matlab X(row_mask,col_mask) operator, where row_mask, col_mask are non-negative integer indices. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">X</td><td>m by n matrix </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">R</td><td>m list of row bools </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">C</td><td>n list of column bools </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">Y</td><td>#trues-in-R by #trues-in-C matrix</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="namespaceigl.html#aef569f1ee0e9cd71c2cfabd1e27e2f40" title="Act like the matlab X(row_mask,col_mask) operator, where row_mask, col_mask are non-negative integer ...">slice_mask</a> </dd></dl>
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+<p>See <a class="el" href="slice_8h.html">slice.h</a> for more details </p>
 
 </div>
 </div>
 <a id="ab448e84d310f37a2cffd09d50faad326" name="ab448e84d310f37a2cffd09d50faad326"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab448e84d310f37a2cffd09d50faad326">&#9670;&#160;</a></span>slice_mask() <span class="overload">[2/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab448e84d310f37a2cffd09d50faad326">&#9670;&#160;</a></span>slice_mask() <span class="overload">[4/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -41605,19 +41753,10 @@ template&lt;typename DerivedX , typename DerivedY &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
-<p>Wrapper to only slice in one direction</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">[int]</td><td>dim dimension to slice in 1 or 2, dim=1 --&gt; X(R,:), dim=2 --&gt; X(:,R) </td></tr>
-  </table>
-  </dd>
-</dl>
-
 </div>
 </div>
 <a id="afe884ab3e3a80bcea135959a5b9aa831" name="afe884ab3e3a80bcea135959a5b9aa831"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe884ab3e3a80bcea135959a5b9aa831">&#9670;&#160;</a></span>slice_mask() <span class="overload">[3/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afe884ab3e3a80bcea135959a5b9aa831">&#9670;&#160;</a></span>slice_mask() <span class="overload">[5/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -41656,7 +41795,7 @@ template&lt;typename DerivedX &gt; </div>
 </div>
 </div>
 <a id="ae4dd189219e52c3496a80f36b82cbbce" name="ae4dd189219e52c3496a80f36b82cbbce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae4dd189219e52c3496a80f36b82cbbce">&#9670;&#160;</a></span>slice_mask() <span class="overload">[4/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4dd189219e52c3496a80f36b82cbbce">&#9670;&#160;</a></span>slice_mask() <span class="overload">[6/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -41680,94 +41819,6 @@ template&lt;typename DerivedX &gt; </div>
           <td></td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>dim</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
-
-</div>
-</div>
-<a id="a6770877236349590d6b4bbc2a6f616ad" name="a6770877236349590d6b4bbc2a6f616ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6770877236349590d6b4bbc2a6f616ad">&#9670;&#160;</a></span>slice_mask() <span class="overload">[5/6]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename XType , typename YType &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void igl::slice_mask </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::SparseMatrix&lt; XType &gt; &amp;&#160;</td>
-          <td class="paramname"><em>X</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::Array&lt; bool, Eigen::Dynamic, 1 &gt; &amp;&#160;</td>
-          <td class="paramname"><em>R</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>dim</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Eigen::SparseMatrix&lt; YType &gt; &amp;&#160;</td>
-          <td class="paramname"><em>Y</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
-
-</div>
-</div>
-<a id="acb30d6061d773254628256682b88b427" name="acb30d6061d773254628256682b88b427"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb30d6061d773254628256682b88b427">&#9670;&#160;</a></span>slice_mask() <span class="overload">[6/6]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename XType , typename YType &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void igl::slice_mask </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::SparseMatrix&lt; XType &gt; &amp;&#160;</td>
-          <td class="paramname"><em>X</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::Array&lt; bool, Eigen::Dynamic, 1 &gt; &amp;&#160;</td>
-          <td class="paramname"><em>R</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::Array&lt; bool, Eigen::Dynamic, 1 &gt; &amp;&#160;</td>
-          <td class="paramname"><em>C</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Eigen::SparseMatrix&lt; YType &gt; &amp;&#160;</td>
-          <td class="paramname"><em>Y</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -43456,7 +43507,7 @@ template&lt;typename DerivedI , typename Scalar &gt; </div>
   </table>
   </dd>
 </dl>
-<h4><a class="anchor" id="autotoc_md33"></a>
+<h4><a class="anchor" id="autotoc_md34"></a>
 Example:</h4>
 <pre class="fragment">  Eigen::SparseMatrix&lt;double&gt; A;
   std::vector&lt;Eigen::Triplet&lt;double&gt; &gt; IJV;
@@ -45242,7 +45293,7 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<h4><a class="anchor" id="autotoc_md34"></a>
+<h4><a class="anchor" id="autotoc_md35"></a>
 Example:</h4>
 <p>A = [ 1 2 3 4 5 6 7 8 101 102 103 104 105 106 107 108 201 202 203 204 205 206 207 208]; transpose_blocks(A,1,3,B); B -&gt; [ 1 5 2 6 3 7 4 8 101 105 102 106 103 107 104 108 201 205 202 206 203 207 204 208]; </p>
 
@@ -46642,7 +46693,7 @@ template&lt;typename DerivedF , typename DerivedE , typename DeriveduE , typenam
   </table>
   </dd>
 </dl>
-<h4><a class="anchor" id="autotoc_md35"></a>
+<h4><a class="anchor" id="autotoc_md36"></a>
 Example:</h4>
 <div class="fragment"><div class="line"><span class="comment">// Using uE2E</span></div>
 <div class="line"><span class="keywordflow">for</span>(<span class="keywordtype">int</span> u = 0;u&lt;uE2E.size();u++)</div>
@@ -47398,7 +47449,7 @@ template&lt;typename DerivedV , typename DerivedF , typename Derivedbc &gt; </di
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if there's a hit</dd></dl>
-<h4><a class="anchor" id="autotoc_md36"></a>
+<h4><a class="anchor" id="autotoc_md37"></a>
 Example:</h4>
 <div class="fragment"><div class="line"><a class="code hl_class" href="classigl_1_1opengl_1_1glfw_1_1Viewer.html">igl::opengl::glfw::Viewer</a> vr;</div>
 <div class="line">...</div>
@@ -47595,7 +47646,7 @@ template&lt;typename DerivedA , typename DerivedU , typename DerivedG , typename
   </table>
   </dd>
 </dl>
-<h4><a class="anchor" id="autotoc_md37"></a>
+<h4><a class="anchor" id="autotoc_md38"></a>
 Matlibberish Example</h4>
 <p>[V,F,TC,FTC] = readOBJ('~/Downloads/kiwis/kiwi.obj'); [U,G] = unzip_corners(cat(3,F,FTC)); % display mesh tsurf(G,V(U(:,1),:)); % display texture coordinates tsurf(G,TC(U(:,2),:)); </p>
 

@@ -17,47 +17,47 @@
 \DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
 \DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
 \DoxyCodeLine{00015\ \{}
-\DoxyCodeLine{00025\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedX,\textcolor{keyword}{typename}\ DerivedY>}
-\DoxyCodeLine{00026\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_aef569f1ee0e9cd71c2cfabd1e27e2f40}{slice\_mask}}(}
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::DenseBase<DerivedX>\ \&\ X,}
+\DoxyCodeLine{00025\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ XType,\ \textcolor{keyword}{typename}\ YType>}
+\DoxyCodeLine{00026\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_acb30d6061d773254628256682b88b427}{slice\_mask}}(}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<XType>\ \&\ X,}
 \DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Array<bool,Eigen::Dynamic,1>\ \&\ R,}
 \DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Array<bool,Eigen::Dynamic,1>\ \&\ C,}
-\DoxyCodeLine{00030\ \ \ \ \ Eigen::PlainObjectBase<DerivedY>\ \&\ Y);}
-\DoxyCodeLine{00036\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedX,\textcolor{keyword}{typename}\ DerivedY>}
-\DoxyCodeLine{00037\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_aef569f1ee0e9cd71c2cfabd1e27e2f40}{slice\_mask}}(}
-\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::DenseBase<DerivedX>\ \&\ X,}
+\DoxyCodeLine{00030\ \ \ \ \ Eigen::SparseMatrix<YType>\ \&\ Y);}
+\DoxyCodeLine{00036\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ XType,\ \textcolor{keyword}{typename}\ YType>}
+\DoxyCodeLine{00037\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_acb30d6061d773254628256682b88b427}{slice\_mask}}(}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<XType>\ \&\ X,}
 \DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Array<bool,Eigen::Dynamic,1>\ \&\ R,}
 \DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ dim,}
-\DoxyCodeLine{00041\ \ \ \ \ Eigen::PlainObjectBase<DerivedY>\ \&\ Y);}
-\DoxyCodeLine{00047\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedX>}
-\DoxyCodeLine{00048\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ DerivedX\ \mbox{\hyperlink{namespaceigl_aef569f1ee0e9cd71c2cfabd1e27e2f40}{slice\_mask}}(}
+\DoxyCodeLine{00041\ \ \ \ \ Eigen::SparseMatrix<YType>\ \&\ Y);}
+\DoxyCodeLine{00047\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedX,\textcolor{keyword}{typename}\ DerivedY>}
+\DoxyCodeLine{00048\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_acb30d6061d773254628256682b88b427}{slice\_mask}}(}
 \DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::DenseBase<DerivedX>\ \&\ X,}
 \DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Array<bool,Eigen::Dynamic,1>\ \&\ R,}
-\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Array<bool,Eigen::Dynamic,1>\ \&\ C);}
-\DoxyCodeLine{00053\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedX>}
-\DoxyCodeLine{00054\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ DerivedX\ \mbox{\hyperlink{namespaceigl_aef569f1ee0e9cd71c2cfabd1e27e2f40}{slice\_mask}}(}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Array<bool,Eigen::Dynamic,1>\ \&\ C,}
+\DoxyCodeLine{00052\ \ \ \ \ Eigen::PlainObjectBase<DerivedY>\ \&\ Y);}
+\DoxyCodeLine{00053\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedX,\textcolor{keyword}{typename}\ DerivedY>}
+\DoxyCodeLine{00054\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_acb30d6061d773254628256682b88b427}{slice\_mask}}(}
 \DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::DenseBase<DerivedX>\ \&\ X,}
 \DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Array<bool,Eigen::Dynamic,1>\ \&\ R,}
-\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ dim);}
-\DoxyCodeLine{00059\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ XType,\ \textcolor{keyword}{typename}\ YType>}
-\DoxyCodeLine{00060\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_aef569f1ee0e9cd71c2cfabd1e27e2f40}{slice\_mask}}(}
-\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<XType>\ \&\ X,}
-\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Array<bool,Eigen::Dynamic,1>\ \&\ R,}
-\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ dim,}
-\DoxyCodeLine{00064\ \ \ \ \ Eigen::SparseMatrix<YType>\ \&\ Y);}
-\DoxyCodeLine{00066\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ XType,\ \textcolor{keyword}{typename}\ YType>}
-\DoxyCodeLine{00067\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_aef569f1ee0e9cd71c2cfabd1e27e2f40}{slice\_mask}}(}
-\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<XType>\ \&\ X,}
-\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Array<bool,Eigen::Dynamic,1>\ \&\ R,}
-\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Array<bool,Eigen::Dynamic,1>\ \&\ C,}
-\DoxyCodeLine{00071\ \ \ \ \ Eigen::SparseMatrix<YType>\ \&\ Y);}
-\DoxyCodeLine{00072\ \}}
-\DoxyCodeLine{00073\ }
-\DoxyCodeLine{00074\ }
-\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
-\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#\ \ include\ "{}slice\_mask.cpp"{}}}
-\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00078\ }
-\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ dim,}
+\DoxyCodeLine{00058\ \ \ \ \ Eigen::PlainObjectBase<DerivedY>\ \&\ Y);}
+\DoxyCodeLine{00064\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedX>}
+\DoxyCodeLine{00065\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ DerivedX\ \mbox{\hyperlink{namespaceigl_acb30d6061d773254628256682b88b427}{slice\_mask}}(}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::DenseBase<DerivedX>\ \&\ X,}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Array<bool,Eigen::Dynamic,1>\ \&\ R,}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Array<bool,Eigen::Dynamic,1>\ \&\ C);}
+\DoxyCodeLine{00070\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedX>}
+\DoxyCodeLine{00071\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ DerivedX\ \mbox{\hyperlink{namespaceigl_acb30d6061d773254628256682b88b427}{slice\_mask}}(}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::DenseBase<DerivedX>\ \&\ X,}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::Array<bool,Eigen::Dynamic,1>\ \&\ R,}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ dim);}
+\DoxyCodeLine{00075\ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#\ \ include\ "{}slice\_mask.cpp"{}}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

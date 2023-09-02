@@ -4,5 +4,6 @@ var find_8h =
     [ "find", "find_8h.html#ad0ba264f987871035fb7d12de96fccab", null ],
     [ "find", "find_8h.html#a2f6c699f94449b23813f0d80df36db8e", null ],
     [ "find", "find_8h.html#a1c874cf1ad179744026898ded3da4ea7", null ],
-    [ "find", "find_8h.html#ab6758ca13380f9bd099c860aba705d45", null ]
+    [ "find", "find_8h.html#ab6758ca13380f9bd099c860aba705d45", null ],
+    [ "find", "find_8h.html#a35cd54b6c6bf02c39e4caf02782fcfbc", null ]
 ];

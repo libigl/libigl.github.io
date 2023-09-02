@@ -66,7 +66,8 @@ var searchData=
   ['current_5fmouse_5fx_63',['current_mouse_x',['../classigl_1_1opengl_1_1glfw_1_1Viewer.html#a3b0a689bb89ef9295e708cfcd2dbd51f',1,'igl::opengl::glfw::Viewer']]],
   ['current_5fmouse_5fy_64',['current_mouse_y',['../classigl_1_1opengl_1_1glfw_1_1Viewer.html#ad1ed01fb809938fa9b79e7cee0504e71',1,'igl::opengl::glfw::Viewer']]],
   ['custom_5flabels_65',['custom_labels',['../classigl_1_1opengl_1_1MeshGL.html#ab7495df16869f13f7714a8072a3e1da0',1,'igl::opengl::MeshGL']]],
-  ['cyan_5fambient_66',['CYAN_AMBIENT',['../namespaceigl.html#a41f327ea1271a24126e5b54b58137207',1,'igl']]],
-  ['cyan_5fdiffuse_67',['CYAN_DIFFUSE',['../namespaceigl.html#aa91b40d8001ba8a6732b57ea544e3cff',1,'igl']]],
-  ['cyan_5fspecular_68',['CYAN_SPECULAR',['../namespaceigl.html#a2aa44781d95faf982b844c0aa39b3138',1,'igl']]]
+  ['cutoff_66',['cutoff',['../structigl_1_1copyleft_1_1cgal_1_1RemeshSelfIntersectionsParam.html#ae7ba2931a13ae300b0aab512eb87d6c6',1,'igl::copyleft::cgal::RemeshSelfIntersectionsParam']]],
+  ['cyan_5fambient_67',['CYAN_AMBIENT',['../namespaceigl.html#a41f327ea1271a24126e5b54b58137207',1,'igl']]],
+  ['cyan_5fdiffuse_68',['CYAN_DIFFUSE',['../namespaceigl.html#aa91b40d8001ba8a6732b57ea544e3cff',1,'igl']]],
+  ['cyan_5fspecular_69',['CYAN_SPECULAR',['../namespaceigl.html#a2aa44781d95faf982b844c0aa39b3138',1,'igl']]]
 ];

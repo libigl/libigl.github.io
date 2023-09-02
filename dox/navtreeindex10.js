@@ -1,5 +1,6 @@
 var NAVTREEINDEX10 =
 {
+"functions_x.html":[2,3,0,23],
 "functions_y.html":[2,3,0,24],
 "functions_~.html":[2,3,0,25],
 "gaussian__curvature_8h.html":[3,0,1,0,159],
@@ -92,8 +93,8 @@ var NAVTREEINDEX10 =
 "incircle_8h.html":[3,0,1,0,0,0,17],
 "incircle_8h.html#a3cbee8698ddf7b0868d3b433b6d5bd77":[3,0,1,0,0,0,17,0],
 "incircle_8h_source.html":[3,0,1,0,0,0,17],
-"index.html":[],
 "index.html":[0],
+"index.html":[],
 "infinite__cost__stopping__condition_8h.html":[3,0,1,0,182],
 "infinite__cost__stopping__condition_8h.html#a0cba56449805461c9713bc29b8ebcc79":[3,0,1,0,182,0],
 "infinite__cost__stopping__condition_8h.html#a6f95773129e4cd1a29171858e1f313b5":[3,0,1,0,182,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX10 =
 "launch__medit_8h_source.html":[3,0,1,0,215],
 "lbs__matrix_8h.html":[3,0,1,0,216],
 "lbs__matrix_8h.html#a24aaeb1753decc0b7602a6cb0432458e":[3,0,1,0,216,4],
-"lbs__matrix_8h.html#a5f0754d811bd0e0c95fac0317917c255":[3,0,1,0,216,3],
-"lbs__matrix_8h.html#a7e6a7f8c0fb33cae88074977a12e12fc":[3,0,1,0,216,0]
+"lbs__matrix_8h.html#a5f0754d811bd0e0c95fac0317917c255":[3,0,1,0,216,3]
 };

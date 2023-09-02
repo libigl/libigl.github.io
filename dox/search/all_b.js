@@ -72,6 +72,6 @@ var searchData=
   ['lscm_2eh_69',['lscm.h',['../lscm_8h.html',1,'(Global Namespace)'],['../spectra_2lscm_8h.html',1,'(Global Namespace)']]],
   ['lscm_5fhessian_70',['lscm_hessian',['../namespaceigl.html#a1cf5daa1660b341b111456aabafc1f9b',1,'igl']]],
   ['lscm_5fhessian_2eh_71',['lscm_hessian.h',['../lscm__hessian_8h.html',1,'']]],
-  ['lu_72',['lu',['../structigl_1_1min__quad__with__fixed__data.html#a7c60ca349277d0e6e85e5cdd489e5dc2',1,'igl::min_quad_with_fixed_data::lu'],['../structigl_1_1min__quad__with__fixed__data.html#a0ecb4d6605c0d09f0d9cd9e3beaf9022a6a372e5f964cccd56a199d6172ececdc',1,'igl::min_quad_with_fixed_data::LU']]],
+  ['lu_72',['lu',['../structigl_1_1min__quad__with__fixed__data.html#a0ecb4d6605c0d09f0d9cd9e3beaf9022a6a372e5f964cccd56a199d6172ececdc',1,'igl::min_quad_with_fixed_data::LU'],['../structigl_1_1min__quad__with__fixed__data.html#a7c60ca349277d0e6e85e5cdd489e5dc2',1,'igl::min_quad_with_fixed_data::lu']]],
   ['lvel0_73',['Lvel0',['../structigl_1_1ArapDOFData.html#a3b5766a665522b07f56c8246317e3c28',1,'igl::ArapDOFData']]]
 ];

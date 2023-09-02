@@ -112,8 +112,8 @@ $(document).ready(function(){initNavTree('structigl_1_1copyleft_1_1cgal_1_1Remes
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac3c7a8edf4f534235052cf7b26765c85" id="r_ac3c7a8edf4f534235052cf7b26765c85"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structigl_1_1copyleft_1_1cgal_1_1RemeshSelfIntersectionsParam.html#ac3c7a8edf4f534235052cf7b26765c85">RemeshSelfIntersectionsParam</a> (bool _detect_only=false, bool _first_only=false, bool _stitch_all=false, bool _slow_and_more_precise_rounding=false)</td></tr>
-<tr class="separator:ac3c7a8edf4f534235052cf7b26765c85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f8a6f7293ed2fd1e536cc4fc2be4acf" id="r_a5f8a6f7293ed2fd1e536cc4fc2be4acf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structigl_1_1copyleft_1_1cgal_1_1RemeshSelfIntersectionsParam.html#a5f8a6f7293ed2fd1e536cc4fc2be4acf">RemeshSelfIntersectionsParam</a> (bool _detect_only=false, bool _first_only=false, bool _stitch_all=false, bool _slow_and_more_precise_rounding=false, int _cutoff=1000)</td></tr>
+<tr class="separator:a5f8a6f7293ed2fd1e536cc4fc2be4acf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -130,12 +130,15 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a2e8863d911e7f8ef63354a70eea2b470" id="r_a2e8863d911e7f8ef63354a70eea2b470"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structigl_1_1copyleft_1_1cgal_1_1RemeshSelfIntersectionsParam.html#a2e8863d911e7f8ef63354a70eea2b470">slow_and_more_precise_rounding</a></td></tr>
 <tr class="memdesc:a2e8863d911e7f8ef63354a70eea2b470"><td class="mdescLeft">&#160;</td><td class="mdescRight">whether to use slow and more precise rounding (see assign_scalar)  <br /></td></tr>
 <tr class="separator:a2e8863d911e7f8ef63354a70eea2b470"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7ba2931a13ae300b0aab512eb87d6c6" id="r_ae7ba2931a13ae300b0aab512eb87d6c6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structigl_1_1copyleft_1_1cgal_1_1RemeshSelfIntersectionsParam.html#ae7ba2931a13ae300b0aab512eb87d6c6">cutoff</a></td></tr>
+<tr class="memdesc:ae7ba2931a13ae300b0aab512eb87d6c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">cutoff parameter for box_self_intersection_d (based on some casual testing 1000 works better than 1,10,100,10000 etc.  <br /></td></tr>
+<tr class="separator:ae7ba2931a13ae300b0aab512eb87d6c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Parameters for <a class="el" href="classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh.html" title="Class for computing the self-intersections of a mesh.">SelfIntersectMesh</a>, remesh_self_intersections and remesh_intersections, and intersect_other. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ac3c7a8edf4f534235052cf7b26765c85" name="ac3c7a8edf4f534235052cf7b26765c85"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac3c7a8edf4f534235052cf7b26765c85">&#9670;&#160;</a></span>RemeshSelfIntersectionsParam()</h2>
+<a id="a5f8a6f7293ed2fd1e536cc4fc2be4acf" name="a5f8a6f7293ed2fd1e536cc4fc2be4acf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f8a6f7293ed2fd1e536cc4fc2be4acf">&#9670;&#160;</a></span>RemeshSelfIntersectionsParam()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -165,7 +168,13 @@ Public Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>_slow_and_more_precise_rounding</em> = <code>false</code>&#160;</td>
+          <td class="paramname"><em>_slow_and_more_precise_rounding</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>_cutoff</em> = <code>1000</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -245,6 +254,23 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>whether to use slow and more precise rounding (see assign_scalar) </p>
+
+</div>
+</div>
+<a id="ae7ba2931a13ae300b0aab512eb87d6c6" name="ae7ba2931a13ae300b0aab512eb87d6c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7ba2931a13ae300b0aab512eb87d6c6">&#9670;&#160;</a></span>cutoff</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int igl::copyleft::cgal::RemeshSelfIntersectionsParam::cutoff</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>cutoff parameter for box_self_intersection_d (based on some casual testing 1000 works better than 1,10,100,10000 etc. </p>
+<p>and better than the recommended √n) </p>
 
 </div>
 </div>

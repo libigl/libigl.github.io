@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['m_0',['m',['../structigl_1_1SLIMData.html#a2bc173c625140e700d6448680a9e4b1c',1,'igl::SLIMData::M'],['../structigl_1_1ArapDOFData.html#aa162503dfcb0aa7d40d662a9d4c9b906',1,'igl::ArapDOFData::m'],['../classigl_1_1opengl_1_1glfw_1_1imgui_1_1SelectionWidget.html#af5720982643465483fcd9a48d3b1160c',1,'igl::opengl::glfw::imgui::SelectionWidget::M']]],
+  ['m_0',['m',['../classigl_1_1opengl_1_1glfw_1_1imgui_1_1SelectionWidget.html#af5720982643465483fcd9a48d3b1160c',1,'igl::opengl::glfw::imgui::SelectionWidget::M'],['../structigl_1_1SLIMData.html#a2bc173c625140e700d6448680a9e4b1c',1,'igl::SLIMData::M'],['../structigl_1_1ArapDOFData.html#aa162503dfcb0aa7d40d662a9d4c9b906',1,'igl::ArapDOFData::m']]],
   ['m_5fbox_1',['m_box',['../classigl_1_1AABB.html#ae5a1a951d07db942eed6d14f45af6e6b',1,'igl::AABB']]],
   ['m_5ffullsolve_2',['M_FullSolve',['../structigl_1_1ArapDOFData.html#a3494ef8635b2f2ca4617b49f5f46484a',1,'igl::ArapDOFData']]],
   ['m_5fleft_3',['m_left',['../classigl_1_1AABB.html#a235d9f0789affa75050a75fe1d9a3e84',1,'igl::AABB']]],

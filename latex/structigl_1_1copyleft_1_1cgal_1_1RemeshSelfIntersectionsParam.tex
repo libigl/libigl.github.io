@@ -12,7 +12,7 @@ Parameters for \doxylink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh}{Self
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{structigl_1_1copyleft_1_1cgal_1_1RemeshSelfIntersectionsParam_ac3c7a8edf4f534235052cf7b26765c85}{Remesh\+Self\+Intersections\+Param}} (bool \+\_\+detect\+\_\+only=false, bool \+\_\+first\+\_\+only=false, bool \+\_\+stitch\+\_\+all=false, bool \+\_\+slow\+\_\+and\+\_\+more\+\_\+precise\+\_\+rounding=false)
+\mbox{\hyperlink{structigl_1_1copyleft_1_1cgal_1_1RemeshSelfIntersectionsParam_a5f8a6f7293ed2fd1e536cc4fc2be4acf}{Remesh\+Self\+Intersections\+Param}} (bool \+\_\+detect\+\_\+only=false, bool \+\_\+first\+\_\+only=false, bool \+\_\+stitch\+\_\+all=false, bool \+\_\+slow\+\_\+and\+\_\+more\+\_\+precise\+\_\+rounding=false, int \+\_\+cutoff=1000)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -25,18 +25,20 @@ bool \mbox{\hyperlink{structigl_1_1copyleft_1_1cgal_1_1RemeshSelfIntersectionsPa
 \begin{DoxyCompactList}\small\item\em whether to stitch all resulting constructed elements into a (non-\/manifold) mesh ~\newline
  \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{structigl_1_1copyleft_1_1cgal_1_1RemeshSelfIntersectionsParam_a2e8863d911e7f8ef63354a70eea2b470}{slow\+\_\+and\+\_\+more\+\_\+precise\+\_\+rounding}}
-\begin{DoxyCompactList}\small\item\em whether to use slow and more precise rounding (see assign\+\_\+scalar) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em whether to use slow and more precise rounding (see assign\+\_\+scalar) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structigl_1_1copyleft_1_1cgal_1_1RemeshSelfIntersectionsParam_ae7ba2931a13ae300b0aab512eb87d6c6}{cutoff}}
+\begin{DoxyCompactList}\small\item\em cutoff parameter for box\+\_\+self\+\_\+intersection\+\_\+d (based on some casual testing 1000 works better than 1,10,100,10000 etc. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Parameters for \doxylink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh}{Self\+Intersect\+Mesh}, remesh\+\_\+self\+\_\+intersections and remesh\+\_\+intersections, and intersect\+\_\+other. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{structigl_1_1copyleft_1_1cgal_1_1RemeshSelfIntersectionsParam_ac3c7a8edf4f534235052cf7b26765c85}\label{structigl_1_1copyleft_1_1cgal_1_1RemeshSelfIntersectionsParam_ac3c7a8edf4f534235052cf7b26765c85} 
+\Hypertarget{structigl_1_1copyleft_1_1cgal_1_1RemeshSelfIntersectionsParam_a5f8a6f7293ed2fd1e536cc4fc2be4acf}\label{structigl_1_1copyleft_1_1cgal_1_1RemeshSelfIntersectionsParam_a5f8a6f7293ed2fd1e536cc4fc2be4acf} 
 \index{igl::copyleft::cgal::RemeshSelfIntersectionsParam@{igl::copyleft::cgal::RemeshSelfIntersectionsParam}!RemeshSelfIntersectionsParam@{RemeshSelfIntersectionsParam}}
 \index{RemeshSelfIntersectionsParam@{RemeshSelfIntersectionsParam}!igl::copyleft::cgal::RemeshSelfIntersectionsParam@{igl::copyleft::cgal::RemeshSelfIntersectionsParam}}
 \doxysubsubsection{\texorpdfstring{RemeshSelfIntersectionsParam()}{RemeshSelfIntersectionsParam()}}
-{\footnotesize\ttfamily igl\+::copyleft\+::cgal\+::\+Remesh\+Self\+Intersections\+Param\+::\+Remesh\+Self\+Intersections\+Param (\begin{DoxyParamCaption}\item[{bool}]{\+\_\+detect\+\_\+only = {\ttfamily false},  }\item[{bool}]{\+\_\+first\+\_\+only = {\ttfamily false},  }\item[{bool}]{\+\_\+stitch\+\_\+all = {\ttfamily false},  }\item[{bool}]{\+\_\+slow\+\_\+and\+\_\+more\+\_\+precise\+\_\+rounding = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily igl\+::copyleft\+::cgal\+::\+Remesh\+Self\+Intersections\+Param\+::\+Remesh\+Self\+Intersections\+Param (\begin{DoxyParamCaption}\item[{bool}]{\+\_\+detect\+\_\+only = {\ttfamily false},  }\item[{bool}]{\+\_\+first\+\_\+only = {\ttfamily false},  }\item[{bool}]{\+\_\+stitch\+\_\+all = {\ttfamily false},  }\item[{bool}]{\+\_\+slow\+\_\+and\+\_\+more\+\_\+precise\+\_\+rounding = {\ttfamily false},  }\item[{int}]{\+\_\+cutoff = {\ttfamily 1000} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -82,7 +84,17 @@ whether to stitch all resulting constructed elements into a (non-\/manifold) mes
 
 whether to use slow and more precise rounding (see assign\+\_\+scalar) 
 
+\Hypertarget{structigl_1_1copyleft_1_1cgal_1_1RemeshSelfIntersectionsParam_ae7ba2931a13ae300b0aab512eb87d6c6}\label{structigl_1_1copyleft_1_1cgal_1_1RemeshSelfIntersectionsParam_ae7ba2931a13ae300b0aab512eb87d6c6} 
+\index{igl::copyleft::cgal::RemeshSelfIntersectionsParam@{igl::copyleft::cgal::RemeshSelfIntersectionsParam}!cutoff@{cutoff}}
+\index{cutoff@{cutoff}!igl::copyleft::cgal::RemeshSelfIntersectionsParam@{igl::copyleft::cgal::RemeshSelfIntersectionsParam}}
+\doxysubsubsection{\texorpdfstring{cutoff}{cutoff}}
+{\footnotesize\ttfamily int igl\+::copyleft\+::cgal\+::\+Remesh\+Self\+Intersections\+Param\+::cutoff}
 
+
+
+cutoff parameter for box\+\_\+self\+\_\+intersection\+\_\+d (based on some casual testing 1000 works better than 1,10,100,10000 etc. 
+
+and better than the recommended √n) 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

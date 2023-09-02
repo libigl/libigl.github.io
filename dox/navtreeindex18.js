@@ -1,5 +1,7 @@
 var NAVTREEINDEX18 =
 {
+"on__boundary_8h.html":[3,0,1,0,267],
+"on__boundary_8h.html#a9f19762456ef8396dfc4096f34c841e6":[3,0,1,0,267,0],
 "on__boundary_8h.html#acc0e9a973c6c86bc98645ef61f4d4b43":[3,0,1,0,267,1],
 "on__boundary_8h_source.html":[3,0,1,0,267],
 "order__facets__around__edge_8h.html":[3,0,1,0,0,0,28],
@@ -164,8 +166,8 @@ var NAVTREEINDEX18 =
 "point__segment__squared__distance_8h.html#aeb0f63485251c67fe5632d5177cf3cf8":[3,0,1,0,0,0,42,0],
 "point__segment__squared__distance_8h_source.html":[3,0,1,0,0,0,42],
 "point__simplex__squared__distance_8h.html":[3,0,1,0,295],
-"point__simplex__squared__distance_8h.html#a3de253885cbe07d8d264d21d6ba8a193":[3,0,1,0,295,0],
-"point__simplex__squared__distance_8h.html#add9fa7fb8d6e85604adbb9aebb990014":[3,0,1,0,295,1],
+"point__simplex__squared__distance_8h.html#a8c64da392edc068d98cf9c78ec8a6ee3":[3,0,1,0,295,0],
+"point__simplex__squared__distance_8h.html#a937e7f60501c5fa10d8ddf3aba6e3d2e":[3,0,1,0,295,1],
 "point__simplex__squared__distance_8h_source.html":[3,0,1,0,295],
 "point__solid__signed__squared__distance_8h.html":[3,0,1,0,0,0,43],
 "point__solid__signed__squared__distance_8h.html#aba6c0e12a671c3facc2b5129904c738e":[3,0,1,0,0,0,43,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX18 =
 "print__ijv_8h.html#a0f935d00d75dd71d9b65d2f6a7fe4a19":[3,0,1,0,302,1],
 "print__ijv_8h.html#aa93624b0b2836d2510e8c92ae951d817":[3,0,1,0,302,0],
 "print__ijv_8h_source.html":[3,0,1,0,302],
-"print__program__info__log_8h.html":[3,0,1,0,4,13],
-"print__program__info__log_8h.html#ad53ec95dc32499a84b78cc753c0be4b4":[3,0,1,0,4,13,0],
-"print__program__info__log_8h_source.html":[3,0,1,0,4,13]
+"print__program__info__log_8h.html":[3,0,1,0,4,13]
 };

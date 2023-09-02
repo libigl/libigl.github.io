@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['n_0',['n',['../structigl_1_1embree_1_1EmbreeRenderer_1_1Hit.html#a1ba4beafff0f04f218f2192ca66a5edf',1,'igl::embree::EmbreeRenderer::Hit::N'],['../structigl_1_1min__quad__with__fixed__data.html#aa2f79821dd5f69c2c704d4f8d2e0c34d',1,'igl::min_quad_with_fixed_data::n'],['../structigl_1_1ARAPData.html#ab99b3e4ab328a9312eff182894a32143',1,'igl::ARAPData::n'],['../structigl_1_1ArapDOFData.html#a496220a6256bfd490491b0f86384b241',1,'igl::ArapDOFData::n']]],
+  ['n_0',['n',['../structigl_1_1min__quad__with__fixed__data.html#aa2f79821dd5f69c2c704d4f8d2e0c34d',1,'igl::min_quad_with_fixed_data::n'],['../structigl_1_1ArapDOFData.html#a496220a6256bfd490491b0f86384b241',1,'igl::ArapDOFData::n'],['../structigl_1_1embree_1_1EmbreeRenderer_1_1Hit.html#a1ba4beafff0f04f218f2192ca66a5edf',1,'igl::embree::EmbreeRenderer::Hit::N'],['../structigl_1_1ARAPData.html#ab99b3e4ab328a9312eff182894a32143',1,'igl::ARAPData::n']]],
   ['name_1',['name',['../classigl_1_1opengl_1_1glfw_1_1imgui_1_1ImGuiWidget.html#a29581a458a08fc27f8c494fdc0ccdce5',1,'igl::opengl::glfw::imgui::ImGuiWidget']]],
   ['nb_2',['NB',['../structigl_1_1min__quad__with__fixed__data.html#a5ebf64e81dccd7a909e252ff13d2dfee',1,'igl::min_quad_with_fixed_data']]],
   ['nchoosek_3',['nchoosek',['../namespaceigl.html#a5aa3a7446d17387b412677075b546ebb',1,'igl::nchoosek(const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, const int k, Eigen::PlainObjectBase&lt; DerivedU &gt; &amp;U)'],['../namespaceigl.html#a330d1e74582084d2c5d7002ecab40baf',1,'igl::nchoosek(const int n, const int k)']]],

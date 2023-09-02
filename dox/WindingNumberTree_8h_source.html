@@ -295,7 +295,7 @@ $(document).ready(function(){initNavTree('WindingNumberTree_8h_source.html','');
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>  <span class="comment">// Remove any exactly duplicate vertices</span></div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>  <span class="comment">// Q: Can this ever increase the complexity of the boundary?</span></div>
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>  <span class="comment">// Q: Would we gain even more by remove almost exactly duplicate vertices?</span></div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>  <a class="code hl_typedef" href="classigl_1_1WindingNumberTree.html#a08fd4eb30fce0b226f1b2dc2853daf04">MatrixXF</a> SF,SVI,SVJ;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>  Eigen::Matrix&lt;typename MatrixXF::Scalar,Eigen::Dynamic,1&gt; SVI,SVJ;</div>
 <div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>  <a class="code hl_function" href="namespaceigl.html#a4684c8d485a5cd367751c6bb92e8b415">igl::remove_duplicate_vertices</a>(_V,_F,0.0,SV,SVI,SVJ,F);</div>
 <div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>  <a class="code hl_function" href="namespaceigl.html#a9ce1a2b984f20466ffc7732ab29501ba">triangle_fan</a>(<a class="code hl_function" href="namespaceigl.html#a269a81c6ea4fcbc58882d48720e1a4f5">igl::exterior_edges</a>(F),cap);</div>
 <div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>  V = SV;</div>

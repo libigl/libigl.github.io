@@ -1,5 +1,6 @@
 var NAVTREEINDEX11 =
 {
+"lbs__matrix_8h.html#a7e6a7f8c0fb33cae88074977a12e12fc":[3,0,1,0,216,0],
 "lbs__matrix_8h.html#aaafa8162de573ea1c1c90b3f4ffad4a7":[3,0,1,0,216,2],
 "lbs__matrix_8h.html#abf08b3e278ea284934baa0d3f6dc4975":[3,0,1,0,216,1],
 "lbs__matrix_8h_source.html":[3,0,1,0,216],
@@ -248,6 +249,5 @@ var NAVTREEINDEX11 =
 "mode_8h_source.html":[3,0,1,0,254],
 "moments_8h.html":[3,0,1,0,255],
 "moments_8h.html#ae9c8d358cf9fdbac0bd749920e072b84":[3,0,1,0,255,0],
-"moments_8h_source.html":[3,0,1,0,255],
-"mosek_2bbw_8h.html":[3,0,1,0,3,0]
+"moments_8h_source.html":[3,0,1,0,255]
 };
