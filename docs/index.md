@@ -293,7 +293,7 @@ page](https://github.com/libigl/libigl/issues).
 
 ## Copyright
 
-2019 Alec Jacobson, Daniele Panozzo, Christian Schüller, Olga Diamanti,
+2023 Alec Jacobson, Daniele Panozzo, Christian Schüller, Olga Diamanti,
 Qingnan Zhou, Sebastian Koch, Jeremie Dumas, Amir Vaxman, Nico Pietroni,
 Stefan Brugger, Kenshi Takayama, Wenzel Jakob, Nikolas De Giorgis, Luigi
 Rocca, Leonardo Sacht, Kevin Walliman, Olga Sorkine-Hornung, Teseo Schneider,
