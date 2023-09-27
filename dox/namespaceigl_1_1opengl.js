@@ -17,7 +17,7 @@ var namespaceigl_1_1opengl =
     [ "gli_verbose", "namespaceigl_1_1opengl.html#a1581cf9fab6f2f7dbc495dc8c601bd9b", null ],
     [ "gliVerbose", "namespaceigl_1_1opengl.html#ab7b723fc81098ef1841429fb1e127d76", null ],
     [ "writeTGA", "namespaceigl_1_1opengl.html#a0ee614bf7fc62ec302b276934bc9a8cc", null ],
-    [ "bind_vertex_attrib_array", "namespaceigl_1_1opengl.html#a18546398e939980318ed1cdbc9ccd2cc", null ],
+    [ "bind_vertex_attrib_array", "namespaceigl_1_1opengl.html#aeec995e7405f0abc5605089526f4ed91", null ],
     [ "create_index_vbo", "namespaceigl_1_1opengl.html#afb53eea84ee235ebd173c8c150ce4759", null ],
     [ "create_mesh_vbo", "namespaceigl_1_1opengl.html#a09b4597fbcc534310ba6cd68ad18e41f", null ],
     [ "create_mesh_vbo", "namespaceigl_1_1opengl.html#a33dff64f122b8ae53a54fb2c9b71445b", null ],

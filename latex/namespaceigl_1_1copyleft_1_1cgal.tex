@@ -50,7 +50,12 @@ using \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_aaab770fd7d59c9d5b18d153
 enum \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a652b3870ca0cbdd378a3b383ba9bd5f2}{Keeper\+Type}} \{ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a652b3870ca0cbdd378a3b383ba9bd5f2a4fe1fa3cfe8bfbb3dd60b8c84f3118ce}{KEEP\+\_\+\+INSIDE}}
 , \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a652b3870ca0cbdd378a3b383ba9bd5f2a224588758e6408e9ad5fff0b04142844}{KEEP\+\_\+\+ALL}}
  \}
-\begin{DoxyCompactList}\small\item\em Types of Keep policies. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Types of Keep policies. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a2ed8d1b22fc3cb87822647766b3dc863}{Trim\+With\+Solid\+Method}} \{ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a2ed8d1b22fc3cb87822647766b3dc863af6beb371c912a1daa28342fb54aa5644}{CHECK\+\_\+\+EACH\+\_\+\+FACE}} = 1
+, \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a2ed8d1b22fc3cb87822647766b3dc863a2fa5c48d2f98ca34cd4cc7a247120d35}{CHECK\+\_\+\+EACH\+\_\+\+PATCH}} = 2
+, \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a2ed8d1b22fc3cb87822647766b3dc863a1c69a30202b872a482875c36d59d9252}{RESOLVE\+\_\+\+BOTH\+\_\+\+AND\+\_\+\+RESTORE\+\_\+\+THEN\+\_\+\+CHECK\+\_\+\+EACH\+\_\+\+PATCH}} = 3
+ \}
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -246,6 +251,10 @@ void \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a4a7a5d1111aea73ba095a0af
 \begin{DoxyCompactList}\small\item\em Remesh faces according to results of intersection detection and construction (e.\+g. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename DerivedV , typename DerivedF , typename Derived\+VV , typename Derived\+FF , typename Derived\+IF , typename DerivedJ , typename Derived\+IM $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a7169f4ae2fe2c11f7e878b41aa747fc2}{remesh\+\_\+self\+\_\+intersections}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const \mbox{\hyperlink{structigl_1_1copyleft_1_1cgal_1_1RemeshSelfIntersectionsParam}{Remesh\+Self\+Intersections\+Param}} \&params, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+VV $>$ \&VV, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+FF $>$ \&FF, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+IF $>$ \&IF, Eigen\+::\+Plain\+Object\+Base$<$ DerivedJ $>$ \&J, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+IM $>$ \&IM)
 \begin{DoxyCompactList}\small\item\em Given a triangle mesh (V,F) compute a new mesh (VV,FF) which is the same as (V,F) except that any self-\/intersecting triangles in (V,F) have been subdivided (new vertices and face created) so that the self-\/intersection contour lies exactly on edges in (VV,FF). \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF , typename Derived\+VV , typename Derived\+FF , typename Derived\+IF , typename DerivedJ $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a65f8fa9920a99cd809e2944afed7c908}{remesh\+\_\+self\+\_\+intersections}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const \mbox{\hyperlink{structigl_1_1copyleft_1_1cgal_1_1RemeshSelfIntersectionsParam}{Remesh\+Self\+Intersections\+Param}} \&params, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+VV $>$ \&VV, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+FF $>$ \&FF, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+IF $>$ \&IF, Eigen\+::\+Plain\+Object\+Base$<$ DerivedJ $>$ \&J)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+IM above is {\itshape applied} to merge duplicated vertices in VV. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename DerivedV , typename DerivedE , typename Derived\+VI , typename Derived\+EI , typename DerivedJ , typename Derived\+IM $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a4711ebc19670232979ddfafeea023a6c}{resolve\+\_\+intersections}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Plain\+Object\+Base$<$ DerivedE $>$ \&E, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+VI $>$ \&VI, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+EI $>$ \&EI, Eigen\+::\+Plain\+Object\+Base$<$ DerivedJ $>$ \&J, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+IM $>$ \&IM)
 \begin{DoxyCompactList}\small\item\em Given a list of possible intersecting segments with endpoints, split segments to overlap only at endpoints. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Kernel , typename DerivedV $>$ }\\CGAL\+::\+Point\+\_\+2$<$ Kernel $>$ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_aacfa81a78943385b9146fe53e121b380}{row\+\_\+to\+\_\+point}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, const typename Derived\+V\+::\+Index \&i)
@@ -270,6 +279,8 @@ bool \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_ac105fc714db9b51b1c3945c5
 \begin{DoxyCompactList}\small\item\em Triangulate the interior of a polygon using CGAL. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Derived\+VA , typename Derived\+FA , typename Derived\+VB , typename Derived\+FB , typename DerivedV , typename DerivedF , typename DerivedD , typename DerivedJ $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a6dca57f7cfcb9b65b561d5d3ccec99be}{trim\+\_\+with\+\_\+solid}} (const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+VA $>$ \&VA, const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+FA $>$ \&FA, const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+VB $>$ \&VB, const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+FB $>$ \&FB, Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&Vd, Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ DerivedD $>$ \&D, Eigen\+::\+Plain\+Object\+Base$<$ DerivedJ $>$ \&J)
 \begin{DoxyCompactList}\small\item\em Given an arbitrary mesh (VA,FA) and the boundary mesh (VB,FB) of a solid (as defined in \mbox{[}Zhou et al. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derived\+VA , typename Derived\+FA , typename Derived\+VB , typename Derived\+FB , typename DerivedV , typename DerivedF , typename DerivedD , typename DerivedJ $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_ace643f9725b6a5aad6e10cadb57f0de0}{trim\+\_\+with\+\_\+solid}} (const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+VA $>$ \&VA, const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+FA $>$ \&FA, const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+VB $>$ \&VB, const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+FB $>$ \&FB, const \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a2ed8d1b22fc3cb87822647766b3dc863}{Trim\+With\+Solid\+Method}} method, Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&Vd, Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ DerivedD $>$ \&D, Eigen\+::\+Plain\+Object\+Base$<$ DerivedJ $>$ \&J)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Derived\+WV , typename Derived\+WE , typename Derivedth , typename DerivedV , typename DerivedF , typename DerivedJ $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a1da8adecc2e7b09a987748532fb975d2}{wire\+\_\+mesh}} (const Eigen\+::\+Matrix\+Base$<$ Derived\+WV $>$ \&WV, const Eigen\+::\+Matrix\+Base$<$ Derived\+WE $>$ \&WE, const Eigen\+::\+Matrix\+Base$<$ Derivedth $>$ \&th, const int poly\+\_\+size, const bool solid, Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ DerivedJ $>$ \&J)
 \begin{DoxyCompactList}\small\item\em Construct a "{}wire"{} or "{}wireframe"{} or "{}strut"{} surface mesh, given a one-\/dimensional network of straight edges. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Derived\+WV , typename Derived\+WE , typename DerivedV , typename DerivedF , typename DerivedJ $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a7dc5cdc053c1f25a930d46be790a7c74}{wire\+\_\+mesh}} (const Eigen\+::\+Matrix\+Base$<$ Derived\+WV $>$ \&WV, const Eigen\+::\+Matrix\+Base$<$ Derived\+WE $>$ \&WE, const double th, const int poly\+\_\+size, const bool solid, Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ DerivedJ $>$ \&J)
@@ -341,6 +352,27 @@ KEEP\+\_\+\+INSIDE&Keep only inside. \\
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{KEEP\_ALL@{KEEP\_ALL}!igl::copyleft::cgal@{igl::copyleft::cgal}}\index{igl::copyleft::cgal@{igl::copyleft::cgal}!KEEP\_ALL@{KEEP\_ALL}}}\Hypertarget{namespaceigl_1_1copyleft_1_1cgal_a652b3870ca0cbdd378a3b383ba9bd5f2a224588758e6408e9ad5fff0b04142844}\label{namespaceigl_1_1copyleft_1_1cgal_a652b3870ca0cbdd378a3b383ba9bd5f2a224588758e6408e9ad5fff0b04142844} 
 KEEP\+\_\+\+ALL&Keep everything. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespaceigl_1_1copyleft_1_1cgal_a2ed8d1b22fc3cb87822647766b3dc863}\label{namespaceigl_1_1copyleft_1_1cgal_a2ed8d1b22fc3cb87822647766b3dc863} 
+\index{igl::copyleft::cgal@{igl::copyleft::cgal}!TrimWithSolidMethod@{TrimWithSolidMethod}}
+\index{TrimWithSolidMethod@{TrimWithSolidMethod}!igl::copyleft::cgal@{igl::copyleft::cgal}}
+\doxysubsubsection{\texorpdfstring{TrimWithSolidMethod}{TrimWithSolidMethod}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a2ed8d1b22fc3cb87822647766b3dc863}{igl\+::copyleft\+::cgal\+::\+Trim\+With\+Solid\+Method}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CHECK\_EACH\_FACE@{CHECK\_EACH\_FACE}!igl::copyleft::cgal@{igl::copyleft::cgal}}\index{igl::copyleft::cgal@{igl::copyleft::cgal}!CHECK\_EACH\_FACE@{CHECK\_EACH\_FACE}}}\Hypertarget{namespaceigl_1_1copyleft_1_1cgal_a2ed8d1b22fc3cb87822647766b3dc863af6beb371c912a1daa28342fb54aa5644}\label{namespaceigl_1_1copyleft_1_1cgal_a2ed8d1b22fc3cb87822647766b3dc863af6beb371c912a1daa28342fb54aa5644} 
+CHECK\+\_\+\+EACH\+\_\+\+FACE&Resolve intersections only between A and B and then check whether every face in A is inside/outside of B. (Included for debugging). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CHECK\_EACH\_PATCH@{CHECK\_EACH\_PATCH}!igl::copyleft::cgal@{igl::copyleft::cgal}}\index{igl::copyleft::cgal@{igl::copyleft::cgal}!CHECK\_EACH\_PATCH@{CHECK\_EACH\_PATCH}}}\Hypertarget{namespaceigl_1_1copyleft_1_1cgal_a2ed8d1b22fc3cb87822647766b3dc863a2fa5c48d2f98ca34cd4cc7a247120d35}\label{namespaceigl_1_1copyleft_1_1cgal_a2ed8d1b22fc3cb87822647766b3dc863a2fa5c48d2f98ca34cd4cc7a247120d35} 
+CHECK\+\_\+\+EACH\+\_\+\+PATCH&Resolve intersections only between A and B, then separate into patches of connected faces --- where connected means sharing an edge and {\itshape not} the same original face in A --- then label each patch as inside or outside. This should always be strictly equivalent in output and strictly fewer FLOPS than CHECK\+\_\+\+EACH\+\_\+\+FACE. There will be many tiny patches along the intersection of A and B. ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RESOLVE\_BOTH\_AND\_RESTORE\_THEN\_CHECK\_EACH\_PATCH@{RESOLVE\_BOTH\_AND\_RESTORE\_THEN\_CHECK\_EACH\_PATCH}!igl::copyleft::cgal@{igl::copyleft::cgal}}\index{igl::copyleft::cgal@{igl::copyleft::cgal}!RESOLVE\_BOTH\_AND\_RESTORE\_THEN\_CHECK\_EACH\_PATCH@{RESOLVE\_BOTH\_AND\_RESTORE\_THEN\_CHECK\_EACH\_PATCH}}}\Hypertarget{namespaceigl_1_1copyleft_1_1cgal_a2ed8d1b22fc3cb87822647766b3dc863a1c69a30202b872a482875c36d59d9252}\label{namespaceigl_1_1copyleft_1_1cgal_a2ed8d1b22fc3cb87822647766b3dc863a1c69a30202b872a482875c36d59d9252} 
+RESOLVE\+\_\+\+BOTH\+\_\+\+AND\+\_\+\+RESTORE\+\_\+\+THEN\+\_\+\+CHECK\+\_\+\+EACH\+\_\+\+PATCH&Merge A and B into the same mesh and resolve all self-\/itnersections. Then "{}undo"{} remeshing on faces of A not involved in intersections with B (i.\+e., self-\/intersections in A). Then seperate into patches based on connected faces --- where connected means sharing a {\itshape manifold edge} --- then label each aptch as inside or outside. Results in fewer patches than CHECK\+\_\+\+EACH\+\_\+\+PATCH but finding, meshing and mesh-\/undoing self-\/intersections in A can be costly. This could result in different output from CHECK\+\_\+\+EACH\+\_\+\+PATCH because of shared remeshing with (i.\+e., faces in A that both intersect B and other faces in A). If A has no self-\/intersections then I claim the outputs should be the same. \\
 \hline
 
 \end{DoxyEnumFields}
@@ -2315,7 +2347,7 @@ from {\ttfamily \doxylink{namespaceigl_1_1copyleft_1_1cgal_aad0ee9bfc55573ac2ac7
 \Hypertarget{namespaceigl_1_1copyleft_1_1cgal_a7169f4ae2fe2c11f7e878b41aa747fc2}\label{namespaceigl_1_1copyleft_1_1cgal_a7169f4ae2fe2c11f7e878b41aa747fc2} 
 \index{igl::copyleft::cgal@{igl::copyleft::cgal}!remesh\_self\_intersections@{remesh\_self\_intersections}}
 \index{remesh\_self\_intersections@{remesh\_self\_intersections}!igl::copyleft::cgal@{igl::copyleft::cgal}}
-\doxysubsubsection{\texorpdfstring{remesh\_self\_intersections()}{remesh\_self\_intersections()}}
+\doxysubsubsection{\texorpdfstring{remesh\_self\_intersections()}{remesh\_self\_intersections()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily template$<$typename DerivedV , typename DerivedF , typename Derived\+VV , typename Derived\+FF , typename Derived\+IF , typename DerivedJ , typename Derived\+IM $>$ \\
 void igl\+::copyleft\+::cgal\+::remesh\+\_\+self\+\_\+intersections (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&}]{F,  }\item[{const \mbox{\hyperlink{structigl_1_1copyleft_1_1cgal_1_1RemeshSelfIntersectionsParam}{Remesh\+Self\+Intersections\+Param}} \&}]{params,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+VV $>$ \&}]{VV,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+FF $>$ \&}]{FF,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+IF $>$ \&}]{IF,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedJ $>$ \&}]{J,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+IM $>$ \&}]{IM }\end{DoxyParamCaption})}
 
@@ -2345,7 +2377,20 @@ New vertices will appear in original faces or on original edges. New vertices on
 \hline
 \end{DoxyParams}
 \hypertarget{namespaceigl_1_1copyleft_1_1cgal_autotoc_md6}{}\doxyparagraph{\texorpdfstring{Example.}{Example.}}\label{namespaceigl_1_1copyleft_1_1cgal_autotoc_md6}
-// resolve intersections igl\+::copyleft\+::cgal\+::remesh\+\_\+self\+\_\+intersections(\+V,\+F,params,\+VV,\+FF,\+IF,\+J,\+IM); // {\itshape apply} duplicate vertex mapping IM to FF for\+\_\+each(FF.\+data(),FF.\+data()+FF.\+size(),\mbox{[}\&IM\mbox{]}(int \& a)\{a=IM(a);\}); // remove any vertices now unreferenced after duplicate mapping. igl\+::remove\+\_\+unreferenced(\+VV,\+FF,\+SV,\+SF,\+UIM); // Now (SV,SF) is ready to extract outer hull igl\+::copyleft\+::cgal\+::outer\+\_\+hull(\+SV,\+SF,\+G,\+J,flip); \Hypertarget{namespaceigl_1_1copyleft_1_1cgal_a4711ebc19670232979ddfafeea023a6c}\label{namespaceigl_1_1copyleft_1_1cgal_a4711ebc19670232979ddfafeea023a6c} 
+// resolve intersections igl\+::copyleft\+::cgal\+::remesh\+\_\+self\+\_\+intersections(\+V,\+F,params,\+VV,\+FF,\+IF,\+J,\+IM); // {\itshape apply} duplicate vertex mapping IM to FF for\+\_\+each(FF.\+data(),FF.\+data()+FF.\+size(),\mbox{[}\&IM\mbox{]}(int \& a)\{a=IM(a);\}); // remove any vertices now unreferenced after duplicate mapping. igl\+::remove\+\_\+unreferenced(\+VV,\+FF,\+SV,\+SF,\+UIM); // Now (SV,SF) is ready to extract outer hull igl\+::copyleft\+::cgal\+::outer\+\_\+hull(\+SV,\+SF,\+G,\+J,flip); \Hypertarget{namespaceigl_1_1copyleft_1_1cgal_a65f8fa9920a99cd809e2944afed7c908}\label{namespaceigl_1_1copyleft_1_1cgal_a65f8fa9920a99cd809e2944afed7c908} 
+\index{igl::copyleft::cgal@{igl::copyleft::cgal}!remesh\_self\_intersections@{remesh\_self\_intersections}}
+\index{remesh\_self\_intersections@{remesh\_self\_intersections}!igl::copyleft::cgal@{igl::copyleft::cgal}}
+\doxysubsubsection{\texorpdfstring{remesh\_self\_intersections()}{remesh\_self\_intersections()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename DerivedV , typename DerivedF , typename Derived\+VV , typename Derived\+FF , typename Derived\+IF , typename DerivedJ $>$ \\
+void igl\+::copyleft\+::cgal\+::remesh\+\_\+self\+\_\+intersections (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&}]{F,  }\item[{const \mbox{\hyperlink{structigl_1_1copyleft_1_1cgal_1_1RemeshSelfIntersectionsParam}{Remesh\+Self\+Intersections\+Param}} \&}]{params,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+VV $>$ \&}]{VV,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+FF $>$ \&}]{FF,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+IF $>$ \&}]{IF,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedJ $>$ \&}]{J }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+IM above is {\itshape applied} to merge duplicated vertices in VV. 
+
+\Hypertarget{namespaceigl_1_1copyleft_1_1cgal_a4711ebc19670232979ddfafeea023a6c}\label{namespaceigl_1_1copyleft_1_1cgal_a4711ebc19670232979ddfafeea023a6c} 
 \index{igl::copyleft::cgal@{igl::copyleft::cgal}!resolve\_intersections@{resolve\_intersections}}
 \index{resolve\_intersections@{resolve\_intersections}!igl::copyleft::cgal@{igl::copyleft::cgal}}
 \doxysubsubsection{\texorpdfstring{resolve\_intersections()}{resolve\_intersections()}}
@@ -2620,7 +2665,7 @@ Triangulate the interior of a polygon using CGAL.
 \Hypertarget{namespaceigl_1_1copyleft_1_1cgal_a6dca57f7cfcb9b65b561d5d3ccec99be}\label{namespaceigl_1_1copyleft_1_1cgal_a6dca57f7cfcb9b65b561d5d3ccec99be} 
 \index{igl::copyleft::cgal@{igl::copyleft::cgal}!trim\_with\_solid@{trim\_with\_solid}}
 \index{trim\_with\_solid@{trim\_with\_solid}!igl::copyleft::cgal@{igl::copyleft::cgal}}
-\doxysubsubsection{\texorpdfstring{trim\_with\_solid()}{trim\_with\_solid()}}
+\doxysubsubsection{\texorpdfstring{trim\_with\_solid()}{trim\_with\_solid()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily template$<$typename Derived\+VA , typename Derived\+FA , typename Derived\+VB , typename Derived\+FB , typename DerivedV , typename DerivedF , typename DerivedD , typename DerivedJ $>$ \\
 void igl\+::copyleft\+::cgal\+::trim\+\_\+with\+\_\+solid (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+VA $>$ \&}]{VA,  }\item[{const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+FA $>$ \&}]{FA,  }\item[{const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+VB $>$ \&}]{VB,  }\item[{const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+FB $>$ \&}]{FB,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&}]{Vd,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&}]{F,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedD $>$ \&}]{D,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedJ $>$ \&}]{J }\end{DoxyParamCaption})}
 
@@ -2647,6 +2692,22 @@ Given an arbitrary mesh (VA,FA) and the boundary mesh (VB,FB) of a solid (as def
 \mbox{\texttt{ out}}  & {\em D} & \#F list of bools whether face is inside B \\
 \hline
 \mbox{\texttt{ out}}  & {\em J} & \#F list of indices into FA revealing birth parent \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespaceigl_1_1copyleft_1_1cgal_ace643f9725b6a5aad6e10cadb57f0de0}\label{namespaceigl_1_1copyleft_1_1cgal_ace643f9725b6a5aad6e10cadb57f0de0} 
+\index{igl::copyleft::cgal@{igl::copyleft::cgal}!trim\_with\_solid@{trim\_with\_solid}}
+\index{trim\_with\_solid@{trim\_with\_solid}!igl::copyleft::cgal@{igl::copyleft::cgal}}
+\doxysubsubsection{\texorpdfstring{trim\_with\_solid()}{trim\_with\_solid()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Derived\+VA , typename Derived\+FA , typename Derived\+VB , typename Derived\+FB , typename DerivedV , typename DerivedF , typename DerivedD , typename DerivedJ $>$ \\
+void igl\+::copyleft\+::cgal\+::trim\+\_\+with\+\_\+solid (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+VA $>$ \&}]{VA,  }\item[{const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+FA $>$ \&}]{FA,  }\item[{const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+VB $>$ \&}]{VB,  }\item[{const Eigen\+::\+Plain\+Object\+Base$<$ Derived\+FB $>$ \&}]{FB,  }\item[{const \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1cgal_a2ed8d1b22fc3cb87822647766b3dc863}{Trim\+With\+Solid\+Method}}}]{method,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&}]{Vd,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&}]{F,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedD $>$ \&}]{D,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedJ $>$ \&}]{J }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em method} & which method for extracting and determining the trim contents. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{namespaceigl_1_1copyleft_1_1cgal_a1da8adecc2e7b09a987748532fb975d2}\label{namespaceigl_1_1copyleft_1_1cgal_a1da8adecc2e7b09a987748532fb975d2} 

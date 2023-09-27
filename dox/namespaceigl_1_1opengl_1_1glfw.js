@@ -7,5 +7,7 @@ var namespaceigl_1_1opengl_1_1glfw =
     ] ],
     [ "Viewer", "classigl_1_1opengl_1_1glfw_1_1Viewer.html", "classigl_1_1opengl_1_1glfw_1_1Viewer" ],
     [ "ViewerPlugin", "classigl_1_1opengl_1_1glfw_1_1ViewerPlugin.html", "classigl_1_1opengl_1_1glfw_1_1ViewerPlugin" ],
-    [ "background_window", "namespaceigl_1_1opengl_1_1glfw.html#a74a2d1824668b9763e32bd964a4344c6", null ]
+    [ "background_window", "namespaceigl_1_1opengl_1_1glfw.html#a74a2d1824668b9763e32bd964a4344c6", null ],
+    [ "map_texture", "namespaceigl_1_1opengl_1_1glfw.html#a39644629e2263cbe93c207529ec5c931", null ],
+    [ "map_texture", "namespaceigl_1_1opengl_1_1glfw.html#af43847c3148350dc5bc853c37e821317", null ]
 ];

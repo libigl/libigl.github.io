@@ -5,7 +5,7 @@ var searchData=
   ['scalar_5fto_5fcr_5fvector_5fgradient_2eh_2',['scalar_to_cr_vector_gradient.h',['../scalar__to__cr__vector__gradient_8h.html',1,'']]],
   ['screen_5fspace_5fselection_2eh_3',['screen_space_selection.h',['../screen__space__selection_8h.html',1,'']]],
   ['seam_5fedges_2eh_4',['seam_edges.h',['../seam__edges_8h.html',1,'']]],
-  ['segment_5fsegment_5fintersect_2eh_5',['segment_segment_intersect.h',['../predicates_2segment__segment__intersect_8h.html',1,'(Global Namespace)'],['../segment__segment__intersect_8h.html',1,'(Global Namespace)']]],
+  ['segment_5fsegment_5fintersect_2eh_5',['segment_segment_intersect.h',['../segment__segment__intersect_8h.html',1,'(Global Namespace)'],['../predicates_2segment__segment__intersect_8h.html',1,'(Global Namespace)']]],
   ['segment_5fsegment_5fsquared_5fdistance_2eh_6',['segment_segment_squared_distance.h',['../segment__segment__squared__distance_8h.html',1,'']]],
   ['selectionwidget_2eh_7',['SelectionWidget.h',['../SelectionWidget_8h.html',1,'']]],
   ['selfintersectmesh_2eh_8',['SelfIntersectMesh.h',['../SelfIntersectMesh_8h.html',1,'']]],

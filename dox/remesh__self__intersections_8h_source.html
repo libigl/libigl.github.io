@@ -142,15 +142,30 @@ $(document).ready(function(){initNavTree('remesh__self__intersections_8h_source.
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        Eigen::PlainObjectBase&lt;DerivedIF&gt; &amp; IF,</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        Eigen::PlainObjectBase&lt;DerivedJ&gt; &amp; J,</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        Eigen::PlainObjectBase&lt;DerivedIM&gt; &amp; IM);</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    }</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  }</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>}</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="preprocessor">#ifndef IGL_STATIC_LIBRARY</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="preprocessor">#  include &quot;remesh_self_intersections.cpp&quot;</span></div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>      <span class="keyword">template</span> &lt;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="keyword">typename</span> DerivedV,</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keyword">typename</span> DerivedF,</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="keyword">typename</span> DerivedVV,</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keyword">typename</span> DerivedFF,</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keyword">typename</span> DerivedIF,</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <span class="keyword">typename</span> DerivedJ&gt;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="namespaceigl_1_1copyleft_1_1cgal.html#a65f8fa9920a99cd809e2944afed7c908">   81</a></span>      <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceigl_1_1copyleft_1_1cgal.html#a7169f4ae2fe2c11f7e878b41aa747fc2">remesh_self_intersections</a>(</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="keyword">const</span> Eigen::MatrixBase&lt;DerivedV&gt; &amp; V,</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="keyword">const</span> Eigen::MatrixBase&lt;DerivedF&gt; &amp; F,</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="keyword">const</span> <a class="code hl_struct" href="structigl_1_1copyleft_1_1cgal_1_1RemeshSelfIntersectionsParam.html">RemeshSelfIntersectionsParam</a> &amp; params,</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        Eigen::PlainObjectBase&lt;DerivedVV&gt; &amp; VV,</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        Eigen::PlainObjectBase&lt;DerivedFF&gt; &amp; FF,</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        Eigen::PlainObjectBase&lt;DerivedIF&gt; &amp; IF,</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        Eigen::PlainObjectBase&lt;DerivedJ&gt; &amp; J);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    }</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>}</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="preprocessor">#ifndef IGL_STATIC_LIBRARY</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="preprocessor">#  include &quot;remesh_self_intersections.cpp&quot;</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aRemeshSelfIntersectionsParam_8h_html"><div class="ttname"><a href="RemeshSelfIntersectionsParam_8h.html">RemeshSelfIntersectionsParam.h</a></div></div>
 <div class="ttc" id="aigl__inline_8h_html_a838241279013352686271b4c4ce1f708"><div class="ttname"><a href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a></div><div class="ttdeci">#define IGL_INLINE</div><div class="ttdef"><b>Definition</b> igl_inline.h:15</div></div>
 <div class="ttc" id="anamespaceigl_1_1copyleft_1_1cgal_html_a7169f4ae2fe2c11f7e878b41aa747fc2"><div class="ttname"><a href="namespaceigl_1_1copyleft_1_1cgal.html#a7169f4ae2fe2c11f7e878b41aa747fc2">igl::copyleft::cgal::remesh_self_intersections</a></div><div class="ttdeci">void remesh_self_intersections(const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, const Eigen::MatrixBase&lt; DerivedF &gt; &amp;F, const RemeshSelfIntersectionsParam &amp;params, Eigen::PlainObjectBase&lt; DerivedVV &gt; &amp;VV, Eigen::PlainObjectBase&lt; DerivedFF &gt; &amp;FF, Eigen::PlainObjectBase&lt; DerivedIF &gt; &amp;IF, Eigen::PlainObjectBase&lt; DerivedJ &gt; &amp;J, Eigen::PlainObjectBase&lt; DerivedIM &gt; &amp;IM)</div><div class="ttdoc">Given a triangle mesh (V,F) compute a new mesh (VV,FF) which is the same as (V,F) except that any sel...</div></div>

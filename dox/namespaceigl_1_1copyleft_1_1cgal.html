@@ -169,6 +169,11 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:a652b3870ca0cbdd378a3b383ba9bd5f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Types of Keep policies.  <a href="namespaceigl_1_1copyleft_1_1cgal.html#a652b3870ca0cbdd378a3b383ba9bd5f2">More...</a><br /></td></tr>
 <tr class="separator:a652b3870ca0cbdd378a3b383ba9bd5f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ed8d1b22fc3cb87822647766b3dc863" id="r_a2ed8d1b22fc3cb87822647766b3dc863"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1copyleft_1_1cgal.html#a2ed8d1b22fc3cb87822647766b3dc863">TrimWithSolidMethod</a> { <a class="el" href="namespaceigl_1_1copyleft_1_1cgal.html#a2ed8d1b22fc3cb87822647766b3dc863af6beb371c912a1daa28342fb54aa5644">CHECK_EACH_FACE</a> = 1
+, <a class="el" href="namespaceigl_1_1copyleft_1_1cgal.html#a2ed8d1b22fc3cb87822647766b3dc863a2fa5c48d2f98ca34cd4cc7a247120d35">CHECK_EACH_PATCH</a> = 2
+, <a class="el" href="namespaceigl_1_1copyleft_1_1cgal.html#a2ed8d1b22fc3cb87822647766b3dc863a1c69a30202b872a482875c36d59d9252">RESOLVE_BOTH_AND_RESTORE_THEN_CHECK_EACH_PATCH</a> = 3
+ }</td></tr>
+<tr class="separator:a2ed8d1b22fc3cb87822647766b3dc863"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -539,6 +544,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a7169f4ae2fe2c11f7e878b41aa747fc2"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1copyleft_1_1cgal.html#a7169f4ae2fe2c11f7e878b41aa747fc2">remesh_self_intersections</a> (const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, const Eigen::MatrixBase&lt; DerivedF &gt; &amp;F, const <a class="el" href="structigl_1_1copyleft_1_1cgal_1_1RemeshSelfIntersectionsParam.html">RemeshSelfIntersectionsParam</a> &amp;params, Eigen::PlainObjectBase&lt; DerivedVV &gt; &amp;VV, Eigen::PlainObjectBase&lt; DerivedFF &gt; &amp;FF, Eigen::PlainObjectBase&lt; DerivedIF &gt; &amp;IF, Eigen::PlainObjectBase&lt; DerivedJ &gt; &amp;J, Eigen::PlainObjectBase&lt; DerivedIM &gt; &amp;IM)</td></tr>
 <tr class="memdesc:a7169f4ae2fe2c11f7e878b41aa747fc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a triangle mesh (V,F) compute a new mesh (VV,FF) which is the same as (V,F) except that any self-intersecting triangles in (V,F) have been subdivided (new vertices and face created) so that the self-intersection contour lies exactly on edges in (VV,FF).  <br /></td></tr>
 <tr class="separator:a7169f4ae2fe2c11f7e878b41aa747fc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65f8fa9920a99cd809e2944afed7c908" id="r_a65f8fa9920a99cd809e2944afed7c908"><td class="memTemplParams" colspan="2">template&lt;typename DerivedV , typename DerivedF , typename DerivedVV , typename DerivedFF , typename DerivedIF , typename DerivedJ &gt; </td></tr>
+<tr class="memitem:a65f8fa9920a99cd809e2944afed7c908"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1copyleft_1_1cgal.html#a65f8fa9920a99cd809e2944afed7c908">remesh_self_intersections</a> (const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, const Eigen::MatrixBase&lt; DerivedF &gt; &amp;F, const <a class="el" href="structigl_1_1copyleft_1_1cgal_1_1RemeshSelfIntersectionsParam.html">RemeshSelfIntersectionsParam</a> &amp;params, Eigen::PlainObjectBase&lt; DerivedVV &gt; &amp;VV, Eigen::PlainObjectBase&lt; DerivedFF &gt; &amp;FF, Eigen::PlainObjectBase&lt; DerivedIF &gt; &amp;IF, Eigen::PlainObjectBase&lt; DerivedJ &gt; &amp;J)</td></tr>
+<tr class="memdesc:a65f8fa9920a99cd809e2944afed7c908"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.IM above is <em>applied</em> to merge duplicated vertices in VV.  <br /></td></tr>
+<tr class="separator:a65f8fa9920a99cd809e2944afed7c908"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4711ebc19670232979ddfafeea023a6c" id="r_a4711ebc19670232979ddfafeea023a6c"><td class="memTemplParams" colspan="2">template&lt;typename DerivedV , typename DerivedE , typename DerivedVI , typename DerivedEI , typename DerivedJ , typename DerivedIM &gt; </td></tr>
 <tr class="memitem:a4711ebc19670232979ddfafeea023a6c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1copyleft_1_1cgal.html#a4711ebc19670232979ddfafeea023a6c">resolve_intersections</a> (const Eigen::PlainObjectBase&lt; DerivedV &gt; &amp;V, const Eigen::PlainObjectBase&lt; DerivedE &gt; &amp;E, Eigen::PlainObjectBase&lt; DerivedVI &gt; &amp;VI, Eigen::PlainObjectBase&lt; DerivedEI &gt; &amp;EI, Eigen::PlainObjectBase&lt; DerivedJ &gt; &amp;J, Eigen::PlainObjectBase&lt; DerivedIM &gt; &amp;IM)</td></tr>
 <tr class="memdesc:a4711ebc19670232979ddfafeea023a6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a list of possible intersecting segments with endpoints, split segments to overlap only at endpoints.  <br /></td></tr>
@@ -584,6 +593,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a6dca57f7cfcb9b65b561d5d3ccec99be"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1copyleft_1_1cgal.html#a6dca57f7cfcb9b65b561d5d3ccec99be">trim_with_solid</a> (const Eigen::PlainObjectBase&lt; DerivedVA &gt; &amp;VA, const Eigen::PlainObjectBase&lt; DerivedFA &gt; &amp;FA, const Eigen::PlainObjectBase&lt; DerivedVB &gt; &amp;VB, const Eigen::PlainObjectBase&lt; DerivedFB &gt; &amp;FB, Eigen::PlainObjectBase&lt; DerivedV &gt; &amp;Vd, Eigen::PlainObjectBase&lt; DerivedF &gt; &amp;F, Eigen::PlainObjectBase&lt; DerivedD &gt; &amp;D, Eigen::PlainObjectBase&lt; DerivedJ &gt; &amp;J)</td></tr>
 <tr class="memdesc:a6dca57f7cfcb9b65b561d5d3ccec99be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given an arbitrary mesh (VA,FA) and the boundary mesh (VB,FB) of a solid (as defined in [Zhou et al.  <br /></td></tr>
 <tr class="separator:a6dca57f7cfcb9b65b561d5d3ccec99be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace643f9725b6a5aad6e10cadb57f0de0" id="r_ace643f9725b6a5aad6e10cadb57f0de0"><td class="memTemplParams" colspan="2">template&lt;typename DerivedVA , typename DerivedFA , typename DerivedVB , typename DerivedFB , typename DerivedV , typename DerivedF , typename DerivedD , typename DerivedJ &gt; </td></tr>
+<tr class="memitem:ace643f9725b6a5aad6e10cadb57f0de0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1copyleft_1_1cgal.html#ace643f9725b6a5aad6e10cadb57f0de0">trim_with_solid</a> (const Eigen::PlainObjectBase&lt; DerivedVA &gt; &amp;VA, const Eigen::PlainObjectBase&lt; DerivedFA &gt; &amp;FA, const Eigen::PlainObjectBase&lt; DerivedVB &gt; &amp;VB, const Eigen::PlainObjectBase&lt; DerivedFB &gt; &amp;FB, const <a class="el" href="namespaceigl_1_1copyleft_1_1cgal.html#a2ed8d1b22fc3cb87822647766b3dc863">TrimWithSolidMethod</a> method, Eigen::PlainObjectBase&lt; DerivedV &gt; &amp;Vd, Eigen::PlainObjectBase&lt; DerivedF &gt; &amp;F, Eigen::PlainObjectBase&lt; DerivedD &gt; &amp;D, Eigen::PlainObjectBase&lt; DerivedJ &gt; &amp;J)</td></tr>
+<tr class="memdesc:ace643f9725b6a5aad6e10cadb57f0de0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
+<tr class="separator:ace643f9725b6a5aad6e10cadb57f0de0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1da8adecc2e7b09a987748532fb975d2" id="r_a1da8adecc2e7b09a987748532fb975d2"><td class="memTemplParams" colspan="2">template&lt;typename DerivedWV , typename DerivedWE , typename Derivedth , typename DerivedV , typename DerivedF , typename DerivedJ &gt; </td></tr>
 <tr class="memitem:a1da8adecc2e7b09a987748532fb975d2"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1copyleft_1_1cgal.html#a1da8adecc2e7b09a987748532fb975d2">wire_mesh</a> (const Eigen::MatrixBase&lt; DerivedWV &gt; &amp;WV, const Eigen::MatrixBase&lt; DerivedWE &gt; &amp;WE, const Eigen::MatrixBase&lt; Derivedth &gt; &amp;th, const int poly_size, const bool solid, Eigen::PlainObjectBase&lt; DerivedV &gt; &amp;V, Eigen::PlainObjectBase&lt; DerivedF &gt; &amp;F, Eigen::PlainObjectBase&lt; DerivedJ &gt; &amp;J)</td></tr>
 <tr class="memdesc:a1da8adecc2e7b09a987748532fb975d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a "wire" or "wireframe" or "strut" surface mesh, given a one-dimensional network of straight edges.  <br /></td></tr>
@@ -714,6 +727,32 @@ Functions</h2></td></tr>
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a652b3870ca0cbdd378a3b383ba9bd5f2a4fe1fa3cfe8bfbb3dd60b8c84f3118ce" name="a652b3870ca0cbdd378a3b383ba9bd5f2a4fe1fa3cfe8bfbb3dd60b8c84f3118ce"></a>KEEP_INSIDE&#160;</td><td class="fielddoc"><p>Keep only inside. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a652b3870ca0cbdd378a3b383ba9bd5f2a224588758e6408e9ad5fff0b04142844" name="a652b3870ca0cbdd378a3b383ba9bd5f2a224588758e6408e9ad5fff0b04142844"></a>KEEP_ALL&#160;</td><td class="fielddoc"><p>Keep everything. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="a2ed8d1b22fc3cb87822647766b3dc863" name="a2ed8d1b22fc3cb87822647766b3dc863"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ed8d1b22fc3cb87822647766b3dc863">&#9670;&#160;</a></span>TrimWithSolidMethod</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespaceigl_1_1copyleft_1_1cgal.html#a2ed8d1b22fc3cb87822647766b3dc863">igl::copyleft::cgal::TrimWithSolidMethod</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a2ed8d1b22fc3cb87822647766b3dc863af6beb371c912a1daa28342fb54aa5644" name="a2ed8d1b22fc3cb87822647766b3dc863af6beb371c912a1daa28342fb54aa5644"></a>CHECK_EACH_FACE&#160;</td><td class="fielddoc"><p>Resolve intersections only between A and B and then check whether every face in A is inside/outside of B. </p>
+<p>(Included for debugging). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2ed8d1b22fc3cb87822647766b3dc863a2fa5c48d2f98ca34cd4cc7a247120d35" name="a2ed8d1b22fc3cb87822647766b3dc863a2fa5c48d2f98ca34cd4cc7a247120d35"></a>CHECK_EACH_PATCH&#160;</td><td class="fielddoc"><p>Resolve intersections only between A and B, then separate into patches of connected faces &mdash; where connected means sharing an edge and <em>not</em> the same original face in A &mdash; then label each patch as inside or outside. </p>
+<p>This should always be strictly equivalent in output and strictly fewer FLOPS than CHECK_EACH_FACE. There will be many tiny patches along the intersection of A and B. <br  />
+ </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2ed8d1b22fc3cb87822647766b3dc863a1c69a30202b872a482875c36d59d9252" name="a2ed8d1b22fc3cb87822647766b3dc863a1c69a30202b872a482875c36d59d9252"></a>RESOLVE_BOTH_AND_RESTORE_THEN_CHECK_EACH_PATCH&#160;</td><td class="fielddoc"><p>Merge A and B into the same mesh and resolve all self-itnersections. </p>
+<p>Then "undo" remeshing on faces of A not involved in intersections with B (i.e., self-intersections in A). Then seperate into patches based on connected faces &mdash; where connected means sharing a <em>manifold edge</em> &mdash; then label each aptch as inside or outside. Results in fewer patches than CHECK_EACH_PATCH but finding, meshing and mesh-undoing self-intersections in A can be costly. This could result in different output from CHECK_EACH_PATCH because of shared remeshing with (i.e., faces in A that both intersect B and other faces in A). If A has no self-intersections then I claim the outputs should be the same. </p>
 </td></tr>
 </table>
 
@@ -6037,7 +6076,7 @@ template&lt;typename DerivedV , typename DerivedF , typename Kernel , typename D
 </div>
 </div>
 <a id="a7169f4ae2fe2c11f7e878b41aa747fc2" name="a7169f4ae2fe2c11f7e878b41aa747fc2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7169f4ae2fe2c11f7e878b41aa747fc2">&#9670;&#160;</a></span>remesh_self_intersections()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7169f4ae2fe2c11f7e878b41aa747fc2">&#9670;&#160;</a></span>remesh_self_intersections() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -6118,6 +6157,68 @@ template&lt;typename DerivedV , typename DerivedF , typename DerivedVV , typenam
 <h4><a class="anchor" id="autotoc_md6"></a>
 Example.</h4>
 <p>// resolve intersections igl::copyleft::cgal::remesh_self_intersections(V,F,params,VV,FF,IF,J,IM); // <em>apply</em> duplicate vertex mapping IM to FF for_each(FF.data(),FF.data()+FF.size(),[&amp;IM](int &amp; a){a=IM(a);}); // remove any vertices now unreferenced after duplicate mapping. igl::remove_unreferenced(VV,FF,SV,SF,UIM); // Now (SV,SF) is ready to extract outer hull igl::copyleft::cgal::outer_hull(SV,SF,G,J,flip); </p>
+
+</div>
+</div>
+<a id="a65f8fa9920a99cd809e2944afed7c908" name="a65f8fa9920a99cd809e2944afed7c908"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65f8fa9920a99cd809e2944afed7c908">&#9670;&#160;</a></span>remesh_self_intersections() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DerivedV , typename DerivedF , typename DerivedVV , typename DerivedFF , typename DerivedIF , typename DerivedJ &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void igl::copyleft::cgal::remesh_self_intersections </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::MatrixBase&lt; DerivedV &gt; &amp;&#160;</td>
+          <td class="paramname"><em>V</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::MatrixBase&lt; DerivedF &gt; &amp;&#160;</td>
+          <td class="paramname"><em>F</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structigl_1_1copyleft_1_1cgal_1_1RemeshSelfIntersectionsParam.html">RemeshSelfIntersectionsParam</a> &amp;&#160;</td>
+          <td class="paramname"><em>params</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::PlainObjectBase&lt; DerivedVV &gt; &amp;&#160;</td>
+          <td class="paramname"><em>VV</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::PlainObjectBase&lt; DerivedFF &gt; &amp;&#160;</td>
+          <td class="paramname"><em>FF</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::PlainObjectBase&lt; DerivedIF &gt; &amp;&#160;</td>
+          <td class="paramname"><em>IF</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::PlainObjectBase&lt; DerivedJ &gt; &amp;&#160;</td>
+          <td class="paramname"><em>J</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.IM above is <em>applied</em> to merge duplicated vertices in VV. </p>
 
 </div>
 </div>
@@ -6766,7 +6867,7 @@ template&lt;typename Kernel , typename DerivedV , typename DerivedE , typename D
 </div>
 </div>
 <a id="a6dca57f7cfcb9b65b561d5d3ccec99be" name="a6dca57f7cfcb9b65b561d5d3ccec99be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6dca57f7cfcb9b65b561d5d3ccec99be">&#9670;&#160;</a></span>trim_with_solid()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dca57f7cfcb9b65b561d5d3ccec99be">&#9670;&#160;</a></span>trim_with_solid() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -6841,6 +6942,86 @@ template&lt;typename DerivedVA , typename DerivedFA , typename DerivedVB , typen
     <tr><td class="paramdir">[out]</td><td class="paramname">F</td><td>#F by 3 list of mesh triangle indices into V </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">D</td><td>#F list of bools whether face is inside B </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">J</td><td>#F list of indices into FA revealing birth parent </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ace643f9725b6a5aad6e10cadb57f0de0" name="ace643f9725b6a5aad6e10cadb57f0de0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace643f9725b6a5aad6e10cadb57f0de0">&#9670;&#160;</a></span>trim_with_solid() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DerivedVA , typename DerivedFA , typename DerivedVB , typename DerivedFB , typename DerivedV , typename DerivedF , typename DerivedD , typename DerivedJ &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void igl::copyleft::cgal::trim_with_solid </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::PlainObjectBase&lt; DerivedVA &gt; &amp;&#160;</td>
+          <td class="paramname"><em>VA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::PlainObjectBase&lt; DerivedFA &gt; &amp;&#160;</td>
+          <td class="paramname"><em>FA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::PlainObjectBase&lt; DerivedVB &gt; &amp;&#160;</td>
+          <td class="paramname"><em>VB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::PlainObjectBase&lt; DerivedFB &gt; &amp;&#160;</td>
+          <td class="paramname"><em>FB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceigl_1_1copyleft_1_1cgal.html#a2ed8d1b22fc3cb87822647766b3dc863">TrimWithSolidMethod</a>&#160;</td>
+          <td class="paramname"><em>method</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::PlainObjectBase&lt; DerivedV &gt; &amp;&#160;</td>
+          <td class="paramname"><em>Vd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::PlainObjectBase&lt; DerivedF &gt; &amp;&#160;</td>
+          <td class="paramname"><em>F</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::PlainObjectBase&lt; DerivedD &gt; &amp;&#160;</td>
+          <td class="paramname"><em>D</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::PlainObjectBase&lt; DerivedJ &gt; &amp;&#160;</td>
+          <td class="paramname"><em>J</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">method</td><td>which method for extracting and determining the trim contents. </td></tr>
   </table>
   </dd>
 </dl>

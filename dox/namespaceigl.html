@@ -1330,6 +1330,10 @@ Skinning and Variants".  <br /></td></tr>
 <tr class="memitem:ad0ba264f987871035fb7d12de96fccab"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#ad0ba264f987871035fb7d12de96fccab">find</a> (const Eigen::SparseMatrix&lt; T &gt; &amp;X, Eigen::DenseBase&lt; DerivedI &gt; &amp;I, Eigen::DenseBase&lt; DerivedJ &gt; &amp;J, Eigen::DenseBase&lt; DerivedV &gt; &amp;V)</td></tr>
 <tr class="memdesc:ad0ba264f987871035fb7d12de96fccab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the non-zero entries and there respective indices in a sparse matrix.  <br /></td></tr>
 <tr class="separator:ad0ba264f987871035fb7d12de96fccab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ed5d2d6c493023192c2b2f1c5ed0bf0" id="r_a7ed5d2d6c493023192c2b2f1c5ed0bf0"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a7ed5d2d6c493023192c2b2f1c5ed0bf0"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; Eigen::Triplet&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a7ed5d2d6c493023192c2b2f1c5ed0bf0">find</a> (const Eigen::SparseMatrix&lt; T &gt; &amp;X)</td></tr>
+<tr class="memdesc:a7ed5d2d6c493023192c2b2f1c5ed0bf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
+<tr class="separator:a7ed5d2d6c493023192c2b2f1c5ed0bf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f6c699f94449b23813f0d80df36db8e" id="r_a2f6c699f94449b23813f0d80df36db8e"><td class="memTemplParams" colspan="2">template&lt;typename DerivedX , typename DerivedI , typename DerivedJ , typename DerivedV &gt; </td></tr>
 <tr class="memitem:a2f6c699f94449b23813f0d80df36db8e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a2f6c699f94449b23813f0d80df36db8e">find</a> (const Eigen::DenseBase&lt; DerivedX &gt; &amp;X, Eigen::PlainObjectBase&lt; DerivedI &gt; &amp;I, Eigen::PlainObjectBase&lt; DerivedJ &gt; &amp;J, Eigen::PlainObjectBase&lt; DerivedV &gt; &amp;V)</td></tr>
 <tr class="memdesc:a2f6c699f94449b23813f0d80df36db8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
@@ -1431,7 +1435,7 @@ fitting digitized curves" [Schneider 1990].  <br /></td></tr>
 <tr class="separator:acd2f248b52f9534c49484e76be8aa0bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad31a0406b0fb32f5345361442c0e85c9" id="r_ad31a0406b0fb32f5345361442c0e85c9"><td class="memTemplParams" colspan="2">template&lt;typename DerivedV , typename DerivedF , typename DerivedK &gt; </td></tr>
 <tr class="memitem:ad31a0406b0fb32f5345361442c0e85c9"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#ad31a0406b0fb32f5345361442c0e85c9">gaussian_curvature</a> (const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, const Eigen::MatrixBase&lt; DerivedF &gt; &amp;F, Eigen::PlainObjectBase&lt; DerivedK &gt; &amp;K)</td></tr>
-<tr class="memdesc:ad31a0406b0fb32f5345361442c0e85c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute discrete local integral gaussian curvature (angle deficit, without averaging by local area).  <br /></td></tr>
+<tr class="memdesc:ad31a0406b0fb32f5345361442c0e85c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the 2π minus the sum of interior angles at each vertex.  <br /></td></tr>
 <tr class="separator:ad31a0406b0fb32f5345361442c0e85c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23d8ca74669cc6ed33b89020ee4f9b2e" id="r_a23d8ca74669cc6ed33b89020ee4f9b2e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceigl.html#a60bbc303acee156af52ab587c4680502">DEFAULT_URBG</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a23d8ca74669cc6ed33b89020ee4f9b2e">generate_default_urbg</a> ()</td></tr>
 <tr class="separator:a23d8ca74669cc6ed33b89020ee4f9b2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1544,6 +1548,9 @@ fitting digitized curves" [Schneider 1990].  <br /></td></tr>
 <tr class="memitem:a3e2573040155e553e83f6b2098417ed2"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a3e2573040155e553e83f6b2098417ed2">hsv_to_rgb</a> (const Eigen::PlainObjectBase&lt; DerivedH &gt; &amp;H, Eigen::PlainObjectBase&lt; DerivedR &gt; &amp;R)</td></tr>
 <tr class="memdesc:a3e2573040155e553e83f6b2098417ed2"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
 <tr class="separator:a3e2573040155e553e83f6b2098417ed2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91986768165db4e2fe4f6541db3a100e" id="r_a91986768165db4e2fe4f6541db3a100e"><td class="memTemplParams" colspan="2">template&lt;typename DerivedV , typename DerivedF &gt; </td></tr>
+<tr class="memitem:a91986768165db4e2fe4f6541db3a100e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a91986768165db4e2fe4f6541db3a100e">icosahedron</a> (Eigen::PlainObjectBase&lt; DerivedV &gt; &amp;V, Eigen::PlainObjectBase&lt; DerivedF &gt; &amp;F)</td></tr>
+<tr class="separator:a91986768165db4e2fe4f6541db3a100e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6a48ea815ed7c6fce66c5fb16643592" id="r_ae6a48ea815ed7c6fce66c5fb16643592"><td class="memTemplParams" colspan="2">template&lt;typename DerivedV , typename DerivedQ , int DIM&gt; </td></tr>
 <tr class="memitem:ae6a48ea815ed7c6fce66c5fb16643592"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#ae6a48ea815ed7c6fce66c5fb16643592">in_element</a> (const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, const Eigen::MatrixXi &amp;Ele, const Eigen::MatrixBase&lt; DerivedQ &gt; &amp;Q, const <a class="el" href="classigl_1_1AABB.html">AABB</a>&lt; DerivedV, DIM &gt; &amp;aabb, Eigen::VectorXi &amp;I)</td></tr>
 <tr class="memdesc:ae6a48ea815ed7c6fce66c5fb16643592"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine whether each point in a list of points is in the elements of a mesh.  <br /></td></tr>
@@ -1552,6 +1559,10 @@ fitting digitized curves" [Schneider 1990].  <br /></td></tr>
 <tr class="memitem:a1cc28747ccc281b8790d1ec2a07daf42"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a1cc28747ccc281b8790d1ec2a07daf42">in_element</a> (const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, const Eigen::MatrixXi &amp;Ele, const Eigen::MatrixBase&lt; DerivedQ &gt; &amp;Q, const <a class="el" href="classigl_1_1AABB.html">AABB</a>&lt; DerivedV, DIM &gt; &amp;aabb, Eigen::SparseMatrix&lt; Scalar &gt; &amp;I)</td></tr>
 <tr class="memdesc:a1cc28747ccc281b8790d1ec2a07daf42"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
 <tr class="separator:a1cc28747ccc281b8790d1ec2a07daf42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac35f10d1dc8993c19f76b5c2ba6c48e7" id="r_ac35f10d1dc8993c19f76b5c2ba6c48e7"><td class="memTemplParams" colspan="2">template&lt;typename Derived &gt; </td></tr>
+<tr class="memitem:ac35f10d1dc8993c19f76b5c2ba6c48e7"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#ac35f10d1dc8993c19f76b5c2ba6c48e7">increment_ulp</a> (Eigen::MatrixBase&lt; Derived &gt; &amp;inout, int it)</td></tr>
+<tr class="memdesc:ac35f10d1dc8993c19f76b5c2ba6c48e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increment Unit in Last Place of a matrix.  <br /></td></tr>
+<tr class="separator:ac35f10d1dc8993c19f76b5c2ba6c48e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0cba56449805461c9713bc29b8ebcc79" id="r_a0cba56449805461c9713bc29b8ebcc79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a0cba56449805461c9713bc29b8ebcc79">infinite_cost_stopping_condition</a> (const <a class="el" href="namespaceigl.html#af967096efcc39e806f0c2b374e2ccc5f">decimate_cost_and_placement_callback</a> &amp;cost_and_placement, <a class="el" href="namespaceigl.html#a64c8b006ed52af02a20d1664722a94b3">decimate_stopping_condition_callback</a> &amp;stopping_condition)</td></tr>
 <tr class="memdesc:a0cba56449805461c9713bc29b8ebcc79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stopping condition function compatible with <a class="el" href="namespaceigl.html#a48e2a2c1ae537d160f7767a230be66b3" title="Assumes (V,F) is a manifold mesh (possibly with boundary) collapses edges until desired number of fac...">igl::decimate</a>.  <br /></td></tr>
 <tr class="separator:a0cba56449805461c9713bc29b8ebcc79"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1566,10 +1577,10 @@ fitting digitized curves" [Schneider 1990].  <br /></td></tr>
 <tr class="memitem:a748a89868e9e150c9d02736c6f304318"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a748a89868e9e150c9d02736c6f304318">internal_angles</a> (const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, const Eigen::MatrixBase&lt; DerivedF &gt; &amp;F, Eigen::PlainObjectBase&lt; DerivedK &gt; &amp;K)</td></tr>
 <tr class="memdesc:a748a89868e9e150c9d02736c6f304318"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute internal angles for a triangle mesh.  <br /></td></tr>
 <tr class="separator:a748a89868e9e150c9d02736c6f304318"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73dde9718b67d33fc34e68f738c72e94" id="r_a73dde9718b67d33fc34e68f738c72e94"><td class="memTemplParams" colspan="2">template&lt;typename DerivedL , typename DerivedK &gt; </td></tr>
-<tr class="memitem:a73dde9718b67d33fc34e68f738c72e94"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a73dde9718b67d33fc34e68f738c72e94">internal_angles_using_squared_edge_lengths</a> (const Eigen::MatrixBase&lt; DerivedL &gt; &amp;L_sq, Eigen::PlainObjectBase&lt; DerivedK &gt; &amp;K)</td></tr>
-<tr class="memdesc:a73dde9718b67d33fc34e68f738c72e94"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
-<tr class="separator:a73dde9718b67d33fc34e68f738c72e94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42cf87a6db6ebff753475465b9e0a6f3" id="r_a42cf87a6db6ebff753475465b9e0a6f3"><td class="memTemplParams" colspan="2">template&lt;typename DerivedL , typename DerivedK &gt; </td></tr>
+<tr class="memitem:a42cf87a6db6ebff753475465b9e0a6f3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a42cf87a6db6ebff753475465b9e0a6f3">internal_angles_intrinsic</a> (const Eigen::MatrixBase&lt; DerivedL &gt; &amp;L_sq, Eigen::PlainObjectBase&lt; DerivedK &gt; &amp;K)</td></tr>
+<tr class="memdesc:a42cf87a6db6ebff753475465b9e0a6f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute internal angles for a triangle mesh.  <br /></td></tr>
+<tr class="separator:a42cf87a6db6ebff753475465b9e0a6f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f72acbb659a5c1d291a4cff36910a87" id="r_a4f72acbb659a5c1d291a4cff36910a87"><td class="memTemplParams" colspan="2">template&lt;class M &gt; </td></tr>
 <tr class="memitem:a4f72acbb659a5c1d291a4cff36910a87"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a4f72acbb659a5c1d291a4cff36910a87">intersect</a> (const M &amp;A, const M &amp;B, M &amp;C)</td></tr>
 <tr class="memdesc:a4f72acbb659a5c1d291a4cff36910a87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine the intersect between two sets of coefficients using ==.  <br /></td></tr>
@@ -1879,26 +1890,26 @@ fitting digitized curves" [Schneider 1990].  <br /></td></tr>
 <tr class="memitem:af60d3b30634f77428770f2ae32f34059"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#af60d3b30634f77428770f2ae32f34059">marching_cubes</a> (const Eigen::MatrixBase&lt; DerivedS &gt; &amp;S, const Eigen::MatrixBase&lt; DerivedGV &gt; &amp;GV, const Eigen::MatrixBase&lt; DerivedGI &gt; &amp;GI, const typename DerivedS::Scalar isovalue, Eigen::PlainObjectBase&lt; DerivedV &gt; &amp;V, Eigen::PlainObjectBase&lt; DerivedF &gt; &amp;F)</td></tr>
 <tr class="memdesc:af60d3b30634f77428770f2ae32f34059"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
 <tr class="separator:af60d3b30634f77428770f2ae32f34059"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0093d125cb961522130e5a1ab9b8ca27" id="r_a0093d125cb961522130e5a1ab9b8ca27"><td class="memTemplParams" colspan="2">template&lt;typename DerivedTV , typename DerivedTT , typename DerivedS , typename DerivedSV , typename DerivedSF , typename DerivedJ , typename BCType &gt; </td></tr>
-<tr class="memitem:a0093d125cb961522130e5a1ab9b8ca27"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a0093d125cb961522130e5a1ab9b8ca27">marching_tets</a> (const Eigen::MatrixBase&lt; DerivedTV &gt; &amp;TV, const Eigen::MatrixBase&lt; DerivedTT &gt; &amp;TT, const Eigen::MatrixBase&lt; DerivedS &gt; &amp;S, double isovalue, Eigen::PlainObjectBase&lt; DerivedSV &gt; &amp;SV, Eigen::PlainObjectBase&lt; DerivedSF &gt; &amp;SF, Eigen::PlainObjectBase&lt; DerivedJ &gt; &amp;J, Eigen::SparseMatrix&lt; BCType &gt; &amp;BC)</td></tr>
-<tr class="memdesc:a0093d125cb961522130e5a1ab9b8ca27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs the marching tetrahedra algorithm on a tet mesh defined by TV and TT with scalar values defined at each vertex in TV.  <br /></td></tr>
-<tr class="separator:a0093d125cb961522130e5a1ab9b8ca27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5512306a29939c7ac8d4ebcef2cd032a" id="r_a5512306a29939c7ac8d4ebcef2cd032a"><td class="memTemplParams" colspan="2">template&lt;typename DerivedTV , typename DerivedTT , typename DerivedS , typename DerivedSV , typename DerivedSF , typename DerivedJ , typename BCType &gt; </td></tr>
+<tr class="memitem:a5512306a29939c7ac8d4ebcef2cd032a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a5512306a29939c7ac8d4ebcef2cd032a">marching_tets</a> (const Eigen::MatrixBase&lt; DerivedTV &gt; &amp;TV, const Eigen::MatrixBase&lt; DerivedTT &gt; &amp;TT, const Eigen::MatrixBase&lt; DerivedS &gt; &amp;S, const typename DerivedS::Scalar isovalue, Eigen::PlainObjectBase&lt; DerivedSV &gt; &amp;SV, Eigen::PlainObjectBase&lt; DerivedSF &gt; &amp;SF, Eigen::PlainObjectBase&lt; DerivedJ &gt; &amp;J, Eigen::SparseMatrix&lt; BCType &gt; &amp;BC)</td></tr>
+<tr class="memdesc:a5512306a29939c7ac8d4ebcef2cd032a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs the marching tetrahedra algorithm on a tet mesh defined by TV and TT with scalar values defined at each vertex in TV.  <br /></td></tr>
+<tr class="separator:a5512306a29939c7ac8d4ebcef2cd032a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa49f489ae12ec4a901418253fcd3f3ed" id="r_aa49f489ae12ec4a901418253fcd3f3ed"><td class="memTemplParams" colspan="2">template&lt;typename DerivedTV , typename DerivedTT , typename DerivedS , typename DerivedSV , typename DerivedSF , typename DerivedJ , typename BCType &gt; </td></tr>
 <tr class="memitem:aa49f489ae12ec4a901418253fcd3f3ed"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#aa49f489ae12ec4a901418253fcd3f3ed">marching_tets</a> (const Eigen::MatrixBase&lt; DerivedTV &gt; &amp;TV, const Eigen::MatrixBase&lt; DerivedTT &gt; &amp;TT, const Eigen::MatrixBase&lt; DerivedS &gt; &amp;S, Eigen::PlainObjectBase&lt; DerivedSV &gt; &amp;SV, Eigen::PlainObjectBase&lt; DerivedSF &gt; &amp;SF, Eigen::PlainObjectBase&lt; DerivedJ &gt; &amp;J, Eigen::SparseMatrix&lt; BCType &gt; &amp;BC)</td></tr>
 <tr class="memdesc:aa49f489ae12ec4a901418253fcd3f3ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
 <tr class="separator:aa49f489ae12ec4a901418253fcd3f3ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad9e83c54a585aaa12cd190c0e616f78" id="r_aad9e83c54a585aaa12cd190c0e616f78"><td class="memTemplParams" colspan="2">template&lt;typename DerivedTV , typename DerivedTT , typename DerivedS , typename DerivedSV , typename DerivedSF , typename DerivedJ &gt; </td></tr>
-<tr class="memitem:aad9e83c54a585aaa12cd190c0e616f78"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#aad9e83c54a585aaa12cd190c0e616f78">marching_tets</a> (const Eigen::MatrixBase&lt; DerivedTV &gt; &amp;TV, const Eigen::MatrixBase&lt; DerivedTT &gt; &amp;TT, const Eigen::MatrixBase&lt; DerivedS &gt; &amp;S, double isovalue, Eigen::PlainObjectBase&lt; DerivedSV &gt; &amp;SV, Eigen::PlainObjectBase&lt; DerivedSF &gt; &amp;SF, Eigen::PlainObjectBase&lt; DerivedJ &gt; &amp;J)</td></tr>
-<tr class="memdesc:aad9e83c54a585aaa12cd190c0e616f78"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
-<tr class="separator:aad9e83c54a585aaa12cd190c0e616f78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23bde721d023a222d5fe54c24c749d25" id="r_a23bde721d023a222d5fe54c24c749d25"><td class="memTemplParams" colspan="2">template&lt;typename DerivedTV , typename DerivedTT , typename DerivedS , typename DerivedSV , typename DerivedSF , typename BCType &gt; </td></tr>
-<tr class="memitem:a23bde721d023a222d5fe54c24c749d25"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a23bde721d023a222d5fe54c24c749d25">marching_tets</a> (const Eigen::MatrixBase&lt; DerivedTV &gt; &amp;TV, const Eigen::MatrixBase&lt; DerivedTT &gt; &amp;TT, const Eigen::MatrixBase&lt; DerivedS &gt; &amp;S, double isovalue, Eigen::PlainObjectBase&lt; DerivedSV &gt; &amp;SV, Eigen::PlainObjectBase&lt; DerivedSF &gt; &amp;SF, Eigen::SparseMatrix&lt; BCType &gt; &amp;BC)</td></tr>
-<tr class="memdesc:a23bde721d023a222d5fe54c24c749d25"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
-<tr class="separator:a23bde721d023a222d5fe54c24c749d25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a164e0e949f5e320e1fd2d9cc2bd1d40a" id="r_a164e0e949f5e320e1fd2d9cc2bd1d40a"><td class="memTemplParams" colspan="2">template&lt;typename DerivedTV , typename DerivedTT , typename DerivedS , typename DerivedSV , typename DerivedSF &gt; </td></tr>
-<tr class="memitem:a164e0e949f5e320e1fd2d9cc2bd1d40a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a164e0e949f5e320e1fd2d9cc2bd1d40a">marching_tets</a> (const Eigen::MatrixBase&lt; DerivedTV &gt; &amp;TV, const Eigen::MatrixBase&lt; DerivedTT &gt; &amp;TT, const Eigen::MatrixBase&lt; DerivedS &gt; &amp;S, double isovalue, Eigen::PlainObjectBase&lt; DerivedSV &gt; &amp;SV, Eigen::PlainObjectBase&lt; DerivedSF &gt; &amp;SF)</td></tr>
-<tr class="memdesc:a164e0e949f5e320e1fd2d9cc2bd1d40a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
-<tr class="separator:a164e0e949f5e320e1fd2d9cc2bd1d40a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77b74374c21bab647512f658e050cc27" id="r_a77b74374c21bab647512f658e050cc27"><td class="memTemplParams" colspan="2">template&lt;typename DerivedTV , typename DerivedTT , typename DerivedS , typename DerivedSV , typename DerivedSF , typename DerivedJ &gt; </td></tr>
+<tr class="memitem:a77b74374c21bab647512f658e050cc27"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a77b74374c21bab647512f658e050cc27">marching_tets</a> (const Eigen::MatrixBase&lt; DerivedTV &gt; &amp;TV, const Eigen::MatrixBase&lt; DerivedTT &gt; &amp;TT, const Eigen::MatrixBase&lt; DerivedS &gt; &amp;S, const typename DerivedS::Scalar isovalue, Eigen::PlainObjectBase&lt; DerivedSV &gt; &amp;SV, Eigen::PlainObjectBase&lt; DerivedSF &gt; &amp;SF, Eigen::PlainObjectBase&lt; DerivedJ &gt; &amp;J)</td></tr>
+<tr class="memdesc:a77b74374c21bab647512f658e050cc27"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
+<tr class="separator:a77b74374c21bab647512f658e050cc27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac630f9be345647d2008378e9489ea50e" id="r_ac630f9be345647d2008378e9489ea50e"><td class="memTemplParams" colspan="2">template&lt;typename DerivedTV , typename DerivedTT , typename DerivedS , typename DerivedSV , typename DerivedSF , typename BCType &gt; </td></tr>
+<tr class="memitem:ac630f9be345647d2008378e9489ea50e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#ac630f9be345647d2008378e9489ea50e">marching_tets</a> (const Eigen::MatrixBase&lt; DerivedTV &gt; &amp;TV, const Eigen::MatrixBase&lt; DerivedTT &gt; &amp;TT, const Eigen::MatrixBase&lt; DerivedS &gt; &amp;S, const typename DerivedS::Scalar isovalue, Eigen::PlainObjectBase&lt; DerivedSV &gt; &amp;SV, Eigen::PlainObjectBase&lt; DerivedSF &gt; &amp;SF, Eigen::SparseMatrix&lt; BCType &gt; &amp;BC)</td></tr>
+<tr class="memdesc:ac630f9be345647d2008378e9489ea50e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
+<tr class="separator:ac630f9be345647d2008378e9489ea50e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4416636f9a80fb95a7656732a32dbf0f" id="r_a4416636f9a80fb95a7656732a32dbf0f"><td class="memTemplParams" colspan="2">template&lt;typename DerivedTV , typename DerivedTT , typename DerivedS , typename DerivedSV , typename DerivedSF &gt; </td></tr>
+<tr class="memitem:a4416636f9a80fb95a7656732a32dbf0f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a4416636f9a80fb95a7656732a32dbf0f">marching_tets</a> (const Eigen::MatrixBase&lt; DerivedTV &gt; &amp;TV, const Eigen::MatrixBase&lt; DerivedTT &gt; &amp;TT, const Eigen::MatrixBase&lt; DerivedS &gt; &amp;S, const typename DerivedS::Scalar isovalue, Eigen::PlainObjectBase&lt; DerivedSV &gt; &amp;SV, Eigen::PlainObjectBase&lt; DerivedSF &gt; &amp;SF)</td></tr>
+<tr class="memdesc:a4416636f9a80fb95a7656732a32dbf0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
+<tr class="separator:a4416636f9a80fb95a7656732a32dbf0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72cf047d8b4df743c47bbbf0ba9dc6e1" id="r_a72cf047d8b4df743c47bbbf0ba9dc6e1"><td class="memTemplParams" colspan="2">template&lt;typename DerivedV , typename DerivedF , typename Scalar &gt; </td></tr>
 <tr class="memitem:a72cf047d8b4df743c47bbbf0ba9dc6e1"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a72cf047d8b4df743c47bbbf0ba9dc6e1">massmatrix</a> (const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, const Eigen::MatrixBase&lt; DerivedF &gt; &amp;F, const <a class="el" href="namespaceigl.html#a8ed02513847d2f3fdb8c74dcbe55bb90">MassMatrixType</a> type, Eigen::SparseMatrix&lt; Scalar &gt; &amp;M)</td></tr>
 <tr class="memdesc:a72cf047d8b4df743c47bbbf0ba9dc6e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the mass (area) matrix for a given mesh (V,F).  <br /></td></tr>
@@ -2510,6 +2521,10 @@ fitting digitized curves" [Schneider 1990].  <br /></td></tr>
 <tr class="memitem:af41f8552f81764bc8793cb5f76a87553"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#af41f8552f81764bc8793cb5f76a87553">ray_box_intersect</a> (const Eigen::MatrixBase&lt; Derivedsource &gt; &amp;source, const Eigen::MatrixBase&lt; Deriveddir &gt; &amp;dir, const Eigen::AlignedBox&lt; Scalar, 3 &gt; &amp;box, const Scalar &amp;t0, const Scalar &amp;t1, Scalar &amp;tmin, Scalar &amp;tmax)</td></tr>
 <tr class="memdesc:af41f8552f81764bc8793cb5f76a87553"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine whether a ray origin+t*dir and box intersect within the ray's parameterized range (t0,t1)  <br /></td></tr>
 <tr class="separator:af41f8552f81764bc8793cb5f76a87553"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18af1e6cc596af264e3a02e02b823a01" id="r_a18af1e6cc596af264e3a02e02b823a01"><td class="memTemplParams" colspan="2">template&lt;typename Derivedsource , typename Deriveddir , typename Scalar &gt; </td></tr>
+<tr class="memitem:a18af1e6cc596af264e3a02e02b823a01"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a18af1e6cc596af264e3a02e02b823a01">ray_box_intersect</a> (const Eigen::MatrixBase&lt; Derivedsource &gt; &amp;source, const Eigen::MatrixBase&lt; Deriveddir &gt; &amp;inv_dir, const Eigen::MatrixBase&lt; Deriveddir &gt; &amp;inv_dir_pad, const Eigen::AlignedBox&lt; Scalar, 3 &gt; &amp;box, const Scalar &amp;t0, const Scalar &amp;t1, Scalar &amp;tmin, Scalar &amp;tmax)</td></tr>
+<tr class="memdesc:a18af1e6cc596af264e3a02e02b823a01"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <br /></td></tr>
+<tr class="separator:a18af1e6cc596af264e3a02e02b823a01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adcb07bb96941cdba2a28b4239f88a246" id="r_adcb07bb96941cdba2a28b4239f88a246"><td class="memTemplParams" colspan="2">template&lt;typename Derivedsource , typename Deriveddir , typename DerivedV , typename DerivedF &gt; </td></tr>
 <tr class="memitem:adcb07bb96941cdba2a28b4239f88a246"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#adcb07bb96941cdba2a28b4239f88a246">ray_mesh_intersect</a> (const Eigen::MatrixBase&lt; Derivedsource &gt; &amp;source, const Eigen::MatrixBase&lt; Deriveddir &gt; &amp;dir, const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, const Eigen::MatrixBase&lt; DerivedF &gt; &amp;F, std::vector&lt; <a class="el" href="structigl_1_1Hit.html">igl::Hit</a> &gt; &amp;hits)</td></tr>
 <tr class="memdesc:adcb07bb96941cdba2a28b4239f88a246"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shoot a ray against a mesh (V,F) and collect all hits.  <br /></td></tr>
@@ -3259,7 +3274,7 @@ fitting digitized curves" [Schneider 1990].  <br /></td></tr>
 <tr class="separator:ada72de8eeac466f8cb2a52016a1bd1cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09d82782b314ba8729b05712387f7ec4" id="r_a09d82782b314ba8729b05712387f7ec4"><td class="memTemplParams" colspan="2">template&lt;typename DerivedGV , typename DerivedGT &gt; </td></tr>
 <tr class="memitem:a09d82782b314ba8729b05712387f7ec4"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#a09d82782b314ba8729b05712387f7ec4">tetrahedralized_grid</a> (const int nx, const int ny, const int nz, const <a class="el" href="namespaceigl.html#ac3bae8c76c2714f3cce8b651ae93fae2">TetrahedralizedGripType</a> type, Eigen::PlainObjectBase&lt; DerivedGV &gt; &amp;GV, Eigen::PlainObjectBase&lt; DerivedGT &gt; &amp;GT)</td></tr>
-<tr class="memdesc:a09d82782b314ba8729b05712387f7ec4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct vertices of a regular grid, suitable for input to <code><a class="el" href="namespaceigl.html#a0093d125cb961522130e5a1ab9b8ca27" title="Performs the marching tetrahedra algorithm on a tet mesh defined by TV and TT with scalar values defi...">igl::marching_tets</a></code>  <br /></td></tr>
+<tr class="memdesc:a09d82782b314ba8729b05712387f7ec4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct vertices of a regular grid, suitable for input to <code><a class="el" href="namespaceigl.html#a5512306a29939c7ac8d4ebcef2cd032a" title="Performs the marching tetrahedra algorithm on a tet mesh defined by TV and TT with scalar values defi...">igl::marching_tets</a></code>  <br /></td></tr>
 <tr class="separator:a09d82782b314ba8729b05712387f7ec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae86a7e69f97c1ca839467731e3944441" id="r_ae86a7e69f97c1ca839467731e3944441"><td class="memTemplParams" colspan="2">template&lt;typename Derivedside , typename DerivedGT &gt; </td></tr>
 <tr class="memitem:ae86a7e69f97c1ca839467731e3944441"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl.html#ae86a7e69f97c1ca839467731e3944441">tetrahedralized_grid</a> (const Eigen::MatrixBase&lt; Derivedside &gt; &amp;side, const <a class="el" href="namespaceigl.html#ac3bae8c76c2714f3cce8b651ae93fae2">TetrahedralizedGripType</a> type, Eigen::PlainObjectBase&lt; DerivedGT &gt; &amp;GT)</td></tr>
@@ -4618,7 +4633,7 @@ template&lt;typename Index , typename IndexVector &gt; </div>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">F</td><td>#F by dim list of mesh faces (must be triangles) </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">A</td><td>vector&lt;vector&lt;T&gt; &gt; containing at row i the adjacent vertices of vertex i </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">sorted</td><td>flag that indicates if the list should be sorted counter-clockwise</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sorted</td><td>flag that indicates if the list should be sorted counter-clockwise. Input assumed to be manifold.</td></tr>
   </table>
   </dd>
 </dl>
@@ -12705,7 +12720,7 @@ template&lt;typename DerivedV , typename DerivedF &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>whether the copy was successful</dd></dl>
-<h4><a class="anchor" id="autotoc_md7"></a>
+<h4><a class="anchor" id="autotoc_md8"></a>
 Example:</h4>
 <div class="fragment"><div class="line"><a class="code hl_function" href="namespaceigl.html#a73748b03f3e779d764d30d920653aba6">dated_copy</a>(<span class="stringliteral">&quot;/path/to/foo&quot;</span>,<span class="stringliteral">&quot;/bar/&quot;</span>);</div>
 <div class="line"><span class="comment">// copies /path/to/foo to /bar/foo-2013-12-12T18-10-56</span></div>
@@ -16635,7 +16650,7 @@ template&lt;typename MatV , typename MatF , typename VecI &gt; </div>
   </table>
   </dd>
 </dl>
-<h4><a class="anchor" id="autotoc_md11"></a>
+<h4><a class="anchor" id="autotoc_md12"></a>
 Example:</h4>
 <div class="fragment"><div class="line"><span class="comment">// Tet mesh in (V,T,F)</span></div>
 <div class="line"><a class="code hl_function" href="namespaceigl.html#af7aa77ffc481c82074bcdd0ae765c090">faces_first</a>(V,F,IM);</div>
@@ -17733,7 +17748,7 @@ template&lt;typename Derivedp &gt; </div>
 </div>
 </div>
 <a id="ad0ba264f987871035fb7d12de96fccab" name="ad0ba264f987871035fb7d12de96fccab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad0ba264f987871035fb7d12de96fccab">&#9670;&#160;</a></span>find() <span class="overload">[1/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0ba264f987871035fb7d12de96fccab">&#9670;&#160;</a></span>find() <span class="overload">[1/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -17792,8 +17807,30 @@ template&lt;typename T , typename DerivedI , typename DerivedJ , typename Derive
 
 </div>
 </div>
+<a id="a7ed5d2d6c493023192c2b2f1c5ed0bf0" name="a7ed5d2d6c493023192c2b2f1c5ed0bf0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ed5d2d6c493023192c2b2f1c5ed0bf0">&#9670;&#160;</a></span>find() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; Eigen::Triplet&lt; T &gt; &gt; igl::find </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::SparseMatrix&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>X</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+
+</div>
+</div>
 <a id="a2f6c699f94449b23813f0d80df36db8e" name="a2f6c699f94449b23813f0d80df36db8e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f6c699f94449b23813f0d80df36db8e">&#9670;&#160;</a></span>find() <span class="overload">[2/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f6c699f94449b23813f0d80df36db8e">&#9670;&#160;</a></span>find() <span class="overload">[3/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -17837,7 +17874,7 @@ template&lt;typename DerivedX , typename DerivedI , typename DerivedJ , typename
 </div>
 </div>
 <a id="a1c874cf1ad179744026898ded3da4ea7" name="a1c874cf1ad179744026898ded3da4ea7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c874cf1ad179744026898ded3da4ea7">&#9670;&#160;</a></span>find() <span class="overload">[3/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c874cf1ad179744026898ded3da4ea7">&#9670;&#160;</a></span>find() <span class="overload">[4/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -17875,7 +17912,7 @@ template&lt;typename DerivedX , typename DerivedI &gt; </div>
 </div>
 </div>
 <a id="ab6758ca13380f9bd099c860aba705d45" name="ab6758ca13380f9bd099c860aba705d45"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab6758ca13380f9bd099c860aba705d45">&#9670;&#160;</a></span>find() <span class="overload">[4/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6758ca13380f9bd099c860aba705d45">&#9670;&#160;</a></span>find() <span class="overload">[5/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -17913,7 +17950,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a35cd54b6c6bf02c39e4caf02782fcfbc" name="a35cd54b6c6bf02c39e4caf02782fcfbc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a35cd54b6c6bf02c39e4caf02782fcfbc">&#9670;&#160;</a></span>find() <span class="overload">[5/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a35cd54b6c6bf02c39e4caf02782fcfbc">&#9670;&#160;</a></span>find() <span class="overload">[6/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -17938,7 +17975,7 @@ template&lt;int RowsAtCompileTime, int MaxRowsAtCompileTime&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>indices of true entries in M</dd></dl>
-<p><a class="anchor" id="autotoc_md12"></a> </p><h5>Example</h5>
+<p><a class="anchor" id="autotoc_md13"></a> </p><h5>Example</h5>
 <div class="fragment"><div class="line"><a class="code hl_function" href="namespaceigl.html#acb30d6061d773254628256682b88b427">igl::slice_mask</a>(A,<a class="code hl_function" href="namespaceigl.html#ad0ba264f987871035fb7d12de96fccab">igl::find</a>(M),<a class="code hl_function" href="namespaceigl.html#ad0ba264f987871035fb7d12de96fccab">igl::find</a>(N),B);</div>
 <div class="line"><span class="comment">// Is the same as</span></div>
 <div class="line">B = A(<a class="code hl_function" href="namespaceigl.html#ad0ba264f987871035fb7d12de96fccab">igl::find</a>(M),<a class="code hl_function" href="namespaceigl.html#ad0ba264f987871035fb7d12de96fccab">igl::find</a>(N));</div>
@@ -19254,7 +19291,8 @@ template&lt;typename DerivedV , typename DerivedF , typename DerivedK &gt; </div
       </table>
 </div><div class="memdoc">
 
-<p>Compute discrete local integral gaussian curvature (angle deficit, without averaging by local area). </p>
+<p>Compute the 2π minus the sum of interior angles at each vertex. </p>
+<p>For interior vertices of a manifold mesh this corresponds to the local integral gaussian curvature ("angle deficit", without averaging by local area). For boundary vertices, this quantity is not so meaninful. FWIW, adding π to the output for boundary vertices would produce local integral geodesic curvature along the boundary curve.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">V</td><td>#V by 3 eigen Matrix of mesh vertex 3D positions </td></tr>
@@ -19308,7 +19346,7 @@ template&lt;typename DerivedV , typename DerivedF , typename DerivedK &gt; </div
 
 <p>Current time in seconds. </p>
 <dl class="section return"><dt>Returns</dt><dd>the current time in seconds since epoch</dd></dl>
-<h4><a class="anchor" id="autotoc_md13"></a>
+<h4><a class="anchor" id="autotoc_md14"></a>
 Example:</h4>
 <div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keyword">auto</span> &amp; tictoc = []()</div>
 <div class="line">{</div>
@@ -20660,6 +20698,36 @@ template&lt;typename DerivedH , typename DerivedR &gt; </div>
 
 </div>
 </div>
+<a id="a91986768165db4e2fe4f6541db3a100e" name="a91986768165db4e2fe4f6541db3a100e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91986768165db4e2fe4f6541db3a100e">&#9670;&#160;</a></span>icosahedron()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DerivedV , typename DerivedF &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void igl::icosahedron </td>
+          <td>(</td>
+          <td class="paramtype">Eigen::PlainObjectBase&lt; DerivedV &gt; &amp;&#160;</td>
+          <td class="paramname"><em>V</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::PlainObjectBase&lt; DerivedF &gt; &amp;&#160;</td>
+          <td class="paramname"><em>F</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ae6a48ea815ed7c6fce66c5fb16643592" name="ae6a48ea815ed7c6fce66c5fb16643592"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae6a48ea815ed7c6fce66c5fb16643592">&#9670;&#160;</a></span>in_element() <span class="overload">[1/2]</span></h2>
 
@@ -20776,6 +20844,45 @@ template&lt;typename DerivedV , typename DerivedQ , int DIM, typename Scalar &gt
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">I</td><td>#Q by #Ele sparse matrix revealing whether each element contains each point: I(q,e) means point q is in element e </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac35f10d1dc8993c19f76b5c2ba6c48e7" name="ac35f10d1dc8993c19f76b5c2ba6c48e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac35f10d1dc8993c19f76b5c2ba6c48e7">&#9670;&#160;</a></span>increment_ulp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void igl::increment_ulp </td>
+          <td>(</td>
+          <td class="paramtype">Eigen::MatrixBase&lt; Derived &gt; &amp;&#160;</td>
+          <td class="paramname"><em>inout</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>it</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Increment Unit in Last Place of a matrix. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">inout</td><td>input matrix </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">it</td><td>number of increments </td></tr>
   </table>
   </dd>
 </dl>
@@ -20933,8 +21040,8 @@ template&lt;typename DerivedV , typename DerivedF , typename DerivedK &gt; </div
 
 </div>
 </div>
-<a id="a73dde9718b67d33fc34e68f738c72e94" name="a73dde9718b67d33fc34e68f738c72e94"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a73dde9718b67d33fc34e68f738c72e94">&#9670;&#160;</a></span>internal_angles_using_squared_edge_lengths()</h2>
+<a id="a42cf87a6db6ebff753475465b9e0a6f3" name="a42cf87a6db6ebff753475465b9e0a6f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42cf87a6db6ebff753475465b9e0a6f3">&#9670;&#160;</a></span>internal_angles_intrinsic()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -20942,7 +21049,7 @@ template&lt;typename DerivedV , typename DerivedF , typename DerivedK &gt; </div
 template&lt;typename DerivedL , typename DerivedK &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void igl::internal_angles_using_squared_edge_lengths </td>
+          <td class="memname">void igl::internal_angles_intrinsic </td>
           <td>(</td>
           <td class="paramtype">const Eigen::MatrixBase&lt; DerivedL &gt; &amp;&#160;</td>
           <td class="paramname"><em>L_sq</em>, </td>
@@ -20961,15 +21068,14 @@ template&lt;typename DerivedL , typename DerivedK &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+<p>Compute internal angles for a triangle mesh. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">L_sq</td><td>#F by 3 list of squared edge lengths </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">K</td><td>#F by poly-size eigen Matrix of internal angles for triangles, columns correspond to edges [1,2],[2,0],[0,1]</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">K</td><td>#F by poly-size eigen Matrix of internal angles for triangles, columns correspond to edges [1,2],[2,0],[0,1] </td></tr>
   </table>
   </dd>
 </dl>
-<p><a class="el" href="internal__angles_8h.html">include/igl/internal_angles.h</a> </p>
 
 </div>
 </div>
@@ -25112,8 +25218,8 @@ template&lt;typename DerivedS , typename DerivedGV , typename DerivedGI , typena
 
 </div>
 </div>
-<a id="a0093d125cb961522130e5a1ab9b8ca27" name="a0093d125cb961522130e5a1ab9b8ca27"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0093d125cb961522130e5a1ab9b8ca27">&#9670;&#160;</a></span>marching_tets() <span class="overload">[1/5]</span></h2>
+<a id="a5512306a29939c7ac8d4ebcef2cd032a" name="a5512306a29939c7ac8d4ebcef2cd032a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5512306a29939c7ac8d4ebcef2cd032a">&#9670;&#160;</a></span>marching_tets() <span class="overload">[1/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -25141,7 +25247,7 @@ template&lt;typename DerivedTV , typename DerivedTT , typename DerivedS , typena
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype">const typename DerivedS::Scalar&#160;</td>
           <td class="paramname"><em>isovalue</em>, </td>
         </tr>
         <tr>
@@ -25257,8 +25363,8 @@ template&lt;typename DerivedTV , typename DerivedTT , typename DerivedS , typena
 
 </div>
 </div>
-<a id="aad9e83c54a585aaa12cd190c0e616f78" name="aad9e83c54a585aaa12cd190c0e616f78"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad9e83c54a585aaa12cd190c0e616f78">&#9670;&#160;</a></span>marching_tets() <span class="overload">[3/5]</span></h2>
+<a id="a77b74374c21bab647512f658e050cc27" name="a77b74374c21bab647512f658e050cc27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77b74374c21bab647512f658e050cc27">&#9670;&#160;</a></span>marching_tets() <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -25286,7 +25392,7 @@ template&lt;typename DerivedTV , typename DerivedTT , typename DerivedS , typena
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype">const typename DerivedS::Scalar&#160;</td>
           <td class="paramname"><em>isovalue</em>, </td>
         </tr>
         <tr>
@@ -25319,8 +25425,8 @@ template&lt;typename DerivedTV , typename DerivedTT , typename DerivedS , typena
 
 </div>
 </div>
-<a id="a23bde721d023a222d5fe54c24c749d25" name="a23bde721d023a222d5fe54c24c749d25"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23bde721d023a222d5fe54c24c749d25">&#9670;&#160;</a></span>marching_tets() <span class="overload">[4/5]</span></h2>
+<a id="ac630f9be345647d2008378e9489ea50e" name="ac630f9be345647d2008378e9489ea50e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac630f9be345647d2008378e9489ea50e">&#9670;&#160;</a></span>marching_tets() <span class="overload">[4/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -25348,7 +25454,7 @@ template&lt;typename DerivedTV , typename DerivedTT , typename DerivedS , typena
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype">const typename DerivedS::Scalar&#160;</td>
           <td class="paramname"><em>isovalue</em>, </td>
         </tr>
         <tr>
@@ -25381,8 +25487,8 @@ template&lt;typename DerivedTV , typename DerivedTT , typename DerivedS , typena
 
 </div>
 </div>
-<a id="a164e0e949f5e320e1fd2d9cc2bd1d40a" name="a164e0e949f5e320e1fd2d9cc2bd1d40a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a164e0e949f5e320e1fd2d9cc2bd1d40a">&#9670;&#160;</a></span>marching_tets() <span class="overload">[5/5]</span></h2>
+<a id="a4416636f9a80fb95a7656732a32dbf0f" name="a4416636f9a80fb95a7656732a32dbf0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4416636f9a80fb95a7656732a32dbf0f">&#9670;&#160;</a></span>marching_tets() <span class="overload">[5/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -25410,7 +25516,7 @@ template&lt;typename DerivedTV , typename DerivedTT , typename DerivedS , typena
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype">const typename DerivedS::Scalar&#160;</td>
           <td class="paramname"><em>isovalue</em>, </td>
         </tr>
         <tr>
@@ -26083,7 +26189,7 @@ template&lt;typename DerivedM &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Formatted matrix</dd></dl>
-<h4><a class="anchor" id="autotoc_md14"></a>
+<h4><a class="anchor" id="autotoc_md15"></a>
 Example:</h4>
 <div class="fragment"><div class="line"><span class="comment">// M := [1 2 3;4 5 6];</span></div>
 <div class="line">cout&lt;&lt;<a class="code hl_function" href="namespaceigl.html#a6b539a21fb577617710f5fce2046e65b">matlab_format</a>(M)&lt;&lt;endl;</div>
@@ -26165,7 +26271,7 @@ template&lt;typename DerivedS &gt; </div>
 
 <p>Same but for sparse matrices. </p>
 <p>Print IJV format into an auxiliary variable and then print a call to sparse which will construct the sparse matrix</p>
-<h4><a class="anchor" id="autotoc_md15"></a>
+<h4><a class="anchor" id="autotoc_md16"></a>
 Example:</h4>
 <div class="fragment"><div class="line"><span class="comment">// S := [0 2 3;4 5 0];</span></div>
 <div class="line">cout&lt;&lt;<a class="code hl_function" href="namespaceigl.html#a6b539a21fb577617710f5fce2046e65b">matlab_format</a>(S,<span class="stringliteral">&quot;S&quot;</span>)&lt;&lt;endl;</div>
@@ -26258,7 +26364,7 @@ Example:</h4>
 
 <p>Just build and return the format. </p>
 <dl class="section return"><dt>Returns</dt><dd>eigen IOFormat object</dd></dl>
-<h4><a class="anchor" id="autotoc_md16"></a>
+<h4><a class="anchor" id="autotoc_md17"></a>
 Example:</h4>
 <div class="fragment"><div class="line"><span class="comment">// M := [1 2 3;4 5 6];</span></div>
 <div class="line">cout&lt;&lt;M.format(<a class="code hl_function" href="namespaceigl.html#a6b539a21fb577617710f5fce2046e65b">matlab_format</a>())&lt;&lt;endl;</div>
@@ -27384,7 +27490,7 @@ template&lt;typename DerivedV , typename DerivedF , typename Derivedm0 , typenam
 <p>Computes the moments of mass for a solid object bound by a triangle mesh. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">V</td><td>#V by dim list of rest domain positions </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">V</td><td>#V by 3 list of rest domain positions </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">F</td><td>#F by 3 list of triangle indices into V </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">m0</td><td>zeroth moment of mass, total signed volume of solid. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">m1</td><td>first moment of mass, center of mass (centroid) times total mass </td></tr>
@@ -28054,10 +28160,11 @@ template&lt;typename DerivedV , typename DerivedF , typename DerivedC , typename
     <tr><td class="paramdir">[in]</td><td class="paramname">F</td><td>#F by 3 list of triangle indices </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">C</td><td>#F list of components (output of orientable_patches) </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">FF</td><td>#F by 3 list of new triangle indices such that FF(~I,:) = F(~I,:) and FF(I,:) = fliplr(F(I,:)) (OK if &amp;FF = &amp;F) </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">I</td><td>max(C)+1 list of whether face has been flipped </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">I</td><td>max(C)+1 list of whether face has been flipped</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="namespaceigl.html#aa7ea97ba9a25206eb1ba9d7469b371d1" title="Compute connected components of facets connected by manifold edges.">orientable_patches</a>, reorient_facets_raycast </dd></dl>
 
 </div>
 </div>
@@ -29129,7 +29236,7 @@ template&lt;typename Index , typename DerivedE &gt; </div>
   </table>
   </dd>
 </dl>
-<h4><a class="anchor" id="autotoc_md17"></a>
+<h4><a class="anchor" id="autotoc_md18"></a>
 Examples</h4>
 <pre class="fragment"> input                     | dirname        basename       ext    filename
  "/"                       | "/"            ""             ""     ""
@@ -29686,7 +29793,7 @@ template&lt;typename DerivedV , typename DerivedF , typename DerivedZ , typename
   </table>
   </dd>
 </dl>
-<h4><a class="anchor" id="autotoc_md18"></a>
+<h4><a class="anchor" id="autotoc_md19"></a>
 Example</h4>
 <p>// Give degenerate faces (1/3,1/3,1/3)^0.5 per_face_normals(V,F,Vector3d(1,1,1).normalized(),N); </p>
 
@@ -30489,7 +30596,22 @@ template&lt;typename DerivedP , typename DerivedV , typename DerivedEle , typena
   </table>
   </dd>
 </dl>
-
+<p><a class="anchor" id="autotoc_md20"></a> </p><h5>Example:</h5>
+<div class="fragment"><div class="line">Eigen::MatrixXd V;</div>
+<div class="line">Eigen::MatrixXi F;</div>
+<div class="line"><a class="code hl_function" href="namespaceigl.html#a6bd18b073b51beb1500c10c4f2825aba">igl::read_triangle_mesh</a>(<span class="stringliteral">&quot;bunny.obj&quot;</span>,V,F);</div>
+<div class="line"><span class="comment">// 100 points in [-1,1]³ cube</span></div>
+<div class="line">Eigen::MatrixXd P = Eigen::MatrixXd::Random(100,3);</div>
+<div class="line">Eigen::VectorXd sqrD;</div>
+<div class="line">Eigen::VectorXi I;</div>
+<div class="line">Eigen::MatrixXd C;</div>
+<div class="line"><a class="code hl_function" href="namespaceigl.html#ae9616bb9fd33e6c00dcb4e8f91952091">igl::point_mesh_squared_distance</a>(P,V,F,sqrD,I,C);</div>
+<div class="line"><span class="comment">// Now sqrD(i) = squared distance from P.row(i) to mesh</span></div>
+<div class="line"><span class="comment">// I(i) = closest primitive index</span></div>
+<div class="line"><span class="comment">// C.row(i) = closest point on mesh to P.row(i)</span></div>
+<div class="ttc" id="anamespaceigl_html_a6bd18b073b51beb1500c10c4f2825aba"><div class="ttname"><a href="namespaceigl.html#a6bd18b073b51beb1500c10c4f2825aba">igl::read_triangle_mesh</a></div><div class="ttdeci">bool read_triangle_mesh(const std::string str, Eigen::PlainObjectBase&lt; DerivedV &gt; &amp;V, Eigen::PlainObjectBase&lt; DerivedF &gt; &amp;F)</div><div class="ttdoc">Read mesh from an ascii file with automatic detection of file format among: mesh, msh obj,...</div></div>
+<div class="ttc" id="anamespaceigl_html_ae9616bb9fd33e6c00dcb4e8f91952091"><div class="ttname"><a href="namespaceigl.html#ae9616bb9fd33e6c00dcb4e8f91952091">igl::point_mesh_squared_distance</a></div><div class="ttdeci">void point_mesh_squared_distance(const Eigen::MatrixBase&lt; DerivedP &gt; &amp;P, const Eigen::MatrixBase&lt; DerivedV &gt; &amp;V, const Eigen::MatrixBase&lt; DerivedEle &gt; &amp;Ele, Eigen::PlainObjectBase&lt; DerivedsqrD &gt; &amp;sqrD, Eigen::PlainObjectBase&lt; DerivedI &gt; &amp;I, Eigen::PlainObjectBase&lt; DerivedC &gt; &amp;C)</div><div class="ttdoc">Compute distances from a set of points P to a triangle mesh (V,F)</div></div>
+</div><!-- fragment --> 
 </div>
 </div>
 <a id="a8c64da392edc068d98cf9c78ec8a6ee3" name="a8c64da392edc068d98cf9c78ec8a6ee3"></a>
@@ -31578,7 +31700,7 @@ template&lt;typename DerivedX , typename DerivedY , typename Scalar , typename D
   </table>
   </dd>
 </dl>
-<h4><a class="anchor" id="autotoc_md19"></a>
+<h4><a class="anchor" id="autotoc_md21"></a>
 Example</h4>
 <div class="fragment"><div class="line">MatrixXd X, Y; (containing 3d points as rows)</div>
 <div class="line"><span class="keywordtype">double</span> scale;</div>
@@ -31646,7 +31768,7 @@ template&lt;typename DerivedX , typename DerivedY , typename Scalar , int DIM, i
   </table>
   </dd>
 </dl>
-<h4><a class="anchor" id="autotoc_md20"></a>
+<h4><a class="anchor" id="autotoc_md22"></a>
 Example</h4>
 <div class="fragment"><div class="line">MatrixXd X, Y; (containing 3d points as rows)</div>
 <div class="line">AffineCompact3d T;</div>
@@ -31918,7 +32040,7 @@ template&lt;typename DerivedV , typename DerivedM , typename DerivedN , typename
   </table>
   </dd>
 </dl>
-<h4><a class="anchor" id="autotoc_md21"></a>
+<h4><a class="anchor" id="autotoc_md23"></a>
 Example:</h4>
 <div class="fragment"><div class="line"><a class="code hl_class" href="classigl_1_1opengl_1_1glfw_1_1Viewer.html">igl::opengl::glfw::Viewer</a> vr;</div>
 <div class="line">...</div>
@@ -33927,7 +34049,7 @@ template&lt;typename DerivedI , typename URBG  = DEFAULT_URBG&gt; </div>
 </div>
 </div>
 <a id="af41f8552f81764bc8793cb5f76a87553" name="af41f8552f81764bc8793cb5f76a87553"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af41f8552f81764bc8793cb5f76a87553">&#9670;&#160;</a></span>ray_box_intersect()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af41f8552f81764bc8793cb5f76a87553">&#9670;&#160;</a></span>ray_box_intersect() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -33998,6 +34120,75 @@ template&lt;typename Derivedsource , typename Deriveddir , typename Scalar &gt; 
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if hit </dd></dl>
+
+</div>
+</div>
+<a id="a18af1e6cc596af264e3a02e02b823a01" name="a18af1e6cc596af264e3a02e02b823a01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18af1e6cc596af264e3a02e02b823a01">&#9670;&#160;</a></span>ray_box_intersect() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derivedsource , typename Deriveddir , typename Scalar &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool igl::ray_box_intersect </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::MatrixBase&lt; Derivedsource &gt; &amp;&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::MatrixBase&lt; Deriveddir &gt; &amp;&#160;</td>
+          <td class="paramname"><em>inv_dir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::MatrixBase&lt; Deriveddir &gt; &amp;&#160;</td>
+          <td class="paramname"><em>inv_dir_pad</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::AlignedBox&lt; Scalar, 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>box</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Scalar &amp;&#160;</td>
+          <td class="paramname"><em>t0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Scalar &amp;&#160;</td>
+          <td class="paramname"><em>t1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Scalar &amp;&#160;</td>
+          <td class="paramname"><em>tmin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Scalar &amp;&#160;</td>
+          <td class="paramname"><em>tmax</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+<p>same with direction inverse precomputed </p>
 
 </div>
 </div>
@@ -34276,7 +34467,7 @@ template&lt;typename Derivedo , typename Derivedd , typename Derivedc , typename
   </table>
   </dd>
 </dl>
-<h4><a class="anchor" id="autotoc_md22"></a>
+<h4><a class="anchor" id="autotoc_md24"></a>
 Side effects:</h4>
 <p>closes fp </p><dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
@@ -36436,7 +36627,7 @@ template&lt;typename DerivedV , typename DerivedF , typename DerivedN &gt; </div
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true on success, false on errors</dd></dl>
-<h4><a class="anchor" id="autotoc_md28"></a>
+<h4><a class="anchor" id="autotoc_md30"></a>
 Example</h4>
 <pre class="fragment">bool success = readSTL(filename,temp_V,F,N);
 remove_duplicate_vertices(temp_V,0,V,SVI,SVJ);
@@ -40807,7 +40998,7 @@ template&lt;typename DerivedP , typename DerivedV , typename DerivedF , typename
 </div><div class="memdoc">
 
 <p>Calculates signed distance at query points P, using fast winding number for sign. </p>
-<h4><a class="anchor" id="autotoc_md32"></a>
+<h4><a class="anchor" id="autotoc_md34"></a>
 Usage:</h4>
 <p>VectorXd S; <br  />
  VectorXd V, P; //where V is mesh vertices, P are query points VectorXi F; <br  />
@@ -41308,7 +41499,7 @@ template&lt;typename TX , typename TY , typename DerivedI &gt; </div>
   </table>
   </dd>
 </dl>
-<h4><a class="anchor" id="autotoc_md33"></a>
+<h4><a class="anchor" id="autotoc_md35"></a>
 Example</h4>
 <pre class="fragment">// Construct and slice up Laplacian
 SparseMatrix&lt;double&gt; L,L_sliced;
@@ -43507,7 +43698,7 @@ template&lt;typename DerivedI , typename Scalar &gt; </div>
   </table>
   </dd>
 </dl>
-<h4><a class="anchor" id="autotoc_md34"></a>
+<h4><a class="anchor" id="autotoc_md36"></a>
 Example:</h4>
 <pre class="fragment">  Eigen::SparseMatrix&lt;double&gt; A;
   std::vector&lt;Eigen::Triplet&lt;double&gt; &gt; IJV;
@@ -44888,7 +45079,7 @@ template&lt;typename DerivedGV , typename DerivedGT &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Construct vertices of a regular grid, suitable for input to <code><a class="el" href="namespaceigl.html#a0093d125cb961522130e5a1ab9b8ca27" title="Performs the marching tetrahedra algorithm on a tet mesh defined by TV and TT with scalar values defi...">igl::marching_tets</a></code> </p>
+<p>Construct vertices of a regular grid, suitable for input to <code><a class="el" href="namespaceigl.html#a5512306a29939c7ac8d4ebcef2cd032a" title="Performs the marching tetrahedra algorithm on a tet mesh defined by TV and TT with scalar values defi...">igl::marching_tets</a></code> </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">nx</td><td>number of grid vertices in x direction </td></tr>
@@ -45293,7 +45484,7 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<h4><a class="anchor" id="autotoc_md35"></a>
+<h4><a class="anchor" id="autotoc_md37"></a>
 Example:</h4>
 <p>A = [ 1 2 3 4 5 6 7 8 101 102 103 104 105 106 107 108 201 202 203 204 205 206 207 208]; transpose_blocks(A,1,3,B); B -&gt; [ 1 5 2 6 3 7 4 8 101 105 102 106 103 107 104 108 201 205 202 206 203 207 204 208]; </p>
 
@@ -46693,7 +46884,7 @@ template&lt;typename DerivedF , typename DerivedE , typename DeriveduE , typenam
   </table>
   </dd>
 </dl>
-<h4><a class="anchor" id="autotoc_md36"></a>
+<h4><a class="anchor" id="autotoc_md38"></a>
 Example:</h4>
 <div class="fragment"><div class="line"><span class="comment">// Using uE2E</span></div>
 <div class="line"><span class="keywordflow">for</span>(<span class="keywordtype">int</span> u = 0;u&lt;uE2E.size();u++)</div>
@@ -47449,7 +47640,7 @@ template&lt;typename DerivedV , typename DerivedF , typename Derivedbc &gt; </di
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if there's a hit</dd></dl>
-<h4><a class="anchor" id="autotoc_md37"></a>
+<h4><a class="anchor" id="autotoc_md39"></a>
 Example:</h4>
 <div class="fragment"><div class="line"><a class="code hl_class" href="classigl_1_1opengl_1_1glfw_1_1Viewer.html">igl::opengl::glfw::Viewer</a> vr;</div>
 <div class="line">...</div>
@@ -47646,7 +47837,7 @@ template&lt;typename DerivedA , typename DerivedU , typename DerivedG , typename
   </table>
   </dd>
 </dl>
-<h4><a class="anchor" id="autotoc_md38"></a>
+<h4><a class="anchor" id="autotoc_md40"></a>
 Matlibberish Example</h4>
 <p>[V,F,TC,FTC] = readOBJ('~/Downloads/kiwis/kiwi.obj'); [U,G] = unzip_corners(cat(3,F,FTC)); % display mesh tsurf(G,V(U(:,1),:)); % display texture coordinates tsurf(G,TC(U(:,2),:)); </p>
 

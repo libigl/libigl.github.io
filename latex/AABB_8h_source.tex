@@ -288,16 +288,36 @@
 \DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ \&\ sqr\_d,}
 \DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \&\ i,}
 \DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<RowVectorDIMS>\ \&\ c)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00446\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00447\ \ \ \ \ \ \ EIGEN\_MAKE\_ALIGNED\_OPERATOR\_NEW}
-\DoxyCodeLine{00448\ \ \ \ \ \};}
-\DoxyCodeLine{00449\ \}}
-\DoxyCodeLine{00450\ }
-\DoxyCodeLine{00451\ }
-\DoxyCodeLine{00452\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
-\DoxyCodeLine{00453\ \textcolor{preprocessor}{\#\ \ include\ "{}AABB.cpp"{}}}
-\DoxyCodeLine{00454\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00455\ }
-\DoxyCodeLine{00456\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00446\ }
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedEle>}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ intersect\_ray\_opt(}
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEle>\ \&\ Ele,}
+\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ origin,}
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ dir,}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ inv\_dir,}
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ inv\_dir\_pad,}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ std::vector<igl::Hit>\ \&\ hits)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedEle>}
+\DoxyCodeLine{00474\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ intersect\_ray\_opt(}
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEle>\ \&\ Ele,}
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ origin,}
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ dir,}
+\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ inv\_dir,}
+\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ inv\_dir\_pad,}
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ min\_t,}
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1Hit}{igl::Hit}}\ \&\ hit)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00483\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ EIGEN\_MAKE\_ALIGNED\_OPERATOR\_NEW}
+\DoxyCodeLine{00485\ \ \ \ \ \};}
+\DoxyCodeLine{00486\ \}}
+\DoxyCodeLine{00487\ }
+\DoxyCodeLine{00488\ }
+\DoxyCodeLine{00489\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00490\ \textcolor{preprocessor}{\#\ \ include\ "{}AABB.cpp"{}}}
+\DoxyCodeLine{00491\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00492\ }
+\DoxyCodeLine{00493\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

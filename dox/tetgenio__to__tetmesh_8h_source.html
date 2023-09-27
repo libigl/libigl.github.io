@@ -129,49 +129,38 @@ $(document).ready(function(){initNavTree('tetgenio__to__tetmesh_8h_source.html',
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  {</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">namespace </span>tetgen</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="namespaceigl_1_1copyleft_1_1tetgen.html#a63ecd5e93119c4b9eb62440cc0970294">   37</a></span>      <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceigl_1_1copyleft_1_1tetgen.html#a63ecd5e93119c4b9eb62440cc0970294">tetgenio_to_tetmesh</a>(</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keyword">const</span> tetgenio &amp; out,</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    std::vector&lt;std::vector&lt;REAL &gt; &gt; &amp; V,</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    std::vector&lt;std::vector&lt;int&gt; &gt; &amp; T,</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        std::vector&lt;std::vector&lt;int&gt; &gt; &amp; F, </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    std::vector&lt;std::vector&lt;REAL&gt; &gt; &amp; R,<span class="comment">// region marks for tetrahedrons</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    std::vector&lt;std::vector&lt;int &gt; &gt; &amp;N, <span class="comment">// neighborlist per tet</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    std::vector&lt;std::vector&lt;int &gt; &gt; &amp;PT, <span class="comment">// Point to tet list per point</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    std::vector&lt;std::vector&lt;int &gt; &gt; &amp;FT, <span class="comment">// face to tet list</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordtype">size_t</span> &amp; nR); <span class="comment">// number of regions    </span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="namespaceigl_1_1copyleft_1_1tetgen.html#ae61f5bd1bef2af521f0c09c47a979af5">   48</a></span>      <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceigl_1_1copyleft_1_1tetgen.html#a63ecd5e93119c4b9eb62440cc0970294">tetgenio_to_tetmesh</a>(</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>      <span class="keyword">template</span> &lt;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keyword">typename</span> DerivedV, </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keyword">typename</span> DerivedT,</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keyword">typename</span> DerivedF,</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keyword">typename</span> DerivedTM,</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keyword">typename</span> DerivedR,</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keyword">typename</span> DerivedN,</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keyword">typename</span> DerivedPT,</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keyword">typename</span> DerivedFT&gt;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="namespaceigl_1_1copyleft_1_1tetgen.html#a40a274b8a4538e1079a213b72d05eb9a">   48</a></span>      <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceigl_1_1copyleft_1_1tetgen.html#a40a274b8a4538e1079a213b72d05eb9a">tetgenio_to_tetmesh</a>(</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keyword">const</span> tetgenio &amp; out,</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        std::vector&lt;std::vector&lt;REAL &gt; &gt; &amp; V, </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        std::vector&lt;std::vector&lt;int&gt; &gt; &amp; T,</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        std::vector&lt;std::vector&lt;int&gt; &gt; &amp; F);</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="namespaceigl_1_1copyleft_1_1tetgen.html#ae60d719de3a41a70e8c4fa08d2d33e59">   54</a></span>      <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceigl_1_1copyleft_1_1tetgen.html#a63ecd5e93119c4b9eb62440cc0970294">tetgenio_to_tetmesh</a>(</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keyword">const</span> tetgenio &amp; out,</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        std::vector&lt;std::vector&lt;REAL &gt; &gt; &amp; V, </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        std::vector&lt;std::vector&lt;int&gt; &gt; &amp; T);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>      <span class="keyword">template</span> &lt;<span class="keyword">typename</span> DerivedV, <span class="keyword">typename</span> DerivedT, <span class="keyword">typename</span> DerivedF&gt;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="namespaceigl_1_1copyleft_1_1tetgen.html#a62c127834e91e67b7e4ebe347d4c23bb">   60</a></span>      <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceigl_1_1copyleft_1_1tetgen.html#a63ecd5e93119c4b9eb62440cc0970294">tetgenio_to_tetmesh</a>(</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keyword">const</span> tetgenio &amp; out,</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        Eigen::PlainObjectBase&lt;DerivedV&gt;&amp; V,</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        Eigen::PlainObjectBase&lt;DerivedT&gt;&amp; T,</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        Eigen::PlainObjectBase&lt;DerivedF&gt;&amp; F);</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>      <span class="keyword">template</span> &lt;<span class="keyword">typename</span> DerivedV, <span class="keyword">typename</span> DerivedT&gt;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="namespaceigl_1_1copyleft_1_1tetgen.html#a0ba8a207f28e5fc5eedb946f50562f18">   67</a></span>      <a class="code hl_define" href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a> <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceigl_1_1copyleft_1_1tetgen.html#a63ecd5e93119c4b9eb62440cc0970294">tetgenio_to_tetmesh</a>(</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keyword">const</span> tetgenio &amp; out,</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        Eigen::PlainObjectBase&lt;DerivedV&gt;&amp; V,</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        Eigen::PlainObjectBase&lt;DerivedT&gt;&amp; T);</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  }</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  }</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>}</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="preprocessor">#ifndef IGL_STATIC_LIBRARY</span></div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="preprocessor">#  include &quot;tetgenio_to_tetmesh.cpp&quot;</span></div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        Eigen::PlainObjectBase&lt;DerivedV&gt;&amp; V,</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        Eigen::PlainObjectBase&lt;DerivedT&gt;&amp; T,</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        Eigen::PlainObjectBase&lt;DerivedF&gt;&amp; F,</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        Eigen::PlainObjectBase&lt;DerivedTM&gt;&amp; TM,</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        Eigen::PlainObjectBase&lt;DerivedR&gt;&amp; R,</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        Eigen::PlainObjectBase&lt;DerivedN&gt;&amp; N,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        Eigen::PlainObjectBase&lt;DerivedPT&gt;&amp; PT,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        Eigen::PlainObjectBase&lt;DerivedFT&gt;&amp; FT,</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keywordtype">int</span> &amp; num_regions);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    }</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>}</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">#ifndef IGL_STATIC_LIBRARY</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="preprocessor">#  include &quot;tetgenio_to_tetmesh.cpp&quot;</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aigl__inline_8h_html_a838241279013352686271b4c4ce1f708"><div class="ttname"><a href="igl__inline_8h.html#a838241279013352686271b4c4ce1f708">IGL_INLINE</a></div><div class="ttdeci">#define IGL_INLINE</div><div class="ttdef"><b>Definition</b> igl_inline.h:15</div></div>
-<div class="ttc" id="anamespaceigl_1_1copyleft_1_1tetgen_html_a63ecd5e93119c4b9eb62440cc0970294"><div class="ttname"><a href="namespaceigl_1_1copyleft_1_1tetgen.html#a63ecd5e93119c4b9eb62440cc0970294">igl::copyleft::tetgen::tetgenio_to_tetmesh</a></div><div class="ttdeci">bool tetgenio_to_tetmesh(const tetgenio &amp;out, std::vector&lt; std::vector&lt; REAL &gt; &gt; &amp;V, std::vector&lt; std::vector&lt; int &gt; &gt; &amp;T, std::vector&lt; std::vector&lt; int &gt; &gt; &amp;F, std::vector&lt; std::vector&lt; REAL &gt; &gt; &amp;R, std::vector&lt; std::vector&lt; int &gt; &gt; &amp;N, std::vector&lt; std::vector&lt; int &gt; &gt; &amp;PT, std::vector&lt; std::vector&lt; int &gt; &gt; &amp;FT, size_t &amp;nR)</div><div class="ttdoc">Extract a tetrahedral mesh from a tetgenio object.</div></div>
+<div class="ttc" id="anamespaceigl_1_1copyleft_1_1tetgen_html_a40a274b8a4538e1079a213b72d05eb9a"><div class="ttname"><a href="namespaceigl_1_1copyleft_1_1tetgen.html#a40a274b8a4538e1079a213b72d05eb9a">igl::copyleft::tetgen::tetgenio_to_tetmesh</a></div><div class="ttdeci">bool tetgenio_to_tetmesh(const tetgenio &amp;out, Eigen::PlainObjectBase&lt; DerivedV &gt; &amp;V, Eigen::PlainObjectBase&lt; DerivedT &gt; &amp;T, Eigen::PlainObjectBase&lt; DerivedF &gt; &amp;F, Eigen::PlainObjectBase&lt; DerivedTM &gt; &amp;TM, Eigen::PlainObjectBase&lt; DerivedR &gt; &amp;R, Eigen::PlainObjectBase&lt; DerivedN &gt; &amp;N, Eigen::PlainObjectBase&lt; DerivedPT &gt; &amp;PT, Eigen::PlainObjectBase&lt; DerivedFT &gt; &amp;FT, int &amp;num_regions)</div><div class="ttdoc">Convert a tetgenio to a tetmesh.</div></div>
 <div class="ttc" id="anamespaceigl_html"><div class="ttname"><a href="namespaceigl.html">igl</a></div><div class="ttdef"><b>Definition</b> AABB.h:17</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

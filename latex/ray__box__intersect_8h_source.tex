@@ -28,10 +28,23 @@
 \DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{const}\ Scalar\ \&\ t1,}
 \DoxyCodeLine{00036\ \ \ \ \ Scalar\ \&\ tmin,}
 \DoxyCodeLine{00037\ \ \ \ \ Scalar\ \&\ tmax);}
-\DoxyCodeLine{00038\ \}}
-\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
-\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#\ \ include\ "{}ray\_box\_intersect.cpp"{}}}
-\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00040\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedsource,}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{typename}\ Deriveddir,}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{typename}\ Scalar>}
+\DoxyCodeLine{00044\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_af41f8552f81764bc8793cb5f76a87553}{ray\_box\_intersect}}(}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedsource>\ \&\ source,}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Deriveddir>\ \&\ inv\_dir,}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Deriveddir>\ \&\ inv\_dir\_pad,}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::AlignedBox<Scalar,3>\ \&\ box,}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{const}\ Scalar\ \&\ t0,}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{const}\ Scalar\ \&\ t1,}
+\DoxyCodeLine{00051\ \ \ \ \ Scalar\ \&\ tmin,}
+\DoxyCodeLine{00052\ \ \ \ \ Scalar\ \&\ tmax);}
+\DoxyCodeLine{00053\ \}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#\ \ include\ "{}ray\_box\_intersect.cpp"{}}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

@@ -20,14 +20,14 @@ namespace \mbox{\hyperlink{namespaceigl}{igl}}
 
 
 \doxysubsection{Detailed Description}
-\hypertarget{readDMAT_8h_autotoc_md23}{}\doxysubsection{\texorpdfstring{.\+dmat -\/ dense matrices}{.dmat - dense matrices}}\label{readDMAT_8h_autotoc_md23}
+\hypertarget{readDMAT_8h_autotoc_md25}{}\doxysubsection{\texorpdfstring{.\+dmat -\/ dense matrices}{.dmat - dense matrices}}\label{readDMAT_8h_autotoc_md25}
 \DoxyHorRuler{0}
 
 
-A .dmat file contains a dense matrix in column major order. It can contain ASCII or binary data. Note that it is uncompressed so binary only reduces the file size by 50\%. But writing and reading binary is usually faster. In MATLAB, binary is almost 100x faster.\hypertarget{readDMAT_8h_autotoc_md25}{}\doxysubsubsection{\texorpdfstring{ASCII}{ASCII}}\label{readDMAT_8h_autotoc_md25}
+A .dmat file contains a dense matrix in column major order. It can contain ASCII or binary data. Note that it is uncompressed so binary only reduces the file size by 50\%. But writing and reading binary is usually faster. In MATLAB, binary is almost 100x faster.\hypertarget{readDMAT_8h_autotoc_md27}{}\doxysubsubsection{\texorpdfstring{ASCII}{ASCII}}\label{readDMAT_8h_autotoc_md27}
 The first line is a header containing\+: \begin{DoxyVerb}[#cols] [#rows]
 \end{DoxyVerb}
- Then the coefficients are printed in column-\/major order separated by spaces.\hypertarget{readDMAT_8h_autotoc_md26}{}\doxysubsubsection{\texorpdfstring{Binary}{Binary}}\label{readDMAT_8h_autotoc_md26}
+ Then the coefficients are printed in column-\/major order separated by spaces.\hypertarget{readDMAT_8h_autotoc_md28}{}\doxysubsubsection{\texorpdfstring{Binary}{Binary}}\label{readDMAT_8h_autotoc_md28}
 Binary files will also contain the ascii header, but it should read\+: \begin{DoxyVerb}0 0
 \end{DoxyVerb}
  Then there should be another header containing the size of the binary part\+: \begin{DoxyVerb}[#cols] [#rows]
@@ -35,7 +35,7 @@ Binary files will also contain the ascii header, but it should read\+: \begin{Do
  Then coefficients are written in column-\/major order in Little-\/endian 8-\/byte double precision IEEE floating point format.
 
 {\bfseries{Note\+:}} Line endings must be `'~\newline
-\textquotesingle{}{\ttfamily aka}char(10)\`{} aka line feeds.\hypertarget{readDMAT_8h_autotoc_md27}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{readDMAT_8h_autotoc_md27}
+\textquotesingle{}{\ttfamily aka}char(10)\`{} aka line feeds.\hypertarget{readDMAT_8h_autotoc_md29}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{readDMAT_8h_autotoc_md29}
 \begin{DoxyVerb} The matrix m = [1 2 3; 4 5 6];
 \end{DoxyVerb}
  corresponds to a .dmat file containing\+: \begin{DoxyVerb}  3 2

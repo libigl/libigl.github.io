@@ -27,7 +27,7 @@ void \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_acdbcfdf0a634addbd8e3f7fd
 void \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_ade91972b4cf683917540b9f10e2574ca}{set\+\_\+visible}} (bool value, unsigned int core\+\_\+id=1)
 \begin{DoxyCompactList}\small\item\em Set whether this object is visible. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_ab44012abab5b16b87b76a622839292f5}{set\+\_\+colors}} (const Eigen\+::\+Matrix\+Xd \&C)
-\begin{DoxyCompactList}\small\item\em Set the color of the mesh. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Set the diffuse color of the mesh. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a5a4a3bd973759305cf8fda10d5e2a999}{set\+\_\+uv}} (const Eigen\+::\+Matrix\+Xd \&UV)
 \begin{DoxyCompactList}\small\item\em Set per-\/vertex UV coordinates. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classigl_1_1opengl_1_1ViewerData_a2ce2dbe479d1f212ae038b929ff06944}{set\+\_\+uv}} (const Eigen\+::\+Matrix\+Xd \&UV\+\_\+V, const Eigen\+::\+Matrix\+Xi \&UV\+\_\+F)
@@ -298,11 +298,13 @@ Set whether this object is visible.
 
 
 
-Set the color of the mesh. 
+Set the diffuse color of the mesh. 
+
+The ambient color will be set to 0.\+1\texorpdfstring{$\ast$}{*}C and the specular color will be set to 0.\+3+0.\+1\texorpdfstring{$\ast$}{*}(C-\/0.\+3).
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em C} & \doxylink{classigl_1_1opengl_1_1ViewerData_a1e9e01dcbb96b329c8da0dbb71c47554}{V}\texorpdfstring{$\vert$}{|}\doxylink{classigl_1_1opengl_1_1ViewerData_ac31a200e07734a7dbe33f991dca0cc87}{F}\texorpdfstring{$\vert$}{|}1 by 3 list of colors \\
+\mbox{\texttt{ in}}  & {\em C} & \doxylink{classigl_1_1opengl_1_1ViewerData_a1e9e01dcbb96b329c8da0dbb71c47554}{V}\texorpdfstring{$\vert$}{|}\doxylink{classigl_1_1opengl_1_1ViewerData_ac31a200e07734a7dbe33f991dca0cc87}{F}\texorpdfstring{$\vert$}{|}1 by 3 list of diffuse colors \\
 \hline
 \end{DoxyParams}
 \Hypertarget{classigl_1_1opengl_1_1ViewerData_a5a4a3bd973759305cf8fda10d5e2a999}\label{classigl_1_1opengl_1_1ViewerData_a5a4a3bd973759305cf8fda10d5e2a999} 

@@ -722,6 +722,8 @@ bool \mbox{\hyperlink{namespaceigl_a63e14036599fdc6d4f6706d26a542e92}{file\+\_\+
 \begin{DoxyCompactList}\small\item\em Check if a file or directory exists like PHP\textquotesingle{}s file\+\_\+exists function\+: \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , typename DerivedI , typename DerivedJ , typename DerivedV $>$ }\\void \mbox{\hyperlink{namespaceigl_ad0ba264f987871035fb7d12de96fccab}{find}} (const Eigen\+::\+Sparse\+Matrix$<$ T $>$ \&X, Eigen\+::\+Dense\+Base$<$ DerivedI $>$ \&I, Eigen\+::\+Dense\+Base$<$ DerivedJ $>$ \&J, Eigen\+::\+Dense\+Base$<$ DerivedV $>$ \&V)
 \begin{DoxyCompactList}\small\item\em Find the non-\/zero entries and there respective indices in a sparse matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ Eigen\+::\+Triplet$<$ T $>$ $>$ \mbox{\hyperlink{namespaceigl_a7ed5d2d6c493023192c2b2f1c5ed0bf0}{find}} (const Eigen\+::\+Sparse\+Matrix$<$ T $>$ \&X)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename DerivedX , typename DerivedI , typename DerivedJ , typename DerivedV $>$ }\\void \mbox{\hyperlink{namespaceigl_a2f6c699f94449b23813f0d80df36db8e}{find}} (const Eigen\+::\+Dense\+Base$<$ DerivedX $>$ \&X, Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&I, Eigen\+::\+Plain\+Object\+Base$<$ DerivedJ $>$ \&J, Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V)
 \begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename DerivedX , typename DerivedI $>$ }\\void \mbox{\hyperlink{namespaceigl_a1c874cf1ad179744026898ded3da4ea7}{find}} (const Eigen\+::\+Dense\+Base$<$ DerivedX $>$ \&X, Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&I)
@@ -777,7 +779,7 @@ void \mbox{\hyperlink{namespaceigl_a9b1822be03089dbefc97ae0274f7f744}{frame\+\_\
 {\footnotesize template$<$typename DerivedP $>$ }\\void \mbox{\hyperlink{namespaceigl_acd2f248b52f9534c49484e76be8aa0bc}{frustum}} (const typename Derived\+P\+::\+Scalar left, const typename Derived\+P\+::\+Scalar right, const typename Derived\+P\+::\+Scalar bottom, const typename Derived\+P\+::\+Scalar top, const typename Derived\+P\+::\+Scalar near\+Val, const typename Derived\+P\+::\+Scalar far\+Val, Eigen\+::\+Plain\+Object\+Base$<$ DerivedP $>$ \&P)
 \begin{DoxyCompactList}\small\item\em Implementation of the deprecated gl\+Frustum function. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedK $>$ }\\void \mbox{\hyperlink{namespaceigl_ad31a0406b0fb32f5345361442c0e85c9}{gaussian\+\_\+curvature}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ DerivedK $>$ \&K)
-\begin{DoxyCompactList}\small\item\em Compute discrete local integral gaussian curvature (angle deficit, without averaging by local area). \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Compute the 2π minus the sum of interior angles at each vertex. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{namespaceigl_a60bbc303acee156af52ab587c4680502}{DEFAULT\+\_\+\+URBG}} \mbox{\hyperlink{namespaceigl_a23d8ca74669cc6ed33b89020ee4f9b2e}{generate\+\_\+default\+\_\+urbg}} ()
 \item 
 double \mbox{\hyperlink{namespaceigl_a14a7a848b8b1eb296b5c8b80efc05efc}{get\+\_\+seconds}} ()
@@ -836,10 +838,14 @@ std\+::string \mbox{\hyperlink{namespaceigl_ab79410fbbb723767aecc21edcc5941cb}{g
 \begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename DerivedH , typename DerivedR $>$ }\\void \mbox{\hyperlink{namespaceigl_a3e2573040155e553e83f6b2098417ed2}{hsv\+\_\+to\+\_\+rgb}} (const Eigen\+::\+Plain\+Object\+Base$<$ DerivedH $>$ \&H, Eigen\+::\+Plain\+Object\+Base$<$ DerivedR $>$ \&R)
 \begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV , typename DerivedF $>$ }\\void \mbox{\hyperlink{namespaceigl_a91986768165db4e2fe4f6541db3a100e}{icosahedron}} (Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F)
+\item 
 {\footnotesize template$<$typename DerivedV , typename DerivedQ , int DIM$>$ }\\void \mbox{\hyperlink{namespaceigl_ae6a48ea815ed7c6fce66c5fb16643592}{in\+\_\+element}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Xi \&Ele, const Eigen\+::\+Matrix\+Base$<$ DerivedQ $>$ \&Q, const \mbox{\hyperlink{classigl_1_1AABB}{AABB}}$<$ DerivedV, DIM $>$ \&aabb, Eigen\+::\+Vector\+Xi \&I)
 \begin{DoxyCompactList}\small\item\em Determine whether each point in a list of points is in the elements of a mesh. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename DerivedV , typename DerivedQ , int DIM, typename Scalar $>$ }\\void \mbox{\hyperlink{namespaceigl_a1cc28747ccc281b8790d1ec2a07daf42}{in\+\_\+element}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Xi \&Ele, const Eigen\+::\+Matrix\+Base$<$ DerivedQ $>$ \&Q, const \mbox{\hyperlink{classigl_1_1AABB}{AABB}}$<$ DerivedV, DIM $>$ \&aabb, Eigen\+::\+Sparse\+Matrix$<$ Scalar $>$ \&I)
 \begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derived $>$ }\\void \mbox{\hyperlink{namespaceigl_ac35f10d1dc8993c19f76b5c2ba6c48e7}{increment\+\_\+ulp}} (Eigen\+::\+Matrix\+Base$<$ Derived $>$ \&inout, int it)
+\begin{DoxyCompactList}\small\item\em Increment Unit in Last Place of a matrix. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{namespaceigl_a0cba56449805461c9713bc29b8ebcc79}{infinite\+\_\+cost\+\_\+stopping\+\_\+condition}} (const \mbox{\hyperlink{namespaceigl_af967096efcc39e806f0c2b374e2ccc5f}{decimate\+\_\+cost\+\_\+and\+\_\+placement\+\_\+callback}} \&cost\+\_\+and\+\_\+placement, \mbox{\hyperlink{namespaceigl_a64c8b006ed52af02a20d1664722a94b3}{decimate\+\_\+stopping\+\_\+condition\+\_\+callback}} \&stopping\+\_\+condition)
 \begin{DoxyCompactList}\small\item\em Stopping condition function compatible with \doxylink{namespaceigl_a48e2a2c1ae537d160f7767a230be66b3}{igl\+::decimate}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{namespaceigl_a64c8b006ed52af02a20d1664722a94b3}{decimate\+\_\+stopping\+\_\+condition\+\_\+callback}} \mbox{\hyperlink{namespaceigl_a6f95773129e4cd1a29171858e1f313b5}{infinite\+\_\+cost\+\_\+stopping\+\_\+condition}} (const \mbox{\hyperlink{namespaceigl_af967096efcc39e806f0c2b374e2ccc5f}{decimate\+\_\+cost\+\_\+and\+\_\+placement\+\_\+callback}} \&cost\+\_\+and\+\_\+placement)
@@ -848,8 +854,8 @@ void \mbox{\hyperlink{namespaceigl_a0cba56449805461c9713bc29b8ebcc79}{infinite\+
 \begin{DoxyCompactList}\small\item\em Compute the inradius of each triangle in a mesh (V,F) \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedK $>$ }\\void \mbox{\hyperlink{namespaceigl_a748a89868e9e150c9d02736c6f304318}{internal\+\_\+angles}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ DerivedK $>$ \&K)
 \begin{DoxyCompactList}\small\item\em Compute internal angles for a triangle mesh. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename DerivedL , typename DerivedK $>$ }\\void \mbox{\hyperlink{namespaceigl_a73dde9718b67d33fc34e68f738c72e94}{internal\+\_\+angles\+\_\+using\+\_\+squared\+\_\+edge\+\_\+lengths}} (const Eigen\+::\+Matrix\+Base$<$ DerivedL $>$ \&L\+\_\+sq, Eigen\+::\+Plain\+Object\+Base$<$ DerivedK $>$ \&K)
-\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedL , typename DerivedK $>$ }\\void \mbox{\hyperlink{namespaceigl_a42cf87a6db6ebff753475465b9e0a6f3}{internal\+\_\+angles\+\_\+intrinsic}} (const Eigen\+::\+Matrix\+Base$<$ DerivedL $>$ \&L\+\_\+sq, Eigen\+::\+Plain\+Object\+Base$<$ DerivedK $>$ \&K)
+\begin{DoxyCompactList}\small\item\em Compute internal angles for a triangle mesh. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class M $>$ }\\void \mbox{\hyperlink{namespaceigl_a4f72acbb659a5c1d291a4cff36910a87}{intersect}} (const M \&A, const M \&B, M \&C)
 \begin{DoxyCompactList}\small\item\em Determine the intersect between two sets of coefficients using ==. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class M $>$ }\\M \mbox{\hyperlink{namespaceigl_a41a6a9d793818a4836de7c3faa524e26}{intersect}} (const M \&A, const M \&B)
@@ -1014,15 +1020,15 @@ double \mbox{\hyperlink{namespaceigl_a0a118619cf44f20a0956f9e856707aa2}{mapping\
 \begin{DoxyCompactList}\small\item\em Performs marching cubes reconstruction on a grid defined by values, and points, and generates a mesh defined by vertices and faces. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename DerivedS , typename Derived\+GV , typename Derived\+GI , typename DerivedV , typename DerivedF $>$ }\\void \mbox{\hyperlink{namespaceigl_af60d3b30634f77428770f2ae32f34059}{marching\+\_\+cubes}} (const Eigen\+::\+Matrix\+Base$<$ DerivedS $>$ \&S, const Eigen\+::\+Matrix\+Base$<$ Derived\+GV $>$ \&GV, const Eigen\+::\+Matrix\+Base$<$ Derived\+GI $>$ \&GI, const typename Derived\+S\+::\+Scalar isovalue, Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&V, Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F)
 \begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Derived\+TV , typename Derived\+TT , typename DerivedS , typename Derived\+SV , typename Derived\+SF , typename DerivedJ , typename BCType $>$ }\\void \mbox{\hyperlink{namespaceigl_a0093d125cb961522130e5a1ab9b8ca27}{marching\+\_\+tets}} (const Eigen\+::\+Matrix\+Base$<$ Derived\+TV $>$ \&TV, const Eigen\+::\+Matrix\+Base$<$ Derived\+TT $>$ \&TT, const Eigen\+::\+Matrix\+Base$<$ DerivedS $>$ \&S, double isovalue, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SV $>$ \&SV, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SF $>$ \&SF, Eigen\+::\+Plain\+Object\+Base$<$ DerivedJ $>$ \&J, Eigen\+::\+Sparse\+Matrix$<$ BCType $>$ \&BC)
+{\footnotesize template$<$typename Derived\+TV , typename Derived\+TT , typename DerivedS , typename Derived\+SV , typename Derived\+SF , typename DerivedJ , typename BCType $>$ }\\void \mbox{\hyperlink{namespaceigl_a5512306a29939c7ac8d4ebcef2cd032a}{marching\+\_\+tets}} (const Eigen\+::\+Matrix\+Base$<$ Derived\+TV $>$ \&TV, const Eigen\+::\+Matrix\+Base$<$ Derived\+TT $>$ \&TT, const Eigen\+::\+Matrix\+Base$<$ DerivedS $>$ \&S, const typename Derived\+S\+::\+Scalar isovalue, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SV $>$ \&SV, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SF $>$ \&SF, Eigen\+::\+Plain\+Object\+Base$<$ DerivedJ $>$ \&J, Eigen\+::\+Sparse\+Matrix$<$ BCType $>$ \&BC)
 \begin{DoxyCompactList}\small\item\em Performs the marching tetrahedra algorithm on a tet mesh defined by TV and TT with scalar values defined at each vertex in TV. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Derived\+TV , typename Derived\+TT , typename DerivedS , typename Derived\+SV , typename Derived\+SF , typename DerivedJ , typename BCType $>$ }\\void \mbox{\hyperlink{namespaceigl_aa49f489ae12ec4a901418253fcd3f3ed}{marching\+\_\+tets}} (const Eigen\+::\+Matrix\+Base$<$ Derived\+TV $>$ \&TV, const Eigen\+::\+Matrix\+Base$<$ Derived\+TT $>$ \&TT, const Eigen\+::\+Matrix\+Base$<$ DerivedS $>$ \&S, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SV $>$ \&SV, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SF $>$ \&SF, Eigen\+::\+Plain\+Object\+Base$<$ DerivedJ $>$ \&J, Eigen\+::\+Sparse\+Matrix$<$ BCType $>$ \&BC)
 \begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Derived\+TV , typename Derived\+TT , typename DerivedS , typename Derived\+SV , typename Derived\+SF , typename DerivedJ $>$ }\\void \mbox{\hyperlink{namespaceigl_aad9e83c54a585aaa12cd190c0e616f78}{marching\+\_\+tets}} (const Eigen\+::\+Matrix\+Base$<$ Derived\+TV $>$ \&TV, const Eigen\+::\+Matrix\+Base$<$ Derived\+TT $>$ \&TT, const Eigen\+::\+Matrix\+Base$<$ DerivedS $>$ \&S, double isovalue, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SV $>$ \&SV, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SF $>$ \&SF, Eigen\+::\+Plain\+Object\+Base$<$ DerivedJ $>$ \&J)
+{\footnotesize template$<$typename Derived\+TV , typename Derived\+TT , typename DerivedS , typename Derived\+SV , typename Derived\+SF , typename DerivedJ $>$ }\\void \mbox{\hyperlink{namespaceigl_a77b74374c21bab647512f658e050cc27}{marching\+\_\+tets}} (const Eigen\+::\+Matrix\+Base$<$ Derived\+TV $>$ \&TV, const Eigen\+::\+Matrix\+Base$<$ Derived\+TT $>$ \&TT, const Eigen\+::\+Matrix\+Base$<$ DerivedS $>$ \&S, const typename Derived\+S\+::\+Scalar isovalue, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SV $>$ \&SV, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SF $>$ \&SF, Eigen\+::\+Plain\+Object\+Base$<$ DerivedJ $>$ \&J)
 \begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Derived\+TV , typename Derived\+TT , typename DerivedS , typename Derived\+SV , typename Derived\+SF , typename BCType $>$ }\\void \mbox{\hyperlink{namespaceigl_a23bde721d023a222d5fe54c24c749d25}{marching\+\_\+tets}} (const Eigen\+::\+Matrix\+Base$<$ Derived\+TV $>$ \&TV, const Eigen\+::\+Matrix\+Base$<$ Derived\+TT $>$ \&TT, const Eigen\+::\+Matrix\+Base$<$ DerivedS $>$ \&S, double isovalue, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SV $>$ \&SV, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SF $>$ \&SF, Eigen\+::\+Sparse\+Matrix$<$ BCType $>$ \&BC)
+{\footnotesize template$<$typename Derived\+TV , typename Derived\+TT , typename DerivedS , typename Derived\+SV , typename Derived\+SF , typename BCType $>$ }\\void \mbox{\hyperlink{namespaceigl_ac630f9be345647d2008378e9489ea50e}{marching\+\_\+tets}} (const Eigen\+::\+Matrix\+Base$<$ Derived\+TV $>$ \&TV, const Eigen\+::\+Matrix\+Base$<$ Derived\+TT $>$ \&TT, const Eigen\+::\+Matrix\+Base$<$ DerivedS $>$ \&S, const typename Derived\+S\+::\+Scalar isovalue, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SV $>$ \&SV, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SF $>$ \&SF, Eigen\+::\+Sparse\+Matrix$<$ BCType $>$ \&BC)
 \begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Derived\+TV , typename Derived\+TT , typename DerivedS , typename Derived\+SV , typename Derived\+SF $>$ }\\void \mbox{\hyperlink{namespaceigl_a164e0e949f5e320e1fd2d9cc2bd1d40a}{marching\+\_\+tets}} (const Eigen\+::\+Matrix\+Base$<$ Derived\+TV $>$ \&TV, const Eigen\+::\+Matrix\+Base$<$ Derived\+TT $>$ \&TT, const Eigen\+::\+Matrix\+Base$<$ DerivedS $>$ \&S, double isovalue, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SV $>$ \&SV, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SF $>$ \&SF)
+{\footnotesize template$<$typename Derived\+TV , typename Derived\+TT , typename DerivedS , typename Derived\+SV , typename Derived\+SF $>$ }\\void \mbox{\hyperlink{namespaceigl_a4416636f9a80fb95a7656732a32dbf0f}{marching\+\_\+tets}} (const Eigen\+::\+Matrix\+Base$<$ Derived\+TV $>$ \&TV, const Eigen\+::\+Matrix\+Base$<$ Derived\+TT $>$ \&TT, const Eigen\+::\+Matrix\+Base$<$ DerivedS $>$ \&S, const typename Derived\+S\+::\+Scalar isovalue, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SV $>$ \&SV, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SF $>$ \&SF)
 \begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename DerivedV , typename DerivedF , typename Scalar $>$ }\\void \mbox{\hyperlink{namespaceigl_a72cf047d8b4df743c47bbbf0ba9dc6e1}{massmatrix}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const \mbox{\hyperlink{namespaceigl_a8ed02513847d2f3fdb8c74dcbe55bb90}{Mass\+Matrix\+Type}} type, Eigen\+::\+Sparse\+Matrix$<$ Scalar $>$ \&M)
 \begin{DoxyCompactList}\small\item\em Constructs the mass (area) matrix for a given mesh (V,F). \end{DoxyCompactList}\item 
@@ -1352,6 +1358,8 @@ Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{namespaceigl_a4782a4291e5724eb403de4686b8
 \begin{DoxyCompactList}\small\item\em Like matlab\textquotesingle{}s randperm(n) but minus 1. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Derivedsource , typename Deriveddir , typename Scalar $>$ }\\bool \mbox{\hyperlink{namespaceigl_af41f8552f81764bc8793cb5f76a87553}{ray\+\_\+box\+\_\+intersect}} (const Eigen\+::\+Matrix\+Base$<$ Derivedsource $>$ \&source, const Eigen\+::\+Matrix\+Base$<$ Deriveddir $>$ \&dir, const Eigen\+::\+Aligned\+Box$<$ Scalar, 3 $>$ \&box, const Scalar \&t0, const Scalar \&t1, Scalar \&tmin, Scalar \&tmax)
 \begin{DoxyCompactList}\small\item\em Determine whether a ray origin+t\texorpdfstring{$\ast$}{*}dir and box intersect within the ray\textquotesingle{}s parameterized range (t0,t1) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derivedsource , typename Deriveddir , typename Scalar $>$ }\\bool \mbox{\hyperlink{namespaceigl_a18af1e6cc596af264e3a02e02b823a01}{ray\+\_\+box\+\_\+intersect}} (const Eigen\+::\+Matrix\+Base$<$ Derivedsource $>$ \&source, const Eigen\+::\+Matrix\+Base$<$ Deriveddir $>$ \&inv\+\_\+dir, const Eigen\+::\+Matrix\+Base$<$ Deriveddir $>$ \&inv\+\_\+dir\+\_\+pad, const Eigen\+::\+Aligned\+Box$<$ Scalar, 3 $>$ \&box, const Scalar \&t0, const Scalar \&t1, Scalar \&tmin, Scalar \&tmax)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Derivedsource , typename Deriveddir , typename DerivedV , typename DerivedF $>$ }\\bool \mbox{\hyperlink{namespaceigl_adcb07bb96941cdba2a28b4239f88a246}{ray\+\_\+mesh\+\_\+intersect}} (const Eigen\+::\+Matrix\+Base$<$ Derivedsource $>$ \&source, const Eigen\+::\+Matrix\+Base$<$ Deriveddir $>$ \&dir, const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, std\+::vector$<$ \mbox{\hyperlink{structigl_1_1Hit}{igl\+::\+Hit}} $>$ \&hits)
 \begin{DoxyCompactList}\small\item\em Shoot a ray against a mesh (V,F) and collect all hits. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Derivedsource , typename Deriveddir , typename DerivedV , typename DerivedF $>$ }\\bool \mbox{\hyperlink{namespaceigl_a6a827e72cc935817ec986e83ce56cc73}{ray\+\_\+mesh\+\_\+intersect}} (const Eigen\+::\+Matrix\+Base$<$ Derivedsource $>$ \&source, const Eigen\+::\+Matrix\+Base$<$ Deriveddir $>$ \&dir, const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, \mbox{\hyperlink{structigl_1_1Hit}{igl\+::\+Hit}} \&hit)
@@ -1749,7 +1757,7 @@ void \mbox{\hyperlink{namespaceigl_a030deb66b915a2f498701588640ee3a4}{swept\+\_\
 {\footnotesize template$<$typename DerivedT , typename Derived\+TT $>$ }\\void \mbox{\hyperlink{namespaceigl_ada72de8eeac466f8cb2a52016a1bd1cf}{tet\+\_\+tet\+\_\+adjacency}} (const Eigen\+::\+Matrix\+Base$<$ DerivedT $>$ \&T, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+TT $>$ \&TT)
 \begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Derived\+GV , typename Derived\+GT $>$ }\\void \mbox{\hyperlink{namespaceigl_a09d82782b314ba8729b05712387f7ec4}{tetrahedralized\+\_\+grid}} (const int nx, const int ny, const int nz, const \mbox{\hyperlink{namespaceigl_ac3bae8c76c2714f3cce8b651ae93fae2}{Tetrahedralized\+Grip\+Type}} type, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+GV $>$ \&GV, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+GT $>$ \&GT)
-\begin{DoxyCompactList}\small\item\em Construct vertices of a regular grid, suitable for input to {\ttfamily \doxylink{namespaceigl_a0093d125cb961522130e5a1ab9b8ca27}{igl\+::marching\+\_\+tets}} \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Construct vertices of a regular grid, suitable for input to {\ttfamily \doxylink{namespaceigl_a5512306a29939c7ac8d4ebcef2cd032a}{igl\+::marching\+\_\+tets}} \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Derivedside , typename Derived\+GT $>$ }\\void \mbox{\hyperlink{namespaceigl_ae86a7e69f97c1ca839467731e3944441}{tetrahedralized\+\_\+grid}} (const Eigen\+::\+Matrix\+Base$<$ Derivedside $>$ \&side, const \mbox{\hyperlink{namespaceigl_ac3bae8c76c2714f3cce8b651ae93fae2}{Tetrahedralized\+Grip\+Type}} type, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+GT $>$ \&GT)
 \begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename DerivedF , typename Vector\+Index , typename Derived\+F\+\_\+filled $>$ }\\void \mbox{\hyperlink{namespaceigl_a6f1fa0516e3b6395846621d6a79507e8}{topological\+\_\+hole\+\_\+fill}} (const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const std\+::vector$<$ Vector\+Index $>$ \&holes, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+F\+\_\+filled $>$ \&F\+\_\+filled)
@@ -2844,7 +2852,7 @@ Constructs the graph adjacency list of a given mesh (V,F)
 \hline
 \mbox{\texttt{ out}}  & {\em A} & vector\texorpdfstring{$<$}{<}vector$<$\+T$>$ \texorpdfstring{$>$}{>} containing at row i the adjacent vertices of vertex i \\
 \hline
-\mbox{\texttt{ in}}  & {\em sorted} & flag that indicates if the list should be sorted counter-\/clockwise\\
+\mbox{\texttt{ in}}  & {\em sorted} & flag that indicates if the list should be sorted counter-\/clockwise. Input assumed to be manifold.\\
 \hline
 \end{DoxyParams}
 Example\+: 
@@ -6258,7 +6266,7 @@ Copy the given file to a new file with the same basename in {\ttfamily dir} dire
 \begin{DoxyReturn}{Returns}
 whether the copy was successful
 \end{DoxyReturn}
-\hypertarget{namespaceigl_autotoc_md7}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md7}
+\hypertarget{namespaceigl_autotoc_md8}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md8}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{namespaceigl_a73748b03f3e779d764d30d920653aba6}{dated\_copy}}(\textcolor{stringliteral}{"{}/path/to/foo"{}},\textcolor{stringliteral}{"{}/bar/"{}});}
@@ -7884,7 +7892,7 @@ This is especially useful if the face list contains only surface faces and you w
 \mbox{\texttt{ out}}  & {\em IM} & \#V by 1 list of indices such that\+: RF = IM(\+F) and RT = IM(\+T) and RV(\+IM,\+:) = V\\
 \hline
 \end{DoxyParams}
-\hypertarget{namespaceigl_autotoc_md11}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md11}
+\hypertarget{namespaceigl_autotoc_md12}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md12}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{comment}{//\ Tet\ mesh\ in\ (V,T,F)}}
@@ -8340,7 +8348,7 @@ true if file exists and is readable and false if file doesn\textquotesingle{}t e
 \Hypertarget{namespaceigl_ad0ba264f987871035fb7d12de96fccab}\label{namespaceigl_ad0ba264f987871035fb7d12de96fccab} 
 \index{igl@{igl}!find@{find}}
 \index{find@{find}!igl@{igl}}
-\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
 {\footnotesize\ttfamily template$<$typename T , typename DerivedI , typename DerivedJ , typename DerivedV $>$ \\
 void igl\+::find (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Sparse\+Matrix$<$ T $>$ \&}]{X,  }\item[{Eigen\+::\+Dense\+Base$<$ DerivedI $>$ \&}]{I,  }\item[{Eigen\+::\+Dense\+Base$<$ DerivedJ $>$ \&}]{J,  }\item[{Eigen\+::\+Dense\+Base$<$ DerivedV $>$ \&}]{V }\end{DoxyParamCaption})}
 
@@ -8366,10 +8374,21 @@ Like matlab\textquotesingle{}s \mbox{[}I,J,V\mbox{]} = find(\+X)
 \mbox{\texttt{ out}}  & {\em V} & nnz vector of type T non-\/zeros entries in X \\
 \hline
 \end{DoxyParams}
+\Hypertarget{namespaceigl_a7ed5d2d6c493023192c2b2f1c5ed0bf0}\label{namespaceigl_a7ed5d2d6c493023192c2b2f1c5ed0bf0} 
+\index{igl@{igl}!find@{find}}
+\index{find@{find}!igl@{igl}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$ Eigen\+::\+Triplet$<$ T $>$ $>$ igl\+::find (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Sparse\+Matrix$<$ T $>$ \&}]{X }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
 \Hypertarget{namespaceigl_a2f6c699f94449b23813f0d80df36db8e}\label{namespaceigl_a2f6c699f94449b23813f0d80df36db8e} 
 \index{igl@{igl}!find@{find}}
 \index{find@{find}!igl@{igl}}
-\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
 {\footnotesize\ttfamily template$<$typename DerivedX , typename DerivedI , typename DerivedJ , typename DerivedV $>$ \\
 void igl\+::find (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Dense\+Base$<$ DerivedX $>$ \&}]{X,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&}]{I,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedJ $>$ \&}]{J,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&}]{V }\end{DoxyParamCaption})}
 
@@ -8380,7 +8399,7 @@ This is an overloaded member function, provided for convenience. It differs from
 \Hypertarget{namespaceigl_a1c874cf1ad179744026898ded3da4ea7}\label{namespaceigl_a1c874cf1ad179744026898ded3da4ea7} 
 \index{igl@{igl}!find@{find}}
 \index{find@{find}!igl@{igl}}
-\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
 {\footnotesize\ttfamily template$<$typename DerivedX , typename DerivedI $>$ \\
 void igl\+::find (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Dense\+Base$<$ DerivedX $>$ \&}]{X,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&}]{I }\end{DoxyParamCaption})}
 
@@ -8396,7 +8415,7 @@ This is an overloaded member function, provided for convenience. It differs from
 \Hypertarget{namespaceigl_ab6758ca13380f9bd099c860aba705d45}\label{namespaceigl_ab6758ca13380f9bd099c860aba705d45} 
 \index{igl@{igl}!find@{find}}
 \index{find@{find}!igl@{igl}}
-\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
 void igl\+::find (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Sparse\+Vector$<$ T $>$ \&}]{X,  }\item[{Eigen\+::\+Matrix$<$ int, Eigen\+::\+Dynamic, 1 $>$ \&}]{I,  }\item[{Eigen\+::\+Matrix$<$ T, Eigen\+::\+Dynamic, 1 $>$ \&}]{V }\end{DoxyParamCaption})}
 
@@ -8407,7 +8426,7 @@ This is an overloaded member function, provided for convenience. It differs from
 \Hypertarget{namespaceigl_a35cd54b6c6bf02c39e4caf02782fcfbc}\label{namespaceigl_a35cd54b6c6bf02c39e4caf02782fcfbc} 
 \index{igl@{igl}!find@{find}}
 \index{find@{find}!igl@{igl}}
-\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
 {\footnotesize\ttfamily template$<$int Rows\+At\+Compile\+Time, int Max\+Rows\+At\+Compile\+Time$>$ \\
 std\+::vector$<$ int $>$ igl\+::find (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Array$<$ bool, Rows\+At\+Compile\+Time, 1, 0, Max\+Rows\+At\+Compile\+Time, 1 $>$ \&}]{M }\end{DoxyParamCaption})}
 
@@ -8423,8 +8442,8 @@ This overload facilitates the use of bool masks for Eigen slicing
 \begin{DoxyReturn}{Returns}
 indices of true entries in M
 \end{DoxyReturn}
-\label{namespaceigl_autotoc_md12}%
-\Hypertarget{namespaceigl_autotoc_md12}%
+\label{namespaceigl_autotoc_md13}%
+\Hypertarget{namespaceigl_autotoc_md13}%
  \doxysubparagraph*{Example}
 
 
@@ -8940,7 +8959,9 @@ void igl\+::gaussian\+\_\+curvature (\begin{DoxyParamCaption}\item[{const Eigen\
 
 
 
-Compute discrete local integral gaussian curvature (angle deficit, without averaging by local area). 
+Compute the 2π minus the sum of interior angles at each vertex. 
+
+For interior vertices of a manifold mesh this corresponds to the local integral gaussian curvature ("{}angle deficit"{}, without averaging by local area). For boundary vertices, this quantity is not so meaninful. FWIW, adding π to the output for boundary vertices would produce local integral geodesic curvature along the boundary curve.
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -8970,7 +8991,7 @@ Current time in seconds.
 \begin{DoxyReturn}{Returns}
 the current time in seconds since epoch
 \end{DoxyReturn}
-\hypertarget{namespaceigl_autotoc_md13}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md13}
+\hypertarget{namespaceigl_autotoc_md14}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md14}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&\ tictoc\ =\ []()}
@@ -9540,6 +9561,13 @@ This is an overloaded member function, provided for convenience. It differs from
 \mbox{\texttt{ out}}  & {\em R} & \#H by 3 list of rgb values \\
 \hline
 \end{DoxyParams}
+\Hypertarget{namespaceigl_a91986768165db4e2fe4f6541db3a100e}\label{namespaceigl_a91986768165db4e2fe4f6541db3a100e} 
+\index{igl@{igl}!icosahedron@{icosahedron}}
+\index{icosahedron@{icosahedron}!igl@{igl}}
+\doxysubsubsection{\texorpdfstring{icosahedron()}{icosahedron()}}
+{\footnotesize\ttfamily template$<$typename DerivedV , typename DerivedF $>$ \\
+void igl\+::icosahedron (\begin{DoxyParamCaption}\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&}]{F }\end{DoxyParamCaption})}
+
 \Hypertarget{namespaceigl_ae6a48ea815ed7c6fce66c5fb16643592}\label{namespaceigl_ae6a48ea815ed7c6fce66c5fb16643592} 
 \index{igl@{igl}!in\_element@{in\_element}}
 \index{in\_element@{in\_element}!igl@{igl}}
@@ -9583,6 +9611,24 @@ This is an overloaded member function, provided for convenience. It differs from
 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ out}}  & {\em I} & \#Q by \#\+Ele sparse matrix revealing whether each element contains each point\+: I(q,e) means point q is in element e \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespaceigl_ac35f10d1dc8993c19f76b5c2ba6c48e7}\label{namespaceigl_ac35f10d1dc8993c19f76b5c2ba6c48e7} 
+\index{igl@{igl}!increment\_ulp@{increment\_ulp}}
+\index{increment\_ulp@{increment\_ulp}!igl@{igl}}
+\doxysubsubsection{\texorpdfstring{increment\_ulp()}{increment\_ulp()}}
+{\footnotesize\ttfamily template$<$typename Derived $>$ \\
+void igl\+::increment\+\_\+ulp (\begin{DoxyParamCaption}\item[{Eigen\+::\+Matrix\+Base$<$ Derived $>$ \&}]{inout,  }\item[{int}]{it }\end{DoxyParamCaption})}
+
+
+
+Increment Unit in Last Place of a matrix. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em inout} & input matrix \\
+\hline
+\mbox{\texttt{ in}}  & {\em it} & number of increments \\
 \hline
 \end{DoxyParams}
 \Hypertarget{namespaceigl_a0cba56449805461c9713bc29b8ebcc79}\label{namespaceigl_a0cba56449805461c9713bc29b8ebcc79} 
@@ -9657,25 +9703,25 @@ Compute internal angles for a triangle mesh.
 \begin{DoxyNote}{Note}
 if poly-\/size ≠ 3 then dim must equal 3. 
 \end{DoxyNote}
-\Hypertarget{namespaceigl_a73dde9718b67d33fc34e68f738c72e94}\label{namespaceigl_a73dde9718b67d33fc34e68f738c72e94} 
-\index{igl@{igl}!internal\_angles\_using\_squared\_edge\_lengths@{internal\_angles\_using\_squared\_edge\_lengths}}
-\index{internal\_angles\_using\_squared\_edge\_lengths@{internal\_angles\_using\_squared\_edge\_lengths}!igl@{igl}}
-\doxysubsubsection{\texorpdfstring{internal\_angles\_using\_squared\_edge\_lengths()}{internal\_angles\_using\_squared\_edge\_lengths()}}
+\Hypertarget{namespaceigl_a42cf87a6db6ebff753475465b9e0a6f3}\label{namespaceigl_a42cf87a6db6ebff753475465b9e0a6f3} 
+\index{igl@{igl}!internal\_angles\_intrinsic@{internal\_angles\_intrinsic}}
+\index{internal\_angles\_intrinsic@{internal\_angles\_intrinsic}!igl@{igl}}
+\doxysubsubsection{\texorpdfstring{internal\_angles\_intrinsic()}{internal\_angles\_intrinsic()}}
 {\footnotesize\ttfamily template$<$typename DerivedL , typename DerivedK $>$ \\
-void igl\+::internal\+\_\+angles\+\_\+using\+\_\+squared\+\_\+edge\+\_\+lengths (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedL $>$ \&}]{L\+\_\+sq,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedK $>$ \&}]{K }\end{DoxyParamCaption})}
+void igl\+::internal\+\_\+angles\+\_\+intrinsic (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedL $>$ \&}]{L\+\_\+sq,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedK $>$ \&}]{K }\end{DoxyParamCaption})}
 
 
 
-This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+Compute internal angles for a triangle mesh. 
 
 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em L\+\_\+sq} & \#F by 3 list of squared edge lengths \\
 \hline
-\mbox{\texttt{ out}}  & {\em K} & \#F by poly-\/size eigen Matrix of internal angles for triangles, columns correspond to edges \mbox{[}1,2\mbox{]},\mbox{[}2,0\mbox{]},\mbox{[}0,1\mbox{]}\\
+\mbox{\texttt{ out}}  & {\em K} & \#F by poly-\/size eigen Matrix of internal angles for triangles, columns correspond to edges \mbox{[}1,2\mbox{]},\mbox{[}2,0\mbox{]},\mbox{[}0,1\mbox{]} \\
 \hline
 \end{DoxyParams}
-\doxylink{internal__angles_8h}{include/igl/internal\+\_\+angles.\+h} \Hypertarget{namespaceigl_a4f72acbb659a5c1d291a4cff36910a87}\label{namespaceigl_a4f72acbb659a5c1d291a4cff36910a87} 
+\Hypertarget{namespaceigl_a4f72acbb659a5c1d291a4cff36910a87}\label{namespaceigl_a4f72acbb659a5c1d291a4cff36910a87} 
 \index{igl@{igl}!intersect@{intersect}}
 \index{intersect@{intersect}!igl@{igl}}
 \doxysubsubsection{\texorpdfstring{intersect()}{intersect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -11496,12 +11542,12 @@ Sparse voxel version
 \mbox{\texttt{ in}}  & {\em GI} & \#\+GI by 8 list of grid corner indices into rows of GV \\
 \hline
 \end{DoxyParams}
-\Hypertarget{namespaceigl_a0093d125cb961522130e5a1ab9b8ca27}\label{namespaceigl_a0093d125cb961522130e5a1ab9b8ca27} 
+\Hypertarget{namespaceigl_a5512306a29939c7ac8d4ebcef2cd032a}\label{namespaceigl_a5512306a29939c7ac8d4ebcef2cd032a} 
 \index{igl@{igl}!marching\_tets@{marching\_tets}}
 \index{marching\_tets@{marching\_tets}!igl@{igl}}
 \doxysubsubsection{\texorpdfstring{marching\_tets()}{marching\_tets()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
 {\footnotesize\ttfamily template$<$typename Derived\+TV , typename Derived\+TT , typename DerivedS , typename Derived\+SV , typename Derived\+SF , typename DerivedJ , typename BCType $>$ \\
-void igl\+::marching\+\_\+tets (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+TV $>$ \&}]{TV,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+TT $>$ \&}]{TT,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedS $>$ \&}]{S,  }\item[{double}]{isovalue,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SV $>$ \&}]{SV,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SF $>$ \&}]{SF,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedJ $>$ \&}]{J,  }\item[{Eigen\+::\+Sparse\+Matrix$<$ BCType $>$ \&}]{BC }\end{DoxyParamCaption})}
+void igl\+::marching\+\_\+tets (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+TV $>$ \&}]{TV,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+TT $>$ \&}]{TT,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedS $>$ \&}]{S,  }\item[{const typename Derived\+S\+::\+Scalar}]{isovalue,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SV $>$ \&}]{SV,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SF $>$ \&}]{SF,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedJ $>$ \&}]{J,  }\item[{Eigen\+::\+Sparse\+Matrix$<$ BCType $>$ \&}]{BC }\end{DoxyParamCaption})}
 
 
 
@@ -11539,34 +11585,34 @@ void igl\+::marching\+\_\+tets (\begin{DoxyParamCaption}\item[{const Eigen\+::\+
 
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
 
-assumes isovalue = 0 \Hypertarget{namespaceigl_aad9e83c54a585aaa12cd190c0e616f78}\label{namespaceigl_aad9e83c54a585aaa12cd190c0e616f78} 
+assumes isovalue = 0 \Hypertarget{namespaceigl_a77b74374c21bab647512f658e050cc27}\label{namespaceigl_a77b74374c21bab647512f658e050cc27} 
 \index{igl@{igl}!marching\_tets@{marching\_tets}}
 \index{marching\_tets@{marching\_tets}!igl@{igl}}
 \doxysubsubsection{\texorpdfstring{marching\_tets()}{marching\_tets()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
 {\footnotesize\ttfamily template$<$typename Derived\+TV , typename Derived\+TT , typename DerivedS , typename Derived\+SV , typename Derived\+SF , typename DerivedJ $>$ \\
-void igl\+::marching\+\_\+tets (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+TV $>$ \&}]{TV,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+TT $>$ \&}]{TT,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedS $>$ \&}]{S,  }\item[{double}]{isovalue,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SV $>$ \&}]{SV,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SF $>$ \&}]{SF,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedJ $>$ \&}]{J }\end{DoxyParamCaption})}
+void igl\+::marching\+\_\+tets (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+TV $>$ \&}]{TV,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+TT $>$ \&}]{TT,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedS $>$ \&}]{S,  }\item[{const typename Derived\+S\+::\+Scalar}]{isovalue,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SV $>$ \&}]{SV,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SF $>$ \&}]{SF,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedJ $>$ \&}]{J }\end{DoxyParamCaption})}
 
 
 
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
 
-\Hypertarget{namespaceigl_a23bde721d023a222d5fe54c24c749d25}\label{namespaceigl_a23bde721d023a222d5fe54c24c749d25} 
+\Hypertarget{namespaceigl_ac630f9be345647d2008378e9489ea50e}\label{namespaceigl_ac630f9be345647d2008378e9489ea50e} 
 \index{igl@{igl}!marching\_tets@{marching\_tets}}
 \index{marching\_tets@{marching\_tets}!igl@{igl}}
 \doxysubsubsection{\texorpdfstring{marching\_tets()}{marching\_tets()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
 {\footnotesize\ttfamily template$<$typename Derived\+TV , typename Derived\+TT , typename DerivedS , typename Derived\+SV , typename Derived\+SF , typename BCType $>$ \\
-void igl\+::marching\+\_\+tets (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+TV $>$ \&}]{TV,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+TT $>$ \&}]{TT,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedS $>$ \&}]{S,  }\item[{double}]{isovalue,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SV $>$ \&}]{SV,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SF $>$ \&}]{SF,  }\item[{Eigen\+::\+Sparse\+Matrix$<$ BCType $>$ \&}]{BC }\end{DoxyParamCaption})}
+void igl\+::marching\+\_\+tets (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+TV $>$ \&}]{TV,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+TT $>$ \&}]{TT,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedS $>$ \&}]{S,  }\item[{const typename Derived\+S\+::\+Scalar}]{isovalue,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SV $>$ \&}]{SV,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SF $>$ \&}]{SF,  }\item[{Eigen\+::\+Sparse\+Matrix$<$ BCType $>$ \&}]{BC }\end{DoxyParamCaption})}
 
 
 
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
 
-\Hypertarget{namespaceigl_a164e0e949f5e320e1fd2d9cc2bd1d40a}\label{namespaceigl_a164e0e949f5e320e1fd2d9cc2bd1d40a} 
+\Hypertarget{namespaceigl_a4416636f9a80fb95a7656732a32dbf0f}\label{namespaceigl_a4416636f9a80fb95a7656732a32dbf0f} 
 \index{igl@{igl}!marching\_tets@{marching\_tets}}
 \index{marching\_tets@{marching\_tets}!igl@{igl}}
 \doxysubsubsection{\texorpdfstring{marching\_tets()}{marching\_tets()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
 {\footnotesize\ttfamily template$<$typename Derived\+TV , typename Derived\+TT , typename DerivedS , typename Derived\+SV , typename Derived\+SF $>$ \\
-void igl\+::marching\+\_\+tets (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+TV $>$ \&}]{TV,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+TT $>$ \&}]{TT,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedS $>$ \&}]{S,  }\item[{double}]{isovalue,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SV $>$ \&}]{SV,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SF $>$ \&}]{SF }\end{DoxyParamCaption})}
+void igl\+::marching\+\_\+tets (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+TV $>$ \&}]{TV,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+TT $>$ \&}]{TT,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedS $>$ \&}]{S,  }\item[{const typename Derived\+S\+::\+Scalar}]{isovalue,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SV $>$ \&}]{SV,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derived\+SF $>$ \&}]{SF }\end{DoxyParamCaption})}
 
 
 
@@ -11756,7 +11802,7 @@ This is a routine to print a matrix using format suitable for pasting into the m
 \begin{DoxyReturn}{Returns}
 Formatted matrix
 \end{DoxyReturn}
-\hypertarget{namespaceigl_autotoc_md14}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md14}
+\hypertarget{namespaceigl_autotoc_md15}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md15}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{comment}{//\ M\ :=\ [1\ 2\ 3;4\ 5\ 6];}}
@@ -11796,7 +11842,7 @@ const std\+::string igl\+::matlab\+\_\+format (\begin{DoxyParamCaption}\item[{co
 
 Same but for sparse matrices. 
 
-Print IJV format into an auxiliary variable and then print a call to sparse which will construct the sparse matrix\hypertarget{namespaceigl_autotoc_md15}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md15}
+Print IJV format into an auxiliary variable and then print a call to sparse which will construct the sparse matrix\hypertarget{namespaceigl_autotoc_md16}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md16}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{comment}{//\ S\ :=\ [0\ 2\ 3;4\ 5\ 0];}}
@@ -11844,7 +11890,7 @@ Just build and return the format.
 \begin{DoxyReturn}{Returns}
 eigen IOFormat object
 \end{DoxyReturn}
-\hypertarget{namespaceigl_autotoc_md16}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md16}
+\hypertarget{namespaceigl_autotoc_md17}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md17}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{comment}{//\ M\ :=\ [1\ 2\ 3;4\ 5\ 6];}}
@@ -12316,7 +12362,7 @@ Computes the moments of mass for a solid object bound by a triangle mesh.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em V} & \#V by dim list of rest domain positions \\
+\mbox{\texttt{ in}}  & {\em V} & \#V by 3 list of rest domain positions \\
 \hline
 \mbox{\texttt{ in}}  & {\em F} & \#F by 3 list of triangle indices into V \\
 \hline
@@ -12626,9 +12672,12 @@ Orient each component (identified by C) of a mesh (V,F) so the normals on averag
 \hline
 \mbox{\texttt{ out}}  & {\em FF} & \#F by 3 list of new triangle indices such that FF(\texorpdfstring{$\sim$}{\string~}I,\+:) = F(\texorpdfstring{$\sim$}{\string~}I,\+:) and FF(\+I,\+:) = fliplr(\+F(\+I,\+:)) (OK if \&FF = \&F) \\
 \hline
-\mbox{\texttt{ out}}  & {\em I} & max(\+C)+1 list of whether face has been flipped \\
+\mbox{\texttt{ out}}  & {\em I} & max(\+C)+1 list of whether face has been flipped\\
 \hline
 \end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{namespaceigl_aa7ea97ba9a25206eb1ba9d7469b371d1}{orientable\+\_\+patches}, reorient\+\_\+facets\+\_\+raycast 
+\end{DoxySeeAlso}
 \Hypertarget{namespaceigl_aa7ea97ba9a25206eb1ba9d7469b371d1}\label{namespaceigl_aa7ea97ba9a25206eb1ba9d7469b371d1} 
 \index{igl@{igl}!orientable\_patches@{orientable\_patches}}
 \index{orientable\_patches@{orientable\_patches}!igl@{igl}}
@@ -13130,7 +13179,7 @@ Function like PHP\textquotesingle{}s pathinfo to return information about path.
 \mbox{\texttt{ out}}  & {\em filename} & string containing filename (characters of basename before last \textquotesingle{}.\textquotesingle{})\\
 \hline
 \end{DoxyParams}
-\hypertarget{namespaceigl_autotoc_md17}{}\doxyparagraph{\texorpdfstring{Examples}{Examples}}\label{namespaceigl_autotoc_md17}
+\hypertarget{namespaceigl_autotoc_md18}{}\doxyparagraph{\texorpdfstring{Examples}{Examples}}\label{namespaceigl_autotoc_md18}
 \begin{DoxyVerb} input                     | dirname        basename       ext    filename
  "/"                       | "/"            ""             ""     ""
  "//"                      | "/"            ""             ""     ""
@@ -13333,7 +13382,7 @@ Compute face normals via vertex position list, face list.
 \mbox{\texttt{ out}}  & {\em N} & \#F by 3 eigen Matrix of mesh face (triangle) 3D normals\\
 \hline
 \end{DoxyParams}
-\hypertarget{namespaceigl_autotoc_md18}{}\doxyparagraph{\texorpdfstring{Example}{Example}}\label{namespaceigl_autotoc_md18}
+\hypertarget{namespaceigl_autotoc_md19}{}\doxyparagraph{\texorpdfstring{Example}{Example}}\label{namespaceigl_autotoc_md19}
 // Give degenerate faces (1/3,1/3,1/3)\texorpdfstring{$^\wedge$}{\string^}0.5 per\+\_\+face\+\_\+normals(V,F,Vector3d(1,1,1).normalized(),N); \Hypertarget{namespaceigl_aa5e240d2506aa22bb2a07edd7636d6cb}\label{namespaceigl_aa5e240d2506aa22bb2a07edd7636d6cb} 
 \index{igl@{igl}!per\_face\_normals@{per\_face\_normals}}
 \index{per\_face\_normals@{per\_face\_normals}!igl@{igl}}
@@ -13642,7 +13691,29 @@ Compute distances from a set of points P to a triangle mesh (V,F)
 \mbox{\texttt{ out}}  & {\em C} & \#P by 3 list of closest points\\
 \hline
 \end{DoxyParams}
-\Hypertarget{namespaceigl_a8c64da392edc068d98cf9c78ec8a6ee3}\label{namespaceigl_a8c64da392edc068d98cf9c78ec8a6ee3} 
+
+
+\label{namespaceigl_autotoc_md20}%
+\Hypertarget{namespaceigl_autotoc_md20}%
+ \doxysubparagraph*{Example\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Eigen::MatrixXd\ V;}
+\DoxyCodeLine{Eigen::MatrixXi\ F;}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceigl_a6bd18b073b51beb1500c10c4f2825aba}{igl::read\_triangle\_mesh}}(\textcolor{stringliteral}{"{}bunny.obj"{}},V,F);}
+\DoxyCodeLine{\textcolor{comment}{//\ 100\ points\ in\ [-\/1,1]³\ cube}}
+\DoxyCodeLine{Eigen::MatrixXd\ P\ =\ Eigen::MatrixXd::Random(100,3);}
+\DoxyCodeLine{Eigen::VectorXd\ sqrD;}
+\DoxyCodeLine{Eigen::VectorXi\ I;}
+\DoxyCodeLine{Eigen::MatrixXd\ C;}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceigl_ae9616bb9fd33e6c00dcb4e8f91952091}{igl::point\_mesh\_squared\_distance}}(P,V,F,sqrD,I,C);}
+\DoxyCodeLine{\textcolor{comment}{//\ Now\ sqrD(i)\ =\ squared\ distance\ from\ P.row(i)\ to\ mesh}}
+\DoxyCodeLine{\textcolor{comment}{//\ I(i)\ =\ closest\ primitive\ index}}
+\DoxyCodeLine{\textcolor{comment}{//\ C.row(i)\ =\ closest\ point\ on\ mesh\ to\ P.row(i)}}
+
+\end{DoxyCode}
+ \Hypertarget{namespaceigl_a8c64da392edc068d98cf9c78ec8a6ee3}\label{namespaceigl_a8c64da392edc068d98cf9c78ec8a6ee3} 
 \index{igl@{igl}!point\_simplex\_squared\_distance@{point\_simplex\_squared\_distance}}
 \index{point\_simplex\_squared\_distance@{point\_simplex\_squared\_distance}!igl@{igl}}
 \doxysubsubsection{\texorpdfstring{point\_simplex\_squared\_distance()}{point\_simplex\_squared\_distance()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -14037,7 +14108,7 @@ Given two point sets X,Y in R\texorpdfstring{$^\wedge$}{\string^}d find best sca
 \mbox{\texttt{ out}}  & {\em t} & translation\\
 \hline
 \end{DoxyParams}
-\hypertarget{namespaceigl_autotoc_md19}{}\doxyparagraph{\texorpdfstring{Example}{Example}}\label{namespaceigl_autotoc_md19}
+\hypertarget{namespaceigl_autotoc_md21}{}\doxyparagraph{\texorpdfstring{Example}{Example}}\label{namespaceigl_autotoc_md21}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{MatrixXd\ X,\ Y;\ (containing\ 3d\ points\ as\ rows)}
@@ -14068,7 +14139,7 @@ Same as above but returns Eigen transformation object.
 \\
 \hline
 \end{DoxyParams}
-\hypertarget{namespaceigl_autotoc_md20}{}\doxyparagraph{\texorpdfstring{Example}{Example}}\label{namespaceigl_autotoc_md20}
+\hypertarget{namespaceigl_autotoc_md22}{}\doxyparagraph{\texorpdfstring{Example}{Example}}\label{namespaceigl_autotoc_md22}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{MatrixXd\ X,\ Y;\ (containing\ 3d\ points\ as\ rows)}
@@ -14164,7 +14235,7 @@ This is an overloaded member function, provided for convenience. It differs from
 \mbox{\texttt{ out}}  & {\em P} & \#V by 3 list of screen space points\\
 \hline
 \end{DoxyParams}
-\hypertarget{namespaceigl_autotoc_md21}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md21}
+\hypertarget{namespaceigl_autotoc_md23}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md23}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{igl::opengl::glfw::Viewer}}\ vr;}
@@ -14941,7 +15012,7 @@ When urbg is not specified, randperm will use default random bit generator std\+
 \Hypertarget{namespaceigl_af41f8552f81764bc8793cb5f76a87553}\label{namespaceigl_af41f8552f81764bc8793cb5f76a87553} 
 \index{igl@{igl}!ray\_box\_intersect@{ray\_box\_intersect}}
 \index{ray\_box\_intersect@{ray\_box\_intersect}!igl@{igl}}
-\doxysubsubsection{\texorpdfstring{ray\_box\_intersect()}{ray\_box\_intersect()}}
+\doxysubsubsection{\texorpdfstring{ray\_box\_intersect()}{ray\_box\_intersect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily template$<$typename Derivedsource , typename Deriveddir , typename Scalar $>$ \\
 bool igl\+::ray\+\_\+box\+\_\+intersect (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ Derivedsource $>$ \&}]{source,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Deriveddir $>$ \&}]{dir,  }\item[{const Eigen\+::\+Aligned\+Box$<$ Scalar, 3 $>$ \&}]{box,  }\item[{const Scalar \&}]{t0,  }\item[{const Scalar \&}]{t1,  }\item[{Scalar \&}]{tmin,  }\item[{Scalar \&}]{tmax }\end{DoxyParamCaption})}
 
@@ -14969,7 +15040,18 @@ Determine whether a ray origin+t\texorpdfstring{$\ast$}{*}dir and box intersect 
 \begin{DoxyReturn}{Returns}
 true if hit 
 \end{DoxyReturn}
-\Hypertarget{namespaceigl_adcb07bb96941cdba2a28b4239f88a246}\label{namespaceigl_adcb07bb96941cdba2a28b4239f88a246} 
+\Hypertarget{namespaceigl_a18af1e6cc596af264e3a02e02b823a01}\label{namespaceigl_a18af1e6cc596af264e3a02e02b823a01} 
+\index{igl@{igl}!ray\_box\_intersect@{ray\_box\_intersect}}
+\index{ray\_box\_intersect@{ray\_box\_intersect}!igl@{igl}}
+\doxysubsubsection{\texorpdfstring{ray\_box\_intersect()}{ray\_box\_intersect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Derivedsource , typename Deriveddir , typename Scalar $>$ \\
+bool igl\+::ray\+\_\+box\+\_\+intersect (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ Derivedsource $>$ \&}]{source,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Deriveddir $>$ \&}]{inv\+\_\+dir,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Deriveddir $>$ \&}]{inv\+\_\+dir\+\_\+pad,  }\item[{const Eigen\+::\+Aligned\+Box$<$ Scalar, 3 $>$ \&}]{box,  }\item[{const Scalar \&}]{t0,  }\item[{const Scalar \&}]{t1,  }\item[{Scalar \&}]{tmin,  }\item[{Scalar \&}]{tmax }\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+same with direction inverse precomputed \Hypertarget{namespaceigl_adcb07bb96941cdba2a28b4239f88a246}\label{namespaceigl_adcb07bb96941cdba2a28b4239f88a246} 
 \index{igl@{igl}!ray\_mesh\_intersect@{ray\_mesh\_intersect}}
 \index{ray\_mesh\_intersect@{ray\_mesh\_intersect}!igl@{igl}}
 \doxysubsubsection{\texorpdfstring{ray\_mesh\_intersect()}{ray\_mesh\_intersect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -15070,7 +15152,7 @@ Read contents of file into a buffer of uint8\+\_\+t bytes.
 \mbox{\texttt{ out}}  & {\em file\+Buffer\+Bytes} & contents of file as vector of bytes\\
 \hline
 \end{DoxyParams}
-\hypertarget{namespaceigl_autotoc_md22}{}\doxyparagraph{\texorpdfstring{Side effects\+:}{Side effects:}}\label{namespaceigl_autotoc_md22}
+\hypertarget{namespaceigl_autotoc_md24}{}\doxyparagraph{\texorpdfstring{Side effects\+:}{Side effects:}}\label{namespaceigl_autotoc_md24}
 closes fp 
 \begin{DoxyExceptions}{Exceptions}
 {\em runtime\+\_\+error} & on error \\
@@ -15802,7 +15884,7 @@ Read a mesh from an ascii/binary stl file.
 \begin{DoxyReturn}{Returns}
 true on success, false on errors
 \end{DoxyReturn}
-\hypertarget{namespaceigl_autotoc_md28}{}\doxyparagraph{\texorpdfstring{Example}{Example}}\label{namespaceigl_autotoc_md28}
+\hypertarget{namespaceigl_autotoc_md30}{}\doxyparagraph{\texorpdfstring{Example}{Example}}\label{namespaceigl_autotoc_md30}
 \begin{DoxyVerb}bool success = readSTL(filename,temp_V,F,N);
 remove_duplicate_vertices(temp_V,0,V,SVI,SVJ);
 for_each(F.data(),F.data()+F.size(),[&SVJ](int & f){f=SVJ(f);});
@@ -17243,7 +17325,7 @@ void igl\+::signed\+\_\+distance\+\_\+fast\+\_\+winding\+\_\+number (\begin{Doxy
 
 Calculates signed distance at query points P, using fast winding number for sign. 
 
-\hypertarget{namespaceigl_autotoc_md32}{}\doxyparagraph{\texorpdfstring{Usage\+:}{Usage:}}\label{namespaceigl_autotoc_md32}
+\hypertarget{namespaceigl_autotoc_md34}{}\doxyparagraph{\texorpdfstring{Usage\+:}{Usage:}}\label{namespaceigl_autotoc_md34}
 Vector\+Xd S; ~\newline
  Vector\+Xd V, P; //where V is mesh vertices, P are query points Vector\+Xi F; ~\newline
  igl\+::\+Fast\+Winding\+Number\+BVH fwn\+\_\+bvh; \doxylink{namespaceigl_af9a50987fefc0df065fb3e2cde90c92e}{igl\+::fast\+\_\+winding\+\_\+number}(V.\+cast$<$float$>$(), F, 2, fwn\+\_\+bvh); igl\+::signed\+\_\+distance\+\_\+fast\+\_\+winding\+\_\+number(\+P,\+V,\+F,tree,fwn\+\_\+bvh,\+S);
@@ -17447,7 +17529,7 @@ This is a fast version of \doxylink{namespaceigl_a547a8704200d3af48fe92105c15a32
 \mbox{\texttt{ out}}  & {\em Y} & \#R by \#C matrix\\
 \hline
 \end{DoxyParams}
-\hypertarget{namespaceigl_autotoc_md33}{}\doxyparagraph{\texorpdfstring{Example}{Example}}\label{namespaceigl_autotoc_md33}
+\hypertarget{namespaceigl_autotoc_md35}{}\doxyparagraph{\texorpdfstring{Example}{Example}}\label{namespaceigl_autotoc_md35}
 \begin{DoxyVerb}// Construct and slice up Laplacian
 SparseMatrix<double> L,L_sliced;
 igl::cotmatrix(V,F,L);
@@ -18288,7 +18370,7 @@ Divides the construction in two phases, one for fixing the sparsity pattern, and
 \mbox{\texttt{ out}}  & {\em X} & m by n matrix of type T whose entries are to be found\\
 \hline
 \end{DoxyParams}
-\hypertarget{namespaceigl_autotoc_md34}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md34}
+\hypertarget{namespaceigl_autotoc_md36}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md36}
 \begin{DoxyVerb}  Eigen::SparseMatrix<double> A;
   std::vector<Eigen::Triplet<double> > IJV;
   slim_buildA(IJV);
@@ -18852,7 +18934,7 @@ void igl\+::tetrahedralized\+\_\+grid (\begin{DoxyParamCaption}\item[{const int}
 
 
 
-Construct vertices of a regular grid, suitable for input to {\ttfamily \doxylink{namespaceigl_a0093d125cb961522130e5a1ab9b8ca27}{igl\+::marching\+\_\+tets}} 
+Construct vertices of a regular grid, suitable for input to {\ttfamily \doxylink{namespaceigl_a5512306a29939c7ac8d4ebcef2cd032a}{igl\+::marching\+\_\+tets}} 
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -19008,7 +19090,7 @@ Transpose blocks of a matrix.
 \mbox{\texttt{ out}}  & {\em B} & n\texorpdfstring{$\ast$}{*}k by m (dim\+: 1) or n by m\texorpdfstring{$\ast$}{*}k (dim\+: 2) eigen Matrix of type T values, NOT allowed to be the same as A\\
 \hline
 \end{DoxyParams}
-\hypertarget{namespaceigl_autotoc_md35}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md35}
+\hypertarget{namespaceigl_autotoc_md37}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md37}
 A = \mbox{[} 1 2 3 4 5 6 7 8 101 102 103 104 105 106 107 108 201 202 203 204 205 206 207 208\mbox{]}; transpose\+\_\+blocks(\+A,1,3,\+B); B -\/\texorpdfstring{$>$}{>} \mbox{[} 1 5 2 6 3 7 4 8 101 105 102 106 103 107 104 108 201 205 202 206 203 207 204 208\mbox{]}; \Hypertarget{namespaceigl_a62161fdfef57c22542b38d735550b635}\label{namespaceigl_a62161fdfef57c22542b38d735550b635} 
 \index{igl@{igl}!tri\_tri\_overlap\_test\_3d@{tri\_tri\_overlap\_test\_3d}}
 \index{tri\_tri\_overlap\_test\_3d@{tri\_tri\_overlap\_test\_3d}!igl@{igl}}
@@ -19508,7 +19590,7 @@ It is usual much faster if your algorithm can be written in terms of (u\+EC,u\+E
 \mbox{\texttt{ out}}  & {\em u\+EE} & \#E list of indices into E, so that the consecutive segment of indices u\+EE.\+segment(u\+EC(i),u\+EC(i+1)-\/u\+EC(i)) lists all directed edges sharing the ith unique edge.\\
 \hline
 \end{DoxyParams}
-\hypertarget{namespaceigl_autotoc_md36}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md36}
+\hypertarget{namespaceigl_autotoc_md38}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md38}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{comment}{//\ Using\ uE2E}}
@@ -19802,7 +19884,7 @@ Unproject a screen location (using current opengl viewport, projection, and mode
 \begin{DoxyReturn}{Returns}
 true if there\textquotesingle{}s a hit
 \end{DoxyReturn}
-\hypertarget{namespaceigl_autotoc_md37}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md37}
+\hypertarget{namespaceigl_autotoc_md39}{}\doxyparagraph{\texorpdfstring{Example\+:}{Example:}}\label{namespaceigl_autotoc_md39}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{igl::opengl::glfw::Viewer}}\ vr;}
@@ -19881,7 +19963,7 @@ To pass a list of attributes this function takes an std\+::vector of std\+::refe
 \mbox{\texttt{ out}}  & {\em J} & \#F\texorpdfstring{$\ast$}{*}3 by 1 list of indices so that A\mbox{[}\mbox{]}(i,j) = U.\+row(i+j\texorpdfstring{$\ast$}{*}\#F)\\
 \hline
 \end{DoxyParams}
-\hypertarget{namespaceigl_autotoc_md38}{}\doxyparagraph{\texorpdfstring{Matlibberish Example}{Matlibberish Example}}\label{namespaceigl_autotoc_md38}
+\hypertarget{namespaceigl_autotoc_md40}{}\doxyparagraph{\texorpdfstring{Matlibberish Example}{Matlibberish Example}}\label{namespaceigl_autotoc_md40}
 \mbox{[}V,F,TC,FTC\mbox{]} = read\+OBJ(\textquotesingle{}\texorpdfstring{$\sim$}{\string~}/\+Downloads/kiwis/kiwi.obj\textquotesingle{}); \mbox{[}U,G\mbox{]} = unzip\+\_\+corners(cat(3,\+F,\+FTC)); \% display mesh tsurf(G,V(\+U(\+:,1),\+:)); \% display texture coordinates tsurf(G,TC(\+U(\+:,2),\+:)); \Hypertarget{namespaceigl_a7897e133babd19415648e5aaef9cc63a}\label{namespaceigl_a7897e133babd19415648e5aaef9cc63a} 
 \index{igl@{igl}!upsample@{upsample}}
 \index{upsample@{upsample}!igl@{igl}}

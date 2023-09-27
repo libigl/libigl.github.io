@@ -23,7 +23,7 @@ var searchData=
   ['point_5fareas_2eh_20',['point_areas.h',['../point__areas_8h.html',1,'']]],
   ['point_5fin_5fcircle_2eh_21',['point_in_circle.h',['../point__in__circle_8h.html',1,'']]],
   ['point_5finside_5fconvex_5fpolygon_2eh_22',['point_inside_convex_polygon.h',['../point__inside__convex__polygon_8h.html',1,'']]],
-  ['point_5fmesh_5fsquared_5fdistance_2eh_23',['point_mesh_squared_distance.h',['../point__mesh__squared__distance_8h.html',1,'(Global Namespace)'],['../copyleft_2cgal_2point__mesh__squared__distance_8h.html',1,'(Global Namespace)']]],
+  ['point_5fmesh_5fsquared_5fdistance_2eh_23',['point_mesh_squared_distance.h',['../copyleft_2cgal_2point__mesh__squared__distance_8h.html',1,'(Global Namespace)'],['../point__mesh__squared__distance_8h.html',1,'(Global Namespace)']]],
   ['point_5fsegment_5fsquared_5fdistance_2eh_24',['point_segment_squared_distance.h',['../point__segment__squared__distance_8h.html',1,'']]],
   ['point_5fsimplex_5fsquared_5fdistance_2eh_25',['point_simplex_squared_distance.h',['../point__simplex__squared__distance_8h.html',1,'']]],
   ['point_5fsolid_5fsigned_5fsquared_5fdistance_2eh_26',['point_solid_signed_squared_distance.h',['../point__solid__signed__squared__distance_8h.html',1,'']]],

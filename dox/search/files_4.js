@@ -12,7 +12,7 @@ var searchData=
   ['edge_5fvectors_2eh_9',['edge_vectors.h',['../edge__vectors_8h.html',1,'']]],
   ['edges_2eh_10',['edges.h',['../edges_8h.html',1,'']]],
   ['edges_5fto_5fpath_2eh_11',['edges_to_path.h',['../edges__to__path_8h.html',1,'']]],
-  ['eigs_2eh_12',['eigs.h',['../spectra_2eigs_8h.html',1,'(Global Namespace)'],['../eigs_8h.html',1,'(Global Namespace)']]],
+  ['eigs_2eh_12',['eigs.h',['../eigs_8h.html',1,'(Global Namespace)'],['../spectra_2eigs_8h.html',1,'(Global Namespace)']]],
   ['embreedevice_2eh_13',['EmbreeDevice.h',['../EmbreeDevice_8h.html',1,'']]],
   ['embreeintersector_2eh_14',['EmbreeIntersector.h',['../EmbreeIntersector_8h.html',1,'']]],
   ['embreerenderer_2eh_15',['EmbreeRenderer.h',['../EmbreeRenderer_8h.html',1,'']]],

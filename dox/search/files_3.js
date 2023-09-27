@@ -6,7 +6,7 @@ var searchData=
   ['decimate_5ftrivial_5fcallbacks_2eh_3',['decimate_trivial_callbacks.h',['../decimate__trivial__callbacks_8h.html',1,'']]],
   ['default_5fnum_5fthreads_2eh_4',['default_num_threads.h',['../default__num__threads_8h.html',1,'']]],
   ['deform_5fskeleton_2eh_5',['deform_skeleton.h',['../deform__skeleton_8h.html',1,'']]],
-  ['delaunay_5ftriangulation_2eh_6',['delaunay_triangulation.h',['../predicates_2delaunay__triangulation_8h.html',1,'(Global Namespace)'],['../delaunay__triangulation_8h.html',1,'(Global Namespace)'],['../copyleft_2cgal_2delaunay__triangulation_8h.html',1,'(Global Namespace)']]],
+  ['delaunay_5ftriangulation_2eh_6',['delaunay_triangulation.h',['../delaunay__triangulation_8h.html',1,'(Global Namespace)'],['../predicates_2delaunay__triangulation_8h.html',1,'(Global Namespace)'],['../copyleft_2cgal_2delaunay__triangulation_8h.html',1,'(Global Namespace)']]],
   ['destroy_5fshader_5fprogram_2eh_7',['destroy_shader_program.h',['../destroy__shader__program_8h.html',1,'']]],
   ['dfs_2eh_8',['dfs.h',['../dfs_8h.html',1,'']]],
   ['dihedral_5fangles_2eh_9',['dihedral_angles.h',['../dihedral__angles_8h.html',1,'']]],

@@ -146,9 +146,10 @@ Functions</h2></td></tr>
 <tr class="separator:ab7b723fc81098ef1841429fb1e127d76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ee614bf7fc62ec302b276934bc9a8cc" id="r_a0ee614bf7fc62ec302b276934bc9a8cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1opengl.html#a0ee614bf7fc62ec302b276934bc9a8cc">writeTGA</a> (<a class="el" href="structigl_1_1opengl_1_1gliGenericImage.html">gliGenericImage</a> *image, FILE *fp)</td></tr>
 <tr class="separator:a0ee614bf7fc62ec302b276934bc9a8cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18546398e939980318ed1cdbc9ccd2cc" id="r_a18546398e939980318ed1cdbc9ccd2cc"><td class="memItemLeft" align="right" valign="top">GLint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1opengl.html#a18546398e939980318ed1cdbc9ccd2cc">bind_vertex_attrib_array</a> (const GLuint program_shader, const std::string &amp;name, GLuint bufferID, const Eigen::Matrix&lt; float, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor &gt; &amp;M, bool refresh)</td></tr>
-<tr class="memdesc:a18546398e939980318ed1cdbc9ccd2cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bind a per-vertex array attribute and refresh its contents from an Eigen matrix.  <br /></td></tr>
-<tr class="separator:a18546398e939980318ed1cdbc9ccd2cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeec995e7405f0abc5605089526f4ed91" id="r_aeec995e7405f0abc5605089526f4ed91"><td class="memTemplParams" colspan="2">template&lt;typename Scalar , int RowsAtCompileTime, int ColsAtCompileTime&gt; </td></tr>
+<tr class="memitem:aeec995e7405f0abc5605089526f4ed91"><td class="memTemplItemLeft" align="right" valign="top">GLint&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1opengl.html#aeec995e7405f0abc5605089526f4ed91">bind_vertex_attrib_array</a> (const GLuint program_shader, const std::string &amp;name, GLuint bufferID, const Eigen::Matrix&lt; Scalar, RowsAtCompileTime, ColsAtCompileTime, Eigen::RowMajor &gt; &amp;M, const bool refresh)</td></tr>
+<tr class="memdesc:aeec995e7405f0abc5605089526f4ed91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bind a per-vertex array attribute and refresh its contents from an Eigen matrix.  <br /></td></tr>
+<tr class="separator:aeec995e7405f0abc5605089526f4ed91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb53eea84ee235ebd173c8c150ce4759" id="r_afb53eea84ee235ebd173c8c150ce4759"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceigl_1_1opengl.html#afb53eea84ee235ebd173c8c150ce4759">create_index_vbo</a> (const Eigen::MatrixXi &amp;F, GLuint &amp;F_vbo_id)</td></tr>
 <tr class="memdesc:afb53eea84ee235ebd173c8c150ce4759"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a VBO (Vertex Buffer Object) for a list of indices: GL_ELEMENT_ARRAY_BUFFER_ARB for the triangle indices (F)  <br /></td></tr>
 <tr class="separator:afb53eea84ee235ebd173c8c150ce4759"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -417,11 +418,13 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a18546398e939980318ed1cdbc9ccd2cc" name="a18546398e939980318ed1cdbc9ccd2cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18546398e939980318ed1cdbc9ccd2cc">&#9670;&#160;</a></span>bind_vertex_attrib_array()</h2>
+<a id="aeec995e7405f0abc5605089526f4ed91" name="aeec995e7405f0abc5605089526f4ed91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeec995e7405f0abc5605089526f4ed91">&#9670;&#160;</a></span>bind_vertex_attrib_array()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename Scalar , int RowsAtCompileTime, int ColsAtCompileTime&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">GLint igl::opengl::bind_vertex_attrib_array </td>
@@ -444,13 +447,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Eigen::Matrix&lt; float, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor &gt; &amp;&#160;</td>
+          <td class="paramtype">const Eigen::Matrix&lt; Scalar, RowsAtCompileTime, ColsAtCompileTime, Eigen::RowMajor &gt; &amp;&#160;</td>
           <td class="paramname"><em>M</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
+          <td class="paramtype">const bool&#160;</td>
           <td class="paramname"><em>refresh</em>&#160;</td>
         </tr>
         <tr>

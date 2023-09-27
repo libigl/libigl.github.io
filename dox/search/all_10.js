@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['q_0',['q',['../structigl_1_1ShapeupData.html#a3585a859a0981a599f554586cf7ba719',1,'igl::ShapeupData::Q'],['../structigl_1_1ArapDOFData.html#afc773159071cf32fd1cef5380b6b6c82',1,'igl::ArapDOFData::Q']]],
+  ['q_0',['q',['../structigl_1_1ArapDOFData.html#afc773159071cf32fd1cef5380b6b6c82',1,'igl::ArapDOFData::Q'],['../structigl_1_1ShapeupData.html#a3585a859a0981a599f554586cf7ba719',1,'igl::ShapeupData::Q']]],
   ['qr_5fllt_1',['QR_LLT',['../structigl_1_1min__quad__with__fixed__data.html#a0ecb4d6605c0d09f0d9cd9e3beaf9022a810e6fec9cfe02bad4897cb21380f6c9',1,'igl::min_quad_with_fixed_data']]],
   ['qslim_2',['qslim',['../namespaceigl.html#ad5a2ee54dd545ede9b79ee62905dfc4d',1,'igl']]],
   ['qslim_2eh_3',['qslim.h',['../qslim_8h.html',1,'']]],
   ['qslim_5foptimal_5fcollapse_5fedge_5fcallbacks_2eh_4',['qslim_optimal_collapse_edge_callbacks.h',['../qslim__optimal__collapse__edge__callbacks_8h.html',1,'']]],
-  ['quad_5fgrid_5',['quad_grid',['../namespaceigl.html#acb165fc9bf550b7a4248ef3e4750c7b5',1,'igl::quad_grid(const int nx, const int ny, Eigen::PlainObjectBase&lt; DerivedV &gt; &amp;V, Eigen::PlainObjectBase&lt; DerivedQ &gt; &amp;Q, Eigen::PlainObjectBase&lt; DerivedE &gt; &amp;E)'],['../namespaceigl.html#aa374c6a411a695fa5fec90e301b42daf',1,'igl::quad_grid(const int nx, const int ny, Eigen::PlainObjectBase&lt; DerivedQ &gt; &amp;Q, Eigen::PlainObjectBase&lt; DerivedE &gt; &amp;E)']]],
+  ['quad_5fgrid_5',['quad_grid',['../namespaceigl.html#aa374c6a411a695fa5fec90e301b42daf',1,'igl::quad_grid(const int nx, const int ny, Eigen::PlainObjectBase&lt; DerivedQ &gt; &amp;Q, Eigen::PlainObjectBase&lt; DerivedE &gt; &amp;E)'],['../namespaceigl.html#acb165fc9bf550b7a4248ef3e4750c7b5',1,'igl::quad_grid(const int nx, const int ny, Eigen::PlainObjectBase&lt; DerivedV &gt; &amp;V, Eigen::PlainObjectBase&lt; DerivedQ &gt; &amp;Q, Eigen::PlainObjectBase&lt; DerivedE &gt; &amp;E)']]],
   ['quad_5fgrid_2eh_6',['quad_grid.h',['../quad__grid_8h.html',1,'']]],
   ['quad_5fplanarity_7',['quad_planarity',['../namespaceigl.html#addf84125e942c49f765c4d652f607cd2',1,'igl']]],
   ['quad_5fplanarity_2eh_8',['quad_planarity.h',['../quad__planarity_8h.html',1,'']]],

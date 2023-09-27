@@ -23,6 +23,11 @@ var namespaceigl_1_1copyleft_1_1cgal =
       [ "KEEP_INSIDE", "namespaceigl_1_1copyleft_1_1cgal.html#a652b3870ca0cbdd378a3b383ba9bd5f2a4fe1fa3cfe8bfbb3dd60b8c84f3118ce", null ],
       [ "KEEP_ALL", "namespaceigl_1_1copyleft_1_1cgal.html#a652b3870ca0cbdd378a3b383ba9bd5f2a224588758e6408e9ad5fff0b04142844", null ]
     ] ],
+    [ "TrimWithSolidMethod", "namespaceigl_1_1copyleft_1_1cgal.html#a2ed8d1b22fc3cb87822647766b3dc863", [
+      [ "CHECK_EACH_FACE", "namespaceigl_1_1copyleft_1_1cgal.html#a2ed8d1b22fc3cb87822647766b3dc863af6beb371c912a1daa28342fb54aa5644", null ],
+      [ "CHECK_EACH_PATCH", "namespaceigl_1_1copyleft_1_1cgal.html#a2ed8d1b22fc3cb87822647766b3dc863a2fa5c48d2f98ca34cd4cc7a247120d35", null ],
+      [ "RESOLVE_BOTH_AND_RESTORE_THEN_CHECK_EACH_PATCH", "namespaceigl_1_1copyleft_1_1cgal.html#a2ed8d1b22fc3cb87822647766b3dc863a1c69a30202b872a482875c36d59d9252", null ]
+    ] ],
     [ "assign", "namespaceigl_1_1copyleft_1_1cgal.html#a12c0c03c36999f6c7b35421c59ac9ca4", null ],
     [ "assign", "namespaceigl_1_1copyleft_1_1cgal.html#a76ac4bd4ebabba6c96eb47d91a52bf2b", null ],
     [ "assign", "namespaceigl_1_1copyleft_1_1cgal.html#ab463bca3955e73d59383a31bdff724db", null ],
@@ -119,6 +124,7 @@ var namespaceigl_1_1copyleft_1_1cgal =
     [ "relabel_small_immersed_cells", "namespaceigl_1_1copyleft_1_1cgal.html#a3d3dc739f900eb1f9479e974de035d2c", null ],
     [ "remesh_intersections", "namespaceigl_1_1copyleft_1_1cgal.html#a99d687331f910fef280e3a0e5f5370c7", null ],
     [ "remesh_self_intersections", "namespaceigl_1_1copyleft_1_1cgal.html#a7169f4ae2fe2c11f7e878b41aa747fc2", null ],
+    [ "remesh_self_intersections", "namespaceigl_1_1copyleft_1_1cgal.html#a65f8fa9920a99cd809e2944afed7c908", null ],
     [ "resolve_intersections", "namespaceigl_1_1copyleft_1_1cgal.html#a4711ebc19670232979ddfafeea023a6c", null ],
     [ "row_to_point", "namespaceigl_1_1copyleft_1_1cgal.html#aacfa81a78943385b9146fe53e121b380", null ],
     [ "segment_segment_squared_distance", "namespaceigl_1_1copyleft_1_1cgal.html#a1cd33a114c5e272d9d444bea740c4cfc", null ],
@@ -131,6 +137,7 @@ var namespaceigl_1_1copyleft_1_1cgal =
     [ "triangle_triangle_squared_distance", "namespaceigl_1_1copyleft_1_1cgal.html#a745c9671e98e82bb4f285b028c1aa8c9", null ],
     [ "triangulate", "namespaceigl_1_1copyleft_1_1cgal.html#a2c5d9c112aaddddfc00781eb000fddd4", null ],
     [ "trim_with_solid", "namespaceigl_1_1copyleft_1_1cgal.html#a6dca57f7cfcb9b65b561d5d3ccec99be", null ],
+    [ "trim_with_solid", "namespaceigl_1_1copyleft_1_1cgal.html#ace643f9725b6a5aad6e10cadb57f0de0", null ],
     [ "wire_mesh", "namespaceigl_1_1copyleft_1_1cgal.html#a1da8adecc2e7b09a987748532fb975d2", null ],
     [ "wire_mesh", "namespaceigl_1_1copyleft_1_1cgal.html#a7dc5cdc053c1f25a930d46be790a7c74", null ],
     [ "wire_mesh", "namespaceigl_1_1copyleft_1_1cgal.html#a88a350d009b191ea77e7bb454a2936d7", null ]

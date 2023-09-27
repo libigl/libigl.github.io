@@ -133,7 +133,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ade91972b4cf683917540b9f10e2574ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set whether this object is visible.  <br /></td></tr>
 <tr class="separator:ade91972b4cf683917540b9f10e2574ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab44012abab5b16b87b76a622839292f5" id="r_ab44012abab5b16b87b76a622839292f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#ab44012abab5b16b87b76a622839292f5">set_colors</a> (const Eigen::MatrixXd &amp;C)</td></tr>
-<tr class="memdesc:ab44012abab5b16b87b76a622839292f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the color of the mesh.  <br /></td></tr>
+<tr class="memdesc:ab44012abab5b16b87b76a622839292f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the diffuse color of the mesh.  <br /></td></tr>
 <tr class="separator:ab44012abab5b16b87b76a622839292f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a4a3bd973759305cf8fda10d5e2a999" id="r_a5a4a3bd973759305cf8fda10d5e2a999"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a5a4a3bd973759305cf8fda10d5e2a999">set_uv</a> (const Eigen::MatrixXd &amp;UV)</td></tr>
 <tr class="memdesc:a5a4a3bd973759305cf8fda10d5e2a999"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set per-vertex UV coordinates.  <br /></td></tr>
@@ -557,10 +557,11 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Set the color of the mesh. </p>
+<p>Set the diffuse color of the mesh. </p>
+<p>The ambient color will be set to 0.1*C and the specular color will be set to 0.3+0.1*(C-0.3).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">C</td><td><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a1e9e01dcbb96b329c8da0dbb71c47554" title="Vertices of the current mesh (V x 3)">V</a>|<a class="el" href="classigl_1_1opengl_1_1ViewerData.html#ac31a200e07734a7dbe33f991dca0cc87" title="Faces of the mesh (F x 3)">F</a>|1 by 3 list of colors </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">C</td><td><a class="el" href="classigl_1_1opengl_1_1ViewerData.html#a1e9e01dcbb96b329c8da0dbb71c47554" title="Vertices of the current mesh (V x 3)">V</a>|<a class="el" href="classigl_1_1opengl_1_1ViewerData.html#ac31a200e07734a7dbe33f991dca0cc87" title="Faces of the mesh (F x 3)">F</a>|1 by 3 list of diffuse colors </td></tr>
   </table>
   </dd>
 </dl>
