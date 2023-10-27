@@ -1646,11 +1646,10 @@ rotations.
 The most popular technique is linear blend skinning. Each point on the shape
 computes its new location as a linear combination of bone transformations:
 
- $\mathbf{x}' = \sum\limits_{i = 1}^m w_i(\mathbf{x}) \mathbf{T}_i
- \left(\begin{array}{c}\mathbf{x}_i\\1\end{array}\right),$
+ $\mathbf{x}' = \sum\limits_{i = 1}^m w_i(\mathbf{x}) \mathbf{T}_i \left(\begin{array}{c}\mathbf{x}\\1\end{array}\right),$
 
-where $w_i(\mathbf{x})$ is the scalar _weight function_ of the ith bone evaluated at
-$\mathbf{x}$ and $\mathbf{T}_i$ is the bone transformation as a $4 \times 3$
+where $\mathbf{x}'$ and $\mathbf{x}$ are column vectors,  $w_i(\mathbf{x})$ is the scalar _weight function_ of the ith bone evaluated at
+$\mathbf{x}$ and $\mathbf{T}_i$ is the bone transformation as a $3 \times 4$
 matrix.
 
 This formula is embarassingly parallel (computation at one point does not
@@ -1666,8 +1665,8 @@ multiplication:
  $\mathbf{X}' = \mathbf{M} \mathbf{T},$
 
 where $\mathbf{X}'$ is $n \times 3$ stack of deformed positions as row
-vectors, $\mathbf{M}$ is a $n \times m\cdot dim$ matrix containing weights and
-rest positions and $\mathbf{T}$ is a $m\cdot (dim+1) \times dim$ stack of
+vectors, $\mathbf{M}$ is a $n \times 4m$ matrix containing weights and
+rest positions and $\mathbf{T}$ is a $4m \times 3$ stack of
 transposed bone transformations.
 
 Traditionally, the weight functions $w_j$ are painted manually by skilled
