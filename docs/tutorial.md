@@ -882,7 +882,7 @@ for(int i : vertices)
 }
 ```
 
-Similarly as before, it may seem to loop over one-rings without having an half-edge data structure. However, this is not the case, since the Laplacian may be built by summing together contributions for each triangle, much in spirit with its FEM discretization
+Similarly as before, it may seem inefficient to loop over one-rings without having an half-edge data structure. However, this is not the case, since the Laplacian may be built by summing together contributions for each triangle, much in spirit with its FEM discretization
 of the Dirichlet energy (sum of squared gradients):
 
 ```cpp
