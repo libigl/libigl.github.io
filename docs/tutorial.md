@@ -3734,7 +3734,7 @@ In libigl, if your input solid's surface is represented by `(V,F)` then the
 output surface mesh will be `(SV,SF)` after calling:
 
 ```cpp
-igl::copyleft::swept_volume(V,F,num_time_steps,grid_size,isolevel,SV,SF);
+igl::swept_volume(V,F,num_time_steps,grid_size,isolevel,SV,SF);
 ```
 
 The `isolevel` parameter can be set to zero to approximate the exact swept
