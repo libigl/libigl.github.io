@@ -24,7 +24,7 @@ triangle indices `F`.
 _Optionally_ the library may also be
 [pre-compiled](https://libigl.github.io/static-library/) into a
 statically linked library, for faster compile times with your projects. This
-only effects compile time (run-time performance and behavior is identical). If
+only affects compile time (run-time performance and behavior is identical). If
 in doubt, use the header-only default mode: (i.e. just include the headers you
 want to use).
 
@@ -245,8 +245,8 @@ few labs/companies/institutions using libigl:
  - Columbia University, [Columbia Computer Graphics Group](http://www.cs.columbia.edu/cg/), USA
  - [Cornell University](http://www.graphics.cornell.edu/), USA
  - [Czech Technical University in Prague](http://dcgi.felk.cvut.cz/), Czech
- - EPF Lausanne, [Computer Graphics and Geometry Laboratory](http://lgg.epfl.ch/people.php), Switzerland
- - ETH Zurich, [Interactive Geometry Lab](http://igl.ethz.ch/) and [Advanced Technologies Lab](http://ait.inf.ethz.ch/), Swizterland
+ - EPFL, [Computer Graphics and Geometry Laboratory](http://lgg.epfl.ch/people.php), Lausanne, Switzerland
+ - ETH Zurich, [Interactive Geometry Lab](http://igl.ethz.ch/) and [Advanced Technologies Lab](http://ait.inf.ethz.ch/), Switzerland
  - George Mason University, [CraGL](http://cs.gmu.edu/~ygingold/), USA
  - [Hong Kong University of Science and Technology](http://www.ust.hk/), Hong Kong
  - [Inria, Université Grenoble Alpes](https://www.inria.fr/centre/grenoble/), France
