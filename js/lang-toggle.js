@@ -13,21 +13,6 @@
   var PY_HOME = "/python/api/";
   var CPP_HOME = "/dox/index.html";
 
-  // Symbol of the page we are on, or null.
-  function currentSymbol(path, lang) {
-    if (lang === "cpp") {
-      // Doxygen file-reference pages: <name>_8h.html, underscores doubled.
-      var m = path.match(/\/([^\/]+)_8h\.html$/);
-      if (m) return m[1].replace(/__/g, "_").toLowerCase();
-      return null;
-    }
-    if (lang === "py") {
-      var h = (location.hash || "").replace(/^#/, "");
-      return h ? h.toLowerCase() : null;
-    }
-    return null;
-  }
-
   function currentLang(path) {
     if (path.indexOf("/dox/") !== -1) return "cpp";
     if (path.indexOf("/python/") !== -1) return "py";
@@ -35,14 +20,24 @@
   }
 
   function build(map) {
+    var sym2cpp = map.sym2cpp || {};
+    var cpp2py = map.cpp2py || {};
     var path = location.pathname;
     var lang = currentLang(path);
-    var sym = currentSymbol(path, lang);
-    var entry = (sym && map[sym]) || {};
+    var here = path + location.hash;
 
-    var here = location.pathname + location.hash;
-    var cppHref = lang === "cpp" ? here : (entry.cpp || CPP_HOME);
-    var pyHref = lang === "py" ? here : (entry.py || PY_HOME);
+    var cppHref, pyHref;
+    if (lang === "py") {
+      pyHref = here;
+      var sym = (location.hash || "").replace(/^#/, "").toLowerCase();
+      cppHref = (sym && sym2cpp[sym]) || CPP_HOME;
+    } else {
+      cppHref = here;
+      // Look up this Doxygen page's filename directly (handles the
+      // directory-disambiguated names like copyleft_2marching__cubes_8h.html).
+      var fname = path.split("/").pop();
+      pyHref = cpp2py[fname] || PY_HOME;
+    }
 
     var el = document.createElement("div");
     el.className = "lang-toggle";
