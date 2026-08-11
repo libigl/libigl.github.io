@@ -20,10 +20,16 @@ from __future__ import annotations
 
 import argparse
 import ast
+import json
 import os
 import re
 from collections import Counter
 from pathlib import Path
+
+
+def slugify(name: str) -> str:
+    """Match python-markdown's default heading anchor slug for a symbol name."""
+    return re.sub(r"[^a-z0-9_]+", "-", name.lower()).strip("-")
 
 DOX_BASE = "https://libigl.github.io/dox"
 
@@ -346,6 +352,9 @@ def main():
                          "target /dox/ site; links are validated against it so "
                          "none 404. Omit to link by header-name heuristic only.")
     ap.add_argument("--out", default="website/docs/api")
+    ap.add_argument("--url-base", default="/python/api",
+                    help="site-root URL under which the API pages are served; "
+                         "used to build the symbol_map.json toggle links")
     args = ap.parse_args()
 
     package = Path(args.package).resolve()
@@ -380,21 +389,35 @@ def main():
 
     stubs = sorted(package.rglob("pyigl_*.pyi"))
     index_rows = []
+    symbol_map = {}  # slug -> {"py": url, "cpp": url} for the C++/Python toggle
+
+    def record(name, stem):
+        entry = symbol_map.setdefault(slugify(name), {})
+        entry["py"] = f"{args.url_base}/{stem}/#{slugify(name)}"
+        if name in linkable:
+            entry["cpp"] = f"/dox/{linkable[name]}"
+
     for stub in stubs:
         module = module_for(stub, package_parent)
         title = MODULE_TITLES.get(module, module)
         functions, classes = collect(stub)
+        stem = module.replace(".", "_")
         page = [f"# {title}\n"]
         page.append(f"Python API reference for `{module}`.\n")
         for name in sorted(functions):
             page.append(emit_function(name, functions[name], linkable))
+            record(name, stem)
         for node, methods, doc in sorted(classes, key=lambda c: c[0].name):
             page.append(emit_class(node, methods, doc, linkable))
-        fname = module.replace(".", "_") + ".md"
+            record(node.name, stem)
+        fname = stem + ".md"
         (out / fname).write_text("\n".join(page))
         n = len(functions) + len(classes)
         index_rows.append((title, fname, n))
         print(f"  {module}: {len(functions)} functions, {len(classes)} classes -> {fname}")
+
+    (out / "symbol_map.json").write_text(json.dumps(symbol_map, sort_keys=True))
+    print(f"  wrote symbol_map.json ({len(symbol_map)} symbols)")
 
     # An index page listing every module.
     idx = ["# API Reference\n",
