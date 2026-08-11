@@ -30,6 +30,10 @@ markdown_extensions:
       guess_lang: false
   - footnotes
   - admonition
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - toc:
       permalink: true
   - markdown.extensions.smarty
@@ -69,7 +73,19 @@ plugins:
 nav:
   - Home: index.md
   - Tutorial: tutorial.md
-  - Python Bindings: python-bindings.md
+  - Python Bindings:
+      - Overview: python-bindings.md
+      - API Reference:
+          - Overview: python/api/index.md
+          - igl (core): python/api/igl.md
+          - igl.predicates: python/api/igl_predicates.md
+          - igl.cycodebase: python/api/igl_cycodebase.md
+          - igl.copyleft: python/api/igl_copyleft.md
+          - igl.copyleft.cgal: python/api/igl_copyleft_cgal.md
+          - igl.copyleft.tetgen: python/api/igl_copyleft_tetgen.md
+          - igl.embree: python/api/igl_embree.md
+          - igl.triangle: python/api/igl_triangle.md
+          - igl.spectra: python/api/igl_spectra.md
   - Compilation:
       - Example Project: example-project.md
       - Static Library: static-library.md
