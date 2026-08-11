@@ -298,22 +298,39 @@ def dox_filename(name: str) -> str:
     return f"{name.replace('_', '__')}_8h.html"
 
 
-def cpp_chip(name: str, linkable: dict) -> str:
-    """A standalone C++ cross-link line placed under a heading.
+def resolve_cpp(name, subpath, dox_pages):
+    """Resolve a symbol to its Doxygen page filename, honoring collisions.
 
-    Kept out of the heading itself so it does not leak into the table of
-    contents. `linkable` maps a Python function/class name to its verified
-    Doxygen page filename; only names present there are linked, so we never
-    emit a 404 (see build of `linkable` in main)."""
-    page = linkable.get(name)
-    if page:
-        return f"[:material-language-cpp: C++ reference]({DOX_BASE}/{page}){{ .cpp-xref }}\n"
+    Doxygen keeps a unique filename plain (e.g. mesh_boolean.h ->
+    mesh__boolean_8h.html even under copyleft/cgal/) but disambiguates a
+    duplicate by prefixing its directory, encoding '/' as '_2' (e.g.
+    igl/copyleft/marching_cubes.h -> copyleft_2marching__cubes_8h.html while the
+    core igl/marching_cubes.h stays marching__cubes_8h.html). We try the
+    most-specific prefixed candidate down to the plain one and pick the first
+    that actually exists in the Doxygen page list."""
+    cands = []
+    for i in range(len(subpath) + 1):
+        prefix = "".join(seg.replace("_", "__") + "_2" for seg in subpath[i:])
+        cands.append(prefix + dox_filename(name))
+    if dox_pages is None:
+        return cands[-1]  # best-effort plain name when unvalidated
+    for c in cands:
+        if c in dox_pages:
+            return c
+    return None
+
+
+def cpp_chip(cpp_page) -> str:
+    """A standalone C++ cross-link line placed under a heading (kept out of the
+    heading so it does not leak into the table of contents)."""
+    if cpp_page:
+        return f"[:material-language-cpp: C++ reference]({DOX_BASE}/{cpp_page}){{ .cpp-xref }}\n"
     return ""
 
 
-def emit_function(name, defs, linkable) -> str:
+def emit_function(name, defs, cpp_page) -> str:
     out = [f"### {name}\n"]
-    chip = cpp_chip(name, linkable)
+    chip = cpp_chip(cpp_page)
     if chip:
         out.append(chip)
     seen = set()
@@ -327,9 +344,9 @@ def emit_function(name, defs, linkable) -> str:
     return "\n".join(out)
 
 
-def emit_class(node, methods, doc, linkable) -> str:
+def emit_class(node, methods, doc, cpp_page) -> str:
     out = [f"### {node.name}\n"]
-    chip = cpp_chip(node.name, linkable)
+    chip = cpp_chip(cpp_page)
     if chip:
         out.append(chip)
     if doc:
@@ -362,54 +379,44 @@ def main():
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
 
-    # Cross-link a function to its C++ Doxygen page only when its header basename
-    # is unique across the whole libigl tree — duplicated names (e.g.
-    # marching_cubes exists in both igl/ and igl/copyleft/) get disambiguated by
-    # Doxygen into non-derivable page names, so we skip them.
-    unique = set()
-    if args.igl_include:
-        counts = Counter(h.stem for h in Path(args.igl_include).glob("igl/**/*.h"))
-        unique = {stem for stem, c in counts.items() if c == 1}
-
-    # When a Doxygen index is supplied, additionally require that the derived
-    # page actually exists there. This keeps the preview free of 404s even when
-    # the deployed /dox/ lags the bindings' libigl version (new/renamed headers).
+    # The set of Doxygen pages that actually exist, from the target /dox/ page
+    # list. Cross-links (and the toggle) are resolved against this so they never
+    # 404 and so collisions map to the right disambiguated page.
     dox_pages = None
     if args.dox_index:
         dox_pages = set(re.findall(r"[A-Za-z0-9_]+_8h\.html",
                                    Path(args.dox_index).read_text()))
 
-    linkable = {}
-    for name in unique:
-        page = dox_filename(name)
-        if dox_pages is None or page in dox_pages:
-            linkable[name] = page
-    print(f"  cross-linkable functions: {len(linkable)}"
-          + (f" (validated against {len(dox_pages)} dox pages)" if dox_pages else ""))
-
     stubs = sorted(package.rglob("pyigl_*.pyi"))
     index_rows = []
-    symbol_map = {}  # slug -> {"py": url, "cpp": url} for the C++/Python toggle
+    # Two lookup tables for the toggle: Python anchor -> C++ page, and C++ page
+    # filename -> Python anchor URL (so both directions resolve exactly, even
+    # for directory-disambiguated pages like copyleft_2marching__cubes_8h.html).
+    symbol_map = {"sym2cpp": {}, "cpp2py": {}}
 
-    def record(name, stem):
-        entry = symbol_map.setdefault(slugify(name), {})
-        entry["py"] = f"{args.url_base}/{stem}/#{slugify(name)}"
-        if name in linkable:
-            entry["cpp"] = f"/dox/{linkable[name]}"
+    def record(name, stem, cpp_page):
+        slug = slugify(name)
+        py_url = f"{args.url_base}/{stem}/#{slug}"
+        if cpp_page:
+            symbol_map["sym2cpp"][slug] = f"/dox/{cpp_page}"
+            symbol_map["cpp2py"][cpp_page] = py_url
 
     for stub in stubs:
         module = module_for(stub, package_parent)
         title = MODULE_TITLES.get(module, module)
         functions, classes = collect(stub)
         stem = module.replace(".", "_")
+        subpath = module.split(".")[1:]  # e.g. ["copyleft", "cgal"]
         page = [f"# {title}\n"]
         page.append(f"Python API reference for `{module}`.\n")
         for name in sorted(functions):
-            page.append(emit_function(name, functions[name], linkable))
-            record(name, stem)
+            cpp = resolve_cpp(name, subpath, dox_pages)
+            page.append(emit_function(name, functions[name], cpp))
+            record(name, stem, cpp)
         for node, methods, doc in sorted(classes, key=lambda c: c[0].name):
-            page.append(emit_class(node, methods, doc, linkable))
-            record(node.name, stem)
+            cpp = resolve_cpp(node.name, subpath, dox_pages)
+            page.append(emit_class(node, methods, doc, cpp))
+            record(node.name, stem, cpp)
         fname = stem + ".md"
         (out / fname).write_text("\n".join(page))
         n = len(functions) + len(classes)
@@ -417,7 +424,8 @@ def main():
         print(f"  {module}: {len(functions)} functions, {len(classes)} classes -> {fname}")
 
     (out / "symbol_map.json").write_text(json.dumps(symbol_map, sort_keys=True))
-    print(f"  wrote symbol_map.json ({len(symbol_map)} symbols)")
+    print(f"  wrote symbol_map.json "
+          f"({len(symbol_map['sym2cpp'])} symbols cross-linked)")
 
     # An index page listing every module.
     idx = ["# API Reference\n",
