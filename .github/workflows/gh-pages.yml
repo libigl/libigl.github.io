@@ -44,6 +44,10 @@ jobs:
             --dox-index docs/dox/files.html \
             --out docs/python/api
 
+      - name: Inject the C++/Python toggle into the Doxygen pages 🔀
+        shell: bash
+        run: python inject_dox_toggle.py docs/dox
+
       - name: Build website 🛠
         shell: bash
         run: mkdocs build
