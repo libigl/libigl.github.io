@@ -1,8 +1,8 @@
 var prepare__lhs_8h =
 [
-    [ "prepare_lhs_double", "prepare__lhs_8h.html#a0bf3ba75facb8ae4bdcec4b4e47eb1be", null ],
-    [ "prepare_lhs_double", "prepare__lhs_8h.html#add77f3265f3edbc1669864a60a8f8429", null ],
-    [ "prepare_lhs_logical", "prepare__lhs_8h.html#a96c214a1e80cc0614d522e1e2b46a981", null ],
-    [ "prepare_lhs_index", "prepare__lhs_8h.html#a0630a8f73fa5c504000681f7b1afd6d4", null ],
-    [ "prepare_lhs_double", "prepare__lhs_8h.html#a43f58ed5ed0fc9fd23c93a2859bf1b8b", null ]
+    [ "igl::matlab::prepare_lhs_double", "namespaceigl_1_1matlab.html#a00d5a66012530e095cd25a01e590acac", null ],
+    [ "igl::matlab::prepare_lhs_double", "namespaceigl_1_1matlab.html#add77f3265f3edbc1669864a60a8f8429", null ],
+    [ "igl::matlab::prepare_lhs_logical", "namespaceigl_1_1matlab.html#a394c69c998420f15589744af1baa4a34", null ],
+    [ "igl::matlab::prepare_lhs_index", "namespaceigl_1_1matlab.html#a2564c11f698cdaa389a4620acdcc43d6", null ],
+    [ "igl::matlab::prepare_lhs_double", "namespaceigl_1_1matlab.html#a43f58ed5ed0fc9fd23c93a2859bf1b8b", null ]
 ];

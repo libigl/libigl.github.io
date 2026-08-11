@@ -1,0 +1,41 @@
+\doxysection{Plain\+Vector.\+h}
+\hypertarget{PlainVector_8h_source}{}\label{PlainVector_8h_source}\index{include/igl/PlainVector.h@{include/igl/PlainVector.h}}
+\doxymbox{\hyperlink{PlainVector_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2024\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ IGL\_PLAINVECTOR\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ IGL\_PLAINVECTOR\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{PlainMatrix_8h}{PlainMatrix.h}}"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \ \ \textcolor{comment}{//\ PlainVectorHelper\ to\ determine\ correct\ matrix\ type\ based\ on\ Derived\ and\ Size}}
+\DoxyCodeLine{00017\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Derived,\ \textcolor{keywordtype}{int}\ Size,\ \textcolor{keywordtype}{int}\ Options>}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{structigl_1_1PlainVectorHelper}{PlainVectorHelper}}\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \textcolor{comment}{//\ Conditional\ Type:\ Column\ vector\ if\ is\_column\_vector\ is\ true,\ otherwise\ row\ vector}}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{structigl_1_1PlainVectorHelper_a95ba388ace962ab2e8ac0a523a111ec5}{Type}}\ =\ Eigen::Matrix<}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Derived::Scalar,}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ (Derived::ColsAtCompileTime\ ==\ 1\ \&\&\ Derived::RowsAtCompileTime\ !=\ 1)\ ?\ Size\ :\ 1,}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ (Derived::ColsAtCompileTime\ ==\ 1\ \&\&\ Derived::RowsAtCompileTime\ !=\ 1)\ ?\ 1\ :\ Size,}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ Options>;}
+\DoxyCodeLine{00025\ \ \ \ \ \};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00028\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{typename}\ Derived,\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{int}\ Size\ =\ (Derived::ColsAtCompileTime\ ==\ 1\ \&\&\ Derived::RowsAtCompileTime\ !=\ 1)\ ?\ Derived::RowsAtCompileTime\ :\ Derived::ColsAtCompileTime,}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{int}\ Options\ =\ \doxymbox{\hyperlink{structigl_1_1get__options_ae46dbef1fc4264c060c740fff760aada}{get\_options<Derived>::value}}>}
+\DoxyCodeLine{00032\ \ \ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespaceigl_ae3dab79f9d86136e721fbae1dfb7a95d}{PlainVector}}\ =\ \textcolor{keyword}{typename}\ \doxymbox{\hyperlink{structigl_1_1PlainVectorHelper_a95ba388ace962ab2e8ac0a523a111ec5}{PlainVectorHelper<Derived,\ Size,\ Options>::Type}};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00036\ }
+
+\end{DoxyCode}

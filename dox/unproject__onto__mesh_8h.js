@@ -1,5 +1,5 @@
 var unproject__onto__mesh_8h =
 [
-    [ "unproject_onto_mesh", "unproject__onto__mesh_8h.html#abbefb4e32e184a299b36f663b23b7b9c", null ],
-    [ "unproject_onto_mesh", "unproject__onto__mesh_8h.html#af4d029fbc6f770b7dec469f743858d8f", null ]
+    [ "igl::unproject_onto_mesh", "namespaceigl.html#abbefb4e32e184a299b36f663b23b7b9c", null ],
+    [ "igl::unproject_onto_mesh", "namespaceigl.html#a42476aad6a071181df45cb820a5e67fe", null ]
 ];

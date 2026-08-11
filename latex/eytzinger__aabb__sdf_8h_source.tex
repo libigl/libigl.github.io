@@ -1,0 +1,56 @@
+\doxysection{eytzinger\+\_\+aabb\+\_\+sdf.\+h}
+\hypertarget{eytzinger__aabb__sdf_8h_source}{}\label{eytzinger__aabb__sdf_8h_source}\index{include/igl/eytzinger\_aabb\_sdf.h@{include/igl/eytzinger\_aabb\_sdf.h}}
+\doxymbox{\hyperlink{eytzinger__aabb__sdf_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2025\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_EYTZINGER\_AABB\_SDF\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_EYTZINGER\_AABB\_SDF\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{igl__inline_8h}{igl\_inline.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00029\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ Squared,}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedp,}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{typename}\ Func,}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedB,}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedleaf}
+\DoxyCodeLine{00035\ \ \ >}
+\DoxyCodeLine{00036\ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{namespaceigl_a566d77babbd3ec45aa87bf45c10bae76}{eytzinger\_aabb\_sdf}}(}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedp>\ \&\ p,}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{const}\ Func\ \&\ primitive,}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedB>\ \&\ B1,}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedB>\ \&\ B2,}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedleaf>\ \&\ leaf,}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedp::Scalar\ \&\ f);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00053\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{bool}\ Squared,}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedP,}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{typename}\ Func,}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedB,}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedleaf,}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedS}
+\DoxyCodeLine{00060\ \ \ >}
+\DoxyCodeLine{00061\ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{namespaceigl_a566d77babbd3ec45aa87bf45c10bae76}{eytzinger\_aabb\_sdf}}(}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedP>\ \&\ P,}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{const}\ Func\ \&\ primitive,}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedB>\ \&\ B1,}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedB>\ \&\ B2,}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedleaf>\ \&\ leaf,}
+\DoxyCodeLine{00067\ \ \ \ \ Eigen::PlainObjectBase<DerivedS>\ \&\ S);}
+\DoxyCodeLine{00068\ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#\ \ include\ "{}eytzinger\_aabb\_sdf.cpp"{}}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}

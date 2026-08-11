@@ -1,6 +1,6 @@
 \doxysection{ray\+\_\+mesh\+\_\+intersect.\+h}
 \hypertarget{ray__mesh__intersect_8h_source}{}\label{ray__mesh__intersect_8h_source}\index{include/igl/ray\_mesh\_intersect.h@{include/igl/ray\_mesh\_intersect.h}}
-\mbox{\hyperlink{ray__mesh__intersect_8h}{Go to the documentation of this file.}}
+\doxymbox{\hyperlink{ray__mesh__intersect_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
 \DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
@@ -11,34 +11,34 @@
 \DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_RAY\_MESH\_INTERSECT\_H}}
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_RAY\_MESH\_INTERSECT\_H}}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{igl__inline_8h}{igl\_inline.h}}"{}}}
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Hit_8h}{Hit.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{igl__inline_8h}{igl\_inline.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Hit_8h}{Hit.h}}"{}}}
 \DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
 \DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <vector>}}
-\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceigl}{igl}}}
 \DoxyCodeLine{00015\ \{}
 \DoxyCodeLine{00027\ \ \ \textcolor{keyword}{template}\ <}
 \DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedsource,}
 \DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{typename}\ Deriveddir,}
 \DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,\ }
 \DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF>\ }
-\DoxyCodeLine{00032\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_adcb07bb96941cdba2a28b4239f88a246}{ray\_mesh\_intersect}}(}
+\DoxyCodeLine{00032\ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{namespaceigl_ae1822eb14cd8f22943552266ffde8a64}{ray\_mesh\_intersect}}(}
 \DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedsource>\ \&\ source,}
 \DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Deriveddir>\ \&\ dir,}
 \DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
 \DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
-\DoxyCodeLine{00037\ \ \ \ \ std::vector<igl::Hit>\ \&\ hits);}
+\DoxyCodeLine{00037\ \ \ \ \ std::vector<\doxymbox{\hyperlink{structigl_1_1Hit}{igl::Hit<typename\ DerivedV::Scalar>}}>\ \&\ hits);}
 \DoxyCodeLine{00040\ \ \ \textcolor{keyword}{template}\ <}
 \DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedsource,}
 \DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{typename}\ Deriveddir,}
 \DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,\ }
 \DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF>\ }
-\DoxyCodeLine{00045\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_adcb07bb96941cdba2a28b4239f88a246}{ray\_mesh\_intersect}}(}
+\DoxyCodeLine{00045\ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{namespaceigl_ae1822eb14cd8f22943552266ffde8a64}{ray\_mesh\_intersect}}(}
 \DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedsource>\ \&\ source,}
 \DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Deriveddir>\ \&\ dir,}
 \DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
 \DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
-\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{structigl_1_1Hit}{igl::Hit}}\ \&\ hit);}
+\DoxyCodeLine{00050\ \ \ \ \ \doxymbox{\hyperlink{structigl_1_1Hit}{igl::Hit<typename\ DerivedV::Scalar>}}\ \&\ hit);}
 \DoxyCodeLine{00051\ }
 \DoxyCodeLine{00052\ \ \ \textcolor{comment}{//\ Explicit\ function\ to\ check\ one\ triangle\ (given\ by\ index\ f)\ of\ the\ mesh.}}
 \DoxyCodeLine{00053\ \ \ \textcolor{comment}{//\ This\ function\ is\ used\ by\ ray\_mesh\_intersect\ to\ check\ each\ triangle.}}
@@ -50,13 +50,13 @@
 \DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{typename}\ Deriveddir,}
 \DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
 \DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF>}
-\DoxyCodeLine{00062\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_afab2426f066fcd19c79646bcca3501b8}{ray\_triangle\_intersect}}(}
+\DoxyCodeLine{00062\ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{namespaceigl_add78c18d68cd814c512f1ea1ccf3ce6e}{ray\_triangle\_intersect}}(}
 \DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedsource>\ \&\ source,}
 \DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Deriveddir>\ \&\ dir,}
 \DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
 \DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
 \DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ f,}
-\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{structigl_1_1Hit}{igl::Hit}}\&\ hit);}
+\DoxyCodeLine{00068\ \ \ \ \ \doxymbox{\hyperlink{structigl_1_1Hit}{igl::Hit<typename\ DerivedV::Scalar>}}\&\ hit);}
 \DoxyCodeLine{00069\ \}}
 \DoxyCodeLine{00070\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
 \DoxyCodeLine{00071\ \textcolor{preprocessor}{\#\ \ include\ "{}ray\_mesh\_intersect.cpp"{}}}

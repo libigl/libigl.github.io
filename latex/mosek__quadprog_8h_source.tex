@@ -1,6 +1,6 @@
 \doxysection{mosek\+\_\+quadprog.\+h}
 \hypertarget{mosek__quadprog_8h_source}{}\label{mosek__quadprog_8h_source}\index{include/igl/mosek/mosek\_quadprog.h@{include/igl/mosek/mosek\_quadprog.h}}
-\mbox{\hyperlink{mosek__quadprog_8h}{Go to the documentation of this file.}}
+\doxymbox{\hyperlink{mosek__quadprog_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
 \DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
@@ -11,7 +11,7 @@
 \DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_MOSEK\_MOSEK\_QUADPROG\_H}}
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_MOSEK\_MOSEK\_QUADPROG\_H}}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../igl\_inline.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{igl__inline_8h}{../igl\_inline.h}}"{}}}
 \DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <map>}}
 \DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <mosek.h>}}
@@ -21,15 +21,15 @@
 \DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
 \DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <Eigen/Sparse>}}
 \DoxyCodeLine{00019\ }
-\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceigl}{igl}}}
 \DoxyCodeLine{00021\ \{}
 \DoxyCodeLine{00022\ \ \ \textcolor{keyword}{namespace\ }mosek}
 \DoxyCodeLine{00023\ \ \ \{}
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1mosek_1_1MosekData}{MosekData}}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{structigl_1_1mosek_1_1MosekData_ac2d07362881e6e51044b00eb2ae4f19e}{MosekData}}}
 \DoxyCodeLine{00026\ \ \ \ \ \{}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ std::map<MSKiparame,int>\ \mbox{\hyperlink{structigl_1_1mosek_1_1MosekData_aba2c4deb012a66ca78341756dec1586c}{intparam}};}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ std::map<MSKdparame,double>\ \mbox{\hyperlink{structigl_1_1mosek_1_1MosekData_ac3cb900ad6ecd139a44600378334de1d}{douparam}};}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \mbox{\hyperlink{structigl_1_1mosek_1_1MosekData_ac2d07362881e6e51044b00eb2ae4f19e}{MosekData}}();}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ std::map<MSKiparame,int>\ \doxymbox{\hyperlink{structigl_1_1mosek_1_1MosekData_aba2c4deb012a66ca78341756dec1586c}{intparam}};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ std::map<MSKdparame,double>\ \doxymbox{\hyperlink{structigl_1_1mosek_1_1MosekData_ac3cb900ad6ecd139a44600378334de1d}{douparam}};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \doxymbox{\hyperlink{structigl_1_1mosek_1_1MosekData_ac2d07362881e6e51044b00eb2ae4f19e}{MosekData}}();}
 \DoxyCodeLine{00033\ \ \ \ \ \};}
 \DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\ Solve\ a\ convex\ quadratic\ optimization\ problem\ with\ linear\ and\ constant}}
 \DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//\ bounds.\ Given\ in\ the\ form:}}
@@ -86,7 +86,7 @@
 \DoxyCodeLine{00086\ \ \ \ \ \textcolor{comment}{//\ }}
 \DoxyCodeLine{00087\ \ \ \ \ \textcolor{comment}{//\ \(\backslash\)note\ All\ indices\ are\ 0-\/based}}
 \DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Index,\ \textcolor{keyword}{typename}\ Scalar>}
-\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_1_1mosek_ac3c815fd0f5ecdf826ee9c99ec7b3986}{mosek\_quadprog}}(}
+\DoxyCodeLine{00089\ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{namespaceigl_1_1mosek_ac3c815fd0f5ecdf826ee9c99ec7b3986}{mosek\_quadprog}}(}
 \DoxyCodeLine{00090\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Index\ n,}
 \DoxyCodeLine{00091\ \ \ \ \ \ \ \textcolor{comment}{/*\ mosek\ won't\ allow\ this\ to\ be\ const*/}\ std::vector<Index>\ \&\ Qi,}
 \DoxyCodeLine{00092\ \ \ \ \ \ \ \textcolor{comment}{/*\ mosek\ won't\ allow\ this\ to\ be\ const*/}\ std::vector<Index>\ \&\ Qj,}
@@ -101,9 +101,9 @@
 \DoxyCodeLine{00101\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<Scalar>\ \&\ uc,}
 \DoxyCodeLine{00102\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<Scalar>\ \&\ lx,}
 \DoxyCodeLine{00103\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<Scalar>\ \&\ ux,}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1mosek_1_1MosekData}{MosekData}}\ \&\ mosek\_data,}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \doxymbox{\hyperlink{structigl_1_1mosek_1_1MosekData}{MosekData}}\ \&\ mosek\_data,}
 \DoxyCodeLine{00105\ \ \ \ \ \ \ std::vector<Scalar>\ \&\ x);}
-\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_1_1mosek_ac3c815fd0f5ecdf826ee9c99ec7b3986}{mosek\_quadprog}}(}
+\DoxyCodeLine{00121\ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{namespaceigl_1_1mosek_ac3c815fd0f5ecdf826ee9c99ec7b3986}{mosek\_quadprog}}(}
 \DoxyCodeLine{00122\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<double>\ \&\ Q,}
 \DoxyCodeLine{00123\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::VectorXd\ \&\ c,}
 \DoxyCodeLine{00124\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ cf,}
@@ -112,7 +112,7 @@
 \DoxyCodeLine{00127\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::VectorXd\ \&\ uc,}
 \DoxyCodeLine{00128\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::VectorXd\ \&\ lx,}
 \DoxyCodeLine{00129\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::VectorXd\ \&\ ux,}
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1mosek_1_1MosekData}{MosekData}}\ \&\ mosek\_data,}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \doxymbox{\hyperlink{structigl_1_1mosek_1_1MosekData}{MosekData}}\ \&\ mosek\_data,}
 \DoxyCodeLine{00131\ \ \ \ \ \ \ Eigen::VectorXd\ \&\ x);}
 \DoxyCodeLine{00132\ \ \ \}}
 \DoxyCodeLine{00133\ \}}

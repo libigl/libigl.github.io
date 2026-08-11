@@ -1,4 +1,4 @@
-\doxysection{igl\+::AABB\texorpdfstring{$<$}{<} DerivedV, DIM \texorpdfstring{$>$}{>} Class Template Reference}
+\doxysection{igl::\+AABB\texorpdfstring{$<$}{<} DerivedV, DIM \texorpdfstring{$>$}{>} Class Template Reference}
 \hypertarget{classigl_1_1AABB}{}\label{classigl_1_1AABB}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
 
 
@@ -7,143 +7,713 @@ Implementation of semi-\/general purpose axis-\/aligned bounding box hierarchy.
 
 
 
-{\ttfamily \#include $<$AABB.\+h$>$}
+{\ttfamily \+\#include $<$AABB.\+h$>$}
 
 \doxysubsubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-typedef Derived\+V\+::\+Scalar \mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}
-\begin{DoxyCompactList}\small\item\em Scalar type of vertex positions (e.\+g., {\ttfamily double}) \end{DoxyCompactList}\item 
-typedef Eigen\+::\+Matrix$<$ \mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}, 1, DIM $>$ \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}}
-\begin{DoxyCompactList}\small\item\em Fixed-\/size ({\ttfamily DIM}) Row\+Vector type using {\ttfamily Scalar} \end{DoxyCompactList}\item 
-typedef Eigen\+::\+Matrix$<$ \mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}, DIM, 1 $>$ \mbox{\hyperlink{classigl_1_1AABB_a115da153746506529eaaa70fb01ffffb}{Vector\+DIMS}}
-\begin{DoxyCompactList}\small\item\em Fixed-\/size ({\ttfamily DIM}) (Column)Vector type using {\ttfamily Scalar} \end{DoxyCompactList}\item 
-typedef Eigen\+::\+Matrix$<$ \mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}, Eigen\+::\+Dynamic, DIM $>$ \mbox{\hyperlink{classigl_1_1AABB_aa509e281d53292cd5a54a186d166a741}{Matrix\+XDIMS}}
-\begin{DoxyCompactList}\small\item\em Fixed-\/width ({\ttfamily DIM}) Matrix type using {\ttfamily Scalar} \end{DoxyCompactList}\end{DoxyCompactItemize}
+typedef Derived\+V::\+\+Scalar \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar} type of vertex positions (e.\+g., {\ttfamily double}). \end{DoxyCompactList}\item 
+typedef Eigen::\+\+Matrix$<$ \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}, 1, DIM $>$ \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}}
+\begin{DoxyCompactList}\small\item\em Fixed-\/size ({\ttfamily DIM}) Row\+Vector type using {\ttfamily \doxylink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}. \end{DoxyCompactList}\item 
+typedef Eigen::\+\+Matrix$<$ \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}, DIM, 1 $>$ \doxymbox{\hyperlink{classigl_1_1AABB_a115da153746506529eaaa70fb01ffffb}{Vector\+DIMS}}
+\begin{DoxyCompactList}\small\item\em Fixed-\/size ({\ttfamily DIM}) (Column)Vector type using {\ttfamily \doxylink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}. \end{DoxyCompactList}\item 
+typedef Eigen::\+\+Matrix$<$ \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}, Eigen::\+\+Dynamic, DIM $>$ \doxymbox{\hyperlink{classigl_1_1AABB_aa509e281d53292cd5a54a186d166a741}{Matrix\+XDIMS}}
+\begin{DoxyCompactList}\small\item\em Fixed-\/width ({\ttfamily DIM}) Matrix type using {\ttfamily \doxylink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename Derived\+Ele , typename Derivedbb\+\_\+mins , typename Derivedbb\+\_\+maxs , typename Derivedelements $>$ }\\\mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} void \mbox{\hyperlink{classigl_1_1AABB_a15c01f34f8720540a720f8e916d26679}{init}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ Derived\+Ele $>$ \&Ele, const Eigen\+::\+Matrix\+Base$<$ Derivedbb\+\_\+mins $>$ \&bb\+\_\+mins, const Eigen\+::\+Matrix\+Base$<$ Derivedbb\+\_\+maxs $>$ \&bb\+\_\+maxs, const Eigen\+::\+Matrix\+Base$<$ Derivedelements $>$ \&elements, const int i=0)
-\begin{DoxyCompactList}\small\item\em Build an Axis-\/\+Aligned Bounding Box tree for a given mesh and given serialization of a previous \doxylink{classigl_1_1AABB}{AABB} tree. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Derived\+Ele $>$ }\\\mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} void \mbox{\hyperlink{classigl_1_1AABB_a78edb75957a1a751c484148206e93622}{init}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ Derived\+Ele $>$ \&Ele)
-\begin{DoxyCompactList}\small\item\em Build an Axis-\/\+Aligned Bounding Box tree for a given mesh and given serialization of a previous \doxylink{classigl_1_1AABB}{AABB} tree. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Derived\+Ele , typename Derived\+SI , typename DerivedI $>$ }\\\mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} void \mbox{\hyperlink{classigl_1_1AABB_a9536e0b163e920704d22262aaf0eb5dd}{init}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ Derived\+Ele $>$ \&Ele, const Eigen\+::\+Matrix\+Base$<$ Derived\+SI $>$ \&SI, const Eigen\+::\+Matrix\+Base$<$ DerivedI $>$ \&I)
-\begin{DoxyCompactList}\small\item\em Build an Axis-\/\+Aligned Bounding Box tree for a given mesh. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} bool \mbox{\hyperlink{classigl_1_1AABB_a24935012c54ca405bb515ae96e2549d1}{is\+\_\+leaf}} () const
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} bool \doxymbox{\hyperlink{classigl_1_1AABB_a24935012c54ca405bb515ae96e2549d1}{is\+\_\+leaf}} () const
 \begin{DoxyCompactList}\small\item\em Return whether at leaf node. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Derived\+Ele , typename Derivedq $>$ }\\\mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} std\+::vector$<$ int $>$ \mbox{\hyperlink{classigl_1_1AABB_a05a70628fcd4f87981ebff25ed58055b}{find}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ Derived\+Ele $>$ \&Ele, const Eigen\+::\+Matrix\+Base$<$ Derivedq $>$ \&q, const bool first=false) const
-\begin{DoxyCompactList}\small\item\em Find the indices of elements containing given point\+: this makes sense when Ele is a co-\/dimension 0 simplex (tets in 3D, triangles in 2D). \end{DoxyCompactList}\item 
-\mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} int \mbox{\hyperlink{classigl_1_1AABB_aa10facd7366f1a368b86e45eaa25f316}{subtree\+\_\+size}} () const
-\begin{DoxyCompactList}\small\item\em Number of nodes contained in subtree. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Derivedbb\+\_\+mins , typename Derivedbb\+\_\+maxs , typename Derivedelements $>$ }\\\mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} void \mbox{\hyperlink{classigl_1_1AABB_ad4cae218326d31c60636f6e8b399604a}{serialize}} (Eigen\+::\+Plain\+Object\+Base$<$ Derivedbb\+\_\+mins $>$ \&bb\+\_\+mins, Eigen\+::\+Plain\+Object\+Base$<$ Derivedbb\+\_\+maxs $>$ \&bb\+\_\+maxs, Eigen\+::\+Plain\+Object\+Base$<$ Derivedelements $>$ \&elements, const int i=0) const
-\begin{DoxyCompactList}\small\item\em Serialize this class into 3 arrays (so we can pass it pack to matlab) \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Derived\+Ele $>$ }\\\mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} \mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}} \mbox{\hyperlink{classigl_1_1AABB_a96a7347d4780172b8c88ffab2be93e0f}{squared\+\_\+distance}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ Derived\+Ele $>$ \&Ele, const \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} \&p, int \&i, Eigen\+::\+Plain\+Object\+Base$<$ \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} $>$ \&c) const
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} bool \doxymbox{\hyperlink{classigl_1_1AABB_ab7221bea55f56fabb3732f597af70bdd}{is\+\_\+root}} () const
+\begin{DoxyCompactList}\small\item\em Return whether at root node. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} AABB$<$ DerivedV, DIM $>$ \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classigl_1_1AABB_afcf11024faa410261cff29ad56ca8daa}{root}} () const
+\begin{DoxyCompactList}\small\item\em Return the root node of this node\textquotesingle{}s tree by following its parent. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} AABB$<$ DerivedV, DIM $>$ \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classigl_1_1AABB_a9a7b6dc89ff02c9007ce18bb64ddc9c6}{detach}} ()
+\item 
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} void \doxymbox{\hyperlink{classigl_1_1AABB_a693b9d39513c811edca96ecd4edb802e}{refit\+\_\+lineage}} ()
+\item 
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} std::\+vector$<$ AABB$<$ DerivedV, DIM $>$ \texorpdfstring{$\ast$}{*} $>$ \doxymbox{\hyperlink{classigl_1_1AABB_af4e55a98deeb84a2dd51ac98bdbce92b}{gather\+\_\+leaves}} (const int m)
+\begin{DoxyCompactList}\small\item\em Get a vector of leaves indexed by their m\+\_\+primitive id (these better be non-\/negative and tightly packed. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} std::\+vector$<$ AABB$<$ DerivedV, DIM $>$ \texorpdfstring{$\ast$}{*} $>$ \doxymbox{\hyperlink{classigl_1_1AABB_a0cbd83a63c2addcbf093fd42a549f427}{gather\+\_\+leaves}} ()
+\item 
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} AABB$<$ DerivedV, DIM $>$ \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classigl_1_1AABB_a8b32f6b97f8a9a87acf41975e8f60d31}{pad}} (const std::\+vector$<$ AABB$<$ DerivedV, DIM $>$ \texorpdfstring{$\ast$}{*} $>$ \&leaves, const \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}} pad, const int polish\+\_\+rotate\+\_\+passes=0)
+\begin{DoxyCompactList}\small\item\em Pad leaves by {\ttfamily \doxylink{classigl_1_1AABB_a8b32f6b97f8a9a87acf41975e8f60d31}{pad}} in each dimension. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} AABB$<$ DerivedV, DIM $>$ \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classigl_1_1AABB_ae65c17480c1934f4ccd8a06baa0f6bb2}{update}} (const Eigen::\+\+Aligned\+Box$<$ \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}, DIM $>$ \&new\+\_\+box, const \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}} \doxymbox{\hyperlink{classigl_1_1AABB_a8b32f6b97f8a9a87acf41975e8f60d31}{pad}}=0)
+\item 
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} AABB$<$ DerivedV, DIM $>$ \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classigl_1_1AABB_aebe36abbb76b6a1e854a1cd642b7c00a}{insert}} (AABB \texorpdfstring{$\ast$}{*}other)
+\begin{DoxyCompactList}\small\item\em Insert a (probably a leaf) \doxylink{classigl_1_1AABB}{AABB} {\ttfamily other} into this \doxylink{classigl_1_1AABB}{AABB} tree. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} AABB$<$ DerivedV, DIM $>$ \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classigl_1_1AABB_a4e948cf8a46ade9a3a0e263fab666627}{insert\+\_\+as\+\_\+sibling}} (AABB \texorpdfstring{$\ast$}{*}other)
+\begin{DoxyCompactList}\small\item\em Insert {\ttfamily other} as a sibling to {\ttfamily this} by creating a new internal node to be their shared parent. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}} \doxymbox{\hyperlink{classigl_1_1AABB_acc77199ab1a533a032f3fc5d884ebd11}{rotate}} (const bool dry\+\_\+run=false)
+\begin{DoxyCompactList}\small\item\em Try to swap this node with its close relatives if it will decrease total internal surface area. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}} \doxymbox{\hyperlink{classigl_1_1AABB_a1575de7b10acabf80a3cb0ed92dc9743}{rotate\+\_\+across}} (const bool dry\+\_\+run=false)
+\begin{DoxyCompactList}\small\item\em Try to swap this node with its cousins if it will decrease total internal surface area. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}} \doxymbox{\hyperlink{classigl_1_1AABB_ae59d1111100f7f03cf1920a35dfe0687}{rotate\+\_\+up}} (const bool dry\+\_\+run=false)
+\begin{DoxyCompactList}\small\item\em Try to swap this node with its pibling if it will decrease total internal surface area. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}} \doxymbox{\hyperlink{classigl_1_1AABB_ad47f8f7b06fd713697c2d4b42934fa5e}{rotate\+\_\+down}} (const bool dry\+\_\+run=false)
+\begin{DoxyCompactList}\small\item\em Try to swap this node with one of its niblings if it will decrease total internal surface area. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} void \doxymbox{\hyperlink{classigl_1_1AABB_ab3931ea326a767e633fadf32430d177d}{rotate\+\_\+lineage}} ()
+\item 
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} int \doxymbox{\hyperlink{classigl_1_1AABB_aa10facd7366f1a368b86e45eaa25f316}{subtree\+\_\+size}} () const
+\begin{DoxyCompactList}\small\item\em Number of nodes contained in subtree (is it?). \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} bool \doxymbox{\hyperlink{classigl_1_1AABB_a95f147a583c6e7c4d395cf7e08104f21}{append\+\_\+intersecting\+\_\+leaves}} (const Eigen::\+\+Aligned\+Box$<$ \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}, DIM $>$ \&box, std::\+vector$<$ const AABB$<$ DerivedV, DIM $>$ \texorpdfstring{$\ast$}{*} $>$ \&leaves) const
+\item 
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} Derived\+V::\+\+Scalar \doxymbox{\hyperlink{classigl_1_1AABB_ae9d81bfa68216b34c3e6f7bd2f25439c}{internal\+\_\+surface\+\_\+area}} () const
+\begin{DoxyCompactList}\small\item\em Compute sum of surface area of all internal (non-\/root, non-\/leaf) boxes. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} void \doxymbox{\hyperlink{classigl_1_1AABB_ae64f03de2248450c50205b437da3fcdc}{validate}} () const
+\begin{DoxyCompactList}\small\item\em Validate the subtree under this node by running a bunch of assertions. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} void \doxymbox{\hyperlink{classigl_1_1AABB_afd67ad586203da2f0780952f1c500adb}{print}} (const int depth=0) const
+\begin{DoxyCompactList}\small\item\em print the memory addresses of the tree in a somewhat legible way \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} int \doxymbox{\hyperlink{classigl_1_1AABB_a8d6c3a6fbe3b4ba91eab1753c0d39888}{size}} () const
+\item 
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} int \doxymbox{\hyperlink{classigl_1_1AABB_ad4d3163bf327426fb9266751f14fa235}{height}} () const
+\item 
+{\footnotesize template$<$typename Derived\+Ele, typename Derivedbb\+\_\+mins, typename Derivedbb\+\_\+maxs, typename Derivedelements$>$ }\\\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} void \doxymbox{\hyperlink{classigl_1_1AABB_a15c01f34f8720540a720f8e916d26679}{init}} (const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen::\+\+Matrix\+Base$<$ Derived\+Ele $>$ \&Ele, const Eigen::\+\+Matrix\+Base$<$ Derivedbb\+\_\+mins $>$ \&bb\+\_\+mins, const Eigen::\+\+Matrix\+Base$<$ Derivedbb\+\_\+maxs $>$ \&bb\+\_\+maxs, const Eigen::\+\+Matrix\+Base$<$ Derivedelements $>$ \&elements, const int i=0)
+\begin{DoxyCompactList}\small\item\em Build an Axis-\/\+Aligned Bounding Box tree for a given mesh and given serialization of a previous \doxylink{classigl_1_1AABB}{AABB} tree. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derived\+Ele$>$ }\\\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} void \doxymbox{\hyperlink{classigl_1_1AABB_a78edb75957a1a751c484148206e93622}{init}} (const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen::\+\+Matrix\+Base$<$ Derived\+Ele $>$ \&Ele)
+\begin{DoxyCompactList}\small\item\em Build an Axis-\/\+Aligned Bounding Box tree for a given mesh and given serialization of a previous \doxylink{classigl_1_1AABB}{AABB} tree. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derived\+Ele, typename Derived\+SI, typename DerivedI$>$ }\\\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} void \doxymbox{\hyperlink{classigl_1_1AABB_a9536e0b163e920704d22262aaf0eb5dd}{init}} (const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen::\+\+Matrix\+Base$<$ Derived\+Ele $>$ \&Ele, const Eigen::\+\+Matrix\+Base$<$ Derived\+SI $>$ \&SI, const Eigen::\+\+Matrix\+Base$<$ DerivedI $>$ \&I)
+\begin{DoxyCompactList}\small\item\em Build an Axis-\/\+Aligned Bounding Box tree for a given mesh. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derived\+Ele$>$ }\\\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} AABB$<$ DerivedV, DIM $>$ \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classigl_1_1AABB_a45c371debe0a10956ba2be1b3bfa4cf0}{update\+\_\+primitive}} (const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen::\+\+Matrix\+Base$<$ Derived\+Ele $>$ \&Ele, const \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}} \doxymbox{\hyperlink{classigl_1_1AABB_a8b32f6b97f8a9a87acf41975e8f60d31}{pad}}=0)
+\item 
+{\footnotesize template$<$typename Derived\+Ele, typename Derivedq$>$ }\\\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} std::\+vector$<$ int $>$ \doxymbox{\hyperlink{classigl_1_1AABB_a05a70628fcd4f87981ebff25ed58055b}{find}} (const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen::\+\+Matrix\+Base$<$ Derived\+Ele $>$ \&Ele, const Eigen::\+\+Matrix\+Base$<$ Derivedq $>$ \&q, const bool first=false) const
+\begin{DoxyCompactList}\small\item\em Find the indices of elements containing given point:\+ this makes sense when Ele is a co-\/dimension 0 simplex (tets in 3D, triangles in 2D). \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derivedbb\+\_\+mins, typename Derivedbb\+\_\+maxs, typename Derivedelements$>$ }\\\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} void \doxymbox{\hyperlink{classigl_1_1AABB_ad4cae218326d31c60636f6e8b399604a}{serialize}} (Eigen::\+\+Plain\+Object\+Base$<$ Derivedbb\+\_\+mins $>$ \&bb\+\_\+mins, Eigen::\+\+Plain\+Object\+Base$<$ Derivedbb\+\_\+maxs $>$ \&bb\+\_\+maxs, Eigen::\+\+Plain\+Object\+Base$<$ Derivedelements $>$ \&elements, const int i=0) const
+\begin{DoxyCompactList}\small\item\em Serialize this class into 3 arrays (so we can pass it pack to matlab). \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derived\+Ele$>$ }\\\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}} \doxymbox{\hyperlink{classigl_1_1AABB_a96a7347d4780172b8c88ffab2be93e0f}{squared\+\_\+distance}} (const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen::\+\+Matrix\+Base$<$ Derived\+Ele $>$ \&Ele, const \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} \&p, int \&i, Eigen::\+\+Plain\+Object\+Base$<$ \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} $>$ \&c) const
 \begin{DoxyCompactList}\small\item\em Compute squared distance to a query point. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Derived\+Ele $>$ }\\\mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} \mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}} \mbox{\hyperlink{classigl_1_1AABB_ab82da3a68c7fb585068468b1a47d695c}{squared\+\_\+distance}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ Derived\+Ele $>$ \&Ele, const \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} \&p, const \mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}} low\+\_\+sqr\+\_\+d, const \mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}} up\+\_\+sqr\+\_\+d, int \&i, Eigen\+::\+Plain\+Object\+Base$<$ \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} $>$ \&c) const
+{\footnotesize template$<$typename Derived\+Ele$>$ }\\\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}} \doxymbox{\hyperlink{classigl_1_1AABB_ab82da3a68c7fb585068468b1a47d695c}{squared\+\_\+distance}} (const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen::\+\+Matrix\+Base$<$ Derived\+Ele $>$ \&Ele, const \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} \&p, const \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}} low\+\_\+sqr\+\_\+d, const \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}} up\+\_\+sqr\+\_\+d, int \&i, Eigen::\+\+Plain\+Object\+Base$<$ \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} $>$ \&c) const
 \begin{DoxyCompactList}\small\item\em Compute squared distance to a query point if within {\ttfamily low\+\_\+sqr\+\_\+d} and {\ttfamily up\+\_\+sqr\+\_\+d}. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Derived\+Ele $>$ }\\\mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} \mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}} \mbox{\hyperlink{classigl_1_1AABB_ac6cda1a6e31e015f72b2c5cf5143cb5b}{squared\+\_\+distance}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ Derived\+Ele $>$ \&Ele, const \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} \&p, const \mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}} up\+\_\+sqr\+\_\+d, int \&i, Eigen\+::\+Plain\+Object\+Base$<$ \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} $>$ \&c) const
-\begin{DoxyCompactList}\small\item\em Compute squared distance to a query point (default {\ttfamily low\+\_\+sqr\+\_\+d}) \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Derived\+Ele $>$ }\\\mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} bool \mbox{\hyperlink{classigl_1_1AABB_ac29bfe91eaf75f2f28180345a478cbd5}{intersect\+\_\+ray}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ Derived\+Ele $>$ \&Ele, const \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} \&origin, const \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} \&dir, std\+::vector$<$ \mbox{\hyperlink{structigl_1_1Hit}{igl\+::\+Hit}} $>$ \&hits) const
+{\footnotesize template$<$typename Derived\+Ele$>$ }\\\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}} \doxymbox{\hyperlink{classigl_1_1AABB_ac6cda1a6e31e015f72b2c5cf5143cb5b}{squared\+\_\+distance}} (const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen::\+\+Matrix\+Base$<$ Derived\+Ele $>$ \&Ele, const \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} \&p, const \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}} up\+\_\+sqr\+\_\+d, int \&i, Eigen::\+\+Plain\+Object\+Base$<$ \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} $>$ \&c) const
+\begin{DoxyCompactList}\small\item\em Compute squared distance to a query point (default {\ttfamily low\+\_\+sqr\+\_\+d}). \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derived\+Ele$>$ }\\\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} bool \doxymbox{\hyperlink{classigl_1_1AABB_a0cb125ad92cf40f35267b31da40c39ae}{intersect\+\_\+ray}} (const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen::\+\+Matrix\+Base$<$ Derived\+Ele $>$ \&Ele, const \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} \&origin, const \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} \&dir, std::\+vector$<$ \doxymbox{\hyperlink{structigl_1_1Hit}{igl::\+\+Hit}}$<$ typename Derived\+V::\+\+Scalar $>$ $>$ \&hits) const
 \begin{DoxyCompactList}\small\item\em Intersect a ray with the mesh return all hits. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Derived\+Ele $>$ }\\\mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} bool \mbox{\hyperlink{classigl_1_1AABB_a8482291a47ef3c018869057c892b6766}{intersect\+\_\+ray}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ Derived\+Ele $>$ \&Ele, const \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} \&origin, const \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} \&dir, \mbox{\hyperlink{structigl_1_1Hit}{igl\+::\+Hit}} \&hit) const
+{\footnotesize template$<$typename Derived\+Ele$>$ }\\\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} bool \doxymbox{\hyperlink{classigl_1_1AABB_a4f915f2db534ee67592651980132b2a1}{intersect\+\_\+ray}} (const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen::\+\+Matrix\+Base$<$ Derived\+Ele $>$ \&Ele, const \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} \&origin, const \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} \&dir, \doxymbox{\hyperlink{structigl_1_1Hit}{igl::\+\+Hit}}$<$ typename Derived\+V::\+\+Scalar $>$ \&hit) const
 \begin{DoxyCompactList}\small\item\em Intersect a ray with the mesh return first hit. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Derived\+Ele $>$ }\\\mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} bool \mbox{\hyperlink{classigl_1_1AABB_a8de34081730915384b218bedb16a7b07}{intersect\+\_\+ray}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ Derived\+Ele $>$ \&Ele, const \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} \&origin, const \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} \&dir, const \mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}} min\+\_\+t, \mbox{\hyperlink{structigl_1_1Hit}{igl\+::\+Hit}} \&hit) const
-\begin{DoxyCompactList}\small\item\em Intersect a ray with the mesh return first hit farther than {\ttfamily min\+\_\+t} \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Derived\+Ele , typename DerivedP , typename DerivedsqrD , typename DerivedI , typename DerivedC $>$ }\\\mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} void \mbox{\hyperlink{classigl_1_1AABB_a634a96258fec901ee54613d51b4e9b64}{squared\+\_\+distance}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ Derived\+Ele $>$ \&Ele, const Eigen\+::\+Matrix\+Base$<$ DerivedP $>$ \&P, Eigen\+::\+Plain\+Object\+Base$<$ DerivedsqrD $>$ \&sqrD, Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&I, Eigen\+::\+Plain\+Object\+Base$<$ DerivedC $>$ \&C) const
+{\footnotesize template$<$typename Derived\+Ele$>$ }\\\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} bool \doxymbox{\hyperlink{classigl_1_1AABB_a44817fe83922a30e38698112a8a4d07a}{intersect\+\_\+ray}} (const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen::\+\+Matrix\+Base$<$ Derived\+Ele $>$ \&Ele, const \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} \&origin, const \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} \&dir, const \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}} min\+\_\+t, \doxymbox{\hyperlink{structigl_1_1Hit}{igl::\+\+Hit}}$<$ typename Derived\+V::\+\+Scalar $>$ \&hit) const
+\begin{DoxyCompactList}\small\item\em Intersect a ray with the mesh return first hit farther than {\ttfamily min\+\_\+t}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derived\+Ele, typename Derived\+Origin, typename Derived\+Dir, typename DerivedI, typename DerivedT, typename Derived\+UV$>$ }\\\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} void \doxymbox{\hyperlink{classigl_1_1AABB_a9c33cf880342419fb601b8260e6701f6}{intersect\+\_\+ray}} (const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen::\+\+Matrix\+Base$<$ Derived\+Ele $>$ \&Ele, const Eigen::\+\+Matrix\+Base$<$ Derived\+Origin $>$ \&origin, const Eigen::\+\+Matrix\+Base$<$ Derived\+Dir $>$ \&dir, const \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}} min\+\_\+t, Eigen::\+\+Plain\+Object\+Base$<$ DerivedI $>$ \&I, Eigen::\+\+Plain\+Object\+Base$<$ DerivedT $>$ \&T, Eigen::\+\+Plain\+Object\+Base$<$ Derived\+UV $>$ \&UV)
+\begin{DoxyCompactList}\small\item\em Intersect a rays with the mesh return first hit for each. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derived\+Ele, typename Derived\+Origin, typename Derived\+Dir$>$ }\\\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} void \doxymbox{\hyperlink{classigl_1_1AABB_a47225468caa8d112f2ca1002c30fefd5}{intersect\+\_\+ray}} (const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen::\+\+Matrix\+Base$<$ Derived\+Ele $>$ \&Ele, const Eigen::\+\+Matrix\+Base$<$ Derived\+Origin $>$ \&origin, const Eigen::\+\+Matrix\+Base$<$ Derived\+Dir $>$ \&dir, std::\+vector$<$ std::\+vector$<$ \doxymbox{\hyperlink{structigl_1_1Hit}{igl::\+\+Hit}}$<$ typename Derived\+V::\+\+Scalar $>$ $>$ $>$ \&hits)
+\item 
+{\footnotesize template$<$typename Derived\+Ele, typename DerivedP, typename DerivedsqrD, typename DerivedI, typename DerivedC$>$ }\\\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} void \doxymbox{\hyperlink{classigl_1_1AABB_a634a96258fec901ee54613d51b4e9b64}{squared\+\_\+distance}} (const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen::\+\+Matrix\+Base$<$ Derived\+Ele $>$ \&Ele, const Eigen::\+\+Matrix\+Base$<$ DerivedP $>$ \&P, Eigen::\+\+Plain\+Object\+Base$<$ DerivedsqrD $>$ \&sqrD, Eigen::\+\+Plain\+Object\+Base$<$ DerivedI $>$ \&I, Eigen::\+\+Plain\+Object\+Base$<$ DerivedC $>$ \&C) const
 \begin{DoxyCompactList}\small\item\em Compute the squared distance from all query points in P to the {\itshape closest} points on the primitives stored in the \doxylink{classigl_1_1AABB}{AABB} hierarchy for the mesh (V,Ele). \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Derived\+Ele , typename Derivedother\+\_\+V , typename Derivedother\+\_\+\+Ele , typename DerivedsqrD , typename DerivedI , typename DerivedC $>$ }\\\mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} void \mbox{\hyperlink{classigl_1_1AABB_a222114f494110d3e536bca03b86b8c12}{squared\+\_\+distance}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ Derived\+Ele $>$ \&Ele, const \mbox{\hyperlink{classigl_1_1AABB}{AABB}}$<$ Derivedother\+\_\+V, DIM $>$ \&other, const Eigen\+::\+Matrix\+Base$<$ Derivedother\+\_\+V $>$ \&other\+\_\+V, const Eigen\+::\+Matrix\+Base$<$ Derivedother\+\_\+\+Ele $>$ \&other\+\_\+\+Ele, Eigen\+::\+Plain\+Object\+Base$<$ DerivedsqrD $>$ \&sqrD, Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&I, Eigen\+::\+Plain\+Object\+Base$<$ DerivedC $>$ \&C) const
+{\footnotesize template$<$typename Derived\+Ele, typename Derivedother\+\_\+V, typename Derivedother\+\_\+\+Ele, typename DerivedsqrD, typename DerivedI, typename DerivedC$>$ }\\\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} void \doxymbox{\hyperlink{classigl_1_1AABB_a222114f494110d3e536bca03b86b8c12}{squared\+\_\+distance}} (const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen::\+\+Matrix\+Base$<$ Derived\+Ele $>$ \&Ele, const AABB$<$ Derivedother\+\_\+V, DIM $>$ \&other, const Eigen::\+\+Matrix\+Base$<$ Derivedother\+\_\+V $>$ \&other\+\_\+V, const Eigen::\+\+Matrix\+Base$<$ Derivedother\+\_\+\+Ele $>$ \&other\+\_\+\+Ele, Eigen::\+\+Plain\+Object\+Base$<$ DerivedsqrD $>$ \&sqrD, Eigen::\+\+Plain\+Object\+Base$<$ DerivedI $>$ \&I, Eigen::\+\+Plain\+Object\+Base$<$ DerivedC $>$ \&C) const
 \begin{DoxyCompactList}\small\item\em Compute the squared distance from all query points in P already stored in its own \doxylink{classigl_1_1AABB}{AABB} hierarchy to the {\itshape closest} points on the primitives stored in the \doxylink{classigl_1_1AABB}{AABB} hierarchy for the mesh (V,Ele). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}} \doxymbox{\hyperlink{classigl_1_1AABB_a62112762bfdaf556f1de163f9ecef323}{rotate\+\_\+up}} (const bool dry\+\_\+run, AABB$<$ DerivedV, DIM $>$ \texorpdfstring{$\ast$}{*}reining, AABB$<$ DerivedV, DIM $>$ \texorpdfstring{$\ast$}{*}grandparent, AABB$<$ DerivedV, DIM $>$ \texorpdfstring{$\ast$}{*}parent, AABB$<$ DerivedV, DIM $>$ \texorpdfstring{$\ast$}{*}challenger, AABB$<$ DerivedV, DIM $>$ \texorpdfstring{$\ast$}{*}sibling)
+\begin{DoxyCompactList}\small\item\em "{}\+Rotate"{} (swap) {\ttfamily reining} with {\ttfamily challenger}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classigl_1_1AABB}{AABB}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classigl_1_1AABB_a235d9f0789affa75050a75fe1d9a3e84}{m\+\_\+left}}
-\begin{DoxyCompactList}\small\item\em Pointer to "{}left"{} child node ({\ttfamily nullptr} if leaf) \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classigl_1_1AABB}{AABB}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classigl_1_1AABB_a9abce242119d9e709b8e447480b27bf5}{m\+\_\+right}}
-\begin{DoxyCompactList}\small\item\em Pointer to "{}right"{} child node ({\ttfamily nullptr} if leaf) \end{DoxyCompactList}\item 
-Eigen\+::\+Aligned\+Box$<$ \mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}, DIM $>$ \mbox{\hyperlink{classigl_1_1AABB_ae5a1a951d07db942eed6d14f45af6e6b}{m\+\_\+box}}
+AABB \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classigl_1_1AABB_a235d9f0789affa75050a75fe1d9a3e84}{m\+\_\+left}}
+\begin{DoxyCompactList}\small\item\em Pointer to "{}left"{} child node ({\ttfamily nullptr} if leaf). \end{DoxyCompactList}\item 
+AABB \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classigl_1_1AABB_a9abce242119d9e709b8e447480b27bf5}{m\+\_\+right}}
+\begin{DoxyCompactList}\small\item\em Pointer to "{}right"{} child node ({\ttfamily nullptr} if leaf). \end{DoxyCompactList}\item 
+AABB \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classigl_1_1AABB_afefa55132c521c4fe3412d8f46231ccb}{m\+\_\+parent}}
+\begin{DoxyCompactList}\small\item\em Pointer to "{}parent"{} node ({\ttfamily nullptr} if root). \end{DoxyCompactList}\item 
+Eigen::\+\+Aligned\+Box$<$ \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}, DIM $>$ \doxymbox{\hyperlink{classigl_1_1AABB_ae5a1a951d07db942eed6d14f45af6e6b}{m\+\_\+box}}
 \begin{DoxyCompactList}\small\item\em Axis-\/\+Aligned Bounding Box containing this node. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{classigl_1_1AABB_a5ea4da975626dc7c471a0405b48ed3b4}{m\+\_\+primitive}}
+int \doxymbox{\hyperlink{classigl_1_1AABB_a5ea4da975626dc7c471a0405b48ed3b4}{m\+\_\+primitive}}
 \begin{DoxyCompactList}\small\item\em Index of single primitive in this node if full leaf, otherwise -\/1 for non-\/leaf. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{classigl_1_1AABB_a9703efef4dfa78aa20be159b0ea57b0f}{swap}} (\mbox{\hyperlink{classigl_1_1AABB}{AABB}} \&first, \mbox{\hyperlink{classigl_1_1AABB}{AABB}} \&second)
+void \doxymbox{\hyperlink{classigl_1_1AABB_a9703efef4dfa78aa20be159b0ea57b0f}{swap}} (AABB \&first, AABB \&second)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 \subsubsection*{template$<$typename DerivedV, int DIM$>$\newline
-class igl\+::\+AABB$<$ Derived\+V, DIM $>$}
+class igl::\+\+AABB$<$ Derived\+V, DIM $>$}
 Implementation of semi-\/general purpose axis-\/aligned bounding box hierarchy. 
+
+Determine if collapse the edge {\ttfamily e} would create new intersections.
 
 The mesh (V,Ele) is stored and managed by the caller and each routine here simply takes it as references (it better not change between calls).
 
-It\textquotesingle{}s a little annoying that the Dimension is a template parameter and not picked up at run time from V. This leads to duplicated code for 2d/3d (up to dim).
+It\textquotesingle{}s a little annoying that the Dimension is a template parameter and not picked up at run time from V. This leads to duplicated code for 2d/\+3d (up to dim).
 
 
 \begin{DoxyTemplParams}{Template Parameters}
-{\em DerivedV} & Matrix type of vertex positions (e.\+g., {\ttfamily Eigen\+::\+Matrix\+Xd}) \\
+{\em DerivedV} & Matrix type of vertex positions (e.\+g., {\ttfamily Eigen::\+\+Matrix\+Xd}) \\
 \hline
-{\em DIM} & Dimension of mesh vertex positions (2 or 3) \\
+{\em DIM} & Dimension of mesh vertex positions (2 or 3)\\
 \hline
 \end{DoxyTemplParams}
 
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em e} & index into E of edge to try to collapse. E(e,:\+) = \+[s d]\+ or \+[d s]\+ so that s\texorpdfstring{$<$}{<}d, then d is collapsed to s. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em p} & dim list of vertex position where to place merged vertex \+[mesh inputs]\+ \\
+\hline
+\doxymbox{\texttt{in,out}}  & {\em V} & \+\#V by dim list of vertex positions, lesser index of E(e,:\+) will be set to midpoint of edge. \\
+\hline
+\doxymbox{\texttt{in,out}}  & {\em F} & \+\#F by 3 list of face indices into V. \\
+\hline
+\doxymbox{\texttt{in,out}}  & {\em E} & \+\#E by 2 list of edge indices into V. \\
+\hline
+\doxymbox{\texttt{in,out}}  & {\em EMAP} & \+\#F\texorpdfstring{$\ast$}{*}3 list of indices into E, mapping each directed edge to unique unique edge in E \\
+\hline
+\doxymbox{\texttt{in,out}}  & {\em EF} & \+\#E by 2 list of edge flaps, EF(e,0)=f means e=(i-\/-\/\texorpdfstring{$>$}{>}j) is the edge of F(f,:\+) opposite the vth corner, where EI(e,0)=v. Similarly EF(e,1) "{} e=(j-\/\texorpdfstring{$>$}{>}i) \\
+\hline
+\doxymbox{\texttt{in,out}}  & {\em EI} & \+\#E by 2 list of edge flap corners (see above). \+[mesh inputs]\+ \\
+\hline
+\doxymbox{\texttt{in}}  & {\em tree} & \doxylink{classigl_1_1AABB}{AABB} tree whose leaves correspond to the current (non-\/null) faces in (V,F)\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{namespaceigl_a43980a1bf72d42d703282642c2dfabd6}{collapse\+\_\+edge} 
+\end{DoxySeeAlso}
 
+
+\label{doc-typedef-members}
+\Hypertarget{classigl_1_1AABB_doc-typedef-members}
 \doxysubsection{Member Typedef Documentation}
-\Hypertarget{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}\label{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d} 
-\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!Scalar@{Scalar}}
+\Hypertarget{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!Scalar@{Scalar}}
 \index{Scalar@{Scalar}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
 \doxysubsubsection{\texorpdfstring{Scalar}{Scalar}}
-{\footnotesize\ttfamily template$<$typename DerivedV , int DIM$>$ \\
-typedef Derived\+V\+::\+Scalar \mbox{\hyperlink{classigl_1_1AABB}{igl\+::\+AABB}}$<$ DerivedV, DIM $>$\+::\+Scalar}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d} 
+template$<$typename DerivedV, int DIM$>$ \\
+typedef Derived\+V::\+\+Scalar \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+\+Scalar}
 
 
 
-Scalar type of vertex positions (e.\+g., {\ttfamily double}) 
+\doxylink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar} type of vertex positions (e.\+g., {\ttfamily double}). 
 
-\Hypertarget{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}\label{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261} 
-\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!RowVectorDIMS@{RowVectorDIMS}}
+\Hypertarget{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!RowVectorDIMS@{RowVectorDIMS}}
 \index{RowVectorDIMS@{RowVectorDIMS}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
 \doxysubsubsection{\texorpdfstring{RowVectorDIMS}{RowVectorDIMS}}
-{\footnotesize\ttfamily template$<$typename DerivedV , int DIM$>$ \\
-typedef Eigen\+::\+Matrix$<$\mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}},1,DIM$>$ \mbox{\hyperlink{classigl_1_1AABB}{igl\+::\+AABB}}$<$ DerivedV, DIM $>$\+::\+Row\+Vector\+DIMS}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261} 
+template$<$typename DerivedV, int DIM$>$ \\
+typedef Eigen::\+\+Matrix$<$\doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}},1,DIM$>$ \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+\+Row\+Vector\+DIMS}
 
 
 
-Fixed-\/size ({\ttfamily DIM}) Row\+Vector type using {\ttfamily Scalar} 
+Fixed-\/size ({\ttfamily DIM}) Row\+Vector type using {\ttfamily \doxylink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}. 
 
-\Hypertarget{classigl_1_1AABB_a115da153746506529eaaa70fb01ffffb}\label{classigl_1_1AABB_a115da153746506529eaaa70fb01ffffb} 
-\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!VectorDIMS@{VectorDIMS}}
+\Hypertarget{classigl_1_1AABB_a115da153746506529eaaa70fb01ffffb}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!VectorDIMS@{VectorDIMS}}
 \index{VectorDIMS@{VectorDIMS}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
 \doxysubsubsection{\texorpdfstring{VectorDIMS}{VectorDIMS}}
-{\footnotesize\ttfamily template$<$typename DerivedV , int DIM$>$ \\
-typedef Eigen\+::\+Matrix$<$\mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}},DIM,1$>$ \mbox{\hyperlink{classigl_1_1AABB}{igl\+::\+AABB}}$<$ DerivedV, DIM $>$\+::\+Vector\+DIMS}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_a115da153746506529eaaa70fb01ffffb} 
+template$<$typename DerivedV, int DIM$>$ \\
+typedef Eigen::\+\+Matrix$<$\doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}},DIM,1$>$ \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+\+Vector\+DIMS}
 
 
 
-Fixed-\/size ({\ttfamily DIM}) (Column)Vector type using {\ttfamily Scalar} 
+Fixed-\/size ({\ttfamily DIM}) (Column)Vector type using {\ttfamily \doxylink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}. 
 
-\Hypertarget{classigl_1_1AABB_aa509e281d53292cd5a54a186d166a741}\label{classigl_1_1AABB_aa509e281d53292cd5a54a186d166a741} 
-\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!MatrixXDIMS@{MatrixXDIMS}}
+\Hypertarget{classigl_1_1AABB_aa509e281d53292cd5a54a186d166a741}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!MatrixXDIMS@{MatrixXDIMS}}
 \index{MatrixXDIMS@{MatrixXDIMS}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
 \doxysubsubsection{\texorpdfstring{MatrixXDIMS}{MatrixXDIMS}}
-{\footnotesize\ttfamily template$<$typename DerivedV , int DIM$>$ \\
-typedef Eigen\+::\+Matrix$<$\mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}},Eigen\+::\+Dynamic,DIM$>$ \mbox{\hyperlink{classigl_1_1AABB}{igl\+::\+AABB}}$<$ DerivedV, DIM $>$\+::\+Matrix\+XDIMS}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_aa509e281d53292cd5a54a186d166a741} 
+template$<$typename DerivedV, int DIM$>$ \\
+typedef Eigen::\+\+Matrix$<$\doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}},Eigen::\+\+Dynamic,DIM$>$ \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+\+Matrix\+XDIMS}
 
 
 
-Fixed-\/width ({\ttfamily DIM}) Matrix type using {\ttfamily Scalar} 
+Fixed-\/width ({\ttfamily DIM}) Matrix type using {\ttfamily \doxylink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}. 
 
 
 
+\label{doc-func-members}
+\Hypertarget{classigl_1_1AABB_doc-func-members}
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classigl_1_1AABB_a15c01f34f8720540a720f8e916d26679}\label{classigl_1_1AABB_a15c01f34f8720540a720f8e916d26679} 
-\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!init@{init}}
+\Hypertarget{classigl_1_1AABB_a24935012c54ca405bb515ae96e2549d1}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!is\_leaf@{is\_leaf}}
+\index{is\_leaf@{is\_leaf}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
+\doxysubsubsection{\texorpdfstring{is\_leaf()}{is\_leaf()}}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_a24935012c54ca405bb515ae96e2549d1} 
+template$<$typename DerivedV, int DIM$>$ \\
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} bool \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+is\+\_\+leaf (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Return whether at leaf node. 
+
+\Hypertarget{classigl_1_1AABB_ab7221bea55f56fabb3732f597af70bdd}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!is\_root@{is\_root}}
+\index{is\_root@{is\_root}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
+\doxysubsubsection{\texorpdfstring{is\_root()}{is\_root()}}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_ab7221bea55f56fabb3732f597af70bdd} 
+template$<$typename DerivedV, int DIM$>$ \\
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} bool \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+is\+\_\+root (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Return whether at root node. 
+
+\Hypertarget{classigl_1_1AABB_afcf11024faa410261cff29ad56ca8daa}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!root@{root}}
+\index{root@{root}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
+\doxysubsubsection{\texorpdfstring{root()}{root()}}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_afcf11024faa410261cff29ad56ca8daa} 
+template$<$typename DerivedV, int DIM$>$ \\
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} AABB$<$ DerivedV, DIM $>$ \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+root (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Return the root node of this node\textquotesingle{}s tree by following its parent. 
+
+\Hypertarget{classigl_1_1AABB_a9a7b6dc89ff02c9007ce18bb64ddc9c6}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!detach@{detach}}
+\index{detach@{detach}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
+\doxysubsubsection{\texorpdfstring{detach()}{detach()}}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_a9a7b6dc89ff02c9007ce18bb64ddc9c6} 
+template$<$typename DerivedV, int DIM$>$ \\
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} AABB$<$ DerivedV, DIM $>$ \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+detach (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1AABB_a693b9d39513c811edca96ecd4edb802e}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!refit\_lineage@{refit\_lineage}}
+\index{refit\_lineage@{refit\_lineage}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
+\doxysubsubsection{\texorpdfstring{refit\_lineage()}{refit\_lineage()}}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_a693b9d39513c811edca96ecd4edb802e} 
+template$<$typename DerivedV, int DIM$>$ \\
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} void \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+refit\+\_\+lineage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1AABB_af4e55a98deeb84a2dd51ac98bdbce92b}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!gather\_leaves@{gather\_leaves}}
+\index{gather\_leaves@{gather\_leaves}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
+\doxysubsubsection{\texorpdfstring{gather\_leaves()}{gather\_leaves()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_af4e55a98deeb84a2dd51ac98bdbce92b} 
+template$<$typename DerivedV, int DIM$>$ \\
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} std::\+vector$<$ AABB$<$ DerivedV, DIM $>$ \texorpdfstring{$\ast$}{*} $>$ \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+gather\+\_\+leaves (\begin{DoxyParamCaption}\item[{const int}]{m}{}\end{DoxyParamCaption})}
+
+
+
+Get a vector of leaves indexed by their m\+\_\+primitive id (these better be non-\/negative and tightly packed. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em m} & number of leaves/\+elements (Ele.\+rows()) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+leaves m list of pointers to leaves 
+\end{DoxyReturn}
+\Hypertarget{classigl_1_1AABB_a0cbd83a63c2addcbf093fd42a549f427}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!gather\_leaves@{gather\_leaves}}
+\index{gather\_leaves@{gather\_leaves}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
+\doxysubsubsection{\texorpdfstring{gather\_leaves()}{gather\_leaves()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_a0cbd83a63c2addcbf093fd42a549f427} 
+template$<$typename DerivedV, int DIM$>$ \\
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} std::\+vector$<$ AABB$<$ DerivedV, DIM $>$ \texorpdfstring{$\ast$}{*} $>$ \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+gather\+\_\+leaves (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1AABB_a8b32f6b97f8a9a87acf41975e8f60d31}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!pad@{pad}}
+\index{pad@{pad}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
+\doxysubsubsection{\texorpdfstring{pad()}{pad()}}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_a8b32f6b97f8a9a87acf41975e8f60d31} 
+template$<$typename DerivedV, int DIM$>$ \\
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} AABB$<$ DerivedV, DIM $>$ \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+pad (\begin{DoxyParamCaption}\item[{const std::\+vector$<$ AABB$<$ DerivedV, DIM $>$ \texorpdfstring{$\ast$}{*} $>$ \&}]{leaves}{, }\item[{const \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}}]{pad}{, }\item[{const int}]{polish\+\_\+rotate\+\_\+passes}{ = {\ttfamily 0}}\end{DoxyParamCaption})}
+
+
+
+Pad leaves by {\ttfamily \doxylink{classigl_1_1AABB_a8b32f6b97f8a9a87acf41975e8f60d31}{pad}} in each dimension. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em \doxylink{classigl_1_1AABB_a8b32f6b97f8a9a87acf41975e8f60d31}{pad}} & padding amount \\
+\hline
+\doxymbox{\texttt{in}}  & {\em polish\+\_\+rotate\+\_\+passes} & number of passes to polish rotations \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to (potentially new) root 
+\end{DoxyReturn}
+\Hypertarget{classigl_1_1AABB_ae65c17480c1934f4ccd8a06baa0f6bb2}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!update@{update}}
+\index{update@{update}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_ae65c17480c1934f4ccd8a06baa0f6bb2} 
+template$<$typename DerivedV, int DIM$>$ \\
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} AABB$<$ DerivedV, DIM $>$ \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+update (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Aligned\+Box$<$ \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}, DIM $>$ \&}]{new\+\_\+box}{, }\item[{const \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}}]{pad}{ = {\ttfamily 0}}\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily this} if no update was needed, otherwise returns pointer to (potentially new) root
+\end{DoxyReturn}
+Example:\+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{auto}\ *\ up\ =\ leaf-\/>update(new\_box);}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(up\ !=\ leaf)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ tree\ =\ up-\/>root();}
+\DoxyCodeLine{\}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ printf(\textcolor{stringliteral}{"{}no\ update\ occurred\(\backslash\)n"{}});}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ or\ simply}}
+\DoxyCodeLine{tree\ =\ leaf-\/>update(new\_box)-\/>root();}
+
+\end{DoxyCode}
+ \Hypertarget{classigl_1_1AABB_aebe36abbb76b6a1e854a1cd642b7c00a}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!insert@{insert}}
+\index{insert@{insert}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_aebe36abbb76b6a1e854a1cd642b7c00a} 
+template$<$typename DerivedV, int DIM$>$ \\
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} AABB$<$ DerivedV, DIM $>$ \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+insert (\begin{DoxyParamCaption}\item[{AABB$<$ DerivedV, DIM $>$ \texorpdfstring{$\ast$}{*}}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Insert a (probably a leaf) \doxylink{classigl_1_1AABB}{AABB} {\ttfamily other} into this \doxylink{classigl_1_1AABB}{AABB} tree. 
+
+If {\ttfamily other}\textquotesingle{}s box is contained in this \doxylink{classigl_1_1AABB}{AABB}\textquotesingle{}s box then insert it as a child recursively.
+
+If {\ttfamily other}\textquotesingle{}s box is not contained in this \doxylink{classigl_1_1AABB}{AABB}\textquotesingle{}s box then insert it as a sibling.
+
+It\textquotesingle{}s a very good idea to call either {\ttfamily \doxylink{classigl_1_1AABB_acc77199ab1a533a032f3fc5d884ebd11}{rotate}} (faster, less good) or {\ttfamily \doxylink{classigl_1_1AABB_ab3931ea326a767e633fadf32430d177d}{rotate\+\_\+lineage}} (slower, better) after insertion. Rotating continues to improve the tree\textquotesingle{}s quality so after doing a bunch of insertions you might even consider calling {\ttfamily \doxylink{classigl_1_1AABB_acc77199ab1a533a032f3fc5d884ebd11}{rotate}} on all nodes.
+
+{\ttfamily \doxylink{classigl_1_1AABB_aebe36abbb76b6a1e854a1cd642b7c00a}{insert}} attempts to minimize total internal surface area. Where as {\ttfamily \doxylink{classigl_1_1AABB_a15c01f34f8720540a720f8e916d26679}{init}} is top-\/down and splits boxes based on the median along the longest dimension. When initializing a tree, {\ttfamily \doxylink{classigl_1_1AABB_a15c01f34f8720540a720f8e916d26679}{init}} seems to result in great trees (small height and small total internal surface area).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em other} & pointer to another \doxylink{classigl_1_1AABB}{AABB} node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the parent of {\ttfamily other} or {\ttfamily other} itself. This could be == to a {\ttfamily new}ly created internal node or to {\ttfamily other} if {\ttfamily this==other}. Calling -\/\texorpdfstring{$>$}{>}\doxylink{classigl_1_1AABB_afcf11024faa410261cff29ad56ca8daa}{root()} on this returned node will give you the root of the tree.
+\end{DoxyReturn}
+\hypertarget{classigl_1_1AABB_autotoc_md1}{}\doxysubsubsubsubsubsection{\texorpdfstring{Example}{Example}}\label{classigl_1_1AABB_autotoc_md1}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Create\ a\ tree\ (use\ pointer\ to\ track\ changes\ to\ root)}}
+\DoxyCodeLine{\textcolor{keyword}{auto}\ *\ tree\ =\ \textcolor{keyword}{new}\ igl::AABB<DerivedV,3>::AABB();}
+\DoxyCodeLine{\textcolor{comment}{//\ Fill\ the\ tree\ (e.g.,\ using\ -\/>init())}}
+\DoxyCodeLine{…}
+\DoxyCodeLine{\textcolor{comment}{//\ Create\ a\ new\ leafe\ node}}
+\DoxyCodeLine{\textcolor{keyword}{auto}\ *\ leaf\ =\ \textcolor{keyword}{new}\ igl::AABB<DerivedV,3>::AABB();}
+\DoxyCodeLine{\textcolor{comment}{//\ Fill\ the\ leaf\ node\ with\ a\ primitive\ and\ box}}
+\DoxyCodeLine{…}
+\DoxyCodeLine{\textcolor{comment}{//\ Insert\ into\ the\ tree\ and\ find\ the\ possibly\ new\ root}}
+\DoxyCodeLine{tree\ =\ tree-\/>insert(leaf)-\/>root();}
+
+\end{DoxyCode}
+ \Hypertarget{classigl_1_1AABB_a4e948cf8a46ade9a3a0e263fab666627}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!insert\_as\_sibling@{insert\_as\_sibling}}
+\index{insert\_as\_sibling@{insert\_as\_sibling}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
+\doxysubsubsection{\texorpdfstring{insert\_as\_sibling()}{insert\_as\_sibling()}}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_a4e948cf8a46ade9a3a0e263fab666627} 
+template$<$typename DerivedV, int DIM$>$ \\
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} AABB$<$ DerivedV, DIM $>$ \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+insert\+\_\+as\+\_\+sibling (\begin{DoxyParamCaption}\item[{AABB$<$ DerivedV, DIM $>$ \texorpdfstring{$\ast$}{*}}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Insert {\ttfamily other} as a sibling to {\ttfamily this} by creating a new internal node to be their shared parent. 
+
+\begin{DoxyVerb}Before
+         parent
+         ╱     ╲
+     this(C)  sibling
+       ╱   ╲
+     left right
+
+After
+         parent
+         ╱     ╲
+      newbie   sibling
+       ╱    ╲
+    this    other
+    ╱     ╲
+  left  right
+\end{DoxyVerb}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em other} & pointer to another \doxylink{classigl_1_1AABB}{AABB} node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the new shared parent. 
+\end{DoxyReturn}
+\Hypertarget{classigl_1_1AABB_acc77199ab1a533a032f3fc5d884ebd11}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!rotate@{rotate}}
+\index{rotate@{rotate}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
+\doxysubsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_acc77199ab1a533a032f3fc5d884ebd11} 
+template$<$typename DerivedV, int DIM$>$ \\
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}} \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+rotate (\begin{DoxyParamCaption}\item[{const bool}]{dry\+\_\+run}{ = {\ttfamily false}}\end{DoxyParamCaption})}
+
+
+
+Try to swap this node with its close relatives if it will decrease total internal surface area. 
+
+\begin{DoxyVerb}       grandparent
+       ╱          ╲
+    parent       pibling°
+    ╱     ╲          ╱     ╲
+sibling  this   cuz1°  cuz2°
+ ╱     ╲
+nib1° nib2°
+
+°Swap Candidates
+\end{DoxyVerb}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em dry\+\_\+run} & if true then don\textquotesingle{}t actually swap \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+[in]\+ the change in total internal surface area, 0 if no improvement and rotate won\textquotesingle{}t be carried out. 
+\end{DoxyReturn}
+\Hypertarget{classigl_1_1AABB_a1575de7b10acabf80a3cb0ed92dc9743}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!rotate\_across@{rotate\_across}}
+\index{rotate\_across@{rotate\_across}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
+\doxysubsubsection{\texorpdfstring{rotate\_across()}{rotate\_across()}}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_a1575de7b10acabf80a3cb0ed92dc9743} 
+template$<$typename DerivedV, int DIM$>$ \\
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}} \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+rotate\+\_\+across (\begin{DoxyParamCaption}\item[{const bool}]{dry\+\_\+run}{ = {\ttfamily false}}\end{DoxyParamCaption})}
+
+
+
+Try to swap this node with its cousins if it will decrease total internal surface area. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em dry\+\_\+run} & if true then don\textquotesingle{}t actually swap \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+[in]\+ the change in total internal surface area, 0 if no improvement and rotate won\textquotesingle{}t be carried out. \begin{DoxyVerb}Before
+       grandparent
+       ╱          ╲
+    parent       pibling
+    ╱     ╲          ╱     ╲
+sibling  this    cuz1  cuz2
+
+
+Candidates
+       grandparent
+       ╱          ╲
+    parent       pibling
+    ╱     ╲          ╱     ╲
+sibling  cuz1   this   cuz2
+
+Or
+       grandparent
+       ╱          ╲
+    parent       pibling
+    ╱     ╲          ╱     ╲
+sibling  cuz2    cuz1  this 
+\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+\Hypertarget{classigl_1_1AABB_ae59d1111100f7f03cf1920a35dfe0687}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!rotate\_up@{rotate\_up}}
+\index{rotate\_up@{rotate\_up}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
+\doxysubsubsection{\texorpdfstring{rotate\_up()}{rotate\_up()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_ae59d1111100f7f03cf1920a35dfe0687} 
+template$<$typename DerivedV, int DIM$>$ \\
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}} \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+rotate\+\_\+up (\begin{DoxyParamCaption}\item[{const bool}]{dry\+\_\+run}{ = {\ttfamily false}}\end{DoxyParamCaption})}
+
+
+
+Try to swap this node with its pibling if it will decrease total internal surface area. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em dry\+\_\+run} & if true then don\textquotesingle{}t actually swap \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+[in]\+ the change in total internal surface area, 0 if no improvement and rotate won\textquotesingle{}t be carried out. \begin{DoxyVerb}Before
+   grandparent
+      ╱     ╲
+    other  parent
+           ╱   ╲
+        this  sibling
+
+
+Candidate
+   grandparent
+      ╱     ╲
+   this    parent
+           ╱   ╲
+       other  sibling 
+\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+\Hypertarget{classigl_1_1AABB_ad47f8f7b06fd713697c2d4b42934fa5e}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!rotate\_down@{rotate\_down}}
+\index{rotate\_down@{rotate\_down}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
+\doxysubsubsection{\texorpdfstring{rotate\_down()}{rotate\_down()}}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_ad47f8f7b06fd713697c2d4b42934fa5e} 
+template$<$typename DerivedV, int DIM$>$ \\
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}} \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+rotate\+\_\+down (\begin{DoxyParamCaption}\item[{const bool}]{dry\+\_\+run}{ = {\ttfamily false}}\end{DoxyParamCaption})}
+
+
+
+Try to swap this node with one of its niblings if it will decrease total internal surface area. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em dry\+\_\+run} & if true then don\textquotesingle{}t actually swap \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+[in]\+ the change in total internal surface area, 0 if no improvement and rotate won\textquotesingle{}t be carried out. \begin{DoxyVerb}Before
+      parent
+      ╱     ╲
+    this   sibling
+           ╱   ╲
+        left  right
+
+
+Candidates
+      parent
+      ╱     ╲
+  left     sibling
+           ╱   ╲
+       this   right
+
+Or
+
+      parent
+      ╱     ╲
+  right    sibling
+           ╱   ╲
+       left   this 
+\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+\Hypertarget{classigl_1_1AABB_a62112762bfdaf556f1de163f9ecef323}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!rotate\_up@{rotate\_up}}
+\index{rotate\_up@{rotate\_up}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
+\doxysubsubsection{\texorpdfstring{rotate\_up()}{rotate\_up()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_a62112762bfdaf556f1de163f9ecef323} 
+template$<$typename DerivedV, int DIM$>$ \\
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}} \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+rotate\+\_\+up (\begin{DoxyParamCaption}\item[{const bool}]{dry\+\_\+run}{, }\item[{AABB$<$ DerivedV, DIM $>$ \texorpdfstring{$\ast$}{*}}]{reining}{, }\item[{AABB$<$ DerivedV, DIM $>$ \texorpdfstring{$\ast$}{*}}]{grandparent}{, }\item[{AABB$<$ DerivedV, DIM $>$ \texorpdfstring{$\ast$}{*}}]{parent}{, }\item[{AABB$<$ DerivedV, DIM $>$ \texorpdfstring{$\ast$}{*}}]{challenger}{, }\item[{AABB$<$ DerivedV, DIM $>$ \texorpdfstring{$\ast$}{*}}]{sibling}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+"{}\+Rotate"{} (swap) {\ttfamily reining} with {\ttfamily challenger}. 
+
+\begin{DoxyVerb}Before
+   grandparent
+      ╱       ╲
+ reining      parent
+              ╱     ╲
+       challenger  sibling
+
+
+Candidate
+   grandparent
+      ╱       ╲
+challenger    parent
+              ╱     ╲
+         reining   sibling
+\end{DoxyVerb}
+ 
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em reining} & pointer to \doxylink{classigl_1_1AABB}{AABB} node to be rotated \\
+\hline
+\doxymbox{\texttt{in}}  & {\em grandparent} & pointer to challenger\textquotesingle{}s grandparent \\
+\hline
+\doxymbox{\texttt{in}}  & {\em parent} & pointer to challenger\textquotesingle{}s parent \\
+\hline
+\doxymbox{\texttt{in}}  & {\em challenger} & pointer to \doxylink{classigl_1_1AABB}{AABB} node to be rotated \\
+\hline
+\doxymbox{\texttt{in}}  & {\em sibling} & pointer to challenger\textquotesingle{}s sibling \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true only if rotation was possible and successfully carried out. 
+\end{DoxyReturn}
+\Hypertarget{classigl_1_1AABB_ab3931ea326a767e633fadf32430d177d}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!rotate\_lineage@{rotate\_lineage}}
+\index{rotate\_lineage@{rotate\_lineage}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
+\doxysubsubsection{\texorpdfstring{rotate\_lineage()}{rotate\_lineage()}}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_ab3931ea326a767e633fadf32430d177d} 
+template$<$typename DerivedV, int DIM$>$ \\
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} void \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+rotate\+\_\+lineage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1AABB_aa10facd7366f1a368b86e45eaa25f316}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!subtree\_size@{subtree\_size}}
+\index{subtree\_size@{subtree\_size}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
+\doxysubsubsection{\texorpdfstring{subtree\_size()}{subtree\_size()}}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_aa10facd7366f1a368b86e45eaa25f316} 
+template$<$typename DerivedV, int DIM$>$ \\
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} int \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+subtree\+\_\+size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Number of nodes contained in subtree (is it?). 
+
+\begin{DoxyNote}{Note}
+At best, this function has a dubious name. This is really an internal helper function for the serialization.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classigl_1_1AABB_a8d6c3a6fbe3b4ba91eab1753c0d39888}{size()}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+Number of elements m then total tree size should be 2\texorpdfstring{$\ast$}{*}h where h is the deepest depth 2\texorpdfstring{$^\wedge$}{\string^}ceil(log(\+\#\+Ele\texorpdfstring{$\ast$}{*}2-\/1)) 
+\end{DoxyReturn}
+\Hypertarget{classigl_1_1AABB_a95f147a583c6e7c4d395cf7e08104f21}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!append\_intersecting\_leaves@{append\_intersecting\_leaves}}
+\index{append\_intersecting\_leaves@{append\_intersecting\_leaves}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
+\doxysubsubsection{\texorpdfstring{append\_intersecting\_leaves()}{append\_intersecting\_leaves()}}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_a95f147a583c6e7c4d395cf7e08104f21} 
+template$<$typename DerivedV, int DIM$>$ \\
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} bool \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+append\+\_\+intersecting\+\_\+leaves (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Aligned\+Box$<$ \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}, DIM $>$ \&}]{box}{, }\item[{std::\+vector$<$ const AABB$<$ DerivedV, DIM $>$ \texorpdfstring{$\ast$}{*} $>$ \&}]{leaves}{}\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em box} & query box \\
+\hline
+\doxymbox{\texttt{in,out}}  & {\em leaves} & list of leaves to append to \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classigl_1_1AABB_ae9d81bfa68216b34c3e6f7bd2f25439c}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!internal\_surface\_area@{internal\_surface\_area}}
+\index{internal\_surface\_area@{internal\_surface\_area}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
+\doxysubsubsection{\texorpdfstring{internal\_surface\_area()}{internal\_surface\_area()}}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_ae9d81bfa68216b34c3e6f7bd2f25439c} 
+template$<$typename DerivedV, int DIM$>$ \\
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} Derived\+V::\+\+Scalar \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+internal\+\_\+surface\+\_\+area (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Compute sum of surface area of all internal (non-\/root, non-\/leaf) boxes. 
+
+\Hypertarget{classigl_1_1AABB_ae64f03de2248450c50205b437da3fcdc}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!validate@{validate}}
+\index{validate@{validate}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
+\doxysubsubsection{\texorpdfstring{validate()}{validate()}}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_ae64f03de2248450c50205b437da3fcdc} 
+template$<$typename DerivedV, int DIM$>$ \\
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} void \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+validate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Validate the subtree under this node by running a bunch of assertions. 
+
+Does nothing when not in debug mode \Hypertarget{classigl_1_1AABB_afd67ad586203da2f0780952f1c500adb}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!print@{print}}
+\index{print@{print}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_afd67ad586203da2f0780952f1c500adb} 
+template$<$typename DerivedV, int DIM$>$ \\
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} void \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+print (\begin{DoxyParamCaption}\item[{const int}]{depth}{ = {\ttfamily 0}}\end{DoxyParamCaption}) const}
+
+
+
+print the memory addresses of the tree in a somewhat legible way 
+
+\Hypertarget{classigl_1_1AABB_a8d6c3a6fbe3b4ba91eab1753c0d39888}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!size@{size}}
+\index{size@{size}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_a8d6c3a6fbe3b4ba91eab1753c0d39888} 
+template$<$typename DerivedV, int DIM$>$ \\
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} int \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+Actual size of tree. Total number of nodes in tree. A singleton root has size 1.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classigl_1_1AABB_aa10facd7366f1a368b86e45eaa25f316}{subtree\+\_\+size} 
+\end{DoxySeeAlso}
+\Hypertarget{classigl_1_1AABB_ad4d3163bf327426fb9266751f14fa235}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!height@{height}}
+\index{height@{height}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
+\doxysubsubsection{\texorpdfstring{height()}{height()}}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_ad4d3163bf327426fb9266751f14fa235} 
+template$<$typename DerivedV, int DIM$>$ \\
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} int \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+height (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+Height of the tree. A singleton root has height 1. 
+\end{DoxyReturn}
+\Hypertarget{classigl_1_1AABB_a15c01f34f8720540a720f8e916d26679}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!init@{init}}
 \index{init@{init}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
 \doxysubsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily template$<$typename DerivedV , int DIM$>$ \\
-template$<$typename Derived\+Ele , typename Derivedbb\+\_\+mins , typename Derivedbb\+\_\+maxs , typename Derivedelements $>$ \\
-\mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} void \mbox{\hyperlink{classigl_1_1AABB}{igl\+::\+AABB}}$<$ DerivedV, DIM $>$\+::init (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+Ele $>$ \&}]{Ele,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derivedbb\+\_\+mins $>$ \&}]{bb\+\_\+mins,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derivedbb\+\_\+maxs $>$ \&}]{bb\+\_\+maxs,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derivedelements $>$ \&}]{elements,  }\item[{const int}]{i = {\ttfamily 0} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_a15c01f34f8720540a720f8e916d26679} 
+template$<$typename DerivedV, int DIM$>$ \\
+template$<$typename Derived\+Ele, typename Derivedbb\+\_\+mins, typename Derivedbb\+\_\+maxs, typename Derivedelements$>$ \\
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} void \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+init (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&}]{V}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derived\+Ele $>$ \&}]{Ele}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derivedbb\+\_\+mins $>$ \&}]{bb\+\_\+mins}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derivedbb\+\_\+maxs $>$ \&}]{bb\+\_\+maxs}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derivedelements $>$ \&}]{elements}{, }\item[{const int}]{i}{ = {\ttfamily 0}}\end{DoxyParamCaption})}
 
 
 
@@ -151,26 +721,26 @@ Build an Axis-\/\+Aligned Bounding Box tree for a given mesh and given serializa
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em V} & \#V by dim list of mesh vertex positions. \\
+\doxymbox{\texttt{in}}  & {\em V} & \+\#V by dim list of mesh vertex positions. \\
 \hline
-\mbox{\texttt{ in}}  & {\em Ele} & \#\+Ele by dim+1 list of mesh indices into \#V. \\
+\doxymbox{\texttt{in}}  & {\em Ele} & \+\#\+Ele by dim+1 list of mesh indices into \+\#V. \\
 \hline
-\mbox{\texttt{ in}}  & {\em bb\+\_\+mins} & max\+\_\+tree by dim list of bounding box min corner positions \\
+\doxymbox{\texttt{in}}  & {\em bb\+\_\+mins} & max\+\_\+tree by dim list of bounding box min corner positions \\
 \hline
-\mbox{\texttt{ in}}  & {\em bb\+\_\+maxs} & max\+\_\+tree by dim list of bounding box max corner positions \\
+\doxymbox{\texttt{in}}  & {\em bb\+\_\+maxs} & max\+\_\+tree by dim list of bounding box max corner positions \\
 \hline
-\mbox{\texttt{ in}}  & {\em elements} & max\+\_\+tree list of element or (not leaf id) indices into Ele \\
+\doxymbox{\texttt{in}}  & {\em elements} & max\+\_\+tree list of element or (not leaf id) indices into Ele \\
 \hline
-\mbox{\texttt{ in}}  & {\em i} & recursive call index \{0\} \\
+\doxymbox{\texttt{in}}  & {\em i} & recursive call index \{0\} \\
 \hline
 \end{DoxyParams}
-\Hypertarget{classigl_1_1AABB_a78edb75957a1a751c484148206e93622}\label{classigl_1_1AABB_a78edb75957a1a751c484148206e93622} 
-\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!init@{init}}
+\Hypertarget{classigl_1_1AABB_a78edb75957a1a751c484148206e93622}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!init@{init}}
 \index{init@{init}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
 \doxysubsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily template$<$typename DerivedV , int DIM$>$ \\
-template$<$typename Derived\+Ele $>$ \\
-\mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} void \mbox{\hyperlink{classigl_1_1AABB}{igl\+::\+AABB}}$<$ DerivedV, DIM $>$\+::init (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+Ele $>$ \&}]{Ele }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_a78edb75957a1a751c484148206e93622} 
+template$<$typename DerivedV, int DIM$>$ \\
+template$<$typename Derived\+Ele$>$ \\
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} void \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+init (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&}]{V}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derived\+Ele $>$ \&}]{Ele}{}\end{DoxyParamCaption})}
 
 
 
@@ -178,19 +748,18 @@ Build an Axis-\/\+Aligned Bounding Box tree for a given mesh and given serializa
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em V} & \#V by dim list of mesh vertex positions. \\
+\doxymbox{\texttt{in}}  & {\em V} & \+\#V by dim list of mesh vertex positions. \\
 \hline
-\mbox{\texttt{ in}}  & {\em Ele} & \#\+Ele by dim+1 list of mesh indices into \#V. ~\newline
- \\
+\doxymbox{\texttt{in}}  & {\em Ele} & \+\#\+Ele by dim+1 list of mesh indices into \+\#V. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{classigl_1_1AABB_a9536e0b163e920704d22262aaf0eb5dd}\label{classigl_1_1AABB_a9536e0b163e920704d22262aaf0eb5dd} 
-\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!init@{init}}
+\Hypertarget{classigl_1_1AABB_a9536e0b163e920704d22262aaf0eb5dd}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!init@{init}}
 \index{init@{init}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
 \doxysubsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily template$<$typename DerivedV , int DIM$>$ \\
-template$<$typename Derived\+Ele , typename Derived\+SI , typename DerivedI $>$ \\
-\mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} void \mbox{\hyperlink{classigl_1_1AABB}{igl\+::\+AABB}}$<$ DerivedV, DIM $>$\+::init (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+Ele $>$ \&}]{Ele,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+SI $>$ \&}]{SI,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedI $>$ \&}]{I }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_a9536e0b163e920704d22262aaf0eb5dd} 
+template$<$typename DerivedV, int DIM$>$ \\
+template$<$typename Derived\+Ele, typename Derived\+SI, typename DerivedI$>$ \\
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} void \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+init (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&}]{V}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derived\+Ele $>$ \&}]{Ele}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derived\+SI $>$ \&}]{SI}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedI $>$ \&}]{I}{}\end{DoxyParamCaption})}
 
 
 
@@ -198,96 +767,82 @@ Build an Axis-\/\+Aligned Bounding Box tree for a given mesh.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em V} & \#V by dim list of mesh vertex positions. \\
+\doxymbox{\texttt{in}}  & {\em V} & \+\#V by dim list of mesh vertex positions. \\
 \hline
-\mbox{\texttt{ in}}  & {\em Ele} & \#\+Ele by dim+1 list of mesh indices into \#V. \\
+\doxymbox{\texttt{in}}  & {\em Ele} & \+\#\+Ele by dim+1 list of mesh indices into \+\#V. \\
 \hline
-\mbox{\texttt{ in}}  & {\em SI} & \#\+Ele by dim list revealing for each coordinate where Ele\textquotesingle{}s barycenters would be sorted\+: SI(e,d) = i -\/-\/\texorpdfstring{$>$}{>} the dth coordinate of the barycenter of the eth element would be placed at position i in a sorted list. \\
+\doxymbox{\texttt{in}}  & {\em SI} & \+\#\+Ele by dim list revealing for each coordinate where Ele\textquotesingle{}s barycenters would be sorted:\+ SI(e,d) = i -\/-\/\texorpdfstring{$>$}{>} the dth coordinate of the barycenter of the eth element would be placed at position i in a sorted list. \\
 \hline
-\mbox{\texttt{ in}}  & {\em I} & \#I list of indices into Ele of elements to include (for recursive calls) \\
+\doxymbox{\texttt{in}}  & {\em I} & \+\#I list of indices into Ele of elements to include (for recursive calls) \\
 \hline
 \end{DoxyParams}
-\Hypertarget{classigl_1_1AABB_a24935012c54ca405bb515ae96e2549d1}\label{classigl_1_1AABB_a24935012c54ca405bb515ae96e2549d1} 
-\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!is\_leaf@{is\_leaf}}
-\index{is\_leaf@{is\_leaf}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
-\doxysubsubsection{\texorpdfstring{is\_leaf()}{is\_leaf()}}
-{\footnotesize\ttfamily template$<$typename DerivedV , int DIM$>$ \\
-\mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} bool \mbox{\hyperlink{classigl_1_1AABB}{igl\+::\+AABB}}$<$ DerivedV, DIM $>$\+::is\+\_\+leaf (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+\Hypertarget{classigl_1_1AABB_a45c371debe0a10956ba2be1b3bfa4cf0}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!update\_primitive@{update\_primitive}}
+\index{update\_primitive@{update\_primitive}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
+\doxysubsubsection{\texorpdfstring{update\_primitive()}{update\_primitive()}}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_a45c371debe0a10956ba2be1b3bfa4cf0} 
+template$<$typename DerivedV, int DIM$>$ \\
+template$<$typename Derived\+Ele$>$ \\
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} AABB$<$ DerivedV, DIM $>$ \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+update\+\_\+primitive (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&}]{V}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derived\+Ele $>$ \&}]{Ele}{, }\item[{const \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}}]{pad}{ = {\ttfamily 0}}\end{DoxyParamCaption})}
 
-
-
-Return whether at leaf node. 
-
-\Hypertarget{classigl_1_1AABB_a05a70628fcd4f87981ebff25ed58055b}\label{classigl_1_1AABB_a05a70628fcd4f87981ebff25ed58055b} 
-\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!find@{find}}
+\begin{DoxyReturn}{Returns}
+{\ttfamily this} if no update was needed, otherwise returns pointer to (potentially new) root 
+\end{DoxyReturn}
+\Hypertarget{classigl_1_1AABB_a05a70628fcd4f87981ebff25ed58055b}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!find@{find}}
 \index{find@{find}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
 \doxysubsubsection{\texorpdfstring{find()}{find()}}
-{\footnotesize\ttfamily template$<$typename DerivedV , int DIM$>$ \\
-template$<$typename Derived\+Ele , typename Derivedq $>$ \\
-\mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} std\+::vector$<$ int $>$ \mbox{\hyperlink{classigl_1_1AABB}{igl\+::\+AABB}}$<$ DerivedV, DIM $>$\+::find (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+Ele $>$ \&}]{Ele,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derivedq $>$ \&}]{q,  }\item[{const bool}]{first = {\ttfamily false} }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_a05a70628fcd4f87981ebff25ed58055b} 
+template$<$typename DerivedV, int DIM$>$ \\
+template$<$typename Derived\+Ele, typename Derivedq$>$ \\
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} std::\+vector$<$ int $>$ \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+find (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&}]{V}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derived\+Ele $>$ \&}]{Ele}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derivedq $>$ \&}]{q}{, }\item[{const bool}]{first}{ = {\ttfamily false}}\end{DoxyParamCaption}) const}
 
 
 
-Find the indices of elements containing given point\+: this makes sense when Ele is a co-\/dimension 0 simplex (tets in 3D, triangles in 2D). 
+Find the indices of elements containing given point:\+ this makes sense when Ele is a co-\/dimension 0 simplex (tets in 3D, triangles in 2D). 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em V} & \#V by dim list of mesh vertex positions. {\bfseries{Should be same as used to construct mesh.}} \\
+\doxymbox{\texttt{in}}  & {\em V} & \+\#V by dim list of mesh vertex positions. {\bfseries{Should be same as used to construct mesh.}} \\
 \hline
-\mbox{\texttt{ in}}  & {\em Ele} & \#\+Ele by dim+1 list of mesh indices into \#V. {\bfseries{Should be same as used to construct mesh.}} \\
+\doxymbox{\texttt{in}}  & {\em Ele} & \+\#\+Ele by dim+1 list of mesh indices into \+\#V. {\bfseries{Should be same as used to construct mesh.}} \\
 \hline
-\mbox{\texttt{ in}}  & {\em q} & dim row-\/vector query position \\
+\doxymbox{\texttt{in}}  & {\em q} & dim row-\/vector query position \\
 \hline
-\mbox{\texttt{ in}}  & {\em first} & whether to only return first element containing q \\
+\doxymbox{\texttt{in}}  & {\em first} & whether to only return first element containing q \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 list of indices of elements containing q 
 \end{DoxyReturn}
-\Hypertarget{classigl_1_1AABB_aa10facd7366f1a368b86e45eaa25f316}\label{classigl_1_1AABB_aa10facd7366f1a368b86e45eaa25f316} 
-\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!subtree\_size@{subtree\_size}}
-\index{subtree\_size@{subtree\_size}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
-\doxysubsubsection{\texorpdfstring{subtree\_size()}{subtree\_size()}}
-{\footnotesize\ttfamily template$<$typename DerivedV , int DIM$>$ \\
-\mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} int \mbox{\hyperlink{classigl_1_1AABB}{igl\+::\+AABB}}$<$ DerivedV, DIM $>$\+::subtree\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
-
-
-
-Number of nodes contained in subtree. 
-
-\begin{DoxyReturn}{Returns}
-Number of elements m then total tree size should be 2\texorpdfstring{$\ast$}{*}h where h is the deepest depth 2\texorpdfstring{$^\wedge$}{\string^}ceil(log(\#\+Ele\texorpdfstring{$\ast$}{*}2-\/1)) 
-\end{DoxyReturn}
-\Hypertarget{classigl_1_1AABB_ad4cae218326d31c60636f6e8b399604a}\label{classigl_1_1AABB_ad4cae218326d31c60636f6e8b399604a} 
-\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!serialize@{serialize}}
+\Hypertarget{classigl_1_1AABB_ad4cae218326d31c60636f6e8b399604a}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!serialize@{serialize}}
 \index{serialize@{serialize}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
 \doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
-{\footnotesize\ttfamily template$<$typename DerivedV , int DIM$>$ \\
-template$<$typename Derivedbb\+\_\+mins , typename Derivedbb\+\_\+maxs , typename Derivedelements $>$ \\
-\mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} void \mbox{\hyperlink{classigl_1_1AABB}{igl\+::\+AABB}}$<$ DerivedV, DIM $>$\+::serialize (\begin{DoxyParamCaption}\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derivedbb\+\_\+mins $>$ \&}]{bb\+\_\+mins,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derivedbb\+\_\+maxs $>$ \&}]{bb\+\_\+maxs,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ Derivedelements $>$ \&}]{elements,  }\item[{const int}]{i = {\ttfamily 0} }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_ad4cae218326d31c60636f6e8b399604a} 
+template$<$typename DerivedV, int DIM$>$ \\
+template$<$typename Derivedbb\+\_\+mins, typename Derivedbb\+\_\+maxs, typename Derivedelements$>$ \\
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} void \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+serialize (\begin{DoxyParamCaption}\item[{Eigen::\+\+Plain\+Object\+Base$<$ Derivedbb\+\_\+mins $>$ \&}]{bb\+\_\+mins}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ Derivedbb\+\_\+maxs $>$ \&}]{bb\+\_\+maxs}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ Derivedelements $>$ \&}]{elements}{, }\item[{const int}]{i}{ = {\ttfamily 0}}\end{DoxyParamCaption}) const}
 
 
 
-Serialize this class into 3 arrays (so we can pass it pack to matlab) 
+Serialize this class into 3 arrays (so we can pass it pack to matlab). 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ out}}  & {\em bb\+\_\+mins} & max\+\_\+tree by dim list of bounding box min corner positions \\
+\doxymbox{\texttt{out}}  & {\em bb\+\_\+mins} & max\+\_\+tree by dim list of bounding box min corner positions \\
 \hline
-\mbox{\texttt{ out}}  & {\em bb\+\_\+maxs} & max\+\_\+tree by dim list of bounding box max corner positions \\
+\doxymbox{\texttt{out}}  & {\em bb\+\_\+maxs} & max\+\_\+tree by dim list of bounding box max corner positions \\
 \hline
-\mbox{\texttt{ out}}  & {\em elements} & max\+\_\+tree list of element or (not leaf id) indices into Ele \\
+\doxymbox{\texttt{out}}  & {\em elements} & max\+\_\+tree list of element or (not leaf id) indices into Ele \\
 \hline
-\mbox{\texttt{ in}}  & {\em i} & recursive call index into these arrays \{0\} \\
+\doxymbox{\texttt{in}}  & {\em i} & recursive call index into these arrays \{0\} \\
 \hline
 \end{DoxyParams}
-\Hypertarget{classigl_1_1AABB_a96a7347d4780172b8c88ffab2be93e0f}\label{classigl_1_1AABB_a96a7347d4780172b8c88ffab2be93e0f} 
-\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!squared\_distance@{squared\_distance}}
+\Hypertarget{classigl_1_1AABB_a96a7347d4780172b8c88ffab2be93e0f}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!squared\_distance@{squared\_distance}}
 \index{squared\_distance@{squared\_distance}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
 \doxysubsubsection{\texorpdfstring{squared\_distance()}{squared\_distance()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
-{\footnotesize\ttfamily template$<$typename DerivedV , int DIM$>$ \\
-template$<$typename Derived\+Ele $>$ \\
-\mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} \mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}} \mbox{\hyperlink{classigl_1_1AABB}{igl\+::\+AABB}}$<$ DerivedV, DIM $>$\+::squared\+\_\+distance (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+Ele $>$ \&}]{Ele,  }\item[{const \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} \&}]{p,  }\item[{int \&}]{i,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} $>$ \&}]{c }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_a96a7347d4780172b8c88ffab2be93e0f} 
+template$<$typename DerivedV, int DIM$>$ \\
+template$<$typename Derived\+Ele$>$ \\
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}} \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+squared\+\_\+distance (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&}]{V}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derived\+Ele $>$ \&}]{Ele}{, }\item[{const \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} \&}]{p}{, }\item[{int \&}]{i}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} $>$ \&}]{c}{}\end{DoxyParamCaption}) const}
 
 
 
@@ -295,15 +850,15 @@ Compute squared distance to a query point.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em V} & \#V by dim list of vertex positions \\
+\doxymbox{\texttt{in}}  & {\em V} & \+\#V by dim list of vertex positions \\
 \hline
-\mbox{\texttt{ in}}  & {\em Ele} & \#\+Ele by dim list of simplex indices \\
+\doxymbox{\texttt{in}}  & {\em Ele} & \+\#\+Ele by dim list of simplex indices \\
 \hline
-\mbox{\texttt{ in}}  & {\em p} & dim-\/long query point \\
+\doxymbox{\texttt{in}}  & {\em p} & dim-\/long query point \\
 \hline
-\mbox{\texttt{ out}}  & {\em i} & facet index corresponding to smallest distances \\
+\doxymbox{\texttt{out}}  & {\em i} & facet index corresponding to smallest distances \\
 \hline
-\mbox{\texttt{ out}}  & {\em c} & closest point \\
+\doxymbox{\texttt{out}}  & {\em c} & closest point \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -312,13 +867,13 @@ squared distance
 \begin{DoxyPrecond}{Precondition}
 Currently assumes Elements are triangles regardless of dimension. 
 \end{DoxyPrecond}
-\Hypertarget{classigl_1_1AABB_ab82da3a68c7fb585068468b1a47d695c}\label{classigl_1_1AABB_ab82da3a68c7fb585068468b1a47d695c} 
-\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!squared\_distance@{squared\_distance}}
+\Hypertarget{classigl_1_1AABB_ab82da3a68c7fb585068468b1a47d695c}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!squared\_distance@{squared\_distance}}
 \index{squared\_distance@{squared\_distance}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
 \doxysubsubsection{\texorpdfstring{squared\_distance()}{squared\_distance()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
-{\footnotesize\ttfamily template$<$typename DerivedV , int DIM$>$ \\
-template$<$typename Derived\+Ele $>$ \\
-\mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} \mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}} \mbox{\hyperlink{classigl_1_1AABB}{igl\+::\+AABB}}$<$ DerivedV, DIM $>$\+::squared\+\_\+distance (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+Ele $>$ \&}]{Ele,  }\item[{const \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} \&}]{p,  }\item[{const \mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}}]{low\+\_\+sqr\+\_\+d,  }\item[{const \mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}}]{up\+\_\+sqr\+\_\+d,  }\item[{int \&}]{i,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} $>$ \&}]{c }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_ab82da3a68c7fb585068468b1a47d695c} 
+template$<$typename DerivedV, int DIM$>$ \\
+template$<$typename Derived\+Ele$>$ \\
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}} \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+squared\+\_\+distance (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&}]{V}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derived\+Ele $>$ \&}]{Ele}{, }\item[{const \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} \&}]{p}{, }\item[{const \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}}]{low\+\_\+sqr\+\_\+d}{, }\item[{const \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}}]{up\+\_\+sqr\+\_\+d}{, }\item[{int \&}]{i}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} $>$ \&}]{c}{}\end{DoxyParamCaption}) const}
 
 
 
@@ -326,19 +881,19 @@ Compute squared distance to a query point if within {\ttfamily low\+\_\+sqr\+\_\
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em V} & \#V by dim list of vertex positions \\
+\doxymbox{\texttt{in}}  & {\em V} & \+\#V by dim list of vertex positions \\
 \hline
-\mbox{\texttt{ in}}  & {\em Ele} & \#\+Ele by dim list of simplex indices \\
+\doxymbox{\texttt{in}}  & {\em Ele} & \+\#\+Ele by dim list of simplex indices \\
 \hline
-\mbox{\texttt{ in}}  & {\em p} & dim-\/long query point \\
+\doxymbox{\texttt{in}}  & {\em p} & dim-\/long query point \\
 \hline
-\mbox{\texttt{ in}}  & {\em low\+\_\+sqr\+\_\+d} & lower bound on squared distance, specified maximum squared distance \\
+\doxymbox{\texttt{in}}  & {\em low\+\_\+sqr\+\_\+d} & lower bound on squared distance, specified maximum squared distance \\
 \hline
-\mbox{\texttt{ in}}  & {\em up\+\_\+sqr\+\_\+d} & current upper bounded on squared distance, current minimum squared distance (only consider distances less than this), see output. \\
+\doxymbox{\texttt{in}}  & {\em up\+\_\+sqr\+\_\+d} & current upper bounded on squared distance, current minimum squared distance (only consider distances less than this), see output. \\
 \hline
-\mbox{\texttt{ out}}  & {\em i} & facet index corresponding to smallest distances \\
+\doxymbox{\texttt{out}}  & {\em i} & facet index corresponding to smallest distances \\
 \hline
-\mbox{\texttt{ out}}  & {\em c} & closest point \\
+\doxymbox{\texttt{out}}  & {\em c} & closest point \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -347,43 +902,43 @@ squared distance
 \begin{DoxyPrecond}{Precondition}
 currently assumes Elements are triangles regardless of dimension. 
 \end{DoxyPrecond}
-\Hypertarget{classigl_1_1AABB_ac6cda1a6e31e015f72b2c5cf5143cb5b}\label{classigl_1_1AABB_ac6cda1a6e31e015f72b2c5cf5143cb5b} 
-\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!squared\_distance@{squared\_distance}}
+\Hypertarget{classigl_1_1AABB_ac6cda1a6e31e015f72b2c5cf5143cb5b}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!squared\_distance@{squared\_distance}}
 \index{squared\_distance@{squared\_distance}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
 \doxysubsubsection{\texorpdfstring{squared\_distance()}{squared\_distance()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
-{\footnotesize\ttfamily template$<$typename DerivedV , int DIM$>$ \\
-template$<$typename Derived\+Ele $>$ \\
-\mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} \mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}} \mbox{\hyperlink{classigl_1_1AABB}{igl\+::\+AABB}}$<$ DerivedV, DIM $>$\+::squared\+\_\+distance (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+Ele $>$ \&}]{Ele,  }\item[{const \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} \&}]{p,  }\item[{const \mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}}]{up\+\_\+sqr\+\_\+d,  }\item[{int \&}]{i,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} $>$ \&}]{c }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_ac6cda1a6e31e015f72b2c5cf5143cb5b} 
+template$<$typename DerivedV, int DIM$>$ \\
+template$<$typename Derived\+Ele$>$ \\
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}} \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+squared\+\_\+distance (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&}]{V}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derived\+Ele $>$ \&}]{Ele}{, }\item[{const \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} \&}]{p}{, }\item[{const \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}}]{up\+\_\+sqr\+\_\+d}{, }\item[{int \&}]{i}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} $>$ \&}]{c}{}\end{DoxyParamCaption}) const}
 
 
 
-Compute squared distance to a query point (default {\ttfamily low\+\_\+sqr\+\_\+d}) 
+Compute squared distance to a query point (default {\ttfamily low\+\_\+sqr\+\_\+d}). 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em V} & \#V by dim list of vertex positions \\
+\doxymbox{\texttt{in}}  & {\em V} & \+\#V by dim list of vertex positions \\
 \hline
-\mbox{\texttt{ in}}  & {\em Ele} & \#\+Ele by dim list of simplex indices \\
+\doxymbox{\texttt{in}}  & {\em Ele} & \+\#\+Ele by dim list of simplex indices \\
 \hline
-\mbox{\texttt{ in}}  & {\em p} & dim-\/long query point \\
+\doxymbox{\texttt{in}}  & {\em p} & dim-\/long query point \\
 \hline
-\mbox{\texttt{ in}}  & {\em up\+\_\+sqr\+\_\+d} & current upper bounded on squared distance, current minimum squared distance (only consider distances less than this), see output. \\
+\doxymbox{\texttt{in}}  & {\em up\+\_\+sqr\+\_\+d} & current upper bounded on squared distance, current minimum squared distance (only consider distances less than this), see output. \\
 \hline
-\mbox{\texttt{ out}}  & {\em i} & facet index corresponding to smallest distances \\
+\doxymbox{\texttt{out}}  & {\em i} & facet index corresponding to smallest distances \\
 \hline
-\mbox{\texttt{ out}}  & {\em c} & closest point \\
+\doxymbox{\texttt{out}}  & {\em c} & closest point \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 squared distance 
 \end{DoxyReturn}
-\Hypertarget{classigl_1_1AABB_ac29bfe91eaf75f2f28180345a478cbd5}\label{classigl_1_1AABB_ac29bfe91eaf75f2f28180345a478cbd5} 
-\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!intersect\_ray@{intersect\_ray}}
+\Hypertarget{classigl_1_1AABB_a0cb125ad92cf40f35267b31da40c39ae}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!intersect\_ray@{intersect\_ray}}
 \index{intersect\_ray@{intersect\_ray}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
-\doxysubsubsection{\texorpdfstring{intersect\_ray()}{intersect\_ray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily template$<$typename DerivedV , int DIM$>$ \\
-template$<$typename Derived\+Ele $>$ \\
-\mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} bool \mbox{\hyperlink{classigl_1_1AABB}{igl\+::\+AABB}}$<$ DerivedV, DIM $>$\+::intersect\+\_\+ray (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+Ele $>$ \&}]{Ele,  }\item[{const \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} \&}]{origin,  }\item[{const \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} \&}]{dir,  }\item[{std\+::vector$<$ \mbox{\hyperlink{structigl_1_1Hit}{igl\+::\+Hit}} $>$ \&}]{hits }\end{DoxyParamCaption}) const}
+\doxysubsubsection{\texorpdfstring{intersect\_ray()}{intersect\_ray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_a0cb125ad92cf40f35267b31da40c39ae} 
+template$<$typename DerivedV, int DIM$>$ \\
+template$<$typename Derived\+Ele$>$ \\
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} bool \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+intersect\+\_\+ray (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&}]{V}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derived\+Ele $>$ \&}]{Ele}{, }\item[{const \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} \&}]{origin}{, }\item[{const \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} \&}]{dir}{, }\item[{std::\+vector$<$ \doxymbox{\hyperlink{structigl_1_1Hit}{igl::\+\+Hit}}$<$ typename Derived\+V::\+\+Scalar $>$ $>$ \&}]{hits}{}\end{DoxyParamCaption}) const}
 
 
 
@@ -391,27 +946,27 @@ Intersect a ray with the mesh return all hits.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em V} & \#V by dim list of vertex positions \\
+\doxymbox{\texttt{in}}  & {\em V} & \+\#V by dim list of vertex positions \\
 \hline
-\mbox{\texttt{ in}}  & {\em Ele} & \#\+Ele by dim list of simplex indices \\
+\doxymbox{\texttt{in}}  & {\em Ele} & \+\#\+Ele by dim list of simplex indices \\
 \hline
-\mbox{\texttt{ in}}  & {\em origin} & dim-\/long ray origin \\
+\doxymbox{\texttt{in}}  & {\em origin} & dim-\/long ray origin \\
 \hline
-\mbox{\texttt{ in}}  & {\em dir} & dim-\/long ray direction \\
+\doxymbox{\texttt{in}}  & {\em dir} & dim-\/long ray direction \\
 \hline
-\mbox{\texttt{ out}}  & {\em hits} & list of hits \\
+\doxymbox{\texttt{out}}  & {\em hits} & list of hits \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 true if any hits 
 \end{DoxyReturn}
-\Hypertarget{classigl_1_1AABB_a8482291a47ef3c018869057c892b6766}\label{classigl_1_1AABB_a8482291a47ef3c018869057c892b6766} 
-\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!intersect\_ray@{intersect\_ray}}
+\Hypertarget{classigl_1_1AABB_a4f915f2db534ee67592651980132b2a1}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!intersect\_ray@{intersect\_ray}}
 \index{intersect\_ray@{intersect\_ray}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
-\doxysubsubsection{\texorpdfstring{intersect\_ray()}{intersect\_ray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily template$<$typename DerivedV , int DIM$>$ \\
-template$<$typename Derived\+Ele $>$ \\
-\mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} bool \mbox{\hyperlink{classigl_1_1AABB}{igl\+::\+AABB}}$<$ DerivedV, DIM $>$\+::intersect\+\_\+ray (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+Ele $>$ \&}]{Ele,  }\item[{const \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} \&}]{origin,  }\item[{const \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} \&}]{dir,  }\item[{\mbox{\hyperlink{structigl_1_1Hit}{igl\+::\+Hit}} \&}]{hit }\end{DoxyParamCaption}) const}
+\doxysubsubsection{\texorpdfstring{intersect\_ray()}{intersect\_ray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_a4f915f2db534ee67592651980132b2a1} 
+template$<$typename DerivedV, int DIM$>$ \\
+template$<$typename Derived\+Ele$>$ \\
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} bool \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+intersect\+\_\+ray (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&}]{V}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derived\+Ele $>$ \&}]{Ele}{, }\item[{const \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} \&}]{origin}{, }\item[{const \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} \&}]{dir}{, }\item[{\doxymbox{\hyperlink{structigl_1_1Hit}{igl::\+\+Hit}}$<$ typename Derived\+V::\+\+Scalar $>$ \&}]{hit}{}\end{DoxyParamCaption}) const}
 
 
 
@@ -419,57 +974,96 @@ Intersect a ray with the mesh return first hit.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em V} & \#V by dim list of vertex positions \\
+\doxymbox{\texttt{in}}  & {\em V} & \+\#V by dim list of vertex positions \\
 \hline
-\mbox{\texttt{ in}}  & {\em Ele} & \#\+Ele by dim list of simplex indices \\
+\doxymbox{\texttt{in}}  & {\em Ele} & \+\#\+Ele by dim list of simplex indices \\
 \hline
-\mbox{\texttt{ in}}  & {\em origin} & dim-\/long ray origin \\
+\doxymbox{\texttt{in}}  & {\em origin} & dim-\/long ray origin \\
 \hline
-\mbox{\texttt{ in}}  & {\em dir} & dim-\/long ray direction \\
+\doxymbox{\texttt{in}}  & {\em dir} & dim-\/long ray direction \\
 \hline
-\mbox{\texttt{ out}}  & {\em hit} & first hit \\
+\doxymbox{\texttt{out}}  & {\em hit} & first hit \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 true if any hit 
 \end{DoxyReturn}
-\Hypertarget{classigl_1_1AABB_a8de34081730915384b218bedb16a7b07}\label{classigl_1_1AABB_a8de34081730915384b218bedb16a7b07} 
-\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!intersect\_ray@{intersect\_ray}}
+\Hypertarget{classigl_1_1AABB_a44817fe83922a30e38698112a8a4d07a}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!intersect\_ray@{intersect\_ray}}
 \index{intersect\_ray@{intersect\_ray}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
-\doxysubsubsection{\texorpdfstring{intersect\_ray()}{intersect\_ray()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily template$<$typename DerivedV , int DIM$>$ \\
-template$<$typename Derived\+Ele $>$ \\
-\mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} bool \mbox{\hyperlink{classigl_1_1AABB}{igl\+::\+AABB}}$<$ DerivedV, DIM $>$\+::intersect\+\_\+ray (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+Ele $>$ \&}]{Ele,  }\item[{const \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} \&}]{origin,  }\item[{const \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} \&}]{dir,  }\item[{const \mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}}]{min\+\_\+t,  }\item[{\mbox{\hyperlink{structigl_1_1Hit}{igl\+::\+Hit}} \&}]{hit }\end{DoxyParamCaption}) const}
+\doxysubsubsection{\texorpdfstring{intersect\_ray()}{intersect\_ray()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_a44817fe83922a30e38698112a8a4d07a} 
+template$<$typename DerivedV, int DIM$>$ \\
+template$<$typename Derived\+Ele$>$ \\
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} bool \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+intersect\+\_\+ray (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&}]{V}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derived\+Ele $>$ \&}]{Ele}{, }\item[{const \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} \&}]{origin}{, }\item[{const \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{Row\+Vector\+DIMS}} \&}]{dir}{, }\item[{const \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}}]{min\+\_\+t}{, }\item[{\doxymbox{\hyperlink{structigl_1_1Hit}{igl::\+\+Hit}}$<$ typename Derived\+V::\+\+Scalar $>$ \&}]{hit}{}\end{DoxyParamCaption}) const}
 
 
 
-Intersect a ray with the mesh return first hit farther than {\ttfamily min\+\_\+t} 
+Intersect a ray with the mesh return first hit farther than {\ttfamily min\+\_\+t}. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em V} & \#V by dim list of vertex positions \\
+\doxymbox{\texttt{in}}  & {\em V} & \+\#V by dim list of vertex positions \\
 \hline
-\mbox{\texttt{ in}}  & {\em Ele} & \#\+Ele by dim list of simplex indices \\
+\doxymbox{\texttt{in}}  & {\em Ele} & \+\#\+Ele by dim list of simplex indices \\
 \hline
-\mbox{\texttt{ in}}  & {\em origin} & dim-\/long ray origin \\
+\doxymbox{\texttt{in}}  & {\em origin} & dim-\/long ray origin \\
 \hline
-\mbox{\texttt{ in}}  & {\em dir} & dim-\/long ray direction \\
+\doxymbox{\texttt{in}}  & {\em dir} & dim-\/long ray direction \\
 \hline
-\mbox{\texttt{ in}}  & {\em min\+\_\+t} & minimum t value to consider \\
+\doxymbox{\texttt{in}}  & {\em min\+\_\+t} & minimum t value to consider \\
 \hline
-\mbox{\texttt{ out}}  & {\em hit} & first hit \\
+\doxymbox{\texttt{out}}  & {\em hit} & first hit \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 true if any hit 
 \end{DoxyReturn}
-\Hypertarget{classigl_1_1AABB_a634a96258fec901ee54613d51b4e9b64}\label{classigl_1_1AABB_a634a96258fec901ee54613d51b4e9b64} 
-\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!squared\_distance@{squared\_distance}}
+\Hypertarget{classigl_1_1AABB_a9c33cf880342419fb601b8260e6701f6}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!intersect\_ray@{intersect\_ray}}
+\index{intersect\_ray@{intersect\_ray}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
+\doxysubsubsection{\texorpdfstring{intersect\_ray()}{intersect\_ray()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_a9c33cf880342419fb601b8260e6701f6} 
+template$<$typename DerivedV, int DIM$>$ \\
+template$<$typename Derived\+Ele, typename Derived\+Origin, typename Derived\+Dir, typename DerivedI, typename DerivedT, typename Derived\+UV$>$ \\
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} void \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+intersect\+\_\+ray (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&}]{V}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derived\+Ele $>$ \&}]{Ele}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derived\+Origin $>$ \&}]{origin}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derived\+Dir $>$ \&}]{dir}{, }\item[{const \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}}]{min\+\_\+t}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ DerivedI $>$ \&}]{I}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ DerivedT $>$ \&}]{T}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ Derived\+UV $>$ \&}]{UV}{}\end{DoxyParamCaption})}
+
+
+
+Intersect a rays with the mesh return first hit for each. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em V} & \+\#V by dim list of vertex positions \\
+\hline
+\doxymbox{\texttt{in}}  & {\em Ele} & \+\#\+Ele by dim list of simplex indices \\
+\hline
+\doxymbox{\texttt{in}}  & {\em origin} & \+\#ray by dim+1 list of ray origins \\
+\hline
+\doxymbox{\texttt{in}}  & {\em dir} & \+\#ray by dim list of ray directions \\
+\hline
+\doxymbox{\texttt{in}}  & {\em min\+\_\+t} & minimum t value to consider \\
+\hline
+\doxymbox{\texttt{out}}  & {\em I} & \+\#ray list of indices into Ele of closest primitives (-\/1 indicates no hit) \\
+\hline
+\doxymbox{\texttt{out}}  & {\em T} & \+\#ray list of t values (nan indicates no hit) \\
+\hline
+\doxymbox{\texttt{out}}  & {\em UV} & \+\#ray by dim list of barycentric coordinates \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classigl_1_1AABB_a47225468caa8d112f2ca1002c30fefd5}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!intersect\_ray@{intersect\_ray}}
+\index{intersect\_ray@{intersect\_ray}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
+\doxysubsubsection{\texorpdfstring{intersect\_ray()}{intersect\_ray()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_a47225468caa8d112f2ca1002c30fefd5} 
+template$<$typename DerivedV, int DIM$>$ \\
+template$<$typename Derived\+Ele, typename Derived\+Origin, typename Derived\+Dir$>$ \\
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} void \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+intersect\+\_\+ray (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&}]{V}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derived\+Ele $>$ \&}]{Ele}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derived\+Origin $>$ \&}]{origin}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derived\+Dir $>$ \&}]{dir}{, }\item[{std::\+vector$<$ std::\+vector$<$ \doxymbox{\hyperlink{structigl_1_1Hit}{igl::\+\+Hit}}$<$ typename Derived\+V::\+\+Scalar $>$ $>$ $>$ \&}]{hits}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classigl_1_1AABB_a634a96258fec901ee54613d51b4e9b64}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!squared\_distance@{squared\_distance}}
 \index{squared\_distance@{squared\_distance}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
 \doxysubsubsection{\texorpdfstring{squared\_distance()}{squared\_distance()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
-{\footnotesize\ttfamily template$<$typename DerivedV , int DIM$>$ \\
-template$<$typename Derived\+Ele , typename DerivedP , typename DerivedsqrD , typename DerivedI , typename DerivedC $>$ \\
-\mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} void \mbox{\hyperlink{classigl_1_1AABB}{igl\+::\+AABB}}$<$ DerivedV, DIM $>$\+::squared\+\_\+distance (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+Ele $>$ \&}]{Ele,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedP $>$ \&}]{P,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedsqrD $>$ \&}]{sqrD,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&}]{I,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedC $>$ \&}]{C }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_a634a96258fec901ee54613d51b4e9b64} 
+template$<$typename DerivedV, int DIM$>$ \\
+template$<$typename Derived\+Ele, typename DerivedP, typename DerivedsqrD, typename DerivedI, typename DerivedC$>$ \\
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} void \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+squared\+\_\+distance (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&}]{V}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derived\+Ele $>$ \&}]{Ele}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedP $>$ \&}]{P}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ DerivedsqrD $>$ \&}]{sqrD}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ DerivedI $>$ \&}]{I}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ DerivedC $>$ \&}]{C}{}\end{DoxyParamCaption}) const}
 
 
 
@@ -477,26 +1071,26 @@ Compute the squared distance from all query points in P to the {\itshape closest
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em V} & \#V by dim list of vertex positions \\
+\doxymbox{\texttt{in}}  & {\em V} & \+\#V by dim list of vertex positions \\
 \hline
-\mbox{\texttt{ in}}  & {\em Ele} & \#\+Ele by dim list of simplex indices \\
+\doxymbox{\texttt{in}}  & {\em Ele} & \+\#\+Ele by dim list of simplex indices \\
 \hline
-\mbox{\texttt{ in}}  & {\em P} & \#P by dim list of query points \\
+\doxymbox{\texttt{in}}  & {\em P} & \+\#P by dim list of query points \\
 \hline
-\mbox{\texttt{ out}}  & {\em sqrD} & \#P list of squared distances \\
+\doxymbox{\texttt{out}}  & {\em sqrD} & \+\#P list of squared distances \\
 \hline
-\mbox{\texttt{ out}}  & {\em I} & \#P list of indices into Ele of closest primitives \\
+\doxymbox{\texttt{out}}  & {\em I} & \+\#P list of indices into Ele of closest primitives \\
 \hline
-\mbox{\texttt{ out}}  & {\em C} & \#P by dim list of closest points \\
+\doxymbox{\texttt{out}}  & {\em C} & \+\#P by dim list of closest points \\
 \hline
 \end{DoxyParams}
-\Hypertarget{classigl_1_1AABB_a222114f494110d3e536bca03b86b8c12}\label{classigl_1_1AABB_a222114f494110d3e536bca03b86b8c12} 
-\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!squared\_distance@{squared\_distance}}
+\Hypertarget{classigl_1_1AABB_a222114f494110d3e536bca03b86b8c12}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!squared\_distance@{squared\_distance}}
 \index{squared\_distance@{squared\_distance}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
 \doxysubsubsection{\texorpdfstring{squared\_distance()}{squared\_distance()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
-{\footnotesize\ttfamily template$<$typename DerivedV , int DIM$>$ \\
-template$<$typename Derived\+Ele , typename Derivedother\+\_\+V , typename Derivedother\+\_\+\+Ele , typename DerivedsqrD , typename DerivedI , typename DerivedC $>$ \\
-\mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} void \mbox{\hyperlink{classigl_1_1AABB}{igl\+::\+AABB}}$<$ DerivedV, DIM $>$\+::squared\+\_\+distance (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+Ele $>$ \&}]{Ele,  }\item[{const \mbox{\hyperlink{classigl_1_1AABB}{AABB}}$<$ Derivedother\+\_\+V, DIM $>$ \&}]{other,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derivedother\+\_\+V $>$ \&}]{other\+\_\+V,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derivedother\+\_\+\+Ele $>$ \&}]{other\+\_\+\+Ele,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedsqrD $>$ \&}]{sqrD,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&}]{I,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedC $>$ \&}]{C }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_a222114f494110d3e536bca03b86b8c12} 
+template$<$typename DerivedV, int DIM$>$ \\
+template$<$typename Derived\+Ele, typename Derivedother\+\_\+V, typename Derivedother\+\_\+\+Ele, typename DerivedsqrD, typename DerivedI, typename DerivedC$>$ \\
+\doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\+\_\+\+INLINE}} void \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+squared\+\_\+distance (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&}]{V}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derived\+Ele $>$ \&}]{Ele}{, }\item[{const AABB$<$ Derivedother\+\_\+V, DIM $>$ \&}]{other}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derivedother\+\_\+V $>$ \&}]{other\+\_\+V}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derivedother\+\_\+\+Ele $>$ \&}]{other\+\_\+\+Ele}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ DerivedsqrD $>$ \&}]{sqrD}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ DerivedI $>$ \&}]{I}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ DerivedC $>$ \&}]{C}{}\end{DoxyParamCaption}) const}
 
 
 
@@ -504,75 +1098,90 @@ Compute the squared distance from all query points in P already stored in its ow
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em V} & \#V by dim list of vertex positions \\
+\doxymbox{\texttt{in}}  & {\em V} & \+\#V by dim list of vertex positions \\
 \hline
-\mbox{\texttt{ in}}  & {\em Ele} & \#\+Ele by dim list of simplex indices \\
+\doxymbox{\texttt{in}}  & {\em Ele} & \+\#\+Ele by dim list of simplex indices \\
 \hline
-\mbox{\texttt{ in}}  & {\em other} & \doxylink{classigl_1_1AABB}{AABB} hierarchy of another set of primitives (must be points) \\
+\doxymbox{\texttt{in}}  & {\em other} & \doxylink{classigl_1_1AABB}{AABB} hierarchy of another set of primitives (must be points) \\
 \hline
-\mbox{\texttt{ in}}  & {\em other\+\_\+V} & \#other\+\_\+V by dim list of query points \\
+\doxymbox{\texttt{in}}  & {\em other\+\_\+V} & \+\#other\+\_\+V by dim list of query points \\
 \hline
-\mbox{\texttt{ in}}  & {\em other\+\_\+\+Ele} & \#other\+\_\+\+Ele by ss list of simplex indices into other\+\_\+V (must be simple list of points\+: ss == 1) \\
+\doxymbox{\texttt{in}}  & {\em other\+\_\+\+Ele} & \+\#other\+\_\+\+Ele by ss list of simplex indices into other\+\_\+V (must be simple list of points:\+ ss == 1) \\
 \hline
-\mbox{\texttt{ out}}  & {\em sqrD} & \#P list of squared distances \\
+\doxymbox{\texttt{out}}  & {\em sqrD} & \+\#P list of squared distances \\
 \hline
-\mbox{\texttt{ out}}  & {\em I} & \#P list of indices into Ele of closest primitives \\
+\doxymbox{\texttt{out}}  & {\em I} & \+\#P list of indices into Ele of closest primitives \\
 \hline
-\mbox{\texttt{ out}}  & {\em C} & \#P by dim list of closest points \\
+\doxymbox{\texttt{out}}  & {\em C} & \+\#P by dim list of closest points \\
 \hline
 \end{DoxyParams}
 
 
+\label{doc-related-members}
+\Hypertarget{classigl_1_1AABB_doc-related-members}
 \doxysubsection{Friends And Related Symbol Documentation}
-\Hypertarget{classigl_1_1AABB_a9703efef4dfa78aa20be159b0ea57b0f}\label{classigl_1_1AABB_a9703efef4dfa78aa20be159b0ea57b0f} 
-\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!swap@{swap}}
+\Hypertarget{classigl_1_1AABB_a9703efef4dfa78aa20be159b0ea57b0f}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!swap@{swap}}
 \index{swap@{swap}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
 \doxysubsubsection{\texorpdfstring{swap}{swap}}
-{\footnotesize\ttfamily template$<$typename DerivedV , int DIM$>$ \\
-void swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classigl_1_1AABB}{AABB}}$<$ DerivedV, DIM $>$ \&}]{first,  }\item[{\mbox{\hyperlink{classigl_1_1AABB}{AABB}}$<$ DerivedV, DIM $>$ \&}]{second }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_a9703efef4dfa78aa20be159b0ea57b0f} 
+template$<$typename DerivedV, int DIM$>$ \\
+void swap (\begin{DoxyParamCaption}\item[{AABB$<$ DerivedV, DIM $>$ \&}]{first}{, }\item[{AABB$<$ DerivedV, DIM $>$ \&}]{second}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
 
 
 
+\label{doc-variable-members}
+\Hypertarget{classigl_1_1AABB_doc-variable-members}
 \doxysubsection{Member Data Documentation}
-\Hypertarget{classigl_1_1AABB_a235d9f0789affa75050a75fe1d9a3e84}\label{classigl_1_1AABB_a235d9f0789affa75050a75fe1d9a3e84} 
-\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!m\_left@{m\_left}}
+\Hypertarget{classigl_1_1AABB_a235d9f0789affa75050a75fe1d9a3e84}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!m\_left@{m\_left}}
 \index{m\_left@{m\_left}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
 \doxysubsubsection{\texorpdfstring{m\_left}{m\_left}}
-{\footnotesize\ttfamily template$<$typename DerivedV , int DIM$>$ \\
-\mbox{\hyperlink{classigl_1_1AABB}{AABB}}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classigl_1_1AABB}{igl\+::\+AABB}}$<$ DerivedV, DIM $>$\+::m\+\_\+left}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_a235d9f0789affa75050a75fe1d9a3e84} 
+template$<$typename DerivedV, int DIM$>$ \\
+AABB\texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+m\+\_\+left}
 
 
 
-Pointer to "{}left"{} child node ({\ttfamily nullptr} if leaf) 
+Pointer to "{}left"{} child node ({\ttfamily nullptr} if leaf). 
 
-\Hypertarget{classigl_1_1AABB_a9abce242119d9e709b8e447480b27bf5}\label{classigl_1_1AABB_a9abce242119d9e709b8e447480b27bf5} 
-\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!m\_right@{m\_right}}
+\Hypertarget{classigl_1_1AABB_a9abce242119d9e709b8e447480b27bf5}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!m\_right@{m\_right}}
 \index{m\_right@{m\_right}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
 \doxysubsubsection{\texorpdfstring{m\_right}{m\_right}}
-{\footnotesize\ttfamily template$<$typename DerivedV , int DIM$>$ \\
-\mbox{\hyperlink{classigl_1_1AABB}{AABB}}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classigl_1_1AABB}{igl\+::\+AABB}}$<$ DerivedV, DIM $>$\+::m\+\_\+right}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_a9abce242119d9e709b8e447480b27bf5} 
+template$<$typename DerivedV, int DIM$>$ \\
+AABB\texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+m\+\_\+right}
 
 
 
-Pointer to "{}right"{} child node ({\ttfamily nullptr} if leaf) 
+Pointer to "{}right"{} child node ({\ttfamily nullptr} if leaf). 
 
-\Hypertarget{classigl_1_1AABB_ae5a1a951d07db942eed6d14f45af6e6b}\label{classigl_1_1AABB_ae5a1a951d07db942eed6d14f45af6e6b} 
-\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!m\_box@{m\_box}}
+\Hypertarget{classigl_1_1AABB_afefa55132c521c4fe3412d8f46231ccb}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!m\_parent@{m\_parent}}
+\index{m\_parent@{m\_parent}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
+\doxysubsubsection{\texorpdfstring{m\_parent}{m\_parent}}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_afefa55132c521c4fe3412d8f46231ccb} 
+template$<$typename DerivedV, int DIM$>$ \\
+AABB\texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+m\+\_\+parent}
+
+
+
+Pointer to "{}parent"{} node ({\ttfamily nullptr} if root). 
+
+\Hypertarget{classigl_1_1AABB_ae5a1a951d07db942eed6d14f45af6e6b}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!m\_box@{m\_box}}
 \index{m\_box@{m\_box}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
 \doxysubsubsection{\texorpdfstring{m\_box}{m\_box}}
-{\footnotesize\ttfamily template$<$typename DerivedV , int DIM$>$ \\
-Eigen\+::\+Aligned\+Box$<$\mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}},DIM$>$ \mbox{\hyperlink{classigl_1_1AABB}{igl\+::\+AABB}}$<$ DerivedV, DIM $>$\+::m\+\_\+box}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_ae5a1a951d07db942eed6d14f45af6e6b} 
+template$<$typename DerivedV, int DIM$>$ \\
+Eigen::\+\+Aligned\+Box$<$\doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}},DIM$>$ \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+m\+\_\+box}
 
 
 
 Axis-\/\+Aligned Bounding Box containing this node. 
 
-\Hypertarget{classigl_1_1AABB_a5ea4da975626dc7c471a0405b48ed3b4}\label{classigl_1_1AABB_a5ea4da975626dc7c471a0405b48ed3b4} 
-\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!m\_primitive@{m\_primitive}}
+\Hypertarget{classigl_1_1AABB_a5ea4da975626dc7c471a0405b48ed3b4}\index{igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}!m\_primitive@{m\_primitive}}
 \index{m\_primitive@{m\_primitive}!igl::AABB$<$ DerivedV, DIM $>$@{igl::AABB$<$ DerivedV, DIM $>$}}
 \doxysubsubsection{\texorpdfstring{m\_primitive}{m\_primitive}}
-{\footnotesize\ttfamily template$<$typename DerivedV , int DIM$>$ \\
-int \mbox{\hyperlink{classigl_1_1AABB}{igl\+::\+AABB}}$<$ DerivedV, DIM $>$\+::m\+\_\+primitive}
+{\footnotesize\ttfamily \label{classigl_1_1AABB_a5ea4da975626dc7c471a0405b48ed3b4} 
+template$<$typename DerivedV, int DIM$>$ \\
+int \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ DerivedV, DIM $>$::\+m\+\_\+primitive}
 
 
 
@@ -580,6 +1189,6 @@ Index of single primitive in this node if full leaf, otherwise -\/1 for non-\/le
 
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
 \item 
-include/igl/\mbox{\hyperlink{AABB_8h}{AABB.\+h}}\end{DoxyCompactItemize}
+include/\+igl/\+\doxymbox{\hyperlink{AABB_8h}{AABB.\+h}}\end{DoxyCompactItemize}

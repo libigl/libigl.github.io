@@ -1,4 +1,4 @@
 var copyleft_2cgal_2piecewise__constant__winding__number_8h =
 [
-    [ "piecewise_constant_winding_number", "copyleft_2cgal_2piecewise__constant__winding__number_8h.html#a55276c7ddaadbfad9b0ddf0beeb756fe", null ]
+    [ "igl::copyleft::cgal::piecewise_constant_winding_number", "namespaceigl_1_1copyleft_1_1cgal.html#af067b6eab670195b248d085d98b0b4da", null ]
 ];

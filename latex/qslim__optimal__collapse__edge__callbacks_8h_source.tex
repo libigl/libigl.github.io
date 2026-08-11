@@ -1,6 +1,6 @@
 \doxysection{qslim\+\_\+optimal\+\_\+collapse\+\_\+edge\+\_\+callbacks.\+h}
 \hypertarget{qslim__optimal__collapse__edge__callbacks_8h_source}{}\label{qslim__optimal__collapse__edge__callbacks_8h_source}\index{include/igl/qslim\_optimal\_collapse\_edge\_callbacks.h@{include/igl/qslim\_optimal\_collapse\_edge\_callbacks.h}}
-\mbox{\hyperlink{qslim__optimal__collapse__edge__callbacks_8h}{Go to the documentation of this file.}}
+\doxymbox{\hyperlink{qslim__optimal__collapse__edge__callbacks_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
 \DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
@@ -11,28 +11,32 @@
 \DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_QSLIM\_OPTIMAL\_COLLAPSE\_EDGE\_CALLBACKS\_H}}
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_QSLIM\_OPTIMAL\_COLLAPSE\_EDGE\_CALLBACKS\_H}}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{igl__inline_8h}{igl\_inline.h}}"{}}}
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{decimate__callback__types_8h}{decimate\_callback\_types.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{igl__inline_8h}{igl\_inline.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{decimate__callback__types_8h}{decimate\_callback\_types.h}}"{}}}
 \DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
 \DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <functional>}}
 \DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <tuple>}}
 \DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <set>}}
-\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceigl}{igl}}}
 \DoxyCodeLine{00018\ \{}
-\DoxyCodeLine{00036\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ qslim\_optimal\_collapse\_edge\_callbacks(}
+\DoxyCodeLine{00036\ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ qslim\_optimal\_collapse\_edge\_callbacks(}
 \DoxyCodeLine{00037\ \ \ \ \ Eigen::MatrixXi\ \&\ E,}
-\DoxyCodeLine{00038\ \ \ \ \ std::vector<std::tuple<Eigen::MatrixXd,Eigen::RowVectorXd,double>\ >\ \&\ }
-\DoxyCodeLine{00039\ \ \ \ \ \ \ quadrics,}
-\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{int}\ \&\ v1,}
-\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ \&\ v2,}
-\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{namespaceigl_af967096efcc39e806f0c2b374e2ccc5f}{decimate\_cost\_and\_placement\_callback}}\ \&\ cost\_and\_placement,}
-\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{namespaceigl_af695d0b4a424387592b06f466a86088e}{decimate\_pre\_collapse\_callback}}\ \&\ pre\_collapse,}
-\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{namespaceigl_a16fd55ae4f3085d4ed4d3c6bff008426}{decimate\_post\_collapse\_callback}}\ \&\ post\_collapse);}
-\DoxyCodeLine{00045\ \}}
-\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
-\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#\ \ include\ "{}qslim\_optimal\_collapse\_edge\_callbacks.cpp"{}}}
-\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00038\ \ \ \ \ std::vector<}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ std::tuple<}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ Eigen::MatrixXd,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ Eigen::RowVectorXd,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}>\ >\ \&\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ quadrics,}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{int}\ \&\ v1,}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{int}\ \&\ v2,}
+\DoxyCodeLine{00046\ \ \ \ \ \doxymbox{\hyperlink{namespaceigl_a4152020fc4cd835c4de8a85206acada5}{decimate\_cost\_and\_placement\_callback}}\ \&\ cost\_and\_placement,}
+\DoxyCodeLine{00047\ \ \ \ \ \doxymbox{\hyperlink{namespaceigl_a240aaf3a251d500dee65c7bdf0be5481}{decimate\_pre\_collapse\_callback}}\ \&\ pre\_collapse,}
+\DoxyCodeLine{00048\ \ \ \ \ \doxymbox{\hyperlink{namespaceigl_aed8c530e3082ed7029d848f18045762d}{decimate\_post\_collapse\_callback}}\ \&\ post\_collapse);}
+\DoxyCodeLine{00049\ \}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#\ \ include\ "{}qslim\_optimal\_collapse\_edge\_callbacks.cpp"{}}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

@@ -1,4 +1,4 @@
 var xml_2write__triangle__mesh_8h =
 [
-    [ "write_triangle_mesh", "xml_2write__triangle__mesh_8h.html#a7753fb4de2038a79b3effc502e076cc7", null ]
+    [ "igl::xml::write_triangle_mesh", "namespaceigl_1_1xml.html#aa092fedb705f72ab89e594aae962998f", null ]
 ];

@@ -1,0 +1,17 @@
+\doxysection{include/\+igl/\+unique\+\_\+sparse\+\_\+voxel\+\_\+corners.h File Reference}
+\hypertarget{unique__sparse__voxel__corners_8h}{}\label{unique__sparse__voxel__corners_8h}\index{include/igl/unique\_sparse\_voxel\_corners.h@{include/igl/unique\_sparse\_voxel\_corners.h}}
+{\ttfamily \+\#include "{}igl\+\_\+inline.\+h"{}}\newline
+{\ttfamily \+\#include $<$Eigen/\+\+Core$>$}\newline
+{\ttfamily \+\#include "{}unique\+\_\+sparse\+\_\+voxel\+\_\+corners.\+cpp"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \doxymbox{\hyperlink{namespaceigl}{igl}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Derivedijk, typename Derivedunique\+\_\+ijk, typename DerivedJ$>$ }\\void \doxymbox{\hyperlink{namespaceigl_a9b646ffbc52777d2d3f4eb2336351520}{igl::\+unique\+\_\+sparse\+\_\+voxel\+\_\+corners}} (const int depth, const Eigen::\+\+Matrix\+Base$<$ Derivedijk $>$ \&ijk, Eigen::\+\+Plain\+Object\+Base$<$ Derivedunique\+\_\+ijk $>$ \&unique\+\_\+ijk, Eigen::\+\+Plain\+Object\+Base$<$ DerivedJ $>$ \&J)
+\begin{DoxyCompactList}\small\item\em Give a list of octree cells subscripts (ijk) (minimum corners) at a given depth, determine a unique list of subscripts to all incident corners of those cells (de-\/replicating shared corners). \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derivedorigin, typename Derivedijk, typename Derivedunique\+\_\+ijk, typename DerivedJ, typename Derivedunique\+\_\+corners$>$ }\\void \doxymbox{\hyperlink{namespaceigl_a693e2f604f43ec0d30b00f3e0178057e}{igl::\+unique\+\_\+sparse\+\_\+voxel\+\_\+corners}} (const Eigen::\+\+Matrix\+Base$<$ Derivedorigin $>$ \&origin, const typename Derivedorigin::\+\+Scalar h0, const int depth, const Eigen::\+\+Matrix\+Base$<$ Derivedijk $>$ \&ijk, Eigen::\+\+Plain\+Object\+Base$<$ Derivedunique\+\_\+ijk $>$ \&unique\+\_\+ijk, Eigen::\+\+Plain\+Object\+Base$<$ DerivedJ $>$ \&J, Eigen::\+\+Plain\+Object\+Base$<$ Derivedunique\+\_\+corners $>$ \&unique\+\_\+corners)
+\begin{DoxyCompactList}\small\item\em overload \end{DoxyCompactList}\end{DoxyCompactItemize}

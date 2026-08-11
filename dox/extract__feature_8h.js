@@ -1,5 +1,5 @@
 var extract__feature_8h =
 [
-    [ "extract_feature", "extract__feature_8h.html#a2db9c1082a8f9b57e7b7344a328badd7", null ],
-    [ "extract_feature", "extract__feature_8h.html#a6453a79d93b320a4360444550d13b0ac", null ]
+    [ "igl::copyleft::cgal::extract_feature", "namespaceigl_1_1copyleft_1_1cgal.html#ae332e4abbb81cda1f85b7beb28539b96", null ],
+    [ "igl::copyleft::cgal::extract_feature", "namespaceigl_1_1copyleft_1_1cgal.html#a795d2cb7d1f9710a0825fb034233e0c1", null ]
 ];

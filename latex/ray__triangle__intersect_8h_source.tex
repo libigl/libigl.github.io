@@ -1,0 +1,38 @@
+\doxysection{ray\+\_\+triangle\+\_\+intersect.\+h}
+\hypertarget{ray__triangle__intersect_8h_source}{}\label{ray__triangle__intersect_8h_source}\index{include/igl/ray\_triangle\_intersect.h@{include/igl/ray\_triangle\_intersect.h}}
+\doxymbox{\hyperlink{ray__triangle__intersect_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ IGL\_RAY\_TRIANGLE\_INTERSECT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ IGL\_RAY\_TRIANGLE\_INTERSECT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{igl__inline_8h}{igl\_inline.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00027\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedO,}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedD,}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV0,}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV1,}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV2>}
+\DoxyCodeLine{00033\ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{namespaceigl_add78c18d68cd814c512f1ea1ccf3ce6e}{ray\_triangle\_intersect}}(}
+\DoxyCodeLine{00034\ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedO>\ \&\ O,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedD>\ \&\ D,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV0>\ \&\ V0,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV1>\ \&\ V1,}
+\DoxyCodeLine{00038\ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV2>\ \&\ V2,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{typename}\ DerivedO::Scalar\ epsilon,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedO::Scalar\ \&\ t,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedO::Scalar\ \&\ u,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedO::Scalar\ \&\ v,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \&\ parallel);}
+\DoxyCodeLine{00044\ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#\ \ include\ "{}ray\_triangle\_intersect.cpp"{}}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

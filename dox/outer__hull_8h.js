@@ -1,4 +1,4 @@
 var outer__hull_8h =
 [
-    [ "outer_hull", "outer__hull_8h.html#abf86c29b557c7341d5d6a2ae734273d4", null ]
+    [ "igl::copyleft::cgal::outer_hull", "namespaceigl_1_1copyleft_1_1cgal.html#acf172cca7f9977e44aa6fb46cbd2594a", null ]
 ];

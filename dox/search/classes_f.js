@@ -1,5 +1,9 @@
 var searchData=
 [
-  ['xmlserializable_0',['XMLSerializable',['../classigl_1_1xml_1_1XMLSerializable.html',1,'igl::xml']]],
-  ['xmlserializablebase_1',['XMLSerializableBase',['../structigl_1_1xml_1_1XMLSerializableBase.html',1,'igl::xml']]]
+  ['windingnumberaabb_0',['WindingNumberAABB',['../classigl_1_1WindingNumberAABB.html',1,'igl']]],
+  ['windingnumberantipodalscene_1',['WindingNumberAntipodalScene',['../classigl_1_1WindingNumberAntipodalScene.html',1,'igl']]],
+  ['windingnumberfilter_2',['WindingNumberFilter',['../classigl_1_1copyleft_1_1cgal_1_1WindingNumberFilter.html',1,'igl::copyleft::cgal']]],
+  ['windingnumberfilter_3c_20keep_5fall_20_3e_3',['WindingNumberFilter&lt; KEEP_ALL &gt;',['../classigl_1_1copyleft_1_1cgal_1_1WindingNumberFilter_3_01KEEP__ALL_01_4.html',1,'igl::copyleft::cgal']]],
+  ['windingnumberfilter_3c_20keep_5finside_20_3e_4',['WindingNumberFilter&lt; KEEP_INSIDE &gt;',['../classigl_1_1copyleft_1_1cgal_1_1WindingNumberFilter_3_01KEEP__INSIDE_01_4.html',1,'igl::copyleft::cgal']]],
+  ['windingnumbertree_5',['WindingNumberTree',['../classigl_1_1WindingNumberTree.html',1,'igl']]]
 ];

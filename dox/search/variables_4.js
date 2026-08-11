@@ -9,6 +9,7 @@ var searchData=
   ['energy_6',['energy',['../structigl_1_1ARAPData.html#a295a9607737205344e67005507e25689',1,'igl::ARAPData::energy'],['../structigl_1_1ArapDOFData.html#a91bea11f44a6fe58c2b10ec7f890ad0e',1,'igl::ArapDOFData::energy'],['../structigl_1_1SLIMData.html#a56eea77ddeae9c08f49f5a2e6f8e2870',1,'igl::SLIMData::energy'],['../structigl_1_1triangle_1_1SCAFData.html#acf54ae1a445da74bfdd2703eef47a82b',1,'igl::triangle::SCAFData::energy']]],
   ['ep_7',['ep',['../structigl_1_1KelvinletParams.html#aa8a5f06a42ed5787c6388c43e04ef6f9',1,'igl::KelvinletParams']]],
   ['epsilon_8',['epsilon',['../structigl_1_1KelvinletParams.html#a830d8ba44471b21a468c7ea537a2dee8',1,'igl::KelvinletParams']]],
-  ['exp_5ffactor_9',['exp_factor',['../structigl_1_1SLIMData.html#a4f4bf11823f39c8e000c96d0de0248d2',1,'igl::SLIMData']]],
-  ['extensionareaoffset_10',['extensionAreaOffset',['../structigl_1_1opengl_1_1TgaFooter.html#a9d9eab04975df747cd799779fa415d44',1,'igl::opengl::TgaFooter']]]
+  ['ev_9',['EV',['../classigl_1_1SphereMeshWedge.html#acb47a4b2ad70f36375729248e07ef5d6',1,'igl::SphereMeshWedge']]],
+  ['exp_5ffactor_10',['exp_factor',['../structigl_1_1SLIMData.html#a4f4bf11823f39c8e000c96d0de0248d2',1,'igl::SLIMData']]],
+  ['extensionareaoffset_11',['extensionAreaOffset',['../structigl_1_1opengl_1_1TgaFooter.html#a9d9eab04975df747cd799779fa415d44',1,'igl::opengl::TgaFooter']]]
 ];

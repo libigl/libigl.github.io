@@ -1,6 +1,6 @@
 \doxysection{matlab\+\_\+format.\+h}
 \hypertarget{matlab__format_8h_source}{}\label{matlab__format_8h_source}\index{include/igl/matlab\_format.h@{include/igl/matlab\_format.h}}
-\mbox{\hyperlink{matlab__format_8h}{Go to the documentation of this file.}}
+\doxymbox{\hyperlink{matlab__format_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
 \DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
@@ -12,40 +12,45 @@
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_MATLAB\_FORMAT\_H}}
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_MATLAB\_FORMAT\_H}}
 \DoxyCodeLine{00010\ }
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{igl__inline_8h}{igl\_inline.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{igl__inline_8h}{igl\_inline.h}}"{}}}
 \DoxyCodeLine{00012\ }
 \DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
 \DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <Eigen/Sparse>}}
 \DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <string>}}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
-\DoxyCodeLine{00018\ \{}
-\DoxyCodeLine{00043\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedM>}
-\DoxyCodeLine{00044\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{const}\ Eigen::WithFormat<\ DerivedM\ >\ \mbox{\hyperlink{namespaceigl_a6b539a21fb577617710f5fce2046e65b}{matlab\_format}}(}
-\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::DenseBase<DerivedM>\ \&\ M,}
-\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ name\ =\ \textcolor{stringliteral}{"{}"{}});}
-\DoxyCodeLine{00050\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedM>}
-\DoxyCodeLine{00051\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ std::string\ \mbox{\hyperlink{namespaceigl_acc0f1184f42624896cf510cd82ccb6ca}{matlab\_format\_index}}(}
-\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedM>\ \&\ M,}
-\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ name\ =\ \textcolor{stringliteral}{"{}"{}});}
-\DoxyCodeLine{00071\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedS>}
-\DoxyCodeLine{00072\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{namespaceigl_a6b539a21fb577617710f5fce2046e65b}{matlab\_format}}(}
-\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<DerivedS>\ \&\ S,}
-\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ name\ =\ \textcolor{stringliteral}{"{}"{}});}
-\DoxyCodeLine{00077\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{namespaceigl_a6b539a21fb577617710f5fce2046e65b}{matlab\_format}}(}
-\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ v,}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00044\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedM>}
+\DoxyCodeLine{00045\ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{const}\ Eigen::WithFormat<\ DerivedM\ >\ \doxymbox{\hyperlink{namespaceigl_a6b539a21fb577617710f5fce2046e65b}{matlab\_format}}(}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::DenseBase<DerivedM>\ \&\ M,}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ name\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00051\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedM>}
+\DoxyCodeLine{00052\ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ std::string\ \doxymbox{\hyperlink{namespaceigl_acc0f1184f42624896cf510cd82ccb6ca}{matlab\_format\_index}}(}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedM>\ \&\ M,}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ name\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00055\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00056\ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ std::string\ \doxymbox{\hyperlink{namespaceigl_acc0f1184f42624896cf510cd82ccb6ca}{matlab\_format\_index}}(}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<T>\ \&\ Mvec,}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ name\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00076\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedS>}
+\DoxyCodeLine{00077\ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{const}\ std::string\ \doxymbox{\hyperlink{namespaceigl_a6b539a21fb577617710f5fce2046e65b}{matlab\_format}}(}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<DerivedS>\ \&\ S,}
 \DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ name\ =\ \textcolor{stringliteral}{"{}"{}});}
-\DoxyCodeLine{00081\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{namespaceigl_a6b539a21fb577617710f5fce2046e65b}{matlab\_format}}(}
-\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ v,}
-\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ name\ =\ \textcolor{stringliteral}{"{}"{}});}
-\DoxyCodeLine{00097\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ Eigen::IOFormat\ \mbox{\hyperlink{namespaceigl_a6b539a21fb577617710f5fce2046e65b}{matlab\_format}}();}
-\DoxyCodeLine{00098\ \}}
-\DoxyCodeLine{00099\ }
-\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
-\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#\ \ include\ "{}matlab\_format.cpp"{}}}
-\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00103\ }
-\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00082\ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{const}\ std::string\ \doxymbox{\hyperlink{namespaceigl_a6b539a21fb577617710f5fce2046e65b}{matlab\_format}}(}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ v,}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ name\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00086\ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{const}\ std::string\ \doxymbox{\hyperlink{namespaceigl_a6b539a21fb577617710f5fce2046e65b}{matlab\_format}}(}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ v,}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ name\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00102\ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ Eigen::IOFormat\ \doxymbox{\hyperlink{namespaceigl_a6b539a21fb577617710f5fce2046e65b}{matlab\_format}}();}
+\DoxyCodeLine{00103\ \}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#\ \ include\ "{}matlab\_format.cpp"{}}}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00110\ }
 
 \end{DoxyCode}

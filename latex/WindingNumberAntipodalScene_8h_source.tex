@@ -1,0 +1,207 @@
+\doxysection{Winding\+Number\+Antipodal\+Scene.\+h}
+\hypertarget{WindingNumberAntipodalScene_8h_source}{}\label{WindingNumberAntipodalScene_8h_source}\index{include/igl/WindingNumberAntipodalScene.h@{include/igl/WindingNumberAntipodalScene.h}}
+\doxymbox{\hyperlink{WindingNumberAntipodalScene_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2026\ Philip\ Trettner\ <trettner@shapedcode.com>,\ Cedric\ Martens\ <cedric.martens@umontreal.ca>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_WINDINGNUMBERANTIPODALSCENE\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_WINDINGNUMBERANTIPODALSCENE\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{PI_8h}{PI.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{parallel__for_8h}{parallel\_for.h}}"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00048\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Scalar>}
+\DoxyCodeLine{00049\ \ \ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_ab1a027dc7b99d4ba39c8778b8dec16a1}{WindingNumberAntipodalScene}}}
+\DoxyCodeLine{00050\ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a1402c27d54bb4af5274645b80593c16e}{Point}}\ \ \ \ \ =\ Eigen::Matrix<Scalar,\ 1,\ 3>;}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a73fd65d6601aa0bdcd2a166d38da2dd3}{Direction}}\ =\ Eigen::Matrix<Scalar,\ 1,\ 3>;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{struct\ }WeightedSeg}
+\DoxyCodeLine{00057\ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a1402c27d54bb4af5274645b80593c16e}{Point}}\ a;}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a1402c27d54bb4af5274645b80593c16e}{Point}}\ b;}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ Scalar\ w;}
+\DoxyCodeLine{00061\ \ \ \ \ \};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00070\ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_ab1a027dc7b99d4ba39c8778b8dec16a1}{WindingNumberAntipodalScene}}(}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a73fd65d6601aa0bdcd2a166d38da2dd3}{Direction}}\ \&\ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a6fc4db3facd085fa682f597d2937dc59}{x0}}\ =\ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a9d571b6f318d129ee10ffff6b7b085ff}{default\_x0}}())}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ :\ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a2f5bd5e724cc3d7cb1a539db87e5a628}{m\_x0}}(\doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a6fc4db3facd085fa682f597d2937dc59}{x0}}),\ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a7abdcdb8be443318433106d3977d6eb8}{m\_face\_count}}(static\_cast<size\_t>(F.rows()))}
+\DoxyCodeLine{00075\ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ assert(V.cols()\ ==\ 3\ \&\&\ \textcolor{stringliteral}{"{}WindingNumberAntipodalScene:\ only\ 3D\ vertex\ positions\ are\ supported"{}});}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ assert(F.cols()\ ==\ 3\ \&\&\ \textcolor{stringliteral}{"{}WindingNumberAntipodalScene:\ only\ triangle\ meshes\ are\ supported"{}});}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a479b4857c6da3a449ef6f44ef3d04d63}{build\_boundary\_segments}}(V,\ F,\ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a4900569be5ffcdecb6862df689e44f0c}{m\_boundary}});}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Intersector,\ \textcolor{keyword}{typename}\ Derivedp>}
+\DoxyCodeLine{00084\ \ \ \ \ Scalar\ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_ac646eb0207e4bf96682fa7e4924ade23}{winding\_number}}(}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Intersector\ \&\ intersector,}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedp>\ \&\ p)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00087\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a1402c27d54bb4af5274645b80593c16e}{Point}}\ pp(\textcolor{keyword}{static\_cast<}Scalar\textcolor{keyword}{>}(p(0)),}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}Scalar\textcolor{keyword}{>}(p(1)),}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}Scalar\textcolor{keyword}{>}(p(2)));}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a73fd65d6601aa0bdcd2a166d38da2dd3}{Direction}}\ x1\ =\ -\/\doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a2f5bd5e724cc3d7cb1a539db87e5a628}{m\_x0}};}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ Scalar\ area\ =\ Scalar(0);}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&\ ws\ :\ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a4900569be5ffcdecb6862df689e44f0c}{m\_boundary}})}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a1402c27d54bb4af5274645b80593c16e}{Point}}\ v0\ =\ ws.a\ -\/\ pp;}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a1402c27d54bb4af5274645b80593c16e}{Point}}\ v1\ =\ ws.b\ -\/\ pp;}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ area\ +=\ ws.w\ *\ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a67e197d91946089ca2d53c97fc03cf92}{half\_solid\_angle\_unorm}}(x1,\ v0,\ v1);}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Scalar\ frac\ =\ area\ /\ (Scalar(2)\ *\ Scalar(\doxymbox{\hyperlink{namespaceigl_af3c65fcb2a063b19e572a9d982b5dcdc}{igl::PI}}));}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \textcolor{keyword}{using\ }IO\ =\ \textcolor{keyword}{typename}\ Intersector::OriginType;}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \textcolor{keyword}{using\ }ID\ =\ \textcolor{keyword}{typename}\ Intersector::DirectionType;}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \textcolor{keyword}{const}\ IO\ io(\textcolor{keyword}{static\_cast<}typename\ IO::Scalar\textcolor{keyword}{>}(pp(0)),}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}typename\ IO::Scalar\textcolor{keyword}{>}(pp(1)),}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}typename\ IO::Scalar\textcolor{keyword}{>}(pp(2)));}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \textcolor{keyword}{const}\ ID\ id(\textcolor{keyword}{static\_cast<}typename\ ID::Scalar\textcolor{keyword}{>}(\doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a2f5bd5e724cc3d7cb1a539db87e5a628}{m\_x0}}(0)),}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}typename\ ID::Scalar\textcolor{keyword}{>}(\doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a2f5bd5e724cc3d7cb1a539db87e5a628}{m\_x0}}(1)),}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}typename\ ID::Scalar\textcolor{keyword}{>}(\doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a2f5bd5e724cc3d7cb1a539db87e5a628}{m\_x0}}(2)));}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ c\ =\ intersector.signedIntersectionsRay(io,\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ frac\ +\ Scalar(c);}
+\DoxyCodeLine{00112\ \ \ \ \ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Intersector,\ \textcolor{keyword}{typename}\ DerivedO,\ \textcolor{keyword}{typename}\ DerivedW>}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a2deb15757f8e7d976fd477be935ac07f}{winding\_number}}(}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Intersector\ \&\ intersector,}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedO>\ \&\ O,}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedW>\ \&\ W)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00126\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ W.resize(O.rows(),\ 1);}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \textcolor{comment}{//\ Adaptive\ parallel-\/for\ threshold.}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \textcolor{comment}{//\ The\ libigl\ thread\ pool\ has\ a\ roughly\ fixed\ \string~1\ ms\ TOTAL\ overhead\ per}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \textcolor{comment}{//\ parallel\_for\ invocation\ (not\ per\ iteration).\ So\ we\ only\ spawn\ the}}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \textcolor{comment}{//\ pool\ when\ the\ WHOLE\ batch\ is\ expected\ to\ take\ ≥\ 1\ ms.}}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \textcolor{comment}{//\ Per-\/query\ work\ heuristic:}}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ t\_q\ ≈\ 50\ *\ B\ +\ 100\ *\ sqrt(F)\ \ ns}}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \textcolor{comment}{//\ with\ B\ =\ boundary\ segment\ count,\ F\ =\ triangle\ count.\ Pool\ wins\ once}}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ t\_q\ *\ O\ >\ 10\string^6\ ns\ \ ⇒\ \ O\ >\ 10\string^6\ /\ t\_q}}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \textcolor{comment}{//\ which\ is\ exactly\ parallel\_for's\ \`{}min\_parallel`\ semantics.}}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \textcolor{comment}{//\ (This\ is\ a\ rough\ heuristic\ and\ should\ be\ revisited\ once\ parallel\_for\ becomes\ lower-\/overhead)}}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ t\_q\_ns\ =}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ 50.0\ \ *\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(\doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a4900569be5ffcdecb6862df689e44f0c}{m\_boundary}}.size())\ +}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ 100.0\ *\ std::sqrt(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(\doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a7abdcdb8be443318433106d3977d6eb8}{m\_face\_count}}));}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ min\_parallel\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ std::ceil(1.0e6\ /\ std::max(t\_q\_ns,\ 1.0)));}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \doxymbox{\hyperlink{namespaceigl_a48ba3dac8f2da11935cd7e566f27e69d}{igl::parallel\_for}}(O.rows(),\ [\&](\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ o)}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ W(o)\ =\ winding\_number(intersector,\ O.row(o));}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \},\ min\_parallel);}
+\DoxyCodeLine{00152\ \ \ \ \ \}}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a73fd65d6601aa0bdcd2a166d38da2dd3}{Direction}}\ \&\ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a6fc4db3facd085fa682f597d2937dc59}{x0}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a2f5bd5e724cc3d7cb1a539db87e5a628}{m\_x0}};\ \}}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a7b7bce93aa72a9c2ea38fd8beffb3b66}{num\_boundary\_segments}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a4900569be5ffcdecb6862df689e44f0c}{m\_boundary}}.size();\ \}}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a6eab299151d31c20af3e73afd20facaa}{num\_faces}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a7abdcdb8be443318433106d3977d6eb8}{m\_face\_count}};\ \}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keyword}{static}\ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a73fd65d6601aa0bdcd2a166d38da2dd3}{Direction}}\ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a9d571b6f318d129ee10ffff6b7b085ff}{default\_x0}}()}
+\DoxyCodeLine{00165\ \ \ \ \ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a73fd65d6601aa0bdcd2a166d38da2dd3}{Direction}}\ d(Scalar(1),}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Scalar(std::sqrt(2.0)),}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Scalar(std::sqrt(3.0)));}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ d\ /\ d.norm();}
+\DoxyCodeLine{00170\ \ \ \ \ \}}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keyword}{static}\ Scalar\ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a67e197d91946089ca2d53c97fc03cf92}{half\_solid\_angle\_unorm}}(}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a73fd65d6601aa0bdcd2a166d38da2dd3}{Direction}}\ \&\ x1,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a1402c27d54bb4af5274645b80593c16e}{Point}}\ \&\ v0,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a1402c27d54bb4af5274645b80593c16e}{Point}}\ \&\ v1)}
+\DoxyCodeLine{00179\ \ \ \ \ \{}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Scalar\ l0\ =\ v0.norm();}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Scalar\ l1\ =\ v1.norm();}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Scalar\ num\ \ \ =\ x1.dot(v0.cross(v1));}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Scalar\ denom\ =\ l0\ *\ l1}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ l1\ *\ x1.dot(v0)}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ l0\ *\ x1.dot(v1)}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ v0.dot(v1);}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::atan2(num,\ denom);}
+\DoxyCodeLine{00188\ \ \ \ \ \}}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keyword}{typename}\ DerivedF>}
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a479b4857c6da3a449ef6f44ef3d04d63}{build\_boundary\_segments}}(}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ std::vector<WeightedSeg>\ \&\ out)}
+\DoxyCodeLine{00204\ \ \ \ \ \{}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ out.clear();}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ std::unordered\_map<std::uint64\_t,\ int>\ counts;}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ counts.reserve(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(F.rows())\ *\ 3);}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ pack\ =\ [](\textcolor{keywordtype}{int}\ lo,\ \textcolor{keywordtype}{int}\ hi)\ -\/>\ std::uint64\_t}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keyword}{static\_cast<}std::uint64\_t\textcolor{keyword}{>}(\textcolor{keyword}{static\_cast<}std::uint32\_t\textcolor{keyword}{>}(lo))\ <<\ 32)}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ \ \textcolor{keyword}{static\_cast<}std::uint64\_t\textcolor{keyword}{>}(\textcolor{keyword}{static\_cast<}std::uint32\_t\textcolor{keyword}{>}(hi));}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (Eigen::Index\ t\ =\ 0;\ t\ <\ F.rows();\ ++t)}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ tri[3]\ =\ \{}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(F(t,\ 0)),}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(F(t,\ 1)),}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(F(t,\ 2))}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ e\ =\ 0;\ e\ <\ 3;\ ++e)}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ u\ =\ tri[e];}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ v\ =\ tri[(e\ +\ 1)\ \%\ 3];}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ lo\ =\ u\ <\ v\ ?\ u\ :\ v;}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ hi\ =\ u\ <\ v\ ?\ v\ :\ u;}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::uint64\_t\ k\ =\ pack(lo,\ hi);}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ counts[k]\ +=\ (u\ <\ v)\ ?\ +1\ :\ -\/1;}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00233\ \ \ \ \ \ \ out.reserve(counts.size());}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&\ kv\ :\ counts)}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{namespaceigl_adf21bb95cf3e8474259c54e4a55ed734}{sum}}\ =\ kv.second;}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\doxymbox{\hyperlink{namespaceigl_adf21bb95cf3e8474259c54e4a55ed734}{sum}}\ ==\ 0)\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::uint32\_t\ lo\ =\ \textcolor{keyword}{static\_cast<}std::uint32\_t\textcolor{keyword}{>}(kv.first\ >>\ 32);}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::uint32\_t\ hi\ =\ \textcolor{keyword}{static\_cast<}std::uint32\_t\textcolor{keyword}{>}(kv.first\ \&\ 0xFFFFFFFFu);}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a1402c27d54bb4af5274645b80593c16e}{Point}}\ a(\textcolor{keyword}{static\_cast<}Scalar\textcolor{keyword}{>}(V(lo,\ 0)),}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}Scalar\textcolor{keyword}{>}(V(lo,\ 1)),}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}Scalar\textcolor{keyword}{>}(V(lo,\ 2)));}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a1402c27d54bb4af5274645b80593c16e}{Point}}\ b(\textcolor{keyword}{static\_cast<}Scalar\textcolor{keyword}{>}(V(hi,\ 0)),}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}Scalar\textcolor{keyword}{>}(V(hi,\ 1)),}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}Scalar\textcolor{keyword}{>}(V(hi,\ 2)));}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ WeightedSeg\ ws;}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\doxymbox{\hyperlink{namespaceigl_adf21bb95cf3e8474259c54e4a55ed734}{sum}}\ >\ 0)\ \{\ ws.a\ =\ a;\ ws.b\ =\ b;\ ws.w\ =\ \textcolor{keyword}{static\_cast<}Scalar\textcolor{keyword}{>}(\doxymbox{\hyperlink{namespaceigl_adf21bb95cf3e8474259c54e4a55ed734}{sum}});\ \}}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \ \ \ \ \ \ \ \ \{\ ws.a\ =\ b;\ ws.b\ =\ a;\ ws.w\ =\ \textcolor{keyword}{static\_cast<}Scalar\textcolor{keyword}{>}(-\/\doxymbox{\hyperlink{namespaceigl_adf21bb95cf3e8474259c54e4a55ed734}{sum}});\ \}}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ out.push\_back(ws);}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00251\ \ \ \ \ \}}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00253\ \ \ \ \ std::vector<WeightedSeg>\ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a4900569be5ffcdecb6862df689e44f0c}{m\_boundary}};}
+\DoxyCodeLine{00254\ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a73fd65d6601aa0bdcd2a166d38da2dd3}{Direction}}\ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a2f5bd5e724cc3d7cb1a539db87e5a628}{m\_x0}};}
+\DoxyCodeLine{00255\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a7abdcdb8be443318433106d3977d6eb8}{m\_face\_count}}\ =\ 0;}
+\DoxyCodeLine{00256\ \ \ \};}
+\DoxyCodeLine{00257\ \}}
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00259\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

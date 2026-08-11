@@ -1,0 +1,48 @@
+\doxysection{collapse\+\_\+least\+\_\+cost\+\_\+edge.\+h}
+\hypertarget{collapse__least__cost__edge_8h_source}{}\label{collapse__least__cost__edge_8h_source}\index{include/igl/collapse\_least\_cost\_edge.h@{include/igl/collapse\_least\_cost\_edge.h}}
+\doxymbox{\hyperlink{collapse__least__cost__edge_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2015\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_COLLAPSE\_LEAST\_COST\_EDGE\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_COLLAPSE\_LEAST\_COST\_EDGE\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{igl__inline_8h}{igl\_inline.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{min__heap_8h}{min\_heap.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{decimate__callback__types_8h}{decimate\_callback\_types.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{COLLAPSE__EDGE__NULL_8h}{COLLAPSE\_EDGE\_NULL.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00058\ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{namespaceigl_a88d10a9e539e9acbd1aa19c36cab70fc}{collapse\_least\_cost\_edge}}(}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{namespaceigl_a4152020fc4cd835c4de8a85206acada5}{decimate\_cost\_and\_placement\_callback}}\ \&\ cost\_and\_placement,}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{namespaceigl_a240aaf3a251d500dee65c7bdf0be5481}{decimate\_pre\_collapse\_callback}}\ \ \ \ \ \ \ \&\ pre\_collapse,}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{namespaceigl_aed8c530e3082ed7029d848f18045762d}{decimate\_post\_collapse\_callback}}\ \ \ \ \ \ \&\ post\_collapse,}
+\DoxyCodeLine{00062\ \ \ \ \ Eigen::MatrixXd\ \&\ V,}
+\DoxyCodeLine{00063\ \ \ \ \ Eigen::MatrixXi\ \&\ F,}
+\DoxyCodeLine{00064\ \ \ \ \ Eigen::MatrixXi\ \&\ E,}
+\DoxyCodeLine{00065\ \ \ \ \ Eigen::VectorXi\ \&\ EMAP,}
+\DoxyCodeLine{00066\ \ \ \ \ Eigen::MatrixXi\ \&\ EF,}
+\DoxyCodeLine{00067\ \ \ \ \ Eigen::MatrixXi\ \&\ EI,}
+\DoxyCodeLine{00068\ \ \ \ \ \doxymbox{\hyperlink{namespaceigl_a6e32aa4312f8e971984119227d0a5674}{igl::min\_heap}}<\ std::tuple<double,int,int>\ >\ \&\ Q,}
+\DoxyCodeLine{00069\ \ \ \ \ Eigen::VectorXi\ \&\ EQ,}
+\DoxyCodeLine{00070\ \ \ \ \ Eigen::MatrixXd\ \&\ C,}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{int}\ \&\ e,}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{int}\ \&\ e1,}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{int}\ \&\ e2,}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{int}\ \&\ f1,}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{int}\ \&\ f2);}
+\DoxyCodeLine{00076\ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#\ \ include\ "{}collapse\_least\_cost\_edge.cpp"{}}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00082\ }
+
+\end{DoxyCode}

@@ -1,109 +1,87 @@
-\doxysection{igl\+::predicates Namespace Reference}
+\doxysection{igl::\+predicates Namespace Reference}
 \hypertarget{namespaceigl_1_1predicates}{}\label{namespaceigl_1_1predicates}\index{igl::predicates@{igl::predicates}}
-\doxysubsubsection*{Enumerations}
-\begin{DoxyCompactItemize}
-\item 
-enum class \mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418b}{Orientation}} \{ \newline
-\mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418baab6c31432785221bae58327ef5f6ea58}{POSITIVE}} =1
-, \mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418ba554a7418c4c0dafd902ebd377b87c80c}{INSIDE}} =1
-, \mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418ba50546bf973283065b6ccf09faf7a580a}{NEGATIVE}} =-\/1
-, \mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418ba93da25bafef6761717afc6b25c17ea16}{OUTSIDE}} =-\/1
-, \newline
-\mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418bac514333ce2954c3110061a9d61666f8c}{COLLINEAR}} =0
-, \mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418ba9b1fc8879c96b8594f626bd204405336}{COPLANAR}} =0
-, \mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418bacfb327ad336ef0a1ba58a8651000d228}{COCIRCULAR}} =0
-, \mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418ba744ce244a9eef07f7a7fed2073d10947}{COSPHERICAL}} =0
-, \newline
-\mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418ba6084ee8bb30ae219127db8b7aece408a}{DEGENERATE}} =0
- \}
-\begin{DoxyCompactList}\small\item\em Types of orientations and other predicate results. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename DerivedV , typename DerivedF $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1predicates_a7edd289c72535b2014622b5fc55c397e}{delaunay\+\_\+triangulation}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F)
+{\footnotesize template$<$typename DerivedC, typename Derivedq$>$ }\\Derived\+C::\+\+Scalar \doxymbox{\hyperlink{namespaceigl_1_1predicates_a8156b64c555347e2d559167fcb70c2c8}{cubic\+\_\+winding\+\_\+number}} (const Eigen::\+\+Matrix\+Base$<$ DerivedC $>$ \&C, const Eigen::\+\+Matrix\+Base$<$ Derivedq $>$ \&q)
+\begin{DoxyCompactList}\small\item\em Computes the (generalized) winding number of a cubic Bézier curve around a query. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV, typename DerivedF$>$ }\\void \doxymbox{\hyperlink{namespaceigl_1_1predicates_a7edd289c72535b2014622b5fc55c397e}{delaunay\+\_\+triangulation}} (const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&V, Eigen::\+\+Plain\+Object\+Base$<$ DerivedF $>$ \&F)
 \begin{DoxyCompactList}\small\item\em Given a set of points in 2D, return a Delaunay triangulation of these points using predicates. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename DerivedP , typename Derived\+RT , typename DerivedF , typename DerivedI $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1predicates_a87050342a2559880af3a5d0b550bfd0a}{ear\+\_\+clipping}} (const Eigen\+::\+Matrix\+Base$<$ DerivedP $>$ \&P, const Eigen\+::\+Matrix\+Base$<$ Derived\+RT $>$ \&RT, Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&eF, Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&I)
+{\footnotesize template$<$typename DerivedP, typename Derived\+RT, typename DerivedF, typename DerivedI$>$ }\\void \doxymbox{\hyperlink{namespaceigl_1_1predicates_a87050342a2559880af3a5d0b550bfd0a}{ear\+\_\+clipping}} (const Eigen::\+\+Matrix\+Base$<$ DerivedP $>$ \&P, const Eigen::\+\+Matrix\+Base$<$ Derived\+RT $>$ \&RT, Eigen::\+\+Plain\+Object\+Base$<$ DerivedF $>$ \&eF, Eigen::\+\+Plain\+Object\+Base$<$ DerivedI $>$ \&I)
 \begin{DoxyCompactList}\small\item\em Implementation of ear clipping triangulation algorithm for a 2D polygon. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename DerivedP , typename DerivedF $>$ }\\bool \mbox{\hyperlink{namespaceigl_1_1predicates_ada15b6ecd90806923001927e53180fd4}{ear\+\_\+clipping}} (const Eigen\+::\+Matrix\+Base$<$ DerivedP $>$ \&P, Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&eF)
+{\footnotesize template$<$typename DerivedP, typename DerivedF$>$ }\\bool \doxymbox{\hyperlink{namespaceigl_1_1predicates_ada15b6ecd90806923001927e53180fd4}{ear\+\_\+clipping}} (const Eigen::\+\+Matrix\+Base$<$ DerivedP $>$ \&P, Eigen::\+\+Plain\+Object\+Base$<$ DerivedF $>$ \&eF)
 \begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename DerivedV , typename DerivedF $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1predicates_a61e6a3ff4a055fb5e6c749d601d3e694}{lexicographic\+\_\+triangulation}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F)
-\begin{DoxyCompactList}\small\item\em Given a set of points in 2D, return a lexicographic triangulation of these points using predicates. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename DerivedP , typename DerivedQ $>$ }\\bool \mbox{\hyperlink{namespaceigl_1_1predicates_a7780c668969af51b6d39c023d8850192}{point\+\_\+inside\+\_\+convex\+\_\+polygon}} (const Eigen\+::\+Matrix\+Base$<$ DerivedP $>$ \&P, const Eigen\+::\+Matrix\+Base$<$ DerivedQ $>$ \&q)
-\begin{DoxyCompactList}\small\item\em check whether 2d point lies inside 2d convex polygon \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename DerivedV , typename DerivedI , typename DerivedC , typename DerivedF , typename DerivedJ $>$ }\\void \mbox{\hyperlink{namespaceigl_1_1predicates_ae34c1fbb1f6a62e7083463a89556bdfc}{polygons\+\_\+to\+\_\+triangles}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedI $>$ \&I, const Eigen\+::\+Matrix\+Base$<$ DerivedC $>$ \&C, Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&F, Eigen\+::\+Plain\+Object\+Base$<$ DerivedJ $>$ \&J)
-\begin{DoxyCompactList}\small\item\em Given a polygon mesh, trivially triangulate each polygon with a fan. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{namespaceigl_1_1predicates_a7b443360a322c1ab15643ea1bad58d58}{exactinit}} ()
+void \doxymbox{\hyperlink{namespaceigl_1_1predicates_a7b443360a322c1ab15643ea1bad58d58}{exactinit}} ()
 \begin{DoxyCompactList}\small\item\em Initialize internal variable used by predciates. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Vector2D $>$ }\\\mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418b}{Orientation}} \mbox{\hyperlink{namespaceigl_1_1predicates_ab85f8a0e2f35b55088ba76fa3e269a1a}{orient2d}} (const Eigen\+::\+Matrix\+Base$<$ Vector2D $>$ \&pa, const Eigen\+::\+Matrix\+Base$<$ Vector2D $>$ \&pb, const Eigen\+::\+Matrix\+Base$<$ Vector2D $>$ \&pc)
+{\footnotesize template$<$typename Derived\+V1, typename Derived\+F1, typename Derived\+V2, typename Derived\+F2, typename Derived\+IF, typename Derived\+CP$>$ }\\bool \doxymbox{\hyperlink{namespaceigl_1_1predicates_a8933404a7087fe62c2ae736dd1187056}{find\+\_\+intersections}} (const \doxymbox{\hyperlink{classigl_1_1AABB}{AABB}}$<$ Derived\+V1, 3 $>$ \&tree1, const Eigen::\+\+Matrix\+Base$<$ Derived\+V1 $>$ \&V1, const Eigen::\+\+Matrix\+Base$<$ Derived\+F1 $>$ \&F1, const Eigen::\+\+Matrix\+Base$<$ Derived\+V2 $>$ \&V2, const Eigen::\+\+Matrix\+Base$<$ Derived\+F2 $>$ \&F2, const bool first\+\_\+only, Eigen::\+\+Plain\+Object\+Base$<$ Derived\+IF $>$ \&IF, Eigen::\+\+Plain\+Object\+Base$<$ Derived\+CP $>$ \&CP)
+\begin{DoxyCompactList}\small\item\em Identify triangles where two meshes interesect using AABBTree and \doxylink{namespaceigl_1_1predicates_a56015a00c1892c273542f5eb6097690a}{igl::\+predicates::\+triangle\+\_\+triangle\+\_\+intersect}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derived\+V1, typename Derived\+F1, typename Derived\+V2, typename Derived\+F2, typename Derived\+IF, typename Derived\+CP$>$ }\\bool \doxymbox{\hyperlink{namespaceigl_1_1predicates_a3682eb8bb7f162cb6119efd32a7b0363}{find\+\_\+intersections}} (const Eigen::\+\+Matrix\+Base$<$ Derived\+V1 $>$ \&V1, const Eigen::\+\+Matrix\+Base$<$ Derived\+F1 $>$ \&F1, const Eigen::\+\+Matrix\+Base$<$ Derived\+V2 $>$ \&V2, const Eigen::\+\+Matrix\+Base$<$ Derived\+F2 $>$ \&F2, const bool first\+\_\+only, Eigen::\+\+Plain\+Object\+Base$<$ Derived\+IF $>$ \&IF, Eigen::\+\+Plain\+Object\+Base$<$ Derived\+CP $>$ \&CP)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derived\+V1, typename Derived\+F1, typename Derived\+V2, typename Derived\+F2, typename Derived\+IF, typename Derived\+CP, typename Derived\+EV, typename Derived\+EE, typename Derived\+EI$>$ }\\bool \doxymbox{\hyperlink{namespaceigl_1_1predicates_a27abce4ca0362ff4644db203b16dacf0}{find\+\_\+intersections}} (const Eigen::\+\+Matrix\+Base$<$ Derived\+V1 $>$ \&V1, const Eigen::\+\+Matrix\+Base$<$ Derived\+F1 $>$ \&F1, const Eigen::\+\+Matrix\+Base$<$ Derived\+V2 $>$ \&V2, const Eigen::\+\+Matrix\+Base$<$ Derived\+F2 $>$ \&F2, Eigen::\+\+Plain\+Object\+Base$<$ Derived\+IF $>$ \&IF, Eigen::\+\+Plain\+Object\+Base$<$ Derived\+CP $>$ \&CP, Eigen::\+\+Plain\+Object\+Base$<$ Derived\+EV $>$ \&EV, Eigen::\+\+Plain\+Object\+Base$<$ Derived\+EE $>$ \&EE, Eigen::\+\+Plain\+Object\+Base$<$ Derived\+EI $>$ \&EI)
+\item 
+{\footnotesize template$<$typename Derived\+V1, typename Derived\+F1, typename Derived\+V2, typename Derived\+F2, typename Derived\+IF, typename Derived\+CP, typename Derived\+EV, typename Derived\+EE, typename Derived\+EI$>$ }\\bool \doxymbox{\hyperlink{namespaceigl_1_1predicates_a0cc007b5d8c7ee41cd9ae785f5d6bbf2}{find\+\_\+intersections}} (const \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ Derived\+V1, 3 $>$ \&tree1, const Eigen::\+\+Matrix\+Base$<$ Derived\+V1 $>$ \&V1, const Eigen::\+\+Matrix\+Base$<$ Derived\+F1 $>$ \&F1, const Eigen::\+\+Matrix\+Base$<$ Derived\+V2 $>$ \&V2, const Eigen::\+\+Matrix\+Base$<$ Derived\+F2 $>$ \&F2, Eigen::\+\+Plain\+Object\+Base$<$ Derived\+IF $>$ \&IF, Eigen::\+\+Plain\+Object\+Base$<$ Derived\+CP $>$ \&CP, Eigen::\+\+Plain\+Object\+Base$<$ Derived\+EV $>$ \&EV, Eigen::\+\+Plain\+Object\+Base$<$ Derived\+EE $>$ \&EE, Eigen::\+\+Plain\+Object\+Base$<$ Derived\+EI $>$ \&EI)
+\item 
+{\footnotesize template$<$typename DerivedV, typename DerivedF, typename Derived\+IF, typename Derived\+CP$>$ }\\bool \doxymbox{\hyperlink{namespaceigl_1_1predicates_aab68b25786d1d29281a22ad94a23aefb}{find\+\_\+self\+\_\+intersections}} (const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen::\+\+Matrix\+Base$<$ DerivedF $>$ \&F, const bool first\+\_\+only, Eigen::\+\+Plain\+Object\+Base$<$ Derived\+IF $>$ \&IF, Eigen::\+\+Plain\+Object\+Base$<$ Derived\+CP $>$ \&CP)
+\begin{DoxyCompactList}\small\item\em Identify triangle-\/triangle interesections within the same mesh using AABBTree and \doxylink{namespaceigl_1_1predicates_a56015a00c1892c273542f5eb6097690a}{igl::\+predicates::\+triangle\+\_\+triangle\+\_\+intersect}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV, typename DerivedF, typename Derived\+IF, typename Derived\+CP, typename Derived\+EV, typename Derived\+EE, typename Derived\+EI$>$ }\\bool \doxymbox{\hyperlink{namespaceigl_1_1predicates_ab33a2d54a0f3ca4c88814f88f247811f}{find\+\_\+self\+\_\+intersections}} (const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen::\+\+Matrix\+Base$<$ DerivedF $>$ \&F, Eigen::\+\+Plain\+Object\+Base$<$ Derived\+IF $>$ \&IF, Eigen::\+\+Plain\+Object\+Base$<$ Derived\+CP $>$ \&CP, Eigen::\+\+Plain\+Object\+Base$<$ Derived\+EV $>$ \&EV, Eigen::\+\+Plain\+Object\+Base$<$ Derived\+EE $>$ \&EE, Eigen::\+\+Plain\+Object\+Base$<$ Derived\+EI $>$ \&EI)
+\item 
+{\footnotesize template$<$typename Vector2D$>$ }\\\doxymbox{\hyperlink{namespaceigl_a93f2a7c83dee3568f488e9e24fb98f8c}{Orientation}} \doxymbox{\hyperlink{namespaceigl_1_1predicates_a34dc07d0d7c3e70d012a400c07fea6d5}{incircle}} (const Eigen::\+\+Matrix\+Base$<$ Vector2D $>$ \&pa, const Eigen::\+\+Matrix\+Base$<$ Vector2D $>$ \&pb, const Eigen::\+\+Matrix\+Base$<$ Vector2D $>$ \&pc, const Eigen::\+\+Matrix\+Base$<$ Vector2D $>$ \&pd)
+\begin{DoxyCompactList}\small\item\em Decide whether a point is inside/\+outside/\+on a circle. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Vector3D$>$ }\\\doxymbox{\hyperlink{namespaceigl_a93f2a7c83dee3568f488e9e24fb98f8c}{Orientation}} \doxymbox{\hyperlink{namespaceigl_1_1predicates_aa3f8cfda1a577af57f2729330ca6a459}{insphere}} (const Eigen::\+\+Matrix\+Base$<$ Vector3D $>$ \&pa, const Eigen::\+\+Matrix\+Base$<$ Vector3D $>$ \&pb, const Eigen::\+\+Matrix\+Base$<$ Vector3D $>$ \&pc, const Eigen::\+\+Matrix\+Base$<$ Vector3D $>$ \&pd, const Eigen::\+\+Matrix\+Base$<$ Vector3D $>$ \&pe)
+\begin{DoxyCompactList}\small\item\em Decide whether a point is inside/\+outside/\+on a sphere. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV, typename DerivedF$>$ }\\void \doxymbox{\hyperlink{namespaceigl_1_1predicates_a61e6a3ff4a055fb5e6c749d601d3e694}{lexicographic\+\_\+triangulation}} (const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&V, Eigen::\+\+Plain\+Object\+Base$<$ DerivedF $>$ \&F)
+\begin{DoxyCompactList}\small\item\em Given a set of points in 2D, return a lexicographic triangulation of these points using predicates. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derivedpa, typename Derivedpb, typename Derivedpc$>$ }\\\doxymbox{\hyperlink{namespaceigl_a93f2a7c83dee3568f488e9e24fb98f8c}{Orientation}} \doxymbox{\hyperlink{namespaceigl_1_1predicates_a808c6c9ad2561179d610fbaf2bf7934e}{orient2d}} (const Eigen::\+\+Matrix\+Base$<$ Derivedpa $>$ \&pa, const Eigen::\+\+Matrix\+Base$<$ Derivedpb $>$ \&pb, const Eigen::\+\+Matrix\+Base$<$ Derivedpc $>$ \&pc)
 \begin{DoxyCompactList}\small\item\em Compute the orientation of the triangle formed by pa, pb, pc. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Vector3D $>$ }\\\mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418b}{Orientation}} \mbox{\hyperlink{namespaceigl_1_1predicates_a16875914854207c54ce309a69d802292}{orient3d}} (const Eigen\+::\+Matrix\+Base$<$ Vector3D $>$ \&pa, const Eigen\+::\+Matrix\+Base$<$ Vector3D $>$ \&pb, const Eigen\+::\+Matrix\+Base$<$ Vector3D $>$ \&pc, const Eigen\+::\+Matrix\+Base$<$ Vector3D $>$ \&pd)
+{\footnotesize template$<$typename DerivedA, typename DerivedB, typename DerivedC, typename DerivedR$>$ }\\void \doxymbox{\hyperlink{namespaceigl_1_1predicates_a56762ae6e0dfa2c8bb75bc8ba7424d70}{orient2d}} (const Eigen::\+\+Matrix\+Base$<$ DerivedA $>$ \&A, const Eigen::\+\+Matrix\+Base$<$ DerivedB $>$ \&B, const Eigen::\+\+Matrix\+Base$<$ DerivedC $>$ \&C, Eigen::\+\+Plain\+Object\+Base$<$ DerivedR $>$ \&R)
+\begin{DoxyCompactList}\small\item\em Compute the orientation of the tetrahedron formed by each 4-\/tuple of points. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Vector3D$>$ }\\\doxymbox{\hyperlink{namespaceigl_a93f2a7c83dee3568f488e9e24fb98f8c}{Orientation}} \doxymbox{\hyperlink{namespaceigl_1_1predicates_a16875914854207c54ce309a69d802292}{orient3d}} (const Eigen::\+\+Matrix\+Base$<$ Vector3D $>$ \&pa, const Eigen::\+\+Matrix\+Base$<$ Vector3D $>$ \&pb, const Eigen::\+\+Matrix\+Base$<$ Vector3D $>$ \&pc, const Eigen::\+\+Matrix\+Base$<$ Vector3D $>$ \&pd)
 \begin{DoxyCompactList}\small\item\em Compute the orientation of the tetrahedron formed by pa, pb, pc, pd. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Vector2D $>$ }\\\mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418b}{Orientation}} \mbox{\hyperlink{namespaceigl_1_1predicates_a34dc07d0d7c3e70d012a400c07fea6d5}{incircle}} (const Eigen\+::\+Matrix\+Base$<$ Vector2D $>$ \&pa, const Eigen\+::\+Matrix\+Base$<$ Vector2D $>$ \&pb, const Eigen\+::\+Matrix\+Base$<$ Vector2D $>$ \&pc, const Eigen\+::\+Matrix\+Base$<$ Vector2D $>$ \&pd)
-\begin{DoxyCompactList}\small\item\em Decide whether a point is inside/outside/on a circle. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Vector3D $>$ }\\\mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418b}{Orientation}} \mbox{\hyperlink{namespaceigl_1_1predicates_aa3f8cfda1a577af57f2729330ca6a459}{insphere}} (const Eigen\+::\+Matrix\+Base$<$ Vector3D $>$ \&pa, const Eigen\+::\+Matrix\+Base$<$ Vector3D $>$ \&pb, const Eigen\+::\+Matrix\+Base$<$ Vector3D $>$ \&pc, const Eigen\+::\+Matrix\+Base$<$ Vector3D $>$ \&pd, const Eigen\+::\+Matrix\+Base$<$ Vector3D $>$ \&pe)
-\begin{DoxyCompactList}\small\item\em Decide whether a point is inside/outside/on a sphere. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename DerivedP $>$ }\\bool \mbox{\hyperlink{namespaceigl_1_1predicates_a660dbf746a2adc274bc12ba3938bd049}{segment\+\_\+segment\+\_\+intersect}} (const Eigen\+::\+Matrix\+Base$<$ DerivedP $>$ \&A, const Eigen\+::\+Matrix\+Base$<$ DerivedP $>$ \&B, const Eigen\+::\+Matrix\+Base$<$ DerivedP $>$ \&C, const Eigen\+::\+Matrix\+Base$<$ DerivedP $>$ \&D)
-\begin{DoxyCompactList}\small\item\em Given two segments in 2d test whether they intersect each other using predicates orient2d. \end{DoxyCompactList}\end{DoxyCompactItemize}
+{\footnotesize template$<$typename DerivedA, typename DerivedB, typename DerivedC, typename DerivedD, typename DerivedR$>$ }\\void \doxymbox{\hyperlink{namespaceigl_1_1predicates_ae081684d9943c869cdcd5a7d77c78df7}{orient3d}} (const Eigen::\+\+Matrix\+Base$<$ DerivedA $>$ \&A, const Eigen::\+\+Matrix\+Base$<$ DerivedB $>$ \&B, const Eigen::\+\+Matrix\+Base$<$ DerivedC $>$ \&C, const Eigen::\+\+Matrix\+Base$<$ DerivedD $>$ \&D, Eigen::\+\+Plain\+Object\+Base$<$ DerivedR $>$ \&R)
+\begin{DoxyCompactList}\small\item\em Compute the orientation of the tetrahedron formed by each 4-\/tuple of points. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derivedq, typename Deriveda, typename Derivedb, typename Derivedc, typename Derivedd$>$ }\\\doxymbox{\hyperlink{namespaceigl_a93f2a7c83dee3568f488e9e24fb98f8c}{Orientation}} \doxymbox{\hyperlink{namespaceigl_1_1predicates_a9ec02e38d27711e0933ff8d6bd98af6b}{point\+\_\+in\+\_\+convex\+\_\+hull}} (const Eigen::\+\+Matrix\+Base$<$ Derivedq $>$ \&q, const Eigen::\+\+Matrix\+Base$<$ Deriveda $>$ \&a, const Eigen::\+\+Matrix\+Base$<$ Derivedb $>$ \&b, const Eigen::\+\+Matrix\+Base$<$ Derivedc $>$ \&c, const Eigen::\+\+Matrix\+Base$<$ Derivedd $>$ \&d)
+\begin{DoxyCompactList}\small\item\em Determine if the 2D point q is inside, outside, or on the boundary of the convex hull of the 2D points a,b,c,d. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedP, typename DerivedQ$>$ }\\bool \doxymbox{\hyperlink{namespaceigl_1_1predicates_a7780c668969af51b6d39c023d8850192}{point\+\_\+inside\+\_\+convex\+\_\+polygon}} (const Eigen::\+\+Matrix\+Base$<$ DerivedP $>$ \&P, const Eigen::\+\+Matrix\+Base$<$ DerivedQ $>$ \&q)
+\begin{DoxyCompactList}\small\item\em check whether 2d point lies inside 2d convex polygon \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV, typename DerivedI, typename DerivedC, typename DerivedF, typename DerivedJ$>$ }\\void \doxymbox{\hyperlink{namespaceigl_1_1predicates_ae34c1fbb1f6a62e7083463a89556bdfc}{polygons\+\_\+to\+\_\+triangles}} (const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen::\+\+Matrix\+Base$<$ DerivedI $>$ \&I, const Eigen::\+\+Matrix\+Base$<$ DerivedC $>$ \&C, Eigen::\+\+Plain\+Object\+Base$<$ DerivedF $>$ \&F, Eigen::\+\+Plain\+Object\+Base$<$ DerivedJ $>$ \&J)
+\begin{DoxyCompactList}\small\item\em Given a polygon mesh, trivially triangulate each polygon with a fan. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedP$>$ }\\bool \doxymbox{\hyperlink{namespaceigl_1_1predicates_a660dbf746a2adc274bc12ba3938bd049}{segment\+\_\+segment\+\_\+intersect}} (const Eigen::\+\+Matrix\+Base$<$ DerivedP $>$ \&A, const Eigen::\+\+Matrix\+Base$<$ DerivedP $>$ \&B, const Eigen::\+\+Matrix\+Base$<$ DerivedP $>$ \&C, const Eigen::\+\+Matrix\+Base$<$ DerivedP $>$ \&D)
+\begin{DoxyCompactList}\small\item\em Given two segments in 2d test whether they intersect each other using predicates orient2d. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedP, typename DerivedC, typename DerivedB, typename Derivedleaf, typename DerivedQ, typename DerivedW$>$ }\\void \doxymbox{\hyperlink{namespaceigl_1_1predicates_a0e5bdf4506071ba597ec8f44d13e7d7b}{spline\+\_\+winding\+\_\+number}} (const Eigen::\+\+Matrix\+Base$<$ DerivedP $>$ \&P, const Eigen::\+\+Matrix\+Base$<$ DerivedC $>$ \&C, const Eigen::\+\+Matrix\+Base$<$ DerivedB $>$ \&B1, const Eigen::\+\+Matrix\+Base$<$ DerivedB $>$ \&B2, const Eigen::\+\+Matrix\+Base$<$ Derivedleaf $>$ \&leaf, const Eigen::\+\+Matrix\+Base$<$ DerivedQ $>$ \&Q, Eigen::\+\+Plain\+Object\+Base$<$ DerivedW $>$ \&W)
+\begin{DoxyCompactList}\small\item\em Computes the (generalized) winding number of a spline of cubic Bézier curves around a set of query points. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Vector3D$>$ }\\bool \doxymbox{\hyperlink{namespaceigl_1_1predicates_a56015a00c1892c273542f5eb6097690a}{triangle\+\_\+triangle\+\_\+intersect}} (const Vector3D \&a1, const Vector3D \&a2, const Vector3D \&a3, const Vector3D \&b1, const Vector3D \&b2, const Vector3D \&b3, bool \&coplanar)
+\begin{DoxyCompactList}\small\item\em Triangle-\/triangle intersection test using exact predicates. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\doxysubsection{Enumeration Type Documentation}
-\Hypertarget{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418b}\label{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418b} 
-\index{igl::predicates@{igl::predicates}!Orientation@{Orientation}}
-\index{Orientation@{Orientation}!igl::predicates@{igl::predicates}}
-\doxysubsubsection{\texorpdfstring{Orientation}{Orientation}}
-{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418b}{igl\+::predicates\+::\+Orientation}}\hspace{0.3cm}{\ttfamily [strong]}}
-
-
-
-Types of orientations and other predicate results. 
-
-\doxylink{predicates_8h}{include/igl/predicates/predicates.\+h} \begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{POSITIVE@{POSITIVE}!igl::predicates@{igl::predicates}}\index{igl::predicates@{igl::predicates}!POSITIVE@{POSITIVE}}}\Hypertarget{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418baab6c31432785221bae58327ef5f6ea58}\label{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418baab6c31432785221bae58327ef5f6ea58} 
-POSITIVE&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{INSIDE@{INSIDE}!igl::predicates@{igl::predicates}}\index{igl::predicates@{igl::predicates}!INSIDE@{INSIDE}}}\Hypertarget{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418ba554a7418c4c0dafd902ebd377b87c80c}\label{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418ba554a7418c4c0dafd902ebd377b87c80c} 
-INSIDE&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{NEGATIVE@{NEGATIVE}!igl::predicates@{igl::predicates}}\index{igl::predicates@{igl::predicates}!NEGATIVE@{NEGATIVE}}}\Hypertarget{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418ba50546bf973283065b6ccf09faf7a580a}\label{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418ba50546bf973283065b6ccf09faf7a580a} 
-NEGATIVE&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{OUTSIDE@{OUTSIDE}!igl::predicates@{igl::predicates}}\index{igl::predicates@{igl::predicates}!OUTSIDE@{OUTSIDE}}}\Hypertarget{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418ba93da25bafef6761717afc6b25c17ea16}\label{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418ba93da25bafef6761717afc6b25c17ea16} 
-OUTSIDE&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{COLLINEAR@{COLLINEAR}!igl::predicates@{igl::predicates}}\index{igl::predicates@{igl::predicates}!COLLINEAR@{COLLINEAR}}}\Hypertarget{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418bac514333ce2954c3110061a9d61666f8c}\label{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418bac514333ce2954c3110061a9d61666f8c} 
-COLLINEAR&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{COPLANAR@{COPLANAR}!igl::predicates@{igl::predicates}}\index{igl::predicates@{igl::predicates}!COPLANAR@{COPLANAR}}}\Hypertarget{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418ba9b1fc8879c96b8594f626bd204405336}\label{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418ba9b1fc8879c96b8594f626bd204405336} 
-COPLANAR&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{COCIRCULAR@{COCIRCULAR}!igl::predicates@{igl::predicates}}\index{igl::predicates@{igl::predicates}!COCIRCULAR@{COCIRCULAR}}}\Hypertarget{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418bacfb327ad336ef0a1ba58a8651000d228}\label{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418bacfb327ad336ef0a1ba58a8651000d228} 
-COCIRCULAR&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{COSPHERICAL@{COSPHERICAL}!igl::predicates@{igl::predicates}}\index{igl::predicates@{igl::predicates}!COSPHERICAL@{COSPHERICAL}}}\Hypertarget{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418ba744ce244a9eef07f7a7fed2073d10947}\label{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418ba744ce244a9eef07f7a7fed2073d10947} 
-COSPHERICAL&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{DEGENERATE@{DEGENERATE}!igl::predicates@{igl::predicates}}\index{igl::predicates@{igl::predicates}!DEGENERATE@{DEGENERATE}}}\Hypertarget{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418ba6084ee8bb30ae219127db8b7aece408a}\label{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418ba6084ee8bb30ae219127db8b7aece408a} 
-DEGENERATE&\\
-\hline
-
-\end{DoxyEnumFields}
-
-
+\label{doc-func-members}
+\Hypertarget{namespaceigl_1_1predicates_doc-func-members}
 \doxysubsection{Function Documentation}
-\Hypertarget{namespaceigl_1_1predicates_a7edd289c72535b2014622b5fc55c397e}\label{namespaceigl_1_1predicates_a7edd289c72535b2014622b5fc55c397e} 
-\index{igl::predicates@{igl::predicates}!delaunay\_triangulation@{delaunay\_triangulation}}
+\Hypertarget{namespaceigl_1_1predicates_a8156b64c555347e2d559167fcb70c2c8}\index{igl::predicates@{igl::predicates}!cubic\_winding\_number@{cubic\_winding\_number}}
+\index{cubic\_winding\_number@{cubic\_winding\_number}!igl::predicates@{igl::predicates}}
+\doxysubsubsection{\texorpdfstring{cubic\_winding\_number()}{cubic\_winding\_number()}}
+{\footnotesize\ttfamily \label{namespaceigl_1_1predicates_a8156b64c555347e2d559167fcb70c2c8} 
+template$<$typename DerivedC, typename Derivedq$>$ \\
+Derived\+C::\+\+Scalar igl::\+predicates::\+cubic\+\_\+winding\+\_\+number (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedC $>$ \&}]{C}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derivedq $>$ \&}]{q}{}\end{DoxyParamCaption})}
+
+
+
+Computes the (generalized) winding number of a cubic Bézier curve around a query. 
+
+This implementation is similar to "{}\+Robust Containment Queries Over \+Collections of Rational Parametric Curves via Generalized Winding \+Numbers"{} \+[Spainhour et al. 2024]\+.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em C} & 4 by dimensions matrix of control points for a cubic Bézier curve \\
+\hline
+\doxymbox{\texttt{in}}  & {\em q} & 1 by dimensions query point \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespaceigl_1_1predicates_a7edd289c72535b2014622b5fc55c397e}\index{igl::predicates@{igl::predicates}!delaunay\_triangulation@{delaunay\_triangulation}}
 \index{delaunay\_triangulation@{delaunay\_triangulation}!igl::predicates@{igl::predicates}}
 \doxysubsubsection{\texorpdfstring{delaunay\_triangulation()}{delaunay\_triangulation()}}
-{\footnotesize\ttfamily template$<$typename DerivedV , typename DerivedF $>$ \\
-void igl\+::predicates\+::delaunay\+\_\+triangulation (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&}]{F }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{namespaceigl_1_1predicates_a7edd289c72535b2014622b5fc55c397e} 
+template$<$typename DerivedV, typename DerivedF$>$ \\
+void igl::\+predicates::\+delaunay\+\_\+triangulation (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&}]{V}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ DerivedF $>$ \&}]{F}{}\end{DoxyParamCaption})}
 
 
 
@@ -111,33 +89,33 @@ Given a set of points in 2D, return a Delaunay triangulation of these points usi
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em V} & \#V by 2 list of vertex positions \\
+\doxymbox{\texttt{in}}  & {\em V} & \+\#V by 2 list of vertex positions \\
 \hline
-\mbox{\texttt{ out}}  & {\em F} & \#F by 3 of faces in Delaunay triangulation. \\
+\doxymbox{\texttt{out}}  & {\em F} & \+\#F by 3 of faces in Delaunay triangulation. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{namespaceigl_1_1predicates_a87050342a2559880af3a5d0b550bfd0a}\label{namespaceigl_1_1predicates_a87050342a2559880af3a5d0b550bfd0a} 
-\index{igl::predicates@{igl::predicates}!ear\_clipping@{ear\_clipping}}
+\Hypertarget{namespaceigl_1_1predicates_a87050342a2559880af3a5d0b550bfd0a}\index{igl::predicates@{igl::predicates}!ear\_clipping@{ear\_clipping}}
 \index{ear\_clipping@{ear\_clipping}!igl::predicates@{igl::predicates}}
 \doxysubsubsection{\texorpdfstring{ear\_clipping()}{ear\_clipping()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily template$<$typename DerivedP , typename Derived\+RT , typename DerivedF , typename DerivedI $>$ \\
-void igl\+::predicates\+::ear\+\_\+clipping (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedP $>$ \&}]{P,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+RT $>$ \&}]{RT,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&}]{eF,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedI $>$ \&}]{I }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{namespaceigl_1_1predicates_a87050342a2559880af3a5d0b550bfd0a} 
+template$<$typename DerivedP, typename Derived\+RT, typename DerivedF, typename DerivedI$>$ \\
+void igl::\+predicates::\+ear\+\_\+clipping (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedP $>$ \&}]{P}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derived\+RT $>$ \&}]{RT}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ DerivedF $>$ \&}]{eF}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ DerivedI $>$ \&}]{I}{}\end{DoxyParamCaption})}
 
 
 
 Implementation of ear clipping triangulation algorithm for a 2D polygon. 
 
-\href{https://www.geometrictools.com/Documentation/TriangulationByEarClipping.pdf}{\texttt{ https\+://www.\+geometrictools.\+com/\+Documentation/\+Triangulation\+By\+Ear\+Clipping.\+pdf}} If the polygon is simple and oriented counter-\/clockwise, all vertices will be clipped and the result mesh is (P,eF) Otherwise, the function will try to clip as many ears as possible.
+\href{https://www.geometrictools.com/Documentation/TriangulationByEarClipping.pdf}{\texttt{https:\+/\+/\+www.\+geometrictools.\+com/\+\+Documentation/\+\+Triangulation\+By\+Ear\+Clipping.\+pdf}} If the polygon is simple and oriented counter-\/clockwise, all vertices will be clipped and the result mesh is (P,eF) Otherwise, the function will try to clip as many ears as possible.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em P} & \+: n\texorpdfstring{$\ast$}{*}2, size n 2D polygon \\
+\doxymbox{\texttt{in}}  & {\em P} & :\+ n\texorpdfstring{$\ast$}{*}2, size n 2D polygon \\
 \hline
-\mbox{\texttt{ in}}  & {\em RT} & n\texorpdfstring{$\ast$}{*}1, preserved vertices (do not clip) marked as 1, otherwise 0 \\
+\doxymbox{\texttt{in}}  & {\em RT} & n\texorpdfstring{$\ast$}{*}1, preserved vertices (do not clip) marked as 1, otherwise 0 \\
 \hline
-\mbox{\texttt{ out}}  & {\em eF} & clipped ears, in original index of P \\
+\doxymbox{\texttt{out}}  & {\em eF} & clipped ears, in original index of P \\
 \hline
-\mbox{\texttt{ out}}  & {\em I} & \+: size \#nP vector, maps index from nP to P, e.\+g. nP\textquotesingle{}s ith vertex is origianlly I(i) in P\\
+\doxymbox{\texttt{out}}  & {\em I} & :\+ size \+\#nP vector, maps index from nP to P, e.\+g. nP\textquotesingle{}s ith vertex is origianlly I(i) in P\\
 \hline
 \end{DoxyParams}
 \begin{DoxyPrecond}{Precondition}
@@ -146,90 +124,25 @@ To result in a proper mesh, P should be oriented counter-\/clockwise with no sel
 \begin{DoxyNote}{Note}
 This implementation does not handle polygons with holes.
 \end{DoxyNote}
-\Hypertarget{namespaceigl_1_1predicates_ada15b6ecd90806923001927e53180fd4}\label{namespaceigl_1_1predicates_ada15b6ecd90806923001927e53180fd4} 
-\index{igl::predicates@{igl::predicates}!ear\_clipping@{ear\_clipping}}
+\Hypertarget{namespaceigl_1_1predicates_ada15b6ecd90806923001927e53180fd4}\index{igl::predicates@{igl::predicates}!ear\_clipping@{ear\_clipping}}
 \index{ear\_clipping@{ear\_clipping}!igl::predicates@{igl::predicates}}
 \doxysubsubsection{\texorpdfstring{ear\_clipping()}{ear\_clipping()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$typename DerivedP , typename DerivedF $>$ \\
-bool igl\+::predicates\+::ear\+\_\+clipping (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedP $>$ \&}]{P,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&}]{eF }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{namespaceigl_1_1predicates_ada15b6ecd90806923001927e53180fd4} 
+template$<$typename DerivedP, typename DerivedF$>$ \\
+bool igl::\+predicates::\+ear\+\_\+clipping (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedP $>$ \&}]{P}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ DerivedF $>$ \&}]{eF}{}\end{DoxyParamCaption})}
 
 
 
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
 
-Reverses P if necessary. Orientation of output will match input \begin{DoxyReturn}{Returns}
+Reverses P if necessary. \doxylink{namespaceigl_a93f2a7c83dee3568f488e9e24fb98f8c}{Orientation} of output will match input \begin{DoxyReturn}{Returns}
 true if mesh is proper (should correspond to input being a simple polygon in either orientation), false otherwise. 
 \end{DoxyReturn}
-\Hypertarget{namespaceigl_1_1predicates_a61e6a3ff4a055fb5e6c749d601d3e694}\label{namespaceigl_1_1predicates_a61e6a3ff4a055fb5e6c749d601d3e694} 
-\index{igl::predicates@{igl::predicates}!lexicographic\_triangulation@{lexicographic\_triangulation}}
-\index{lexicographic\_triangulation@{lexicographic\_triangulation}!igl::predicates@{igl::predicates}}
-\doxysubsubsection{\texorpdfstring{lexicographic\_triangulation()}{lexicographic\_triangulation()}}
-{\footnotesize\ttfamily template$<$typename DerivedV , typename DerivedF $>$ \\
-void igl\+::predicates\+::lexicographic\+\_\+triangulation (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&}]{F }\end{DoxyParamCaption})}
-
-
-
-Given a set of points in 2D, return a lexicographic triangulation of these points using predicates. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em V} & \#V by 2 list of vertex positions \\
-\hline
-\mbox{\texttt{ out}}  & {\em F} & \#F by 3 of faces in Delaunay triangulation. \\
-\hline
-\end{DoxyParams}
-\Hypertarget{namespaceigl_1_1predicates_a7780c668969af51b6d39c023d8850192}\label{namespaceigl_1_1predicates_a7780c668969af51b6d39c023d8850192} 
-\index{igl::predicates@{igl::predicates}!point\_inside\_convex\_polygon@{point\_inside\_convex\_polygon}}
-\index{point\_inside\_convex\_polygon@{point\_inside\_convex\_polygon}!igl::predicates@{igl::predicates}}
-\doxysubsubsection{\texorpdfstring{point\_inside\_convex\_polygon()}{point\_inside\_convex\_polygon()}}
-{\footnotesize\ttfamily template$<$typename DerivedP , typename DerivedQ $>$ \\
-bool igl\+::predicates\+::point\+\_\+inside\+\_\+convex\+\_\+polygon (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedP $>$ \&}]{P,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedQ $>$ \&}]{q }\end{DoxyParamCaption})}
-
-
-
-check whether 2d point lies inside 2d convex polygon 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em P} & n\texorpdfstring{$\ast$}{*}2 polygon, n \texorpdfstring{$>$}{>}= 3 \\
-\hline
-\mbox{\texttt{ in}}  & {\em q} & 2d query point \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-true if point is inside polygon 
-\end{DoxyReturn}
-\Hypertarget{namespaceigl_1_1predicates_ae34c1fbb1f6a62e7083463a89556bdfc}\label{namespaceigl_1_1predicates_ae34c1fbb1f6a62e7083463a89556bdfc} 
-\index{igl::predicates@{igl::predicates}!polygons\_to\_triangles@{polygons\_to\_triangles}}
-\index{polygons\_to\_triangles@{polygons\_to\_triangles}!igl::predicates@{igl::predicates}}
-\doxysubsubsection{\texorpdfstring{polygons\_to\_triangles()}{polygons\_to\_triangles()}}
-{\footnotesize\ttfamily template$<$typename DerivedV , typename DerivedI , typename DerivedC , typename DerivedF , typename DerivedJ $>$ \\
-void igl\+::predicates\+::polygons\+\_\+to\+\_\+triangles (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedI $>$ \&}]{I,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedC $>$ \&}]{C,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedF $>$ \&}]{F,  }\item[{Eigen\+::\+Plain\+Object\+Base$<$ DerivedJ $>$ \&}]{J }\end{DoxyParamCaption})}
-
-
-
-Given a polygon mesh, trivially triangulate each polygon with a fan. 
-
-This purely combinatorial triangulation will work well for convex/flat polygons and degrade otherwise.
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em V} & \#V by dim list of vertex positions \\
-\hline
-\mbox{\texttt{ in}}  & {\em I} & \#I vectorized list of polygon corner indices into rows of some matrix V \\
-\hline
-\mbox{\texttt{ in}}  & {\em C} & \#polygons+1 list of cumulative polygon sizes so that C(i+1)-\/C(i) = size of the ith polygon, and so I(\+C(i)) through I(C(i+1)-\/1) are the indices of the ith polygon \\
-\hline
-\mbox{\texttt{ out}}  & {\em F} & \#F by 3 list of triangle indices into rows of V \\
-\hline
-\mbox{\texttt{ out}}  & {\em J} & \#F list of indices into 0\+:\#P-\/1 of corresponding polygon \\
-\hline
-\end{DoxyParams}
-\Hypertarget{namespaceigl_1_1predicates_a7b443360a322c1ab15643ea1bad58d58}\label{namespaceigl_1_1predicates_a7b443360a322c1ab15643ea1bad58d58} 
-\index{igl::predicates@{igl::predicates}!exactinit@{exactinit}}
+\Hypertarget{namespaceigl_1_1predicates_a7b443360a322c1ab15643ea1bad58d58}\index{igl::predicates@{igl::predicates}!exactinit@{exactinit}}
 \index{exactinit@{exactinit}!igl::predicates@{igl::predicates}}
 \doxysubsubsection{\texorpdfstring{exactinit()}{exactinit()}}
-{\footnotesize\ttfamily void igl\+::predicates\+::exactinit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{namespaceigl_1_1predicates_a7b443360a322c1ab15643ea1bad58d58} 
+void igl::\+predicates::\+exactinit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
@@ -237,12 +150,188 @@ Initialize internal variable used by predciates.
 
 Must be called before using exact predicates. It is safe to call this function from multiple threads.
 
-\doxylink{predicates_8h}{include/igl/predicates/predicates.\+h} \Hypertarget{namespaceigl_1_1predicates_ab85f8a0e2f35b55088ba76fa3e269a1a}\label{namespaceigl_1_1predicates_ab85f8a0e2f35b55088ba76fa3e269a1a} 
-\index{igl::predicates@{igl::predicates}!orient2d@{orient2d}}
+\doxylink{exactinit_8h}{include/\+igl/\+predicates/\+exactinit.\+h} \Hypertarget{namespaceigl_1_1predicates_a8933404a7087fe62c2ae736dd1187056}\index{igl::predicates@{igl::predicates}!find\_intersections@{find\_intersections}}
+\index{find\_intersections@{find\_intersections}!igl::predicates@{igl::predicates}}
+\doxysubsubsection{\texorpdfstring{find\_intersections()}{find\_intersections()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{namespaceigl_1_1predicates_a8933404a7087fe62c2ae736dd1187056} 
+template$<$typename Derived\+V1, typename Derived\+F1, typename Derived\+V2, typename Derived\+F2, typename Derived\+IF, typename Derived\+CP$>$ \\
+bool igl::\+predicates::\+find\+\_\+intersections (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{classigl_1_1AABB}{AABB}}$<$ Derived\+V1, 3 $>$ \&}]{tree1}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derived\+V1 $>$ \&}]{V1}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derived\+F1 $>$ \&}]{F1}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derived\+V2 $>$ \&}]{V2}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derived\+F2 $>$ \&}]{F2}{, }\item[{const bool}]{first\+\_\+only}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ Derived\+IF $>$ \&}]{IF}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ Derived\+CP $>$ \&}]{CP}{}\end{DoxyParamCaption})}
+
+
+
+Identify triangles where two meshes interesect using AABBTree and \doxylink{namespaceigl_1_1predicates_a56015a00c1892c273542f5eb6097690a}{igl::\+predicates::\+triangle\+\_\+triangle\+\_\+intersect}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em tree1} & \doxylink{classigl_1_1AABB}{AABB} tree for the first mesh \\
+\hline
+\doxymbox{\texttt{in}}  & {\em V1} & \+\#\+V1 by 3 list representing vertices on the first mesh \\
+\hline
+\doxymbox{\texttt{in}}  & {\em F1} & \+\#\+F1 by 3 list representing triangles on the first mesh \\
+\hline
+\doxymbox{\texttt{in}}  & {\em V2} & \+\#\+V2 by 3 list representing vertices on the second mesh \\
+\hline
+\doxymbox{\texttt{in}}  & {\em F2} & \+\#\+F2 by 3 list representing triangles on the second mesh \\
+\hline
+\doxymbox{\texttt{out}}  & {\em IF} & \+\#\+IF by 2 list of intersecting triangle pairs, so that F1(\+IF(i,0),:\+) intersects F2(\+IF(i,1),:\+) \\
+\hline
+\doxymbox{\texttt{out}}  & {\em CP} & \+\#\+IF list of whether the intersection is coplanar\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{namespaceigl_1_1copyleft_1_1cgal_a34d36fcc8b6bd1e52ab849ef666867c5}{copyleft::\+cgal::\+intersect\+\_\+other} 
+\end{DoxySeeAlso}
+\Hypertarget{namespaceigl_1_1predicates_a3682eb8bb7f162cb6119efd32a7b0363}\index{igl::predicates@{igl::predicates}!find\_intersections@{find\_intersections}}
+\index{find\_intersections@{find\_intersections}!igl::predicates@{igl::predicates}}
+\doxysubsubsection{\texorpdfstring{find\_intersections()}{find\_intersections()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{namespaceigl_1_1predicates_a3682eb8bb7f162cb6119efd32a7b0363} 
+template$<$typename Derived\+V1, typename Derived\+F1, typename Derived\+V2, typename Derived\+F2, typename Derived\+IF, typename Derived\+CP$>$ \\
+bool igl::\+predicates::\+find\+\_\+intersections (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Matrix\+Base$<$ Derived\+V1 $>$ \&}]{V1}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derived\+F1 $>$ \&}]{F1}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derived\+V2 $>$ \&}]{V2}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derived\+F2 $>$ \&}]{F2}{, }\item[{const bool}]{first\+\_\+only}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ Derived\+IF $>$ \&}]{IF}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ Derived\+CP $>$ \&}]{CP}{}\end{DoxyParamCaption})}
+
+
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+Tree built internally. \Hypertarget{namespaceigl_1_1predicates_a27abce4ca0362ff4644db203b16dacf0}\index{igl::predicates@{igl::predicates}!find\_intersections@{find\_intersections}}
+\index{find\_intersections@{find\_intersections}!igl::predicates@{igl::predicates}}
+\doxysubsubsection{\texorpdfstring{find\_intersections()}{find\_intersections()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{namespaceigl_1_1predicates_a27abce4ca0362ff4644db203b16dacf0} 
+template$<$typename Derived\+V1, typename Derived\+F1, typename Derived\+V2, typename Derived\+F2, typename Derived\+IF, typename Derived\+CP, typename Derived\+EV, typename Derived\+EE, typename Derived\+EI$>$ \\
+bool igl::\+predicates::\+find\+\_\+intersections (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Matrix\+Base$<$ Derived\+V1 $>$ \&}]{V1}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derived\+F1 $>$ \&}]{F1}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derived\+V2 $>$ \&}]{V2}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derived\+F2 $>$ \&}]{F2}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ Derived\+IF $>$ \&}]{IF}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ Derived\+CP $>$ \&}]{CP}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ Derived\+EV $>$ \&}]{EV}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ Derived\+EE $>$ \&}]{EE}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ Derived\+EI $>$ \&}]{EI}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{out}}  & {\em EV} & \+\#\+EV by 3 list of vertex positions of intersection segments \\
+\hline
+\doxymbox{\texttt{out}}  & {\em EE} & \+\#\+EE by 2 list of edge indices into EV \\
+\hline
+\doxymbox{\texttt{out}}  & {\em EI} & \+\#\+EI by 1 list of indices into rows IF indicating source of intersection. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespaceigl_1_1predicates_a0cc007b5d8c7ee41cd9ae785f5d6bbf2}\index{igl::predicates@{igl::predicates}!find\_intersections@{find\_intersections}}
+\index{find\_intersections@{find\_intersections}!igl::predicates@{igl::predicates}}
+\doxysubsubsection{\texorpdfstring{find\_intersections()}{find\_intersections()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{namespaceigl_1_1predicates_a0cc007b5d8c7ee41cd9ae785f5d6bbf2} 
+template$<$typename Derived\+V1, typename Derived\+F1, typename Derived\+V2, typename Derived\+F2, typename Derived\+IF, typename Derived\+CP, typename Derived\+EV, typename Derived\+EE, typename Derived\+EI$>$ \\
+bool igl::\+predicates::\+find\+\_\+intersections (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{classigl_1_1AABB}{igl::\+\+AABB}}$<$ Derived\+V1, 3 $>$ \&}]{tree1}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derived\+V1 $>$ \&}]{V1}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derived\+F1 $>$ \&}]{F1}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derived\+V2 $>$ \&}]{V2}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derived\+F2 $>$ \&}]{F2}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ Derived\+IF $>$ \&}]{IF}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ Derived\+CP $>$ \&}]{CP}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ Derived\+EV $>$ \&}]{EV}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ Derived\+EE $>$ \&}]{EE}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ Derived\+EI $>$ \&}]{EI}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceigl_1_1predicates_aab68b25786d1d29281a22ad94a23aefb}\index{igl::predicates@{igl::predicates}!find\_self\_intersections@{find\_self\_intersections}}
+\index{find\_self\_intersections@{find\_self\_intersections}!igl::predicates@{igl::predicates}}
+\doxysubsubsection{\texorpdfstring{find\_self\_intersections()}{find\_self\_intersections()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{namespaceigl_1_1predicates_aab68b25786d1d29281a22ad94a23aefb} 
+template$<$typename DerivedV, typename DerivedF, typename Derived\+IF, typename Derived\+CP$>$ \\
+bool igl::\+predicates::\+find\+\_\+self\+\_\+intersections (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&}]{V}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedF $>$ \&}]{F}{, }\item[{const bool}]{first\+\_\+only}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ Derived\+IF $>$ \&}]{IF}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ Derived\+CP $>$ \&}]{CP}{}\end{DoxyParamCaption})}
+
+
+
+Identify triangle-\/triangle interesections within the same mesh using AABBTree and \doxylink{namespaceigl_1_1predicates_a56015a00c1892c273542f5eb6097690a}{igl::\+predicates::\+triangle\+\_\+triangle\+\_\+intersect}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em V} & \+\#V by 3 list representing vertices on the first mesh \\
+\hline
+\doxymbox{\texttt{in}}  & {\em F} & \+\#F by 3 list representing triangles on the first mesh \\
+\hline
+\doxymbox{\texttt{out}}  & {\em IF} & \+\#\+IF by 2 list of intersecting triangle pairs, so that F1(\+IF(i,0),:\+) intersects F2(\+IF(i,1),:\+) \\
+\hline
+\doxymbox{\texttt{out}}  & {\em CP} & \+\#\+IF list of whether the intersection is coplanar\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classigl_1_1copyleft_1_1cgal_1_1SelfIntersectMesh}{copyleft::\+cgal::\+\+Self\+Intersect\+Mesh} 
+\end{DoxySeeAlso}
+\Hypertarget{namespaceigl_1_1predicates_ab33a2d54a0f3ca4c88814f88f247811f}\index{igl::predicates@{igl::predicates}!find\_self\_intersections@{find\_self\_intersections}}
+\index{find\_self\_intersections@{find\_self\_intersections}!igl::predicates@{igl::predicates}}
+\doxysubsubsection{\texorpdfstring{find\_self\_intersections()}{find\_self\_intersections()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{namespaceigl_1_1predicates_ab33a2d54a0f3ca4c88814f88f247811f} 
+template$<$typename DerivedV, typename DerivedF, typename Derived\+IF, typename Derived\+CP, typename Derived\+EV, typename Derived\+EE, typename Derived\+EI$>$ \\
+bool igl::\+predicates::\+find\+\_\+self\+\_\+intersections (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&}]{V}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedF $>$ \&}]{F}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ Derived\+IF $>$ \&}]{IF}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ Derived\+CP $>$ \&}]{CP}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ Derived\+EV $>$ \&}]{EV}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ Derived\+EE $>$ \&}]{EE}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ Derived\+EI $>$ \&}]{EI}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{out}}  & {\em EV} & \+\#\+EV by 3 list of vertex positions of intersection segments \\
+\hline
+\doxymbox{\texttt{out}}  & {\em EE} & \+\#\+EE by 2 list of edge indices into EV \\
+\hline
+\doxymbox{\texttt{out}}  & {\em EI} & \+\#\+EI by 1 list of indices into rows IF indicating source of intersection. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespaceigl_1_1predicates_a34dc07d0d7c3e70d012a400c07fea6d5}\index{igl::predicates@{igl::predicates}!incircle@{incircle}}
+\index{incircle@{incircle}!igl::predicates@{igl::predicates}}
+\doxysubsubsection{\texorpdfstring{incircle()}{incircle()}}
+{\footnotesize\ttfamily \label{namespaceigl_1_1predicates_a34dc07d0d7c3e70d012a400c07fea6d5} 
+template$<$typename Vector2D$>$ \\
+\doxymbox{\hyperlink{namespaceigl_a93f2a7c83dee3568f488e9e24fb98f8c}{Orientation}} igl::\+predicates::\+incircle (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Matrix\+Base$<$ Vector2D $>$ \&}]{pa}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Vector2D $>$ \&}]{pb}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Vector2D $>$ \&}]{pc}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Vector2D $>$ \&}]{pd}{}\end{DoxyParamCaption})}
+
+
+
+Decide whether a point is inside/\+outside/\+on a circle. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em pa} & 2D point on circle \\
+\hline
+\doxymbox{\texttt{in}}  & {\em pb} & 2D point on circle \\
+\hline
+\doxymbox{\texttt{in}}  & {\em pc} & 2D point on circle \\
+\hline
+\doxymbox{\texttt{in}}  & {\em pd} & 2D point query \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+INSIDE if pd is inside of the circle defined by pa, pb and pc. OUSIDE if pd is outside of the circle. COCIRCULAR pd is exactly on the circle.
+\end{DoxyReturn}
+\doxylink{predicates_2incircle_8h}{include/\+igl/\+predicates/\+incircle.\+h} \Hypertarget{namespaceigl_1_1predicates_aa3f8cfda1a577af57f2729330ca6a459}\index{igl::predicates@{igl::predicates}!insphere@{insphere}}
+\index{insphere@{insphere}!igl::predicates@{igl::predicates}}
+\doxysubsubsection{\texorpdfstring{insphere()}{insphere()}}
+{\footnotesize\ttfamily \label{namespaceigl_1_1predicates_aa3f8cfda1a577af57f2729330ca6a459} 
+template$<$typename Vector3D$>$ \\
+\doxymbox{\hyperlink{namespaceigl_a93f2a7c83dee3568f488e9e24fb98f8c}{Orientation}} igl::\+predicates::\+insphere (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Matrix\+Base$<$ Vector3D $>$ \&}]{pa}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Vector3D $>$ \&}]{pb}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Vector3D $>$ \&}]{pc}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Vector3D $>$ \&}]{pd}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Vector3D $>$ \&}]{pe}{}\end{DoxyParamCaption})}
+
+
+
+Decide whether a point is inside/\+outside/\+on a sphere. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em pa} & 2D point on sphere \\
+\hline
+\doxymbox{\texttt{in}}  & {\em pb} & 2D point on sphere \\
+\hline
+\doxymbox{\texttt{in}}  & {\em pc} & 2D point on sphere \\
+\hline
+\doxymbox{\texttt{in}}  & {\em pd} & 2D point on sphere \\
+\hline
+\doxymbox{\texttt{in}}  & {\em pe} & 2D point query \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+INSIDE if pe is inside of the sphere defined by pa, pb, pc and pd. OUSIDE if pe is outside of the sphere. COSPHERICAL pd is exactly on the sphere.
+\end{DoxyReturn}
+\doxylink{predicates_2insphere_8h}{include/\+igl/\+predicates/\+insphere.\+h} \Hypertarget{namespaceigl_1_1predicates_a61e6a3ff4a055fb5e6c749d601d3e694}\index{igl::predicates@{igl::predicates}!lexicographic\_triangulation@{lexicographic\_triangulation}}
+\index{lexicographic\_triangulation@{lexicographic\_triangulation}!igl::predicates@{igl::predicates}}
+\doxysubsubsection{\texorpdfstring{lexicographic\_triangulation()}{lexicographic\_triangulation()}}
+{\footnotesize\ttfamily \label{namespaceigl_1_1predicates_a61e6a3ff4a055fb5e6c749d601d3e694} 
+template$<$typename DerivedV, typename DerivedF$>$ \\
+void igl::\+predicates::\+lexicographic\+\_\+triangulation (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&}]{V}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ DerivedF $>$ \&}]{F}{}\end{DoxyParamCaption})}
+
+
+
+Given a set of points in 2D, return a lexicographic triangulation of these points using predicates. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em V} & \+\#V by 2 list of vertex positions \\
+\hline
+\doxymbox{\texttt{out}}  & {\em F} & \+\#F by 3 of faces in Delaunay triangulation. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespaceigl_1_1predicates_a808c6c9ad2561179d610fbaf2bf7934e}\index{igl::predicates@{igl::predicates}!orient2d@{orient2d}}
 \index{orient2d@{orient2d}!igl::predicates@{igl::predicates}}
-\doxysubsubsection{\texorpdfstring{orient2d()}{orient2d()}}
-{\footnotesize\ttfamily template$<$typename Vector2D $>$ \\
-\mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418b}{Orientation}} igl\+::predicates\+::orient2d (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ Vector2D $>$ \&}]{pa,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Vector2D $>$ \&}]{pb,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Vector2D $>$ \&}]{pc }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{orient2d()}{orient2d()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{namespaceigl_1_1predicates_a808c6c9ad2561179d610fbaf2bf7934e} 
+template$<$typename Derivedpa, typename Derivedpb, typename Derivedpc$>$ \\
+\doxymbox{\hyperlink{namespaceigl_a93f2a7c83dee3568f488e9e24fb98f8c}{Orientation}} igl::\+predicates::\+orient2d (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Matrix\+Base$<$ Derivedpa $>$ \&}]{pa}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derivedpb $>$ \&}]{pb}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derivedpc $>$ \&}]{pc}{}\end{DoxyParamCaption})}
 
 
 
@@ -250,22 +339,44 @@ Compute the orientation of the triangle formed by pa, pb, pc.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em pa} & 2D point on line \\
+\doxymbox{\texttt{in}}  & {\em pa} & 2D point on line \\
 \hline
-\mbox{\texttt{ in}}  & {\em pb} & 2D point on line \\
+\doxymbox{\texttt{in}}  & {\em pb} & 2D point on line \\
 \hline
-\mbox{\texttt{ in}}  & {\em pc} & 2D query point. \\
+\doxymbox{\texttt{in}}  & {\em pc} & 2D query point. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 POSITIVE if pa, pb, pc are counterclockwise oriented. NEGATIVE if they are clockwise oriented. COLLINEAR if they are collinear.
 \end{DoxyReturn}
-\doxylink{predicates_8h}{include/igl/predicates/predicates.\+h} \Hypertarget{namespaceigl_1_1predicates_a16875914854207c54ce309a69d802292}\label{namespaceigl_1_1predicates_a16875914854207c54ce309a69d802292} 
-\index{igl::predicates@{igl::predicates}!orient3d@{orient3d}}
+\doxylink{orient2d_8h}{include/\+igl/\+predicates/\+orient2d.\+h} \Hypertarget{namespaceigl_1_1predicates_a56762ae6e0dfa2c8bb75bc8ba7424d70}\index{igl::predicates@{igl::predicates}!orient2d@{orient2d}}
+\index{orient2d@{orient2d}!igl::predicates@{igl::predicates}}
+\doxysubsubsection{\texorpdfstring{orient2d()}{orient2d()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{namespaceigl_1_1predicates_a56762ae6e0dfa2c8bb75bc8ba7424d70} 
+template$<$typename DerivedA, typename DerivedB, typename DerivedC, typename DerivedR$>$ \\
+void igl::\+predicates::\+orient2d (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedA $>$ \&}]{A}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedB $>$ \&}]{B}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedC $>$ \&}]{C}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ DerivedR $>$ \&}]{R}{}\end{DoxyParamCaption})}
+
+
+
+Compute the orientation of the tetrahedron formed by each 4-\/tuple of points. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em A} & \+\#P\texorpdfstring{$\vert$}{|}1 by 3 matrix of 3D points \\
+\hline
+\doxymbox{\texttt{in}}  & {\em B} & \+\#P\texorpdfstring{$\vert$}{|}1 by 3 matrix of 3D points \\
+\hline
+\doxymbox{\texttt{in}}  & {\em C} & \+\#P\texorpdfstring{$\vert$}{|}1 by 3 matrix of 3D points \\
+\hline
+\doxymbox{\texttt{out}}  & {\em R} & \+\#P vector of orientations \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespaceigl_1_1predicates_a16875914854207c54ce309a69d802292}\index{igl::predicates@{igl::predicates}!orient3d@{orient3d}}
 \index{orient3d@{orient3d}!igl::predicates@{igl::predicates}}
-\doxysubsubsection{\texorpdfstring{orient3d()}{orient3d()}}
-{\footnotesize\ttfamily template$<$typename Vector3D $>$ \\
-\mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418b}{Orientation}} igl\+::predicates\+::orient3d (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ Vector3D $>$ \&}]{pa,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Vector3D $>$ \&}]{pb,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Vector3D $>$ \&}]{pc,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Vector3D $>$ \&}]{pd }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{orient3d()}{orient3d()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{namespaceigl_1_1predicates_a16875914854207c54ce309a69d802292} 
+template$<$typename Vector3D$>$ \\
+\doxymbox{\hyperlink{namespaceigl_a93f2a7c83dee3568f488e9e24fb98f8c}{Orientation}} igl::\+predicates::\+orient3d (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Matrix\+Base$<$ Vector3D $>$ \&}]{pa}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Vector3D $>$ \&}]{pb}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Vector3D $>$ \&}]{pc}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Vector3D $>$ \&}]{pd}{}\end{DoxyParamCaption})}
 
 
 
@@ -273,76 +384,124 @@ Compute the orientation of the tetrahedron formed by pa, pb, pc, pd.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em pa} & 2D point on plane \\
+\doxymbox{\texttt{in}}  & {\em pa} & 3D point on plane \\
 \hline
-\mbox{\texttt{ in}}  & {\em pb} & 2D point on plane \\
+\doxymbox{\texttt{in}}  & {\em pb} & 3D point on plane \\
 \hline
-\mbox{\texttt{ in}}  & {\em pc} & 2D point on plane \\
+\doxymbox{\texttt{in}}  & {\em pc} & 3D point on plane \\
 \hline
-\mbox{\texttt{ in}}  & {\em pd} & 2D query point \\
+\doxymbox{\texttt{in}}  & {\em pd} & 3D query point \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 POSITIVE if pd is "{}below"{} the oriented plane formed by pa, pb and pc. NEGATIVE if pd is "{}above"{} the plane. COPLANAR if pd is on the plane.
 \end{DoxyReturn}
-\doxylink{predicates_8h}{include/igl/predicates/predicates.\+h} \Hypertarget{namespaceigl_1_1predicates_a34dc07d0d7c3e70d012a400c07fea6d5}\label{namespaceigl_1_1predicates_a34dc07d0d7c3e70d012a400c07fea6d5} 
-\index{igl::predicates@{igl::predicates}!incircle@{incircle}}
-\index{incircle@{incircle}!igl::predicates@{igl::predicates}}
-\doxysubsubsection{\texorpdfstring{incircle()}{incircle()}}
-{\footnotesize\ttfamily template$<$typename Vector2D $>$ \\
-\mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418b}{Orientation}} igl\+::predicates\+::incircle (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ Vector2D $>$ \&}]{pa,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Vector2D $>$ \&}]{pb,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Vector2D $>$ \&}]{pc,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Vector2D $>$ \&}]{pd }\end{DoxyParamCaption})}
+\doxylink{orient3d_8h}{include/\+igl/\+predicates/\+orient3d.\+h} \Hypertarget{namespaceigl_1_1predicates_ae081684d9943c869cdcd5a7d77c78df7}\index{igl::predicates@{igl::predicates}!orient3d@{orient3d}}
+\index{orient3d@{orient3d}!igl::predicates@{igl::predicates}}
+\doxysubsubsection{\texorpdfstring{orient3d()}{orient3d()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{namespaceigl_1_1predicates_ae081684d9943c869cdcd5a7d77c78df7} 
+template$<$typename DerivedA, typename DerivedB, typename DerivedC, typename DerivedD, typename DerivedR$>$ \\
+void igl::\+predicates::\+orient3d (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedA $>$ \&}]{A}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedB $>$ \&}]{B}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedC $>$ \&}]{C}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedD $>$ \&}]{D}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ DerivedR $>$ \&}]{R}{}\end{DoxyParamCaption})}
 
 
 
-Decide whether a point is inside/outside/on a circle. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em pa} & 2D point on circle \\
-\hline
-\mbox{\texttt{ in}}  & {\em pb} & 2D point on circle \\
-\hline
-\mbox{\texttt{ in}}  & {\em pc} & 2D point on circle \\
-\hline
-\mbox{\texttt{ in}}  & {\em pd} & 2D point query \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-INSIDE if pd is inside of the circle defined by pa, pb and pc. OUSIDE if pd is outside of the circle. COCIRCULAR pd is exactly on the circle.
-\end{DoxyReturn}
-\doxylink{predicates_8h}{include/igl/predicates/predicates.\+h} \Hypertarget{namespaceigl_1_1predicates_aa3f8cfda1a577af57f2729330ca6a459}\label{namespaceigl_1_1predicates_aa3f8cfda1a577af57f2729330ca6a459} 
-\index{igl::predicates@{igl::predicates}!insphere@{insphere}}
-\index{insphere@{insphere}!igl::predicates@{igl::predicates}}
-\doxysubsubsection{\texorpdfstring{insphere()}{insphere()}}
-{\footnotesize\ttfamily template$<$typename Vector3D $>$ \\
-\mbox{\hyperlink{namespaceigl_1_1predicates_aacb20fd4a9b17ca7521e3d96e39d418b}{Orientation}} igl\+::predicates\+::insphere (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ Vector3D $>$ \&}]{pa,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Vector3D $>$ \&}]{pb,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Vector3D $>$ \&}]{pc,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Vector3D $>$ \&}]{pd,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Vector3D $>$ \&}]{pe }\end{DoxyParamCaption})}
-
-
-
-Decide whether a point is inside/outside/on a sphere. 
+Compute the orientation of the tetrahedron formed by each 4-\/tuple of points. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em pa} & 2D point on sphere \\
+\doxymbox{\texttt{in}}  & {\em A} & \+\#P\texorpdfstring{$\vert$}{|}1 by 3 matrix of 3D points \\
 \hline
-\mbox{\texttt{ in}}  & {\em pb} & 2D point on sphere \\
+\doxymbox{\texttt{in}}  & {\em B} & \+\#P\texorpdfstring{$\vert$}{|}1 by 3 matrix of 3D points \\
 \hline
-\mbox{\texttt{ in}}  & {\em pc} & 2D point on sphere \\
+\doxymbox{\texttt{in}}  & {\em C} & \+\#P\texorpdfstring{$\vert$}{|}1 by 3 matrix of 3D points \\
 \hline
-\mbox{\texttt{ in}}  & {\em pd} & 2D point on sphere \\
+\doxymbox{\texttt{in}}  & {\em D} & \+\#P\texorpdfstring{$\vert$}{|}1 by 3 matrix of 3D points \\
 \hline
-\mbox{\texttt{ in}}  & {\em pe} & 2D point query \\
+\doxymbox{\texttt{out}}  & {\em R} & \+\#P vector of orientations \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespaceigl_1_1predicates_a9ec02e38d27711e0933ff8d6bd98af6b}\index{igl::predicates@{igl::predicates}!point\_in\_convex\_hull@{point\_in\_convex\_hull}}
+\index{point\_in\_convex\_hull@{point\_in\_convex\_hull}!igl::predicates@{igl::predicates}}
+\doxysubsubsection{\texorpdfstring{point\_in\_convex\_hull()}{point\_in\_convex\_hull()}}
+{\footnotesize\ttfamily \label{namespaceigl_1_1predicates_a9ec02e38d27711e0933ff8d6bd98af6b} 
+template$<$typename Derivedq, typename Deriveda, typename Derivedb, typename Derivedc, typename Derivedd$>$ \\
+\doxymbox{\hyperlink{namespaceigl_a93f2a7c83dee3568f488e9e24fb98f8c}{Orientation}} igl::\+predicates::\+point\+\_\+in\+\_\+convex\+\_\+hull (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Matrix\+Base$<$ Derivedq $>$ \&}]{q}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Deriveda $>$ \&}]{a}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derivedb $>$ \&}]{b}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derivedc $>$ \&}]{c}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derivedd $>$ \&}]{d}{}\end{DoxyParamCaption})}
+
+
+
+Determine if the 2D point q is inside, outside, or on the boundary of the convex hull of the 2D points a,b,c,d. 
+
+The points a,b,c,d may be given in any order and the convex hull may be a point, segment, triangle or quadrilateral.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em q} & 2D query point \\
+\hline
+\doxymbox{\texttt{in}}  & {\em a} & 2D point possibly on the convex hull \\
+\hline
+\doxymbox{\texttt{in}}  & {\em b} & 2D point possibly on the convex hull \\
+\hline
+\doxymbox{\texttt{in}}  & {\em c} & 2D point possibly on the convex hull \\
+\hline
+\doxymbox{\texttt{in}}  & {\em d} & 2D point possibly on the convex hull \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-INSIDE if pe is inside of the sphere defined by pa, pb, pc and pd. OUSIDE if pe is outside of the sphere. COSPHERICAL pd is exactly on the sphere.
+Returns +1 if q is inside the convex hull, -\/1 if outside, and 0 if on the boundary. 
 \end{DoxyReturn}
-\doxylink{predicates_8h}{include/igl/predicates/predicates.\+h} \Hypertarget{namespaceigl_1_1predicates_a660dbf746a2adc274bc12ba3938bd049}\label{namespaceigl_1_1predicates_a660dbf746a2adc274bc12ba3938bd049} 
-\index{igl::predicates@{igl::predicates}!segment\_segment\_intersect@{segment\_segment\_intersect}}
+\Hypertarget{namespaceigl_1_1predicates_a7780c668969af51b6d39c023d8850192}\index{igl::predicates@{igl::predicates}!point\_inside\_convex\_polygon@{point\_inside\_convex\_polygon}}
+\index{point\_inside\_convex\_polygon@{point\_inside\_convex\_polygon}!igl::predicates@{igl::predicates}}
+\doxysubsubsection{\texorpdfstring{point\_inside\_convex\_polygon()}{point\_inside\_convex\_polygon()}}
+{\footnotesize\ttfamily \label{namespaceigl_1_1predicates_a7780c668969af51b6d39c023d8850192} 
+template$<$typename DerivedP, typename DerivedQ$>$ \\
+bool igl::\+predicates::\+point\+\_\+inside\+\_\+convex\+\_\+polygon (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedP $>$ \&}]{P}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedQ $>$ \&}]{q}{}\end{DoxyParamCaption})}
+
+
+
+check whether 2d point lies inside 2d convex polygon 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em P} & n\texorpdfstring{$\ast$}{*}2 polygon, n \texorpdfstring{$>$}{>}= 3 \\
+\hline
+\doxymbox{\texttt{in}}  & {\em q} & 2d query point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if point is inside polygon 
+\end{DoxyReturn}
+\Hypertarget{namespaceigl_1_1predicates_ae34c1fbb1f6a62e7083463a89556bdfc}\index{igl::predicates@{igl::predicates}!polygons\_to\_triangles@{polygons\_to\_triangles}}
+\index{polygons\_to\_triangles@{polygons\_to\_triangles}!igl::predicates@{igl::predicates}}
+\doxysubsubsection{\texorpdfstring{polygons\_to\_triangles()}{polygons\_to\_triangles()}}
+{\footnotesize\ttfamily \label{namespaceigl_1_1predicates_ae34c1fbb1f6a62e7083463a89556bdfc} 
+template$<$typename DerivedV, typename DerivedI, typename DerivedC, typename DerivedF, typename DerivedJ$>$ \\
+void igl::\+predicates::\+polygons\+\_\+to\+\_\+triangles (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&}]{V}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedI $>$ \&}]{I}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedC $>$ \&}]{C}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ DerivedF $>$ \&}]{F}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ DerivedJ $>$ \&}]{J}{}\end{DoxyParamCaption})}
+
+
+
+Given a polygon mesh, trivially triangulate each polygon with a fan. 
+
+This purely combinatorial triangulation will work well for convex/\+flat polygons and degrade otherwise.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em V} & \+\#V by dim list of vertex positions \\
+\hline
+\doxymbox{\texttt{in}}  & {\em I} & \+\#I vectorized list of polygon corner indices into rows of some matrix V \\
+\hline
+\doxymbox{\texttt{in}}  & {\em C} & \+\#polygons+1 list of cumulative polygon sizes so that C(i+1)-\/C(i) = size of the ith polygon, and so I(\+C(i)) through I(C(i+1)-\/1) are the indices of the ith polygon \\
+\hline
+\doxymbox{\texttt{out}}  & {\em F} & \+\#F by 3 list of triangle indices into rows of V \\
+\hline
+\doxymbox{\texttt{out}}  & {\em J} & \+\#F list of indices into 0:\+\+\#\+P-\/1 of corresponding polygon \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespaceigl_1_1predicates_a660dbf746a2adc274bc12ba3938bd049}\index{igl::predicates@{igl::predicates}!segment\_segment\_intersect@{segment\_segment\_intersect}}
 \index{segment\_segment\_intersect@{segment\_segment\_intersect}!igl::predicates@{igl::predicates}}
 \doxysubsubsection{\texorpdfstring{segment\_segment\_intersect()}{segment\_segment\_intersect()}}
-{\footnotesize\ttfamily template$<$typename DerivedP $>$ \\
-bool igl\+::predicates\+::segment\+\_\+segment\+\_\+intersect (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedP $>$ \&}]{A,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedP $>$ \&}]{B,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedP $>$ \&}]{C,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedP $>$ \&}]{D }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{namespaceigl_1_1predicates_a660dbf746a2adc274bc12ba3938bd049} 
+template$<$typename DerivedP$>$ \\
+bool igl::\+predicates::\+segment\+\_\+segment\+\_\+intersect (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedP $>$ \&}]{A}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedP $>$ \&}]{B}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedP $>$ \&}]{C}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedP $>$ \&}]{D}{}\end{DoxyParamCaption})}
 
 
 
@@ -350,15 +509,79 @@ Given two segments in 2d test whether they intersect each other using predicates
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em A} & 1st endpoint of segment 1 \\
+\doxymbox{\texttt{in}}  & {\em A} & 1st endpoint of segment 1 \\
 \hline
-\mbox{\texttt{ in}}  & {\em B} & 2st endpoint of segment 1 \\
+\doxymbox{\texttt{in}}  & {\em B} & 2st endpoint of segment 1 \\
 \hline
-\mbox{\texttt{ in}}  & {\em C} & 1st endpoint of segment 2 \\
+\doxymbox{\texttt{in}}  & {\em C} & 1st endpoint of segment 2 \\
 \hline
-\mbox{\texttt{ in}}  & {\em D} & 2st endpoint of segment 2 \\
+\doxymbox{\texttt{in}}  & {\em D} & 2st endpoint of segment 2 \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 true if they intersect 
+\end{DoxyReturn}
+\Hypertarget{namespaceigl_1_1predicates_a0e5bdf4506071ba597ec8f44d13e7d7b}\index{igl::predicates@{igl::predicates}!spline\_winding\_number@{spline\_winding\_number}}
+\index{spline\_winding\_number@{spline\_winding\_number}!igl::predicates@{igl::predicates}}
+\doxysubsubsection{\texorpdfstring{spline\_winding\_number()}{spline\_winding\_number()}}
+{\footnotesize\ttfamily \label{namespaceigl_1_1predicates_a0e5bdf4506071ba597ec8f44d13e7d7b} 
+template$<$typename DerivedP, typename DerivedC, typename DerivedB, typename Derivedleaf, typename DerivedQ, typename DerivedW$>$ \\
+void igl::\+predicates::\+spline\+\_\+winding\+\_\+number (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedP $>$ \&}]{P}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedC $>$ \&}]{C}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedB $>$ \&}]{B1}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedB $>$ \&}]{B2}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derivedleaf $>$ \&}]{leaf}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedQ $>$ \&}]{Q}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ DerivedW $>$ \&}]{W}{}\end{DoxyParamCaption})}
+
+
+
+Computes the (generalized) winding number of a spline of cubic Bézier curves around a set of query points. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em q} & 1 by dim query point \\
+\hline
+\doxymbox{\texttt{in}}  & {\em P} & \+\#P by dim matrix of spline control points \\
+\hline
+\doxymbox{\texttt{in}}  & {\em C} & \+\#C by 4 matrix of indices into P defining the cubic Bézier curves making up the spline \\
+\hline
+\doxymbox{\texttt{in}}  & {\em B1} & \+\#B by dim matrix of \doxylink{classigl_1_1AABB}{AABB} min box corners \\
+\hline
+\doxymbox{\texttt{in}}  & {\em B2} & \+\#B by dim matrix of \doxylink{classigl_1_1AABB}{AABB} max box corners \\
+\hline
+\doxymbox{\texttt{in}}  & {\em leaf} & \+\#B by 1 matrix of \doxylink{classigl_1_1AABB}{AABB} leaf node indices/\+flags \\
+\hline
+\doxymbox{\texttt{in}}  & {\em Q} & \+\#Q by dim matrix of query points \\
+\hline
+\doxymbox{\texttt{out}}  & {\em W} & \+\#Q by 1 matrix of winding numbers for each query point\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{namespaceigl_1_1cycodebase_a030171f5ebb459930f7c204641d847d8}{igl::\+cycodebase::\+box\+\_\+cubic}, \doxylink{namespaceigl_1_1predicates_a8156b64c555347e2d559167fcb70c2c8}{igl::\+predicates::\+cubic\+\_\+winding\+\_\+number}, \doxylink{namespaceigl_ad8b5d745eb35de86afb805726905e7cd}{igl::\+eytzinger\+\_\+aabb}, \doxylink{namespaceigl_1_1cycodebase_aa7694819d8b656962859251f639ed199}{igl::\+cycodebase::\+spline\+\_\+eytzinger\+\_\+aabb} 
+\end{DoxySeeAlso}
+\Hypertarget{namespaceigl_1_1predicates_a56015a00c1892c273542f5eb6097690a}\index{igl::predicates@{igl::predicates}!triangle\_triangle\_intersect@{triangle\_triangle\_intersect}}
+\index{triangle\_triangle\_intersect@{triangle\_triangle\_intersect}!igl::predicates@{igl::predicates}}
+\doxysubsubsection{\texorpdfstring{triangle\_triangle\_intersect()}{triangle\_triangle\_intersect()}}
+{\footnotesize\ttfamily \label{namespaceigl_1_1predicates_a56015a00c1892c273542f5eb6097690a} 
+template$<$typename Vector3D$>$ \\
+bool igl::\+predicates::\+triangle\+\_\+triangle\+\_\+intersect (\begin{DoxyParamCaption}\item[{const Vector3D \&}]{a1}{, }\item[{const Vector3D \&}]{a2}{, }\item[{const Vector3D \&}]{a3}{, }\item[{const Vector3D \&}]{b1}{, }\item[{const Vector3D \&}]{b2}{, }\item[{const Vector3D \&}]{b3}{, }\item[{bool \&}]{coplanar}{}\end{DoxyParamCaption})}
+
+
+
+Triangle-\/triangle intersection test using exact predicates. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em a1} & First vertex of triangle A. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em a2} & Second vertex of triangle A. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em a3} & Third vertex of triangle A. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em b1} & First vertex of triangle B. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em b2} & Second vertex of triangle B. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em b3} & Third vertex of triangle B. \\
+\hline
+\doxymbox{\texttt{out}}  & {\em coplanar} & True if the triangles are coplanar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the triangles intersect. 
 \end{DoxyReturn}

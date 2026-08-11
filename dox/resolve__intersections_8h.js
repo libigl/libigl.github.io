@@ -1,4 +1,4 @@
 var resolve__intersections_8h =
 [
-    [ "resolve_intersections", "resolve__intersections_8h.html#a4711ebc19670232979ddfafeea023a6c", null ]
+    [ "igl::copyleft::cgal::resolve_intersections", "namespaceigl_1_1copyleft_1_1cgal.html#a4948744e3d056b49a1fa785e86caf26c", null ]
 ];

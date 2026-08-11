@@ -1,5 +1,5 @@
 var is__boundary__edge_8h =
 [
-    [ "is_boundary_edge", "is__boundary__edge_8h.html#a39d02bea0e57dce707ada6bc3228d22a", null ],
-    [ "is_boundary_edge", "is__boundary__edge_8h.html#a2687ea500d0a998cf01ab3ff7456ba25", null ]
+    [ "igl::is_boundary_edge", "namespaceigl.html#a7f602eadd232e27cab1858f1d8362bdc", null ],
+    [ "igl::is_boundary_edge", "namespaceigl.html#a17626a7fcba2fbcb54f16442c502dd01", null ]
 ];

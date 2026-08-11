@@ -1,0 +1,62 @@
+\doxysection{Sphere\+Mesh\+Wedge.\+h}
+\hypertarget{SphereMeshWedge_8h_source}{}\label{SphereMeshWedge_8h_source}\index{include/igl/SphereMeshWedge.h@{include/igl/SphereMeshWedge.h}}
+\doxymbox{\hyperlink{SphereMeshWedge_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2025\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_SPHERE\_MESH\_WEDGE\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_SPHERE\_MESH\_WEDGE\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{igl__inline_8h}{igl\_inline.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00026\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Scalar>}
+\DoxyCodeLine{00027\ \ \ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_a6da021c1a476af1a3023cf2db84575a8}{SphereMeshWedge}}}
+\DoxyCodeLine{00028\ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{public}:\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_adcceb053caf23fa9a7aabc4f7c1dc481}{RowVector3S}}\ =\ Eigen::Matrix<Scalar,\ 1,\ 3>;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \textcolor{comment}{//\ Fields}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \textcolor{keyword}{enum}\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_af886b6c8c65da5db4aa67e0cb8eb46d4a4db91b3932adf9f0ed19bac4d90ac999}{BIG\_VERTEX}}\ =\ 0,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_af886b6c8c65da5db4aa67e0cb8eb46d4a3935e633f7144bac2443375567ed56ee}{BIG\_EDGE}}\ =\ 1,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_af886b6c8c65da5db4aa67e0cb8eb46d4acb72a5db0486bd72519a3c71da298558}{NO\_TRIANGLE}}\ =\ 2,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_af886b6c8c65da5db4aa67e0cb8eb46d4abadbc967720326fc3d9009dc17ae3ed3}{FULL}}\ =\ 3}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \}\ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_a28854b49c773ea134d51f89014edecc4}{flavor}};}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ Eigen::Matrix<Scalar,3,3,Eigen::RowMajor>\ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_ae0ebc2021c15d8aa3683ce2b9d2d6119}{V}};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ Eigen::Matrix<Scalar,3,1>\ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_aa207aa0bc7b499733cc8b24c7e74e2ef}{r}};}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ Eigen::Matrix<Scalar,3,3,Eigen::RowMajor>\ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_acb47a4b2ad70f36375729248e07ef5d6}{EV}};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ Eigen::Matrix<Scalar,3,1>\ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_a17b300091dea4a14eb9547ca8bdb58bc}{l}},\doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_a361493acf3a82d5afaf575b75d61fbb2}{l2}},\doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_abad7ec7c4287c728b3a8ae2fa0305789}{rr}},\doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_ac2decc72356058ab698b162360c4ec49}{a2}},\doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_a5a65cde7b8cc0e7f927f814f60900472}{il2}};}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_aeea205238932a3f75f092a6e45433148}{max\_i}};}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ Eigen::Matrix<Scalar,5,4,Eigen::RowMajor>\ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_a5f22d02481f15d94b919772e11f25206}{planes}};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ Eigen::Matrix<Scalar,3,3,Eigen::RowMajor>\ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_a0f18e21a62372024238ce82b7c35c7be}{T}};}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ Eigen::Matrix<Scalar,3,3,Eigen::RowMajor>\ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_acd57a64bb51d0f995ce728901511709b}{C}};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_a6da021c1a476af1a3023cf2db84575a8}{SphereMeshWedge}}()\{\}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_ab98122abacf8dfff1b69d95d5a6d8715}{SphereMeshWedge}}(}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_adcceb053caf23fa9a7aabc4f7c1dc481}{RowVector3S}}\ \&\ V0,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_adcceb053caf23fa9a7aabc4f7c1dc481}{RowVector3S}}\ \&\ V1,}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_adcceb053caf23fa9a7aabc4f7c1dc481}{RowVector3S}}\ \&\ V2,}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Scalar\ r0,}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Scalar\ r1,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Scalar\ r2);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ Scalar\ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_a23ae4aeb2b8e659498bc7386af686c2d}{operator()}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_adcceb053caf23fa9a7aabc4f7c1dc481}{RowVector3S}}\ \&\ p)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ compute\_planes();}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ Scalar\ round\_cone\_signed\_distance(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_adcceb053caf23fa9a7aabc4f7c1dc481}{RowVector3S}}\ \&\ p,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ i,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ j)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00081\ \ \ \};}
+\DoxyCodeLine{00082\ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#include\ "{}SphereMeshWedge.cpp"{}}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}

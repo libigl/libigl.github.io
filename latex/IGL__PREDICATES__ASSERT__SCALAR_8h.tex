@@ -1,0 +1,27 @@
+\doxysection{include/\+igl/\+predicates/\+\+IGL\+\_\+\+PREDICATES\+\_\+\+ASSERT\+\_\+\+SCALAR.h File Reference}
+\hypertarget{IGL__PREDICATES__ASSERT__SCALAR_8h}{}\label{IGL__PREDICATES__ASSERT__SCALAR_8h}\index{include/igl/predicates/IGL\_PREDICATES\_ASSERT\_SCALAR.h@{include/igl/predicates/IGL\_PREDICATES\_ASSERT\_SCALAR.h}}
+{\ttfamily \+\#include $<$type\+\_\+traits$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\+\#define \doxymbox{\hyperlink{IGL__PREDICATES__ASSERT__SCALAR_8h_a583d3cd3bc99a4e92941aeb94c948a5f}{IGL\+\_\+\+PREDICATES\+\_\+\+ASSERT\+\_\+\+SCALAR}}(Vector)
+\end{DoxyCompactItemize}
+
+
+\label{doc-define-members}
+\Hypertarget{IGL__PREDICATES__ASSERT__SCALAR_8h_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{IGL__PREDICATES__ASSERT__SCALAR_8h_a583d3cd3bc99a4e92941aeb94c948a5f}\index{IGL\_PREDICATES\_ASSERT\_SCALAR.h@{IGL\_PREDICATES\_ASSERT\_SCALAR.h}!IGL\_PREDICATES\_ASSERT\_SCALAR@{IGL\_PREDICATES\_ASSERT\_SCALAR}}
+\index{IGL\_PREDICATES\_ASSERT\_SCALAR@{IGL\_PREDICATES\_ASSERT\_SCALAR}!IGL\_PREDICATES\_ASSERT\_SCALAR.h@{IGL\_PREDICATES\_ASSERT\_SCALAR.h}}
+\doxysubsubsection{\texorpdfstring{IGL\_PREDICATES\_ASSERT\_SCALAR}{IGL\_PREDICATES\_ASSERT\_SCALAR}}
+{\footnotesize\ttfamily \label{IGL__PREDICATES__ASSERT__SCALAR_8h_a583d3cd3bc99a4e92941aeb94c948a5f} 
+\+\#define IGL\+\_\+\+PREDICATES\+\_\+\+ASSERT\+\_\+\+SCALAR(\begin{DoxyParamCaption}\item[{}]{Vector}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{static\_assert}(\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ std::is\_same<typename\ Vector::Scalar,\ double>::value\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ std::is\_same<typename\ Vector::Scalar,\ float>::value,\ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \textcolor{stringliteral}{"{}Shewchuk's\ exact\ predicates\ only\ support\ float\ and\ double"{}})}
+
+\end{DoxyCode}

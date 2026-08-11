@@ -1,8 +1,8 @@
 var structigl_1_1Hit =
 [
-    [ "id", "structigl_1_1Hit.html#aac867f1426de0a5d0f2a9022496460ea", null ],
-    [ "gid", "structigl_1_1Hit.html#ae9bf3e8babcb425173d9345be38d7a87", null ],
-    [ "u", "structigl_1_1Hit.html#aaa0a85031d466e01f56dac94251f2e2e", null ],
-    [ "v", "structigl_1_1Hit.html#aadcb6273a81628a44bac6c9bdcf9d7d4", null ],
-    [ "t", "structigl_1_1Hit.html#a74e794fbf1a39d404f1a666165fa2b63", null ]
+    [ "id", "structigl_1_1Hit.html#a2424161905a17ad174f93da4f4efb0bc", null ],
+    [ "gid", "structigl_1_1Hit.html#a1bf3f8d81644e6c46e1ca5e7a8ced023", null ],
+    [ "u", "structigl_1_1Hit.html#ab9e7ec446b7b6835280fa26494879ab5", null ],
+    [ "v", "structigl_1_1Hit.html#a8369ff5988cde5e50b8d3ce8837f3a0a", null ],
+    [ "t", "structigl_1_1Hit.html#a87f21e34211f51c3d729c4101c28f195", null ]
 ];

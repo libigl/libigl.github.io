@@ -7,7 +7,7 @@ var searchData=
   ['adjacency_5fmatrix_2eh_4',['adjacency_matrix.h',['../adjacency__matrix_8h.html',1,'']]],
   ['all_2eh_5',['all.h',['../all_8h.html',1,'']]],
   ['all_5fpairs_5fdistances_2eh_6',['all_pairs_distances.h',['../all__pairs__distances_8h.html',1,'']]],
-  ['ambient_5focclusion_2eh_7',['ambient_occlusion.h',['../embree_2ambient__occlusion_8h.html',1,'(Global Namespace)'],['../ambient__occlusion_8h.html',1,'(Global Namespace)']]],
+  ['ambient_5focclusion_2eh_7',['ambient_occlusion.h',['../ambient__occlusion_8h.html',1,'(Global Namespace)'],['../embree_2ambient__occlusion_8h.html',1,'(Global Namespace)']]],
   ['angular_5fdistance_2eh_8',['angular_distance.h',['../angular__distance_8h.html',1,'']]],
   ['any_2eh_9',['any.h',['../any_8h.html',1,'']]],
   ['arap_2eh_10',['arap.h',['../arap_8h.html',1,'']]],

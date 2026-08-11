@@ -1,5 +1,5 @@
 var component__inside__component_8h =
 [
-    [ "component_inside_component", "component__inside__component_8h.html#a9135f1c36fb37be3a3dc9a924ef40fe6", null ],
-    [ "component_inside_component", "component__inside__component_8h.html#ac01406d0fbbda3a765535e66ed8ee95a", null ]
+    [ "igl::copyleft::cgal::component_inside_component", "namespaceigl_1_1copyleft_1_1cgal.html#a845ce5b04774b3a1e8018b6f030c791d", null ],
+    [ "igl::copyleft::cgal::component_inside_component", "namespaceigl_1_1copyleft_1_1cgal.html#a91ec132b74f3a87455c2024da9ae3a45", null ]
 ];

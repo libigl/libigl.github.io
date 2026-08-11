@@ -1,5 +1,5 @@
 var intersect__other_8h =
 [
-    [ "intersect_other", "intersect__other_8h.html#aad0ee9bfc55573ac2ac722c5d6e6d8bc", null ],
-    [ "intersect_other", "intersect__other_8h.html#a0d884b824ed6773fde6de21ce4178b1a", null ]
+    [ "igl::copyleft::cgal::intersect_other", "namespaceigl_1_1copyleft_1_1cgal.html#a34d36fcc8b6bd1e52ab849ef666867c5", null ],
+    [ "igl::copyleft::cgal::intersect_other", "namespaceigl_1_1copyleft_1_1cgal.html#a59f49bee6062864fbde54e1ba0743284", null ]
 ];

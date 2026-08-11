@@ -1,6 +1,6 @@
 \doxysection{Embree\+Renderer.\+h}
 \hypertarget{EmbreeRenderer_8h_source}{}\label{EmbreeRenderer_8h_source}\index{include/igl/embree/EmbreeRenderer.h@{include/igl/embree/EmbreeRenderer.h}}
-\mbox{\hyperlink{EmbreeRenderer_8h}{Go to the documentation of this file.}}
+\doxymbox{\hyperlink{EmbreeRenderer_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
 \DoxyCodeLine{00002\ \textcolor{comment}{//}}
@@ -17,36 +17,36 @@
 \DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ IGL\_EMBREE\_EMBREE\_RENDERER\_H}}
 \DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ IGL\_EMBREE\_EMBREE\_RENDERER\_H}}
 \DoxyCodeLine{00015\ }
-\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}../colormap.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{colormap_8h}{../colormap.h}}"{}}}
 \DoxyCodeLine{00017\ }
 \DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <Eigen/Geometry>}}
 \DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
 \DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <Eigen/Geometry>}}
 \DoxyCodeLine{00021\ }
-\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <embree3/rtcore.h>}}
-\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <embree3/rtcore\_ray.h>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <embree4/rtcore.h>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <embree4/rtcore\_ray.h>}}
 \DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <iostream>}}
 \DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{EmbreeDevice_8h}{EmbreeDevice.h}}"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{EmbreeDevice_8h}{EmbreeDevice.h}}"{}}}
 \DoxyCodeLine{00028\ }
 \DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00030\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceigl}{igl}}}
 \DoxyCodeLine{00031\ \{}
-\DoxyCodeLine{00032\ \ \ \textcolor{keyword}{namespace\ }embree}
+\DoxyCodeLine{00032\ \ \ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceigl_1_1embree}{embree}}}
 \DoxyCodeLine{00033\ \ \ \{}
 \DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{class\ }EmbreeRenderer}
 \DoxyCodeLine{00037\ \ \ \ \ \{}
 \DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{public}:}
 \DoxyCodeLine{00039\ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ Eigen::RowVector3f\ Vec3f;}
 \DoxyCodeLine{00040\ }
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1embree_1_1EmbreeRenderer_1_1Hit}{Hit}}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{structigl_1_1embree_1_1EmbreeRenderer_1_1Hit}{Hit}}}
 \DoxyCodeLine{00042\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structigl_1_1embree_1_1EmbreeRenderer_1_1Hit_a420b1f982ab205030d185ebb2efae7cf}{id}};\ \ \ \ \textcolor{comment}{//\ primitive\ id}}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structigl_1_1embree_1_1EmbreeRenderer_1_1Hit_a2443594f784a813f968229aa7b2391ac}{gid}};\ \ \ \textcolor{comment}{//\ geometry\ id}}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structigl_1_1embree_1_1EmbreeRenderer_1_1Hit_a7a3deb3910a32739d84bb55a8dd928c2}{u}},\mbox{\hyperlink{structigl_1_1embree_1_1EmbreeRenderer_1_1Hit_ac18d3f6b788ea1249a32b0a8c537ea7d}{v}};\ \textcolor{comment}{//\ barycentric\ coordinates}}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structigl_1_1embree_1_1EmbreeRenderer_1_1Hit_ae1f4d73ed6986b9dd08784102ceb4034}{t}};\ \ \ \textcolor{comment}{//\ distance\ =\ direction*t\ to\ intersection}}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ Vec3f\ \mbox{\hyperlink{structigl_1_1embree_1_1EmbreeRenderer_1_1Hit_a1ba4beafff0f04f218f2192ca66a5edf}{N}};\ \ \ \ \textcolor{comment}{//\ element\ normal}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{structigl_1_1embree_1_1EmbreeRenderer_1_1Hit_a420b1f982ab205030d185ebb2efae7cf}{id}};\ \ \ \ \textcolor{comment}{//\ primitive\ id}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{structigl_1_1embree_1_1EmbreeRenderer_1_1Hit_a2443594f784a813f968229aa7b2391ac}{gid}};\ \ \ \textcolor{comment}{//\ geometry\ id}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \doxymbox{\hyperlink{structigl_1_1embree_1_1EmbreeRenderer_1_1Hit_a7a3deb3910a32739d84bb55a8dd928c2}{u}},\doxymbox{\hyperlink{structigl_1_1embree_1_1EmbreeRenderer_1_1Hit_ac18d3f6b788ea1249a32b0a8c537ea7d}{v}};\ \textcolor{comment}{//\ barycentric\ coordinates}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \doxymbox{\hyperlink{structigl_1_1embree_1_1EmbreeRenderer_1_1Hit_ae1f4d73ed6986b9dd08784102ceb4034}{t}};\ \ \ \textcolor{comment}{//\ distance\ =\ direction*t\ to\ intersection}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ Vec3f\ \doxymbox{\hyperlink{structigl_1_1embree_1_1EmbreeRenderer_1_1Hit_a1ba4beafff0f04f218f2192ca66a5edf}{N}};\ \ \ \ \textcolor{comment}{//\ element\ normal}}
 \DoxyCodeLine{00048\ \ \ \ \ \ \ \};}
 \DoxyCodeLine{00049\ }
 \DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{public}:}
@@ -85,7 +85,7 @@
 \DoxyCodeLine{00083\ \ \ \ \ \ \ \textcolor{comment}{//\ Use\ min(D)\ and\ max(D)\ to\ set\ caxis.}}
 \DoxyCodeLine{00084\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedD>}
 \DoxyCodeLine{00085\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_data(\textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedD>\ \&\ D,}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_a1b823cd12b22dd7d7c16b36223e68dea}{igl::ColorMapType}}\ cmap\ =\ \mbox{\hyperlink{namespaceigl_a1b823cd12b22dd7d7c16b36223e68deaac0949b6bec17c57dae985f9945f0ba87}{igl::COLOR\_MAP\_TYPE\_VIRIDIS}});}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{namespaceigl_a1b823cd12b22dd7d7c16b36223e68dea}{igl::ColorMapType}}\ cmap\ =\ \doxymbox{\hyperlink{namespaceigl_a1b823cd12b22dd7d7c16b36223e68deaac0949b6bec17c57dae985f9945f0ba87}{igl::COLOR\_MAP\_TYPE\_VIRIDIS}});}
 \DoxyCodeLine{00087\ }
 \DoxyCodeLine{00088\ \ \ \ \ \ \ \textcolor{comment}{//\ Specify\ per-\/vertex\ or\ per-\/face\ scalar\ field}}
 \DoxyCodeLine{00089\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ that\ will\ be\ converted\ to\ color\ using\ jet\ color\ map}}
@@ -100,7 +100,7 @@
 \DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedD>\ \&\ D,}
 \DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ T\ caxis\_min,}
 \DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ T\ caxis\_max,}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_a1b823cd12b22dd7d7c16b36223e68dea}{igl::ColorMapType}}\ cmap\ =\ \mbox{\hyperlink{namespaceigl_a1b823cd12b22dd7d7c16b36223e68deaac0949b6bec17c57dae985f9945f0ba87}{igl::COLOR\_MAP\_TYPE\_VIRIDIS}});}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{namespaceigl_a1b823cd12b22dd7d7c16b36223e68dea}{igl::ColorMapType}}\ cmap\ =\ \doxymbox{\hyperlink{namespaceigl_a1b823cd12b22dd7d7c16b36223e68deaac0949b6bec17c57dae985f9945f0ba87}{igl::COLOR\_MAP\_TYPE\_VIRIDIS}});}
 \DoxyCodeLine{00102\ }
 \DoxyCodeLine{00103\ \ \ \ \ \ \ \textcolor{comment}{//\ Specify\ mesh\ rotation}}
 \DoxyCodeLine{00104\ \ \ \ \ \ \ \textcolor{comment}{//\ Inputs:}}
@@ -163,7 +163,7 @@
 \DoxyCodeLine{00161\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ intersect\_ray(}
 \DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::RowVector3f\&\ origin,}
 \DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::RowVector3f\&\ direction,}
-\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1embree_1_1EmbreeRenderer_1_1Hit}{Hit}}\&\ hit,}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structigl_1_1embree_1_1EmbreeRenderer_1_1Hit}{Hit}}\ \&\ hit,}
 \DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ tnear\ =\ 0,}
 \DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ tfar\ =\ std::numeric\_limits<float>::infinity(),}
 \DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ mask\ =\ 0xFFFFFFFF)\ \textcolor{keyword}{const};}

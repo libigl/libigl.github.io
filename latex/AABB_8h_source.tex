@@ -1,323 +1,423 @@
 \doxysection{AABB.\+h}
 \hypertarget{AABB_8h_source}{}\label{AABB_8h_source}\index{include/igl/AABB.h@{include/igl/AABB.h}}
-\mbox{\hyperlink{AABB_8h}{Go to the documentation of this file.}}
+\doxymbox{\hyperlink{AABB_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
-\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
 \DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2015\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
-\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
-\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
-\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
 \DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_AABB\_H}}
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_AABB\_H}}
 \DoxyCodeLine{00010\ }
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Hit_8h}{Hit.h}}"{}}}
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{igl__inline_8h}{igl\_inline.h}}"{}}}
-\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
-\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <Eigen/Geometry>}}
-\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <vector>}}
-\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
-\DoxyCodeLine{00017\ \{}
-\DoxyCodeLine{00028\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keywordtype}{int}\ DIM>}
-\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classigl_1_1AABB}{AABB}}\ }
-\DoxyCodeLine{00030\ \ \ \ \ \{}
-\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ DerivedV::Scalar\ \mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}};}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ Eigen::Matrix<Scalar,1,DIM>\ \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}};}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ Eigen::Matrix<Scalar,DIM,1>\ \mbox{\hyperlink{classigl_1_1AABB_a115da153746506529eaaa70fb01ffffb}{VectorDIMS}};}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ Eigen::Matrix<Scalar,Eigen::Dynamic,DIM>\ \mbox{\hyperlink{classigl_1_1AABB_aa509e281d53292cd5a54a186d166a741}{MatrixXDIMS}};}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \textcolor{comment}{//\ Shared\ pointers\ are\ slower...}}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1AABB}{AABB}}\ *\ \mbox{\hyperlink{classigl_1_1AABB_a235d9f0789affa75050a75fe1d9a3e84}{m\_left}};\ }
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1AABB}{AABB}}\ *\ \mbox{\hyperlink{classigl_1_1AABB_a9abce242119d9e709b8e447480b27bf5}{m\_right}};}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ Eigen::AlignedBox<Scalar,DIM>\ \mbox{\hyperlink{classigl_1_1AABB_ae5a1a951d07db942eed6d14f45af6e6b}{m\_box}};}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1AABB_a5ea4da975626dc7c471a0405b48ed3b4}{m\_primitive}};}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \textcolor{comment}{//Scalar\ m\_low\_sqr\_d;}}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \textcolor{comment}{//int\ m\_depth;}}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1AABB}{AABB}}():}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1AABB_a235d9f0789affa75050a75fe1d9a3e84}{m\_left}}(NULL),\ \mbox{\hyperlink{classigl_1_1AABB_a9abce242119d9e709b8e447480b27bf5}{m\_right}}(NULL),}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1AABB_ae5a1a951d07db942eed6d14f45af6e6b}{m\_box}}(),\ \mbox{\hyperlink{classigl_1_1AABB_a5ea4da975626dc7c471a0405b48ed3b4}{m\_primitive}}(-\/1)}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{comment}{//m\_low\_sqr\_d(std::numeric\_limits<double>::infinity()),}}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{comment}{//m\_depth(0)}}
-\DoxyCodeLine{00057\ \ \ \ \ \{}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \textcolor{keyword}{static\_assert}(DerivedV::ColsAtCompileTime\ ==\ DIM\ ||\ DerivedV::ColsAtCompileTime\ ==\ Eigen::Dynamic,\textcolor{stringliteral}{"{}DerivedV::ColsAtCompileTime\ ==\ DIM\ ||\ DerivedV::ColsAtCompileTime\ ==\ Eigen::Dynamic"{}});}
-\DoxyCodeLine{00059\ \ \ \ \ \}}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \textcolor{comment}{//\ http://stackoverflow.com/a/3279550/148668}}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1AABB}{AABB}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB}{AABB}}\&\ other):}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1AABB_a235d9f0789affa75050a75fe1d9a3e84}{m\_left}}(other.\mbox{\hyperlink{classigl_1_1AABB_a235d9f0789affa75050a75fe1d9a3e84}{m\_left}}\ ?\ new\ \mbox{\hyperlink{classigl_1_1AABB}{AABB}}(*other.\mbox{\hyperlink{classigl_1_1AABB_a235d9f0789affa75050a75fe1d9a3e84}{m\_left}})\ :\ NULL),}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1AABB_a9abce242119d9e709b8e447480b27bf5}{m\_right}}(other.\mbox{\hyperlink{classigl_1_1AABB_a9abce242119d9e709b8e447480b27bf5}{m\_right}}\ ?\ new\ \mbox{\hyperlink{classigl_1_1AABB}{AABB}}(*other.\mbox{\hyperlink{classigl_1_1AABB_a9abce242119d9e709b8e447480b27bf5}{m\_right}})\ :\ NULL),}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1AABB_ae5a1a951d07db942eed6d14f45af6e6b}{m\_box}}(other.\mbox{\hyperlink{classigl_1_1AABB_ae5a1a951d07db942eed6d14f45af6e6b}{m\_box}}),}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1AABB_a5ea4da975626dc7c471a0405b48ed3b4}{m\_primitive}}(other.\mbox{\hyperlink{classigl_1_1AABB_a5ea4da975626dc7c471a0405b48ed3b4}{m\_primitive}})}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{comment}{//m\_low\_sqr\_d(other.m\_low\_sqr\_d),}}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{comment}{//m\_depth(std::max(}}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ m\_left\ ?\ m\_left-\/>m\_depth\ +\ 1\ :\ 0,}}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ m\_right\ ?\ m\_right-\/>m\_depth\ +\ 1\ :\ 0))}}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \textcolor{comment}{//\ copy-\/swap\ idiom}}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1AABB_a9703efef4dfa78aa20be159b0ea57b0f}{swap}}(\mbox{\hyperlink{classigl_1_1AABB}{AABB}}\&\ first,\ \mbox{\hyperlink{classigl_1_1AABB}{AABB}}\&\ second)}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Enable\ ADL}}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }std::swap;}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1AABB_a9703efef4dfa78aa20be159b0ea57b0f}{swap}}(first.\mbox{\hyperlink{classigl_1_1AABB_a235d9f0789affa75050a75fe1d9a3e84}{m\_left}},second.\mbox{\hyperlink{classigl_1_1AABB_a235d9f0789affa75050a75fe1d9a3e84}{m\_left}});}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1AABB_a9703efef4dfa78aa20be159b0ea57b0f}{swap}}(first.\mbox{\hyperlink{classigl_1_1AABB_a9abce242119d9e709b8e447480b27bf5}{m\_right}},second.\mbox{\hyperlink{classigl_1_1AABB_a9abce242119d9e709b8e447480b27bf5}{m\_right}});}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1AABB_a9703efef4dfa78aa20be159b0ea57b0f}{swap}}(first.\mbox{\hyperlink{classigl_1_1AABB_ae5a1a951d07db942eed6d14f45af6e6b}{m\_box}},second.\mbox{\hyperlink{classigl_1_1AABB_ae5a1a951d07db942eed6d14f45af6e6b}{m\_box}});}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1AABB_a9703efef4dfa78aa20be159b0ea57b0f}{swap}}(first.\mbox{\hyperlink{classigl_1_1AABB_a5ea4da975626dc7c471a0405b48ed3b4}{m\_primitive}},second.\mbox{\hyperlink{classigl_1_1AABB_a5ea4da975626dc7c471a0405b48ed3b4}{m\_primitive}});}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{comment}{//swap(first.m\_low\_sqr\_d,second.m\_low\_sqr\_d);}}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{comment}{//swap(first.m\_depth,second.m\_depth);}}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \textcolor{comment}{//\ Pass-\/by-\/value\ (aka\ copy)}}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1AABB}{AABB}}\&\ operator=(\mbox{\hyperlink{classigl_1_1AABB}{AABB}}\ other)}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1AABB_a9703efef4dfa78aa20be159b0ea57b0f}{swap}}(*\textcolor{keyword}{this},other);}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00094\ \ \ \ \ \ \ AABB(AABB\&\&\ other):}
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ initialize\ via\ default\ constructor}}
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ AABB()\ }
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1AABB_a9703efef4dfa78aa20be159b0ea57b0f}{swap}}(*\textcolor{keyword}{this},other);}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \textcolor{comment}{//\ Seems\ like\ there\ should\ have\ been\ an\ elegant\ solution\ to\ this\ using}}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \textcolor{comment}{//\ the\ copy-\/swap\ idiom\ above:}}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ deinit()}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1AABB_a5ea4da975626dc7c471a0405b48ed3b4}{m\_primitive}}\ =\ -\/1;}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1AABB_ae5a1a951d07db942eed6d14f45af6e6b}{m\_box}}\ =\ Eigen::AlignedBox<Scalar,DIM>();}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{classigl_1_1AABB_a235d9f0789affa75050a75fe1d9a3e84}{m\_left}};}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1AABB_a235d9f0789affa75050a75fe1d9a3e84}{m\_left}}\ =\ NULL;}
-\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{classigl_1_1AABB_a9abce242119d9e709b8e447480b27bf5}{m\_right}};}
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1AABB_a9abce242119d9e709b8e447480b27bf5}{m\_right}}\ =\ NULL;}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00113\ \ \ \ \ \ \ \string~AABB()}
-\DoxyCodeLine{00114\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ deinit();}
-\DoxyCodeLine{00116\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00126\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <}
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedEle,\ }
-\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Derivedbb\_mins,\ }
-\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Derivedbb\_maxs,}
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Derivedelements>}
-\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1AABB_a15c01f34f8720540a720f8e916d26679}{init}}(}
-\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
-\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEle>\ \&\ Ele,\ }
-\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedbb\_mins>\ \&\ bb\_mins,}
-\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedbb\_maxs>\ \&\ bb\_maxs,}
-\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedelements>\ \&\ elements,}
-\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ i\ =\ 0);}
-\DoxyCodeLine{00143\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedEle>}
-\DoxyCodeLine{00144\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1AABB_a78edb75957a1a751c484148206e93622}{init}}(}
-\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
-\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEle>\ \&\ Ele);}
-\DoxyCodeLine{00158\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedEle,\ \textcolor{keyword}{typename}\ DerivedSI,\ \textcolor{keyword}{typename}\ DerivedI>}
-\DoxyCodeLine{00159\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1AABB_a9536e0b163e920704d22262aaf0eb5dd}{init}}(}
-\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
-\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEle>\ \&\ Ele,\ }
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedSI>\ \&\ SI,}
-\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedI>\&\ I);}
-\DoxyCodeLine{00165\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1AABB_a24935012c54ca405bb515ae96e2549d1}{is\_leaf}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00176\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedEle,\ \textcolor{keyword}{typename}\ Derivedq>}
-\DoxyCodeLine{00177\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ std::vector<int>\ \mbox{\hyperlink{classigl_1_1AABB_a05a70628fcd4f87981ebff25ed58055b}{find}}(}
-\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
-\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEle>\ \&\ Ele,\ }
-\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedq>\ \&\ q,}
-\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ first=\textcolor{keyword}{false})\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00182\ }
-\DoxyCodeLine{00187\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classigl_1_1AABB_aa10facd7366f1a368b86e45eaa25f316}{subtree\_size}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00188\ }
-\DoxyCodeLine{00195\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <}
-\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Derivedbb\_mins,\ }
-\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Derivedbb\_maxs,}
-\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Derivedelements>}
-\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1AABB_ad4cae218326d31c60636f6e8b399604a}{serialize}}(}
-\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<Derivedbb\_mins>\ \&\ bb\_mins,}
-\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<Derivedbb\_maxs>\ \&\ bb\_maxs,}
-\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<Derivedelements>\ \&\ elements,}
-\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ i\ =\ 0)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00215\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedEle>}
-\DoxyCodeLine{00216\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ \mbox{\hyperlink{classigl_1_1AABB_a96a7347d4780172b8c88ffab2be93e0f}{squared\_distance}}(}
-\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
-\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEle>\ \&\ Ele,\ }
-\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ p,}
-\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \&\ i,}
-\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<RowVectorDIMS>\ \&\ c)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00239\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedEle>}
-\DoxyCodeLine{00240\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ \mbox{\hyperlink{classigl_1_1AABB_ab82da3a68c7fb585068468b1a47d695c}{squared\_distance}}(}
-\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
-\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEle>\ \&\ Ele,\ }
-\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ p,}
-\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ low\_sqr\_d,}
-\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ up\_sqr\_d,}
-\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \&\ i,}
-\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<RowVectorDIMS>\ \&\ c)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00260\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedEle>}
-\DoxyCodeLine{00261\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ \mbox{\hyperlink{classigl_1_1AABB_ac6cda1a6e31e015f72b2c5cf5143cb5b}{squared\_distance}}(}
-\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
-\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEle>\ \&\ Ele,\ }
-\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ p,}
-\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ up\_sqr\_d,}
-\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \&\ i,}
-\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<RowVectorDIMS>\ \&\ c)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00276\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedEle>}
-\DoxyCodeLine{00277\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1AABB_ac29bfe91eaf75f2f28180345a478cbd5}{intersect\_ray}}(}
-\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
-\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEle>\ \&\ Ele,\ }
-\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ origin,}
-\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ dir,}
-\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ std::vector<igl::Hit>\ \&\ hits)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00291\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedEle>}
-\DoxyCodeLine{00292\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1AABB_a8482291a47ef3c018869057c892b6766}{intersect\_ray}}(}
-\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
-\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEle>\ \&\ Ele,\ }
-\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ origin,}
-\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ dir,}
-\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1Hit}{igl::Hit}}\ \&\ hit)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00307\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedEle>}
-\DoxyCodeLine{00308\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classigl_1_1AABB_a8de34081730915384b218bedb16a7b07}{intersect\_ray}}(}
-\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
-\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEle>\ \&\ Ele,\ }
-\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ origin,}
-\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ dir,}
-\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ min\_t,}
-\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1Hit}{igl::Hit}}\ \&\ hit)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00315\ }
-\DoxyCodeLine{00316\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00327\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <}
-\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedEle,}
-\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedP,\ }
-\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedsqrD,\ }
-\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedI,\ }
-\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedC>}
-\DoxyCodeLine{00333\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1AABB_a634a96258fec901ee54613d51b4e9b64}{squared\_distance}}(}
-\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
-\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEle>\ \&\ Ele,\ }
-\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedP>\ \&\ P,}
-\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedsqrD>\ \&\ sqrD,}
-\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedI>\ \&\ I,}
-\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedC>\ \&\ C)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00340\ }
-\DoxyCodeLine{00354\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\ }
-\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedEle,}
-\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Derivedother\_V,}
-\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Derivedother\_Ele,}
-\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedsqrD,\ }
-\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedI,\ }
-\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedC>}
-\DoxyCodeLine{00361\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classigl_1_1AABB_a222114f494110d3e536bca03b86b8c12}{squared\_distance}}(}
-\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
-\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEle>\ \&\ Ele,\ }
-\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB}{AABB<Derivedother\_V,DIM>}}\ \&\ other,}
-\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedother\_V>\ \&\ other\_V,}
-\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedother\_Ele>\ \&\ other\_Ele,\ }
-\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedsqrD>\ \&\ sqrD,}
-\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedI>\ \&\ I,}
-\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedC>\ \&\ C)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00370\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00371\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\ }
-\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedEle,}
-\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Derivedother\_V,}
-\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Derivedother\_Ele,}
-\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedsqrD,\ }
-\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedI,\ }
-\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedC>}
-\DoxyCodeLine{00378\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ squared\_distance\_helper(}
-\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
-\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEle>\ \&\ Ele,\ }
-\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB}{AABB<Derivedother\_V,DIM>}}\ *\ other,}
-\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedother\_V>\ \&\ other\_V,}
-\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedother\_Ele>\&\ other\_Ele,\ }
-\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ up\_sqr\_d,}
-\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedsqrD>\ \&\ sqrD,}
-\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedI>\ \&\ I,}
-\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedC>\ \&\ C)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00388\ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ the\ squared\ distance\ to\ the\ primitive\ in\ this\ node:\ assumes}}
-\DoxyCodeLine{00389\ \ \ \ \ \ \ \textcolor{comment}{//\ that\ this\ is\ indeed\ a\ leaf\ node.}}
-\DoxyCodeLine{00390\ \ \ \ \ \ \ \textcolor{comment}{//}}
-\DoxyCodeLine{00391\ \ \ \ \ \ \ \textcolor{comment}{//\ Inputs:}}
-\DoxyCodeLine{00392\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ V\ \ \#V\ by\ dim\ list\ of\ vertex\ positions}}
-\DoxyCodeLine{00393\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ Ele\ \ \#Ele\ by\ dim\ list\ of\ simplex\ indices}}
-\DoxyCodeLine{00394\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ p\ \ dim-\/long\ query\ point}}
-\DoxyCodeLine{00395\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ sqr\_d\ \ current\ minimum\ distance\ for\ this\ query,\ see\ output}}
-\DoxyCodeLine{00396\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ i\ \ current\ index\ into\ Ele\ of\ closest\ point,\ see\ output}}
-\DoxyCodeLine{00397\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ c\ \ dim-\/long\ current\ closest\ point,\ see\ output}}
-\DoxyCodeLine{00398\ \ \ \ \ \ \ \textcolor{comment}{//\ Outputs:}}
-\DoxyCodeLine{00399\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ sqr\_d\ \ \ minimum\ of\ initial\ value\ and\ squared\ distance\ to\ this}}
-\DoxyCodeLine{00400\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ primitive}}
-\DoxyCodeLine{00401\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ i\ \ possibly\ updated\ index\ into\ Ele\ of\ closest\ point}}
-\DoxyCodeLine{00402\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ c\ \ dim-\/long\ possibly\ updated\ closest\ point}}
-\DoxyCodeLine{00403\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedEle>}
-\DoxyCodeLine{00404\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ leaf\_squared\_distance(}
-\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
-\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEle>\ \&\ Ele,\ }
-\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ p,}
-\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ low\_sqr\_d,}
-\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ \&\ sqr\_d,}
-\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \&\ i,}
-\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<RowVectorDIMS>\ \&\ c)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00412\ \ \ \ \ \ \ \textcolor{comment}{//\ Default\ low\_sqr\_d}}
-\DoxyCodeLine{00413\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedEle>}
-\DoxyCodeLine{00414\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ leaf\_squared\_distance(}
-\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
-\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEle>\ \&\ Ele,\ }
-\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ p,}
-\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ \&\ sqr\_d,}
-\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \&\ i,}
-\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<RowVectorDIMS>\ \&\ c)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00421\ \ \ \ \ \ \ \textcolor{comment}{//\ If\ new\ distance\ (sqr\_d\_candidate)\ is\ less\ than\ current\ distance}}
-\DoxyCodeLine{00422\ \ \ \ \ \ \ \textcolor{comment}{//\ (sqr\_d),\ then\ update\ this\ distance\ and\ its\ associated\ values}}
-\DoxyCodeLine{00423\ \ \ \ \ \ \ \textcolor{comment}{//\ \_in-\/place\_:}}
-\DoxyCodeLine{00424\ \ \ \ \ \ \ \textcolor{comment}{//}}
-\DoxyCodeLine{00425\ \ \ \ \ \ \ \textcolor{comment}{//\ Inputs:}}
-\DoxyCodeLine{00426\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ p\ \ dim-\/long\ query\ point\ (only\ used\ in\ DEBUG\ mode)}}
-\DoxyCodeLine{00427\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ sqr\_d\ \ candidate\ minimum\ distance\ for\ this\ query,\ see\ output}}
-\DoxyCodeLine{00428\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ i\ \ candidate\ index\ into\ Ele\ of\ closest\ point,\ see\ output}}
-\DoxyCodeLine{00429\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ c\ \ dim-\/long\ candidate\ closest\ point,\ see\ output}}
-\DoxyCodeLine{00430\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ sqr\_d\ \ current\ minimum\ distance\ for\ this\ query,\ see\ output}}
-\DoxyCodeLine{00431\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ i\ \ current\ index\ into\ Ele\ of\ closest\ point,\ see\ output}}
-\DoxyCodeLine{00432\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ c\ \ dim-\/long\ current\ closest\ point,\ see\ output}}
-\DoxyCodeLine{00433\ \ \ \ \ \ \ \textcolor{comment}{//\ Outputs:}}
-\DoxyCodeLine{00434\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ sqr\_d\ \ \ minimum\ of\ initial\ value\ and\ squared\ distance\ to\ this}}
-\DoxyCodeLine{00435\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ primitive}}
-\DoxyCodeLine{00436\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ i\ \ possibly\ updated\ index\ into\ Ele\ of\ closest\ point}}
-\DoxyCodeLine{00437\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ c\ \ dim-\/long\ possibly\ updated\ closest\ point}}
-\DoxyCodeLine{00438\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ set\_min(}
-\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ p,}
-\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ sqr\_d\_candidate,}
-\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ i\_candidate,}
-\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ c\_candidate,}
-\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ \&\ sqr\_d,}
-\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \&\ i,}
-\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<RowVectorDIMS>\ \&\ c)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00446\ }
-\DoxyCodeLine{00455\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedEle>}
-\DoxyCodeLine{00456\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ intersect\_ray\_opt(}
-\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
-\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEle>\ \&\ Ele,}
-\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ origin,}
-\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ dir,}
-\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ inv\_dir,}
-\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ inv\_dir\_pad,}
-\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ std::vector<igl::Hit>\ \&\ hits)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00473\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedEle>}
-\DoxyCodeLine{00474\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ intersect\_ray\_opt(}
-\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
-\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEle>\ \&\ Ele,}
-\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ origin,}
-\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ dir,}
-\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ inv\_dir,}
-\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ inv\_dir\_pad,}
-\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ min\_t,}
-\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1Hit}{igl::Hit}}\ \&\ hit)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00483\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00484\ \ \ \ \ \ \ EIGEN\_MAKE\_ALIGNED\_OPERATOR\_NEW}
-\DoxyCodeLine{00485\ \ \ \ \ \};}
-\DoxyCodeLine{00486\ \}}
-\DoxyCodeLine{00487\ }
-\DoxyCodeLine{00488\ }
-\DoxyCodeLine{00489\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
-\DoxyCodeLine{00490\ \textcolor{preprocessor}{\#\ \ include\ "{}AABB.cpp"{}}}
-\DoxyCodeLine{00491\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00492\ }
-\DoxyCodeLine{00493\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Hit_8h}{Hit.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{igl__inline_8h}{igl\_inline.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <Eigen/Geometry>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00029\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keywordtype}{int}\ DIM>}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{class\ }AABB}
+\DoxyCodeLine{00031\ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \textcolor{comment}{//\ Member\ variables}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ DerivedV::Scalar\ \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}};}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ Eigen::Matrix<Scalar,1,DIM>\ \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}};}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ Eigen::Matrix<Scalar,DIM,1>\ \doxymbox{\hyperlink{classigl_1_1AABB_a115da153746506529eaaa70fb01ffffb}{VectorDIMS}};}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ Eigen::Matrix<Scalar,Eigen::Dynamic,DIM>\ \doxymbox{\hyperlink{classigl_1_1AABB_aa509e281d53292cd5a54a186d166a741}{MatrixXDIMS}};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \textcolor{comment}{//\ Shared\ pointers\ are\ slower...}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ AABB\ *\ \doxymbox{\hyperlink{classigl_1_1AABB_a235d9f0789affa75050a75fe1d9a3e84}{m\_left}};}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ AABB\ *\ \doxymbox{\hyperlink{classigl_1_1AABB_a9abce242119d9e709b8e447480b27bf5}{m\_right}};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ AABB\ *\ \doxymbox{\hyperlink{classigl_1_1AABB_afefa55132c521c4fe3412d8f46231ccb}{m\_parent}};}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ Eigen::AlignedBox<Scalar,DIM>\ \doxymbox{\hyperlink{classigl_1_1AABB_ae5a1a951d07db942eed6d14f45af6e6b}{m\_box}};}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{classigl_1_1AABB_a5ea4da975626dc7c471a0405b48ed3b4}{m\_primitive}};}
+\DoxyCodeLine{00056\ \textcolor{comment}{//\ Non-\/templated\ member\ functions}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \textcolor{comment}{//Scalar\ m\_low\_sqr\_d;}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \textcolor{comment}{//int\ m\_depth;}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ AABB():}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1AABB_a235d9f0789affa75050a75fe1d9a3e84}{m\_left}}(nullptr),\ \doxymbox{\hyperlink{classigl_1_1AABB_a9abce242119d9e709b8e447480b27bf5}{m\_right}}(nullptr),\doxymbox{\hyperlink{classigl_1_1AABB_afefa55132c521c4fe3412d8f46231ccb}{m\_parent}}(nullptr),}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1AABB_ae5a1a951d07db942eed6d14f45af6e6b}{m\_box}}(),\ \doxymbox{\hyperlink{classigl_1_1AABB_a5ea4da975626dc7c471a0405b48ed3b4}{m\_primitive}}(-\/1)}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{comment}{//m\_low\_sqr\_d(std::numeric\_limits<double>::infinity()),}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{comment}{//m\_depth(0)}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_assert}(DerivedV::ColsAtCompileTime\ ==\ DIM\ ||\ DerivedV::ColsAtCompileTime\ ==\ Eigen::Dynamic,\textcolor{stringliteral}{"{}DerivedV::ColsAtCompileTime\ ==\ DIM\ ||\ DerivedV::ColsAtCompileTime\ ==\ Eigen::Dynamic"{}});}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \textcolor{comment}{//\ http://stackoverflow.com/a/3279550/148668}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1AABB}{AABB}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1AABB}{AABB}}\&\ other):}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1AABB_a235d9f0789affa75050a75fe1d9a3e84}{m\_left}}\ (other.\doxymbox{\hyperlink{classigl_1_1AABB_a235d9f0789affa75050a75fe1d9a3e84}{m\_left}}\ \ ?\ new\ \doxymbox{\hyperlink{classigl_1_1AABB}{AABB}}(*other.\doxymbox{\hyperlink{classigl_1_1AABB_a235d9f0789affa75050a75fe1d9a3e84}{m\_left}})\ \ :\ nullptr),}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1AABB_a9abce242119d9e709b8e447480b27bf5}{m\_right}}(other.\doxymbox{\hyperlink{classigl_1_1AABB_a9abce242119d9e709b8e447480b27bf5}{m\_right}}\ ?\ new\ \doxymbox{\hyperlink{classigl_1_1AABB}{AABB}}(*other.\doxymbox{\hyperlink{classigl_1_1AABB_a9abce242119d9e709b8e447480b27bf5}{m\_right}})\ :\ nullptr),}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1AABB_afefa55132c521c4fe3412d8f46231ccb}{m\_parent}}(other.\doxymbox{\hyperlink{classigl_1_1AABB_afefa55132c521c4fe3412d8f46231ccb}{m\_parent}}),}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1AABB_ae5a1a951d07db942eed6d14f45af6e6b}{m\_box}}(other.\doxymbox{\hyperlink{classigl_1_1AABB_ae5a1a951d07db942eed6d14f45af6e6b}{m\_box}}),}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1AABB_a5ea4da975626dc7c471a0405b48ed3b4}{m\_primitive}}(other.\doxymbox{\hyperlink{classigl_1_1AABB_a5ea4da975626dc7c471a0405b48ed3b4}{m\_primitive}})}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{comment}{//m\_low\_sqr\_d(other.m\_low\_sqr\_d),}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{comment}{//m\_depth(std::max(}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ m\_left\ ?\ m\_left-\/>m\_depth\ +\ 1\ :\ 0,}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ m\_right\ ?\ m\_right-\/>m\_depth\ +\ 1\ :\ 0))}}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classigl_1_1AABB_a235d9f0789affa75050a75fe1d9a3e84}{m\_left}})\ \{\ \doxymbox{\hyperlink{classigl_1_1AABB_a235d9f0789affa75050a75fe1d9a3e84}{m\_left}}-\/>\doxymbox{\hyperlink{classigl_1_1AABB_afefa55132c521c4fe3412d8f46231ccb}{m\_parent}}\ =\ \textcolor{keyword}{this};\ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classigl_1_1AABB_a9abce242119d9e709b8e447480b27bf5}{m\_right}})\ \{\ \doxymbox{\hyperlink{classigl_1_1AABB_a9abce242119d9e709b8e447480b27bf5}{m\_right}}-\/>\doxymbox{\hyperlink{classigl_1_1AABB_afefa55132c521c4fe3412d8f46231ccb}{m\_parent}}\ =\ \textcolor{keyword}{this};\ \}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \textcolor{comment}{//\ copy-\/swap\ idiom}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classigl_1_1AABB_a9703efef4dfa78aa20be159b0ea57b0f}{swap}}(AABB\&\ first,\ AABB\&\ second)}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Enable\ ADL}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }std::swap;}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1AABB_a9703efef4dfa78aa20be159b0ea57b0f}{swap}}(first.\doxymbox{\hyperlink{classigl_1_1AABB_a235d9f0789affa75050a75fe1d9a3e84}{m\_left}},second.\doxymbox{\hyperlink{classigl_1_1AABB_a235d9f0789affa75050a75fe1d9a3e84}{m\_left}});}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1AABB_a9703efef4dfa78aa20be159b0ea57b0f}{swap}}(first.\doxymbox{\hyperlink{classigl_1_1AABB_a9abce242119d9e709b8e447480b27bf5}{m\_right}},second.\doxymbox{\hyperlink{classigl_1_1AABB_a9abce242119d9e709b8e447480b27bf5}{m\_right}});}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1AABB_a9703efef4dfa78aa20be159b0ea57b0f}{swap}}(first.\doxymbox{\hyperlink{classigl_1_1AABB_afefa55132c521c4fe3412d8f46231ccb}{m\_parent}},second.\doxymbox{\hyperlink{classigl_1_1AABB_afefa55132c521c4fe3412d8f46231ccb}{m\_parent}});}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1AABB_a9703efef4dfa78aa20be159b0ea57b0f}{swap}}(first.\doxymbox{\hyperlink{classigl_1_1AABB_ae5a1a951d07db942eed6d14f45af6e6b}{m\_box}},second.\doxymbox{\hyperlink{classigl_1_1AABB_ae5a1a951d07db942eed6d14f45af6e6b}{m\_box}});}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1AABB_a9703efef4dfa78aa20be159b0ea57b0f}{swap}}(first.\doxymbox{\hyperlink{classigl_1_1AABB_a5ea4da975626dc7c471a0405b48ed3b4}{m\_primitive}},second.\doxymbox{\hyperlink{classigl_1_1AABB_a5ea4da975626dc7c471a0405b48ed3b4}{m\_primitive}});}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{comment}{//swap(first.m\_low\_sqr\_d,second.m\_low\_sqr\_d);}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{comment}{//swap(first.m\_depth,second.m\_depth);}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \textcolor{comment}{//\ Pass-\/by-\/value\ (aka\ copy)}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1AABB}{AABB}}\&\ operator=(\doxymbox{\hyperlink{classigl_1_1AABB}{AABB}}\ other)}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1AABB_a9703efef4dfa78aa20be159b0ea57b0f}{swap}}(*\textcolor{keyword}{this},other);}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ AABB(AABB\&\&\ other):}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ initialize\ via\ default\ constructor}}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ AABB()}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1AABB_a9703efef4dfa78aa20be159b0ea57b0f}{swap}}(*\textcolor{keyword}{this},other);}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \textcolor{comment}{//\ Seems\ like\ there\ should\ have\ been\ an\ elegant\ solution\ to\ this\ using}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \textcolor{comment}{//\ the\ copy-\/swap\ idiom\ above:}}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ clear()}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1AABB_a5ea4da975626dc7c471a0405b48ed3b4}{m\_primitive}}\ =\ -\/1;}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1AABB_ae5a1a951d07db942eed6d14f45af6e6b}{m\_box}}\ =\ Eigen::AlignedBox<Scalar,DIM>();}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ \doxymbox{\hyperlink{classigl_1_1AABB_a235d9f0789affa75050a75fe1d9a3e84}{m\_left}};}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1AABB_a235d9f0789affa75050a75fe1d9a3e84}{m\_left}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ \doxymbox{\hyperlink{classigl_1_1AABB_a9abce242119d9e709b8e447480b27bf5}{m\_right}};}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1AABB_a9abce242119d9e709b8e447480b27bf5}{m\_right}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Tell\ my\ parent\ I'm\ dead}}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classigl_1_1AABB_afefa55132c521c4fe3412d8f46231ccb}{m\_parent}})}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classigl_1_1AABB_afefa55132c521c4fe3412d8f46231ccb}{m\_parent}}-\/>m\_left\ ==\ \textcolor{keyword}{this})}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1AABB_afefa55132c521c4fe3412d8f46231ccb}{m\_parent}}-\/>m\_left\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{classigl_1_1AABB_afefa55132c521c4fe3412d8f46231ccb}{m\_parent}}-\/>m\_right\ ==\ \textcolor{keyword}{this})}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1AABB_afefa55132c521c4fe3412d8f46231ccb}{m\_parent}}-\/>m\_right\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ assert(\textcolor{keyword}{false}\ \&\&\ \textcolor{stringliteral}{"{}I'm\ not\ my\ parent's\ child"{}});}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ *\ grandparent\ =\ \doxymbox{\hyperlink{classigl_1_1AABB_afefa55132c521c4fe3412d8f46231ccb}{m\_parent}}-\/>m\_parent;}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(grandparent)}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Before}}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ grandparent}}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ ╱\ \ \ \ \ ╲}}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ parent\ \ \ pibling}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ ╱\ \ \ \ ╲}}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ sibling\ \ this}}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ After}}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ grandparent}}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ ╱\ \ \ \ \ ╲}}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ sibling®\ \ pibling}}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Before}}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ parent=root}}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ ╱\ \ \ \ ╲}}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ sibling\ \ this}}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ After}}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ grandparent}}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ ╱\ \ \ \ \ ╲}}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ sibling®\ \ pibling}}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Now\ my\ parent\ is\ dead\ to\ me.}}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1AABB_afefa55132c521c4fe3412d8f46231ccb}{m\_parent}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \string~AABB()}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ clear();}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classigl_1_1AABB_a24935012c54ca405bb515ae96e2549d1}{is\_leaf}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classigl_1_1AABB_ab7221bea55f56fabb3732f597af70bdd}{is\_root}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ AABB<DerivedV,DIM>*\ \doxymbox{\hyperlink{classigl_1_1AABB_afcf11024faa410261cff29ad56ca8daa}{root}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ AABB<DerivedV,DIM>*\ \doxymbox{\hyperlink{classigl_1_1AABB_a9a7b6dc89ff02c9007ce18bb64ddc9c6}{detach}}();}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classigl_1_1AABB_a693b9d39513c811edca96ecd4edb802e}{refit\_lineage}}();}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ std::vector<AABB<DerivedV,DIM>*>\ \doxymbox{\hyperlink{classigl_1_1AABB_af4e55a98deeb84a2dd51ac98bdbce92b}{gather\_leaves}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ m);}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ std::vector<AABB<DerivedV,DIM>*>\ \doxymbox{\hyperlink{classigl_1_1AABB_a0cbd83a63c2addcbf093fd42a549f427}{gather\_leaves}}();}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ AABB<DerivedV,DIM>*\ \doxymbox{\hyperlink{classigl_1_1AABB_a8b32f6b97f8a9a87acf41975e8f60d31}{pad}}(}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<AABB<DerivedV,DIM>*>\ \&\ leaves,}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ \doxymbox{\hyperlink{classigl_1_1AABB_a8b32f6b97f8a9a87acf41975e8f60d31}{pad}},}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ polish\_rotate\_passes=0);}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ AABB<DerivedV,DIM>*\ \doxymbox{\hyperlink{classigl_1_1AABB_ae65c17480c1934f4ccd8a06baa0f6bb2}{update}}(}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::AlignedBox<Scalar,DIM>\ \&\ new\_box,}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ \doxymbox{\hyperlink{classigl_1_1AABB_a8b32f6b97f8a9a87acf41975e8f60d31}{pad}}=0);}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ AABB<DerivedV,DIM>*\ \doxymbox{\hyperlink{classigl_1_1AABB_aebe36abbb76b6a1e854a1cd642b7c00a}{insert}}(AABB\ *\ other);}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ AABB<DerivedV,DIM>*\ \doxymbox{\hyperlink{classigl_1_1AABB_a4e948cf8a46ade9a3a0e263fab666627}{insert\_as\_sibling}}(AABB\ *\ other);}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ \doxymbox{\hyperlink{classigl_1_1AABB_acc77199ab1a533a032f3fc5d884ebd11}{rotate}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ dry\_run\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ \doxymbox{\hyperlink{classigl_1_1AABB_a1575de7b10acabf80a3cb0ed92dc9743}{rotate\_across}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ dry\_run\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ \doxymbox{\hyperlink{classigl_1_1AABB_ae59d1111100f7f03cf1920a35dfe0687}{rotate\_up}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ dry\_run\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ \doxymbox{\hyperlink{classigl_1_1AABB_ad47f8f7b06fd713697c2d4b42934fa5e}{rotate\_down}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ dry\_run\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \textcolor{keyword}{static}\ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ \doxymbox{\hyperlink{classigl_1_1AABB_a62112762bfdaf556f1de163f9ecef323}{rotate\_up}}(}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ dry\_run,}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ AABB<DerivedV,DIM>*\ reining,}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ AABB<DerivedV,DIM>*\ grandparent,}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ AABB<DerivedV,DIM>*\ parent,}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ AABB<DerivedV,DIM>*\ challenger,}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ AABB<DerivedV,DIM>*\ sibling);}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \textcolor{comment}{//\ Should\ this\ be\ a\ static\ function\ with\ an\ argument?}}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classigl_1_1AABB_ab3931ea326a767e633fadf32430d177d}{rotate\_lineage}}();}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{classigl_1_1AABB_aa10facd7366f1a368b86e45eaa25f316}{subtree\_size}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classigl_1_1AABB_a95f147a583c6e7c4d395cf7e08104f21}{append\_intersecting\_leaves}}(}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::AlignedBox<Scalar,DIM>\ \&\ box,}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ std::vector<\textcolor{keyword}{const}\ AABB<DerivedV,DIM>*>\ \&\ leaves)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{typename}\ DerivedV::Scalar\ \doxymbox{\hyperlink{classigl_1_1AABB_ae9d81bfa68216b34c3e6f7bd2f25439c}{internal\_surface\_area}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classigl_1_1AABB_ae64f03de2248450c50205b437da3fcdc}{validate}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classigl_1_1AABB_afd67ad586203da2f0780952f1c500adb}{print}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ depth\ =\ 0)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{classigl_1_1AABB_a8d6c3a6fbe3b4ba91eab1753c0d39888}{size}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{classigl_1_1AABB_ad4d3163bf327426fb9266751f14fa235}{height}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00435\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ set\_min(}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ p,}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ sqr\_d\_candidate,}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \&\ i\_candidate,}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ c\_candidate,}
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ \&\ sqr\_d,}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \&\ i,}
+\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<RowVectorDIMS>\ \&\ c)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00460\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00462\ \textcolor{comment}{//\ Templated\ member\ functions}}
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedEle,}
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Derivedbb\_mins,}
+\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Derivedbb\_maxs,}
+\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Derivedelements>}
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classigl_1_1AABB_a15c01f34f8720540a720f8e916d26679}{init}}(}
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEle>\ \&\ Ele,}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedbb\_mins>\ \&\ bb\_mins,}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedbb\_maxs>\ \&\ bb\_maxs,}
+\DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedelements>\ \&\ elements,}
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ i\ =\ 0);}
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedEle>}
+\DoxyCodeLine{00494\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classigl_1_1AABB_a78edb75957a1a751c484148206e93622}{init}}(}
+\DoxyCodeLine{00495\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00496\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEle>\ \&\ Ele);}
+\DoxyCodeLine{00508\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedEle,\ \textcolor{keyword}{typename}\ DerivedSI,\ \textcolor{keyword}{typename}\ DerivedI>}
+\DoxyCodeLine{00509\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classigl_1_1AABB_a9536e0b163e920704d22262aaf0eb5dd}{init}}(}
+\DoxyCodeLine{00510\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00511\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEle>\ \&\ Ele,}
+\DoxyCodeLine{00512\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedSI>\ \&\ SI,}
+\DoxyCodeLine{00513\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedI>\&\ I);}
+\DoxyCodeLine{00516\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedEle>}
+\DoxyCodeLine{00517\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ AABB<DerivedV,DIM>*\ \doxymbox{\hyperlink{classigl_1_1AABB_a45c371debe0a10956ba2be1b3bfa4cf0}{update\_primitive}}(}
+\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00519\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEle>\ \&\ Ele,}
+\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ \doxymbox{\hyperlink{classigl_1_1AABB_a8b32f6b97f8a9a87acf41975e8f60d31}{pad}}=0);}
+\DoxyCodeLine{00521\ }
+\DoxyCodeLine{00532\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedEle,\ \textcolor{keyword}{typename}\ Derivedq>}
+\DoxyCodeLine{00533\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ std::vector<int>\ \doxymbox{\hyperlink{classigl_1_1AABB_a05a70628fcd4f87981ebff25ed58055b}{find}}(}
+\DoxyCodeLine{00534\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00535\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEle>\ \&\ Ele,}
+\DoxyCodeLine{00536\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedq>\ \&\ q,}
+\DoxyCodeLine{00537\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ first=\textcolor{keyword}{false})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00538\ }
+\DoxyCodeLine{00548\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00549\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Derivedbb\_mins,}
+\DoxyCodeLine{00550\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Derivedbb\_maxs,}
+\DoxyCodeLine{00551\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Derivedelements>}
+\DoxyCodeLine{00552\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classigl_1_1AABB_ad4cae218326d31c60636f6e8b399604a}{serialize}}(}
+\DoxyCodeLine{00553\ \ \ \ \ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<Derivedbb\_mins>\ \&\ bb\_mins,}
+\DoxyCodeLine{00554\ \ \ \ \ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<Derivedbb\_maxs>\ \&\ bb\_maxs,}
+\DoxyCodeLine{00555\ \ \ \ \ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<Derivedelements>\ \&\ elements,}
+\DoxyCodeLine{00556\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ i\ =\ 0)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00568\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedEle>}
+\DoxyCodeLine{00569\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ \doxymbox{\hyperlink{classigl_1_1AABB_a96a7347d4780172b8c88ffab2be93e0f}{squared\_distance}}(}
+\DoxyCodeLine{00570\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00571\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEle>\ \&\ Ele,}
+\DoxyCodeLine{00572\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ p,}
+\DoxyCodeLine{00573\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \&\ i,}
+\DoxyCodeLine{00574\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<RowVectorDIMS>\ \&\ c)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00592\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedEle>}
+\DoxyCodeLine{00593\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ \doxymbox{\hyperlink{classigl_1_1AABB_ab82da3a68c7fb585068468b1a47d695c}{squared\_distance}}(}
+\DoxyCodeLine{00594\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00595\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEle>\ \&\ Ele,}
+\DoxyCodeLine{00596\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ p,}
+\DoxyCodeLine{00597\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ low\_sqr\_d,}
+\DoxyCodeLine{00598\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ up\_sqr\_d,}
+\DoxyCodeLine{00599\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \&\ i,}
+\DoxyCodeLine{00600\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<RowVectorDIMS>\ \&\ c)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00613\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedEle>}
+\DoxyCodeLine{00614\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ \doxymbox{\hyperlink{classigl_1_1AABB_ac6cda1a6e31e015f72b2c5cf5143cb5b}{squared\_distance}}(}
+\DoxyCodeLine{00615\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00616\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEle>\ \&\ Ele,}
+\DoxyCodeLine{00617\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ p,}
+\DoxyCodeLine{00618\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ up\_sqr\_d,}
+\DoxyCodeLine{00619\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \&\ i,}
+\DoxyCodeLine{00620\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<RowVectorDIMS>\ \&\ c)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00629\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedEle>}
+\DoxyCodeLine{00630\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classigl_1_1AABB_a0cb125ad92cf40f35267b31da40c39ae}{intersect\_ray}}(}
+\DoxyCodeLine{00631\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00632\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEle>\ \&\ Ele,}
+\DoxyCodeLine{00633\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ origin,}
+\DoxyCodeLine{00634\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ dir,}
+\DoxyCodeLine{00635\ \ \ \ \ \ \ \ \ std::vector<\doxymbox{\hyperlink{structigl_1_1Hit}{igl::Hit<typename\ DerivedV::Scalar>}}>\ \&\ hits)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00644\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedEle>}
+\DoxyCodeLine{00645\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classigl_1_1AABB_a4f915f2db534ee67592651980132b2a1}{intersect\_ray}}(}
+\DoxyCodeLine{00646\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00647\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEle>\ \&\ Ele,}
+\DoxyCodeLine{00648\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ origin,}
+\DoxyCodeLine{00649\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ dir,}
+\DoxyCodeLine{00650\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structigl_1_1Hit}{igl::Hit<typename\ DerivedV::Scalar>}}\ \&\ hit)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00651\ }
+\DoxyCodeLine{00661\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedEle>}
+\DoxyCodeLine{00662\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classigl_1_1AABB_a44817fe83922a30e38698112a8a4d07a}{intersect\_ray}}(}
+\DoxyCodeLine{00663\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00664\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEle>\ \&\ Ele,}
+\DoxyCodeLine{00665\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ origin,}
+\DoxyCodeLine{00666\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ dir,}
+\DoxyCodeLine{00667\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ min\_t,}
+\DoxyCodeLine{00668\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structigl_1_1Hit}{igl::Hit<typename\ DerivedV::Scalar>}}\ \&\ hit)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00680\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00681\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedEle,}
+\DoxyCodeLine{00682\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedOrigin,}
+\DoxyCodeLine{00683\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedDir,}
+\DoxyCodeLine{00684\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedI,}
+\DoxyCodeLine{00685\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedT,}
+\DoxyCodeLine{00686\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedUV>}
+\DoxyCodeLine{00687\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classigl_1_1AABB_a9c33cf880342419fb601b8260e6701f6}{intersect\_ray}}(}
+\DoxyCodeLine{00688\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00689\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEle>\ \&\ Ele,}
+\DoxyCodeLine{00690\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedOrigin>\ \&\ origin,}
+\DoxyCodeLine{00691\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedDir>\ \&\ dir,}
+\DoxyCodeLine{00692\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ min\_t,}
+\DoxyCodeLine{00693\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedI>\ \&\ I,}
+\DoxyCodeLine{00694\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedT>\ \&\ T,}
+\DoxyCodeLine{00695\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedUV>\ \&\ UV);}
+\DoxyCodeLine{00696\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00697\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedEle,}
+\DoxyCodeLine{00698\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedOrigin,}
+\DoxyCodeLine{00699\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedDir>}
+\DoxyCodeLine{00700\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classigl_1_1AABB_a47225468caa8d112f2ca1002c30fefd5}{intersect\_ray}}(}
+\DoxyCodeLine{00701\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00702\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEle>\ \&\ Ele,}
+\DoxyCodeLine{00703\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedOrigin>\ \&\ origin,}
+\DoxyCodeLine{00704\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedDir>\ \&\ dir,}
+\DoxyCodeLine{00705\ \ \ \ \ \ \ \ \ std::vector<std::vector<\doxymbox{\hyperlink{structigl_1_1Hit}{igl::Hit<typename\ DerivedV::Scalar>}}>>\ \&\ hits);}
+\DoxyCodeLine{00716\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00717\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedEle,}
+\DoxyCodeLine{00718\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedP,}
+\DoxyCodeLine{00719\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedsqrD,}
+\DoxyCodeLine{00720\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedI,}
+\DoxyCodeLine{00721\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedC>}
+\DoxyCodeLine{00722\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classigl_1_1AABB_a634a96258fec901ee54613d51b4e9b64}{squared\_distance}}(}
+\DoxyCodeLine{00723\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00724\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEle>\ \&\ Ele,}
+\DoxyCodeLine{00725\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedP>\ \&\ P,}
+\DoxyCodeLine{00726\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedsqrD>\ \&\ sqrD,}
+\DoxyCodeLine{00727\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedI>\ \&\ I,}
+\DoxyCodeLine{00728\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedC>\ \&\ C)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00742\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00743\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedEle,}
+\DoxyCodeLine{00744\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Derivedother\_V,}
+\DoxyCodeLine{00745\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Derivedother\_Ele,}
+\DoxyCodeLine{00746\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedsqrD,}
+\DoxyCodeLine{00747\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedI,}
+\DoxyCodeLine{00748\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedC>}
+\DoxyCodeLine{00749\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classigl_1_1AABB_a222114f494110d3e536bca03b86b8c12}{squared\_distance}}(}
+\DoxyCodeLine{00750\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00751\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEle>\ \&\ Ele,}
+\DoxyCodeLine{00752\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ AABB<Derivedother\_V,DIM>\ \&\ other,}
+\DoxyCodeLine{00753\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedother\_V>\ \&\ other\_V,}
+\DoxyCodeLine{00754\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedother\_Ele>\ \&\ other\_Ele,}
+\DoxyCodeLine{00755\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedsqrD>\ \&\ sqrD,}
+\DoxyCodeLine{00756\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedI>\ \&\ I,}
+\DoxyCodeLine{00757\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedC>\ \&\ C)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00758\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00759\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00760\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedEle,}
+\DoxyCodeLine{00761\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Derivedother\_V,}
+\DoxyCodeLine{00762\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Derivedother\_Ele,}
+\DoxyCodeLine{00763\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedsqrD,}
+\DoxyCodeLine{00764\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedI,}
+\DoxyCodeLine{00765\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedC>}
+\DoxyCodeLine{00766\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ squared\_distance\_helper(}
+\DoxyCodeLine{00767\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00768\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEle>\ \&\ Ele,}
+\DoxyCodeLine{00769\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ AABB<Derivedother\_V,DIM>\ *\ other,}
+\DoxyCodeLine{00770\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedother\_V>\ \&\ other\_V,}
+\DoxyCodeLine{00771\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedother\_Ele>\&\ other\_Ele,}
+\DoxyCodeLine{00772\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ up\_sqr\_d,}
+\DoxyCodeLine{00773\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedsqrD>\ \&\ sqrD,}
+\DoxyCodeLine{00774\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedI>\ \&\ I,}
+\DoxyCodeLine{00775\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedC>\ \&\ C)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00776\ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ the\ squared\ distance\ to\ the\ primitive\ in\ this\ node:\ assumes}}
+\DoxyCodeLine{00777\ \ \ \ \ \ \ \textcolor{comment}{//\ that\ this\ is\ indeed\ a\ leaf\ node.}}
+\DoxyCodeLine{00778\ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00779\ \ \ \ \ \ \ \textcolor{comment}{//\ Inputs:}}
+\DoxyCodeLine{00780\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ V\ \ \#V\ by\ dim\ list\ of\ vertex\ positions}}
+\DoxyCodeLine{00781\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ Ele\ \ \#Ele\ by\ dim\ list\ of\ simplex\ indices}}
+\DoxyCodeLine{00782\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ p\ \ dim-\/long\ query\ point}}
+\DoxyCodeLine{00783\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ sqr\_d\ \ current\ minimum\ distance\ for\ this\ query,\ see\ output}}
+\DoxyCodeLine{00784\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ i\ \ current\ index\ into\ Ele\ of\ closest\ point,\ see\ output}}
+\DoxyCodeLine{00785\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ c\ \ dim-\/long\ current\ closest\ point,\ see\ output}}
+\DoxyCodeLine{00786\ \ \ \ \ \ \ \textcolor{comment}{//\ Outputs:}}
+\DoxyCodeLine{00787\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ sqr\_d\ \ \ minimum\ of\ initial\ value\ and\ squared\ distance\ to\ this}}
+\DoxyCodeLine{00788\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ primitive}}
+\DoxyCodeLine{00789\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ i\ \ possibly\ updated\ index\ into\ Ele\ of\ closest\ point}}
+\DoxyCodeLine{00790\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ c\ \ dim-\/long\ possibly\ updated\ closest\ point}}
+\DoxyCodeLine{00791\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedEle>}
+\DoxyCodeLine{00792\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ leaf\_squared\_distance(}
+\DoxyCodeLine{00793\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00794\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEle>\ \&\ Ele,}
+\DoxyCodeLine{00795\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ p,}
+\DoxyCodeLine{00796\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ low\_sqr\_d,}
+\DoxyCodeLine{00797\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ \&\ sqr\_d,}
+\DoxyCodeLine{00798\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \&\ i,}
+\DoxyCodeLine{00799\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<RowVectorDIMS>\ \&\ c)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00800\ \ \ \ \ \ \ \textcolor{comment}{//\ Default\ low\_sqr\_d}}
+\DoxyCodeLine{00801\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedEle>}
+\DoxyCodeLine{00802\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ leaf\_squared\_distance(}
+\DoxyCodeLine{00803\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00804\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEle>\ \&\ Ele,}
+\DoxyCodeLine{00805\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ p,}
+\DoxyCodeLine{00806\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ \&\ sqr\_d,}
+\DoxyCodeLine{00807\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \&\ i,}
+\DoxyCodeLine{00808\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<RowVectorDIMS>\ \&\ c)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00817\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedEle>}
+\DoxyCodeLine{00818\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ intersect\_ray\_opt(}
+\DoxyCodeLine{00819\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00820\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEle>\ \&\ Ele,}
+\DoxyCodeLine{00821\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ origin,}
+\DoxyCodeLine{00822\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ dir,}
+\DoxyCodeLine{00823\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ inv\_dir,}
+\DoxyCodeLine{00824\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ inv\_dir\_pad,}
+\DoxyCodeLine{00825\ \ \ \ \ \ \ \ \ std::vector<\doxymbox{\hyperlink{structigl_1_1Hit}{igl::Hit<typename\ DerivedV::Scalar>}}>\ \&\ hits)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00835\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedEle>}
+\DoxyCodeLine{00836\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ intersect\_ray\_opt(}
+\DoxyCodeLine{00837\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00838\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEle>\ \&\ Ele,}
+\DoxyCodeLine{00839\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ origin,}
+\DoxyCodeLine{00840\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ dir,}
+\DoxyCodeLine{00841\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ inv\_dir,}
+\DoxyCodeLine{00842\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1AABB_ac5abf414cbc2c2eec477945798d08261}{RowVectorDIMS}}\ \&\ inv\_dir\_pad,}
+\DoxyCodeLine{00843\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classigl_1_1AABB_a6ca257118a7e22bb815a0a00bd2ef63d}{Scalar}}\ min\_t,}
+\DoxyCodeLine{00844\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structigl_1_1Hit}{igl::Hit<typename\ DerivedV::Scalar>}}\ \&\ hit)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00845\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00846\ \ \ \ \ \ \ EIGEN\_MAKE\_ALIGNED\_OPERATOR\_NEW}
+\DoxyCodeLine{00847\ \ \ \ \ \};}
+\DoxyCodeLine{00848\ \}}
+\DoxyCodeLine{00849\ }
+\DoxyCodeLine{00850\ }
+\DoxyCodeLine{00851\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00852\ \textcolor{preprocessor}{\#\ \ include\ "{}AABB.cpp"{}}}
+\DoxyCodeLine{00853\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00854\ }
+\DoxyCodeLine{00855\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

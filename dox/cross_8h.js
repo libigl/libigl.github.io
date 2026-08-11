@@ -1,5 +1,5 @@
 var cross_8h =
 [
-    [ "cross", "cross_8h.html#a8eb65039a597811fba7c59d41d039b4c", null ],
-    [ "cross", "cross_8h.html#a4887506ff673ad3a57ca0697dda4d029", null ]
+    [ "igl::cross", "namespaceigl.html#a8eb65039a597811fba7c59d41d039b4c", null ],
+    [ "igl::cross", "namespaceigl.html#a2c0f71155dfb03874b17f60a509d05ba", null ]
 ];

@@ -1,6 +1,6 @@
 \doxysection{min\+\_\+quad\+\_\+with\+\_\+fixed.\+impl.\+h}
 \hypertarget{min__quad__with__fixed_8impl_8h_source}{}\label{min__quad__with__fixed_8impl_8h_source}\index{include/igl/min\_quad\_with\_fixed.impl.h@{include/igl/min\_quad\_with\_fixed.impl.h}}
-\mbox{\hyperlink{min__quad__with__fixed_8impl_8h}{Go to the documentation of this file.}}
+\doxymbox{\hyperlink{min__quad__with__fixed_8impl_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
 \DoxyCodeLine{00002\ \textcolor{comment}{//}}
@@ -11,879 +11,902 @@
 \DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
 \DoxyCodeLine{00009\ }
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{min__quad__with__fixed_8h}{min\_quad\_with\_fixed.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{min__quad__with__fixed_8h}{min\_quad\_with\_fixed.h}}"{}}}
 \DoxyCodeLine{00011\ }
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{slice_8h}{slice.h}}"{}}}
-\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{is__symmetric_8h}{is\_symmetric.h}}"{}}}
-\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{find_8h}{find.h}}"{}}}
-\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sparse_8h}{sparse.h}}"{}}}
-\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{repmat_8h}{repmat.h}}"{}}}
-\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{EPS_8h}{EPS.h}}"{}}}
-\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{cat_8h}{cat.h}}"{}}}
-\DoxyCodeLine{00019\ }
-\DoxyCodeLine{00020\ \textcolor{comment}{//\#include\ <Eigen/SparseExtra>}}
-\DoxyCodeLine{00021\ \textcolor{comment}{//\ Bug\ in\ unsupported/Eigen/SparseExtra\ needs\ iostream\ first}}
-\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <iostream>}}
-\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <unsupported/Eigen/SparseExtra>}}
-\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <cassert>}}
-\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <cstdio>}}
-\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{matlab__format_8h}{matlab\_format.h}}"{}}}
-\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <type\_traits>}}
-\DoxyCodeLine{00028\ }
-\DoxyCodeLine{00029\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ Derivedknown>}
-\DoxyCodeLine{00030\ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_adc0382628e374a5b92a226ad75ce6b8b}{igl::min\_quad\_with\_fixed\_precompute}}(}
-\DoxyCodeLine{00031\ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<T>\&\ A2,}
-\DoxyCodeLine{00032\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedknown>\ \&\ known,}
-\DoxyCodeLine{00033\ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<T>\&\ Aeq,}
-\DoxyCodeLine{00034\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ pd,}
-\DoxyCodeLine{00035\ \ \ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data}{min\_quad\_with\_fixed\_data<T>}}\ \&\ data}
-\DoxyCodeLine{00036\ \ \ )}
-\DoxyCodeLine{00037\ \{}
-\DoxyCodeLine{00038\ \textcolor{comment}{//\#define\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
-\DoxyCodeLine{00039\ \ \ \textcolor{keyword}{using\ namespace\ }Eigen;}
-\DoxyCodeLine{00040\ \ \ \textcolor{keyword}{using\ namespace\ }std;}
-\DoxyCodeLine{00041\ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<T>\ A\ =\ 0.5*A2;}
-\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#ifdef\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
-\DoxyCodeLine{00043\ \ \ cout<<\textcolor{stringliteral}{"{}\ \ \ \ pre"{}}<<endl;}
-\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00045\ \ \ \textcolor{comment}{//\ number\ of\ rows}}
-\DoxyCodeLine{00046\ \ \ \textcolor{keywordtype}{int}\ n\ =\ A.rows();}
-\DoxyCodeLine{00047\ \ \ \textcolor{comment}{//\ cache\ problem\ size}}
-\DoxyCodeLine{00048\ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_aa2f79821dd5f69c2c704d4f8d2e0c34d}{n}}\ =\ n;}
-\DoxyCodeLine{00049\ }
-\DoxyCodeLine{00050\ \ \ \textcolor{keywordtype}{int}\ neq\ =\ Aeq.rows();}
-\DoxyCodeLine{00051\ \ \ \textcolor{comment}{//\ default\ is\ to\ have\ 0\ linear\ equality\ constraints}}
-\DoxyCodeLine{00052\ \ \ \textcolor{keywordflow}{if}(Aeq.size()\ !=\ 0)}
-\DoxyCodeLine{00053\ \ \ \{}
-\DoxyCodeLine{00054\ \ \ \ \ assert(n\ ==\ Aeq.cols()\ \&\&\ \textcolor{stringliteral}{"{}\#Aeq.cols()\ should\ match\ A.rows()"{}});}
-\DoxyCodeLine{00055\ \ \ \}}
-\DoxyCodeLine{00056\ }
-\DoxyCodeLine{00057\ \ \ assert(known.cols()\ ==\ 1\ \&\&\ \textcolor{stringliteral}{"{}known\ should\ be\ a\ vector"{}});}
-\DoxyCodeLine{00058\ \ \ assert(A.rows()\ ==\ n\ \&\&\ \textcolor{stringliteral}{"{}A\ should\ be\ square"{}});}
-\DoxyCodeLine{00059\ \ \ assert(A.cols()\ ==\ n\ \&\&\ \textcolor{stringliteral}{"{}A\ should\ be\ square"{}});}
-\DoxyCodeLine{00060\ }
-\DoxyCodeLine{00061\ \ \ \textcolor{comment}{//\ number\ of\ known\ rows}}
-\DoxyCodeLine{00062\ \ \ \textcolor{keywordtype}{int}\ kr\ =\ known.size();}
-\DoxyCodeLine{00063\ }
-\DoxyCodeLine{00064\ \ \ assert((kr\ ==\ 0\ ||\ known.minCoeff()\ >=\ 0)\&\&\ \textcolor{stringliteral}{"{}known\ indices\ should\ be\ in\ [0,n)"{}});}
-\DoxyCodeLine{00065\ \ \ assert((kr\ ==\ 0\ ||\ known.maxCoeff()\ <\ n)\ \&\&\ \textcolor{stringliteral}{"{}known\ indices\ should\ be\ in\ [0,n)"{}});}
-\DoxyCodeLine{00066\ \ \ assert(neq\ <=\ n\ \&\&\ \textcolor{stringliteral}{"{}Number\ of\ equality\ constraints\ should\ be\ less\ than\ DOFs"{}});}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{slice_8h}{slice.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{is__symmetric_8h}{is\_symmetric.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{find_8h}{find.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{sparse_8h}{sparse.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{repmat_8h}{repmat.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{EPS_8h}{EPS.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{cat_8h}{cat.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{placeholders_8h}{placeholders.h}}"{}}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{comment}{//\#include\ <Eigen/SparseExtra>}}
+\DoxyCodeLine{00022\ \textcolor{comment}{//\ Bug\ in\ unsupported/Eigen/SparseExtra\ needs\ iostream\ first}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <unsupported/Eigen/SparseExtra>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <cstdio>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{matlab__format_8h}{matlab\_format.h}}"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <type\_traits>}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ Derivedknown>}
+\DoxyCodeLine{00031\ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{namespaceigl_adc0382628e374a5b92a226ad75ce6b8b}{igl::min\_quad\_with\_fixed\_precompute}}(}
+\DoxyCodeLine{00032\ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<T>\&\ A2,}
+\DoxyCodeLine{00033\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedknown>\ \&\ known,}
+\DoxyCodeLine{00034\ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<T>\&\ Aeq,}
+\DoxyCodeLine{00035\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ pd,}
+\DoxyCodeLine{00036\ \ \ \doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data}{min\_quad\_with\_fixed\_data<T>}}\ \&\ data}
+\DoxyCodeLine{00037\ \ \ )}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \textcolor{comment}{//\#define\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
+\DoxyCodeLine{00040\ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<T>\ A\ =\ 0.5*A2;}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#ifdef\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
+\DoxyCodeLine{00042\ \ \ cout<<\textcolor{stringliteral}{"{}\ \ \ \ pre"{}}<<endl;}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00044\ \ \ \textcolor{comment}{//\ number\ of\ rows}}
+\DoxyCodeLine{00045\ \ \ \textcolor{keywordtype}{int}\ n\ =\ A.rows();}
+\DoxyCodeLine{00046\ \ \ \textcolor{comment}{//\ cache\ problem\ size}}
+\DoxyCodeLine{00047\ \ \ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_aa2f79821dd5f69c2c704d4f8d2e0c34d}{n}}\ =\ n;}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \textcolor{keywordtype}{int}\ neq\ =\ Aeq.rows();}
+\DoxyCodeLine{00050\ \ \ \textcolor{comment}{//\ default\ is\ to\ have\ 0\ linear\ equality\ constraints}}
+\DoxyCodeLine{00051\ \ \ \textcolor{keywordflow}{if}(Aeq.size()\ !=\ 0)}
+\DoxyCodeLine{00052\ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ assert(n\ ==\ Aeq.cols()\ \&\&\ \textcolor{stringliteral}{"{}\#Aeq.cols()\ should\ match\ A.rows()"{}});}
+\DoxyCodeLine{00054\ \ \ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ assert(known.cols()\ ==\ 1\ \&\&\ \textcolor{stringliteral}{"{}known\ should\ be\ a\ vector"{}});}
+\DoxyCodeLine{00057\ \ \ assert(A.rows()\ ==\ n\ \&\&\ \textcolor{stringliteral}{"{}A\ should\ be\ square"{}});}
+\DoxyCodeLine{00058\ \ \ assert(A.cols()\ ==\ n\ \&\&\ \textcolor{stringliteral}{"{}A\ should\ be\ square"{}});}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \textcolor{comment}{//\ number\ of\ known\ rows}}
+\DoxyCodeLine{00061\ \ \ \textcolor{keywordtype}{int}\ kr\ =\ known.size();}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ assert((kr\ ==\ 0\ ||\ known.minCoeff()\ >=\ 0)\&\&\ \textcolor{stringliteral}{"{}known\ indices\ should\ be\ in\ [0,n)"{}});}
+\DoxyCodeLine{00064\ \ \ assert((kr\ ==\ 0\ ||\ known.maxCoeff()\ <\ n)\ \&\&\ \textcolor{stringliteral}{"{}known\ indices\ should\ be\ in\ [0,n)"{}});}
+\DoxyCodeLine{00065\ \ \ assert(neq\ <=\ n\ \&\&\ \textcolor{stringliteral}{"{}Number\ of\ equality\ constraints\ should\ be\ less\ than\ DOFs"{}});}
+\DoxyCodeLine{00066\ }
 \DoxyCodeLine{00067\ }
-\DoxyCodeLine{00068\ }
-\DoxyCodeLine{00069\ \ \ \textcolor{comment}{//\ cache\ known}}
-\DoxyCodeLine{00070\ \ \ \textcolor{comment}{//\ FIXME:\ This\ is\ *NOT*\ generic\ and\ introduces\ a\ copy.}}
-\DoxyCodeLine{00071\ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0b135eb50ef96353f9959dbfdc4e9844}{known}}\ =\ known.template\ cast<int>();}
-\DoxyCodeLine{00072\ }
-\DoxyCodeLine{00073\ \ \ \textcolor{comment}{//\ get\ list\ of\ unknown\ indices}}
-\DoxyCodeLine{00074\ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a45a26b0e5d41d28bfea348ee51f52e4b}{unknown}}.resize(n-\/kr);}
-\DoxyCodeLine{00075\ \ \ std::vector<bool>\ unknown\_mask;}
-\DoxyCodeLine{00076\ \ \ unknown\_mask.resize(n,\textcolor{keyword}{true});}
-\DoxyCodeLine{00077\ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;i<kr;i++)}
-\DoxyCodeLine{00078\ \ \ \{}
-\DoxyCodeLine{00079\ \ \ \ \ unknown\_mask[known(i,\ 0)]\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00080\ \ \ \}}
-\DoxyCodeLine{00081\ \ \ \textcolor{keywordtype}{int}\ u\ =\ 0;}
-\DoxyCodeLine{00082\ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;i<n;i++)}
-\DoxyCodeLine{00083\ \ \ \{}
-\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordflow}{if}(unknown\_mask[i])}
-\DoxyCodeLine{00085\ \ \ \ \ \{}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a45a26b0e5d41d28bfea348ee51f52e4b}{unknown}}(u)\ =\ i;}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ u++;}
-\DoxyCodeLine{00088\ \ \ \ \ \}}
-\DoxyCodeLine{00089\ \ \ \}}
-\DoxyCodeLine{00090\ \ \ \textcolor{comment}{//\ get\ list\ of\ lagrange\ multiplier\ indices}}
-\DoxyCodeLine{00091\ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ab07863971db161e5eb7cdf2ec28afb06}{lagrange}}.resize(neq);}
-\DoxyCodeLine{00092\ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;i<neq;i++)}
-\DoxyCodeLine{00093\ \ \ \{}
-\DoxyCodeLine{00094\ \ \ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ab07863971db161e5eb7cdf2ec28afb06}{lagrange}}(i)\ =\ n\ +\ i;}
-\DoxyCodeLine{00095\ \ \ \}}
-\DoxyCodeLine{00096\ \ \ \textcolor{comment}{//\ cache\ unknown\ followed\ by\ lagrange\ indices}}
-\DoxyCodeLine{00097\ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ac680271bddf24abc8337ca15965a200d}{unknown\_lagrange}}.resize(data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a45a26b0e5d41d28bfea348ee51f52e4b}{unknown}}.size()+data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ab07863971db161e5eb7cdf2ec28afb06}{lagrange}}.size());}
-\DoxyCodeLine{00098\ \ \ \textcolor{comment}{//\ Would\ like\ to\ do:}}
-\DoxyCodeLine{00099\ \ \ \textcolor{comment}{//data.unknown\_lagrange\ <<\ data.unknown,\ data.lagrange;}}
-\DoxyCodeLine{00100\ \ \ \textcolor{comment}{//\ but\ Eigen\ can't\ handle\ empty\ vectors\ in\ comma\ initialization}}
-\DoxyCodeLine{00101\ \ \ \textcolor{comment}{//\ https://forum.kde.org/viewtopic.php?f=74\&t=107974\&p=364947\#p364947}}
-\DoxyCodeLine{00102\ \ \ \textcolor{keywordflow}{if}(data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a45a26b0e5d41d28bfea348ee51f52e4b}{unknown}}.size()\ >\ 0)}
-\DoxyCodeLine{00103\ \ \ \{}
-\DoxyCodeLine{00104\ \ \ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ac680271bddf24abc8337ca15965a200d}{unknown\_lagrange}}.head(data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a45a26b0e5d41d28bfea348ee51f52e4b}{unknown}}.size())\ =\ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a45a26b0e5d41d28bfea348ee51f52e4b}{unknown}};}
-\DoxyCodeLine{00105\ \ \ \}}
-\DoxyCodeLine{00106\ \ \ \textcolor{keywordflow}{if}(data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ab07863971db161e5eb7cdf2ec28afb06}{lagrange}}.size()\ >\ 0)}
-\DoxyCodeLine{00107\ \ \ \{}
-\DoxyCodeLine{00108\ \ \ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ac680271bddf24abc8337ca15965a200d}{unknown\_lagrange}}.tail(data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ab07863971db161e5eb7cdf2ec28afb06}{lagrange}}.size())\ =\ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ab07863971db161e5eb7cdf2ec28afb06}{lagrange}};}
-\DoxyCodeLine{00109\ \ \ \}}
-\DoxyCodeLine{00110\ }
-\DoxyCodeLine{00111\ \ \ SparseMatrix<T>\ Auu;}
-\DoxyCodeLine{00112\ \ \ \mbox{\hyperlink{namespaceigl_a547a8704200d3af48fe92105c15a32ad}{slice}}(A,data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a45a26b0e5d41d28bfea348ee51f52e4b}{unknown}},data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a45a26b0e5d41d28bfea348ee51f52e4b}{unknown}},Auu);}
-\DoxyCodeLine{00113\ \ \ assert(Auu.size()\ !=\ 0\ \&\&\ Auu.rows()\ >\ 0\ \&\&\ \textcolor{stringliteral}{"{}There\ should\ be\ at\ least\ one\ unknown."{}});}
-\DoxyCodeLine{00114\ }
-\DoxyCodeLine{00115\ \ \ \textcolor{comment}{//\ Positive\ definiteness\ is\ *not*\ determined,\ rather\ it\ is\ given\ as\ a}}
-\DoxyCodeLine{00116\ \ \ \textcolor{comment}{//\ parameter}}
-\DoxyCodeLine{00117\ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ad3ec9b5eb512ccd82dc39fc7c670eae5}{Auu\_pd}}\ =\ pd;}
-\DoxyCodeLine{00118\ \ \ \textcolor{keywordflow}{if}(data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ad3ec9b5eb512ccd82dc39fc7c670eae5}{Auu\_pd}})}
-\DoxyCodeLine{00119\ \ \ \{}
-\DoxyCodeLine{00120\ \ \ \ \ \textcolor{comment}{//\ PD\ implies\ symmetric}}
-\DoxyCodeLine{00121\ \ \ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ab1604a8b1d543c6dfc4ac01dc42df0a6}{Auu\_sym}}\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00122\ \ \ \ \ \textcolor{comment}{//\ This\ is\ an\ annoying\ assertion\ unless\ EPS\ can\ be\ chosen\ in\ a\ nicer\ way.}}
-\DoxyCodeLine{00123\ \ \ \ \ \textcolor{comment}{//assert(is\_symmetric(Auu,EPS<T>()));}}
-\DoxyCodeLine{00124\ \ \ \ \ assert(\mbox{\hyperlink{namespaceigl_a4f840791a21ca650ec1d68910c3ec900}{is\_symmetric}}(Auu,1.0)\ \&\&}
-\DoxyCodeLine{00125\ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Auu\ should\ be\ symmetric\ if\ positive\ definite"{}});}
-\DoxyCodeLine{00126\ \ \ \}\textcolor{keywordflow}{else}}
-\DoxyCodeLine{00127\ \ \ \{}
-\DoxyCodeLine{00128\ \ \ \ \ \textcolor{comment}{//\ determine\ if\ A(unknown,unknown)\ is\ symmetric\ and/or\ positive\ definite}}
-\DoxyCodeLine{00129\ \ \ \ \ VectorXi\ AuuI,AuuJ;}
-\DoxyCodeLine{00130\ \ \ \ \ Matrix<T,Eigen::Dynamic,Eigen::Dynamic>\ AuuV;}
-\DoxyCodeLine{00131\ \ \ \ \ \mbox{\hyperlink{namespaceigl_ad0ba264f987871035fb7d12de96fccab}{find}}(Auu,AuuI,AuuJ,AuuV);}
-\DoxyCodeLine{00132\ \ \ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ab1604a8b1d543c6dfc4ac01dc42df0a6}{Auu\_sym}}\ =\ \mbox{\hyperlink{namespaceigl_a4f840791a21ca650ec1d68910c3ec900}{is\_symmetric}}(Auu,EPS<T>()*AuuV.maxCoeff());}
-\DoxyCodeLine{00133\ \ \ \}}
-\DoxyCodeLine{00134\ }
-\DoxyCodeLine{00135\ \ \ \textcolor{comment}{//\ Determine\ number\ of\ linearly\ independent\ constraints}}
-\DoxyCodeLine{00136\ \ \ \textcolor{keywordtype}{int}\ nc\ =\ 0;}
-\DoxyCodeLine{00137\ \ \ \textcolor{keywordflow}{if}(neq>0)}
-\DoxyCodeLine{00138\ \ \ \{}
-\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#ifdef\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
-\DoxyCodeLine{00140\ \ \ \ \ cout<<\textcolor{stringliteral}{"{}\ \ \ \ qr"{}}<<endl;}
-\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00142\ \ \ \ \ \textcolor{comment}{//\ QR\ decomposition\ to\ determine\ row\ rank\ in\ Aequ}}
-\DoxyCodeLine{00143\ \ \ \ \ \mbox{\hyperlink{namespaceigl_a547a8704200d3af48fe92105c15a32ad}{slice}}(Aeq,data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a45a26b0e5d41d28bfea348ee51f52e4b}{unknown}},2,data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ae7eec6673505fc46af7fb9e65aa6c426}{Aequ}});}
-\DoxyCodeLine{00144\ \ \ \ \ assert(data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ae7eec6673505fc46af7fb9e65aa6c426}{Aequ}}.rows()\ ==\ neq\ \&\&}
-\DoxyCodeLine{00145\ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\#Rows\ in\ Aequ\ should\ match\ \#constraints"{}});}
-\DoxyCodeLine{00146\ \ \ \ \ assert(data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ae7eec6673505fc46af7fb9e65aa6c426}{Aequ}}.cols()\ ==\ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a45a26b0e5d41d28bfea348ee51f52e4b}{unknown}}.size()\ \&\&}
-\DoxyCodeLine{00147\ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\#cols\ in\ Aequ\ should\ match\ \#unknowns"{}});}
-\DoxyCodeLine{00148\ \ \ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0dd37f713f6578dc75ab710458d4654c}{AeqTQR}}.compute(data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ae7eec6673505fc46af7fb9e65aa6c426}{Aequ}}.transpose().eval());}
-\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#ifdef\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
-\DoxyCodeLine{00150\ \ \ \ \ \textcolor{comment}{//cout<<endl<<matlab\_format(SparseMatrix<T>(data.Aequ.transpose().eval()),"{}AeqT"{})<<endl<<endl;}}
-\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordflow}{switch}(data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0dd37f713f6578dc75ab710458d4654c}{AeqTQR}}.info())}
-\DoxyCodeLine{00153\ \ \ \ \ \{}
-\DoxyCodeLine{00154\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Eigen::Success:}
-\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00156\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Eigen::NumericalIssue:}
+\DoxyCodeLine{00068\ \ \ \textcolor{comment}{//\ cache\ known}}
+\DoxyCodeLine{00069\ \ \ \textcolor{comment}{//\ FIXME:\ This\ is\ *NOT*\ generic\ and\ introduces\ a\ copy.}}
+\DoxyCodeLine{00070\ \ \ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0b135eb50ef96353f9959dbfdc4e9844}{known}}\ =\ known.template\ cast<int>();}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \textcolor{comment}{//\ get\ list\ of\ unknown\ indices}}
+\DoxyCodeLine{00073\ \ \ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a45a26b0e5d41d28bfea348ee51f52e4b}{unknown}}.resize(n-\/kr);}
+\DoxyCodeLine{00074\ \ \ std::vector<bool>\ unknown\_mask;}
+\DoxyCodeLine{00075\ \ \ unknown\_mask.resize(n,\textcolor{keyword}{true});}
+\DoxyCodeLine{00076\ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;i<kr;i++)}
+\DoxyCodeLine{00077\ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ unknown\_mask[known(i,\ 0)]\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00079\ \ \ \}}
+\DoxyCodeLine{00080\ \ \ \textcolor{keywordtype}{int}\ u\ =\ 0;}
+\DoxyCodeLine{00081\ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;i<n;i++)}
+\DoxyCodeLine{00082\ \ \ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordflow}{if}(unknown\_mask[i])}
+\DoxyCodeLine{00084\ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a45a26b0e5d41d28bfea348ee51f52e4b}{unknown}}(u)\ =\ i;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ u++;}
+\DoxyCodeLine{00087\ \ \ \ \ \}}
+\DoxyCodeLine{00088\ \ \ \}}
+\DoxyCodeLine{00089\ \ \ \textcolor{comment}{//\ get\ list\ of\ lagrange\ multiplier\ indices}}
+\DoxyCodeLine{00090\ \ \ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ab07863971db161e5eb7cdf2ec28afb06}{lagrange}}.resize(neq);}
+\DoxyCodeLine{00091\ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;i<neq;i++)}
+\DoxyCodeLine{00092\ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ab07863971db161e5eb7cdf2ec28afb06}{lagrange}}(i)\ =\ n\ +\ i;}
+\DoxyCodeLine{00094\ \ \ \}}
+\DoxyCodeLine{00095\ \ \ \textcolor{comment}{//\ cache\ unknown\ followed\ by\ lagrange\ indices}}
+\DoxyCodeLine{00096\ \ \ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ac680271bddf24abc8337ca15965a200d}{unknown\_lagrange}}.resize(data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a45a26b0e5d41d28bfea348ee51f52e4b}{unknown}}.size()+data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ab07863971db161e5eb7cdf2ec28afb06}{lagrange}}.size());}
+\DoxyCodeLine{00097\ \ \ \textcolor{comment}{//\ Would\ like\ to\ do:}}
+\DoxyCodeLine{00098\ \ \ \textcolor{comment}{//data.unknown\_lagrange\ <<\ data.unknown,\ data.lagrange;}}
+\DoxyCodeLine{00099\ \ \ \textcolor{comment}{//\ but\ Eigen\ can't\ handle\ empty\ vectors\ in\ comma\ initialization}}
+\DoxyCodeLine{00100\ \ \ \textcolor{comment}{//\ https://forum.kde.org/viewtopic.php?f=74\&t=107974\&p=364947\#p364947}}
+\DoxyCodeLine{00101\ \ \ \textcolor{keywordflow}{if}(data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a45a26b0e5d41d28bfea348ee51f52e4b}{unknown}}.size()\ >\ 0)}
+\DoxyCodeLine{00102\ \ \ \{}
+\DoxyCodeLine{00103\ \ \ \ \ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ac680271bddf24abc8337ca15965a200d}{unknown\_lagrange}}.head(data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a45a26b0e5d41d28bfea348ee51f52e4b}{unknown}}.size())\ =\ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a45a26b0e5d41d28bfea348ee51f52e4b}{unknown}};}
+\DoxyCodeLine{00104\ \ \ \}}
+\DoxyCodeLine{00105\ \ \ \textcolor{keywordflow}{if}(data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ab07863971db161e5eb7cdf2ec28afb06}{lagrange}}.size()\ >\ 0)}
+\DoxyCodeLine{00106\ \ \ \{}
+\DoxyCodeLine{00107\ \ \ \ \ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ac680271bddf24abc8337ca15965a200d}{unknown\_lagrange}}.tail(data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ab07863971db161e5eb7cdf2ec28afb06}{lagrange}}.size())\ =\ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ab07863971db161e5eb7cdf2ec28afb06}{lagrange}};}
+\DoxyCodeLine{00108\ \ \ \}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ Eigen::SparseMatrix<T>\ Auu;}
+\DoxyCodeLine{00111\ \ \ \doxymbox{\hyperlink{namespaceigl_a547a8704200d3af48fe92105c15a32ad}{slice}}(A,data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a45a26b0e5d41d28bfea348ee51f52e4b}{unknown}},data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a45a26b0e5d41d28bfea348ee51f52e4b}{unknown}},Auu);}
+\DoxyCodeLine{00112\ \ \ assert(Auu.size()\ !=\ 0\ \&\&\ Auu.rows()\ >\ 0\ \&\&\ \textcolor{stringliteral}{"{}There\ should\ be\ at\ least\ one\ unknown."{}});}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \textcolor{comment}{//\ Positive\ definiteness\ is\ *not*\ determined,\ rather\ it\ is\ given\ as\ a}}
+\DoxyCodeLine{00115\ \ \ \textcolor{comment}{//\ parameter}}
+\DoxyCodeLine{00116\ \ \ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ad3ec9b5eb512ccd82dc39fc7c670eae5}{Auu\_pd}}\ =\ pd;}
+\DoxyCodeLine{00117\ \ \ \textcolor{keywordflow}{if}(data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ad3ec9b5eb512ccd82dc39fc7c670eae5}{Auu\_pd}})}
+\DoxyCodeLine{00118\ \ \ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{comment}{//\ PD\ implies\ symmetric}}
+\DoxyCodeLine{00120\ \ \ \ \ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ab1604a8b1d543c6dfc4ac01dc42df0a6}{Auu\_sym}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{comment}{//\ This\ is\ an\ annoying\ assertion\ unless\ EPS\ can\ be\ chosen\ in\ a\ nicer\ way.}}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{comment}{//assert(is\_symmetric(Auu,EPS<T>()));}}
+\DoxyCodeLine{00123\ \ \ \ \ assert(\doxymbox{\hyperlink{namespaceigl_a4f840791a21ca650ec1d68910c3ec900}{is\_symmetric}}(Auu,1.0)\ \&\&}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Auu\ should\ be\ symmetric\ if\ positive\ definite"{}});}
+\DoxyCodeLine{00125\ \ \ \}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{00126\ \ \ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{comment}{//\ determine\ if\ A(unknown,unknown)\ is\ symmetric\ and/or\ positive\ definite}}
+\DoxyCodeLine{00128\ \ \ \ \ Eigen::VectorXi\ AuuI,AuuJ;}
+\DoxyCodeLine{00129\ \ \ \ \ Eigen::Matrix<T,Eigen::Dynamic,Eigen::Dynamic>\ AuuV;}
+\DoxyCodeLine{00130\ \ \ \ \ \doxymbox{\hyperlink{namespaceigl_ad0ba264f987871035fb7d12de96fccab}{find}}(Auu,AuuI,AuuJ,AuuV);}
+\DoxyCodeLine{00131\ \ \ \ \ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ab1604a8b1d543c6dfc4ac01dc42df0a6}{Auu\_sym}}\ =\ \doxymbox{\hyperlink{namespaceigl_a4f840791a21ca650ec1d68910c3ec900}{is\_symmetric}}(Auu,\doxymbox{\hyperlink{namespaceigl_ad059c2eefaa87bb31a2b03a1787f133d}{EPS<T>}}()*AuuV.maxCoeff());}
+\DoxyCodeLine{00132\ \ \ \}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \textcolor{comment}{//\ Determine\ number\ of\ linearly\ independent\ constraints}}
+\DoxyCodeLine{00135\ \ \ \textcolor{keywordtype}{int}\ nc\ =\ 0;}
+\DoxyCodeLine{00136\ \ \ \textcolor{keywordflow}{if}(neq>0)}
+\DoxyCodeLine{00137\ \ \ \{}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#ifdef\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
+\DoxyCodeLine{00139\ \ \ \ \ cout<<\textcolor{stringliteral}{"{}\ \ \ \ qr"{}}<<endl;}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{comment}{//\ QR\ decomposition\ to\ determine\ row\ rank\ in\ Aequ}}
+\DoxyCodeLine{00142\ \ \ \ \ \doxymbox{\hyperlink{namespaceigl_a547a8704200d3af48fe92105c15a32ad}{slice}}(Aeq,data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a45a26b0e5d41d28bfea348ee51f52e4b}{unknown}},2,data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ae7eec6673505fc46af7fb9e65aa6c426}{Aequ}});}
+\DoxyCodeLine{00143\ \ \ \ \ assert(data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ae7eec6673505fc46af7fb9e65aa6c426}{Aequ}}.rows()\ ==\ neq\ \&\&}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\#Rows\ in\ Aequ\ should\ match\ \#constraints"{}});}
+\DoxyCodeLine{00145\ \ \ \ \ assert(data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ae7eec6673505fc46af7fb9e65aa6c426}{Aequ}}.cols()\ ==\ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a45a26b0e5d41d28bfea348ee51f52e4b}{unknown}}.size()\ \&\&}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\#cols\ in\ Aequ\ should\ match\ \#unknowns"{}});}
+\DoxyCodeLine{00147\ \ \ \ \ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0dd37f713f6578dc75ab710458d4654c}{AeqTQR}}.compute(data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ae7eec6673505fc46af7fb9e65aa6c426}{Aequ}}.transpose().eval());}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#ifdef\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{comment}{//cout<<endl<<matlab\_format(SparseMatrix<T>(data.Aequ.transpose().eval()),"{}AeqT"{})<<endl<<endl;}}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordflow}{switch}(data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0dd37f713f6578dc75ab710458d4654c}{AeqTQR}}.info())}
+\DoxyCodeLine{00152\ \ \ \ \ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Eigen::Success:}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Eigen::NumericalIssue:}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#ifdef\ IGL\_MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
 \DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ cerr<<\textcolor{stringliteral}{"{}Error:\ Numerical\ issue."{}}<<endl;}
-\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00159\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Eigen::InvalidInput:}
-\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ cerr<<\textcolor{stringliteral}{"{}Error:\ Invalid\ input."{}}<<endl;}
-\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
-\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ cerr<<\textcolor{stringliteral}{"{}Error:\ Other."{}}<<endl;}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Eigen::InvalidInput:}
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#ifdef\ IGL\_MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ cerr<<\textcolor{stringliteral}{"{}Error:\ Invalid\ input."{}}<<endl;}
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#endif}}
 \DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00165\ \ \ \ \ \}}
-\DoxyCodeLine{00166\ \ \ \ \ nc\ =\ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0dd37f713f6578dc75ab710458d4654c}{AeqTQR}}.rank();}
-\DoxyCodeLine{00167\ \ \ \ \ assert(nc<=neq\ \&\&}
-\DoxyCodeLine{00168\ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Rank\ of\ reduced\ constraints\ should\ be\ <=\ \#original\ constraints"{}});}
-\DoxyCodeLine{00169\ \ \ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_aae738302bbd952761f3e48fcaa1b11f9}{Aeq\_li}}\ =\ nc\ ==\ neq;}
-\DoxyCodeLine{00170\ \ \ \ \ \textcolor{comment}{//cout<<"{}data.Aeq\_li:\ "{}<<data.Aeq\_li<<endl;}}
-\DoxyCodeLine{00171\ \ \ \}\textcolor{keywordflow}{else}}
-\DoxyCodeLine{00172\ \ \ \{}
-\DoxyCodeLine{00173\ \ \ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_aae738302bbd952761f3e48fcaa1b11f9}{Aeq\_li}}\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00174\ \ \ \}}
-\DoxyCodeLine{00175\ }
-\DoxyCodeLine{00176\ \ \ \textcolor{keywordflow}{if}(data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_aae738302bbd952761f3e48fcaa1b11f9}{Aeq\_li}})}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\#ifdef\ IGL\_MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ cerr<<\textcolor{stringliteral}{"{}Error:\ Other."{}}<<endl;}
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00170\ \ \ \ \ \}}
+\DoxyCodeLine{00171\ \ \ \ \ nc\ =\ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0dd37f713f6578dc75ab710458d4654c}{AeqTQR}}.rank();}
+\DoxyCodeLine{00172\ \ \ \ \ assert(nc<=neq\ \&\&}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Rank\ of\ reduced\ constraints\ should\ be\ <=\ \#original\ constraints"{}});}
+\DoxyCodeLine{00174\ \ \ \ \ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_aae738302bbd952761f3e48fcaa1b11f9}{Aeq\_li}}\ =\ nc\ ==\ neq;}
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{comment}{//cout<<"{}data.Aeq\_li:\ "{}<<data.Aeq\_li<<endl;}}
+\DoxyCodeLine{00176\ \ \ \}\textcolor{keywordflow}{else}}
 \DoxyCodeLine{00177\ \ \ \{}
-\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#ifdef\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
-\DoxyCodeLine{00179\ \ \ \ \ cout<<\textcolor{stringliteral}{"{}\ \ \ \ Aeq\_li=true"{}}<<endl;}
-\DoxyCodeLine{00180\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00181\ \ \ \ \ \textcolor{comment}{//\ Append\ lagrange\ multiplier\ quadratic\ terms}}
-\DoxyCodeLine{00182\ \ \ \ \ SparseMatrix<T>\ new\_A;}
-\DoxyCodeLine{00183\ \ \ \ \ SparseMatrix<T>\ AeqT\ =\ Aeq.transpose();}
-\DoxyCodeLine{00184\ \ \ \ \ SparseMatrix<T>\ Z(neq,neq);}
-\DoxyCodeLine{00185\ \ \ \ \ \textcolor{comment}{//\ This\ is\ a\ bit\ slower.\ But\ why\ isn't\ cat\ fast?}}
-\DoxyCodeLine{00186\ \ \ \ \ new\_A\ =\ \mbox{\hyperlink{namespaceigl_ad5f624eb7c4015b813215c87880eb54d}{cat}}(1,\ \mbox{\hyperlink{namespaceigl_ad5f624eb7c4015b813215c87880eb54d}{cat}}(2,\ \ \ A,\ AeqT\ ),}
-\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_ad5f624eb7c4015b813215c87880eb54d}{cat}}(2,\ Aeq,\ \ \ \ Z\ ));}
-\DoxyCodeLine{00188\ }
-\DoxyCodeLine{00189\ \ \ \ \ \textcolor{comment}{//\ precompute\ RHS\ builders}}
-\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordflow}{if}(kr\ >\ 0)}
-\DoxyCodeLine{00191\ \ \ \ \ \{}
-\DoxyCodeLine{00192\ \ \ \ \ \ \ SparseMatrix<T>\ Aulk,Akul;}
-\DoxyCodeLine{00193\ \ \ \ \ \ \ \textcolor{comment}{//\ Slow}}
-\DoxyCodeLine{00194\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_a547a8704200d3af48fe92105c15a32ad}{slice}}(new\_A,data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ac680271bddf24abc8337ca15965a200d}{unknown\_lagrange}},data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0b135eb50ef96353f9959dbfdc4e9844}{known}},Aulk);}
-\DoxyCodeLine{00196\ \ \ \ \ \ \ \textcolor{comment}{//data.preY\ =\ Aulk\ +\ Akul.transpose();}}
-\DoxyCodeLine{00197\ \ \ \ \ \ \ \textcolor{comment}{//\ Slow}}
-\DoxyCodeLine{00198\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ab1604a8b1d543c6dfc4ac01dc42df0a6}{Auu\_sym}})}
-\DoxyCodeLine{00199\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a3db371095ff5ecf7dc8c42c3e34a3695}{preY}}\ =\ Aulk*2;}
-\DoxyCodeLine{00201\ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}}
-\DoxyCodeLine{00202\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_a547a8704200d3af48fe92105c15a32ad}{slice}}(new\_A,data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0b135eb50ef96353f9959dbfdc4e9844}{known}},data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ac680271bddf24abc8337ca15965a200d}{unknown\_lagrange}},Akul);}
-\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ SparseMatrix<T>\ AkulT\ =\ Akul.transpose();}
-\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a3db371095ff5ecf7dc8c42c3e34a3695}{preY}}\ =\ Aulk\ +\ AkulT;}
-\DoxyCodeLine{00206\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00207\ \ \ \ \ \}\textcolor{keywordflow}{else}}
-\DoxyCodeLine{00208\ \ \ \ \ \{}
-\DoxyCodeLine{00209\ \ \ \ \ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a3db371095ff5ecf7dc8c42c3e34a3695}{preY}}.resize(data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ac680271bddf24abc8337ca15965a200d}{unknown\_lagrange}}.size(),0);}
-\DoxyCodeLine{00210\ \ \ \ \ \}}
-\DoxyCodeLine{00211\ }
-\DoxyCodeLine{00212\ \ \ \ \ \textcolor{comment}{//\ Positive\ definite\ and\ no\ equality\ constraints\ (Positive\ definiteness}}
-\DoxyCodeLine{00213\ \ \ \ \ \textcolor{comment}{//\ implies\ symmetric)}}
-\DoxyCodeLine{00214\ \textcolor{preprocessor}{\#ifdef\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
-\DoxyCodeLine{00215\ \ \ \ \ cout<<\textcolor{stringliteral}{"{}\ \ \ \ factorize"{}}<<endl;}
-\DoxyCodeLine{00216\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keywordflow}{if}(data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ad3ec9b5eb512ccd82dc39fc7c670eae5}{Auu\_pd}}\ \&\&\ neq\ ==\ 0)}
-\DoxyCodeLine{00218\ \ \ \ \ \{}
+\DoxyCodeLine{00178\ \ \ \ \ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_aae738302bbd952761f3e48fcaa1b11f9}{Aeq\_li}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00179\ \ \ \}}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \textcolor{keywordflow}{if}(data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_aae738302bbd952761f3e48fcaa1b11f9}{Aeq\_li}})}
+\DoxyCodeLine{00182\ \ \ \{}
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\#ifdef\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
+\DoxyCodeLine{00184\ \ \ \ \ cout<<\textcolor{stringliteral}{"{}\ \ \ \ Aeq\_li=true"{}}<<endl;}
+\DoxyCodeLine{00185\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{comment}{//\ Append\ lagrange\ multiplier\ quadratic\ terms}}
+\DoxyCodeLine{00187\ \ \ \ \ Eigen::SparseMatrix<T>\ new\_A;}
+\DoxyCodeLine{00188\ \ \ \ \ Eigen::SparseMatrix<T>\ AeqT\ =\ Aeq.transpose();}
+\DoxyCodeLine{00189\ \ \ \ \ Eigen::SparseMatrix<T>\ Z(neq,neq);}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{comment}{//\ This\ is\ a\ bit\ slower.\ But\ why\ isn't\ cat\ fast?}}
+\DoxyCodeLine{00191\ \ \ \ \ new\_A\ =\ \doxymbox{\hyperlink{namespaceigl_ad5f624eb7c4015b813215c87880eb54d}{cat}}(1,\ \doxymbox{\hyperlink{namespaceigl_ad5f624eb7c4015b813215c87880eb54d}{cat}}(2,\ \ \ A,\ AeqT\ ),}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{namespaceigl_ad5f624eb7c4015b813215c87880eb54d}{cat}}(2,\ Aeq,\ \ \ \ Z\ ));}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{comment}{//\ precompute\ RHS\ builders}}
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keywordflow}{if}(kr\ >\ 0)}
+\DoxyCodeLine{00196\ \ \ \ \ \{}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ Eigen::SparseMatrix<T>\ Aulk,Akul;}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \textcolor{comment}{//\ Slow}}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \doxymbox{\hyperlink{namespaceigl_a547a8704200d3af48fe92105c15a32ad}{slice}}(new\_A,data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ac680271bddf24abc8337ca15965a200d}{unknown\_lagrange}},data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0b135eb50ef96353f9959dbfdc4e9844}{known}},Aulk);}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \textcolor{comment}{//data.preY\ =\ Aulk\ +\ Akul.transpose();}}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \textcolor{comment}{//\ Slow}}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ab1604a8b1d543c6dfc4ac01dc42df0a6}{Auu\_sym}})}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a3db371095ff5ecf7dc8c42c3e34a3695}{preY}}\ =\ Aulk*2;}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{namespaceigl_a547a8704200d3af48fe92105c15a32ad}{slice}}(new\_A,data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0b135eb50ef96353f9959dbfdc4e9844}{known}},data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ac680271bddf24abc8337ca15965a200d}{unknown\_lagrange}},Akul);}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ Eigen::SparseMatrix<T>\ AkulT\ =\ Akul.transpose();}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a3db371095ff5ecf7dc8c42c3e34a3695}{preY}}\ =\ Aulk\ +\ AkulT;}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00212\ \ \ \ \ \}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{00213\ \ \ \ \ \{}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a3db371095ff5ecf7dc8c42c3e34a3695}{preY}}.resize(data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ac680271bddf24abc8337ca15965a200d}{unknown\_lagrange}}.size(),0);}
+\DoxyCodeLine{00215\ \ \ \ \ \}}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{comment}{//\ Positive\ definite\ and\ no\ equality\ constraints\ (Positive\ definiteness}}
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{comment}{//\ implies\ symmetric)}}
 \DoxyCodeLine{00219\ \textcolor{preprocessor}{\#ifdef\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
-\DoxyCodeLine{00220\ \ \ \ \ cout<<\textcolor{stringliteral}{"{}\ \ \ \ llt"{}}<<endl;}
+\DoxyCodeLine{00220\ \ \ \ \ cout<<\textcolor{stringliteral}{"{}\ \ \ \ factorize"{}}<<endl;}
 \DoxyCodeLine{00221\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00222\ \ \ \ \ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a4ef765c434c7997a24378788a7fd9c84}{llt}}.compute(Auu);}
-\DoxyCodeLine{00223\ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a4ef765c434c7997a24378788a7fd9c84}{llt}}.info())}
-\DoxyCodeLine{00224\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Eigen::Success:}
-\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Eigen::NumericalIssue:}
-\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ cerr<<\textcolor{stringliteral}{"{}Error:\ Numerical\ issue."{}}<<endl;}
-\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
-\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ cerr<<\textcolor{stringliteral}{"{}Error:\ Other."{}}<<endl;}
-\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00233\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00234\ \ \ \ \ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_adf555171e037b12e5177ebd81fd33de5}{solver\_type}}\ =\ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data}{min\_quad\_with\_fixed\_data<T>::LLT}};}
-\DoxyCodeLine{00235\ \ \ \ \ \}\textcolor{keywordflow}{else}}
-\DoxyCodeLine{00236\ \ \ \ \ \{}
-\DoxyCodeLine{00237\ \textcolor{preprocessor}{\#ifdef\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
-\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ cout<<\textcolor{stringliteral}{"{}\ \ \ \ ldlt/lu"{}}<<endl;}
-\DoxyCodeLine{00239\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00240\ \ \ \ \ \ \ \textcolor{comment}{//\ Either\ not\ PD\ or\ there\ are\ equality\ constraints}}
-\DoxyCodeLine{00241\ \ \ \ \ \ \ SparseMatrix<T>\ NA;}
-\DoxyCodeLine{00242\ \ \ \ \ \ \ \mbox{\hyperlink{namespaceigl_a547a8704200d3af48fe92105c15a32ad}{slice}}(new\_A,data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ac680271bddf24abc8337ca15965a200d}{unknown\_lagrange}},data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ac680271bddf24abc8337ca15965a200d}{unknown\_lagrange}},NA);}
-\DoxyCodeLine{00243\ \ \ \ \ \ \ data.NA\ =\ NA;}
-\DoxyCodeLine{00244\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ad3ec9b5eb512ccd82dc39fc7c670eae5}{Auu\_pd}})}
-\DoxyCodeLine{00245\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keywordflow}{if}(data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ad3ec9b5eb512ccd82dc39fc7c670eae5}{Auu\_pd}}\ \&\&\ neq\ ==\ 0)}
+\DoxyCodeLine{00223\ \ \ \ \ \{}
+\DoxyCodeLine{00224\ \textcolor{preprocessor}{\#ifdef\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
+\DoxyCodeLine{00225\ \ \ \ \ cout<<\textcolor{stringliteral}{"{}\ \ \ \ llt"{}}<<endl;}
+\DoxyCodeLine{00226\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a4ef765c434c7997a24378788a7fd9c84}{llt}}.compute(Auu);}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a4ef765c434c7997a24378788a7fd9c84}{llt}}.info())}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Eigen::Success:}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Eigen::NumericalIssue:}
+\DoxyCodeLine{00233\ \textcolor{preprocessor}{\#ifdef\ IGL\_MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ cerr<<\textcolor{stringliteral}{"{}Error:\ Numerical\ issue."{}}<<endl;}
+\DoxyCodeLine{00235\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00238\ \textcolor{preprocessor}{\#ifdef\ IGL\_MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ cerr<<\textcolor{stringliteral}{"{}Error:\ Other."{}}<<endl;}
+\DoxyCodeLine{00240\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_adf555171e037b12e5177ebd81fd33de5}{solver\_type}}\ =\ \doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0ecb4d6605c0d09f0d9cd9e3beaf9022aec26e1242a5954a0a6c3aac46ceb9925}{min\_quad\_with\_fixed\_data<T>::LLT}};}
+\DoxyCodeLine{00244\ \ \ \ \ \}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{00245\ \ \ \ \ \{}
 \DoxyCodeLine{00246\ \textcolor{preprocessor}{\#ifdef\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
-\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ cout<<\textcolor{stringliteral}{"{}\ \ \ \ ldlt"{}}<<endl;}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ cout<<\textcolor{stringliteral}{"{}\ \ \ \ ldlt/lu"{}}<<endl;}
 \DoxyCodeLine{00248\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a1bd2d40db9381b99df7cafafa3e9b8ac}{ldlt}}.compute(NA);}
-\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a1bd2d40db9381b99df7cafafa3e9b8ac}{ldlt}}.info())}
-\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Eigen::Success:}
-\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Eigen::NumericalIssue:}
-\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ cerr<<\textcolor{stringliteral}{"{}Error:\ Numerical\ issue."{}}<<endl;}
-\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
-\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ cerr<<\textcolor{stringliteral}{"{}Error:\ Other."{}}<<endl;}
-\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_adf555171e037b12e5177ebd81fd33de5}{solver\_type}}\ =\ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data}{min\_quad\_with\_fixed\_data<T>::LDLT}};}
-\DoxyCodeLine{00262\ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}}
-\DoxyCodeLine{00263\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \textcolor{comment}{//\ Either\ not\ PD\ or\ there\ are\ equality\ constraints}}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ Eigen::SparseMatrix<T>\ NA;}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \doxymbox{\hyperlink{namespaceigl_a547a8704200d3af48fe92105c15a32ad}{slice}}(new\_A,data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ac680271bddf24abc8337ca15965a200d}{unknown\_lagrange}},data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ac680271bddf24abc8337ca15965a200d}{unknown\_lagrange}},NA);}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ data.NA\ =\ NA;}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ad3ec9b5eb512ccd82dc39fc7c670eae5}{Auu\_pd}})}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00255\ \textcolor{preprocessor}{\#ifdef\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ cout<<\textcolor{stringliteral}{"{}\ \ \ \ ldlt"{}}<<endl;}
+\DoxyCodeLine{00257\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a1bd2d40db9381b99df7cafafa3e9b8ac}{ldlt}}.compute(NA);}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a1bd2d40db9381b99df7cafafa3e9b8ac}{ldlt}}.info())}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Eigen::Success:}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Eigen::NumericalIssue:}
 \DoxyCodeLine{00264\ \textcolor{preprocessor}{\#ifdef\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
-\DoxyCodeLine{00265\ \ \ \ \ cout<<\textcolor{stringliteral}{"{}\ \ \ \ lu"{}}<<endl;}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ cerr<<\textcolor{stringliteral}{"{}Error:\ Numerical\ issue."{}}<<endl;}
 \DoxyCodeLine{00266\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Resort\ to\ LU}}
-\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Bottleneck\ >1/2}}
-\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a7c60ca349277d0e6e85e5cdd489e5dc2}{lu}}.compute(NA);}
-\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout<<"{}NA=["{}<<std::endl<<NA<<std::endl<<"{}];"{}<<std::endl;}}
-\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a7c60ca349277d0e6e85e5cdd489e5dc2}{lu}}.info())}
-\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Eigen::Success:}
-\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Eigen::NumericalIssue:}
-\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ cerr<<\textcolor{stringliteral}{"{}Error:\ Numerical\ issue."{}}<<endl;}
-\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Eigen::InvalidInput:}
-\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ cerr<<\textcolor{stringliteral}{"{}Error:\ Invalid\ Input."{}}<<endl;}
-\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
-\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ cerr<<\textcolor{stringliteral}{"{}Error:\ Other."{}}<<endl;}
-\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_adf555171e037b12e5177ebd81fd33de5}{solver\_type}}\ =\ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data}{min\_quad\_with\_fixed\_data<T>::LU}};}
-\DoxyCodeLine{00286\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00287\ \ \ \ \ \}}
-\DoxyCodeLine{00288\ \ \ \}\textcolor{keywordflow}{else}}
-\DoxyCodeLine{00289\ \ \ \{}
-\DoxyCodeLine{00290\ \textcolor{preprocessor}{\#ifdef\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
-\DoxyCodeLine{00291\ \ \ \ \ cout<<\textcolor{stringliteral}{"{}\ \ \ \ Aeq\_li=false"{}}<<endl;}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00269\ \textcolor{preprocessor}{\#ifdef\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ cerr<<\textcolor{stringliteral}{"{}Error:\ Other."{}}<<endl;}
+\DoxyCodeLine{00271\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_adf555171e037b12e5177ebd81fd33de5}{solver\_type}}\ =\ \doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0ecb4d6605c0d09f0d9cd9e3beaf9022a74a4143bfda022543372860ad5fe0160}{min\_quad\_with\_fixed\_data<T>::LDLT}};}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00277\ \textcolor{preprocessor}{\#ifdef\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
+\DoxyCodeLine{00278\ \ \ \ \ cout<<\textcolor{stringliteral}{"{}\ \ \ \ lu"{}}<<endl;}
+\DoxyCodeLine{00279\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Resort\ to\ LU}}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Bottleneck\ >1/2}}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a7c60ca349277d0e6e85e5cdd489e5dc2}{lu}}.compute(NA);}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout<<"{}NA=["{}<<std::endl<<NA<<std::endl<<"{}];"{}<<std::endl;}}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a7c60ca349277d0e6e85e5cdd489e5dc2}{lu}}.info())}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Eigen::Success:}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Eigen::NumericalIssue:}
+\DoxyCodeLine{00289\ \textcolor{preprocessor}{\#ifdef\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ cerr<<\textcolor{stringliteral}{"{}Error:\ Numerical\ issue."{}}<<endl;}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
 \DoxyCodeLine{00292\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00293\ \ \ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_abdd3d36254dbf348fb6296f80bb3eaa0}{neq}}\ =\ neq;}
-\DoxyCodeLine{00294\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ nu\ =\ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a45a26b0e5d41d28bfea348ee51f52e4b}{unknown}}.size();}
-\DoxyCodeLine{00295\ \ \ \ \ \textcolor{comment}{//cout<<"{}nu:\ "{}<<nu<<endl;}}
-\DoxyCodeLine{00296\ \ \ \ \ \textcolor{comment}{//cout<<"{}neq:\ "{}<<neq<<endl;}}
-\DoxyCodeLine{00297\ \ \ \ \ \textcolor{comment}{//cout<<"{}nc:\ "{}<<nc<<endl;}}
-\DoxyCodeLine{00298\ \ \ \ \ \textcolor{comment}{//cout<<"{}\ \ \ \ matrixR"{}<<endl;}}
-\DoxyCodeLine{00299\ \ \ \ \ SparseMatrix<T>\ AeqTR,AeqTQ;}
-\DoxyCodeLine{00300\ \ \ \ \ AeqTR\ =\ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0dd37f713f6578dc75ab710458d4654c}{AeqTQR}}.matrixR();}
-\DoxyCodeLine{00301\ \ \ \ \ \textcolor{comment}{//\ This\ shouldn't\ be\ necessary}}
-\DoxyCodeLine{00302\ \ \ \ \ AeqTR.prune(\textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0.0));}
-\DoxyCodeLine{00303\ \textcolor{preprocessor}{\#ifdef\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
-\DoxyCodeLine{00304\ \ \ \ \ cout<<\textcolor{stringliteral}{"{}\ \ \ \ matrixQ"{}}<<endl;}
-\DoxyCodeLine{00305\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00306\ \ \ \ \ \textcolor{comment}{//\ THIS\ IS\ ESSENTIALLY\ DENSE\ AND\ THIS\ IS\ BY\ FAR\ THE\ BOTTLENECK}}
-\DoxyCodeLine{00307\ \ \ \ \ \textcolor{comment}{//\ http://forum.kde.org/viewtopic.php?f=74\&t=117500}}
-\DoxyCodeLine{00308\ \ \ \ \ AeqTQ\ =\ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0dd37f713f6578dc75ab710458d4654c}{AeqTQR}}.matrixQ();}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Eigen::InvalidInput:}
+\DoxyCodeLine{00294\ \textcolor{preprocessor}{\#ifdef\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ cerr<<\textcolor{stringliteral}{"{}Error:\ Invalid\ Input."{}}<<endl;}
+\DoxyCodeLine{00296\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00299\ \textcolor{preprocessor}{\#ifdef\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ cerr<<\textcolor{stringliteral}{"{}Error:\ Other."{}}<<endl;}
+\DoxyCodeLine{00301\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_adf555171e037b12e5177ebd81fd33de5}{solver\_type}}\ =\ \doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0ecb4d6605c0d09f0d9cd9e3beaf9022a6a372e5f964cccd56a199d6172ececdc}{min\_quad\_with\_fixed\_data<T>::LU}};}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00306\ \ \ \ \ \}}
+\DoxyCodeLine{00307\ \ \ \}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{00308\ \ \ \{}
 \DoxyCodeLine{00309\ \textcolor{preprocessor}{\#ifdef\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
-\DoxyCodeLine{00310\ \ \ \ \ cout<<\textcolor{stringliteral}{"{}\ \ \ \ prune"{}}<<endl;}
-\DoxyCodeLine{00311\ \ \ \ \ cout<<\textcolor{stringliteral}{"{}\ \ \ \ \ \ nnz:\ "{}}<<AeqTQ.nonZeros()<<endl;}
-\DoxyCodeLine{00312\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00313\ \ \ \ \ \textcolor{comment}{//\ This\ shouldn't\ be\ necessary}}
-\DoxyCodeLine{00314\ \ \ \ \ AeqTQ.prune(\textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0.0));}
-\DoxyCodeLine{00315\ \ \ \ \ \textcolor{comment}{//cout<<"{}AeqTQ:\ "{}<<AeqTQ.rows()<<"{}\ "{}<<AeqTQ.cols()<<endl;}}
-\DoxyCodeLine{00316\ \ \ \ \ \textcolor{comment}{//cout<<matlab\_format(AeqTQ,"{}AeqTQ"{})<<endl;}}
-\DoxyCodeLine{00317\ \ \ \ \ \textcolor{comment}{//cout<<"{}\ \ \ \ perms"{}<<endl;}}
-\DoxyCodeLine{00318\ \textcolor{preprocessor}{\#ifdef\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
-\DoxyCodeLine{00319\ \ \ \ \ cout<<\textcolor{stringliteral}{"{}\ \ \ \ \ \ nnz:\ "{}}<<AeqTQ.nonZeros()<<endl;}
-\DoxyCodeLine{00320\ \ \ \ \ cout<<\textcolor{stringliteral}{"{}\ \ \ \ perm"{}}<<endl;}
-\DoxyCodeLine{00321\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00322\ \ \ \ \ SparseMatrix<T>\ I(neq,neq);}
-\DoxyCodeLine{00323\ \ \ \ \ I.setIdentity();}
-\DoxyCodeLine{00324\ \ \ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_aeedc9f4d675bbd636b1782a75d0bbef3}{AeqTE}}\ =\ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0dd37f713f6578dc75ab710458d4654c}{AeqTQR}}.colsPermutation()\ *\ I;}
-\DoxyCodeLine{00325\ \ \ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_acabf6c24ee8ff41b8e536923a48c7395}{AeqTET}}\ =\ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0dd37f713f6578dc75ab710458d4654c}{AeqTQR}}.colsPermutation().transpose()\ *\ I;}
-\DoxyCodeLine{00326\ \ \ \ \ assert(AeqTR.rows()\ ==\ nu\ \ \ \&\&\ \textcolor{stringliteral}{"{}\#rows\ in\ AeqTR\ should\ match\ \#unknowns"{}});}
-\DoxyCodeLine{00327\ \ \ \ \ assert(AeqTR.cols()\ ==\ neq\ \ \&\&\ \textcolor{stringliteral}{"{}\#cols\ in\ AeqTR\ should\ match\ \#constraints"{}});}
-\DoxyCodeLine{00328\ \ \ \ \ assert(AeqTQ.rows()\ ==\ nu\ \&\&\ \textcolor{stringliteral}{"{}\#rows\ in\ AeqTQ\ should\ match\ \#unknowns"{}});}
-\DoxyCodeLine{00329\ \ \ \ \ assert(AeqTQ.cols()\ ==\ nu\ \&\&\ \textcolor{stringliteral}{"{}\#cols\ in\ AeqTQ\ should\ match\ \#unknowns"{}});}
-\DoxyCodeLine{00330\ \ \ \ \ \textcolor{comment}{//cout<<"{}\ \ \ \ slice"{}<<endl;}}
-\DoxyCodeLine{00331\ \textcolor{preprocessor}{\#ifdef\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
-\DoxyCodeLine{00332\ \ \ \ \ cout<<\textcolor{stringliteral}{"{}\ \ \ \ slice"{}}<<endl;}
-\DoxyCodeLine{00333\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00334\ \ \ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a6dd70a80c9696cbd95cc4a11413caa8e}{AeqTQ1}}\ =\ AeqTQ.topLeftCorner(nu,nc);}
-\DoxyCodeLine{00335\ \ \ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_af29f3f637f6a03ece40aa8c4811ad6f0}{AeqTQ1T}}\ =\ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a6dd70a80c9696cbd95cc4a11413caa8e}{AeqTQ1}}.transpose().eval();}
-\DoxyCodeLine{00336\ \ \ \ \ \textcolor{comment}{//\ ALREADY\ TRIM\ (Not\ 100\%\ sure\ about\ this)}}
-\DoxyCodeLine{00337\ \ \ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_abe2e974252d7deadea02f19093374781}{AeqTR1}}\ =\ AeqTR.topLeftCorner(nc,nc);}
-\DoxyCodeLine{00338\ \ \ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ad67e1f780d301ce6928c4bcf60563288}{AeqTR1T}}\ =\ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_abe2e974252d7deadea02f19093374781}{AeqTR1}}.transpose().eval();}
-\DoxyCodeLine{00339\ \ \ \ \ \textcolor{comment}{//cout<<"{}AeqTR1T.size()\ "{}<<data.AeqTR1T.rows()<<"{}\ "{}<<data.AeqTR1T.cols()<<endl;}}
-\DoxyCodeLine{00340\ \ \ \ \ \textcolor{comment}{//\ Null\ space}}
-\DoxyCodeLine{00341\ \ \ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a65ebbedaafb67501de8a7cb0798b70ab}{AeqTQ2}}\ =\ AeqTQ.bottomRightCorner(nu,nu-\/nc);}
-\DoxyCodeLine{00342\ \ \ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ada118a14cca10b66554139cc28883b49}{AeqTQ2T}}\ =\ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a65ebbedaafb67501de8a7cb0798b70ab}{AeqTQ2}}.transpose().eval();}
-\DoxyCodeLine{00343\ \textcolor{preprocessor}{\#ifdef\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
-\DoxyCodeLine{00344\ \ \ \ \ cout<<\textcolor{stringliteral}{"{}\ \ \ \ proj"{}}<<endl;}
-\DoxyCodeLine{00345\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00346\ \ \ \ \ \textcolor{comment}{//\ Projected\ hessian}}
-\DoxyCodeLine{00347\ \ \ \ \ SparseMatrix<T>\ QRAuu\ =\ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ada118a14cca10b66554139cc28883b49}{AeqTQ2T}}\ *\ Auu\ *\ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a65ebbedaafb67501de8a7cb0798b70ab}{AeqTQ2}};}
-\DoxyCodeLine{00348\ \ \ \ \ \{}
-\DoxyCodeLine{00349\ \textcolor{preprocessor}{\#ifdef\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
-\DoxyCodeLine{00350\ \ \ \ \ \ \ cout<<\textcolor{stringliteral}{"{}\ \ \ \ factorize"{}}<<endl;}
-\DoxyCodeLine{00351\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00352\ \ \ \ \ \ \ \textcolor{comment}{//\ QRAuu\ should\ always\ be\ PD}}
-\DoxyCodeLine{00353\ \ \ \ \ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a4ef765c434c7997a24378788a7fd9c84}{llt}}.compute(QRAuu);}
-\DoxyCodeLine{00354\ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a4ef765c434c7997a24378788a7fd9c84}{llt}}.info())}
-\DoxyCodeLine{00355\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Eigen::Success:}
-\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Eigen::NumericalIssue:}
-\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ cerr<<\textcolor{stringliteral}{"{}Error:\ Numerical\ issue."{}}<<endl;}
-\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
-\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \ \ cerr<<\textcolor{stringliteral}{"{}Error:\ Other."{}}<<endl;}
-\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00364\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00365\ \ \ \ \ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_adf555171e037b12e5177ebd81fd33de5}{solver\_type}}\ =\ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data}{min\_quad\_with\_fixed\_data<T>::QR\_LLT}};}
-\DoxyCodeLine{00366\ \ \ \ \ \}}
-\DoxyCodeLine{00367\ \textcolor{preprocessor}{\#ifdef\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
-\DoxyCodeLine{00368\ \ \ \ \ cout<<\textcolor{stringliteral}{"{}\ \ \ \ smash"{}}<<endl;}
-\DoxyCodeLine{00369\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00370\ \ \ \ \ \textcolor{comment}{//\ Known\ value\ multiplier}}
-\DoxyCodeLine{00371\ \ \ \ \ SparseMatrix<T>\ Auk;}
-\DoxyCodeLine{00372\ \ \ \ \ \mbox{\hyperlink{namespaceigl_a547a8704200d3af48fe92105c15a32ad}{slice}}(A,data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a45a26b0e5d41d28bfea348ee51f52e4b}{unknown}},data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0b135eb50ef96353f9959dbfdc4e9844}{known}},Auk);}
-\DoxyCodeLine{00373\ \ \ \ \ SparseMatrix<T>\ Aku;}
-\DoxyCodeLine{00374\ \ \ \ \ \mbox{\hyperlink{namespaceigl_a547a8704200d3af48fe92105c15a32ad}{slice}}(A,data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0b135eb50ef96353f9959dbfdc4e9844}{known}},data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a45a26b0e5d41d28bfea348ee51f52e4b}{unknown}},Aku);}
-\DoxyCodeLine{00375\ \ \ \ \ SparseMatrix<T>\ AkuT\ =\ Aku.transpose();}
-\DoxyCodeLine{00376\ \ \ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a3db371095ff5ecf7dc8c42c3e34a3695}{preY}}\ =\ Auk\ +\ AkuT;}
-\DoxyCodeLine{00377\ \ \ \ \ \textcolor{comment}{//\ Needed\ during\ solve}}
-\DoxyCodeLine{00378\ \ \ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_adde8448b08fd094fb92f2638ae476814}{Auu}}\ =\ Auu;}
-\DoxyCodeLine{00379\ \ \ \ \ \mbox{\hyperlink{namespaceigl_a547a8704200d3af48fe92105c15a32ad}{slice}}(Aeq,data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0b135eb50ef96353f9959dbfdc4e9844}{known}},2,data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_add2a92c1b4fb911ff47f193b37650afa}{Aeqk}});}
-\DoxyCodeLine{00380\ \ \ \ \ assert(data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_add2a92c1b4fb911ff47f193b37650afa}{Aeqk}}.rows()\ ==\ neq);}
-\DoxyCodeLine{00381\ \ \ \ \ assert(data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_add2a92c1b4fb911ff47f193b37650afa}{Aeqk}}.cols()\ ==\ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0b135eb50ef96353f9959dbfdc4e9844}{known}}.size());}
-\DoxyCodeLine{00382\ \ \ \}}
-\DoxyCodeLine{00383\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00384\ \}}
-\DoxyCodeLine{00385\ }
-\DoxyCodeLine{00386\ }
-\DoxyCodeLine{00387\ \textcolor{keyword}{template}\ <}
-\DoxyCodeLine{00388\ \ \ \textcolor{keyword}{typename}\ T,}
-\DoxyCodeLine{00389\ \ \ \textcolor{keyword}{typename}\ DerivedB,}
-\DoxyCodeLine{00390\ \ \ \textcolor{keyword}{typename}\ DerivedY,}
-\DoxyCodeLine{00391\ \ \ \textcolor{keyword}{typename}\ DerivedBeq,}
-\DoxyCodeLine{00392\ \ \ \textcolor{keyword}{typename}\ DerivedZ,}
-\DoxyCodeLine{00393\ \ \ \textcolor{keyword}{typename}\ Derivedsol>}
-\DoxyCodeLine{00394\ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_ad6d436a09a132f780d5e503b39499fbb}{igl::min\_quad\_with\_fixed\_solve}}(}
-\DoxyCodeLine{00395\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data}{min\_quad\_with\_fixed\_data<T>}}\ \&\ data,}
-\DoxyCodeLine{00396\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedB>\ \&\ B,}
-\DoxyCodeLine{00397\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedY>\ \&\ Y,}
-\DoxyCodeLine{00398\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedBeq>\ \&\ Beq,}
-\DoxyCodeLine{00399\ \ \ Eigen::PlainObjectBase<DerivedZ>\ \&\ Z,}
-\DoxyCodeLine{00400\ \ \ Eigen::PlainObjectBase<Derivedsol>\ \&\ sol)}
-\DoxyCodeLine{00401\ \{}
-\DoxyCodeLine{00402\ \ \ \textcolor{keyword}{using\ namespace\ }std;}
-\DoxyCodeLine{00403\ \ \ \textcolor{keyword}{using\ namespace\ }Eigen;}
-\DoxyCodeLine{00404\ \ \ \textcolor{keyword}{typedef}\ Matrix<T,Dynamic,Dynamic>\ MatrixXT;}
-\DoxyCodeLine{00405\ \ \ \textcolor{comment}{//\ number\ of\ known\ rows}}
-\DoxyCodeLine{00406\ \ \ \textcolor{keywordtype}{int}\ kr\ =\ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0b135eb50ef96353f9959dbfdc4e9844}{known}}.size();}
-\DoxyCodeLine{00407\ \ \ \textcolor{keywordflow}{if}(kr!=0)}
-\DoxyCodeLine{00408\ \ \ \{}
-\DoxyCodeLine{00409\ \ \ \ \ assert(kr\ ==\ Y.rows());}
-\DoxyCodeLine{00410\ \ \ \}}
-\DoxyCodeLine{00411\ \ \ \textcolor{comment}{//\ number\ of\ columns\ to\ solve}}
-\DoxyCodeLine{00412\ \ \ \textcolor{keywordtype}{int}\ cols\ =\ Y.cols();}
-\DoxyCodeLine{00413\ \ \ assert(B.cols()\ ==\ 1\ ||\ B.cols()\ ==\ cols);}
-\DoxyCodeLine{00414\ \ \ assert(Beq.size()\ ==\ 0\ ||\ Beq.cols()\ ==\ 1\ ||\ Beq.cols()\ ==\ cols);}
-\DoxyCodeLine{00415\ }
-\DoxyCodeLine{00416\ \ \ \textcolor{comment}{//\ resize\ output}}
-\DoxyCodeLine{00417\ \ \ Z.resize(data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_aa2f79821dd5f69c2c704d4f8d2e0c34d}{n}},cols);}
-\DoxyCodeLine{00418\ \ \ \textcolor{comment}{//\ Set\ known\ values}}
-\DoxyCodeLine{00419\ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;i\ <\ kr;i++)}
-\DoxyCodeLine{00420\ \ \ \{}
-\DoxyCodeLine{00421\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;j\ <\ cols;j++)}
-\DoxyCodeLine{00422\ \ \ \ \ \{}
-\DoxyCodeLine{00423\ \ \ \ \ \ \ Z(data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0b135eb50ef96353f9959dbfdc4e9844}{known}}(i),j)\ =\ Y(i,j);}
-\DoxyCodeLine{00424\ \ \ \ \ \}}
-\DoxyCodeLine{00425\ \ \ \}}
-\DoxyCodeLine{00426\ }
-\DoxyCodeLine{00427\ \ \ \textcolor{keywordflow}{if}(data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_aae738302bbd952761f3e48fcaa1b11f9}{Aeq\_li}})}
-\DoxyCodeLine{00428\ \ \ \{}
-\DoxyCodeLine{00429\ \ \ \ \ \textcolor{comment}{//\ number\ of\ lagrange\ multipliers\ aka\ linear\ equality\ constraints}}
-\DoxyCodeLine{00430\ \ \ \ \ \textcolor{keywordtype}{int}\ neq\ =\ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ab07863971db161e5eb7cdf2ec28afb06}{lagrange}}.size();}
-\DoxyCodeLine{00431\ \ \ \ \ \textcolor{comment}{//\ append\ lagrange\ multiplier\ rhs's}}
-\DoxyCodeLine{00432\ \ \ \ \ MatrixXT\ BBeq(B.rows()\ +\ Beq.rows(),cols);}
-\DoxyCodeLine{00433\ \ \ \ \ \textcolor{keywordflow}{if}(B.size()\ >\ 0)}
-\DoxyCodeLine{00434\ \ \ \ \ \{}
-\DoxyCodeLine{00435\ \ \ \ \ \ \ BBeq.topLeftCorner(B.rows(),cols)\ =\ B.replicate(1,B.cols()==cols?1:cols);}
-\DoxyCodeLine{00436\ \ \ \ \ \}}
-\DoxyCodeLine{00437\ \ \ \ \ \textcolor{keywordflow}{if}(Beq.size()\ >\ 0)}
-\DoxyCodeLine{00438\ \ \ \ \ \{}
-\DoxyCodeLine{00439\ \ \ \ \ \ \ BBeq.bottomLeftCorner(Beq.rows(),cols)\ =\ -\/2.0*Beq.replicate(1,Beq.cols()==cols?1:cols);}
-\DoxyCodeLine{00440\ \ \ \ \ \}}
-\DoxyCodeLine{00441\ }
-\DoxyCodeLine{00442\ \ \ \ \ \textcolor{comment}{//\ Build\ right\ hand\ side}}
-\DoxyCodeLine{00443\ \ \ \ \ MatrixXT\ BBequlcols\ =\ BBeq(data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ac680271bddf24abc8337ca15965a200d}{unknown\_lagrange}},Eigen::all);}
-\DoxyCodeLine{00444\ \ \ \ \ MatrixXT\ NB;}
-\DoxyCodeLine{00445\ \ \ \ \ \textcolor{keywordflow}{if}(kr\ ==\ 0)}
-\DoxyCodeLine{00446\ \ \ \ \ \{}
-\DoxyCodeLine{00447\ \ \ \ \ \ \ NB\ =\ BBequlcols;}
-\DoxyCodeLine{00448\ \ \ \ \ \}\textcolor{keywordflow}{else}}
-\DoxyCodeLine{00449\ \ \ \ \ \{}
-\DoxyCodeLine{00450\ \ \ \ \ \ \ NB\ =\ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a3db371095ff5ecf7dc8c42c3e34a3695}{preY}}\ *\ Y\ +\ BBequlcols;}
-\DoxyCodeLine{00451\ \ \ \ \ \}}
-\DoxyCodeLine{00452\ }
-\DoxyCodeLine{00453\ \ \ \ \ \textcolor{comment}{//std::cout<<"{}NB=["{}<<std::endl<<NB<<std::endl<<"{}];"{}<<std::endl;}}
-\DoxyCodeLine{00454\ \ \ \ \ \textcolor{comment}{//cout<<matlab\_format(NB,"{}NB"{})<<endl;}}
-\DoxyCodeLine{00455\ \ \ \ \ \textcolor{keywordflow}{switch}(data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_adf555171e037b12e5177ebd81fd33de5}{solver\_type}})}
-\DoxyCodeLine{00456\ \ \ \ \ \{}
-\DoxyCodeLine{00457\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data}{igl::min\_quad\_with\_fixed\_data<T>::LLT}}:}
-\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ sol\ =\ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a4ef765c434c7997a24378788a7fd9c84}{llt}}.solve(NB);}
-\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00460\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data}{igl::min\_quad\_with\_fixed\_data<T>::LDLT}}:}
-\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ sol\ =\ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a1bd2d40db9381b99df7cafafa3e9b8ac}{ldlt}}.solve(NB);}
-\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00463\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data}{igl::min\_quad\_with\_fixed\_data<T>::LU}}:}
-\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Not\ a\ bottleneck}}
-\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ sol\ =\ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a7c60ca349277d0e6e85e5cdd489e5dc2}{lu}}.solve(NB);}
-\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00467\ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
-\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ cerr<<\textcolor{stringliteral}{"{}Error:\ invalid\ solver\ type"{}}<<endl;}
-\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00470\ \ \ \ \ \}}
-\DoxyCodeLine{00471\ \ \ \ \ \textcolor{comment}{//std::cout<<"{}sol=["{}<<std::endl<<sol<<std::endl<<"{}];"{}<<std::endl;}}
-\DoxyCodeLine{00472\ \ \ \ \ \textcolor{comment}{//\ Now\ sol\ contains\ sol/-\/0.5}}
-\DoxyCodeLine{00473\ \ \ \ \ sol\ *=\ -\/0.5;}
-\DoxyCodeLine{00474\ \ \ \ \ \textcolor{comment}{//\ Now\ sol\ contains\ solution}}
-\DoxyCodeLine{00475\ \ \ \ \ \textcolor{comment}{//\ Place\ solution\ in\ Z}}
-\DoxyCodeLine{00476\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;i<(sol.rows()-\/neq);i++)}
+\DoxyCodeLine{00310\ \ \ \ \ cout<<\textcolor{stringliteral}{"{}\ \ \ \ Aeq\_li=false"{}}<<endl;}
+\DoxyCodeLine{00311\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00312\ \ \ \ \ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_abdd3d36254dbf348fb6296f80bb3eaa0}{neq}}\ =\ neq;}
+\DoxyCodeLine{00313\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ nu\ =\ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a45a26b0e5d41d28bfea348ee51f52e4b}{unknown}}.size();}
+\DoxyCodeLine{00314\ \ \ \ \ \textcolor{comment}{//cout<<"{}nu:\ "{}<<nu<<endl;}}
+\DoxyCodeLine{00315\ \ \ \ \ \textcolor{comment}{//cout<<"{}neq:\ "{}<<neq<<endl;}}
+\DoxyCodeLine{00316\ \ \ \ \ \textcolor{comment}{//cout<<"{}nc:\ "{}<<nc<<endl;}}
+\DoxyCodeLine{00317\ \ \ \ \ \textcolor{comment}{//cout<<"{}\ \ \ \ matrixR"{}<<endl;}}
+\DoxyCodeLine{00318\ \ \ \ \ Eigen::SparseMatrix<T>\ AeqTR,AeqTQ;}
+\DoxyCodeLine{00319\ \ \ \ \ AeqTR\ =\ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0dd37f713f6578dc75ab710458d4654c}{AeqTQR}}.matrixR();}
+\DoxyCodeLine{00320\ \ \ \ \ \textcolor{comment}{//\ This\ shouldn't\ be\ necessary}}
+\DoxyCodeLine{00321\ \ \ \ \ AeqTR.prune(\textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0.0));}
+\DoxyCodeLine{00322\ \textcolor{preprocessor}{\#ifdef\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
+\DoxyCodeLine{00323\ \ \ \ \ cout<<\textcolor{stringliteral}{"{}\ \ \ \ matrixQ"{}}<<endl;}
+\DoxyCodeLine{00324\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00325\ \ \ \ \ \textcolor{comment}{//\ THIS\ IS\ ESSENTIALLY\ DENSE\ AND\ THIS\ IS\ BY\ FAR\ THE\ BOTTLENECK}}
+\DoxyCodeLine{00326\ \ \ \ \ \textcolor{comment}{//\ http://forum.kde.org/viewtopic.php?f=74\&t=117500}}
+\DoxyCodeLine{00327\ \ \ \ \ AeqTQ\ =\ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0dd37f713f6578dc75ab710458d4654c}{AeqTQR}}.matrixQ();}
+\DoxyCodeLine{00328\ \textcolor{preprocessor}{\#ifdef\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
+\DoxyCodeLine{00329\ \ \ \ \ cout<<\textcolor{stringliteral}{"{}\ \ \ \ prune"{}}<<endl;}
+\DoxyCodeLine{00330\ \ \ \ \ cout<<\textcolor{stringliteral}{"{}\ \ \ \ \ \ nnz:\ "{}}<<AeqTQ.nonZeros()<<endl;}
+\DoxyCodeLine{00331\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00332\ \ \ \ \ \textcolor{comment}{//\ This\ shouldn't\ be\ necessary}}
+\DoxyCodeLine{00333\ \ \ \ \ AeqTQ.prune(\textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0.0));}
+\DoxyCodeLine{00334\ \ \ \ \ \textcolor{comment}{//cout<<"{}AeqTQ:\ "{}<<AeqTQ.rows()<<"{}\ "{}<<AeqTQ.cols()<<endl;}}
+\DoxyCodeLine{00335\ \ \ \ \ \textcolor{comment}{//cout<<matlab\_format(AeqTQ,"{}AeqTQ"{})<<endl;}}
+\DoxyCodeLine{00336\ \ \ \ \ \textcolor{comment}{//cout<<"{}\ \ \ \ perms"{}<<endl;}}
+\DoxyCodeLine{00337\ \textcolor{preprocessor}{\#ifdef\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
+\DoxyCodeLine{00338\ \ \ \ \ cout<<\textcolor{stringliteral}{"{}\ \ \ \ \ \ nnz:\ "{}}<<AeqTQ.nonZeros()<<endl;}
+\DoxyCodeLine{00339\ \ \ \ \ cout<<\textcolor{stringliteral}{"{}\ \ \ \ perm"{}}<<endl;}
+\DoxyCodeLine{00340\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00341\ \ \ \ \ Eigen::SparseMatrix<T>\ I(neq,neq);}
+\DoxyCodeLine{00342\ \ \ \ \ I.setIdentity();}
+\DoxyCodeLine{00343\ \ \ \ \ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_aeedc9f4d675bbd636b1782a75d0bbef3}{AeqTE}}\ =\ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0dd37f713f6578dc75ab710458d4654c}{AeqTQR}}.colsPermutation()\ *\ I;}
+\DoxyCodeLine{00344\ \ \ \ \ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_acabf6c24ee8ff41b8e536923a48c7395}{AeqTET}}\ =\ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0dd37f713f6578dc75ab710458d4654c}{AeqTQR}}.colsPermutation().transpose()\ *\ I;}
+\DoxyCodeLine{00345\ \ \ \ \ assert(AeqTR.rows()\ ==\ nu\ \ \ \&\&\ \textcolor{stringliteral}{"{}\#rows\ in\ AeqTR\ should\ match\ \#unknowns"{}});}
+\DoxyCodeLine{00346\ \ \ \ \ assert(AeqTR.cols()\ ==\ neq\ \ \&\&\ \textcolor{stringliteral}{"{}\#cols\ in\ AeqTR\ should\ match\ \#constraints"{}});}
+\DoxyCodeLine{00347\ \ \ \ \ assert(AeqTQ.rows()\ ==\ nu\ \&\&\ \textcolor{stringliteral}{"{}\#rows\ in\ AeqTQ\ should\ match\ \#unknowns"{}});}
+\DoxyCodeLine{00348\ \ \ \ \ assert(AeqTQ.cols()\ ==\ nu\ \&\&\ \textcolor{stringliteral}{"{}\#cols\ in\ AeqTQ\ should\ match\ \#unknowns"{}});}
+\DoxyCodeLine{00349\ \ \ \ \ \textcolor{comment}{//cout<<"{}\ \ \ \ slice"{}<<endl;}}
+\DoxyCodeLine{00350\ \textcolor{preprocessor}{\#ifdef\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
+\DoxyCodeLine{00351\ \ \ \ \ cout<<\textcolor{stringliteral}{"{}\ \ \ \ slice"{}}<<endl;}
+\DoxyCodeLine{00352\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00353\ \ \ \ \ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a6dd70a80c9696cbd95cc4a11413caa8e}{AeqTQ1}}\ =\ AeqTQ.topLeftCorner(nu,nc);}
+\DoxyCodeLine{00354\ \ \ \ \ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_af29f3f637f6a03ece40aa8c4811ad6f0}{AeqTQ1T}}\ =\ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a6dd70a80c9696cbd95cc4a11413caa8e}{AeqTQ1}}.transpose().eval();}
+\DoxyCodeLine{00355\ \ \ \ \ \textcolor{comment}{//\ ALREADY\ TRIM\ (Not\ 100\%\ sure\ about\ this)}}
+\DoxyCodeLine{00356\ \ \ \ \ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_abe2e974252d7deadea02f19093374781}{AeqTR1}}\ =\ AeqTR.topLeftCorner(nc,nc);}
+\DoxyCodeLine{00357\ \ \ \ \ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ad67e1f780d301ce6928c4bcf60563288}{AeqTR1T}}\ =\ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_abe2e974252d7deadea02f19093374781}{AeqTR1}}.transpose().eval();}
+\DoxyCodeLine{00358\ \ \ \ \ \textcolor{comment}{//cout<<"{}AeqTR1T.size()\ "{}<<data.AeqTR1T.rows()<<"{}\ "{}<<data.AeqTR1T.cols()<<endl;}}
+\DoxyCodeLine{00359\ \ \ \ \ \textcolor{comment}{//\ Null\ space}}
+\DoxyCodeLine{00360\ \ \ \ \ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a65ebbedaafb67501de8a7cb0798b70ab}{AeqTQ2}}\ =\ AeqTQ.bottomRightCorner(nu,nu-\/nc);}
+\DoxyCodeLine{00361\ \ \ \ \ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ada118a14cca10b66554139cc28883b49}{AeqTQ2T}}\ =\ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a65ebbedaafb67501de8a7cb0798b70ab}{AeqTQ2}}.transpose().eval();}
+\DoxyCodeLine{00362\ \textcolor{preprocessor}{\#ifdef\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
+\DoxyCodeLine{00363\ \ \ \ \ cout<<\textcolor{stringliteral}{"{}\ \ \ \ proj"{}}<<endl;}
+\DoxyCodeLine{00364\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00365\ \ \ \ \ \textcolor{comment}{//\ Projected\ hessian}}
+\DoxyCodeLine{00366\ \ \ \ \ Eigen::SparseMatrix<T>\ QRAuu\ =\ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ada118a14cca10b66554139cc28883b49}{AeqTQ2T}}\ *\ Auu\ *\ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a65ebbedaafb67501de8a7cb0798b70ab}{AeqTQ2}};}
+\DoxyCodeLine{00367\ \ \ \ \ \{}
+\DoxyCodeLine{00368\ \textcolor{preprocessor}{\#ifdef\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ cout<<\textcolor{stringliteral}{"{}\ \ \ \ factorize"{}}<<endl;}
+\DoxyCodeLine{00370\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \textcolor{comment}{//\ QRAuu\ should\ always\ be\ PD}}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a4ef765c434c7997a24378788a7fd9c84}{llt}}.compute(QRAuu);}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a4ef765c434c7997a24378788a7fd9c84}{llt}}.info())}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Eigen::Success:}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Eigen::NumericalIssue:}
+\DoxyCodeLine{00378\ \textcolor{preprocessor}{\#ifdef\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \ \ cerr<<\textcolor{stringliteral}{"{}Error:\ Numerical\ issue."{}}<<endl;}
+\DoxyCodeLine{00380\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00383\ \textcolor{preprocessor}{\#ifdef\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \ \ cerr<<\textcolor{stringliteral}{"{}Error:\ Other."{}}<<endl;}
+\DoxyCodeLine{00385\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_adf555171e037b12e5177ebd81fd33de5}{solver\_type}}\ =\ \doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0ecb4d6605c0d09f0d9cd9e3beaf9022a810e6fec9cfe02bad4897cb21380f6c9}{min\_quad\_with\_fixed\_data<T>::QR\_LLT}};}
+\DoxyCodeLine{00389\ \ \ \ \ \}}
+\DoxyCodeLine{00390\ \textcolor{preprocessor}{\#ifdef\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
+\DoxyCodeLine{00391\ \ \ \ \ cout<<\textcolor{stringliteral}{"{}\ \ \ \ smash"{}}<<endl;}
+\DoxyCodeLine{00392\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00393\ \ \ \ \ \textcolor{comment}{//\ Known\ value\ multiplier}}
+\DoxyCodeLine{00394\ \ \ \ \ Eigen::SparseMatrix<T>\ Auk;}
+\DoxyCodeLine{00395\ \ \ \ \ \doxymbox{\hyperlink{namespaceigl_a547a8704200d3af48fe92105c15a32ad}{slice}}(A,data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a45a26b0e5d41d28bfea348ee51f52e4b}{unknown}},data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0b135eb50ef96353f9959dbfdc4e9844}{known}},Auk);}
+\DoxyCodeLine{00396\ \ \ \ \ Eigen::SparseMatrix<T>\ Aku;}
+\DoxyCodeLine{00397\ \ \ \ \ \doxymbox{\hyperlink{namespaceigl_a547a8704200d3af48fe92105c15a32ad}{slice}}(A,data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0b135eb50ef96353f9959dbfdc4e9844}{known}},data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a45a26b0e5d41d28bfea348ee51f52e4b}{unknown}},Aku);}
+\DoxyCodeLine{00398\ \ \ \ \ Eigen::SparseMatrix<T>\ AkuT\ =\ Aku.transpose();}
+\DoxyCodeLine{00399\ \ \ \ \ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a3db371095ff5ecf7dc8c42c3e34a3695}{preY}}\ =\ Auk\ +\ AkuT;}
+\DoxyCodeLine{00400\ \ \ \ \ \textcolor{comment}{//\ Needed\ during\ solve}}
+\DoxyCodeLine{00401\ \ \ \ \ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_adde8448b08fd094fb92f2638ae476814}{Auu}}\ =\ Auu;}
+\DoxyCodeLine{00402\ \ \ \ \ \doxymbox{\hyperlink{namespaceigl_a547a8704200d3af48fe92105c15a32ad}{slice}}(Aeq,data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0b135eb50ef96353f9959dbfdc4e9844}{known}},2,data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_add2a92c1b4fb911ff47f193b37650afa}{Aeqk}});}
+\DoxyCodeLine{00403\ \ \ \ \ assert(data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_add2a92c1b4fb911ff47f193b37650afa}{Aeqk}}.rows()\ ==\ neq);}
+\DoxyCodeLine{00404\ \ \ \ \ assert(data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_add2a92c1b4fb911ff47f193b37650afa}{Aeqk}}.cols()\ ==\ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0b135eb50ef96353f9959dbfdc4e9844}{known}}.size());}
+\DoxyCodeLine{00405\ \ \ \}}
+\DoxyCodeLine{00406\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00407\ \}}
+\DoxyCodeLine{00408\ }
+\DoxyCodeLine{00409\ }
+\DoxyCodeLine{00410\ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00411\ \ \ \textcolor{keyword}{typename}\ T,}
+\DoxyCodeLine{00412\ \ \ \textcolor{keyword}{typename}\ DerivedB,}
+\DoxyCodeLine{00413\ \ \ \textcolor{keyword}{typename}\ DerivedY,}
+\DoxyCodeLine{00414\ \ \ \textcolor{keyword}{typename}\ DerivedBeq,}
+\DoxyCodeLine{00415\ \ \ \textcolor{keyword}{typename}\ DerivedZ,}
+\DoxyCodeLine{00416\ \ \ \textcolor{keyword}{typename}\ Derivedsol>}
+\DoxyCodeLine{00417\ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{namespaceigl_ad6d436a09a132f780d5e503b39499fbb}{igl::min\_quad\_with\_fixed\_solve}}(}
+\DoxyCodeLine{00418\ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data}{min\_quad\_with\_fixed\_data<T>}}\ \&\ data,}
+\DoxyCodeLine{00419\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedB>\ \&\ B,}
+\DoxyCodeLine{00420\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedY>\ \&\ Y,}
+\DoxyCodeLine{00421\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedBeq>\ \&\ Beq,}
+\DoxyCodeLine{00422\ \ \ Eigen::PlainObjectBase<DerivedZ>\ \&\ Z,}
+\DoxyCodeLine{00423\ \ \ Eigen::PlainObjectBase<Derivedsol>\ \&\ sol)}
+\DoxyCodeLine{00424\ \{}
+\DoxyCodeLine{00425\ \ \ \textcolor{keyword}{typedef}\ Eigen::Matrix<T\ ,Eigen::Dynamic\ ,Eigen::Dynamic>\ MatrixXT;}
+\DoxyCodeLine{00426\ \ \ \textcolor{comment}{//\ number\ of\ known\ rows}}
+\DoxyCodeLine{00427\ \ \ \textcolor{keywordtype}{int}\ kr\ =\ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0b135eb50ef96353f9959dbfdc4e9844}{known}}.size();}
+\DoxyCodeLine{00428\ \ \ \textcolor{keywordflow}{if}(kr!=0)}
+\DoxyCodeLine{00429\ \ \ \{}
+\DoxyCodeLine{00430\ \ \ \ \ assert(kr\ ==\ Y.rows());}
+\DoxyCodeLine{00431\ \ \ \}}
+\DoxyCodeLine{00432\ \ \ \textcolor{comment}{//\ number\ of\ columns\ to\ solve}}
+\DoxyCodeLine{00433\ \ \ \textcolor{keywordtype}{int}\ cols\ =\ Y.cols();}
+\DoxyCodeLine{00434\ \ \ assert(B.cols()\ ==\ 1\ ||\ B.cols()\ ==\ cols);}
+\DoxyCodeLine{00435\ \ \ assert(Beq.size()\ ==\ 0\ ||\ Beq.cols()\ ==\ 1\ ||\ Beq.cols()\ ==\ cols);}
+\DoxyCodeLine{00436\ }
+\DoxyCodeLine{00437\ \ \ \textcolor{comment}{//\ resize\ output}}
+\DoxyCodeLine{00438\ \ \ Z.resize(data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_aa2f79821dd5f69c2c704d4f8d2e0c34d}{n}},cols);}
+\DoxyCodeLine{00439\ \ \ \textcolor{comment}{//\ Set\ known\ values}}
+\DoxyCodeLine{00440\ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;i\ <\ kr;i++)}
+\DoxyCodeLine{00441\ \ \ \{}
+\DoxyCodeLine{00442\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;j\ <\ cols;j++)}
+\DoxyCodeLine{00443\ \ \ \ \ \{}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ Z(data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0b135eb50ef96353f9959dbfdc4e9844}{known}}(i),j)\ =\ Y(i,j);}
+\DoxyCodeLine{00445\ \ \ \ \ \}}
+\DoxyCodeLine{00446\ \ \ \}}
+\DoxyCodeLine{00447\ }
+\DoxyCodeLine{00448\ \ \ \textcolor{keywordflow}{if}(data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_aae738302bbd952761f3e48fcaa1b11f9}{Aeq\_li}})}
+\DoxyCodeLine{00449\ \ \ \{}
+\DoxyCodeLine{00450\ \ \ \ \ \textcolor{comment}{//\ number\ of\ lagrange\ multipliers\ aka\ linear\ equality\ constraints}}
+\DoxyCodeLine{00451\ \ \ \ \ \textcolor{keywordtype}{int}\ neq\ =\ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ab07863971db161e5eb7cdf2ec28afb06}{lagrange}}.size();}
+\DoxyCodeLine{00452\ \ \ \ \ \textcolor{comment}{//\ append\ lagrange\ multiplier\ rhs's}}
+\DoxyCodeLine{00453\ \ \ \ \ MatrixXT\ BBeq(B.rows()\ +\ Beq.rows(),cols);}
+\DoxyCodeLine{00454\ \ \ \ \ \textcolor{keywordflow}{if}(B.size()\ >\ 0)}
+\DoxyCodeLine{00455\ \ \ \ \ \{}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ BBeq.topLeftCorner(B.rows(),cols)\ =\ B.replicate(1,B.cols()==cols?1:cols);}
+\DoxyCodeLine{00457\ \ \ \ \ \}}
+\DoxyCodeLine{00458\ \ \ \ \ \textcolor{keywordflow}{if}(Beq.size()\ >\ 0)}
+\DoxyCodeLine{00459\ \ \ \ \ \{}
+\DoxyCodeLine{00460\ \ \ \ \ \ \ BBeq.bottomLeftCorner(Beq.rows(),cols)\ =\ -\/2.0*Beq.replicate(1,Beq.cols()==cols?1:cols);}
+\DoxyCodeLine{00461\ \ \ \ \ \}}
+\DoxyCodeLine{00462\ }
+\DoxyCodeLine{00463\ \ \ \ \ \textcolor{comment}{//\ Build\ right\ hand\ side}}
+\DoxyCodeLine{00464\ \ \ \ \ MatrixXT\ BBequlcols\ =\ BBeq(data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ac680271bddf24abc8337ca15965a200d}{unknown\_lagrange}},\doxymbox{\hyperlink{namespaceigl_1_1placeholders_a80985c53a4ac19899c86b7106b5da10e}{igl::placeholders::all}});}
+\DoxyCodeLine{00465\ \ \ \ \ MatrixXT\ NB;}
+\DoxyCodeLine{00466\ \ \ \ \ \textcolor{keywordflow}{if}(kr\ ==\ 0)}
+\DoxyCodeLine{00467\ \ \ \ \ \{}
+\DoxyCodeLine{00468\ \ \ \ \ \ \ NB\ =\ BBequlcols;}
+\DoxyCodeLine{00469\ \ \ \ \ \}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{00470\ \ \ \ \ \{}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ NB\ =\ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a3db371095ff5ecf7dc8c42c3e34a3695}{preY}}\ *\ Y\ +\ BBequlcols;}
+\DoxyCodeLine{00472\ \ \ \ \ \}}
+\DoxyCodeLine{00473\ }
+\DoxyCodeLine{00474\ \ \ \ \ \textcolor{comment}{//std::cout<<"{}NB=["{}<<std::endl<<NB<<std::endl<<"{}];"{}<<std::endl;}}
+\DoxyCodeLine{00475\ \ \ \ \ \textcolor{comment}{//cout<<matlab\_format(NB,"{}NB"{})<<endl;}}
+\DoxyCodeLine{00476\ \ \ \ \ \textcolor{keywordflow}{switch}(data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_adf555171e037b12e5177ebd81fd33de5}{solver\_type}})}
 \DoxyCodeLine{00477\ \ \ \ \ \{}
-\DoxyCodeLine{00478\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;j<sol.cols();j++)}
-\DoxyCodeLine{00479\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ Z(data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ac680271bddf24abc8337ca15965a200d}{unknown\_lagrange}}(i),j)\ =\ sol(i,j);}
-\DoxyCodeLine{00481\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00482\ \ \ \ \ \}}
-\DoxyCodeLine{00483\ \ \ \}\textcolor{keywordflow}{else}}
-\DoxyCodeLine{00484\ \ \ \{}
-\DoxyCodeLine{00485\ \ \ \ \ assert(data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_adf555171e037b12e5177ebd81fd33de5}{solver\_type}}\ ==\ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data}{min\_quad\_with\_fixed\_data<T>::QR\_LLT}});}
-\DoxyCodeLine{00486\ \ \ \ \ MatrixXT\ eff\_Beq;}
-\DoxyCodeLine{00487\ \ \ \ \ \textcolor{comment}{//\ Adjust\ Aeq\ rhs\ to\ include\ known\ parts}}
-\DoxyCodeLine{00488\ \ \ \ \ eff\_Beq\ =}
-\DoxyCodeLine{00489\ \ \ \ \ \ \ \textcolor{comment}{//data.AeqTQR.colsPermutation().transpose()\ *\ (-\/data.Aeqk\ *\ Y\ +\ Beq);}}
-\DoxyCodeLine{00490\ \ \ \ \ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_acabf6c24ee8ff41b8e536923a48c7395}{AeqTET}}\ *\ (-\/data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_add2a92c1b4fb911ff47f193b37650afa}{Aeqk}}\ *\ Y\ +\ Beq.replicate(1,Beq.cols()==cols?1:cols));}
-\DoxyCodeLine{00491\ \ \ \ \ \textcolor{comment}{//\ Where\ did\ this\ -\/0.5\ come\ from?\ Probably\ the\ same\ place\ as\ above.}}
-\DoxyCodeLine{00492\ \ \ \ \ MatrixXT\ Bu\ =\ B(data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a45a26b0e5d41d28bfea348ee51f52e4b}{unknown}},Eigen::all);}
-\DoxyCodeLine{00493\ \ \ \ \ MatrixXT\ NB;}
-\DoxyCodeLine{00494\ \ \ \ \ NB\ =\ -\/0.5*(Bu.replicate(1,B.cols()==cols?1:cols)\ +\ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a3db371095ff5ecf7dc8c42c3e34a3695}{preY}}\ *\ Y);}
-\DoxyCodeLine{00495\ \ \ \ \ \textcolor{comment}{//\ Trim\ eff\_Beq}}
-\DoxyCodeLine{00496\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ nc\ =\ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0dd37f713f6578dc75ab710458d4654c}{AeqTQR}}.rank();}
-\DoxyCodeLine{00497\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ neq\ =\ Beq.rows();}
-\DoxyCodeLine{00498\ \ \ \ \ eff\_Beq\ =\ eff\_Beq.topLeftCorner(nc,cols).eval();}
-\DoxyCodeLine{00499\ \ \ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ad67e1f780d301ce6928c4bcf60563288}{AeqTR1T}}.template\ triangularView<Lower>().solveInPlace(eff\_Beq);}
-\DoxyCodeLine{00500\ \ \ \ \ \textcolor{comment}{//\ Now\ eff\_Beq\ =\ (data.AeqTR1T\ \(\backslash\)\ (data.AeqTET\ *\ (-\/data.Aeqk\ *\ Y\ +\ Beq)))}}
-\DoxyCodeLine{00501\ \ \ \ \ MatrixXT\ lambda\_0;}
-\DoxyCodeLine{00502\ \ \ \ \ lambda\_0\ =\ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a6dd70a80c9696cbd95cc4a11413caa8e}{AeqTQ1}}\ *\ eff\_Beq;}
-\DoxyCodeLine{00503\ \ \ \ \ \textcolor{comment}{//cout<<matlab\_format(lambda\_0,"{}lambda\_0"{})<<endl;}}
-\DoxyCodeLine{00504\ \ \ \ \ MatrixXT\ QRB;}
-\DoxyCodeLine{00505\ \ \ \ \ QRB\ =\ -\/data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ada118a14cca10b66554139cc28883b49}{AeqTQ2T}}\ *\ (data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_adde8448b08fd094fb92f2638ae476814}{Auu}}\ *\ lambda\_0)\ +\ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ada118a14cca10b66554139cc28883b49}{AeqTQ2T}}\ *\ NB;}
-\DoxyCodeLine{00506\ \ \ \ \ Derivedsol\ lambda;}
-\DoxyCodeLine{00507\ \ \ \ \ lambda\ =\ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a4ef765c434c7997a24378788a7fd9c84}{llt}}.solve(QRB);}
-\DoxyCodeLine{00508\ \ \ \ \ \textcolor{comment}{//\ prepare\ output}}
-\DoxyCodeLine{00509\ \ \ \ \ Derivedsol\ solu;}
-\DoxyCodeLine{00510\ \ \ \ \ solu\ =\ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a65ebbedaafb67501de8a7cb0798b70ab}{AeqTQ2}}\ *\ lambda\ +\ lambda\_0;}
-\DoxyCodeLine{00511\ \ \ \ \ \textcolor{comment}{//\ \ http://www.math.uh.edu/\string~rohop/fall\_06/Chapter3.pdf}}
-\DoxyCodeLine{00512\ \ \ \ \ Derivedsol\ solLambda;}
-\DoxyCodeLine{00513\ \ \ \ \ \{}
-\DoxyCodeLine{00514\ \ \ \ \ \ \ Derivedsol\ temp1,temp2;}
-\DoxyCodeLine{00515\ \ \ \ \ \ \ temp1\ =\ (data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_af29f3f637f6a03ece40aa8c4811ad6f0}{AeqTQ1T}}\ *\ NB\ -\/\ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_af29f3f637f6a03ece40aa8c4811ad6f0}{AeqTQ1T}}\ *\ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_adde8448b08fd094fb92f2638ae476814}{Auu}}\ *\ solu);}
-\DoxyCodeLine{00516\ \ \ \ \ \ \ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_abe2e974252d7deadea02f19093374781}{AeqTR1}}.template\ triangularView<Upper>().solveInPlace(temp1);}
-\DoxyCodeLine{00517\ \ \ \ \ \ \ \textcolor{comment}{//cout<<matlab\_format(temp1,"{}temp1"{})<<endl;}}
-\DoxyCodeLine{00518\ \ \ \ \ \ \ temp2\ =\ Derivedsol::Zero(neq,cols);}
-\DoxyCodeLine{00519\ \ \ \ \ \ \ temp2.topLeftCorner(nc,cols)\ =\ temp1;}
-\DoxyCodeLine{00520\ \ \ \ \ \ \ \textcolor{comment}{//solLambda\ =\ data.AeqTQR.colsPermutation()\ *\ temp2;}}
-\DoxyCodeLine{00521\ \ \ \ \ \ \ solLambda\ =\ data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_aeedc9f4d675bbd636b1782a75d0bbef3}{AeqTE}}\ *\ temp2;}
-\DoxyCodeLine{00522\ \ \ \ \ \}}
-\DoxyCodeLine{00523\ \ \ \ \ \textcolor{comment}{//\ sol\ is\ [Z(unknown);Lambda]}}
-\DoxyCodeLine{00524\ \ \ \ \ assert(data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a45a26b0e5d41d28bfea348ee51f52e4b}{unknown}}.size()\ ==\ solu.rows());}
-\DoxyCodeLine{00525\ \ \ \ \ assert(cols\ ==\ solu.cols());}
-\DoxyCodeLine{00526\ \ \ \ \ assert(data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_abdd3d36254dbf348fb6296f80bb3eaa0}{neq}}\ ==\ neq);}
-\DoxyCodeLine{00527\ \ \ \ \ assert(data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_abdd3d36254dbf348fb6296f80bb3eaa0}{neq}}\ ==\ solLambda.rows());}
-\DoxyCodeLine{00528\ \ \ \ \ assert(cols\ ==\ solLambda.cols());}
-\DoxyCodeLine{00529\ \ \ \ \ sol.resize(data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a45a26b0e5d41d28bfea348ee51f52e4b}{unknown}}.size()+data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_abdd3d36254dbf348fb6296f80bb3eaa0}{neq}},cols);}
-\DoxyCodeLine{00530\ \ \ \ \ sol.block(0,0,solu.rows(),solu.cols())\ =\ solu;}
-\DoxyCodeLine{00531\ \ \ \ \ sol.block(solu.rows(),0,solLambda.rows(),solLambda.cols())\ =\ solLambda;}
-\DoxyCodeLine{00532\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ u\ =\ 0;u<data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a45a26b0e5d41d28bfea348ee51f52e4b}{unknown}}.size();u++)}
-\DoxyCodeLine{00533\ \ \ \ \ \{}
-\DoxyCodeLine{00534\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;j<Z.cols();j++)}
-\DoxyCodeLine{00535\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00536\ \ \ \ \ \ \ \ \ Z(data.\mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a45a26b0e5d41d28bfea348ee51f52e4b}{unknown}}(u),j)\ =\ solu(u,j);}
-\DoxyCodeLine{00537\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00538\ \ \ \ \ \}}
-\DoxyCodeLine{00539\ \ \ \}}
-\DoxyCodeLine{00540\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00541\ \}}
-\DoxyCodeLine{00542\ }
-\DoxyCodeLine{00543\ \textcolor{keyword}{template}\ <}
-\DoxyCodeLine{00544\ \ \ \textcolor{keyword}{typename}\ T,}
-\DoxyCodeLine{00545\ \ \ \textcolor{keyword}{typename}\ DerivedB,}
-\DoxyCodeLine{00546\ \ \ \textcolor{keyword}{typename}\ DerivedY,}
-\DoxyCodeLine{00547\ \ \ \textcolor{keyword}{typename}\ DerivedBeq,}
-\DoxyCodeLine{00548\ \ \ \textcolor{keyword}{typename}\ DerivedZ>}
-\DoxyCodeLine{00549\ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_ad6d436a09a132f780d5e503b39499fbb}{igl::min\_quad\_with\_fixed\_solve}}(}
-\DoxyCodeLine{00550\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data}{min\_quad\_with\_fixed\_data<T>}}\ \&\ data,}
-\DoxyCodeLine{00551\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedB>\ \&\ B,}
-\DoxyCodeLine{00552\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedY>\ \&\ Y,}
-\DoxyCodeLine{00553\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedBeq>\ \&\ Beq,}
-\DoxyCodeLine{00554\ \ \ Eigen::PlainObjectBase<DerivedZ>\ \&\ Z)}
-\DoxyCodeLine{00555\ \{}
-\DoxyCodeLine{00556\ \ \ Eigen::Matrix<typename\ DerivedZ::Scalar,\ Eigen::Dynamic,\ Eigen::Dynamic>\ sol;}
-\DoxyCodeLine{00557\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceigl_ad6d436a09a132f780d5e503b39499fbb}{min\_quad\_with\_fixed\_solve}}(data,B,Y,Beq,Z,sol);}
-\DoxyCodeLine{00558\ \}}
-\DoxyCodeLine{00559\ }
-\DoxyCodeLine{00560\ \textcolor{keyword}{template}\ <}
-\DoxyCodeLine{00561\ \ \ \textcolor{keyword}{typename}\ T,}
-\DoxyCodeLine{00562\ \ \ \textcolor{keyword}{typename}\ Derivedknown,}
-\DoxyCodeLine{00563\ \ \ \textcolor{keyword}{typename}\ DerivedB,}
-\DoxyCodeLine{00564\ \ \ \textcolor{keyword}{typename}\ DerivedY,}
-\DoxyCodeLine{00565\ \ \ \textcolor{keyword}{typename}\ DerivedBeq,}
-\DoxyCodeLine{00566\ \ \ \textcolor{keyword}{typename}\ DerivedZ>}
-\DoxyCodeLine{00567\ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_abcdcf5c62d46412f4b5de5889e51c0d4}{igl::min\_quad\_with\_fixed}}(}
-\DoxyCodeLine{00568\ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<T>\&\ A,}
-\DoxyCodeLine{00569\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedB>\ \&\ B,}
-\DoxyCodeLine{00570\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedknown>\ \&\ known,}
-\DoxyCodeLine{00571\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedY>\ \&\ Y,}
-\DoxyCodeLine{00572\ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<T>\&\ Aeq,}
-\DoxyCodeLine{00573\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedBeq>\ \&\ Beq,}
-\DoxyCodeLine{00574\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ pd,}
-\DoxyCodeLine{00575\ \ \ Eigen::PlainObjectBase<DerivedZ>\ \&\ Z)}
-\DoxyCodeLine{00576\ \{}
-\DoxyCodeLine{00577\ \ \ \mbox{\hyperlink{structigl_1_1min__quad__with__fixed__data}{min\_quad\_with\_fixed\_data<T>}}\ data;}
-\DoxyCodeLine{00578\ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{namespaceigl_adc0382628e374a5b92a226ad75ce6b8b}{min\_quad\_with\_fixed\_precompute}}(A,known,Aeq,pd,data))}
-\DoxyCodeLine{00579\ \ \ \{}
-\DoxyCodeLine{00580\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00581\ \ \ \}}
-\DoxyCodeLine{00582\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceigl_ad6d436a09a132f780d5e503b39499fbb}{min\_quad\_with\_fixed\_solve}}(data,B,Y,Beq,Z);}
-\DoxyCodeLine{00583\ \}}
-\DoxyCodeLine{00584\ }
-\DoxyCodeLine{00585\ }
-\DoxyCodeLine{00586\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Scalar,\ \textcolor{keywordtype}{int}\ n,\ \textcolor{keywordtype}{int}\ m,\ \textcolor{keywordtype}{bool}\ Hpd>}
-\DoxyCodeLine{00587\ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ Eigen::Matrix<Scalar,n,1>\ \mbox{\hyperlink{namespaceigl_abcdcf5c62d46412f4b5de5889e51c0d4}{igl::min\_quad\_with\_fixed}}(}
-\DoxyCodeLine{00588\ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,n,n>\ \&\ H,}
-\DoxyCodeLine{00589\ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,n,1>\ \&\ f,}
-\DoxyCodeLine{00590\ \ \ \textcolor{keyword}{const}\ Eigen::Array<bool,n,1>\ \&\ k,}
-\DoxyCodeLine{00591\ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,n,1>\ \&\ bc,}
-\DoxyCodeLine{00592\ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,m,n>\ \&\ A,}
-\DoxyCodeLine{00593\ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,m,1>\ \&\ b)}
-\DoxyCodeLine{00594\ \{}
-\DoxyCodeLine{00595\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ dyn\_n\ =\ n\ ==\ Eigen::Dynamic\ ?\ H.rows()\ :\ n;}
-\DoxyCodeLine{00596\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ dyn\_m\ =\ m\ ==\ Eigen::Dynamic\ ?\ A.rows()\ :\ m;}
-\DoxyCodeLine{00597\ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ nn\ =\ n\ ==\ Eigen::Dynamic\ ?\ Eigen::Dynamic\ :\ n+m;}
-\DoxyCodeLine{00598\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ dyn\_nn\ =\ nn\ ==\ Eigen::Dynamic\ ?\ dyn\_n+dyn\_m\ :\ nn;}
-\DoxyCodeLine{00599\ \ \ \textcolor{keywordflow}{if}(dyn\_m\ ==\ 0)}
-\DoxyCodeLine{00600\ \ \ \{}
-\DoxyCodeLine{00601\ \ \ \ \ \textcolor{keywordflow}{return}\ igl::min\_quad\_with\_fixed<Scalar,n,Hpd>(H,f,k,bc);}
-\DoxyCodeLine{00602\ \ \ \}}
-\DoxyCodeLine{00603\ \ \ \textcolor{comment}{//\ min\_x\ ½\ xᵀ\ H\ x\ +\ xᵀ\ f\ \ \ subject\ to\ A\ x\ =\ b\ and\ x(k)\ =\ bc(k)}}
-\DoxyCodeLine{00604\ \ \ \textcolor{comment}{//\ let\ zᵀ\ =\ [xᵀ\ λᵀ]}}
-\DoxyCodeLine{00605\ \ \ \textcolor{comment}{//\ min\_z\ ½\ zᵀ\ [H\ Aᵀ;A\ 0]\ z\ +\ zᵀ\ [f;-\/b]\ \ \ z(k)\ =\ bc(k)}}
-\DoxyCodeLine{00606\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ make\_HH\ =\ [\&]()}
-\DoxyCodeLine{00607\ \ \ \{}
-\DoxyCodeLine{00608\ \ \ \ \ \textcolor{comment}{//\ Windows\ can't\ remember\ that\ nn\ is\ const.}}
-\DoxyCodeLine{00609\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ nn\ =\ n\ ==\ Eigen::Dynamic\ ?\ Eigen::Dynamic\ :\ n+m;}
-\DoxyCodeLine{00610\ \ \ \ \ Eigen::Matrix<Scalar,nn,nn>\ HH\ =}
-\DoxyCodeLine{00611\ \ \ \ \ \ \ Eigen::Matrix<Scalar,nn,nn>::Zero(dyn\_nn,dyn\_nn);}
-\DoxyCodeLine{00612\ \ \ \ \ HH.topLeftCorner(dyn\_n,dyn\_n)\ =\ H;}
-\DoxyCodeLine{00613\ \ \ \ \ HH.bottomLeftCorner(dyn\_m,dyn\_n)\ =\ A;}
-\DoxyCodeLine{00614\ \ \ \ \ HH.topRightCorner(dyn\_n,dyn\_m)\ =\ A.transpose();}
-\DoxyCodeLine{00615\ \ \ \ \ \textcolor{keywordflow}{return}\ HH;}
-\DoxyCodeLine{00616\ \ \ \};}
-\DoxyCodeLine{00617\ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,nn,nn>\ HH\ =\ make\_HH();}
-\DoxyCodeLine{00618\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ make\_ff\ \ =\ [\&]()}
-\DoxyCodeLine{00619\ \ \ \{}
-\DoxyCodeLine{00620\ \ \ \ \ \textcolor{comment}{//\ Windows\ can't\ remember\ that\ nn\ is\ const.}}
-\DoxyCodeLine{00621\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ nn\ =\ n\ ==\ Eigen::Dynamic\ ?\ Eigen::Dynamic\ :\ n+m;}
-\DoxyCodeLine{00622\ \ \ \ \ Eigen::Matrix<Scalar,nn,1>\ ff(dyn\_nn);}
-\DoxyCodeLine{00623\ \ \ \ \ ff.head(dyn\_n)\ =\ \ f;}
-\DoxyCodeLine{00624\ \ \ \ \ ff.tail(dyn\_m)\ =\ -\/b;}
-\DoxyCodeLine{00625\ \ \ \ \ \textcolor{keywordflow}{return}\ ff;}
-\DoxyCodeLine{00626\ \ \ \};}
-\DoxyCodeLine{00627\ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,nn,1>\ ff\ =\ make\_ff();}
-\DoxyCodeLine{00628\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ make\_kk\ \ =\ [\&]()}
-\DoxyCodeLine{00629\ \ \ \{}
-\DoxyCodeLine{00630\ \ \ \ \ \textcolor{comment}{//\ Windows\ can't\ remember\ that\ nn\ is\ const.}}
-\DoxyCodeLine{00631\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ nn\ =\ n\ ==\ Eigen::Dynamic\ ?\ Eigen::Dynamic\ :\ n+m;}
-\DoxyCodeLine{00632\ \ \ \ \ Eigen::Array<bool,nn,1>\ kk\ =}
-\DoxyCodeLine{00633\ \ \ \ \ \ \ Eigen::Array<bool,nn,1>::Constant(dyn\_nn,1,\textcolor{keyword}{false});}
-\DoxyCodeLine{00634\ \ \ \ \ kk.head(dyn\_n)\ =\ \ k;}
-\DoxyCodeLine{00635\ \ \ \ \ \textcolor{keywordflow}{return}\ kk;}
-\DoxyCodeLine{00636\ \ \ \};}
-\DoxyCodeLine{00637\ \ \ \textcolor{keyword}{const}\ Eigen::Array<bool,nn,1>\ kk\ =\ make\_kk();}
-\DoxyCodeLine{00638\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ make\_bcbc=\ [\&]()}
-\DoxyCodeLine{00639\ \ \ \{}
-\DoxyCodeLine{00640\ \ \ \ \ \textcolor{comment}{//\ Windows\ can't\ remember\ that\ nn\ is\ const.}}
-\DoxyCodeLine{00641\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ nn\ =\ n\ ==\ Eigen::Dynamic\ ?\ Eigen::Dynamic\ :\ n+m;}
-\DoxyCodeLine{00642\ \ \ \ \ Eigen::Matrix<Scalar,nn,1>\ bcbc(dyn\_nn);}
-\DoxyCodeLine{00643\ \ \ \ \ bcbc.head(dyn\_n)\ =\ \ bc;}
-\DoxyCodeLine{00644\ \ \ \ \ \textcolor{keywordflow}{return}\ bcbc;}
-\DoxyCodeLine{00645\ \ \ \};}
-\DoxyCodeLine{00646\ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,nn,1>\ bcbc\ =\ make\_bcbc();}
-\DoxyCodeLine{00647\ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,nn,1>\ xx\ =}
-\DoxyCodeLine{00648\ \ \ \ \ min\_quad\_with\_fixed<Scalar,nn,false>(HH,ff,kk,bcbc);}
-\DoxyCodeLine{00649\ \ \ \textcolor{keywordflow}{return}\ xx.head(dyn\_n);}
-\DoxyCodeLine{00650\ \}}
-\DoxyCodeLine{00651\ }
-\DoxyCodeLine{00652\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Scalar,\ \textcolor{keywordtype}{int}\ n,\ \textcolor{keywordtype}{bool}\ Hpd>}
-\DoxyCodeLine{00653\ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ Eigen::Matrix<Scalar,n,1>\ \mbox{\hyperlink{namespaceigl_abcdcf5c62d46412f4b5de5889e51c0d4}{igl::min\_quad\_with\_fixed}}(}
-\DoxyCodeLine{00654\ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,n,n>\ \&\ H,}
-\DoxyCodeLine{00655\ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,n,1>\ \&\ f,}
-\DoxyCodeLine{00656\ \ \ \textcolor{keyword}{const}\ Eigen::Array<bool,n,1>\ \&\ k,}
-\DoxyCodeLine{00657\ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,n,1>\ \&\ bc)}
-\DoxyCodeLine{00658\ \{}
-\DoxyCodeLine{00659\ \ \ assert(H.isApprox(H.transpose(),1e-\/7));}
-\DoxyCodeLine{00660\ \ \ assert(H.rows()\ ==\ H.cols());}
-\DoxyCodeLine{00661\ \ \ assert(H.rows()\ ==\ f.size());}
-\DoxyCodeLine{00662\ \ \ assert(H.rows()\ ==\ k.size());}
-\DoxyCodeLine{00663\ \ \ assert(H.rows()\ ==\ bc.size());}
-\DoxyCodeLine{00664\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ kcount\ =\ k.count();}
-\DoxyCodeLine{00665\ \ \ \textcolor{comment}{//\ Everything\ fixed}}
-\DoxyCodeLine{00666\ \ \ \textcolor{keywordflow}{if}(kcount\ ==\ (Eigen::Dynamic?H.rows():n))}
-\DoxyCodeLine{00667\ \ \ \{}
-\DoxyCodeLine{00668\ \ \ \ \ \textcolor{keywordflow}{return}\ bc;}
-\DoxyCodeLine{00669\ \ \ \}}
-\DoxyCodeLine{00670\ \ \ \textcolor{comment}{//\ Nothing\ fixed}}
-\DoxyCodeLine{00671\ \ \ \textcolor{keywordflow}{if}(kcount\ ==\ 0)}
-\DoxyCodeLine{00672\ \ \ \{}
-\DoxyCodeLine{00673\ \ \ \ \ \textcolor{comment}{//\ avoid\ function\ call}}
-\DoxyCodeLine{00674\ \ \ \ \ \textcolor{keyword}{typedef}\ Eigen::Matrix<Scalar,n,n>\ MatrixSn;}
-\DoxyCodeLine{00675\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}}
-\DoxyCodeLine{00676\ \ \ \ \ \ \ std::conditional<Hpd,Eigen::LLT<MatrixSn>,Eigen::CompleteOrthogonalDecomposition<MatrixSn>>::type}
-\DoxyCodeLine{00677\ \ \ \ \ \ \ Solver;}
-\DoxyCodeLine{00678\ \ \ \ \ \textcolor{keywordflow}{return}\ Solver(H).solve(-\/f);}
-\DoxyCodeLine{00679\ \ \ \}}
-\DoxyCodeLine{00680\ \ \ \textcolor{comment}{//\ All-\/but-\/one\ fixed}}
-\DoxyCodeLine{00681\ \ \ \textcolor{keywordflow}{if}(\ (Eigen::Dynamic?H.rows():n)-\/kcount\ ==\ 1)}
-\DoxyCodeLine{00682\ \ \ \{}
-\DoxyCodeLine{00683\ \ \ \ \ \textcolor{comment}{//\ which\ one\ is\ not\ fixed?}}
-\DoxyCodeLine{00684\ \ \ \ \ \textcolor{keywordtype}{int}\ u\ =\ -\/1;}
-\DoxyCodeLine{00685\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;i<k.size();i++)\{\ \textcolor{keywordflow}{if}(!k(i))\{\ u=i;\ \textcolor{keywordflow}{break};\ \}\ \}}
-\DoxyCodeLine{00686\ \ \ \ \ assert(u>=0);}
-\DoxyCodeLine{00687\ \ \ \ \ \textcolor{comment}{//\ min\ ½\ x(u)\ Huu\ x(u)\ +\ x(u)(fu\ +\ H(u,k)bc(k))}}
-\DoxyCodeLine{00688\ \ \ \ \ \textcolor{comment}{//\ Huu\ x(u)\ =\ -\/(fu\ +\ H(u,k)\ bc(k))}}
-\DoxyCodeLine{00689\ \ \ \ \ \textcolor{comment}{//\ x(u)\ =\ (-\/fu\ +\ ∑\ -\/Huj\ bcj)/Huu}}
-\DoxyCodeLine{00690\ \ \ \ \ Eigen::Matrix<Scalar,n,1>\ x\ =\ bc;}
-\DoxyCodeLine{00691\ \ \ \ \ x(u)\ =\ -\/f(u);}
-\DoxyCodeLine{00692\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;i<k.size();i++)\{\ \textcolor{keywordflow}{if}(i!=u)\{\ x(u)-\/=bc(i)*H(i,u);\ \}\ \}}
-\DoxyCodeLine{00693\ \ \ \ \ x(u)\ /=\ H(u,u);}
-\DoxyCodeLine{00694\ \ \ \ \ \textcolor{keywordflow}{return}\ x;}
-\DoxyCodeLine{00695\ \ \ \}}
-\DoxyCodeLine{00696\ \ \ \textcolor{comment}{//\ Alec:\ Is\ there\ a\ smart\ template\ way\ to\ do\ this?}}
-\DoxyCodeLine{00697\ \ \ \textcolor{comment}{//\ jdumas:\ I\ guess\ you\ could\ do\ a\ templated\ for-\/loop\ starting\ from\ 16,\ and}}
-\DoxyCodeLine{00698\ \ \ \textcolor{comment}{//\ dispatching\ to\ the\ appropriate\ templated\ function\ when\ the\ argument\ matches}}
-\DoxyCodeLine{00699\ \ \ \textcolor{comment}{//\ (with\ a\ fallback\ to\ the\ dynamic\ version).\ Cf\ this\ example:}}
-\DoxyCodeLine{00700\ \ \ \textcolor{comment}{//\ https://gist.github.com/disconnect3d/13c2d035bb31b244df14}}
-\DoxyCodeLine{00701\ \ \ \textcolor{keywordflow}{switch}(kcount)}
-\DoxyCodeLine{00702\ \ \ \{}
-\DoxyCodeLine{00703\ \ \ \ \ \textcolor{keywordflow}{case}\ 0:\ assert(\textcolor{keyword}{false}\ \&\&\ \textcolor{stringliteral}{"{}Handled\ above."{}});\ \textcolor{keywordflow}{return}\ Eigen::Matrix<Scalar,n,1>();}
-\DoxyCodeLine{00704\ \ \ \ \ \textcolor{comment}{//\ \%\ Matlibberish\ for\ generating\ these\ case\ statements:}}
-\DoxyCodeLine{00705\ \ \ \ \ \textcolor{comment}{//\ maxi=16;for\ i=1:maxi;fprintf('\ \ \ \ case\ \%d:\(\backslash\)n\ \ \ \ \{\(\backslash\)n\ \ \ \ \ const\ bool\ D\ =\ (n-\/\%d<=0)||(\%d>=n)||(n>\%d);\(\backslash\)n\ \ \ \ \ return\ min\_quad\_with\_fixed<Scalar,D?Eigen::Dynamic:n,D?Eigen::Dynamic:\%d,Hpd>(H,f,k,bc);\(\backslash\)n\ \ \ \ \}\(\backslash\)n',[i\ i\ i\ maxi\ i]);end}}
-\DoxyCodeLine{00706\ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
-\DoxyCodeLine{00707\ \ \ \ \ \{}
-\DoxyCodeLine{00708\ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ D\ =\ (n-\/1<=0)||(1>=n)||(n>16);}
-\DoxyCodeLine{00709\ \ \ \ \ \ \textcolor{keywordflow}{return}\ min\_quad\_with\_fixed<Scalar,D?Eigen::Dynamic:n,D?Eigen::Dynamic:1,Hpd>(H,f,k,bc);}
-\DoxyCodeLine{00710\ \ \ \ \ \}}
-\DoxyCodeLine{00711\ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
-\DoxyCodeLine{00712\ \ \ \ \ \{}
-\DoxyCodeLine{00713\ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ D\ =\ (n-\/2<=0)||(2>=n)||(n>16);}
-\DoxyCodeLine{00714\ \ \ \ \ \ \textcolor{keywordflow}{return}\ min\_quad\_with\_fixed<Scalar,D?Eigen::Dynamic:n,D?Eigen::Dynamic:2,Hpd>(H,f,k,bc);}
-\DoxyCodeLine{00715\ \ \ \ \ \}}
-\DoxyCodeLine{00716\ \ \ \ \ \textcolor{keywordflow}{case}\ 3:}
-\DoxyCodeLine{00717\ \ \ \ \ \{}
-\DoxyCodeLine{00718\ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ D\ =\ (n-\/3<=0)||(3>=n)||(n>16);}
-\DoxyCodeLine{00719\ \ \ \ \ \ \textcolor{keywordflow}{return}\ min\_quad\_with\_fixed<Scalar,D?Eigen::Dynamic:n,D?Eigen::Dynamic:3,Hpd>(H,f,k,bc);}
-\DoxyCodeLine{00720\ \ \ \ \ \}}
-\DoxyCodeLine{00721\ \ \ \ \ \textcolor{keywordflow}{case}\ 4:}
-\DoxyCodeLine{00722\ \ \ \ \ \{}
-\DoxyCodeLine{00723\ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ D\ =\ (n-\/4<=0)||(4>=n)||(n>16);}
-\DoxyCodeLine{00724\ \ \ \ \ \ \textcolor{keywordflow}{return}\ min\_quad\_with\_fixed<Scalar,D?Eigen::Dynamic:n,D?Eigen::Dynamic:4,Hpd>(H,f,k,bc);}
-\DoxyCodeLine{00725\ \ \ \ \ \}}
-\DoxyCodeLine{00726\ \ \ \ \ \textcolor{keywordflow}{case}\ 5:}
-\DoxyCodeLine{00727\ \ \ \ \ \{}
-\DoxyCodeLine{00728\ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ D\ =\ (n-\/5<=0)||(5>=n)||(n>16);}
-\DoxyCodeLine{00729\ \ \ \ \ \ \textcolor{keywordflow}{return}\ min\_quad\_with\_fixed<Scalar,D?Eigen::Dynamic:n,D?Eigen::Dynamic:5,Hpd>(H,f,k,bc);}
-\DoxyCodeLine{00730\ \ \ \ \ \}}
-\DoxyCodeLine{00731\ \ \ \ \ \textcolor{keywordflow}{case}\ 6:}
-\DoxyCodeLine{00732\ \ \ \ \ \{}
-\DoxyCodeLine{00733\ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ D\ =\ (n-\/6<=0)||(6>=n)||(n>16);}
-\DoxyCodeLine{00734\ \ \ \ \ \ \textcolor{keywordflow}{return}\ min\_quad\_with\_fixed<Scalar,D?Eigen::Dynamic:n,D?Eigen::Dynamic:6,Hpd>(H,f,k,bc);}
-\DoxyCodeLine{00735\ \ \ \ \ \}}
-\DoxyCodeLine{00736\ \ \ \ \ \textcolor{keywordflow}{case}\ 7:}
-\DoxyCodeLine{00737\ \ \ \ \ \{}
-\DoxyCodeLine{00738\ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ D\ =\ (n-\/7<=0)||(7>=n)||(n>16);}
-\DoxyCodeLine{00739\ \ \ \ \ \ \textcolor{keywordflow}{return}\ min\_quad\_with\_fixed<Scalar,D?Eigen::Dynamic:n,D?Eigen::Dynamic:7,Hpd>(H,f,k,bc);}
-\DoxyCodeLine{00740\ \ \ \ \ \}}
-\DoxyCodeLine{00741\ \ \ \ \ \textcolor{keywordflow}{case}\ 8:}
-\DoxyCodeLine{00742\ \ \ \ \ \{}
-\DoxyCodeLine{00743\ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ D\ =\ (n-\/8<=0)||(8>=n)||(n>16);}
-\DoxyCodeLine{00744\ \ \ \ \ \ \textcolor{keywordflow}{return}\ min\_quad\_with\_fixed<Scalar,D?Eigen::Dynamic:n,D?Eigen::Dynamic:8,Hpd>(H,f,k,bc);}
-\DoxyCodeLine{00745\ \ \ \ \ \}}
-\DoxyCodeLine{00746\ \ \ \ \ \textcolor{keywordflow}{case}\ 9:}
-\DoxyCodeLine{00747\ \ \ \ \ \{}
-\DoxyCodeLine{00748\ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ D\ =\ (n-\/9<=0)||(9>=n)||(n>16);}
-\DoxyCodeLine{00749\ \ \ \ \ \ \textcolor{keywordflow}{return}\ min\_quad\_with\_fixed<Scalar,D?Eigen::Dynamic:n,D?Eigen::Dynamic:9,Hpd>(H,f,k,bc);}
-\DoxyCodeLine{00750\ \ \ \ \ \}}
-\DoxyCodeLine{00751\ \ \ \ \ \textcolor{keywordflow}{case}\ 10:}
-\DoxyCodeLine{00752\ \ \ \ \ \{}
-\DoxyCodeLine{00753\ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ D\ =\ (n-\/10<=0)||(10>=n)||(n>16);}
-\DoxyCodeLine{00754\ \ \ \ \ \ \textcolor{keywordflow}{return}\ min\_quad\_with\_fixed<Scalar,D?Eigen::Dynamic:n,D?Eigen::Dynamic:10,Hpd>(H,f,k,bc);}
-\DoxyCodeLine{00755\ \ \ \ \ \}}
-\DoxyCodeLine{00756\ \ \ \ \ \textcolor{keywordflow}{case}\ 11:}
-\DoxyCodeLine{00757\ \ \ \ \ \{}
-\DoxyCodeLine{00758\ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ D\ =\ (n-\/11<=0)||(11>=n)||(n>16);}
-\DoxyCodeLine{00759\ \ \ \ \ \ \textcolor{keywordflow}{return}\ min\_quad\_with\_fixed<Scalar,D?Eigen::Dynamic:n,D?Eigen::Dynamic:11,Hpd>(H,f,k,bc);}
-\DoxyCodeLine{00760\ \ \ \ \ \}}
-\DoxyCodeLine{00761\ \ \ \ \ \textcolor{keywordflow}{case}\ 12:}
-\DoxyCodeLine{00762\ \ \ \ \ \{}
-\DoxyCodeLine{00763\ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ D\ =\ (n-\/12<=0)||(12>=n)||(n>16);}
-\DoxyCodeLine{00764\ \ \ \ \ \ \textcolor{keywordflow}{return}\ min\_quad\_with\_fixed<Scalar,D?Eigen::Dynamic:n,D?Eigen::Dynamic:12,Hpd>(H,f,k,bc);}
-\DoxyCodeLine{00765\ \ \ \ \ \}}
-\DoxyCodeLine{00766\ \ \ \ \ \textcolor{keywordflow}{case}\ 13:}
-\DoxyCodeLine{00767\ \ \ \ \ \{}
-\DoxyCodeLine{00768\ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ D\ =\ (n-\/13<=0)||(13>=n)||(n>16);}
-\DoxyCodeLine{00769\ \ \ \ \ \ \textcolor{keywordflow}{return}\ min\_quad\_with\_fixed<Scalar,D?Eigen::Dynamic:n,D?Eigen::Dynamic:13,Hpd>(H,f,k,bc);}
-\DoxyCodeLine{00770\ \ \ \ \ \}}
-\DoxyCodeLine{00771\ \ \ \ \ \textcolor{keywordflow}{case}\ 14:}
-\DoxyCodeLine{00772\ \ \ \ \ \{}
-\DoxyCodeLine{00773\ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ D\ =\ (n-\/14<=0)||(14>=n)||(n>16);}
-\DoxyCodeLine{00774\ \ \ \ \ \ \textcolor{keywordflow}{return}\ min\_quad\_with\_fixed<Scalar,D?Eigen::Dynamic:n,D?Eigen::Dynamic:14,Hpd>(H,f,k,bc);}
-\DoxyCodeLine{00775\ \ \ \ \ \}}
-\DoxyCodeLine{00776\ \ \ \ \ \textcolor{keywordflow}{case}\ 15:}
-\DoxyCodeLine{00777\ \ \ \ \ \{}
-\DoxyCodeLine{00778\ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ D\ =\ (n-\/15<=0)||(15>=n)||(n>16);}
-\DoxyCodeLine{00779\ \ \ \ \ \ \textcolor{keywordflow}{return}\ min\_quad\_with\_fixed<Scalar,D?Eigen::Dynamic:n,D?Eigen::Dynamic:15,Hpd>(H,f,k,bc);}
-\DoxyCodeLine{00780\ \ \ \ \ \}}
-\DoxyCodeLine{00781\ \ \ \ \ \textcolor{keywordflow}{case}\ 16:}
-\DoxyCodeLine{00782\ \ \ \ \ \{}
-\DoxyCodeLine{00783\ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ D\ =\ (n-\/16<=0)||(16>=n)||(n>16);}
-\DoxyCodeLine{00784\ \ \ \ \ \ \textcolor{keywordflow}{return}\ min\_quad\_with\_fixed<Scalar,D?Eigen::Dynamic:n,D?Eigen::Dynamic:16,Hpd>(H,f,k,bc);}
-\DoxyCodeLine{00785\ \ \ \ \ \}}
-\DoxyCodeLine{00786\ \ \ \ \ \textcolor{keywordflow}{default}:}
-\DoxyCodeLine{00787\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ min\_quad\_with\_fixed<Scalar,Eigen::Dynamic,Eigen::Dynamic,Hpd>(H,f,k,bc);}
-\DoxyCodeLine{00788\ \ \ \}}
-\DoxyCodeLine{00789\ \}}
-\DoxyCodeLine{00790\ }
-\DoxyCodeLine{00791\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Scalar,\ \textcolor{keywordtype}{int}\ n,\ \textcolor{keywordtype}{int}\ kcount,\ \textcolor{keywordtype}{bool}\ Hpd>}
-\DoxyCodeLine{00792\ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ Eigen::Matrix<Scalar,n,1>\ \mbox{\hyperlink{namespaceigl_abcdcf5c62d46412f4b5de5889e51c0d4}{igl::min\_quad\_with\_fixed}}(}
-\DoxyCodeLine{00793\ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,n,n>\ \&\ H,}
-\DoxyCodeLine{00794\ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,n,1>\ \&\ f,}
-\DoxyCodeLine{00795\ \ \ \textcolor{keyword}{const}\ Eigen::Array<bool,n,1>\ \&\ k,}
-\DoxyCodeLine{00796\ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,n,1>\ \&\ bc)}
-\DoxyCodeLine{00797\ \{}
-\DoxyCodeLine{00798\ \ \ \textcolor{comment}{//\ 0\ and\ n\ should\ be\ handle\ outside\ this\ function}}
-\DoxyCodeLine{00799\ \ \ \textcolor{keyword}{static\_assert}(kcount==Eigen::Dynamic\ ||\ kcount>0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ,\textcolor{stringliteral}{"{}"{}});}
-\DoxyCodeLine{00800\ \ \ \textcolor{keyword}{static\_assert}(kcount==Eigen::Dynamic\ ||\ kcount<n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ,\textcolor{stringliteral}{"{}"{}});}
-\DoxyCodeLine{00801\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ ucount\ =\ n==Eigen::Dynamic\ ?\ Eigen::Dynamic\ :\ n-\/kcount;}
-\DoxyCodeLine{00802\ \ \ \textcolor{keyword}{static\_assert}(kcount==Eigen::Dynamic\ ||\ ucount+kcount\ ==\ n\ \ \ \ \ \ \ \ ,\textcolor{stringliteral}{"{}"{}});}
-\DoxyCodeLine{00803\ \ \ \textcolor{keyword}{static\_assert}((n==Eigen::Dynamic)\ ==\ (ucount==Eigen::Dynamic),\textcolor{stringliteral}{"{}"{}});}
-\DoxyCodeLine{00804\ \ \ \textcolor{keyword}{static\_assert}((kcount==Eigen::Dynamic)\ ==\ (ucount==Eigen::Dynamic),\textcolor{stringliteral}{"{}"{}});}
-\DoxyCodeLine{00805\ \ \ assert((n==Eigen::Dynamic)\ ||\ n\ ==\ H.rows());}
-\DoxyCodeLine{00806\ \ \ assert((kcount==Eigen::Dynamic)\ ||\ kcount\ ==\ k.count());}
-\DoxyCodeLine{00807\ \ \ \textcolor{keyword}{typedef}\ Eigen::Matrix<Scalar,ucount,ucount>\ MatrixSuu;}
-\DoxyCodeLine{00808\ \ \ \textcolor{keyword}{typedef}\ Eigen::Matrix<Scalar,ucount,kcount>\ MatrixSuk;}
-\DoxyCodeLine{00809\ \ \ \textcolor{keyword}{typedef}\ Eigen::Matrix<Scalar,n,1>\ \ \ \ \ \ VectorSn;}
-\DoxyCodeLine{00810\ \ \ \textcolor{keyword}{typedef}\ Eigen::Matrix<Scalar,ucount,1>\ VectorSu;}
-\DoxyCodeLine{00811\ \ \ \textcolor{keyword}{typedef}\ Eigen::Matrix<Scalar,kcount,1>\ VectorSk;}
-\DoxyCodeLine{00812\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ dyn\_n\ =\ n==Eigen::Dynamic\ ?\ H.rows()\ :\ n;}
-\DoxyCodeLine{00813\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ dyn\_kcount\ =\ kcount==Eigen::Dynamic\ ?\ k.count()\ :\ kcount;}
-\DoxyCodeLine{00814\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ dyn\_ucount\ =\ ucount==Eigen::Dynamic\ ?\ dyn\_n-\/\ dyn\_kcount\ :\ ucount;}
-\DoxyCodeLine{00815\ \ \ \textcolor{comment}{//\ For\ ucount==2\ or\ kcount==2\ this\ calls\ the\ coefficient\ initiliazer\ rather}}
-\DoxyCodeLine{00816\ \ \ \textcolor{comment}{//\ than\ the\ size\ initilizer,\ but\ I\ guess\ that's\ ok.}}
-\DoxyCodeLine{00817\ \ \ MatrixSuu\ Huu(dyn\_ucount,dyn\_ucount);}
-\DoxyCodeLine{00818\ \ \ MatrixSuk\ Huk(dyn\_ucount,dyn\_kcount);}
-\DoxyCodeLine{00819\ \ \ VectorSu\ mrhs(dyn\_ucount);}
-\DoxyCodeLine{00820\ \ \ VectorSk\ \ bck(dyn\_kcount);}
-\DoxyCodeLine{00821\ \ \ \{}
-\DoxyCodeLine{00822\ \ \ \ \ \textcolor{keywordtype}{int}\ ui\ =\ 0;}
-\DoxyCodeLine{00823\ \ \ \ \ \textcolor{keywordtype}{int}\ ki\ =\ 0;}
-\DoxyCodeLine{00824\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;i<dyn\_n;i++)}
-\DoxyCodeLine{00825\ \ \ \ \ \{}
-\DoxyCodeLine{00826\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(k(i))}
-\DoxyCodeLine{00827\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00828\ \ \ \ \ \ \ \ \ bck(ki)\ =\ bc(i);}
-\DoxyCodeLine{00829\ \ \ \ \ \ \ \ \ ki++;}
-\DoxyCodeLine{00830\ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}}
-\DoxyCodeLine{00831\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00832\ \ \ \ \ \ \ \ \ mrhs(ui)\ =\ f(i);}
-\DoxyCodeLine{00833\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ uj\ =\ 0;}
-\DoxyCodeLine{00834\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ kj\ =\ 0;}
-\DoxyCodeLine{00835\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;j<dyn\_n;j++)}
-\DoxyCodeLine{00836\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00837\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(k(j))}
-\DoxyCodeLine{00838\ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00839\ \ \ \ \ \ \ \ \ \ \ \ \ Huk(ui,kj)\ =\ H(i,j);}
-\DoxyCodeLine{00840\ \ \ \ \ \ \ \ \ \ \ \ \ kj++;}
-\DoxyCodeLine{00841\ \ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}}
-\DoxyCodeLine{00842\ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00843\ \ \ \ \ \ \ \ \ \ \ \ \ Huu(ui,uj)\ =\ H(i,j);}
-\DoxyCodeLine{00844\ \ \ \ \ \ \ \ \ \ \ \ \ uj++;}
-\DoxyCodeLine{00845\ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00846\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00847\ \ \ \ \ \ \ \ \ ui++;}
-\DoxyCodeLine{00848\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00849\ \ \ \ \ \}}
-\DoxyCodeLine{00850\ \ \ \}}
-\DoxyCodeLine{00851\ \ \ mrhs\ +=\ Huk\ *\ bck;}
-\DoxyCodeLine{00852\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}}
-\DoxyCodeLine{00853\ \ \ \ \ std::conditional<Hpd,}
-\DoxyCodeLine{00854\ \ \ \ \ \ \ Eigen::LLT<MatrixSuu>,}
-\DoxyCodeLine{00855\ \ \ \ \ \ \ \textcolor{comment}{//\ LDLT\ should\ be\ faster\ for\ indefinite\ problems\ but\ already\ found\ some}}
-\DoxyCodeLine{00856\ \ \ \ \ \ \ \textcolor{comment}{//\ cases\ where\ it\ was\ too\ inaccurate\ when\ called\ via\ quadprog\_primal.}}
-\DoxyCodeLine{00857\ \ \ \ \ \ \ \textcolor{comment}{//\ Ideally\ this\ function\ takes\ LLT,LDLT,\ or}}
-\DoxyCodeLine{00858\ \ \ \ \ \ \ \textcolor{comment}{//\ CompleteOrthogonalDecomposition\ as\ a\ template\ parameter.\ \ "{}template}}
-\DoxyCodeLine{00859\ \ \ \ \ \ \ \textcolor{comment}{//\ template"{}\ parameters\ did\ work\ because\ LLT,LDLT\ have\ different\ number\ of}}
-\DoxyCodeLine{00860\ \ \ \ \ \ \ \textcolor{comment}{//\ template\ parameters\ from\ CompleteOrthogonalDecomposition.\ \ Perhaps}}
-\DoxyCodeLine{00861\ \ \ \ \ \ \ \textcolor{comment}{//\ there's\ a\ way\ to\ take\ advantage\ of\ LLT\ and\ LDLT's\ default\ template}}
-\DoxyCodeLine{00862\ \ \ \ \ \ \ \textcolor{comment}{//\ parameters\ (I\ couldn't\ figure\ out\ how).}}
-\DoxyCodeLine{00863\ \ \ \ \ \ \ Eigen::CompleteOrthogonalDecomposition<MatrixSuu>>::type}
-\DoxyCodeLine{00864\ \ \ \ \ Solver;}
-\DoxyCodeLine{00865\ \ \ VectorSu\ xu\ =\ Solver(Huu).solve(-\/mrhs);}
-\DoxyCodeLine{00866\ \ \ VectorSn\ x(dyn\_n);}
-\DoxyCodeLine{00867\ \ \ \{}
-\DoxyCodeLine{00868\ \ \ \ \ \textcolor{keywordtype}{int}\ ui\ =\ 0;}
-\DoxyCodeLine{00869\ \ \ \ \ \textcolor{keywordtype}{int}\ ki\ =\ 0;}
-\DoxyCodeLine{00870\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;i<dyn\_n;i++)}
-\DoxyCodeLine{00871\ \ \ \ \ \{}
-\DoxyCodeLine{00872\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(k(i))}
-\DoxyCodeLine{00873\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00874\ \ \ \ \ \ \ \ \ x(i)\ =\ bck(ki);}
-\DoxyCodeLine{00875\ \ \ \ \ \ \ \ \ ki++;}
-\DoxyCodeLine{00876\ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}}
-\DoxyCodeLine{00877\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00878\ \ \ \ \ \ \ \ \ x(i)\ =\ xu(ui);}
-\DoxyCodeLine{00879\ \ \ \ \ \ \ \ \ ui++;}
-\DoxyCodeLine{00880\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00881\ \ \ \ \ \}}
-\DoxyCodeLine{00882\ \ \ \}}
-\DoxyCodeLine{00883\ \ \ \textcolor{keywordflow}{return}\ x;}
-\DoxyCodeLine{00884\ \}}
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0ecb4d6605c0d09f0d9cd9e3beaf9022aec26e1242a5954a0a6c3aac46ceb9925}{igl::min\_quad\_with\_fixed\_data<T>::LLT}}:}
+\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ sol\ =\ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a4ef765c434c7997a24378788a7fd9c84}{llt}}.solve(NB);}
+\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0ecb4d6605c0d09f0d9cd9e3beaf9022a74a4143bfda022543372860ad5fe0160}{igl::min\_quad\_with\_fixed\_data<T>::LDLT}}:}
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ sol\ =\ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a1bd2d40db9381b99df7cafafa3e9b8ac}{ldlt}}.solve(NB);}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0ecb4d6605c0d09f0d9cd9e3beaf9022a6a372e5f964cccd56a199d6172ececdc}{igl::min\_quad\_with\_fixed\_data<T>::LU}}:}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Not\ a\ bottleneck}}
+\DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ sol\ =\ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a7c60ca349277d0e6e85e5cdd489e5dc2}{lu}}.solve(NB);}
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00489\ \textcolor{preprocessor}{\#ifdef\ MIN\_QUAD\_WITH\_FIXED\_CPP\_DEBUG}}
+\DoxyCodeLine{00490\ \ \ \ \ \ \ \ \ cerr<<\textcolor{stringliteral}{"{}Error:\ invalid\ solver\ type"{}}<<endl;}
+\DoxyCodeLine{00491\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00492\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00493\ \ \ \ \ \}}
+\DoxyCodeLine{00494\ \ \ \ \ \textcolor{comment}{//std::cout<<"{}sol=["{}<<std::endl<<sol<<std::endl<<"{}];"{}<<std::endl;}}
+\DoxyCodeLine{00495\ \ \ \ \ \textcolor{comment}{//\ Now\ sol\ contains\ sol/-\/0.5}}
+\DoxyCodeLine{00496\ \ \ \ \ sol\ *=\ -\/0.5;}
+\DoxyCodeLine{00497\ \ \ \ \ \textcolor{comment}{//\ Now\ sol\ contains\ solution}}
+\DoxyCodeLine{00498\ \ \ \ \ \textcolor{comment}{//\ Place\ solution\ in\ Z}}
+\DoxyCodeLine{00499\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;i<(sol.rows()-\/neq);i++)}
+\DoxyCodeLine{00500\ \ \ \ \ \{}
+\DoxyCodeLine{00501\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;j<sol.cols();j++)}
+\DoxyCodeLine{00502\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00503\ \ \ \ \ \ \ \ \ Z(data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ac680271bddf24abc8337ca15965a200d}{unknown\_lagrange}}(i),j)\ =\ sol(i,j);}
+\DoxyCodeLine{00504\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00505\ \ \ \ \ \}}
+\DoxyCodeLine{00506\ \ \ \}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{00507\ \ \ \{}
+\DoxyCodeLine{00508\ \ \ \ \ assert(data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_adf555171e037b12e5177ebd81fd33de5}{solver\_type}}\ ==\ \doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0ecb4d6605c0d09f0d9cd9e3beaf9022a810e6fec9cfe02bad4897cb21380f6c9}{min\_quad\_with\_fixed\_data<T>::QR\_LLT}});}
+\DoxyCodeLine{00509\ \ \ \ \ MatrixXT\ eff\_Beq;}
+\DoxyCodeLine{00510\ \ \ \ \ \textcolor{comment}{//\ Adjust\ Aeq\ rhs\ to\ include\ known\ parts}}
+\DoxyCodeLine{00511\ \ \ \ \ eff\_Beq\ =}
+\DoxyCodeLine{00512\ \ \ \ \ \ \ \textcolor{comment}{//data.AeqTQR.colsPermutation().transpose()\ *\ (-\/data.Aeqk\ *\ Y\ +\ Beq);}}
+\DoxyCodeLine{00513\ \ \ \ \ \ \ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_acabf6c24ee8ff41b8e536923a48c7395}{AeqTET}}\ *\ (-\/data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_add2a92c1b4fb911ff47f193b37650afa}{Aeqk}}\ *\ Y\ +\ Beq.replicate(1,Beq.cols()==cols?1:cols));}
+\DoxyCodeLine{00514\ \ \ \ \ \textcolor{comment}{//\ Where\ did\ this\ -\/0.5\ come\ from?\ Probably\ the\ same\ place\ as\ above.}}
+\DoxyCodeLine{00515\ \ \ \ \ MatrixXT\ Bu\ =\ B(data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a45a26b0e5d41d28bfea348ee51f52e4b}{unknown}},\doxymbox{\hyperlink{namespaceigl_1_1placeholders_a80985c53a4ac19899c86b7106b5da10e}{igl::placeholders::all}});}
+\DoxyCodeLine{00516\ \ \ \ \ MatrixXT\ NB;}
+\DoxyCodeLine{00517\ \ \ \ \ NB\ =\ -\/0.5*(Bu.replicate(1,B.cols()==cols?1:cols)\ +\ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a3db371095ff5ecf7dc8c42c3e34a3695}{preY}}\ *\ Y);}
+\DoxyCodeLine{00518\ \ \ \ \ \textcolor{comment}{//\ Trim\ eff\_Beq}}
+\DoxyCodeLine{00519\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ nc\ =\ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a0dd37f713f6578dc75ab710458d4654c}{AeqTQR}}.rank();}
+\DoxyCodeLine{00520\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ neq\ =\ Beq.rows();}
+\DoxyCodeLine{00521\ \ \ \ \ eff\_Beq\ =\ eff\_Beq.topLeftCorner(nc,cols).eval();}
+\DoxyCodeLine{00522\ \ \ \ \ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ad67e1f780d301ce6928c4bcf60563288}{AeqTR1T}}.template\ triangularView<Eigen::Lower>().solveInPlace(eff\_Beq);}
+\DoxyCodeLine{00523\ \ \ \ \ \textcolor{comment}{//\ Now\ eff\_Beq\ =\ (data.AeqTR1T\ \(\backslash\)\ (data.AeqTET\ *\ (-\/data.Aeqk\ *\ Y\ +\ Beq)))}}
+\DoxyCodeLine{00524\ \ \ \ \ MatrixXT\ lambda\_0;}
+\DoxyCodeLine{00525\ \ \ \ \ lambda\_0\ =\ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a6dd70a80c9696cbd95cc4a11413caa8e}{AeqTQ1}}\ *\ eff\_Beq;}
+\DoxyCodeLine{00526\ \ \ \ \ \textcolor{comment}{//cout<<matlab\_format(lambda\_0,"{}lambda\_0"{})<<endl;}}
+\DoxyCodeLine{00527\ \ \ \ \ MatrixXT\ QRB;}
+\DoxyCodeLine{00528\ \ \ \ \ QRB\ =\ -\/data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ada118a14cca10b66554139cc28883b49}{AeqTQ2T}}\ *\ (data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_adde8448b08fd094fb92f2638ae476814}{Auu}}\ *\ lambda\_0)\ +\ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_ada118a14cca10b66554139cc28883b49}{AeqTQ2T}}\ *\ NB;}
+\DoxyCodeLine{00529\ \ \ \ \ Derivedsol\ lambda;}
+\DoxyCodeLine{00530\ \ \ \ \ lambda\ =\ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a4ef765c434c7997a24378788a7fd9c84}{llt}}.solve(QRB);}
+\DoxyCodeLine{00531\ \ \ \ \ \textcolor{comment}{//\ prepare\ output}}
+\DoxyCodeLine{00532\ \ \ \ \ Derivedsol\ solu;}
+\DoxyCodeLine{00533\ \ \ \ \ solu\ =\ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a65ebbedaafb67501de8a7cb0798b70ab}{AeqTQ2}}\ *\ lambda\ +\ lambda\_0;}
+\DoxyCodeLine{00534\ \ \ \ \ \textcolor{comment}{//\ \ http://www.math.uh.edu/\string~rohop/fall\_06/Chapter3.pdf}}
+\DoxyCodeLine{00535\ \ \ \ \ Derivedsol\ solLambda;}
+\DoxyCodeLine{00536\ \ \ \ \ \{}
+\DoxyCodeLine{00537\ \ \ \ \ \ \ Derivedsol\ temp1,temp2;}
+\DoxyCodeLine{00538\ \ \ \ \ \ \ temp1\ =\ (data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_af29f3f637f6a03ece40aa8c4811ad6f0}{AeqTQ1T}}\ *\ NB\ -\/\ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_af29f3f637f6a03ece40aa8c4811ad6f0}{AeqTQ1T}}\ *\ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_adde8448b08fd094fb92f2638ae476814}{Auu}}\ *\ solu);}
+\DoxyCodeLine{00539\ \ \ \ \ \ \ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_abe2e974252d7deadea02f19093374781}{AeqTR1}}.template\ triangularView<Eigen::Upper>().solveInPlace(temp1);}
+\DoxyCodeLine{00540\ \ \ \ \ \ \ \textcolor{comment}{//cout<<matlab\_format(temp1,"{}temp1"{})<<endl;}}
+\DoxyCodeLine{00541\ \ \ \ \ \ \ temp2\ =\ Derivedsol::Zero(neq,cols);}
+\DoxyCodeLine{00542\ \ \ \ \ \ \ temp2.topLeftCorner(nc,cols)\ =\ temp1;}
+\DoxyCodeLine{00543\ \ \ \ \ \ \ \textcolor{comment}{//solLambda\ =\ data.AeqTQR.colsPermutation()\ *\ temp2;}}
+\DoxyCodeLine{00544\ \ \ \ \ \ \ solLambda\ =\ data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_aeedc9f4d675bbd636b1782a75d0bbef3}{AeqTE}}\ *\ temp2;}
+\DoxyCodeLine{00545\ \ \ \ \ \}}
+\DoxyCodeLine{00546\ \ \ \ \ \textcolor{comment}{//\ sol\ is\ [Z(unknown);Lambda]}}
+\DoxyCodeLine{00547\ \ \ \ \ assert(data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a45a26b0e5d41d28bfea348ee51f52e4b}{unknown}}.size()\ ==\ solu.rows());}
+\DoxyCodeLine{00548\ \ \ \ \ assert(cols\ ==\ solu.cols());}
+\DoxyCodeLine{00549\ \ \ \ \ assert(data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_abdd3d36254dbf348fb6296f80bb3eaa0}{neq}}\ ==\ neq);}
+\DoxyCodeLine{00550\ \ \ \ \ assert(data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_abdd3d36254dbf348fb6296f80bb3eaa0}{neq}}\ ==\ solLambda.rows());}
+\DoxyCodeLine{00551\ \ \ \ \ assert(cols\ ==\ solLambda.cols());}
+\DoxyCodeLine{00552\ \ \ \ \ sol.resize(data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a45a26b0e5d41d28bfea348ee51f52e4b}{unknown}}.size()+data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_abdd3d36254dbf348fb6296f80bb3eaa0}{neq}},cols);}
+\DoxyCodeLine{00553\ \ \ \ \ sol.block(0,0,solu.rows(),solu.cols())\ =\ solu;}
+\DoxyCodeLine{00554\ \ \ \ \ sol.block(solu.rows(),0,solLambda.rows(),solLambda.cols())\ =\ solLambda;}
+\DoxyCodeLine{00555\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ u\ =\ 0;u<data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a45a26b0e5d41d28bfea348ee51f52e4b}{unknown}}.size();u++)}
+\DoxyCodeLine{00556\ \ \ \ \ \{}
+\DoxyCodeLine{00557\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;j<Z.cols();j++)}
+\DoxyCodeLine{00558\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00559\ \ \ \ \ \ \ \ \ Z(data.\doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data_a45a26b0e5d41d28bfea348ee51f52e4b}{unknown}}(u),j)\ =\ solu(u,j);}
+\DoxyCodeLine{00560\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00561\ \ \ \ \ \}}
+\DoxyCodeLine{00562\ \ \ \}}
+\DoxyCodeLine{00563\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00564\ \}}
+\DoxyCodeLine{00565\ }
+\DoxyCodeLine{00566\ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00567\ \ \ \textcolor{keyword}{typename}\ T,}
+\DoxyCodeLine{00568\ \ \ \textcolor{keyword}{typename}\ DerivedB,}
+\DoxyCodeLine{00569\ \ \ \textcolor{keyword}{typename}\ DerivedY,}
+\DoxyCodeLine{00570\ \ \ \textcolor{keyword}{typename}\ DerivedBeq,}
+\DoxyCodeLine{00571\ \ \ \textcolor{keyword}{typename}\ DerivedZ>}
+\DoxyCodeLine{00572\ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{namespaceigl_ad6d436a09a132f780d5e503b39499fbb}{igl::min\_quad\_with\_fixed\_solve}}(}
+\DoxyCodeLine{00573\ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data}{min\_quad\_with\_fixed\_data<T>}}\ \&\ data,}
+\DoxyCodeLine{00574\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedB>\ \&\ B,}
+\DoxyCodeLine{00575\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedY>\ \&\ Y,}
+\DoxyCodeLine{00576\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedBeq>\ \&\ Beq,}
+\DoxyCodeLine{00577\ \ \ Eigen::PlainObjectBase<DerivedZ>\ \&\ Z)}
+\DoxyCodeLine{00578\ \{}
+\DoxyCodeLine{00579\ \ \ Eigen::Matrix<typename\ DerivedZ::Scalar,\ Eigen::Dynamic,\ Eigen::Dynamic>\ sol;}
+\DoxyCodeLine{00580\ \ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{namespaceigl_ad6d436a09a132f780d5e503b39499fbb}{min\_quad\_with\_fixed\_solve}}(data,B,Y,Beq,Z,sol);}
+\DoxyCodeLine{00581\ \}}
+\DoxyCodeLine{00582\ }
+\DoxyCodeLine{00583\ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00584\ \ \ \textcolor{keyword}{typename}\ T,}
+\DoxyCodeLine{00585\ \ \ \textcolor{keyword}{typename}\ Derivedknown,}
+\DoxyCodeLine{00586\ \ \ \textcolor{keyword}{typename}\ DerivedB,}
+\DoxyCodeLine{00587\ \ \ \textcolor{keyword}{typename}\ DerivedY,}
+\DoxyCodeLine{00588\ \ \ \textcolor{keyword}{typename}\ DerivedBeq,}
+\DoxyCodeLine{00589\ \ \ \textcolor{keyword}{typename}\ DerivedZ>}
+\DoxyCodeLine{00590\ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{namespaceigl_abcdcf5c62d46412f4b5de5889e51c0d4}{igl::min\_quad\_with\_fixed}}(}
+\DoxyCodeLine{00591\ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<T>\&\ A,}
+\DoxyCodeLine{00592\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedB>\ \&\ B,}
+\DoxyCodeLine{00593\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedknown>\ \&\ known,}
+\DoxyCodeLine{00594\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedY>\ \&\ Y,}
+\DoxyCodeLine{00595\ \ \ \textcolor{keyword}{const}\ Eigen::SparseMatrix<T>\&\ Aeq,}
+\DoxyCodeLine{00596\ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedBeq>\ \&\ Beq,}
+\DoxyCodeLine{00597\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ pd,}
+\DoxyCodeLine{00598\ \ \ Eigen::PlainObjectBase<DerivedZ>\ \&\ Z)}
+\DoxyCodeLine{00599\ \{}
+\DoxyCodeLine{00600\ \ \ \doxymbox{\hyperlink{structigl_1_1min__quad__with__fixed__data}{min\_quad\_with\_fixed\_data<T>}}\ data;}
+\DoxyCodeLine{00601\ \ \ \textcolor{keywordflow}{if}(!\doxymbox{\hyperlink{namespaceigl_adc0382628e374a5b92a226ad75ce6b8b}{min\_quad\_with\_fixed\_precompute}}(A,known,Aeq,pd,data))}
+\DoxyCodeLine{00602\ \ \ \{}
+\DoxyCodeLine{00603\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00604\ \ \ \}}
+\DoxyCodeLine{00605\ \ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{namespaceigl_ad6d436a09a132f780d5e503b39499fbb}{min\_quad\_with\_fixed\_solve}}(data,B,Y,Beq,Z);}
+\DoxyCodeLine{00606\ \}}
+\DoxyCodeLine{00607\ }
+\DoxyCodeLine{00608\ }
+\DoxyCodeLine{00609\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Scalar,\ \textcolor{keywordtype}{int}\ n,\ \textcolor{keywordtype}{int}\ m,\ \textcolor{keywordtype}{bool}\ Hpd>}
+\DoxyCodeLine{00610\ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ Eigen::Matrix<Scalar,n,1>\ \doxymbox{\hyperlink{namespaceigl_abcdcf5c62d46412f4b5de5889e51c0d4}{igl::min\_quad\_with\_fixed}}(}
+\DoxyCodeLine{00611\ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,n,n>\ \&\ H,}
+\DoxyCodeLine{00612\ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,n,1>\ \&\ f,}
+\DoxyCodeLine{00613\ \ \ \textcolor{keyword}{const}\ Eigen::Array<bool,n,1>\ \&\ k,}
+\DoxyCodeLine{00614\ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,n,1>\ \&\ bc,}
+\DoxyCodeLine{00615\ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,m,n>\ \&\ A,}
+\DoxyCodeLine{00616\ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,m,1>\ \&\ b)}
+\DoxyCodeLine{00617\ \{}
+\DoxyCodeLine{00618\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ dyn\_n\ =\ n\ ==\ Eigen::Dynamic\ ?\ H.rows()\ :\ n;}
+\DoxyCodeLine{00619\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ dyn\_m\ =\ m\ ==\ Eigen::Dynamic\ ?\ A.rows()\ :\ m;}
+\DoxyCodeLine{00620\ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ nn\ =\ n\ ==\ Eigen::Dynamic\ ?\ Eigen::Dynamic\ :\ n+m;}
+\DoxyCodeLine{00621\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ dyn\_nn\ =\ nn\ ==\ Eigen::Dynamic\ ?\ dyn\_n+dyn\_m\ :\ nn;}
+\DoxyCodeLine{00622\ \ \ \textcolor{keywordflow}{if}(dyn\_m\ ==\ 0)}
+\DoxyCodeLine{00623\ \ \ \{}
+\DoxyCodeLine{00624\ \ \ \ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{namespaceigl_abcdcf5c62d46412f4b5de5889e51c0d4}{igl::min\_quad\_with\_fixed<Scalar,n,Hpd>}}(H,f,k,bc);}
+\DoxyCodeLine{00625\ \ \ \}}
+\DoxyCodeLine{00626\ \ \ \textcolor{comment}{//\ min\_x\ ½\ xᵀ\ H\ x\ +\ xᵀ\ f\ \ \ subject\ to\ A\ x\ =\ b\ and\ x(k)\ =\ bc(k)}}
+\DoxyCodeLine{00627\ \ \ \textcolor{comment}{//\ let\ zᵀ\ =\ [xᵀ\ λᵀ]}}
+\DoxyCodeLine{00628\ \ \ \textcolor{comment}{//\ min\_z\ ½\ zᵀ\ [H\ Aᵀ;A\ 0]\ z\ +\ zᵀ\ [f;-\/b]\ \ \ z(k)\ =\ bc(k)}}
+\DoxyCodeLine{00629\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ make\_HH\ =\ [\&]()}
+\DoxyCodeLine{00630\ \ \ \{}
+\DoxyCodeLine{00631\ \ \ \ \ \textcolor{comment}{//\ Windows\ can't\ remember\ that\ nn\ is\ const.}}
+\DoxyCodeLine{00632\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ nn\ =\ n\ ==\ Eigen::Dynamic\ ?\ Eigen::Dynamic\ :\ n+m;}
+\DoxyCodeLine{00633\ \ \ \ \ Eigen::Matrix<Scalar,nn,nn>\ HH\ =}
+\DoxyCodeLine{00634\ \ \ \ \ \ \ Eigen::Matrix<Scalar,nn,nn>::Zero(dyn\_nn,dyn\_nn);}
+\DoxyCodeLine{00635\ \ \ \ \ HH.topLeftCorner(dyn\_n,dyn\_n)\ =\ H;}
+\DoxyCodeLine{00636\ \ \ \ \ HH.bottomLeftCorner(dyn\_m,dyn\_n)\ =\ A;}
+\DoxyCodeLine{00637\ \ \ \ \ HH.topRightCorner(dyn\_n,dyn\_m)\ =\ A.transpose();}
+\DoxyCodeLine{00638\ \ \ \ \ \textcolor{keywordflow}{return}\ HH;}
+\DoxyCodeLine{00639\ \ \ \};}
+\DoxyCodeLine{00640\ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,nn,nn>\ HH\ =\ make\_HH();}
+\DoxyCodeLine{00641\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ make\_ff\ \ =\ [\&]()}
+\DoxyCodeLine{00642\ \ \ \{}
+\DoxyCodeLine{00643\ \ \ \ \ \textcolor{comment}{//\ Windows\ can't\ remember\ that\ nn\ is\ const.}}
+\DoxyCodeLine{00644\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ nn\ =\ n\ ==\ Eigen::Dynamic\ ?\ Eigen::Dynamic\ :\ n+m;}
+\DoxyCodeLine{00645\ \ \ \ \ Eigen::Matrix<Scalar,nn,1>\ ff(dyn\_nn);}
+\DoxyCodeLine{00646\ \ \ \ \ ff.head(dyn\_n)\ =\ \ f;}
+\DoxyCodeLine{00647\ \ \ \ \ ff.tail(dyn\_m)\ =\ -\/b;}
+\DoxyCodeLine{00648\ \ \ \ \ \textcolor{keywordflow}{return}\ ff;}
+\DoxyCodeLine{00649\ \ \ \};}
+\DoxyCodeLine{00650\ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,nn,1>\ ff\ =\ make\_ff();}
+\DoxyCodeLine{00651\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ make\_kk\ \ =\ [\&]()}
+\DoxyCodeLine{00652\ \ \ \{}
+\DoxyCodeLine{00653\ \ \ \ \ \textcolor{comment}{//\ Windows\ can't\ remember\ that\ nn\ is\ const.}}
+\DoxyCodeLine{00654\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ nn\ =\ n\ ==\ Eigen::Dynamic\ ?\ Eigen::Dynamic\ :\ n+m;}
+\DoxyCodeLine{00655\ \ \ \ \ Eigen::Array<bool,nn,1>\ kk\ =}
+\DoxyCodeLine{00656\ \ \ \ \ \ \ Eigen::Array<bool,nn,1>::Constant(dyn\_nn,1,\textcolor{keyword}{false});}
+\DoxyCodeLine{00657\ \ \ \ \ kk.head(dyn\_n)\ =\ \ k;}
+\DoxyCodeLine{00658\ \ \ \ \ \textcolor{keywordflow}{return}\ kk;}
+\DoxyCodeLine{00659\ \ \ \};}
+\DoxyCodeLine{00660\ \ \ \textcolor{keyword}{const}\ Eigen::Array<bool,nn,1>\ kk\ =\ make\_kk();}
+\DoxyCodeLine{00661\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ make\_bcbc=\ [\&]()}
+\DoxyCodeLine{00662\ \ \ \{}
+\DoxyCodeLine{00663\ \ \ \ \ \textcolor{comment}{//\ Windows\ can't\ remember\ that\ nn\ is\ const.}}
+\DoxyCodeLine{00664\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ nn\ =\ n\ ==\ Eigen::Dynamic\ ?\ Eigen::Dynamic\ :\ n+m;}
+\DoxyCodeLine{00665\ \ \ \ \ Eigen::Matrix<Scalar,nn,1>\ bcbc(dyn\_nn);}
+\DoxyCodeLine{00666\ \ \ \ \ bcbc.head(dyn\_n)\ =\ \ bc;}
+\DoxyCodeLine{00667\ \ \ \ \ \textcolor{keywordflow}{return}\ bcbc;}
+\DoxyCodeLine{00668\ \ \ \};}
+\DoxyCodeLine{00669\ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,nn,1>\ bcbc\ =\ make\_bcbc();}
+\DoxyCodeLine{00670\ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,nn,1>\ xx\ =}
+\DoxyCodeLine{00671\ \ \ \ \ \doxymbox{\hyperlink{namespaceigl_abcdcf5c62d46412f4b5de5889e51c0d4}{min\_quad\_with\_fixed<Scalar,nn,false>}}(HH,ff,kk,bcbc);}
+\DoxyCodeLine{00672\ \ \ \textcolor{keywordflow}{return}\ xx.head(dyn\_n);}
+\DoxyCodeLine{00673\ \}}
+\DoxyCodeLine{00674\ }
+\DoxyCodeLine{00675\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Scalar,\ \textcolor{keywordtype}{int}\ n,\ \textcolor{keywordtype}{bool}\ Hpd>}
+\DoxyCodeLine{00676\ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ Eigen::Matrix<Scalar,n,1>\ \doxymbox{\hyperlink{namespaceigl_abcdcf5c62d46412f4b5de5889e51c0d4}{igl::min\_quad\_with\_fixed}}(}
+\DoxyCodeLine{00677\ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,n,n>\ \&\ H,}
+\DoxyCodeLine{00678\ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,n,1>\ \&\ f,}
+\DoxyCodeLine{00679\ \ \ \textcolor{keyword}{const}\ Eigen::Array<bool,n,1>\ \&\ k,}
+\DoxyCodeLine{00680\ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,n,1>\ \&\ bc)}
+\DoxyCodeLine{00681\ \{}
+\DoxyCodeLine{00682\ \ \ assert(H.isApprox(H.transpose(),1e-\/7));}
+\DoxyCodeLine{00683\ \ \ assert(H.rows()\ ==\ H.cols());}
+\DoxyCodeLine{00684\ \ \ assert(H.rows()\ ==\ f.size());}
+\DoxyCodeLine{00685\ \ \ assert(H.rows()\ ==\ k.size());}
+\DoxyCodeLine{00686\ \ \ assert(H.rows()\ ==\ bc.size());}
+\DoxyCodeLine{00687\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ kcount\ =\ k.count();}
+\DoxyCodeLine{00688\ \ \ \textcolor{comment}{//\ Everything\ fixed}}
+\DoxyCodeLine{00689\ \ \ \textcolor{keywordflow}{if}(kcount\ ==\ (Eigen::Dynamic?H.rows():n))}
+\DoxyCodeLine{00690\ \ \ \{}
+\DoxyCodeLine{00691\ \ \ \ \ \textcolor{keywordflow}{return}\ bc;}
+\DoxyCodeLine{00692\ \ \ \}}
+\DoxyCodeLine{00693\ \ \ \textcolor{comment}{//\ Nothing\ fixed}}
+\DoxyCodeLine{00694\ \ \ \textcolor{keywordflow}{if}(kcount\ ==\ 0)}
+\DoxyCodeLine{00695\ \ \ \{}
+\DoxyCodeLine{00696\ \ \ \ \ \textcolor{comment}{//\ avoid\ function\ call}}
+\DoxyCodeLine{00697\ \ \ \ \ \textcolor{keyword}{typedef}\ Eigen::Matrix<Scalar,n,n>\ MatrixSn;}
+\DoxyCodeLine{00698\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}}
+\DoxyCodeLine{00699\ \ \ \ \ \ \ std::conditional<Hpd,Eigen::LLT<MatrixSn>,Eigen::CompleteOrthogonalDecomposition<MatrixSn>>::type}
+\DoxyCodeLine{00700\ \ \ \ \ \ \ Solver;}
+\DoxyCodeLine{00701\ \ \ \ \ \textcolor{keywordflow}{return}\ Solver(H).solve(-\/f);}
+\DoxyCodeLine{00702\ \ \ \}}
+\DoxyCodeLine{00703\ \ \ \textcolor{comment}{//\ All-\/but-\/one\ fixed}}
+\DoxyCodeLine{00704\ \ \ \textcolor{keywordflow}{if}(\ (Eigen::Dynamic?H.rows():n)-\/kcount\ ==\ 1)}
+\DoxyCodeLine{00705\ \ \ \{}
+\DoxyCodeLine{00706\ \ \ \ \ \textcolor{comment}{//\ which\ one\ is\ not\ fixed?}}
+\DoxyCodeLine{00707\ \ \ \ \ \textcolor{keywordtype}{int}\ u\ =\ -\/1;}
+\DoxyCodeLine{00708\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;i<k.size();i++)\{\ \textcolor{keywordflow}{if}(!k(i))\{\ u=i;\ \textcolor{keywordflow}{break};\ \}\ \}}
+\DoxyCodeLine{00709\ \ \ \ \ assert(u>=0);}
+\DoxyCodeLine{00710\ \ \ \ \ \textcolor{comment}{//\ min\ ½\ x(u)\ Huu\ x(u)\ +\ x(u)(fu\ +\ H(u,k)bc(k))}}
+\DoxyCodeLine{00711\ \ \ \ \ \textcolor{comment}{//\ Huu\ x(u)\ =\ -\/(fu\ +\ H(u,k)\ bc(k))}}
+\DoxyCodeLine{00712\ \ \ \ \ \textcolor{comment}{//\ x(u)\ =\ (-\/fu\ +\ ∑\ -\/Huj\ bcj)/Huu}}
+\DoxyCodeLine{00713\ \ \ \ \ Eigen::Matrix<Scalar,n,1>\ x\ =\ bc;}
+\DoxyCodeLine{00714\ \ \ \ \ x(u)\ =\ -\/f(u);}
+\DoxyCodeLine{00715\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;i<k.size();i++)\{\ \textcolor{keywordflow}{if}(i!=u)\{\ x(u)-\/=bc(i)*H(i,u);\ \}\ \}}
+\DoxyCodeLine{00716\ \ \ \ \ x(u)\ /=\ H(u,u);}
+\DoxyCodeLine{00717\ \ \ \ \ \textcolor{keywordflow}{return}\ x;}
+\DoxyCodeLine{00718\ \ \ \}}
+\DoxyCodeLine{00719\ \ \ \textcolor{comment}{//\ Alec:\ Is\ there\ a\ smart\ template\ way\ to\ do\ this?}}
+\DoxyCodeLine{00720\ \ \ \textcolor{comment}{//\ jdumas:\ I\ guess\ you\ could\ do\ a\ templated\ for-\/loop\ starting\ from\ 16,\ and}}
+\DoxyCodeLine{00721\ \ \ \textcolor{comment}{//\ dispatching\ to\ the\ appropriate\ templated\ function\ when\ the\ argument\ matches}}
+\DoxyCodeLine{00722\ \ \ \textcolor{comment}{//\ (with\ a\ fallback\ to\ the\ dynamic\ version).\ Cf\ this\ example:}}
+\DoxyCodeLine{00723\ \ \ \textcolor{comment}{//\ https://gist.github.com/disconnect3d/13c2d035bb31b244df14}}
+\DoxyCodeLine{00724\ \ \ \textcolor{keywordflow}{switch}(kcount)}
+\DoxyCodeLine{00725\ \ \ \{}
+\DoxyCodeLine{00726\ \ \ \ \ \textcolor{keywordflow}{case}\ 0:\ assert(\textcolor{keyword}{false}\ \&\&\ \textcolor{stringliteral}{"{}Handled\ above."{}});\ \textcolor{keywordflow}{return}\ Eigen::Matrix<Scalar,n,1>();}
+\DoxyCodeLine{00727\ \ \ \ \ \textcolor{comment}{//\ \%\ Matlibberish\ for\ generating\ these\ case\ statements:}}
+\DoxyCodeLine{00728\ \ \ \ \ \textcolor{comment}{//\ maxi=16;for\ i=1:maxi;fprintf('\ \ \ \ case\ \%d:\(\backslash\)n\ \ \ \ \{\(\backslash\)n\ \ \ \ \ const\ bool\ D\ =\ (n-\/\%d<=0)||(\%d>=n)||(n>\%d);\(\backslash\)n\ \ \ \ \ return\ min\_quad\_with\_fixed<Scalar,D?Eigen::Dynamic:n,D?Eigen::Dynamic:\%d,Hpd>(H,f,k,bc);\(\backslash\)n\ \ \ \ \}\(\backslash\)n',[i\ i\ i\ maxi\ i]);end}}
+\DoxyCodeLine{00729\ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{00730\ \ \ \ \ \{}
+\DoxyCodeLine{00731\ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ D\ =\ (n-\/1<=0)||(1>=n)||(n>16);}
+\DoxyCodeLine{00732\ \ \ \ \ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{namespaceigl_abcdcf5c62d46412f4b5de5889e51c0d4}{min\_quad\_with\_fixed<Scalar,D?Eigen::Dynamic:n,D?Eigen::Dynamic:1,Hpd>}}(H,f,k,bc);}
+\DoxyCodeLine{00733\ \ \ \ \ \}}
+\DoxyCodeLine{00734\ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{00735\ \ \ \ \ \{}
+\DoxyCodeLine{00736\ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ D\ =\ (n-\/2<=0)||(2>=n)||(n>16);}
+\DoxyCodeLine{00737\ \ \ \ \ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{namespaceigl_abcdcf5c62d46412f4b5de5889e51c0d4}{min\_quad\_with\_fixed<Scalar,D?Eigen::Dynamic:n,D?Eigen::Dynamic:2,Hpd>}}(H,f,k,bc);}
+\DoxyCodeLine{00738\ \ \ \ \ \}}
+\DoxyCodeLine{00739\ \ \ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{00740\ \ \ \ \ \{}
+\DoxyCodeLine{00741\ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ D\ =\ (n-\/3<=0)||(3>=n)||(n>16);}
+\DoxyCodeLine{00742\ \ \ \ \ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{namespaceigl_abcdcf5c62d46412f4b5de5889e51c0d4}{min\_quad\_with\_fixed<Scalar,D?Eigen::Dynamic:n,D?Eigen::Dynamic:3,Hpd>}}(H,f,k,bc);}
+\DoxyCodeLine{00743\ \ \ \ \ \}}
+\DoxyCodeLine{00744\ \ \ \ \ \textcolor{keywordflow}{case}\ 4:}
+\DoxyCodeLine{00745\ \ \ \ \ \{}
+\DoxyCodeLine{00746\ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ D\ =\ (n-\/4<=0)||(4>=n)||(n>16);}
+\DoxyCodeLine{00747\ \ \ \ \ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{namespaceigl_abcdcf5c62d46412f4b5de5889e51c0d4}{min\_quad\_with\_fixed<Scalar,D?Eigen::Dynamic:n,D?Eigen::Dynamic:4,Hpd>}}(H,f,k,bc);}
+\DoxyCodeLine{00748\ \ \ \ \ \}}
+\DoxyCodeLine{00749\ \ \ \ \ \textcolor{keywordflow}{case}\ 5:}
+\DoxyCodeLine{00750\ \ \ \ \ \{}
+\DoxyCodeLine{00751\ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ D\ =\ (n-\/5<=0)||(5>=n)||(n>16);}
+\DoxyCodeLine{00752\ \ \ \ \ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{namespaceigl_abcdcf5c62d46412f4b5de5889e51c0d4}{min\_quad\_with\_fixed<Scalar,D?Eigen::Dynamic:n,D?Eigen::Dynamic:5,Hpd>}}(H,f,k,bc);}
+\DoxyCodeLine{00753\ \ \ \ \ \}}
+\DoxyCodeLine{00754\ \ \ \ \ \textcolor{keywordflow}{case}\ 6:}
+\DoxyCodeLine{00755\ \ \ \ \ \{}
+\DoxyCodeLine{00756\ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ D\ =\ (n-\/6<=0)||(6>=n)||(n>16);}
+\DoxyCodeLine{00757\ \ \ \ \ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{namespaceigl_abcdcf5c62d46412f4b5de5889e51c0d4}{min\_quad\_with\_fixed<Scalar,D?Eigen::Dynamic:n,D?Eigen::Dynamic:6,Hpd>}}(H,f,k,bc);}
+\DoxyCodeLine{00758\ \ \ \ \ \}}
+\DoxyCodeLine{00759\ \ \ \ \ \textcolor{keywordflow}{case}\ 7:}
+\DoxyCodeLine{00760\ \ \ \ \ \{}
+\DoxyCodeLine{00761\ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ D\ =\ (n-\/7<=0)||(7>=n)||(n>16);}
+\DoxyCodeLine{00762\ \ \ \ \ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{namespaceigl_abcdcf5c62d46412f4b5de5889e51c0d4}{min\_quad\_with\_fixed<Scalar,D?Eigen::Dynamic:n,D?Eigen::Dynamic:7,Hpd>}}(H,f,k,bc);}
+\DoxyCodeLine{00763\ \ \ \ \ \}}
+\DoxyCodeLine{00764\ \ \ \ \ \textcolor{keywordflow}{case}\ 8:}
+\DoxyCodeLine{00765\ \ \ \ \ \{}
+\DoxyCodeLine{00766\ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ D\ =\ (n-\/8<=0)||(8>=n)||(n>16);}
+\DoxyCodeLine{00767\ \ \ \ \ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{namespaceigl_abcdcf5c62d46412f4b5de5889e51c0d4}{min\_quad\_with\_fixed<Scalar,D?Eigen::Dynamic:n,D?Eigen::Dynamic:8,Hpd>}}(H,f,k,bc);}
+\DoxyCodeLine{00768\ \ \ \ \ \}}
+\DoxyCodeLine{00769\ \ \ \ \ \textcolor{keywordflow}{case}\ 9:}
+\DoxyCodeLine{00770\ \ \ \ \ \{}
+\DoxyCodeLine{00771\ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ D\ =\ (n-\/9<=0)||(9>=n)||(n>16);}
+\DoxyCodeLine{00772\ \ \ \ \ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{namespaceigl_abcdcf5c62d46412f4b5de5889e51c0d4}{min\_quad\_with\_fixed<Scalar,D?Eigen::Dynamic:n,D?Eigen::Dynamic:9,Hpd>}}(H,f,k,bc);}
+\DoxyCodeLine{00773\ \ \ \ \ \}}
+\DoxyCodeLine{00774\ \ \ \ \ \textcolor{keywordflow}{case}\ 10:}
+\DoxyCodeLine{00775\ \ \ \ \ \{}
+\DoxyCodeLine{00776\ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ D\ =\ (n-\/10<=0)||(10>=n)||(n>16);}
+\DoxyCodeLine{00777\ \ \ \ \ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{namespaceigl_abcdcf5c62d46412f4b5de5889e51c0d4}{min\_quad\_with\_fixed<Scalar,D?Eigen::Dynamic:n,D?Eigen::Dynamic:10,Hpd>}}(H,f,k,bc);}
+\DoxyCodeLine{00778\ \ \ \ \ \}}
+\DoxyCodeLine{00779\ \ \ \ \ \textcolor{keywordflow}{case}\ 11:}
+\DoxyCodeLine{00780\ \ \ \ \ \{}
+\DoxyCodeLine{00781\ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ D\ =\ (n-\/11<=0)||(11>=n)||(n>16);}
+\DoxyCodeLine{00782\ \ \ \ \ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{namespaceigl_abcdcf5c62d46412f4b5de5889e51c0d4}{min\_quad\_with\_fixed<Scalar,D?Eigen::Dynamic:n,D?Eigen::Dynamic:11,Hpd>}}(H,f,k,bc);}
+\DoxyCodeLine{00783\ \ \ \ \ \}}
+\DoxyCodeLine{00784\ \ \ \ \ \textcolor{keywordflow}{case}\ 12:}
+\DoxyCodeLine{00785\ \ \ \ \ \{}
+\DoxyCodeLine{00786\ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ D\ =\ (n-\/12<=0)||(12>=n)||(n>16);}
+\DoxyCodeLine{00787\ \ \ \ \ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{namespaceigl_abcdcf5c62d46412f4b5de5889e51c0d4}{min\_quad\_with\_fixed<Scalar,D?Eigen::Dynamic:n,D?Eigen::Dynamic:12,Hpd>}}(H,f,k,bc);}
+\DoxyCodeLine{00788\ \ \ \ \ \}}
+\DoxyCodeLine{00789\ \ \ \ \ \textcolor{keywordflow}{case}\ 13:}
+\DoxyCodeLine{00790\ \ \ \ \ \{}
+\DoxyCodeLine{00791\ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ D\ =\ (n-\/13<=0)||(13>=n)||(n>16);}
+\DoxyCodeLine{00792\ \ \ \ \ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{namespaceigl_abcdcf5c62d46412f4b5de5889e51c0d4}{min\_quad\_with\_fixed<Scalar,D?Eigen::Dynamic:n,D?Eigen::Dynamic:13,Hpd>}}(H,f,k,bc);}
+\DoxyCodeLine{00793\ \ \ \ \ \}}
+\DoxyCodeLine{00794\ \ \ \ \ \textcolor{keywordflow}{case}\ 14:}
+\DoxyCodeLine{00795\ \ \ \ \ \{}
+\DoxyCodeLine{00796\ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ D\ =\ (n-\/14<=0)||(14>=n)||(n>16);}
+\DoxyCodeLine{00797\ \ \ \ \ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{namespaceigl_abcdcf5c62d46412f4b5de5889e51c0d4}{min\_quad\_with\_fixed<Scalar,D?Eigen::Dynamic:n,D?Eigen::Dynamic:14,Hpd>}}(H,f,k,bc);}
+\DoxyCodeLine{00798\ \ \ \ \ \}}
+\DoxyCodeLine{00799\ \ \ \ \ \textcolor{keywordflow}{case}\ 15:}
+\DoxyCodeLine{00800\ \ \ \ \ \{}
+\DoxyCodeLine{00801\ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ D\ =\ (n-\/15<=0)||(15>=n)||(n>16);}
+\DoxyCodeLine{00802\ \ \ \ \ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{namespaceigl_abcdcf5c62d46412f4b5de5889e51c0d4}{min\_quad\_with\_fixed<Scalar,D?Eigen::Dynamic:n,D?Eigen::Dynamic:15,Hpd>}}(H,f,k,bc);}
+\DoxyCodeLine{00803\ \ \ \ \ \}}
+\DoxyCodeLine{00804\ \ \ \ \ \textcolor{keywordflow}{case}\ 16:}
+\DoxyCodeLine{00805\ \ \ \ \ \{}
+\DoxyCodeLine{00806\ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ D\ =\ (n-\/16<=0)||(16>=n)||(n>16);}
+\DoxyCodeLine{00807\ \ \ \ \ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{namespaceigl_abcdcf5c62d46412f4b5de5889e51c0d4}{min\_quad\_with\_fixed<Scalar,D?Eigen::Dynamic:n,D?Eigen::Dynamic:16,Hpd>}}(H,f,k,bc);}
+\DoxyCodeLine{00808\ \ \ \ \ \}}
+\DoxyCodeLine{00809\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00810\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{namespaceigl_abcdcf5c62d46412f4b5de5889e51c0d4}{min\_quad\_with\_fixed<Scalar,Eigen::Dynamic,Eigen::Dynamic,Hpd>}}(H,f,k,bc);}
+\DoxyCodeLine{00811\ \ \ \}}
+\DoxyCodeLine{00812\ \}}
+\DoxyCodeLine{00813\ }
+\DoxyCodeLine{00814\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Scalar,\ \textcolor{keywordtype}{int}\ n,\ \textcolor{keywordtype}{int}\ kcount,\ \textcolor{keywordtype}{bool}\ Hpd>}
+\DoxyCodeLine{00815\ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ Eigen::Matrix<Scalar,n,1>\ \doxymbox{\hyperlink{namespaceigl_abcdcf5c62d46412f4b5de5889e51c0d4}{igl::min\_quad\_with\_fixed}}(}
+\DoxyCodeLine{00816\ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,n,n>\ \&\ H,}
+\DoxyCodeLine{00817\ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,n,1>\ \&\ f,}
+\DoxyCodeLine{00818\ \ \ \textcolor{keyword}{const}\ Eigen::Array<bool,n,1>\ \&\ k,}
+\DoxyCodeLine{00819\ \ \ \textcolor{keyword}{const}\ Eigen::Matrix<Scalar,n,1>\ \&\ bc)}
+\DoxyCodeLine{00820\ \{}
+\DoxyCodeLine{00821\ \ \ \textcolor{comment}{//\ 0\ and\ n\ should\ be\ handle\ outside\ this\ function}}
+\DoxyCodeLine{00822\ \ \ \textcolor{keyword}{static\_assert}(kcount==Eigen::Dynamic\ ||\ kcount>0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ,\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00823\ \ \ \textcolor{keyword}{static\_assert}(kcount==Eigen::Dynamic\ ||\ kcount<n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ,\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00824\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ ucount\ =\ n==Eigen::Dynamic\ ?\ Eigen::Dynamic\ :\ n-\/kcount;}
+\DoxyCodeLine{00825\ \ \ \textcolor{keyword}{static\_assert}(kcount==Eigen::Dynamic\ ||\ ucount+kcount\ ==\ n\ \ \ \ \ \ \ \ ,\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00826\ \ \ \textcolor{keyword}{static\_assert}((n==Eigen::Dynamic)\ ==\ (ucount==Eigen::Dynamic),\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00827\ \ \ \textcolor{keyword}{static\_assert}((kcount==Eigen::Dynamic)\ ==\ (ucount==Eigen::Dynamic),\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00828\ \ \ assert((n==Eigen::Dynamic)\ ||\ n\ ==\ H.rows());}
+\DoxyCodeLine{00829\ \ \ assert((kcount==Eigen::Dynamic)\ ||\ kcount\ ==\ k.count());}
+\DoxyCodeLine{00830\ \ \ \textcolor{keyword}{typedef}\ Eigen::Matrix<Scalar,ucount,ucount>\ MatrixSuu;}
+\DoxyCodeLine{00831\ \ \ \textcolor{keyword}{typedef}\ Eigen::Matrix<Scalar,ucount,kcount>\ MatrixSuk;}
+\DoxyCodeLine{00832\ \ \ \textcolor{keyword}{typedef}\ Eigen::Matrix<Scalar,n,1>\ \ \ \ \ \ VectorSn;}
+\DoxyCodeLine{00833\ \ \ \textcolor{keyword}{typedef}\ Eigen::Matrix<Scalar,ucount,1>\ VectorSu;}
+\DoxyCodeLine{00834\ \ \ \textcolor{keyword}{typedef}\ Eigen::Matrix<Scalar,kcount,1>\ VectorSk;}
+\DoxyCodeLine{00835\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ dyn\_n\ =\ n==Eigen::Dynamic\ ?\ H.rows()\ :\ n;}
+\DoxyCodeLine{00836\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ dyn\_kcount\ =\ kcount==Eigen::Dynamic\ ?\ k.count()\ :\ kcount;}
+\DoxyCodeLine{00837\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ dyn\_ucount\ =\ ucount==Eigen::Dynamic\ ?\ dyn\_n-\/\ dyn\_kcount\ :\ ucount;}
+\DoxyCodeLine{00838\ \ \ \textcolor{comment}{//\ For\ ucount==2\ or\ kcount==2\ this\ calls\ the\ coefficient\ initiliazer\ rather}}
+\DoxyCodeLine{00839\ \ \ \textcolor{comment}{//\ than\ the\ size\ initilizer,\ but\ I\ guess\ that's\ ok.}}
+\DoxyCodeLine{00840\ \ \ MatrixSuu\ Huu(dyn\_ucount,dyn\_ucount);}
+\DoxyCodeLine{00841\ \ \ MatrixSuk\ Huk(dyn\_ucount,dyn\_kcount);}
+\DoxyCodeLine{00842\ \ \ VectorSu\ mrhs(dyn\_ucount);}
+\DoxyCodeLine{00843\ \ \ VectorSk\ \ bck(dyn\_kcount);}
+\DoxyCodeLine{00844\ \ \ \{}
+\DoxyCodeLine{00845\ \ \ \ \ \textcolor{keywordtype}{int}\ ui\ =\ 0;}
+\DoxyCodeLine{00846\ \ \ \ \ \textcolor{keywordtype}{int}\ ki\ =\ 0;}
+\DoxyCodeLine{00847\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;i<dyn\_n;i++)}
+\DoxyCodeLine{00848\ \ \ \ \ \{}
+\DoxyCodeLine{00849\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(k(i))}
+\DoxyCodeLine{00850\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00851\ \ \ \ \ \ \ \ \ bck(ki)\ =\ bc(i);}
+\DoxyCodeLine{00852\ \ \ \ \ \ \ \ \ ki++;}
+\DoxyCodeLine{00853\ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{00854\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00855\ \ \ \ \ \ \ \ \ mrhs(ui)\ =\ f(i);}
+\DoxyCodeLine{00856\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ uj\ =\ 0;}
+\DoxyCodeLine{00857\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ kj\ =\ 0;}
+\DoxyCodeLine{00858\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ 0;j<dyn\_n;j++)}
+\DoxyCodeLine{00859\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00860\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(k(j))}
+\DoxyCodeLine{00861\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00862\ \ \ \ \ \ \ \ \ \ \ \ \ Huk(ui,kj)\ =\ H(i,j);}
+\DoxyCodeLine{00863\ \ \ \ \ \ \ \ \ \ \ \ \ kj++;}
+\DoxyCodeLine{00864\ \ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{00865\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00866\ \ \ \ \ \ \ \ \ \ \ \ \ Huu(ui,uj)\ =\ H(i,j);}
+\DoxyCodeLine{00867\ \ \ \ \ \ \ \ \ \ \ \ \ uj++;}
+\DoxyCodeLine{00868\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00869\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00870\ \ \ \ \ \ \ \ \ ui++;}
+\DoxyCodeLine{00871\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00872\ \ \ \ \ \}}
+\DoxyCodeLine{00873\ \ \ \}}
+\DoxyCodeLine{00874\ \ \ mrhs\ +=\ Huk\ *\ bck;}
+\DoxyCodeLine{00875\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}}
+\DoxyCodeLine{00876\ \ \ \ \ std::conditional<Hpd,}
+\DoxyCodeLine{00877\ \ \ \ \ \ \ Eigen::LLT<MatrixSuu>,}
+\DoxyCodeLine{00878\ \ \ \ \ \ \ \textcolor{comment}{//\ LDLT\ should\ be\ faster\ for\ indefinite\ problems\ but\ already\ found\ some}}
+\DoxyCodeLine{00879\ \ \ \ \ \ \ \textcolor{comment}{//\ cases\ where\ it\ was\ too\ inaccurate\ when\ called\ via\ quadprog\_primal.}}
+\DoxyCodeLine{00880\ \ \ \ \ \ \ \textcolor{comment}{//\ Ideally\ this\ function\ takes\ LLT,LDLT,\ or}}
+\DoxyCodeLine{00881\ \ \ \ \ \ \ \textcolor{comment}{//\ CompleteOrthogonalDecomposition\ as\ a\ template\ parameter.\ \ "{}template}}
+\DoxyCodeLine{00882\ \ \ \ \ \ \ \textcolor{comment}{//\ template"{}\ parameters\ did\ work\ because\ LLT,LDLT\ have\ different\ number\ of}}
+\DoxyCodeLine{00883\ \ \ \ \ \ \ \textcolor{comment}{//\ template\ parameters\ from\ CompleteOrthogonalDecomposition.\ \ Perhaps}}
+\DoxyCodeLine{00884\ \ \ \ \ \ \ \textcolor{comment}{//\ there's\ a\ way\ to\ take\ advantage\ of\ LLT\ and\ LDLT's\ default\ template}}
+\DoxyCodeLine{00885\ \ \ \ \ \ \ \textcolor{comment}{//\ parameters\ (I\ couldn't\ figure\ out\ how).}}
+\DoxyCodeLine{00886\ \ \ \ \ \ \ Eigen::CompleteOrthogonalDecomposition<MatrixSuu>>::type}
+\DoxyCodeLine{00887\ \ \ \ \ Solver;}
+\DoxyCodeLine{00888\ \ \ VectorSu\ xu\ =\ Solver(Huu).solve(-\/mrhs);}
+\DoxyCodeLine{00889\ \ \ VectorSn\ x(dyn\_n);}
+\DoxyCodeLine{00890\ \ \ \{}
+\DoxyCodeLine{00891\ \ \ \ \ \textcolor{keywordtype}{int}\ ui\ =\ 0;}
+\DoxyCodeLine{00892\ \ \ \ \ \textcolor{keywordtype}{int}\ ki\ =\ 0;}
+\DoxyCodeLine{00893\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;i<dyn\_n;i++)}
+\DoxyCodeLine{00894\ \ \ \ \ \{}
+\DoxyCodeLine{00895\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(k(i))}
+\DoxyCodeLine{00896\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00897\ \ \ \ \ \ \ \ \ x(i)\ =\ bck(ki);}
+\DoxyCodeLine{00898\ \ \ \ \ \ \ \ \ ki++;}
+\DoxyCodeLine{00899\ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{00900\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00901\ \ \ \ \ \ \ \ \ x(i)\ =\ xu(ui);}
+\DoxyCodeLine{00902\ \ \ \ \ \ \ \ \ ui++;}
+\DoxyCodeLine{00903\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00904\ \ \ \ \ \}}
+\DoxyCodeLine{00905\ \ \ \}}
+\DoxyCodeLine{00906\ \ \ \textcolor{keywordflow}{return}\ x;}
+\DoxyCodeLine{00907\ \}}
 
 \end{DoxyCode}

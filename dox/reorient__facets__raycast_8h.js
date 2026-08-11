@@ -1,5 +1,5 @@
 var reorient__facets__raycast_8h =
 [
-    [ "reorient_facets_raycast", "reorient__facets__raycast_8h.html#a50d8808b728c372e38d88371dee2cf0f", null ],
-    [ "reorient_facets_raycast", "reorient__facets__raycast_8h.html#a7dd7d02a9d43ec8e0735b96166341d68", null ]
+    [ "igl::embree::reorient_facets_raycast", "namespaceigl_1_1embree.html#ac4c1a13cb3775728460f9b8f0e1fda4b", null ],
+    [ "igl::embree::reorient_facets_raycast", "namespaceigl_1_1embree.html#afe61e8ce21035d19f1ca030f9543aab5", null ]
 ];

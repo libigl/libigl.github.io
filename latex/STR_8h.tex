@@ -1,36 +1,43 @@
-\doxysection{include/igl/\+STR.h File Reference}
+\doxysection{include/\+igl/\+\+STR.h File Reference}
 \hypertarget{STR_8h}{}\label{STR_8h}\index{include/igl/STR.h@{include/igl/STR.h}}
-{\ttfamily \#include $<$string$>$}\newline
-{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \+\#include $<$string$>$}\newline
+{\ttfamily \+\#include $<$sstream$>$}\newline
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \mbox{\hyperlink{STR_8h_aae57f17e11e61cf0519e2004414f5629}{STR}}(X)~static\+\_\+cast$<$std\+::ostringstream\&$>$(std\+::ostringstream().flush() $<$$<$ X).str()
-\begin{DoxyCompactList}\small\item\em Convert a stream of things to std\+:;string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\+\#define \doxymbox{\hyperlink{STR_8h_aae57f17e11e61cf0519e2004414f5629}{STR}}(X)
+\begin{DoxyCompactList}\small\item\em Convert a stream of things to std:\+;string. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
+\label{doc-define-members}
+\Hypertarget{STR_8h_doc-define-members}
 \doxysubsection{Macro Definition Documentation}
-\Hypertarget{STR_8h_aae57f17e11e61cf0519e2004414f5629}\label{STR_8h_aae57f17e11e61cf0519e2004414f5629} 
-\index{STR.h@{STR.h}!STR@{STR}}
+\Hypertarget{STR_8h_aae57f17e11e61cf0519e2004414f5629}\index{STR.h@{STR.h}!STR@{STR}}
 \index{STR@{STR}!STR.h@{STR.h}}
 \doxysubsubsection{\texorpdfstring{STR}{STR}}
-{\footnotesize\ttfamily \#define STR(\begin{DoxyParamCaption}\item[{}]{X }\end{DoxyParamCaption})~static\+\_\+cast$<$std\+::ostringstream\&$>$(std\+::ostringstream().flush() $<$$<$ X).str()}
+{\footnotesize\ttfamily \label{STR_8h_aae57f17e11e61cf0519e2004414f5629} 
+\+\#define STR(\begin{DoxyParamCaption}\item[{}]{X}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{static\_cast<}std::ostringstream\&\textcolor{keyword}{>}(std::ostringstream().flush()\ <<\ X).str()}
+
+\end{DoxyCode}
 
 
+Convert a stream of things to std:\+;string. 
 
-Convert a stream of things to std\+:;string. 
-
-Suppose you have a function\+: 
+Suppose you have a function:\+ 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keywordtype}{void}\ func(std::string\ s);}
 
 \end{DoxyCode}
- Then you can write\+: 
+ Then you can write:\+ 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{func(\mbox{\hyperlink{C__STR_8h_a0694d2f2211a224ad161925f11cc2c31}{C\_STR}}(\textcolor{stringliteral}{"{}foo"{}}<<1<<\textcolor{stringliteral}{"{}bar"{}}));}
+\DoxyCodeLine{func(\doxymbox{\hyperlink{C__STR_8h_a0694d2f2211a224ad161925f11cc2c31}{C\_STR}}(\textcolor{stringliteral}{"{}foo"{}}<<1<<\textcolor{stringliteral}{"{}bar"{}}));}
 
 \end{DoxyCode}
- which is equivalent to\+: 
+ which is equivalent to:\+ 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{func(\textcolor{stringliteral}{"{}foo1bar"{}});}
 

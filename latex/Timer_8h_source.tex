@@ -1,6 +1,6 @@
 \doxysection{Timer.\+h}
 \hypertarget{Timer_8h_source}{}\label{Timer_8h_source}\index{include/igl/Timer.h@{include/igl/Timer.h}}
-\mbox{\hyperlink{Timer_8h}{Go to the documentation of this file.}}
+\doxymbox{\hyperlink{Timer_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
 \DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
@@ -26,152 +26,153 @@
 \DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <sys/time.h>}}
 \DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif}}
 \DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <cstddef>}}
-\DoxyCodeLine{00025\ }
-\DoxyCodeLine{00026\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
-\DoxyCodeLine{00027\ \{}
-\DoxyCodeLine{00029\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classigl_1_1Timer}{Timer}}}
-\DoxyCodeLine{00030\ \ \ \{}
-\DoxyCodeLine{00031\ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{classigl_1_1Timer_a4492debe2d7447a5915c9fd9911cebc8}{Timer}}():}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ stopped(0),}
-\DoxyCodeLine{00035\ \#ifdef\ WIN32}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ frequency(),}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ startCount(),}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ endCount()}
-\DoxyCodeLine{00039\ \#elif\ \_\_APPLE\_\_}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ startCount(0),}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ endCount(0)}
-\DoxyCodeLine{00042\ \#else}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ startCount(),}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ endCount()}
-\DoxyCodeLine{00045\ \#endif}
-\DoxyCodeLine{00046\ \ \ \ \ \{}
-\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#ifdef\ WIN32}}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ QueryPerformanceFrequency(\&frequency);}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ startCount.QuadPart\ =\ 0;}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ endCount.QuadPart\ =\ 0;}
-\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#elif\ \_\_APPLE\_\_}}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ startCount\ =\ 0;}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ endCount\ =\ 0;}
-\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#else}}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ startCount.tv\_sec\ =\ startCount.tv\_usec\ =\ 0;}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ endCount.tv\_sec\ =\ endCount.tv\_usec\ =\ 0;}
-\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00058\ }
-\DoxyCodeLine{00059\ \ \ \ \ \ \ stopped\ =\ 0;}
-\DoxyCodeLine{00060\ \ \ \ \ \}}
-\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{//\ default\ destructor}}
-\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{classigl_1_1Timer_a2381e16bd653de578ae921e5fd6e1d34}{\string~Timer}}()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00063\ \ \ \ \ \{}
-\DoxyCodeLine{00064\ }
-\DoxyCodeLine{00065\ \ \ \ \ \}}
-\DoxyCodeLine{00066\ }
-\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#ifdef\ \_\_APPLE\_\_}}
-\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{double}\ subtractTimes(\ uint64\_t\ endTime,\ uint64\_t\ startTime\ )}
-\DoxyCodeLine{00073\ \ \ \ \ \{}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ uint64\_t\ difference\ =\ endTime\ -\/\ startTime;}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ conversion\ =\ 0.0;}
-\DoxyCodeLine{00076\ }
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\ conversion\ ==\ 0.0\ )}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ mach\_timebase\_info\_data\_t\ info;}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ kern\_return\_t\ err\ =\ mach\_timebase\_info(\ \&info\ );}
-\DoxyCodeLine{00081\ }
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Convert\ the\ timebase\ into\ seconds}}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\ err\ ==\ 0\ \ )}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ conversion\ =\ 1e-\/9\ *\ (double)\ info.numer\ /\ (\textcolor{keywordtype}{double})\ info.denom;}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00086\ }
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ conversion\ *\ (double)\ difference;}
-\DoxyCodeLine{00088\ \ \ \ \ \}}
-\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00090\ }
-\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{classigl_1_1Timer_a7271dec79a3c17a37896cf08f5cb8e9f}{start}}()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00093\ \ \ \ \ \{}
-\DoxyCodeLine{00094\ \ \ \ \ \ \ stopped\ =\ 0;\ \textcolor{comment}{//\ reset\ stop\ flag}}
-\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#ifdef\ WIN32}}
-\DoxyCodeLine{00096\ \ \ \ \ \ \ QueryPerformanceCounter(\&startCount);}
-\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#elif\ \_\_APPLE\_\_}}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ startCount\ =\ mach\_absolute\_time();}
-\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#else}}
-\DoxyCodeLine{00100\ \ \ \ \ \ \ gettimeofday(\&startCount,\ NULL);}
-\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00102\ }
-\DoxyCodeLine{00103\ \ \ \ \ \}}
-\DoxyCodeLine{00104\ }
-\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{classigl_1_1Timer_a350f4f155a9974861a53e2d03b1e37f0}{stop}}()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00107\ \ \ \ \ \{}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ stopped\ =\ 1;\ \textcolor{comment}{//\ set\ timer\ stopped\ flag}}
-\DoxyCodeLine{00109\ }
-\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#ifdef\ WIN32}}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ QueryPerformanceCounter(\&endCount);}
-\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#elif\ \_\_APPLE\_\_}}
-\DoxyCodeLine{00113\ \ \ \ \ \ \ endCount\ =\ mach\_absolute\_time();}
-\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#else}}
-\DoxyCodeLine{00115\ \ \ \ \ \ \ gettimeofday(\&endCount,\ NULL);}
-\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00117\ }
-\DoxyCodeLine{00118\ \ \ \ \ \}}
-\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classigl_1_1Timer_a6993bf83943d02273be5f8a44ac5af1e}{getElapsedTime}}()\ \ \ \ \ \ }
-\DoxyCodeLine{00122\ \ \ \ \ \{}
-\DoxyCodeLine{00123\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classigl_1_1Timer_a31d603d31042afe385abc3d291c241d1}{getElapsedTimeInSec}}();}
-\DoxyCodeLine{00124\ \ \ \ \ \}}
-\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classigl_1_1Timer_a31d603d31042afe385abc3d291c241d1}{getElapsedTimeInSec}}()\ }
-\DoxyCodeLine{00128\ \ \ \ \ \{}
-\DoxyCodeLine{00129\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classigl_1_1Timer_a123c1ee2463fc32983291c023d35bc97}{getElapsedTimeInMicroSec}}()\ *\ 0.000001;}
-\DoxyCodeLine{00130\ \ \ \ \ \}}
-\DoxyCodeLine{00131\ }
-\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classigl_1_1Timer_acc30f6be0c6ecc244c543ac3a130a057}{getElapsedTimeInMilliSec}}()}
-\DoxyCodeLine{00135\ \ \ \ \ \{}
-\DoxyCodeLine{00136\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classigl_1_1Timer_a123c1ee2463fc32983291c023d35bc97}{getElapsedTimeInMicroSec}}()\ *\ 0.001;}
-\DoxyCodeLine{00137\ \ \ \ \ \}}
-\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classigl_1_1Timer_a123c1ee2463fc32983291c023d35bc97}{getElapsedTimeInMicroSec}}()\ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00141\ \ \ \ \ \{}
-\DoxyCodeLine{00142\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ startTimeInMicroSec\ =\ 0;}
-\DoxyCodeLine{00143\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ endTimeInMicroSec\ =\ 0;}
-\DoxyCodeLine{00144\ }
-\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#ifdef\ WIN32}}
-\DoxyCodeLine{00146\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!stopped)}
-\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ QueryPerformanceCounter(\&endCount);}
-\DoxyCodeLine{00148\ }
-\DoxyCodeLine{00149\ \ \ \ \ \ \ startTimeInMicroSec\ =\ }
-\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ startCount.QuadPart\ *\ (1000000.0\ /\ frequency.QuadPart);}
-\DoxyCodeLine{00151\ \ \ \ \ \ \ endTimeInMicroSec\ =\ endCount.QuadPart\ *\ (1000000.0\ /\ frequency.QuadPart);}
-\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#elif\ \_\_APPLE\_\_}}
-\DoxyCodeLine{00153\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!stopped)}
-\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ endCount\ =\ mach\_absolute\_time();}
-\DoxyCodeLine{00155\ }
-\DoxyCodeLine{00156\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ subtractTimes(endCount,startCount)/1e-\/6;}
-\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#else}}
-\DoxyCodeLine{00158\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!stopped)}
-\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ gettimeofday(\&endCount,\ NULL);}
-\DoxyCodeLine{00160\ }
-\DoxyCodeLine{00161\ \ \ \ \ \ \ startTimeInMicroSec\ =\ }
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ (startCount.tv\_sec\ *\ 1000000.0)\ +\ startCount.tv\_usec;}
-\DoxyCodeLine{00163\ \ \ \ \ \ \ endTimeInMicroSec\ =\ (endCount.tv\_sec\ *\ 1000000.0)\ +\ endCount.tv\_usec;}
-\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00165\ }
-\DoxyCodeLine{00166\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ endTimeInMicroSec\ -\/\ startTimeInMicroSec;}
-\DoxyCodeLine{00167\ \ \ \ \ \}}
-\DoxyCodeLine{00168\ }
-\DoxyCodeLine{00169\ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00170\ \ \ \ \ \textcolor{comment}{//\ stop\ flag\ }}
-\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ stopped;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00172\ \textcolor{preprocessor}{\#ifdef\ WIN32}}
-\DoxyCodeLine{00173\ \ \ \ \ \textcolor{comment}{//\ ticks\ per\ second}}
-\DoxyCodeLine{00174\ \ \ \ \ LARGE\_INTEGER\ frequency;\ \ \ \ \ \ }
-\DoxyCodeLine{00175\ \ \ \ \ LARGE\_INTEGER\ startCount;\ \ \ \ \ }
-\DoxyCodeLine{00176\ \ \ \ \ LARGE\_INTEGER\ endCount;\ \ \ \ \ \ \ }
-\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#elif\ \_\_APPLE\_\_}}
-\DoxyCodeLine{00178\ \ \ \ \ uint64\_t\ startCount;\ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00179\ \ \ \ \ uint64\_t\ endCount;\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00180\ \textcolor{preprocessor}{\#else}}
-\DoxyCodeLine{00181\ \ \ \ \ timeval\ startCount;\ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00182\ \ \ \ \ timeval\ endCount;\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00183\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00184\ \ \ \};}
-\DoxyCodeLine{00185\ \}}
-\DoxyCodeLine{00186\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TIMER\_H\_DEF}}
-\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00030\ \ \ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classigl_1_1Timer_a4492debe2d7447a5915c9fd9911cebc8}{Timer}}}
+\DoxyCodeLine{00031\ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1Timer_a4492debe2d7447a5915c9fd9911cebc8}{Timer}}():}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ stopped(0),}
+\DoxyCodeLine{00036\ \#ifdef\ WIN32}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ frequency(),}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ startCount(),}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ endCount()}
+\DoxyCodeLine{00040\ \#elif\ \_\_APPLE\_\_}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ startCount(0),}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ endCount(0)}
+\DoxyCodeLine{00043\ \#else}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ startCount(),}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ endCount()}
+\DoxyCodeLine{00046\ \#endif}
+\DoxyCodeLine{00047\ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#ifdef\ WIN32}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ QueryPerformanceFrequency(\&frequency);}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ startCount.QuadPart\ =\ 0;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ endCount.QuadPart\ =\ 0;}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#elif\ \_\_APPLE\_\_}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ startCount\ =\ 0;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ endCount\ =\ 0;}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ startCount.tv\_sec\ =\ startCount.tv\_usec\ =\ 0;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ endCount.tv\_sec\ =\ endCount.tv\_usec\ =\ 0;}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ stopped\ =\ 0;}
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{//\ default\ destructor}}
+\DoxyCodeLine{00063\ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1Timer_a2381e16bd653de578ae921e5fd6e1d34}{\string~Timer}}()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00064\ \ \ \ \ \{}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#ifdef\ \_\_APPLE\_\_}}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{double}\ subtractTimes(\ std::uint64\_t\ endTime,\ std::uint64\_t\ startTime\ )}
+\DoxyCodeLine{00074\ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ std::uint64\_t\ difference\ =\ endTime\ -\/\ startTime;}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ conversion\ =\ 0.0;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\ conversion\ ==\ 0.0\ )}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ mach\_timebase\_info\_data\_t\ info;}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ kern\_return\_t\ err\ =\ mach\_timebase\_info(\ \&info\ );}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Convert\ the\ timebase\ into\ seconds}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\ err\ ==\ 0\ \ )}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ conversion\ =\ 1e-\/9\ *\ (double)\ info.numer\ /\ (\textcolor{keywordtype}{double})\ info.denom;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ conversion\ *\ (double)\ difference;}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \doxymbox{\hyperlink{classigl_1_1Timer_a7271dec79a3c17a37896cf08f5cb8e9f}{start}}()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00094\ \ \ \ \ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ stopped\ =\ 0;\ \textcolor{comment}{//\ reset\ stop\ flag}}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#ifdef\ WIN32}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ QueryPerformanceCounter(\&startCount);}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#elif\ \_\_APPLE\_\_}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ startCount\ =\ mach\_absolute\_time();}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ gettimeofday(\&startCount,\ NULL);}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \doxymbox{\hyperlink{classigl_1_1Timer_a350f4f155a9974861a53e2d03b1e37f0}{stop}}()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00108\ \ \ \ \ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ stopped\ =\ 1;\ \textcolor{comment}{//\ set\ timer\ stopped\ flag}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#ifdef\ WIN32}}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ QueryPerformanceCounter(\&endCount);}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#elif\ \_\_APPLE\_\_}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ endCount\ =\ mach\_absolute\_time();}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ gettimeofday(\&endCount,\ NULL);}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \}}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{classigl_1_1Timer_a6993bf83943d02273be5f8a44ac5af1e}{getElapsedTime}}()\ \ \ \ \ \ }
+\DoxyCodeLine{00123\ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\doxymbox{\hyperlink{classigl_1_1Timer_a31d603d31042afe385abc3d291c241d1}{getElapsedTimeInSec}}();}
+\DoxyCodeLine{00125\ \ \ \ \ \}}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{classigl_1_1Timer_a31d603d31042afe385abc3d291c241d1}{getElapsedTimeInSec}}()\ }
+\DoxyCodeLine{00129\ \ \ \ \ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\doxymbox{\hyperlink{classigl_1_1Timer_a123c1ee2463fc32983291c023d35bc97}{getElapsedTimeInMicroSec}}()\ *\ 0.000001;}
+\DoxyCodeLine{00131\ \ \ \ \ \}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{classigl_1_1Timer_acc30f6be0c6ecc244c543ac3a130a057}{getElapsedTimeInMilliSec}}()}
+\DoxyCodeLine{00136\ \ \ \ \ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\doxymbox{\hyperlink{classigl_1_1Timer_a123c1ee2463fc32983291c023d35bc97}{getElapsedTimeInMicroSec}}()\ *\ 0.001;}
+\DoxyCodeLine{00138\ \ \ \ \ \}}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{classigl_1_1Timer_a123c1ee2463fc32983291c023d35bc97}{getElapsedTimeInMicroSec}}()\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00142\ \ \ \ \ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ startTimeInMicroSec\ =\ 0;}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ endTimeInMicroSec\ =\ 0;}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#ifdef\ WIN32}}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!stopped)}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ QueryPerformanceCounter(\&endCount);}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ \ \ startTimeInMicroSec\ =\ }
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ startCount.QuadPart\ *\ (1000000.0\ /\ frequency.QuadPart);}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ endTimeInMicroSec\ =\ endCount.QuadPart\ *\ (1000000.0\ /\ frequency.QuadPart);}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#elif\ \_\_APPLE\_\_}}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!stopped)}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ endCount\ =\ mach\_absolute\_time();}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ subtractTimes(endCount,startCount)/1e-\/6;}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!stopped)}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ gettimeofday(\&endCount,\ NULL);}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ \ \ startTimeInMicroSec\ =\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ (startCount.tv\_sec\ *\ 1000000.0)\ +\ startCount.tv\_usec;}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ endTimeInMicroSec\ =\ (endCount.tv\_sec\ *\ 1000000.0)\ +\ endCount.tv\_usec;}
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ endTimeInMicroSec\ -\/\ startTimeInMicroSec;}
+\DoxyCodeLine{00168\ \ \ \ \ \}}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{comment}{//\ stop\ flag\ }}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ stopped;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#ifdef\ WIN32}}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{comment}{//\ ticks\ per\ second}}
+\DoxyCodeLine{00175\ \ \ \ \ LARGE\_INTEGER\ frequency;\ \ \ \ \ \ }
+\DoxyCodeLine{00176\ \ \ \ \ LARGE\_INTEGER\ startCount;\ \ \ \ \ }
+\DoxyCodeLine{00177\ \ \ \ \ LARGE\_INTEGER\ endCount;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#elif\ \_\_APPLE\_\_}}
+\DoxyCodeLine{00179\ \ \ \ \ std::uint64\_t\ startCount;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00180\ \ \ \ \ std::uint64\_t\ endCount;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00182\ \ \ \ \ timeval\ startCount;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00183\ \ \ \ \ timeval\ endCount;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00185\ \ \ \};}
+\DoxyCodeLine{00186\ \}}
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TIMER\_H\_DEF}}
+\DoxyCodeLine{00188\ }
 
 \end{DoxyCode}

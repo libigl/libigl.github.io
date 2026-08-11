@@ -1,0 +1,15 @@
+\doxysection{include/\+igl/\+lipschitz\+\_\+octree.h File Reference}
+\hypertarget{lipschitz__octree_8h}{}\label{lipschitz__octree_8h}\index{include/igl/lipschitz\_octree.h@{include/igl/lipschitz\_octree.h}}
+{\ttfamily \+\#include "{}igl\+\_\+inline.\+h"{}}\newline
+{\ttfamily \+\#include $<$Eigen/\+\+Core$>$}\newline
+{\ttfamily \+\#include "{}lipschitz\+\_\+octree.\+cpp"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \doxymbox{\hyperlink{namespaceigl}{igl}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$bool batched = false, typename Derivedorigin, typename Func, typename Derivedijk$>$ }\\void \doxymbox{\hyperlink{namespaceigl_af96fc4ab22f037305ebc4561da847d88}{igl::\+lipschitz\+\_\+octree}} (const Eigen::\+\+Matrix\+Base$<$ Derivedorigin $>$ \&origin, const typename Derivedorigin::\+\+Scalar h0, const int max\+\_\+depth, const Func \&udf, Eigen::\+\+Plain\+Object\+Base$<$ Derivedijk $>$ \&ijk)
+\begin{DoxyCompactList}\small\item\em Given a minimum corner position (origin) and a side length (h0) and a maximum depth (max\+\_\+depth), determine the possible active leaf octree cells based on an one-\/\+Lipschitz non-\/negative function to a level set (e.\+g., "{}unsigned distance function"{}). \end{DoxyCompactList}\end{DoxyCompactItemize}

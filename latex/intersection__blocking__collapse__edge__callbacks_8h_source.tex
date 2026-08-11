@@ -1,0 +1,40 @@
+\doxysection{intersection\+\_\+blocking\+\_\+collapse\+\_\+edge\+\_\+callbacks.\+h}
+\hypertarget{intersection__blocking__collapse__edge__callbacks_8h_source}{}\label{intersection__blocking__collapse__edge__callbacks_8h_source}\index{include/igl/intersection\_blocking\_collapse\_edge\_callbacks.h@{include/igl/intersection\_blocking\_collapse\_edge\_callbacks.h}}
+\doxymbox{\hyperlink{intersection__blocking__collapse__edge__callbacks_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ IGL\_INTERSECTION\_BLOCKING\_COLLAPSE\_EDGE\_CALLBACKS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ IGL\_INTERSECTION\_BLOCKING\_COLLAPSE\_EDGE\_CALLBACKS\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{igl__inline_8h}{igl\_inline.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{decimate__callback__types_8h}{decimate\_callback\_types.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{placeholders_8h}{placeholders.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \ \ \textcolor{comment}{//\ Forward\ declaration}}
+\DoxyCodeLine{00011\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedV,\ \textcolor{keywordtype}{int}\ DIM>\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classigl_1_1AABB}{AABB}};}
+\DoxyCodeLine{00071\ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{namespaceigl_a62ca13a1ff7bb576581a7f6e9c68c24d}{intersection\_blocking\_collapse\_edge\_callbacks}}(}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{namespaceigl_a240aaf3a251d500dee65c7bdf0be5481}{decimate\_pre\_collapse\_callback}}\ \ \&\ orig\_pre\_collapse,}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{namespaceigl_aed8c530e3082ed7029d848f18045762d}{decimate\_post\_collapse\_callback}}\ \&\ orig\_post\_collapse,}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<\doxymbox{\hyperlink{classigl_1_1AABB}{AABB<Eigen::MatrixXd,3>}}\ *>\ \&\ leaves,}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1AABB}{AABB<Eigen::MatrixXd,3>}}\ *\ \&\ tree,}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{namespaceigl_a240aaf3a251d500dee65c7bdf0be5481}{decimate\_pre\_collapse\_callback}}\ \ \&\ pre\_collapse,}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{namespaceigl_aed8c530e3082ed7029d848f18045762d}{decimate\_post\_collapse\_callback}}\ \&\ post\_collapse);}
+\DoxyCodeLine{00079\ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{namespaceigl_a62ca13a1ff7bb576581a7f6e9c68c24d}{intersection\_blocking\_collapse\_edge\_callbacks}}(}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{namespaceigl_a240aaf3a251d500dee65c7bdf0be5481}{decimate\_pre\_collapse\_callback}}\ \ \&\ orig\_pre\_collapse,}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{namespaceigl_aed8c530e3082ed7029d848f18045762d}{decimate\_post\_collapse\_callback}}\ \&\ orig\_post\_collapse,}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1AABB}{AABB<Eigen::MatrixXd,3>}}\ *\ \&\ tree,}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{namespaceigl_a240aaf3a251d500dee65c7bdf0be5481}{decimate\_pre\_collapse\_callback}}\ \ \&\ pre\_collapse,}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{namespaceigl_aed8c530e3082ed7029d848f18045762d}{decimate\_post\_collapse\_callback}}\ \&\ post\_collapse);}
+\DoxyCodeLine{00086\ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{namespaceigl_a62ca13a1ff7bb576581a7f6e9c68c24d}{intersection\_blocking\_collapse\_edge\_callbacks}}(}
+\DoxyCodeLine{00087\ \ \ \ \ \doxymbox{\hyperlink{classigl_1_1AABB}{AABB<Eigen::MatrixXd,3>}}\ *\ \&\ tree,}
+\DoxyCodeLine{00088\ \ \ \ \ \doxymbox{\hyperlink{namespaceigl_a240aaf3a251d500dee65c7bdf0be5481}{decimate\_pre\_collapse\_callback}}\ \ \&\ pre\_collapse,}
+\DoxyCodeLine{00089\ \ \ \ \ \doxymbox{\hyperlink{namespaceigl_aed8c530e3082ed7029d848f18045762d}{decimate\_post\_collapse\_callback}}\ \&\ post\_collapse);}
+\DoxyCodeLine{00090\ \}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#\ \ include\ "{}intersection\_blocking\_collapse\_edge\_callbacks.cpp"{}}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

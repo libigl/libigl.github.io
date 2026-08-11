@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['keepall_0',['KeepAll',['../namespaceigl_1_1copyleft_1_1cgal.html#aaab770fd7d59c9d5b18d15351d8c13d1',1,'igl::copyleft::cgal']]],
-  ['keepinside_1',['KeepInside',['../namespaceigl_1_1copyleft_1_1cgal.html#aca810a2d57eab3749b7a4f9379a9f008',1,'igl::copyleft::cgal']]]
+  ['keepall_0',['KeepAll',['../namespaceigl_1_1copyleft_1_1cgal.html#a9bbd19617edb5c6246bb9171b9ec9928',1,'igl::copyleft::cgal']]],
+  ['keepinside_1',['KeepInside',['../namespaceigl_1_1copyleft_1_1cgal.html#a99cf7f42feb928dd31b12094588205db',1,'igl::copyleft::cgal']]]
 ];

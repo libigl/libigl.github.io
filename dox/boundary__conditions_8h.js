@@ -1,4 +1,4 @@
 var boundary__conditions_8h =
 [
-    [ "boundary_conditions", "boundary__conditions_8h.html#a366cd5eb6c56116ad697c23065fb8b40", null ]
+    [ "igl::boundary_conditions", "namespaceigl.html#aa978214580f471282bf080f984c43e87", null ]
 ];

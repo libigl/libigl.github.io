@@ -1,6 +1,6 @@
 \doxysection{read\+MSH.\+h}
 \hypertarget{readMSH_8h_source}{}\label{readMSH_8h_source}\index{include/igl/readMSH.h@{include/igl/readMSH.h}}
-\mbox{\hyperlink{readMSH_8h}{Go to the documentation of this file.}}
+\doxymbox{\hyperlink{readMSH_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{comment}{//\ high\ level\ interface\ for\ MshLoader.h/.cpp}}
 \DoxyCodeLine{00002\ }
@@ -11,55 +11,64 @@
 \DoxyCodeLine{00007\ \textcolor{comment}{//\ with\ this\ file,\ You\ can\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_READ\_MSH\_H}}
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_READ\_MSH\_H}}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{igl__inline_8h}{igl\_inline.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{igl__inline_8h}{igl\_inline.h}}"{}}}
 \DoxyCodeLine{00011\ }
 \DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
 \DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <string>}}
 \DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{00015\ }
 \DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceigl}{igl}}\ }
 \DoxyCodeLine{00018\ \{}
-\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keywordtype}{int}\ EigenMatrixOptions>}
-\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a9364f18a5e9db3da7b923ab9ee054481}{readMSH}}(}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&msh,}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ Eigen::Matrix<double,Eigen::Dynamic,Eigen::Dynamic,EigenMatrixOptions>\ \&X,}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ Eigen::Matrix<int,Eigen::Dynamic,Eigen::Dynamic,EigenMatrixOptions>\ \&Tri,}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ Eigen::Matrix<int,Eigen::Dynamic,Eigen::Dynamic,EigenMatrixOptions>\ \&Tet,}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ Eigen::VectorXi\ \&TriTag,}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ Eigen::VectorXi\ \&TetTag,}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ std::vector<std::string>\ \ \ \ \ \&XFields,}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ std::vector<Eigen::Matrix<double,Eigen::Dynamic,Eigen::Dynamic,EigenMatrixOptions>>\ \&XF,}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ std::vector<std::string>\ \ \ \ \ \&EFields,}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ std::vector<Eigen::Matrix<double,Eigen::Dynamic,Eigen::Dynamic,EigenMatrixOptions>>\ \&TriF,}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ std::vector<Eigen::Matrix<double,Eigen::Dynamic,Eigen::Dynamic,EigenMatrixOptions>>\ \&TetF);}
-\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keywordtype}{int}\ EigenMatrixOptions>}
-\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a9364f18a5e9db3da7b923ab9ee054481}{readMSH}}(}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&msh,}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ Eigen::Matrix<double,Eigen::Dynamic,Eigen::Dynamic,EigenMatrixOptions>\ \&X,}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ Eigen::Matrix<int,Eigen::Dynamic,Eigen::Dynamic,EigenMatrixOptions>\ \&Tri,}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ Eigen::Matrix<int,Eigen::Dynamic,Eigen::Dynamic,EigenMatrixOptions>\ \&Tet,}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ Eigen::VectorXi\ \&TriTag,}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ Eigen::VectorXi\ \&TetTag);}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedX,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedTri,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedTet,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedTriTag,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedTetTag,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ MatrixXF,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ MatrixTriF,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ MatrixTetF}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ >}
+\DoxyCodeLine{00050\ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{namespaceigl_a798734030a00408c63bbc45c7567515a}{readMSH}}(}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&msh,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedX>\ \&X,}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedTri>\ \&Tri,}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedTet>\ \&Tet,}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedTriTag>\ \&TriTag,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedTetTag>\ \&TetTag,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ std::vector<std::string>\ \ \ \ \ \&XFields,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ std::vector<MatrixXF>\ \&XF,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ std::vector<std::string>\ \ \ \ \ \&EFields,}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ std::vector<MatrixTriF>\ \&TriF,}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ std::vector<MatrixTetF>\ \&TetF);}
 \DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keywordtype}{int}\ EigenMatrixOptions>}
-\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a9364f18a5e9db3da7b923ab9ee054481}{readMSH}}(}
+\DoxyCodeLine{00064\ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{namespaceigl_a798734030a00408c63bbc45c7567515a}{readMSH}}(}
 \DoxyCodeLine{00065\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&msh,}
 \DoxyCodeLine{00066\ \ \ \ \ \ \ Eigen::Matrix<double,Eigen::Dynamic,Eigen::Dynamic,EigenMatrixOptions>\ \&X,}
 \DoxyCodeLine{00067\ \ \ \ \ \ \ Eigen::Matrix<int,Eigen::Dynamic,Eigen::Dynamic,EigenMatrixOptions>\ \&Tri,}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ Eigen::VectorXi\ \&TriTag);}
-\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keywordtype}{int}\ EigenMatrixOptions>}
-\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a9364f18a5e9db3da7b923ab9ee054481}{readMSH}}(}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&msh,}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ Eigen::Matrix<double,Eigen::Dynamic,Eigen::Dynamic,EigenMatrixOptions>\ \&X,}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ Eigen::Matrix<int,Eigen::Dynamic,Eigen::Dynamic,EigenMatrixOptions>\ \&Tri);}
-\DoxyCodeLine{00075\ }
-\DoxyCodeLine{00076\ \}}
-\DoxyCodeLine{00077\ }
-\DoxyCodeLine{00078\ }
-\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
-\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#\ \ include\ "{}readMSH.cpp"{}}}
-\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00082\ }
-\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ Eigen::Matrix<int,Eigen::Dynamic,Eigen::Dynamic,EigenMatrixOptions>\ \&Tet,}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ Eigen::VectorXi\ \&TriTag,}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ Eigen::VectorXi\ \&TetTag);}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keywordtype}{int}\ EigenMatrixOptions>}
+\DoxyCodeLine{00073\ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{namespaceigl_a798734030a00408c63bbc45c7567515a}{readMSH}}(}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&msh,}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ Eigen::Matrix<double,Eigen::Dynamic,Eigen::Dynamic,EigenMatrixOptions>\ \&X,}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ Eigen::Matrix<int,Eigen::Dynamic,Eigen::Dynamic,EigenMatrixOptions>\ \&Tri,}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ Eigen::VectorXi\ \&TriTag);}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keywordtype}{int}\ EigenMatrixOptions>}
+\DoxyCodeLine{00080\ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{namespaceigl_a798734030a00408c63bbc45c7567515a}{readMSH}}(}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&msh,}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ Eigen::Matrix<double,Eigen::Dynamic,Eigen::Dynamic,EigenMatrixOptions>\ \&X,}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ Eigen::Matrix<int,Eigen::Dynamic,Eigen::Dynamic,EigenMatrixOptions>\ \&Tri);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#\ \ include\ "{}readMSH.cpp"{}}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

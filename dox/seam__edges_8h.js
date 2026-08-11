@@ -1,4 +1,4 @@
 var seam__edges_8h =
 [
-    [ "seam_edges", "seam__edges_8h.html#ac159f8e26c3ca48a403dd1f27d3fd645", null ]
+    [ "igl::seam_edges", "namespaceigl.html#a99a5f44a892491abe8d9eed977296d99", null ]
 ];

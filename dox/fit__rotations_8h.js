@@ -1,5 +1,5 @@
 var fit__rotations_8h =
 [
-    [ "fit_rotations", "fit__rotations_8h.html#aab9cbb962b540c16acdca0c7d168345d", null ],
-    [ "fit_rotations_planar", "fit__rotations_8h.html#ac84591b34ac42f8f958c015edabec2d6", null ]
+    [ "igl::fit_rotations", "namespaceigl.html#a72836f986e53edbf9f79b1e6b9099f96", null ],
+    [ "igl::fit_rotations_planar", "namespaceigl.html#a50c0faed6b88532337d10315eb4f5550", null ]
 ];

@@ -1,0 +1,61 @@
+\doxysection{Plain\+Matrix.\+h}
+\hypertarget{PlainMatrix_8h_source}{}\label{PlainMatrix_8h_source}\index{include/igl/PlainMatrix.h@{include/igl/PlainMatrix.h}}
+\doxymbox{\hyperlink{PlainMatrix_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2024\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ IGL\_PLAINMATRIX\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ IGL\_PLAINMATRIX\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <type\_traits>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ Define\ void\_t\ for\ compatibility\ if\ it's\ not\ in\ the\ standard\ library\ (C++11\ and\ later)}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#if\ \_\_cplusplus\ <\ 201703L}}
+\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespacestd}{std}}\ \{}
+\DoxyCodeLine{00019\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Ts>}
+\DoxyCodeLine{00020\ \ \ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespacestd_a0f7a4f244193b2b15df30bbb0234808d}{void\_t}}\ =\ void;}
+\DoxyCodeLine{00021\ \}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#ifndef\ IGL\_DEFAULT\_MAJORING}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ IGL\_DEFAULT\_MAJORING\ Eigen::ColMajor}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00031\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Derived,\ \textcolor{keywordtype}{int}\ Rows,\ \textcolor{keywordtype}{int}\ Cols,\ \textcolor{keywordtype}{int}\ Options>}
+\DoxyCodeLine{00032\ \ \ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{structigl_1_1PlainMatrixHelper}{PlainMatrixHelper}}\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{structigl_1_1PlainMatrixHelper_a7a5b84d9d94b5e5ea95dd6df5f05f3eb}{Type}}\ =\ Eigen::Matrix<\textcolor{keyword}{typename}\ Derived::Scalar,Rows,Cols,((Rows\ ==\ 1\ \&\&\ Cols\ !=\ 1)\ ?\ Eigen::RowMajor\ :\ ((Cols\ ==\ 1\ \&\&\ Rows\ !=\ 1)\ ?\ Eigen::ColMajor\ :\ Options))>;}
+\DoxyCodeLine{00034\ \ \ \};}
+\DoxyCodeLine{00035\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Derived,\ \textcolor{keyword}{typename}\ =\ \textcolor{keywordtype}{void}>}
+\DoxyCodeLine{00036\ \ \ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{structigl_1_1get__options}{get\_options}}\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{structigl_1_1get__options_ae46dbef1fc4264c060c740fff760aada}{value}}\ =\ \doxymbox{\hyperlink{PlainMatrix_8h_a4e1845d3f6567cee51e7a796a62a5ba3}{IGL\_DEFAULT\_MAJORING}};}
+\DoxyCodeLine{00038\ \ \ \};}
+\DoxyCodeLine{00039\ \ \ }
+\DoxyCodeLine{00040\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Derived>}
+\DoxyCodeLine{00041\ \ \ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{structigl_1_1get__options}{get\_options}}<Derived,\ \doxymbox{\hyperlink{namespacestd}{std}}::void\_t<decltype(Derived::Options)>>\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{structigl_1_1get__options_3_01Derived_00_01std_1_1void__t_3_01decltype_07Derived_1_1Options_08_4_01_4_a2590d7db8308c3aa8deefb2ae89eafda}{value}}\ =\ Derived::Options;}
+\DoxyCodeLine{00043\ \ \ \};}
+\DoxyCodeLine{00084\ \ \ \textcolor{comment}{//\ Helper\ to\ check\ if\ \`{}Options`\ exists\ in\ Derived}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \textcolor{comment}{//\ Modify\ PlainMatrix\ to\ use\ get\_options}}
+\DoxyCodeLine{00087\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Derived,\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ Rows\ =\ Derived::RowsAtCompileTime,\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ Cols\ =\ Derived::ColsAtCompileTime,\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ Options\ =\ \doxymbox{\hyperlink{structigl_1_1get__options_ae46dbef1fc4264c060c740fff760aada}{get\_options<Derived>::value}}>}
+\DoxyCodeLine{00091\ \ \ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespaceigl_ac46903f375954a1cc8dbd7b6cbdd10c7}{PlainMatrix}}\ =\ \textcolor{keyword}{typename}\ \doxymbox{\hyperlink{structigl_1_1PlainMatrixHelper_a7a5b84d9d94b5e5ea95dd6df5f05f3eb}{PlainMatrixHelper<Derived,\ Rows,\ Cols,\ Options>::Type}};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

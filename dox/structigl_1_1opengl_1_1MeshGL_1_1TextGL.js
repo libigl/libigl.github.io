@@ -2,7 +2,7 @@ var structigl_1_1opengl_1_1MeshGL_1_1TextGL =
 [
     [ "init_buffers", "structigl_1_1opengl_1_1MeshGL_1_1TextGL.html#a226328ca297a344dc8abe024dc392b67", null ],
     [ "free_buffers", "structigl_1_1opengl_1_1MeshGL_1_1TextGL.html#afd22585e8cfab8d6b9a92d67d0dd42df", null ],
-    [ "dirty_flag", "structigl_1_1opengl_1_1MeshGL_1_1TextGL.html#af66b6c41f56c315289d6aca3a4e98a21", null ],
+    [ "dirty_flag", "structigl_1_1opengl_1_1MeshGL_1_1TextGL.html#a0594a008623d166c06a7b5f96d3676c0", null ],
     [ "vao_labels", "structigl_1_1opengl_1_1MeshGL_1_1TextGL.html#a31dbb00383bcb99a9f1ce96b7f619b13", null ],
     [ "vbo_labels_pos", "structigl_1_1opengl_1_1MeshGL_1_1TextGL.html#a33b847b339528f059d36c9a38e0881db", null ],
     [ "vbo_labels_characters", "structigl_1_1opengl_1_1MeshGL_1_1TextGL.html#a695e1db76908c5d849b476c1abc83152", null ],

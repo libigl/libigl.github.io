@@ -1,0 +1,41 @@
+\doxysection{lipschitz\+\_\+octree.\+h}
+\hypertarget{lipschitz__octree_8h_source}{}\label{lipschitz__octree_8h_source}\index{include/igl/lipschitz\_octree.h@{include/igl/lipschitz\_octree.h}}
+\doxymbox{\hyperlink{lipschitz__octree_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2025\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_LIPSCHITZ\_OCTREE\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_LIPSCHITZ\_OCTREE\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{igl__inline_8h}{igl\_inline.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceigl}{igl}}\ }
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00027\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{bool}\ batched=\textcolor{keyword}{false},}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedorigin,}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{typename}\ Func,}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedijk}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ >}
+\DoxyCodeLine{00033\ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{namespaceigl_af96fc4ab22f037305ebc4561da847d88}{lipschitz\_octree}}(}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedorigin>\ \&\ origin,}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{typename}\ Derivedorigin::Scalar\ h0,}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ max\_depth,}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{const}\ Func\ \&\ udf,}
+\DoxyCodeLine{00038\ \ \ \ \ Eigen::PlainObjectBase<Derivedijk>\ \&\ ijk);}
+\DoxyCodeLine{00039\ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#\ \ \ \ include\ "{}lipschitz\_octree.cpp"{}}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00046\ }
+
+\end{DoxyCode}

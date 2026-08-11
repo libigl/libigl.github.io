@@ -1,4 +1,4 @@
 var null_8h =
 [
-    [ "null", "null_8h.html#a8799fd07216a41e98f6ccaa39aec488f", null ]
+    [ "igl::null", "namespaceigl.html#a1315902236fe76293bf123360d8cdbdf", null ]
 ];

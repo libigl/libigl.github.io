@@ -1,4 +1,4 @@
 var cell__adjacency_8h =
 [
-    [ "cell_adjacency", "cell__adjacency_8h.html#a5f57dae2a4485cc2651abfb51f55cf0e", null ]
+    [ "igl::copyleft::cgal::cell_adjacency", "namespaceigl_1_1copyleft_1_1cgal.html#a8c6d9c025c6456e58545e535af59d17b", null ]
 ];

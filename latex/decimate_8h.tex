@@ -1,36 +1,31 @@
-\doxysection{include/igl/decimate.h File Reference}
+\doxysection{include/\+igl/\+decimate.h File Reference}
 \hypertarget{decimate_8h}{}\label{decimate_8h}\index{include/igl/decimate.h@{include/igl/decimate.h}}
 
 
-\doxylink{namespaceigl_a48e2a2c1ae537d160f7767a230be66b3}{igl\+::decimate} implements a customizable greedy edge collapser using a priority-\/queue\+:  
+\doxylink{namespaceigl_ab7213058aa5105bbd82e36916c83aaf1}{igl::\+decimate} implements a customizable greedy edge collapser using a priority-\/queue:\+  
 
 
-{\ttfamily \#include "{}igl\+\_\+inline.\+h"{}}\newline
-{\ttfamily \#include "{}decimate\+\_\+callback\+\_\+types.\+h"{}}\newline
-{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
-{\ttfamily \#include "{}decimate.\+cpp"{}}\newline
+{\ttfamily \+\#include "{}igl\+\_\+inline.\+h"{}}\newline
+{\ttfamily \+\#include "{}decimate\+\_\+callback\+\_\+types.\+h"{}}\newline
+{\ttfamily \+\#include "{}COLLAPSE\+\_\+\+EDGE\+\_\+\+NULL.\+h"{}}\newline
+{\ttfamily \+\#include $<$Eigen/\+\+Core$>$}\newline
+{\ttfamily \+\#include "{}decimate.\+cpp"{}}\newline
 \doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
-namespace \mbox{\hyperlink{namespaceigl}{igl}}
+namespace \doxymbox{\hyperlink{namespaceigl}{igl}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-bool \mbox{\hyperlink{namespaceigl_a48e2a2c1ae537d160f7767a230be66b3}{igl\+::decimate}} (const Eigen\+::\+Matrix\+Xd \&V, const Eigen\+::\+Matrix\+Xi \&F, const size\+\_\+t max\+\_\+m, Eigen\+::\+Matrix\+Xd \&U, Eigen\+::\+Matrix\+Xi \&G, Eigen\+::\+Vector\+Xi \&J, Eigen\+::\+Vector\+Xi \&I)
+bool \doxymbox{\hyperlink{namespaceigl_ab7213058aa5105bbd82e36916c83aaf1}{igl::\+decimate}} (const Eigen::\+\+Matrix\+Xd \&V, const Eigen::\+\+Matrix\+Xi \&F, const int max\+\_\+m, const bool block\+\_\+intersections, Eigen::\+\+Matrix\+Xd \&U, Eigen::\+\+Matrix\+Xi \&G, Eigen::\+\+Vector\+Xi \&J, Eigen::\+\+Vector\+Xi \&I)
 \begin{DoxyCompactList}\small\item\em Assumes (V,F) is a manifold mesh (possibly with boundary) collapses edges until desired number of faces is achieved. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{namespaceigl_a012dde4236352501b14abc42b746906e}{igl\+::decimate}} (const Eigen\+::\+Matrix\+Xd \&V, const Eigen\+::\+Matrix\+Xi \&F, const size\+\_\+t max\+\_\+m, Eigen\+::\+Matrix\+Xd \&U, Eigen\+::\+Matrix\+Xi \&G, Eigen\+::\+Vector\+Xi \&J)
-\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{namespaceigl_a61885a8ab4cc1e4ed8ed1fba6e42ecb6}{igl\+::decimate}} (const Eigen\+::\+Matrix\+Xd \&V, const Eigen\+::\+Matrix\+Xi \&F, const \mbox{\hyperlink{namespaceigl_af967096efcc39e806f0c2b374e2ccc5f}{decimate\+\_\+cost\+\_\+and\+\_\+placement\+\_\+callback}} \&cost\+\_\+and\+\_\+placement, const \mbox{\hyperlink{namespaceigl_a64c8b006ed52af02a20d1664722a94b3}{decimate\+\_\+stopping\+\_\+condition\+\_\+callback}} \&stopping\+\_\+condition, const \mbox{\hyperlink{namespaceigl_af695d0b4a424387592b06f466a86088e}{decimate\+\_\+pre\+\_\+collapse\+\_\+callback}} \&pre\+\_\+collapse, const \mbox{\hyperlink{namespaceigl_a16fd55ae4f3085d4ed4d3c6bff008426}{decimate\+\_\+post\+\_\+collapse\+\_\+callback}} \&post\+\_\+collapse, const Eigen\+::\+Matrix\+Xi \&E, const Eigen\+::\+Vector\+Xi \&EMAP, const Eigen\+::\+Matrix\+Xi \&EF, const Eigen\+::\+Matrix\+Xi \&EI, Eigen\+::\+Matrix\+Xd \&U, Eigen\+::\+Matrix\+Xi \&G, Eigen\+::\+Vector\+Xi \&J, Eigen\+::\+Vector\+Xi \&I)
-\begin{DoxyCompactList}\small\item\em Collapses edges of a {\bfseries{closed manifold mesh}} (V,F) using user defined callbacks in a priority queue. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{namespaceigl_a8e383abbd367d0ed68c602a7ae7ea2f7}{igl\+::decimate}} (const Eigen\+::\+Matrix\+Xd \&V, const Eigen\+::\+Matrix\+Xi \&F, const \mbox{\hyperlink{namespaceigl_af967096efcc39e806f0c2b374e2ccc5f}{decimate\+\_\+cost\+\_\+and\+\_\+placement\+\_\+callback}} \&cost\+\_\+and\+\_\+placement, const \mbox{\hyperlink{namespaceigl_a64c8b006ed52af02a20d1664722a94b3}{decimate\+\_\+stopping\+\_\+condition\+\_\+callback}} \&stopping\+\_\+condition, const \mbox{\hyperlink{namespaceigl_af695d0b4a424387592b06f466a86088e}{decimate\+\_\+pre\+\_\+collapse\+\_\+callback}} \&pre\+\_\+collapse, const \mbox{\hyperlink{namespaceigl_a16fd55ae4f3085d4ed4d3c6bff008426}{decimate\+\_\+post\+\_\+collapse\+\_\+callback}} \&post\+\_\+collapse, Eigen\+::\+Matrix\+Xd \&U, Eigen\+::\+Matrix\+Xi \&G, Eigen\+::\+Vector\+Xi \&J, Eigen\+::\+Vector\+Xi \&I)
-\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{namespaceigl_aa716c4de65ed56fd9f9968f9d79ee657}{igl\+::decimate}} (const Eigen\+::\+Matrix\+Xd \&V, const Eigen\+::\+Matrix\+Xi \&F, const \mbox{\hyperlink{namespaceigl_af967096efcc39e806f0c2b374e2ccc5f}{decimate\+\_\+cost\+\_\+and\+\_\+placement\+\_\+callback}} \&cost\+\_\+and\+\_\+placement, const \mbox{\hyperlink{namespaceigl_a64c8b006ed52af02a20d1664722a94b3}{decimate\+\_\+stopping\+\_\+condition\+\_\+callback}} \&stopping\+\_\+condition, Eigen\+::\+Matrix\+Xd \&U, Eigen\+::\+Matrix\+Xi \&G, Eigen\+::\+Vector\+Xi \&J, Eigen\+::\+Vector\+Xi \&I)
-\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+bool \doxymbox{\hyperlink{namespaceigl_a8e383abbd367d0ed68c602a7ae7ea2f7}{igl::\+decimate}} (const Eigen::\+\+Matrix\+Xd \&V, const Eigen::\+\+Matrix\+Xi \&F, const \doxymbox{\hyperlink{namespaceigl_a4152020fc4cd835c4de8a85206acada5}{decimate\+\_\+cost\+\_\+and\+\_\+placement\+\_\+callback}} \&cost\+\_\+and\+\_\+placement, const \doxymbox{\hyperlink{namespaceigl_a1b6b52904280c186a98b7c0651bf4491}{decimate\+\_\+stopping\+\_\+condition\+\_\+callback}} \&stopping\+\_\+condition, const \doxymbox{\hyperlink{namespaceigl_a240aaf3a251d500dee65c7bdf0be5481}{decimate\+\_\+pre\+\_\+collapse\+\_\+callback}} \&pre\+\_\+collapse, const \doxymbox{\hyperlink{namespaceigl_aed8c530e3082ed7029d848f18045762d}{decimate\+\_\+post\+\_\+collapse\+\_\+callback}} \&post\+\_\+collapse, Eigen::\+\+Matrix\+Xd \&U, Eigen::\+\+Matrix\+Xi \&G, Eigen::\+\+Vector\+Xi \&J, Eigen::\+\+Vector\+Xi \&I)
+\begin{DoxyCompactList}\small\item\em Collapses edges of a {\bfseries{closed manifold mesh}} (V,F) using user defined callbacks in a priority queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-\doxylink{namespaceigl_a48e2a2c1ae537d160f7767a230be66b3}{igl\+::decimate} implements a customizable greedy edge collapser using a priority-\/queue\+: 
+\doxylink{namespaceigl_ab7213058aa5105bbd82e36916c83aaf1}{igl::\+decimate} implements a customizable greedy edge collapser using a priority-\/queue:\+ 
 
 \begin{DoxyVerb} Q ← {}
  for each edge e
@@ -62,10 +57,10 @@ There are four important callbacks that can be customized (\doxylink{decimate__c
 
 {\ttfamily pre\+\_\+collapse} This function is called just before {\ttfamily collapse\+\_\+edge} is attempted. If this function returns false then the collapse is aborted. This callback is an opportunity for callers to conduct a final check whether the collapse should really take place (e.\+g., based on the most current information, which may not be available at the time that {\ttfamily cost\+\_\+and\+\_\+placement} was called). This is rarely necessary and its preferred to use cost\+\_\+and\+\_\+placement to assign uncollapsible edges ∞ cost if possible.
 
-{\ttfamily post\+\_\+collapse} This function is called after {\ttfamily collapse\+\_\+edge} is attempted. Since this collapse may have failed (e.\+g., it would create a non-\/manifold mesh). This callback is provided a flag whether the attempted collapse actually occurred. This callback is an opportunity for callers to update any data-\/structures/book-\/keeping to acknowledge the successful (or failed) collapse.
+{\ttfamily post\+\_\+collapse} This function is called after {\ttfamily collapse\+\_\+edge} is attempted. Since this collapse may have failed (e.\+g., it would create a non-\/manifold mesh). This callback is provided a flag whether the attempted collapse actually occurred. This callback is an opportunity for callers to update any data-\/structures/\+book-\/keeping to acknowledge the successful (or failed) collapse.
 
 {\ttfamily stopping\+\_\+condition} This function is called after a successful call to {\ttfamily collapse\+\_\+edge}. If this function returns true then the entire queue-\/processing ends (e.\+g., if the number of remaining faces is below a user’s threshold).
 
 \begin{DoxySeeAlso}{See also}
-collapse\+\_\+edge qslim 
+collapse\+\_\+least\+\_\+cost\+\_\+edge collapse\+\_\+edge qslim 
 \end{DoxySeeAlso}

@@ -1,4 +1,4 @@
 var march__cube_8h =
 [
-    [ "march_cube", "march__cube_8h.html#a75c4985a12f6c71116d36492d2f6154d", null ]
+    [ "igl::march_cube", "namespaceigl.html#abdbdd22def62b692cda61ac6ab245fab", null ]
 ];

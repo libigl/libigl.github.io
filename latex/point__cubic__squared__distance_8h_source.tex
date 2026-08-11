@@ -1,0 +1,78 @@
+\doxysection{point\+\_\+cubic\+\_\+squared\+\_\+distance.\+h}
+\hypertarget{point__cubic__squared__distance_8h_source}{}\label{point__cubic__squared__distance_8h_source}\index{include/igl/cycodebase/point\_cubic\_squared\_distance.h@{include/igl/cycodebase/point\_cubic\_squared\_distance.h}}
+\doxymbox{\hyperlink{point__cubic__squared__distance_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ IGL\_CYCODEBASE\_POINT\_CUBIC\_SQUARED\_DISTANCE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ IGL\_CYCODEBASE\_POINT\_CUBIC\_SQUARED\_DISTANCE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{igl__inline_8h}{../igl\_inline.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceigl}{igl}}\ \{}
+\DoxyCodeLine{00008\ \ \ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceigl_1_1cycodebase}{cycodebase}}\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedQ,}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedC,}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedsqrD,}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedS,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedK>}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{namespaceigl_1_1cycodebase_a4d2b9a834948804961b0976fff6bb835}{point\_cubic\_squared\_distance}}(}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedQ>\&\ Q,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedC>\&\ C,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedsqrD>\&\ sqrD,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedS>\&\ S,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedK>\&\ K);}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedQ,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedC,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedD,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedB,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedsqrD,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedS,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedK>}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{namespaceigl_1_1cycodebase_a4d2b9a834948804961b0976fff6bb835}{point\_cubic\_squared\_distance}}(}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedQ>\&\ Q,}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedC>\&\ C,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedD>\&\ D,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedB>\&\ B,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedsqrD>\&\ sqrD,}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedS>\&\ S,}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedK>\&\ K);}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Derivedq,}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedC,}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedD,}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedB,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Derivedk}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ >}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{namespaceigl_1_1cycodebase_a4d2b9a834948804961b0976fff6bb835}{point\_cubic\_squared\_distance}}(}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedq>\&\ q,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedC>\&\ C,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedD>\&\ D,}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedB>\&\ B,}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Derivedq::Scalar\&\ sqrD,}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Derivedq::Scalar\&\ s,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ Eigen::PlainObjectBase<Derivedk>\&\ k);}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Derivedq,}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedC,}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Derivedk}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ >}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{namespaceigl_1_1cycodebase_a4d2b9a834948804961b0976fff6bb835}{point\_cubic\_squared\_distance}}(}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedq>\&\ q,}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedC>\&\ C,}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Derivedq::Scalar\&\ sqrD,}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Derivedq::Scalar\&\ s,}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ Eigen::PlainObjectBase<Derivedk>\&\ k);}
+\DoxyCodeLine{00085\ \ \ \}}
+\DoxyCodeLine{00086\ \}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\ \ \#include\ "{}point\_cubic\_squared\_distance.cpp"{}}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ }
+
+\end{DoxyCode}

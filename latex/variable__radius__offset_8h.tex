@@ -1,0 +1,21 @@
+\doxysection{include/\+igl/\+variable\+\_\+radius\+\_\+offset.h File Reference}
+\hypertarget{variable__radius__offset_8h}{}\label{variable__radius__offset_8h}\index{include/igl/variable\_radius\_offset.h@{include/igl/variable\_radius\_offset.h}}
+{\ttfamily \+\#include "{}igl\+\_\+inline.\+h"{}}\newline
+{\ttfamily \+\#include $<$Eigen/\+\+Core$>$}\newline
+{\ttfamily \+\#include $<$vector$>$}\newline
+{\ttfamily \+\#include $<$functional$>$}\newline
+{\ttfamily \+\#include "{}variable\+\_\+radius\+\_\+offset.\+cpp"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \doxymbox{\hyperlink{namespaceigl}{igl}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV, typename DerivedF, typename DerivedR, typename Derivedorigin, typename DerivedmV, typename DerivedmF$>$ }\\void \doxymbox{\hyperlink{namespaceigl_ad52e3e94a6e5c5cfe8a1b854b8d3fb12}{igl::\+variable\+\_\+radius\+\_\+offset}} (const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen::\+\+Matrix\+Base$<$ DerivedF $>$ \&F, const Eigen::\+\+Matrix\+Base$<$ DerivedR $>$ \&R, const Eigen::\+\+Matrix\+Base$<$ Derivedorigin $>$ \&origin, const typename Derivedorigin::\+\+Scalar h0, const int max\+\_\+depth, Eigen::\+\+Plain\+Object\+Base$<$ DerivedmV $>$ \&mV, Eigen::\+\+Plain\+Object\+Base$<$ DerivedmF $>$ \&mF)
+\begin{DoxyCompactList}\small\item\em Compute the variable radius offset (see, e.\+g., "{}\+Variable-\/\+Radius Offset \+Curves and Surfaces"{} \+[Lin \& Rokne 1997]\+) of a triangle mesh with a pieceiwse linear radius function. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV, typename DerivedF, typename DerivedR, typename Derived\+PB1, typename Derived\+PB2, typename Scalar$>$ }\\void \doxymbox{\hyperlink{namespaceigl_a0da11058370a7b1b62fdc732b234694b}{igl::\+variable\+\_\+radius\+\_\+offset}} (const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen::\+\+Matrix\+Base$<$ DerivedF $>$ \&F, const Eigen::\+\+Matrix\+Base$<$ DerivedR $>$ \&R, Eigen::\+\+Plain\+Object\+Base$<$ Derived\+PB1 $>$ \&PB1, Eigen::\+\+Plain\+Object\+Base$<$ Derived\+PB2 $>$ \&PB2, std::\+vector$<$ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge}{igl::\+\+Sphere\+Mesh\+Wedge}}$<$ Scalar $>$ $>$ \&data, std::\+function$<$ Scalar(const Eigen::\+\+Matrix$<$ Scalar, 1, 3 $>$ \&, const int i)$>$ \&primitive)
+\begin{DoxyCompactList}\small\item\em Overload which prepares data for a eytzinger\+\_\+aabb\+\_\+sdf callable sdf function. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derived\+PB1, typename Derived\+PB2, typename Scalar, typename Derivedorigin, typename DerivedmV, typename DerivedmF$>$ }\\void \doxymbox{\hyperlink{namespaceigl_a589ca9a7b0c8f5f5d2f3d48111cdb442}{igl::\+variable\+\_\+radius\+\_\+offset}} (const Eigen::\+\+Matrix\+Base$<$ Derived\+PB1 $>$ \&PB1, const Eigen::\+\+Matrix\+Base$<$ Derived\+PB2 $>$ \&PB2, const std::\+vector$<$ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge}{igl::\+\+Sphere\+Mesh\+Wedge}}$<$ Scalar $>$ $>$ \&data, const std::\+function$<$ Scalar(const Eigen::\+\+Matrix$<$ Scalar, 1, 3 $>$ \&, const int i)$>$ \&primitive, const Eigen::\+\+Matrix\+Base$<$ Derivedorigin $>$ \&origin, const Scalar h0, const int max\+\_\+depth, Eigen::\+\+Plain\+Object\+Base$<$ DerivedmV $>$ \&mV, Eigen::\+\+Plain\+Object\+Base$<$ DerivedmF $>$ \&mF)
+\end{DoxyCompactItemize}

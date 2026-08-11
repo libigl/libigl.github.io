@@ -1,6 +1,6 @@
 \doxysection{Embree\+Device.\+h}
 \hypertarget{EmbreeDevice_8h_source}{}\label{EmbreeDevice_8h_source}\index{include/igl/embree/EmbreeDevice.h@{include/igl/embree/EmbreeDevice.h}}
-\mbox{\hyperlink{EmbreeDevice_8h}{Go to the documentation of this file.}}
+\doxymbox{\hyperlink{EmbreeDevice_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
 \DoxyCodeLine{00002\ \textcolor{comment}{//}}
@@ -15,77 +15,84 @@
 \DoxyCodeLine{00011\ }
 \DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ IGL\_EMBREE\_EMBREE\_DEVICE\_H}}
 \DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ IGL\_EMBREE\_EMBREE\_DEVICE\_H}}
-\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <embree3/rtcore.h>}}
-\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <iostream>}}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
-\DoxyCodeLine{00018\ \{}
-\DoxyCodeLine{00019\ \ \ \textcolor{keyword}{namespace\ }embree}
-\DoxyCodeLine{00020\ \ \ \{}
-\DoxyCodeLine{00022\ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice}{EmbreeDevice}}}
-\DoxyCodeLine{00023\ \ \ \ \ \ \{}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ RTCDevice\ \mbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_a892da2869d548a629ad118abe64b8791}{embree\_device}};}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_a679b7144da20325f743ade1cb3b17090}{embree\_device\_cntr}};}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice}{EmbreeDevice}}\ \&\ \mbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_acf805a434119a54325f39c891b274b73}{instance}}()}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice}{EmbreeDevice}}\ s;}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ s;}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \}\ \textcolor{comment}{//\ instance}}
-\DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_afa550c5331bbd02f0545ee41f853f3f1}{EmbreeDevice}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice}{EmbreeDevice}}\ \&)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice}{EmbreeDevice}}\ \&\ \mbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_a427daf569f9d309423ae8543264bf93b}{operator\ =\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice}{EmbreeDevice}}\ \&)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{00035\ }
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ RTCDevice\ \mbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_ad001501c97f4a60e9d60901eb2a13cd9}{get\_device}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *config=\textcolor{keyword}{nullptr})}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_acf805a434119a54325f39c891b274b73}{instance}}().get(config);}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00040\ }
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_a8b930eee00945a493fe0880d59f0b578}{release\_device}}(\textcolor{keywordtype}{void})}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_acf805a434119a54325f39c891b274b73}{instance}}().release();}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00045\ }
-\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <embree4/rtcore.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \ \ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceigl_1_1embree}{embree}}}
+\DoxyCodeLine{00022\ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_afa550c5331bbd02f0545ee41f853f3f1}{EmbreeDevice}}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ RTCDevice\ \doxymbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_a892da2869d548a629ad118abe64b8791}{embree\_device}};}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \doxymbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_a679b7144da20325f743ade1cb3b17090}{embree\_device\_cntr}};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \doxymbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_afa550c5331bbd02f0545ee41f853f3f1}{EmbreeDevice}}\ \&\ \doxymbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_acf805a434119a54325f39c891b274b73}{instance}}()}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \doxymbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_afa550c5331bbd02f0545ee41f853f3f1}{EmbreeDevice}}\ s;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ s;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \}\ \textcolor{comment}{//\ instance}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_afa550c5331bbd02f0545ee41f853f3f1}{EmbreeDevice}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_afa550c5331bbd02f0545ee41f853f3f1}{EmbreeDevice}}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_afa550c5331bbd02f0545ee41f853f3f1}{EmbreeDevice}}\ \&\ \doxymbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_a427daf569f9d309423ae8543264bf93b}{operator\ =\ }}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_afa550c5331bbd02f0545ee41f853f3f1}{EmbreeDevice}}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ RTCDevice\ \doxymbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_ad001501c97f4a60e9d60901eb2a13cd9}{get\_device}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *config=\textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_acf805a434119a54325f39c891b274b73}{instance}}().get(config);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_a8b930eee00945a493fe0880d59f0b578}{release\_device}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_acf805a434119a54325f39c891b274b73}{instance}}().release();}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00047\ }
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice}{EmbreeDevice}}():\mbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_a892da2869d548a629ad118abe64b8791}{embree\_device}}(nullptr),\mbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_a679b7144da20325f743ade1cb3b17090}{embree\_device\_cntr}}(0)\ \{\}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{private}:}
 \DoxyCodeLine{00049\ }
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \string~EmbreeDevice()\ }
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \{\ }
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_a892da2869d548a629ad118abe64b8791}{embree\_device}})}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rtcReleaseDevice(\mbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_a892da2869d548a629ad118abe64b8791}{embree\_device}});}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00055\ }
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ RTCDevice\ get(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *config=\textcolor{keyword}{nullptr})\ }
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_a892da2869d548a629ad118abe64b8791}{embree\_device}})\ }
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_a892da2869d548a629ad118abe64b8791}{embree\_device}}\ =\ rtcNewDevice\ (config);}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(rtcGetDeviceError\ (\mbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_a892da2869d548a629ad118abe64b8791}{embree\_device}})\ !=\ RTC\_ERROR\_NONE)}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Embree:\ An\ error\ occurred\ while\ initializing\ embree\ core!"{}}\ <<\ std::endl;}
-\DoxyCodeLine{00063\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#ifdef\ IGL\_VERBOSE}}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Embree:\ core\ initialized."{}}\ <<\ std::endl;}
-\DoxyCodeLine{00066\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#endif}}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ ++\mbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_a679b7144da20325f743ade1cb3b17090}{embree\_device\_cntr}};}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_a892da2869d548a629ad118abe64b8791}{embree\_device}};}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00071\ }
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ release()}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!-\/-\/\mbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_a679b7144da20325f743ade1cb3b17090}{embree\_device\_cntr}})\ \{}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rtcReleaseDevice\ (\mbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_a892da2869d548a629ad118abe64b8791}{embree\_device}});}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_a892da2869d548a629ad118abe64b8791}{embree\_device}}\ =\ \textcolor{keyword}{nullptr};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00077\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#ifdef\ IGL\_VERBOSE}}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Embree:\ core\ released."{}}\ <<\ std::endl;}
-\DoxyCodeLine{00079\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#endif}}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00082\ \ \ \ \ \ \};}
-\DoxyCodeLine{00083\ \ \ \}}
-\DoxyCodeLine{00084\ \}}
-\DoxyCodeLine{00085\ }
-\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ IGL\_EMBREE\_EMBREE\_DEVICE\_H}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_afa550c5331bbd02f0545ee41f853f3f1}{EmbreeDevice}}():\doxymbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_a892da2869d548a629ad118abe64b8791}{embree\_device}}(nullptr),\doxymbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_a679b7144da20325f743ade1cb3b17090}{embree\_device\_cntr}}(0)\ \{\}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \string~EmbreeDevice()\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \{\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\doxymbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_a892da2869d548a629ad118abe64b8791}{embree\_device}})}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rtcReleaseDevice(\doxymbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_a892da2869d548a629ad118abe64b8791}{embree\_device}});}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ RTCDevice\ get(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *config=\textcolor{keyword}{nullptr})\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!\doxymbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_a892da2869d548a629ad118abe64b8791}{embree\_device}})\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_a892da2869d548a629ad118abe64b8791}{embree\_device}}\ =\ rtcNewDevice\ (config);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(rtcGetDeviceError\ (\doxymbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_a892da2869d548a629ad118abe64b8791}{embree\_device}})\ !=\ RTC\_ERROR\_NONE)}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ assert(\textcolor{keyword}{false}\ \&\&\ \textcolor{stringliteral}{"{}Embree:\ An\ error\ occurred\ while\ initializing\ embree\ core!"{}});}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#ifdef\ IGL\_VERBOSE}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Embree:\ An\ error\ occurred\ while\ initializing\ embree\ core!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Embree:\ core\ initialized."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ ++\doxymbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_a679b7144da20325f743ade1cb3b17090}{embree\_device\_cntr}};}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_a892da2869d548a629ad118abe64b8791}{embree\_device}};}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ release()}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!-\/-\/\doxymbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_a679b7144da20325f743ade1cb3b17090}{embree\_device\_cntr}})\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rtcReleaseDevice\ (\doxymbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_a892da2869d548a629ad118abe64b8791}{embree\_device}});}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structigl_1_1embree_1_1EmbreeDevice_a892da2869d548a629ad118abe64b8791}{embree\_device}}\ =\ \textcolor{keyword}{nullptr};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#ifdef\ IGL\_VERBOSE}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Embree:\ core\ released."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \};}
+\DoxyCodeLine{00090\ \ \ \}}
+\DoxyCodeLine{00091\ \}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ IGL\_EMBREE\_EMBREE\_DEVICE\_H}}
 
 \end{DoxyCode}

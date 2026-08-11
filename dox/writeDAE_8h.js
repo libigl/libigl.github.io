@@ -1,4 +1,4 @@
 var writeDAE_8h =
 [
-    [ "writeDAE", "writeDAE_8h.html#ac3b53b95f8286c93479f1b11ae230682", null ]
+    [ "igl::xml::writeDAE", "namespaceigl_1_1xml.html#ac0fdd54256e940aa85414708401038c9", null ]
 ];

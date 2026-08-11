@@ -1,0 +1,15 @@
+\doxysection{include/\+igl/\+lipschitz\+\_\+octree\+\_\+prune.h File Reference}
+\hypertarget{lipschitz__octree__prune_8h}{}\label{lipschitz__octree__prune_8h}\index{include/igl/lipschitz\_octree\_prune.h@{include/igl/lipschitz\_octree\_prune.h}}
+{\ttfamily \+\#include "{}igl\+\_\+inline.\+h"{}}\newline
+{\ttfamily \+\#include $<$Eigen/\+\+Core$>$}\newline
+{\ttfamily \+\#include "{}lipschitz\+\_\+octree\+\_\+prune.\+cpp"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \doxymbox{\hyperlink{namespaceigl}{igl}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$bool batched = false, typename Derivedorigin, typename Func, typename Derivedijk, typename Derivedijk\+\_\+maybe$>$ }\\void \doxymbox{\hyperlink{namespaceigl_a9878dedb0c45db3e04aeed2c3016de47}{igl::\+lipschitz\+\_\+octree\+\_\+prune}} (const Eigen::\+\+Matrix\+Base$<$ Derivedorigin $>$ \&origin, const typename Derivedorigin::\+\+Scalar h0, const int depth, const Func \&udf, const Eigen::\+\+Matrix\+Base$<$ Derivedijk $>$ \&ijk, Eigen::\+\+Plain\+Object\+Base$<$ Derivedijk\+\_\+maybe $>$ \&ijk\+\_\+maybe)
+\begin{DoxyCompactList}\small\item\em Given a 1-\/Lipschitz non-\/negative function to a level set (e.\+g., "{}unsigned distance function"{}) and a set of query octree cells at a current depth given by the minimum corners subscripts in ijk (where root is (0,0,0)), determine which of these cells maybe still contains the level set based on checking a simple sufficient culling condition at the corners. \end{DoxyCompactList}\end{DoxyCompactItemize}

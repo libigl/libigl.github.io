@@ -1,6 +1,6 @@
 \doxysection{cdt.\+h}
 \hypertarget{copyleft_2tetgen_2cdt_8h_source}{}\label{copyleft_2tetgen_2cdt_8h_source}\index{include/igl/copyleft/tetgen/cdt.h@{include/igl/copyleft/tetgen/cdt.h}}
-\mbox{\hyperlink{copyleft_2tetgen_2cdt_8h}{Go to the documentation of this file.}}
+\doxymbox{\hyperlink{copyleft_2tetgen_2cdt_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
 \DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
@@ -11,7 +11,7 @@
 \DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_COPYLEFT\_TETGEN\_CDT\_H}}
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_COPYLEFT\_TETGEN\_CDT\_H}}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../../igl\_inline.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{igl__inline_8h}{../../igl\_inline.h}}"{}}}
 \DoxyCodeLine{00011\ }
 \DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
 \DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <string>}}
@@ -20,17 +20,17 @@
 \DoxyCodeLine{00016\ \textcolor{preprocessor}{\#endif}}
 \DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <tetgen.h>}\ \textcolor{comment}{//\ Defined\ REAL}}
 \DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00019\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceigl}{igl}}}
 \DoxyCodeLine{00020\ \{}
 \DoxyCodeLine{00021\ \ \ \textcolor{keyword}{namespace\ }copyleft}
 \DoxyCodeLine{00022\ \ \ \{}
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{namespace\ }tetgen}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen}{tetgen}}}
 \DoxyCodeLine{00024\ \ \ \ \ \{}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structigl_1_1copyleft_1_1tetgen_1_1CDTParam}{CDTParam}}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{structigl_1_1copyleft_1_1tetgen_1_1CDTParam}{CDTParam}}}
 \DoxyCodeLine{00027\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structigl_1_1copyleft_1_1tetgen_1_1CDTParam_af202fb83c40a5bcdb473690c3c087572}{use\_bounding\_box}}\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structigl_1_1copyleft_1_1tetgen_1_1CDTParam_a52b4e13ee2dfc01704897fcc7e3a302b}{bounding\_box\_scale}}\ =\ 1.01;}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{structigl_1_1copyleft_1_1tetgen_1_1CDTParam_a2e383b51e3e19ad85b724a36fc5461b0}{flags}}\ =\ \textcolor{stringliteral}{"{}Y"{}};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{structigl_1_1copyleft_1_1tetgen_1_1CDTParam_af202fb83c40a5bcdb473690c3c087572}{use\_bounding\_box}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{structigl_1_1copyleft_1_1tetgen_1_1CDTParam_a52b4e13ee2dfc01704897fcc7e3a302b}{bounding\_box\_scale}}\ =\ 1.01;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ std::string\ \doxymbox{\hyperlink{structigl_1_1copyleft_1_1tetgen_1_1CDTParam_a2e383b51e3e19ad85b724a36fc5461b0}{flags}}\ =\ \textcolor{stringliteral}{"{}Y"{}};}
 \DoxyCodeLine{00037\ \ \ \ \ \ \ \};}
 \DoxyCodeLine{00048\ \ \ \ \ \ \ \textcolor{keyword}{template}\ <}
 \DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,\ }
@@ -38,10 +38,10 @@
 \DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedTV,\ }
 \DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedTT,\ }
 \DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedTF>}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen_a5b8924e16ae31504decc1139bef2de8c}{cdt}}(}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedV>\&\ V,}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedF>\&\ F,}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structigl_1_1copyleft_1_1tetgen_1_1CDTParam}{CDTParam}}\ \&\ param,}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{namespaceigl_1_1copyleft_1_1tetgen_a31b6f71e0715fdfecc76bcfea76d91af}{cdt}}(}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\&\ V,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\&\ F,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{structigl_1_1copyleft_1_1tetgen_1_1CDTParam}{CDTParam}}\ \&\ param,}
 \DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedTV>\&\ TV,}
 \DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedTT>\&\ TT,}
 \DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedTF>\&\ TF);}

@@ -1,14 +1,14 @@
-\doxysection{include/igl/collapse\+\_\+small\+\_\+triangles.h File Reference}
+\doxysection{include/\+igl/\+collapse\+\_\+small\+\_\+triangles.h File Reference}
 \hypertarget{collapse__small__triangles_8h}{}\label{collapse__small__triangles_8h}\index{include/igl/collapse\_small\_triangles.h@{include/igl/collapse\_small\_triangles.h}}
-{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
-{\ttfamily \#include "{}collapse\+\_\+small\+\_\+triangles.\+cpp"{}}\newline
+{\ttfamily \+\#include $<$Eigen/\+\+Dense$>$}\newline
+{\ttfamily \+\#include "{}collapse\+\_\+small\+\_\+triangles.\+cpp"{}}\newline
 \doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
-namespace \mbox{\hyperlink{namespaceigl}{igl}}
+namespace \doxymbox{\hyperlink{namespaceigl}{igl}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{namespaceigl_a6b31209f04c3bbfb3e3e54836c60d21f}{igl\+::collapse\+\_\+small\+\_\+triangles}} (const Eigen\+::\+Matrix\+Xd \&V, const Eigen\+::\+Matrix\+Xi \&F, const double eps, Eigen\+::\+Matrix\+Xi \&FF)
+{\footnotesize template$<$typename DerivedV, typename DerivedF, typename Derived\+FF$>$ }\\void \doxymbox{\hyperlink{namespaceigl_ae3cecc614615f5b38d6b6354c15ae8c0}{igl::\+collapse\+\_\+small\+\_\+triangles}} (const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen::\+\+Matrix\+Base$<$ DerivedF $>$ \&F, const double eps, Eigen::\+\+Plain\+Object\+Base$<$ Derived\+FF $>$ \&FF)
 \begin{DoxyCompactList}\small\item\em Given a triangle mesh (V,F) compute a new mesh (VV,FF) which contains the original faces and vertices of (V,F) except any small triangles have been removed via collapse. \end{DoxyCompactList}\end{DoxyCompactItemize}

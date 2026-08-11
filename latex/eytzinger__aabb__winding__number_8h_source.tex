@@ -1,0 +1,56 @@
+\doxysection{eytzinger\+\_\+aabb\+\_\+winding\+\_\+number.\+h}
+\hypertarget{eytzinger__aabb__winding__number_8h_source}{}\label{eytzinger__aabb__winding__number_8h_source}\index{include/igl/eytzinger\_aabb\_winding\_number.h@{include/igl/eytzinger\_aabb\_winding\_number.h}}
+\doxymbox{\hyperlink{eytzinger__aabb__winding__number_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ IGL\_EYTZINGER\_AABB\_WINDING\_NUMBER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ IGL\_EYTZINGER\_AABB\_WINDING\_NUMBER\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{igl__inline_8h}{igl\_inline.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00026\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedp,}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedE,}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedB,}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedleaf,}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedI,}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedC>}
+\DoxyCodeLine{00034\ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{namespaceigl_a20724e175e67dbd1810295156138b665}{eytzinger\_aabb\_winding\_number}}(}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedp>\ \&\ p,}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedE>\ \&\ E,}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedB>\ \&\ B1,}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedB>\ \&\ B2,}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedleaf>\ \&\ leaf,}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedI>\ \&\ I,}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedC>\ \&\ C,}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV::Scalar\ \&\ wn);}
+\DoxyCodeLine{00044\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedp,}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedB,}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedleaf,}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedI,}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedC>}
+\DoxyCodeLine{00051\ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{namespaceigl_a20724e175e67dbd1810295156138b665}{eytzinger\_aabb\_winding\_number}}(}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedp>\ \&\ p,}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{const}\ std::function<\textcolor{keyword}{typename}\ DerivedV::Scalar(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int})>\ \&\ primitive,}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedB>\ \&\ B1,}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedB>\ \&\ B2,}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedleaf>\ \&\ leaf,}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedI>\ \&\ I,}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedC>\ \&\ C,}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV::Scalar\ \&\ wn);}
+\DoxyCodeLine{00061\ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#include\ "{}eytzinger\_aabb\_winding\_number.cpp"{}}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00068\ }
+
+\end{DoxyCode}

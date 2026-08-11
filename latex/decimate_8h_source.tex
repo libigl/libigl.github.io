@@ -1,6 +1,6 @@
 \doxysection{decimate.\+h}
 \hypertarget{decimate_8h_source}{}\label{decimate_8h_source}\index{include/igl/decimate.h@{include/igl/decimate.h}}
-\mbox{\hyperlink{decimate_8h}{Go to the documentation of this file.}}
+\doxymbox{\hyperlink{decimate_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
 \DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
@@ -11,70 +11,41 @@
 \DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_DECIMATE\_H}}
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_DECIMATE\_H}}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{igl__inline_8h}{igl\_inline.h}}"{}}}
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{decimate__callback__types_8h}{decimate\_callback\_types.h}}"{}}}
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
-\DoxyCodeLine{00013\ }
-\DoxyCodeLine{00073\ }
-\DoxyCodeLine{00074\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
-\DoxyCodeLine{00075\ \{}
-\DoxyCodeLine{00090\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a48e2a2c1ae537d160f7767a230be66b3}{decimate}}(}
-\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\ \&\ V,}
-\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ F,}
-\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ max\_m,}
-\DoxyCodeLine{00094\ \ \ \ \ Eigen::MatrixXd\ \&\ U,}
-\DoxyCodeLine{00095\ \ \ \ \ Eigen::MatrixXi\ \&\ G,}
-\DoxyCodeLine{00096\ \ \ \ \ Eigen::VectorXi\ \&\ J,}
-\DoxyCodeLine{00097\ \ \ \ \ Eigen::VectorXi\ \&\ I);}
-\DoxyCodeLine{00099\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a48e2a2c1ae537d160f7767a230be66b3}{decimate}}(}
-\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\ \&\ V,}
-\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ F,}
-\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ max\_m,}
-\DoxyCodeLine{00103\ \ \ \ \ Eigen::MatrixXd\ \&\ U,}
-\DoxyCodeLine{00104\ \ \ \ \ Eigen::MatrixXi\ \&\ G,}
-\DoxyCodeLine{00105\ \ \ \ \ Eigen::VectorXi\ \&\ J);}
-\DoxyCodeLine{00106\ }
-\DoxyCodeLine{00147\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a48e2a2c1ae537d160f7767a230be66b3}{decimate}}(}
-\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\ \&\ V,}
-\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ F,}
-\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceigl_af967096efcc39e806f0c2b374e2ccc5f}{decimate\_cost\_and\_placement\_callback}}\ \&\ cost\_and\_placement,}
-\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceigl_a64c8b006ed52af02a20d1664722a94b3}{decimate\_stopping\_condition\_callback}}\ \&\ stopping\_condition,}
-\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceigl_af695d0b4a424387592b06f466a86088e}{decimate\_pre\_collapse\_callback}}\ \ \ \ \ \ \ \&\ pre\_collapse,}
-\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceigl_a16fd55ae4f3085d4ed4d3c6bff008426}{decimate\_post\_collapse\_callback}}\ \ \ \ \ \ \&\ post\_collapse,}
-\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ E,}
-\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::VectorXi\ \&\ EMAP,}
-\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ EF,}
-\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ EI,}
-\DoxyCodeLine{00158\ \ \ \ \ Eigen::MatrixXd\ \&\ U,}
-\DoxyCodeLine{00159\ \ \ \ \ Eigen::MatrixXi\ \&\ G,}
-\DoxyCodeLine{00160\ \ \ \ \ Eigen::VectorXi\ \&\ J,}
-\DoxyCodeLine{00161\ \ \ \ \ Eigen::VectorXi\ \&\ I);}
-\DoxyCodeLine{00163\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a48e2a2c1ae537d160f7767a230be66b3}{decimate}}(}
-\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\ \&\ V,}
-\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ F,}
-\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceigl_af967096efcc39e806f0c2b374e2ccc5f}{decimate\_cost\_and\_placement\_callback}}\ \&\ cost\_and\_placement,}
-\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceigl_a64c8b006ed52af02a20d1664722a94b3}{decimate\_stopping\_condition\_callback}}\ \&\ stopping\_condition,}
-\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceigl_af695d0b4a424387592b06f466a86088e}{decimate\_pre\_collapse\_callback}}\ \ \ \ \ \ \ \&\ pre\_collapse,}
-\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceigl_a16fd55ae4f3085d4ed4d3c6bff008426}{decimate\_post\_collapse\_callback}}\ \ \ \ \ \ \&\ post\_collapse,}
-\DoxyCodeLine{00170\ \ \ \ \ Eigen::MatrixXd\ \&\ U,}
-\DoxyCodeLine{00171\ \ \ \ \ Eigen::MatrixXi\ \&\ G,}
-\DoxyCodeLine{00172\ \ \ \ \ Eigen::VectorXi\ \&\ J,}
-\DoxyCodeLine{00173\ \ \ \ \ Eigen::VectorXi\ \&\ I);}
-\DoxyCodeLine{00175\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a48e2a2c1ae537d160f7767a230be66b3}{decimate}}(}
-\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\ \&\ V,}
-\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ F,}
-\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceigl_af967096efcc39e806f0c2b374e2ccc5f}{decimate\_cost\_and\_placement\_callback}}\ \&\ cost\_and\_placement,}
-\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceigl_a64c8b006ed52af02a20d1664722a94b3}{decimate\_stopping\_condition\_callback}}\ \&\ stopping\_condition,}
-\DoxyCodeLine{00180\ \ \ \ \ Eigen::MatrixXd\ \&\ U,}
-\DoxyCodeLine{00181\ \ \ \ \ Eigen::MatrixXi\ \&\ G,}
-\DoxyCodeLine{00182\ \ \ \ \ Eigen::VectorXi\ \&\ J,}
-\DoxyCodeLine{00183\ \ \ \ \ Eigen::VectorXi\ \&\ I);}
-\DoxyCodeLine{00184\ \}}
-\DoxyCodeLine{00185\ }
-\DoxyCodeLine{00186\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
-\DoxyCodeLine{00187\ \textcolor{preprocessor}{\#\ \ include\ "{}decimate.cpp"{}}}
-\DoxyCodeLine{00188\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00189\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{igl__inline_8h}{igl\_inline.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{decimate__callback__types_8h}{decimate\_callback\_types.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{COLLAPSE__EDGE__NULL_8h}{COLLAPSE\_EDGE\_NULL.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00077\ \{}
+\DoxyCodeLine{00094\ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{namespaceigl_ab7213058aa5105bbd82e36916c83aaf1}{decimate}}(}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\ \&\ V,}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ F,}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ max\_m,}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ block\_intersections,}
+\DoxyCodeLine{00099\ \ \ \ \ Eigen::MatrixXd\ \&\ U,}
+\DoxyCodeLine{00100\ \ \ \ \ Eigen::MatrixXi\ \&\ G,}
+\DoxyCodeLine{00101\ \ \ \ \ Eigen::VectorXi\ \&\ J,}
+\DoxyCodeLine{00102\ \ \ \ \ Eigen::VectorXi\ \&\ I);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00138\ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{namespaceigl_ab7213058aa5105bbd82e36916c83aaf1}{decimate}}(}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\ \&\ V,}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ F,}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{namespaceigl_a4152020fc4cd835c4de8a85206acada5}{decimate\_cost\_and\_placement\_callback}}\ \&\ cost\_and\_placement,}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{namespaceigl_a1b6b52904280c186a98b7c0651bf4491}{decimate\_stopping\_condition\_callback}}\ \&\ stopping\_condition,}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{namespaceigl_a240aaf3a251d500dee65c7bdf0be5481}{decimate\_pre\_collapse\_callback}}\ \ \ \ \ \ \ \&\ pre\_collapse,}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{namespaceigl_aed8c530e3082ed7029d848f18045762d}{decimate\_post\_collapse\_callback}}\ \ \ \ \ \ \&\ post\_collapse,}
+\DoxyCodeLine{00145\ \ \ \ \ Eigen::MatrixXd\ \&\ U,}
+\DoxyCodeLine{00146\ \ \ \ \ Eigen::MatrixXi\ \&\ G,}
+\DoxyCodeLine{00147\ \ \ \ \ Eigen::VectorXi\ \&\ J,}
+\DoxyCodeLine{00148\ \ \ \ \ Eigen::VectorXi\ \&\ I);}
+\DoxyCodeLine{00149\ \}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#\ \ include\ "{}decimate.cpp"{}}}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00155\ }
 
 \end{DoxyCode}

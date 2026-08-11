@@ -1,6 +1,6 @@
 var copyleft_2cgal_2point__mesh__squared__distance_8h =
 [
-    [ "point_mesh_squared_distance", "copyleft_2cgal_2point__mesh__squared__distance_8h.html#a538a22d0da720af8d4bc8943eeb78ccd", null ],
-    [ "point_mesh_squared_distance_precompute", "copyleft_2cgal_2point__mesh__squared__distance_8h.html#a7079694987005d32d246369f638930a2", null ],
-    [ "point_mesh_squared_distance", "copyleft_2cgal_2point__mesh__squared__distance_8h.html#a4b06702d1399da65b7d57a7883a903cd", null ]
+    [ "igl::copyleft::cgal::point_mesh_squared_distance", "namespaceigl_1_1copyleft_1_1cgal.html#af4fb29d4d246ecd439b45b4b449f1ada", null ],
+    [ "igl::copyleft::cgal::point_mesh_squared_distance_precompute", "namespaceigl_1_1copyleft_1_1cgal.html#a5914d23fbedede2435aa54a2ae9991e4", null ],
+    [ "igl::copyleft::cgal::point_mesh_squared_distance", "namespaceigl_1_1copyleft_1_1cgal.html#a05b26d1bd5b46f16801b3b5604a40290", null ]
 ];

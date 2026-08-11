@@ -1,0 +1,37 @@
+\doxysection{igl::\+Plain\+Vector\+Helper\texorpdfstring{$<$}{<} Derived, Size, Options \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{structigl_1_1PlainVectorHelper}{}\label{structigl_1_1PlainVectorHelper}\index{igl::PlainVectorHelper$<$ Derived, Size, Options $>$@{igl::PlainVectorHelper$<$ Derived, Size, Options $>$}}
+
+
+{\ttfamily \+\#include $<$Plain\+Vector.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \doxymbox{\hyperlink{structigl_1_1PlainVectorHelper_a95ba388ace962ab2e8ac0a523a111ec5}{Type}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-typedef-members}
+\Hypertarget{structigl_1_1PlainVectorHelper_doc-typedef-members}
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{structigl_1_1PlainVectorHelper_a95ba388ace962ab2e8ac0a523a111ec5}\index{igl::PlainVectorHelper$<$ Derived, Size, Options $>$@{igl::PlainVectorHelper$<$ Derived, Size, Options $>$}!Type@{Type}}
+\index{Type@{Type}!igl::PlainVectorHelper$<$ Derived, Size, Options $>$@{igl::PlainVectorHelper$<$ Derived, Size, Options $>$}}
+\doxysubsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily \label{structigl_1_1PlainVectorHelper_a95ba388ace962ab2e8ac0a523a111ec5} 
+template$<$typename Derived, int Size, int Options$>$ \\
+using \doxymbox{\hyperlink{structigl_1_1PlainVectorHelper}{igl::\+\+Plain\+Vector\+Helper}}$<$ Derived, Size, Options $>$::\+\+Type}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Eigen::Matrix<}
+\DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Derived::Scalar,}
+\DoxyCodeLine{\ \ \ \ \ \ \ (Derived::ColsAtCompileTime\ ==\ 1\ \&\&\ Derived::RowsAtCompileTime\ !=\ 1)\ ?\ Size\ :\ 1,}
+\DoxyCodeLine{\ \ \ \ \ \ \ (Derived::ColsAtCompileTime\ ==\ 1\ \&\&\ Derived::RowsAtCompileTime\ !=\ 1)\ ?\ 1\ :\ Size,}
+\DoxyCodeLine{\ \ \ \ \ \ \ Options>}
+
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+include/\+igl/\+\doxymbox{\hyperlink{PlainVector_8h}{Plain\+Vector.\+h}}\end{DoxyCompactItemize}

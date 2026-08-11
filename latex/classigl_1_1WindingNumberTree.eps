@@ -5,7 +5,7 @@
 %%For: 
 %Magnification: 1.00
 %%Orientation: Portrait
-%%BoundingBox: 0 0 500 117.994102
+%%BoundingBox: 0 0 500 152.671753
 %%Pages: 0
 %%BeginSetup
 %%EndSetup
@@ -19,7 +19,7 @@
 /marginwidth 10 def
 /distx 20 def
 /disty 40 def
-/boundaspect 4.237500 def  % aspect ratio of the BoundingBox (width/height)
+/boundaspect 3.275000 def  % aspect ratio of the BoundingBox (width/height)
 /boundx 500 def
 /boundy boundx boundaspect div def
 /xspacing 0 def
@@ -173,8 +173,8 @@
 
 boxfont setfont
 1 boundaspect scale
-(igl::WindingNumberTree< Point, DerivedV, DerivedF >) cw
-(igl::WindingNumberAABB< Point, DerivedV, DerivedF >) cw
+(igl::WindingNumberTree< Scalar, Index >) cw
+(igl::WindingNumberAABB< Scalar, Index >) cw
 /boxwidth boxwidth marginwidth 2 mul add def
 /xspacing boxwidth distx add def
 /yspacing boxheight disty add def
@@ -186,8 +186,8 @@ boundx scalefactor div boundy scalefactor div scale
 
 % ----- classes -----
 
- (igl::WindingNumberTree< Point, DerivedV, DerivedF >) 0.000000 1.000000 box
- (igl::WindingNumberAABB< Point, DerivedV, DerivedF >) 0.000000 0.000000 box
+ (igl::WindingNumberTree< Scalar, Index >) 0.000000 1.000000 box
+ (igl::WindingNumberAABB< Scalar, Index >) 0.000000 0.000000 box
 
 % ----- relations -----
 

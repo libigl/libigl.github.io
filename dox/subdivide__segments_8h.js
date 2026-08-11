@@ -1,4 +1,4 @@
 var subdivide__segments_8h =
 [
-    [ "subdivide_segments", "subdivide__segments_8h.html#a347c87769a3b67d0bee379fb78705679", null ]
+    [ "igl::copyleft::cgal::subdivide_segments", "namespaceigl_1_1copyleft_1_1cgal.html#ae3b4aebfb2987813f270a78817cefef8", null ]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['grab_0',['GRAB',['../namespaceigl.html#a69c0d149c7cb41a263f858b695eeb988a8695c57e30e957161af26fe52d8a5826',1,'igl']]]
+  ['full_0',['FULL',['../classigl_1_1SphereMeshWedge.html#af886b6c8c65da5db4aa67e0cb8eb46d4abadbc967720326fc3d9009dc17ae3ed3',1,'igl::SphereMeshWedge']]]
 ];

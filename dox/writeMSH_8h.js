@@ -1,4 +1,4 @@
 var writeMSH_8h =
 [
-    [ "writeMSH", "writeMSH_8h.html#a2df694c52f937d065a10d20c184ddfc4", null ]
+    [ "igl::writeMSH", "namespaceigl.html#a7ea77388f17077da40f3cbd69b3593d2", null ]
 ];

@@ -1,0 +1,29 @@
+\doxysection{box\+\_\+surface\+\_\+area.\+h}
+\hypertarget{box__surface__area_8h_source}{}\label{box__surface__area_8h_source}\index{include/igl/box\_surface\_area.h@{include/igl/box\_surface\_area.h}}
+\doxymbox{\hyperlink{box__surface__area_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ IGL\_BOX\_SURFACE\_AREA\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ IGL\_BOX\_SURFACE\_AREA\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{igl__inline_8h}{igl\_inline.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <Eigen/Geometry>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00014\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedCorner>}
+\DoxyCodeLine{00015\ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keyword}{typename}\ DerivedCorner::Scalar\ \doxymbox{\hyperlink{namespaceigl_ac183a64ae3bf33fb29cd82df19a23bdd}{box\_surface\_area}}(}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedCorner>\ \&\ min\_corner,}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedCorner>\ \&\ max\_corner);}
+\DoxyCodeLine{00020\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Scalar,\ \textcolor{keywordtype}{int}\ AmbientDim>}
+\DoxyCodeLine{00021\ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ Scalar\ \doxymbox{\hyperlink{namespaceigl_ac183a64ae3bf33fb29cd82df19a23bdd}{box\_surface\_area}}(}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::AlignedBox<Scalar,AmbientDim>\ \&\ box);}
+\DoxyCodeLine{00023\ \}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#\ \ include\ "{}box\_surface\_area.cpp"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00030\ }
+
+\end{DoxyCode}

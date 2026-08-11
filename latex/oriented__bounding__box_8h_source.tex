@@ -1,0 +1,41 @@
+\doxysection{oriented\+\_\+bounding\+\_\+box.\+h}
+\hypertarget{oriented__bounding__box_8h_source}{}\label{oriented__bounding__box_8h_source}\index{include/igl/oriented\_bounding\_box.h@{include/igl/oriented\_bounding\_box.h}}
+\doxymbox{\hyperlink{oriented__bounding__box_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2025\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ IGL\_ORIENTED\_BOUNDING\_BOX\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ IGL\_ORIENTED\_BOUNDING\_BOX\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{igl__inline_8h}{igl\_inline.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <Eigen/Geometry>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \textcolor{keyword}{enum}\ \doxymbox{\hyperlink{namespaceigl_ae546cbe4d21de668427509e62e6c0e0a}{OrientedBoundingBoxMinimizeType}}}
+\DoxyCodeLine{00018\ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \doxymbox{\hyperlink{namespaceigl_ae546cbe4d21de668427509e62e6c0e0aa08b63581217b58560d8e8f9630f3a642}{ORIENTED\_BOUNDING\_BOX\_MINIMIZE\_VOLUME}}\ =\ 0,}
+\DoxyCodeLine{00020\ \ \ \ \ \doxymbox{\hyperlink{namespaceigl_ae546cbe4d21de668427509e62e6c0e0aa006cc5eab2136712d51d053c20fb4278}{ORIENTED\_BOUNDING\_BOX\_MINIMIZE\_SURFACE\_AREA}}\ =\ 1,}
+\DoxyCodeLine{00021\ \ \ \ \ \doxymbox{\hyperlink{namespaceigl_ae546cbe4d21de668427509e62e6c0e0aaac501e20ebafb8f1f37fe994732cf9b5}{ORIENTED\_BOUNDING\_BOX\_MINIMIZE\_DIAGONAL\_LENGTH}}\ =\ 2,}
+\DoxyCodeLine{00022\ \ \ \ \ \doxymbox{\hyperlink{namespaceigl_ae546cbe4d21de668427509e62e6c0e0aa6b0c05aaf125116c8621cf38b1b3b4cb}{NUM\_ORIENTED\_BOUNDING\_BOX\_MINIMIZE\_TYPES}}\ =\ 3,}
+\DoxyCodeLine{00023\ \ \ \};}
+\DoxyCodeLine{00033\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedP,\ \textcolor{keyword}{typename}\ DerivedR>}
+\DoxyCodeLine{00034\ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{namespaceigl_a8d08f7fbff62d3139759a4f127a350d4}{oriented\_bounding\_box}}(}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedP>\&\ P,}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ n,}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{namespaceigl_ae546cbe4d21de668427509e62e6c0e0a}{OrientedBoundingBoxMinimizeType}}\ minimize\_type,}
+\DoxyCodeLine{00038\ \ \ \ \ Eigen::PlainObjectBase<DerivedR>\ \&\ R);}
+\DoxyCodeLine{00039\ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ "{}oriented\_bounding\_box.cpp"{}}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

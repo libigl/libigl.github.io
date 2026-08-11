@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['orientation_0',['Orientation',['../namespaceigl_1_1predicates.html#aacb20fd4a9b17ca7521e3d96e39d418b',1,'igl::predicates']]]
+  ['orientation_0',['Orientation',['../namespaceigl.html#a93f2a7c83dee3568f488e9e24fb98f8c',1,'igl']]],
+  ['orientedboundingboxminimizetype_1',['OrientedBoundingBoxMinimizeType',['../namespaceigl.html#ae546cbe4d21de668427509e62e6c0e0a',1,'igl']]]
 ];

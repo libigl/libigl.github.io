@@ -1,5 +1,5 @@
 var edge__flaps_8h =
 [
-    [ "edge_flaps", "edge__flaps_8h.html#a984c604c49a10f557933850d8c8e2a76", null ],
-    [ "edge_flaps", "edge__flaps_8h.html#a00745ad61704fb8a6dc941ebf003f628", null ]
+    [ "igl::edge_flaps", "namespaceigl.html#ab65feb04b8d75fcb9cd406bef6c6fb40", null ],
+    [ "igl::edge_flaps", "namespaceigl.html#ab440673f9f5fb3ed5e2d49b43087725d", null ]
 ];

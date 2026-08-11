@@ -6,9 +6,9 @@ var namespaceigl_1_1opengl =
       [ "render_to_file_async", "namespaceigl_1_1opengl_1_1stb.html#a1ed5c9922f64e421b15c535bb2229df8", null ]
     ] ],
     [ "gliGenericImage", "structigl_1_1opengl_1_1gliGenericImage.html", "structigl_1_1opengl_1_1gliGenericImage" ],
-    [ "MeshGL", "classigl_1_1opengl_1_1MeshGL.html", "classigl_1_1opengl_1_1MeshGL" ],
-    [ "TgaFooter", "structigl_1_1opengl_1_1TgaFooter.html", "structigl_1_1opengl_1_1TgaFooter" ],
     [ "TgaHeader", "structigl_1_1opengl_1_1TgaHeader.html", "structigl_1_1opengl_1_1TgaHeader" ],
+    [ "TgaFooter", "structigl_1_1opengl_1_1TgaFooter.html", "structigl_1_1opengl_1_1TgaFooter" ],
+    [ "MeshGL", "classigl_1_1opengl_1_1MeshGL.html", "classigl_1_1opengl_1_1MeshGL" ],
     [ "ViewerCore", "classigl_1_1opengl_1_1ViewerCore.html", "classigl_1_1opengl_1_1ViewerCore" ],
     [ "ViewerData", "classigl_1_1opengl_1_1ViewerData.html", "classigl_1_1opengl_1_1ViewerData" ],
     [ "render_to_tga", "namespaceigl_1_1opengl.html#a967f6e5284d63e98cbd501388672bff9", null ],

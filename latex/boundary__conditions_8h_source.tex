@@ -1,6 +1,6 @@
 \doxysection{boundary\+\_\+conditions.\+h}
 \hypertarget{boundary__conditions_8h_source}{}\label{boundary__conditions_8h_source}\index{include/igl/boundary\_conditions.h@{include/igl/boundary\_conditions.h}}
-\mbox{\hyperlink{boundary__conditions_8h}{Go to the documentation of this file.}}
+\doxymbox{\hyperlink{boundary__conditions_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
 \DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
@@ -11,27 +11,37 @@
 \DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_BOUNDARY\_CONDITIONS\_H}}
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_BOUNDARY\_CONDITIONS\_H}}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{igl__inline_8h}{igl\_inline.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{igl__inline_8h}{igl\_inline.h}}"{}}}
 \DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
 \DoxyCodeLine{00012\ }
-\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceigl}{igl}}}
 \DoxyCodeLine{00014\ \{}
-\DoxyCodeLine{00039\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceigl_a366cd5eb6c56116ad697c23065fb8b40}{boundary\_conditions}}(}
-\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\ \&\ V,}
-\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ Ele,}
-\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\ \&\ C,}
-\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::VectorXi\ \&\ P,}
-\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ BE,}
-\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ CE,}
-\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ CF,}
-\DoxyCodeLine{00047\ \ \ \ \ Eigen::VectorXi\ \&\ b,}
-\DoxyCodeLine{00048\ \ \ \ \ Eigen::MatrixXd\ \&\ bc);}
-\DoxyCodeLine{00049\ \}}
-\DoxyCodeLine{00050\ }
-\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
-\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#\ \ include\ "{}boundary\_conditions.cpp"{}}}
-\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00054\ }
-\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00039\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedEle,}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedC,}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedP,}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedBE,}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedCE,}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedCF,}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedb,}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedbc>}
+\DoxyCodeLine{00049\ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{namespaceigl_aa978214580f471282bf080f984c43e87}{boundary\_conditions}}(}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEle>\ \&\ Ele,}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedC>\ \&\ C,}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedP>\ \&\ P,}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedBE>\ \&\ BE,}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedCE>\ \&\ CE,}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedCF>\ \&\ CF,}
+\DoxyCodeLine{00057\ \ \ \ \ Eigen::PlainObjectBase<Derivedb>\ \&\ b,}
+\DoxyCodeLine{00058\ \ \ \ \ Eigen::PlainObjectBase<Derivedbc>\ \&\ bc);}
+\DoxyCodeLine{00059\ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#\ \ include\ "{}boundary\_conditions.cpp"{}}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

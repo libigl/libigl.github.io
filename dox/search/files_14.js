@@ -6,12 +6,13 @@ var searchData=
   ['unique_5fedge_5fmap_2eh_3',['unique_edge_map.h',['../unique__edge__map_8h.html',1,'']]],
   ['unique_5frows_2eh_4',['unique_rows.h',['../unique__rows_8h.html',1,'']]],
   ['unique_5fsimplices_2eh_5',['unique_simplices.h',['../unique__simplices_8h.html',1,'']]],
-  ['unproject_2eh_6',['unproject.h',['../unproject_8h.html',1,'']]],
-  ['unproject_5fin_5fmesh_2eh_7',['unproject_in_mesh.h',['../embree_2unproject__in__mesh_8h.html',1,'(Global Namespace)'],['../unproject__in__mesh_8h.html',1,'(Global Namespace)']]],
-  ['unproject_5fon_5fline_2eh_8',['unproject_on_line.h',['../unproject__on__line_8h.html',1,'']]],
-  ['unproject_5fon_5fplane_2eh_9',['unproject_on_plane.h',['../unproject__on__plane_8h.html',1,'']]],
-  ['unproject_5fonto_5fmesh_2eh_10',['unproject_onto_mesh.h',['../embree_2unproject__onto__mesh_8h.html',1,'(Global Namespace)'],['../unproject__onto__mesh_8h.html',1,'(Global Namespace)']]],
-  ['unproject_5fray_2eh_11',['unproject_ray.h',['../unproject__ray_8h.html',1,'']]],
-  ['unzip_5fcorners_2eh_12',['unzip_corners.h',['../unzip__corners_8h.html',1,'']]],
-  ['upsample_2eh_13',['upsample.h',['../upsample_8h.html',1,'']]]
+  ['unique_5fsparse_5fvoxel_5fcorners_2eh_6',['unique_sparse_voxel_corners.h',['../unique__sparse__voxel__corners_8h.html',1,'']]],
+  ['unproject_2eh_7',['unproject.h',['../unproject_8h.html',1,'']]],
+  ['unproject_5fin_5fmesh_2eh_8',['unproject_in_mesh.h',['../embree_2unproject__in__mesh_8h.html',1,'(Global Namespace)'],['../unproject__in__mesh_8h.html',1,'(Global Namespace)']]],
+  ['unproject_5fon_5fline_2eh_9',['unproject_on_line.h',['../unproject__on__line_8h.html',1,'']]],
+  ['unproject_5fon_5fplane_2eh_10',['unproject_on_plane.h',['../unproject__on__plane_8h.html',1,'']]],
+  ['unproject_5fonto_5fmesh_2eh_11',['unproject_onto_mesh.h',['../embree_2unproject__onto__mesh_8h.html',1,'(Global Namespace)'],['../unproject__onto__mesh_8h.html',1,'(Global Namespace)']]],
+  ['unproject_5fray_2eh_12',['unproject_ray.h',['../unproject__ray_8h.html',1,'']]],
+  ['unzip_5fcorners_2eh_13',['unzip_corners.h',['../unzip__corners_8h.html',1,'']]],
+  ['upsample_2eh_14',['upsample.h',['../upsample_8h.html',1,'']]]
 ];

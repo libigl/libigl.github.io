@@ -1,4 +1,4 @@
 var mosek_2bbw_8h =
 [
-    [ "bbw", "mosek_2bbw_8h.html#a4de18238d9facc388d5238acc014a99a", null ]
+    [ "igl::mosek::bbw", "namespaceigl_1_1mosek.html#a07b295484e97e212918969b30bed183e", null ]
 ];

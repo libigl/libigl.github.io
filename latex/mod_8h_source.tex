@@ -1,6 +1,6 @@
 \doxysection{mod.\+h}
 \hypertarget{mod_8h_source}{}\label{mod_8h_source}\index{include/igl/mod.h@{include/igl/mod.h}}
-\mbox{\hyperlink{mod_8h}{Go to the documentation of this file.}}
+\doxymbox{\hyperlink{mod_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
 \DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
@@ -11,22 +11,23 @@
 \DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_MOD\_H}}
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_MOD\_H}}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{igl__inline_8h}{igl\_inline.h}}"{}}}
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
-\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
-\DoxyCodeLine{00013\ \{}
-\DoxyCodeLine{00019\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedA,\ \textcolor{keyword}{typename}\ DerivedB>}
-\DoxyCodeLine{00020\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_ae574038db202105a0eccec2ef233be57}{mod}}(}
-\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedA>\ \&\ A,}
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ base,}
-\DoxyCodeLine{00023\ \ \ \ \ Eigen::PlainObjectBase<DerivedB>\ \&\ B);}
-\DoxyCodeLine{00025\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedA>}
-\DoxyCodeLine{00026\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ DerivedA\ \mbox{\hyperlink{namespaceigl_ae574038db202105a0eccec2ef233be57}{mod}}(}
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::PlainObjectBase<DerivedA>\ \&\ A,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ base);}
-\DoxyCodeLine{00028\ \}}
-\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
-\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}mod.cpp"{}}}
-\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{igl__inline_8h}{igl\_inline.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{PlainMatrix_8h}{PlainMatrix.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00020\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedA,\ \textcolor{keyword}{typename}\ DerivedB>}
+\DoxyCodeLine{00021\ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{namespaceigl_aa8aa867b9783c8bc01b3986dd0ac6d30}{mod}}(}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedA>\ \&\ A,}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ base,}
+\DoxyCodeLine{00024\ \ \ \ \ Eigen::PlainObjectBase<DerivedB>\ \&\ B);}
+\DoxyCodeLine{00026\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedA>}
+\DoxyCodeLine{00027\ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \doxymbox{\hyperlink{namespaceigl_ac46903f375954a1cc8dbd7b6cbdd10c7}{igl::PlainMatrix<DerivedA>}}\ \doxymbox{\hyperlink{namespaceigl_aa8aa867b9783c8bc01b3986dd0ac6d30}{mod}}(}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedA>\ \&\ A,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ base);}
+\DoxyCodeLine{00029\ \}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}mod.cpp"{}}}
 \DoxyCodeLine{00032\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

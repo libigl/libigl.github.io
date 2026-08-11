@@ -1,36 +1,43 @@
-\doxysection{include/igl/\+C\+\_\+\+STR.h File Reference}
+\doxysection{include/\+igl/\+\+C\+\_\+\+STR.h File Reference}
 \hypertarget{C__STR_8h}{}\label{C__STR_8h}\index{include/igl/C\_STR.h@{include/igl/C\_STR.h}}
-{\ttfamily \#include $<$sstream$>$}\newline
-{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \+\#include $<$sstream$>$}\newline
+{\ttfamily \+\#include $<$string$>$}\newline
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \mbox{\hyperlink{C__STR_8h_a0694d2f2211a224ad161925f11cc2c31}{C\+\_\+\+STR}}(X)~static\+\_\+cast$<$std\+::ostringstream\&$>$(std\+::ostringstream().flush() $<$$<$ X).str().c\+\_\+str()
+\+\#define \doxymbox{\hyperlink{C__STR_8h_a0694d2f2211a224ad161925f11cc2c31}{C\+\_\+\+STR}}(X)
 \begin{DoxyCompactList}\small\item\em Convert a stream of things to a const char \texorpdfstring{$\ast$}{*}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
+\label{doc-define-members}
+\Hypertarget{C__STR_8h_doc-define-members}
 \doxysubsection{Macro Definition Documentation}
-\Hypertarget{C__STR_8h_a0694d2f2211a224ad161925f11cc2c31}\label{C__STR_8h_a0694d2f2211a224ad161925f11cc2c31} 
-\index{C\_STR.h@{C\_STR.h}!C\_STR@{C\_STR}}
+\Hypertarget{C__STR_8h_a0694d2f2211a224ad161925f11cc2c31}\index{C\_STR.h@{C\_STR.h}!C\_STR@{C\_STR}}
 \index{C\_STR@{C\_STR}!C\_STR.h@{C\_STR.h}}
 \doxysubsubsection{\texorpdfstring{C\_STR}{C\_STR}}
-{\footnotesize\ttfamily \#define C\+\_\+\+STR(\begin{DoxyParamCaption}\item[{}]{X }\end{DoxyParamCaption})~static\+\_\+cast$<$std\+::ostringstream\&$>$(std\+::ostringstream().flush() $<$$<$ X).str().c\+\_\+str()}
+{\footnotesize\ttfamily \label{C__STR_8h_a0694d2f2211a224ad161925f11cc2c31} 
+\+\#define C\+\_\+\+STR(\begin{DoxyParamCaption}\item[{}]{X}{}\end{DoxyParamCaption})}
 
+{\bfseries Value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{static\_cast<}std::ostringstream\&\textcolor{keyword}{>}(std::ostringstream().flush()\ <<\ X).str().c\_str()}
+
+\end{DoxyCode}
 
 
 Convert a stream of things to a const char \texorpdfstring{$\ast$}{*}. 
 
-Suppose you have a function\+: 
+Suppose you have a function:\+ 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keywordtype}{void}\ func(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ c);}
 
 \end{DoxyCode}
- Then you can write\+: 
+ Then you can write:\+ 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{func(\mbox{\hyperlink{C__STR_8h_a0694d2f2211a224ad161925f11cc2c31}{C\_STR}}(\textcolor{stringliteral}{"{}foo"{}}<<1<<\textcolor{stringliteral}{"{}bar"{}}));}
+\DoxyCodeLine{func(\doxymbox{\hyperlink{C__STR_8h_a0694d2f2211a224ad161925f11cc2c31}{C\_STR}}(\textcolor{stringliteral}{"{}foo"{}}<<1<<\textcolor{stringliteral}{"{}bar"{}}));}
 
 \end{DoxyCode}
- which is equivalent to\+: 
+ which is equivalent to:\+ 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{func(\textcolor{stringliteral}{"{}foo1bar"{}});}
 

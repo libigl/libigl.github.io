@@ -1,0 +1,62 @@
+\doxysection{point\+\_\+spline\+\_\+squared\+\_\+distance.\+h}
+\hypertarget{point__spline__squared__distance_8h_source}{}\label{point__spline__squared__distance_8h_source}\index{include/igl/cycodebase/point\_spline\_squared\_distance.h@{include/igl/cycodebase/point\_spline\_squared\_distance.h}}
+\doxymbox{\hyperlink{point__spline__squared__distance_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ IGL\_CYCODEBASE\_POINT\_SPLINE\_SQUARED\_DISTANCE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ IGL\_CYCODEBASE\_POINT\_SPLINE\_SQUARED\_DISTANCE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{igl__inline_8h}{../igl\_inline.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceigl}{igl}}\ \{}
+\DoxyCodeLine{00008\ \ \ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceigl_1_1cycodebase}{cycodebase}}\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedQ,}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedP,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedC,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedsqrD,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedI,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedS,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedK>}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{namespaceigl_1_1cycodebase_a5b27b4cd4d66eb34c952e7db69455427}{point\_spline\_squared\_distance}}(}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedQ>\&\ Q,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedP>\&\ P,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedC>\&\ C,}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedsqrD>\&\ sqrD,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedI>\&\ I,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedS>\&\ S,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedK>\&\ K);}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedQ,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedP,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedC,}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedB,}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Derivedleaf,}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedsqrD,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedI,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedS,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedK>}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{namespaceigl_1_1cycodebase_a5b27b4cd4d66eb34c952e7db69455427}{point\_spline\_squared\_distance}}(}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedQ>\&\ Q,}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedP>\&\ P,}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedC>\&\ C,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedB>\&\ B1,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedB>\&\ B2,}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedleaf>\&\ leaf,}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedsqrD>\&\ sqrD,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedI>\&\ I,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedS>\&\ S,}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedK>\&\ K);}
+\DoxyCodeLine{00070\ \ \ \}}
+\DoxyCodeLine{00071\ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\ \ \#include\ "{}point\_spline\_squared\_distance.cpp"{}}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ }
+
+\end{DoxyCode}

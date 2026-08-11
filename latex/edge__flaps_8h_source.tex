@@ -1,6 +1,6 @@
 \doxysection{edge\+\_\+flaps.\+h}
 \hypertarget{edge__flaps_8h_source}{}\label{edge__flaps_8h_source}\index{include/igl/edge\_flaps.h@{include/igl/edge\_flaps.h}}
-\mbox{\hyperlink{edge__flaps_8h}{Go to the documentation of this file.}}
+\doxymbox{\hyperlink{edge__flaps_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
 \DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
@@ -12,27 +12,39 @@
 \DoxyCodeLine{00008\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ IGL\_EDGE\_FLAPS\_H}}
 \DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ IGL\_EDGE\_FLAPS\_H}}
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{igl__inline_8h}{igl\_inline.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{igl__inline_8h}{igl\_inline.h}}"{}}}
 \DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
-\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceigl}{igl}}}
 \DoxyCodeLine{00014\ \{}
-\DoxyCodeLine{00038\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a984c604c49a10f557933850d8c8e2a76}{edge\_flaps}}(}
-\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ F,}
-\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ uE,}
-\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::VectorXi\ \&\ EMAP,}
-\DoxyCodeLine{00042\ \ \ \ \ Eigen::MatrixXi\ \&\ EF,}
-\DoxyCodeLine{00043\ \ \ \ \ Eigen::MatrixXi\ \&\ EI);}
-\DoxyCodeLine{00045\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a984c604c49a10f557933850d8c8e2a76}{edge\_flaps}}(}
-\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ F,}
-\DoxyCodeLine{00047\ \ \ \ \ Eigen::MatrixXi\ \&\ uE,}
-\DoxyCodeLine{00048\ \ \ \ \ Eigen::VectorXi\ \&\ EMAP,}
-\DoxyCodeLine{00049\ \ \ \ \ Eigen::MatrixXi\ \&\ EF,}
-\DoxyCodeLine{00050\ \ \ \ \ Eigen::MatrixXi\ \&\ EI);}
-\DoxyCodeLine{00051\ \}}
-\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
-\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#\ \ include\ "{}edge\_flaps.cpp"{}}}
-\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00055\ }
-\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00038\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{typename}\ DeriveduE,}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedEMAP,}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedEF,}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedEI>}
+\DoxyCodeLine{00044\ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{namespaceigl_ab65feb04b8d75fcb9cd406bef6c6fb40}{edge\_flaps}}(}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DeriveduE>\ \&\ uE,}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEMAP>\ \&\ EMAP,}
+\DoxyCodeLine{00048\ \ \ \ \ Eigen::PlainObjectBase<DerivedEF>\ \&\ EF,}
+\DoxyCodeLine{00049\ \ \ \ \ Eigen::PlainObjectBase<DerivedEI>\ \&\ EI);}
+\DoxyCodeLine{00051\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{typename}\ DeriveduE,}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedEMAP,}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedEF,}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedEI>}
+\DoxyCodeLine{00057\ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{namespaceigl_ab65feb04b8d75fcb9cd406bef6c6fb40}{edge\_flaps}}(}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00059\ \ \ \ \ Eigen::PlainObjectBase<DeriveduE>\ \&\ uE,}
+\DoxyCodeLine{00060\ \ \ \ \ Eigen::PlainObjectBase<DerivedEMAP>\ \&\ EMAP,}
+\DoxyCodeLine{00061\ \ \ \ \ Eigen::PlainObjectBase<DerivedEF>\ \&\ EF,}
+\DoxyCodeLine{00062\ \ \ \ \ Eigen::PlainObjectBase<DerivedEI>\ \&\ EI);}
+\DoxyCodeLine{00063\ \}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#\ \ include\ "{}edge\_flaps.cpp"{}}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

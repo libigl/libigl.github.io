@@ -1,4 +1,4 @@
 var qslim_8h =
 [
-    [ "qslim", "qslim_8h.html#ad5a2ee54dd545ede9b79ee62905dfc4d", null ]
+    [ "igl::qslim", "namespaceigl.html#ac3dcc9001479151f97a2f42702e360f9", null ]
 ];

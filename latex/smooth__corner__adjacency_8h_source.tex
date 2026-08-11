@@ -1,32 +1,49 @@
 \doxysection{smooth\+\_\+corner\+\_\+adjacency.\+h}
 \hypertarget{smooth__corner__adjacency_8h_source}{}\label{smooth__corner__adjacency_8h_source}\index{include/igl/smooth\_corner\_adjacency.h@{include/igl/smooth\_corner\_adjacency.h}}
-\mbox{\hyperlink{smooth__corner__adjacency_8h}{Go to the documentation of this file.}}
+\doxymbox{\hyperlink{smooth__corner__adjacency_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ IGL\_SMOOTH\_CORNER\_ADJACENCY\_H}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ IGL\_SMOOTH\_CORNER\_ADJACENCY\_H}}
-\DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{igl__inline_8h}{igl\_inline.h}}"{}}}
-\DoxyCodeLine{00006\ }
-\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
-\DoxyCodeLine{00008\ \{}
-\DoxyCodeLine{00019\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_aef5e220e449787733ece4abbc94f419a}{smooth\_corner\_adjacency}}(}
-\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\ \&\ V,}
-\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ F,}
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ corner\_threshold\_radians,}
-\DoxyCodeLine{00023\ \ \ \ \ Eigen::VectorXi\ \&\ CI,}
-\DoxyCodeLine{00024\ \ \ \ \ Eigen::VectorXi\ \&\ CC);}
-\DoxyCodeLine{00034\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_aef5e220e449787733ece4abbc94f419a}{smooth\_corner\_adjacency}}(}
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ FV,}
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ FN,}
-\DoxyCodeLine{00037\ \ \ \ \ Eigen::VectorXi\ \&\ CI,}
-\DoxyCodeLine{00038\ \ \ \ \ Eigen::VectorXi\ \&\ CC);}
-\DoxyCodeLine{00039\ \}}
-\DoxyCodeLine{00040\ }
-\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
-\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#\ \ include\ "{}smooth\_corner\_adjacency.cpp"{}}}
-\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00044\ }
-\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2024\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_SMOOTH\_CORNER\_ADJACENCY\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_SMOOTH\_CORNER\_ADJACENCY\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{igl__inline_8h}{igl\_inline.h}}"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00026\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedCI,}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedCC>}
+\DoxyCodeLine{00031\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{namespaceigl_a2c277632b9e7d943d0f3f3d6936349cb}{smooth\_corner\_adjacency}}(}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ corner\_threshold\_radians,}
+\DoxyCodeLine{00035\ \ \ \ \ Eigen::PlainObjectBase<DerivedCI>\ \&\ CI,}
+\DoxyCodeLine{00036\ \ \ \ \ Eigen::PlainObjectBase<DerivedCC>\ \&\ CC);}
+\DoxyCodeLine{00046\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFV,}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFN,}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedCI,}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedCC>}
+\DoxyCodeLine{00051\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{namespaceigl_a2c277632b9e7d943d0f3f3d6936349cb}{smooth\_corner\_adjacency}}(}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedFV>\ \&\ FV,}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedFN>\ \&\ FN,}
+\DoxyCodeLine{00054\ \ \ \ \ Eigen::PlainObjectBase<DerivedCI>\ \&\ CI,}
+\DoxyCodeLine{00055\ \ \ \ \ Eigen::PlainObjectBase<DerivedCC>\ \&\ CC);}
+\DoxyCodeLine{00056\ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#\ \ include\ "{}smooth\_corner\_adjacency.cpp"{}}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

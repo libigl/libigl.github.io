@@ -1,5 +1,5 @@
 var bbw_8h =
 [
     [ "igl::BBWData", "classigl_1_1BBWData.html", "classigl_1_1BBWData" ],
-    [ "bbw", "bbw_8h.html#a33e3dc749c63b65a87635a309d322e9c", null ]
+    [ "igl::bbw", "namespaceigl.html#a9d40164f73d660bf94090aa9bd3b95a7", null ]
 ];

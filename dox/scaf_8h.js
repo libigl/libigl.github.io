@@ -1,8 +1,8 @@
 var scaf_8h =
 [
     [ "igl::triangle::SCAFData", "structigl_1_1triangle_1_1SCAFData.html", "structigl_1_1triangle_1_1SCAFData" ],
-    [ "scaf_precompute", "scaf_8h.html#a03d5ece31e4a17a719f9f84cae3abc60", null ],
-    [ "scaf_solve", "scaf_8h.html#af0b4e101055d768d68ced968dd25c578", null ],
-    [ "scaf_system", "scaf_8h.html#a127da61612f0261ab9984b131ceadf79", null ],
-    [ "compute_energy", "scaf_8h.html#a684a4bf5b4e9a6eb695edb2563bd7377", null ]
+    [ "igl::triangle::scaf_precompute", "namespaceigl_1_1triangle.html#a41957604a1ec63f359b2190ff1e598e1", null ],
+    [ "igl::triangle::scaf_solve", "namespaceigl_1_1triangle.html#a721c60f4c7ae311654afb1ad8491f2f6", null ],
+    [ "igl::triangle::scaf_system", "namespaceigl_1_1triangle.html#a127da61612f0261ab9984b131ceadf79", null ],
+    [ "igl::triangle::scaf::compute_energy", "namespaceigl_1_1triangle_1_1scaf.html#a684a4bf5b4e9a6eb695edb2563bd7377", null ]
 ];

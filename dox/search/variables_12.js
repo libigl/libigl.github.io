@@ -37,7 +37,7 @@ var searchData=
   ['silver_5fdiffuse_34',['SILVER_DIFFUSE',['../namespaceigl.html#a285eccdcab39b99b34da071d0e811328',1,'igl']]],
   ['silver_5fspecular_35',['SILVER_SPECULAR',['../namespaceigl.html#adde55f12f19663cc168932e3cbaa1033',1,'igl']]],
   ['size_36',['size',['../structigl_1_1FileMemoryBuffer.html#a1e7aabc3f803e896eb5d9dc334ea329d',1,'igl::FileMemoryBuffer']]],
-  ['slim_5fenergy_37',['slim_energy',['../structigl_1_1triangle_1_1SCAFData.html#ae2eea844f25355115c7cd849bdda82ba',1,'igl::triangle::SCAFData::slim_energy'],['../structigl_1_1SLIMData.html#a0442b46248d198eae5dc341738e9f821',1,'igl::SLIMData::slim_energy']]],
+  ['slim_5fenergy_37',['slim_energy',['../structigl_1_1SLIMData.html#a0442b46248d198eae5dc341738e9f821',1,'igl::SLIMData::slim_energy'],['../structigl_1_1triangle_1_1SCAFData.html#ae2eea844f25355115c7cd849bdda82ba',1,'igl::triangle::SCAFData::slim_energy']]],
   ['slow_5fand_5fmore_5fprecise_5frounding_38',['slow_and_more_precise_rounding',['../structigl_1_1copyleft_1_1cgal_1_1RemeshSelfIntersectionsParam.html#a2e8863d911e7f8ef63354a70eea2b470',1,'igl::copyleft::cgal::RemeshSelfIntersectionsParam']]],
   ['smoothcoeff_39',['smoothCoeff',['../structigl_1_1ShapeupData.html#af67e0b57af8a3d63b1c3f92e8f73109e',1,'igl::ShapeupData']]],
   ['soft_5fcons_40',['soft_cons',['../structigl_1_1triangle_1_1SCAFData.html#a82d05775cd272b601dc4047b46c7cc0e',1,'igl::triangle::SCAFData']]],
@@ -45,8 +45,8 @@ var searchData=
   ['solution_5fdiff_5fthreshold_42',['solution_diff_threshold',['../structigl_1_1active__set__params.html#a7ef711f81e9fea1a97b5928f4bf59628',1,'igl::active_set_params']]],
   ['solver_5fdata_43',['solver_data',['../structigl_1_1ShapeupData.html#a52d5a56d3f3d3bc6519f7c9a5db81adf',1,'igl::ShapeupData']]],
   ['solver_5ftype_44',['solver_type',['../structigl_1_1min__quad__with__fixed__data.html#adf555171e037b12e5177ebd81fd33de5',1,'igl::min_quad_with_fixed_data']]],
-  ['split_5fmethod_45',['split_method',['../classigl_1_1WindingNumberAABB.html#a9877c31ae6c8df5e23a5f85bf5391465',1,'igl::WindingNumberAABB']]],
+  ['split_5fmethod_45',['split_method',['../classigl_1_1WindingNumberAABB.html#a2c4716506133837f42af668435a87c94',1,'igl::WindingNumberAABB']]],
   ['stitch_5fall_46',['stitch_all',['../structigl_1_1copyleft_1_1cgal_1_1RemeshSelfIntersectionsParam.html#ae1aa81388a94d26294c74a51ae3cf906',1,'igl::copyleft::cgal::RemeshSelfIntersectionsParam']]],
-  ['sv_47',['SV',['../classigl_1_1WindingNumberTree.html#afb916b7b6c91cd34c714902e7d796694',1,'igl::WindingNumberTree']]],
+  ['sv_47',['SV',['../classigl_1_1WindingNumberTree.html#aab4abade2802fc13530a90a4449bd310',1,'igl::WindingNumberTree']]],
   ['sv_5fnum_48',['sv_num',['../structigl_1_1triangle_1_1SCAFData.html#a18067c1443737be1f417e90d1fe9e584',1,'igl::triangle::SCAFData']]]
 ];

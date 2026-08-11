@@ -1,0 +1,50 @@
+\doxysection{orient3d.\+h}
+\hypertarget{orient3d_8h_source}{}\label{orient3d_8h_source}\index{include/igl/predicates/orient3d.h@{include/igl/predicates/orient3d.h}}
+\doxymbox{\hyperlink{orient3d_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2019\ Qingnan\ Zhou\ <qnzhou@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ IGL\_PREDICATES\_ORIENT3D\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ IGL\_PREDICATES\_ORIENT3D\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{igl__inline_8h}{../igl\_inline.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Orientation_8h}{../Orientation.h}}"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceigl}{igl}}\ \{}
+\DoxyCodeLine{00017\ \ \ \textcolor{keyword}{namespace\ }predicates\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Vector3D>}
+\DoxyCodeLine{00030\ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \doxymbox{\hyperlink{namespaceigl_a93f2a7c83dee3568f488e9e24fb98f8c}{Orientation}}\ \doxymbox{\hyperlink{namespaceigl_1_1predicates_a16875914854207c54ce309a69d802292}{orient3d}}(}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Vector3D>\&\ pa,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Vector3D>\&\ pb,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Vector3D>\&\ pc,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Vector3D>\&\ pd);}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{template}\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ <\textcolor{keyword}{typename}\ DerivedA,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedB,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedC,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedD,}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DerivedR>}
+\DoxyCodeLine{00050\ \ \ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{namespaceigl_1_1predicates_a16875914854207c54ce309a69d802292}{orient3d}}(}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedA>\&\ A,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedB>\&\ B,}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedC>\&\ C,}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedD>\&\ D,}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedR>\&\ R);}
+\DoxyCodeLine{00056\ \ \ \}}
+\DoxyCodeLine{00057\ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ "{}orient3d.cpp"{}}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00064\ }
+
+\end{DoxyCode}

@@ -1,4 +1,4 @@
 var columnize_8h =
 [
-    [ "columnize", "columnize_8h.html#a2ae4ea0e51288d468b77d2303f7b60e5", null ]
+    [ "igl::columnize", "namespaceigl.html#a92b8191c2edb7dd07eb69af8a8fd4ab1", null ]
 ];

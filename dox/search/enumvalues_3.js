@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['degenerate_0',['DEGENERATE',['../namespaceigl_1_1predicates.html#aacb20fd4a9b17ca7521e3d96e39d418ba6084ee8bb30ae219127db8b7aece408a',1,'igl::predicates']]],
+  ['degenerate_0',['DEGENERATE',['../namespaceigl.html#a93f2a7c83dee3568f488e9e24fb98f8ca6084ee8bb30ae219127db8b7aece408a',1,'igl']]],
   ['dirty_5fall_1',['DIRTY_ALL',['../classigl_1_1opengl_1_1MeshGL.html#a81a97b4082a52abc4e29f46574b07862a4d4b153582583c9f01bbb3339df59f36',1,'igl::opengl::MeshGL']]],
   ['dirty_5fambient_2',['DIRTY_AMBIENT',['../classigl_1_1opengl_1_1MeshGL.html#a81a97b4082a52abc4e29f46574b07862a730020e8027f0ec0ad2ba17e26d041c7',1,'igl::opengl::MeshGL']]],
   ['dirty_5fcustom_5flabels_3',['DIRTY_CUSTOM_LABELS',['../classigl_1_1opengl_1_1MeshGL.html#a81a97b4082a52abc4e29f46574b07862ae51dc021e56be62128930315f107bf5c',1,'igl::opengl::MeshGL']]],

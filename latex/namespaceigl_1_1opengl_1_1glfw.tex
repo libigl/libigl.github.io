@@ -1,36 +1,38 @@
-\doxysection{igl\+::opengl\+::glfw Namespace Reference}
+\doxysection{igl::\+opengl::\+glfw Namespace Reference}
 \hypertarget{namespaceigl_1_1opengl_1_1glfw}{}\label{namespaceigl_1_1opengl_1_1glfw}\index{igl::opengl::glfw@{igl::opengl::glfw}}
 \doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
-namespace \mbox{\hyperlink{namespaceigl_1_1opengl_1_1glfw_1_1imgui}{imgui}}
+namespace \doxymbox{\hyperlink{namespaceigl_1_1opengl_1_1glfw_1_1imgui}{imgui}}
 \item 
-namespace \mbox{\hyperlink{namespaceigl_1_1opengl_1_1glfw_1_1serialization}{serialization}}
+namespace \doxymbox{\hyperlink{namespaceigl_1_1opengl_1_1glfw_1_1serialization}{serialization}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}}
+class \doxymbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1Viewer}{Viewer}}
 \item 
-class \mbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin}{Viewer\+Plugin}}
-\begin{DoxyCompactList}\small\item\em Abstract class for plugins All plugins MUST have this class as their parent and may implement any/all the callbacks marked {\ttfamily virtual} here. \end{DoxyCompactList}\end{DoxyCompactItemize}
+class \doxymbox{\hyperlink{classigl_1_1opengl_1_1glfw_1_1ViewerPlugin}{Viewer\+Plugin}}
+\begin{DoxyCompactList}\small\item\em Abstract class for plugins All plugins MUST have this class as their parent and may implement any/\+all the callbacks marked {\ttfamily virtual} here. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-bool \mbox{\hyperlink{namespaceigl_1_1opengl_1_1glfw_a74a2d1824668b9763e32bd964a4344c6}{background\+\_\+window}} (GLFWwindow \texorpdfstring{$\ast$}{*}\&window)
+bool \doxymbox{\hyperlink{namespaceigl_1_1opengl_1_1glfw_a74a2d1824668b9763e32bd964a4344c6}{background\+\_\+window}} (GLFWwindow \texorpdfstring{$\ast$}{*}\&window)
 \begin{DoxyCompactList}\small\item\em Create a background window with a valid core profile opengl context set to current. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedU $>$ }\\bool \mbox{\hyperlink{namespaceigl_1_1opengl_1_1glfw_a39644629e2263cbe93c207529ec5c931}{map\+\_\+texture}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&\+\_\+V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&\+\_\+F, const Eigen\+::\+Matrix\+Base$<$ DerivedU $>$ \&\+\_\+U, const unsigned char \texorpdfstring{$\ast$}{*}in\+\_\+data, const int w, const int h, const int nc, std\+::vector$<$ unsigned char $>$ \&out\+\_\+data, int \&out\+\_\+w, int \&out\+\_\+h, int \&out\+\_\+nc)
-\begin{DoxyCompactList}\small\item\em Given a mesh (V,F) in \mbox{[}0,1\mbox{]}² and new positions (U) and a texture image (in\+\_\+data), {\itshape render} a new image (out\+\_\+data) of the same size. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename DerivedV , typename DerivedF , typename DerivedU $>$ }\\bool \mbox{\hyperlink{namespaceigl_1_1opengl_1_1glfw_af43847c3148350dc5bc853c37e821317}{map\+\_\+texture}} (const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&F, const Eigen\+::\+Matrix\+Base$<$ DerivedU $>$ \&U, const unsigned char \texorpdfstring{$\ast$}{*}in\+\_\+data, const int w, const int h, const int nc, std\+::vector$<$ unsigned char $>$ \&out\+\_\+data)
+{\footnotesize template$<$typename DerivedV, typename DerivedF, typename DerivedU$>$ }\\bool \doxymbox{\hyperlink{namespaceigl_1_1opengl_1_1glfw_a39644629e2263cbe93c207529ec5c931}{map\+\_\+texture}} (const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&\+\_\+V, const Eigen::\+\+Matrix\+Base$<$ DerivedF $>$ \&\+\_\+F, const Eigen::\+\+Matrix\+Base$<$ DerivedU $>$ \&\+\_\+U, const unsigned char \texorpdfstring{$\ast$}{*}in\+\_\+data, const int w, const int h, const int nc, std::\+vector$<$ unsigned char $>$ \&out\+\_\+data, int \&out\+\_\+w, int \&out\+\_\+h, int \&out\+\_\+nc)
+\begin{DoxyCompactList}\small\item\em Given a mesh (V,F) in \+[0,1]\+² and new positions (U) and a texture image (in\+\_\+data), {\itshape render} a new image (out\+\_\+data) of the same size. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV, typename DerivedF, typename DerivedU$>$ }\\bool \doxymbox{\hyperlink{namespaceigl_1_1opengl_1_1glfw_af43847c3148350dc5bc853c37e821317}{map\+\_\+texture}} (const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen::\+\+Matrix\+Base$<$ DerivedF $>$ \&F, const Eigen::\+\+Matrix\+Base$<$ DerivedU $>$ \&U, const unsigned char \texorpdfstring{$\ast$}{*}in\+\_\+data, const int w, const int h, const int nc, std::\+vector$<$ unsigned char $>$ \&out\+\_\+data)
 \begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
+\label{doc-func-members}
+\Hypertarget{namespaceigl_1_1opengl_1_1glfw_doc-func-members}
 \doxysubsection{Function Documentation}
-\Hypertarget{namespaceigl_1_1opengl_1_1glfw_a74a2d1824668b9763e32bd964a4344c6}\label{namespaceigl_1_1opengl_1_1glfw_a74a2d1824668b9763e32bd964a4344c6} 
-\index{igl::opengl::glfw@{igl::opengl::glfw}!background\_window@{background\_window}}
+\Hypertarget{namespaceigl_1_1opengl_1_1glfw_a74a2d1824668b9763e32bd964a4344c6}\index{igl::opengl::glfw@{igl::opengl::glfw}!background\_window@{background\_window}}
 \index{background\_window@{background\_window}!igl::opengl::glfw@{igl::opengl::glfw}}
 \doxysubsubsection{\texorpdfstring{background\_window()}{background\_window()}}
-{\footnotesize\ttfamily bool igl\+::opengl\+::glfw\+::background\+\_\+window (\begin{DoxyParamCaption}\item[{GLFWwindow \texorpdfstring{$\ast$}{*}\&}]{window }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{namespaceigl_1_1opengl_1_1glfw_a74a2d1824668b9763e32bd964a4344c6} 
+bool igl::\+opengl::\+glfw::\+background\+\_\+window (\begin{DoxyParamCaption}\item[{GLFWwindow \texorpdfstring{$\ast$}{*}\&}]{window}{}\end{DoxyParamCaption})}
 
 
 
@@ -42,57 +44,57 @@ After you\textquotesingle{}re finished with glfw you should call {\ttfamily glfw
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ out}}  & {\em window} & pointer to glfw window \\
+\doxymbox{\texttt{out}}  & {\em window} & pointer to glfw window \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 true iff success 
 \end{DoxyReturn}
-\Hypertarget{namespaceigl_1_1opengl_1_1glfw_a39644629e2263cbe93c207529ec5c931}\label{namespaceigl_1_1opengl_1_1glfw_a39644629e2263cbe93c207529ec5c931} 
-\index{igl::opengl::glfw@{igl::opengl::glfw}!map\_texture@{map\_texture}}
+\Hypertarget{namespaceigl_1_1opengl_1_1glfw_a39644629e2263cbe93c207529ec5c931}\index{igl::opengl::glfw@{igl::opengl::glfw}!map\_texture@{map\_texture}}
 \index{map\_texture@{map\_texture}!igl::opengl::glfw@{igl::opengl::glfw}}
 \doxysubsubsection{\texorpdfstring{map\_texture()}{map\_texture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily template$<$typename DerivedV , typename DerivedF , typename DerivedU $>$ \\
-bool igl\+::opengl\+::glfw\+::map\+\_\+texture (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&}]{\+\_\+V,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&}]{\+\_\+F,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedU $>$ \&}]{\+\_\+U,  }\item[{const unsigned char \texorpdfstring{$\ast$}{*}}]{in\+\_\+data,  }\item[{const int}]{w,  }\item[{const int}]{h,  }\item[{const int}]{nc,  }\item[{std\+::vector$<$ unsigned char $>$ \&}]{out\+\_\+data,  }\item[{int \&}]{out\+\_\+w,  }\item[{int \&}]{out\+\_\+h,  }\item[{int \&}]{out\+\_\+nc }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{namespaceigl_1_1opengl_1_1glfw_a39644629e2263cbe93c207529ec5c931} 
+template$<$typename DerivedV, typename DerivedF, typename DerivedU$>$ \\
+bool igl::\+opengl::\+glfw::\+map\+\_\+texture (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&}]{\+\_\+V}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedF $>$ \&}]{\+\_\+F}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedU $>$ \&}]{\+\_\+U}{, }\item[{const unsigned char \texorpdfstring{$\ast$}{*}}]{in\+\_\+data}{, }\item[{const int}]{w}{, }\item[{const int}]{h}{, }\item[{const int}]{nc}{, }\item[{std::\+vector$<$ unsigned char $>$ \&}]{out\+\_\+data}{, }\item[{int \&}]{out\+\_\+w}{, }\item[{int \&}]{out\+\_\+h}{, }\item[{int \&}]{out\+\_\+nc}{}\end{DoxyParamCaption})}
 
 
 
-Given a mesh (V,F) in \mbox{[}0,1\mbox{]}² and new positions (U) and a texture image (in\+\_\+data), {\itshape render} a new image (out\+\_\+data) of the same size. 
+Given a mesh (V,F) in \+[0,1]\+² and new positions (U) and a texture image (in\+\_\+data), {\itshape render} a new image (out\+\_\+data) of the same size. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em V} & \#V by 2 list of undeformed mesh vertex positions ∈ \mbox{[}0,1\mbox{]}² \\
+\doxymbox{\texttt{in}}  & {\em V} & \+\#V by 2 list of undeformed mesh vertex positions ∈ \+[0,1]\+² \\
 \hline
-\mbox{\texttt{ in}}  & {\em F} & \#F by 3 list of mesh triangle indices into V \\
+\doxymbox{\texttt{in}}  & {\em F} & \+\#F by 3 list of mesh triangle indices into V \\
 \hline
-\mbox{\texttt{ in}}  & {\em U} & \#U by 2 list of deformed vertex positions ∈ \mbox{[}0,1\mbox{]}² \\
+\doxymbox{\texttt{in}}  & {\em U} & \+\#U by 2 list of deformed vertex positions ∈ \+[0,1]\+² \\
 \hline
-\mbox{\texttt{ in}}  & {\em in\+\_\+data} & w\texorpdfstring{$\ast$}{*}h\texorpdfstring{$\ast$}{*}nc array of color values, channels, then columns, then rows (e.\+g., what stbi\+\_\+image returns and expects) \\
+\doxymbox{\texttt{in}}  & {\em in\+\_\+data} & w\texorpdfstring{$\ast$}{*}h\texorpdfstring{$\ast$}{*}nc array of color values, channels, then columns, then rows (e.\+g., what stbi\+\_\+image returns and expects) \\
 \hline
-\mbox{\texttt{ in}}  & {\em w} & width \\
+\doxymbox{\texttt{in}}  & {\em w} & width \\
 \hline
-\mbox{\texttt{ in}}  & {\em h} & height \\
+\doxymbox{\texttt{in}}  & {\em h} & height \\
 \hline
-\mbox{\texttt{ in}}  & {\em nc} & number of channels \\
+\doxymbox{\texttt{in}}  & {\em nc} & number of channels \\
 \hline
-\mbox{\texttt{ out}}  & {\em out\+\_\+data} & h\texorpdfstring{$\ast$}{*}w\texorpdfstring{$\ast$}{*}nc list of output colors in same order as input \\
+\doxymbox{\texttt{out}}  & {\em out\+\_\+data} & h\texorpdfstring{$\ast$}{*}w\texorpdfstring{$\ast$}{*}nc list of output colors in same order as input \\
 \hline
-\mbox{\texttt{ out}}  & {\em out\+\_\+w} & width of output image \\
+\doxymbox{\texttt{out}}  & {\em out\+\_\+w} & width of output image \\
 \hline
-\mbox{\texttt{ out}}  & {\em out\+\_\+h} & height of output image \\
+\doxymbox{\texttt{out}}  & {\em out\+\_\+h} & height of output image \\
 \hline
-\mbox{\texttt{ out}}  & {\em out\+\_\+nc} & number of channels of output image\\
+\doxymbox{\texttt{out}}  & {\em out\+\_\+nc} & number of channels of output image\\
 \hline
 \end{DoxyParams}
 \begin{DoxyPrecond}{Precondition}
 Seems like w,h should be equal. 
 \end{DoxyPrecond}
-\Hypertarget{namespaceigl_1_1opengl_1_1glfw_af43847c3148350dc5bc853c37e821317}\label{namespaceigl_1_1opengl_1_1glfw_af43847c3148350dc5bc853c37e821317} 
-\index{igl::opengl::glfw@{igl::opengl::glfw}!map\_texture@{map\_texture}}
+\Hypertarget{namespaceigl_1_1opengl_1_1glfw_af43847c3148350dc5bc853c37e821317}\index{igl::opengl::glfw@{igl::opengl::glfw}!map\_texture@{map\_texture}}
 \index{map\_texture@{map\_texture}!igl::opengl::glfw@{igl::opengl::glfw}}
 \doxysubsubsection{\texorpdfstring{map\_texture()}{map\_texture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$typename DerivedV , typename DerivedF , typename DerivedU $>$ \\
-bool igl\+::opengl\+::glfw\+::map\+\_\+texture (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedV $>$ \&}]{V,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&}]{F,  }\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedU $>$ \&}]{U,  }\item[{const unsigned char \texorpdfstring{$\ast$}{*}}]{in\+\_\+data,  }\item[{const int}]{w,  }\item[{const int}]{h,  }\item[{const int}]{nc,  }\item[{std\+::vector$<$ unsigned char $>$ \&}]{out\+\_\+data }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{namespaceigl_1_1opengl_1_1glfw_af43847c3148350dc5bc853c37e821317} 
+template$<$typename DerivedV, typename DerivedF, typename DerivedU$>$ \\
+bool igl::\+opengl::\+glfw::\+map\+\_\+texture (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&}]{V}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedF $>$ \&}]{F}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedU $>$ \&}]{U}{, }\item[{const unsigned char \texorpdfstring{$\ast$}{*}}]{in\+\_\+data}{, }\item[{const int}]{w}{, }\item[{const int}]{h}{, }\item[{const int}]{nc}{, }\item[{std::\+vector$<$ unsigned char $>$ \&}]{out\+\_\+data}{}\end{DoxyParamCaption})}
 
 
 

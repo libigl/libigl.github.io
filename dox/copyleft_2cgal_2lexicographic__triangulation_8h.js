@@ -1,4 +1,4 @@
 var copyleft_2cgal_2lexicographic__triangulation_8h =
 [
-    [ "lexicographic_triangulation", "copyleft_2cgal_2lexicographic__triangulation_8h.html#a15d7510126e3d13d597b9c2dbe0bac28", null ]
+    [ "igl::copyleft::cgal::lexicographic_triangulation", "namespaceigl_1_1copyleft_1_1cgal.html#a45a7fa2e9ae58779fbdddd431189afba", null ]
 ];

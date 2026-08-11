@@ -61,6 +61,7 @@ var classigl_1_1opengl_1_1ViewerData =
     [ "face_based", "classigl_1_1opengl_1_1ViewerData.html#a67bbf06b914264df68d96c53dcbdbb68", null ],
     [ "double_sided", "classigl_1_1opengl_1_1ViewerData.html#a025f22d7d0c46ecabb3330ada2aa92c1", null ],
     [ "invert_normals", "classigl_1_1opengl_1_1ViewerData.html#a25b4e769d28d918ceffff12e6349f2da", null ],
+    [ "pseudocolor_with_normals", "classigl_1_1opengl_1_1ViewerData.html#a8047bb4d62bf8ce245a4742bb6fcb911", null ],
     [ "is_visible", "classigl_1_1opengl_1_1ViewerData.html#afe1e980442c1d2d86faea50cebfb6eb4", null ],
     [ "show_custom_labels", "classigl_1_1opengl_1_1ViewerData.html#aa15ff82f63580806342dcfe36a8e3a25", null ],
     [ "show_face_labels", "classigl_1_1opengl_1_1ViewerData.html#aef7839330c3ba448c33b8f56e68f1c51", null ],

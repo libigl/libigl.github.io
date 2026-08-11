@@ -1,4 +1,4 @@
 var collapse__small__triangles_8h =
 [
-    [ "collapse_small_triangles", "collapse__small__triangles_8h.html#a6b31209f04c3bbfb3e3e54836c60d21f", null ]
+    [ "igl::collapse_small_triangles", "namespaceigl.html#ae3cecc614615f5b38d6b6354c15ae8c0", null ]
 ];

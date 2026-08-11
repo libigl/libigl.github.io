@@ -1,0 +1,84 @@
+\doxysection{variable\+\_\+radius\+\_\+offset.\+h}
+\hypertarget{variable__radius__offset_8h_source}{}\label{variable__radius__offset_8h_source}\index{include/igl/variable\_radius\_offset.h@{include/igl/variable\_radius\_offset.h}}
+\doxymbox{\hyperlink{variable__radius__offset_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (C)\ 2025\ Alec\ Jacobson\ <alecjacobson@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public\ License\ }}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this\ file,\ You\ can\ }}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_VARIABLE\_RADIUS\_OFFSET\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_VARIABLE\_RADIUS\_OFFSET\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{igl__inline_8h}{igl\_inline.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Scalar>}
+\DoxyCodeLine{00018\ \ \ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classigl_1_1SphereMeshWedge}{SphereMeshWedge}};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00033\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedR,}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedorigin,}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedmV,}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedmF>}
+\DoxyCodeLine{00040\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{namespaceigl_ad52e3e94a6e5c5cfe8a1b854b8d3fb12}{variable\_radius\_offset}}(}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedR>\ \&\ R,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedorigin>\ \&\ origin,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{typename}\ Derivedorigin::Scalar\ h0,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ max\_depth,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedmV>\ \&\ mV,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedmF>\ \&\ mF);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00064\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedR,}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedPB1,}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedPB2,}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{typename}\ Scalar>}
+\DoxyCodeLine{00071\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{namespaceigl_ad52e3e94a6e5c5cfe8a1b854b8d3fb12}{variable\_radius\_offset}}(}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedR>\ \&\ R,}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedPB1>\ \&\ PB1,}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ Eigen::PlainObjectBase<DerivedPB2>\ \&\ PB2,}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ std::vector<\doxymbox{\hyperlink{classigl_1_1SphereMeshWedge}{igl::SphereMeshWedge<Scalar>}}>\ \&\ data,}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ std::function<Scalar(\textcolor{keyword}{const}\ Eigen::Matrix<Scalar,1,3>\ \&,\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ i)>\ \&\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ primitive);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00082\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedPB1,}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedPB2,}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{typename}\ Scalar,}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keyword}{typename}\ Derivedorigin,}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedmV,}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedmF>}
+\DoxyCodeLine{00089\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{namespaceigl_ad52e3e94a6e5c5cfe8a1b854b8d3fb12}{variable\_radius\_offset}}(}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedPB1>\ \&\ PB1,}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedPB2>\ \&\ PB2,}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<\doxymbox{\hyperlink{classigl_1_1SphereMeshWedge}{igl::SphereMeshWedge<Scalar>}}>\ \&\ data,}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{const}\ std::function<Scalar(\textcolor{keyword}{const}\ Eigen::Matrix<Scalar,1,3>\ \&,\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ i)>\ \&\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ primitive,}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<Derivedorigin>\ \&\ origin,}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keyword}{const}\ Scalar\ h0,}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ max\_depth,}
+\DoxyCodeLine{00098\ \ \ \ \ Eigen::PlainObjectBase<DerivedmV>\ \&\ mV,}
+\DoxyCodeLine{00099\ \ \ \ \ Eigen::PlainObjectBase<DerivedmF>\ \&\ mF);}
+\DoxyCodeLine{00100\ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#\ \ include\ "{}variable\_radius\_offset.cpp"{}}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#endif\ }}
+\DoxyCodeLine{00106\ }
+
+\end{DoxyCode}

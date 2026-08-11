@@ -1,4 +1,4 @@
 var relabel__small__immersed__cells_8h =
 [
-    [ "relabel_small_immersed_cells", "relabel__small__immersed__cells_8h.html#a3d3dc739f900eb1f9479e974de035d2c", null ]
+    [ "igl::copyleft::cgal::relabel_small_immersed_cells", "namespaceigl_1_1copyleft_1_1cgal.html#a7b9cbc50e8832634c094cee499c052c6", null ]
 ];

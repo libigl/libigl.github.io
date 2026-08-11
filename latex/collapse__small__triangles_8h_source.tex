@@ -1,6 +1,6 @@
 \doxysection{collapse\+\_\+small\+\_\+triangles.\+h}
 \hypertarget{collapse__small__triangles_8h_source}{}\label{collapse__small__triangles_8h_source}\index{include/igl/collapse\_small\_triangles.h@{include/igl/collapse\_small\_triangles.h}}
-\mbox{\hyperlink{collapse__small__triangles_8h}{Go to the documentation of this file.}}
+\doxymbox{\hyperlink{collapse__small__triangles_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
 \DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
@@ -12,19 +12,23 @@
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_COLLAPSE\_SMALL\_TRIANGLES\_H}}
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_COLLAPSE\_SMALL\_TRIANGLES\_H}}
 \DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
-\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceigl}{igl}}}
 \DoxyCodeLine{00012\ \{}
-\DoxyCodeLine{00027\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_a6b31209f04c3bbfb3e3e54836c60d21f}{collapse\_small\_triangles}}(}
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXd\ \&\ V,}
-\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ F,}
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ eps,}
-\DoxyCodeLine{00031\ \ \ \ \ Eigen::MatrixXi\ \&\ FF);}
-\DoxyCodeLine{00032\ \}}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
-\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#\ \ include\ "{}collapse\_small\_triangles.cpp"{}}}
-\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00037\ \ \ }
-\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00027\ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedV,}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedF,}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{typename}\ DerivedFF>}
+\DoxyCodeLine{00031\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{namespaceigl_ae3cecc614615f5b38d6b6354c15ae8c0}{collapse\_small\_triangles}}(}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedV>\ \&\ V,}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ eps,}
+\DoxyCodeLine{00035\ \ \ \ \ Eigen::PlainObjectBase<DerivedFF>\ \&\ FF);}
+\DoxyCodeLine{00036\ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#\ \ include\ "{}collapse\_small\_triangles.cpp"{}}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00041\ \ \ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

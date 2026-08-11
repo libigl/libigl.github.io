@@ -1,4 +1,4 @@
 var covariance__scatter__matrix_8h =
 [
-    [ "covariance_scatter_matrix", "covariance__scatter__matrix_8h.html#a566bead6b8810ca47f10d8e0b184c2ab", null ]
+    [ "igl::covariance_scatter_matrix", "namespaceigl.html#a601e0e9b0c3caa605c3c9764533484b1", null ]
 ];

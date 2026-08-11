@@ -1,0 +1,4 @@
+var COLLAPSE__EDGE__NULL_8h =
+[
+    [ "IGL_COLLAPSE_EDGE_NULL", "COLLAPSE__EDGE__NULL_8h.html#aead6484be211713cb2b3f0b4e2eb4859", null ]
+];

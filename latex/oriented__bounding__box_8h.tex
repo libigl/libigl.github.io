@@ -1,0 +1,26 @@
+\doxysection{include/\+igl/\+oriented\+\_\+bounding\+\_\+box.h File Reference}
+\hypertarget{oriented__bounding__box_8h}{}\label{oriented__bounding__box_8h}\index{include/igl/oriented\_bounding\_box.h@{include/igl/oriented\_bounding\_box.h}}
+{\ttfamily \+\#include "{}igl\+\_\+inline.\+h"{}}\newline
+{\ttfamily \+\#include $<$Eigen/\+\+Core$>$}\newline
+{\ttfamily \+\#include $<$Eigen/\+\+Geometry$>$}\newline
+{\ttfamily \+\#include $<$vector$>$}\newline
+{\ttfamily \+\#include "{}oriented\+\_\+bounding\+\_\+box.\+cpp"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \doxymbox{\hyperlink{namespaceigl}{igl}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \doxymbox{\hyperlink{namespaceigl_ae546cbe4d21de668427509e62e6c0e0a}{igl::\+\+Oriented\+Bounding\+Box\+Minimize\+Type}} \{ \doxymbox{\hyperlink{namespaceigl_ae546cbe4d21de668427509e62e6c0e0aa08b63581217b58560d8e8f9630f3a642}{igl::\+\+ORIENTED\+\_\+\+BOUNDING\+\_\+\+BOX\+\_\+\+MINIMIZE\+\_\+\+VOLUME}} = 0
+, \doxymbox{\hyperlink{namespaceigl_ae546cbe4d21de668427509e62e6c0e0aa006cc5eab2136712d51d053c20fb4278}{igl::\+\+ORIENTED\+\_\+\+BOUNDING\+\_\+\+BOX\+\_\+\+MINIMIZE\+\_\+\+SURFACE\+\_\+\+AREA}} = 1
+, \doxymbox{\hyperlink{namespaceigl_ae546cbe4d21de668427509e62e6c0e0aaac501e20ebafb8f1f37fe994732cf9b5}{igl::\+\+ORIENTED\+\_\+\+BOUNDING\+\_\+\+BOX\+\_\+\+MINIMIZE\+\_\+\+DIAGONAL\+\_\+\+LENGTH}} = 2
+, \doxymbox{\hyperlink{namespaceigl_ae546cbe4d21de668427509e62e6c0e0aa6b0c05aaf125116c8621cf38b1b3b4cb}{igl::\+\+NUM\+\_\+\+ORIENTED\+\_\+\+BOUNDING\+\_\+\+BOX\+\_\+\+MINIMIZE\+\_\+\+TYPES}} = 3
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedP, typename DerivedR$>$ }\\void \doxymbox{\hyperlink{namespaceigl_a8d08f7fbff62d3139759a4f127a350d4}{igl::\+oriented\+\_\+bounding\+\_\+box}} (const Eigen::\+\+Matrix\+Base$<$ DerivedP $>$ \&P, const int n, const \doxymbox{\hyperlink{namespaceigl_ae546cbe4d21de668427509e62e6c0e0a}{Oriented\+Bounding\+Box\+Minimize\+Type}} minimize\+\_\+type, Eigen::\+\+Plain\+Object\+Base$<$ DerivedR $>$ \&R)
+\begin{DoxyCompactList}\small\item\em Given a set of points compute the rotation transformation of them such that their axis-\/aligned bounding box is as small as possible. \end{DoxyCompactList}\end{DoxyCompactItemize}

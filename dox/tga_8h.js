@@ -13,8 +13,8 @@ var tga_8h =
     [ "TGA_DESC_HORIZONTAL", "tga_8h.html#a255757244f4fbec43538dd2ea229b107", null ],
     [ "TGA_DESC_VERTICAL", "tga_8h.html#ac55820adc49b98690e41d85f03a22dd7", null ],
     [ "TGA_SIGNATURE", "tga_8h.html#a327b7b6807f6870a4b6ea87ae702597e", null ],
-    [ "gliReadTGA", "tga_8h.html#a73e1f94f7c5006844213837713652e0f", null ],
-    [ "gli_verbose", "tga_8h.html#a1581cf9fab6f2f7dbc495dc8c601bd9b", null ],
-    [ "gliVerbose", "tga_8h.html#ab7b723fc81098ef1841429fb1e127d76", null ],
-    [ "writeTGA", "tga_8h.html#a0ee614bf7fc62ec302b276934bc9a8cc", null ]
+    [ "igl::opengl::gliReadTGA", "namespaceigl_1_1opengl.html#a73e1f94f7c5006844213837713652e0f", null ],
+    [ "igl::opengl::gli_verbose", "namespaceigl_1_1opengl.html#a1581cf9fab6f2f7dbc495dc8c601bd9b", null ],
+    [ "igl::opengl::gliVerbose", "namespaceigl_1_1opengl.html#ab7b723fc81098ef1841429fb1e127d76", null ],
+    [ "igl::opengl::writeTGA", "namespaceigl_1_1opengl.html#a0ee614bf7fc62ec302b276934bc9a8cc", null ]
 ];

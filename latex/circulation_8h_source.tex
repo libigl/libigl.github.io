@@ -1,6 +1,6 @@
 \doxysection{circulation.\+h}
 \hypertarget{circulation_8h_source}{}\label{circulation_8h_source}\index{include/igl/circulation.h@{include/igl/circulation.h}}
-\mbox{\hyperlink{circulation_8h}{Go to the documentation of this file.}}
+\doxymbox{\hyperlink{circulation_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ libigl,\ a\ simple\ c++\ geometry\ processing\ library.}}
 \DoxyCodeLine{00002\ \textcolor{comment}{//\ }}
@@ -11,40 +11,43 @@
 \DoxyCodeLine{00007\ \textcolor{comment}{//\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IGL\_CIRCULATION\_H}}
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IGL\_CIRCULATION\_H}}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{igl__inline_8h}{igl\_inline.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{igl__inline_8h}{igl\_inline.h}}"{}}}
 \DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Eigen/Core>}}
 \DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{00013\ }
-\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceigl}{igl}}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceigl}{igl}}}
 \DoxyCodeLine{00015\ \{}
-\DoxyCodeLine{00031\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ std::vector<int>\ \mbox{\hyperlink{namespaceigl_ad2779ad7549dc5da4bed4c7042e2f780}{circulation}}(}
-\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ e,}
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ ccw,}
-\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::VectorXi\ \&\ EMAP,}
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ EF,}
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ EI);}
-\DoxyCodeLine{00052\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_ad2779ad7549dc5da4bed4c7042e2f780}{circulation}}(}
-\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ e,}
-\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ ccw,}
-\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::VectorXi\ \&\ EMAP,}
-\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ EF,}
-\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ EI,}
-\DoxyCodeLine{00058\ \ \ \ \ Eigen::VectorXi\ \&\ vN);}
-\DoxyCodeLine{00075\ \ \ \mbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceigl_ad2779ad7549dc5da4bed4c7042e2f780}{circulation}}(}
-\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ e,}
-\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ ccw,}
-\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ F,}
-\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::VectorXi\ \&\ EMAP,}
-\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ EF,}
-\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixXi\ \&\ EI,}
-\DoxyCodeLine{00082\ \ \ \ \ \textcolor{comment}{/*std::vector<int>\ \&\ Ne,*/}}
-\DoxyCodeLine{00083\ \ \ \ \ std::vector<int>\ \&\ Nv,}
-\DoxyCodeLine{00084\ \ \ \ \ std::vector<int>\ \&\ Nf);}
-\DoxyCodeLine{00085\ \}}
-\DoxyCodeLine{00086\ }
-\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
-\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#\ \ include\ "{}circulation.cpp"{}}}
-\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00031\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedEMAP,\ \textcolor{keyword}{typename}\ DerivedEF,\ \textcolor{keyword}{typename}\ DerivedEI>}
+\DoxyCodeLine{00032\ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ std::vector<int>\ \doxymbox{\hyperlink{namespaceigl_a807f37ede2eabcdf21ba08fa80fc5852}{circulation}}(}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ e,}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ ccw,}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEMAP>\ \&\ EMAP,}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEF>\ \&\ EF,}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEI>\ \&\ EI);}
+\DoxyCodeLine{00053\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedEMAP,\ \textcolor{keyword}{typename}\ DerivedEF,\ \textcolor{keyword}{typename}\ DerivedEI,\ \textcolor{keyword}{typename}\ DerivedvN>}
+\DoxyCodeLine{00054\ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{namespaceigl_a807f37ede2eabcdf21ba08fa80fc5852}{circulation}}(}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ e,}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ ccw,}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEMAP>\ \&\ EMAP,}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEF>\ \&\ EF,}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEI>\ \&\ EI,}
+\DoxyCodeLine{00060\ \ \ \ \ Eigen::PlainObjectBase<DerivedvN>\ \&\ vN);}
+\DoxyCodeLine{00077\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DerivedF,\ \textcolor{keyword}{typename}\ DerivedEMAP,\ \textcolor{keyword}{typename}\ DerivedEF,\ \textcolor{keyword}{typename}\ DerivedEI,\ \textcolor{keyword}{typename}\ Nv\_type>}
+\DoxyCodeLine{00078\ \ \ \doxymbox{\hyperlink{igl__inline_8h_a838241279013352686271b4c4ce1f708}{IGL\_INLINE}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{namespaceigl_a807f37ede2eabcdf21ba08fa80fc5852}{circulation}}(}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ e,}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ ccw,}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedF>\ \&\ F,}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEMAP>\ \&\ EMAP,}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEF>\ \&\ EF,}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{const}\ Eigen::MatrixBase<DerivedEI>\ \&\ EI,}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{comment}{/*std::vector<int>\ \&\ Ne,*/}}
+\DoxyCodeLine{00086\ \ \ \ \ std::vector<Nv\_type>\ \&\ Nv,}
+\DoxyCodeLine{00087\ \ \ \ \ std::vector<Nv\_type>\ \&\ Nf);}
+\DoxyCodeLine{00088\ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#ifndef\ IGL\_STATIC\_LIBRARY}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#\ \ include\ "{}circulation.cpp"{}}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

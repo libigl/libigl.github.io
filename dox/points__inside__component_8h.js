@@ -1,5 +1,5 @@
 var points__inside__component_8h =
 [
-    [ "points_inside_component", "points__inside__component_8h.html#a41473b3f595af6326c481f3be623b95d", null ],
-    [ "points_inside_component", "points__inside__component_8h.html#aa361bd05fcdd8ce7cc09059a90a71397", null ]
+    [ "igl::copyleft::cgal::points_inside_component", "namespaceigl_1_1copyleft_1_1cgal.html#add8cd343a098631f66058cf3bf47d254", null ],
+    [ "igl::copyleft::cgal::points_inside_component", "namespaceigl_1_1copyleft_1_1cgal.html#a671e45ccdb5cab1b8f912c572c1119c9", null ]
 ];

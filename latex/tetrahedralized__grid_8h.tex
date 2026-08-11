@@ -1,25 +1,25 @@
-\doxysection{include/igl/tetrahedralized\+\_\+grid.h File Reference}
+\doxysection{include/\+igl/\+tetrahedralized\+\_\+grid.h File Reference}
 \hypertarget{tetrahedralized__grid_8h}{}\label{tetrahedralized__grid_8h}\index{include/igl/tetrahedralized\_grid.h@{include/igl/tetrahedralized\_grid.h}}
-{\ttfamily \#include "{}igl\+\_\+inline.\+h"{}}\newline
-{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
-{\ttfamily \#include "{}tetrahedralized\+\_\+grid.\+cpp"{}}\newline
+{\ttfamily \+\#include "{}igl\+\_\+inline.\+h"{}}\newline
+{\ttfamily \+\#include $<$Eigen/\+\+Core$>$}\newline
+{\ttfamily \+\#include "{}tetrahedralized\+\_\+grid.\+cpp"{}}\newline
 \doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
-namespace \mbox{\hyperlink{namespaceigl}{igl}}
+namespace \doxymbox{\hyperlink{namespaceigl}{igl}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
-enum \mbox{\hyperlink{namespaceigl_ac3bae8c76c2714f3cce8b651ae93fae2}{igl\+::\+Tetrahedralized\+Grip\+Type}} \{ \mbox{\hyperlink{namespaceigl_ac3bae8c76c2714f3cce8b651ae93fae2a6c9f3915cd235c5f5d9ec1f849c4f45a}{igl\+::\+TETRAHEDRALIZED\+\_\+\+GRID\+\_\+\+TYPE\+\_\+5}} = 0
-, \mbox{\hyperlink{namespaceigl_ac3bae8c76c2714f3cce8b651ae93fae2a0f009090a25fab927bfc17ed8c95ccf7}{igl\+::\+TETRAHEDRALIZED\+\_\+\+GRID\+\_\+\+TYPE\+\_\+6\+\_\+\+ROTATIONAL}} = 1
-, \mbox{\hyperlink{namespaceigl_ac3bae8c76c2714f3cce8b651ae93fae2a4945d263c917ea6178567ad57cedddd6}{igl\+::\+NUM\+\_\+\+TETRAHEDRALIZED\+\_\+\+GRID\+\_\+\+TYPE}} = 2
+enum \doxymbox{\hyperlink{namespaceigl_ac3bae8c76c2714f3cce8b651ae93fae2}{igl::\+\+Tetrahedralized\+Grip\+Type}} \{ \doxymbox{\hyperlink{namespaceigl_ac3bae8c76c2714f3cce8b651ae93fae2a6c9f3915cd235c5f5d9ec1f849c4f45a}{igl::\+\+TETRAHEDRALIZED\+\_\+\+GRID\+\_\+\+TYPE\+\_\+5}} = 0
+, \doxymbox{\hyperlink{namespaceigl_ac3bae8c76c2714f3cce8b651ae93fae2a0f009090a25fab927bfc17ed8c95ccf7}{igl::\+\+TETRAHEDRALIZED\+\_\+\+GRID\+\_\+\+TYPE\+\_\+6\+\_\+\+ROTATIONAL}} = 1
+, \doxymbox{\hyperlink{namespaceigl_ac3bae8c76c2714f3cce8b651ae93fae2a4945d263c917ea6178567ad57cedddd6}{igl::\+\+NUM\+\_\+\+TETRAHEDRALIZED\+\_\+\+GRID\+\_\+\+TYPE}} = 2
  \}
 \begin{DoxyCompactList}\small\item\em Types of tetrahedralizations of a cubical cell. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename Derived\+GV , typename Derived\+GT $>$ }\\void \mbox{\hyperlink{namespaceigl_a09d82782b314ba8729b05712387f7ec4}{igl\+::tetrahedralized\+\_\+grid}} (const int nx, const int ny, const int nz, const \mbox{\hyperlink{namespaceigl_ac3bae8c76c2714f3cce8b651ae93fae2}{Tetrahedralized\+Grip\+Type}} type, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+GV $>$ \&GV, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+GT $>$ \&GT)
-\begin{DoxyCompactList}\small\item\em Construct vertices of a regular grid, suitable for input to {\ttfamily \doxylink{namespaceigl_a5512306a29939c7ac8d4ebcef2cd032a}{igl\+::marching\+\_\+tets}} \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Derivedside , typename Derived\+GT $>$ }\\void \mbox{\hyperlink{namespaceigl_ae86a7e69f97c1ca839467731e3944441}{igl\+::tetrahedralized\+\_\+grid}} (const Eigen\+::\+Matrix\+Base$<$ Derivedside $>$ \&side, const \mbox{\hyperlink{namespaceigl_ac3bae8c76c2714f3cce8b651ae93fae2}{Tetrahedralized\+Grip\+Type}} type, Eigen\+::\+Plain\+Object\+Base$<$ Derived\+GT $>$ \&GT)
+{\footnotesize template$<$typename Derived\+GV, typename Derived\+GT$>$ }\\void \doxymbox{\hyperlink{namespaceigl_a09d82782b314ba8729b05712387f7ec4}{igl::\+tetrahedralized\+\_\+grid}} (const int nx, const int ny, const int nz, const \doxymbox{\hyperlink{namespaceigl_ac3bae8c76c2714f3cce8b651ae93fae2}{Tetrahedralized\+Grip\+Type}} type, Eigen::\+\+Plain\+Object\+Base$<$ Derived\+GV $>$ \&GV, Eigen::\+\+Plain\+Object\+Base$<$ Derived\+GT $>$ \&GT)
+\begin{DoxyCompactList}\small\item\em Construct vertices of a regular grid, suitable for input to {\ttfamily \doxylink{namespaceigl_a5512306a29939c7ac8d4ebcef2cd032a}{igl::\+marching\+\_\+tets}}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derivedside, typename Derived\+GT$>$ }\\void \doxymbox{\hyperlink{namespaceigl_ae86a7e69f97c1ca839467731e3944441}{igl::\+tetrahedralized\+\_\+grid}} (const Eigen::\+\+Matrix\+Base$<$ Derivedside $>$ \&side, const \doxymbox{\hyperlink{namespaceigl_ac3bae8c76c2714f3cce8b651ae93fae2}{Tetrahedralized\+Grip\+Type}} type, Eigen::\+\+Plain\+Object\+Base$<$ Derived\+GT $>$ \&GT)
 \begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\end{DoxyCompactItemize}

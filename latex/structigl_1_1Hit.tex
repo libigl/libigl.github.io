@@ -1,74 +1,83 @@
-\doxysection{igl\+::Hit Struct Reference}
-\hypertarget{structigl_1_1Hit}{}\label{structigl_1_1Hit}\index{igl::Hit@{igl::Hit}}
+\doxysection{igl::\+Hit\texorpdfstring{$<$}{<} Scalar \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{structigl_1_1Hit}{}\label{structigl_1_1Hit}\index{igl::Hit$<$ Scalar $>$@{igl::Hit$<$ Scalar $>$}}
 
 
-Reimplementation of the embree\+::\+Hit struct from embree1.\+0.  
+Reimplementation of the embree::\+\+Hit struct from embree1.\+0.  
 
 
 
 
-{\ttfamily \#include $<$Hit.\+h$>$}
+{\ttfamily \+\#include $<$Hit.\+h$>$}
 
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{structigl_1_1Hit_aac867f1426de0a5d0f2a9022496460ea}{id}}
+int \doxymbox{\hyperlink{structigl_1_1Hit_a2424161905a17ad174f93da4f4efb0bc}{id}}
 \begin{DoxyCompactList}\small\item\em primitive id \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{structigl_1_1Hit_ae9bf3e8babcb425173d9345be38d7a87}{gid}}
+int \doxymbox{\hyperlink{structigl_1_1Hit_a1bf3f8d81644e6c46e1ca5e7a8ced023}{gid}}
 \begin{DoxyCompactList}\small\item\em geometry id (not used) \end{DoxyCompactList}\item 
-float \mbox{\hyperlink{structigl_1_1Hit_aaa0a85031d466e01f56dac94251f2e2e}{u}}
+Scalar \doxymbox{\hyperlink{structigl_1_1Hit_ab9e7ec446b7b6835280fa26494879ab5}{u}}
 \begin{DoxyCompactList}\small\item\em barycentric coordinates so that pos = V.\+row(\+F(id,0))\texorpdfstring{$\ast$}{*}(1-\/u-\/v)+V.\+row(\+F(id,1))\texorpdfstring{$\ast$}{*}u+V.row(\+F(id,2))\texorpdfstring{$\ast$}{*}v; \end{DoxyCompactList}\item 
-float \mbox{\hyperlink{structigl_1_1Hit_aadcb6273a81628a44bac6c9bdcf9d7d4}{v}}
+Scalar \doxymbox{\hyperlink{structigl_1_1Hit_a8369ff5988cde5e50b8d3ce8837f3a0a}{v}}
 \item 
-float \mbox{\hyperlink{structigl_1_1Hit_a74e794fbf1a39d404f1a666165fa2b63}{t}}
+Scalar \doxymbox{\hyperlink{structigl_1_1Hit_a87f21e34211f51c3d729c4101c28f195}{t}}
 \begin{DoxyCompactList}\small\item\em parametric distance so that pos = origin + t \texorpdfstring{$\ast$}{*} dir \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Reimplementation of the embree\+::\+Hit struct from embree1.\+0. 
+\subsubsection*{template$<$typename Scalar$>$\newline
+struct igl::\+\+Hit$<$ Scalar $>$}
+Reimplementation of the embree::\+\+Hit struct from embree1.\+0. 
 
+\label{doc-variable-members}
+\Hypertarget{structigl_1_1Hit_doc-variable-members}
 \doxysubsection{Member Data Documentation}
-\Hypertarget{structigl_1_1Hit_aac867f1426de0a5d0f2a9022496460ea}\label{structigl_1_1Hit_aac867f1426de0a5d0f2a9022496460ea} 
-\index{igl::Hit@{igl::Hit}!id@{id}}
-\index{id@{id}!igl::Hit@{igl::Hit}}
+\Hypertarget{structigl_1_1Hit_a2424161905a17ad174f93da4f4efb0bc}\index{igl::Hit$<$ Scalar $>$@{igl::Hit$<$ Scalar $>$}!id@{id}}
+\index{id@{id}!igl::Hit$<$ Scalar $>$@{igl::Hit$<$ Scalar $>$}}
 \doxysubsubsection{\texorpdfstring{id}{id}}
-{\footnotesize\ttfamily int igl\+::\+Hit\+::id}
+{\footnotesize\ttfamily \label{structigl_1_1Hit_a2424161905a17ad174f93da4f4efb0bc} 
+template$<$typename Scalar$>$ \\
+int \doxymbox{\hyperlink{structigl_1_1Hit}{igl::\+\+Hit}}$<$ Scalar $>$::\+id}
 
 
 
 primitive id 
 
-\Hypertarget{structigl_1_1Hit_ae9bf3e8babcb425173d9345be38d7a87}\label{structigl_1_1Hit_ae9bf3e8babcb425173d9345be38d7a87} 
-\index{igl::Hit@{igl::Hit}!gid@{gid}}
-\index{gid@{gid}!igl::Hit@{igl::Hit}}
+\Hypertarget{structigl_1_1Hit_a1bf3f8d81644e6c46e1ca5e7a8ced023}\index{igl::Hit$<$ Scalar $>$@{igl::Hit$<$ Scalar $>$}!gid@{gid}}
+\index{gid@{gid}!igl::Hit$<$ Scalar $>$@{igl::Hit$<$ Scalar $>$}}
 \doxysubsubsection{\texorpdfstring{gid}{gid}}
-{\footnotesize\ttfamily int igl\+::\+Hit\+::gid}
+{\footnotesize\ttfamily \label{structigl_1_1Hit_a1bf3f8d81644e6c46e1ca5e7a8ced023} 
+template$<$typename Scalar$>$ \\
+int \doxymbox{\hyperlink{structigl_1_1Hit}{igl::\+\+Hit}}$<$ Scalar $>$::\+gid}
 
 
 
 geometry id (not used) 
 
-\Hypertarget{structigl_1_1Hit_aaa0a85031d466e01f56dac94251f2e2e}\label{structigl_1_1Hit_aaa0a85031d466e01f56dac94251f2e2e} 
-\index{igl::Hit@{igl::Hit}!u@{u}}
-\index{u@{u}!igl::Hit@{igl::Hit}}
+\Hypertarget{structigl_1_1Hit_ab9e7ec446b7b6835280fa26494879ab5}\index{igl::Hit$<$ Scalar $>$@{igl::Hit$<$ Scalar $>$}!u@{u}}
+\index{u@{u}!igl::Hit$<$ Scalar $>$@{igl::Hit$<$ Scalar $>$}}
 \doxysubsubsection{\texorpdfstring{u}{u}}
-{\footnotesize\ttfamily float igl\+::\+Hit\+::u}
+{\footnotesize\ttfamily \label{structigl_1_1Hit_ab9e7ec446b7b6835280fa26494879ab5} 
+template$<$typename Scalar$>$ \\
+Scalar \doxymbox{\hyperlink{structigl_1_1Hit}{igl::\+\+Hit}}$<$ Scalar $>$::\+u}
 
 
 
 barycentric coordinates so that pos = V.\+row(\+F(id,0))\texorpdfstring{$\ast$}{*}(1-\/u-\/v)+V.\+row(\+F(id,1))\texorpdfstring{$\ast$}{*}u+V.row(\+F(id,2))\texorpdfstring{$\ast$}{*}v; 
 
-\Hypertarget{structigl_1_1Hit_aadcb6273a81628a44bac6c9bdcf9d7d4}\label{structigl_1_1Hit_aadcb6273a81628a44bac6c9bdcf9d7d4} 
-\index{igl::Hit@{igl::Hit}!v@{v}}
-\index{v@{v}!igl::Hit@{igl::Hit}}
+\Hypertarget{structigl_1_1Hit_a8369ff5988cde5e50b8d3ce8837f3a0a}\index{igl::Hit$<$ Scalar $>$@{igl::Hit$<$ Scalar $>$}!v@{v}}
+\index{v@{v}!igl::Hit$<$ Scalar $>$@{igl::Hit$<$ Scalar $>$}}
 \doxysubsubsection{\texorpdfstring{v}{v}}
-{\footnotesize\ttfamily float igl\+::\+Hit\+::v}
+{\footnotesize\ttfamily \label{structigl_1_1Hit_a8369ff5988cde5e50b8d3ce8837f3a0a} 
+template$<$typename Scalar$>$ \\
+Scalar \doxymbox{\hyperlink{structigl_1_1Hit}{igl::\+\+Hit}}$<$ Scalar $>$::\+v}
 
-\Hypertarget{structigl_1_1Hit_a74e794fbf1a39d404f1a666165fa2b63}\label{structigl_1_1Hit_a74e794fbf1a39d404f1a666165fa2b63} 
-\index{igl::Hit@{igl::Hit}!t@{t}}
-\index{t@{t}!igl::Hit@{igl::Hit}}
+\Hypertarget{structigl_1_1Hit_a87f21e34211f51c3d729c4101c28f195}\index{igl::Hit$<$ Scalar $>$@{igl::Hit$<$ Scalar $>$}!t@{t}}
+\index{t@{t}!igl::Hit$<$ Scalar $>$@{igl::Hit$<$ Scalar $>$}}
 \doxysubsubsection{\texorpdfstring{t}{t}}
-{\footnotesize\ttfamily float igl\+::\+Hit\+::t}
+{\footnotesize\ttfamily \label{structigl_1_1Hit_a87f21e34211f51c3d729c4101c28f195} 
+template$<$typename Scalar$>$ \\
+Scalar \doxymbox{\hyperlink{structigl_1_1Hit}{igl::\+\+Hit}}$<$ Scalar $>$::\+t}
 
 
 
@@ -76,6 +85,6 @@ parametric distance so that pos = origin + t \texorpdfstring{$\ast$}{*} dir
 
 
 
-The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this struct was generated from the following file:\+\begin{DoxyCompactItemize}
 \item 
-include/igl/\mbox{\hyperlink{Hit_8h}{Hit.\+h}}\end{DoxyCompactItemize}
+include/\+igl/\+\doxymbox{\hyperlink{Hit_8h}{Hit.\+h}}\end{DoxyCompactItemize}

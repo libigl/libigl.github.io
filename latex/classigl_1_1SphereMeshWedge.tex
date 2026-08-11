@@ -1,0 +1,273 @@
+\doxysection{igl::\+Sphere\+Mesh\+Wedge\texorpdfstring{$<$}{<} Scalar \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classigl_1_1SphereMeshWedge}{}\label{classigl_1_1SphereMeshWedge}\index{igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}}
+
+
+A class to compute the signed distance to a "{}\+Sphere-\/\+Mesh Wedge"{} as seen in variable radius offset surfaces or Sphere-\/\+Meshes.  
+
+
+
+
+{\ttfamily \+\#include $<$Sphere\+Mesh\+Wedge.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_af886b6c8c65da5db4aa67e0cb8eb46d4a4db91b3932adf9f0ed19bac4d90ac999}{BIG\+\_\+\+VERTEX}} = 0
+, \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_af886b6c8c65da5db4aa67e0cb8eb46d4a3935e633f7144bac2443375567ed56ee}{BIG\+\_\+\+EDGE}} = 1
+, \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_af886b6c8c65da5db4aa67e0cb8eb46d4acb72a5db0486bd72519a3c71da298558}{NO\+\_\+\+TRIANGLE}} = 2
+, \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_af886b6c8c65da5db4aa67e0cb8eb46d4abadbc967720326fc3d9009dc17ae3ed3}{FULL}} = 3
+ \}
+\item 
+using \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_adcceb053caf23fa9a7aabc4f7c1dc481}{Row\+Vector3S}} = Eigen::\+\+Matrix$<$Scalar, 1, 3$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_a6da021c1a476af1a3023cf2db84575a8}{Sphere\+Mesh\+Wedge}} ()
+\item 
+\doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_ab98122abacf8dfff1b69d95d5a6d8715}{Sphere\+Mesh\+Wedge}} (const \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_adcceb053caf23fa9a7aabc4f7c1dc481}{Row\+Vector3S}} \&V0, const \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_adcceb053caf23fa9a7aabc4f7c1dc481}{Row\+Vector3S}} \&V1, const \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_adcceb053caf23fa9a7aabc4f7c1dc481}{Row\+Vector3S}} \&V2, const Scalar r0, const Scalar r1, const Scalar r2)
+\begin{DoxyCompactList}\small\item\em Constructor that takes three vertices and three radii. \end{DoxyCompactList}\item 
+Scalar \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_a23ae4aeb2b8e659498bc7386af686c2d}{operator()}} (const \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_adcceb053caf23fa9a7aabc4f7c1dc481}{Row\+Vector3S}} \&p) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+enum igl::\+\+Sphere\+Mesh\+Wedge::\+ \{ ... \}  \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_a28854b49c773ea134d51f89014edecc4}{flavor}}
+\item 
+Eigen::\+\+Matrix$<$ Scalar, 3, 3, Eigen::\+\+Row\+Major $>$ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_ae0ebc2021c15d8aa3683ce2b9d2d6119}{V}}
+\item 
+Eigen::\+\+Matrix$<$ Scalar, 3, 1 $>$ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_aa207aa0bc7b499733cc8b24c7e74e2ef}{r}}
+\item 
+Eigen::\+\+Matrix$<$ Scalar, 3, 3, Eigen::\+\+Row\+Major $>$ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_acb47a4b2ad70f36375729248e07ef5d6}{EV}}
+\item 
+Eigen::\+\+Matrix$<$ Scalar, 3, 1 $>$ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_a17b300091dea4a14eb9547ca8bdb58bc}{l}}
+\item 
+Eigen::\+\+Matrix$<$ Scalar, 3, 1 $>$ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_a361493acf3a82d5afaf575b75d61fbb2}{l2}}
+\item 
+Eigen::\+\+Matrix$<$ Scalar, 3, 1 $>$ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_abad7ec7c4287c728b3a8ae2fa0305789}{rr}}
+\item 
+Eigen::\+\+Matrix$<$ Scalar, 3, 1 $>$ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_ac2decc72356058ab698b162360c4ec49}{a2}}
+\item 
+Eigen::\+\+Matrix$<$ Scalar, 3, 1 $>$ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_a5a65cde7b8cc0e7f927f814f60900472}{il2}}
+\item 
+int \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_aeea205238932a3f75f092a6e45433148}{max\+\_\+i}}
+\item 
+Eigen::\+\+Matrix$<$ Scalar, 5, 4, Eigen::\+\+Row\+Major $>$ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_a5f22d02481f15d94b919772e11f25206}{planes}}
+\item 
+Eigen::\+\+Matrix$<$ Scalar, 3, 3, Eigen::\+\+Row\+Major $>$ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_a0f18e21a62372024238ce82b7c35c7be}{T}}
+\item 
+Eigen::\+\+Matrix$<$ Scalar, 3, 3, Eigen::\+\+Row\+Major $>$ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_acd57a64bb51d0f995ce728901511709b}{C}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Scalar$>$\newline
+class igl::\+\+Sphere\+Mesh\+Wedge$<$ Scalar $>$}
+A class to compute the signed distance to a "{}\+Sphere-\/\+Mesh Wedge"{} as seen in variable radius offset surfaces or Sphere-\/\+Meshes. 
+
+Each wedge is defined by three vertices and three radii, one at each vertex. The wedge is the union of all spheres at points on the triangle with radius linearly interpolated. See, e.\+g., "{}\+Sphere-\/\+Meshes for Real-\/\+Time Hand Modeling and \+Tracking"{} or "{}\+A Multilinear Model for Bidirectional Craniofacial \+Reconstruction"{} or "{}\+Sphere-\/\+Meshes:\+ Shape Approximation using Spherical \+Quadric Error Metrics"{} or "{}\+Variable-\/\+Radius Offset Surface Approximation on the GPU"{}. 
+
+\label{doc-typedef-members}
+\Hypertarget{classigl_1_1SphereMeshWedge_doc-typedef-members}
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{classigl_1_1SphereMeshWedge_adcceb053caf23fa9a7aabc4f7c1dc481}\index{igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}!RowVector3S@{RowVector3S}}
+\index{RowVector3S@{RowVector3S}!igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}}
+\doxysubsubsection{\texorpdfstring{RowVector3S}{RowVector3S}}
+{\footnotesize\ttfamily \label{classigl_1_1SphereMeshWedge_adcceb053caf23fa9a7aabc4f7c1dc481} 
+template$<$typename Scalar$>$ \\
+using \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge}{igl::\+\+Sphere\+Mesh\+Wedge}}$<$ Scalar $>$::\+\+Row\+Vector3S = Eigen::\+\+Matrix$<$Scalar, 1, 3$>$}
+
+
+
+\label{doc-enum-members}
+\Hypertarget{classigl_1_1SphereMeshWedge_doc-enum-members}
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classigl_1_1SphereMeshWedge_af886b6c8c65da5db4aa67e0cb8eb46d4}\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily \label{classigl_1_1SphereMeshWedge_af886b6c8c65da5db4aa67e0cb8eb46d4} 
+template$<$typename Scalar$>$ \\
+anonymous enum}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BIG\_VERTEX@{BIG\_VERTEX}!igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}}
+\index{igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}!BIG\_VERTEX@{BIG\_VERTEX}}
+}\Hypertarget{classigl_1_1SphereMeshWedge_af886b6c8c65da5db4aa67e0cb8eb46d4a4db91b3932adf9f0ed19bac4d90ac999}\label{classigl_1_1SphereMeshWedge_af886b6c8c65da5db4aa67e0cb8eb46d4a4db91b3932adf9f0ed19bac4d90ac999} 
+BIG\+\_\+\+VERTEX&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BIG\_EDGE@{BIG\_EDGE}!igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}}
+\index{igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}!BIG\_EDGE@{BIG\_EDGE}}
+}\Hypertarget{classigl_1_1SphereMeshWedge_af886b6c8c65da5db4aa67e0cb8eb46d4a3935e633f7144bac2443375567ed56ee}\label{classigl_1_1SphereMeshWedge_af886b6c8c65da5db4aa67e0cb8eb46d4a3935e633f7144bac2443375567ed56ee} 
+BIG\+\_\+\+EDGE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NO\_TRIANGLE@{NO\_TRIANGLE}!igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}}
+\index{igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}!NO\_TRIANGLE@{NO\_TRIANGLE}}
+}\Hypertarget{classigl_1_1SphereMeshWedge_af886b6c8c65da5db4aa67e0cb8eb46d4acb72a5db0486bd72519a3c71da298558}\label{classigl_1_1SphereMeshWedge_af886b6c8c65da5db4aa67e0cb8eb46d4acb72a5db0486bd72519a3c71da298558} 
+NO\+\_\+\+TRIANGLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FULL@{FULL}!igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}}
+\index{igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}!FULL@{FULL}}
+}\Hypertarget{classigl_1_1SphereMeshWedge_af886b6c8c65da5db4aa67e0cb8eb46d4abadbc967720326fc3d9009dc17ae3ed3}\label{classigl_1_1SphereMeshWedge_af886b6c8c65da5db4aa67e0cb8eb46d4abadbc967720326fc3d9009dc17ae3ed3} 
+FULL&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-constructors}
+\Hypertarget{classigl_1_1SphereMeshWedge_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classigl_1_1SphereMeshWedge_a6da021c1a476af1a3023cf2db84575a8}\index{igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}!SphereMeshWedge@{SphereMeshWedge}}
+\index{SphereMeshWedge@{SphereMeshWedge}!igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}}
+\doxysubsubsection{\texorpdfstring{SphereMeshWedge()}{SphereMeshWedge()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classigl_1_1SphereMeshWedge_a6da021c1a476af1a3023cf2db84575a8} 
+template$<$typename Scalar$>$ \\
+\doxymbox{\hyperlink{classigl_1_1SphereMeshWedge}{igl::\+\+Sphere\+Mesh\+Wedge}}$<$ Scalar $>$::\+\+Sphere\+Mesh\+Wedge (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classigl_1_1SphereMeshWedge_ab98122abacf8dfff1b69d95d5a6d8715}\index{igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}!SphereMeshWedge@{SphereMeshWedge}}
+\index{SphereMeshWedge@{SphereMeshWedge}!igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}}
+\doxysubsubsection{\texorpdfstring{SphereMeshWedge()}{SphereMeshWedge()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classigl_1_1SphereMeshWedge_ab98122abacf8dfff1b69d95d5a6d8715} 
+template$<$typename Scalar$>$ \\
+\doxymbox{\hyperlink{classigl_1_1SphereMeshWedge}{igl::\+\+Sphere\+Mesh\+Wedge}}$<$ Scalar $>$::\+\+Sphere\+Mesh\+Wedge (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_adcceb053caf23fa9a7aabc4f7c1dc481}{Row\+Vector3S}} \&}]{V0}{, }\item[{const \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_adcceb053caf23fa9a7aabc4f7c1dc481}{Row\+Vector3S}} \&}]{V1}{, }\item[{const \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_adcceb053caf23fa9a7aabc4f7c1dc481}{Row\+Vector3S}} \&}]{V2}{, }\item[{const Scalar}]{r0}{, }\item[{const Scalar}]{r1}{, }\item[{const Scalar}]{r2}{}\end{DoxyParamCaption})}
+
+
+
+Constructor that takes three vertices and three radii. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em V0} & first vertex position \\
+\hline
+{\em V1} & second vertex position \\
+\hline
+{\em V2} & third vertex position \\
+\hline
+{\em r0} & radius at first vertex \\
+\hline
+{\em r1} & radius at second vertex \\
+\hline
+{\em r2} & radius at third vertex \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classigl_1_1SphereMeshWedge_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classigl_1_1SphereMeshWedge_a23ae4aeb2b8e659498bc7386af686c2d}\index{igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily \label{classigl_1_1SphereMeshWedge_a23ae4aeb2b8e659498bc7386af686c2d} 
+template$<$typename Scalar$>$ \\
+Scalar \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge}{igl::\+\+Sphere\+Mesh\+Wedge}}$<$ Scalar $>$::\+operator() (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge_adcceb053caf23fa9a7aabc4f7c1dc481}{Row\+Vector3S}} \&}]{p}{}\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em p} & 3-\/vector query point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+signed distance to the wedge at point p 
+\end{DoxyReturn}
+
+
+\label{doc-variable-members}
+\Hypertarget{classigl_1_1SphereMeshWedge_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classigl_1_1SphereMeshWedge_a28854b49c773ea134d51f89014edecc4}\index{igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}!flavor@{flavor}}
+\index{flavor@{flavor}!igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}}
+\doxysubsubsection{\texorpdfstring{[]}{[]}}
+{\footnotesize\ttfamily \label{classigl_1_1SphereMeshWedge_a28854b49c773ea134d51f89014edecc4} 
+enum  \{ ... \}  \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge}{igl::\+\+Sphere\+Mesh\+Wedge}}$<$ Scalar $>$::\+flavor}
+
+\Hypertarget{classigl_1_1SphereMeshWedge_ae0ebc2021c15d8aa3683ce2b9d2d6119}\index{igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}!V@{V}}
+\index{V@{V}!igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}}
+\doxysubsubsection{\texorpdfstring{V}{V}}
+{\footnotesize\ttfamily \label{classigl_1_1SphereMeshWedge_ae0ebc2021c15d8aa3683ce2b9d2d6119} 
+template$<$typename Scalar$>$ \\
+Eigen::\+\+Matrix$<$Scalar,3,3,Eigen::\+\+Row\+Major$>$ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge}{igl::\+\+Sphere\+Mesh\+Wedge}}$<$ Scalar $>$::\+V}
+
+\Hypertarget{classigl_1_1SphereMeshWedge_aa207aa0bc7b499733cc8b24c7e74e2ef}\index{igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}!r@{r}}
+\index{r@{r}!igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}}
+\doxysubsubsection{\texorpdfstring{r}{r}}
+{\footnotesize\ttfamily \label{classigl_1_1SphereMeshWedge_aa207aa0bc7b499733cc8b24c7e74e2ef} 
+template$<$typename Scalar$>$ \\
+Eigen::\+\+Matrix$<$Scalar,3,1$>$ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge}{igl::\+\+Sphere\+Mesh\+Wedge}}$<$ Scalar $>$::\+r}
+
+\Hypertarget{classigl_1_1SphereMeshWedge_acb47a4b2ad70f36375729248e07ef5d6}\index{igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}!EV@{EV}}
+\index{EV@{EV}!igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}}
+\doxysubsubsection{\texorpdfstring{EV}{EV}}
+{\footnotesize\ttfamily \label{classigl_1_1SphereMeshWedge_acb47a4b2ad70f36375729248e07ef5d6} 
+template$<$typename Scalar$>$ \\
+Eigen::\+\+Matrix$<$Scalar,3,3,Eigen::\+\+Row\+Major$>$ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge}{igl::\+\+Sphere\+Mesh\+Wedge}}$<$ Scalar $>$::\+\+EV}
+
+\Hypertarget{classigl_1_1SphereMeshWedge_a17b300091dea4a14eb9547ca8bdb58bc}\index{igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}!l@{l}}
+\index{l@{l}!igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}}
+\doxysubsubsection{\texorpdfstring{l}{l}}
+{\footnotesize\ttfamily \label{classigl_1_1SphereMeshWedge_a17b300091dea4a14eb9547ca8bdb58bc} 
+template$<$typename Scalar$>$ \\
+Eigen::\+\+Matrix$<$Scalar,3,1$>$ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge}{igl::\+\+Sphere\+Mesh\+Wedge}}$<$ Scalar $>$::\+l}
+
+\Hypertarget{classigl_1_1SphereMeshWedge_a361493acf3a82d5afaf575b75d61fbb2}\index{igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}!l2@{l2}}
+\index{l2@{l2}!igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}}
+\doxysubsubsection{\texorpdfstring{l2}{l2}}
+{\footnotesize\ttfamily \label{classigl_1_1SphereMeshWedge_a361493acf3a82d5afaf575b75d61fbb2} 
+template$<$typename Scalar$>$ \\
+Eigen::\+\+Matrix$<$Scalar,3,1$>$ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge}{igl::\+\+Sphere\+Mesh\+Wedge}}$<$ Scalar $>$::\+l2}
+
+\Hypertarget{classigl_1_1SphereMeshWedge_abad7ec7c4287c728b3a8ae2fa0305789}\index{igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}!rr@{rr}}
+\index{rr@{rr}!igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}}
+\doxysubsubsection{\texorpdfstring{rr}{rr}}
+{\footnotesize\ttfamily \label{classigl_1_1SphereMeshWedge_abad7ec7c4287c728b3a8ae2fa0305789} 
+template$<$typename Scalar$>$ \\
+Eigen::\+\+Matrix$<$Scalar,3,1$>$ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge}{igl::\+\+Sphere\+Mesh\+Wedge}}$<$ Scalar $>$::\+rr}
+
+\Hypertarget{classigl_1_1SphereMeshWedge_ac2decc72356058ab698b162360c4ec49}\index{igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}!a2@{a2}}
+\index{a2@{a2}!igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}}
+\doxysubsubsection{\texorpdfstring{a2}{a2}}
+{\footnotesize\ttfamily \label{classigl_1_1SphereMeshWedge_ac2decc72356058ab698b162360c4ec49} 
+template$<$typename Scalar$>$ \\
+Eigen::\+\+Matrix$<$Scalar,3,1$>$ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge}{igl::\+\+Sphere\+Mesh\+Wedge}}$<$ Scalar $>$::\+a2}
+
+\Hypertarget{classigl_1_1SphereMeshWedge_a5a65cde7b8cc0e7f927f814f60900472}\index{igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}!il2@{il2}}
+\index{il2@{il2}!igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}}
+\doxysubsubsection{\texorpdfstring{il2}{il2}}
+{\footnotesize\ttfamily \label{classigl_1_1SphereMeshWedge_a5a65cde7b8cc0e7f927f814f60900472} 
+template$<$typename Scalar$>$ \\
+Eigen::\+\+Matrix$<$Scalar,3,1$>$ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge}{igl::\+\+Sphere\+Mesh\+Wedge}}$<$ Scalar $>$::\+il2}
+
+\Hypertarget{classigl_1_1SphereMeshWedge_aeea205238932a3f75f092a6e45433148}\index{igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}!max\_i@{max\_i}}
+\index{max\_i@{max\_i}!igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}}
+\doxysubsubsection{\texorpdfstring{max\_i}{max\_i}}
+{\footnotesize\ttfamily \label{classigl_1_1SphereMeshWedge_aeea205238932a3f75f092a6e45433148} 
+template$<$typename Scalar$>$ \\
+int \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge}{igl::\+\+Sphere\+Mesh\+Wedge}}$<$ Scalar $>$::\+max\+\_\+i}
+
+\Hypertarget{classigl_1_1SphereMeshWedge_a5f22d02481f15d94b919772e11f25206}\index{igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}!planes@{planes}}
+\index{planes@{planes}!igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}}
+\doxysubsubsection{\texorpdfstring{planes}{planes}}
+{\footnotesize\ttfamily \label{classigl_1_1SphereMeshWedge_a5f22d02481f15d94b919772e11f25206} 
+template$<$typename Scalar$>$ \\
+Eigen::\+\+Matrix$<$Scalar,5,4,Eigen::\+\+Row\+Major$>$ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge}{igl::\+\+Sphere\+Mesh\+Wedge}}$<$ Scalar $>$::\+planes}
+
+\Hypertarget{classigl_1_1SphereMeshWedge_a0f18e21a62372024238ce82b7c35c7be}\index{igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}!T@{T}}
+\index{T@{T}!igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}}
+\doxysubsubsection{\texorpdfstring{T}{T}}
+{\footnotesize\ttfamily \label{classigl_1_1SphereMeshWedge_a0f18e21a62372024238ce82b7c35c7be} 
+template$<$typename Scalar$>$ \\
+Eigen::\+\+Matrix$<$Scalar,3,3,Eigen::\+\+Row\+Major$>$ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge}{igl::\+\+Sphere\+Mesh\+Wedge}}$<$ Scalar $>$::\+T}
+
+\Hypertarget{classigl_1_1SphereMeshWedge_acd57a64bb51d0f995ce728901511709b}\index{igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}!C@{C}}
+\index{C@{C}!igl::SphereMeshWedge$<$ Scalar $>$@{igl::SphereMeshWedge$<$ Scalar $>$}}
+\doxysubsubsection{\texorpdfstring{C}{C}}
+{\footnotesize\ttfamily \label{classigl_1_1SphereMeshWedge_acd57a64bb51d0f995ce728901511709b} 
+template$<$typename Scalar$>$ \\
+Eigen::\+\+Matrix$<$Scalar,3,3,Eigen::\+\+Row\+Major$>$ \doxymbox{\hyperlink{classigl_1_1SphereMeshWedge}{igl::\+\+Sphere\+Mesh\+Wedge}}$<$ Scalar $>$::\+C}
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+include/\+igl/\+\doxymbox{\hyperlink{SphereMeshWedge_8h}{Sphere\+Mesh\+Wedge.\+h}}\end{DoxyCompactItemize}

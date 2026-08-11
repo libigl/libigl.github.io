@@ -1,4 +1,4 @@
 var peel__winding__number__layers_8h =
 [
-    [ "peel_winding_number_layers", "peel__winding__number__layers_8h.html#ac1f61d0bdf6d687737bc08b5fa72111a", null ]
+    [ "igl::copyleft::cgal::peel_winding_number_layers", "namespaceigl_1_1copyleft_1_1cgal.html#ada21378d593c139c30746942209d182b", null ]
 ];

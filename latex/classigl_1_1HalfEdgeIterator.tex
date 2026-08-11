@@ -1,4 +1,4 @@
-\doxysection{igl\+::Half\+Edge\+Iterator\texorpdfstring{$<$}{<} DerivedF, Derived\+FF, Derived\+FFi \texorpdfstring{$>$}{>} Class Template Reference}
+\doxysection{igl::\+Half\+Edge\+Iterator\texorpdfstring{$<$}{<} DerivedF, Derived\+FF, Derived\+FFi \texorpdfstring{$>$}{>} Class Template Reference}
 \hypertarget{classigl_1_1HalfEdgeIterator}{}\label{classigl_1_1HalfEdgeIterator}\index{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$@{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$}}
 
 
@@ -7,111 +7,115 @@ Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+t
 
 
 
-{\ttfamily \#include $<$Half\+Edge\+Iterator.\+h$>$}
+{\ttfamily \+\#include $<$Half\+Edge\+Iterator.\+h$>$}
 
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classigl_1_1HalfEdgeIterator_ade6f831eefbe8752706db4e8c5ffebb9}{Half\+Edge\+Iterator}} (const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&\+\_\+F, const Eigen\+::\+Matrix\+Base$<$ Derived\+FF $>$ \&\+\_\+\+FF, const Eigen\+::\+Matrix\+Base$<$ Derived\+FFi $>$ \&\+\_\+\+FFi, int \+\_\+fi, int \+\_\+ei, bool \+\_\+reverse=false)
-\begin{DoxyCompactList}\small\item\em Init the \doxylink{classigl_1_1HalfEdgeIterator}{Half\+Edge\+Iterator} by specifying Face,Edge Index and Orientation. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classigl_1_1HalfEdgeIterator_a8be83ead1050fd4901b863cb32d2492e}{flipF}} ()
+\doxymbox{\hyperlink{classigl_1_1HalfEdgeIterator_ade6f831eefbe8752706db4e8c5ffebb9}{Half\+Edge\+Iterator}} (const Eigen::\+\+Matrix\+Base$<$ DerivedF $>$ \&\+\_\+F, const Eigen::\+\+Matrix\+Base$<$ Derived\+FF $>$ \&\+\_\+\+FF, const Eigen::\+\+Matrix\+Base$<$ Derived\+FFi $>$ \&\+\_\+\+FFi, int \+\_\+fi, int \+\_\+ei, bool \+\_\+reverse=false)
+\begin{DoxyCompactList}\small\item\em Init the \doxylink{classigl_1_1HalfEdgeIterator}{Half\+Edge\+Iterator} by specifying Face,Edge Index and \doxylink{namespaceigl_a93f2a7c83dee3568f488e9e24fb98f8c}{Orientation}. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classigl_1_1HalfEdgeIterator_a8be83ead1050fd4901b863cb32d2492e}{flipF}} ()
 \begin{DoxyCompactList}\small\item\em Change Face. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classigl_1_1HalfEdgeIterator_a302263a4590db215292b9df12a72ea98}{flipE}} ()
+void \doxymbox{\hyperlink{classigl_1_1HalfEdgeIterator_a302263a4590db215292b9df12a72ea98}{flipE}} ()
 \begin{DoxyCompactList}\small\item\em Change Edge. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classigl_1_1HalfEdgeIterator_a5a46cbff6201fe3d5ea6965949dcf233}{flipV}} ()
+void \doxymbox{\hyperlink{classigl_1_1HalfEdgeIterator_a5a46cbff6201fe3d5ea6965949dcf233}{flipV}} ()
 \begin{DoxyCompactList}\small\item\em Change Vertex. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classigl_1_1HalfEdgeIterator_acd659df96f2d15901e435f00bb108430}{is\+Border}} ()
+bool \doxymbox{\hyperlink{classigl_1_1HalfEdgeIterator_acd659df96f2d15901e435f00bb108430}{is\+Border}} ()
 \begin{DoxyCompactList}\small\item\em Determine if on border. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classigl_1_1HalfEdgeIterator_ae8c6926d09207e64ddebc76da5349bd1}{Next\+FE}} ()
+bool \doxymbox{\hyperlink{classigl_1_1HalfEdgeIterator_ae8c6926d09207e64ddebc76da5349bd1}{Next\+FE}} ()
 \begin{DoxyCompactList}\small\item\em Change to next edge skipping the border. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{classigl_1_1HalfEdgeIterator_a832d0372901b3083631507927e3eb11c}{Vi}} ()
+int \doxymbox{\hyperlink{classigl_1_1HalfEdgeIterator_a832d0372901b3083631507927e3eb11c}{Vi}} ()
 \begin{DoxyCompactList}\small\item\em Get vertex index. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{classigl_1_1HalfEdgeIterator_acdebf5be0b70ae105896bc7b4dc21519}{Fi}} ()
+int \doxymbox{\hyperlink{classigl_1_1HalfEdgeIterator_acdebf5be0b70ae105896bc7b4dc21519}{Fi}} ()
 \begin{DoxyCompactList}\small\item\em Get face index. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{classigl_1_1HalfEdgeIterator_a7b95717e2fe5d396d933bd9b48d4e82c}{Ei}} ()
+int \doxymbox{\hyperlink{classigl_1_1HalfEdgeIterator_a7b95717e2fe5d396d933bd9b48d4e82c}{Ei}} ()
 \begin{DoxyCompactList}\small\item\em Get edge index. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classigl_1_1HalfEdgeIterator_a8ce6e514ed49e9684b0c0fd0dd48e0d6}{operator==}} (\mbox{\hyperlink{classigl_1_1HalfEdgeIterator}{Half\+Edge\+Iterator}} \&p2)
+bool \doxymbox{\hyperlink{classigl_1_1HalfEdgeIterator_a8ce6e514ed49e9684b0c0fd0dd48e0d6}{operator==}} (\doxymbox{\hyperlink{classigl_1_1HalfEdgeIterator_ade6f831eefbe8752706db4e8c5ffebb9}{Half\+Edge\+Iterator}} \&p2)
 \begin{DoxyCompactList}\small\item\em Check if two \doxylink{classigl_1_1HalfEdgeIterator}{Half\+Edge\+Iterator} are the same. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 \subsubsection*{template$<$typename DerivedF, typename Derived\+FF, typename Derived\+FFi$>$\newline
-class igl\+::\+Half\+Edge\+Iterator$<$ Derived\+F, Derived\+FF, Derived\+FFi $>$}
+class igl::\+\+Half\+Edge\+Iterator$<$ Derived\+F, Derived\+FF, Derived\+FFi $>$}
 Fake halfedge for fast and easy navigation on triangle meshes with vertex\+\_\+triangle\+\_\+adjacency and triangle\+\_\+triangle adjacency. 
 
-Note\+: this is different to classical Half Edge data structure. Instead, it follows cell-\/tuple in \mbox{[}Brisson, 1989\mbox{]} "{}\+Representing geometric structures in d dimensions\+: topology and order."{} This class can achieve local navigation similar to half edge in Open\+Mesh But the logic behind each atom operation is different. So this should be more properly called Triangle\+Tuple\+Iterator.
+Note:\+ this is different to classical Half Edge data structure. Instead, it follows cell-\/tuple in \+[Brisson, 1989]\+ "{}\+Representing geometric structures in d dimensions:\+ topology and order."{} This class can achieve local navigation similar to half edge in Open\+Mesh But the logic behind each atom operation is different. So this should be more properly called Triangle\+Tuple\+Iterator.
 
 Each tuple contains information on (face, edge, vertex) and encoded by (face, edge \textbackslash{}in \{0,1,2\}, bool reverse) 
 
+\label{doc-constructors}
+\Hypertarget{classigl_1_1HalfEdgeIterator_doc-constructors}
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{classigl_1_1HalfEdgeIterator_ade6f831eefbe8752706db4e8c5ffebb9}\label{classigl_1_1HalfEdgeIterator_ade6f831eefbe8752706db4e8c5ffebb9} 
-\index{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$@{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$}!HalfEdgeIterator@{HalfEdgeIterator}}
+\Hypertarget{classigl_1_1HalfEdgeIterator_ade6f831eefbe8752706db4e8c5ffebb9}\index{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$@{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$}!HalfEdgeIterator@{HalfEdgeIterator}}
 \index{HalfEdgeIterator@{HalfEdgeIterator}!igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$@{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$}}
 \doxysubsubsection{\texorpdfstring{HalfEdgeIterator()}{HalfEdgeIterator()}}
-{\footnotesize\ttfamily template$<$typename DerivedF , typename Derived\+FF , typename Derived\+FFi $>$ \\
-\mbox{\hyperlink{classigl_1_1HalfEdgeIterator}{igl\+::\+Half\+Edge\+Iterator}}$<$ DerivedF, Derived\+FF, Derived\+FFi $>$\+::\+Half\+Edge\+Iterator (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ DerivedF $>$ \&}]{\+\_\+F,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+FF $>$ \&}]{\+\_\+\+FF,  }\item[{const Eigen\+::\+Matrix\+Base$<$ Derived\+FFi $>$ \&}]{\+\_\+\+FFi,  }\item[{int}]{\+\_\+fi,  }\item[{int}]{\+\_\+ei,  }\item[{bool}]{\+\_\+reverse = {\ttfamily false} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{classigl_1_1HalfEdgeIterator_ade6f831eefbe8752706db4e8c5ffebb9} 
+template$<$typename DerivedF, typename Derived\+FF, typename Derived\+FFi$>$ \\
+\doxymbox{\hyperlink{classigl_1_1HalfEdgeIterator}{igl::\+\+Half\+Edge\+Iterator}}$<$ DerivedF, Derived\+FF, Derived\+FFi $>$::\+\+Half\+Edge\+Iterator (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedF $>$ \&}]{\+\_\+F}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derived\+FF $>$ \&}]{\+\_\+\+FF}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derived\+FFi $>$ \&}]{\+\_\+\+FFi}{, }\item[{int}]{\+\_\+fi}{, }\item[{int}]{\+\_\+ei}{, }\item[{bool}]{\+\_\+reverse}{ = {\ttfamily false}}\end{DoxyParamCaption})}
 
 
 
-Init the \doxylink{classigl_1_1HalfEdgeIterator}{Half\+Edge\+Iterator} by specifying Face,Edge Index and Orientation. 
+Init the \doxylink{classigl_1_1HalfEdgeIterator}{Half\+Edge\+Iterator} by specifying Face,Edge Index and \doxylink{namespaceigl_a93f2a7c83dee3568f488e9e24fb98f8c}{Orientation}. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em F} & F by 3 list of "{}faces"{} \\
+\doxymbox{\texttt{in}}  & {\em F} & F by 3 list of "{}faces"{} \\
 \hline
-\mbox{\texttt{ in}}  & {\em FF} & F by 3 list of triangle-\/triangle adjacency. \\
+\doxymbox{\texttt{in}}  & {\em FF} & F by 3 list of triangle-\/triangle adjacency. \\
 \hline
-\mbox{\texttt{ in}}  & {\em FFi} & F by 3 list of FF inverse. For FF and FFi, refer to "{}triangle\+\_\+triangle\+\_\+adjacency.\+h"{} \\
+\doxymbox{\texttt{in}}  & {\em FFi} & F by 3 list of FF inverse. For FF and FFi, refer to "{}triangle\+\_\+triangle\+\_\+adjacency.\+h"{} \\
 \hline
-\mbox{\texttt{ in}}  & {\em \+\_\+fi} & index of the selected face \\
+\doxymbox{\texttt{in}}  & {\em \+\_\+fi} & index of the selected face \\
 \hline
-\mbox{\texttt{ in}}  & {\em \+\_\+ii} & index of the selected face \\
+\doxymbox{\texttt{in}}  & {\em \+\_\+ii} & index of the selected face \\
 \hline
-\mbox{\texttt{ in}}  & {\em \+\_\+reverse} & orientation of the selected face \\
+\doxymbox{\texttt{in}}  & {\em \+\_\+reverse} & orientation of the selected face \\
 \hline
 \end{DoxyParams}
 
 
+\label{doc-func-members}
+\Hypertarget{classigl_1_1HalfEdgeIterator_doc-func-members}
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classigl_1_1HalfEdgeIterator_a8be83ead1050fd4901b863cb32d2492e}\label{classigl_1_1HalfEdgeIterator_a8be83ead1050fd4901b863cb32d2492e} 
-\index{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$@{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$}!flipF@{flipF}}
+\Hypertarget{classigl_1_1HalfEdgeIterator_a8be83ead1050fd4901b863cb32d2492e}\index{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$@{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$}!flipF@{flipF}}
 \index{flipF@{flipF}!igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$@{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$}}
 \doxysubsubsection{\texorpdfstring{flipF()}{flipF()}}
-{\footnotesize\ttfamily template$<$typename DerivedF , typename Derived\+FF , typename Derived\+FFi $>$ \\
-void \mbox{\hyperlink{classigl_1_1HalfEdgeIterator}{igl\+::\+Half\+Edge\+Iterator}}$<$ DerivedF, Derived\+FF, Derived\+FFi $>$\+::flipF (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{classigl_1_1HalfEdgeIterator_a8be83ead1050fd4901b863cb32d2492e} 
+template$<$typename DerivedF, typename Derived\+FF, typename Derived\+FFi$>$ \\
+void \doxymbox{\hyperlink{classigl_1_1HalfEdgeIterator}{igl::\+\+Half\+Edge\+Iterator}}$<$ DerivedF, Derived\+FF, Derived\+FFi $>$::\+flipF (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
 Change Face. 
 
-\Hypertarget{classigl_1_1HalfEdgeIterator_a302263a4590db215292b9df12a72ea98}\label{classigl_1_1HalfEdgeIterator_a302263a4590db215292b9df12a72ea98} 
-\index{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$@{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$}!flipE@{flipE}}
+\Hypertarget{classigl_1_1HalfEdgeIterator_a302263a4590db215292b9df12a72ea98}\index{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$@{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$}!flipE@{flipE}}
 \index{flipE@{flipE}!igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$@{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$}}
 \doxysubsubsection{\texorpdfstring{flipE()}{flipE()}}
-{\footnotesize\ttfamily template$<$typename DerivedF , typename Derived\+FF , typename Derived\+FFi $>$ \\
-void \mbox{\hyperlink{classigl_1_1HalfEdgeIterator}{igl\+::\+Half\+Edge\+Iterator}}$<$ DerivedF, Derived\+FF, Derived\+FFi $>$\+::flipE (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{classigl_1_1HalfEdgeIterator_a302263a4590db215292b9df12a72ea98} 
+template$<$typename DerivedF, typename Derived\+FF, typename Derived\+FFi$>$ \\
+void \doxymbox{\hyperlink{classigl_1_1HalfEdgeIterator}{igl::\+\+Half\+Edge\+Iterator}}$<$ DerivedF, Derived\+FF, Derived\+FFi $>$::\+flipE (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
 Change Edge. 
 
-\Hypertarget{classigl_1_1HalfEdgeIterator_a5a46cbff6201fe3d5ea6965949dcf233}\label{classigl_1_1HalfEdgeIterator_a5a46cbff6201fe3d5ea6965949dcf233} 
-\index{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$@{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$}!flipV@{flipV}}
+\Hypertarget{classigl_1_1HalfEdgeIterator_a5a46cbff6201fe3d5ea6965949dcf233}\index{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$@{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$}!flipV@{flipV}}
 \index{flipV@{flipV}!igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$@{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$}}
 \doxysubsubsection{\texorpdfstring{flipV()}{flipV()}}
-{\footnotesize\ttfamily template$<$typename DerivedF , typename Derived\+FF , typename Derived\+FFi $>$ \\
-void \mbox{\hyperlink{classigl_1_1HalfEdgeIterator}{igl\+::\+Half\+Edge\+Iterator}}$<$ DerivedF, Derived\+FF, Derived\+FFi $>$\+::flipV (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{classigl_1_1HalfEdgeIterator_a5a46cbff6201fe3d5ea6965949dcf233} 
+template$<$typename DerivedF, typename Derived\+FF, typename Derived\+FFi$>$ \\
+void \doxymbox{\hyperlink{classigl_1_1HalfEdgeIterator}{igl::\+\+Half\+Edge\+Iterator}}$<$ DerivedF, Derived\+FF, Derived\+FFi $>$::\+flipV (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
 Change Vertex. 
 
-\Hypertarget{classigl_1_1HalfEdgeIterator_acd659df96f2d15901e435f00bb108430}\label{classigl_1_1HalfEdgeIterator_acd659df96f2d15901e435f00bb108430} 
-\index{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$@{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$}!isBorder@{isBorder}}
+\Hypertarget{classigl_1_1HalfEdgeIterator_acd659df96f2d15901e435f00bb108430}\index{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$@{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$}!isBorder@{isBorder}}
 \index{isBorder@{isBorder}!igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$@{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$}}
 \doxysubsubsection{\texorpdfstring{isBorder()}{isBorder()}}
-{\footnotesize\ttfamily template$<$typename DerivedF , typename Derived\+FF , typename Derived\+FFi $>$ \\
-bool \mbox{\hyperlink{classigl_1_1HalfEdgeIterator}{igl\+::\+Half\+Edge\+Iterator}}$<$ DerivedF, Derived\+FF, Derived\+FFi $>$\+::is\+Border (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{classigl_1_1HalfEdgeIterator_acd659df96f2d15901e435f00bb108430} 
+template$<$typename DerivedF, typename Derived\+FF, typename Derived\+FFi$>$ \\
+bool \doxymbox{\hyperlink{classigl_1_1HalfEdgeIterator}{igl::\+\+Half\+Edge\+Iterator}}$<$ DerivedF, Derived\+FF, Derived\+FFi $>$::\+is\+Border (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
@@ -120,29 +124,29 @@ Determine if on border.
 \begin{DoxyReturn}{Returns}
 true if the current edge is on the border 
 \end{DoxyReturn}
-\Hypertarget{classigl_1_1HalfEdgeIterator_ae8c6926d09207e64ddebc76da5349bd1}\label{classigl_1_1HalfEdgeIterator_ae8c6926d09207e64ddebc76da5349bd1} 
-\index{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$@{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$}!NextFE@{NextFE}}
+\Hypertarget{classigl_1_1HalfEdgeIterator_ae8c6926d09207e64ddebc76da5349bd1}\index{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$@{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$}!NextFE@{NextFE}}
 \index{NextFE@{NextFE}!igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$@{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$}}
 \doxysubsubsection{\texorpdfstring{NextFE()}{NextFE()}}
-{\footnotesize\ttfamily template$<$typename DerivedF , typename Derived\+FF , typename Derived\+FFi $>$ \\
-bool \mbox{\hyperlink{classigl_1_1HalfEdgeIterator}{igl\+::\+Half\+Edge\+Iterator}}$<$ DerivedF, Derived\+FF, Derived\+FFi $>$\+::\+Next\+FE (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{classigl_1_1HalfEdgeIterator_ae8c6926d09207e64ddebc76da5349bd1} 
+template$<$typename DerivedF, typename Derived\+FF, typename Derived\+FFi$>$ \\
+bool \doxymbox{\hyperlink{classigl_1_1HalfEdgeIterator}{igl::\+\+Half\+Edge\+Iterator}}$<$ DerivedF, Derived\+FF, Derived\+FFi $>$::\+\+Next\+FE (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
 Change to next edge skipping the border. 
 
 \DoxyHorRuler{0}
- /\textbackslash{} c \texorpdfstring{$\vert$}{|} b /\textbackslash{} / \textbackslash{} \texorpdfstring{$\vert$}{|} / \textbackslash{} / d \textbackslash{} \texorpdfstring{$\vert$}{|} / a \textbackslash{} /\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+$|$/\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\textbackslash{} v In this example, if a and d are of-\/border and the pos is iterating counterclockwise, this method iterate through the faces incident on vertex v, producing the sequence a, b, c, d, a, b, c, ...
+ ╱╲ c \texorpdfstring{$\vert$}{|} b ╱╲ ╱ ╲ \texorpdfstring{$\vert$}{|} ╱ ╲ ╱ d ╲ \texorpdfstring{$\vert$}{|} ╱ a ╲ ╱\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+╲\texorpdfstring{$\vert$}{|}╱\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+╲ v In this example, if a and d are of-\/border and the pos is iterating counterclockwise, this method iterate through the faces incident on vertex v, producing the sequence a, b, c, d, a, b, c, ...
 
 \begin{DoxyReturn}{Returns}
 true if the next edge is not on the border 
 \end{DoxyReturn}
-\Hypertarget{classigl_1_1HalfEdgeIterator_a832d0372901b3083631507927e3eb11c}\label{classigl_1_1HalfEdgeIterator_a832d0372901b3083631507927e3eb11c} 
-\index{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$@{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$}!Vi@{Vi}}
+\Hypertarget{classigl_1_1HalfEdgeIterator_a832d0372901b3083631507927e3eb11c}\index{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$@{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$}!Vi@{Vi}}
 \index{Vi@{Vi}!igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$@{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$}}
 \doxysubsubsection{\texorpdfstring{Vi()}{Vi()}}
-{\footnotesize\ttfamily template$<$typename DerivedF , typename Derived\+FF , typename Derived\+FFi $>$ \\
-int \mbox{\hyperlink{classigl_1_1HalfEdgeIterator}{igl\+::\+Half\+Edge\+Iterator}}$<$ DerivedF, Derived\+FF, Derived\+FFi $>$\+::\+Vi (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{classigl_1_1HalfEdgeIterator_a832d0372901b3083631507927e3eb11c} 
+template$<$typename DerivedF, typename Derived\+FF, typename Derived\+FFi$>$ \\
+int \doxymbox{\hyperlink{classigl_1_1HalfEdgeIterator}{igl::\+\+Half\+Edge\+Iterator}}$<$ DerivedF, Derived\+FF, Derived\+FFi $>$::\+\+Vi (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
@@ -151,12 +155,12 @@ Get vertex index.
 \begin{DoxyReturn}{Returns}
 vertex index 
 \end{DoxyReturn}
-\Hypertarget{classigl_1_1HalfEdgeIterator_acdebf5be0b70ae105896bc7b4dc21519}\label{classigl_1_1HalfEdgeIterator_acdebf5be0b70ae105896bc7b4dc21519} 
-\index{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$@{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$}!Fi@{Fi}}
+\Hypertarget{classigl_1_1HalfEdgeIterator_acdebf5be0b70ae105896bc7b4dc21519}\index{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$@{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$}!Fi@{Fi}}
 \index{Fi@{Fi}!igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$@{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$}}
 \doxysubsubsection{\texorpdfstring{Fi()}{Fi()}}
-{\footnotesize\ttfamily template$<$typename DerivedF , typename Derived\+FF , typename Derived\+FFi $>$ \\
-int \mbox{\hyperlink{classigl_1_1HalfEdgeIterator}{igl\+::\+Half\+Edge\+Iterator}}$<$ DerivedF, Derived\+FF, Derived\+FFi $>$\+::\+Fi (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{classigl_1_1HalfEdgeIterator_acdebf5be0b70ae105896bc7b4dc21519} 
+template$<$typename DerivedF, typename Derived\+FF, typename Derived\+FFi$>$ \\
+int \doxymbox{\hyperlink{classigl_1_1HalfEdgeIterator}{igl::\+\+Half\+Edge\+Iterator}}$<$ DerivedF, Derived\+FF, Derived\+FFi $>$::\+\+Fi (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
@@ -165,12 +169,12 @@ Get face index.
 \begin{DoxyReturn}{Returns}
 face index 
 \end{DoxyReturn}
-\Hypertarget{classigl_1_1HalfEdgeIterator_a7b95717e2fe5d396d933bd9b48d4e82c}\label{classigl_1_1HalfEdgeIterator_a7b95717e2fe5d396d933bd9b48d4e82c} 
-\index{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$@{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$}!Ei@{Ei}}
+\Hypertarget{classigl_1_1HalfEdgeIterator_a7b95717e2fe5d396d933bd9b48d4e82c}\index{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$@{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$}!Ei@{Ei}}
 \index{Ei@{Ei}!igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$@{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$}}
 \doxysubsubsection{\texorpdfstring{Ei()}{Ei()}}
-{\footnotesize\ttfamily template$<$typename DerivedF , typename Derived\+FF , typename Derived\+FFi $>$ \\
-int \mbox{\hyperlink{classigl_1_1HalfEdgeIterator}{igl\+::\+Half\+Edge\+Iterator}}$<$ DerivedF, Derived\+FF, Derived\+FFi $>$\+::\+Ei (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{classigl_1_1HalfEdgeIterator_a7b95717e2fe5d396d933bd9b48d4e82c} 
+template$<$typename DerivedF, typename Derived\+FF, typename Derived\+FFi$>$ \\
+int \doxymbox{\hyperlink{classigl_1_1HalfEdgeIterator}{igl::\+\+Half\+Edge\+Iterator}}$<$ DerivedF, Derived\+FF, Derived\+FFi $>$::\+\+Ei (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
@@ -179,12 +183,12 @@ Get edge index.
 \begin{DoxyReturn}{Returns}
 edge index 
 \end{DoxyReturn}
-\Hypertarget{classigl_1_1HalfEdgeIterator_a8ce6e514ed49e9684b0c0fd0dd48e0d6}\label{classigl_1_1HalfEdgeIterator_a8ce6e514ed49e9684b0c0fd0dd48e0d6} 
-\index{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$@{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$}!operator==@{operator==}}
+\Hypertarget{classigl_1_1HalfEdgeIterator_a8ce6e514ed49e9684b0c0fd0dd48e0d6}\index{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$@{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$}!operator==@{operator==}}
 \index{operator==@{operator==}!igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$@{igl::HalfEdgeIterator$<$ DerivedF, DerivedFF, DerivedFFi $>$}}
 \doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
-{\footnotesize\ttfamily template$<$typename DerivedF , typename Derived\+FF , typename Derived\+FFi $>$ \\
-bool \mbox{\hyperlink{classigl_1_1HalfEdgeIterator}{igl\+::\+Half\+Edge\+Iterator}}$<$ DerivedF, Derived\+FF, Derived\+FFi $>$\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classigl_1_1HalfEdgeIterator}{Half\+Edge\+Iterator}}$<$ DerivedF, Derived\+FF, Derived\+FFi $>$ \&}]{p2 }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{classigl_1_1HalfEdgeIterator_a8ce6e514ed49e9684b0c0fd0dd48e0d6} 
+template$<$typename DerivedF, typename Derived\+FF, typename Derived\+FFi$>$ \\
+bool \doxymbox{\hyperlink{classigl_1_1HalfEdgeIterator}{igl::\+\+Half\+Edge\+Iterator}}$<$ DerivedF, Derived\+FF, Derived\+FFi $>$::\+operator== (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classigl_1_1HalfEdgeIterator_ade6f831eefbe8752706db4e8c5ffebb9}{Half\+Edge\+Iterator}}$<$ DerivedF, Derived\+FF, Derived\+FFi $>$ \&}]{p2}{}\end{DoxyParamCaption})}
 
 
 
@@ -195,6 +199,6 @@ true if two \doxylink{classigl_1_1HalfEdgeIterator}{Half\+Edge\+Iterator} are th
 \end{DoxyReturn}
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
 \item 
-include/igl/\mbox{\hyperlink{HalfEdgeIterator_8h}{Half\+Edge\+Iterator.\+h}}\end{DoxyCompactItemize}
+include/\+igl/\+\doxymbox{\hyperlink{HalfEdgeIterator_8h}{Half\+Edge\+Iterator.\+h}}\end{DoxyCompactItemize}

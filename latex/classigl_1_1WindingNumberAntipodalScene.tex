@@ -1,0 +1,249 @@
+\doxysection{igl::\+Winding\+Number\+Antipodal\+Scene\texorpdfstring{$<$}{<} Scalar \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classigl_1_1WindingNumberAntipodalScene}{}\label{classigl_1_1WindingNumberAntipodalScene}\index{igl::WindingNumberAntipodalScene$<$ Scalar $>$@{igl::WindingNumberAntipodalScene$<$ Scalar $>$}}
+
+
+Precomputed scene for the Antipodal Method generalized winding number.  
+
+
+
+
+{\ttfamily \+\#include $<$Winding\+Number\+Antipodal\+Scene.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a1402c27d54bb4af5274645b80593c16e}{Point}} = Eigen::\+\+Matrix$<$Scalar, 1, 3$>$
+\item 
+using \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a73fd65d6601aa0bdcd2a166d38da2dd3}{Direction}} = Eigen::\+\+Matrix$<$Scalar, 1, 3$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedV, typename DerivedF$>$ }\\\doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_ab1a027dc7b99d4ba39c8778b8dec16a1}{Winding\+Number\+Antipodal\+Scene}} (const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen::\+\+Matrix\+Base$<$ DerivedF $>$ \&F, const \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a73fd65d6601aa0bdcd2a166d38da2dd3}{Direction}} \&\doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a6fc4db3facd085fa682f597d2937dc59}{x0}}=\doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a9d571b6f318d129ee10ffff6b7b085ff}{default\+\_\+x0}}())
+\begin{DoxyCompactList}\small\item\em Build a scene from a 3D triangle mesh. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Intersector, typename Derivedp$>$ }\\Scalar \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_ac646eb0207e4bf96682fa7e4924ade23}{winding\+\_\+number}} (const Intersector \&intersector, const Eigen::\+\+Matrix\+Base$<$ Derivedp $>$ \&p) const
+\begin{DoxyCompactList}\small\item\em Single-\/point query:\+ full generalized winding number at {\ttfamily p} (fractional + signed integer crossings). \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Intersector, typename DerivedO, typename DerivedW$>$ }\\void \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a2deb15757f8e7d976fd477be935ac07f}{winding\+\_\+number}} (const Intersector \&intersector, const Eigen::\+\+Matrix\+Base$<$ DerivedO $>$ \&O, Eigen::\+\+Plain\+Object\+Base$<$ DerivedW $>$ \&W) const
+\begin{DoxyCompactList}\small\item\em Batch query, parallelized via {\ttfamily \doxylink{namespaceigl_a48ba3dac8f2da11935cd7e566f27e69d}{igl::\+parallel\+\_\+for}}. \end{DoxyCompactList}\item 
+const \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a73fd65d6601aa0bdcd2a166d38da2dd3}{Direction}} \& \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a6fc4db3facd085fa682f597d2937dc59}{x0}} () const
+\begin{DoxyCompactList}\small\item\em Reference direction {\ttfamily \doxylink{classigl_1_1WindingNumberAntipodalScene_a6fc4db3facd085fa682f597d2937dc59}{x0}} used to evaluate this scene. \end{DoxyCompactList}\item 
+size\+\_\+t \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a7b7bce93aa72a9c2ea38fd8beffb3b66}{num\+\_\+boundary\+\_\+segments}} () const
+\begin{DoxyCompactList}\small\item\em Number of weighted boundary edge segments. \end{DoxyCompactList}\item 
+size\+\_\+t \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a6eab299151d31c20af3e73afd20facaa}{num\+\_\+faces}} () const
+\begin{DoxyCompactList}\small\item\em Number of triangles in the original mesh. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a73fd65d6601aa0bdcd2a166d38da2dd3}{Direction}} \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a9d571b6f318d129ee10ffff6b7b085ff}{default\+\_\+x0}} ()
+\begin{DoxyCompactList}\small\item\em Default reference direction:\+ normalize(1, sqrt(2), sqrt(3)). \end{DoxyCompactList}\item 
+static Scalar \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a67e197d91946089ca2d53c97fc03cf92}{half\+\_\+solid\+\_\+angle\+\_\+unorm}} (const \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a73fd65d6601aa0bdcd2a166d38da2dd3}{Direction}} \&x1, const \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a1402c27d54bb4af5274645b80593c16e}{Point}} \&v0, const \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a1402c27d54bb4af5274645b80593c16e}{Point}} \&v1)
+\begin{DoxyCompactList}\small\item\em Half the signed solid angle subtended by the spherical triangle (x1, v0, v1) at the origin, via the unnormalized Van Oosterom-\/\+Strackee formula. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename DerivedV, typename DerivedF$>$ }\\static void \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a479b4857c6da3a449ef6f44ef3d04d63}{build\+\_\+boundary\+\_\+segments}} (const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&V, const Eigen::\+\+Matrix\+Base$<$ DerivedF $>$ \&F, std::\+vector$<$ Weighted\+Seg $>$ \&out)
+\begin{DoxyCompactList}\small\item\em Extract the open boundary as oriented, weighted edge segments. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::\+vector$<$ Weighted\+Seg $>$ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a4900569be5ffcdecb6862df689e44f0c}{m\+\_\+boundary}}
+\item 
+\doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a73fd65d6601aa0bdcd2a166d38da2dd3}{Direction}} \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a2f5bd5e724cc3d7cb1a539db87e5a628}{m\+\_\+x0}}
+\item 
+size\+\_\+t \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a7abdcdb8be443318433106d3977d6eb8}{m\+\_\+face\+\_\+count}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Scalar$>$\newline
+class igl::\+\+Winding\+Number\+Antipodal\+Scene$<$ Scalar $>$}
+Precomputed scene for the Antipodal Method generalized winding number. 
+
+The scene stores only the weighted open-\/boundary edges of the input triangle mesh and a fixed antipodal reference direction {\ttfamily \doxylink{classigl_1_1WindingNumberAntipodalScene_a6fc4db3facd085fa682f597d2937dc59}{x0}}. Closed (manifold) meshes have an empty boundary and the fractional term is exactly zero.
+
+Querying the winding number additionally requires an {\ttfamily Intersector} that returns the signed ray-\/mesh crossing count along {\ttfamily (p, \doxylink{classigl_1_1WindingNumberAntipodalScene_a6fc4db3facd085fa682f597d2937dc59}{x0})} over the original mesh; the scene itself is intersector-\/agnostic. See {\ttfamily \doxylink{classigl_1_1embree_1_1EmbreeIntersector_a1a01eaccc24a70a8e0e790d5ec2ee328}{igl::\+embree::\+\+Embree\+Intersector::\+signed\+Intersections\+Ray}} for an optimized concrete implementation.\hypertarget{classigl_1_1WindingNumberAntipodalScene_autotoc_md43}{}\doxysubsubsubsection{\texorpdfstring{Intersector concept}{Intersector concept}}\label{classigl_1_1WindingNumberAntipodalScene_autotoc_md43}
+A type {\ttfamily I} satisfies the concept when it exposes:\+
+\begin{DoxyItemize}
+\item {\ttfamily using Origin\+Type = ...;} (3D row vector type)
+\item {\ttfamily using Direction\+Type = ...;} (3D row vector type)
+\item {\ttfamily int signed\+Intersections\+Ray( Origin\+Type origin, Direction\+Type direction, /\+\texorpdfstring{$\ast$}{*} defaulted tnear, tfar, mask \texorpdfstring{$\ast$}{*}/\+) const;}
+\end{DoxyItemize}
+
+{\ttfamily \doxylink{classigl_1_1WindingNumberAntipodalScene_ac646eb0207e4bf96682fa7e4924ade23}{winding\+\_\+number}} casts query point/\+direction to the intersector\textquotesingle{}s types at the call site, so a {\ttfamily double}-\/precision scene against a float-\/only intersector works without an adaptor. 
+
+\label{doc-typedef-members}
+\Hypertarget{classigl_1_1WindingNumberAntipodalScene_doc-typedef-members}
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{classigl_1_1WindingNumberAntipodalScene_a1402c27d54bb4af5274645b80593c16e}\index{igl::WindingNumberAntipodalScene$<$ Scalar $>$@{igl::WindingNumberAntipodalScene$<$ Scalar $>$}!Point@{Point}}
+\index{Point@{Point}!igl::WindingNumberAntipodalScene$<$ Scalar $>$@{igl::WindingNumberAntipodalScene$<$ Scalar $>$}}
+\doxysubsubsection{\texorpdfstring{Point}{Point}}
+{\footnotesize\ttfamily \label{classigl_1_1WindingNumberAntipodalScene_a1402c27d54bb4af5274645b80593c16e} 
+template$<$typename Scalar$>$ \\
+using \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene}{igl::\+\+Winding\+Number\+Antipodal\+Scene}}$<$ Scalar $>$::\+\+Point = Eigen::\+\+Matrix$<$Scalar, 1, 3$>$}
+
+\Hypertarget{classigl_1_1WindingNumberAntipodalScene_a73fd65d6601aa0bdcd2a166d38da2dd3}\index{igl::WindingNumberAntipodalScene$<$ Scalar $>$@{igl::WindingNumberAntipodalScene$<$ Scalar $>$}!Direction@{Direction}}
+\index{Direction@{Direction}!igl::WindingNumberAntipodalScene$<$ Scalar $>$@{igl::WindingNumberAntipodalScene$<$ Scalar $>$}}
+\doxysubsubsection{\texorpdfstring{Direction}{Direction}}
+{\footnotesize\ttfamily \label{classigl_1_1WindingNumberAntipodalScene_a73fd65d6601aa0bdcd2a166d38da2dd3} 
+template$<$typename Scalar$>$ \\
+using \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene}{igl::\+\+Winding\+Number\+Antipodal\+Scene}}$<$ Scalar $>$::\+\+Direction = Eigen::\+\+Matrix$<$Scalar, 1, 3$>$}
+
+
+
+\label{doc-constructors}
+\Hypertarget{classigl_1_1WindingNumberAntipodalScene_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classigl_1_1WindingNumberAntipodalScene_ab1a027dc7b99d4ba39c8778b8dec16a1}\index{igl::WindingNumberAntipodalScene$<$ Scalar $>$@{igl::WindingNumberAntipodalScene$<$ Scalar $>$}!WindingNumberAntipodalScene@{WindingNumberAntipodalScene}}
+\index{WindingNumberAntipodalScene@{WindingNumberAntipodalScene}!igl::WindingNumberAntipodalScene$<$ Scalar $>$@{igl::WindingNumberAntipodalScene$<$ Scalar $>$}}
+\doxysubsubsection{\texorpdfstring{WindingNumberAntipodalScene()}{WindingNumberAntipodalScene()}}
+{\footnotesize\ttfamily \label{classigl_1_1WindingNumberAntipodalScene_ab1a027dc7b99d4ba39c8778b8dec16a1} 
+template$<$typename Scalar$>$ \\
+template$<$typename DerivedV, typename DerivedF$>$ \\
+\doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene}{igl::\+\+Winding\+Number\+Antipodal\+Scene}}$<$ Scalar $>$::\+\+Winding\+Number\+Antipodal\+Scene (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&}]{V}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedF $>$ \&}]{F}{, }\item[{const \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a73fd65d6601aa0bdcd2a166d38da2dd3}{Direction}} \&}]{x0}{ = {\ttfamily \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a9d571b6f318d129ee10ffff6b7b085ff}{default\+\_\+x0}}()}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Build a scene from a 3D triangle mesh. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em V} & \+\#V by 3 list of vertex positions \\
+\hline
+\doxymbox{\texttt{in}}  & {\em F} & \+\#F by 3 list of triangle indices \\
+\hline
+\doxymbox{\texttt{in}}  & {\em \doxylink{classigl_1_1WindingNumberAntipodalScene_a6fc4db3facd085fa682f597d2937dc59}{x0}} & unit reference direction (defaults to a fixed non-\/axis-\/aligned vector) \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classigl_1_1WindingNumberAntipodalScene_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classigl_1_1WindingNumberAntipodalScene_ac646eb0207e4bf96682fa7e4924ade23}\index{igl::WindingNumberAntipodalScene$<$ Scalar $>$@{igl::WindingNumberAntipodalScene$<$ Scalar $>$}!winding\_number@{winding\_number}}
+\index{winding\_number@{winding\_number}!igl::WindingNumberAntipodalScene$<$ Scalar $>$@{igl::WindingNumberAntipodalScene$<$ Scalar $>$}}
+\doxysubsubsection{\texorpdfstring{winding\_number()}{winding\_number()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classigl_1_1WindingNumberAntipodalScene_ac646eb0207e4bf96682fa7e4924ade23} 
+template$<$typename Scalar$>$ \\
+template$<$typename Intersector, typename Derivedp$>$ \\
+Scalar \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene}{igl::\+\+Winding\+Number\+Antipodal\+Scene}}$<$ Scalar $>$::\+winding\+\_\+number (\begin{DoxyParamCaption}\item[{const Intersector \&}]{intersector}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ Derivedp $>$ \&}]{p}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Single-\/point query:\+ full generalized winding number at {\ttfamily p} (fractional + signed integer crossings). 
+
+\Hypertarget{classigl_1_1WindingNumberAntipodalScene_a2deb15757f8e7d976fd477be935ac07f}\index{igl::WindingNumberAntipodalScene$<$ Scalar $>$@{igl::WindingNumberAntipodalScene$<$ Scalar $>$}!winding\_number@{winding\_number}}
+\index{winding\_number@{winding\_number}!igl::WindingNumberAntipodalScene$<$ Scalar $>$@{igl::WindingNumberAntipodalScene$<$ Scalar $>$}}
+\doxysubsubsection{\texorpdfstring{winding\_number()}{winding\_number()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classigl_1_1WindingNumberAntipodalScene_a2deb15757f8e7d976fd477be935ac07f} 
+template$<$typename Scalar$>$ \\
+template$<$typename Intersector, typename DerivedO, typename DerivedW$>$ \\
+void \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene}{igl::\+\+Winding\+Number\+Antipodal\+Scene}}$<$ Scalar $>$::\+winding\+\_\+number (\begin{DoxyParamCaption}\item[{const Intersector \&}]{intersector}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedO $>$ \&}]{O}{, }\item[{Eigen::\+\+Plain\+Object\+Base$<$ DerivedW $>$ \&}]{W}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Batch query, parallelized via {\ttfamily \doxylink{namespaceigl_a48ba3dac8f2da11935cd7e566f27e69d}{igl::\+parallel\+\_\+for}}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em intersector} & Concept-\/compatible intersector built over the same mesh used to construct the scene. Must be safe to query concurrently. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em O} & \+\#O by 3 list of query points \\
+\hline
+\doxymbox{\texttt{out}}  & {\em W} & \+\#O by 1 list of winding numbers \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classigl_1_1WindingNumberAntipodalScene_a6fc4db3facd085fa682f597d2937dc59}\index{igl::WindingNumberAntipodalScene$<$ Scalar $>$@{igl::WindingNumberAntipodalScene$<$ Scalar $>$}!x0@{x0}}
+\index{x0@{x0}!igl::WindingNumberAntipodalScene$<$ Scalar $>$@{igl::WindingNumberAntipodalScene$<$ Scalar $>$}}
+\doxysubsubsection{\texorpdfstring{x0()}{x0()}}
+{\footnotesize\ttfamily \label{classigl_1_1WindingNumberAntipodalScene_a6fc4db3facd085fa682f597d2937dc59} 
+template$<$typename Scalar$>$ \\
+const \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a73fd65d6601aa0bdcd2a166d38da2dd3}{Direction}} \& \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene}{igl::\+\+Winding\+Number\+Antipodal\+Scene}}$<$ Scalar $>$::\+x0 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reference direction {\ttfamily \doxylink{classigl_1_1WindingNumberAntipodalScene_a6fc4db3facd085fa682f597d2937dc59}{x0}} used to evaluate this scene. 
+
+\Hypertarget{classigl_1_1WindingNumberAntipodalScene_a7b7bce93aa72a9c2ea38fd8beffb3b66}\index{igl::WindingNumberAntipodalScene$<$ Scalar $>$@{igl::WindingNumberAntipodalScene$<$ Scalar $>$}!num\_boundary\_segments@{num\_boundary\_segments}}
+\index{num\_boundary\_segments@{num\_boundary\_segments}!igl::WindingNumberAntipodalScene$<$ Scalar $>$@{igl::WindingNumberAntipodalScene$<$ Scalar $>$}}
+\doxysubsubsection{\texorpdfstring{num\_boundary\_segments()}{num\_boundary\_segments()}}
+{\footnotesize\ttfamily \label{classigl_1_1WindingNumberAntipodalScene_a7b7bce93aa72a9c2ea38fd8beffb3b66} 
+template$<$typename Scalar$>$ \\
+size\+\_\+t \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene}{igl::\+\+Winding\+Number\+Antipodal\+Scene}}$<$ Scalar $>$::\+num\+\_\+boundary\+\_\+segments (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Number of weighted boundary edge segments. 
+
+\Hypertarget{classigl_1_1WindingNumberAntipodalScene_a6eab299151d31c20af3e73afd20facaa}\index{igl::WindingNumberAntipodalScene$<$ Scalar $>$@{igl::WindingNumberAntipodalScene$<$ Scalar $>$}!num\_faces@{num\_faces}}
+\index{num\_faces@{num\_faces}!igl::WindingNumberAntipodalScene$<$ Scalar $>$@{igl::WindingNumberAntipodalScene$<$ Scalar $>$}}
+\doxysubsubsection{\texorpdfstring{num\_faces()}{num\_faces()}}
+{\footnotesize\ttfamily \label{classigl_1_1WindingNumberAntipodalScene_a6eab299151d31c20af3e73afd20facaa} 
+template$<$typename Scalar$>$ \\
+size\+\_\+t \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene}{igl::\+\+Winding\+Number\+Antipodal\+Scene}}$<$ Scalar $>$::\+num\+\_\+faces (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Number of triangles in the original mesh. 
+
+\Hypertarget{classigl_1_1WindingNumberAntipodalScene_a9d571b6f318d129ee10ffff6b7b085ff}\index{igl::WindingNumberAntipodalScene$<$ Scalar $>$@{igl::WindingNumberAntipodalScene$<$ Scalar $>$}!default\_x0@{default\_x0}}
+\index{default\_x0@{default\_x0}!igl::WindingNumberAntipodalScene$<$ Scalar $>$@{igl::WindingNumberAntipodalScene$<$ Scalar $>$}}
+\doxysubsubsection{\texorpdfstring{default\_x0()}{default\_x0()}}
+{\footnotesize\ttfamily \label{classigl_1_1WindingNumberAntipodalScene_a9d571b6f318d129ee10ffff6b7b085ff} 
+template$<$typename Scalar$>$ \\
+\doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a73fd65d6601aa0bdcd2a166d38da2dd3}{Direction}} \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene}{igl::\+\+Winding\+Number\+Antipodal\+Scene}}$<$ Scalar $>$::\+default\+\_\+x0 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Default reference direction:\+ normalize(1, sqrt(2), sqrt(3)). 
+
+A fixed non-\/axis-\/aligned unit vector; any unit vector works per the paper; this choice avoids accidental alignment with axis-\/aligned geometry. \Hypertarget{classigl_1_1WindingNumberAntipodalScene_a67e197d91946089ca2d53c97fc03cf92}\index{igl::WindingNumberAntipodalScene$<$ Scalar $>$@{igl::WindingNumberAntipodalScene$<$ Scalar $>$}!half\_solid\_angle\_unorm@{half\_solid\_angle\_unorm}}
+\index{half\_solid\_angle\_unorm@{half\_solid\_angle\_unorm}!igl::WindingNumberAntipodalScene$<$ Scalar $>$@{igl::WindingNumberAntipodalScene$<$ Scalar $>$}}
+\doxysubsubsection{\texorpdfstring{half\_solid\_angle\_unorm()}{half\_solid\_angle\_unorm()}}
+{\footnotesize\ttfamily \label{classigl_1_1WindingNumberAntipodalScene_a67e197d91946089ca2d53c97fc03cf92} 
+template$<$typename Scalar$>$ \\
+Scalar \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene}{igl::\+\+Winding\+Number\+Antipodal\+Scene}}$<$ Scalar $>$::\+half\+\_\+solid\+\_\+angle\+\_\+unorm (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a73fd65d6601aa0bdcd2a166d38da2dd3}{Direction}} \&}]{x1}{, }\item[{const \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a1402c27d54bb4af5274645b80593c16e}{Point}} \&}]{v0}{, }\item[{const \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a1402c27d54bb4af5274645b80593c16e}{Point}} \&}]{v1}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Half the signed solid angle subtended by the spherical triangle (x1, v0, v1) at the origin, via the unnormalized Van Oosterom-\/\+Strackee formula. 
+
+{\ttfamily x1} is expected to be a unit vector (the antipodal "{}south pole"{} {\ttfamily -\/\doxylink{classigl_1_1WindingNumberAntipodalScene_a6fc4db3facd085fa682f597d2937dc59}{x0}}); {\ttfamily v0}, {\ttfamily v1} need not be normalized. Callers accumulate per-\/edge contributions and divide by 2π. \Hypertarget{classigl_1_1WindingNumberAntipodalScene_a479b4857c6da3a449ef6f44ef3d04d63}\index{igl::WindingNumberAntipodalScene$<$ Scalar $>$@{igl::WindingNumberAntipodalScene$<$ Scalar $>$}!build\_boundary\_segments@{build\_boundary\_segments}}
+\index{build\_boundary\_segments@{build\_boundary\_segments}!igl::WindingNumberAntipodalScene$<$ Scalar $>$@{igl::WindingNumberAntipodalScene$<$ Scalar $>$}}
+\doxysubsubsection{\texorpdfstring{build\_boundary\_segments()}{build\_boundary\_segments()}}
+{\footnotesize\ttfamily \label{classigl_1_1WindingNumberAntipodalScene_a479b4857c6da3a449ef6f44ef3d04d63} 
+template$<$typename Scalar$>$ \\
+template$<$typename DerivedV, typename DerivedF$>$ \\
+void \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene}{igl::\+\+Winding\+Number\+Antipodal\+Scene}}$<$ Scalar $>$::\+build\+\_\+boundary\+\_\+segments (\begin{DoxyParamCaption}\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedV $>$ \&}]{V}{, }\item[{const Eigen::\+\+Matrix\+Base$<$ DerivedF $>$ \&}]{F}{, }\item[{std::\+vector$<$ Weighted\+Seg $>$ \&}]{out}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Extract the open boundary as oriented, weighted edge segments. 
+
+Each undirected edge \{min, max\} accumulates +1 for every triangle that traverses it as min→max and -\/1 for every traversal max→min. Interior edges of an oriented manifold cancel to zero and are dropped. Surviving edges are emitted with positive weight; the segment direction is flipped when the net count is negative so the weight is always \texorpdfstring{$>$}{>} 0. Non-\/manifold (≥3 incident triangles per edge) is handled the same way. The surviving net count becomes the weight. 
+
+\label{doc-variable-members}
+\Hypertarget{classigl_1_1WindingNumberAntipodalScene_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classigl_1_1WindingNumberAntipodalScene_a4900569be5ffcdecb6862df689e44f0c}\index{igl::WindingNumberAntipodalScene$<$ Scalar $>$@{igl::WindingNumberAntipodalScene$<$ Scalar $>$}!m\_boundary@{m\_boundary}}
+\index{m\_boundary@{m\_boundary}!igl::WindingNumberAntipodalScene$<$ Scalar $>$@{igl::WindingNumberAntipodalScene$<$ Scalar $>$}}
+\doxysubsubsection{\texorpdfstring{m\_boundary}{m\_boundary}}
+{\footnotesize\ttfamily \label{classigl_1_1WindingNumberAntipodalScene_a4900569be5ffcdecb6862df689e44f0c} 
+template$<$typename Scalar$>$ \\
+std::\+vector$<$Weighted\+Seg$>$ \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene}{igl::\+\+Winding\+Number\+Antipodal\+Scene}}$<$ Scalar $>$::\+m\+\_\+boundary}
+
+\Hypertarget{classigl_1_1WindingNumberAntipodalScene_a2f5bd5e724cc3d7cb1a539db87e5a628}\index{igl::WindingNumberAntipodalScene$<$ Scalar $>$@{igl::WindingNumberAntipodalScene$<$ Scalar $>$}!m\_x0@{m\_x0}}
+\index{m\_x0@{m\_x0}!igl::WindingNumberAntipodalScene$<$ Scalar $>$@{igl::WindingNumberAntipodalScene$<$ Scalar $>$}}
+\doxysubsubsection{\texorpdfstring{m\_x0}{m\_x0}}
+{\footnotesize\ttfamily \label{classigl_1_1WindingNumberAntipodalScene_a2f5bd5e724cc3d7cb1a539db87e5a628} 
+template$<$typename Scalar$>$ \\
+\doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene_a73fd65d6601aa0bdcd2a166d38da2dd3}{Direction}} \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene}{igl::\+\+Winding\+Number\+Antipodal\+Scene}}$<$ Scalar $>$::\+m\+\_\+x0}
+
+\Hypertarget{classigl_1_1WindingNumberAntipodalScene_a7abdcdb8be443318433106d3977d6eb8}\index{igl::WindingNumberAntipodalScene$<$ Scalar $>$@{igl::WindingNumberAntipodalScene$<$ Scalar $>$}!m\_face\_count@{m\_face\_count}}
+\index{m\_face\_count@{m\_face\_count}!igl::WindingNumberAntipodalScene$<$ Scalar $>$@{igl::WindingNumberAntipodalScene$<$ Scalar $>$}}
+\doxysubsubsection{\texorpdfstring{m\_face\_count}{m\_face\_count}}
+{\footnotesize\ttfamily \label{classigl_1_1WindingNumberAntipodalScene_a7abdcdb8be443318433106d3977d6eb8} 
+template$<$typename Scalar$>$ \\
+size\+\_\+t \doxymbox{\hyperlink{classigl_1_1WindingNumberAntipodalScene}{igl::\+\+Winding\+Number\+Antipodal\+Scene}}$<$ Scalar $>$::\+m\+\_\+face\+\_\+count = 0}
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+include/\+igl/\+\doxymbox{\hyperlink{WindingNumberAntipodalScene_8h}{Winding\+Number\+Antipodal\+Scene.\+h}}\end{DoxyCompactItemize}

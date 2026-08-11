@@ -22,5 +22,9 @@ var searchData=
   ['boundary_5ffacets_2eh_19',['boundary_facets.h',['../boundary__facets_8h.html',1,'']]],
   ['boundary_5floop_2eh_20',['boundary_loop.h',['../boundary__loop_8h.html',1,'']]],
   ['bounding_5fbox_2eh_21',['bounding_box.h',['../bounding__box_8h.html',1,'']]],
-  ['bounding_5fbox_5fdiagonal_2eh_22',['bounding_box_diagonal.h',['../bounding__box__diagonal_8h.html',1,'']]]
+  ['bounding_5fbox_5fdiagonal_2eh_22',['bounding_box_diagonal.h',['../bounding__box__diagonal_8h.html',1,'']]],
+  ['box_5fcubic_2eh_23',['box_cubic.h',['../box__cubic_8h.html',1,'']]],
+  ['box_5ffaces_2eh_24',['box_faces.h',['../box__faces_8h.html',1,'']]],
+  ['box_5fsimplices_2eh_25',['box_simplices.h',['../box__simplices_8h.html',1,'']]],
+  ['box_5fsurface_5farea_2eh_26',['box_surface_area.h',['../box__surface__area_8h.html',1,'']]]
 ];

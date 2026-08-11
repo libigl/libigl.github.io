@@ -1,4 +1,4 @@
 var submesh__aabb__tree_8h =
 [
-    [ "submesh_aabb_tree", "submesh__aabb__tree_8h.html#a3b5cc8bbbcee4ed4567bc754a4e939c0", null ]
+    [ "igl::copyleft::cgal::submesh_aabb_tree", "namespaceigl_1_1copyleft_1_1cgal.html#aee75db83e962277d073fa5a83fe58494", null ]
 ];

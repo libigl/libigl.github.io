@@ -1,5 +1,5 @@
 var embree_2shape__diameter__function_8h =
 [
-    [ "shape_diameter_function", "embree_2shape__diameter__function_8h.html#a93025c9bea20cc5c7dcf9c3c0606a3df", null ],
-    [ "shape_diameter_function", "embree_2shape__diameter__function_8h.html#a628ebea8ce36a70ecb61abd5502b5ba4", null ]
+    [ "igl::embree::shape_diameter_function", "namespaceigl_1_1embree.html#ad3517b6708a3dea6161a8e518203dfaf", null ],
+    [ "igl::embree::shape_diameter_function", "namespaceigl_1_1embree.html#a792e5495ec237888fc296bc369d40ba6", null ]
 ];

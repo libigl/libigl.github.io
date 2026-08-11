@@ -1,0 +1,15 @@
+\doxysection{include/\+igl/\+eytzinger\+\_\+aabb\+\_\+winding\+\_\+number\+\_\+tree.h File Reference}
+\hypertarget{eytzinger__aabb__winding__number__tree_8h}{}\label{eytzinger__aabb__winding__number__tree_8h}\index{include/igl/eytzinger\_aabb\_winding\_number\_tree.h@{include/igl/eytzinger\_aabb\_winding\_number\_tree.h}}
+{\ttfamily \+\#include "{}igl\+\_\+inline.\+h"{}}\newline
+{\ttfamily \+\#include $<$Eigen/\+\+Core$>$}\newline
+{\ttfamily \+\#include "{}eytzinger\+\_\+aabb\+\_\+winding\+\_\+number\+\_\+tree.\+cpp"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \doxymbox{\hyperlink{namespaceigl}{igl}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename DerivedE, typename Derivedleaf, typename DerivedI, typename DerivedC$>$ }\\void \doxymbox{\hyperlink{namespaceigl_ac6b181f915bb7df9daf3a26f233763be}{igl::\+eytzinger\+\_\+aabb\+\_\+winding\+\_\+number\+\_\+tree}} (const Eigen::\+\+Matrix\+Base$<$ DerivedE $>$ \&E, const Eigen::\+\+Matrix\+Base$<$ Derivedleaf $>$ \&leaf, Eigen::\+\+Plain\+Object\+Base$<$ DerivedI $>$ \&I, Eigen::\+\+Plain\+Object\+Base$<$ DerivedC $>$ \&C)
+\begin{DoxyCompactList}\small\item\em For each internal node of the Eytzinger \doxylink{classigl_1_1AABB}{AABB} tree, compute a streamed list of pairs of vertices which would "{}close"{} the winding number contributions of all segments in the subtree rooted at that node \+[Jacobson et al. \end{DoxyCompactList}\end{DoxyCompactItemize}
