@@ -324,7 +324,7 @@ def cpp_chip(cpp_page) -> str:
     """A standalone C++ cross-link line placed under a heading (kept out of the
     heading so it does not leak into the table of contents)."""
     if cpp_page:
-        return f"[:material-language-cpp: C++ reference]({DOX_BASE}/{cpp_page}){{ .cpp-xref }}\n"
+        return f"[C++ reference]({DOX_BASE}/{cpp_page}){{ .cpp-xref }}\n"
     return ""
 
 
